@@ -1,2 +1,3 @@
-# ci
-Ci for ggml and related projects
+# CI
+
+CI for ggml and related projects
