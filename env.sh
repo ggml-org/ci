@@ -9,7 +9,7 @@ function gg_export {
     fi
 }
 
-gg_export GG_ROOT "~/"
+gg_export GG_ROOT $(realpath ~/work)
 
 gg_export GG_GGML_DIR  "ggml"
 gg_export GG_GGML_REPO "https://github.com/ggerganov/ggml"
@@ -22,3 +22,5 @@ gg_export GG_LLAMA_CPP_REPO            "https://github.com/ggerganov/llama.cpp"
 gg_export GG_LLAMA_CPP_OPEN_LLAMA_REPO "https://huggingface.co/openlm-research/open_llama_3b"
 
 env | grep GG_ | sort
+
+printf "\n"

@@ -4,7 +4,26 @@ sd=`dirname $0`
 
 source $sd/env.sh
 
-function setup_ggml {
+function gg_wget {
+    local url=$1
+    local out=$2
+
+    local cwd=`pwd`
+
+    mkdir -p $out
+    cd $out
+
+    # should not re-download if file is the same
+    wget -N -r $url
+
+    cd $cwd
+}
+
+set -x
+
+mkdir -p $GG_ROOT
+
+function gg_setup_ggml {
     cd $GG_ROOT
 
     if [ ! -d $GG_GGML_DIR ]; then
@@ -12,7 +31,7 @@ function setup_ggml {
     fi
 }
 
-function setup_whisper_cpp {
+function gg_setup_whisper_cpp {
     cd $GG_ROOT
 
     if [ ! -d $GG_WHISPER_CPP_DIR ]; then
@@ -20,7 +39,7 @@ function setup_whisper_cpp {
     fi
 }
 
-function setup_llama_cpp {
+function gg_setup_llama_cpp {
     cd $GG_ROOT
 
     if [ ! -d $GG_LLAMA_CPP_DIR ]; then
@@ -29,13 +48,12 @@ function setup_llama_cpp {
 
     cd $GG_LLAMA_CPP_DIR
 
-    mkdir -p models/open-llama-3b
-    wget -N -r ${GG_LLAMA_CPP_OPEN_LLAMA_REPO}/resolve/main/pytorch_model.bin     -O models/open-llama-3b/pytorch_model.bin
-    wget -N -r ${GG_LLAMA_CPP_OPEN_LLAMA_REPO}/resolve/main/config.json           -O models/open-llama-3b/config.json
-    wget -N -r ${GG_LLAMA_CPP_OPEN_LLAMA_REPO}/resolve/main/tokenizer.model       -O models/open-llama-3b/tokenizer.model
-    wget -N -r ${GG_LLAMA_CPP_OPEN_LLAMA_REPO}/resolve/main/tokenizer_config.json -O models/open-llama-3b/tokenizer_config.json
+    gg_wget models/open-llama-3b ${GG_LLAMA_CPP_OPEN_LLAMA_REPO}/resolve/main/pytorch_model.bin
+    gg_wget models/open-llama-3b ${GG_LLAMA_CPP_OPEN_LLAMA_REPO}/resolve/main/config.json
+    gg_wget models/open-llama-3b ${GG_LLAMA_CPP_OPEN_LLAMA_REPO}/resolve/main/tokenizer.model
+    gg_wget models/open-llama-3b ${GG_LLAMA_CPP_OPEN_LLAMA_REPO}/resolve/main/tokenizer_config.json
 }
 
-setup_ggml
-setup_whisper_cpp
-setup_llama_cpp
+gg_setup_ggml
+gg_setup_whisper_cpp
+gg_setup_llama_cpp
