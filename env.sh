@@ -52,6 +52,7 @@ gg_export GG_LLAMA_CPP_REPO "https://github.com/ggerganov/llama.cpp"
 
 # check last N commits
 gg_export GG_RUN_LAST_N 3
+gg_export GG_RUN_SLEEP  60
 
 env | grep GG_ | sort
 

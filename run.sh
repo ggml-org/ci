@@ -92,5 +92,5 @@ function gg_run_ggml {
 while true; do
     gg_run_ggml
 
-    sleep 10
+    sleep ${GG_RUN_SLEEP}
 done
