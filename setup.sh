@@ -13,7 +13,7 @@ function gg_setup_ggml {
 
     cd $GG_GGML_DIR
 
-    bash ci/setup.sh
+    #bash ci/setup.sh
 }
 
 function gg_setup_whisper_cpp {
