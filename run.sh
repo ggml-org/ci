@@ -13,6 +13,12 @@ source $sd/env.sh
 
 GG_NODE=${1}
 
+# check if results repo is cloned
+if [ ! -d ${GG_RESULTS_PATH} ]; then
+    printf "run.sh : results repo is not cloned\n"
+    exit 1
+fi
+
 # check if the script is already running
 
 if [ -f /tmp/ggml-lock ]; then
