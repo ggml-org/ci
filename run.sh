@@ -77,7 +77,7 @@ function gg_run_ggml {
             git submodule update --init --recursive
             git clean -fd
 
-            time bash ci/run.sh ${out} > ${out}/stdout 2> ${out}/stderr
+            time bash ci/run.sh ${out} > ${out}/stdall 2>&1
             result=$?
 
             echo ${result} > ${out}/exit
