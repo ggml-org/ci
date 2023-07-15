@@ -61,7 +61,19 @@ set -x
 set -e
 
 if [ ! -d $GG_RESULTS_PATH ]; then
-    git clone $GG_RESULTS_REPO $GG_RESULTS_PATH -b $GG_RESULTS_BRANCH
+    git clone -c core.sshCommand="/usr/bin/ssh -i ~/.ssh/ggml-bot-main" $GG_RESULTS_REPO $GG_RESULTS_PATH -b $GG_RESULTS_BRANCH
+
+    if [ ! -d $GG_RESULTS_PATH ]; then
+        printf "setup.sh : failed to clone results repo\n"
+        exit 1
+    fi
+
+    cd $GG_RESULTS_PATH
+
+    git config user.name  $GG_BOT_NAME
+    git config user.email $GG_BOT_EMAIL
+
+    cd ..
 fi
 
 mkdir -p $GG_WORK_PATH
@@ -69,3 +81,6 @@ mkdir -p $GG_WORK_PATH
 gg_setup_ggml
 gg_setup_whisper_cpp
 gg_setup_llama_cpp
+
+set +x
+set +e
