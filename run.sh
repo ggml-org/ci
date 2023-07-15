@@ -43,7 +43,7 @@ function gg_get_last_commits {
         N=1
     fi
 
-    git log origin/${GG_BRANCH} -n ${N} --pretty=format:"%H" --abbrev-commit
+    git log origin/${branch} -n ${N} --pretty=format:"%H" --abbrev-commit
 }
 
 function gg_run_ggml {
@@ -56,6 +56,8 @@ function gg_run_ggml {
     if [ -f ${GG_WORK_BRANCHES} ]; then
         branches=$(cat ${GG_WORK_BRANCHES} | grep "^ggml" | cut -d' ' -f2)
     fi
+
+    printf "run.sh : processing 'ggml' branches - ${branches}\n"
 
     for branch in ${branches} ; do
         commits=$(gg_get_last_commits ${branch} ${GG_RUN_LAST_N})
