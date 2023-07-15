@@ -4,6 +4,16 @@ sd=`dirname $0`
 
 source $sd/env.sh
 
+## dependencies
+
+if [ -f /etc/lsb-release ] ; then
+    sudo apt install cmake g++
+else
+    date
+fi
+
+## helper functions
+
 function gg_setup_ggml {
     cd $GG_WORK_PATH
 
@@ -44,6 +54,8 @@ function gg_setup_llama_cpp {
     #gg_wget models/open-llama-3b ${GG_LLAMA_CPP_OPEN_LLAMA_REPO}/resolve/main/tokenizer.model
     #gg_wget models/open-llama-3b ${GG_LLAMA_CPP_OPEN_LLAMA_REPO}/resolve/main/tokenizer_config.json
 }
+
+## main
 
 set -x
 set -e
