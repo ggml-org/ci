@@ -5,8 +5,8 @@ sd=`dirname $0`
 source $sd/env.sh
 
 function gg_wget {
-    local url=$1
-    local out=$2
+    local out=$1
+    local url=$2
 
     local cwd=`pwd`
 
