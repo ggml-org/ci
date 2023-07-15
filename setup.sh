@@ -10,6 +10,10 @@ function gg_setup_ggml {
     if [ ! -d $GG_GGML_DIR ]; then
         git clone $GG_GGML_REPO $GG_GGML_DIR
     fi
+
+    cd $GG_GGML_DIR
+
+    bash ci/setup.sh
 }
 
 function gg_setup_whisper_cpp {
@@ -18,6 +22,10 @@ function gg_setup_whisper_cpp {
     if [ ! -d $GG_WHISPER_CPP_DIR ]; then
         git clone $GG_WHISPER_CPP_REPO $GG_WHISPER_CPP_DIR
     fi
+
+    cd $GG_WHISPER_CPP_DIR
+
+    #bash ci/setup.sh
 }
 
 function gg_setup_llama_cpp {
@@ -29,10 +37,12 @@ function gg_setup_llama_cpp {
 
     cd $GG_LLAMA_CPP_DIR
 
-    gg_wget models/open-llama-3b ${GG_LLAMA_CPP_OPEN_LLAMA_REPO}/resolve/main/pytorch_model.bin
-    gg_wget models/open-llama-3b ${GG_LLAMA_CPP_OPEN_LLAMA_REPO}/resolve/main/config.json
-    gg_wget models/open-llama-3b ${GG_LLAMA_CPP_OPEN_LLAMA_REPO}/resolve/main/tokenizer.model
-    gg_wget models/open-llama-3b ${GG_LLAMA_CPP_OPEN_LLAMA_REPO}/resolve/main/tokenizer_config.json
+    #bash ci/setup.sh
+
+    #gg_wget models/open-llama-3b ${GG_LLAMA_CPP_OPEN_LLAMA_REPO}/resolve/main/pytorch_model.bin
+    #gg_wget models/open-llama-3b ${GG_LLAMA_CPP_OPEN_LLAMA_REPO}/resolve/main/config.json
+    #gg_wget models/open-llama-3b ${GG_LLAMA_CPP_OPEN_LLAMA_REPO}/resolve/main/tokenizer.model
+    #gg_wget models/open-llama-3b ${GG_LLAMA_CPP_OPEN_LLAMA_REPO}/resolve/main/tokenizer_config.json
 }
 
 set -x

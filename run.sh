@@ -43,23 +43,42 @@ function gg_get_last_commits {
     fi
 
     git fetch --all > /dev/null 2>&1
-    git log -n ${N} --pretty=format:"%H" --abbrev-commit
+    git log origin/master -n ${N} --pretty=format:"%H" --abbrev-commit
 }
 
-function gg_process_ggml {
+function gg_run_ggml {
     cd ${GG_WORK_PATH}/${GG_GGML_DIR}
 
     commits=$(gg_get_last_commits)
 
-    for commit in ${commits} ; do
-        echo "Processing commit ${commit}"
+    for hash in ${commits} ; do
+        out=${GG_RESULTS_PATH}/ggml/${hash}/${GG_NODE}
+
+        if [ -d ${out} ]; then
+            continue
+        fi
+
+        printf "run.sh : processing 'ggml' commit ${hash}\n"
+
+        mkdir -p ${out}
+
+        git checkout ${hash}
+        git submodule update --init --recursive
+        git clean -fd
+
+        time bash ci/run.sh ${out} > ${out}/stdout 2> ${out}/stderr
+        result=$?
+
+        echo ${result} > ${out}/exit
+
+        printf "run.sh : done processing 'ggml' commit ${hash}, result ${result}\n"
     done
 }
 
 # main loop
 
 while true; do
-    gg_process_ggml
+    gg_run_ggml
 
     sleep 3
 done

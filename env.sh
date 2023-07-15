@@ -44,14 +44,13 @@ gg_export GG_GGML_REPO "https://github.com/ggerganov/ggml"
 gg_export GG_WHISPER_CPP_DIR  "whisper.cpp"
 gg_export GG_WHISPER_CPP_REPO "https://github.com/ggerganov/whisper.cpp"
 
-gg_export GG_LLAMA_CPP_DIR             "llama.cpp"
-gg_export GG_LLAMA_CPP_REPO            "https://github.com/ggerganov/llama.cpp"
-gg_export GG_LLAMA_CPP_OPEN_LLAMA_REPO "https://huggingface.co/openlm-research/open_llama_3b"
+gg_export GG_LLAMA_CPP_DIR  "llama.cpp"
+gg_export GG_LLAMA_CPP_REPO "https://github.com/ggerganov/llama.cpp"
 
 ## run env
 
 # check last N commits
-gg_export GG_RUN_LAST_N 10
+gg_export GG_RUN_LAST_N 3
 
 env | grep GG_ | sort
 
