@@ -36,42 +36,52 @@ trap gg_cleanup EXIT
 ## main
 
 function gg_get_last_commits {
-    N=${GG_RUN_LAST_N}
+    branch=$1
+    N=$2
 
     if [ -z "${N}" ]; then
         N=1
     fi
 
-    git fetch --all > /dev/null 2>&1
-    git log origin/master -n ${N} --pretty=format:"%H" --abbrev-commit
+    git log origin/${GG_BRANCH} -n ${N} --pretty=format:"%H" --abbrev-commit
 }
 
 function gg_run_ggml {
     cd ${GG_WORK_PATH}/${GG_GGML_DIR}
 
-    commits=$(gg_get_last_commits)
+    git fetch --all > /dev/null 2>&1
 
-    for hash in ${commits} ; do
-        out=${GG_RESULTS_PATH}/ggml/${hash}/${GG_NODE}
+    branches="master"
 
-        if [ -d ${out} ]; then
-            continue
-        fi
+    if [ -f ${GG_WORK_BRANCHES} ]; then
+        branches=$(cat ${GG_WORK_BRANCHES} | grep "^ggml" | cut -d' ' -f2)
+    fi
 
-        printf "run.sh : processing 'ggml' commit ${hash}\n"
+    for branch in ${branches} ; do
+        commits=$(gg_get_last_commits ${branch} ${GG_RUN_LAST_N})
 
-        mkdir -p ${out}
+        for hash in ${commits} ; do
+            out=${GG_RESULTS_PATH}/ggml/${branch}/${hash}/${GG_NODE}
 
-        git checkout ${hash}
-        git submodule update --init --recursive
-        git clean -fd
+            if [ -d ${out} ]; then
+                continue
+            fi
 
-        time bash ci/run.sh ${out} > ${out}/stdout 2> ${out}/stderr
-        result=$?
+            printf "run.sh : processing 'ggml' commit ${hash}\n"
 
-        echo ${result} > ${out}/exit
+            mkdir -p ${out}
 
-        printf "run.sh : done processing 'ggml' commit ${hash}, result ${result}\n"
+            git checkout ${hash}
+            git submodule update --init --recursive
+            git clean -fd
+
+            time bash ci/run.sh ${out} > ${out}/stdout 2> ${out}/stderr
+            result=$?
+
+            echo ${result} > ${out}/exit
+
+            printf "run.sh : done processing 'ggml' commit ${hash}, result ${result}\n"
+        done
     done
 }
 
