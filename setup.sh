@@ -14,7 +14,7 @@ function gg_wget {
     cd $out
 
     # should not re-download if file is the same
-    wget -N -r $url
+    wget -N $url
 
     cd $cwd
 }
