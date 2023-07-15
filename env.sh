@@ -32,7 +32,7 @@ function gg_export {
 
 # here we will clone and build the projects
 gg_export GG_WORK_PATH     $(realpath ~/work)
-gg_export GG_WORK_BRANCHES ${GG_WORK_PATH}/branches}
+gg_export GG_WORK_BRANCHES ${GG_WORK_PATH}/branches
 
 # here we will store all results
 gg_export GG_RESULTS_PATH   $(realpath ~/results)
