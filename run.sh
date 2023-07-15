@@ -46,6 +46,24 @@ function gg_get_last_commits {
     git log origin/${branch} -n ${N} --pretty=format:"%H" --abbrev-commit
 }
 
+function gg_commit_results {
+    repo=$1
+
+    cd ${GG_RESULTS_PATH}
+
+    git add .
+    git commit -m "$repo : results for ${GG_NODE}"
+
+    for i in $(seq 1 ${GG_RUN_PUSH_RETRY}); do
+        git pull --rebase
+        git push
+
+        if [ $? -eq 0 ]; then
+            break
+        fi
+    done
+}
+
 function gg_run_ggml {
     cd ${GG_WORK_PATH}/${GG_GGML_DIR}
 
@@ -59,6 +77,8 @@ function gg_run_ggml {
 
     printf "run.sh : processing 'ggml' branches - ${branches}\n"
 
+    has_changes=0
+
     for branch in ${branches} ; do
         commits=$(gg_get_last_commits ${branch} ${GG_RUN_LAST_N})
 
@@ -70,6 +90,8 @@ function gg_run_ggml {
             fi
 
             printf "run.sh : processing 'ggml' commit ${hash}\n"
+
+            has_changes=1
 
             mkdir -p ${out}
 
@@ -85,6 +107,10 @@ function gg_run_ggml {
             printf "run.sh : done processing 'ggml' commit ${hash}, result ${result}\n"
         done
     done
+
+    if [ ${has_changes} -eq 1 ]; then
+        gg_commit_results "ggml"
+    fi
 }
 
 # main loop

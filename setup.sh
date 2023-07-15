@@ -60,6 +60,7 @@ function gg_setup_llama_cpp {
 set -x
 set -e
 
+# prepare results repo
 if [ ! -d $GG_RESULTS_PATH ]; then
     git clone -c core.sshCommand="/usr/bin/ssh -i ~/.ssh/ggml-bot-main" $GG_RESULTS_REPO $GG_RESULTS_PATH -b $GG_RESULTS_BRANCH
 
@@ -74,7 +75,17 @@ if [ ! -d $GG_RESULTS_PATH ]; then
     git config user.email $GG_BOT_EMAIL
 
     cd ..
+else
+    # reset the results
+    cd $GG_RESULTS_PATH
+
+    git fetch origin
+    git reset --hard origin/$GG_RESULTS_BRANCH
+
+    cd ..
 fi
+
+# main
 
 mkdir -p $GG_WORK_PATH
 
