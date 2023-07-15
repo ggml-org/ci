@@ -7,6 +7,10 @@ if [ -z "${1}" ]; then
     exit 1
 fi
 
+sd=`dirname $0`
+
+source $sd/env.sh
+
 GG_NODE=${1}
 
 # check if the script is already running
