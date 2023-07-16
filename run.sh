@@ -179,8 +179,8 @@ function gg_run_ggml {
 
             gg_printf ${out}/README.md "<details><summary>click to expand</summary>\n\n"
             gg_printf ${out}/README.md "\`\`\`diff\n"
-            diff -u ${out_parent}/stdall ${out}/stdall >> ${out}/README.md
-            gg_printf ${out}/README.md "\n\`\`\`\n"
+            gg_printf ${out}/README.md "$(diff -u ${out_parent}/stdall ${out}/stdall)\n"
+            gg_printf ${out}/README.md "\`\`\`\n"
             gg_printf ${out}/README.md "</details>\n\n"
         fi
 
