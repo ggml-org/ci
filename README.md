@@ -10,7 +10,7 @@ CI for ggml and related projects
 - For each commit, checkout and run the corrsponding `ci/run.sh` script of the target repo
 - The script should execute all necessary tests and generate a `README.md` with summary of the results
 - The script can decide what tests to execute based on the environment
-- The CI will then push the `README.md` and the generated logs to the `results` branch of this repo
+- The CI will then push the `README.md` and the generated logs to the [results](https://github.com/ggml-org/ci/tree/results) branch of this repo
 - Commit statuses are updated through the Github API
 
 ## Add a new CI node
