@@ -17,7 +17,8 @@ printf "\n"
 ## dependencies
 
 if [ -f /etc/lsb-release ] ; then
-    sudo apt install cmake g++
+    sudo apt update
+    sudo apt install cmake g++ python3-pip
 else
     date
 fi
