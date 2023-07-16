@@ -1,0 +1,9 @@
++ ./bin/gpt-2 --model ../models/gpt-2/ggml-model-gpt-2-117M.bin -s 1234 -n 64 -t 4 -tt ../examples/prompts/gpt-2.txt
+gpt2_model_load: failed to open '../models/gpt-2/ggml-model-gpt-2-117M.bin'
+main: failed to load model from '../models/gpt-2/ggml-model-gpt-2-117M.bin'
+main: seed = 1234
+gpt2_model_load: loading model from '../models/gpt-2/ggml-model-gpt-2-117M.bin'
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
