@@ -23,9 +23,7 @@ function gg_export {
     local var=$1
     local val="$2"
 
-    if [ -z "${!var}" ]; then
-        export $var="$val"
-    fi
+    export $var="$val"
 }
 
 # printf to a file:
