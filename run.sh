@@ -116,32 +116,37 @@ function gg_run_ggml {
 
     commits="${commits} $(gg_get_last_commits_grep ${GG_CI_KEYWORD} ${GG_RUN_LAST_N})"
 
-    for hash in ${commits} ; do
-        out=${GG_RESULTS_PATH}/${repo}/${GG_NODE}/${hash}
+    for commit in ${commits} ; do
+        out=${GG_RESULTS_PATH}/${repo}/${GG_NODE}/${commit}
 
         if [ -d ${out} ]; then
             continue
         fi
 
-        gg_set_commit_status "${GG_NODE}" "${GG_GGML_OWN}" "${repo}" "${hash}" "pending" "in queue ..."
+        gg_set_commit_status "${GG_NODE}" "${GG_GGML_OWN}" "${repo}" "${commit}" "pending" "in queue ..."
     done
 
-    for hash in ${commits} ; do
-        out=${GG_RESULTS_PATH}/${repo}/${GG_NODE}/${hash}
+    for commit in ${commits} ; do
+        out=${GG_RESULTS_PATH}/${repo}/${GG_NODE}/${commit}
 
         if [ -d ${out} ]; then
             continue
         fi
 
-        printf "run.sh : processing '${repo}' commit ${hash}\n"
+        printf "run.sh : processing '${repo}' commit ${commit}\n"
 
-        gg_set_commit_status "${GG_NODE}" "${GG_GGML_OWN}" "${repo}" "${hash}" "pending" "running ..."
+        gg_set_commit_status "${GG_NODE}" "${GG_GGML_OWN}" "${repo}" "${commit}" "pending" "running ..."
 
         mkdir -p ${out}
 
-        git checkout ${hash}
+        git checkout ${commit}
         git submodule update --init --recursive
         git clean -fd
+
+        gg_export GG_CI_REPO          "https://github.com/${GG_GGML_OWN}/${repo}"
+        gg_export GG_CI_COMMIT_URL    "https://github.com/${GG_GGML_OWN}/${repo}/commit/${commit}"
+        gg_export GG_CI_COMMIT_MSG    $(git log -1 --pretty=%B)
+        gg_export GG_CI_COMMIT_AUTHOR $(git log -1 --pretty=%an)
 
         timeout ${GG_RUN_TIMEOUT} time bash ci/run.sh ${out} > ${out}/stdall 2>&1
         result=$?
@@ -149,12 +154,12 @@ function gg_run_ggml {
         echo ${result} > ${out}/exit
 
         if [ ${result} -eq 0 ]; then
-            gg_set_commit_status "${GG_NODE}" "${GG_GGML_OWN}" "${repo}" "${hash}" "success" "success"
+            gg_set_commit_status "${GG_NODE}" "${GG_GGML_OWN}" "${repo}" "${commit}" "success" "success"
         else
-            gg_set_commit_status "${GG_NODE}" "${GG_GGML_OWN}" "${repo}" "${hash}" "failure" "failure ${result}"
+            gg_set_commit_status "${GG_NODE}" "${GG_GGML_OWN}" "${repo}" "${commit}" "failure" "failure ${result}"
         fi
 
-        printf "run.sh : done processing '${repo}' commit ${hash}, result ${result}\n"
+        printf "run.sh : done processing '${repo}' commit ${commit}, result ${result}\n"
 
         gg_commit_results "${repo}"
     done
