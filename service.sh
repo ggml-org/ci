@@ -26,7 +26,7 @@ function gg_cleanup {
 
 trap gg_cleanup EXIT
 
-sd=`dirname $0`
+sd="$(dirname $0)"
 cd $sd
 
 ## main loop

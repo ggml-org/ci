@@ -12,7 +12,7 @@ if [ ! -f ~/.env.sh ]; then
     exit 1
 fi
 
-sd=`dirname $0`
+sd="$(dirname $0)"
 
 source $sd/env.sh
 source ~/.env.sh
