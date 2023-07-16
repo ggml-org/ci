@@ -202,13 +202,13 @@ function gg_run_ggml {
         printf "run.sh : done processing '${repo}' commit ${commit}, result ${result}\n"
 
         gg_commit_results "${repo}"
+
+        sleep 1
     done
 }
 
-# main loop
+# main
 
-while true; do
-    gg_run_ggml
+gg_run_ggml
 
-    sleep ${GG_RUN_SLEEP}
-done
+sleep ${GG_RUN_SLEEP}
