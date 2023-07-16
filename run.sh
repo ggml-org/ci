@@ -44,7 +44,7 @@ function gg_get_last_commits {
     branch=$1
     N=$2
 
-    git log origin/${branch} -n ${N} --pretty=format:"%H" --abbrev-commit
+    git log origin/${branch} -n ${N} --pretty=format:"%H" --abbrev-commit | tac
 }
 
 # get last N commits from all branches that contain a keyword
@@ -52,7 +52,7 @@ function gg_get_last_commits_grep {
     keyword=$1
     N=$2
 
-    git log --all --grep="${keyword}" -n ${N} --pretty=format:"%H" --abbrev-commit
+    git log --all --grep="${keyword}" -n ${N} --pretty=format:"%H" --abbrev-commit | tac
 }
 
 function gg_commit_results {
