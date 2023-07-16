@@ -21,10 +21,10 @@ function gg_wget {
 # useful for exporting bash variables and being able to vertically align them
 function gg_export {
     local var=$1
-    local val=$2
+    local val="$2"
 
     if [ -z "${!var}" ]; then
-        export $var=$val
+        export $var="$val"
     fi
 }
 
