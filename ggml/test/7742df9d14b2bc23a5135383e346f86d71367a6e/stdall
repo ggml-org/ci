@@ -26,16 +26,16 @@ mkdir: cannot create directory ‘build-ci-0’: File exists
 -- Generating done
 -- Build files have been written to: /home/ggml/work/ggml/build-ci-0
 
-real	0m0.557s
-user	0m0.382s
+real	0m0.539s
+user	0m0.372s
 sys	0m0.169s
 [  1%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
 [  2%] Building C object src/CMakeFiles/ggml.dir/ggml.c.o
 [  4%] Linking C static library libggml.a
 [  4%] Built target ggml
-[  6%] Building C object tests/CMakeFiles/test-vec1.dir/test-vec1.c.o
 [  8%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
 [  8%] Building C object tests/CMakeFiles/test-grad0.dir/test-grad0.c.o
+[  8%] Building C object tests/CMakeFiles/test-vec1.dir/test-vec1.c.o
 [  9%] Linking C executable ../bin/test-vec0
 [  9%] Built target test-vec0
 [ 11%] Building C object tests/CMakeFiles/test-opt.dir/test-opt.c.o
@@ -52,25 +52,25 @@ sys	0m0.169s
 [ 20%] Built target test-mul-mat0
 [ 22%] Building C object tests/CMakeFiles/test-mul-mat2.dir/test-mul-mat2.c.o
 [ 23%] Linking CXX executable ../bin/test-quantize-fns
-[ 23%] Built target test-quantize-fns
-[ 25%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
-[ 26%] Linking C executable ../bin/test-mul-mat2
+[ 25%] Linking C executable ../bin/test-mul-mat2
+[ 25%] Built target test-quantize-fns
+[ 26%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
+[ 26%] Built target test-mul-mat2
 [ 27%] Linking C executable ../bin/test0
-[ 27%] Built target test-mul-mat2
 [ 29%] Building C object tests/CMakeFiles/test1.dir/test1.c.o
 [ 29%] Built target test0
 [ 30%] Building C object tests/CMakeFiles/test2.dir/test2.c.o
-[ 31%] Linking C executable ../bin/test2
-[ 33%] Linking C executable ../bin/test1
-[ 33%] Built target test2
+[ 31%] Linking C executable ../bin/test1
+[ 33%] Linking C executable ../bin/test2
 [ 33%] Built target test1
 [ 34%] Building C object tests/CMakeFiles/test3.dir/test3.c.o
+[ 34%] Built target test2
 [ 36%] Building C object tests/CMakeFiles/test-pool.dir/test-pool.c.o
 [ 37%] Linking C executable ../bin/test3
 [ 38%] Linking C executable ../bin/test-pool
 [ 38%] Built target test3
-[ 38%] Built target test-pool
 [ 40%] Building CXX object examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o
+[ 40%] Built target test-pool
 [ 41%] Building CXX object examples/whisper/CMakeFiles/whisper-cpp.dir/whisper.cpp.o
 [ 43%] Linking CXX executable ../bin/test-quantize-perf
 [ 43%] Built target test-quantize-perf
@@ -107,16 +107,16 @@ sys	0m0.169s
 [ 72%] Building CXX object examples/dolly-v2/CMakeFiles/dollyv2-quantize.dir/quantize.cpp.o
 [ 73%] Linking CXX static library libwhisper-cpp.a
 [ 73%] Built target whisper-cpp
-[ 75%] Building CXX object examples/replit/CMakeFiles/replit.dir/main.cpp.o
-[ 76%] Linking CXX executable ../../bin/gpt-neox-quantize
+[ 75%] Linking CXX executable ../../bin/gpt-neox-quantize
+[ 76%] Building CXX object examples/replit/CMakeFiles/replit.dir/main.cpp.o
 [ 76%] Built target gpt-neox-quantize
 [ 77%] Building CXX object examples/replit/CMakeFiles/replit-quantize.dir/quantize.cpp.o
 [ 79%] Linking CXX executable ../../bin/dollyv2
-[ 79%] Built target dollyv2
 [ 80%] Linking CXX executable ../../bin/dollyv2-quantize
+[ 80%] Built target dollyv2
 [ 81%] Building CXX object examples/mpt/CMakeFiles/mpt.dir/main.cpp.o
-[ 81%] Built target dollyv2-quantize
 [ 83%] Linking CXX executable ../../bin/replit-quantize
+[ 83%] Built target dollyv2-quantize
 [ 84%] Building CXX object examples/mpt/CMakeFiles/mpt-quantize.dir/quantize.cpp.o
 [ 84%] Built target replit-quantize
 [ 86%] Building CXX object examples/starcoder/CMakeFiles/starcoder.dir/main.cpp.o
@@ -140,49 +140,49 @@ sys	0m0.169s
 /home/ggml/work/ggml/examples/starcoder/starcoder-mmap.cpp:197:18: warning: unused variable ‘file_size’ [-Wunused-variable]
   197 |     const size_t file_size = fin.tellg();
       |                  ^~~~~~~~~
-[ 93%] Built target mpt
-[ 94%] Building CXX object examples/whisper/CMakeFiles/whisper.dir/main.cpp.o
-[ 95%] Linking CXX executable ../../bin/starcoder
+[ 94%] Linking CXX executable ../../bin/starcoder
+[ 94%] Built target mpt
+[ 95%] Building CXX object examples/whisper/CMakeFiles/whisper.dir/main.cpp.o
 [ 95%] Built target starcoder
-[ 97%] Linking CXX executable ../../bin/starcoder-mmap
-[ 98%] Linking CXX executable ../../bin/starcoder-quantize
+[ 97%] Linking CXX executable ../../bin/starcoder-quantize
+[ 98%] Linking CXX executable ../../bin/starcoder-mmap
+[ 98%] Built target starcoder-mmap
 [ 98%] Built target starcoder-quantize
 [100%] Linking CXX executable ../../bin/whisper
-[100%] Built target starcoder-mmap
 [100%] Built target whisper
 
-real	0m16.130s
-user	0m52.309s
-sys	0m5.424s
+real	0m16.210s
+user	0m52.472s
+sys	0m5.277s
 Test project /home/ggml/work/ggml/build-ci-0
       Start  1: test-grad0
- 1/10 Test  #1: test-grad0 .......................   Passed    6.30 sec
+ 1/10 Test  #1: test-grad0 .......................   Passed    6.14 sec
       Start  2: test-quantize-fns
  2/10 Test  #2: test-quantize-fns ................   Passed    0.01 sec
       Start  3: test-quantize-perf
  3/10 Test  #3: test-quantize-perf ...............   Passed    0.02 sec
       Start  4: test-mul-mat0
- 4/10 Test  #4: test-mul-mat0 ....................   Passed    3.21 sec
+ 4/10 Test  #4: test-mul-mat0 ....................   Passed    3.30 sec
       Start  5: test-mul-mat2
- 5/10 Test  #5: test-mul-mat2 ....................   Passed    7.73 sec
+ 5/10 Test  #5: test-mul-mat2 ....................   Passed    7.72 sec
       Start  6: test0
  6/10 Test  #6: test0 ............................   Passed    0.01 sec
       Start  7: test1
  7/10 Test  #7: test1 ............................   Passed    0.01 sec
       Start  8: test2
- 8/10 Test  #8: test2 ............................   Passed   19.77 sec
+ 8/10 Test  #8: test2 ............................   Passed   20.06 sec
       Start  9: test3
- 9/10 Test  #9: test3 ............................   Passed    1.11 sec
+ 9/10 Test  #9: test3 ............................   Passed    1.16 sec
       Start 10: test-pool
 10/10 Test #10: test-pool ........................   Passed    0.01 sec
 
 100% tests passed, 0 tests failed out of 10
 
-Total Test time (real) =  38.17 sec
+Total Test time (real) =  38.44 sec
 
-real	0m38.180s
-user	1m42.930s
-sys	0m4.737s
+real	0m38.446s
+user	1m43.657s
+sys	0m4.880s
 mkdir: cannot create directory ‘build-ci-1’: File exists
 -- The C compiler identification is GNU 11.3.0
 -- The CXX compiler identification is GNU 11.3.0
@@ -211,15 +211,15 @@ mkdir: cannot create directory ‘build-ci-1’: File exists
 -- Generating done
 -- Build files have been written to: /home/ggml/work/ggml/build-ci-1
 
-real	0m0.551s
-user	0m0.408s
-sys	0m0.146s
-[  1%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
-[  2%] Building C object src/CMakeFiles/ggml.dir/ggml.c.o
+real	0m0.550s
+user	0m0.375s
+sys	0m0.178s
+[  1%] Building C object src/CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
 [  4%] Linking C static library libggml.a
 [  4%] Built target ggml
-[  8%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
-[  8%] Building C object tests/CMakeFiles/test-vec1.dir/test-vec1.c.o
+[  6%] Building C object tests/CMakeFiles/test-vec1.dir/test-vec1.c.o
+[  6%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
 [  8%] Building C object tests/CMakeFiles/test-grad0.dir/test-grad0.c.o
 [  9%] Linking C executable ../bin/test-vec0
 [  9%] Built target test-vec0
@@ -237,25 +237,25 @@ sys	0m0.146s
 [ 20%] Built target test-mul-mat0
 [ 22%] Building C object tests/CMakeFiles/test-mul-mat2.dir/test-mul-mat2.c.o
 [ 23%] Linking CXX executable ../bin/test-quantize-fns
-[ 25%] Linking C executable ../bin/test-mul-mat2
-[ 25%] Built target test-quantize-fns
-[ 26%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
-[ 26%] Built target test-mul-mat2
-[ 27%] Building C object tests/CMakeFiles/test1.dir/test1.c.o
-[ 29%] Linking C executable ../bin/test0
+[ 23%] Built target test-quantize-fns
+[ 25%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
+[ 26%] Linking C executable ../bin/test-mul-mat2
+[ 27%] Linking C executable ../bin/test0
+[ 27%] Built target test-mul-mat2
+[ 29%] Building C object tests/CMakeFiles/test1.dir/test1.c.o
 [ 29%] Built target test0
 [ 30%] Building C object tests/CMakeFiles/test2.dir/test2.c.o
 [ 31%] Linking C executable ../bin/test1
-[ 31%] Built target test1
 [ 33%] Linking C executable ../bin/test2
+[ 33%] Built target test1
+[ 33%] Built target test2
 [ 34%] Building C object tests/CMakeFiles/test3.dir/test3.c.o
-[ 34%] Built target test2
 [ 36%] Building C object tests/CMakeFiles/test-pool.dir/test-pool.c.o
 [ 37%] Linking C executable ../bin/test3
-[ 37%] Built target test3
 [ 38%] Linking C executable ../bin/test-pool
+[ 38%] Built target test3
+[ 38%] Built target test-pool
 [ 40%] Building CXX object examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o
-[ 40%] Built target test-pool
 [ 41%] Building CXX object examples/whisper/CMakeFiles/whisper-cpp.dir/whisper.cpp.o
 [ 43%] Linking CXX executable ../bin/test-quantize-perf
 [ 43%] Built target test-quantize-perf
@@ -267,8 +267,8 @@ sys	0m0.146s
 [ 48%] Building CXX object examples/mnist/CMakeFiles/mnist.dir/main.cpp.o
 [ 50%] Linking CXX static library libcommon-ggml.a
 [ 50%] Built target common-ggml
+[ 51%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-quantize.dir/quantize.cpp.o
 [ 52%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2.dir/main.cpp.o
-[ 52%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-quantize.dir/quantize.cpp.o
 [ 54%] Linking CXX executable ../../bin/mnist
 [ 54%] Built target mnist
 [ 55%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j.dir/main.cpp.o
@@ -276,9 +276,9 @@ sys	0m0.146s
 [ 56%] Built target gpt-2-quantize
 [ 58%] Linking CXX executable ../../bin/gpt-2
 [ 59%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j-quantize.dir/quantize.cpp.o
-[ 59%] Built target gpt-2
-[ 61%] Building CXX object examples/whisper/CMakeFiles/whisper-quantize.dir/quantize.cpp.o
-[ 62%] Linking CXX executable ../../bin/gpt-j
+[ 61%] Linking CXX executable ../../bin/gpt-j
+[ 61%] Built target gpt-2
+[ 62%] Building CXX object examples/whisper/CMakeFiles/whisper-quantize.dir/quantize.cpp.o
 [ 62%] Built target gpt-j
 [ 63%] Building CXX object examples/gpt-neox/CMakeFiles/gpt-neox.dir/main.cpp.o
 [ 65%] Linking CXX executable ../../bin/gpt-j-quantize
@@ -291,24 +291,24 @@ sys	0m0.146s
 [ 70%] Built target gpt-neox
 [ 72%] Building CXX object examples/dolly-v2/CMakeFiles/dollyv2-quantize.dir/quantize.cpp.o
 [ 73%] Linking CXX static library libwhisper-cpp.a
-[ 75%] Linking CXX executable ../../bin/gpt-neox-quantize
-[ 75%] Built target whisper-cpp
-[ 76%] Building CXX object examples/replit/CMakeFiles/replit.dir/main.cpp.o
+[ 73%] Built target whisper-cpp
+[ 75%] Building CXX object examples/replit/CMakeFiles/replit.dir/main.cpp.o
+[ 76%] Linking CXX executable ../../bin/gpt-neox-quantize
 [ 76%] Built target gpt-neox-quantize
 [ 77%] Building CXX object examples/replit/CMakeFiles/replit-quantize.dir/quantize.cpp.o
 [ 79%] Linking CXX executable ../../bin/dollyv2
-[ 79%] Built target dollyv2
 [ 80%] Linking CXX executable ../../bin/dollyv2-quantize
+[ 80%] Built target dollyv2
 [ 81%] Building CXX object examples/mpt/CMakeFiles/mpt.dir/main.cpp.o
-[ 83%] Linking CXX executable ../../bin/replit-quantize
-[ 83%] Built target dollyv2-quantize
-[ 84%] Building CXX object examples/mpt/CMakeFiles/mpt-quantize.dir/quantize.cpp.o
+[ 81%] Built target dollyv2-quantize
+[ 83%] Building CXX object examples/mpt/CMakeFiles/mpt-quantize.dir/quantize.cpp.o
+[ 84%] Linking CXX executable ../../bin/replit-quantize
 [ 84%] Built target replit-quantize
 [ 86%] Building CXX object examples/starcoder/CMakeFiles/starcoder.dir/main.cpp.o
 [ 87%] Linking CXX executable ../../bin/replit
-[ 87%] Built target replit
-[ 88%] Building CXX object examples/starcoder/CMakeFiles/starcoder-mmap.dir/starcoder-mmap.cpp.o
-[ 90%] Linking CXX executable ../../bin/mpt-quantize
+[ 88%] Linking CXX executable ../../bin/mpt-quantize
+[ 88%] Built target replit
+[ 90%] Building CXX object examples/starcoder/CMakeFiles/starcoder-mmap.dir/starcoder-mmap.cpp.o
 [ 90%] Built target mpt-quantize
 [ 91%] Building CXX object examples/starcoder/CMakeFiles/starcoder-quantize.dir/quantize.cpp.o
 [ 93%] Linking CXX executable ../../bin/mpt
@@ -326,28 +326,28 @@ sys	0m0.146s
   197 |     const size_t file_size = fin.tellg();
       |                  ^~~~~~~~~
 [ 93%] Built target mpt
-[ 94%] Linking CXX executable ../../bin/starcoder
-[ 95%] Building CXX object examples/whisper/CMakeFiles/whisper.dir/main.cpp.o
+[ 94%] Building CXX object examples/whisper/CMakeFiles/whisper.dir/main.cpp.o
+[ 95%] Linking CXX executable ../../bin/starcoder
 [ 95%] Built target starcoder
 [ 97%] Linking CXX executable ../../bin/starcoder-quantize
 [ 98%] Linking CXX executable ../../bin/starcoder-mmap
 [ 98%] Built target starcoder-quantize
+[ 98%] Built target starcoder-mmap
 [100%] Linking CXX executable ../../bin/whisper
-[100%] Built target starcoder-mmap
 [100%] Built target whisper
 
-real	0m16.173s
-user	0m52.434s
-sys	0m5.338s
+real	0m16.305s
+user	0m52.395s
+sys	0m5.335s
 Test project /home/ggml/work/ggml/build-ci-1
       Start  1: test-grad0
- 1/10 Test  #1: test-grad0 .......................   Passed    6.16 sec
+ 1/10 Test  #1: test-grad0 .......................   Passed    6.06 sec
       Start  2: test-quantize-fns
  2/10 Test  #2: test-quantize-fns ................   Passed    0.01 sec
       Start  3: test-quantize-perf
  3/10 Test  #3: test-quantize-perf ...............   Passed    0.02 sec
       Start  4: test-mul-mat0
- 4/10 Test  #4: test-mul-mat0 ....................   Passed    3.25 sec
+ 4/10 Test  #4: test-mul-mat0 ....................   Passed    3.23 sec
       Start  5: test-mul-mat2
  5/10 Test  #5: test-mul-mat2 ....................   Passed    7.72 sec
       Start  6: test0
@@ -355,19 +355,19 @@ Test project /home/ggml/work/ggml/build-ci-1
       Start  7: test1
  7/10 Test  #7: test1 ............................   Passed    0.01 sec
       Start  8: test2
- 8/10 Test  #8: test2 ............................   Passed   19.71 sec
+ 8/10 Test  #8: test2 ............................   Passed   19.60 sec
       Start  9: test3
- 9/10 Test  #9: test3 ............................   Passed    1.09 sec
+ 9/10 Test  #9: test3 ............................   Passed    1.12 sec
       Start 10: test-pool
 10/10 Test #10: test-pool ........................   Passed    0.01 sec
 
 100% tests passed, 0 tests failed out of 10
 
-Total Test time (real) =  37.98 sec
+Total Test time (real) =  37.79 sec
 
-real	0m37.988s
-user	1m41.935s
-sys	0m4.908s
+real	0m37.798s
+user	1m41.442s
+sys	0m4.856s
 ci/run.sh: line 67: printf: - : invalid option
 printf: usage: printf [-v var] format [arguments]
 ci/run.sh: line 68: printf: - : invalid option
@@ -378,5 +378,5 @@ ci/run.sh: line 70: printf: - : invalid option
 printf: usage: printf [-v var] format [arguments]
 ci/run.sh: line 71: printf: - : invalid option
 printf: usage: printf [-v var] format [arguments]
-310.42user 20.73system 1:49.59elapsed 302%CPU (0avgtext+0avgdata 387832maxresident)k
-0inputs+1036096outputs (310major+2925351minor)pagefaults 0swaps
+310.74user 20.71system 1:49.86elapsed 301%CPU (0avgtext+0avgdata 386916maxresident)k
+0inputs+1036056outputs (229major+2912806minor)pagefaults 0swaps
