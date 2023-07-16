@@ -92,6 +92,9 @@ else
     git fetch origin
     git reset --hard origin/$GG_RESULTS_BRANCH
 
+    git config user.name  $GG_BOT_NAME
+    git config user.email $GG_BOT_EMAIL
+
     cd ..
 fi
 
