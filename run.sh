@@ -117,11 +117,6 @@ function gg_run_ggml {
             continue
         fi
 
-        if [ ! -x ci/run.sh ]; then
-            printf "run.sh : ci/run.sh is not found\n"
-            exit 1
-        fi
-
         printf "run.sh : processing '${repo}' commit ${commit}\n"
 
         gg_set_commit_status "${GG_NODE}" "${GG_GGML_OWN}" "${repo}" "${commit}" "pending" "running ..."
@@ -137,8 +132,13 @@ function gg_run_ggml {
         gg_export GG_CI_COMMIT_MSG    "$(git log -1 --pretty=%B)"
         gg_export GG_CI_COMMIT_AUTHOR "$(git log -1 --pretty=%an)"
 
-        timeout ${GG_RUN_TIMEOUT} time bash ci/run.sh ${out} > ${out}/stdall 2>&1
-        result=$?
+        if [ -x ci/run.sh ]; then
+            timeout ${GG_RUN_TIMEOUT} time bash ci/run.sh ${out} > ${out}/stdall 2>&1
+            result=$?
+        else
+            gg_prinf ${out}/README.md "ci/run.sh was not found - nothing to do\n"
+            result=0
+        fi
 
         echo ${result} > ${out}/exit
 
