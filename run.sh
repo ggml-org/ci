@@ -159,12 +159,12 @@ function gg_run_ggml {
 
         gg_printf ${out}/README.md '## Summary\n\n'
 
-        gg_printf ${out}/README.md '- status: %s\n'       "${status}"
-        gg_printf ${out}/README.md '- date:   %s\n'       "$(date)"
-        gg_printf ${out}/README.md '- repo:   %s\n'       "${GG_CI_REPO}"
-        gg_printf ${out}/README.md '- commit: %s\n'       "${GG_CI_COMMIT_URL}"
-        gg_printf ${out}/README.md '- author: %s\n'       "${GG_CI_COMMIT_AUTHOR}"
-        gg_printf ${out}/README.md '\`\`\`\n%s\n\`\`\`\n' "${GG_CI_COMMIT_MSG}"
+        gg_printf ${out}/README.md '- status: %s\n' "${status}"
+        gg_printf ${out}/README.md '- date:   %s\n' "$(date)"
+        gg_printf ${out}/README.md '- repo:   %s\n' "${GG_CI_REPO}"
+        gg_printf ${out}/README.md '- commit: %s\n' "${GG_CI_COMMIT_URL}"
+        gg_printf ${out}/README.md '- author: %s\n' "${GG_CI_COMMIT_AUTHOR}"
+        gg_printf ${out}/README.md '```\n%s\n```\n' "${GG_CI_COMMIT_MSG}"
         gg_printf ${out}/README.md '\n'
 
         cat ${out}/README.md.bak >> ${out}/README.md
@@ -178,9 +178,9 @@ function gg_run_ggml {
             gg_printf ${out}/README.md '## Diff with parent commit\n\n'
 
             gg_printf ${out}/README.md '<details><summary>click to expand</summary>\n\n'
-            gg_printf ${out}/README.md '\`\`\`diff\n'
+            gg_printf ${out}/README.md '```diff\n'
             gg_printf ${out}/README.md '%s\n' "$(diff -u ${out_parent}/stdall ${out}/stdall)"
-            gg_printf ${out}/README.md '\`\`\`\n'
+            gg_printf ${out}/README.md '```\n'
             gg_printf ${out}/README.md '</details>\n\n'
         fi
 
