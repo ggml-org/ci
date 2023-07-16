@@ -155,7 +155,7 @@ function gg_run_ggml {
 
         mv ${out}/README.md ${out}/README.md.bak
 
-        status="$(if [ $result -eq 0 ]; then echo "SUCCESS"; else echo "FAILURE ($result)"; fi)"
+        status="$(if [ $result -eq 0 ]; then echo "SUCCESS ✅"; else echo "FAILURE ❌ (${result})"; fi)"
 
         gg_printf ${out}/README.md "## Summary\n\n"
 
