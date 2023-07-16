@@ -28,6 +28,16 @@ function gg_export {
     fi
 }
 
+# printf to a file:
+# usage: gg_printf file "string"
+function gg_printf {
+    local file=$1
+
+    shift
+    printf -- "$@" >> $file
+}
+
+# set the commit status on GitHub using the GitHub API
 function gg_set_commit_status {
     node=$1
     owner=$2
