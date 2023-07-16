@@ -32,7 +32,7 @@ cd $sd
 ## main loop
 
 while true; do
-    $sd/service.sh "$1"
+    bash ./run.sh "$1"
     sleep 1
 
     git pull
