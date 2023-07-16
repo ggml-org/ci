@@ -1,16 +1,16 @@
 #!/bin/bash
 
-# usage: service.sh node
-
-if [ -z "${1}" ]; then
-    printf "run.sh : usage: run.sh node\n"
-    exit 1
-fi
-
 # check if the script is already running
 
 if [ -f /tmp/ggml-lock ]; then
     printf "run.sh : script is already running\n"
+    exit 1
+fi
+
+# usage: service.sh node
+
+if [ -z "${1}" ]; then
+    printf "run.sh : usage: run.sh node\n"
     exit 1
 fi
 
