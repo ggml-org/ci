@@ -153,6 +153,22 @@ function gg_run_ggml {
 
         echo ${result} > ${out}/exit
 
+        mv ${out}/README.md ${out}/README.md.bak
+
+        status="$(if [ $result -eq 0 ]; then echo "SUCCESS"; else echo "FAILURE ($result)"; fi)"
+
+        gg_printf ${out}/README.md "## Summary\n\n"
+
+        gg_printf ${out}/README.md "- status: ${status}\n"
+        gg_printf ${out}/README.md "- date:   $(date)\n"
+        gg_printf ${out}/README.md "- repo:   ${GG_CI_REPO}\n"
+        gg_printf ${out}/README.md "- commit: ${GG_CI_COMMIT_URL}\n"
+        gg_printf ${out}/README.md "- author: ${GG_CI_COMMIT_AUTHOR}\n"
+        gg_printf ${out}/README.md "\`\`\`\n${GG_CI_COMMIT_MSG}\n\`\`\`\n"
+        gg_printf ${out}/README.md "\n"
+
+        cat ${out}/README.md.bak >> ${out}/README.md
+
         if [ ${result} -eq 0 ]; then
             gg_set_commit_status "${GG_NODE}" "${GG_GGML_OWN}" "${repo}" "${commit}" "success" "success"
         else

@@ -31,7 +31,7 @@ function gg_export {
 # printf to a file:
 # usage: gg_printf file "string"
 function gg_printf {
-    local file=$1
+    local file="$1"
 
     shift
     printf -- "$@" >> $file
