@@ -70,14 +70,17 @@ gg_export GG_RESULTS_BRANCH   "results"
 gg_export GG_GGML_DIR  "ggml"
 gg_export GG_GGML_OWN  "ggerganov"
 gg_export GG_GGML_REPO "https://github.com/ggerganov/ggml"
+gg_export GG_GGML_MNT  "/mnt/ggml"
 
 gg_export GG_WHISPER_CPP_DIR  "whisper.cpp"
 gg_export GG_WHISPER_CPP_OWN  "ggerganov"
 gg_export GG_WHISPER_CPP_REPO "https://github.com/ggerganov/whisper.cpp"
+gg_export GG_WHISPER_CPP_MNT  "/mnt/whisper.cpp"
 
 gg_export GG_LLAMA_CPP_DIR  "llama.cpp"
 gg_export GG_LLAMA_CPP_OWN  "ggerganov"
 gg_export GG_LLAMA_CPP_REPO "https://github.com/ggerganov/llama.cpp"
+gg_export GG_LLAMA_CPP_MNT  "/mnt/llama.cpp"
 
 ## run env
 
