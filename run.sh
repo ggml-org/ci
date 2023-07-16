@@ -17,6 +17,11 @@ sd="$(dirname $0)"
 source $sd/env.sh
 source ~/.env.sh
 
+
+env | grep GG_ | sort
+
+printf "\n"
+
 GG_NODE=${1}
 
 # check if results repo is cloned
