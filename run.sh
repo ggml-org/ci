@@ -145,8 +145,8 @@ function gg_run_ggml {
 
         gg_export GG_CI_REPO          "https://github.com/${GG_GGML_OWN}/${repo}"
         gg_export GG_CI_COMMIT_URL    "https://github.com/${GG_GGML_OWN}/${repo}/commit/${commit}"
-        gg_export GG_CI_COMMIT_MSG    $(git log -1 --pretty=%B)
-        gg_export GG_CI_COMMIT_AUTHOR $(git log -1 --pretty=%an)
+        gg_export GG_CI_COMMIT_MSG    "$(git log -1 --pretty=%B)"
+        gg_export GG_CI_COMMIT_AUTHOR "$(git log -1 --pretty=%an)"
 
         timeout ${GG_RUN_TIMEOUT} time bash ci/run.sh ${out} > ${out}/stdall 2>&1
         result=$?
