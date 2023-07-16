@@ -42,7 +42,7 @@ function gg_set_commit_status {
         -H "Authorization: Bearer ${GG_SECRET_TOKEN_GH_API}"\
         -H "X-GitHub-Api-Version: 2022-11-28" \
         https://api.github.com/repos/${owner}/${repo}/statuses/${commit} \
-        -d '{"state":"'"${status}"'","target_url":"'${GG_RESULTS_REPO}'/tree/'${GG_RESULTS_BRANCH}'/'${repo}'/'${node}'/'${commit}'","description":"'"${desc}"'","context":"ggml-org/ci / '"${node}"'"}'
+        -d '{"state":"'"${status}"'","target_url":"'${GG_RESULTS_REPO}'/tree/'${GG_RESULTS_BRANCH}'/'${repo}'/'${node}'/'${commit}'","description":"'"${desc}"'","context":"ggml-org / '"${node}"'"}'
 }
 
 ## general env
