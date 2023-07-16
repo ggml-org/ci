@@ -132,7 +132,7 @@ function gg_run_ggml {
         gg_export GG_CI_COMMIT_MSG    "$(git log -1 --pretty=%B)"
         gg_export GG_CI_COMMIT_AUTHOR "$(git log -1 --pretty=%an)"
 
-        if [ -x ci/run.sh ]; then
+        if [ -f ci/run.sh ]; then
             timeout ${GG_RUN_TIMEOUT} time bash ci/run.sh ${out} > ${out}/stdall 2>&1
             result=$?
         else
