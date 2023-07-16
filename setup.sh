@@ -30,6 +30,8 @@ function gg_setup_ggml {
     if [ ! -d $GG_GGML_DIR ]; then
         git clone $GG_GGML_REPO $GG_GGML_DIR
     fi
+
+    mkdir -p $GG_GGML_MNT
 }
 
 function gg_setup_whisper_cpp {
@@ -38,6 +40,8 @@ function gg_setup_whisper_cpp {
     if [ ! -d $GG_WHISPER_CPP_DIR ]; then
         git clone $GG_WHISPER_CPP_REPO $GG_WHISPER_CPP_DIR
     fi
+
+    mkdir -p $GG_WHISPER_CPP_MNT
 }
 
 function gg_setup_llama_cpp {
@@ -46,6 +50,8 @@ function gg_setup_llama_cpp {
     if [ ! -d $GG_LLAMA_CPP_DIR ]; then
         git clone $GG_LLAMA_CPP_REPO $GG_LLAMA_CPP_DIR
     fi
+
+    mkdir -p $GG_LLAMA_CPP_MNT
 }
 
 ## main
@@ -84,6 +90,7 @@ fi
 # main
 
 mkdir -p $GG_WORK_PATH
+sudo chown ggml:ggml /mnt
 
 gg_setup_ggml
 gg_setup_whisper_cpp
