@@ -18,7 +18,7 @@ CI for ggml and related projects
 WARNING: run only inside fresh VMs! Do not run on your own workstation as it can mess up your data structure
 
 - Create a fresh VM
-- Setup env: https://gist.github.com/ggerganov/a70c625a69e61aa299060c61f30eb915
+- [Setup env](https://github.com/ggml-org/secrets/blob/master/ggml-ci.txt)
 - Run the following:
 
 ```bash
