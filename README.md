@@ -23,5 +23,6 @@ WARNING: run only inside fresh VMs! Do not run on your own workstation as it can
 
 ```bash
 git clone https://github.com/ggml-org/ci
+./ci/setup.sh
 ./ci/start.sh id-node
 ```
