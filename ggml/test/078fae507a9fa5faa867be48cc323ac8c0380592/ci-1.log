@@ -25,11 +25,11 @@
 -- Generating done
 -- Build files have been written to: /home/ggml/work/ggml/build-ci-1
 
-real	0m0.538s
-user	0m0.375s
-sys	0m0.165s
-[  1%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
-[  2%] Building C object src/CMakeFiles/ggml.dir/ggml.c.o
+real	0m0.539s
+user	0m0.381s
+sys	0m0.161s
+[  1%] Building C object src/CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
 [  4%] Linking C static library libggml.a
 [  4%] Built target ggml
 [  8%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
@@ -81,8 +81,8 @@ sys	0m0.165s
 [ 48%] Building CXX object examples/mnist/CMakeFiles/mnist.dir/main.cpp.o
 [ 50%] Linking CXX static library libcommon-ggml.a
 [ 50%] Built target common-ggml
-[ 52%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-quantize.dir/quantize.cpp.o
 [ 52%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2.dir/main.cpp.o
+[ 52%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-quantize.dir/quantize.cpp.o
 [ 54%] Linking CXX executable ../../bin/mnist
 [ 54%] Built target mnist
 [ 55%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j.dir/main.cpp.o
@@ -121,8 +121,8 @@ sys	0m0.165s
 [ 86%] Building CXX object examples/starcoder/CMakeFiles/starcoder.dir/main.cpp.o
 [ 87%] Linking CXX executable ../../bin/replit
 [ 87%] Built target replit
-[ 88%] Linking CXX executable ../../bin/mpt-quantize
-[ 90%] Building CXX object examples/starcoder/CMakeFiles/starcoder-mmap.dir/starcoder-mmap.cpp.o
+[ 88%] Building CXX object examples/starcoder/CMakeFiles/starcoder-mmap.dir/starcoder-mmap.cpp.o
+[ 90%] Linking CXX executable ../../bin/mpt-quantize
 [ 90%] Built target mpt-quantize
 [ 91%] Building CXX object examples/starcoder/CMakeFiles/starcoder-quantize.dir/quantize.cpp.o
 [ 93%] Linking CXX executable ../../bin/mpt
@@ -140,22 +140,22 @@ sys	0m0.165s
   197 |     const size_t file_size = fin.tellg();
       |                  ^~~~~~~~~
 [ 93%] Built target mpt
-[ 94%] Building CXX object examples/whisper/CMakeFiles/whisper.dir/main.cpp.o
-[ 95%] Linking CXX executable ../../bin/starcoder
+[ 94%] Linking CXX executable ../../bin/starcoder
+[ 95%] Building CXX object examples/whisper/CMakeFiles/whisper.dir/main.cpp.o
 [ 95%] Built target starcoder
-[ 97%] Linking CXX executable ../../bin/starcoder-mmap
-[ 98%] Linking CXX executable ../../bin/starcoder-quantize
-[ 98%] Built target starcoder-mmap
+[ 97%] Linking CXX executable ../../bin/starcoder-quantize
+[ 98%] Linking CXX executable ../../bin/starcoder-mmap
 [ 98%] Built target starcoder-quantize
 [100%] Linking CXX executable ../../bin/whisper
+[100%] Built target starcoder-mmap
 [100%] Built target whisper
 
-real	0m16.175s
-user	0m52.459s
-sys	0m5.232s
+real	0m16.134s
+user	0m52.445s
+sys	0m5.324s
 Test project /home/ggml/work/ggml/build-ci-1
       Start  1: test-grad0
- 1/10 Test  #1: test-grad0 .......................   Passed    6.05 sec
+ 1/10 Test  #1: test-grad0 .......................   Passed    6.17 sec
       Start  2: test-quantize-fns
  2/10 Test  #2: test-quantize-fns ................   Passed    0.01 sec
       Start  3: test-quantize-perf
@@ -169,16 +169,16 @@ Test project /home/ggml/work/ggml/build-ci-1
       Start  7: test1
  7/10 Test  #7: test1 ............................   Passed    0.01 sec
       Start  8: test2
- 8/10 Test  #8: test2 ............................   Passed   19.72 sec
+ 8/10 Test  #8: test2 ............................   Passed   19.79 sec
       Start  9: test3
- 9/10 Test  #9: test3 ............................   Passed    1.10 sec
+ 9/10 Test  #9: test3 ............................   Passed    1.07 sec
       Start 10: test-pool
 10/10 Test #10: test-pool ........................   Passed    0.01 sec
 
 100% tests passed, 0 tests failed out of 10
 
-Total Test time (real) =  37.88 sec
+Total Test time (real) =  38.04 sec
 
-real	0m37.883s
-user	1m41.880s
-sys	0m4.800s
+real	0m38.048s
+user	1m42.591s
+sys	0m4.574s
