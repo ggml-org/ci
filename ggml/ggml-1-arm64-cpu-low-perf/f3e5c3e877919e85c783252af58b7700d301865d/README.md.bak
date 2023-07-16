@@ -1,0 +1,108 @@
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -E test-opt
+Test project /home/ggml/work/ggml/build-ci-debug
+      Start  1: test-grad0
+ 1/10 Test  #1: test-grad0 .......................   Passed    5.90 sec
+      Start  2: test-quantize-fns
+ 2/10 Test  #2: test-quantize-fns ................   Passed    0.01 sec
+      Start  3: test-quantize-perf
+ 3/10 Test  #3: test-quantize-perf ...............   Passed    0.02 sec
+      Start  4: test-mul-mat0
+ 4/10 Test  #4: test-mul-mat0 ....................   Passed    0.54 sec
+      Start  5: test-mul-mat2
+ 5/10 Test  #5: test-mul-mat2 ....................   Passed    8.57 sec
+      Start  6: test0
+ 6/10 Test  #6: test0 ............................   Passed    0.01 sec
+      Start  7: test1
+ 7/10 Test  #7: test1 ............................   Passed    0.01 sec
+      Start  8: test2
+ 8/10 Test  #8: test2 ............................   Passed   16.77 sec
+      Start  9: test3
+ 9/10 Test  #9: test3 ............................   Passed    0.97 sec
+      Start 10: test-pool
+10/10 Test #10: test-pool ........................   Passed    0.01 sec
+
+100% tests passed, 0 tests failed out of 10
+
+Total Test time (real) =  32.80 sec
+
+real	0m32.815s
+user	1m30.570s
+sys	0m4.536s
+```
+
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -E test-opt
+Test project /home/ggml/work/ggml/build-ci-release
+      Start  1: test-grad0
+ 1/10 Test  #1: test-grad0 .......................   Passed    5.40 sec
+      Start  2: test-quantize-fns
+ 2/10 Test  #2: test-quantize-fns ................   Passed    0.01 sec
+      Start  3: test-quantize-perf
+ 3/10 Test  #3: test-quantize-perf ...............   Passed    0.01 sec
+      Start  4: test-mul-mat0
+ 4/10 Test  #4: test-mul-mat0 ....................   Passed    0.52 sec
+      Start  5: test-mul-mat2
+ 5/10 Test  #5: test-mul-mat2 ....................   Passed    1.77 sec
+      Start  6: test0
+ 6/10 Test  #6: test0 ............................   Passed    0.00 sec
+      Start  7: test1
+ 7/10 Test  #7: test1 ............................   Passed    0.01 sec
+      Start  8: test2
+ 8/10 Test  #8: test2 ............................   Passed   16.65 sec
+      Start  9: test3
+ 9/10 Test  #9: test3 ............................   Passed    0.95 sec
+      Start 10: test-pool
+10/10 Test #10: test-pool ........................   Passed    0.01 sec
+
+100% tests passed, 0 tests failed out of 10
+
+Total Test time (real) =  25.32 sec
+
+real	0m25.337s
+user	1m22.096s
+sys	0m4.193s
+```
+### gpt_2
+
+Runs short GPT-2 text generation
+- status: 0
+```
++ ./bin/gpt-2 --model -s 1234 -n 64 -t 4 -p 'I believe the meaning of life is'
+error: unknown argument: 1234
+usage: ./bin/gpt-2 [options]
+
+options:
+  -h, --help            show this help message and exit
+  -s SEED, --seed SEED  RNG seed (default: -1)
+  -t N, --threads N     number of threads to use during computation (default: 4)
+  -ngl N, --gpu-layers N  number of layers to offload to GPU on supported models (default: 0)
+  -p PROMPT, --prompt PROMPT
+                        prompt to start generation with (default: random)
+  -f FNAME, --file FNAME
+                        load prompt from a file
+  -tt TOKEN_TEST, --token_test TOKEN_TEST
+                        test tokenization
+  -n N, --n_predict N   number of tokens to predict (default: 200)
+  --top_k N             top-k sampling (default: 40)
+  --top_p N             top-p sampling (default: 0.9)
+  --temp N              temperature (default: 0.9)
+  --repeat-last-n N     last n tokens to consider for penalize (default: 64, 0 = disabled)
+  --repeat-penalty N    penalize repeat sequence of tokens (default: 1.00, 1.0 = disabled)
+  -b N, --batch_size N  batch size for prompt processing (default: 8)
+  -m FNAME, --model FNAME
+                        model path (default: -s)
+
+
+real	0m0.003s
+user	0m0.003s
+sys	0m0.001s
+```
