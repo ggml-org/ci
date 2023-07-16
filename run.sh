@@ -157,15 +157,15 @@ function gg_run_ggml {
 
         status="$(if [ $result -eq 0 ]; then echo "SUCCESS ✅"; else echo "FAILURE ❌ (${result})"; fi)"
 
-        gg_printf ${out}/README.md "## Summary\n\n"
+        gg_printf ${out}/README.md '## Summary\n\n'
 
-        gg_printf ${out}/README.md "- status: ${status}\n"
-        gg_printf ${out}/README.md "- date:   $(date)\n"
-        gg_printf ${out}/README.md "- repo:   ${GG_CI_REPO}\n"
-        gg_printf ${out}/README.md "- commit: ${GG_CI_COMMIT_URL}\n"
-        gg_printf ${out}/README.md "- author: ${GG_CI_COMMIT_AUTHOR}\n"
-        gg_printf ${out}/README.md "\`\`\`\n${GG_CI_COMMIT_MSG}\n\`\`\`\n"
-        gg_printf ${out}/README.md "\n"
+        gg_printf ${out}/README.md '- status: %s\n'       "${status}"
+        gg_printf ${out}/README.md '- date:   %s\n'       "$(date)"
+        gg_printf ${out}/README.md '- repo:   %s\n'       "${GG_CI_REPO}"
+        gg_printf ${out}/README.md '- commit: %s\n'       "${GG_CI_COMMIT_URL}"
+        gg_printf ${out}/README.md '- author: %s\n'       "${GG_CI_COMMIT_AUTHOR}"
+        gg_printf ${out}/README.md '\`\`\`\n%s\n\`\`\`\n' "${GG_CI_COMMIT_MSG}"
+        gg_printf ${out}/README.md '\n'
 
         cat ${out}/README.md.bak >> ${out}/README.md
 
@@ -175,13 +175,13 @@ function gg_run_ggml {
         out_parent=${GG_RESULTS_PATH}/${repo}/${GG_NODE}/${commit_parent}
 
         if [ -d ${out_parent} ]; then
-            gg_printf ${out}/README.md "## Diff with parent commit\n\n"
+            gg_printf ${out}/README.md '## Diff with parent commit\n\n'
 
-            gg_printf ${out}/README.md "<details><summary>click to expand</summary>\n\n"
-            gg_printf ${out}/README.md "\`\`\`diff\n"
-            gg_printf ${out}/README.md "$(diff -u ${out_parent}/stdall ${out}/stdall)\n"
-            gg_printf ${out}/README.md "\`\`\`\n"
-            gg_printf ${out}/README.md "</details>\n\n"
+            gg_printf ${out}/README.md '<details><summary>click to expand</summary>\n\n'
+            gg_printf ${out}/README.md '\`\`\`diff\n'
+            gg_printf ${out}/README.md '%s\n' "$(diff -u ${out_parent}/stdall ${out}/stdall)"
+            gg_printf ${out}/README.md '\`\`\`\n'
+            gg_printf ${out}/README.md '</details>\n\n'
         fi
 
         if [ ${result} -eq 0 ]; then
