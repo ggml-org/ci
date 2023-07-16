@@ -1,0 +1,126 @@
++ make -j4
+[  1%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  2%] Building C object src/CMakeFiles/ggml.dir/ggml.c.o
+[  4%] Linking C static library libggml.a
+[  4%] Built target ggml
+[  6%] Building C object tests/CMakeFiles/test-grad0.dir/test-grad0.c.o
+[  6%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
+[  8%] Building C object tests/CMakeFiles/test-vec1.dir/test-vec1.c.o
+[  9%] Linking C executable ../bin/test-vec0
+[  9%] Built target test-vec0
+[ 11%] Building C object tests/CMakeFiles/test-opt.dir/test-opt.c.o
+[ 12%] Linking C executable ../bin/test-opt
+[ 12%] Built target test-opt
+[ 13%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 15%] Linking CXX static library libcommon.a
+[ 15%] Built target common
+[ 16%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 18%] Linking C executable ../bin/test-vec1
+[ 18%] Built target test-vec1
+[ 19%] Building C object tests/CMakeFiles/test-mul-mat0.dir/test-mul-mat0.c.o
+[ 20%] Linking CXX executable ../bin/test-quantize-fns
+[ 20%] Built target test-quantize-fns
+[ 22%] Building C object tests/CMakeFiles/test-mul-mat2.dir/test-mul-mat2.c.o
+[ 23%] Linking C executable ../bin/test-mul-mat0
+[ 25%] Linking C executable ../bin/test-grad0
+[ 25%] Built target test-mul-mat0
+[ 25%] Built target test-grad0
+[ 26%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
+[ 27%] Building C object tests/CMakeFiles/test1.dir/test1.c.o
+[ 29%] Linking C executable ../bin/test0
+[ 29%] Built target test0
+[ 30%] Building C object tests/CMakeFiles/test2.dir/test2.c.o
+[ 31%] Linking C executable ../bin/test1
+[ 33%] Linking C executable ../bin/test2
+[ 33%] Built target test1
+[ 34%] Building C object tests/CMakeFiles/test3.dir/test3.c.o
+[ 34%] Built target test2
+[ 36%] Building C object tests/CMakeFiles/test-pool.dir/test-pool.c.o
+[ 37%] Linking C executable ../bin/test3
+[ 37%] Built target test3
+[ 38%] Linking C executable ../bin/test-pool
+[ 40%] Building CXX object examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o
+[ 40%] Built target test-pool
+[ 41%] Building CXX object examples/whisper/CMakeFiles/whisper-cpp.dir/whisper.cpp.o
+[ 43%] Linking C executable ../bin/test-mul-mat2
+[ 43%] Built target test-mul-mat2
+[ 44%] Building CXX object examples/mnist/CMakeFiles/mnist.dir/main.cpp.o
+[ 45%] Linking CXX executable ../bin/test-quantize-perf
+[ 45%] Built target test-quantize-perf
+[ 47%] Building CXX object examples/mnist/CMakeFiles/mnist-cpu.dir/main-cpu.cpp.o
+[ 48%] Linking CXX executable ../../bin/mnist
+[ 50%] Linking CXX executable ../../bin/mnist-cpu
+[ 50%] Built target mnist
+[ 50%] Built target mnist-cpu
+[ 51%] Linking CXX static library libcommon-ggml.a
+[ 51%] Built target common-ggml
+[ 54%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-quantize.dir/quantize.cpp.o
+[ 54%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2.dir/main.cpp.o
+[ 55%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j.dir/main.cpp.o
+[ 56%] Linking CXX executable ../../bin/gpt-2-quantize
+[ 56%] Built target gpt-2-quantize
+[ 58%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j-quantize.dir/quantize.cpp.o
+[ 59%] Linking CXX executable ../../bin/gpt-j
+[ 61%] Linking CXX executable ../../bin/gpt-2
+[ 61%] Built target gpt-j
+[ 62%] Building CXX object examples/whisper/CMakeFiles/whisper-quantize.dir/quantize.cpp.o
+[ 62%] Built target gpt-2
+[ 63%] Building CXX object examples/gpt-neox/CMakeFiles/gpt-neox.dir/main.cpp.o
+[ 65%] Linking CXX executable ../../bin/gpt-j-quantize
+[ 65%] Built target gpt-j-quantize
+[ 66%] Building CXX object examples/gpt-neox/CMakeFiles/gpt-neox-quantize.dir/quantize.cpp.o
+[ 68%] Linking CXX executable ../../bin/whisper-quantize
+[ 68%] Built target whisper-quantize
+[ 69%] Building CXX object examples/dolly-v2/CMakeFiles/dollyv2.dir/main.cpp.o
+[ 70%] Linking CXX executable ../../bin/gpt-neox-quantize
+[ 70%] Built target gpt-neox-quantize
+[ 72%] Building CXX object examples/dolly-v2/CMakeFiles/dollyv2-quantize.dir/quantize.cpp.o
+[ 73%] Linking CXX executable ../../bin/gpt-neox
+[ 73%] Built target gpt-neox
+[ 75%] Building CXX object examples/replit/CMakeFiles/replit.dir/main.cpp.o
+[ 76%] Linking CXX executable ../../bin/dollyv2-quantize
+[ 76%] Built target dollyv2-quantize
+[ 77%] Building CXX object examples/replit/CMakeFiles/replit-quantize.dir/quantize.cpp.o
+[ 79%] Linking CXX executable ../../bin/dollyv2
+[ 79%] Built target dollyv2
+[ 80%] Building CXX object examples/mpt/CMakeFiles/mpt.dir/main.cpp.o
+[ 81%] Linking CXX executable ../../bin/replit-quantize
+[ 81%] Built target replit-quantize
+[ 83%] Linking CXX executable ../../bin/replit
+[ 84%] Building CXX object examples/mpt/CMakeFiles/mpt-quantize.dir/quantize.cpp.o
+[ 84%] Built target replit
+[ 86%] Building CXX object examples/starcoder/CMakeFiles/starcoder.dir/main.cpp.o
+[ 87%] Linking CXX executable ../../bin/mpt-quantize
+[ 87%] Built target mpt-quantize
+[ 88%] Building CXX object examples/starcoder/CMakeFiles/starcoder-mmap.dir/starcoder-mmap.cpp.o
+[ 90%] Linking CXX static library libwhisper-cpp.a
+[ 90%] Built target whisper-cpp
+[ 91%] Building CXX object examples/starcoder/CMakeFiles/starcoder-quantize.dir/quantize.cpp.o
+/home/ggml/work/ggml/examples/starcoder/starcoder-mmap.cpp: In function ‘bool starcoder_model_load(const string&, starcoder_model&, gpt_vocab&, int32_t)’:
+/home/ggml/work/ggml/examples/starcoder/starcoder-mmap.cpp:305:19: warning: unused variable ‘n_ctx’ [-Wunused-variable]
+  305 |         const int n_ctx   = hparams.n_ctx;
+      |                   ^~~~~
+/home/ggml/work/ggml/examples/starcoder/starcoder-mmap.cpp:306:19: warning: unused variable ‘n_vocab’ [-Wunused-variable]
+  306 |         const int n_vocab = hparams.n_vocab;
+      |                   ^~~~~~~
+/home/ggml/work/ggml/examples/starcoder/starcoder-mmap.cpp:310:19: warning: unused variable ‘kv_dim’ [-Wunused-variable]
+  310 |         const int kv_dim   = kv_heads * head_dim;
+      |                   ^~~~~~
+/home/ggml/work/ggml/examples/starcoder/starcoder-mmap.cpp:197:18: warning: unused variable ‘file_size’ [-Wunused-variable]
+  197 |     const size_t file_size = fin.tellg();
+      |                  ^~~~~~~~~
+[ 93%] Linking CXX executable ../../bin/mpt
+[ 93%] Built target mpt
+[ 94%] Building CXX object examples/whisper/CMakeFiles/whisper.dir/main.cpp.o
+[ 95%] Linking CXX executable ../../bin/starcoder
+[ 95%] Built target starcoder
+[ 97%] Linking CXX executable ../../bin/starcoder-quantize
+[ 97%] Built target starcoder-quantize
+[ 98%] Linking CXX executable ../../bin/starcoder-mmap
+[ 98%] Built target starcoder-mmap
+[100%] Linking CXX executable ../../bin/whisper
+[100%] Built target whisper
+
+real	0m19.572s
+user	0m56.804s
+sys	0m3.060s
