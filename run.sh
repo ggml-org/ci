@@ -167,6 +167,15 @@ function gg_run_ggml {
         gg_printf ${out}/README.md '```\n%s\n```\n' "${GG_CI_COMMIT_MSG}"
         gg_printf ${out}/README.md '\n'
 
+        gg_printf ${out}/README.md '## Environment\n\n'
+
+        gg_printf ${out}/README.md '```\n'
+        gg_printf ${out}/README.md '%s\n' "$(env | grep GG_BUILD | sort)"
+        gg_printf ${out}/README.md '```\n'
+        gg_printf ${out}/README.md '\n'
+
+        gg_printf ${out}/README.md '## Output\n\n'
+
         cat ${out}/README.md.bak >> ${out}/README.md
 
         commit_parent=$(git log -1 --pretty=%P)
