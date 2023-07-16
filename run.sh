@@ -74,6 +74,8 @@ function gg_get_last_commits_grep {
 function gg_commit_results {
     repo=$1
 
+    wd=$(pwd)
+
     cd ${GG_RESULTS_PATH}
 
     git add .
@@ -87,6 +89,8 @@ function gg_commit_results {
             break
         fi
     done
+
+    cd ${wd}
 }
 
 function gg_run_ggml {
@@ -102,7 +106,7 @@ function gg_run_ggml {
         branches=$(cat ${GG_WORK_BRANCHES} | grep "^${repo}" | cut -d' ' -f2-)
     fi
 
-    printf "run.sh : processing '${repo}' branches - ${branches}\n"
+    printf "run.sh : processing '${repo}' branches - '${branches}'\n"
 
     commits=""
 
