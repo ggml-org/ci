@@ -136,7 +136,7 @@ function gg_run_ggml {
             timeout ${GG_RUN_TIMEOUT} time bash ci/run.sh ${out} > ${out}/stdall 2>&1
             result=$?
         else
-            gg_prinf ${out}/README.md "ci/run.sh was not found - nothing to do\n"
+            gg_printf ${out}/README.md "ci/run.sh was not found - nothing to do\n"
             result=0
         fi
 
