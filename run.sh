@@ -169,6 +169,21 @@ function gg_run_ggml {
 
         cat ${out}/README.md.bak >> ${out}/README.md
 
+        commit_parent=$(git log -1 --pretty=%P)
+
+        # if the output for the parent commit exists, append the "stdall" diff to the README.md
+        out_parent=${GG_RESULTS_PATH}/${repo}/${GG_NODE}/${commit_parent}
+
+        if [ -d ${out_parent} ]; then
+            gg_printf ${out}/README.md "## Diff with parent commit\n\n"
+
+            gg_printf ${out}/README.md "<details><summary>click to expand</summary>\n\n"
+            gg_printf ${out}/README.md "\`\`\`diff\n"
+            diff -u ${out_parent}/stdall ${out}/stdall >> ${out}/README.md
+            gg_printf ${out}/README.md "\n\`\`\`\n"
+            gg_printf ${out}/README.md "</details>\n\n"
+        fi
+
         if [ ${result} -eq 0 ]; then
             gg_set_commit_status "${GG_NODE}" "${GG_GGML_OWN}" "${repo}" "${commit}" "success" "success"
         else
