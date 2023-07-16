@@ -28,8 +28,8 @@ fi
 
 # check if GG_SECRET_TOKENGH_API env is empty
 
-if [ -z "${GG_DUMMY}" ]; then
-    printf "run.sh : GG_DUMMY env is not set\n"
+if [ -z "${GG_SECRET_TOKEN_GH_API}" ]; then
+    printf "run.sh : GG_SECRET_TOKEN_GH_API env is not set\n"
     exit 1
 fi
 
