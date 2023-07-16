@@ -1,3 +1,3 @@
 #!/bin/bash
 
-kill -9 $(pgrep -f service.sh)
+kill $(pgrep -f service.sh)
