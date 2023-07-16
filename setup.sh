@@ -1,8 +1,18 @@
 #!/bin/bash
 
+if [ ! -f ~/.env.sh ]; then
+    printf "run.sh : ~/.env.sh is not found\n"
+    exit 1
+fi
+
 sd=`dirname $0`
 
 source $sd/env.sh
+source ~/.env.sh
+
+env | grep GG_ | sort
+
+printf "\n"
 
 ## dependencies
 
