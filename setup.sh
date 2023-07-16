@@ -62,7 +62,7 @@ set -e
 
 # prepare results repo
 if [ ! -d $GG_RESULTS_PATH ]; then
-    git clone -c core.sshCommand="/usr/bin/ssh -i ~/.ssh/ggml-bot-main" $GG_RESULTS_REPO $GG_RESULTS_PATH -b $GG_RESULTS_BRANCH
+    git clone -c core.sshCommand="/usr/bin/ssh -i ~/.ssh/ggml-bot-main" $GG_RESULTS_REPO_SSH $GG_RESULTS_PATH -b $GG_RESULTS_BRANCH
 
     if [ ! -d $GG_RESULTS_PATH ]; then
         printf "setup.sh : failed to clone results repo\n"

@@ -7,15 +7,29 @@ if [ -z "${1}" ]; then
     exit 1
 fi
 
+if [ ! -f ~/.env.sh ]; then
+    printf "run.sh : ~/.env.sh is not found\n"
+    exit 1
+fi
+
 sd=`dirname $0`
 
 source $sd/env.sh
+source ~/.env.sh
 
 GG_NODE=${1}
 
 # check if results repo is cloned
+
 if [ ! -d ${GG_RESULTS_PATH} ]; then
     printf "run.sh : results repo is not cloned\n"
+    exit 1
+fi
+
+# check if GG_SECRET_TOKENGH_API env is empty
+
+if [ -z "${GG_DUMMY}" ]; then
+    printf "run.sh : GG_DUMMY env is not set\n"
     exit 1
 fi
 
@@ -41,15 +55,20 @@ trap gg_cleanup EXIT
 
 ## main
 
+# get last N commits from a branch
 function gg_get_last_commits {
     branch=$1
     N=$2
 
-    if [ -z "${N}" ]; then
-        N=1
-    fi
-
     git log origin/${branch} -n ${N} --pretty=format:"%H" --abbrev-commit
+}
+
+# get last N commits from all branches that contain a keyword
+function gg_get_last_commits_grep {
+    keyword=$1
+    N=$2
+
+    git log --all --grep="${keyword}" -n ${N} --pretty=format:"%H" --abbrev-commit
 }
 
 function gg_commit_results {
@@ -71,6 +90,8 @@ function gg_commit_results {
 }
 
 function gg_run_ggml {
+    repo="ggml"
+
     cd ${GG_WORK_PATH}/${GG_GGML_DIR}
 
     git fetch --all > /dev/null 2>&1
@@ -78,45 +99,61 @@ function gg_run_ggml {
     branches="master"
 
     if [ -f ${GG_WORK_BRANCHES} ]; then
-        branches=$(cat ${GG_WORK_BRANCHES} | grep "^ggml" | cut -d' ' -f2)
+        branches=$(cat ${GG_WORK_BRANCHES} | grep "^${repo}" | cut -d' ' -f2-)
     fi
 
-    printf "run.sh : processing 'ggml' branches - ${branches}\n"
+    printf "run.sh : processing '${repo}' branches - ${branches}\n"
 
-    has_changes=0
+    commits=""
 
     for branch in ${branches} ; do
-        commits=$(gg_get_last_commits ${branch} ${GG_RUN_LAST_N})
-
-        for hash in ${commits} ; do
-            out=${GG_RESULTS_PATH}/ggml/${branch}/${hash}/${GG_NODE}
-
-            if [ -d ${out} ]; then
-                continue
-            fi
-
-            printf "run.sh : processing 'ggml' commit ${hash}\n"
-
-            has_changes=1
-
-            mkdir -p ${out}
-
-            git checkout ${hash}
-            git submodule update --init --recursive
-            git clean -fd
-
-            timeout ${GG_RUN_TIMEOUT} time bash ci/run.sh ${out} > ${out}/stdall 2>&1
-            result=$?
-
-            echo ${result} > ${out}/exit
-
-            printf "run.sh : done processing 'ggml' commit ${hash}, result ${result}\n"
-        done
+        commits="${commits} $(gg_get_last_commits ${branch} ${GG_RUN_LAST_N})"
     done
 
-    if [ ${has_changes} -eq 1 ]; then
-        gg_commit_results "ggml"
-    fi
+    commits="${commits} $(gg_get_last_commits_grep ${GG_CI_KEYWORD} ${GG_RUN_LAST_N})"
+
+    for hash in ${commits} ; do
+        out=${GG_RESULTS_PATH}/${repo}/${GG_NODE}/${hash}
+
+        if [ -d ${out} ]; then
+            continue
+        fi
+
+        gg_set_commit_status "${GG_NODE}" "${GG_GGML_OWN}" "${repo}" "${hash}" "pending" "in queue ..."
+    done
+
+    for hash in ${commits} ; do
+        out=${GG_RESULTS_PATH}/${repo}/${GG_NODE}/${hash}
+
+        if [ -d ${out} ]; then
+            continue
+        fi
+
+        printf "run.sh : processing '${repo}' commit ${hash}\n"
+
+        gg_set_commit_status "${GG_NODE}" "${GG_GGML_OWN}" "${repo}" "${hash}" "pending" "running ..."
+
+        mkdir -p ${out}
+
+        git checkout ${hash}
+        git submodule update --init --recursive
+        git clean -fd
+
+        timeout ${GG_RUN_TIMEOUT} time bash ci/run.sh ${out} > ${out}/stdall 2>&1
+        result=$?
+
+        echo ${result} > ${out}/exit
+
+        if [ ${result} -eq 0 ]; then
+            gg_set_commit_status "${GG_NODE}" "${GG_GGML_OWN}" "${repo}" "${hash}" "success" "success"
+        else
+            gg_set_commit_status "${GG_NODE}" "${GG_GGML_OWN}" "${repo}" "${hash}" "failure" "failure ${result}"
+        fi
+
+        printf "run.sh : done processing '${repo}' commit ${hash}, result ${result}\n"
+
+        gg_commit_results "${repo}"
+    done
 }
 
 # main loop
