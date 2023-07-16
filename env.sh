@@ -59,9 +59,6 @@ function gg_set_commit_status {
 gg_export GG_WORK_PATH     $(realpath ~/work)
 gg_export GG_WORK_BRANCHES ${GG_WORK_PATH}/branches
 
-gg_export GG_BOT_NAME  "ggml-bot"
-gg_export GG_BOT_EMAIL "keytapchallenge@gmail.com"
-
 gg_export GG_CI_KEYWORD "ggml-ci"
 
 # here we will store all results
