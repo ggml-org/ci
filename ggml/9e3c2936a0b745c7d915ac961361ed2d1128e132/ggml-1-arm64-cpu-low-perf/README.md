@@ -1,0 +1,319 @@
+## Summary
+
+- status: SUCCESS ✅
+- date:   Mon Jul 17 12:36:56 UTC 2023
+- repo:   https://github.com/ggerganov/ggml
+- commit: https://github.com/ggerganov/ggml/commit/9e3c2936a0b745c7d915ac961361ed2d1128e132
+- author: Georgi Gerganov
+```
+ci : integrate with ggml-org/ci (#393)
+
+* ci : add initial scripts
+
+* ci : remove setup.sh
+
+* run : add deps
+
+* run : fix
+
+* ci : remove deps
+
+* ci : ignore test-opt
+
+* ci : fix ctest
+
+* ci : induce error in ci-1
+
+* ci : try to capture exit codes
+
+* ci : try fix pipefail
+
+* ci : output time of commands
+
+* ci : disable test-opt for release as well
+
+* ci : generate README.md
+
+* ci : update README.md
+
+* ci : fix header
+
+* ci : utilize gg_printf
+
+row 0
+row 1 testing adafa
+
+asdfdsa
+
+* ci : move out the README.md header generation
+
+row 0
+row 1 dsfkdjs
+
+adslfkaj ska
+test
+
+* ci : fix
+
+row 0
+row 1 dsfkdjs
+
+adslfkaj ska
+test
+
+* ci : induce error
+
+* ci : fix error
+
+remove assert(false)
+
+* ci : fix ctest summary
+
+* ci : fix comment
+
+minor
+
+test test
+
+* ci : fix gg_printf usage
+
+* ci : switch ci-1 to Release
+
+* ci : try to simplify
+
+* ci : induce error
+
+* Revert "ci : induce error"
+
+This reverts commit a9cef1eeb174764a0a1eb5b13753a7637b10f9dd.
+
+* ci : induce error
+
+* ci : fix pipefail + status
+
+* ci : try to fix pipefail
+
+* ci : fix output
+
+* ci : fix return codes
+
+* ci : test
+
+* ci : fix test
+
+* ci : add gpt-2 ci
+
+* ci : fix gpt-2 test
+
+* ci : gpt-2 seed
+
+* ci : fix checks
+
+* ci : time gpt-2
+
+* ci : fix gpt-2 output
+
+* ci : try to fix duplicated output
+
+* ci : try fix duplicated output
+
+* ci : cat gpt-2 output
+
+* ci : finally fix double output
+
+* ci : try to add "set -x"
+
+* ci : fix model var
+
+* ci : append logs
+
+* ci : add mpt
+
+* ci : fix model dir creation
+
+* ci : fix mpt convert
+
+* ci : add mpt config.json
+
+* ci : add configuration_mpt.py
+
+* ci : don't run test-opt on low perf systems
+
+* ci : do not run test-opt in Debug
+```
+
+## Environment
+
+```
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+GG_BUILD_LOW_PERF=1
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -E test-opt
+Test project /home/ggml/work/ggml/build-ci-debug
+      Start  1: test-grad0
+ 1/10 Test  #1: test-grad0 .......................   Passed    5.96 sec
+      Start  2: test-quantize-fns
+ 2/10 Test  #2: test-quantize-fns ................   Passed    0.01 sec
+      Start  3: test-quantize-perf
+ 3/10 Test  #3: test-quantize-perf ...............   Passed    0.02 sec
+      Start  4: test-mul-mat0
+ 4/10 Test  #4: test-mul-mat0 ....................   Passed    0.55 sec
+      Start  5: test-mul-mat2
+ 5/10 Test  #5: test-mul-mat2 ....................   Passed    8.67 sec
+      Start  6: test0
+ 6/10 Test  #6: test0 ............................   Passed    0.01 sec
+      Start  7: test1
+ 7/10 Test  #7: test1 ............................   Passed    0.01 sec
+      Start  8: test2
+ 8/10 Test  #8: test2 ............................   Passed   17.18 sec
+      Start  9: test3
+ 9/10 Test  #9: test3 ............................   Passed    0.94 sec
+      Start 10: test-pool
+10/10 Test #10: test-pool ........................   Passed    0.01 sec
+
+100% tests passed, 0 tests failed out of 10
+
+Total Test time (real) =  33.36 sec
+
+real	0m33.369s
+user	1m32.437s
+sys	0m4.491s
+```
+
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -E test-opt
+Test project /home/ggml/work/ggml/build-ci-release
+      Start  1: test-grad0
+ 1/10 Test  #1: test-grad0 .......................   Passed    5.86 sec
+      Start  2: test-quantize-fns
+ 2/10 Test  #2: test-quantize-fns ................   Passed    0.01 sec
+      Start  3: test-quantize-perf
+ 3/10 Test  #3: test-quantize-perf ...............   Passed    0.01 sec
+      Start  4: test-mul-mat0
+ 4/10 Test  #4: test-mul-mat0 ....................   Passed    0.52 sec
+      Start  5: test-mul-mat2
+ 5/10 Test  #5: test-mul-mat2 ....................   Passed    1.77 sec
+      Start  6: test0
+ 6/10 Test  #6: test0 ............................   Passed    0.00 sec
+      Start  7: test1
+ 7/10 Test  #7: test1 ............................   Passed    0.01 sec
+      Start  8: test2
+ 8/10 Test  #8: test2 ............................   Passed   17.16 sec
+      Start  9: test3
+ 9/10 Test  #9: test3 ............................   Passed    0.96 sec
+      Start 10: test-pool
+10/10 Test #10: test-pool ........................   Passed    0.01 sec
+
+100% tests passed, 0 tests failed out of 10
+
+Total Test time (real) =  26.31 sec
+
+real	0m26.326s
+user	1m25.201s
+sys	0m4.298s
+```
+### gpt_2
+
+Runs short GPT-2 text generation
+- status: 0
+```
++ ./bin/gpt-2 --model ../models/gpt-2/ggml-model-gpt-2-117M.bin -s 1234 -n 64 -t 4 -tt ../examples/prompts/gpt-2.txt
+test_gpt_tokenizer : failed test: 'I l0ve t0 tr@vel @r0und the w0rld.'
+test_gpt_tokenizer : tokens in hf:   I(40),  l(300), 0(15), ve(303),  t(256), 0(15),  tr(491), @(31), vel(626),  @(2488), r(81), 0(15), und(917),  the(262),  w(266), 0(15), r(81), ld(335), .(13), 
+test_gpt_tokenizer : tokens in ggml: I(40),  l(300), 0(15), ve(303),  t(256), 0(15),  tr(491), @(31), vel(626),  @(2488), r(81), 0(15), und(917),  the(262),  w(266), 0(15), rl(45895), d(67), .(13), 
+test_gpt_tokenizer : failed test: 'She danced gracefully on the stage.'
+test_gpt_tokenizer : tokens in hf:   She(3347),  danced(39480),  grace(11542), fully(2759),  on(319),  the(262),  stage(3800), .(13), 
+test_gpt_tokenizer : tokens in ggml: She(3347),  danced(39480),  graceful(44363), ly(306),  on(319),  the(262),  stage(3800), .(13), 
+test_gpt_tokenizer : failed test: 'She dances gracefully to the music.'
+test_gpt_tokenizer : tokens in hf:   She(3347),  dances(38207),  grace(11542), fully(2759),  to(284),  the(262),  music(2647), .(13), 
+test_gpt_tokenizer : tokens in ggml: She(3347),  dances(38207),  graceful(44363), ly(306),  to(284),  the(262),  music(2647), .(13), 
+test_gpt_tokenizer : failed test: 'The birds are chirping in the trees.'
+test_gpt_tokenizer : tokens in hf:   The(464),  birds(10087),  are(389),  ch(442), ir(343), ping(13886),  in(287),  the(262),  trees(7150), .(13), 
+test_gpt_tokenizer : tokens in ggml: The(464),  birds(10087),  are(389),  chi(33166), r(81), ping(13886),  in(287),  the(262),  trees(7150), .(13), 
+test_gpt_tokenizer : failed test: 'The flowers are blooming in the garden.'
+test_gpt_tokenizer : tokens in hf:   The(464),  flowers(12734),  are(389),  blo(24924), oming(3383),  in(287),  the(262),  garden(11376), .(13), 
+test_gpt_tokenizer : tokens in ggml: The(464),  flowers(12734),  are(389),  bloom(29955), ing(278),  in(287),  the(262),  garden(11376), .(13), 
+test_gpt_tokenizer : failed test: 'The flowers in the garden are blooming.'
+test_gpt_tokenizer : tokens in hf:   The(464),  flowers(12734),  in(287),  the(262),  garden(11376),  are(389),  blo(24924), oming(3383), .(13), 
+test_gpt_tokenizer : tokens in ggml: The(464),  flowers(12734),  in(287),  the(262),  garden(11376),  are(389),  bloom(29955), ing(278), .(13), 
+test_gpt_tokenizer : failed test: 'Wh@t's y0ur f@v0rite m0vie?'
+test_gpt_tokenizer : tokens in hf:   Wh(1199), @(31), t(83), 's(338),  y(331), 0(15), ur(333),  f(277), @(31), v(85), 0(15), rite(6525),  m(285), 0(15), v(85), ie(494), ?(30), 
+test_gpt_tokenizer : tokens in ggml: Wh(1199), @(31), t(83), 's(338),  y(331), 0(15), ur(333),  f(277), @(31), v(85), 0(15), rite(6525),  m(285), 0(15), vi(8903), e(68), ?(30), 
+test_gpt_tokenizer : 7 tests failed out of 100 tests.
+main: seed = 1234
+gpt2_model_load: loading model from '../models/gpt-2/ggml-model-gpt-2-117M.bin'
+gpt2_model_load: n_vocab = 50257
+gpt2_model_load: n_ctx   = 1024
+gpt2_model_load: n_embd  = 768
+gpt2_model_load: n_head  = 12
+gpt2_model_load: n_layer = 12
+gpt2_model_load: ftype   = 1
+gpt2_model_load: qntvr   = 0
+gpt2_model_load: ggml tensor size = 240 bytes
+gpt2_model_load: ggml ctx size = 384.77 MB
+gpt2_model_load: memory size =    72.00 MB, n_mem = 12288
+gpt2_model_load: model size  =   239.08 MB
+main: prompt: 'If'
+main: number of tokens in prompt = 1, first 8 tokens: 1532 
+
+If we look at what we're talking about and then look at the evidence and the evidence of the United States, what we're dealing with, we've got a huge problem in the world of terrorism."
+
+Asked about the possibility that ISIS may have used the United States as a vehicle to recruit followers and commit violence in
+
+main: mem per token =  2016924 bytes
+main:     load time =   155.78 ms
+main:   sample time =    17.27 ms
+main:  predict time =   809.50 ms / 12.65 ms per token
+main:    total time =  1056.18 ms
+
+real	0m1.088s
+user	0m3.388s
+sys	0m0.180s
++ ./bin/gpt-2 --model ../models/gpt-2/ggml-model-gpt-2-117M.bin -s 1234 -n 64 -t 4 -p 'I believe the meaning of life is'
+extract_tests_from_file : No test file found.
+test_gpt_tokenizer : 0 tests failed out of 0 tests.
+main: seed = 1234
+gpt2_model_load: loading model from '../models/gpt-2/ggml-model-gpt-2-117M.bin'
+gpt2_model_load: n_vocab = 50257
+gpt2_model_load: n_ctx   = 1024
+gpt2_model_load: n_embd  = 768
+gpt2_model_load: n_head  = 12
+gpt2_model_load: n_layer = 12
+gpt2_model_load: ftype   = 1
+gpt2_model_load: qntvr   = 0
+gpt2_model_load: ggml tensor size = 240 bytes
+gpt2_model_load: ggml ctx size = 384.77 MB
+gpt2_model_load: memory size =    72.00 MB, n_mem = 12288
+gpt2_model_load: model size  =   239.08 MB
+main: prompt: 'I believe the meaning of life is'
+main: number of tokens in prompt = 7, first 8 tokens: 40 1975 262 3616 286 1204 318 
+
+I believe the meaning of life is not one that you must be able to answer for.
+
+If you do not believe in God, then why does his word make you feel better? Why do he make you feel better? It's because I don't think the gospel is true. It's because it's not true.
+
+The gospel tells
+
+main: mem per token =  2016924 bytes
+main:     load time =   156.35 ms
+main:   sample time =    17.27 ms
+main:  predict time =   881.81 ms / 12.60 ms per token
+main:    total time =  1105.20 ms
+
+real	0m1.138s
+user	0m3.650s
+sys	0m0.181s
+```
