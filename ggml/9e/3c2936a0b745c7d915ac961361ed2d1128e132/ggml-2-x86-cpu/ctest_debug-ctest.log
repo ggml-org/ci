@@ -15,7 +15,7 @@ Test project /home/ggml/work/ggml/build-ci-debug
       Start  7: test1
  7/10 Test  #7: test1 ............................   Passed    0.01 sec
       Start  8: test2
- 8/10 Test  #8: test2 ............................   Passed    0.02 sec
+ 8/10 Test  #8: test2 ............................   Passed    0.03 sec
       Start  9: test3
  9/10 Test  #9: test3 ............................   Passed    0.03 sec
       Start 10: test-pool
@@ -23,8 +23,8 @@ Test project /home/ggml/work/ggml/build-ci-debug
 
 100% tests passed, 0 tests failed out of 10
 
-Total Test time (real) =   9.98 sec
+Total Test time (real) =   9.97 sec
 
-real	0m9.982s
-user	0m10.245s
-sys	0m3.168s
+real	0m9.975s
+user	0m10.128s
+sys	0m3.358s

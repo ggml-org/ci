@@ -43,14 +43,14 @@ I believe the meaning of life is to seek and follow Jesus Christ. It is my desir
 
 main: sampled tokens =       64
 main:  mem per token =   361552 bytes
-main:      load time =  4220.07 ms
-main:    sample time =   456.09 ms / 7.13 ms per token
-main:      eval time = 16706.42 ms / 238.66 ms per token
-main:     total time = 22343.27 ms
+main:      load time =  4206.99 ms
+main:    sample time =   457.22 ms / 7.14 ms per token
+main:      eval time = 16678.20 ms / 238.26 ms per token
+main:     total time = 22268.73 ms
 
-real	0m22.372s
-user	2m21.253s
-sys	0m4.296s
+real	0m22.298s
+user	2m20.711s
+sys	0m4.354s
 + ./bin/mpt --model ../models/mpt/7B/ggml-model-q4_0.bin -s 1234 -n 64 -t 8 -p 'I believe the meaning of life is'
 main: seed      = 1234
 main: n_threads = 8
@@ -97,11 +97,11 @@ So where there is a will there is a way! Think about it, if you think something 
 
 main: sampled tokens =       64
 main:  mem per token =   346192 bytes
-main:      load time =  1141.00 ms
-main:    sample time =   455.55 ms / 7.12 ms per token
-main:      eval time =  7588.17 ms / 108.40 ms per token
-main:     total time =  9611.50 ms
+main:      load time =  1135.04 ms
+main:    sample time =   456.60 ms / 7.13 ms per token
+main:      eval time =  7593.69 ms / 108.48 ms per token
+main:     total time =  9611.90 ms
 
 real	0m9.625s
-user	1m4.039s
-sys	0m1.256s
+user	1m4.127s
+sys	0m1.204s

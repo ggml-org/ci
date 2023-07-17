@@ -42,14 +42,14 @@ If we look at what we're talking about and then look at the evidence and the evi
 Asked about the possibility that ISIS may have used the United States as a vehicle to recruit followers and commit violence in
 
 main: mem per token =  2016924 bytes
-main:     load time =   124.82 ms
-main:   sample time =    23.42 ms
-main:  predict time =   420.32 ms / 6.57 ms per token
-main:    total time =   609.92 ms
+main:     load time =   127.10 ms
+main:   sample time =    23.38 ms
+main:  predict time =   419.21 ms / 6.55 ms per token
+main:    total time =   612.40 ms
 
-real	0m0.618s
-user	0m1.744s
-sys	0m0.148s
+real	0m0.621s
+user	0m1.769s
+sys	0m0.128s
 + ./bin/gpt-2 --model ../models/gpt-2/ggml-model-gpt-2-117M.bin -s 1234 -n 64 -t 4 -p 'I believe the meaning of life is'
 extract_tests_from_file : No test file found.
 test_gpt_tokenizer : 0 tests failed out of 0 tests.
@@ -74,11 +74,11 @@ I believe the meaning of life is not one that you must be able to answer for.
 If you do not believe in God, then why does his word make you feel better? Why do he make you feel better? It's because I don't think the "good" life you choose is for you. I don't think it's worth
 
 main: mem per token =  2016924 bytes
-main:     load time =   123.78 ms
-main:   sample time =    23.43 ms
-main:  predict time =   445.39 ms / 6.36 ms per token
-main:    total time =   620.14 ms
+main:     load time =   123.40 ms
+main:   sample time =    23.33 ms
+main:  predict time =   448.40 ms / 6.41 ms per token
+main:    total time =   624.20 ms
 
-real	0m0.628s
-user	0m1.867s
-sys	0m0.108s
+real	0m0.633s
+user	0m1.860s
+sys	0m0.125s
