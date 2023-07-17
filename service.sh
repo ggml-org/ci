@@ -33,7 +33,7 @@ cd $sd
 
 while true; do
     bash ./run.sh "$1"
-    sleep 1
+    sleep 3
 
     git pull
 done

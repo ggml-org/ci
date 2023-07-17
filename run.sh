@@ -37,6 +37,11 @@ if [ -z "${GG_SECRET_TOKEN_GH_API}" ]; then
     exit 1
 fi
 
+if [ ${GG_RUN_PAUSE} -eq 1 ]; then
+    printf "run.sh : GG_RUN_PAUSE is set to 1\n"
+    exit 1
+fi
+
 ## main
 
 # get last N commits from a branch
