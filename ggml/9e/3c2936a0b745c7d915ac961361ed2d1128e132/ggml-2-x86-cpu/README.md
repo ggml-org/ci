@@ -1,7 +1,7 @@
 ## Summary
 
 - status: SUCCESS ✅
-- date:   Mon Jul 17 13:00:08 UTC 2023
+- date:   Mon Jul 17 13:13:40 UTC 2023
 - repo:   https://github.com/ggerganov/ggml
 - commit: https://github.com/ggerganov/ggml/commit/9e3c2936a0b745c7d915ac961361ed2d1128e132
 - author: Georgi Gerganov
@@ -181,11 +181,11 @@ Test project /home/ggml/work/ggml/build-ci-debug
 
 100% tests passed, 0 tests failed out of 10
 
-Total Test time (real) =   9.97 sec
+Total Test time (real) =   9.98 sec
 
-real	0m9.973s
-user	0m9.969s
-sys	0m3.399s
+real	0m9.982s
+user	0m10.245s
+sys	0m3.168s
 ```
 
 ### ctest_release
@@ -196,15 +196,15 @@ Runs ctest in release mode
 + ctest --output-on-failure
 Test project /home/ggml/work/ggml/build-ci-release
       Start  1: test-grad0
- 1/11 Test  #1: test-grad0 .......................   Passed    2.63 sec
+ 1/11 Test  #1: test-grad0 .......................   Passed    2.62 sec
       Start  2: test-opt
- 2/11 Test  #2: test-opt .........................   Passed   33.38 sec
+ 2/11 Test  #2: test-opt .........................   Passed   33.13 sec
       Start  3: test-quantize-fns
  3/11 Test  #3: test-quantize-fns ................   Passed    0.00 sec
       Start  4: test-quantize-perf
  4/11 Test  #4: test-quantize-perf ...............   Passed    0.00 sec
       Start  5: test-mul-mat0
- 5/11 Test  #5: test-mul-mat0 ....................   Passed    0.56 sec
+ 5/11 Test  #5: test-mul-mat0 ....................   Passed    0.54 sec
       Start  6: test-mul-mat2
  6/11 Test  #6: test-mul-mat2 ....................   Passed    2.82 sec
       Start  7: test0
@@ -220,11 +220,11 @@ Test project /home/ggml/work/ggml/build-ci-release
 
 100% tests passed, 0 tests failed out of 11
 
-Total Test time (real) =  39.46 sec
+Total Test time (real) =  39.18 sec
 
-real	0m39.466s
-user	0m38.961s
-sys	0m3.484s
+real	0m39.182s
+user	0m38.837s
+sys	0m3.313s
 ```
 ### gpt_2
 
@@ -275,14 +275,14 @@ If we look at what we're talking about and then look at the evidence and the evi
 Asked about the possibility that ISIS may have used the United States as a vehicle to recruit followers and commit violence in
 
 main: mem per token =  2016924 bytes
-main:     load time =   129.48 ms
-main:   sample time =    23.59 ms
-main:  predict time =   428.42 ms / 6.69 ms per token
-main:    total time =   624.52 ms
+main:     load time =   124.82 ms
+main:   sample time =    23.42 ms
+main:  predict time =   420.32 ms / 6.57 ms per token
+main:    total time =   609.92 ms
 
-real	0m0.633s
-user	0m1.818s
-sys	0m0.118s
+real	0m0.618s
+user	0m1.744s
+sys	0m0.148s
 + ./bin/gpt-2 --model ../models/gpt-2/ggml-model-gpt-2-117M.bin -s 1234 -n 64 -t 4 -p 'I believe the meaning of life is'
 extract_tests_from_file : No test file found.
 test_gpt_tokenizer : 0 tests failed out of 0 tests.
@@ -307,14 +307,14 @@ I believe the meaning of life is not one that you must be able to answer for.
 If you do not believe in God, then why does his word make you feel better? Why do he make you feel better? It's because I don't think the "good" life you choose is for you. I don't think it's worth
 
 main: mem per token =  2016924 bytes
-main:     load time =   128.43 ms
-main:   sample time =    23.49 ms
-main:  predict time =   447.39 ms / 6.39 ms per token
-main:    total time =   628.26 ms
+main:     load time =   123.78 ms
+main:   sample time =    23.43 ms
+main:  predict time =   445.39 ms / 6.36 ms per token
+main:    total time =   620.14 ms
 
-real	0m0.636s
-user	0m1.835s
-sys	0m0.156s
+real	0m0.628s
+user	0m1.867s
+sys	0m0.108s
 ```
 ### mpt
 
@@ -366,14 +366,14 @@ I believe the meaning of life is to seek and follow Jesus Christ. It is my desir
 
 main: sampled tokens =       64
 main:  mem per token =   361552 bytes
-main:      load time =  4167.34 ms
-main:    sample time =   456.26 ms / 7.13 ms per token
-main:      eval time = 16709.82 ms / 238.71 ms per token
-main:     total time = 22280.12 ms
+main:      load time =  4220.07 ms
+main:    sample time =   456.09 ms / 7.13 ms per token
+main:      eval time = 16706.42 ms / 238.66 ms per token
+main:     total time = 22343.27 ms
 
-real	0m22.309s
-user	2m21.156s
-sys	0m4.284s
+real	0m22.372s
+user	2m21.253s
+sys	0m4.296s
 + ./bin/mpt --model ../models/mpt/7B/ggml-model-q4_0.bin -s 1234 -n 64 -t 8 -p 'I believe the meaning of life is'
 main: seed      = 1234
 main: n_threads = 8
@@ -420,12 +420,12 @@ So where there is a will there is a way! Think about it, if you think something 
 
 main: sampled tokens =       64
 main:  mem per token =   346192 bytes
-main:      load time =  1152.28 ms
-main:    sample time =   456.06 ms / 7.13 ms per token
-main:      eval time =  7588.07 ms / 108.40 ms per token
-main:     total time =  9623.61 ms
+main:      load time =  1141.00 ms
+main:    sample time =   455.55 ms / 7.12 ms per token
+main:      eval time =  7588.17 ms / 108.40 ms per token
+main:     total time =  9611.50 ms
 
-real	0m9.638s
-user	1m4.024s
-sys	0m1.284s
+real	0m9.625s
+user	1m4.039s
+sys	0m1.256s
 ```

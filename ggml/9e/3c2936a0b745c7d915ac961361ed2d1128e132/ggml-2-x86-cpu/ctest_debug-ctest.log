@@ -23,8 +23,8 @@ Test project /home/ggml/work/ggml/build-ci-debug
 
 100% tests passed, 0 tests failed out of 10
 
-Total Test time (real) =   9.97 sec
+Total Test time (real) =   9.98 sec
 
-real	0m9.973s
-user	0m9.969s
-sys	0m3.399s
+real	0m9.982s
+user	0m10.245s
+sys	0m3.168s

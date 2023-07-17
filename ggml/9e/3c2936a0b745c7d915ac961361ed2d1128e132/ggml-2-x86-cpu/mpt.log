@@ -410,8 +410,8 @@ ggml_common_quantize_0: model size  = 25365.02 MB
 ggml_common_quantize_0: quant size  =  3567.83 MB | ftype = 2 (q4_0)
 ggml_common_quantize_0: hist: 0.036 0.015 0.024 0.038 0.055 0.076 0.097 0.114 0.123 0.114 0.097 0.076 0.055 0.038 0.024 0.020 
 
-main: quantize time = 27706.78 ms
-main:    total time = 27706.78 ms
+main: quantize time = 27747.29 ms
+main:    total time = 27747.29 ms
 + ./bin/mpt --model ../models/mpt/7B/ggml-model-f16.bin -s 1234 -n 64 -t 8 -p 'I believe the meaning of life is'
 main: seed      = 1234
 main: n_threads = 8
@@ -457,14 +457,14 @@ I believe the meaning of life is to seek and follow Jesus Christ. It is my desir
 
 main: sampled tokens =       64
 main:  mem per token =   361552 bytes
-main:      load time =  4167.34 ms
-main:    sample time =   456.26 ms / 7.13 ms per token
-main:      eval time = 16709.82 ms / 238.71 ms per token
-main:     total time = 22280.12 ms
+main:      load time =  4220.07 ms
+main:    sample time =   456.09 ms / 7.13 ms per token
+main:      eval time = 16706.42 ms / 238.66 ms per token
+main:     total time = 22343.27 ms
 
-real	0m22.309s
-user	2m21.156s
-sys	0m4.284s
+real	0m22.372s
+user	2m21.253s
+sys	0m4.296s
 + ./bin/mpt --model ../models/mpt/7B/ggml-model-q4_0.bin -s 1234 -n 64 -t 8 -p 'I believe the meaning of life is'
 main: seed      = 1234
 main: n_threads = 8
@@ -511,11 +511,11 @@ So where there is a will there is a way! Think about it, if you think something 
 
 main: sampled tokens =       64
 main:  mem per token =   346192 bytes
-main:      load time =  1152.28 ms
-main:    sample time =   456.06 ms / 7.13 ms per token
-main:      eval time =  7588.07 ms / 108.40 ms per token
-main:     total time =  9623.61 ms
+main:      load time =  1141.00 ms
+main:    sample time =   455.55 ms / 7.12 ms per token
+main:      eval time =  7588.17 ms / 108.40 ms per token
+main:     total time =  9611.50 ms
 
-real	0m9.638s
-user	1m4.024s
-sys	0m1.284s
+real	0m9.625s
+user	1m4.039s
+sys	0m1.256s

@@ -27,5 +27,5 @@
 -- Build files have been written to: /home/ggml/work/ggml/build-ci-debug
 
 real	0m0.422s
-user	0m0.282s
-sys	0m0.099s
+user	0m0.259s
+sys	0m0.129s
