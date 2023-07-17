@@ -85,7 +85,7 @@ gg_export GG_LLAMA_CPP_MNT  "/mnt/llama.cpp"
 ## run env
 
 # check last N commits
-gg_export GG_RUN_LAST_N       5
+gg_export GG_RUN_LAST_N       1
 gg_export GG_RUN_SLEEP       15
 gg_export GG_RUN_PUSH_RETRY   3
 gg_export GG_RUN_TIMEOUT    900

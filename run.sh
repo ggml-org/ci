@@ -63,6 +63,7 @@ function gg_get_last_commits_grep {
     git log --all --grep="${keyword}" -n ${N} --pretty=format:"%H" --abbrev-commit
 }
 
+# commit and push results to the results repo
 function gg_commit_results {
     repo=$1
 
@@ -83,6 +84,19 @@ function gg_commit_results {
     done
 
     cd ${wd}
+}
+
+# return results path for a commit
+function gg_out_for_commit {
+    repo=$1
+    commit=$2
+
+    commit_0=$(echo ${commit} | cut -c1-2)
+    commit_1=$(echo ${commit} | cut -c3-)
+
+    out=${GG_RESULTS_PATH}/${repo}/${commit_0}/${commit_1}/${GG_NODE}
+
+    echo ${out}
 }
 
 function gg_run_ggml {
@@ -109,7 +123,7 @@ function gg_run_ggml {
     commits="${commits} $(gg_get_last_commits_grep ${GG_CI_KEYWORD} ${GG_RUN_LAST_N})"
 
     for commit in ${commits} ; do
-        out=${GG_RESULTS_PATH}/${repo}/${commit}/${GG_NODE}
+        out=$(gg_out_for_commit ${repo} ${commit})
 
         if [ -d ${out} ]; then
             continue
@@ -119,7 +133,7 @@ function gg_run_ggml {
     done
 
     for commit in ${commits} ; do
-        out=${GG_RESULTS_PATH}/${repo}/${commit}/${GG_NODE}
+        out=$(gg_out_for_commit ${repo} ${commit})
 
         if [ -d ${out} ]; then
             continue
@@ -178,7 +192,7 @@ function gg_run_ggml {
         commit_parent=$(git log -1 --pretty=%P)
 
         # if the output for the parent commit exists, append the "stdall" diff to the README.md
-        out_parent=${GG_RESULTS_PATH}/${repo}/${commit_parent}/${GG_NODE}
+        out_parent=$(gg_out_for_commit ${repo} ${commit_parent})
 
         if [ -f ${out_parent}/stdall ]; then
             gg_printf ${out}/README.md '## Diff with parent commit\n\n'
