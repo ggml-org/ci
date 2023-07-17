@@ -35,14 +35,36 @@ function gg_printf {
     printf -- "$@" >> $file
 }
 
+function gg_split_hash {
+    h=$1
+
+    h_0=$(echo ${h} | cut -c1-2)
+    h_1=$(echo ${h} | cut -c3-)
+
+    echo "${h_0}/${h_1}"
+}
+
+# return results path for a commit
+# sync: gg_set_commit_status
+function gg_out_for_commit {
+    repo=$1
+    commit=$2
+
+    out="${GG_RESULTS_PATH}/${repo}/$(gg_split_hash ${commit})/${GG_NODE}"
+
+    echo ${out}
+}
+
 # set the commit status on GitHub using the GitHub API
+# sync: gg_out_for_commit
 function gg_set_commit_status {
-    node=$1
-    owner=$2
-    repo=$3
-    commit=$4
-    status=$5
-    desc=$6
+    owner=$1
+    repo=$2
+    commit=$3
+    status=$4
+    desc=$5
+
+    commit_path=$(gg_split_hash ${commit})
 
     curl -L \
         -X POST \
@@ -50,7 +72,7 @@ function gg_set_commit_status {
         -H "Authorization: Bearer ${GG_SECRET_TOKEN_GH_API}"\
         -H "X-GitHub-Api-Version: 2022-11-28" \
         https://api.github.com/repos/${owner}/${repo}/statuses/${commit} \
-        -d '{"state":"'"${status}"'","target_url":"'${GG_RESULTS_REPO}'/tree/'${GG_RESULTS_BRANCH}'/'${repo}'/'${node}'/'${commit}'","description":"'"${desc}"'","context":"ggml-org / '"${node}"'"}'
+        -d '{"state":"'"${status}"'","target_url":"'${GG_RESULTS_REPO}'/tree/'${GG_RESULTS_BRANCH}'/'${repo}'/'${commit_path}'/'${GG_NODE}'","description":"'${desc}'","context":"ggml-org / '"${GG_NODE}"'"}'
 }
 
 ## general env

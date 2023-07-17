@@ -86,23 +86,11 @@ function gg_commit_results {
     cd ${wd}
 }
 
-# return results path for a commit
-function gg_out_for_commit {
-    repo=$1
-    commit=$2
+function gg_run {
+    owner="$1"
+    repo="$2"
 
-    commit_0=$(echo ${commit} | cut -c1-2)
-    commit_1=$(echo ${commit} | cut -c3-)
-
-    out=${GG_RESULTS_PATH}/${repo}/${commit_0}/${commit_1}/${GG_NODE}
-
-    echo ${out}
-}
-
-function gg_run_ggml {
-    repo="ggml"
-
-    cd ${GG_WORK_PATH}/${GG_GGML_DIR}
+    cd ${GG_WORK_PATH}/${repo}
 
     git fetch --all > /dev/null 2>&1
 
@@ -129,7 +117,7 @@ function gg_run_ggml {
             continue
         fi
 
-        gg_set_commit_status "${GG_NODE}" "${GG_GGML_OWN}" "${repo}" "${commit}" "pending" "in queue ..."
+        gg_set_commit_status "${owner}" "${repo}" "${commit}" "pending" "in queue ..."
     done
 
     for commit in ${commits} ; do
@@ -141,7 +129,7 @@ function gg_run_ggml {
 
         printf "run.sh : processing '${repo}' commit ${commit}\n"
 
-        gg_set_commit_status "${GG_NODE}" "${GG_GGML_OWN}" "${repo}" "${commit}" "pending" "running ..."
+        gg_set_commit_status "${owner}" "${repo}" "${commit}" "pending" "running ..."
 
         mkdir -p ${out}
 
@@ -149,8 +137,8 @@ function gg_run_ggml {
         git submodule update --init --recursive
         git clean -fd
 
-        gg_export GG_CI_REPO          "https://github.com/${GG_GGML_OWN}/${repo}"
-        gg_export GG_CI_COMMIT_URL    "https://github.com/${GG_GGML_OWN}/${repo}/commit/${commit}"
+        gg_export GG_CI_REPO          "https://github.com/${owner}/${repo}"
+        gg_export GG_CI_COMMIT_URL    "https://github.com/${owner}/${repo}/commit/${commit}"
         gg_export GG_CI_COMMIT_MSG    "$(git log -1 --pretty=%B)"
         gg_export GG_CI_COMMIT_AUTHOR "$(git log -1 --pretty=%an)"
 
@@ -205,9 +193,9 @@ function gg_run_ggml {
         fi
 
         if [ ${result} -eq 0 ]; then
-            gg_set_commit_status "${GG_NODE}" "${GG_GGML_OWN}" "${repo}" "${commit}" "success" "success"
+            gg_set_commit_status "${owner}" "${repo}" "${commit}" "success" "success"
         else
-            gg_set_commit_status "${GG_NODE}" "${GG_GGML_OWN}" "${repo}" "${commit}" "failure" "failure ${result}"
+            gg_set_commit_status "${owner}" "${repo}" "${commit}" "failure" "failure ${result}"
         fi
 
         printf "run.sh : done processing '${repo}' commit ${commit}, result ${result}\n"
@@ -220,6 +208,6 @@ function gg_run_ggml {
 
 # main
 
-gg_run_ggml
+gg_run "ggerganov" "ggml"
 
 sleep ${GG_RUN_SLEEP}
