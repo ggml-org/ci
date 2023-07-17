@@ -1,0 +1,56 @@
+## Summary
+
+- status: FAILURE ❌ (8)
+- date:   Mon Jul 17 13:30:55 UTC 2023
+- repo:   https://github.com/ggerganov/llama.cpp
+- commit: https://github.com/ggerganov/llama.cpp/commit/81409a9c213ac6a57083629e824ed1276ba288b8
+- author: Georgi Gerganov
+```
+ci : run ctest
+
+ggml-ci
+```
+
+## Environment
+
+```
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+GG_BUILD_LOW_PERF=1
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 8
+```
++ ctest --output-on-failure -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-debug
+    Start 1: test-quantize-fns
+1/5 Test #1: test-quantize-fns ................   Passed    0.02 sec
+    Start 2: test-quantize-perf
+2/5 Test #2: test-quantize-perf ...............   Passed    0.08 sec
+    Start 3: test-sampling
+3/5 Test #3: test-sampling ....................Subprocess aborted***Exception:   0.10 sec
+test-sampling: /home/ggml/work/llama.cpp/tests/test-sampling.cpp:89: void test_tfs(const std::vector<float>&, const std::vector<float>&, float): Assertion `candidates_p.size == expected_probs.size()' failed.
+
+    Start 4: test-tokenizer-0
+4/5 Test #4: test-tokenizer-0 .................   Passed    0.03 sec
+    Start 5: test-grad0
+5/5 Test #5: test-grad0 .......................   Passed    6.15 sec
+
+80% tests passed, 1 tests failed out of 5
+
+Total Test time (real) =   6.38 sec
+
+The following tests FAILED:
+	  3 - test-sampling (Subprocess aborted)
+Errors while running CTest
+
+real	0m6.395s
+user	0m12.093s
+sys	0m4.287s
+```
+
