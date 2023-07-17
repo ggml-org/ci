@@ -39,6 +39,9 @@ fi
 
 if [ ${GG_RUN_PAUSE} -eq 1 ]; then
     printf "run.sh : GG_RUN_PAUSE is set to 1\n"
+
+    sleep ${GG_RUN_SLEEP}
+
     exit 1
 fi
 
