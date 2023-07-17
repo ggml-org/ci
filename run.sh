@@ -98,6 +98,10 @@ function gg_run {
 
     if [ -f ${GG_WORK_BRANCHES} ]; then
         branches=$(cat ${GG_WORK_BRANCHES} | grep "^${repo}" | cut -d' ' -f2-)
+
+        if [ -z "${branches}" ]; then
+            branches="master"
+        fi
     fi
 
     printf "run.sh : processing '${repo}' branches - '${branches}'\n"
