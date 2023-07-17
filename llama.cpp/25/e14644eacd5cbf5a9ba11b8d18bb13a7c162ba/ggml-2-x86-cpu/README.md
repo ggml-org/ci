@@ -1,7 +1,7 @@
 ## Summary
 
 - status: FAILURE ❌ (8)
-- date:   Mon Jul 17 13:27:06 UTC 2023
+- date:   Mon Jul 17 13:27:44 UTC 2023
 - repo:   https://github.com/ggerganov/llama.cpp
 - commit: https://github.com/ggerganov/llama.cpp/commit/25e14644eacd5cbf5a9ba11b8d18bb13a7c162ba
 - author: Georgi Gerganov
@@ -41,18 +41,18 @@ llama_load_model_from_file: failed to load model
 main: error: failed to load vocab '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab.bin'
 
     Start 5: test-grad0
-5/5 Test #5: test-grad0 .......................   Passed    2.76 sec
+5/5 Test #5: test-grad0 .......................   Passed    2.84 sec
 
 80% tests passed, 1 tests failed out of 5
 
-Total Test time (real) =   2.82 sec
+Total Test time (real) =   2.90 sec
 
 The following tests FAILED:
 	  4 - test-tokenizer-0 (Failed)
 Errors while running CTest
 
-real	0m2.827s
-user	0m3.250s
-sys	0m3.280s
+real	0m2.907s
+user	0m3.312s
+sys	0m3.377s
 ```
 

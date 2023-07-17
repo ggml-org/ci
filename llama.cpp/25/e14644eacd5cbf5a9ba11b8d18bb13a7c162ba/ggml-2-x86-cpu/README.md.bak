@@ -19,18 +19,18 @@ llama_load_model_from_file: failed to load model
 main: error: failed to load vocab '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab.bin'
 
     Start 5: test-grad0
-5/5 Test #5: test-grad0 .......................   Passed    2.76 sec
+5/5 Test #5: test-grad0 .......................   Passed    2.84 sec
 
 80% tests passed, 1 tests failed out of 5
 
-Total Test time (real) =   2.82 sec
+Total Test time (real) =   2.90 sec
 
 The following tests FAILED:
 	  4 - test-tokenizer-0 (Failed)
 Errors while running CTest
 
-real	0m2.827s
-user	0m3.250s
-sys	0m3.280s
+real	0m2.907s
+user	0m3.312s
+sys	0m3.377s
 ```
 
