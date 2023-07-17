@@ -140,6 +140,7 @@ function gg_run {
 
         git checkout ${commit}
         git submodule update --init --recursive
+        git reset --hard
         git clean -fd
 
         gg_export GG_CI_REPO          "https://github.com/${owner}/${repo}"
