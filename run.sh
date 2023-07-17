@@ -109,7 +109,7 @@ function gg_run_ggml {
     commits="${commits} $(gg_get_last_commits_grep ${GG_CI_KEYWORD} ${GG_RUN_LAST_N})"
 
     for commit in ${commits} ; do
-        out=${GG_RESULTS_PATH}/${repo}/${GG_NODE}/${commit}
+        out=${GG_RESULTS_PATH}/${repo}/${commit}/${GG_NODE}
 
         if [ -d ${out} ]; then
             continue
@@ -119,7 +119,7 @@ function gg_run_ggml {
     done
 
     for commit in ${commits} ; do
-        out=${GG_RESULTS_PATH}/${repo}/${GG_NODE}/${commit}
+        out=${GG_RESULTS_PATH}/${repo}/${commit}/${GG_NODE}
 
         if [ -d ${out} ]; then
             continue
@@ -178,7 +178,7 @@ function gg_run_ggml {
         commit_parent=$(git log -1 --pretty=%P)
 
         # if the output for the parent commit exists, append the "stdall" diff to the README.md
-        out_parent=${GG_RESULTS_PATH}/${repo}/${GG_NODE}/${commit_parent}
+        out_parent=${GG_RESULTS_PATH}/${repo}/${commit_parent}/${GG_NODE}
 
         if [ -f ${out_parent}/stdall ]; then
             gg_printf ${out}/README.md '## Diff with parent commit\n\n'
