@@ -209,5 +209,6 @@ function gg_run {
 # main
 
 gg_run "ggerganov" "ggml"
+gg_run "ggerganov" "llama.cpp"
 
 sleep ${GG_RUN_SLEEP}
