@@ -89,6 +89,7 @@ function gg_commit_results {
 function gg_run {
     owner="$1"
     repo="$2"
+    mnt="$3"
 
     cd ${GG_WORK_PATH}/${repo}
 
@@ -147,7 +148,7 @@ function gg_run {
         gg_export GG_CI_COMMIT_AUTHOR "$(git log -1 --pretty=%an)"
 
         if [ -f ci/run.sh ]; then
-            timeout ${GG_RUN_TIMEOUT} time bash ci/run.sh ${out} > ${out}/stdall 2>&1
+            timeout ${GG_RUN_TIMEOUT} time bash ci/run.sh "${out}" "${mnt}" > ${out}/stdall 2>&1
             result=$?
         else
             gg_printf ${out}/README.md "ci/run.sh was not found - nothing to do\n"
@@ -212,7 +213,7 @@ function gg_run {
 
 # main
 
-gg_run "ggerganov" "ggml"
-gg_run "ggerganov" "llama.cpp"
+gg_run "ggerganov" "ggml"      "${GG_GGML_MNT}"
+gg_run "ggerganov" "llama.cpp" "${GG_LLAMA_CPP_MNT}"
 
 sleep ${GG_RUN_SLEEP}
