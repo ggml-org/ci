@@ -1,0 +1,33 @@
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 8
+```
++ ctest --output-on-failure -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-debug
+    Start 1: test-quantize-fns
+1/5 Test #1: test-quantize-fns ................   Passed    0.02 sec
+    Start 2: test-quantize-perf
+2/5 Test #2: test-quantize-perf ...............   Passed    0.08 sec
+    Start 3: test-sampling
+3/5 Test #3: test-sampling ....................Subprocess aborted***Exception:   0.10 sec
+test-sampling: /home/ggml/work/llama.cpp/tests/test-sampling.cpp:89: void test_tfs(const std::vector<float>&, const std::vector<float>&, float): Assertion `candidates_p.size == expected_probs.size()' failed.
+
+    Start 4: test-tokenizer-0
+4/5 Test #4: test-tokenizer-0 .................   Passed    0.03 sec
+    Start 5: test-grad0
+5/5 Test #5: test-grad0 .......................   Passed    6.14 sec
+
+80% tests passed, 1 tests failed out of 5
+
+Total Test time (real) =   6.37 sec
+
+The following tests FAILED:
+	  3 - test-sampling (Subprocess aborted)
+Errors while running CTest
+
+real	0m6.385s
+user	0m12.394s
+sys	0m4.101s
+```
+
