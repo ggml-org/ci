@@ -1,0 +1,6 @@
+mkdir: cannot create directory ‘/mnt/llama.cpp’: Permission denied
+rm: cannot remove '/home/ggml/results/llama.cpp/0d/b14fef06836caaa13cc123c0a24dc598bdb9f0/ggml-0-x86-cpu-low-perf/*.log': No such file or directory
+rm: cannot remove '/home/ggml/results/llama.cpp/0d/b14fef06836caaa13cc123c0a24dc598bdb9f0/ggml-0-x86-cpu-low-perf/*.exit': No such file or directory
+rm: cannot remove '/home/ggml/results/llama.cpp/0d/b14fef06836caaa13cc123c0a24dc598bdb9f0/ggml-0-x86-cpu-low-perf/*.md': No such file or directory
+0.00user 0.00system 0:00.00elapsed 100%CPU (0avgtext+0avgdata 3740maxresident)k
+0inputs+8outputs (0major+1568minor)pagefaults 0swaps
