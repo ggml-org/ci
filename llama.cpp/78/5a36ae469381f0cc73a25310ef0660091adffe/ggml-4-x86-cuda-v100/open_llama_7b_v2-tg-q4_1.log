@@ -1,0 +1,76 @@
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin -ngl 999 -s 1234 -n 64 -p 'I believe the meaning of life is'
+warning: not compiled with GPU offload support, --n-gpu-layers option will be ignored
+warning: see main README.md for information on enabling GPU BLAS support
+main: build = 875 (785a36a)
+main: seed  = 1234
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 256
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 3 (mostly Q4_1)
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: mem required  = 5611.76 MB (+ 1026.00 MB per state)
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 0
+
+
+ I believe the meaning of life is to make someone happy and smile. This was my goal when i came up with this idea, which led me in discovering it’s importance for our own lives as well :)
+My name is Arya Kalyan,I love traveling around the world so much that sometimes even think about living on a desert island
+llama_print_timings:        load time =   409.83 ms
+llama_print_timings:      sample time =    42.62 ms /    64 runs   (    0.67 ms per token,  1501.75 tokens per second)
+llama_print_timings: prompt eval time =  1449.86 ms /     8 tokens (  181.23 ms per token,     5.52 tokens per second)
+llama_print_timings:        eval time = 14422.26 ms /    63 runs   (  228.92 ms per token,     4.37 tokens per second)
+llama_print_timings:       total time = 15939.31 ms
+
+real	0m16.590s
+user	0m48.134s
+sys	0m0.528s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -ngl 999 -c 128 -b 128 --chunks 3
+warning: not compiled with GPU offload support, --n-gpu-layers option will be ignored
+warning: see main README.md for information on enabling GPU BLAS support
+main: build = 875 (785a36a)
+main: seed  = 1690012572
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 128
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 256
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 3 (mostly Q4_1)
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: mem required  = 5585.76 MB (+ 1026.00 MB per state)
+llama_new_context_with_model: kv self size  =   64.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 3 chunks, batch_size=128
+perplexity: 23.73 seconds per pass - ETA 1 minutes
+[1]4.4194,[2]7.1504,[3]7.9745,
+llama_print_timings:        load time = 23916.45 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 71162.12 ms /   384 tokens (  185.32 ms per token,     5.40 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 71420.55 ms
+
+
+real	1m11.514s
+user	3m33.392s
+sys	0m0.408s

@@ -1,0 +1,77 @@
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin -ngl 999 -s 1234 -n 64 -p 'I believe the meaning of life is'
+warning: not compiled with GPU offload support, --n-gpu-layers option will be ignored
+warning: see main README.md for information on enabling GPU BLAS support
+main: build = 875 (785a36a)
+main: seed  = 1234
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 256
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 7 (mostly Q8_0)
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: mem required  = 8368.45 MB (+ 1026.00 MB per state)
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 0
+
+
+ I believe the meaning of life is to give and get love.
+And that’s what this blog, my book (coming soon) will help with! [end of text]
+
+llama_print_timings:        load time =   598.87 ms
+llama_print_timings:      sample time =    17.12 ms /    26 runs   (    0.66 ms per token,  1518.25 tokens per second)
+llama_print_timings: prompt eval time =  1960.16 ms /     8 tokens (  245.02 ms per token,     4.08 tokens per second)
+llama_print_timings:        eval time =  7423.58 ms /    25 runs   (  296.94 ms per token,     3.37 tokens per second)
+llama_print_timings:       total time =  9409.74 ms
+
+real	0m10.416s
+user	0m28.906s
+sys	0m0.838s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -ngl 999 -c 128 -b 128 --chunks 3
+warning: not compiled with GPU offload support, --n-gpu-layers option will be ignored
+warning: see main README.md for information on enabling GPU BLAS support
+main: build = 875 (785a36a)
+main: seed  = 1690012406
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 128
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 256
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 7 (mostly Q8_0)
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: mem required  = 8342.45 MB (+ 1026.00 MB per state)
+llama_new_context_with_model: kv self size  =   64.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 3 chunks, batch_size=128
+perplexity: 28.74 seconds per pass - ETA 1 minutes
+[1]4.4910,[2]7.0113,[3]7.7425,
+llama_print_timings:        load time = 29021.82 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 86674.70 ms /   384 tokens (  225.72 ms per token,     4.43 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 87026.06 ms
+
+
+real	1m27.156s
+user	4m19.660s
+sys	0m0.761s
