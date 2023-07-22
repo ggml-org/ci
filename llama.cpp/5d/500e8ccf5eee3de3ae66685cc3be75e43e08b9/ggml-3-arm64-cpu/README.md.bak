@@ -1,0 +1,180 @@
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-debug
+    Start 1: test-quantize-fns
+1/5 Test #1: test-quantize-fns ................   Passed    0.02 sec
+    Start 2: test-quantize-perf
+2/5 Test #2: test-quantize-perf ...............   Passed    0.08 sec
+    Start 3: test-sampling
+3/5 Test #3: test-sampling ....................   Passed    0.00 sec
+    Start 4: test-tokenizer-0
+4/5 Test #4: test-tokenizer-0 .................   Passed    0.03 sec
+    Start 5: test-grad0
+5/5 Test #5: test-grad0 .......................   Passed    3.93 sec
+
+100% tests passed, 0 tests failed out of 5
+
+Total Test time (real) =   4.06 sec
+
+real	0m4.077s
+user	0m4.074s
+sys	0m5.545s
+```
+
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure
+Test project /home/ggml/work/llama.cpp/build-ci-release
+    Start 1: test-quantize-fns
+1/5 Test #1: test-quantize-fns ................   Passed    0.01 sec
+    Start 2: test-quantize-perf
+2/5 Test #2: test-quantize-perf ...............   Passed    0.02 sec
+    Start 3: test-sampling
+3/5 Test #3: test-sampling ....................   Passed    0.00 sec
+    Start 4: test-tokenizer-0
+4/5 Test #4: test-tokenizer-0 .................   Passed    0.02 sec
+    Start 5: test-grad0
+5/5 Test #5: test-grad0 .......................   Passed    3.74 sec
+
+100% tests passed, 0 tests failed out of 5
+
+Total Test time (real) =   3.79 sec
+
+real	0m3.802s
+user	0m3.340s
+sys	0m5.546s
+```
+### open_llama_3b_v2
+
+OpenLLaMA 3B-v2:
+- status: 1
+- perplexity:
+
+- f16: 
+```
++ ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin -s 1234 -n 64 -p --ignore-eos 'I believe the meaning of life is'
+error: unknown argument: I believe the meaning of life is
+usage: ./bin/main [options]
+
+options:
+  -h, --help            show this help message and exit
+  -i, --interactive     run in interactive mode
+  --interactive-first   run in interactive mode and wait for input right away
+  -ins, --instruct      run in instruction mode (use with Alpaca models)
+  --multiline-input     allows you to write or paste multiple lines without ending each in '\'
+  -r PROMPT, --reverse-prompt PROMPT
+                        halt generation at PROMPT, return control in interactive mode
+                        (can be specified more than once for multiple prompts).
+  --color               colorise output to distinguish prompt and user input from generations
+  -s SEED, --seed SEED  RNG seed (default: -1, use random seed for < 0)
+  -t N, --threads N     number of threads to use during computation (default: 4)
+  -p PROMPT, --prompt PROMPT
+                        prompt to start generation with (default: empty)
+  -e                    process prompt escapes sequences (\n, \r, \t, \', \", \\)
+  --prompt-cache FNAME  file to cache prompt state for faster startup (default: none)
+  --prompt-cache-all    if specified, saves user input and generations to cache as well.
+                        not supported with --interactive or other interactive options
+  --prompt-cache-ro     if specified, uses the prompt cache but does not update it.
+  --random-prompt       start with a randomized prompt.
+  --in-prefix STRING    string to prefix user inputs with (default: empty)
+  --in-suffix STRING    string to suffix after user inputs with (default: empty)
+  -f FNAME, --file FNAME
+                        prompt file to start generation.
+  -n N, --n-predict N   number of tokens to predict (default: -1, -1 = infinity)
+  --top-k N             top-k sampling (default: 40, 0 = disabled)
+  --top-p N             top-p sampling (default: 0.9, 1.0 = disabled)
+  --tfs N               tail free sampling, parameter z (default: 1.0, 1.0 = disabled)
+  --typical N           locally typical sampling, parameter p (default: 1.0, 1.0 = disabled)
+  --repeat-last-n N     last n tokens to consider for penalize (default: 64, 0 = disabled, -1 = ctx_size)
+  --repeat-penalty N    penalize repeat sequence of tokens (default: 1.1, 1.0 = disabled)
+  --presence-penalty N  repeat alpha presence penalty (default: 0.0, 0.0 = disabled)
+  --frequency-penalty N repeat alpha frequency penalty (default: 0.0, 0.0 = disabled)
+  --mirostat N          use Mirostat sampling.
+                        Top K, Nucleus, Tail Free and Locally Typical samplers are ignored if used.
+                        (default: 0, 0 = disabled, 1 = Mirostat, 2 = Mirostat 2.0)
+  --mirostat-lr N       Mirostat learning rate, parameter eta (default: 0.1)
+  --mirostat-ent N      Mirostat target entropy, parameter tau (default: 5.0)
+  -l TOKEN_ID(+/-)BIAS, --logit-bias TOKEN_ID(+/-)BIAS
+                        modifies the likelihood of token appearing in the completion,
+                        i.e. `--logit-bias 15043+1` to increase likelihood of token ' Hello',
+                        or `--logit-bias 15043-1` to decrease likelihood of token ' Hello'
+  --cfg-negative-prompt PROMPT 
+                        negative prompt to use for guidance. (default: empty)
+  --cfg-scale N         strength of guidance (default: 1.000000, 1.0 = disable)
+  -c N, --ctx-size N    size of the prompt context (default: 512)
+  --rope-freq-base N    RoPE base frequency (default: 10000.0)
+  --rope-freq-scale N   RoPE frequency scaling factor (default: 1)
+  --ignore-eos          ignore end of stream token and continue generating (implies --logit-bias 2-inf)
+  --no-penalize-nl      do not penalize newline token
+  --memory-f32          use f32 instead of f16 for memory key+value (default: disabled)
+                        not recommended: doubles context memory required and no measurable increase in quality
+  --temp N              temperature (default: 0.8)
+  -b N, --batch-size N  batch size for prompt processing (default: 512)
+  --perplexity          compute perplexity over the prompt
+  --keep                number of tokens to keep from the initial prompt (default: 0, -1 = all)
+  --chunks N            max number of chunks to process (default: -1, -1 = all)
+  --mlock               force system to keep model in RAM rather than swapping or compressing
+  --no-mmap             do not memory-map model (slower load but may reduce pageouts if not using mlock)
+  --numa                attempt optimizations that help on some NUMA systems
+                        if run without this previously, it is recommended to drop the system page cache before using this
+                        see https://github.com/ggerganov/llama.cpp/issues/1437
+  --mtest               compute maximum memory usage
+  --export              export the computation graph to 'llama.ggml'
+  --verbose-prompt      print prompt before generation
+  --lora FNAME          apply LoRA adapter (implies --no-mmap)
+  --lora-base FNAME     optional model to use as a base for the layers modified by the LoRA adapter
+  -m FNAME, --model FNAME
+                        model path (default: models/7B/ggml-model.bin)
+
+
+real	0m0.004s
+user	0m0.000s
+sys	0m0.004s
+```
+- q8_0:
+```
+
+```
+- q4_0:
+```
+
+```
+- q4_1:
+```
+
+```
+- q5_0:
+```
+
+```
+- q5_1:
+```
+
+```
+- q2_k:
+```
+
+```
+- q3_k:
+```
+
+```
+- q4_k:
+```
+
+```
+- q5_k:
+```
+
+```
+- q6_k:
+```
+
+```
