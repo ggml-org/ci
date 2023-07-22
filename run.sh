@@ -17,9 +17,9 @@ sd="$(dirname $0)"
 source $sd/env.sh
 source ~/.env.sh
 
-env | grep GG_ | sort
-
-printf "\n"
+#env | grep GG_ | sort
+#
+#printf "\n"
 
 GG_NODE=${1}
 
