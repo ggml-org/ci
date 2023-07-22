@@ -25,18 +25,18 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 0
 
 
  I believe the meaning of life is to learn, and have fun. That's why we make learning tools that are so much more than just "drills". We create programs for children in multiple languages - including English! And it doesn't matter how smart they may be; everyone can benefit from these games because you don't need any experience
-llama_print_timings:        load time =   898.70 ms
-llama_print_timings:      sample time =    62.44 ms /    64 runs   (    0.98 ms per token,  1024.98 tokens per second)
-llama_print_timings: prompt eval time =   969.56 ms /     8 tokens (  121.20 ms per token,     8.25 tokens per second)
-llama_print_timings:        eval time =  8045.31 ms /    63 runs   (  127.70 ms per token,     7.83 tokens per second)
-llama_print_timings:       total time =  9086.00 ms
+llama_print_timings:        load time =   890.05 ms
+llama_print_timings:      sample time =    62.28 ms /    64 runs   (    0.97 ms per token,  1027.57 tokens per second)
+llama_print_timings: prompt eval time =   969.07 ms /     8 tokens (  121.13 ms per token,     8.26 tokens per second)
+llama_print_timings:        eval time =  8030.10 ms /    63 runs   (  127.46 ms per token,     7.85 tokens per second)
+llama_print_timings:       total time =  9069.88 ms
 
-real	0m10.120s
-user	0m36.334s
-sys	0m1.017s
+real	0m10.094s
+user	0m36.332s
+sys	0m0.947s
 + ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q4_0.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
 main: build = 874 (7d5f184)
-main: seed  = 1690006595
+main: seed  = 1690010406
 llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q4_0.bin
 llama_model_load_internal: format     = ggjt v3 (latest)
 llama_model_load_internal: n_vocab    = 32000
@@ -59,13 +59,13 @@ system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI =
 perplexity: calculating perplexity over 3 chunks, batch_size=128
 perplexity: 15.64 seconds per pass - ETA 0 minutes
 [1]4.1679,[2]7.8456,[3]8.9743,
-llama_print_timings:        load time = 16377.96 ms
+llama_print_timings:        load time = 16388.41 ms
 llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time = 46883.81 ms /   384 tokens (  122.09 ms per token,     8.19 tokens per second)
+llama_print_timings: prompt eval time = 46872.67 ms /   384 tokens (  122.06 ms per token,     8.19 tokens per second)
 llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time = 47688.37 ms
+llama_print_timings:       total time = 47689.47 ms
 
 
-real	0m47.748s
-user	3m7.526s
-sys	0m0.832s
+real	0m47.750s
+user	3m7.471s
+sys	0m0.857s

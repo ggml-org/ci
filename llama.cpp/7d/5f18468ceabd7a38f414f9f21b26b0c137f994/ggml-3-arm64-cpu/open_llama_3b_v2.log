@@ -1,5 +1,4 @@
 Archive:  models-mnt/wikitext/wikitext-2-raw-v1.zip
-   creating: models-mnt/wikitext/wikitext-2-raw/
   inflating: models-mnt/wikitext/wikitext-2-raw/wiki.test.raw  
   inflating: models-mnt/wikitext/wikitext-2-raw/wiki.valid.raw  
   inflating: models-mnt/wikitext/wikitext-2-raw/wiki.train.raw  
@@ -28,13 +27,13 @@ Archive:  models-mnt/wikitext/wikitext-2-raw-v1.zip
 -- Generating done
 -- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-release
 
-real	0m0.704s
-user	0m0.353s
-sys	0m0.354s
+real	0m0.831s
+user	0m0.355s
+sys	0m0.378s
 + make -j
+[  6%] Building C object CMakeFiles/ggml.dir/ggml.c.o
 [  6%] Built target BUILD_INFO
 [  6%] Building C object CMakeFiles/ggml.dir/k_quants.c.o
-[  6%] Building C object CMakeFiles/ggml.dir/ggml.c.o
 /home/ggml/work/llama.cpp/k_quants.c: In function ‘ggml_vec_dot_q2_K_q8_K’:
 /home/ggml/work/llama.cpp/k_quants.c:1557:22: warning: unused variable ‘vzero’ [-Wunused-variable]
  1557 |     const int32x4_t  vzero = vdupq_n_s32(0);
@@ -48,21 +47,21 @@ sys	0m0.354s
  3741 |     const int32x4_t  vzero = vdupq_n_s32(0);
       |                      ^~~~~
 [  6%] Built target ggml
-[ 10%] Linking C static library libggml_static.a
 [ 10%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+[ 10%] Linking C static library libggml_static.a
 [ 10%] Built target ggml_static
 [ 12%] Linking CXX static library libllama.a
 [ 12%] Built target llama
+[ 17%] Building C object tests/CMakeFiles/test-grad0.dir/test-grad0.c.o
 [ 17%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
-[ 17%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
-[ 19%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/test-tokenizer-0.cpp.o
+[ 19%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+[ 23%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/test-tokenizer-0.cpp.o
 [ 23%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
-[ 25%] Building C object tests/CMakeFiles/test-grad0.dir/test-grad0.c.o
-[ 25%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+[ 25%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 27%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
 [ 29%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
-[ 29%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
-[ 31%] Linking CXX executable ../bin/test-quantize-fns
-[ 34%] Linking CXX executable ../../bin/quantize
+[ 31%] Linking CXX executable ../../bin/quantize
+[ 34%] Linking CXX executable ../bin/test-quantize-fns
 [ 34%] Built target test-quantize-fns
 [ 34%] Built target quantize
 [ 36%] Linking CXX executable ../bin/test-tokenizer-0
@@ -71,45 +70,45 @@ sys	0m0.354s
 [ 38%] Built target test-sampling
 [ 40%] Linking CXX executable ../bin/test-quantize-perf
 [ 42%] Linking CXX executable ../bin/test-grad0
-[ 42%] Built target test-grad0
 [ 42%] Built target test-quantize-perf
+[ 42%] Built target test-grad0
 [ 42%] Built target common
-[ 44%] Building CXX object examples/perplexity/CMakeFiles/perplexity.dir/perplexity.cpp.o
-[ 46%] Building CXX object examples/main/CMakeFiles/main.dir/main.cpp.o
-[ 48%] Building CXX object examples/embedding/CMakeFiles/embedding.dir/embedding.cpp.o
-[ 51%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
-[ 53%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
-[ 55%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
-[ 57%] Building CXX object examples/embd-input/CMakeFiles/embdinput.dir/embd-input-lib.cpp.o
-[ 59%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
-[ 63%] Building CXX object pocs/vdot/CMakeFiles/q8dot.dir/q8dot.cpp.o
-[ 63%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
-[ 65%] Building CXX object pocs/vdot/CMakeFiles/vdot.dir/vdot.cpp.o
-[ 68%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
+[ 44%] Building CXX object examples/main/CMakeFiles/main.dir/main.cpp.o
+[ 46%] Building CXX object examples/embedding/CMakeFiles/embedding.dir/embedding.cpp.o
+[ 48%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
+[ 51%] Building CXX object examples/perplexity/CMakeFiles/perplexity.dir/perplexity.cpp.o
+[ 53%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
+[ 55%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
+[ 57%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
+[ 59%] Building CXX object examples/embd-input/CMakeFiles/embdinput.dir/embd-input-lib.cpp.o
+[ 61%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
+[ 63%] Building CXX object pocs/vdot/CMakeFiles/vdot.dir/vdot.cpp.o
+[ 65%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
+[ 68%] Building CXX object pocs/vdot/CMakeFiles/q8dot.dir/q8dot.cpp.o
 /home/ggml/work/llama.cpp/examples/baby-llama/baby-llama.cpp: In function ‘int main(int, char**)’:
 /home/ggml/work/llama.cpp/examples/baby-llama/baby-llama.cpp:1614:32: warning: variable ‘opt_params_adam’ set but not used [-Wunused-but-set-variable]
  1614 |         struct ggml_opt_params opt_params_adam = ggml_opt_default_params(GGML_OPT_ADAM);
       |                                ^~~~~~~~~~~~~~~
-[ 70%] Linking CXX executable ../../bin/embedding
-[ 70%] Built target embedding
+[ 70%] Linking CXX executable ../../bin/perplexity
 [ 72%] Linking CXX executable ../../bin/benchmark
-[ 74%] Linking CXX executable ../../bin/vdot
-[ 76%] Linking CXX executable ../../bin/save-load-state
-[ 78%] Linking CXX executable ../../bin/q8dot
-[ 80%] Linking CXX executable ../../bin/baby-llama
-[ 80%] Built target benchmark
-[ 82%] Linking CXX executable ../../bin/perplexity
+[ 72%] Built target perplexity
+[ 72%] Built target benchmark
+[ 74%] Linking CXX executable ../../bin/save-load-state
+[ 76%] Linking CXX executable ../../bin/q8dot
+[ 78%] Linking CXX executable ../../bin/embedding
+[ 78%] Built target save-load-state
+[ 80%] Linking CXX executable ../../bin/simple
+[ 80%] Built target q8dot
+[ 80%] Built target simple
+[ 80%] Built target embedding
+[ 82%] Linking CXX executable ../../bin/vdot
 [ 82%] Built target vdot
-[ 82%] Built target save-load-state
-[ 82%] Built target q8dot
-[ 82%] Built target baby-llama
-[ 85%] Linking CXX executable ../../bin/simple
-[ 85%] Built target perplexity
-[ 85%] Built target simple
+[ 85%] Linking CXX executable ../../bin/baby-llama
+[ 85%] Built target baby-llama
 [ 87%] Linking CXX static library libembdinput.a
-[ 87%] Built target embdinput
-[ 89%] Building CXX object examples/embd-input/CMakeFiles/embd-input-test.dir/embd-input-test.cpp.o
-[ 91%] Linking CXX executable ../../bin/main
+[ 89%] Linking CXX executable ../../bin/main
+[ 89%] Built target embdinput
+[ 91%] Building CXX object examples/embd-input/CMakeFiles/embd-input-test.dir/embd-input-test.cpp.o
 [ 91%] Built target main
 [ 93%] Linking CXX executable ../../bin/embd-input-test
 [ 93%] Built target embd-input-test
@@ -120,9 +119,9 @@ sys	0m0.354s
 [100%] Linking CXX executable ../../bin/server
 [100%] Built target server
 
-real	0m35.422s
-user	0m55.247s
-sys	0m4.485s
+real	0m35.242s
+user	0m55.140s
+sys	0m4.657s
 Loading model file ../models-mnt/open-llama/3B-v2/pytorch_model.bin
 Loading vocab file ../models-mnt/open-llama/3B-v2/tokenizer.model
 params: n_vocab:32000 n_embd:3200 n_mult:240 n_head:32 n_layer:26
@@ -606,8 +605,8 @@ llama_model_quantize_internal: model size  =  6535.80 MB
 llama_model_quantize_internal: quant size  =  3451.09 MB
 llama_model_quantize_internal: hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
 
-main: quantize time =  9077.23 ms
-main:    total time =  9077.23 ms
+main: quantize time = 12791.77 ms
+main:    total time = 12791.77 ms
 [   1/ 237]                tok_embeddings.weight -     3200 x 32000, type =    f16, quantizing .. size =   195.31 MB ->    54.93 MB | hist: 0.036 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.117 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
 [   2/ 237]                          norm.weight -             3200, type =    f32, size =    0.012 MB
 [   3/ 237]                        output.weight -     3200 x 32000, type =    f16, quantizing .. size =   195.31 MB ->    82.40 MB | hist: 
@@ -849,8 +848,8 @@ llama_model_quantize_internal: model size  =  6535.80 MB
 llama_model_quantize_internal: quant size  =  1866.13 MB
 llama_model_quantize_internal: hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
 
-main: quantize time =  7301.03 ms
-main:    total time =  7301.03 ms
+main: quantize time =  9537.01 ms
+main:    total time =  9537.01 ms
 [   1/ 237]                tok_embeddings.weight -     3200 x 32000, type =    f16, quantizing .. size =   195.31 MB ->    61.04 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
 [   2/ 237]                          norm.weight -             3200, type =    f32, size =    0.012 MB
 [   3/ 237]                        output.weight -     3200 x 32000, type =    f16, quantizing .. size =   195.31 MB ->    82.40 MB | hist: 
@@ -1092,8 +1091,8 @@ llama_model_quantize_internal: model size  =  6535.80 MB
 llama_model_quantize_internal: quant size  =  2064.25 MB
 llama_model_quantize_internal: hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
 
-main: quantize time =  7825.38 ms
-main:    total time =  7825.38 ms
+main: quantize time =  9911.88 ms
+main:    total time =  9911.88 ms
 [   1/ 237]                tok_embeddings.weight -     3200 x 32000, type =    f16, quantizing .. size =   195.31 MB ->    67.14 MB | hist: 0.078 0.062 0.060 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
 [   2/ 237]                          norm.weight -             3200, type =    f32, size =    0.012 MB
 [   3/ 237]                        output.weight -     3200 x 32000, type =    f16, quantizing .. size =   195.31 MB ->    82.40 MB | hist: 
@@ -1335,8 +1334,8 @@ llama_model_quantize_internal: model size  =  6535.80 MB
 llama_model_quantize_internal: quant size  =  2262.37 MB
 llama_model_quantize_internal: hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
 
-main: quantize time =  7978.36 ms
-main:    total time =  7978.36 ms
+main: quantize time = 10640.84 ms
+main:    total time = 10640.84 ms
 [   1/ 237]                tok_embeddings.weight -     3200 x 32000, type =    f16, quantizing .. size =   195.31 MB ->    73.24 MB | hist: 0.074 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
 [   2/ 237]                          norm.weight -             3200, type =    f32, size =    0.012 MB
 [   3/ 237]                        output.weight -     3200 x 32000, type =    f16, quantizing .. size =   195.31 MB ->    82.40 MB | hist: 
@@ -1578,8 +1577,8 @@ llama_model_quantize_internal: model size  =  6535.80 MB
 llama_model_quantize_internal: quant size  =  2460.49 MB
 llama_model_quantize_internal: hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
 
-main: quantize time =  8549.67 ms
-main:    total time =  8549.67 ms
+main: quantize time = 11190.39 ms
+main:    total time = 11190.39 ms
 [   1/ 237]                tok_embeddings.weight -     3200 x 32000, type =    f16, quantizing .. size =   195.31 MB ->    42.72 MB | hist: 
 [   2/ 237]                          norm.weight -             3200, type =    f32, size =    0.012 MB
 [   3/ 237]                        output.weight -     3200 x 32000, type =    f16, quantizing .. size =   195.31 MB ->    82.40 MB | hist: 
@@ -1820,8 +1819,8 @@ main:    total time =  8549.67 ms
 llama_model_quantize_internal: model size  =  6535.80 MB
 llama_model_quantize_internal: quant size  =  1656.35 MB
 
-main: quantize time = 11791.99 ms
-main:    total time = 11791.99 ms
+main: quantize time = 13841.19 ms
+main:    total time = 13841.19 ms
 [   1/ 237]                tok_embeddings.weight -     3200 x 32000, type =    f16, quantizing .. size =   195.31 MB ->    57.98 MB | hist: 
 [   2/ 237]                          norm.weight -             3200, type =    f32, size =    0.012 MB
 [   3/ 237]                        output.weight -     3200 x 32000, type =    f16, quantizing .. size =   195.31 MB ->    82.40 MB | hist: 
@@ -2062,8 +2061,8 @@ main:    total time = 11791.99 ms
 llama_model_quantize_internal: model size  =  6535.80 MB
 llama_model_quantize_internal: quant size  =  2082.62 MB
 
-main: quantize time = 12596.06 ms
-main:    total time = 12596.06 ms
+main: quantize time = 15032.12 ms
+main:    total time = 15032.12 ms
 [   1/ 237]                tok_embeddings.weight -     3200 x 32000, type =    f16, quantizing .. size =   195.31 MB ->    70.19 MB | hist: 
 [   2/ 237]                          norm.weight -             3200, type =    f32, size =    0.012 MB
 [   3/ 237]                        output.weight -     3200 x 32000, type =    f16, quantizing .. size =   195.31 MB ->    82.40 MB | hist: 
@@ -2304,8 +2303,8 @@ main:    total time = 12596.06 ms
 llama_model_quantize_internal: model size  =  6535.80 MB
 llama_model_quantize_internal: quant size  =  2420.14 MB
 
-main: quantize time = 13406.56 ms
-main:    total time = 13406.56 ms
+main: quantize time = 16116.04 ms
+main:    total time = 16116.04 ms
 [   1/ 237]                tok_embeddings.weight -     3200 x 32000, type =    f16, quantizing .. size =   195.31 MB ->    82.40 MB | hist: 
 [   2/ 237]                          norm.weight -             3200, type =    f32, size =    0.012 MB
 [   3/ 237]                        output.weight -     3200 x 32000, type =    f16, quantizing .. size =   195.31 MB ->    82.40 MB | hist: 
@@ -2546,8 +2545,8 @@ main:    total time = 13406.56 ms
 llama_model_quantize_internal: model size  =  6535.80 MB
 llama_model_quantize_internal: quant size  =  2757.67 MB
 
-main: quantize time = 12102.25 ms
-main:    total time = 12102.25 ms
+main: quantize time = 15265.93 ms
+main:    total time = 15265.93 ms
 + ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin -s 1234 -n 64 -p 'I believe the meaning of life is'
 main: build = 874 (7d5f184)
 main: seed  = 1234
@@ -2576,15 +2575,15 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 0
 
  I believe the meaning of life is to do something with all your heart and soul.
 I have spent my entire adult career in healthcare, always learning more about myself along the way. It’s this journey that has given me a great sense of achievement for working within challenging environments where you must constantly adapt & change as circumstances dictate – but I find
-llama_print_timings:        load time =  2735.84 ms
-llama_print_timings:      sample time =    64.17 ms /    64 runs   (    1.00 ms per token,   997.37 tokens per second)
-llama_print_timings: prompt eval time =  2472.71 ms /     8 tokens (  309.09 ms per token,     3.24 tokens per second)
-llama_print_timings:        eval time = 20134.85 ms /    63 runs   (  319.60 ms per token,     3.13 tokens per second)
-llama_print_timings:       total time = 22680.60 ms
+llama_print_timings:        load time =  2953.86 ms
+llama_print_timings:      sample time =    62.54 ms /    64 runs   (    0.98 ms per token,  1023.35 tokens per second)
+llama_print_timings: prompt eval time =  2479.59 ms /     8 tokens (  309.95 ms per token,     3.23 tokens per second)
+llama_print_timings:        eval time = 20132.69 ms /    63 runs   (  319.57 ms per token,     3.13 tokens per second)
+llama_print_timings:       total time = 22684.13 ms
 
-real	0m25.583s
-user	1m31.503s
-sys	0m2.668s
+real	0m25.806s
+user	1m31.560s
+sys	0m2.844s
 + ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q8_0.bin -s 1234 -n 64 -p 'I believe the meaning of life is'
 main: build = 874 (7d5f184)
 main: seed  = 1234
@@ -2613,15 +2612,15 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 0
 
  I believe the meaning of life is to do something with all your heart and soul.
 I have never been one for following rules, always more free spirited than that kind but this year my faith has made me question everything including what it meant by a set career path or how could i possibly get there? The truth was I had done just about every
-llama_print_timings:        load time =  1430.60 ms
-llama_print_timings:      sample time =    62.35 ms /    64 runs   (    0.97 ms per token,  1026.45 tokens per second)
-llama_print_timings: prompt eval time =  1001.89 ms /     8 tokens (  125.24 ms per token,     7.98 tokens per second)
-llama_print_timings:        eval time =  8728.62 ms /    63 runs   (  138.55 ms per token,     7.22 tokens per second)
-llama_print_timings:       total time =  9801.46 ms
+llama_print_timings:        load time =  1544.74 ms
+llama_print_timings:      sample time =    62.31 ms /    64 runs   (    0.97 ms per token,  1027.17 tokens per second)
+llama_print_timings: prompt eval time =   994.92 ms /     8 tokens (  124.36 ms per token,     8.04 tokens per second)
+llama_print_timings:        eval time =  8715.61 ms /    63 runs   (  138.34 ms per token,     7.23 tokens per second)
+llama_print_timings:       total time =  9782.01 ms
 
-real	0m11.458s
-user	0m39.247s
-sys	0m1.625s
+real	0m11.554s
+user	0m39.193s
+sys	0m1.714s
 + ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q4_0.bin -s 1234 -n 64 -p 'I believe the meaning of life is'
 main: build = 874 (7d5f184)
 main: seed  = 1234
@@ -2649,15 +2648,15 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 0
 
 
  I believe the meaning of life is to learn, and have fun. That's why we make learning tools that are so much more than just "drills". We create programs for children in multiple languages - including English! And it doesn't matter how smart they may be; everyone can benefit from these games because you don't need any experience
-llama_print_timings:        load time =   898.70 ms
-llama_print_timings:      sample time =    62.44 ms /    64 runs   (    0.98 ms per token,  1024.98 tokens per second)
-llama_print_timings: prompt eval time =   969.56 ms /     8 tokens (  121.20 ms per token,     8.25 tokens per second)
-llama_print_timings:        eval time =  8045.31 ms /    63 runs   (  127.70 ms per token,     7.83 tokens per second)
-llama_print_timings:       total time =  9086.00 ms
+llama_print_timings:        load time =   890.05 ms
+llama_print_timings:      sample time =    62.28 ms /    64 runs   (    0.97 ms per token,  1027.57 tokens per second)
+llama_print_timings: prompt eval time =   969.07 ms /     8 tokens (  121.13 ms per token,     8.26 tokens per second)
+llama_print_timings:        eval time =  8030.10 ms /    63 runs   (  127.46 ms per token,     7.85 tokens per second)
+llama_print_timings:       total time =  9069.88 ms
 
-real	0m10.120s
-user	0m36.334s
-sys	0m1.017s
+real	0m10.094s
+user	0m36.332s
+sys	0m0.947s
 + ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q4_1.bin -s 1234 -n 64 -p 'I believe the meaning of life is'
 main: build = 874 (7d5f184)
 main: seed  = 1234
@@ -2687,15 +2686,15 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 0
  I believe the meaning of life is to have fun, so that's exactly what we did.
 I mean... look at this guy! Look at it!! It looks like a dog has peed on him and he just ate up all there was for dinner from his own pooh!!! Oh my godddd!!!! Hehe :D [end of text]
 
-llama_print_timings:        load time =   907.94 ms
-llama_print_timings:      sample time =    62.55 ms /    64 runs   (    0.98 ms per token,  1023.10 tokens per second)
-llama_print_timings: prompt eval time =   926.86 ms /     8 tokens (  115.86 ms per token,     8.63 tokens per second)
-llama_print_timings:        eval time =  7793.31 ms /    63 runs   (  123.70 ms per token,     8.08 tokens per second)
-llama_print_timings:       total time =  8791.88 ms
+llama_print_timings:        load time =   974.53 ms
+llama_print_timings:      sample time =    62.06 ms /    64 runs   (    0.97 ms per token,  1031.24 tokens per second)
+llama_print_timings: prompt eval time =   924.28 ms /     8 tokens (  115.54 ms per token,     8.66 tokens per second)
+llama_print_timings:        eval time =  7780.36 ms /    63 runs   (  123.50 ms per token,     8.10 tokens per second)
+llama_print_timings:       total time =  8775.59 ms
 
-real	0m9.842s
-user	0m35.159s
-sys	0m1.024s
+real	0m9.896s
+user	0m35.148s
+sys	0m1.042s
 + ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q5_0.bin -s 1234 -n 64 -p 'I believe the meaning of life is'
 main: build = 874 (7d5f184)
 main: seed  = 1234
@@ -2723,15 +2722,15 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 0
 
 
  I believe the meaning of life is to do something great for humanity. If you are not doing that, then what’s your purpose? What're we here on this earth to accomplish? When people ask me how long they should work if they can earn double their salary in another field or company and it will be more fulfilling than any job I have
-llama_print_timings:        load time =  1070.30 ms
-llama_print_timings:      sample time =    62.26 ms /    64 runs   (    0.97 ms per token,  1028.01 tokens per second)
-llama_print_timings: prompt eval time =  1280.95 ms /     8 tokens (  160.12 ms per token,     6.25 tokens per second)
-llama_print_timings:        eval time = 10681.59 ms /    63 runs   (  169.55 ms per token,     5.90 tokens per second)
-llama_print_timings:       total time = 12033.44 ms
+llama_print_timings:        load time =  1092.45 ms
+llama_print_timings:      sample time =    62.75 ms /    64 runs   (    0.98 ms per token,  1019.86 tokens per second)
+llama_print_timings: prompt eval time =  1280.19 ms /     8 tokens (  160.02 ms per token,     6.25 tokens per second)
+llama_print_timings:        eval time = 10682.83 ms /    63 runs   (  169.57 ms per token,     5.90 tokens per second)
+llama_print_timings:       total time = 12034.66 ms
 
-real	0m13.259s
-user	0m48.328s
-sys	0m1.126s
+real	0m13.286s
+user	0m48.362s
+sys	0m1.112s
 + ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q5_1.bin -s 1234 -n 64 -p 'I believe the meaning of life is'
 main: build = 874 (7d5f184)
 main: seed  = 1234
@@ -2759,15 +2758,15 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 0
 
 
  I believe the meaning of life is to create, discover and share. And that’s what we do best at The Good Life Company! We bring great products from around the world together with a beautiful design ethos in order for you to give your customers (or yourself) an unforgettable experience every time they use them – whether it be on holiday or daily
-llama_print_timings:        load time =  1086.74 ms
-llama_print_timings:      sample time =    62.22 ms /    64 runs   (    0.97 ms per token,  1028.61 tokens per second)
-llama_print_timings: prompt eval time =  1265.12 ms /     8 tokens (  158.14 ms per token,     6.32 tokens per second)
-llama_print_timings:        eval time = 10462.78 ms /    63 runs   (  166.08 ms per token,     6.02 tokens per second)
-llama_print_timings:       total time = 11798.88 ms
+llama_print_timings:        load time =  1201.36 ms
+llama_print_timings:      sample time =    62.30 ms /    64 runs   (    0.97 ms per token,  1027.30 tokens per second)
+llama_print_timings: prompt eval time =  1253.51 ms /     8 tokens (  156.69 ms per token,     6.38 tokens per second)
+llama_print_timings:        eval time = 10438.16 ms /    63 runs   (  165.69 ms per token,     6.04 tokens per second)
+llama_print_timings:       total time = 11763.10 ms
 
-real	0m13.051s
-user	0m47.368s
-sys	0m1.170s
+real	0m13.134s
+user	0m47.225s
+sys	0m1.289s
 + ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q3_k.bin -s 1234 -n 64 -p 'I believe the meaning of life is'
 main: build = 874 (7d5f184)
 main: seed  = 1234
@@ -2796,15 +2795,15 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 0
 
  I believe the meaning of life is to make it worthwhile, and that everyone has a purpose in this world.
 I am passionate about helping others feel special by making them look their best! Whether they are celebrating an important event or simply want pampering, makeup for me means enhancing someone's natural beauty without taking away from who she really is inside out
-llama_print_timings:        load time =   759.35 ms
-llama_print_timings:      sample time =    63.51 ms /    64 runs   (    0.99 ms per token,  1007.78 tokens per second)
-llama_print_timings: prompt eval time =   976.52 ms /     8 tokens (  122.06 ms per token,     8.19 tokens per second)
-llama_print_timings:        eval time =  8135.33 ms /    63 runs   (  129.13 ms per token,     7.74 tokens per second)
-llama_print_timings:       total time =  9184.08 ms
+llama_print_timings:        load time =   812.87 ms
+llama_print_timings:      sample time =    62.22 ms /    64 runs   (    0.97 ms per token,  1028.58 tokens per second)
+llama_print_timings: prompt eval time =   977.08 ms /     8 tokens (  122.13 ms per token,     8.19 tokens per second)
+llama_print_timings:        eval time =  8125.02 ms /    63 runs   (  128.97 ms per token,     7.75 tokens per second)
+llama_print_timings:       total time =  9173.26 ms
 
-real	0m10.063s
-user	0m36.790s
-sys	0m0.800s
+real	0m10.108s
+user	0m36.709s
+sys	0m0.901s
 + ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q4_k.bin -s 1234 -n 64 -p 'I believe the meaning of life is'
 main: build = 874 (7d5f184)
 main: seed  = 1234
@@ -2833,15 +2832,15 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 0
 
  I believe the meaning of life is to make a difference, and that by doing so we are all responsible for each other.
 I am proud at SOS Children’s Villages USA because it provides quality care through our family-style approach in building homes, helping orphans find families as well as caring for children who have been abandoned due to
-llama_print_timings:        load time =   960.35 ms
-llama_print_timings:      sample time =    62.33 ms /    64 runs   (    0.97 ms per token,  1026.84 tokens per second)
-llama_print_timings: prompt eval time =   876.06 ms /     8 tokens (  109.51 ms per token,     9.13 tokens per second)
-llama_print_timings:        eval time =  7458.85 ms /    63 runs   (  118.39 ms per token,     8.45 tokens per second)
-llama_print_timings:       total time =  8405.81 ms
+llama_print_timings:        load time =   974.09 ms
+llama_print_timings:      sample time =    62.73 ms /    64 runs   (    0.98 ms per token,  1020.26 tokens per second)
+llama_print_timings: prompt eval time =   871.18 ms /     8 tokens (  108.90 ms per token,     9.18 tokens per second)
+llama_print_timings:        eval time =  7431.67 ms /    63 runs   (  117.96 ms per token,     8.48 tokens per second)
+llama_print_timings:       total time =  8374.59 ms
 
-real	0m9.512s
-user	0m33.580s
-sys	0m1.097s
+real	0m9.496s
+user	0m33.524s
+sys	0m1.042s
 + ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q5_k.bin -s 1234 -n 64 -p 'I believe the meaning of life is'
 main: build = 874 (7d5f184)
 main: seed  = 1234
@@ -2870,15 +2869,15 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 0
 
  I believe the meaning of life is to enjoy and celebrate this beautiful planet.
 I am a professional in my field, but also an enthusiastic artist. My art work includes sculpture, painting & poetry as well as music composition; some examples would be you are already familiar with them from various other places on our website! (see below) You will find more
-llama_print_timings:        load time =  1071.67 ms
-llama_print_timings:      sample time =    62.26 ms /    64 runs   (    0.97 ms per token,  1027.98 tokens per second)
-llama_print_timings: prompt eval time =  1152.39 ms /     8 tokens (  144.05 ms per token,     6.94 tokens per second)
-llama_print_timings:        eval time =  9538.45 ms /    63 runs   (  151.40 ms per token,     6.60 tokens per second)
-llama_print_timings:       total time = 10761.70 ms
+llama_print_timings:        load time =  1139.50 ms
+llama_print_timings:      sample time =    62.51 ms /    64 runs   (    0.98 ms per token,  1023.77 tokens per second)
+llama_print_timings: prompt eval time =  1150.80 ms /     8 tokens (  143.85 ms per token,     6.95 tokens per second)
+llama_print_timings:        eval time =  9528.70 ms /    63 runs   (  151.25 ms per token,     6.61 tokens per second)
+llama_print_timings:       total time = 10750.31 ms
 
-real	0m12.000s
-user	0m43.216s
-sys	0m1.119s
+real	0m12.066s
+user	0m43.195s
+sys	0m1.172s
 + ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q6_k.bin -s 1234 -n 64 -p 'I believe the meaning of life is'
 main: build = 874 (7d5f184)
 main: seed  = 1234
@@ -2907,18 +2906,18 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 0
 
  I believe the meaning of life is to do good things and help others.
 I am a student in high school, who loves reading books & doing drawing/painting. Also my hobby are singing gospel songs as well playing guitar :) . My vision for people is let them know that we can make it through anything if you have faith on Him ,
-llama_print_timings:        load time =  1230.01 ms
-llama_print_timings:      sample time =    62.28 ms /    64 runs   (    0.97 ms per token,  1027.68 tokens per second)
-llama_print_timings: prompt eval time =  1217.15 ms /     8 tokens (  152.14 ms per token,     6.57 tokens per second)
-llama_print_timings:        eval time = 10115.64 ms /    63 runs   (  160.57 ms per token,     6.23 tokens per second)
-llama_print_timings:       total time = 11404.44 ms
+llama_print_timings:        load time =  1293.80 ms
+llama_print_timings:      sample time =    62.48 ms /    64 runs   (    0.98 ms per token,  1024.28 tokens per second)
+llama_print_timings: prompt eval time =  1214.00 ms /     8 tokens (  151.75 ms per token,     6.59 tokens per second)
+llama_print_timings:        eval time = 10109.30 ms /    63 runs   (  160.47 ms per token,     6.23 tokens per second)
+llama_print_timings:       total time = 11394.79 ms
 
-real	0m12.821s
-user	0m45.775s
-sys	0m1.332s
+real	0m12.878s
+user	0m45.744s
+sys	0m1.393s
 + ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
 main: build = 874 (7d5f184)
-main: seed  = 1690006426
+main: seed  = 1690010237
 llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin
 llama_model_load_internal: format     = ggjt v1 (pre #1405)
 llama_model_load_internal: n_vocab    = 32000
@@ -2939,21 +2938,21 @@ llama_new_context_with_model: kv self size  =   40.62 MB
 
 system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
 perplexity: calculating perplexity over 3 chunks, batch_size=128
-perplexity: 39.32 seconds per pass - ETA 1 minutes
+perplexity: 39.33 seconds per pass - ETA 1 minutes
 [1]4.2670,[2]7.2723,[3]8.5291,
-llama_print_timings:        load time = 41760.01 ms
+llama_print_timings:        load time = 42043.86 ms
 llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time = 117885.71 ms /   384 tokens (  306.99 ms per token,     3.26 tokens per second)
+llama_print_timings: prompt eval time = 117862.37 ms /   384 tokens (  306.93 ms per token,     3.26 tokens per second)
 llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time = 120391.25 ms
+llama_print_timings:       total time = 120649.03 ms
 
 
-real	2m0.533s
-user	7m51.452s
-sys	0m2.685s
+real	2m0.798s
+user	7m51.407s
+sys	0m2.928s
 + ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q8_0.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
 main: build = 874 (7d5f184)
-main: seed  = 1690006546
+main: seed  = 1690010358
 llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q8_0.bin
 llama_model_load_internal: format     = ggjt v3 (latest)
 llama_model_load_internal: n_vocab    = 32000
@@ -2974,21 +2973,21 @@ llama_new_context_with_model: kv self size  =   40.62 MB
 
 system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
 perplexity: calculating perplexity over 3 chunks, batch_size=128
-perplexity: 15.83 seconds per pass - ETA 0 minutes
+perplexity: 15.57 seconds per pass - ETA 0 minutes
 [1]4.2756,[2]7.3120,[3]8.5617,
-llama_print_timings:        load time = 17124.61 ms
+llama_print_timings:        load time = 16984.77 ms
 llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time = 47334.26 ms /   384 tokens (  123.27 ms per token,     8.11 tokens per second)
+llama_print_timings: prompt eval time = 46710.66 ms /   384 tokens (  121.64 ms per token,     8.22 tokens per second)
 llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time = 48695.83 ms
+llama_print_timings:       total time = 48197.57 ms
 
 
-real	0m48.782s
-user	3m9.227s
-sys	0m1.508s
+real	0m48.289s
+user	3m6.808s
+sys	0m1.572s
 + ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q4_0.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
 main: build = 874 (7d5f184)
-main: seed  = 1690006595
+main: seed  = 1690010406
 llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q4_0.bin
 llama_model_load_internal: format     = ggjt v3 (latest)
 llama_model_load_internal: n_vocab    = 32000
@@ -3011,19 +3010,19 @@ system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI =
 perplexity: calculating perplexity over 3 chunks, batch_size=128
 perplexity: 15.64 seconds per pass - ETA 0 minutes
 [1]4.1679,[2]7.8456,[3]8.9743,
-llama_print_timings:        load time = 16377.96 ms
+llama_print_timings:        load time = 16388.41 ms
 llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time = 46883.81 ms /   384 tokens (  122.09 ms per token,     8.19 tokens per second)
+llama_print_timings: prompt eval time = 46872.67 ms /   384 tokens (  122.06 ms per token,     8.19 tokens per second)
 llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time = 47688.37 ms
+llama_print_timings:       total time = 47689.47 ms
 
 
-real	0m47.748s
-user	3m7.526s
-sys	0m0.832s
+real	0m47.750s
+user	3m7.471s
+sys	0m0.857s
 + ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q4_1.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
 main: build = 874 (7d5f184)
-main: seed  = 1690006643
+main: seed  = 1690010454
 llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q4_1.bin
 llama_model_load_internal: format     = ggjt v3 (latest)
 llama_model_load_internal: n_vocab    = 32000
@@ -3044,21 +3043,21 @@ llama_new_context_with_model: kv self size  =   40.62 MB
 
 system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
 perplexity: calculating perplexity over 3 chunks, batch_size=128
-perplexity: 14.86 seconds per pass - ETA 0 minutes
+perplexity: 14.85 seconds per pass - ETA 0 minutes
 [1]4.4480,[2]8.1217,[3]9.2229,
-llama_print_timings:        load time = 15684.62 ms
+llama_print_timings:        load time = 15698.10 ms
 llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time = 44526.61 ms /   384 tokens (  115.95 ms per token,     8.62 tokens per second)
+llama_print_timings: prompt eval time = 44493.67 ms /   384 tokens (  115.87 ms per token,     8.63 tokens per second)
 llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time = 45425.31 ms
+llama_print_timings:       total time = 45413.31 ms
 
 
-real	0m45.489s
-user	2m58.066s
-sys	0m0.960s
+real	0m45.479s
+user	2m57.903s
+sys	0m1.017s
 + ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q5_0.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
 main: build = 874 (7d5f184)
-main: seed  = 1690006688
+main: seed  = 1690010500
 llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q5_0.bin
 llama_model_load_internal: format     = ggjt v3 (latest)
 llama_model_load_internal: n_vocab    = 32000
@@ -3079,21 +3078,21 @@ llama_new_context_with_model: kv self size  =   40.62 MB
 
 system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
 perplexity: calculating perplexity over 3 chunks, batch_size=128
-perplexity: 20.55 seconds per pass - ETA 1 minutes
+perplexity: 20.60 seconds per pass - ETA 1 minutes
 [1]4.3752,[2]7.6061,[3]8.8161,
-llama_print_timings:        load time = 21431.82 ms
+llama_print_timings:        load time = 21515.51 ms
 llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time = 61572.18 ms /   384 tokens (  160.34 ms per token,     6.24 tokens per second)
+llama_print_timings: prompt eval time = 61747.62 ms /   384 tokens (  160.80 ms per token,     6.22 tokens per second)
 llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time = 62524.09 ms
+llama_print_timings:       total time = 62734.82 ms
 
 
-real	1m2.591s
-user	4m6.277s
-sys	0m0.988s
+real	1m2.804s
+user	4m6.993s
+sys	0m1.009s
 + ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q5_1.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
 main: build = 874 (7d5f184)
-main: seed  = 1690006751
+main: seed  = 1690010562
 llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q5_1.bin
 llama_model_load_internal: format     = ggjt v3 (latest)
 llama_model_load_internal: n_vocab    = 32000
@@ -3114,21 +3113,21 @@ llama_new_context_with_model: kv self size  =   40.62 MB
 
 system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
 perplexity: calculating perplexity over 3 chunks, batch_size=128
-perplexity: 20.29 seconds per pass - ETA 1 minutes
+perplexity: 20.28 seconds per pass - ETA 1 minutes
 [1]4.2776,[2]7.4247,[3]8.7062,
-llama_print_timings:        load time = 21292.99 ms
+llama_print_timings:        load time = 21280.27 ms
 llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time = 60804.83 ms /   384 tokens (  158.35 ms per token,     6.32 tokens per second)
+llama_print_timings: prompt eval time = 60805.06 ms /   384 tokens (  158.35 ms per token,     6.32 tokens per second)
 llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time = 61877.73 ms
+llama_print_timings:       total time = 61875.17 ms
 
 
-real	1m1.949s
-user	4m3.207s
-sys	0m1.112s
+real	1m1.947s
+user	4m3.204s
+sys	0m1.116s
 + ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q3_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
 main: build = 874 (7d5f184)
-main: seed  = 1690006813
+main: seed  = 1690010624
 llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q3_k.bin
 llama_model_load_internal: format     = ggjt v3 (latest)
 llama_model_load_internal: n_vocab    = 32000
@@ -3149,21 +3148,21 @@ llama_new_context_with_model: kv self size  =   40.62 MB
 
 system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
 perplexity: calculating perplexity over 3 chunks, batch_size=128
-perplexity: 15.72 seconds per pass - ETA 0 minutes
+perplexity: 15.71 seconds per pass - ETA 0 minutes
 [1]4.4351,[2]8.0829,[3]9.6072,
-llama_print_timings:        load time = 16379.73 ms
+llama_print_timings:        load time = 16383.46 ms
 llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time = 47097.86 ms /   384 tokens (  122.65 ms per token,     8.15 tokens per second)
+llama_print_timings: prompt eval time = 47067.29 ms /   384 tokens (  122.57 ms per token,     8.16 tokens per second)
 llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time = 47829.65 ms
+llama_print_timings:       total time = 47815.99 ms
 
 
-real	0m47.887s
-user	3m8.376s
-sys	0m0.760s
+real	0m47.876s
+user	3m8.265s
+sys	0m0.772s
 + ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q4_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
 main: build = 874 (7d5f184)
-main: seed  = 1690006861
+main: seed  = 1690010672
 llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q4_k.bin
 llama_model_load_internal: format     = ggjt v3 (latest)
 llama_model_load_internal: n_vocab    = 32000
@@ -3184,21 +3183,21 @@ llama_new_context_with_model: kv self size  =   40.62 MB
 
 system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
 perplexity: calculating perplexity over 3 chunks, batch_size=128
-perplexity: 13.97 seconds per pass - ETA 0 minutes
+perplexity: 13.93 seconds per pass - ETA 0 minutes
 [1]4.2706,[2]7.7204,[3]9.0507,
-llama_print_timings:        load time = 14822.69 ms
+llama_print_timings:        load time = 14789.86 ms
 llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time = 41873.02 ms /   384 tokens (  109.04 ms per token,     9.17 tokens per second)
+llama_print_timings: prompt eval time = 41754.97 ms /   384 tokens (  108.74 ms per token,     9.20 tokens per second)
 llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time = 42794.46 ms
+llama_print_timings:       total time = 42680.96 ms
 
 
-real	0m42.859s
-user	2m47.453s
-sys	0m0.984s
+real	0m42.746s
+user	2m47.023s
+sys	0m0.948s
 + ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q5_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
 main: build = 874 (7d5f184)
-main: seed  = 1690006903
+main: seed  = 1690010715
 llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q5_k.bin
 llama_model_load_internal: format     = ggjt v3 (latest)
 llama_model_load_internal: n_vocab    = 32000
@@ -3219,5 +3218,60 @@ llama_new_context_with_model: kv self size  =   40.62 MB
 
 system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
 perplexity: calculating perplexity over 3 chunks, batch_size=128
-perplexity: 18.50 seconds per pass - ETA 0 minutes
-[1]4.3431,
+perplexity: 18.48 seconds per pass - ETA 0 minutes
+[1]4.3431,[2]7.5145,[3]8.6897,
+llama_print_timings:        load time = 19504.48 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 55383.28 ms /   384 tokens (  144.23 ms per token,     6.93 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 56480.89 ms
+
+
+real	0m56.562s
+user	3m41.542s
+sys	0m1.128s
++ ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q6_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
+main: build = 874 (7d5f184)
+main: seed  = 1690010771
+llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q6_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 128
+llama_model_load_internal: n_embd     = 3200
+llama_model_load_internal: n_mult     = 240
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_layer    = 26
+llama_model_load_internal: n_rot      = 100
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 18 (mostly Q6_K)
+llama_model_load_internal: n_ff       = 8640
+llama_model_load_internal: model size = 3B
+llama_model_load_internal: ggml ctx size =    0.06 MB
+llama_model_load_internal: mem required  = 3661.73 MB (+  682.00 MB per state)
+llama_new_context_with_model: kv self size  =   40.62 MB
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+perplexity: calculating perplexity over 3 chunks, batch_size=128
+perplexity: 19.38 seconds per pass - ETA 0 minutes
+[1]4.2764,[2]7.3228,[3]8.5791,
+llama_print_timings:        load time = 20421.18 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 58116.15 ms /   384 tokens (  151.34 ms per token,     6.61 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 59221.76 ms
+
+
+real	0m59.301s
+user	3m52.454s
+sys	0m1.153s
+  - f16 @ 8.5291 OK
+  - q8_0 @ 8.5617 OK
+  - q4_0 @ 8.9743 OK
+  - q4_1 @ 9.2229 OK
+  - q5_0 @ 8.8161 OK
+  - q5_1 @ 8.7062 OK
+  - q3_k @ 9.6072 OK
+  - q4_k @ 9.0507 OK
+  - q5_k @ 8.6897 OK
+  - q6_k @ 8.5791 OK

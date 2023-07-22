@@ -25,18 +25,18 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 0
 
 
  I believe the meaning of life is to create, discover and share. And that’s what we do best at The Good Life Company! We bring great products from around the world together with a beautiful design ethos in order for you to give your customers (or yourself) an unforgettable experience every time they use them – whether it be on holiday or daily
-llama_print_timings:        load time =  1086.74 ms
-llama_print_timings:      sample time =    62.22 ms /    64 runs   (    0.97 ms per token,  1028.61 tokens per second)
-llama_print_timings: prompt eval time =  1265.12 ms /     8 tokens (  158.14 ms per token,     6.32 tokens per second)
-llama_print_timings:        eval time = 10462.78 ms /    63 runs   (  166.08 ms per token,     6.02 tokens per second)
-llama_print_timings:       total time = 11798.88 ms
+llama_print_timings:        load time =  1201.36 ms
+llama_print_timings:      sample time =    62.30 ms /    64 runs   (    0.97 ms per token,  1027.30 tokens per second)
+llama_print_timings: prompt eval time =  1253.51 ms /     8 tokens (  156.69 ms per token,     6.38 tokens per second)
+llama_print_timings:        eval time = 10438.16 ms /    63 runs   (  165.69 ms per token,     6.04 tokens per second)
+llama_print_timings:       total time = 11763.10 ms
 
-real	0m13.051s
-user	0m47.368s
-sys	0m1.170s
+real	0m13.134s
+user	0m47.225s
+sys	0m1.289s
 + ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q5_1.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
 main: build = 874 (7d5f184)
-main: seed  = 1690006751
+main: seed  = 1690010562
 llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q5_1.bin
 llama_model_load_internal: format     = ggjt v3 (latest)
 llama_model_load_internal: n_vocab    = 32000
@@ -57,15 +57,15 @@ llama_new_context_with_model: kv self size  =   40.62 MB
 
 system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
 perplexity: calculating perplexity over 3 chunks, batch_size=128
-perplexity: 20.29 seconds per pass - ETA 1 minutes
+perplexity: 20.28 seconds per pass - ETA 1 minutes
 [1]4.2776,[2]7.4247,[3]8.7062,
-llama_print_timings:        load time = 21292.99 ms
+llama_print_timings:        load time = 21280.27 ms
 llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time = 60804.83 ms /   384 tokens (  158.35 ms per token,     6.32 tokens per second)
+llama_print_timings: prompt eval time = 60805.06 ms /   384 tokens (  158.35 ms per token,     6.32 tokens per second)
 llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time = 61877.73 ms
+llama_print_timings:       total time = 61875.17 ms
 
 
-real	1m1.949s
-user	4m3.207s
-sys	0m1.112s
+real	1m1.947s
+user	4m3.204s
+sys	0m1.116s
