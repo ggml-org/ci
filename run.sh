@@ -163,16 +163,17 @@ function gg_run {
 
         mv ${out}/README.md ${out}/README.md.bak
 
-        status="$(if [ $result -eq 0 ]; then echo "SUCCESS ✅ in ${runtime}"; else echo "FAILURE ❌ (${result}) in ${runtime}"; fi)"
+        status="$(if [ $result -eq 0 ]; then echo "SUCCESS ✅"; else echo "FAILURE ❌ (${result})"; fi)"
 
         gg_printf ${out}/README.md '## Summary\n\n'
 
-        gg_printf ${out}/README.md '- status: %s\n' "${status}"
-        gg_printf ${out}/README.md '- date:   %s\n' "$(date)"
-        gg_printf ${out}/README.md '- repo:   %s\n' "${GG_CI_REPO}"
-        gg_printf ${out}/README.md '- commit: %s\n' "${GG_CI_COMMIT_URL}"
-        gg_printf ${out}/README.md '- author: %s\n' "${GG_CI_COMMIT_AUTHOR}"
-        gg_printf ${out}/README.md '```\n%s\n```\n' "${GG_CI_COMMIT_MSG}"
+        gg_printf ${out}/README.md '- status:  %s\n' "${status}"
+        gg_printf ${out}/README.md '- runtime: %s\n' "${runtime}"
+        gg_printf ${out}/README.md '- date:    %s\n' "$(date)"
+        gg_printf ${out}/README.md '- repo:    %s\n' "${GG_CI_REPO}"
+        gg_printf ${out}/README.md '- commit:  %s\n' "${GG_CI_COMMIT_URL}"
+        gg_printf ${out}/README.md '- author:  %s\n' "${GG_CI_COMMIT_AUTHOR}"
+        gg_printf ${out}/README.md '```\n%s\n```\n'  "${GG_CI_COMMIT_MSG}"
         gg_printf ${out}/README.md '\n'
 
         gg_printf ${out}/README.md '## Environment\n\n'
