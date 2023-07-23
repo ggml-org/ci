@@ -1,0 +1,6398 @@
+## Summary
+
+- status: SUCCESS ✅
+- date:   Sun Jul 23 09:46:25 UTC 2023
+- repo:   https://github.com/ggerganov/llama.cpp
+- commit: https://github.com/ggerganov/llama.cpp/commit/c594992d6a7e23fb8e11ff5137d26a448d25a071
+- author: Georgi Gerganov
+```
+py : oh boy ..
+
+ggml-ci
+```
+
+## Environment
+
+```
+GG_BUILD_CUDA=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-debug
+    Start 1: test-quantize-fns
+1/5 Test #1: test-quantize-fns ................   Passed    0.01 sec
+    Start 2: test-quantize-perf
+2/5 Test #2: test-quantize-perf ...............   Passed    0.06 sec
+    Start 3: test-sampling
+3/5 Test #3: test-sampling ....................   Passed    0.00 sec
+    Start 4: test-tokenizer-0
+4/5 Test #4: test-tokenizer-0 .................   Passed    0.03 sec
+    Start 5: test-grad0
+5/5 Test #5: test-grad0 .......................   Passed    4.64 sec
+
+100% tests passed, 0 tests failed out of 5
+
+Total Test time (real) =   4.75 sec
+
+real	0m4.780s
+user	0m5.363s
+sys	0m5.481s
+```
+
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure
+Test project /home/ggml/work/llama.cpp/build-ci-release
+    Start 1: test-quantize-fns
+1/5 Test #1: test-quantize-fns ................   Passed    0.01 sec
+    Start 2: test-quantize-perf
+2/5 Test #2: test-quantize-perf ...............   Passed    0.02 sec
+    Start 3: test-sampling
+3/5 Test #3: test-sampling ....................   Passed    0.00 sec
+    Start 4: test-tokenizer-0
+4/5 Test #4: test-tokenizer-0 .................   Passed    0.02 sec
+    Start 5: test-grad0
+5/5 Test #5: test-grad0 .......................   Passed    5.01 sec
+
+100% tests passed, 0 tests failed out of 5
+
+Total Test time (real) =   5.06 sec
+
+real	0m5.089s
+user	0m6.090s
+sys	0m5.588s
+```
+### open_llama_7b_v2
+
+OpenLLaMA 7B-v2:
+- status: 0
+- perplexity:
+  - f16 @ 7.2506 OK
+  - q8_0 @ 7.2550 OK
+  - q4_0 @ 7.3892 OK
+  - q4_1 @ 7.3910 OK
+  - q5_0 @ 7.3003 OK
+  - q5_1 @ 7.2857 OK
+  - q2_k @ 8.1454 OK
+  - q3_k @ 7.5154 OK
+  - q4_k @ 7.3432 OK
+  - q5_k @ 7.2793 OK
+  - q6_k @ 7.2588 OK
+- f16: 
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 884 (c594992)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
+llama_model_load_internal: format     = ggjt v1 (pre #1405)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 256
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 1 (mostly F16)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  552.08 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 13148 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to do with helping other people. In my opinion, we are put on this earth for a reason and our own personal reasons can be fulfilled by giving back too others who need help or have fallen upon tough times. Helping your neighbours when they’re struggling through hardships such as illness/financial problems etc brings about the feeling of helping them to get over those obstacles in their life, thus freeing ourselves from unnecessary worries and stresses!
+The word ‘meaningful’ is often associated with something that has a specific purpose. For instance we may say; “I went on an interesting meaningful journey”, or if you were asked what kind of person do you think I am? You would be more likely to answer, someone who lives their life in a meaningful way by helping other people
+In my opinion meaning is the reason for which something exists — its purpose. It can also mean having significance and value; being important or useful especially when viewed as a whole (Source: Oxford Dictionary) The main idea of this article will be to try explain what does it means living your life in meaningful way by helping others, why should we do that? I think
+Meaningful is something you have to believe. It cannot only come from outside but also inside yourself Meaning
+llama_print_timings:        load time =  2467.55 ms
+llama_print_timings:      sample time =   146.13 ms /   256 runs   (    0.57 ms per token,  1751.85 tokens per second)
+llama_print_timings: prompt eval time =   169.25 ms /     8 tokens (   21.16 ms per token,    47.27 tokens per second)
+llama_print_timings:        eval time =  5098.15 ms /   255 runs   (   19.99 ms per token,    50.02 tokens per second)
+llama_print_timings:       total time =  5484.62 ms
+
+real	0m8.897s
+user	0m16.994s
+sys	0m1.819s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 884 (c594992)
+main: seed  = 1690105376
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
+llama_model_load_internal: format     = ggjt v1 (pre #1405)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 256
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 1 (mostly F16)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  648.08 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 14012 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.65 seconds per pass - ETA 0 minutes
+[1]4.7955,[2]6.3530,[3]7.3683,[4]7.2506,
+llama_print_timings:        load time =  4465.63 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 13851.75 ms /  8192 tokens (    1.69 ms per token,   591.41 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 19761.53 ms
+
+
+real	0m20.776s
+user	0m13.966s
+sys	0m6.815s
+```
+- q8_0:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 884 (c594992)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 256
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 7 (mostly Q8_0)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  434.89 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 7210 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to give yourself purpose, and then create a plan that will help you achieve your goals.
+I think every business owner should have their own personal brand so customers can relate with them on an emotional level instead trying too hard like traditional ad campaigns do. When someone feels connected emotionally they are more likely than not going share what they experienced or heard about it, because now there’s something real behind words which aren’t even spoken yet!
+For example if your business sells shoes then maybe make a video where you show some people who have just purchased them how great they look and feel once worn for the first time. It will give potential customers more confidence knowing what kind of product they are buying rather than trying something new without any idea about its quality or style features!
+People love to share things that inspire others, so make sure everything you do online is interesting enough people want other followers interested too – whether it’s posting photos from your latest event party invitation sent out in the mail box every day with some kind words inside like “Join us at XYZ tomorrow night”; or perhaps giving away free samples of products that may be available for purchase later down line once business is booming again!”
+I believe a brand should have three core values: trust, integrity
+llama_print_timings:        load time =  1409.26 ms
+llama_print_timings:      sample time =   145.86 ms /   256 runs   (    0.57 ms per token,  1755.16 tokens per second)
+llama_print_timings: prompt eval time =   172.05 ms /     8 tokens (   21.51 ms per token,    46.50 tokens per second)
+llama_print_timings:        eval time =  4297.25 ms /   255 runs   (   16.85 ms per token,    59.34 tokens per second)
+llama_print_timings:       total time =  4682.63 ms
+
+real	0m7.124s
+user	0m13.807s
+sys	0m1.612s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 884 (c594992)
+main: seed  = 1690105397
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 256
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 7 (mostly Q8_0)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  530.89 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 8074 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.71 seconds per pass - ETA 0 minutes
+[1]4.7995,[2]6.3562,[3]7.3738,[4]7.2550,
+llama_print_timings:        load time =  3495.70 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 13938.47 ms /  8192 tokens (    1.70 ms per token,   587.73 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 18975.88 ms
+
+
+real	0m19.871s
+user	0m13.523s
+sys	0m6.341s
+```
+- q4_0:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 884 (c594992)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 256
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 2 (mostly Q4_0)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  372.39 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 4122 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to give your all. To be there for others and not yourself as much, because you know that God’s word says we are here only a short time then it will be over forever in Heaven with my Savior Jesus Christ who died on The Cross so He could save me from eternal damnation! It may sound crazy but I am sure of what he has done for us all and hope others join this awesome faith that is the love story between you, God & His Son.
+I believe we are just here to learn in order to get prepared because one day Jesus will be coming back again on a cloud from Heaven with his bridegroom angels! And when I die there’ll probably not even know what happened until after 3 days for the devil/satan has been cast out of heaven and hell is shut too.
+I believe in God, The Father & His Son Jesus Christ who died on the cross to save us all from eternal damnation; because this was how He showed his love towards you! I will always remember him by spreading his word for others even though they may not want it or hear about our Lord and Savior.
+I believe we are here so God can show off what he has done & that one day Jesus, The Son
+llama_print_timings:        load time =   910.21 ms
+llama_print_timings:      sample time =   144.08 ms /   256 runs   (    0.56 ms per token,  1776.75 tokens per second)
+llama_print_timings: prompt eval time =   126.72 ms /     8 tokens (   15.84 ms per token,    63.13 tokens per second)
+llama_print_timings:        eval time =  2903.18 ms /   255 runs   (   11.39 ms per token,    87.83 tokens per second)
+llama_print_timings:       total time =  3239.24 ms
+
+real	0m5.011s
+user	0m9.199s
+sys	0m1.227s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 884 (c594992)
+main: seed  = 1690105417
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 256
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 2 (mostly Q4_0)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  468.39 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 4986 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.49 seconds per pass - ETA 0 minutes
+[1]4.8797,[2]6.4543,[3]7.5007,[4]7.3892,
+llama_print_timings:        load time =  2875.77 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 13138.92 ms /  8192 tokens (    1.60 ms per token,   623.49 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 17490.96 ms
+
+
+real	0m18.293s
+user	0m12.297s
+sys	0m5.986s
+```
+- q4_1:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 884 (c594992)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 256
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 3 (mostly Q4_1)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  380.20 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 4508 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to make your soul and body happy, healthy.
+I have never been a big fan of sports as growing up at home we did not encourage that type of living but in my early 20s when God started knocking on those doors for me He showed me what it meant to be an athlete with all the physical benefits associated! I was so happy about this and excited because now he put something good inside instead.
+I have tried most sports throughout high school, college & beyond but none of them stuck which is actually a sign that they were not really my passion or desire at the time even though in many cases it looked like what everyone else did! It was never enough so when I got into running back in 2015 with my first ever attempt to run a half marathon, something inside me just knew he had more for this life.
+I am not one of those people who is very competitive or even cares about that part but there's always the drive from within! My passion lies mainly on helping other women feel beautiful & healthy through running/exercising with my own personal experiences and struggles because it helped me so much when I was struggling in myself.
+Being a mom to 2 amazing little boys has changed everything, not only
+llama_print_timings:        load time =   985.54 ms
+llama_print_timings:      sample time =   145.54 ms /   256 runs   (    0.57 ms per token,  1759.00 tokens per second)
+llama_print_timings: prompt eval time =   127.86 ms /     8 tokens (   15.98 ms per token,    62.57 tokens per second)
+llama_print_timings:        eval time =  3034.35 ms /   255 runs   (   11.90 ms per token,    84.04 tokens per second)
+llama_print_timings:       total time =  3373.98 ms
+
+real	0m5.249s
+user	0m9.557s
+sys	0m1.384s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 884 (c594992)
+main: seed  = 1690105435
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 256
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 3 (mostly Q4_1)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  476.20 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 5372 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.50 seconds per pass - ETA 0 minutes
+[1]4.9205,[2]6.4604,[3]7.4923,[4]7.3910,
+llama_print_timings:        load time =  2994.52 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 13158.31 ms /  8192 tokens (    1.61 ms per token,   622.57 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 17623.80 ms
+
+
+real	0m18.454s
+user	0m12.254s
+sys	0m6.189s
+```
+- q5_0:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_0.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 884 (c594992)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_0.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 256
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 8 (mostly Q5_0)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  388.02 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 4894 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to have fun. In my opinion, if you are not having any kind of a good time in your life it simply means that something has gone wrong and there for needs some fixing or changing within yourself so all those worries disappear one by one as long as we try our best at what ever comes along on this journey called life which is full of twists an turns, ups downs but most importantly LOVE. My motto in my own words goes like “ I’m not perfect and never will be ,but i can surely make things better so just give me the chance to do that !”
+My dream job would probably have something with horses or dogs since they are a big part of who ever it is you really want to become as long as your goals in life all come together. My favorite quote goes like “If at first yo don’t succeed, try again because success will be yours if not today then tomorrow !”
+My dream vacation would have nothing but horses and/or dogs running free through the mountains of Montana where I can stay for a while just being myself without worrying about anyone or anything else. My favorite food to eat goes like “I’m really hungry all the time so make it fast please! ” And my biggest pet peeve is
+llama_print_timings:        load time =  1065.64 ms
+llama_print_timings:      sample time =   145.22 ms /   256 runs   (    0.57 ms per token,  1762.89 tokens per second)
+llama_print_timings: prompt eval time =   125.58 ms /     8 tokens (   15.70 ms per token,    63.70 tokens per second)
+llama_print_timings:        eval time =  3118.37 ms /   255 runs   (   12.23 ms per token,    81.77 tokens per second)
+llama_print_timings:       total time =  3456.60 ms
+
+real	0m5.406s
+user	0m9.888s
+sys	0m1.379s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_0.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 884 (c594992)
+main: seed  = 1690105453
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_0.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 256
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 8 (mostly Q5_0)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  484.02 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 5758 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.48 seconds per pass - ETA 0 minutes
+[1]4.7980,[2]6.3776,[3]7.4120,[4]7.3003,
+llama_print_timings:        load time =  2990.83 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 13143.26 ms /  8192 tokens (    1.60 ms per token,   623.29 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 17613.50 ms
+
+
+real	0m18.466s
+user	0m12.301s
+sys	0m6.166s
+```
+- q5_1:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 884 (c594992)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 256
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 9 (mostly Q5_1)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  395.83 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 5280 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to have a happy heart and soul, so that you can live each day with love.
+I know from living in my own personal hell for many years what suffering feels like - but now it’s all behind me thank goodness… although people who don't experience such things themselves may not understand the pain I went through before making this decision! There is no greater happiness than knowing you are free of something.
+People always wonder why we do certain crazy or dangerous stunts, and they ask us what will happen if it goes wrong but there is only one way to find out - give your all with everything else left behind in a moment... just like the last image I have here for this blog post! This video clip was taken at 250 mph over New Hampshire's Mount Washington on July 4th, 2017.
+One of my favorite quotes is from John Lennon: "Life is what happens to you while you are busy making other plans." It means that life isn't about planning out the future because we can never know what will happen in it - which makes every day a brand new adventure! My advice? Make sure your heart and soul are healthy so then everything else falls into place automatically.
+There is
+llama_print_timings:        load time =  1099.34 ms
+llama_print_timings:      sample time =   145.25 ms /   256 runs   (    0.57 ms per token,  1762.44 tokens per second)
+llama_print_timings: prompt eval time =   127.82 ms /     8 tokens (   15.98 ms per token,    62.59 tokens per second)
+llama_print_timings:        eval time =  3138.71 ms /   255 runs   (   12.31 ms per token,    81.24 tokens per second)
+llama_print_timings:       total time =  3478.30 ms
+
+real	0m5.466s
+user	0m9.992s
+sys	0m1.372s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 884 (c594992)
+main: seed  = 1690105472
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 256
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 9 (mostly Q5_1)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  491.83 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 6144 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.50 seconds per pass - ETA 0 minutes
+[1]4.8293,[2]6.3759,[3]7.3950,[4]7.2857,
+llama_print_timings:        load time =  3088.27 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 13140.24 ms /  8192 tokens (    1.60 ms per token,   623.43 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 17712.71 ms
+
+
+real	0m18.554s
+user	0m12.672s
+sys	0m5.866s
+```
+- q2_k:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 884 (c594992)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 256
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 10 (mostly Q2_K)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  343.10 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 3237 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to find out who we are and be happy with that.
+In my opinion, there’s no better way then through art because it lets you express yourself while being creative at the same time!
+The reason this site was made however…is for those times when one can not do anything about their situation they want or need to share something but don’t have a place where people will be patient and receptive.
+So here we are in an attempt, through art (or any other way) of sharing our creative thoughts on the life which is ours so I hope you enjoy reading my articles as much as I did writing them! 😎
+I love this site because it gives me another platform to share what’s inside us. So let your eyes wander freely but not too far, just enough for now and see where all those ideas take place within the next few paragraphs of mine… 🙂
+Have fun while reading my articles!! Thank you! 😘
+You can contact with: info@mimosasociety.com or using this form here below ! We’ll be happy to answer your questions about any topics related to our site and more 😉
+Mmm … I like that name, Mimosa Society – it doesn’t
+llama_print_timings:        load time =   755.99 ms
+llama_print_timings:      sample time =   150.04 ms /   256 runs   (    0.59 ms per token,  1706.17 tokens per second)
+llama_print_timings: prompt eval time =   136.83 ms /     8 tokens (   17.10 ms per token,    58.47 tokens per second)
+llama_print_timings:        eval time =  3015.73 ms /   255 runs   (   11.83 ms per token,    84.56 tokens per second)
+llama_print_timings:       total time =  3372.16 ms
+
+real	0m4.937s
+user	0m9.376s
+sys	0m1.186s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 884 (c594992)
+main: seed  = 1690105490
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 256
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 10 (mostly Q2_K)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  439.10 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 4101 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.55 seconds per pass - ETA 0 minutes
+[1]5.2770,[2]6.9940,[3]8.1124,[4]8.1454,
+llama_print_timings:        load time =  2773.36 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 13357.97 ms /  8192 tokens (    1.63 ms per token,   613.27 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 17634.18 ms
+
+
+real	0m18.461s
+user	0m12.250s
+sys	0m6.191s
+```
+- q3_k:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q3_k.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 884 (c594992)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q3_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 256
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 12 (mostly Q3_K - Medium)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  355.79 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 3621 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to do with people and relationships. And that’s what makes me passionate about my work as a coach, helping other like-minded individuals who are driven by purpose find fulfillment in their careers through coaching & mentoring others toward excellence on various personal development topics such as self-awareness, communication skills, leadership styles etc; working collaboratively with businesses and teams to help them get more out of themselves.
+As far back I remember growing up we always had a family gathering once every three months where everyone would come together over dinner at my grandparents home in Pakistan (northwest region near Afghanistan). This was before the war broke down between Northern India & Southern Asia for almost 10 years and it still continues until this day.
+I believe that’s why I have become so fascinated about understanding how people relate to each other, their motivations behind certain attitudes or behaviors towards others which can either be positive or negative; whether they are conscious of these factors influencing them at all times while interacting with co-workers/ family members etc… My interest in this topic has led me here today where I’ve decided that after completing my MBA from University Of Chicago Booth School Of Business & receiving my coaching certification through Coach University, along w/ a long career working within Human
+llama_print_timings:        load time =   815.61 ms
+llama_print_timings:      sample time =   146.05 ms /   256 runs   (    0.57 ms per token,  1752.78 tokens per second)
+llama_print_timings: prompt eval time =   165.67 ms /     8 tokens (   20.71 ms per token,    48.29 tokens per second)
+llama_print_timings:        eval time =  3468.06 ms /   255 runs   (   13.60 ms per token,    73.53 tokens per second)
+llama_print_timings:       total time =  3850.71 ms
+
+real	0m5.465s
+user	0m10.886s
+sys	0m1.205s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q3_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 884 (c594992)
+main: seed  = 1690105509
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q3_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 256
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 12 (mostly Q3_K - Medium)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  451.79 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 4485 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.69 seconds per pass - ETA 0 minutes
+[1]4.9377,[2]6.5303,[3]7.5785,[4]7.5154,
+llama_print_timings:        load time =  3003.17 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 13853.10 ms /  8192 tokens (    1.69 ms per token,   591.35 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 18311.78 ms
+
+
+real	0m19.103s
+user	0m12.913s
+sys	0m6.178s
+```
+- q4_k:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_k.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 884 (c594992)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 256
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 15 (mostly Q4_K - Medium)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  372.39 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 4365 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to give your heart.
+I do not know what my purpose in this world will be, but it could definitely take me somewhere that involves saving lives and making someone smile for a few minutes before they die :) Or if anyone finds out how much time you have left on earth...maybe we can make sure every second counts!!! And maybe I'll start an organization to help people do fun things after life while helping them remember the beautiful memories of this world.
+I believe in making someone smile, and for me it is about bringing joy into someones heart :) This could involve being silly with my friends...it doesn't matter who you are or what your situation..if I can find something to make a person laugh that would be awesome! haha And the worst thing anyone has ever done was not bring someone happiness, they did nothing wrong but didn't do anything right.
+I believe in being yourself and making others feel good about themselves :) If there is one of my goals for this life it will involve helping people overcome their fears..whether its fearing rejection or any other kind...if I can help that person face the world with a smile on his/her lips, then no matter what happens they are going to be able to live an amazing dream.
+llama_print_timings:        load time =   939.66 ms
+llama_print_timings:      sample time =   144.98 ms /   256 runs   (    0.57 ms per token,  1765.80 tokens per second)
+llama_print_timings: prompt eval time =   157.76 ms /     8 tokens (   19.72 ms per token,    50.71 tokens per second)
+llama_print_timings:        eval time =  3547.19 ms /   255 runs   (   13.91 ms per token,    71.89 tokens per second)
+llama_print_timings:       total time =  3916.69 ms
+
+real	0m5.706s
+user	0m11.199s
+sys	0m1.255s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 884 (c594992)
+main: seed  = 1690105528
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 256
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 15 (mostly Q4_K - Medium)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  468.39 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 5229 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.63 seconds per pass - ETA 0 minutes
+[1]4.8790,[2]6.4235,[3]7.4401,[4]7.3432,
+llama_print_timings:        load time =  2993.78 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 13699.29 ms /  8192 tokens (    1.67 ms per token,   597.99 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 18205.72 ms
+
+
+real	0m19.022s
+user	0m12.612s
+sys	0m6.386s
+```
+- q5_k:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 884 (c594992)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 256
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 17 (mostly Q5_K - Medium)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  388.02 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 5019 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to do with having an impact on someone else’s.
+I feel that we are all here for a purpose in this world, and there may be many meanings behind it but one thing leads me to want my presence on this earth to have made some sort of difference or impression upon another person – the question being what would you like your legacy to mean? I believe our lives will influence someone through actions large and small.
+I see life as an opportunity for us all, not only in terms of having great experiences but also in that we can create them ourselves; this applies equally to good or bad times whether it be a job role/career choice which is enjoyable yet unfulfilling too… I believe the meaning behind your own personal story will never truly escape you.
+I’m not sure if there are any more important questions than these but they certainly make me think! If we can all live by this idea, then life wouldn’t be such a bad thing would it? And to those who do go on and enjoy their lives for what it is…well done!. For example I have been lucky enough (in terms of my career) in that many people look up to me when working with them.
+I believe this also has the power though
+llama_print_timings:        load time =  1144.04 ms
+llama_print_timings:      sample time =   145.05 ms /   256 runs   (    0.57 ms per token,  1764.88 tokens per second)
+llama_print_timings: prompt eval time =   130.67 ms /     8 tokens (   16.33 ms per token,    61.22 tokens per second)
+llama_print_timings:        eval time =  4041.56 ms /   255 runs   (   15.85 ms per token,    63.09 tokens per second)
+llama_print_timings:       total time =  4383.28 ms
+
+real	0m6.417s
+user	0m12.745s
+sys	0m1.378s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 884 (c594992)
+main: seed  = 1690105547
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 256
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 17 (mostly Q5_K - Medium)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  484.02 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 5883 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.52 seconds per pass - ETA 0 minutes
+[1]4.8117,[2]6.3753,[3]7.3922,[4]7.2793,
+llama_print_timings:        load time =  3324.15 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 13151.45 ms /  8192 tokens (    1.61 ms per token,   622.90 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 18126.23 ms
+
+
+real	0m18.973s
+user	0m12.867s
+sys	0m6.077s
+```
+- q6_k:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q6_k.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 884 (c594992)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q6_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 256
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 18 (mostly Q6_K)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  404.62 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 5714 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to love God, enjoy Him and find joy in serving others. That’s why we do what we do! This week our staff was honored with a “Dinner on Us” from PF Chang China Bistro because it takes their teamwork as well as ours (and yours) to make this ministry successful!!
+We believe the most important thing that makes us different is not just in HOW but rather WHO… and what we do reflects who He made us. We are a community of believers, committed to glorifying Him through everything from our worship styles/styles & formats including traditional services on Sunday mornings with communion, contemporary music mid-week service for adults (including children’s church), women’s Bible study groups, men’s fellowship breakfast and ministry opportunities…but we are also a community of believers who have chosen to do some things differently.
+Here is what makes us different: We believe in the importance of small group discipleship/Bible study which allows you grow deeper through accountability relationships with others while learning from gifted teachers & experienced leaders (all of our staff members meet weekly). There are also opportunities for women and men at every stage to serve…and we provide some unique ministry contexts including a community outreach center, an inner-city
+llama_print_timings:        load time =  1157.36 ms
+llama_print_timings:      sample time =   148.95 ms /   256 runs   (    0.58 ms per token,  1718.66 tokens per second)
+llama_print_timings: prompt eval time =   120.39 ms /     8 tokens (   15.05 ms per token,    66.45 tokens per second)
+llama_print_timings:        eval time =  3569.50 ms /   255 runs   (   14.00 ms per token,    71.44 tokens per second)
+llama_print_timings:       total time =  3906.00 ms
+
+real	0m6.001s
+user	0m11.285s
+sys	0m1.451s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q6_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 884 (c594992)
+main: seed  = 1690105566
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q6_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 256
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 18 (mostly Q6_K)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  500.62 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 6578 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.48 seconds per pass - ETA 0 minutes
+[1]4.8087,[2]6.3621,[3]7.3760,[4]7.2588,
+llama_print_timings:        load time =  3179.09 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 13089.07 ms /  8192 tokens (    1.60 ms per token,   625.87 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 17732.45 ms
+
+
+real	0m18.581s
+user	0m12.466s
+sys	0m6.087s
+```
+## Diff with parent commit
+
+<details><summary>click to expand</summary>
+
+```diff
+--- /home/ggml/results/llama.cpp/2d/ac31b3580143afbd7716a6e6263f8c6e1ae912/ggml-4-x86-cuda-v100/stdall	2023-07-23 09:28:52.318680595 +0000
++++ /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/stdall	2023-07-23 09:46:25.134888926 +0000
+@@ -1,17 +1,17 @@
+-rm: cannot remove '/home/ggml/results/llama.cpp/2d/ac31b3580143afbd7716a6e6263f8c6e1ae912/ggml-4-x86-cuda-v100/*.log': No such file or directory
+-rm: cannot remove '/home/ggml/results/llama.cpp/2d/ac31b3580143afbd7716a6e6263f8c6e1ae912/ggml-4-x86-cuda-v100/*.exit': No such file or directory
+-rm: cannot remove '/home/ggml/results/llama.cpp/2d/ac31b3580143afbd7716a6e6263f8c6e1ae912/ggml-4-x86-cuda-v100/*.md': No such file or directory
++rm: cannot remove '/home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/*.log': No such file or directory
++rm: cannot remove '/home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/*.exit': No such file or directory
++rm: cannot remove '/home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/*.md': No such file or directory
+ Defaulting to user installation because normal site-packages is not writeable
+ Requirement already satisfied: numpy==1.24 in /home/ggml/.local/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/requirements.txt (line 1)) (1.24.0)
+ Requirement already satisfied: sentencepiece==0.1.98 in /home/ggml/.local/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/requirements.txt (line 2)) (0.1.98)
+ + gg_run_ctest_debug
+ + cd /home/ggml/work/llama.cpp
+ + rm -rf build-ci-debug
+-+ tee /home/ggml/results/llama.cpp/2d/ac31b3580143afbd7716a6e6263f8c6e1ae912/ggml-4-x86-cuda-v100/ctest_debug.log
+++ tee /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/ctest_debug.log
+ + mkdir build-ci-debug
+ + cd build-ci-debug
+ + set -e
+-+ tee -a /home/ggml/results/llama.cpp/2d/ac31b3580143afbd7716a6e6263f8c6e1ae912/ggml-4-x86-cuda-v100/ctest_debug-cmake.log
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/ctest_debug-cmake.log
+ + cmake -DCMAKE_BUILD_TYPE=Debug ..
+ -- The C compiler identification is GNU 11.3.0
+ -- The CXX compiler identification is GNU 11.3.0
+@@ -35,84 +35,82 @@
+ -- Generating done (0.1s)
+ -- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-debug
+ 
+-real	0m0.512s
+-user	0m0.376s
+-sys	0m0.140s
+-+ tee -a /home/ggml/results/llama.cpp/2d/ac31b3580143afbd7716a6e6263f8c6e1ae912/ggml-4-x86-cuda-v100/ctest_debug-make.log
++real	0m0.514s
++user	0m0.403s
++sys	0m0.114s
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/ctest_debug-make.log
+ + make -j
+-[  2%] Built target BUILD_INFO
+-[  4%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+-[  6%] Building C object CMakeFiles/ggml.dir/k_quants.c.o
++[  2%] Building C object CMakeFiles/ggml.dir/ggml.c.o
++[  4%] Building C object CMakeFiles/ggml.dir/k_quants.c.o
++[  6%] Built target BUILD_INFO
+ [  6%] Built target ggml
+-[  8%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+-[ 10%] Linking C static library libggml_static.a
++[  8%] Linking C static library libggml_static.a
++[ 10%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+ [ 10%] Built target ggml_static
+ [ 12%] Linking CXX static library libllama.a
+ [ 12%] Built target llama
+-[ 14%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+-[ 17%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/test-tokenizer-0.cpp.o
+-[ 21%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+-[ 21%] Building C object tests/CMakeFiles/test-grad0.dir/test-grad0.c.o
+-[ 23%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
+-[ 25%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+-[ 27%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
+-[ 29%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
++[ 14%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
++[ 17%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
++[ 19%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
++[ 21%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/test-tokenizer-0.cpp.o
++[ 23%] Building C object tests/CMakeFiles/test-grad0.dir/test-grad0.c.o
++[ 25%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
++[ 27%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
++[ 29%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
+ [ 31%] Linking CXX executable ../bin/test-grad0
+-[ 34%] Linking CXX executable ../../bin/quantize
+-[ 36%] Linking CXX executable ../bin/test-quantize-fns
+-[ 36%] Built target test-grad0
+-[ 36%] Built target quantize
+-[ 36%] Built target test-quantize-fns
+-[ 38%] Linking CXX executable ../bin/test-sampling
+-[ 40%] Linking CXX executable ../bin/test-tokenizer-0
+-[ 40%] Built target test-sampling
++[ 31%] Built target test-grad0
++[ 34%] Linking CXX executable ../bin/test-quantize-fns
++[ 36%] Linking CXX executable ../../bin/quantize
++[ 38%] Linking CXX executable ../bin/test-tokenizer-0
++[ 38%] Built target test-quantize-fns
++[ 40%] Linking CXX executable ../bin/test-sampling
++[ 40%] Built target quantize
+ [ 40%] Built target test-tokenizer-0
++[ 40%] Built target test-sampling
+ [ 42%] Linking CXX executable ../bin/test-quantize-perf
+ [ 42%] Built target test-quantize-perf
+ [ 42%] Built target common
+ [ 44%] Building CXX object examples/main/CMakeFiles/main.dir/main.cpp.o
+-[ 46%] Building CXX object examples/perplexity/CMakeFiles/perplexity.dir/perplexity.cpp.o
+-[ 48%] Building CXX object examples/embedding/CMakeFiles/embedding.dir/embedding.cpp.o
++[ 46%] Building CXX object examples/embedding/CMakeFiles/embedding.dir/embedding.cpp.o
++[ 48%] Building CXX object examples/perplexity/CMakeFiles/perplexity.dir/perplexity.cpp.o
+ [ 51%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
+ [ 53%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
+ [ 55%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
+ [ 57%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
+ [ 59%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
+ [ 61%] Building CXX object examples/embd-input/CMakeFiles/embdinput.dir/embd-input-lib.cpp.o
+-[ 63%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
+-[ 65%] Building CXX object pocs/vdot/CMakeFiles/vdot.dir/vdot.cpp.o
++[ 63%] Building CXX object pocs/vdot/CMakeFiles/vdot.dir/vdot.cpp.o
++[ 65%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
+ [ 68%] Building CXX object pocs/vdot/CMakeFiles/q8dot.dir/q8dot.cpp.o
+ /home/ggml/work/llama.cpp/examples/baby-llama/baby-llama.cpp: In function ‘int main(int, char**)’:
+ /home/ggml/work/llama.cpp/examples/baby-llama/baby-llama.cpp:1614:32: warning: variable ‘opt_params_adam’ set but not used [-Wunused-but-set-variable]
+  1614 |         struct ggml_opt_params opt_params_adam = ggml_opt_default_params(GGML_OPT_ADAM);
+       |                                ^~~~~~~~~~~~~~~
+ [ 70%] Linking CXX executable ../../bin/embedding
+-[ 72%] Linking CXX executable ../../bin/save-load-state
++[ 72%] Linking CXX executable ../../bin/benchmark
+ [ 74%] Linking CXX executable ../../bin/baby-llama
+-[ 76%] Linking CXX executable ../../bin/q8dot
+-[ 78%] Linking CXX executable ../../bin/benchmark
+-[ 78%] Built target embedding
++[ 76%] Linking CXX executable ../../bin/simple
++[ 78%] Linking CXX executable ../../bin/q8dot
+ [ 80%] Linking CXX executable ../../bin/vdot
+-[ 80%] Built target save-load-state
+-[ 82%] Linking CXX executable ../../bin/perplexity
+-[ 82%] Built target baby-llama
+-[ 82%] Built target benchmark
+-[ 82%] Built target q8dot
+-[ 85%] Linking CXX executable ../../bin/simple
+-[ 85%] Built target perplexity
++[ 82%] Linking CXX executable ../../bin/save-load-state
++[ 82%] Built target embedding
++[ 85%] Linking CXX executable ../../bin/perplexity
++[ 85%] Built target simple
++[ 85%] Built target baby-llama
++[ 85%] Built target benchmark
+ [ 85%] Built target vdot
+-[ 87%] Linking CXX static library libembdinput.a
+-[ 89%] Linking CXX executable ../../bin/main
++[ 85%] Built target perplexity
++[ 85%] Built target save-load-state
++[ 85%] Built target q8dot
++[ 87%] Linking CXX executable ../../bin/main
++[ 89%] Linking CXX static library libembdinput.a
+ [ 89%] Built target embdinput
+ [ 91%] Building CXX object examples/embd-input/CMakeFiles/embd-input-test.dir/embd-input-test.cpp.o
+-[ 91%] Built target simple
+ [ 91%] Built target main
+-[ 93%] Linking CXX executable ../../bin/quantize-stats
+-[ 95%] Linking CXX executable ../../bin/embd-input-test
+-[ 95%] Built target quantize-stats
+-[ 97%] Linking CXX executable ../../bin/train-text-from-scratch
++[ 93%] Linking CXX executable ../../bin/embd-input-test
++[ 95%] Linking CXX executable ../../bin/train-text-from-scratch
++[ 97%] Linking CXX executable ../../bin/quantize-stats
+ [ 97%] Built target embd-input-test
+-[ 97%] Built target train-text-from-scratch
+ In file included from /usr/include/c++/11/cassert:44,
+                  from /home/ggml/work/llama.cpp/examples/server/json.hpp:2541,
+                  from /home/ggml/work/llama.cpp/examples/server/server.cpp:11:
+@@ -120,13 +118,15 @@
+ /home/ggml/work/llama.cpp/examples/server/server.cpp:932:27: warning: comparison of integer expressions of different signedness: ‘const int32_t’ {aka ‘const int’} and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+   932 |     assert(timings.n_eval == llama.num_tokens_predicted);
+       |            ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++[ 97%] Built target train-text-from-scratch
++[ 97%] Built target quantize-stats
+ [100%] Linking CXX executable ../../bin/server
+ [100%] Built target server
+ 
+-real	0m21.944s
+-user	0m36.142s
+-sys	0m3.514s
+-+ tee -a /home/ggml/results/llama.cpp/2d/ac31b3580143afbd7716a6e6263f8c6e1ae912/ggml-4-x86-cuda-v100/ctest_debug-ctest.log
++real	0m21.616s
++user	0m36.094s
++sys	0m3.683s
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/ctest_debug-ctest.log
+ + ctest --output-on-failure -E test-opt
+ Test project /home/ggml/work/llama.cpp/build-ci-debug
+     Start 1: test-quantize-fns
+@@ -138,27 +138,27 @@
+     Start 4: test-tokenizer-0
+ 4/5 Test #4: test-tokenizer-0 .................   Passed    0.03 sec
+     Start 5: test-grad0
+-5/5 Test #5: test-grad0 .......................   Passed    5.15 sec
++5/5 Test #5: test-grad0 .......................   Passed    4.64 sec
+ 
+ 100% tests passed, 0 tests failed out of 5
+ 
+-Total Test time (real) =   5.26 sec
++Total Test time (real) =   4.75 sec
+ 
+-real	0m5.292s
+-user	0m6.847s
+-sys	0m5.563s
++real	0m4.780s
++user	0m5.363s
++sys	0m5.481s
+ + set +e
+ + cur=0
+ + echo 0
+ + set +x
+ + gg_run_ctest_release
+ + cd /home/ggml/work/llama.cpp
+-+ tee /home/ggml/results/llama.cpp/2d/ac31b3580143afbd7716a6e6263f8c6e1ae912/ggml-4-x86-cuda-v100/ctest_release.log
+++ tee /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/ctest_release.log
+ + rm -rf build-ci-release
+ + mkdir build-ci-release
+ + cd build-ci-release
+ + set -e
+-+ tee -a /home/ggml/results/llama.cpp/2d/ac31b3580143afbd7716a6e6263f8c6e1ae912/ggml-4-x86-cuda-v100/ctest_release-cmake.log
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/ctest_release-cmake.log
+ + cmake -DCMAKE_BUILD_TYPE=Release ..
+ -- The C compiler identification is GNU 11.3.0
+ -- The CXX compiler identification is GNU 11.3.0
+@@ -182,10 +182,10 @@
+ -- Generating done (0.1s)
+ -- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-release
+ 
+-real	0m0.505s
+-user	0m0.380s
+-sys	0m0.129s
+-+ tee -a /home/ggml/results/llama.cpp/2d/ac31b3580143afbd7716a6e6263f8c6e1ae912/ggml-4-x86-cuda-v100/ctest_release-make.log
++real	0m0.538s
++user	0m0.404s
++sys	0m0.137s
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/ctest_release-make.log
+ + make -j
+ [  2%] Built target BUILD_INFO
+ [  4%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+@@ -196,23 +196,23 @@
+ [ 10%] Built target ggml_static
+ [ 12%] Linking CXX static library libllama.a
+ [ 12%] Built target llama
++[ 14%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+ [ 17%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+-[ 17%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+-[ 19%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
++[ 19%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/test-tokenizer-0.cpp.o
++[ 21%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
+ [ 23%] Building C object tests/CMakeFiles/test-grad0.dir/test-grad0.c.o
+-[ 23%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/test-tokenizer-0.cpp.o
+-[ 25%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+-[ 27%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+-[ 29%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
++[ 25%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
++[ 27%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
++[ 29%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+ [ 31%] Linking CXX executable ../../bin/quantize
+-[ 31%] Built target quantize
+ [ 34%] Linking CXX executable ../bin/test-sampling
+-[ 36%] Linking CXX executable ../bin/test-tokenizer-0
+-[ 38%] Linking CXX executable ../bin/test-quantize-fns
++[ 36%] Linking CXX executable ../bin/test-quantize-fns
++[ 38%] Linking CXX executable ../bin/test-tokenizer-0
++[ 38%] Built target quantize
+ [ 38%] Built target test-sampling
+-[ 38%] Built target test-quantize-fns
+-[ 38%] Built target test-tokenizer-0
+ [ 40%] Linking CXX executable ../bin/test-grad0
++[ 40%] Built target test-quantize-fns
++[ 40%] Built target test-tokenizer-0
+ [ 40%] Built target test-grad0
+ [ 42%] Linking CXX executable ../bin/test-quantize-perf
+ [ 42%] Built target test-quantize-perf
+@@ -221,37 +221,37 @@
+ [ 46%] Building CXX object examples/perplexity/CMakeFiles/perplexity.dir/perplexity.cpp.o
+ [ 48%] Building CXX object examples/embedding/CMakeFiles/embedding.dir/embedding.cpp.o
+ [ 51%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
++[ 53%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
+ [ 55%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
+-[ 55%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
+ [ 57%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
+ [ 59%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
+ [ 61%] Building CXX object examples/embd-input/CMakeFiles/embdinput.dir/embd-input-lib.cpp.o
+ [ 63%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
+-[ 65%] Building CXX object pocs/vdot/CMakeFiles/vdot.dir/vdot.cpp.o
+-[ 68%] Building CXX object pocs/vdot/CMakeFiles/q8dot.dir/q8dot.cpp.o
++[ 65%] Building CXX object pocs/vdot/CMakeFiles/q8dot.dir/q8dot.cpp.o
++[ 68%] Building CXX object pocs/vdot/CMakeFiles/vdot.dir/vdot.cpp.o
+ /home/ggml/work/llama.cpp/examples/baby-llama/baby-llama.cpp: In function ‘int main(int, char**)’:
+ /home/ggml/work/llama.cpp/examples/baby-llama/baby-llama.cpp:1614:32: warning: variable ‘opt_params_adam’ set but not used [-Wunused-but-set-variable]
+  1614 |         struct ggml_opt_params opt_params_adam = ggml_opt_default_params(GGML_OPT_ADAM);
+       |                                ^~~~~~~~~~~~~~~
+-[ 70%] Linking CXX executable ../../bin/embedding
+-[ 72%] Linking CXX executable ../../bin/q8dot
+-[ 72%] Built target embedding
++[ 70%] Linking CXX executable ../../bin/q8dot
++[ 72%] Linking CXX executable ../../bin/embedding
+ [ 74%] Linking CXX executable ../../bin/benchmark
+-[ 74%] Built target q8dot
+-[ 76%] Linking CXX executable ../../bin/vdot
+-[ 78%] Linking CXX executable ../../bin/save-load-state
++[ 76%] Linking CXX executable ../../bin/save-load-state
++[ 78%] Linking CXX executable ../../bin/simple
++[ 78%] Built target save-load-state
++[ 78%] Built target q8dot
++[ 78%] Built target embedding
++[ 78%] Built target simple
+ [ 78%] Built target benchmark
+-[ 80%] Linking CXX executable ../../bin/simple
+-[ 80%] Built target save-load-state
+-[ 82%] Linking CXX executable ../../bin/baby-llama
++[ 80%] Linking CXX executable ../../bin/vdot
++[ 82%] Linking CXX executable ../../bin/perplexity
+ [ 82%] Built target vdot
+-[ 82%] Built target simple
+-[ 82%] Built target baby-llama
+-[ 85%] Linking CXX executable ../../bin/perplexity
+-[ 87%] Linking CXX static library libembdinput.a
+-[ 87%] Built target perplexity
++[ 85%] Linking CXX static library libembdinput.a
++[ 87%] Linking CXX executable ../../bin/baby-llama
+ [ 87%] Built target embdinput
+ [ 89%] Building CXX object examples/embd-input/CMakeFiles/embd-input-test.dir/embd-input-test.cpp.o
++[ 89%] Built target perplexity
++[ 89%] Built target baby-llama
+ [ 91%] Linking CXX executable ../../bin/main
+ [ 91%] Built target main
+ [ 93%] Linking CXX executable ../../bin/embd-input-test
+@@ -263,37 +263,37 @@
+ [100%] Linking CXX executable ../../bin/server
+ [100%] Built target server
+ 
+-real	0m35.335s
+-user	0m56.463s
+-sys	0m2.944s
++real	0m35.797s
++user	0m57.423s
++sys	0m3.051s
+ + '[' -z ']'
+-+ tee -a /home/ggml/results/llama.cpp/2d/ac31b3580143afbd7716a6e6263f8c6e1ae912/ggml-4-x86-cuda-v100/ctest_release-ctest.log
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/ctest_release-ctest.log
+ + ctest --output-on-failure
+ Test project /home/ggml/work/llama.cpp/build-ci-release
+     Start 1: test-quantize-fns
+ 1/5 Test #1: test-quantize-fns ................   Passed    0.01 sec
+     Start 2: test-quantize-perf
+-2/5 Test #2: test-quantize-perf ...............   Passed    0.01 sec
++2/5 Test #2: test-quantize-perf ...............   Passed    0.02 sec
+     Start 3: test-sampling
+ 3/5 Test #3: test-sampling ....................   Passed    0.00 sec
+     Start 4: test-tokenizer-0
+-4/5 Test #4: test-tokenizer-0 .................   Passed    0.01 sec
++4/5 Test #4: test-tokenizer-0 .................   Passed    0.02 sec
+     Start 5: test-grad0
+-5/5 Test #5: test-grad0 .......................   Passed    4.65 sec
++5/5 Test #5: test-grad0 .......................   Passed    5.01 sec
+ 
+ 100% tests passed, 0 tests failed out of 5
+ 
+-Total Test time (real) =   4.69 sec
++Total Test time (real) =   5.06 sec
+ 
+-real	0m4.722s
+-user	0m5.234s
+-sys	0m5.366s
++real	0m5.089s
++user	0m6.090s
++sys	0m5.588s
+ + set +e
+ + cur=0
+ + echo 0
+ + set +x
+ + gg_run_open_llama_7b_v2
+-+ tee /home/ggml/results/llama.cpp/2d/ac31b3580143afbd7716a6e6263f8c6e1ae912/ggml-4-x86-cuda-v100/open_llama_7b_v2.log
+++ tee /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2.log
+ + cd /home/ggml/work/llama.cpp
+ + gg_wget models-mnt/open-llama/7B-v2/ https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/config.json
+ + local out=models-mnt/open-llama/7B-v2/
+@@ -304,7 +304,7 @@
+ + cd models-mnt/open-llama/7B-v2/
+ + wget -nv -N https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/config.json
+ Last-modified header missing -- time-stamps turned off.
+-2023-07-23 09:28:04 URL:https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/config.json [502/502] -> "config.json" [1]
++2023-07-23 09:32:22 URL:https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/config.json [502/502] -> "config.json" [1]
+ + cd /home/ggml/work/llama.cpp
+ + gg_wget models-mnt/open-llama/7B-v2/ https://huggingface.co/openlm-research/open_llama_7b_v2/resolve/main/tokenizer.model
+ + local out=models-mnt/open-llama/7B-v2/
+@@ -324,7 +324,7 @@
+ + cd models-mnt/open-llama/7B-v2/
+ + wget -nv -N https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/tokenizer_config.json
+ Last-modified header missing -- time-stamps turned off.
+-2023-07-23 09:28:05 URL:https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/tokenizer_config.json [593/593] -> "tokenizer_config.json" [1]
++2023-07-23 09:32:23 URL:https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/tokenizer_config.json [593/593] -> "tokenizer_config.json" [1]
+ + cd /home/ggml/work/llama.cpp
+ + gg_wget models-mnt/open-llama/7B-v2/ https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/special_tokens_map.json
+ + local out=models-mnt/open-llama/7B-v2/
+@@ -335,7 +335,7 @@
+ + cd models-mnt/open-llama/7B-v2/
+ + wget -nv -N https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/special_tokens_map.json
+ Last-modified header missing -- time-stamps turned off.
+-2023-07-23 09:28:05 URL:https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/special_tokens_map.json [330/330] -> "special_tokens_map.json" [1]
++2023-07-23 09:32:24 URL:https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/special_tokens_map.json [330/330] -> "special_tokens_map.json" [1]
+ + cd /home/ggml/work/llama.cpp
+ + gg_wget models-mnt/open-llama/7B-v2/ https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/pytorch_model.bin.index.json
+ + local out=models-mnt/open-llama/7B-v2/
+@@ -346,7 +346,7 @@
+ + cd models-mnt/open-llama/7B-v2/
+ + wget -nv -N https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/pytorch_model.bin.index.json
+ Last-modified header missing -- time-stamps turned off.
+-2023-07-23 09:28:05 URL:https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/pytorch_model.bin.index.json [26788/26788] -> "pytorch_model.bin.index.json" [1]
++2023-07-23 09:32:24 URL:https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/pytorch_model.bin.index.json [26788/26788] -> "pytorch_model.bin.index.json" [1]
+ + cd /home/ggml/work/llama.cpp
+ + gg_wget models-mnt/open-llama/7B-v2/ https://huggingface.co/openlm-research/open_llama_7b_v2/resolve/main/pytorch_model-00001-of-00002.bin
+ + local out=models-mnt/open-llama/7B-v2/
+@@ -375,7 +375,7 @@
+ + cd models-mnt/open-llama/7B-v2/
+ + wget -nv -N https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/generation_config.json
+ Last-modified header missing -- time-stamps turned off.
+-2023-07-23 09:28:06 URL:https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/generation_config.json [132/132] -> "generation_config.json" [1]
++2023-07-23 09:32:25 URL:https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/generation_config.json [132/132] -> "generation_config.json" [1]
+ + cd /home/ggml/work/llama.cpp
+ + gg_wget models-mnt/wikitext/ https://s3.amazonaws.com/research.metamind.io/wikitext/wikitext-2-raw-v1.zip
+ + local out=models-mnt/wikitext/
+@@ -397,7 +397,7 @@
+ + mkdir build-ci-release
+ + cd build-ci-release
+ + set -e
+-+ tee -a /home/ggml/results/llama.cpp/2d/ac31b3580143afbd7716a6e6263f8c6e1ae912/ggml-4-x86-cuda-v100/open_llama_7b_v2-cmake.log
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-cmake.log
+ + cmake -DCMAKE_BUILD_TYPE=Release -DLLAMA_CUBLAS=1 ..
+ -- The C compiler identification is GNU 11.3.0
+ -- The CXX compiler identification is GNU 11.3.0
+@@ -430,10 +430,10 @@
+ -- Generating done (0.1s)
+ -- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-release
+ 
+-real	0m3.050s
+-user	0m2.375s
++real	0m2.996s
++user	0m2.326s
+ sys	0m0.670s
+-+ tee -a /home/ggml/results/llama.cpp/2d/ac31b3580143afbd7716a6e6263f8c6e1ae912/ggml-4-x86-cuda-v100/open_llama_7b_v2-make.log
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-make.log
+ + make -j
+ [  2%] Built target BUILD_INFO
+ [  4%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+@@ -445,64 +445,64 @@
+ [ 12%] Built target ggml_static
+ [ 14%] Linking CXX static library libllama.a
+ [ 14%] Built target llama
+-[ 16%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
++[ 18%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+ [ 18%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+ [ 20%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
+-[ 22%] Building C object tests/CMakeFiles/test-grad0.dir/test-grad0.c.o
+-[ 25%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/test-tokenizer-0.cpp.o
++[ 22%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/test-tokenizer-0.cpp.o
++[ 25%] Building C object tests/CMakeFiles/test-grad0.dir/test-grad0.c.o
+ [ 27%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+-[ 29%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
++[ 31%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
+ [ 31%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+-[ 33%] Linking CXX executable ../bin/test-quantize-fns
+-[ 35%] Linking CXX executable ../bin/test-tokenizer-0
+-[ 37%] Linking CXX executable ../../bin/quantize
++[ 33%] Linking CXX executable ../../bin/quantize
++[ 35%] Linking CXX executable ../bin/test-quantize-fns
++[ 37%] Linking CXX executable ../bin/test-tokenizer-0
+ [ 37%] Built target quantize
+ [ 37%] Built target test-quantize-fns
+-[ 39%] Linking CXX executable ../bin/test-grad0
++[ 39%] Linking CXX executable ../bin/test-sampling
+ [ 39%] Built target test-tokenizer-0
+-[ 41%] Linking CXX executable ../bin/test-sampling
++[ 39%] Built target test-sampling
++[ 41%] Linking CXX executable ../bin/test-grad0
+ [ 41%] Built target test-grad0
+-[ 41%] Built target test-sampling
+ [ 43%] Linking CXX executable ../bin/test-quantize-perf
+ [ 43%] Built target test-quantize-perf
+ [ 45%] Linking CXX executable ../../bin/quantize-stats
+ [ 45%] Built target quantize-stats
+ [ 45%] Built target common
++[ 47%] Building CXX object examples/main/CMakeFiles/main.dir/main.cpp.o
+ [ 50%] Building CXX object examples/perplexity/CMakeFiles/perplexity.dir/perplexity.cpp.o
+-[ 50%] Building CXX object examples/embedding/CMakeFiles/embedding.dir/embedding.cpp.o
+-[ 52%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
++[ 52%] Building CXX object examples/embedding/CMakeFiles/embedding.dir/embedding.cpp.o
+ [ 54%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
+-[ 56%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
+-[ 58%] Building CXX object examples/main/CMakeFiles/main.dir/main.cpp.o
+-[ 60%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
+-[ 62%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
++[ 56%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
++[ 58%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
++[ 60%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
++[ 62%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
+ [ 64%] Building CXX object examples/embd-input/CMakeFiles/embdinput.dir/embd-input-lib.cpp.o
+ [ 66%] Building CXX object pocs/vdot/CMakeFiles/vdot.dir/vdot.cpp.o
+-[ 68%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
++[ 70%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
+ [ 70%] Building CXX object pocs/vdot/CMakeFiles/q8dot.dir/q8dot.cpp.o
+ /home/ggml/work/llama.cpp/examples/baby-llama/baby-llama.cpp: In function ‘int main(int, char**)’:
+ /home/ggml/work/llama.cpp/examples/baby-llama/baby-llama.cpp:1614:32: warning: variable ‘opt_params_adam’ set but not used [-Wunused-but-set-variable]
+  1614 |         struct ggml_opt_params opt_params_adam = ggml_opt_default_params(GGML_OPT_ADAM);
+       |                                ^~~~~~~~~~~~~~~
+-[ 72%] Linking CXX executable ../../bin/q8dot
+-[ 75%] Linking CXX executable ../../bin/embedding
+-[ 77%] Linking CXX executable ../../bin/benchmark
++[ 72%] Linking CXX executable ../../bin/embedding
++[ 75%] Linking CXX executable ../../bin/benchmark
++[ 77%] Linking CXX executable ../../bin/q8dot
+ [ 79%] Linking CXX executable ../../bin/save-load-state
+-[ 79%] Built target q8dot
+ [ 79%] Built target embedding
+-[ 79%] Built target benchmark
+-[ 81%] Linking CXX executable ../../bin/vdot
+-[ 81%] Built target save-load-state
+-[ 83%] Linking CXX executable ../../bin/simple
++[ 81%] Linking CXX executable ../../bin/simple
++[ 83%] Linking CXX executable ../../bin/vdot
++[ 83%] Built target benchmark
++[ 83%] Built target q8dot
++[ 83%] Built target save-load-state
+ [ 83%] Built target vdot
+-[ 85%] Linking CXX executable ../../bin/perplexity
+-[ 87%] Linking CXX executable ../../bin/baby-llama
++[ 85%] Linking CXX executable ../../bin/baby-llama
++[ 85%] Built target simple
++[ 87%] Linking CXX executable ../../bin/perplexity
++[ 87%] Built target baby-llama
++[ 87%] Built target perplexity
+ [ 89%] Linking CXX static library libembdinput.a
+-[ 89%] Built target simple
+ [ 89%] Built target embdinput
+ [ 91%] Building CXX object examples/embd-input/CMakeFiles/embd-input-test.dir/embd-input-test.cpp.o
+-[ 91%] Built target perplexity
+-[ 91%] Built target baby-llama
+ [ 93%] Linking CXX executable ../../bin/main
+ [ 93%] Built target main
+ [ 95%] Linking CXX executable ../../bin/embd-input-test
+@@ -512,29 +512,4628 @@
+ [100%] Linking CXX executable ../../bin/server
+ [100%] Built target server
+ 
+-real	0m39.929s
+-user	1m7.444s
+-sys	0m3.356s
++real	0m39.451s
++user	1m6.358s
++sys	0m3.495s
+ + python3 ../convert.py ../models-mnt/open-llama/7B-v2
+-  File "/home/ggml/work/llama.cpp/build-ci-release/../convert.py", line 227
+-    else if orig_config_path.exists():
+-         ^^
+-SyntaxError: expected ':'
+-+ cur=1
+-+ echo 1
++Loading model file ../models-mnt/open-llama/7B-v2/pytorch_model-00001-of-00002.bin
++Loading model file ../models-mnt/open-llama/7B-v2/pytorch_model-00001-of-00002.bin
++Loading model file ../models-mnt/open-llama/7B-v2/pytorch_model-00002-of-00002.bin
++Loading vocab file ../models-mnt/open-llama/7B-v2/tokenizer.model
++params: n_vocab:32000 n_embd:4096 n_mult:256 n_head:32 n_layer:32
++Writing vocab...
++[  1/291] Writing tensor tok_embeddings.weight                  | size  32000 x   4096  | type UnquantizedDataType(name='F16')
++[  2/291] Writing tensor norm.weight                            | size   4096           | type UnquantizedDataType(name='F32')
++[  3/291] Writing tensor output.weight                          | size  32000 x   4096  | type UnquantizedDataType(name='F16')
++[  4/291] Writing tensor layers.0.attention.wq.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[  5/291] Writing tensor layers.0.attention.wk.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[  6/291] Writing tensor layers.0.attention.wv.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[  7/291] Writing tensor layers.0.attention.wo.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[  8/291] Writing tensor layers.0.attention_norm.weight         | size   4096           | type UnquantizedDataType(name='F32')
++[  9/291] Writing tensor layers.0.feed_forward.w1.weight        | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[ 10/291] Writing tensor layers.0.feed_forward.w2.weight        | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[ 11/291] Writing tensor layers.0.feed_forward.w3.weight        | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[ 12/291] Writing tensor layers.0.ffn_norm.weight               | size   4096           | type UnquantizedDataType(name='F32')
++[ 13/291] Writing tensor layers.1.attention.wq.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 14/291] Writing tensor layers.1.attention.wk.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 15/291] Writing tensor layers.1.attention.wv.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 16/291] Writing tensor layers.1.attention.wo.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 17/291] Writing tensor layers.1.attention_norm.weight         | size   4096           | type UnquantizedDataType(name='F32')
++[ 18/291] Writing tensor layers.1.feed_forward.w1.weight        | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[ 19/291] Writing tensor layers.1.feed_forward.w2.weight        | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[ 20/291] Writing tensor layers.1.feed_forward.w3.weight        | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[ 21/291] Writing tensor layers.1.ffn_norm.weight               | size   4096           | type UnquantizedDataType(name='F32')
++[ 22/291] Writing tensor layers.2.attention.wq.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 23/291] Writing tensor layers.2.attention.wk.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 24/291] Writing tensor layers.2.attention.wv.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 25/291] Writing tensor layers.2.attention.wo.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 26/291] Writing tensor layers.2.attention_norm.weight         | size   4096           | type UnquantizedDataType(name='F32')
++[ 27/291] Writing tensor layers.2.feed_forward.w1.weight        | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[ 28/291] Writing tensor layers.2.feed_forward.w2.weight        | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[ 29/291] Writing tensor layers.2.feed_forward.w3.weight        | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[ 30/291] Writing tensor layers.2.ffn_norm.weight               | size   4096           | type UnquantizedDataType(name='F32')
++[ 31/291] Writing tensor layers.3.attention.wq.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 32/291] Writing tensor layers.3.attention.wk.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 33/291] Writing tensor layers.3.attention.wv.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 34/291] Writing tensor layers.3.attention.wo.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 35/291] Writing tensor layers.3.attention_norm.weight         | size   4096           | type UnquantizedDataType(name='F32')
++[ 36/291] Writing tensor layers.3.feed_forward.w1.weight        | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[ 37/291] Writing tensor layers.3.feed_forward.w2.weight        | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[ 38/291] Writing tensor layers.3.feed_forward.w3.weight        | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[ 39/291] Writing tensor layers.3.ffn_norm.weight               | size   4096           | type UnquantizedDataType(name='F32')
++[ 40/291] Writing tensor layers.4.attention.wq.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 41/291] Writing tensor layers.4.attention.wk.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 42/291] Writing tensor layers.4.attention.wv.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 43/291] Writing tensor layers.4.attention.wo.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 44/291] Writing tensor layers.4.attention_norm.weight         | size   4096           | type UnquantizedDataType(name='F32')
++[ 45/291] Writing tensor layers.4.feed_forward.w1.weight        | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[ 46/291] Writing tensor layers.4.feed_forward.w2.weight        | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[ 47/291] Writing tensor layers.4.feed_forward.w3.weight        | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[ 48/291] Writing tensor layers.4.ffn_norm.weight               | size   4096           | type UnquantizedDataType(name='F32')
++[ 49/291] Writing tensor layers.5.attention.wq.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 50/291] Writing tensor layers.5.attention.wk.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 51/291] Writing tensor layers.5.attention.wv.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 52/291] Writing tensor layers.5.attention.wo.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 53/291] Writing tensor layers.5.attention_norm.weight         | size   4096           | type UnquantizedDataType(name='F32')
++[ 54/291] Writing tensor layers.5.feed_forward.w1.weight        | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[ 55/291] Writing tensor layers.5.feed_forward.w2.weight        | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[ 56/291] Writing tensor layers.5.feed_forward.w3.weight        | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[ 57/291] Writing tensor layers.5.ffn_norm.weight               | size   4096           | type UnquantizedDataType(name='F32')
++[ 58/291] Writing tensor layers.6.attention.wq.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 59/291] Writing tensor layers.6.attention.wk.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 60/291] Writing tensor layers.6.attention.wv.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 61/291] Writing tensor layers.6.attention.wo.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 62/291] Writing tensor layers.6.attention_norm.weight         | size   4096           | type UnquantizedDataType(name='F32')
++[ 63/291] Writing tensor layers.6.feed_forward.w1.weight        | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[ 64/291] Writing tensor layers.6.feed_forward.w2.weight        | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[ 65/291] Writing tensor layers.6.feed_forward.w3.weight        | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[ 66/291] Writing tensor layers.6.ffn_norm.weight               | size   4096           | type UnquantizedDataType(name='F32')
++[ 67/291] Writing tensor layers.7.attention.wq.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 68/291] Writing tensor layers.7.attention.wk.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 69/291] Writing tensor layers.7.attention.wv.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 70/291] Writing tensor layers.7.attention.wo.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 71/291] Writing tensor layers.7.attention_norm.weight         | size   4096           | type UnquantizedDataType(name='F32')
++[ 72/291] Writing tensor layers.7.feed_forward.w1.weight        | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[ 73/291] Writing tensor layers.7.feed_forward.w2.weight        | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[ 74/291] Writing tensor layers.7.feed_forward.w3.weight        | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[ 75/291] Writing tensor layers.7.ffn_norm.weight               | size   4096           | type UnquantizedDataType(name='F32')
++[ 76/291] Writing tensor layers.8.attention.wq.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 77/291] Writing tensor layers.8.attention.wk.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 78/291] Writing tensor layers.8.attention.wv.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 79/291] Writing tensor layers.8.attention.wo.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 80/291] Writing tensor layers.8.attention_norm.weight         | size   4096           | type UnquantizedDataType(name='F32')
++[ 81/291] Writing tensor layers.8.feed_forward.w1.weight        | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[ 82/291] Writing tensor layers.8.feed_forward.w2.weight        | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[ 83/291] Writing tensor layers.8.feed_forward.w3.weight        | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[ 84/291] Writing tensor layers.8.ffn_norm.weight               | size   4096           | type UnquantizedDataType(name='F32')
++[ 85/291] Writing tensor layers.9.attention.wq.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 86/291] Writing tensor layers.9.attention.wk.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 87/291] Writing tensor layers.9.attention.wv.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 88/291] Writing tensor layers.9.attention.wo.weight           | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 89/291] Writing tensor layers.9.attention_norm.weight         | size   4096           | type UnquantizedDataType(name='F32')
++[ 90/291] Writing tensor layers.9.feed_forward.w1.weight        | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[ 91/291] Writing tensor layers.9.feed_forward.w2.weight        | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[ 92/291] Writing tensor layers.9.feed_forward.w3.weight        | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[ 93/291] Writing tensor layers.9.ffn_norm.weight               | size   4096           | type UnquantizedDataType(name='F32')
++[ 94/291] Writing tensor layers.10.attention.wq.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 95/291] Writing tensor layers.10.attention.wk.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 96/291] Writing tensor layers.10.attention.wv.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 97/291] Writing tensor layers.10.attention.wo.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[ 98/291] Writing tensor layers.10.attention_norm.weight        | size   4096           | type UnquantizedDataType(name='F32')
++[ 99/291] Writing tensor layers.10.feed_forward.w1.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[100/291] Writing tensor layers.10.feed_forward.w2.weight       | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[101/291] Writing tensor layers.10.feed_forward.w3.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[102/291] Writing tensor layers.10.ffn_norm.weight              | size   4096           | type UnquantizedDataType(name='F32')
++[103/291] Writing tensor layers.11.attention.wq.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[104/291] Writing tensor layers.11.attention.wk.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[105/291] Writing tensor layers.11.attention.wv.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[106/291] Writing tensor layers.11.attention.wo.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[107/291] Writing tensor layers.11.attention_norm.weight        | size   4096           | type UnquantizedDataType(name='F32')
++[108/291] Writing tensor layers.11.feed_forward.w1.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[109/291] Writing tensor layers.11.feed_forward.w2.weight       | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[110/291] Writing tensor layers.11.feed_forward.w3.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[111/291] Writing tensor layers.11.ffn_norm.weight              | size   4096           | type UnquantizedDataType(name='F32')
++[112/291] Writing tensor layers.12.attention.wq.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[113/291] Writing tensor layers.12.attention.wk.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[114/291] Writing tensor layers.12.attention.wv.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[115/291] Writing tensor layers.12.attention.wo.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[116/291] Writing tensor layers.12.attention_norm.weight        | size   4096           | type UnquantizedDataType(name='F32')
++[117/291] Writing tensor layers.12.feed_forward.w1.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[118/291] Writing tensor layers.12.feed_forward.w2.weight       | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[119/291] Writing tensor layers.12.feed_forward.w3.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[120/291] Writing tensor layers.12.ffn_norm.weight              | size   4096           | type UnquantizedDataType(name='F32')
++[121/291] Writing tensor layers.13.attention.wq.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[122/291] Writing tensor layers.13.attention.wk.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[123/291] Writing tensor layers.13.attention.wv.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[124/291] Writing tensor layers.13.attention.wo.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[125/291] Writing tensor layers.13.attention_norm.weight        | size   4096           | type UnquantizedDataType(name='F32')
++[126/291] Writing tensor layers.13.feed_forward.w1.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[127/291] Writing tensor layers.13.feed_forward.w2.weight       | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[128/291] Writing tensor layers.13.feed_forward.w3.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[129/291] Writing tensor layers.13.ffn_norm.weight              | size   4096           | type UnquantizedDataType(name='F32')
++[130/291] Writing tensor layers.14.attention.wq.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[131/291] Writing tensor layers.14.attention.wk.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[132/291] Writing tensor layers.14.attention.wv.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[133/291] Writing tensor layers.14.attention.wo.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[134/291] Writing tensor layers.14.attention_norm.weight        | size   4096           | type UnquantizedDataType(name='F32')
++[135/291] Writing tensor layers.14.feed_forward.w1.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[136/291] Writing tensor layers.14.feed_forward.w2.weight       | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[137/291] Writing tensor layers.14.feed_forward.w3.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[138/291] Writing tensor layers.14.ffn_norm.weight              | size   4096           | type UnquantizedDataType(name='F32')
++[139/291] Writing tensor layers.15.attention.wq.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[140/291] Writing tensor layers.15.attention.wk.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[141/291] Writing tensor layers.15.attention.wv.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[142/291] Writing tensor layers.15.attention.wo.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[143/291] Writing tensor layers.15.attention_norm.weight        | size   4096           | type UnquantizedDataType(name='F32')
++[144/291] Writing tensor layers.15.feed_forward.w1.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[145/291] Writing tensor layers.15.feed_forward.w2.weight       | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[146/291] Writing tensor layers.15.feed_forward.w3.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[147/291] Writing tensor layers.15.ffn_norm.weight              | size   4096           | type UnquantizedDataType(name='F32')
++[148/291] Writing tensor layers.16.attention.wq.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[149/291] Writing tensor layers.16.attention.wk.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[150/291] Writing tensor layers.16.attention.wv.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[151/291] Writing tensor layers.16.attention.wo.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[152/291] Writing tensor layers.16.attention_norm.weight        | size   4096           | type UnquantizedDataType(name='F32')
++[153/291] Writing tensor layers.16.feed_forward.w1.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[154/291] Writing tensor layers.16.feed_forward.w2.weight       | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[155/291] Writing tensor layers.16.feed_forward.w3.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[156/291] Writing tensor layers.16.ffn_norm.weight              | size   4096           | type UnquantizedDataType(name='F32')
++[157/291] Writing tensor layers.17.attention.wq.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[158/291] Writing tensor layers.17.attention.wk.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[159/291] Writing tensor layers.17.attention.wv.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[160/291] Writing tensor layers.17.attention.wo.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[161/291] Writing tensor layers.17.attention_norm.weight        | size   4096           | type UnquantizedDataType(name='F32')
++[162/291] Writing tensor layers.17.feed_forward.w1.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[163/291] Writing tensor layers.17.feed_forward.w2.weight       | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[164/291] Writing tensor layers.17.feed_forward.w3.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[165/291] Writing tensor layers.17.ffn_norm.weight              | size   4096           | type UnquantizedDataType(name='F32')
++[166/291] Writing tensor layers.18.attention.wq.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[167/291] Writing tensor layers.18.attention.wk.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[168/291] Writing tensor layers.18.attention.wv.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[169/291] Writing tensor layers.18.attention.wo.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[170/291] Writing tensor layers.18.attention_norm.weight        | size   4096           | type UnquantizedDataType(name='F32')
++[171/291] Writing tensor layers.18.feed_forward.w1.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[172/291] Writing tensor layers.18.feed_forward.w2.weight       | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[173/291] Writing tensor layers.18.feed_forward.w3.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[174/291] Writing tensor layers.18.ffn_norm.weight              | size   4096           | type UnquantizedDataType(name='F32')
++[175/291] Writing tensor layers.19.attention.wq.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[176/291] Writing tensor layers.19.attention.wk.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[177/291] Writing tensor layers.19.attention.wv.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[178/291] Writing tensor layers.19.attention.wo.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[179/291] Writing tensor layers.19.attention_norm.weight        | size   4096           | type UnquantizedDataType(name='F32')
++[180/291] Writing tensor layers.19.feed_forward.w1.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[181/291] Writing tensor layers.19.feed_forward.w2.weight       | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[182/291] Writing tensor layers.19.feed_forward.w3.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[183/291] Writing tensor layers.19.ffn_norm.weight              | size   4096           | type UnquantizedDataType(name='F32')
++[184/291] Writing tensor layers.20.attention.wq.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[185/291] Writing tensor layers.20.attention.wk.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[186/291] Writing tensor layers.20.attention.wv.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[187/291] Writing tensor layers.20.attention.wo.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[188/291] Writing tensor layers.20.attention_norm.weight        | size   4096           | type UnquantizedDataType(name='F32')
++[189/291] Writing tensor layers.20.feed_forward.w1.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[190/291] Writing tensor layers.20.feed_forward.w2.weight       | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[191/291] Writing tensor layers.20.feed_forward.w3.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[192/291] Writing tensor layers.20.ffn_norm.weight              | size   4096           | type UnquantizedDataType(name='F32')
++[193/291] Writing tensor layers.21.attention.wq.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[194/291] Writing tensor layers.21.attention.wk.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[195/291] Writing tensor layers.21.attention.wv.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[196/291] Writing tensor layers.21.attention.wo.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[197/291] Writing tensor layers.21.attention_norm.weight        | size   4096           | type UnquantizedDataType(name='F32')
++[198/291] Writing tensor layers.21.feed_forward.w1.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[199/291] Writing tensor layers.21.feed_forward.w2.weight       | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[200/291] Writing tensor layers.21.feed_forward.w3.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[201/291] Writing tensor layers.21.ffn_norm.weight              | size   4096           | type UnquantizedDataType(name='F32')
++[202/291] Writing tensor layers.22.attention.wq.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[203/291] Writing tensor layers.22.attention.wk.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[204/291] Writing tensor layers.22.attention.wv.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[205/291] Writing tensor layers.22.attention.wo.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[206/291] Writing tensor layers.22.attention_norm.weight        | size   4096           | type UnquantizedDataType(name='F32')
++[207/291] Writing tensor layers.22.feed_forward.w1.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[208/291] Writing tensor layers.22.feed_forward.w2.weight       | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[209/291] Writing tensor layers.22.feed_forward.w3.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[210/291] Writing tensor layers.22.ffn_norm.weight              | size   4096           | type UnquantizedDataType(name='F32')
++[211/291] Writing tensor layers.23.attention.wq.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[212/291] Writing tensor layers.23.attention.wk.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[213/291] Writing tensor layers.23.attention.wv.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[214/291] Writing tensor layers.23.attention.wo.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[215/291] Writing tensor layers.23.attention_norm.weight        | size   4096           | type UnquantizedDataType(name='F32')
++[216/291] Writing tensor layers.23.feed_forward.w1.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[217/291] Writing tensor layers.23.feed_forward.w2.weight       | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[218/291] Writing tensor layers.23.feed_forward.w3.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[219/291] Writing tensor layers.23.ffn_norm.weight              | size   4096           | type UnquantizedDataType(name='F32')
++[220/291] Writing tensor layers.24.attention.wq.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[221/291] Writing tensor layers.24.attention.wk.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[222/291] Writing tensor layers.24.attention.wv.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[223/291] Writing tensor layers.24.attention.wo.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[224/291] Writing tensor layers.24.attention_norm.weight        | size   4096           | type UnquantizedDataType(name='F32')
++[225/291] Writing tensor layers.24.feed_forward.w1.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[226/291] Writing tensor layers.24.feed_forward.w2.weight       | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[227/291] Writing tensor layers.24.feed_forward.w3.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[228/291] Writing tensor layers.24.ffn_norm.weight              | size   4096           | type UnquantizedDataType(name='F32')
++[229/291] Writing tensor layers.25.attention.wq.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[230/291] Writing tensor layers.25.attention.wk.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[231/291] Writing tensor layers.25.attention.wv.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[232/291] Writing tensor layers.25.attention.wo.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[233/291] Writing tensor layers.25.attention_norm.weight        | size   4096           | type UnquantizedDataType(name='F32')
++[234/291] Writing tensor layers.25.feed_forward.w1.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[235/291] Writing tensor layers.25.feed_forward.w2.weight       | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[236/291] Writing tensor layers.25.feed_forward.w3.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[237/291] Writing tensor layers.25.ffn_norm.weight              | size   4096           | type UnquantizedDataType(name='F32')
++[238/291] Writing tensor layers.26.attention.wq.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[239/291] Writing tensor layers.26.attention.wk.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[240/291] Writing tensor layers.26.attention.wv.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[241/291] Writing tensor layers.26.attention.wo.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[242/291] Writing tensor layers.26.attention_norm.weight        | size   4096           | type UnquantizedDataType(name='F32')
++[243/291] Writing tensor layers.26.feed_forward.w1.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[244/291] Writing tensor layers.26.feed_forward.w2.weight       | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[245/291] Writing tensor layers.26.feed_forward.w3.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[246/291] Writing tensor layers.26.ffn_norm.weight              | size   4096           | type UnquantizedDataType(name='F32')
++[247/291] Writing tensor layers.27.attention.wq.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[248/291] Writing tensor layers.27.attention.wk.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[249/291] Writing tensor layers.27.attention.wv.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[250/291] Writing tensor layers.27.attention.wo.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[251/291] Writing tensor layers.27.attention_norm.weight        | size   4096           | type UnquantizedDataType(name='F32')
++[252/291] Writing tensor layers.27.feed_forward.w1.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[253/291] Writing tensor layers.27.feed_forward.w2.weight       | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[254/291] Writing tensor layers.27.feed_forward.w3.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[255/291] Writing tensor layers.27.ffn_norm.weight              | size   4096           | type UnquantizedDataType(name='F32')
++[256/291] Writing tensor layers.28.attention.wq.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[257/291] Writing tensor layers.28.attention.wk.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[258/291] Writing tensor layers.28.attention.wv.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[259/291] Writing tensor layers.28.attention.wo.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[260/291] Writing tensor layers.28.attention_norm.weight        | size   4096           | type UnquantizedDataType(name='F32')
++[261/291] Writing tensor layers.28.feed_forward.w1.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[262/291] Writing tensor layers.28.feed_forward.w2.weight       | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[263/291] Writing tensor layers.28.feed_forward.w3.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[264/291] Writing tensor layers.28.ffn_norm.weight              | size   4096           | type UnquantizedDataType(name='F32')
++[265/291] Writing tensor layers.29.attention.wq.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[266/291] Writing tensor layers.29.attention.wk.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[267/291] Writing tensor layers.29.attention.wv.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[268/291] Writing tensor layers.29.attention.wo.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[269/291] Writing tensor layers.29.attention_norm.weight        | size   4096           | type UnquantizedDataType(name='F32')
++[270/291] Writing tensor layers.29.feed_forward.w1.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[271/291] Writing tensor layers.29.feed_forward.w2.weight       | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[272/291] Writing tensor layers.29.feed_forward.w3.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[273/291] Writing tensor layers.29.ffn_norm.weight              | size   4096           | type UnquantizedDataType(name='F32')
++[274/291] Writing tensor layers.30.attention.wq.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[275/291] Writing tensor layers.30.attention.wk.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[276/291] Writing tensor layers.30.attention.wv.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[277/291] Writing tensor layers.30.attention.wo.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[278/291] Writing tensor layers.30.attention_norm.weight        | size   4096           | type UnquantizedDataType(name='F32')
++[279/291] Writing tensor layers.30.feed_forward.w1.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[280/291] Writing tensor layers.30.feed_forward.w2.weight       | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[281/291] Writing tensor layers.30.feed_forward.w3.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[282/291] Writing tensor layers.30.ffn_norm.weight              | size   4096           | type UnquantizedDataType(name='F32')
++[283/291] Writing tensor layers.31.attention.wq.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[284/291] Writing tensor layers.31.attention.wk.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[285/291] Writing tensor layers.31.attention.wv.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[286/291] Writing tensor layers.31.attention.wo.weight          | size   4096 x   4096  | type UnquantizedDataType(name='F16')
++[287/291] Writing tensor layers.31.attention_norm.weight        | size   4096           | type UnquantizedDataType(name='F32')
++[288/291] Writing tensor layers.31.feed_forward.w1.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[289/291] Writing tensor layers.31.feed_forward.w2.weight       | size   4096 x  11008  | type UnquantizedDataType(name='F16')
++[290/291] Writing tensor layers.31.feed_forward.w3.weight       | size  11008 x   4096  | type UnquantizedDataType(name='F16')
++[291/291] Writing tensor layers.31.ffn_norm.weight              | size   4096           | type UnquantizedDataType(name='F32')
++Wrote ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
+++ model_f16=../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
+++ model_q8_0=../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin
+++ model_q4_0=../models-mnt/open-llama/7B-v2/ggml-model-q4_0.bin
+++ model_q4_1=../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin
+++ model_q5_0=../models-mnt/open-llama/7B-v2/ggml-model-q5_0.bin
+++ model_q5_1=../models-mnt/open-llama/7B-v2/ggml-model-q5_1.bin
+++ model_q2_k=../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin
+++ model_q3_k=../models-mnt/open-llama/7B-v2/ggml-model-q3_k.bin
+++ model_q4_k=../models-mnt/open-llama/7B-v2/ggml-model-q4_k.bin
+++ model_q5_k=../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin
+++ model_q6_k=../models-mnt/open-llama/7B-v2/ggml-model-q6_k.bin
+++ wiki_test=../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw
+++ ./bin/quantize ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin q8_0
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++main: build = 884 (c594992)
++main: quantizing '../models-mnt/open-llama/7B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin' as Q8_0
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
++llama.cpp: saving model to ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin
++[   1/ 291]                tok_embeddings.weight -     4096 x 32000, type =    f16, quantizing to q8_0 .. size =   250.00 MB ->   132.81 MB | hist: 0.000 0.027 0.020 0.031 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[   2/ 291]                          norm.weight -             4096, type =    f32, size =    0.016 MB
++[   3/ 291]                        output.weight -     4096 x 32000, type =    f16, quantizing to q6_K .. size =   250.00 MB ->   102.54 MB | hist: 
++[   4/ 291]         layers.0.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.025 0.016 0.026 0.041 0.060 0.085 0.113 0.267 0.113 0.085 0.060 0.041 0.026 0.016 0.025 
++[   5/ 291]         layers.0.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.024 0.014 0.023 0.037 0.057 0.084 0.116 0.287 0.117 0.084 0.057 0.037 0.023 0.014 0.024 
++[   6/ 291]         layers.0.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.019 0.030 0.046 0.065 0.087 0.107 0.240 0.107 0.087 0.065 0.046 0.030 0.019 0.027 
++[   7/ 291]         layers.0.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.026 0.017 0.028 0.043 0.063 0.088 0.112 0.246 0.111 0.088 0.063 0.043 0.028 0.017 0.026 
++[   8/ 291]       layers.0.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[   9/ 291]      layers.0.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.028 0.020 0.032 0.049 0.067 0.088 0.105 0.223 0.105 0.088 0.067 0.049 0.032 0.020 0.028 
++[  10/ 291]      layers.0.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[  11/ 291]      layers.0.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[  12/ 291]             layers.0.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  13/ 291]         layers.1.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.025 0.015 0.025 0.039 0.059 0.086 0.116 0.272 0.116 0.086 0.059 0.039 0.024 0.015 0.025 
++[  14/ 291]         layers.1.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.025 0.016 0.025 0.040 0.060 0.086 0.115 0.265 0.115 0.087 0.060 0.040 0.025 0.016 0.025 
++[  15/ 291]         layers.1.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.019 0.031 0.047 0.066 0.088 0.107 0.233 0.107 0.087 0.066 0.047 0.031 0.019 0.027 
++[  16/ 291]         layers.1.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.025 0.016 0.026 0.040 0.060 0.086 0.115 0.263 0.115 0.086 0.060 0.040 0.026 0.016 0.025 
++[  17/ 291]       layers.1.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  18/ 291]      layers.1.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[  19/ 291]      layers.1.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[  20/ 291]      layers.1.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[  21/ 291]             layers.1.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  22/ 291]         layers.2.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.047 0.066 0.087 0.106 0.231 0.106 0.087 0.066 0.047 0.031 0.020 0.027 
++[  23/ 291]         layers.2.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.019 0.031 0.047 0.066 0.088 0.107 0.231 0.107 0.088 0.066 0.047 0.031 0.019 0.027 
++[  24/ 291]         layers.2.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.019 0.031 0.047 0.066 0.088 0.107 0.230 0.107 0.088 0.066 0.047 0.031 0.019 0.027 
++[  25/ 291]         layers.2.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.047 0.066 0.088 0.107 0.228 0.107 0.088 0.066 0.047 0.031 0.019 0.027 
++[  26/ 291]       layers.2.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  27/ 291]      layers.2.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[  28/ 291]      layers.2.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.225 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[  29/ 291]      layers.2.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.225 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[  30/ 291]             layers.2.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  31/ 291]         layers.3.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.048 0.066 0.088 0.106 0.228 0.106 0.088 0.066 0.048 0.031 0.020 0.027 
++[  32/ 291]         layers.3.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.047 0.066 0.088 0.106 0.229 0.106 0.088 0.066 0.047 0.031 0.020 0.027 
++[  33/ 291]         layers.3.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.227 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[  34/ 291]         layers.3.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.225 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[  35/ 291]       layers.3.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  36/ 291]      layers.3.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[  37/ 291]      layers.3.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[  38/ 291]      layers.3.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[  39/ 291]             layers.3.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  40/ 291]         layers.4.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.048 0.066 0.088 0.106 0.229 0.106 0.088 0.066 0.048 0.031 0.020 0.027 
++[  41/ 291]         layers.4.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.047 0.066 0.088 0.106 0.229 0.106 0.088 0.066 0.047 0.031 0.020 0.027 
++[  42/ 291]         layers.4.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.227 0.106 0.088 0.067 0.048 0.031 0.020 0.027 
++[  43/ 291]         layers.4.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.225 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[  44/ 291]       layers.4.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  45/ 291]      layers.4.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[  46/ 291]      layers.4.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[  47/ 291]      layers.4.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[  48/ 291]             layers.4.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  49/ 291]         layers.5.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.048 0.066 0.088 0.106 0.229 0.106 0.087 0.066 0.048 0.031 0.020 0.027 
++[  50/ 291]         layers.5.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.047 0.066 0.088 0.106 0.228 0.106 0.088 0.066 0.047 0.031 0.020 0.027 
++[  51/ 291]         layers.5.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.227 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[  52/ 291]         layers.5.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[  53/ 291]       layers.5.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  54/ 291]      layers.5.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[  55/ 291]      layers.5.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[  56/ 291]      layers.5.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[  57/ 291]             layers.5.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  58/ 291]         layers.6.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.048 0.066 0.087 0.106 0.229 0.106 0.088 0.066 0.048 0.031 0.020 0.027 
++[  59/ 291]         layers.6.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.048 0.066 0.088 0.106 0.228 0.106 0.088 0.066 0.048 0.031 0.020 0.027 
++[  60/ 291]         layers.6.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[  61/ 291]         layers.6.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.225 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[  62/ 291]       layers.6.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  63/ 291]      layers.6.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[  64/ 291]      layers.6.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[  65/ 291]      layers.6.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.225 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[  66/ 291]             layers.6.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  67/ 291]         layers.7.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.048 0.066 0.088 0.106 0.229 0.106 0.088 0.066 0.047 0.031 0.020 0.027 
++[  68/ 291]         layers.7.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.048 0.066 0.088 0.106 0.228 0.106 0.088 0.066 0.048 0.031 0.020 0.027 
++[  69/ 291]         layers.7.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.227 0.106 0.088 0.066 0.048 0.031 0.020 0.027 
++[  70/ 291]         layers.7.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.225 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[  71/ 291]       layers.7.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  72/ 291]      layers.7.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[  73/ 291]      layers.7.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.225 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[  74/ 291]      layers.7.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[  75/ 291]             layers.7.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  76/ 291]         layers.8.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[  77/ 291]         layers.8.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.048 0.066 0.088 0.106 0.228 0.106 0.087 0.066 0.047 0.031 0.020 0.027 
++[  78/ 291]         layers.8.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.066 0.088 0.106 0.227 0.106 0.088 0.066 0.048 0.031 0.020 0.027 
++[  79/ 291]         layers.8.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.224 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[  80/ 291]       layers.8.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  81/ 291]      layers.8.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[  82/ 291]      layers.8.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.225 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[  83/ 291]      layers.8.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.225 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[  84/ 291]             layers.8.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  85/ 291]         layers.9.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[  86/ 291]         layers.9.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.048 0.066 0.088 0.106 0.228 0.106 0.088 0.066 0.048 0.031 0.020 0.027 
++[  87/ 291]         layers.9.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.048 0.067 0.088 0.106 0.228 0.106 0.088 0.067 0.048 0.031 0.020 0.027 
++[  88/ 291]         layers.9.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.224 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[  89/ 291]       layers.9.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  90/ 291]      layers.9.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[  91/ 291]      layers.9.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[  92/ 291]      layers.9.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.225 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[  93/ 291]             layers.9.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  94/ 291]        layers.10.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.048 0.067 0.088 0.106 0.227 0.106 0.088 0.067 0.048 0.031 0.020 0.027 
++[  95/ 291]        layers.10.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.047 0.066 0.088 0.106 0.229 0.106 0.088 0.066 0.047 0.031 0.020 0.027 
++[  96/ 291]        layers.10.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.048 0.066 0.088 0.106 0.228 0.106 0.088 0.067 0.048 0.031 0.020 0.027 
++[  97/ 291]        layers.10.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[  98/ 291]      layers.10.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  99/ 291]     layers.10.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 100/ 291]     layers.10.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.225 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 101/ 291]     layers.10.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.225 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 102/ 291]            layers.10.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 103/ 291]        layers.11.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.031 0.020 0.027 
++[ 104/ 291]        layers.11.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.048 0.066 0.088 0.106 0.228 0.106 0.087 0.066 0.048 0.031 0.020 0.027 
++[ 105/ 291]        layers.11.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.048 0.066 0.088 0.106 0.228 0.106 0.088 0.066 0.048 0.031 0.020 0.027 
++[ 106/ 291]        layers.11.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 107/ 291]      layers.11.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 108/ 291]     layers.11.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 109/ 291]     layers.11.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.225 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 110/ 291]     layers.11.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.225 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 111/ 291]            layers.11.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 112/ 291]        layers.12.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 113/ 291]        layers.12.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.048 0.066 0.088 0.106 0.228 0.106 0.088 0.067 0.048 0.031 0.020 0.027 
++[ 114/ 291]        layers.12.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.227 0.106 0.088 0.067 0.048 0.031 0.020 0.027 
++[ 115/ 291]        layers.12.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 116/ 291]      layers.12.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 117/ 291]     layers.12.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 118/ 291]     layers.12.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.225 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 119/ 291]     layers.12.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.225 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 120/ 291]            layers.12.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 121/ 291]        layers.13.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 122/ 291]        layers.13.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.048 0.067 0.088 0.106 0.227 0.106 0.088 0.066 0.048 0.031 0.020 0.027 
++[ 123/ 291]        layers.13.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.048 0.066 0.088 0.106 0.228 0.106 0.088 0.066 0.048 0.031 0.020 0.027 
++[ 124/ 291]        layers.13.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.224 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 125/ 291]      layers.13.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 126/ 291]     layers.13.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 127/ 291]     layers.13.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.225 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 128/ 291]     layers.13.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.225 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 129/ 291]            layers.13.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 130/ 291]        layers.14.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 131/ 291]        layers.14.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.048 0.066 0.088 0.106 0.227 0.106 0.088 0.067 0.048 0.031 0.020 0.027 
++[ 132/ 291]        layers.14.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.048 0.067 0.088 0.106 0.228 0.106 0.088 0.066 0.048 0.031 0.020 0.027 
++[ 133/ 291]        layers.14.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 134/ 291]      layers.14.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 135/ 291]     layers.14.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 136/ 291]     layers.14.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.225 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 137/ 291]     layers.14.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 138/ 291]            layers.14.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 139/ 291]        layers.15.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 140/ 291]        layers.15.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 141/ 291]        layers.15.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.227 0.106 0.088 0.066 0.048 0.031 0.020 0.027 
++[ 142/ 291]        layers.15.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 143/ 291]      layers.15.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 144/ 291]     layers.15.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 145/ 291]     layers.15.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 146/ 291]     layers.15.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 147/ 291]            layers.15.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 148/ 291]        layers.16.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 149/ 291]        layers.16.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 150/ 291]        layers.16.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.048 0.066 0.088 0.106 0.228 0.106 0.088 0.066 0.048 0.031 0.020 0.027 
++[ 151/ 291]        layers.16.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 152/ 291]      layers.16.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 153/ 291]     layers.16.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 154/ 291]     layers.16.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 155/ 291]     layers.16.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.225 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 156/ 291]            layers.16.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 157/ 291]        layers.17.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 158/ 291]        layers.17.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 159/ 291]        layers.17.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.048 0.066 0.088 0.106 0.227 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 160/ 291]        layers.17.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 161/ 291]      layers.17.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 162/ 291]     layers.17.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 163/ 291]     layers.17.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.225 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 164/ 291]     layers.17.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 165/ 291]            layers.17.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 166/ 291]        layers.18.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 167/ 291]        layers.18.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 168/ 291]        layers.18.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.048 0.066 0.088 0.106 0.227 0.106 0.088 0.067 0.048 0.031 0.020 0.027 
++[ 169/ 291]        layers.18.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 170/ 291]      layers.18.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 171/ 291]     layers.18.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 172/ 291]     layers.18.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.225 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 173/ 291]     layers.18.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 174/ 291]            layers.18.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 175/ 291]        layers.19.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.066 0.088 0.106 0.227 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 176/ 291]        layers.19.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 177/ 291]        layers.19.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.048 0.067 0.088 0.106 0.227 0.106 0.088 0.067 0.048 0.031 0.020 0.027 
++[ 178/ 291]        layers.19.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 179/ 291]      layers.19.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 180/ 291]     layers.19.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 181/ 291]     layers.19.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.225 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 182/ 291]     layers.19.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 183/ 291]            layers.19.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 184/ 291]        layers.20.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 185/ 291]        layers.20.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 186/ 291]        layers.20.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.048 0.067 0.088 0.106 0.227 0.106 0.088 0.067 0.048 0.031 0.020 0.027 
++[ 187/ 291]        layers.20.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 188/ 291]      layers.20.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 189/ 291]     layers.20.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 190/ 291]     layers.20.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.225 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 191/ 291]     layers.20.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 192/ 291]            layers.20.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 193/ 291]        layers.21.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 194/ 291]        layers.21.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 195/ 291]        layers.21.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.227 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 196/ 291]        layers.21.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 197/ 291]      layers.21.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 198/ 291]     layers.21.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 199/ 291]     layers.21.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.225 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 200/ 291]     layers.21.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 201/ 291]            layers.21.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 202/ 291]        layers.22.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 203/ 291]        layers.22.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 204/ 291]        layers.22.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.227 0.106 0.088 0.067 0.048 0.031 0.020 0.027 
++[ 205/ 291]        layers.22.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 206/ 291]      layers.22.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 207/ 291]     layers.22.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 208/ 291]     layers.22.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.225 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 209/ 291]     layers.22.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 210/ 291]            layers.22.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 211/ 291]        layers.23.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 212/ 291]        layers.23.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 213/ 291]        layers.23.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.227 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 214/ 291]        layers.23.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 215/ 291]      layers.23.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 216/ 291]     layers.23.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 217/ 291]     layers.23.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.225 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 218/ 291]     layers.23.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 219/ 291]            layers.23.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 220/ 291]        layers.24.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 221/ 291]        layers.24.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 222/ 291]        layers.24.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.227 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 223/ 291]        layers.24.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 224/ 291]      layers.24.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 225/ 291]     layers.24.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 226/ 291]     layers.24.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.224 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 227/ 291]     layers.24.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 228/ 291]            layers.24.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 229/ 291]        layers.25.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.031 0.020 0.027 
++[ 230/ 291]        layers.25.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 231/ 291]        layers.25.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.227 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 232/ 291]        layers.25.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 233/ 291]      layers.25.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 234/ 291]     layers.25.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.028 0.020 0.032 0.048 0.067 0.088 0.106 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 235/ 291]     layers.25.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 236/ 291]     layers.25.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 237/ 291]            layers.25.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 238/ 291]        layers.26.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 239/ 291]        layers.26.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 240/ 291]        layers.26.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.227 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 241/ 291]        layers.26.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 242/ 291]      layers.26.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 243/ 291]     layers.26.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 244/ 291]     layers.26.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 245/ 291]     layers.26.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 246/ 291]            layers.26.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 247/ 291]        layers.27.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.225 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 248/ 291]        layers.27.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 249/ 291]        layers.27.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.227 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 250/ 291]        layers.27.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 251/ 291]      layers.27.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 252/ 291]     layers.27.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 253/ 291]     layers.27.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 254/ 291]     layers.27.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 255/ 291]            layers.27.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 256/ 291]        layers.28.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 257/ 291]        layers.28.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 258/ 291]        layers.28.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.227 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 259/ 291]        layers.28.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 260/ 291]      layers.28.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 261/ 291]     layers.28.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 262/ 291]     layers.28.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.225 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 263/ 291]     layers.28.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 264/ 291]            layers.28.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 265/ 291]        layers.29.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.225 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 266/ 291]        layers.29.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.225 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 267/ 291]        layers.29.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.227 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 268/ 291]        layers.29.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 269/ 291]      layers.29.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 270/ 291]     layers.29.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 271/ 291]     layers.29.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 272/ 291]     layers.29.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 273/ 291]            layers.29.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 274/ 291]        layers.30.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.225 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 275/ 291]        layers.30.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 276/ 291]        layers.30.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.227 0.106 0.088 0.066 0.048 0.031 0.020 0.027 
++[ 277/ 291]        layers.30.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.105 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 278/ 291]      layers.30.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 279/ 291]     layers.30.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.224 0.105 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 280/ 291]     layers.30.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.031 0.047 0.066 0.088 0.106 0.228 0.106 0.088 0.066 0.047 0.031 0.020 0.027 
++[ 281/ 291]     layers.30.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.225 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 282/ 291]            layers.30.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 283/ 291]        layers.31.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 284/ 291]        layers.31.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 285/ 291]        layers.31.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.031 0.048 0.066 0.088 0.106 0.227 0.106 0.088 0.066 0.048 0.031 0.020 0.027 
++[ 286/ 291]        layers.31.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q8_0 .. size =    32.00 MB ->    17.00 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 287/ 291]      layers.31.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 288/ 291]     layers.31.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.225 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 289/ 291]     layers.31.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.019 0.030 0.046 0.066 0.088 0.108 0.232 0.108 0.088 0.066 0.047 0.030 0.019 0.027 
++[ 290/ 291]     layers.31.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q8_0 .. size =    86.00 MB ->    45.69 MB | hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.225 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++[ 291/ 291]            layers.31.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++llama_model_quantize_internal: model size  = 12853.02 MB
++llama_model_quantize_internal: quant size  =  6798.37 MB
++llama_model_quantize_internal: hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
++
++main: quantize time = 55107.54 ms
++main:    total time = 55107.54 ms
+++ ./bin/quantize ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.bin q4_0
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++main: build = 884 (c594992)
++main: quantizing '../models-mnt/open-llama/7B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/7B-v2/ggml-model-q4_0.bin' as Q4_0
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
++llama.cpp: saving model to ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.bin
++[   1/ 291]                tok_embeddings.weight -     4096 x 32000, type =    f16, quantizing to q4_0 .. size =   250.00 MB ->    70.31 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.097 0.111 0.117 0.111 0.097 0.077 0.057 0.039 0.025 0.021 
++[   2/ 291]                          norm.weight -             4096, type =    f32, size =    0.016 MB
++[   3/ 291]                        output.weight -     4096 x 32000, type =    f16, quantizing to q6_K .. size =   250.00 MB ->   102.54 MB | hist: 
++[   4/ 291]         layers.0.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.013 0.020 0.032 0.049 0.071 0.098 0.125 0.142 0.125 0.098 0.072 0.049 0.032 0.020 0.017 
++[   5/ 291]         layers.0.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.035 0.011 0.018 0.030 0.046 0.069 0.098 0.132 0.153 0.132 0.098 0.069 0.046 0.029 0.018 0.015 
++[   6/ 291]         layers.0.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.024 0.037 0.054 0.075 0.096 0.115 0.126 0.115 0.096 0.075 0.054 0.037 0.024 0.020 
++[   7/ 291]         layers.0.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.013 0.022 0.035 0.052 0.075 0.099 0.120 0.128 0.120 0.099 0.074 0.052 0.035 0.022 0.018 
++[   8/ 291]       layers.0.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[   9/ 291]      layers.0.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.026 0.039 0.057 0.077 0.096 0.110 0.115 0.110 0.096 0.077 0.057 0.040 0.026 0.021 
++[  10/ 291]      layers.0.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.097 0.111 0.117 0.111 0.097 0.077 0.057 0.039 0.025 0.021 
++[  11/ 291]      layers.0.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.026 0.039 0.057 0.077 0.096 0.110 0.116 0.111 0.096 0.077 0.057 0.039 0.026 0.021 
++[  12/ 291]             layers.0.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  13/ 291]         layers.1.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.035 0.012 0.019 0.031 0.047 0.071 0.099 0.128 0.143 0.129 0.100 0.071 0.048 0.031 0.019 0.016 
++[  14/ 291]         layers.1.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.035 0.012 0.020 0.032 0.049 0.072 0.100 0.126 0.139 0.126 0.099 0.072 0.049 0.032 0.020 0.017 
++[  15/ 291]         layers.1.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.024 0.038 0.055 0.076 0.097 0.114 0.122 0.114 0.097 0.076 0.055 0.038 0.024 0.020 
++[  16/ 291]         layers.1.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.013 0.020 0.032 0.049 0.072 0.099 0.126 0.138 0.126 0.099 0.072 0.049 0.032 0.020 0.017 
++[  17/ 291]       layers.1.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  18/ 291]      layers.1.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.026 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.026 0.021 
++[  19/ 291]      layers.1.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  20/ 291]      layers.1.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.026 0.021 
++[  21/ 291]             layers.1.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  22/ 291]         layers.2.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.025 0.038 0.056 0.076 0.096 0.113 0.120 0.113 0.096 0.076 0.056 0.038 0.025 0.020 
++[  23/ 291]         layers.2.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.025 0.038 0.056 0.076 0.097 0.113 0.120 0.113 0.097 0.076 0.056 0.038 0.025 0.020 
++[  24/ 291]         layers.2.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.025 0.038 0.056 0.076 0.097 0.113 0.119 0.113 0.097 0.076 0.056 0.038 0.025 0.020 
++[  25/ 291]         layers.2.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.025 0.038 0.056 0.077 0.097 0.112 0.118 0.112 0.097 0.077 0.056 0.038 0.025 0.020 
++[  26/ 291]       layers.2.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  27/ 291]      layers.2.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  28/ 291]      layers.2.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.036 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.117 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  29/ 291]      layers.2.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  30/ 291]             layers.2.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  31/ 291]         layers.3.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.076 0.096 0.112 0.119 0.112 0.096 0.076 0.056 0.039 0.025 0.021 
++[  32/ 291]         layers.3.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.025 0.038 0.056 0.076 0.096 0.112 0.119 0.113 0.096 0.076 0.056 0.038 0.025 0.021 
++[  33/ 291]         layers.3.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.056 0.076 0.096 0.112 0.118 0.111 0.096 0.077 0.056 0.039 0.025 0.021 
++[  34/ 291]         layers.3.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  35/ 291]       layers.3.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  36/ 291]      layers.3.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  37/ 291]      layers.3.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  38/ 291]      layers.3.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  39/ 291]             layers.3.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  40/ 291]         layers.4.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.025 0.039 0.056 0.076 0.096 0.112 0.119 0.112 0.096 0.076 0.056 0.039 0.025 0.021 
++[  41/ 291]         layers.4.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.025 0.038 0.056 0.076 0.097 0.112 0.119 0.112 0.097 0.076 0.056 0.038 0.025 0.021 
++[  42/ 291]         layers.4.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.118 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  43/ 291]         layers.4.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  44/ 291]       layers.4.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  45/ 291]      layers.4.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  46/ 291]      layers.4.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  47/ 291]      layers.4.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  48/ 291]             layers.4.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  49/ 291]         layers.5.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.025 0.039 0.056 0.076 0.096 0.112 0.119 0.112 0.096 0.076 0.056 0.039 0.025 0.021 
++[  50/ 291]         layers.5.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.025 0.038 0.056 0.076 0.097 0.112 0.119 0.112 0.096 0.076 0.056 0.039 0.025 0.021 
++[  51/ 291]         layers.5.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.118 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  52/ 291]         layers.5.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  53/ 291]       layers.5.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  54/ 291]      layers.5.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  55/ 291]      layers.5.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  56/ 291]      layers.5.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  57/ 291]             layers.5.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  58/ 291]         layers.6.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.025 0.039 0.056 0.076 0.096 0.112 0.119 0.112 0.096 0.076 0.056 0.039 0.025 0.021 
++[  59/ 291]         layers.6.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.025 0.039 0.056 0.076 0.096 0.112 0.119 0.112 0.097 0.076 0.056 0.039 0.025 0.021 
++[  60/ 291]         layers.6.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.118 0.111 0.096 0.077 0.056 0.039 0.025 0.021 
++[  61/ 291]         layers.6.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.097 0.077 0.057 0.039 0.025 0.021 
++[  62/ 291]       layers.6.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  63/ 291]      layers.6.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  64/ 291]      layers.6.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  65/ 291]      layers.6.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  66/ 291]             layers.6.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  67/ 291]         layers.7.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.025 0.039 0.056 0.076 0.096 0.112 0.119 0.112 0.096 0.076 0.056 0.039 0.025 0.021 
++[  68/ 291]         layers.7.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.025 0.039 0.056 0.076 0.097 0.112 0.118 0.112 0.097 0.076 0.056 0.039 0.025 0.021 
++[  69/ 291]         layers.7.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.118 0.111 0.096 0.077 0.056 0.039 0.025 0.021 
++[  70/ 291]         layers.7.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  71/ 291]       layers.7.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  72/ 291]      layers.7.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  73/ 291]      layers.7.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.117 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  74/ 291]      layers.7.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  75/ 291]             layers.7.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  76/ 291]         layers.8.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.112 0.117 0.112 0.096 0.077 0.056 0.039 0.025 0.021 
++[  77/ 291]         layers.8.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.025 0.038 0.056 0.076 0.096 0.112 0.119 0.112 0.096 0.077 0.056 0.039 0.025 0.021 
++[  78/ 291]         layers.8.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.056 0.076 0.096 0.112 0.118 0.112 0.096 0.077 0.056 0.039 0.025 0.021 
++[  79/ 291]         layers.8.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  80/ 291]       layers.8.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  81/ 291]      layers.8.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  82/ 291]      layers.8.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  83/ 291]      layers.8.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  84/ 291]             layers.8.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  85/ 291]         layers.9.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.112 0.096 0.077 0.056 0.039 0.025 0.021 
++[  86/ 291]         layers.9.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.025 0.038 0.056 0.076 0.096 0.112 0.119 0.112 0.096 0.076 0.056 0.039 0.025 0.021 
++[  87/ 291]         layers.9.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.056 0.076 0.096 0.112 0.118 0.112 0.096 0.077 0.056 0.039 0.025 0.021 
++[  88/ 291]         layers.9.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  89/ 291]       layers.9.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  90/ 291]      layers.9.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  91/ 291]      layers.9.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.036 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  92/ 291]      layers.9.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  93/ 291]             layers.9.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  94/ 291]        layers.10.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.025 0.039 0.056 0.076 0.097 0.112 0.118 0.112 0.097 0.077 0.056 0.039 0.025 0.021 
++[  95/ 291]        layers.10.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.025 0.038 0.056 0.076 0.096 0.112 0.119 0.112 0.096 0.076 0.056 0.038 0.025 0.021 
++[  96/ 291]        layers.10.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.076 0.096 0.112 0.118 0.112 0.096 0.077 0.056 0.039 0.025 0.021 
++[  97/ 291]        layers.10.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[  98/ 291]      layers.10.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  99/ 291]     layers.10.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 100/ 291]     layers.10.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 101/ 291]     layers.10.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 102/ 291]            layers.10.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 103/ 291]        layers.11.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.112 0.117 0.111 0.096 0.077 0.056 0.039 0.025 0.021 
++[ 104/ 291]        layers.11.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.025 0.039 0.056 0.076 0.096 0.112 0.119 0.112 0.096 0.076 0.056 0.039 0.025 0.021 
++[ 105/ 291]        layers.11.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.076 0.096 0.112 0.119 0.112 0.096 0.077 0.056 0.039 0.025 0.021 
++[ 106/ 291]        layers.11.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 107/ 291]      layers.11.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 108/ 291]     layers.11.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 109/ 291]     layers.11.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.117 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 110/ 291]     layers.11.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 111/ 291]            layers.11.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 112/ 291]        layers.12.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.096 0.077 0.056 0.039 0.025 0.021 
++[ 113/ 291]        layers.12.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.025 0.039 0.056 0.076 0.097 0.112 0.118 0.112 0.097 0.077 0.056 0.039 0.025 0.021 
++[ 114/ 291]        layers.12.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.118 0.112 0.096 0.077 0.056 0.039 0.025 0.021 
++[ 115/ 291]        layers.12.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 116/ 291]      layers.12.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 117/ 291]     layers.12.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 118/ 291]     layers.12.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.097 0.077 0.057 0.039 0.025 0.021 
++[ 119/ 291]     layers.12.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.036 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 120/ 291]            layers.12.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 121/ 291]        layers.13.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.025 0.039 0.056 0.076 0.096 0.111 0.117 0.111 0.097 0.077 0.057 0.039 0.025 0.021 
++[ 122/ 291]        layers.13.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.076 0.097 0.112 0.118 0.112 0.097 0.077 0.056 0.039 0.025 0.021 
++[ 123/ 291]        layers.13.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.076 0.096 0.112 0.118 0.112 0.096 0.077 0.056 0.039 0.025 0.021 
++[ 124/ 291]        layers.13.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 125/ 291]      layers.13.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 126/ 291]     layers.13.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 127/ 291]     layers.13.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.097 0.111 0.117 0.111 0.097 0.077 0.057 0.039 0.025 0.021 
++[ 128/ 291]     layers.13.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 129/ 291]            layers.13.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 130/ 291]        layers.14.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.112 0.096 0.077 0.056 0.039 0.025 0.021 
++[ 131/ 291]        layers.14.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.025 0.039 0.056 0.077 0.096 0.112 0.118 0.112 0.097 0.077 0.056 0.039 0.025 0.021 
++[ 132/ 291]        layers.14.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.076 0.096 0.112 0.118 0.112 0.096 0.077 0.056 0.039 0.025 0.021 
++[ 133/ 291]        layers.14.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 134/ 291]      layers.14.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 135/ 291]     layers.14.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 136/ 291]     layers.14.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.097 0.111 0.117 0.111 0.097 0.077 0.057 0.039 0.025 0.021 
++[ 137/ 291]     layers.14.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 138/ 291]            layers.14.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 139/ 291]        layers.15.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 140/ 291]        layers.15.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.025 0.039 0.056 0.077 0.097 0.111 0.117 0.112 0.097 0.077 0.056 0.039 0.025 0.021 
++[ 141/ 291]        layers.15.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.112 0.118 0.112 0.096 0.077 0.056 0.039 0.025 0.021 
++[ 142/ 291]        layers.15.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 143/ 291]      layers.15.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 144/ 291]     layers.15.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 145/ 291]     layers.15.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.097 0.111 0.117 0.111 0.097 0.077 0.057 0.039 0.025 0.021 
++[ 146/ 291]     layers.15.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 147/ 291]            layers.15.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 148/ 291]        layers.16.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.097 0.077 0.056 0.039 0.025 0.021 
++[ 149/ 291]        layers.16.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.097 0.077 0.056 0.039 0.025 0.021 
++[ 150/ 291]        layers.16.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.076 0.096 0.112 0.118 0.111 0.096 0.077 0.056 0.039 0.025 0.021 
++[ 151/ 291]        layers.16.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.026 0.021 
++[ 152/ 291]      layers.16.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 153/ 291]     layers.16.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 154/ 291]     layers.16.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.097 0.111 0.117 0.111 0.097 0.077 0.056 0.039 0.025 0.021 
++[ 155/ 291]     layers.16.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 156/ 291]            layers.16.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 157/ 291]        layers.17.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.015 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.096 0.077 0.056 0.039 0.025 0.021 
++[ 158/ 291]        layers.17.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.097 0.077 0.056 0.039 0.025 0.021 
++[ 159/ 291]        layers.17.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.076 0.096 0.112 0.118 0.112 0.096 0.077 0.056 0.039 0.025 0.021 
++[ 160/ 291]        layers.17.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.026 0.021 
++[ 161/ 291]      layers.17.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 162/ 291]     layers.17.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 163/ 291]     layers.17.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.097 0.111 0.117 0.111 0.097 0.077 0.057 0.039 0.025 0.021 
++[ 164/ 291]     layers.17.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 165/ 291]            layers.17.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 166/ 291]        layers.18.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.097 0.077 0.057 0.039 0.025 0.021 
++[ 167/ 291]        layers.18.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.097 0.111 0.117 0.111 0.097 0.077 0.056 0.039 0.025 0.021 
++[ 168/ 291]        layers.18.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.112 0.118 0.112 0.096 0.077 0.056 0.039 0.025 0.021 
++[ 169/ 291]        layers.18.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 170/ 291]      layers.18.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 171/ 291]     layers.18.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 172/ 291]     layers.18.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.097 0.111 0.117 0.111 0.097 0.077 0.057 0.039 0.025 0.021 
++[ 173/ 291]     layers.18.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 174/ 291]            layers.18.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 175/ 291]        layers.19.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.112 0.118 0.112 0.096 0.076 0.056 0.039 0.025 0.021 
++[ 176/ 291]        layers.19.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.025 0.039 0.056 0.077 0.097 0.111 0.117 0.112 0.097 0.077 0.057 0.039 0.025 0.021 
++[ 177/ 291]        layers.19.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.056 0.076 0.096 0.112 0.118 0.112 0.096 0.077 0.056 0.039 0.025 0.021 
++[ 178/ 291]        layers.19.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.026 0.021 
++[ 179/ 291]      layers.19.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 180/ 291]     layers.19.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 181/ 291]     layers.19.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.097 0.111 0.117 0.111 0.097 0.077 0.057 0.039 0.025 0.021 
++[ 182/ 291]     layers.19.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 183/ 291]            layers.19.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 184/ 291]        layers.20.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.096 0.077 0.056 0.039 0.025 0.021 
++[ 185/ 291]        layers.20.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.097 0.077 0.056 0.039 0.025 0.021 
++[ 186/ 291]        layers.20.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.056 0.077 0.096 0.112 0.118 0.112 0.096 0.077 0.056 0.039 0.025 0.021 
++[ 187/ 291]        layers.20.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.026 0.021 
++[ 188/ 291]      layers.20.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 189/ 291]     layers.20.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 190/ 291]     layers.20.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.036 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.117 0.111 0.097 0.077 0.057 0.039 0.025 0.021 
++[ 191/ 291]     layers.20.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 192/ 291]            layers.20.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 193/ 291]        layers.21.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.097 0.111 0.117 0.112 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 194/ 291]        layers.21.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.097 0.077 0.057 0.039 0.025 0.021 
++[ 195/ 291]        layers.21.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.118 0.111 0.096 0.077 0.056 0.039 0.025 0.021 
++[ 196/ 291]        layers.21.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 197/ 291]      layers.21.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 198/ 291]     layers.21.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 199/ 291]     layers.21.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.036 0.016 0.025 0.039 0.057 0.077 0.097 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 200/ 291]     layers.21.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 201/ 291]            layers.21.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 202/ 291]        layers.22.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.096 0.077 0.056 0.039 0.025 0.021 
++[ 203/ 291]        layers.22.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.096 0.077 0.056 0.039 0.025 0.021 
++[ 204/ 291]        layers.22.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.118 0.111 0.096 0.077 0.056 0.039 0.025 0.021 
++[ 205/ 291]        layers.22.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 206/ 291]      layers.22.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 207/ 291]     layers.22.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.026 0.021 
++[ 208/ 291]     layers.22.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.036 0.016 0.025 0.039 0.057 0.077 0.097 0.111 0.116 0.111 0.097 0.077 0.057 0.039 0.025 0.021 
++[ 209/ 291]     layers.22.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 210/ 291]            layers.22.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 211/ 291]        layers.23.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 212/ 291]        layers.23.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 213/ 291]        layers.23.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.118 0.111 0.096 0.077 0.056 0.039 0.025 0.021 
++[ 214/ 291]        layers.23.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 215/ 291]      layers.23.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 216/ 291]     layers.23.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.026 0.021 
++[ 217/ 291]     layers.23.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.097 0.077 0.057 0.039 0.025 0.021 
++[ 218/ 291]     layers.23.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 219/ 291]            layers.23.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 220/ 291]        layers.24.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 221/ 291]        layers.24.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.117 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 222/ 291]        layers.24.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.118 0.111 0.096 0.077 0.056 0.039 0.025 0.021 
++[ 223/ 291]        layers.24.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 224/ 291]      layers.24.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 225/ 291]     layers.24.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 226/ 291]     layers.24.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.036 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 227/ 291]     layers.24.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 228/ 291]            layers.24.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 229/ 291]        layers.25.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.118 0.111 0.096 0.077 0.056 0.039 0.025 0.021 
++[ 230/ 291]        layers.25.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.097 0.077 0.057 0.039 0.025 0.021 
++[ 231/ 291]        layers.25.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.056 0.076 0.096 0.111 0.118 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 232/ 291]        layers.25.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 233/ 291]      layers.25.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 234/ 291]     layers.25.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 235/ 291]     layers.25.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 236/ 291]     layers.25.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.036 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 237/ 291]            layers.25.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 238/ 291]        layers.26.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.117 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 239/ 291]        layers.26.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.057 0.077 0.097 0.111 0.117 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 240/ 291]        layers.26.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.076 0.096 0.111 0.118 0.111 0.096 0.077 0.056 0.039 0.025 0.021 
++[ 241/ 291]        layers.26.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.110 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 242/ 291]      layers.26.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 243/ 291]     layers.26.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 244/ 291]     layers.26.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 245/ 291]     layers.26.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 246/ 291]            layers.26.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 247/ 291]        layers.27.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.097 0.077 0.057 0.039 0.025 0.021 
++[ 248/ 291]        layers.27.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.097 0.077 0.056 0.039 0.025 0.021 
++[ 249/ 291]        layers.27.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.118 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 250/ 291]        layers.27.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 251/ 291]      layers.27.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 252/ 291]     layers.27.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 253/ 291]     layers.27.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 254/ 291]     layers.27.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 255/ 291]            layers.27.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 256/ 291]        layers.28.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.097 0.077 0.057 0.039 0.025 0.021 
++[ 257/ 291]        layers.28.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.097 0.077 0.056 0.039 0.025 0.021 
++[ 258/ 291]        layers.28.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.118 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 259/ 291]        layers.28.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 260/ 291]      layers.28.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 261/ 291]     layers.28.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 262/ 291]     layers.28.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 263/ 291]     layers.28.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 264/ 291]            layers.28.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 265/ 291]        layers.29.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.097 0.077 0.057 0.039 0.025 0.021 
++[ 266/ 291]        layers.29.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.117 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 267/ 291]        layers.29.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.118 0.111 0.096 0.077 0.056 0.039 0.025 0.021 
++[ 268/ 291]        layers.29.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.097 0.077 0.057 0.039 0.025 0.021 
++[ 269/ 291]      layers.29.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 270/ 291]     layers.29.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 271/ 291]     layers.29.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 272/ 291]     layers.29.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 273/ 291]            layers.29.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 274/ 291]        layers.30.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.057 0.077 0.097 0.111 0.116 0.111 0.097 0.077 0.057 0.039 0.025 0.021 
++[ 275/ 291]        layers.30.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.056 0.077 0.097 0.111 0.117 0.111 0.097 0.077 0.056 0.039 0.025 0.021 
++[ 276/ 291]        layers.30.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.076 0.096 0.111 0.118 0.112 0.096 0.077 0.056 0.039 0.025 0.021 
++[ 277/ 291]        layers.30.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.026 0.021 
++[ 278/ 291]      layers.30.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 279/ 291]     layers.30.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 280/ 291]     layers.30.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.036 0.015 0.025 0.038 0.056 0.077 0.097 0.112 0.118 0.112 0.097 0.076 0.056 0.038 0.025 0.021 
++[ 281/ 291]     layers.30.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.116 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++[ 282/ 291]            layers.30.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 283/ 291]        layers.31.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.037 0.016 0.025 0.039 0.056 0.077 0.097 0.111 0.117 0.112 0.096 0.077 0.056 0.039 0.025 0.021 
++[ 284/ 291]        layers.31.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.112 0.097 0.077 0.056 0.039 0.025 0.021 
++[ 285/ 291]        layers.31.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.015 0.025 0.039 0.056 0.076 0.096 0.112 0.118 0.112 0.096 0.077 0.056 0.039 0.025 0.021 
++[ 286/ 291]        layers.31.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_0 .. size =    32.00 MB ->     9.00 MB | hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.097 0.111 0.117 0.112 0.097 0.077 0.056 0.039 0.025 0.021 
++[ 287/ 291]      layers.31.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 288/ 291]     layers.31.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.057 0.077 0.096 0.111 0.117 0.111 0.097 0.077 0.057 0.039 0.025 0.021 
++[ 289/ 291]     layers.31.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.036 0.015 0.024 0.037 0.055 0.076 0.097 0.114 0.120 0.114 0.097 0.076 0.055 0.038 0.024 0.020 
++[ 290/ 291]     layers.31.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_0 .. size =    86.00 MB ->    24.19 MB | hist: 0.037 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.097 0.077 0.057 0.039 0.025 0.021 
++[ 291/ 291]            layers.31.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++llama_model_quantize_internal: model size  = 12853.02 MB
++llama_model_quantize_internal: quant size  =  3647.87 MB
++llama_model_quantize_internal: hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
++
++main: quantize time = 33037.59 ms
++main:    total time = 33037.59 ms
+++ ./bin/quantize ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin q4_1
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++main: build = 884 (c594992)
++main: quantizing '../models-mnt/open-llama/7B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin' as Q4_1
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
++llama.cpp: saving model to ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin
++[   1/ 291]                tok_embeddings.weight -     4096 x 32000, type =    f16, quantizing to q4_1 .. size =   250.00 MB ->    78.12 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[   2/ 291]                          norm.weight -             4096, type =    f32, size =    0.016 MB
++[   3/ 291]                        output.weight -     4096 x 32000, type =    f16, quantizing to q6_K .. size =   250.00 MB ->   102.54 MB | hist: 
++[   4/ 291]         layers.0.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.024 0.036 0.051 0.067 0.083 0.095 0.102 0.103 0.095 0.083 0.068 0.051 0.036 0.024 0.040 
++[   5/ 291]         layers.0.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.024 0.037 0.053 0.068 0.083 0.094 0.101 0.101 0.094 0.083 0.068 0.053 0.037 0.024 0.040 
++[   6/ 291]         layers.0.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.024 0.036 0.050 0.066 0.083 0.097 0.105 0.105 0.097 0.083 0.066 0.050 0.036 0.024 0.040 
++[   7/ 291]         layers.0.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.024 0.036 0.051 0.067 0.083 0.096 0.103 0.104 0.096 0.083 0.067 0.050 0.036 0.024 0.040 
++[   8/ 291]       layers.0.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[   9/ 291]      layers.0.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.052 0.067 0.082 0.095 0.101 0.101 0.095 0.082 0.067 0.052 0.037 0.025 0.040 
++[  10/ 291]      layers.0.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  11/ 291]      layers.0.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  12/ 291]             layers.0.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  13/ 291]         layers.1.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.039 0.023 0.035 0.050 0.067 0.083 0.096 0.104 0.104 0.097 0.084 0.067 0.051 0.036 0.023 0.039 
++[  14/ 291]         layers.1.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.024 0.036 0.051 0.067 0.083 0.096 0.103 0.104 0.096 0.083 0.067 0.051 0.036 0.024 0.040 
++[  15/ 291]         layers.1.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.036 0.050 0.066 0.083 0.096 0.104 0.104 0.096 0.083 0.066 0.050 0.036 0.025 0.040 
++[  16/ 291]         layers.1.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.023 0.035 0.050 0.067 0.084 0.097 0.104 0.104 0.097 0.084 0.067 0.050 0.035 0.023 0.040 
++[  17/ 291]       layers.1.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  18/ 291]      layers.1.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  19/ 291]      layers.1.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  20/ 291]      layers.1.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  21/ 291]             layers.1.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  22/ 291]         layers.2.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.038 0.052 0.067 0.082 0.094 0.101 0.101 0.094 0.082 0.067 0.052 0.038 0.026 0.040 
++[  23/ 291]         layers.2.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.052 0.067 0.082 0.094 0.101 0.101 0.094 0.082 0.067 0.052 0.037 0.025 0.040 
++[  24/ 291]         layers.2.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.036 0.051 0.067 0.083 0.096 0.103 0.103 0.095 0.083 0.067 0.051 0.036 0.025 0.040 
++[  25/ 291]         layers.2.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.036 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[  26/ 291]       layers.2.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  27/ 291]      layers.2.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  28/ 291]      layers.2.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[  29/ 291]      layers.2.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  30/ 291]             layers.2.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  31/ 291]         layers.3.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.026 0.037 0.052 0.067 0.082 0.094 0.101 0.101 0.094 0.082 0.067 0.052 0.038 0.026 0.040 
++[  32/ 291]         layers.3.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.052 0.067 0.082 0.094 0.101 0.101 0.094 0.082 0.068 0.052 0.037 0.025 0.040 
++[  33/ 291]         layers.3.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  34/ 291]         layers.3.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  35/ 291]       layers.3.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  36/ 291]      layers.3.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.052 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  37/ 291]      layers.3.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  38/ 291]      layers.3.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  39/ 291]             layers.3.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  40/ 291]         layers.4.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.052 0.067 0.082 0.094 0.101 0.101 0.094 0.082 0.067 0.052 0.037 0.026 0.040 
++[  41/ 291]         layers.4.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.052 0.067 0.082 0.095 0.101 0.101 0.094 0.082 0.067 0.052 0.037 0.025 0.040 
++[  42/ 291]         layers.4.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  43/ 291]         layers.4.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  44/ 291]       layers.4.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  45/ 291]      layers.4.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  46/ 291]      layers.4.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  47/ 291]      layers.4.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  48/ 291]             layers.4.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  49/ 291]         layers.5.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.026 0.037 0.052 0.067 0.082 0.094 0.101 0.101 0.094 0.082 0.067 0.052 0.038 0.026 0.040 
++[  50/ 291]         layers.5.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.052 0.067 0.083 0.095 0.101 0.101 0.094 0.082 0.067 0.052 0.037 0.025 0.040 
++[  51/ 291]         layers.5.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[  52/ 291]         layers.5.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[  53/ 291]       layers.5.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  54/ 291]      layers.5.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  55/ 291]      layers.5.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  56/ 291]      layers.5.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[  57/ 291]             layers.5.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  58/ 291]         layers.6.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.052 0.067 0.082 0.095 0.101 0.101 0.094 0.082 0.067 0.052 0.037 0.026 0.040 
++[  59/ 291]         layers.6.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.052 0.067 0.082 0.095 0.101 0.102 0.094 0.082 0.067 0.052 0.037 0.025 0.040 
++[  60/ 291]         layers.6.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  61/ 291]         layers.6.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  62/ 291]       layers.6.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  63/ 291]      layers.6.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  64/ 291]      layers.6.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  65/ 291]      layers.6.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  66/ 291]             layers.6.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  67/ 291]         layers.7.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.052 0.067 0.082 0.094 0.101 0.101 0.094 0.082 0.067 0.052 0.037 0.025 0.040 
++[  68/ 291]         layers.7.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.052 0.067 0.083 0.095 0.101 0.101 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  69/ 291]         layers.7.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  70/ 291]         layers.7.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  71/ 291]       layers.7.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  72/ 291]      layers.7.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  73/ 291]      layers.7.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  74/ 291]      layers.7.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[  75/ 291]             layers.7.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  76/ 291]         layers.8.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  77/ 291]         layers.8.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.052 0.067 0.082 0.095 0.101 0.102 0.094 0.082 0.067 0.051 0.037 0.025 0.040 
++[  78/ 291]         layers.8.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.103 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  79/ 291]         layers.8.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.101 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[  80/ 291]       layers.8.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  81/ 291]      layers.8.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  82/ 291]      layers.8.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[  83/ 291]      layers.8.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  84/ 291]             layers.8.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  85/ 291]         layers.9.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[  86/ 291]         layers.9.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.052 0.067 0.082 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  87/ 291]         layers.9.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.103 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  88/ 291]         layers.9.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  89/ 291]       layers.9.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  90/ 291]      layers.9.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  91/ 291]      layers.9.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[  92/ 291]      layers.9.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  93/ 291]             layers.9.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  94/ 291]        layers.10.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  95/ 291]        layers.10.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.052 0.067 0.082 0.095 0.101 0.101 0.095 0.082 0.067 0.052 0.037 0.025 0.040 
++[  96/ 291]        layers.10.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.103 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  97/ 291]        layers.10.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[  98/ 291]      layers.10.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  99/ 291]     layers.10.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 100/ 291]     layers.10.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 101/ 291]     layers.10.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 102/ 291]            layers.10.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 103/ 291]        layers.11.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 104/ 291]        layers.11.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.052 0.067 0.083 0.094 0.101 0.101 0.095 0.082 0.067 0.052 0.037 0.025 0.040 
++[ 105/ 291]        layers.11.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.103 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 106/ 291]        layers.11.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 107/ 291]      layers.11.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 108/ 291]     layers.11.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 109/ 291]     layers.11.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 110/ 291]     layers.11.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 111/ 291]            layers.11.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 112/ 291]        layers.12.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 113/ 291]        layers.12.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.052 0.067 0.082 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 114/ 291]        layers.12.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 115/ 291]        layers.12.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 116/ 291]      layers.12.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 117/ 291]     layers.12.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 118/ 291]     layers.12.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 119/ 291]     layers.12.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 120/ 291]            layers.12.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 121/ 291]        layers.13.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 122/ 291]        layers.13.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.052 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 123/ 291]        layers.13.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.103 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 124/ 291]        layers.13.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 125/ 291]      layers.13.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 126/ 291]     layers.13.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 127/ 291]     layers.13.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 128/ 291]     layers.13.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 129/ 291]            layers.13.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 130/ 291]        layers.14.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 131/ 291]        layers.14.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.052 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 132/ 291]        layers.14.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.103 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 133/ 291]        layers.14.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 134/ 291]      layers.14.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 135/ 291]     layers.14.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 136/ 291]     layers.14.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 137/ 291]     layers.14.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 138/ 291]            layers.14.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 139/ 291]        layers.15.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 140/ 291]        layers.15.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 141/ 291]        layers.15.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.103 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 142/ 291]        layers.15.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 143/ 291]      layers.15.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 144/ 291]     layers.15.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 145/ 291]     layers.15.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 146/ 291]     layers.15.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 147/ 291]            layers.15.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 148/ 291]        layers.16.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 149/ 291]        layers.16.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 150/ 291]        layers.16.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.103 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 151/ 291]        layers.16.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 152/ 291]      layers.16.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 153/ 291]     layers.16.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 154/ 291]     layers.16.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 155/ 291]     layers.16.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 156/ 291]            layers.16.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 157/ 291]        layers.17.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 158/ 291]        layers.17.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 159/ 291]        layers.17.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.103 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 160/ 291]        layers.17.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 161/ 291]      layers.17.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 162/ 291]     layers.17.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 163/ 291]     layers.17.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 164/ 291]     layers.17.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 165/ 291]            layers.17.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 166/ 291]        layers.18.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 167/ 291]        layers.18.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.052 0.067 0.082 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 168/ 291]        layers.18.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 169/ 291]        layers.18.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 170/ 291]      layers.18.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 171/ 291]     layers.18.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 172/ 291]     layers.18.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 173/ 291]     layers.18.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 174/ 291]            layers.18.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 175/ 291]        layers.19.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 176/ 291]        layers.19.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.052 0.067 0.083 0.095 0.101 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 177/ 291]        layers.19.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.103 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 178/ 291]        layers.19.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 179/ 291]      layers.19.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 180/ 291]     layers.19.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 181/ 291]     layers.19.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 182/ 291]     layers.19.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 183/ 291]            layers.19.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 184/ 291]        layers.20.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.052 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 185/ 291]        layers.20.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.101 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 186/ 291]        layers.20.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 187/ 291]        layers.20.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 188/ 291]      layers.20.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 189/ 291]     layers.20.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 190/ 291]     layers.20.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 191/ 291]     layers.20.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 192/ 291]            layers.20.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 193/ 291]        layers.21.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 194/ 291]        layers.21.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 195/ 291]        layers.21.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.103 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 196/ 291]        layers.21.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 197/ 291]      layers.21.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 198/ 291]     layers.21.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 199/ 291]     layers.21.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 200/ 291]     layers.21.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 201/ 291]            layers.21.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 202/ 291]        layers.22.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 203/ 291]        layers.22.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 204/ 291]        layers.22.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 205/ 291]        layers.22.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 206/ 291]      layers.22.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 207/ 291]     layers.22.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 208/ 291]     layers.22.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 209/ 291]     layers.22.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 210/ 291]            layers.22.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 211/ 291]        layers.23.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.052 0.067 0.083 0.095 0.101 0.101 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 212/ 291]        layers.23.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 213/ 291]        layers.23.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 214/ 291]        layers.23.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 215/ 291]      layers.23.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 216/ 291]     layers.23.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 217/ 291]     layers.23.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 218/ 291]     layers.23.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 219/ 291]            layers.23.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 220/ 291]        layers.24.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 221/ 291]        layers.24.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.101 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 222/ 291]        layers.24.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 223/ 291]        layers.24.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 224/ 291]      layers.24.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 225/ 291]     layers.24.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 226/ 291]     layers.24.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 227/ 291]     layers.24.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 228/ 291]            layers.24.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 229/ 291]        layers.25.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.052 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 230/ 291]        layers.25.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 231/ 291]        layers.25.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 232/ 291]        layers.25.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 233/ 291]      layers.25.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 234/ 291]     layers.25.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 235/ 291]     layers.25.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 236/ 291]     layers.25.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 237/ 291]            layers.25.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 238/ 291]        layers.26.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.052 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 239/ 291]        layers.26.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.052 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 240/ 291]        layers.26.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 241/ 291]        layers.26.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 242/ 291]      layers.26.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 243/ 291]     layers.26.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 244/ 291]     layers.26.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 245/ 291]     layers.26.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 246/ 291]            layers.26.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 247/ 291]        layers.27.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 248/ 291]        layers.27.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 249/ 291]        layers.27.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 250/ 291]        layers.27.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 251/ 291]      layers.27.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 252/ 291]     layers.27.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 253/ 291]     layers.27.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 254/ 291]     layers.27.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 255/ 291]            layers.27.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 256/ 291]        layers.28.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 257/ 291]        layers.28.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 258/ 291]        layers.28.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 259/ 291]        layers.28.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 260/ 291]      layers.28.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 261/ 291]     layers.28.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 262/ 291]     layers.28.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 263/ 291]     layers.28.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 264/ 291]            layers.28.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 265/ 291]        layers.29.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 266/ 291]        layers.29.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.052 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 267/ 291]        layers.29.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 268/ 291]        layers.29.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 269/ 291]      layers.29.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 270/ 291]     layers.29.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 271/ 291]     layers.29.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 272/ 291]     layers.29.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 273/ 291]            layers.29.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 274/ 291]        layers.30.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 275/ 291]        layers.30.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.101 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 276/ 291]        layers.30.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.082 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 277/ 291]        layers.30.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 278/ 291]      layers.30.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 279/ 291]     layers.30.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 280/ 291]     layers.30.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.083 0.067 0.051 0.037 0.025 0.040 
++[ 281/ 291]     layers.30.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 282/ 291]            layers.30.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 283/ 291]        layers.31.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 284/ 291]        layers.31.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 285/ 291]        layers.31.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 286/ 291]        layers.31.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_1 .. size =    32.00 MB ->    10.00 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 287/ 291]      layers.31.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 288/ 291]     layers.31.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 289/ 291]     layers.31.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.036 0.051 0.067 0.083 0.096 0.103 0.103 0.096 0.083 0.067 0.050 0.036 0.025 0.040 
++[ 290/ 291]     layers.31.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_1 .. size =    86.00 MB ->    26.88 MB | hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++[ 291/ 291]            layers.31.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++llama_model_quantize_internal: model size  = 12853.02 MB
++llama_model_quantize_internal: quant size  =  4041.68 MB
++llama_model_quantize_internal: hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
++
++main: quantize time = 36273.30 ms
++main:    total time = 36273.30 ms
+++ ./bin/quantize ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin ../models-mnt/open-llama/7B-v2/ggml-model-q5_0.bin q5_0
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++main: build = 884 (c594992)
++main: quantizing '../models-mnt/open-llama/7B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/7B-v2/ggml-model-q5_0.bin' as Q5_0
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
++llama.cpp: saving model to ../models-mnt/open-llama/7B-v2/ggml-model-q5_0.bin
++[   1/ 291]                tok_embeddings.weight -     4096 x 32000, type =    f16, quantizing to q5_0 .. size =   250.00 MB ->    85.94 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[   2/ 291]                          norm.weight -             4096, type =    f32, size =    0.016 MB
++[   3/ 291]                        output.weight -     4096 x 32000, type =    f16, quantizing to q6_K .. size =   250.00 MB ->   102.54 MB | hist: 
++[   4/ 291]         layers.0.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.087 0.065 0.057 0.051 0.051 0.056 0.066 0.078 0.091 0.068 0.057 0.050 0.047 0.050 0.057 0.067 
++[   5/ 291]         layers.0.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.091 0.066 0.055 0.048 0.048 0.054 0.066 0.081 0.097 0.070 0.056 0.047 0.044 0.048 0.057 0.070 
++[   6/ 291]         layers.0.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.082 0.063 0.059 0.056 0.057 0.060 0.066 0.073 0.083 0.065 0.059 0.054 0.052 0.053 0.057 0.062 
++[   7/ 291]         layers.0.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.083 0.064 0.059 0.055 0.055 0.059 0.067 0.074 0.084 0.066 0.059 0.052 0.050 0.052 0.057 0.063 
++[   8/ 291]       layers.0.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[   9/ 291]      layers.0.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.060 0.063 0.066 0.070 0.077 0.063 0.060 0.056 0.055 0.055 0.057 0.059 
++[  10/ 291]      layers.0.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  11/ 291]      layers.0.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.060 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  12/ 291]             layers.0.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  13/ 291]         layers.1.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.088 0.066 0.057 0.050 0.050 0.056 0.066 0.078 0.092 0.069 0.058 0.049 0.046 0.050 0.058 0.068 
++[  14/ 291]         layers.1.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.087 0.065 0.057 0.051 0.051 0.057 0.067 0.077 0.090 0.068 0.058 0.050 0.047 0.050 0.058 0.067 
++[  15/ 291]         layers.1.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.080 0.063 0.060 0.057 0.058 0.061 0.066 0.072 0.080 0.064 0.059 0.055 0.053 0.054 0.057 0.061 
++[  16/ 291]         layers.1.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.086 0.066 0.057 0.051 0.051 0.057 0.067 0.078 0.089 0.069 0.058 0.050 0.047 0.050 0.058 0.066 
++[  17/ 291]       layers.1.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  18/ 291]      layers.1.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.060 0.063 0.066 0.070 0.077 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  19/ 291]      layers.1.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.066 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  20/ 291]      layers.1.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  21/ 291]             layers.1.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  22/ 291]         layers.2.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.080 0.064 0.059 0.055 0.053 0.054 0.057 0.060 
++[  23/ 291]         layers.2.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.058 0.062 0.066 0.071 0.080 0.064 0.059 0.055 0.053 0.054 0.057 0.060 
++[  24/ 291]         layers.2.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.058 0.062 0.067 0.071 0.079 0.064 0.060 0.055 0.053 0.054 0.057 0.060 
++[  25/ 291]         layers.2.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.067 0.071 0.079 0.064 0.060 0.055 0.054 0.054 0.057 0.060 
++[  26/ 291]       layers.2.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  27/ 291]      layers.2.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  28/ 291]      layers.2.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  29/ 291]      layers.2.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  30/ 291]             layers.2.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  31/ 291]         layers.3.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.079 0.063 0.059 0.056 0.054 0.054 0.057 0.060 
++[  32/ 291]         layers.3.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.079 0.064 0.059 0.055 0.053 0.054 0.057 0.060 
++[  33/ 291]         layers.3.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.059 0.059 0.062 0.066 0.071 0.079 0.063 0.060 0.056 0.054 0.055 0.057 0.060 
++[  34/ 291]         layers.3.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  35/ 291]       layers.3.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  36/ 291]      layers.3.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.060 0.063 0.066 0.070 0.077 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  37/ 291]      layers.3.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  38/ 291]      layers.3.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  39/ 291]             layers.3.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  40/ 291]         layers.4.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.079 0.064 0.059 0.056 0.054 0.054 0.057 0.060 
++[  41/ 291]         layers.4.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.079 0.064 0.059 0.055 0.053 0.054 0.057 0.060 
++[  42/ 291]         layers.4.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.079 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  43/ 291]         layers.4.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.062 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  44/ 291]       layers.4.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  45/ 291]      layers.4.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.060 0.063 0.067 0.070 0.077 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  46/ 291]      layers.4.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  47/ 291]      layers.4.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.060 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  48/ 291]             layers.4.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  49/ 291]         layers.5.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.079 0.064 0.059 0.056 0.054 0.054 0.057 0.060 
++[  50/ 291]         layers.5.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.067 0.071 0.079 0.064 0.059 0.055 0.054 0.054 0.057 0.060 
++[  51/ 291]         layers.5.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.062 0.060 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  52/ 291]         layers.5.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  53/ 291]       layers.5.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  54/ 291]      layers.5.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.060 0.063 0.066 0.070 0.077 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  55/ 291]      layers.5.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  56/ 291]      layers.5.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  57/ 291]             layers.5.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  58/ 291]         layers.6.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.079 0.063 0.059 0.055 0.054 0.054 0.057 0.060 
++[  59/ 291]         layers.6.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.079 0.064 0.060 0.056 0.054 0.054 0.057 0.060 
++[  60/ 291]         layers.6.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.062 0.060 0.059 0.059 0.062 0.066 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  61/ 291]         layers.6.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.061 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  62/ 291]       layers.6.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  63/ 291]      layers.6.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.060 0.062 0.067 0.070 0.077 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  64/ 291]      layers.6.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  65/ 291]      layers.6.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.060 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  66/ 291]             layers.6.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  67/ 291]         layers.7.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.079 0.064 0.060 0.055 0.054 0.054 0.057 0.060 
++[  68/ 291]         layers.7.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.067 0.071 0.079 0.064 0.060 0.056 0.054 0.054 0.057 0.060 
++[  69/ 291]         layers.7.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.062 0.060 0.058 0.059 0.062 0.066 0.071 0.079 0.063 0.059 0.056 0.054 0.055 0.057 0.060 
++[  70/ 291]         layers.7.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.061 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  71/ 291]       layers.7.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  72/ 291]      layers.7.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.061 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  73/ 291]      layers.7.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  74/ 291]      layers.7.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  75/ 291]             layers.7.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  76/ 291]         layers.8.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.071 0.078 0.063 0.060 0.056 0.054 0.054 0.057 0.060 
++[  77/ 291]         layers.8.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.067 0.071 0.079 0.063 0.059 0.056 0.054 0.054 0.057 0.060 
++[  78/ 291]         layers.8.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.079 0.063 0.060 0.056 0.054 0.055 0.057 0.060 
++[  79/ 291]         layers.8.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  80/ 291]       layers.8.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  81/ 291]      layers.8.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.061 0.059 0.060 0.062 0.066 0.070 0.077 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  82/ 291]      layers.8.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  83/ 291]      layers.8.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  84/ 291]             layers.8.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  85/ 291]         layers.9.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  86/ 291]         layers.9.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.079 0.064 0.059 0.055 0.054 0.054 0.057 0.060 
++[  87/ 291]         layers.9.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.079 0.063 0.060 0.056 0.054 0.054 0.057 0.060 
++[  88/ 291]         layers.9.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  89/ 291]       layers.9.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  90/ 291]      layers.9.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.063 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  91/ 291]      layers.9.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.061 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  92/ 291]      layers.9.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  93/ 291]             layers.9.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  94/ 291]        layers.10.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.058 0.059 0.062 0.067 0.071 0.078 0.064 0.059 0.056 0.054 0.054 0.057 0.060 
++[  95/ 291]        layers.10.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.079 0.064 0.059 0.055 0.053 0.054 0.057 0.060 
++[  96/ 291]        layers.10.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.079 0.063 0.060 0.056 0.054 0.054 0.057 0.060 
++[  97/ 291]        layers.10.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.061 0.059 0.059 0.063 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[  98/ 291]      layers.10.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  99/ 291]     layers.10.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.061 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 100/ 291]     layers.10.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 101/ 291]     layers.10.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.061 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 102/ 291]            layers.10.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 103/ 291]        layers.11.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.071 0.078 0.063 0.060 0.056 0.054 0.054 0.057 0.060 
++[ 104/ 291]        layers.11.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.079 0.064 0.059 0.055 0.054 0.054 0.057 0.060 
++[ 105/ 291]        layers.11.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.079 0.063 0.060 0.056 0.054 0.054 0.057 0.060 
++[ 106/ 291]        layers.11.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.062 0.061 0.059 0.060 0.063 0.067 0.070 0.077 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 107/ 291]      layers.11.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 108/ 291]     layers.11.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.060 0.063 0.067 0.070 0.077 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 109/ 291]     layers.11.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.060 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 110/ 291]     layers.11.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 111/ 291]            layers.11.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 112/ 291]        layers.12.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 113/ 291]        layers.12.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.079 0.064 0.060 0.056 0.054 0.054 0.057 0.060 
++[ 114/ 291]        layers.12.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.079 0.063 0.060 0.056 0.054 0.055 0.057 0.060 
++[ 115/ 291]        layers.12.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 116/ 291]      layers.12.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 117/ 291]     layers.12.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.061 0.059 0.059 0.063 0.066 0.070 0.077 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 118/ 291]     layers.12.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 119/ 291]     layers.12.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 120/ 291]            layers.12.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 121/ 291]        layers.13.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 122/ 291]        layers.13.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.067 0.071 0.078 0.064 0.060 0.056 0.054 0.054 0.057 0.060 
++[ 123/ 291]        layers.13.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.079 0.064 0.060 0.056 0.054 0.054 0.057 0.060 
++[ 124/ 291]        layers.13.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.061 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 125/ 291]      layers.13.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 126/ 291]     layers.13.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.062 0.066 0.070 0.077 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 127/ 291]     layers.13.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 128/ 291]     layers.13.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 129/ 291]            layers.13.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 130/ 291]        layers.14.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.058 0.059 0.062 0.067 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.060 
++[ 131/ 291]        layers.14.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.078 0.064 0.060 0.056 0.054 0.055 0.057 0.060 
++[ 132/ 291]        layers.14.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.059 0.059 0.062 0.066 0.071 0.079 0.063 0.059 0.056 0.054 0.054 0.057 0.060 
++[ 133/ 291]        layers.14.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.062 0.060 0.059 0.060 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 134/ 291]      layers.14.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 135/ 291]     layers.14.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.061 0.059 0.059 0.062 0.066 0.070 0.077 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 136/ 291]     layers.14.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 137/ 291]     layers.14.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.060 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 138/ 291]            layers.14.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 139/ 291]        layers.15.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 140/ 291]        layers.15.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.058 0.059 0.062 0.067 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.060 
++[ 141/ 291]        layers.15.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.079 0.063 0.060 0.056 0.054 0.055 0.057 0.060 
++[ 142/ 291]        layers.15.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.061 0.059 0.059 0.063 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 143/ 291]      layers.15.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 144/ 291]     layers.15.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 145/ 291]     layers.15.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 146/ 291]     layers.15.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.061 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 147/ 291]            layers.15.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 148/ 291]        layers.16.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.061 0.059 0.059 0.062 0.067 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 149/ 291]        layers.16.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.060 
++[ 150/ 291]        layers.16.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.079 0.063 0.060 0.056 0.054 0.054 0.057 0.060 
++[ 151/ 291]        layers.16.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.062 0.060 0.059 0.059 0.063 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 152/ 291]      layers.16.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 153/ 291]     layers.16.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 154/ 291]     layers.16.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 155/ 291]     layers.16.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 156/ 291]            layers.16.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 157/ 291]        layers.17.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.066 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 158/ 291]        layers.17.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 159/ 291]        layers.17.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.060 
++[ 160/ 291]        layers.17.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.062 0.061 0.059 0.060 0.063 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 161/ 291]      layers.17.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 162/ 291]     layers.17.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 163/ 291]     layers.17.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 164/ 291]     layers.17.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 165/ 291]            layers.17.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 166/ 291]        layers.18.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 167/ 291]        layers.18.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 168/ 291]        layers.18.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.079 0.063 0.060 0.056 0.054 0.055 0.057 0.060 
++[ 169/ 291]        layers.18.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.063 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 170/ 291]      layers.18.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 171/ 291]     layers.18.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 172/ 291]     layers.18.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 173/ 291]     layers.18.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 174/ 291]            layers.18.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 175/ 291]        layers.19.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.059 0.059 0.062 0.066 0.071 0.078 0.064 0.060 0.055 0.054 0.055 0.057 0.060 
++[ 176/ 291]        layers.19.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.066 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 177/ 291]        layers.19.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.079 0.063 0.059 0.056 0.054 0.054 0.057 0.060 
++[ 178/ 291]        layers.19.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.062 0.061 0.059 0.060 0.062 0.067 0.070 0.077 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 179/ 291]      layers.19.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 180/ 291]     layers.19.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 181/ 291]     layers.19.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 182/ 291]     layers.19.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 183/ 291]            layers.19.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 184/ 291]        layers.20.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.066 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 185/ 291]        layers.20.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 186/ 291]        layers.20.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.067 0.071 0.079 0.063 0.059 0.056 0.054 0.054 0.057 0.060 
++[ 187/ 291]        layers.20.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.062 0.061 0.059 0.060 0.063 0.067 0.070 0.077 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 188/ 291]      layers.20.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 189/ 291]     layers.20.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.063 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 190/ 291]     layers.20.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.061 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 191/ 291]     layers.20.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 192/ 291]            layers.20.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 193/ 291]        layers.21.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.060 
++[ 194/ 291]        layers.21.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 195/ 291]        layers.21.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.062 0.060 0.059 0.059 0.062 0.066 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.060 
++[ 196/ 291]        layers.21.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.062 0.061 0.059 0.060 0.063 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 197/ 291]      layers.21.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 198/ 291]     layers.21.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.063 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 199/ 291]     layers.21.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 200/ 291]     layers.21.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 201/ 291]            layers.21.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 202/ 291]        layers.22.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.066 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 203/ 291]        layers.22.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 204/ 291]        layers.22.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.079 0.063 0.060 0.056 0.054 0.055 0.057 0.060 
++[ 205/ 291]        layers.22.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.062 0.061 0.059 0.060 0.063 0.066 0.070 0.077 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 206/ 291]      layers.22.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 207/ 291]     layers.22.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.063 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 208/ 291]     layers.22.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.061 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 209/ 291]     layers.22.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 210/ 291]            layers.22.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 211/ 291]        layers.23.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.066 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.060 
++[ 212/ 291]        layers.23.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.062 0.060 0.059 0.059 0.062 0.067 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 213/ 291]        layers.23.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.062 0.060 0.059 0.059 0.062 0.066 0.071 0.079 0.064 0.060 0.056 0.054 0.055 0.057 0.060 
++[ 214/ 291]        layers.23.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.062 0.061 0.059 0.060 0.063 0.066 0.070 0.077 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 215/ 291]      layers.23.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 216/ 291]     layers.23.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.060 0.063 0.066 0.070 0.077 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 217/ 291]     layers.23.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.061 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 218/ 291]     layers.23.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 219/ 291]            layers.23.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 220/ 291]        layers.24.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 221/ 291]        layers.24.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.066 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 222/ 291]        layers.24.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.066 0.071 0.079 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 223/ 291]        layers.24.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.062 0.061 0.059 0.060 0.063 0.067 0.070 0.077 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 224/ 291]      layers.24.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 225/ 291]     layers.24.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.063 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 226/ 291]     layers.24.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.060 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 227/ 291]     layers.24.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.063 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 228/ 291]            layers.24.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 229/ 291]        layers.25.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 230/ 291]        layers.25.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.062 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 231/ 291]        layers.25.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.059 0.059 0.062 0.066 0.071 0.079 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 232/ 291]        layers.25.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.062 0.060 0.059 0.059 0.063 0.066 0.070 0.077 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 233/ 291]      layers.25.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 234/ 291]     layers.25.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.060 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 235/ 291]     layers.25.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.061 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 236/ 291]     layers.25.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.061 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 237/ 291]            layers.25.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 238/ 291]        layers.26.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.066 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 239/ 291]        layers.26.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 240/ 291]        layers.26.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.062 0.060 0.059 0.059 0.062 0.066 0.071 0.079 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 241/ 291]        layers.26.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.062 0.061 0.059 0.060 0.063 0.067 0.070 0.077 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 242/ 291]      layers.26.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 243/ 291]     layers.26.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.060 0.063 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 244/ 291]     layers.26.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.061 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 245/ 291]     layers.26.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 246/ 291]            layers.26.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 247/ 291]        layers.27.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.061 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 248/ 291]        layers.27.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 249/ 291]        layers.27.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.062 0.060 0.059 0.059 0.062 0.066 0.071 0.079 0.063 0.060 0.056 0.054 0.055 0.057 0.060 
++[ 250/ 291]        layers.27.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.062 0.061 0.059 0.060 0.063 0.067 0.070 0.077 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 251/ 291]      layers.27.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 252/ 291]     layers.27.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.063 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 253/ 291]     layers.27.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.061 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 254/ 291]     layers.27.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 255/ 291]            layers.27.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 256/ 291]        layers.28.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 257/ 291]        layers.28.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.066 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 258/ 291]        layers.28.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.062 0.060 0.059 0.059 0.062 0.066 0.071 0.079 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 259/ 291]        layers.28.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.061 0.059 0.059 0.063 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 260/ 291]      layers.28.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 261/ 291]     layers.28.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.060 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 262/ 291]     layers.28.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 263/ 291]     layers.28.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 264/ 291]            layers.28.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 265/ 291]        layers.29.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 266/ 291]        layers.29.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 267/ 291]        layers.29.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.059 0.059 0.062 0.066 0.071 0.079 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 268/ 291]        layers.29.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.062 0.061 0.059 0.060 0.063 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 269/ 291]      layers.29.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 270/ 291]     layers.29.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 271/ 291]     layers.29.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 272/ 291]     layers.29.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.061 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 273/ 291]            layers.29.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 274/ 291]        layers.30.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.061 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 275/ 291]        layers.30.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 276/ 291]        layers.30.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.079 0.063 0.060 0.056 0.054 0.055 0.057 0.060 
++[ 277/ 291]        layers.30.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.062 0.061 0.059 0.059 0.063 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 278/ 291]      layers.30.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 279/ 291]     layers.30.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 280/ 291]     layers.30.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.067 0.071 0.079 0.064 0.060 0.055 0.054 0.054 0.057 0.060 
++[ 281/ 291]     layers.30.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.062 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 282/ 291]            layers.30.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 283/ 291]        layers.31.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 284/ 291]        layers.31.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 285/ 291]        layers.31.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.079 0.063 0.060 0.058 0.059 0.062 0.066 0.071 0.079 0.063 0.060 0.056 0.054 0.055 0.057 0.060 
++[ 286/ 291]        layers.31.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_0 .. size =    32.00 MB ->    11.00 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 287/ 291]      layers.31.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 288/ 291]     layers.31.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.061 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 289/ 291]     layers.31.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.080 0.063 0.060 0.057 0.058 0.061 0.067 0.072 0.080 0.064 0.059 0.055 0.053 0.054 0.057 0.060 
++[ 290/ 291]     layers.31.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_0 .. size =    86.00 MB ->    29.56 MB | hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.067 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++[ 291/ 291]            layers.31.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++llama_model_quantize_internal: model size  = 12853.02 MB
++llama_model_quantize_internal: quant size  =  4435.49 MB
++llama_model_quantize_internal: hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.066 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
++
++main: quantize time = 39861.83 ms
++main:    total time = 39861.83 ms
+++ ./bin/quantize ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.bin q5_1
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++main: build = 884 (c594992)
++main: quantizing '../models-mnt/open-llama/7B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/7B-v2/ggml-model-q5_1.bin' as Q5_1
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
++llama.cpp: saving model to ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.bin
++[   1/ 291]                tok_embeddings.weight -     4096 x 32000, type =    f16, quantizing to q5_1 .. size =   250.00 MB ->    93.75 MB | hist: 0.074 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[   2/ 291]                          norm.weight -             4096, type =    f32, size =    0.016 MB
++[   3/ 291]                        output.weight -     4096 x 32000, type =    f16, quantizing to q6_K .. size =   250.00 MB ->   102.54 MB | hist: 
++[   4/ 291]         layers.0.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.060 0.061 0.062 0.064 0.066 0.066 0.078 0.070 0.058 0.058 0.057 0.055 0.053 0.053 0.065 
++[   5/ 291]         layers.0.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.073 0.060 0.061 0.064 0.065 0.066 0.065 0.077 0.069 0.058 0.058 0.057 0.056 0.054 0.052 0.064 
++[   6/ 291]         layers.0.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.076 0.061 0.061 0.061 0.062 0.064 0.066 0.080 0.071 0.059 0.057 0.055 0.054 0.053 0.054 0.067 
++[   7/ 291]         layers.0.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.060 0.061 0.062 0.063 0.065 0.066 0.079 0.070 0.058 0.058 0.056 0.054 0.053 0.053 0.066 
++[   8/ 291]       layers.0.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[   9/ 291]      layers.0.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  10/ 291]      layers.0.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  11/ 291]      layers.0.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  12/ 291]             layers.0.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  13/ 291]         layers.1.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.060 0.060 0.062 0.064 0.066 0.066 0.079 0.070 0.059 0.058 0.056 0.054 0.053 0.053 0.066 
++[  14/ 291]         layers.1.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.060 0.061 0.062 0.064 0.065 0.066 0.078 0.070 0.059 0.058 0.056 0.055 0.053 0.053 0.066 
++[  15/ 291]         layers.1.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.061 0.061 0.063 0.065 0.066 0.079 0.070 0.058 0.057 0.056 0.054 0.054 0.054 0.066 
++[  16/ 291]         layers.1.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.060 0.060 0.062 0.064 0.066 0.067 0.079 0.071 0.059 0.058 0.056 0.054 0.053 0.052 0.065 
++[  17/ 291]       layers.1.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  18/ 291]      layers.1.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  19/ 291]      layers.1.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[  20/ 291]      layers.1.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  21/ 291]             layers.1.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  22/ 291]         layers.2.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.057 0.057 0.056 0.055 0.055 0.054 0.065 
++[  23/ 291]         layers.2.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  24/ 291]         layers.2.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.061 0.062 0.063 0.065 0.065 0.079 0.070 0.058 0.057 0.056 0.054 0.054 0.054 0.066 
++[  25/ 291]         layers.2.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.061 0.062 0.063 0.065 0.065 0.078 0.070 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[  26/ 291]       layers.2.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  27/ 291]      layers.2.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[  28/ 291]      layers.2.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[  29/ 291]      layers.2.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  30/ 291]             layers.2.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  31/ 291]         layers.3.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.055 0.054 0.065 
++[  32/ 291]         layers.3.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  33/ 291]         layers.3.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.070 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[  34/ 291]         layers.3.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  35/ 291]       layers.3.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  36/ 291]      layers.3.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[  37/ 291]      layers.3.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  38/ 291]      layers.3.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  39/ 291]             layers.3.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  40/ 291]         layers.4.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.055 0.054 0.065 
++[  41/ 291]         layers.4.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  42/ 291]         layers.4.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.070 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[  43/ 291]         layers.4.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[  44/ 291]       layers.4.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  45/ 291]      layers.4.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[  46/ 291]      layers.4.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  47/ 291]      layers.4.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  48/ 291]             layers.4.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  49/ 291]         layers.5.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  50/ 291]         layers.5.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  51/ 291]         layers.5.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[  52/ 291]         layers.5.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  53/ 291]       layers.5.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  54/ 291]      layers.5.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  55/ 291]      layers.5.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  56/ 291]      layers.5.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  57/ 291]             layers.5.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  58/ 291]         layers.6.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  59/ 291]         layers.6.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  60/ 291]         layers.6.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[  61/ 291]         layers.6.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  62/ 291]       layers.6.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  63/ 291]      layers.6.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  64/ 291]      layers.6.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  65/ 291]      layers.6.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[  66/ 291]             layers.6.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  67/ 291]         layers.7.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  68/ 291]         layers.7.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  69/ 291]         layers.7.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.070 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[  70/ 291]         layers.7.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[  71/ 291]       layers.7.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  72/ 291]      layers.7.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  73/ 291]      layers.7.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[  74/ 291]      layers.7.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[  75/ 291]             layers.7.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  76/ 291]         layers.8.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  77/ 291]         layers.8.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  78/ 291]         layers.8.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.070 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[  79/ 291]         layers.8.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  80/ 291]       layers.8.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  81/ 291]      layers.8.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  82/ 291]      layers.8.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[  83/ 291]      layers.8.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  84/ 291]             layers.8.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  85/ 291]         layers.9.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  86/ 291]         layers.9.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  87/ 291]         layers.9.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.061 0.062 0.063 0.065 0.065 0.078 0.070 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[  88/ 291]         layers.9.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[  89/ 291]       layers.9.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  90/ 291]      layers.9.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  91/ 291]      layers.9.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  92/ 291]      layers.9.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  93/ 291]             layers.9.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  94/ 291]        layers.10.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  95/ 291]        layers.10.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  96/ 291]        layers.10.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.061 0.062 0.063 0.065 0.065 0.078 0.070 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[  97/ 291]        layers.10.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[  98/ 291]      layers.10.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  99/ 291]     layers.10.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 100/ 291]     layers.10.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 101/ 291]     layers.10.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 102/ 291]            layers.10.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 103/ 291]        layers.11.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.063 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 104/ 291]        layers.11.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 105/ 291]        layers.11.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.061 0.062 0.063 0.065 0.065 0.078 0.070 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 106/ 291]        layers.11.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 107/ 291]      layers.11.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 108/ 291]     layers.11.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 109/ 291]     layers.11.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 110/ 291]     layers.11.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 111/ 291]            layers.11.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 112/ 291]        layers.12.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 113/ 291]        layers.12.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 114/ 291]        layers.12.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.070 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 115/ 291]        layers.12.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 116/ 291]      layers.12.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 117/ 291]     layers.12.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 118/ 291]     layers.12.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 119/ 291]     layers.12.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 120/ 291]            layers.12.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 121/ 291]        layers.13.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 122/ 291]        layers.13.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 123/ 291]        layers.13.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.061 0.062 0.063 0.065 0.065 0.078 0.070 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 124/ 291]        layers.13.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 125/ 291]      layers.13.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 126/ 291]     layers.13.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 127/ 291]     layers.13.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 128/ 291]     layers.13.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 129/ 291]            layers.13.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 130/ 291]        layers.14.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 131/ 291]        layers.14.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 132/ 291]        layers.14.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.061 0.062 0.063 0.065 0.065 0.079 0.070 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 133/ 291]        layers.14.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 134/ 291]      layers.14.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 135/ 291]     layers.14.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 136/ 291]     layers.14.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 137/ 291]     layers.14.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 138/ 291]            layers.14.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 139/ 291]        layers.15.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 140/ 291]        layers.15.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 141/ 291]        layers.15.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.061 0.062 0.063 0.065 0.065 0.078 0.070 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 142/ 291]        layers.15.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 143/ 291]      layers.15.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 144/ 291]     layers.15.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 145/ 291]     layers.15.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 146/ 291]     layers.15.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 147/ 291]            layers.15.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 148/ 291]        layers.16.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 149/ 291]        layers.16.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 150/ 291]        layers.16.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.061 0.062 0.063 0.065 0.065 0.079 0.070 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 151/ 291]        layers.16.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 152/ 291]      layers.16.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 153/ 291]     layers.16.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 154/ 291]     layers.16.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 155/ 291]     layers.16.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 156/ 291]            layers.16.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 157/ 291]        layers.17.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 158/ 291]        layers.17.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 159/ 291]        layers.17.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.070 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 160/ 291]        layers.17.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 161/ 291]      layers.17.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 162/ 291]     layers.17.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 163/ 291]     layers.17.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 164/ 291]     layers.17.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 165/ 291]            layers.17.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 166/ 291]        layers.18.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 167/ 291]        layers.18.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 168/ 291]        layers.18.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.070 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 169/ 291]        layers.18.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 170/ 291]      layers.18.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 171/ 291]     layers.18.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 172/ 291]     layers.18.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 173/ 291]     layers.18.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 174/ 291]            layers.18.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 175/ 291]        layers.19.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 176/ 291]        layers.19.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 177/ 291]        layers.19.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.070 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 178/ 291]        layers.19.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 179/ 291]      layers.19.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 180/ 291]     layers.19.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 181/ 291]     layers.19.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 182/ 291]     layers.19.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 183/ 291]            layers.19.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 184/ 291]        layers.20.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 185/ 291]        layers.20.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 186/ 291]        layers.20.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.070 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 187/ 291]        layers.20.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 188/ 291]      layers.20.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 189/ 291]     layers.20.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 190/ 291]     layers.20.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 191/ 291]     layers.20.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 192/ 291]            layers.20.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 193/ 291]        layers.21.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 194/ 291]        layers.21.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 195/ 291]        layers.21.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.070 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 196/ 291]        layers.21.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 197/ 291]      layers.21.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 198/ 291]     layers.21.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 199/ 291]     layers.21.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 200/ 291]     layers.21.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 201/ 291]            layers.21.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 202/ 291]        layers.22.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 203/ 291]        layers.22.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 204/ 291]        layers.22.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.061 0.062 0.063 0.065 0.065 0.078 0.070 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 205/ 291]        layers.22.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 206/ 291]      layers.22.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 207/ 291]     layers.22.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 208/ 291]     layers.22.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 209/ 291]     layers.22.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 210/ 291]            layers.22.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 211/ 291]        layers.23.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 212/ 291]        layers.23.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 213/ 291]        layers.23.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.070 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 214/ 291]        layers.23.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 215/ 291]      layers.23.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 216/ 291]     layers.23.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 217/ 291]     layers.23.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 218/ 291]     layers.23.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 219/ 291]            layers.23.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 220/ 291]        layers.24.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 221/ 291]        layers.24.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 222/ 291]        layers.24.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.061 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 223/ 291]        layers.24.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 224/ 291]      layers.24.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 225/ 291]     layers.24.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 226/ 291]     layers.24.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 227/ 291]     layers.24.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 228/ 291]            layers.24.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 229/ 291]        layers.25.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 230/ 291]        layers.25.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 231/ 291]        layers.25.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 232/ 291]        layers.25.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 233/ 291]      layers.25.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 234/ 291]     layers.25.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 235/ 291]     layers.25.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 236/ 291]     layers.25.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 237/ 291]            layers.25.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 238/ 291]        layers.26.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 239/ 291]        layers.26.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 240/ 291]        layers.26.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.070 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 241/ 291]        layers.26.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 242/ 291]      layers.26.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 243/ 291]     layers.26.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 244/ 291]     layers.26.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 245/ 291]     layers.26.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 246/ 291]            layers.26.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 247/ 291]        layers.27.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 248/ 291]        layers.27.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 249/ 291]        layers.27.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.061 0.062 0.063 0.065 0.065 0.078 0.070 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 250/ 291]        layers.27.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 251/ 291]      layers.27.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 252/ 291]     layers.27.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 253/ 291]     layers.27.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 254/ 291]     layers.27.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 255/ 291]            layers.27.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 256/ 291]        layers.28.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 257/ 291]        layers.28.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 258/ 291]        layers.28.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.070 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 259/ 291]        layers.28.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 260/ 291]      layers.28.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 261/ 291]     layers.28.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 262/ 291]     layers.28.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 263/ 291]     layers.28.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 264/ 291]            layers.28.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 265/ 291]        layers.29.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 266/ 291]        layers.29.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.063 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 267/ 291]        layers.29.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.061 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 268/ 291]        layers.29.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 269/ 291]      layers.29.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 270/ 291]     layers.29.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 271/ 291]     layers.29.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 272/ 291]     layers.29.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 273/ 291]            layers.29.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 274/ 291]        layers.30.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 275/ 291]        layers.30.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 276/ 291]        layers.30.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.070 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 277/ 291]        layers.30.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 278/ 291]      layers.30.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 279/ 291]     layers.30.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 280/ 291]     layers.30.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.070 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 281/ 291]     layers.30.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 282/ 291]            layers.30.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 283/ 291]        layers.31.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 284/ 291]        layers.31.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.074 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 285/ 291]        layers.31.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.070 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 286/ 291]        layers.31.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_1 .. size =    32.00 MB ->    12.00 MB | hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
++[ 287/ 291]      layers.31.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 288/ 291]     layers.31.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 289/ 291]     layers.31.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.061 0.062 0.063 0.065 0.066 0.079 0.070 0.058 0.057 0.056 0.054 0.054 0.054 0.066 
++[ 290/ 291]     layers.31.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_1 .. size =    86.00 MB ->    32.25 MB | hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++[ 291/ 291]            layers.31.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++llama_model_quantize_internal: model size  = 12853.02 MB
++llama_model_quantize_internal: quant size  =  4829.30 MB
++llama_model_quantize_internal: hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
++
++main: quantize time = 40873.31 ms
++main:    total time = 40873.31 ms
+++ ./bin/quantize ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin q2_k
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++main: build = 884 (c594992)
++main: quantizing '../models-mnt/open-llama/7B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin' as Q2_K
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
++llama.cpp: saving model to ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin
++[   1/ 291]                tok_embeddings.weight -     4096 x 32000, type =    f16, quantizing to q2_K .. size =   250.00 MB ->    41.02 MB | hist: 
++[   2/ 291]                          norm.weight -             4096, type =    f32, size =    0.016 MB
++[   3/ 291]                        output.weight -     4096 x 32000, type =    f16, quantizing to q6_K .. size =   250.00 MB ->   102.54 MB | hist: 
++[   4/ 291]         layers.0.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[   5/ 291]         layers.0.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[   6/ 291]         layers.0.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[   7/ 291]         layers.0.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[   8/ 291]       layers.0.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[   9/ 291]      layers.0.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[  10/ 291]      layers.0.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  11/ 291]      layers.0.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[  12/ 291]             layers.0.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  13/ 291]         layers.1.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[  14/ 291]         layers.1.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[  15/ 291]         layers.1.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  16/ 291]         layers.1.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  17/ 291]       layers.1.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  18/ 291]      layers.1.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[  19/ 291]      layers.1.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  20/ 291]      layers.1.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[  21/ 291]             layers.1.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  22/ 291]         layers.2.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[  23/ 291]         layers.2.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[  24/ 291]         layers.2.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  25/ 291]         layers.2.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  26/ 291]       layers.2.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  27/ 291]      layers.2.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[  28/ 291]      layers.2.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  29/ 291]      layers.2.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[  30/ 291]             layers.2.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  31/ 291]         layers.3.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[  32/ 291]         layers.3.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[  33/ 291]         layers.3.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  34/ 291]         layers.3.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  35/ 291]       layers.3.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  36/ 291]      layers.3.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[  37/ 291]      layers.3.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  38/ 291]      layers.3.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[  39/ 291]             layers.3.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  40/ 291]         layers.4.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[  41/ 291]         layers.4.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[  42/ 291]         layers.4.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  43/ 291]         layers.4.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  44/ 291]       layers.4.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  45/ 291]      layers.4.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[  46/ 291]      layers.4.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  47/ 291]      layers.4.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[  48/ 291]             layers.4.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  49/ 291]         layers.5.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[  50/ 291]         layers.5.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[  51/ 291]         layers.5.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  52/ 291]         layers.5.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  53/ 291]       layers.5.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  54/ 291]      layers.5.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[  55/ 291]      layers.5.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  56/ 291]      layers.5.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[  57/ 291]             layers.5.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  58/ 291]         layers.6.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[  59/ 291]         layers.6.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[  60/ 291]         layers.6.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  61/ 291]         layers.6.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  62/ 291]       layers.6.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  63/ 291]      layers.6.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[  64/ 291]      layers.6.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  65/ 291]      layers.6.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[  66/ 291]             layers.6.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  67/ 291]         layers.7.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[  68/ 291]         layers.7.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[  69/ 291]         layers.7.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  70/ 291]         layers.7.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  71/ 291]       layers.7.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  72/ 291]      layers.7.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[  73/ 291]      layers.7.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  74/ 291]      layers.7.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[  75/ 291]             layers.7.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  76/ 291]         layers.8.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[  77/ 291]         layers.8.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[  78/ 291]         layers.8.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  79/ 291]         layers.8.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  80/ 291]       layers.8.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  81/ 291]      layers.8.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[  82/ 291]      layers.8.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  83/ 291]      layers.8.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[  84/ 291]             layers.8.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  85/ 291]         layers.9.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[  86/ 291]         layers.9.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[  87/ 291]         layers.9.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  88/ 291]         layers.9.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  89/ 291]       layers.9.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  90/ 291]      layers.9.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[  91/ 291]      layers.9.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  92/ 291]      layers.9.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[  93/ 291]             layers.9.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  94/ 291]        layers.10.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[  95/ 291]        layers.10.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[  96/ 291]        layers.10.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  97/ 291]        layers.10.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  98/ 291]      layers.10.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  99/ 291]     layers.10.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 100/ 291]     layers.10.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 101/ 291]     layers.10.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 102/ 291]            layers.10.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 103/ 291]        layers.11.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 104/ 291]        layers.11.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 105/ 291]        layers.11.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 106/ 291]        layers.11.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 107/ 291]      layers.11.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 108/ 291]     layers.11.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 109/ 291]     layers.11.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 110/ 291]     layers.11.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 111/ 291]            layers.11.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 112/ 291]        layers.12.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 113/ 291]        layers.12.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 114/ 291]        layers.12.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 115/ 291]        layers.12.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 116/ 291]      layers.12.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 117/ 291]     layers.12.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 118/ 291]     layers.12.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 119/ 291]     layers.12.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 120/ 291]            layers.12.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 121/ 291]        layers.13.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 122/ 291]        layers.13.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 123/ 291]        layers.13.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 124/ 291]        layers.13.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 125/ 291]      layers.13.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 126/ 291]     layers.13.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 127/ 291]     layers.13.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 128/ 291]     layers.13.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 129/ 291]            layers.13.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 130/ 291]        layers.14.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 131/ 291]        layers.14.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 132/ 291]        layers.14.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 133/ 291]        layers.14.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 134/ 291]      layers.14.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 135/ 291]     layers.14.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 136/ 291]     layers.14.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 137/ 291]     layers.14.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 138/ 291]            layers.14.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 139/ 291]        layers.15.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 140/ 291]        layers.15.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 141/ 291]        layers.15.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 142/ 291]        layers.15.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 143/ 291]      layers.15.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 144/ 291]     layers.15.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 145/ 291]     layers.15.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 146/ 291]     layers.15.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 147/ 291]            layers.15.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 148/ 291]        layers.16.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 149/ 291]        layers.16.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 150/ 291]        layers.16.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 151/ 291]        layers.16.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 152/ 291]      layers.16.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 153/ 291]     layers.16.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 154/ 291]     layers.16.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 155/ 291]     layers.16.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 156/ 291]            layers.16.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 157/ 291]        layers.17.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 158/ 291]        layers.17.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 159/ 291]        layers.17.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 160/ 291]        layers.17.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 161/ 291]      layers.17.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 162/ 291]     layers.17.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 163/ 291]     layers.17.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 164/ 291]     layers.17.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 165/ 291]            layers.17.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 166/ 291]        layers.18.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 167/ 291]        layers.18.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 168/ 291]        layers.18.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 169/ 291]        layers.18.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 170/ 291]      layers.18.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 171/ 291]     layers.18.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 172/ 291]     layers.18.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 173/ 291]     layers.18.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 174/ 291]            layers.18.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 175/ 291]        layers.19.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 176/ 291]        layers.19.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 177/ 291]        layers.19.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 178/ 291]        layers.19.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 179/ 291]      layers.19.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 180/ 291]     layers.19.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 181/ 291]     layers.19.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 182/ 291]     layers.19.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 183/ 291]            layers.19.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 184/ 291]        layers.20.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 185/ 291]        layers.20.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 186/ 291]        layers.20.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 187/ 291]        layers.20.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 188/ 291]      layers.20.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 189/ 291]     layers.20.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 190/ 291]     layers.20.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 191/ 291]     layers.20.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 192/ 291]            layers.20.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 193/ 291]        layers.21.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 194/ 291]        layers.21.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 195/ 291]        layers.21.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 196/ 291]        layers.21.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 197/ 291]      layers.21.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 198/ 291]     layers.21.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 199/ 291]     layers.21.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 200/ 291]     layers.21.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 201/ 291]            layers.21.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 202/ 291]        layers.22.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 203/ 291]        layers.22.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 204/ 291]        layers.22.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 205/ 291]        layers.22.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 206/ 291]      layers.22.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 207/ 291]     layers.22.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 208/ 291]     layers.22.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 209/ 291]     layers.22.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 210/ 291]            layers.22.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 211/ 291]        layers.23.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 212/ 291]        layers.23.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 213/ 291]        layers.23.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 214/ 291]        layers.23.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 215/ 291]      layers.23.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 216/ 291]     layers.23.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 217/ 291]     layers.23.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 218/ 291]     layers.23.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 219/ 291]            layers.23.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 220/ 291]        layers.24.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 221/ 291]        layers.24.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 222/ 291]        layers.24.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 223/ 291]        layers.24.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 224/ 291]      layers.24.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 225/ 291]     layers.24.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 226/ 291]     layers.24.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 227/ 291]     layers.24.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 228/ 291]            layers.24.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 229/ 291]        layers.25.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 230/ 291]        layers.25.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 231/ 291]        layers.25.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 232/ 291]        layers.25.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 233/ 291]      layers.25.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 234/ 291]     layers.25.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 235/ 291]     layers.25.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 236/ 291]     layers.25.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 237/ 291]            layers.25.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 238/ 291]        layers.26.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 239/ 291]        layers.26.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 240/ 291]        layers.26.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 241/ 291]        layers.26.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 242/ 291]      layers.26.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 243/ 291]     layers.26.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 244/ 291]     layers.26.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 245/ 291]     layers.26.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 246/ 291]            layers.26.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 247/ 291]        layers.27.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 248/ 291]        layers.27.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 249/ 291]        layers.27.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 250/ 291]        layers.27.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 251/ 291]      layers.27.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 252/ 291]     layers.27.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 253/ 291]     layers.27.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 254/ 291]     layers.27.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 255/ 291]            layers.27.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 256/ 291]        layers.28.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 257/ 291]        layers.28.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 258/ 291]        layers.28.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 259/ 291]        layers.28.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 260/ 291]      layers.28.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 261/ 291]     layers.28.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 262/ 291]     layers.28.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 263/ 291]     layers.28.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 264/ 291]            layers.28.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 265/ 291]        layers.29.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 266/ 291]        layers.29.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 267/ 291]        layers.29.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 268/ 291]        layers.29.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 269/ 291]      layers.29.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 270/ 291]     layers.29.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 271/ 291]     layers.29.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 272/ 291]     layers.29.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 273/ 291]            layers.29.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 274/ 291]        layers.30.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 275/ 291]        layers.30.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 276/ 291]        layers.30.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 277/ 291]        layers.30.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 278/ 291]      layers.30.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 279/ 291]     layers.30.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 280/ 291]     layers.30.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 281/ 291]     layers.30.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 282/ 291]            layers.30.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 283/ 291]        layers.31.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 284/ 291]        layers.31.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q2_K .. size =    32.00 MB ->     5.25 MB | hist: 
++[ 285/ 291]        layers.31.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 286/ 291]        layers.31.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 287/ 291]      layers.31.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 288/ 291]     layers.31.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 289/ 291]     layers.31.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 290/ 291]     layers.31.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q2_K .. size =    86.00 MB ->    14.11 MB | hist: 
++[ 291/ 291]            layers.31.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++llama_model_quantize_internal: model size  = 12853.02 MB
++llama_model_quantize_internal: quant size  =  2733.57 MB
++
++main: quantize time = 41973.04 ms
++main:    total time = 41973.04 ms
+++ ./bin/quantize ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin ../models-mnt/open-llama/7B-v2/ggml-model-q3_k.bin q3_k
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++main: build = 884 (c594992)
++main: quantizing '../models-mnt/open-llama/7B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/7B-v2/ggml-model-q3_k.bin' as Q3_K
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
++llama.cpp: saving model to ../models-mnt/open-llama/7B-v2/ggml-model-q3_k.bin
++[   1/ 291]                tok_embeddings.weight -     4096 x 32000, type =    f16, quantizing to q3_K .. size =   250.00 MB ->    53.71 MB | hist: 
++[   2/ 291]                          norm.weight -             4096, type =    f32, size =    0.016 MB
++[   3/ 291]                        output.weight -     4096 x 32000, type =    f16, quantizing to q6_K .. size =   250.00 MB ->   102.54 MB | hist: 
++[   4/ 291]         layers.0.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[   5/ 291]         layers.0.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[   6/ 291]         layers.0.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[   7/ 291]         layers.0.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[   8/ 291]       layers.0.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[   9/ 291]      layers.0.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[  10/ 291]      layers.0.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  11/ 291]      layers.0.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[  12/ 291]             layers.0.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  13/ 291]         layers.1.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[  14/ 291]         layers.1.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[  15/ 291]         layers.1.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  16/ 291]         layers.1.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  17/ 291]       layers.1.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  18/ 291]      layers.1.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[  19/ 291]      layers.1.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  20/ 291]      layers.1.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[  21/ 291]             layers.1.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  22/ 291]         layers.2.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[  23/ 291]         layers.2.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[  24/ 291]         layers.2.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  25/ 291]         layers.2.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  26/ 291]       layers.2.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  27/ 291]      layers.2.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[  28/ 291]      layers.2.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  29/ 291]      layers.2.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[  30/ 291]             layers.2.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  31/ 291]         layers.3.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[  32/ 291]         layers.3.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[  33/ 291]         layers.3.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  34/ 291]         layers.3.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  35/ 291]       layers.3.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  36/ 291]      layers.3.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[  37/ 291]      layers.3.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  38/ 291]      layers.3.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[  39/ 291]             layers.3.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  40/ 291]         layers.4.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[  41/ 291]         layers.4.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[  42/ 291]         layers.4.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  43/ 291]         layers.4.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  44/ 291]       layers.4.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  45/ 291]      layers.4.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[  46/ 291]      layers.4.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  47/ 291]      layers.4.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[  48/ 291]             layers.4.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  49/ 291]         layers.5.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[  50/ 291]         layers.5.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[  51/ 291]         layers.5.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  52/ 291]         layers.5.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  53/ 291]       layers.5.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  54/ 291]      layers.5.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[  55/ 291]      layers.5.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  56/ 291]      layers.5.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[  57/ 291]             layers.5.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  58/ 291]         layers.6.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[  59/ 291]         layers.6.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[  60/ 291]         layers.6.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  61/ 291]         layers.6.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  62/ 291]       layers.6.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  63/ 291]      layers.6.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[  64/ 291]      layers.6.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  65/ 291]      layers.6.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[  66/ 291]             layers.6.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  67/ 291]         layers.7.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[  68/ 291]         layers.7.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[  69/ 291]         layers.7.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  70/ 291]         layers.7.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  71/ 291]       layers.7.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  72/ 291]      layers.7.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[  73/ 291]      layers.7.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  74/ 291]      layers.7.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[  75/ 291]             layers.7.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  76/ 291]         layers.8.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[  77/ 291]         layers.8.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[  78/ 291]         layers.8.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  79/ 291]         layers.8.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  80/ 291]       layers.8.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  81/ 291]      layers.8.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[  82/ 291]      layers.8.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  83/ 291]      layers.8.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[  84/ 291]             layers.8.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  85/ 291]         layers.9.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[  86/ 291]         layers.9.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[  87/ 291]         layers.9.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  88/ 291]         layers.9.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  89/ 291]       layers.9.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  90/ 291]      layers.9.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[  91/ 291]      layers.9.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  92/ 291]      layers.9.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[  93/ 291]             layers.9.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  94/ 291]        layers.10.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[  95/ 291]        layers.10.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[  96/ 291]        layers.10.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  97/ 291]        layers.10.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  98/ 291]      layers.10.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  99/ 291]     layers.10.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 100/ 291]     layers.10.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 101/ 291]     layers.10.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 102/ 291]            layers.10.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 103/ 291]        layers.11.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 104/ 291]        layers.11.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 105/ 291]        layers.11.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 106/ 291]        layers.11.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 107/ 291]      layers.11.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 108/ 291]     layers.11.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 109/ 291]     layers.11.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 110/ 291]     layers.11.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 111/ 291]            layers.11.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 112/ 291]        layers.12.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 113/ 291]        layers.12.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 114/ 291]        layers.12.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 115/ 291]        layers.12.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 116/ 291]      layers.12.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 117/ 291]     layers.12.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 118/ 291]     layers.12.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 119/ 291]     layers.12.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 120/ 291]            layers.12.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 121/ 291]        layers.13.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 122/ 291]        layers.13.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 123/ 291]        layers.13.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 124/ 291]        layers.13.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 125/ 291]      layers.13.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 126/ 291]     layers.13.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 127/ 291]     layers.13.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 128/ 291]     layers.13.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 129/ 291]            layers.13.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 130/ 291]        layers.14.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 131/ 291]        layers.14.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 132/ 291]        layers.14.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 133/ 291]        layers.14.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 134/ 291]      layers.14.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 135/ 291]     layers.14.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 136/ 291]     layers.14.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 137/ 291]     layers.14.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 138/ 291]            layers.14.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 139/ 291]        layers.15.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 140/ 291]        layers.15.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 141/ 291]        layers.15.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 142/ 291]        layers.15.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 143/ 291]      layers.15.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 144/ 291]     layers.15.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 145/ 291]     layers.15.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 146/ 291]     layers.15.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 147/ 291]            layers.15.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 148/ 291]        layers.16.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 149/ 291]        layers.16.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 150/ 291]        layers.16.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 151/ 291]        layers.16.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 152/ 291]      layers.16.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 153/ 291]     layers.16.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 154/ 291]     layers.16.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 155/ 291]     layers.16.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 156/ 291]            layers.16.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 157/ 291]        layers.17.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 158/ 291]        layers.17.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 159/ 291]        layers.17.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 160/ 291]        layers.17.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 161/ 291]      layers.17.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 162/ 291]     layers.17.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 163/ 291]     layers.17.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 164/ 291]     layers.17.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 165/ 291]            layers.17.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 166/ 291]        layers.18.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 167/ 291]        layers.18.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 168/ 291]        layers.18.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 169/ 291]        layers.18.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 170/ 291]      layers.18.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 171/ 291]     layers.18.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 172/ 291]     layers.18.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 173/ 291]     layers.18.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 174/ 291]            layers.18.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 175/ 291]        layers.19.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 176/ 291]        layers.19.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 177/ 291]        layers.19.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 178/ 291]        layers.19.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 179/ 291]      layers.19.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 180/ 291]     layers.19.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 181/ 291]     layers.19.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 182/ 291]     layers.19.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 183/ 291]            layers.19.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 184/ 291]        layers.20.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 185/ 291]        layers.20.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 186/ 291]        layers.20.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 187/ 291]        layers.20.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 188/ 291]      layers.20.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 189/ 291]     layers.20.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 190/ 291]     layers.20.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 191/ 291]     layers.20.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 192/ 291]            layers.20.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 193/ 291]        layers.21.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 194/ 291]        layers.21.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 195/ 291]        layers.21.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 196/ 291]        layers.21.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 197/ 291]      layers.21.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 198/ 291]     layers.21.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 199/ 291]     layers.21.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 200/ 291]     layers.21.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 201/ 291]            layers.21.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 202/ 291]        layers.22.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 203/ 291]        layers.22.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 204/ 291]        layers.22.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 205/ 291]        layers.22.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 206/ 291]      layers.22.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 207/ 291]     layers.22.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 208/ 291]     layers.22.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 209/ 291]     layers.22.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 210/ 291]            layers.22.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 211/ 291]        layers.23.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 212/ 291]        layers.23.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 213/ 291]        layers.23.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 214/ 291]        layers.23.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 215/ 291]      layers.23.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 216/ 291]     layers.23.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 217/ 291]     layers.23.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 218/ 291]     layers.23.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 219/ 291]            layers.23.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 220/ 291]        layers.24.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 221/ 291]        layers.24.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 222/ 291]        layers.24.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 223/ 291]        layers.24.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 224/ 291]      layers.24.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 225/ 291]     layers.24.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 226/ 291]     layers.24.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 227/ 291]     layers.24.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 228/ 291]            layers.24.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 229/ 291]        layers.25.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 230/ 291]        layers.25.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 231/ 291]        layers.25.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 232/ 291]        layers.25.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 233/ 291]      layers.25.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 234/ 291]     layers.25.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 235/ 291]     layers.25.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 236/ 291]     layers.25.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 237/ 291]            layers.25.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 238/ 291]        layers.26.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 239/ 291]        layers.26.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 240/ 291]        layers.26.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 241/ 291]        layers.26.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 242/ 291]      layers.26.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 243/ 291]     layers.26.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 244/ 291]     layers.26.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 245/ 291]     layers.26.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 246/ 291]            layers.26.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 247/ 291]        layers.27.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 248/ 291]        layers.27.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 249/ 291]        layers.27.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 250/ 291]        layers.27.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 251/ 291]      layers.27.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 252/ 291]     layers.27.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 253/ 291]     layers.27.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 254/ 291]     layers.27.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 255/ 291]            layers.27.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 256/ 291]        layers.28.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 257/ 291]        layers.28.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 258/ 291]        layers.28.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 259/ 291]        layers.28.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 260/ 291]      layers.28.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 261/ 291]     layers.28.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 262/ 291]     layers.28.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 263/ 291]     layers.28.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 264/ 291]            layers.28.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 265/ 291]        layers.29.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 266/ 291]        layers.29.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 267/ 291]        layers.29.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 268/ 291]        layers.29.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 269/ 291]      layers.29.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 270/ 291]     layers.29.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 271/ 291]     layers.29.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 272/ 291]     layers.29.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 273/ 291]            layers.29.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 274/ 291]        layers.30.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 275/ 291]        layers.30.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 276/ 291]        layers.30.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 277/ 291]        layers.30.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 278/ 291]      layers.30.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 279/ 291]     layers.30.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 280/ 291]     layers.30.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 281/ 291]     layers.30.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 282/ 291]            layers.30.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 283/ 291]        layers.31.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 284/ 291]        layers.31.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q3_K .. size =    32.00 MB ->     6.88 MB | hist: 
++[ 285/ 291]        layers.31.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 286/ 291]        layers.31.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 287/ 291]      layers.31.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 288/ 291]     layers.31.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 289/ 291]     layers.31.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 290/ 291]     layers.31.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q3_K .. size =    86.00 MB ->    18.48 MB | hist: 
++[ 291/ 291]            layers.31.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++llama_model_quantize_internal: model size  = 12853.02 MB
++llama_model_quantize_internal: quant size  =  3129.77 MB
++
++main: quantize time = 44426.96 ms
++main:    total time = 44426.96 ms
+++ ./bin/quantize ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin ../models-mnt/open-llama/7B-v2/ggml-model-q4_k.bin q4_k
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++main: build = 884 (c594992)
++main: quantizing '../models-mnt/open-llama/7B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/7B-v2/ggml-model-q4_k.bin' as Q4_K
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
++llama.cpp: saving model to ../models-mnt/open-llama/7B-v2/ggml-model-q4_k.bin
++[   1/ 291]                tok_embeddings.weight -     4096 x 32000, type =    f16, quantizing to q4_K .. size =   250.00 MB ->    70.31 MB | hist: 
++[   2/ 291]                          norm.weight -             4096, type =    f32, size =    0.016 MB
++[   3/ 291]                        output.weight -     4096 x 32000, type =    f16, quantizing to q6_K .. size =   250.00 MB ->   102.54 MB | hist: 
++[   4/ 291]         layers.0.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[   5/ 291]         layers.0.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[   6/ 291]         layers.0.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[   7/ 291]         layers.0.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[   8/ 291]       layers.0.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[   9/ 291]      layers.0.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  10/ 291]      layers.0.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  11/ 291]      layers.0.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  12/ 291]             layers.0.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  13/ 291]         layers.1.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  14/ 291]         layers.1.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  15/ 291]         layers.1.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  16/ 291]         layers.1.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  17/ 291]       layers.1.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  18/ 291]      layers.1.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  19/ 291]      layers.1.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  20/ 291]      layers.1.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  21/ 291]             layers.1.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  22/ 291]         layers.2.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  23/ 291]         layers.2.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  24/ 291]         layers.2.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  25/ 291]         layers.2.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  26/ 291]       layers.2.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  27/ 291]      layers.2.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  28/ 291]      layers.2.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  29/ 291]      layers.2.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  30/ 291]             layers.2.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  31/ 291]         layers.3.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  32/ 291]         layers.3.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  33/ 291]         layers.3.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  34/ 291]         layers.3.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  35/ 291]       layers.3.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  36/ 291]      layers.3.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  37/ 291]      layers.3.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  38/ 291]      layers.3.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  39/ 291]             layers.3.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  40/ 291]         layers.4.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  41/ 291]         layers.4.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  42/ 291]         layers.4.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  43/ 291]         layers.4.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  44/ 291]       layers.4.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  45/ 291]      layers.4.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  46/ 291]      layers.4.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  47/ 291]      layers.4.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  48/ 291]             layers.4.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  49/ 291]         layers.5.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  50/ 291]         layers.5.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  51/ 291]         layers.5.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  52/ 291]         layers.5.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  53/ 291]       layers.5.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  54/ 291]      layers.5.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  55/ 291]      layers.5.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  56/ 291]      layers.5.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  57/ 291]             layers.5.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  58/ 291]         layers.6.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  59/ 291]         layers.6.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  60/ 291]         layers.6.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  61/ 291]         layers.6.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  62/ 291]       layers.6.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  63/ 291]      layers.6.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  64/ 291]      layers.6.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  65/ 291]      layers.6.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  66/ 291]             layers.6.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  67/ 291]         layers.7.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  68/ 291]         layers.7.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  69/ 291]         layers.7.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  70/ 291]         layers.7.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  71/ 291]       layers.7.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  72/ 291]      layers.7.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  73/ 291]      layers.7.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  74/ 291]      layers.7.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  75/ 291]             layers.7.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  76/ 291]         layers.8.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  77/ 291]         layers.8.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  78/ 291]         layers.8.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  79/ 291]         layers.8.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  80/ 291]       layers.8.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  81/ 291]      layers.8.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  82/ 291]      layers.8.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  83/ 291]      layers.8.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  84/ 291]             layers.8.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  85/ 291]         layers.9.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  86/ 291]         layers.9.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  87/ 291]         layers.9.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  88/ 291]         layers.9.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  89/ 291]       layers.9.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  90/ 291]      layers.9.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  91/ 291]      layers.9.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  92/ 291]      layers.9.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[  93/ 291]             layers.9.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  94/ 291]        layers.10.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  95/ 291]        layers.10.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  96/ 291]        layers.10.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  97/ 291]        layers.10.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[  98/ 291]      layers.10.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  99/ 291]     layers.10.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 100/ 291]     layers.10.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 101/ 291]     layers.10.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 102/ 291]            layers.10.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 103/ 291]        layers.11.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 104/ 291]        layers.11.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 105/ 291]        layers.11.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 106/ 291]        layers.11.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 107/ 291]      layers.11.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 108/ 291]     layers.11.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 109/ 291]     layers.11.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 110/ 291]     layers.11.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 111/ 291]            layers.11.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 112/ 291]        layers.12.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 113/ 291]        layers.12.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 114/ 291]        layers.12.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 115/ 291]        layers.12.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 116/ 291]      layers.12.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 117/ 291]     layers.12.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 118/ 291]     layers.12.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 119/ 291]     layers.12.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 120/ 291]            layers.12.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 121/ 291]        layers.13.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 122/ 291]        layers.13.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 123/ 291]        layers.13.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 124/ 291]        layers.13.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 125/ 291]      layers.13.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 126/ 291]     layers.13.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 127/ 291]     layers.13.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 128/ 291]     layers.13.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 129/ 291]            layers.13.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 130/ 291]        layers.14.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 131/ 291]        layers.14.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 132/ 291]        layers.14.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 133/ 291]        layers.14.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 134/ 291]      layers.14.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 135/ 291]     layers.14.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 136/ 291]     layers.14.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 137/ 291]     layers.14.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 138/ 291]            layers.14.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 139/ 291]        layers.15.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 140/ 291]        layers.15.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 141/ 291]        layers.15.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 142/ 291]        layers.15.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 143/ 291]      layers.15.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 144/ 291]     layers.15.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 145/ 291]     layers.15.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 146/ 291]     layers.15.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 147/ 291]            layers.15.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 148/ 291]        layers.16.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 149/ 291]        layers.16.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 150/ 291]        layers.16.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 151/ 291]        layers.16.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 152/ 291]      layers.16.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 153/ 291]     layers.16.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 154/ 291]     layers.16.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 155/ 291]     layers.16.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 156/ 291]            layers.16.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 157/ 291]        layers.17.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 158/ 291]        layers.17.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 159/ 291]        layers.17.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 160/ 291]        layers.17.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 161/ 291]      layers.17.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 162/ 291]     layers.17.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 163/ 291]     layers.17.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 164/ 291]     layers.17.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 165/ 291]            layers.17.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 166/ 291]        layers.18.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 167/ 291]        layers.18.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 168/ 291]        layers.18.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 169/ 291]        layers.18.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 170/ 291]      layers.18.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 171/ 291]     layers.18.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 172/ 291]     layers.18.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 173/ 291]     layers.18.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 174/ 291]            layers.18.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 175/ 291]        layers.19.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 176/ 291]        layers.19.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 177/ 291]        layers.19.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 178/ 291]        layers.19.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 179/ 291]      layers.19.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 180/ 291]     layers.19.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 181/ 291]     layers.19.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 182/ 291]     layers.19.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 183/ 291]            layers.19.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 184/ 291]        layers.20.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 185/ 291]        layers.20.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 186/ 291]        layers.20.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 187/ 291]        layers.20.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 188/ 291]      layers.20.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 189/ 291]     layers.20.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 190/ 291]     layers.20.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 191/ 291]     layers.20.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 192/ 291]            layers.20.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 193/ 291]        layers.21.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 194/ 291]        layers.21.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 195/ 291]        layers.21.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 196/ 291]        layers.21.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 197/ 291]      layers.21.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 198/ 291]     layers.21.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 199/ 291]     layers.21.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 200/ 291]     layers.21.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 201/ 291]            layers.21.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 202/ 291]        layers.22.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 203/ 291]        layers.22.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 204/ 291]        layers.22.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 205/ 291]        layers.22.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 206/ 291]      layers.22.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 207/ 291]     layers.22.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 208/ 291]     layers.22.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 209/ 291]     layers.22.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 210/ 291]            layers.22.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 211/ 291]        layers.23.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 212/ 291]        layers.23.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 213/ 291]        layers.23.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 214/ 291]        layers.23.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 215/ 291]      layers.23.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 216/ 291]     layers.23.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 217/ 291]     layers.23.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 218/ 291]     layers.23.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 219/ 291]            layers.23.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 220/ 291]        layers.24.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 221/ 291]        layers.24.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 222/ 291]        layers.24.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 223/ 291]        layers.24.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 224/ 291]      layers.24.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 225/ 291]     layers.24.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 226/ 291]     layers.24.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 227/ 291]     layers.24.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 228/ 291]            layers.24.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 229/ 291]        layers.25.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 230/ 291]        layers.25.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 231/ 291]        layers.25.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 232/ 291]        layers.25.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 233/ 291]      layers.25.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 234/ 291]     layers.25.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 235/ 291]     layers.25.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 236/ 291]     layers.25.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 237/ 291]            layers.25.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 238/ 291]        layers.26.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 239/ 291]        layers.26.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 240/ 291]        layers.26.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 241/ 291]        layers.26.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 242/ 291]      layers.26.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 243/ 291]     layers.26.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 244/ 291]     layers.26.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 245/ 291]     layers.26.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 246/ 291]            layers.26.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 247/ 291]        layers.27.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 248/ 291]        layers.27.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 249/ 291]        layers.27.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 250/ 291]        layers.27.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 251/ 291]      layers.27.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 252/ 291]     layers.27.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 253/ 291]     layers.27.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 254/ 291]     layers.27.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 255/ 291]            layers.27.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 256/ 291]        layers.28.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 257/ 291]        layers.28.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 258/ 291]        layers.28.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 259/ 291]        layers.28.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 260/ 291]      layers.28.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 261/ 291]     layers.28.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 262/ 291]     layers.28.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 263/ 291]     layers.28.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 264/ 291]            layers.28.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 265/ 291]        layers.29.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 266/ 291]        layers.29.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 267/ 291]        layers.29.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 268/ 291]        layers.29.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 269/ 291]      layers.29.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 270/ 291]     layers.29.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 271/ 291]     layers.29.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 272/ 291]     layers.29.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 273/ 291]            layers.29.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 274/ 291]        layers.30.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 275/ 291]        layers.30.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 276/ 291]        layers.30.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 277/ 291]        layers.30.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 278/ 291]      layers.30.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 279/ 291]     layers.30.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 280/ 291]     layers.30.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 281/ 291]     layers.30.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 282/ 291]            layers.30.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 283/ 291]        layers.31.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 284/ 291]        layers.31.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 285/ 291]        layers.31.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 286/ 291]        layers.31.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q4_K .. size =    32.00 MB ->     9.00 MB | hist: 
++[ 287/ 291]      layers.31.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 288/ 291]     layers.31.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 289/ 291]     layers.31.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 290/ 291]     layers.31.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q4_K .. size =    86.00 MB ->    24.19 MB | hist: 
++[ 291/ 291]            layers.31.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++llama_model_quantize_internal: model size  = 12853.02 MB
++llama_model_quantize_internal: quant size  =  3891.24 MB
++
++main: quantize time = 47635.01 ms
++main:    total time = 47635.01 ms
+++ ./bin/quantize ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin q5_k
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++main: build = 884 (c594992)
++main: quantizing '../models-mnt/open-llama/7B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin' as Q5_K
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
++llama.cpp: saving model to ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin
++[   1/ 291]                tok_embeddings.weight -     4096 x 32000, type =    f16, quantizing to q5_K .. size =   250.00 MB ->    85.94 MB | hist: 
++[   2/ 291]                          norm.weight -             4096, type =    f32, size =    0.016 MB
++[   3/ 291]                        output.weight -     4096 x 32000, type =    f16, quantizing to q6_K .. size =   250.00 MB ->   102.54 MB | hist: 
++[   4/ 291]         layers.0.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[   5/ 291]         layers.0.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[   6/ 291]         layers.0.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[   7/ 291]         layers.0.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[   8/ 291]       layers.0.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[   9/ 291]      layers.0.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[  10/ 291]      layers.0.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  11/ 291]      layers.0.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[  12/ 291]             layers.0.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  13/ 291]         layers.1.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  14/ 291]         layers.1.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  15/ 291]         layers.1.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  16/ 291]         layers.1.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  17/ 291]       layers.1.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  18/ 291]      layers.1.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[  19/ 291]      layers.1.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  20/ 291]      layers.1.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[  21/ 291]             layers.1.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  22/ 291]         layers.2.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  23/ 291]         layers.2.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  24/ 291]         layers.2.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  25/ 291]         layers.2.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  26/ 291]       layers.2.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  27/ 291]      layers.2.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[  28/ 291]      layers.2.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  29/ 291]      layers.2.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[  30/ 291]             layers.2.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  31/ 291]         layers.3.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  32/ 291]         layers.3.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  33/ 291]         layers.3.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  34/ 291]         layers.3.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  35/ 291]       layers.3.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  36/ 291]      layers.3.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[  37/ 291]      layers.3.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  38/ 291]      layers.3.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[  39/ 291]             layers.3.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  40/ 291]         layers.4.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  41/ 291]         layers.4.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  42/ 291]         layers.4.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  43/ 291]         layers.4.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  44/ 291]       layers.4.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  45/ 291]      layers.4.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[  46/ 291]      layers.4.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[  47/ 291]      layers.4.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[  48/ 291]             layers.4.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  49/ 291]         layers.5.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  50/ 291]         layers.5.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  51/ 291]         layers.5.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  52/ 291]         layers.5.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  53/ 291]       layers.5.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  54/ 291]      layers.5.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[  55/ 291]      layers.5.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[  56/ 291]      layers.5.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[  57/ 291]             layers.5.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  58/ 291]         layers.6.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  59/ 291]         layers.6.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  60/ 291]         layers.6.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  61/ 291]         layers.6.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  62/ 291]       layers.6.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  63/ 291]      layers.6.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[  64/ 291]      layers.6.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  65/ 291]      layers.6.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[  66/ 291]             layers.6.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  67/ 291]         layers.7.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  68/ 291]         layers.7.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  69/ 291]         layers.7.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  70/ 291]         layers.7.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  71/ 291]       layers.7.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  72/ 291]      layers.7.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[  73/ 291]      layers.7.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[  74/ 291]      layers.7.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[  75/ 291]             layers.7.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  76/ 291]         layers.8.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  77/ 291]         layers.8.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  78/ 291]         layers.8.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  79/ 291]         layers.8.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  80/ 291]       layers.8.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  81/ 291]      layers.8.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[  82/ 291]      layers.8.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[  83/ 291]      layers.8.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[  84/ 291]             layers.8.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  85/ 291]         layers.9.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  86/ 291]         layers.9.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  87/ 291]         layers.9.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  88/ 291]         layers.9.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  89/ 291]       layers.9.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  90/ 291]      layers.9.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[  91/ 291]      layers.9.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  92/ 291]      layers.9.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[  93/ 291]             layers.9.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  94/ 291]        layers.10.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  95/ 291]        layers.10.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  96/ 291]        layers.10.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  97/ 291]        layers.10.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[  98/ 291]      layers.10.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  99/ 291]     layers.10.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 100/ 291]     layers.10.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 101/ 291]     layers.10.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 102/ 291]            layers.10.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 103/ 291]        layers.11.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 104/ 291]        layers.11.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 105/ 291]        layers.11.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 106/ 291]        layers.11.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 107/ 291]      layers.11.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 108/ 291]     layers.11.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 109/ 291]     layers.11.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 110/ 291]     layers.11.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 111/ 291]            layers.11.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 112/ 291]        layers.12.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 113/ 291]        layers.12.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 114/ 291]        layers.12.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 115/ 291]        layers.12.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 116/ 291]      layers.12.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 117/ 291]     layers.12.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 118/ 291]     layers.12.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 119/ 291]     layers.12.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 120/ 291]            layers.12.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 121/ 291]        layers.13.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 122/ 291]        layers.13.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 123/ 291]        layers.13.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 124/ 291]        layers.13.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 125/ 291]      layers.13.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 126/ 291]     layers.13.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 127/ 291]     layers.13.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 128/ 291]     layers.13.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 129/ 291]            layers.13.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 130/ 291]        layers.14.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 131/ 291]        layers.14.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 132/ 291]        layers.14.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 133/ 291]        layers.14.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 134/ 291]      layers.14.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 135/ 291]     layers.14.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 136/ 291]     layers.14.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 137/ 291]     layers.14.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 138/ 291]            layers.14.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 139/ 291]        layers.15.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 140/ 291]        layers.15.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 141/ 291]        layers.15.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 142/ 291]        layers.15.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 143/ 291]      layers.15.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 144/ 291]     layers.15.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 145/ 291]     layers.15.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 146/ 291]     layers.15.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 147/ 291]            layers.15.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 148/ 291]        layers.16.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 149/ 291]        layers.16.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 150/ 291]        layers.16.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 151/ 291]        layers.16.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 152/ 291]      layers.16.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 153/ 291]     layers.16.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 154/ 291]     layers.16.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 155/ 291]     layers.16.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 156/ 291]            layers.16.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 157/ 291]        layers.17.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 158/ 291]        layers.17.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 159/ 291]        layers.17.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 160/ 291]        layers.17.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 161/ 291]      layers.17.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 162/ 291]     layers.17.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 163/ 291]     layers.17.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 164/ 291]     layers.17.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 165/ 291]            layers.17.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 166/ 291]        layers.18.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 167/ 291]        layers.18.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 168/ 291]        layers.18.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 169/ 291]        layers.18.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 170/ 291]      layers.18.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 171/ 291]     layers.18.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 172/ 291]     layers.18.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 173/ 291]     layers.18.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 174/ 291]            layers.18.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 175/ 291]        layers.19.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 176/ 291]        layers.19.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 177/ 291]        layers.19.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 178/ 291]        layers.19.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 179/ 291]      layers.19.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 180/ 291]     layers.19.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 181/ 291]     layers.19.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 182/ 291]     layers.19.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 183/ 291]            layers.19.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 184/ 291]        layers.20.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 185/ 291]        layers.20.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 186/ 291]        layers.20.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 187/ 291]        layers.20.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 188/ 291]      layers.20.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 189/ 291]     layers.20.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 190/ 291]     layers.20.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 191/ 291]     layers.20.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 192/ 291]            layers.20.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 193/ 291]        layers.21.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 194/ 291]        layers.21.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 195/ 291]        layers.21.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 196/ 291]        layers.21.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 197/ 291]      layers.21.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 198/ 291]     layers.21.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 199/ 291]     layers.21.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 200/ 291]     layers.21.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 201/ 291]            layers.21.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 202/ 291]        layers.22.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 203/ 291]        layers.22.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 204/ 291]        layers.22.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 205/ 291]        layers.22.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 206/ 291]      layers.22.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 207/ 291]     layers.22.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 208/ 291]     layers.22.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 209/ 291]     layers.22.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 210/ 291]            layers.22.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 211/ 291]        layers.23.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 212/ 291]        layers.23.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 213/ 291]        layers.23.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 214/ 291]        layers.23.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 215/ 291]      layers.23.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 216/ 291]     layers.23.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 217/ 291]     layers.23.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 218/ 291]     layers.23.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 219/ 291]            layers.23.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 220/ 291]        layers.24.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 221/ 291]        layers.24.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 222/ 291]        layers.24.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 223/ 291]        layers.24.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 224/ 291]      layers.24.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 225/ 291]     layers.24.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 226/ 291]     layers.24.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 227/ 291]     layers.24.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 228/ 291]            layers.24.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 229/ 291]        layers.25.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 230/ 291]        layers.25.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 231/ 291]        layers.25.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 232/ 291]        layers.25.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 233/ 291]      layers.25.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 234/ 291]     layers.25.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 235/ 291]     layers.25.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 236/ 291]     layers.25.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 237/ 291]            layers.25.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 238/ 291]        layers.26.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 239/ 291]        layers.26.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 240/ 291]        layers.26.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 241/ 291]        layers.26.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 242/ 291]      layers.26.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 243/ 291]     layers.26.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 244/ 291]     layers.26.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 245/ 291]     layers.26.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 246/ 291]            layers.26.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 247/ 291]        layers.27.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 248/ 291]        layers.27.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 249/ 291]        layers.27.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 250/ 291]        layers.27.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 251/ 291]      layers.27.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 252/ 291]     layers.27.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 253/ 291]     layers.27.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 254/ 291]     layers.27.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 255/ 291]            layers.27.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 256/ 291]        layers.28.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 257/ 291]        layers.28.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 258/ 291]        layers.28.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 259/ 291]        layers.28.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 260/ 291]      layers.28.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 261/ 291]     layers.28.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 262/ 291]     layers.28.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 263/ 291]     layers.28.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 264/ 291]            layers.28.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 265/ 291]        layers.29.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 266/ 291]        layers.29.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 267/ 291]        layers.29.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 268/ 291]        layers.29.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 269/ 291]      layers.29.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 270/ 291]     layers.29.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 271/ 291]     layers.29.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 272/ 291]     layers.29.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 273/ 291]            layers.29.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 274/ 291]        layers.30.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 275/ 291]        layers.30.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 276/ 291]        layers.30.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 277/ 291]        layers.30.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 278/ 291]      layers.30.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 279/ 291]     layers.30.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 280/ 291]     layers.30.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 281/ 291]     layers.30.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 282/ 291]            layers.30.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 283/ 291]        layers.31.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 284/ 291]        layers.31.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 285/ 291]        layers.31.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 286/ 291]        layers.31.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q5_K .. size =    32.00 MB ->    11.00 MB | hist: 
++[ 287/ 291]      layers.31.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 288/ 291]     layers.31.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 289/ 291]     layers.31.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 290/ 291]     layers.31.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q5_K .. size =    86.00 MB ->    29.56 MB | hist: 
++[ 291/ 291]            layers.31.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++llama_model_quantize_internal: model size  = 12853.02 MB
++llama_model_quantize_internal: quant size  =  4560.87 MB
++
++main: quantize time = 51669.61 ms
++main:    total time = 51669.61 ms
+++ ./bin/quantize ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin ../models-mnt/open-llama/7B-v2/ggml-model-q6_k.bin q6_k
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++main: build = 884 (c594992)
++main: quantizing '../models-mnt/open-llama/7B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/7B-v2/ggml-model-q6_k.bin' as Q6_K
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
++llama.cpp: saving model to ../models-mnt/open-llama/7B-v2/ggml-model-q6_k.bin
++[   1/ 291]                tok_embeddings.weight -     4096 x 32000, type =    f16, quantizing to q6_K .. size =   250.00 MB ->   102.54 MB | hist: 
++[   2/ 291]                          norm.weight -             4096, type =    f32, size =    0.016 MB
++[   3/ 291]                        output.weight -     4096 x 32000, type =    f16, quantizing to q6_K .. size =   250.00 MB ->   102.54 MB | hist: 
++[   4/ 291]         layers.0.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[   5/ 291]         layers.0.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[   6/ 291]         layers.0.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[   7/ 291]         layers.0.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[   8/ 291]       layers.0.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[   9/ 291]      layers.0.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  10/ 291]      layers.0.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  11/ 291]      layers.0.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  12/ 291]             layers.0.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  13/ 291]         layers.1.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  14/ 291]         layers.1.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  15/ 291]         layers.1.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  16/ 291]         layers.1.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  17/ 291]       layers.1.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  18/ 291]      layers.1.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  19/ 291]      layers.1.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  20/ 291]      layers.1.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  21/ 291]             layers.1.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  22/ 291]         layers.2.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  23/ 291]         layers.2.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  24/ 291]         layers.2.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  25/ 291]         layers.2.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  26/ 291]       layers.2.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  27/ 291]      layers.2.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  28/ 291]      layers.2.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  29/ 291]      layers.2.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  30/ 291]             layers.2.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  31/ 291]         layers.3.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  32/ 291]         layers.3.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  33/ 291]         layers.3.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  34/ 291]         layers.3.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  35/ 291]       layers.3.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  36/ 291]      layers.3.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  37/ 291]      layers.3.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  38/ 291]      layers.3.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  39/ 291]             layers.3.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  40/ 291]         layers.4.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  41/ 291]         layers.4.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  42/ 291]         layers.4.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  43/ 291]         layers.4.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  44/ 291]       layers.4.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  45/ 291]      layers.4.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  46/ 291]      layers.4.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  47/ 291]      layers.4.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  48/ 291]             layers.4.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  49/ 291]         layers.5.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  50/ 291]         layers.5.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  51/ 291]         layers.5.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  52/ 291]         layers.5.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  53/ 291]       layers.5.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  54/ 291]      layers.5.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  55/ 291]      layers.5.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  56/ 291]      layers.5.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  57/ 291]             layers.5.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  58/ 291]         layers.6.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  59/ 291]         layers.6.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  60/ 291]         layers.6.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  61/ 291]         layers.6.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  62/ 291]       layers.6.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  63/ 291]      layers.6.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  64/ 291]      layers.6.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  65/ 291]      layers.6.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  66/ 291]             layers.6.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  67/ 291]         layers.7.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  68/ 291]         layers.7.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  69/ 291]         layers.7.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  70/ 291]         layers.7.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  71/ 291]       layers.7.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  72/ 291]      layers.7.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  73/ 291]      layers.7.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  74/ 291]      layers.7.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  75/ 291]             layers.7.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  76/ 291]         layers.8.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  77/ 291]         layers.8.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  78/ 291]         layers.8.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  79/ 291]         layers.8.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  80/ 291]       layers.8.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  81/ 291]      layers.8.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  82/ 291]      layers.8.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  83/ 291]      layers.8.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  84/ 291]             layers.8.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  85/ 291]         layers.9.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  86/ 291]         layers.9.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  87/ 291]         layers.9.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  88/ 291]         layers.9.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  89/ 291]       layers.9.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  90/ 291]      layers.9.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  91/ 291]      layers.9.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  92/ 291]      layers.9.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[  93/ 291]             layers.9.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  94/ 291]        layers.10.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  95/ 291]        layers.10.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  96/ 291]        layers.10.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  97/ 291]        layers.10.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[  98/ 291]      layers.10.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[  99/ 291]     layers.10.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 100/ 291]     layers.10.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 101/ 291]     layers.10.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 102/ 291]            layers.10.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 103/ 291]        layers.11.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 104/ 291]        layers.11.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 105/ 291]        layers.11.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 106/ 291]        layers.11.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 107/ 291]      layers.11.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 108/ 291]     layers.11.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 109/ 291]     layers.11.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 110/ 291]     layers.11.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 111/ 291]            layers.11.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 112/ 291]        layers.12.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 113/ 291]        layers.12.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 114/ 291]        layers.12.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 115/ 291]        layers.12.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 116/ 291]      layers.12.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 117/ 291]     layers.12.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 118/ 291]     layers.12.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 119/ 291]     layers.12.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 120/ 291]            layers.12.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 121/ 291]        layers.13.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 122/ 291]        layers.13.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 123/ 291]        layers.13.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 124/ 291]        layers.13.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 125/ 291]      layers.13.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 126/ 291]     layers.13.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 127/ 291]     layers.13.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 128/ 291]     layers.13.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 129/ 291]            layers.13.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 130/ 291]        layers.14.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 131/ 291]        layers.14.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 132/ 291]        layers.14.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 133/ 291]        layers.14.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 134/ 291]      layers.14.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 135/ 291]     layers.14.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 136/ 291]     layers.14.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 137/ 291]     layers.14.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 138/ 291]            layers.14.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 139/ 291]        layers.15.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 140/ 291]        layers.15.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 141/ 291]        layers.15.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 142/ 291]        layers.15.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 143/ 291]      layers.15.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 144/ 291]     layers.15.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 145/ 291]     layers.15.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 146/ 291]     layers.15.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 147/ 291]            layers.15.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 148/ 291]        layers.16.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 149/ 291]        layers.16.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 150/ 291]        layers.16.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 151/ 291]        layers.16.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 152/ 291]      layers.16.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 153/ 291]     layers.16.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 154/ 291]     layers.16.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 155/ 291]     layers.16.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 156/ 291]            layers.16.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 157/ 291]        layers.17.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 158/ 291]        layers.17.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 159/ 291]        layers.17.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 160/ 291]        layers.17.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 161/ 291]      layers.17.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 162/ 291]     layers.17.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 163/ 291]     layers.17.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 164/ 291]     layers.17.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 165/ 291]            layers.17.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 166/ 291]        layers.18.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 167/ 291]        layers.18.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 168/ 291]        layers.18.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 169/ 291]        layers.18.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 170/ 291]      layers.18.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 171/ 291]     layers.18.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 172/ 291]     layers.18.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 173/ 291]     layers.18.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 174/ 291]            layers.18.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 175/ 291]        layers.19.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 176/ 291]        layers.19.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 177/ 291]        layers.19.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 178/ 291]        layers.19.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 179/ 291]      layers.19.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 180/ 291]     layers.19.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 181/ 291]     layers.19.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 182/ 291]     layers.19.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 183/ 291]            layers.19.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 184/ 291]        layers.20.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 185/ 291]        layers.20.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 186/ 291]        layers.20.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 187/ 291]        layers.20.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 188/ 291]      layers.20.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 189/ 291]     layers.20.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 190/ 291]     layers.20.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 191/ 291]     layers.20.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 192/ 291]            layers.20.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 193/ 291]        layers.21.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 194/ 291]        layers.21.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 195/ 291]        layers.21.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 196/ 291]        layers.21.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 197/ 291]      layers.21.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 198/ 291]     layers.21.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 199/ 291]     layers.21.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 200/ 291]     layers.21.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 201/ 291]            layers.21.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 202/ 291]        layers.22.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 203/ 291]        layers.22.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 204/ 291]        layers.22.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 205/ 291]        layers.22.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 206/ 291]      layers.22.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 207/ 291]     layers.22.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 208/ 291]     layers.22.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 209/ 291]     layers.22.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 210/ 291]            layers.22.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 211/ 291]        layers.23.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 212/ 291]        layers.23.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 213/ 291]        layers.23.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 214/ 291]        layers.23.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 215/ 291]      layers.23.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 216/ 291]     layers.23.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 217/ 291]     layers.23.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 218/ 291]     layers.23.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 219/ 291]            layers.23.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 220/ 291]        layers.24.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 221/ 291]        layers.24.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 222/ 291]        layers.24.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 223/ 291]        layers.24.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 224/ 291]      layers.24.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 225/ 291]     layers.24.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 226/ 291]     layers.24.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 227/ 291]     layers.24.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 228/ 291]            layers.24.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 229/ 291]        layers.25.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 230/ 291]        layers.25.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 231/ 291]        layers.25.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 232/ 291]        layers.25.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 233/ 291]      layers.25.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 234/ 291]     layers.25.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 235/ 291]     layers.25.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 236/ 291]     layers.25.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 237/ 291]            layers.25.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 238/ 291]        layers.26.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 239/ 291]        layers.26.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 240/ 291]        layers.26.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 241/ 291]        layers.26.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 242/ 291]      layers.26.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 243/ 291]     layers.26.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 244/ 291]     layers.26.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 245/ 291]     layers.26.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 246/ 291]            layers.26.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 247/ 291]        layers.27.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 248/ 291]        layers.27.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 249/ 291]        layers.27.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 250/ 291]        layers.27.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 251/ 291]      layers.27.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 252/ 291]     layers.27.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 253/ 291]     layers.27.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 254/ 291]     layers.27.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 255/ 291]            layers.27.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 256/ 291]        layers.28.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 257/ 291]        layers.28.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 258/ 291]        layers.28.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 259/ 291]        layers.28.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 260/ 291]      layers.28.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 261/ 291]     layers.28.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 262/ 291]     layers.28.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 263/ 291]     layers.28.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 264/ 291]            layers.28.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 265/ 291]        layers.29.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 266/ 291]        layers.29.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 267/ 291]        layers.29.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 268/ 291]        layers.29.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 269/ 291]      layers.29.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 270/ 291]     layers.29.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 271/ 291]     layers.29.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 272/ 291]     layers.29.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 273/ 291]            layers.29.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 274/ 291]        layers.30.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 275/ 291]        layers.30.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 276/ 291]        layers.30.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 277/ 291]        layers.30.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 278/ 291]      layers.30.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 279/ 291]     layers.30.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 280/ 291]     layers.30.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 281/ 291]     layers.30.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 282/ 291]            layers.30.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 283/ 291]        layers.31.attention.wq.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 284/ 291]        layers.31.attention.wk.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 285/ 291]        layers.31.attention.wv.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 286/ 291]        layers.31.attention.wo.weight -     4096 x  4096, type =    f16, quantizing to q6_K .. size =    32.00 MB ->    13.12 MB | hist: 
++[ 287/ 291]      layers.31.attention_norm.weight -             4096, type =    f32, size =    0.016 MB
++[ 288/ 291]     layers.31.feed_forward.w1.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 289/ 291]     layers.31.feed_forward.w2.weight -    11008 x  4096, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 290/ 291]     layers.31.feed_forward.w3.weight -     4096 x 11008, type =    f16, quantizing to q6_K .. size =    86.00 MB ->    35.27 MB | hist: 
++[ 291/ 291]            layers.31.ffn_norm.weight -             4096, type =    f32, size =    0.016 MB
++llama_model_quantize_internal: model size  = 12853.02 MB
++llama_model_quantize_internal: quant size  =  5272.34 MB
++
++main: quantize time = 54426.87 ms
++main:    total time = 54426.87 ms
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-f16.log
+++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
++main: build = 884 (c594992)
++main: seed  = 1234
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
++llama_model_load_internal: format     = ggjt v1 (pre #1405)
++llama_model_load_internal: n_vocab    = 32000
++llama_model_load_internal: n_ctx      = 512
++llama_model_load_internal: n_embd     = 4096
++llama_model_load_internal: n_mult     = 256
++llama_model_load_internal: n_head     = 32
++llama_model_load_internal: n_head_kv  = 32
++llama_model_load_internal: n_layer    = 32
++llama_model_load_internal: n_rot      = 128
++llama_model_load_internal: n_gqa      = 1
++llama_model_load_internal: n_ff       = 11008
++llama_model_load_internal: freq_base  = 10000.0
++llama_model_load_internal: freq_scale = 1
++llama_model_load_internal: ftype      = 1 (mostly F16)
++llama_model_load_internal: model size = 7B
++llama_model_load_internal: ggml ctx size =    0.08 MB
++llama_model_load_internal: using CUDA for GPU acceleration
++llama_model_load_internal: mem required  =  552.08 MB (+  256.00 MB per state)
++llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
++llama_model_load_internal: offloading 32 repeating layers to GPU
++llama_model_load_internal: offloading non-repeating layers to GPU
++llama_model_load_internal: offloading v cache to GPU
++llama_model_load_internal: offloading k cache to GPU
++llama_model_load_internal: offloaded 35/35 layers to GPU
++llama_model_load_internal: total VRAM used: 13148 MB
++llama_new_context_with_model: kv self size  =  256.00 MB
++
++system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
++sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
++generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
++
++
++ I believe the meaning of life is to do with helping other people. In my opinion, we are put on this earth for a reason and our own personal reasons can be fulfilled by giving back too others who need help or have fallen upon tough times. Helping your neighbours when they’re struggling through hardships such as illness/financial problems etc brings about the feeling of helping them to get over those obstacles in their life, thus freeing ourselves from unnecessary worries and stresses!
++The word ‘meaningful’ is often associated with something that has a specific purpose. For instance we may say; “I went on an interesting meaningful journey”, or if you were asked what kind of person do you think I am? You would be more likely to answer, someone who lives their life in a meaningful way by helping other people
++In my opinion meaning is the reason for which something exists — its purpose. It can also mean having significance and value; being important or useful especially when viewed as a whole (Source: Oxford Dictionary) The main idea of this article will be to try explain what does it means living your life in meaningful way by helping others, why should we do that? I think
++Meaningful is something you have to believe. It cannot only come from outside but also inside yourself Meaning
++llama_print_timings:        load time =  2467.55 ms
++llama_print_timings:      sample time =   146.13 ms /   256 runs   (    0.57 ms per token,  1751.85 tokens per second)
++llama_print_timings: prompt eval time =   169.25 ms /     8 tokens (   21.16 ms per token,    47.27 tokens per second)
++llama_print_timings:        eval time =  5098.15 ms /   255 runs   (   19.99 ms per token,    50.02 tokens per second)
++llama_print_timings:       total time =  5484.62 ms
++
++real	0m8.897s
++user	0m16.994s
++sys	0m1.819s
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q8_0.log
+++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
++main: build = 884 (c594992)
++main: seed  = 1234
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin
++llama_model_load_internal: format     = ggjt v3 (latest)
++llama_model_load_internal: n_vocab    = 32000
++llama_model_load_internal: n_ctx      = 512
++llama_model_load_internal: n_embd     = 4096
++llama_model_load_internal: n_mult     = 256
++llama_model_load_internal: n_head     = 32
++llama_model_load_internal: n_head_kv  = 32
++llama_model_load_internal: n_layer    = 32
++llama_model_load_internal: n_rot      = 128
++llama_model_load_internal: n_gqa      = 1
++llama_model_load_internal: n_ff       = 11008
++llama_model_load_internal: freq_base  = 10000.0
++llama_model_load_internal: freq_scale = 1
++llama_model_load_internal: ftype      = 7 (mostly Q8_0)
++llama_model_load_internal: model size = 7B
++llama_model_load_internal: ggml ctx size =    0.08 MB
++llama_model_load_internal: using CUDA for GPU acceleration
++llama_model_load_internal: mem required  =  434.89 MB (+  256.00 MB per state)
++llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
++llama_model_load_internal: offloading 32 repeating layers to GPU
++llama_model_load_internal: offloading non-repeating layers to GPU
++llama_model_load_internal: offloading v cache to GPU
++llama_model_load_internal: offloading k cache to GPU
++llama_model_load_internal: offloaded 35/35 layers to GPU
++llama_model_load_internal: total VRAM used: 7210 MB
++llama_new_context_with_model: kv self size  =  256.00 MB
++
++system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
++sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
++generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
++
++
++ I believe the meaning of life is to give yourself purpose, and then create a plan that will help you achieve your goals.
++I think every business owner should have their own personal brand so customers can relate with them on an emotional level instead trying too hard like traditional ad campaigns do. When someone feels connected emotionally they are more likely than not going share what they experienced or heard about it, because now there’s something real behind words which aren’t even spoken yet!
++For example if your business sells shoes then maybe make a video where you show some people who have just purchased them how great they look and feel once worn for the first time. It will give potential customers more confidence knowing what kind of product they are buying rather than trying something new without any idea about its quality or style features!
++People love to share things that inspire others, so make sure everything you do online is interesting enough people want other followers interested too – whether it’s posting photos from your latest event party invitation sent out in the mail box every day with some kind words inside like “Join us at XYZ tomorrow night”; or perhaps giving away free samples of products that may be available for purchase later down line once business is booming again!”
++I believe a brand should have three core values: trust, integrity
++llama_print_timings:        load time =  1409.26 ms
++llama_print_timings:      sample time =   145.86 ms /   256 runs   (    0.57 ms per token,  1755.16 tokens per second)
++llama_print_timings: prompt eval time =   172.05 ms /     8 tokens (   21.51 ms per token,    46.50 tokens per second)
++llama_print_timings:        eval time =  4297.25 ms /   255 runs   (   16.85 ms per token,    59.34 tokens per second)
++llama_print_timings:       total time =  4682.63 ms
++
++real	0m7.124s
++user	0m13.807s
++sys	0m1.612s
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_0.log
+++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
++main: build = 884 (c594992)
++main: seed  = 1234
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.bin
++llama_model_load_internal: format     = ggjt v3 (latest)
++llama_model_load_internal: n_vocab    = 32000
++llama_model_load_internal: n_ctx      = 512
++llama_model_load_internal: n_embd     = 4096
++llama_model_load_internal: n_mult     = 256
++llama_model_load_internal: n_head     = 32
++llama_model_load_internal: n_head_kv  = 32
++llama_model_load_internal: n_layer    = 32
++llama_model_load_internal: n_rot      = 128
++llama_model_load_internal: n_gqa      = 1
++llama_model_load_internal: n_ff       = 11008
++llama_model_load_internal: freq_base  = 10000.0
++llama_model_load_internal: freq_scale = 1
++llama_model_load_internal: ftype      = 2 (mostly Q4_0)
++llama_model_load_internal: model size = 7B
++llama_model_load_internal: ggml ctx size =    0.08 MB
++llama_model_load_internal: using CUDA for GPU acceleration
++llama_model_load_internal: mem required  =  372.39 MB (+  256.00 MB per state)
++llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
++llama_model_load_internal: offloading 32 repeating layers to GPU
++llama_model_load_internal: offloading non-repeating layers to GPU
++llama_model_load_internal: offloading v cache to GPU
++llama_model_load_internal: offloading k cache to GPU
++llama_model_load_internal: offloaded 35/35 layers to GPU
++llama_model_load_internal: total VRAM used: 4122 MB
++llama_new_context_with_model: kv self size  =  256.00 MB
++
++system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
++sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
++generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
++
++
++ I believe the meaning of life is to give your all. To be there for others and not yourself as much, because you know that God’s word says we are here only a short time then it will be over forever in Heaven with my Savior Jesus Christ who died on The Cross so He could save me from eternal damnation! It may sound crazy but I am sure of what he has done for us all and hope others join this awesome faith that is the love story between you, God & His Son.
++I believe we are just here to learn in order to get prepared because one day Jesus will be coming back again on a cloud from Heaven with his bridegroom angels! And when I die there’ll probably not even know what happened until after 3 days for the devil/satan has been cast out of heaven and hell is shut too.
++I believe in God, The Father & His Son Jesus Christ who died on the cross to save us all from eternal damnation; because this was how He showed his love towards you! I will always remember him by spreading his word for others even though they may not want it or hear about our Lord and Savior.
++I believe we are here so God can show off what he has done & that one day Jesus, The Son
++llama_print_timings:        load time =   910.21 ms
++llama_print_timings:      sample time =   144.08 ms /   256 runs   (    0.56 ms per token,  1776.75 tokens per second)
++llama_print_timings: prompt eval time =   126.72 ms /     8 tokens (   15.84 ms per token,    63.13 tokens per second)
++llama_print_timings:        eval time =  2903.18 ms /   255 runs   (   11.39 ms per token,    87.83 tokens per second)
++llama_print_timings:       total time =  3239.24 ms
++
++real	0m5.011s
++user	0m9.199s
++sys	0m1.227s
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_1.log
+++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
++main: build = 884 (c594992)
++main: seed  = 1234
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin
++llama_model_load_internal: format     = ggjt v3 (latest)
++llama_model_load_internal: n_vocab    = 32000
++llama_model_load_internal: n_ctx      = 512
++llama_model_load_internal: n_embd     = 4096
++llama_model_load_internal: n_mult     = 256
++llama_model_load_internal: n_head     = 32
++llama_model_load_internal: n_head_kv  = 32
++llama_model_load_internal: n_layer    = 32
++llama_model_load_internal: n_rot      = 128
++llama_model_load_internal: n_gqa      = 1
++llama_model_load_internal: n_ff       = 11008
++llama_model_load_internal: freq_base  = 10000.0
++llama_model_load_internal: freq_scale = 1
++llama_model_load_internal: ftype      = 3 (mostly Q4_1)
++llama_model_load_internal: model size = 7B
++llama_model_load_internal: ggml ctx size =    0.08 MB
++llama_model_load_internal: using CUDA for GPU acceleration
++llama_model_load_internal: mem required  =  380.20 MB (+  256.00 MB per state)
++llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
++llama_model_load_internal: offloading 32 repeating layers to GPU
++llama_model_load_internal: offloading non-repeating layers to GPU
++llama_model_load_internal: offloading v cache to GPU
++llama_model_load_internal: offloading k cache to GPU
++llama_model_load_internal: offloaded 35/35 layers to GPU
++llama_model_load_internal: total VRAM used: 4508 MB
++llama_new_context_with_model: kv self size  =  256.00 MB
++
++system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
++sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
++generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
++
++
++ I believe the meaning of life is to make your soul and body happy, healthy.
++I have never been a big fan of sports as growing up at home we did not encourage that type of living but in my early 20s when God started knocking on those doors for me He showed me what it meant to be an athlete with all the physical benefits associated! I was so happy about this and excited because now he put something good inside instead.
++I have tried most sports throughout high school, college & beyond but none of them stuck which is actually a sign that they were not really my passion or desire at the time even though in many cases it looked like what everyone else did! It was never enough so when I got into running back in 2015 with my first ever attempt to run a half marathon, something inside me just knew he had more for this life.
++I am not one of those people who is very competitive or even cares about that part but there's always the drive from within! My passion lies mainly on helping other women feel beautiful & healthy through running/exercising with my own personal experiences and struggles because it helped me so much when I was struggling in myself.
++Being a mom to 2 amazing little boys has changed everything, not only
++llama_print_timings:        load time =   985.54 ms
++llama_print_timings:      sample time =   145.54 ms /   256 runs   (    0.57 ms per token,  1759.00 tokens per second)
++llama_print_timings: prompt eval time =   127.86 ms /     8 tokens (   15.98 ms per token,    62.57 tokens per second)
++llama_print_timings:        eval time =  3034.35 ms /   255 runs   (   11.90 ms per token,    84.04 tokens per second)
++llama_print_timings:       total time =  3373.98 ms
++
++real	0m5.249s
++user	0m9.557s
++sys	0m1.384s
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_0.log
+++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_0.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
++main: build = 884 (c594992)
++main: seed  = 1234
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_0.bin
++llama_model_load_internal: format     = ggjt v3 (latest)
++llama_model_load_internal: n_vocab    = 32000
++llama_model_load_internal: n_ctx      = 512
++llama_model_load_internal: n_embd     = 4096
++llama_model_load_internal: n_mult     = 256
++llama_model_load_internal: n_head     = 32
++llama_model_load_internal: n_head_kv  = 32
++llama_model_load_internal: n_layer    = 32
++llama_model_load_internal: n_rot      = 128
++llama_model_load_internal: n_gqa      = 1
++llama_model_load_internal: n_ff       = 11008
++llama_model_load_internal: freq_base  = 10000.0
++llama_model_load_internal: freq_scale = 1
++llama_model_load_internal: ftype      = 8 (mostly Q5_0)
++llama_model_load_internal: model size = 7B
++llama_model_load_internal: ggml ctx size =    0.08 MB
++llama_model_load_internal: using CUDA for GPU acceleration
++llama_model_load_internal: mem required  =  388.02 MB (+  256.00 MB per state)
++llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
++llama_model_load_internal: offloading 32 repeating layers to GPU
++llama_model_load_internal: offloading non-repeating layers to GPU
++llama_model_load_internal: offloading v cache to GPU
++llama_model_load_internal: offloading k cache to GPU
++llama_model_load_internal: offloaded 35/35 layers to GPU
++llama_model_load_internal: total VRAM used: 4894 MB
++llama_new_context_with_model: kv self size  =  256.00 MB
++
++system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
++sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
++generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
++
++
++ I believe the meaning of life is to have fun. In my opinion, if you are not having any kind of a good time in your life it simply means that something has gone wrong and there for needs some fixing or changing within yourself so all those worries disappear one by one as long as we try our best at what ever comes along on this journey called life which is full of twists an turns, ups downs but most importantly LOVE. My motto in my own words goes like “ I’m not perfect and never will be ,but i can surely make things better so just give me the chance to do that !”
++My dream job would probably have something with horses or dogs since they are a big part of who ever it is you really want to become as long as your goals in life all come together. My favorite quote goes like “If at first yo don’t succeed, try again because success will be yours if not today then tomorrow !”
++My dream vacation would have nothing but horses and/or dogs running free through the mountains of Montana where I can stay for a while just being myself without worrying about anyone or anything else. My favorite food to eat goes like “I’m really hungry all the time so make it fast please! ” And my biggest pet peeve is
++llama_print_timings:        load time =  1065.64 ms
++llama_print_timings:      sample time =   145.22 ms /   256 runs   (    0.57 ms per token,  1762.89 tokens per second)
++llama_print_timings: prompt eval time =   125.58 ms /     8 tokens (   15.70 ms per token,    63.70 tokens per second)
++llama_print_timings:        eval time =  3118.37 ms /   255 runs   (   12.23 ms per token,    81.77 tokens per second)
++llama_print_timings:       total time =  3456.60 ms
++
++real	0m5.406s
++user	0m9.888s
++sys	0m1.379s
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_1.log
+++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
++main: build = 884 (c594992)
++main: seed  = 1234
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.bin
++llama_model_load_internal: format     = ggjt v3 (latest)
++llama_model_load_internal: n_vocab    = 32000
++llama_model_load_internal: n_ctx      = 512
++llama_model_load_internal: n_embd     = 4096
++llama_model_load_internal: n_mult     = 256
++llama_model_load_internal: n_head     = 32
++llama_model_load_internal: n_head_kv  = 32
++llama_model_load_internal: n_layer    = 32
++llama_model_load_internal: n_rot      = 128
++llama_model_load_internal: n_gqa      = 1
++llama_model_load_internal: n_ff       = 11008
++llama_model_load_internal: freq_base  = 10000.0
++llama_model_load_internal: freq_scale = 1
++llama_model_load_internal: ftype      = 9 (mostly Q5_1)
++llama_model_load_internal: model size = 7B
++llama_model_load_internal: ggml ctx size =    0.08 MB
++llama_model_load_internal: using CUDA for GPU acceleration
++llama_model_load_internal: mem required  =  395.83 MB (+  256.00 MB per state)
++llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
++llama_model_load_internal: offloading 32 repeating layers to GPU
++llama_model_load_internal: offloading non-repeating layers to GPU
++llama_model_load_internal: offloading v cache to GPU
++llama_model_load_internal: offloading k cache to GPU
++llama_model_load_internal: offloaded 35/35 layers to GPU
++llama_model_load_internal: total VRAM used: 5280 MB
++llama_new_context_with_model: kv self size  =  256.00 MB
++
++system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
++sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
++generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
++
++
++ I believe the meaning of life is to have a happy heart and soul, so that you can live each day with love.
++I know from living in my own personal hell for many years what suffering feels like - but now it’s all behind me thank goodness… although people who don't experience such things themselves may not understand the pain I went through before making this decision! There is no greater happiness than knowing you are free of something.
++People always wonder why we do certain crazy or dangerous stunts, and they ask us what will happen if it goes wrong but there is only one way to find out - give your all with everything else left behind in a moment... just like the last image I have here for this blog post! This video clip was taken at 250 mph over New Hampshire's Mount Washington on July 4th, 2017.
++One of my favorite quotes is from John Lennon: "Life is what happens to you while you are busy making other plans." It means that life isn't about planning out the future because we can never know what will happen in it - which makes every day a brand new adventure! My advice? Make sure your heart and soul are healthy so then everything else falls into place automatically.
++There is
++llama_print_timings:        load time =  1099.34 ms
++llama_print_timings:      sample time =   145.25 ms /   256 runs   (    0.57 ms per token,  1762.44 tokens per second)
++llama_print_timings: prompt eval time =   127.82 ms /     8 tokens (   15.98 ms per token,    62.59 tokens per second)
++llama_print_timings:        eval time =  3138.71 ms /   255 runs   (   12.31 ms per token,    81.24 tokens per second)
++llama_print_timings:       total time =  3478.30 ms
++
++real	0m5.466s
++user	0m9.992s
++sys	0m1.372s
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q2_k.log
+++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
++main: build = 884 (c594992)
++main: seed  = 1234
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin
++llama_model_load_internal: format     = ggjt v3 (latest)
++llama_model_load_internal: n_vocab    = 32000
++llama_model_load_internal: n_ctx      = 512
++llama_model_load_internal: n_embd     = 4096
++llama_model_load_internal: n_mult     = 256
++llama_model_load_internal: n_head     = 32
++llama_model_load_internal: n_head_kv  = 32
++llama_model_load_internal: n_layer    = 32
++llama_model_load_internal: n_rot      = 128
++llama_model_load_internal: n_gqa      = 1
++llama_model_load_internal: n_ff       = 11008
++llama_model_load_internal: freq_base  = 10000.0
++llama_model_load_internal: freq_scale = 1
++llama_model_load_internal: ftype      = 10 (mostly Q2_K)
++llama_model_load_internal: model size = 7B
++llama_model_load_internal: ggml ctx size =    0.08 MB
++llama_model_load_internal: using CUDA for GPU acceleration
++llama_model_load_internal: mem required  =  343.10 MB (+  256.00 MB per state)
++llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
++llama_model_load_internal: offloading 32 repeating layers to GPU
++llama_model_load_internal: offloading non-repeating layers to GPU
++llama_model_load_internal: offloading v cache to GPU
++llama_model_load_internal: offloading k cache to GPU
++llama_model_load_internal: offloaded 35/35 layers to GPU
++llama_model_load_internal: total VRAM used: 3237 MB
++llama_new_context_with_model: kv self size  =  256.00 MB
++
++system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
++sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
++generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
++
++
++ I believe the meaning of life is to find out who we are and be happy with that.
++In my opinion, there’s no better way then through art because it lets you express yourself while being creative at the same time!
++The reason this site was made however…is for those times when one can not do anything about their situation they want or need to share something but don’t have a place where people will be patient and receptive.
++So here we are in an attempt, through art (or any other way) of sharing our creative thoughts on the life which is ours so I hope you enjoy reading my articles as much as I did writing them! 😎
++I love this site because it gives me another platform to share what’s inside us. So let your eyes wander freely but not too far, just enough for now and see where all those ideas take place within the next few paragraphs of mine… 🙂
++Have fun while reading my articles!! Thank you! 😘
++You can contact with: info@mimosasociety.com or using this form here below ! We’ll be happy to answer your questions about any topics related to our site and more 😉
++Mmm … I like that name, Mimosa Society – it doesn’t
++llama_print_timings:        load time =   755.99 ms
++llama_print_timings:      sample time =   150.04 ms /   256 runs   (    0.59 ms per token,  1706.17 tokens per second)
++llama_print_timings: prompt eval time =   136.83 ms /     8 tokens (   17.10 ms per token,    58.47 tokens per second)
++llama_print_timings:        eval time =  3015.73 ms /   255 runs   (   11.83 ms per token,    84.56 tokens per second)
++llama_print_timings:       total time =  3372.16 ms
++
++real	0m4.937s
++user	0m9.376s
++sys	0m1.186s
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q3_k.log
+++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q3_k.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
++main: build = 884 (c594992)
++main: seed  = 1234
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q3_k.bin
++llama_model_load_internal: format     = ggjt v3 (latest)
++llama_model_load_internal: n_vocab    = 32000
++llama_model_load_internal: n_ctx      = 512
++llama_model_load_internal: n_embd     = 4096
++llama_model_load_internal: n_mult     = 256
++llama_model_load_internal: n_head     = 32
++llama_model_load_internal: n_head_kv  = 32
++llama_model_load_internal: n_layer    = 32
++llama_model_load_internal: n_rot      = 128
++llama_model_load_internal: n_gqa      = 1
++llama_model_load_internal: n_ff       = 11008
++llama_model_load_internal: freq_base  = 10000.0
++llama_model_load_internal: freq_scale = 1
++llama_model_load_internal: ftype      = 12 (mostly Q3_K - Medium)
++llama_model_load_internal: model size = 7B
++llama_model_load_internal: ggml ctx size =    0.08 MB
++llama_model_load_internal: using CUDA for GPU acceleration
++llama_model_load_internal: mem required  =  355.79 MB (+  256.00 MB per state)
++llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
++llama_model_load_internal: offloading 32 repeating layers to GPU
++llama_model_load_internal: offloading non-repeating layers to GPU
++llama_model_load_internal: offloading v cache to GPU
++llama_model_load_internal: offloading k cache to GPU
++llama_model_load_internal: offloaded 35/35 layers to GPU
++llama_model_load_internal: total VRAM used: 3621 MB
++llama_new_context_with_model: kv self size  =  256.00 MB
++
++system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
++sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
++generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
++
++
++ I believe the meaning of life is to do with people and relationships. And that’s what makes me passionate about my work as a coach, helping other like-minded individuals who are driven by purpose find fulfillment in their careers through coaching & mentoring others toward excellence on various personal development topics such as self-awareness, communication skills, leadership styles etc; working collaboratively with businesses and teams to help them get more out of themselves.
++As far back I remember growing up we always had a family gathering once every three months where everyone would come together over dinner at my grandparents home in Pakistan (northwest region near Afghanistan). This was before the war broke down between Northern India & Southern Asia for almost 10 years and it still continues until this day.
++I believe that’s why I have become so fascinated about understanding how people relate to each other, their motivations behind certain attitudes or behaviors towards others which can either be positive or negative; whether they are conscious of these factors influencing them at all times while interacting with co-workers/ family members etc… My interest in this topic has led me here today where I’ve decided that after completing my MBA from University Of Chicago Booth School Of Business & receiving my coaching certification through Coach University, along w/ a long career working within Human
++llama_print_timings:        load time =   815.61 ms
++llama_print_timings:      sample time =   146.05 ms /   256 runs   (    0.57 ms per token,  1752.78 tokens per second)
++llama_print_timings: prompt eval time =   165.67 ms /     8 tokens (   20.71 ms per token,    48.29 tokens per second)
++llama_print_timings:        eval time =  3468.06 ms /   255 runs   (   13.60 ms per token,    73.53 tokens per second)
++llama_print_timings:       total time =  3850.71 ms
++
++real	0m5.465s
++user	0m10.886s
++sys	0m1.205s
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_k.log
+++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_k.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
++main: build = 884 (c594992)
++main: seed  = 1234
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_k.bin
++llama_model_load_internal: format     = ggjt v3 (latest)
++llama_model_load_internal: n_vocab    = 32000
++llama_model_load_internal: n_ctx      = 512
++llama_model_load_internal: n_embd     = 4096
++llama_model_load_internal: n_mult     = 256
++llama_model_load_internal: n_head     = 32
++llama_model_load_internal: n_head_kv  = 32
++llama_model_load_internal: n_layer    = 32
++llama_model_load_internal: n_rot      = 128
++llama_model_load_internal: n_gqa      = 1
++llama_model_load_internal: n_ff       = 11008
++llama_model_load_internal: freq_base  = 10000.0
++llama_model_load_internal: freq_scale = 1
++llama_model_load_internal: ftype      = 15 (mostly Q4_K - Medium)
++llama_model_load_internal: model size = 7B
++llama_model_load_internal: ggml ctx size =    0.08 MB
++llama_model_load_internal: using CUDA for GPU acceleration
++llama_model_load_internal: mem required  =  372.39 MB (+  256.00 MB per state)
++llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
++llama_model_load_internal: offloading 32 repeating layers to GPU
++llama_model_load_internal: offloading non-repeating layers to GPU
++llama_model_load_internal: offloading v cache to GPU
++llama_model_load_internal: offloading k cache to GPU
++llama_model_load_internal: offloaded 35/35 layers to GPU
++llama_model_load_internal: total VRAM used: 4365 MB
++llama_new_context_with_model: kv self size  =  256.00 MB
++
++system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
++sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
++generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
++
++
++ I believe the meaning of life is to give your heart.
++I do not know what my purpose in this world will be, but it could definitely take me somewhere that involves saving lives and making someone smile for a few minutes before they die :) Or if anyone finds out how much time you have left on earth...maybe we can make sure every second counts!!! And maybe I'll start an organization to help people do fun things after life while helping them remember the beautiful memories of this world.
++I believe in making someone smile, and for me it is about bringing joy into someones heart :) This could involve being silly with my friends...it doesn't matter who you are or what your situation..if I can find something to make a person laugh that would be awesome! haha And the worst thing anyone has ever done was not bring someone happiness, they did nothing wrong but didn't do anything right.
++I believe in being yourself and making others feel good about themselves :) If there is one of my goals for this life it will involve helping people overcome their fears..whether its fearing rejection or any other kind...if I can help that person face the world with a smile on his/her lips, then no matter what happens they are going to be able to live an amazing dream.
++llama_print_timings:        load time =   939.66 ms
++llama_print_timings:      sample time =   144.98 ms /   256 runs   (    0.57 ms per token,  1765.80 tokens per second)
++llama_print_timings: prompt eval time =   157.76 ms /     8 tokens (   19.72 ms per token,    50.71 tokens per second)
++llama_print_timings:        eval time =  3547.19 ms /   255 runs   (   13.91 ms per token,    71.89 tokens per second)
++llama_print_timings:       total time =  3916.69 ms
++
++real	0m5.706s
++user	0m11.199s
++sys	0m1.255s
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_k.log
+++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
++main: build = 884 (c594992)
++main: seed  = 1234
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin
++llama_model_load_internal: format     = ggjt v3 (latest)
++llama_model_load_internal: n_vocab    = 32000
++llama_model_load_internal: n_ctx      = 512
++llama_model_load_internal: n_embd     = 4096
++llama_model_load_internal: n_mult     = 256
++llama_model_load_internal: n_head     = 32
++llama_model_load_internal: n_head_kv  = 32
++llama_model_load_internal: n_layer    = 32
++llama_model_load_internal: n_rot      = 128
++llama_model_load_internal: n_gqa      = 1
++llama_model_load_internal: n_ff       = 11008
++llama_model_load_internal: freq_base  = 10000.0
++llama_model_load_internal: freq_scale = 1
++llama_model_load_internal: ftype      = 17 (mostly Q5_K - Medium)
++llama_model_load_internal: model size = 7B
++llama_model_load_internal: ggml ctx size =    0.08 MB
++llama_model_load_internal: using CUDA for GPU acceleration
++llama_model_load_internal: mem required  =  388.02 MB (+  256.00 MB per state)
++llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
++llama_model_load_internal: offloading 32 repeating layers to GPU
++llama_model_load_internal: offloading non-repeating layers to GPU
++llama_model_load_internal: offloading v cache to GPU
++llama_model_load_internal: offloading k cache to GPU
++llama_model_load_internal: offloaded 35/35 layers to GPU
++llama_model_load_internal: total VRAM used: 5019 MB
++llama_new_context_with_model: kv self size  =  256.00 MB
++
++system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
++sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
++generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
++
++
++ I believe the meaning of life is to do with having an impact on someone else’s.
++I feel that we are all here for a purpose in this world, and there may be many meanings behind it but one thing leads me to want my presence on this earth to have made some sort of difference or impression upon another person – the question being what would you like your legacy to mean? I believe our lives will influence someone through actions large and small.
++I see life as an opportunity for us all, not only in terms of having great experiences but also in that we can create them ourselves; this applies equally to good or bad times whether it be a job role/career choice which is enjoyable yet unfulfilling too… I believe the meaning behind your own personal story will never truly escape you.
++I’m not sure if there are any more important questions than these but they certainly make me think! If we can all live by this idea, then life wouldn’t be such a bad thing would it? And to those who do go on and enjoy their lives for what it is…well done!. For example I have been lucky enough (in terms of my career) in that many people look up to me when working with them.
++I believe this also has the power though
++llama_print_timings:        load time =  1144.04 ms
++llama_print_timings:      sample time =   145.05 ms /   256 runs   (    0.57 ms per token,  1764.88 tokens per second)
++llama_print_timings: prompt eval time =   130.67 ms /     8 tokens (   16.33 ms per token,    61.22 tokens per second)
++llama_print_timings:        eval time =  4041.56 ms /   255 runs   (   15.85 ms per token,    63.09 tokens per second)
++llama_print_timings:       total time =  4383.28 ms
++
++real	0m6.417s
++user	0m12.745s
++sys	0m1.378s
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q6_k.log
+++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q6_k.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
++main: build = 884 (c594992)
++main: seed  = 1234
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q6_k.bin
++llama_model_load_internal: format     = ggjt v3 (latest)
++llama_model_load_internal: n_vocab    = 32000
++llama_model_load_internal: n_ctx      = 512
++llama_model_load_internal: n_embd     = 4096
++llama_model_load_internal: n_mult     = 256
++llama_model_load_internal: n_head     = 32
++llama_model_load_internal: n_head_kv  = 32
++llama_model_load_internal: n_layer    = 32
++llama_model_load_internal: n_rot      = 128
++llama_model_load_internal: n_gqa      = 1
++llama_model_load_internal: n_ff       = 11008
++llama_model_load_internal: freq_base  = 10000.0
++llama_model_load_internal: freq_scale = 1
++llama_model_load_internal: ftype      = 18 (mostly Q6_K)
++llama_model_load_internal: model size = 7B
++llama_model_load_internal: ggml ctx size =    0.08 MB
++llama_model_load_internal: using CUDA for GPU acceleration
++llama_model_load_internal: mem required  =  404.62 MB (+  256.00 MB per state)
++llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
++llama_model_load_internal: offloading 32 repeating layers to GPU
++llama_model_load_internal: offloading non-repeating layers to GPU
++llama_model_load_internal: offloading v cache to GPU
++llama_model_load_internal: offloading k cache to GPU
++llama_model_load_internal: offloaded 35/35 layers to GPU
++llama_model_load_internal: total VRAM used: 5714 MB
++llama_new_context_with_model: kv self size  =  256.00 MB
++
++system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
++sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
++generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
++
++
++ I believe the meaning of life is to love God, enjoy Him and find joy in serving others. That’s why we do what we do! This week our staff was honored with a “Dinner on Us” from PF Chang China Bistro because it takes their teamwork as well as ours (and yours) to make this ministry successful!!
++We believe the most important thing that makes us different is not just in HOW but rather WHO… and what we do reflects who He made us. We are a community of believers, committed to glorifying Him through everything from our worship styles/styles & formats including traditional services on Sunday mornings with communion, contemporary music mid-week service for adults (including children’s church), women’s Bible study groups, men’s fellowship breakfast and ministry opportunities…but we are also a community of believers who have chosen to do some things differently.
++Here is what makes us different: We believe in the importance of small group discipleship/Bible study which allows you grow deeper through accountability relationships with others while learning from gifted teachers & experienced leaders (all of our staff members meet weekly). There are also opportunities for women and men at every stage to serve…and we provide some unique ministry contexts including a community outreach center, an inner-city
++llama_print_timings:        load time =  1157.36 ms
++llama_print_timings:      sample time =   148.95 ms /   256 runs   (    0.58 ms per token,  1718.66 tokens per second)
++llama_print_timings: prompt eval time =   120.39 ms /     8 tokens (   15.05 ms per token,    66.45 tokens per second)
++llama_print_timings:        eval time =  3569.50 ms /   255 runs   (   14.00 ms per token,    71.44 tokens per second)
++llama_print_timings:       total time =  3906.00 ms
++
++real	0m6.001s
++user	0m11.285s
++sys	0m1.451s
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-f16.log
+++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
++main: build = 884 (c594992)
++main: seed  = 1690105376
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
++llama_model_load_internal: format     = ggjt v1 (pre #1405)
++llama_model_load_internal: n_vocab    = 32000
++llama_model_load_internal: n_ctx      = 2048
++llama_model_load_internal: n_embd     = 4096
++llama_model_load_internal: n_mult     = 256
++llama_model_load_internal: n_head     = 32
++llama_model_load_internal: n_head_kv  = 32
++llama_model_load_internal: n_layer    = 32
++llama_model_load_internal: n_rot      = 128
++llama_model_load_internal: n_gqa      = 1
++llama_model_load_internal: n_ff       = 11008
++llama_model_load_internal: freq_base  = 10000.0
++llama_model_load_internal: freq_scale = 1
++llama_model_load_internal: ftype      = 1 (mostly F16)
++llama_model_load_internal: model size = 7B
++llama_model_load_internal: ggml ctx size =    0.08 MB
++llama_model_load_internal: using CUDA for GPU acceleration
++llama_model_load_internal: mem required  =  648.08 MB (+ 1024.00 MB per state)
++llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
++llama_model_load_internal: offloading 32 repeating layers to GPU
++llama_model_load_internal: offloading non-repeating layers to GPU
++llama_model_load_internal: offloading v cache to GPU
++llama_model_load_internal: offloading k cache to GPU
++llama_model_load_internal: offloaded 35/35 layers to GPU
++llama_model_load_internal: total VRAM used: 14012 MB
++llama_new_context_with_model: kv self size  = 1024.00 MB
++
++system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
++perplexity: calculating perplexity over 4 chunks, batch_size=512
++perplexity: 3.65 seconds per pass - ETA 0 minutes
++[1]4.7955,[2]6.3530,[3]7.3683,[4]7.2506,
++llama_print_timings:        load time =  4465.63 ms
++llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
++llama_print_timings: prompt eval time = 13851.75 ms /  8192 tokens (    1.69 ms per token,   591.41 tokens per second)
++llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
++llama_print_timings:       total time = 19761.53 ms
++
++
++real	0m20.776s
++user	0m13.966s
++sys	0m6.815s
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q8_0.log
+++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
++main: build = 884 (c594992)
++main: seed  = 1690105397
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin
++llama_model_load_internal: format     = ggjt v3 (latest)
++llama_model_load_internal: n_vocab    = 32000
++llama_model_load_internal: n_ctx      = 2048
++llama_model_load_internal: n_embd     = 4096
++llama_model_load_internal: n_mult     = 256
++llama_model_load_internal: n_head     = 32
++llama_model_load_internal: n_head_kv  = 32
++llama_model_load_internal: n_layer    = 32
++llama_model_load_internal: n_rot      = 128
++llama_model_load_internal: n_gqa      = 1
++llama_model_load_internal: n_ff       = 11008
++llama_model_load_internal: freq_base  = 10000.0
++llama_model_load_internal: freq_scale = 1
++llama_model_load_internal: ftype      = 7 (mostly Q8_0)
++llama_model_load_internal: model size = 7B
++llama_model_load_internal: ggml ctx size =    0.08 MB
++llama_model_load_internal: using CUDA for GPU acceleration
++llama_model_load_internal: mem required  =  530.89 MB (+ 1024.00 MB per state)
++llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
++llama_model_load_internal: offloading 32 repeating layers to GPU
++llama_model_load_internal: offloading non-repeating layers to GPU
++llama_model_load_internal: offloading v cache to GPU
++llama_model_load_internal: offloading k cache to GPU
++llama_model_load_internal: offloaded 35/35 layers to GPU
++llama_model_load_internal: total VRAM used: 8074 MB
++llama_new_context_with_model: kv self size  = 1024.00 MB
++
++system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
++perplexity: calculating perplexity over 4 chunks, batch_size=512
++perplexity: 3.71 seconds per pass - ETA 0 minutes
++[1]4.7995,[2]6.3562,[3]7.3738,[4]7.2550,
++llama_print_timings:        load time =  3495.70 ms
++llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
++llama_print_timings: prompt eval time = 13938.47 ms /  8192 tokens (    1.70 ms per token,   587.73 tokens per second)
++llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
++llama_print_timings:       total time = 18975.88 ms
++
++
++real	0m19.871s
++user	0m13.523s
++sys	0m6.341s
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_0.log
+++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
++main: build = 884 (c594992)
++main: seed  = 1690105417
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.bin
++llama_model_load_internal: format     = ggjt v3 (latest)
++llama_model_load_internal: n_vocab    = 32000
++llama_model_load_internal: n_ctx      = 2048
++llama_model_load_internal: n_embd     = 4096
++llama_model_load_internal: n_mult     = 256
++llama_model_load_internal: n_head     = 32
++llama_model_load_internal: n_head_kv  = 32
++llama_model_load_internal: n_layer    = 32
++llama_model_load_internal: n_rot      = 128
++llama_model_load_internal: n_gqa      = 1
++llama_model_load_internal: n_ff       = 11008
++llama_model_load_internal: freq_base  = 10000.0
++llama_model_load_internal: freq_scale = 1
++llama_model_load_internal: ftype      = 2 (mostly Q4_0)
++llama_model_load_internal: model size = 7B
++llama_model_load_internal: ggml ctx size =    0.08 MB
++llama_model_load_internal: using CUDA for GPU acceleration
++llama_model_load_internal: mem required  =  468.39 MB (+ 1024.00 MB per state)
++llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
++llama_model_load_internal: offloading 32 repeating layers to GPU
++llama_model_load_internal: offloading non-repeating layers to GPU
++llama_model_load_internal: offloading v cache to GPU
++llama_model_load_internal: offloading k cache to GPU
++llama_model_load_internal: offloaded 35/35 layers to GPU
++llama_model_load_internal: total VRAM used: 4986 MB
++llama_new_context_with_model: kv self size  = 1024.00 MB
++
++system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
++perplexity: calculating perplexity over 4 chunks, batch_size=512
++perplexity: 3.49 seconds per pass - ETA 0 minutes
++[1]4.8797,[2]6.4543,[3]7.5007,[4]7.3892,
++llama_print_timings:        load time =  2875.77 ms
++llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
++llama_print_timings: prompt eval time = 13138.92 ms /  8192 tokens (    1.60 ms per token,   623.49 tokens per second)
++llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
++llama_print_timings:       total time = 17490.96 ms
++
++
++real	0m18.293s
++user	0m12.297s
++sys	0m5.986s
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_1.log
+++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
++main: build = 884 (c594992)
++main: seed  = 1690105435
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin
++llama_model_load_internal: format     = ggjt v3 (latest)
++llama_model_load_internal: n_vocab    = 32000
++llama_model_load_internal: n_ctx      = 2048
++llama_model_load_internal: n_embd     = 4096
++llama_model_load_internal: n_mult     = 256
++llama_model_load_internal: n_head     = 32
++llama_model_load_internal: n_head_kv  = 32
++llama_model_load_internal: n_layer    = 32
++llama_model_load_internal: n_rot      = 128
++llama_model_load_internal: n_gqa      = 1
++llama_model_load_internal: n_ff       = 11008
++llama_model_load_internal: freq_base  = 10000.0
++llama_model_load_internal: freq_scale = 1
++llama_model_load_internal: ftype      = 3 (mostly Q4_1)
++llama_model_load_internal: model size = 7B
++llama_model_load_internal: ggml ctx size =    0.08 MB
++llama_model_load_internal: using CUDA for GPU acceleration
++llama_model_load_internal: mem required  =  476.20 MB (+ 1024.00 MB per state)
++llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
++llama_model_load_internal: offloading 32 repeating layers to GPU
++llama_model_load_internal: offloading non-repeating layers to GPU
++llama_model_load_internal: offloading v cache to GPU
++llama_model_load_internal: offloading k cache to GPU
++llama_model_load_internal: offloaded 35/35 layers to GPU
++llama_model_load_internal: total VRAM used: 5372 MB
++llama_new_context_with_model: kv self size  = 1024.00 MB
++
++system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
++perplexity: calculating perplexity over 4 chunks, batch_size=512
++perplexity: 3.50 seconds per pass - ETA 0 minutes
++[1]4.9205,[2]6.4604,[3]7.4923,[4]7.3910,
++llama_print_timings:        load time =  2994.52 ms
++llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
++llama_print_timings: prompt eval time = 13158.31 ms /  8192 tokens (    1.61 ms per token,   622.57 tokens per second)
++llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
++llama_print_timings:       total time = 17623.80 ms
++
++
++real	0m18.454s
++user	0m12.254s
++sys	0m6.189s
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_0.log
+++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_0.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
++main: build = 884 (c594992)
++main: seed  = 1690105453
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_0.bin
++llama_model_load_internal: format     = ggjt v3 (latest)
++llama_model_load_internal: n_vocab    = 32000
++llama_model_load_internal: n_ctx      = 2048
++llama_model_load_internal: n_embd     = 4096
++llama_model_load_internal: n_mult     = 256
++llama_model_load_internal: n_head     = 32
++llama_model_load_internal: n_head_kv  = 32
++llama_model_load_internal: n_layer    = 32
++llama_model_load_internal: n_rot      = 128
++llama_model_load_internal: n_gqa      = 1
++llama_model_load_internal: n_ff       = 11008
++llama_model_load_internal: freq_base  = 10000.0
++llama_model_load_internal: freq_scale = 1
++llama_model_load_internal: ftype      = 8 (mostly Q5_0)
++llama_model_load_internal: model size = 7B
++llama_model_load_internal: ggml ctx size =    0.08 MB
++llama_model_load_internal: using CUDA for GPU acceleration
++llama_model_load_internal: mem required  =  484.02 MB (+ 1024.00 MB per state)
++llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
++llama_model_load_internal: offloading 32 repeating layers to GPU
++llama_model_load_internal: offloading non-repeating layers to GPU
++llama_model_load_internal: offloading v cache to GPU
++llama_model_load_internal: offloading k cache to GPU
++llama_model_load_internal: offloaded 35/35 layers to GPU
++llama_model_load_internal: total VRAM used: 5758 MB
++llama_new_context_with_model: kv self size  = 1024.00 MB
++
++system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
++perplexity: calculating perplexity over 4 chunks, batch_size=512
++perplexity: 3.48 seconds per pass - ETA 0 minutes
++[1]4.7980,[2]6.3776,[3]7.4120,[4]7.3003,
++llama_print_timings:        load time =  2990.83 ms
++llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
++llama_print_timings: prompt eval time = 13143.26 ms /  8192 tokens (    1.60 ms per token,   623.29 tokens per second)
++llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
++llama_print_timings:       total time = 17613.50 ms
++
++
++real	0m18.466s
++user	0m12.301s
++sys	0m6.166s
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_1.log
+++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
++main: build = 884 (c594992)
++main: seed  = 1690105472
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.bin
++llama_model_load_internal: format     = ggjt v3 (latest)
++llama_model_load_internal: n_vocab    = 32000
++llama_model_load_internal: n_ctx      = 2048
++llama_model_load_internal: n_embd     = 4096
++llama_model_load_internal: n_mult     = 256
++llama_model_load_internal: n_head     = 32
++llama_model_load_internal: n_head_kv  = 32
++llama_model_load_internal: n_layer    = 32
++llama_model_load_internal: n_rot      = 128
++llama_model_load_internal: n_gqa      = 1
++llama_model_load_internal: n_ff       = 11008
++llama_model_load_internal: freq_base  = 10000.0
++llama_model_load_internal: freq_scale = 1
++llama_model_load_internal: ftype      = 9 (mostly Q5_1)
++llama_model_load_internal: model size = 7B
++llama_model_load_internal: ggml ctx size =    0.08 MB
++llama_model_load_internal: using CUDA for GPU acceleration
++llama_model_load_internal: mem required  =  491.83 MB (+ 1024.00 MB per state)
++llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
++llama_model_load_internal: offloading 32 repeating layers to GPU
++llama_model_load_internal: offloading non-repeating layers to GPU
++llama_model_load_internal: offloading v cache to GPU
++llama_model_load_internal: offloading k cache to GPU
++llama_model_load_internal: offloaded 35/35 layers to GPU
++llama_model_load_internal: total VRAM used: 6144 MB
++llama_new_context_with_model: kv self size  = 1024.00 MB
++
++system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
++perplexity: calculating perplexity over 4 chunks, batch_size=512
++perplexity: 3.50 seconds per pass - ETA 0 minutes
++[1]4.8293,[2]6.3759,[3]7.3950,[4]7.2857,
++llama_print_timings:        load time =  3088.27 ms
++llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
++llama_print_timings: prompt eval time = 13140.24 ms /  8192 tokens (    1.60 ms per token,   623.43 tokens per second)
++llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
++llama_print_timings:       total time = 17712.71 ms
++
++
++real	0m18.554s
++user	0m12.672s
++sys	0m5.866s
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q2_k.log
+++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
++main: build = 884 (c594992)
++main: seed  = 1690105490
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin
++llama_model_load_internal: format     = ggjt v3 (latest)
++llama_model_load_internal: n_vocab    = 32000
++llama_model_load_internal: n_ctx      = 2048
++llama_model_load_internal: n_embd     = 4096
++llama_model_load_internal: n_mult     = 256
++llama_model_load_internal: n_head     = 32
++llama_model_load_internal: n_head_kv  = 32
++llama_model_load_internal: n_layer    = 32
++llama_model_load_internal: n_rot      = 128
++llama_model_load_internal: n_gqa      = 1
++llama_model_load_internal: n_ff       = 11008
++llama_model_load_internal: freq_base  = 10000.0
++llama_model_load_internal: freq_scale = 1
++llama_model_load_internal: ftype      = 10 (mostly Q2_K)
++llama_model_load_internal: model size = 7B
++llama_model_load_internal: ggml ctx size =    0.08 MB
++llama_model_load_internal: using CUDA for GPU acceleration
++llama_model_load_internal: mem required  =  439.10 MB (+ 1024.00 MB per state)
++llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
++llama_model_load_internal: offloading 32 repeating layers to GPU
++llama_model_load_internal: offloading non-repeating layers to GPU
++llama_model_load_internal: offloading v cache to GPU
++llama_model_load_internal: offloading k cache to GPU
++llama_model_load_internal: offloaded 35/35 layers to GPU
++llama_model_load_internal: total VRAM used: 4101 MB
++llama_new_context_with_model: kv self size  = 1024.00 MB
++
++system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
++perplexity: calculating perplexity over 4 chunks, batch_size=512
++perplexity: 3.55 seconds per pass - ETA 0 minutes
++[1]5.2770,[2]6.9940,[3]8.1124,[4]8.1454,
++llama_print_timings:        load time =  2773.36 ms
++llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
++llama_print_timings: prompt eval time = 13357.97 ms /  8192 tokens (    1.63 ms per token,   613.27 tokens per second)
++llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
++llama_print_timings:       total time = 17634.18 ms
++
++
++real	0m18.461s
++user	0m12.250s
++sys	0m6.191s
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q3_k.log
+++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q3_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
++main: build = 884 (c594992)
++main: seed  = 1690105509
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q3_k.bin
++llama_model_load_internal: format     = ggjt v3 (latest)
++llama_model_load_internal: n_vocab    = 32000
++llama_model_load_internal: n_ctx      = 2048
++llama_model_load_internal: n_embd     = 4096
++llama_model_load_internal: n_mult     = 256
++llama_model_load_internal: n_head     = 32
++llama_model_load_internal: n_head_kv  = 32
++llama_model_load_internal: n_layer    = 32
++llama_model_load_internal: n_rot      = 128
++llama_model_load_internal: n_gqa      = 1
++llama_model_load_internal: n_ff       = 11008
++llama_model_load_internal: freq_base  = 10000.0
++llama_model_load_internal: freq_scale = 1
++llama_model_load_internal: ftype      = 12 (mostly Q3_K - Medium)
++llama_model_load_internal: model size = 7B
++llama_model_load_internal: ggml ctx size =    0.08 MB
++llama_model_load_internal: using CUDA for GPU acceleration
++llama_model_load_internal: mem required  =  451.79 MB (+ 1024.00 MB per state)
++llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
++llama_model_load_internal: offloading 32 repeating layers to GPU
++llama_model_load_internal: offloading non-repeating layers to GPU
++llama_model_load_internal: offloading v cache to GPU
++llama_model_load_internal: offloading k cache to GPU
++llama_model_load_internal: offloaded 35/35 layers to GPU
++llama_model_load_internal: total VRAM used: 4485 MB
++llama_new_context_with_model: kv self size  = 1024.00 MB
++
++system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
++perplexity: calculating perplexity over 4 chunks, batch_size=512
++perplexity: 3.69 seconds per pass - ETA 0 minutes
++[1]4.9377,[2]6.5303,[3]7.5785,[4]7.5154,
++llama_print_timings:        load time =  3003.17 ms
++llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
++llama_print_timings: prompt eval time = 13853.10 ms /  8192 tokens (    1.69 ms per token,   591.35 tokens per second)
++llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
++llama_print_timings:       total time = 18311.78 ms
++
++
++real	0m19.103s
++user	0m12.913s
++sys	0m6.178s
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_k.log
+++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
++main: build = 884 (c594992)
++main: seed  = 1690105528
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_k.bin
++llama_model_load_internal: format     = ggjt v3 (latest)
++llama_model_load_internal: n_vocab    = 32000
++llama_model_load_internal: n_ctx      = 2048
++llama_model_load_internal: n_embd     = 4096
++llama_model_load_internal: n_mult     = 256
++llama_model_load_internal: n_head     = 32
++llama_model_load_internal: n_head_kv  = 32
++llama_model_load_internal: n_layer    = 32
++llama_model_load_internal: n_rot      = 128
++llama_model_load_internal: n_gqa      = 1
++llama_model_load_internal: n_ff       = 11008
++llama_model_load_internal: freq_base  = 10000.0
++llama_model_load_internal: freq_scale = 1
++llama_model_load_internal: ftype      = 15 (mostly Q4_K - Medium)
++llama_model_load_internal: model size = 7B
++llama_model_load_internal: ggml ctx size =    0.08 MB
++llama_model_load_internal: using CUDA for GPU acceleration
++llama_model_load_internal: mem required  =  468.39 MB (+ 1024.00 MB per state)
++llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
++llama_model_load_internal: offloading 32 repeating layers to GPU
++llama_model_load_internal: offloading non-repeating layers to GPU
++llama_model_load_internal: offloading v cache to GPU
++llama_model_load_internal: offloading k cache to GPU
++llama_model_load_internal: offloaded 35/35 layers to GPU
++llama_model_load_internal: total VRAM used: 5229 MB
++llama_new_context_with_model: kv self size  = 1024.00 MB
++
++system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
++perplexity: calculating perplexity over 4 chunks, batch_size=512
++perplexity: 3.63 seconds per pass - ETA 0 minutes
++[1]4.8790,[2]6.4235,[3]7.4401,[4]7.3432,
++llama_print_timings:        load time =  2993.78 ms
++llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
++llama_print_timings: prompt eval time = 13699.29 ms /  8192 tokens (    1.67 ms per token,   597.99 tokens per second)
++llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
++llama_print_timings:       total time = 18205.72 ms
++
++
++real	0m19.022s
++user	0m12.612s
++sys	0m6.386s
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_k.log
+++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
++main: build = 884 (c594992)
++main: seed  = 1690105547
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin
++llama_model_load_internal: format     = ggjt v3 (latest)
++llama_model_load_internal: n_vocab    = 32000
++llama_model_load_internal: n_ctx      = 2048
++llama_model_load_internal: n_embd     = 4096
++llama_model_load_internal: n_mult     = 256
++llama_model_load_internal: n_head     = 32
++llama_model_load_internal: n_head_kv  = 32
++llama_model_load_internal: n_layer    = 32
++llama_model_load_internal: n_rot      = 128
++llama_model_load_internal: n_gqa      = 1
++llama_model_load_internal: n_ff       = 11008
++llama_model_load_internal: freq_base  = 10000.0
++llama_model_load_internal: freq_scale = 1
++llama_model_load_internal: ftype      = 17 (mostly Q5_K - Medium)
++llama_model_load_internal: model size = 7B
++llama_model_load_internal: ggml ctx size =    0.08 MB
++llama_model_load_internal: using CUDA for GPU acceleration
++llama_model_load_internal: mem required  =  484.02 MB (+ 1024.00 MB per state)
++llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
++llama_model_load_internal: offloading 32 repeating layers to GPU
++llama_model_load_internal: offloading non-repeating layers to GPU
++llama_model_load_internal: offloading v cache to GPU
++llama_model_load_internal: offloading k cache to GPU
++llama_model_load_internal: offloaded 35/35 layers to GPU
++llama_model_load_internal: total VRAM used: 5883 MB
++llama_new_context_with_model: kv self size  = 1024.00 MB
++
++system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
++perplexity: calculating perplexity over 4 chunks, batch_size=512
++perplexity: 3.52 seconds per pass - ETA 0 minutes
++[1]4.8117,[2]6.3753,[3]7.3922,[4]7.2793,
++llama_print_timings:        load time =  3324.15 ms
++llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
++llama_print_timings: prompt eval time = 13151.45 ms /  8192 tokens (    1.61 ms per token,   622.90 tokens per second)
++llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
++llama_print_timings:       total time = 18126.23 ms
++
++
++real	0m18.973s
++user	0m12.867s
++sys	0m6.077s
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q6_k.log
+++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q6_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
++main: build = 884 (c594992)
++main: seed  = 1690105566
++ggml_init_cublas: found 1 CUDA devices:
++  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
++llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q6_k.bin
++llama_model_load_internal: format     = ggjt v3 (latest)
++llama_model_load_internal: n_vocab    = 32000
++llama_model_load_internal: n_ctx      = 2048
++llama_model_load_internal: n_embd     = 4096
++llama_model_load_internal: n_mult     = 256
++llama_model_load_internal: n_head     = 32
++llama_model_load_internal: n_head_kv  = 32
++llama_model_load_internal: n_layer    = 32
++llama_model_load_internal: n_rot      = 128
++llama_model_load_internal: n_gqa      = 1
++llama_model_load_internal: n_ff       = 11008
++llama_model_load_internal: freq_base  = 10000.0
++llama_model_load_internal: freq_scale = 1
++llama_model_load_internal: ftype      = 18 (mostly Q6_K)
++llama_model_load_internal: model size = 7B
++llama_model_load_internal: ggml ctx size =    0.08 MB
++llama_model_load_internal: using CUDA for GPU acceleration
++llama_model_load_internal: mem required  =  500.62 MB (+ 1024.00 MB per state)
++llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
++llama_model_load_internal: offloading 32 repeating layers to GPU
++llama_model_load_internal: offloading non-repeating layers to GPU
++llama_model_load_internal: offloading v cache to GPU
++llama_model_load_internal: offloading k cache to GPU
++llama_model_load_internal: offloaded 35/35 layers to GPU
++llama_model_load_internal: total VRAM used: 6578 MB
++llama_new_context_with_model: kv self size  = 1024.00 MB
++
++system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
++perplexity: calculating perplexity over 4 chunks, batch_size=512
++perplexity: 3.48 seconds per pass - ETA 0 minutes
++[1]4.8087,[2]6.3621,[3]7.3760,[4]7.2588,
++llama_print_timings:        load time =  3179.09 ms
++llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
++llama_print_timings: prompt eval time = 13089.07 ms /  8192 tokens (    1.60 ms per token,   625.87 tokens per second)
++llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
++llama_print_timings:       total time = 17732.45 ms
++
++
++real	0m18.581s
++user	0m12.466s
++sys	0m6.087s
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-f16.log
++++ grep '^\[1\]'
+++ check_ppl f16 '[1]4.7955,[2]6.3530,[3]7.3683,[4]7.2506,'
+++ qnt=f16
++++ echo '[1]4.7955,[2]6.3530,[3]7.3683,[4]7.2506,'
++++ grep -oE '[0-9]+\.[0-9]+'
++++ tail -n 1
+++ ppl=7.2506
++++ echo '7.2506 > 20.0'
++++ bc
+++ '[' 0 -eq 1 ']'
+++ printf '  - %s @ %s OK\n' f16 7.2506
+++ return 0
++  - f16 @ 7.2506 OK
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q8_0.log
++++ grep '^\[1\]'
+++ check_ppl q8_0 '[1]4.7995,[2]6.3562,[3]7.3738,[4]7.2550,'
+++ qnt=q8_0
++++ echo '[1]4.7995,[2]6.3562,[3]7.3738,[4]7.2550,'
++++ grep -oE '[0-9]+\.[0-9]+'
++++ tail -n 1
+++ ppl=7.2550
++++ echo '7.2550 > 20.0'
++++ bc
+++ '[' 0 -eq 1 ']'
+++ printf '  - %s @ %s OK\n' q8_0 7.2550
+++ return 0
++  - q8_0 @ 7.2550 OK
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_0.log
++++ grep '^\[1\]'
+++ check_ppl q4_0 '[1]4.8797,[2]6.4543,[3]7.5007,[4]7.3892,'
+++ qnt=q4_0
++++ echo '[1]4.8797,[2]6.4543,[3]7.5007,[4]7.3892,'
++++ grep -oE '[0-9]+\.[0-9]+'
++++ tail -n 1
+++ ppl=7.3892
++++ echo '7.3892 > 20.0'
++++ bc
+++ '[' 0 -eq 1 ']'
+++ printf '  - %s @ %s OK\n' q4_0 7.3892
+++ return 0
++  - q4_0 @ 7.3892 OK
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_1.log
++++ grep '^\[1\]'
+++ check_ppl q4_1 '[1]4.9205,[2]6.4604,[3]7.4923,[4]7.3910,'
+++ qnt=q4_1
++++ echo '[1]4.9205,[2]6.4604,[3]7.4923,[4]7.3910,'
++++ grep -oE '[0-9]+\.[0-9]+'
++++ tail -n 1
+++ ppl=7.3910
++++ echo '7.3910 > 20.0'
++++ bc
+++ '[' 0 -eq 1 ']'
+++ printf '  - %s @ %s OK\n' q4_1 7.3910
+++ return 0
++  - q4_1 @ 7.3910 OK
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_0.log
++++ grep '^\[1\]'
+++ check_ppl q5_0 '[1]4.7980,[2]6.3776,[3]7.4120,[4]7.3003,'
+++ qnt=q5_0
++++ echo '[1]4.7980,[2]6.3776,[3]7.4120,[4]7.3003,'
++++ grep -oE '[0-9]+\.[0-9]+'
++++ tail -n 1
+++ ppl=7.3003
++++ echo '7.3003 > 20.0'
++++ bc
+++ '[' 0 -eq 1 ']'
+++ printf '  - %s @ %s OK\n' q5_0 7.3003
+++ return 0
++  - q5_0 @ 7.3003 OK
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_1.log
++++ grep '^\[1\]'
+++ check_ppl q5_1 '[1]4.8293,[2]6.3759,[3]7.3950,[4]7.2857,'
+++ qnt=q5_1
++++ echo '[1]4.8293,[2]6.3759,[3]7.3950,[4]7.2857,'
++++ grep -oE '[0-9]+\.[0-9]+'
++++ tail -n 1
+++ ppl=7.2857
++++ echo '7.2857 > 20.0'
++++ bc
+++ '[' 0 -eq 1 ']'
+++ printf '  - %s @ %s OK\n' q5_1 7.2857
+++ return 0
++  - q5_1 @ 7.2857 OK
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q2_k.log
++++ grep '^\[1\]'
+++ check_ppl q2_k '[1]5.2770,[2]6.9940,[3]8.1124,[4]8.1454,'
+++ qnt=q2_k
++++ echo '[1]5.2770,[2]6.9940,[3]8.1124,[4]8.1454,'
++++ grep -oE '[0-9]+\.[0-9]+'
++++ tail -n 1
+++ ppl=8.1454
++++ echo '8.1454 > 20.0'
++++ bc
+++ '[' 0 -eq 1 ']'
+++ printf '  - %s @ %s OK\n' q2_k 8.1454
+++ return 0
++  - q2_k @ 8.1454 OK
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q3_k.log
++++ grep '^\[1\]'
+++ check_ppl q3_k '[1]4.9377,[2]6.5303,[3]7.5785,[4]7.5154,'
+++ qnt=q3_k
++++ echo '[1]4.9377,[2]6.5303,[3]7.5785,[4]7.5154,'
++++ grep -oE '[0-9]+\.[0-9]+'
++++ tail -n 1
+++ ppl=7.5154
++++ echo '7.5154 > 20.0'
++++ bc
+++ '[' 0 -eq 1 ']'
+++ printf '  - %s @ %s OK\n' q3_k 7.5154
+++ return 0
++  - q3_k @ 7.5154 OK
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_k.log
++++ grep '^\[1\]'
+++ check_ppl q4_k '[1]4.8790,[2]6.4235,[3]7.4401,[4]7.3432,'
+++ qnt=q4_k
++++ echo '[1]4.8790,[2]6.4235,[3]7.4401,[4]7.3432,'
++++ grep -oE '[0-9]+\.[0-9]+'
++++ tail -n 1
+++ ppl=7.3432
++++ echo '7.3432 > 20.0'
++++ bc
+++ '[' 0 -eq 1 ']'
+++ printf '  - %s @ %s OK\n' q4_k 7.3432
+++ return 0
++  - q4_k @ 7.3432 OK
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_k.log
++++ grep '^\[1\]'
+++ check_ppl q5_k '[1]4.8117,[2]6.3753,[3]7.3922,[4]7.2793,'
+++ qnt=q5_k
++++ echo '[1]4.8117,[2]6.3753,[3]7.3922,[4]7.2793,'
++++ grep -oE '[0-9]+\.[0-9]+'
++++ tail -n 1
+++ ppl=7.2793
++++ echo '7.2793 > 20.0'
++++ bc
+++ '[' 0 -eq 1 ']'
+++ printf '  - %s @ %s OK\n' q5_k 7.2793
+++ return 0
++  - q5_k @ 7.2793 OK
+++ tee -a /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/c5/94992d6a7e23fb8e11ff5137d26a448d25a071/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q6_k.log
++++ grep '^\[1\]'
+++ check_ppl q6_k '[1]4.8087,[2]6.3621,[3]7.3760,[4]7.2588,'
+++ qnt=q6_k
++++ echo '[1]4.8087,[2]6.3621,[3]7.3760,[4]7.2588,'
++++ grep -oE '[0-9]+\.[0-9]+'
++++ tail -n 1
+++ ppl=7.2588
++++ echo '7.2588 > 20.0'
++++ bc
+++ '[' 0 -eq 1 ']'
+++ printf '  - %s @ %s OK\n' q6_k 7.2588
+++ return 0
++  - q6_k @ 7.2588 OK
+++ set +e
+++ cur=0
+++ echo 0
+ + set +x
+-cat: /home/ggml/results/llama.cpp/2d/ac31b3580143afbd7716a6e6263f8c6e1ae912/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log: No such file or directory
+-cat: /home/ggml/results/llama.cpp/2d/ac31b3580143afbd7716a6e6263f8c6e1ae912/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-f16.log: No such file or directory
+-cat: /home/ggml/results/llama.cpp/2d/ac31b3580143afbd7716a6e6263f8c6e1ae912/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q8_0.log: No such file or directory
+-cat: /home/ggml/results/llama.cpp/2d/ac31b3580143afbd7716a6e6263f8c6e1ae912/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_0.log: No such file or directory
+-cat: /home/ggml/results/llama.cpp/2d/ac31b3580143afbd7716a6e6263f8c6e1ae912/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_1.log: No such file or directory
+-cat: /home/ggml/results/llama.cpp/2d/ac31b3580143afbd7716a6e6263f8c6e1ae912/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_0.log: No such file or directory
+-cat: /home/ggml/results/llama.cpp/2d/ac31b3580143afbd7716a6e6263f8c6e1ae912/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_1.log: No such file or directory
+-cat: /home/ggml/results/llama.cpp/2d/ac31b3580143afbd7716a6e6263f8c6e1ae912/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q2_k.log: No such file or directory
+-cat: /home/ggml/results/llama.cpp/2d/ac31b3580143afbd7716a6e6263f8c6e1ae912/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q3_k.log: No such file or directory
+-cat: /home/ggml/results/llama.cpp/2d/ac31b3580143afbd7716a6e6263f8c6e1ae912/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_k.log: No such file or directory
+-cat: /home/ggml/results/llama.cpp/2d/ac31b3580143afbd7716a6e6263f8c6e1ae912/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_k.log: No such file or directory
+-cat: /home/ggml/results/llama.cpp/2d/ac31b3580143afbd7716a6e6263f8c6e1ae912/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q6_k.log: No such file or directory
+-Command exited with non-zero status 1
+-176.95user 21.89system 1:56.04elapsed 171%CPU (0avgtext+0avgdata 763380maxresident)k
+-560inputs+672352outputs (23major+3439442minor)pagefaults 0swaps
++1170.78user 355.63system 15:12.34elapsed 167%CPU (0avgtext+0avgdata 15280624maxresident)k
++0inputs+115770296outputs (31major+13259136minor)pagefaults 0swaps
+```
+</details>
+
