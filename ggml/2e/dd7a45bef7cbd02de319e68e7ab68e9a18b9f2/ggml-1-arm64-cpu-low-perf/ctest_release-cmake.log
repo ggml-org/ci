@@ -24,6 +24,6 @@
 -- Generating done
 -- Build files have been written to: /home/ggml/work/ggml/build-ci-release
 
-real	0m0.669s
-user	0m0.365s
-sys	0m0.307s
+real	0m0.664s
+user	0m0.379s
+sys	0m0.289s

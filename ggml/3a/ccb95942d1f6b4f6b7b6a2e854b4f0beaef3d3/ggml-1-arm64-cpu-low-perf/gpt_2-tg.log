@@ -30,7 +30,7 @@ gpt2_model_load: n_head  = 12
 gpt2_model_load: n_layer = 12
 gpt2_model_load: ftype   = 1
 gpt2_model_load: qntvr   = 0
-gpt2_model_load: ggml tensor size = 272 bytes
+gpt2_model_load: ggml tensor size = 240 bytes
 gpt2_model_load: ggml ctx size = 384.77 MB
 gpt2_model_load: memory size =    72.00 MB, n_mem = 12288
 gpt2_model_load: model size  =   239.08 MB
@@ -41,15 +41,15 @@ If we look at what we're talking about and then look at the evidence and the evi
 
 Asked about the possibility that ISIS may have used the United States as a vehicle to recruit followers and commit violence in
 
-main: mem per token =  2015100 bytes
-main:     load time =   168.07 ms
-main:   sample time =    17.42 ms
-main:  predict time =   813.93 ms / 12.72 ms per token
-main:    total time =  1072.89 ms
+main: mem per token =  2016924 bytes
+main:     load time =   164.88 ms
+main:   sample time =    17.08 ms
+main:  predict time =   811.13 ms / 12.67 ms per token
+main:    total time =  1066.89 ms
 
-real	0m1.109s
-user	0m3.420s
-sys	0m0.188s
+real	0m1.100s
+user	0m3.423s
+sys	0m0.163s
 + ./bin/gpt-2 --model ../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin -s 1234 -n 64 -p 'I believe the meaning of life is'
 extract_tests_from_file : No test file found.
 test_gpt_tokenizer : 0 tests failed out of 0 tests.
@@ -62,7 +62,7 @@ gpt2_model_load: n_head  = 12
 gpt2_model_load: n_layer = 12
 gpt2_model_load: ftype   = 1
 gpt2_model_load: qntvr   = 0
-gpt2_model_load: ggml tensor size = 272 bytes
+gpt2_model_load: ggml tensor size = 240 bytes
 gpt2_model_load: ggml ctx size = 384.77 MB
 gpt2_model_load: memory size =    72.00 MB, n_mem = 12288
 gpt2_model_load: model size  =   239.08 MB
@@ -75,12 +75,12 @@ If you do not believe in God, then why does his word make you feel better? Why d
 
 The gospel tells
 
-main: mem per token =  2015100 bytes
-main:     load time =   168.54 ms
-main:   sample time =    17.28 ms
-main:  predict time =   879.76 ms / 12.57 ms per token
-main:    total time =  1115.58 ms
+main: mem per token =  2016924 bytes
+main:     load time =   167.39 ms
+main:   sample time =    17.14 ms
+main:  predict time =   881.76 ms / 12.60 ms per token
+main:    total time =  1116.23 ms
 
-real	0m1.151s
-user	0m3.689s
-sys	0m0.163s
+real	0m1.153s
+user	0m3.681s
+sys	0m0.168s
