@@ -148,9 +148,12 @@ function gg_run {
         gg_export GG_CI_COMMIT_MSG    "$(git log -1 --pretty=%B)"
         gg_export GG_CI_COMMIT_AUTHOR "$(git log -1 --pretty=%an)"
 
+        runtime="0:00.00"
+
         if [ -f ci/run.sh ]; then
-            timeout ${GG_RUN_TIMEOUT} time bash ci/run.sh "${out}" "${mnt}" > ${out}/stdall 2>&1
+            timeout ${GG_RUN_TIMEOUT} time -o ${out}/runtime bash ci/run.sh "${out}" "${mnt}" > ${out}/stdall 2>&1
             result=$?
+            runtime=$(tail -n 2 ${out}/runtime | head -n 1 | awk '{print $3}' | sed -e 's/elapsed//')
         else
             gg_printf ${out}/README.md "ci/run.sh was not found - nothing to do\n"
             result=0
@@ -160,7 +163,7 @@ function gg_run {
 
         mv ${out}/README.md ${out}/README.md.bak
 
-        status="$(if [ $result -eq 0 ]; then echo "SUCCESS ✅"; else echo "FAILURE ❌ (${result})"; fi)"
+        status="$(if [ $result -eq 0 ]; then echo "SUCCESS ✅ in ${runtime}"; else echo "FAILURE ❌ (${result}) in ${runtime}"; fi)"
 
         gg_printf ${out}/README.md '## Summary\n\n'
 
@@ -199,9 +202,9 @@ function gg_run {
         fi
 
         if [ ${result} -eq 0 ]; then
-            gg_set_commit_status "${owner}" "${repo}" "${commit}" "success" "success"
+            gg_set_commit_status "${owner}" "${repo}" "${commit}" "success" "success in ${runtime}"
         else
-            gg_set_commit_status "${owner}" "${repo}" "${commit}" "failure" "failure ${result}"
+            gg_set_commit_status "${owner}" "${repo}" "${commit}" "failure" "failure ${result} in ${runtime}"
         fi
 
         printf "run.sh : done processing '${repo}' commit ${commit}, result ${result}\n"
