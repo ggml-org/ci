@@ -1,0 +1,100 @@
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 930 (9d2382b)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 17 (mostly Q5_K - Medium)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  388.03 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 5019 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to do with having an impact on someone else’s.
+I feel that we are all here for a purpose in this world, and there may be many meanings behind it but one thing leads me to tell you these thoughts. It has been proven time after time again by scientists (and other people), as well as religions or just the general knowledge of what is right from wrong; having positive impacts on others creates good karma for yourself… so if someone else’s life improves because they had a conversation with us then we ourselves have succeeded in our purpose to impact their lives. I think this has an even more important meaning when it comes into how you live your own personal life and what lessons that teaches other people, as well the effect on others of watching or seeing (or reading) someone else’s actions/words etc.. for example if we are good role models then children will look up to us.
+I believe there is no such thing as luck – I think everything in our lives happens by choice and it all comes down to what lessons you have learned from life so far, because of the way your parents brought you up or how someone else influenced you etc.. There are always good sides/lessons hidden away within every bad situation.
+I also believe
+llama_print_timings:        load time =  1056.83 ms
+llama_print_timings:      sample time =   144.01 ms /   256 runs   (    0.56 ms per token,  1777.68 tokens per second)
+llama_print_timings: prompt eval time =   129.45 ms /     8 tokens (   16.18 ms per token,    61.80 tokens per second)
+llama_print_timings:        eval time =  2830.58 ms /   255 runs   (   11.10 ms per token,    90.09 tokens per second)
+llama_print_timings:       total time =  3170.16 ms
+
+real	0m5.129s
+user	0m9.384s
+sys	0m1.412s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 930 (9d2382b)
+main: seed  = 1690795100
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 17 (mostly Q5_K - Medium)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  484.03 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 5883 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 5.61 seconds per pass - ETA 0 minutes
+[1]4.8128,[2]6.3750,[3]7.3917,[4]7.2792,
+llama_print_timings:        load time =  3570.46 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 21449.84 ms /  8192 tokens (    2.62 ms per token,   381.91 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 25982.02 ms
+
+
+real	0m26.823s
+user	0m17.696s
+sys	0m9.116s
