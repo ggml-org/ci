@@ -1,0 +1,1214 @@
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-debug
+    Start 1: test-quantize-fns
+1/5 Test #1: test-quantize-fns ................   Passed    0.01 sec
+    Start 2: test-quantize-perf
+2/5 Test #2: test-quantize-perf ...............   Passed    0.06 sec
+    Start 3: test-sampling
+3/5 Test #3: test-sampling ....................   Passed    0.00 sec
+    Start 4: test-tokenizer-0
+4/5 Test #4: test-tokenizer-0 .................   Passed    0.03 sec
+    Start 5: test-grad0
+5/5 Test #5: test-grad0 .......................   Passed    4.36 sec
+
+100% tests passed, 0 tests failed out of 5
+
+Total Test time (real) =   4.47 sec
+
+real	0m4.503s
+user	0m4.872s
+sys	0m5.200s
+```
+
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure
+Test project /home/ggml/work/llama.cpp/build-ci-release
+    Start 1: test-quantize-fns
+1/5 Test #1: test-quantize-fns ................   Passed    0.01 sec
+    Start 2: test-quantize-perf
+2/5 Test #2: test-quantize-perf ...............   Passed    0.01 sec
+    Start 3: test-sampling
+3/5 Test #3: test-sampling ....................   Passed    0.00 sec
+    Start 4: test-tokenizer-0
+4/5 Test #4: test-tokenizer-0 .................   Passed    0.01 sec
+    Start 5: test-grad0
+5/5 Test #5: test-grad0 .......................   Passed    4.41 sec
+
+100% tests passed, 0 tests failed out of 5
+
+Total Test time (real) =   4.45 sec
+
+real	0m4.482s
+user	0m4.689s
+sys	0m5.408s
+```
+### open_llama_7b_v2
+
+OpenLLaMA 7B-v2:
+- status: 0
+- perplexity:
+  - f16 @ 7.2503 OK
+  - q8_0 @ 7.2548 OK
+  - q4_0 @ 7.3883 OK
+  - q4_1 @ 7.3921 OK
+  - q5_0 @ 7.3005 OK
+  - q5_1 @ 7.2858 OK
+  - q2_k @ 8.1531 OK
+  - q3_k @ 7.5160 OK
+  - q4_k @ 7.3431 OK
+  - q5_k @ 7.2794 OK
+  - q6_k @ 7.2585 OK
+- f16: 
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 933 (0728c5a)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
+llama_model_load_internal: format     = ggjt v1 (pre #1405)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 1 (mostly F16)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  552.09 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 13148 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to do with having an impact on those around you. To make someone smile, or laugh at a time when all they want to do it cry and be unhappy; this makes me feel alive in some kind of way..”
+I think if we are given one chance then why not take that leap of faith? Why go back to the same place everyday just for money instead of making ourselves happy too. Happiness is something you can create by yourself so I believe it’s up to us as individuals what our next step should be, however when your in debt its hard sometimes but i know deep down if we do make that leap then good things will happen..
+The meaning behind life; my interpretation of the word ‘meaning’. For me this all depends on personal preference. I think it’s important to find out what other people believe and why they feel as such, so you can understand their point of view without judgement or criticism but just be able to take it in at face value rather than judging them for having a different opinion from yours..
+In my perspective the meaning is that everything we do has an impact on someone’s life whether good or bad. So I believe its upto us individually as individuals what our next step should be and how we can
+llama_print_timings:        load time =  2514.44 ms
+llama_print_timings:      sample time =   145.61 ms /   256 runs   (    0.57 ms per token,  1758.11 tokens per second)
+llama_print_timings: prompt eval time =   167.51 ms /     8 tokens (   20.94 ms per token,    47.76 tokens per second)
+llama_print_timings:        eval time =  4918.30 ms /   255 runs   (   19.29 ms per token,    51.85 tokens per second)
+llama_print_timings:       total time =  5307.63 ms
+
+real	0m8.895s
+user	0m16.735s
+sys	0m2.034s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 933 (0728c5a)
+main: seed  = 1690811813
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
+llama_model_load_internal: format     = ggjt v1 (pre #1405)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 1 (mostly F16)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  648.09 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 14012 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.36 seconds per pass - ETA 0 minutes
+[1]4.7952,[2]6.3520,[3]7.3679,[4]7.2503,
+llama_print_timings:        load time =  4444.55 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 12617.24 ms /  8192 tokens (    1.54 ms per token,   649.27 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 18574.44 ms
+
+
+real	0m19.712s
+user	0m12.992s
+sys	0m6.712s
+```
+- q8_0:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 933 (0728c5a)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 7 (mostly Q8_0)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  434.90 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 7210 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to give and get happiness.
+If you are not happy, your family will be unhappy too! The first reason why we should have a healthy body (that means exercise regularly) because our physical health may affect many areas: from mental well-being, social interactions with others around us until it affects the state of marriage or relationship at home. So let’s work on ourselves by exercising every day.
+One more important thing is to be responsible for your family and yourself! It means you need to do something good if there are any conflicts in our life as parents (married). If we can give happiness to them, they will live happily too even though sometimes it may not always succeed 100%. But at least try because no one wants their kids or themselves suffered from sadness.
+I believe that the meaning of life is just finding your purpose and living up with what you want in this world! You can’t escape fate, but if there was anything I could have done differently to live my own way then maybe not being born yet would be good enough so far as one day at time we need more than ever before since every person has their unique path through life and experiences.
+“You are the only thing that is going on in this world!
+llama_print_timings:        load time =  1432.09 ms
+llama_print_timings:      sample time =   145.76 ms /   256 runs   (    0.57 ms per token,  1756.26 tokens per second)
+llama_print_timings: prompt eval time =   170.18 ms /     8 tokens (   21.27 ms per token,    47.01 tokens per second)
+llama_print_timings:        eval time =  3559.24 ms /   255 runs   (   13.96 ms per token,    71.64 tokens per second)
+llama_print_timings:       total time =  3941.58 ms
+
+real	0m6.439s
+user	0m11.921s
+sys	0m1.711s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 933 (0728c5a)
+main: seed  = 1690811832
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 7 (mostly Q8_0)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  530.90 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 8074 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.36 seconds per pass - ETA 0 minutes
+[1]4.7990,[2]6.3552,[3]7.3735,[4]7.2548,
+llama_print_timings:        load time =  3509.85 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 12609.18 ms /  8192 tokens (    1.54 ms per token,   649.69 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 17639.31 ms
+
+
+real	0m18.568s
+user	0m12.231s
+sys	0m6.323s
+```
+- q4_0:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 933 (0728c5a)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 2 (mostly Q4_0)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  372.40 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 4122 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to have a happy marriage.
+What do you think? Is it all about having kids, being successful at your work or finding that one person who completes us physically and emotionally (and financially)? For me when someone says something as simple as “marriage” my mind immediately goes back 20 years ago…to an almost-future of myself getting married.
+I am just going through the archives here on this blog and found a story I wrote about that time in July, 2016: Why Marriage Makes You Happy?
+There is nothing like writing down your thoughts as they occur to you at any moment! It’s great fun but also it can have unexpected results. In my case with the marriage article above….I now get emails from people all over asking me questions about how I manage being married and having kids, working full time (which has been going on for almost 20 years) as a mom of three growing children:
+Dear Marlene – Thank you so much for your blog posts. They are really informative! We were wondering what life is like with the four of you…I imagine it’s quite hectic, but in such an enjoyable and enriching way? I was just curious about how we can live
+llama_print_timings:        load time =   904.31 ms
+llama_print_timings:      sample time =   146.12 ms /   256 runs   (    0.57 ms per token,  1751.95 tokens per second)
+llama_print_timings: prompt eval time =   125.72 ms /     8 tokens (   15.71 ms per token,    63.64 tokens per second)
+llama_print_timings:        eval time =  2590.89 ms /   255 runs   (   10.16 ms per token,    98.42 tokens per second)
+llama_print_timings:       total time =  2928.85 ms
+
+real	0m4.680s
+user	0m8.605s
+sys	0m1.252s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 933 (0728c5a)
+main: seed  = 1690811851
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 2 (mostly Q4_0)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  468.40 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 4986 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.17 seconds per pass - ETA 0 minutes
+[1]4.8783,[2]6.4528,[3]7.5000,[4]7.3883,
+llama_print_timings:        load time =  2778.34 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 11870.20 ms /  8192 tokens (    1.45 ms per token,   690.13 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 16196.08 ms
+
+
+real	0m17.015s
+user	0m11.442s
+sys	0m5.573s
+```
+- q4_1:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 933 (0728c5a)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 3 (mostly Q4_1)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  380.21 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 4508 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to make someone happy and smile. This was my goal when i came up with this idea, which led me in an absolutely amazing experience!
+Alexandros Chalkias has added 52 portfolio pieces. Create an account to review them.
+Sep 2012 - Mar 2014
+No feedback given
+Mar 2013 - Apr 2013
+Feb 2013 - Apr 2013
+Alexandros Chalkias has more jobs to show. Create an account to review them.
+Website: a-chalkias.com
+Illustrator, Web & Graphic Design
+Diploma in Illustration and Concept Art from London College of Communication (LCC) University Of The Arts London - UAL A Levels at Thames Valley University – AVT Athens Polytechnic Technical School BSc Psychology with Research Project Bachelor Degree- Università degli Studi di Firenze. Master’s degree(1 year)-Università degli Studi di Roma La Sapienza
+The London College Of Communication (LCC) - UAL The University of the Arts,London Undergraduate and Postgraduate Degrees in Art &
+llama_print_timings:        load time =   968.88 ms
+llama_print_timings:      sample time =   144.20 ms /   256 runs   (    0.56 ms per token,  1775.29 tokens per second)
+llama_print_timings: prompt eval time =   125.44 ms /     8 tokens (   15.68 ms per token,    63.77 tokens per second)
+llama_print_timings:        eval time =  2676.15 ms /   255 runs   (   10.49 ms per token,    95.29 tokens per second)
+llama_print_timings:       total time =  3011.79 ms
+
+real	0m4.835s
+user	0m8.878s
+sys	0m1.299s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 933 (0728c5a)
+main: seed  = 1690811868
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 3 (mostly Q4_1)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  476.21 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 5372 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.18 seconds per pass - ETA 0 minutes
+[1]4.9223,[2]6.4608,[3]7.4928,[4]7.3921,
+llama_print_timings:        load time =  2855.09 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 11881.26 ms /  8192 tokens (    1.45 ms per token,   689.49 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 16284.17 ms
+
+
+real	0m17.100s
+user	0m11.421s
+sys	0m5.680s
+```
+- q5_0:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_0.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 933 (0728c5a)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_0.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 8 (mostly Q5_0)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  388.03 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 4894 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to give yourself purpose, and then create a plan that will help you achieve your goals.
+I think about those who have inspired me throughout my years in this industry–the people whom are now leaders or mentors helping others discover their full potentials; some had been on television shows like America’s Next Top Model (ANTM) or The Tyra Banks Show, and many were also beauty pageant contestants.
+When you watch reality TV programming with these women in front of the camera at times it can be hard to understand how they are able overcome their fear of stepping into a spotlight, because we as viewers would have our own personal fears–our very own self-doubt about whether or not what is being shown on TV represents who we really are.
+As an actress and public speaker myself there were many times that I had my doubts when asked to host events like the Miss USA Pageant; however, once you take a step back from yourself in order to help others be their best self while giving themselves purpose by following your dreams–then those fears will turn into something else entirely.
+The reason why we watch television shows with these women is because there are things that they have accomplished or experienced within them which make them inspiring role models for young girls who
+llama_print_timings:        load time =  1022.04 ms
+llama_print_timings:      sample time =   148.85 ms /   256 runs   (    0.58 ms per token,  1719.84 tokens per second)
+llama_print_timings: prompt eval time =   123.85 ms /     8 tokens (   15.48 ms per token,    64.59 tokens per second)
+llama_print_timings:        eval time =  2698.52 ms /   255 runs   (   10.58 ms per token,    94.50 tokens per second)
+llama_print_timings:       total time =  3038.30 ms
+
+real	0m4.946s
+user	0m8.953s
+sys	0m1.380s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_0.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 933 (0728c5a)
+main: seed  = 1690811885
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_0.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 8 (mostly Q5_0)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  484.03 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 5758 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.15 seconds per pass - ETA 0 minutes
+[1]4.7986,[2]6.3775,[3]7.4120,[4]7.3005,
+llama_print_timings:        load time =  2913.90 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 11818.59 ms /  8192 tokens (    1.44 ms per token,   693.14 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 16277.89 ms
+
+
+real	0m17.127s
+user	0m11.458s
+sys	0m5.649s
+```
+- q5_1:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 933 (0728c5a)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 9 (mostly Q5_1)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  395.84 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 5280 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to have a family.
+I do not think that this belief would be considered as an unreasonable position in itself, but it has come up for discussion over and again recently because my beliefs about what 'family' consists are sometimes at odds with those who surround me (which includes myself). The most recent example was the question of why I wanted to have a family when there were so many other things out there worth doing: travel; study; get on with living.
+I believe that we do not live in isolation as individuals but rather find ourselves part of bigger webs, each person forming an interlocking series of links within which they can participate and contribute (and receive). I am also deeply influenced by the Buddhist concept of karma whereby everything is linked to another thing somewhere: you cannot separate your actions from their consequences.
+In theory then we should all be aware that our decisions have ramifications for others, but this isn't always the case in practice; so it seems worth spelling out here why I think family life has a lot going for it over other things - even though my personal choices may mean those benefits are not immediately apparent.
+The primary benefit of having children is obvious: that they will (if you have done your job properly) love and
+llama_print_timings:        load time =  1158.17 ms
+llama_print_timings:      sample time =   147.06 ms /   256 runs   (    0.57 ms per token,  1740.79 tokens per second)
+llama_print_timings: prompt eval time =   126.74 ms /     8 tokens (   15.84 ms per token,    63.12 tokens per second)
+llama_print_timings:        eval time =  2692.87 ms /   255 runs   (   10.56 ms per token,    94.69 tokens per second)
+llama_print_timings:       total time =  3033.90 ms
+
+real	0m5.093s
+user	0m9.072s
+sys	0m1.399s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 933 (0728c5a)
+main: seed  = 1690811902
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 9 (mostly Q5_1)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  491.84 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 6144 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.17 seconds per pass - ETA 0 minutes
+[1]4.8305,[2]6.3757,[3]7.3951,[4]7.2858,
+llama_print_timings:        load time =  2967.51 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 11844.61 ms /  8192 tokens (    1.45 ms per token,   691.62 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 16355.14 ms
+
+
+real	0m17.223s
+user	0m11.401s
+sys	0m5.824s
+```
+- q2_k:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 933 (0728c5a)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 10 (mostly Q2_K)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  343.10 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 3237 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to find out who we are and be happy with that.
+—Joseph Campbell, The Power of Myth: Who and What We Are in This Life (1979) 2018-2034." [Pause.] You know what? It's okay if you don't understand everything I am telling you right now. Let me tell it to your mother and she may have something more for you, that can help a little bit with this too. But let us begin by beginning at the start of these three things: life as an event in our universe which is here on earth where we are living...
+"And so I would like if there could be one thing to say about it right now, and then leave you to wonder what else might come up later." [Pause.] Well why don't. And that may not always happen exactly the way in our life as a series of events where we are here living on earth today too... But I do want to talk with all this because there is something more, and maybe it will become clearer by having gone through some things like these so far, or at least have begun to get them together.
+This would be the meaning in life that comes from a
+llama_print_timings:        load time =   756.33 ms
+llama_print_timings:      sample time =   146.55 ms /   256 runs   (    0.57 ms per token,  1746.86 tokens per second)
+llama_print_timings: prompt eval time =   134.72 ms /     8 tokens (   16.84 ms per token,    59.38 tokens per second)
+llama_print_timings:        eval time =  2413.63 ms /   255 runs   (    9.47 ms per token,   105.65 tokens per second)
+llama_print_timings:       total time =  2761.93 ms
+
+real	0m4.300s
+user	0m7.924s
+sys	0m1.181s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 933 (0728c5a)
+main: seed  = 1690811919
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 10 (mostly Q2_K)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  439.10 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 4101 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.21 seconds per pass - ETA 0 minutes
+[1]5.2845,[2]6.9991,[3]8.1187,[4]8.1531,
+llama_print_timings:        load time =  2665.86 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 12030.24 ms /  8192 tokens (    1.47 ms per token,   680.95 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 16240.73 ms
+
+
+real	0m17.064s
+user	0m11.406s
+sys	0m5.634s
+```
+- q3_k:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q3_k.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 933 (0728c5a)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q3_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 12 (mostly Q3_K - Medium)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  355.80 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 3621 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to love, laugh and live. If you can do these things everyday then your on a good path! You want people in your life who make you happy are there for you when times get tough or share those hilarious inside jokes that only you two know about? Life isn’t always easy but if we stick together through the struggles as well as celebrate all our victories, I believe it makes life easier to face everyday.
+I am proud of my past and excited for what is yet to come! My future will hopefully be bright with wonderful things in store like owning a home, traveling on an international trip or even taking over someone’s business; whatever the case may be there are endless possibilities all we have to do it work hard and dream big.
+Throughout your life you meet people who change how they view themselves based from what others think about them whether good or bad! You want these relationships with other individuals so badly that when something happens within a relationship where someone wants more control over their lives then suddenly becomes unreasonable, maybe even mean; there isn’t anything else than can compare for those moments.
+I believe it is okay to be selfish at times because you don’t know what tomorrow has in store but if your heart tells me that I
+llama_print_timings:        load time =   818.84 ms
+llama_print_timings:      sample time =   146.03 ms /   256 runs   (    0.57 ms per token,  1753.04 tokens per second)
+llama_print_timings: prompt eval time =   163.64 ms /     8 tokens (   20.45 ms per token,    48.89 tokens per second)
+llama_print_timings:        eval time =  2811.27 ms /   255 runs   (   11.02 ms per token,    90.71 tokens per second)
+llama_print_timings:       total time =  3186.02 ms
+
+real	0m4.810s
+user	0m9.294s
+sys	0m1.198s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q3_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 933 (0728c5a)
+main: seed  = 1690811937
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q3_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 12 (mostly Q3_K - Medium)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  451.80 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 4485 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.34 seconds per pass - ETA 0 minutes
+[1]4.9390,[2]6.5302,[3]7.5792,[4]7.5160,
+llama_print_timings:        load time =  2755.23 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 12538.33 ms /  8192 tokens (    1.53 ms per token,   653.36 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 16836.98 ms
+
+
+real	0m17.640s
+user	0m11.949s
+sys	0m5.684s
+```
+- q4_k:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_k.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 933 (0728c5a)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 15 (mostly Q4_K - Medium)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  372.40 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 4365 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to give your heart.
+I do not know what my purpose in this world will be, but it could come back and haunt me one day for that very reason; giving up too soon or trying too hard. It really comes down how well we can live with ourselves if our hearts are broken because they were given away as much to others whom had nothing left of their own lives than what was taken from them once, either in times past or present and all I have been able to do is give it a try for the rest will be only speculation on my part.
+We can make up words but not excuses nor reasons that explain why we cannot stand ourselves if our hearts are broken because they were given away as much to others whom had nothing left of their own lives than what was taken from them once, either in times past or present and all I have been able to do is give it a try for the rest will be only speculation on my part.
+This place has become too quiet lately; not enough words are being thrown around like they used to when there were more people who would take their time out of life's busy schedule, from whatever was keeping them going at any given moment in order that we could get a better perspective and maybe some understanding or insight
+llama_print_timings:        load time =   931.45 ms
+llama_print_timings:      sample time =   147.92 ms /   256 runs   (    0.58 ms per token,  1730.67 tokens per second)
+llama_print_timings: prompt eval time =   155.87 ms /     8 tokens (   19.48 ms per token,    51.33 tokens per second)
+llama_print_timings:        eval time =  2536.62 ms /   255 runs   (    9.95 ms per token,   100.53 tokens per second)
+llama_print_timings:       total time =  2906.38 ms
+
+real	0m4.684s
+user	0m8.516s
+sys	0m1.294s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 933 (0728c5a)
+main: seed  = 1690811954
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 15 (mostly Q4_K - Medium)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  468.40 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 5229 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.33 seconds per pass - ETA 0 minutes
+[1]4.8779,[2]6.4223,[3]7.4394,[4]7.3431,
+llama_print_timings:        load time =  3070.22 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 12372.14 ms /  8192 tokens (    1.51 ms per token,   662.13 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 16952.41 ms
+
+
+real	0m17.767s
+user	0m11.723s
+sys	0m6.047s
+```
+- q5_k:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 933 (0728c5a)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 17 (mostly Q5_K - Medium)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  388.03 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 5019 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to do with having an impact on someone else’s.
+I feel that we are all here for a purpose in this world, and there may be many meanings behind it but one thing stays constant: everything has got me exactly where i am today (in my personal opinion). If you think about the word “purpose”-what comes to mind? Does someone else’s life come into focus as part of that sentence. I believe we have a purpose for being here, and if our goal is not fulfilled by death then something will give us another chance/goal at it so there really isn’t any such thing like “the meaning in my life”.
+I do think though the meanings are different to everyone else because no one can know what happens after you die. So we don’t have a clear idea of where, or how our lives will end up but i believe that is why it has so much mystery and intrigue around us – its like “it could happen any moment now”.
+I do not think there IS such thing as meaning in my life because I dont know if something can be defined by one word/concept. However, the most important part of finding a purpose are having goals that you want to achieve or change things for other
+llama_print_timings:        load time =  1034.44 ms
+llama_print_timings:      sample time =   144.43 ms /   256 runs   (    0.56 ms per token,  1772.46 tokens per second)
+llama_print_timings: prompt eval time =   124.30 ms /     8 tokens (   15.54 ms per token,    64.36 tokens per second)
+llama_print_timings:        eval time =  2845.80 ms /   255 runs   (   11.16 ms per token,    89.61 tokens per second)
+llama_print_timings:       total time =  3181.14 ms
+
+real	0m5.146s
+user	0m9.391s
+sys	0m1.405s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 933 (0728c5a)
+main: seed  = 1690811972
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 17 (mostly Q5_K - Medium)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  484.03 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 5883 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.16 seconds per pass - ETA 0 minutes
+[1]4.8115,[2]6.3743,[3]7.3920,[4]7.2794,
+llama_print_timings:        load time =  2964.89 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 11826.66 ms /  8192 tokens (    1.44 ms per token,   692.67 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 16347.28 ms
+
+
+real	0m17.176s
+user	0m11.517s
+sys	0m5.640s
+```
+- q6_k:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q6_k.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 933 (0728c5a)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q6_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 18 (mostly Q6_K)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  404.63 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 5714 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to love God, enjoy Him and find joy in serving others. That’s why we do what we do! This blog will be about that journey as well has some thoughts on living a happy & healthy full-filled existence so you can get through your day with ease…
+My name is Jami Smith (pronounced Jamie). I am the owner and operator of “Jamie’s Creative Living Studio”. What started out in 1996 by offering my services as an interior decorator has grown into a multifaceted home based business that offers Interior Design Services, Professional Organizing & Coaching for busy women to create more time. In addition I also offer the following:
+- Consignment Sales – We sell new and gently used furniture/home furnishings at consignment sales throughout our community (Sales are held 2 x a year)
+- Gift Baskets – Custom designed gift baskets with unique items that will delight anyone on your list! Just in time for Christmas…these beautiful hand made creations can be ordered now & delivered to your door or as gifts during the holidays. The perfect addition of holiday cheer and joy!! (Limited quantity so order early)
+- Furniture/Accessories – We stock an array of furniture,
+llama_print_timings:        load time =  1177.06 ms
+llama_print_timings:      sample time =   154.45 ms /   256 runs   (    0.60 ms per token,  1657.46 tokens per second)
+llama_print_timings: prompt eval time =   119.24 ms /     8 tokens (   14.91 ms per token,    67.09 tokens per second)
+llama_print_timings:        eval time =  3568.53 ms /   255 runs   (   13.99 ms per token,    71.46 tokens per second)
+llama_print_timings:       total time =  3911.25 ms
+
+real	0m6.016s
+user	0m11.696s
+sys	0m1.424s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q6_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 933 (0728c5a)
+main: seed  = 1690811989
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q6_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 18 (mostly Q6_K)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  500.63 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 6578 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.16 seconds per pass - ETA 0 minutes
+[1]4.8081,[2]6.3609,[3]7.3754,[4]7.2585,
+llama_print_timings:        load time =  3039.18 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 11793.48 ms /  8192 tokens (    1.44 ms per token,   694.62 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 16457.06 ms
+
+
+real	0m17.345s
+user	0m11.655s
+sys	0m5.689s
+```
