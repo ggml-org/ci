@@ -1,0 +1,34 @@
++ ctest --output-on-failure
+Test project /home/ggml/work/ggml/build-ci-release
+      Start  1: test-grad0
+ 1/12 Test  #1: test-grad0 .......................   Passed    3.42 sec
+      Start  2: test-opt
+ 2/12 Test  #2: test-opt .........................   Passed    1.38 sec
+      Start  3: test-quantize-fns
+ 3/12 Test  #3: test-quantize-fns ................   Passed    0.01 sec
+      Start  4: test-quantize-perf
+ 4/12 Test  #4: test-quantize-perf ...............   Passed    0.01 sec
+      Start  5: test-mul-mat0
+ 5/12 Test  #5: test-mul-mat0 ....................   Passed    0.53 sec
+      Start  6: test-mul-mat2
+ 6/12 Test  #6: test-mul-mat2 ....................   Passed    1.77 sec
+      Start  7: test0
+ 7/12 Test  #7: test0 ............................   Passed    0.00 sec
+      Start  8: test1
+ 8/12 Test  #8: test1 ............................   Passed    0.01 sec
+      Start  9: test2
+ 9/12 Test  #9: test2 ............................   Passed    0.02 sec
+      Start 10: test3
+10/12 Test #10: test3 ............................   Passed    0.03 sec
+      Start 11: test-pool
+11/12 Test #11: test-pool ........................   Passed    0.00 sec
+      Start 12: test-customop
+12/12 Test #12: test-customop ....................   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 12
+
+Total Test time (real) =   7.20 sec
+
+real	0m7.214s
+user	0m6.397s
+sys	0m5.158s
