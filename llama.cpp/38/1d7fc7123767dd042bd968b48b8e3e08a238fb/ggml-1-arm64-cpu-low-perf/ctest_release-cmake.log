@@ -23,6 +23,6 @@
 -- Generating done
 -- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-release
 
-real	0m0.655s
-user	0m0.369s
-sys	0m0.289s
+real	0m0.660s
+user	0m0.338s
+sys	0m0.325s

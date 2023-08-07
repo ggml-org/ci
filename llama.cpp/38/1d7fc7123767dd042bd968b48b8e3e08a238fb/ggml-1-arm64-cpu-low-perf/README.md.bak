@@ -14,15 +14,15 @@ Test project /home/ggml/work/llama.cpp/build-ci-debug
     Start 4: test-tokenizer-0
 4/5 Test #4: test-tokenizer-0 .................   Passed    0.03 sec
     Start 5: test-grad0
-5/5 Test #5: test-grad0 .......................   Passed    5.34 sec
+5/5 Test #5: test-grad0 .......................   Passed    5.38 sec
 
 100% tests passed, 0 tests failed out of 5
 
-Total Test time (real) =   5.47 sec
+Total Test time (real) =   5.51 sec
 
-real	0m5.488s
-user	0m9.832s
-sys	0m4.199s
+real	0m5.519s
+user	0m10.157s
+sys	0m3.989s
 ```
 
 ### ctest_release
@@ -41,13 +41,13 @@ Test project /home/ggml/work/llama.cpp/build-ci-release
     Start 4: test-tokenizer-0
 4/5 Test #4: test-tokenizer-0 .................   Passed    0.02 sec
     Start 5: test-grad0
-5/5 Test #5: test-grad0 .......................   Passed    5.24 sec
+5/5 Test #5: test-grad0 .......................   Passed    5.04 sec
 
 100% tests passed, 0 tests failed out of 5
 
-Total Test time (real) =   5.28 sec
+Total Test time (real) =   5.09 sec
 
-real	0m5.297s
-user	0m9.653s
-sys	0m3.973s
+real	0m5.103s
+user	0m9.046s
+sys	0m3.979s
 ```
