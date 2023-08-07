@@ -1,0 +1,80 @@
++ ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q3_k.bin -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 961 (9082b5d)
+main: seed  = 1234
+llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q3_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 3200
+llama_model_load_internal: n_mult     = 4320
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 26
+llama_model_load_internal: n_rot      = 100
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 8640
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 12 (mostly Q3_K - Medium)
+llama_model_load_internal: model size = 3B
+llama_model_load_internal: ggml ctx size =    0.07 MB
+llama_model_load_internal: mem required  = 1656.42 MB (+  162.50 MB per state)
+llama_new_context_with_model: kv self size  =  162.50 MB
+llama_new_context_with_model: compute buffer total size =   70.09 MB
+
+system_info: n_threads = 4 / 8 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 0
+
+
+ I believe the meaning of life is to make it better for those around us.
+I have been an active member in my community since 2005, when a family friend invited me on patrol with him and his fellow deputies as part-time auxiliary sheriff's deputies (Auxiliary Deputies). I was immediately hooked
+llama_print_timings:        load time =   202.85 ms
+llama_print_timings:      sample time =    32.08 ms /    64 runs   (    0.50 ms per token,  1995.14 tokens per second)
+llama_print_timings: prompt eval time =   607.62 ms /     8 tokens (   75.95 ms per token,    13.17 tokens per second)
+llama_print_timings:        eval time =  5515.97 ms /    63 runs   (   87.56 ms per token,    11.42 tokens per second)
+llama_print_timings:       total time =  6169.78 ms
+
+real	0m6.492s
+user	0m24.829s
+sys	0m0.284s
++ ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q3_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
+main: build = 961 (9082b5d)
+main: seed  = 1691406186
+llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q3_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 128
+llama_model_load_internal: n_embd     = 3200
+llama_model_load_internal: n_mult     = 4320
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 26
+llama_model_load_internal: n_rot      = 100
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 8640
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 12 (mostly Q3_K - Medium)
+llama_model_load_internal: model size = 3B
+llama_model_load_internal: ggml ctx size =    0.07 MB
+llama_model_load_internal: mem required  = 1656.42 MB (+   40.62 MB per state)
+llama_new_context_with_model: kv self size  =   40.62 MB
+llama_new_context_with_model: compute buffer total size =   18.53 MB
+
+system_info: n_threads = 4 / 8 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 3 chunks, batch_size=128
+perplexity: 9.43 seconds per pass - ETA 0 minutes
+[1]4.4194,[2]8.0834,[3]9.6284,
+llama_print_timings:        load time =  9525.45 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 28232.19 ms /   384 tokens (   73.52 ms per token,    13.60 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 28374.75 ms
+
+
+real	0m28.434s
+user	1m52.915s
+sys	0m0.184s
