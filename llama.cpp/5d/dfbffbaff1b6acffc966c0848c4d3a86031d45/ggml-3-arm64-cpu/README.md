@@ -1,0 +1,2561 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 17:01.98
+- date:    Mon Aug  7 09:52:13 UTC 2023
+- repo:    https://github.com/ggerganov/llama.cpp
+- commit:  https://github.com/ggerganov/llama.cpp/commit/5ddfbffbaff1b6acffc966c0848c4d3a86031d45
+- author:  Georgi Gerganov
+```
+llama : replace (permute + reshape + view_1d) with (view_3d)
+
+ggml-ci
+```
+
+## Environment
+
+```
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-debug
+    Start 1: test-quantize-fns
+1/5 Test #1: test-quantize-fns ................   Passed    0.02 sec
+    Start 2: test-quantize-perf
+2/5 Test #2: test-quantize-perf ...............   Passed    0.08 sec
+    Start 3: test-sampling
+3/5 Test #3: test-sampling ....................   Passed    0.00 sec
+    Start 4: test-tokenizer-0
+4/5 Test #4: test-tokenizer-0 .................   Passed    0.03 sec
+    Start 5: test-grad0
+5/5 Test #5: test-grad0 .......................   Passed    3.58 sec
+
+100% tests passed, 0 tests failed out of 5
+
+Total Test time (real) =   3.71 sec
+
+real	0m3.724s
+user	0m3.748s
+sys	0m4.799s
+```
+
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure
+Test project /home/ggml/work/llama.cpp/build-ci-release
+    Start 1: test-quantize-fns
+1/5 Test #1: test-quantize-fns ................   Passed    0.01 sec
+    Start 2: test-quantize-perf
+2/5 Test #2: test-quantize-perf ...............   Passed    0.01 sec
+    Start 3: test-sampling
+3/5 Test #3: test-sampling ....................   Passed    0.00 sec
+    Start 4: test-tokenizer-0
+4/5 Test #4: test-tokenizer-0 .................   Passed    0.02 sec
+    Start 5: test-grad0
+5/5 Test #5: test-grad0 .......................   Passed    3.47 sec
+
+100% tests passed, 0 tests failed out of 5
+
+Total Test time (real) =   3.52 sec
+
+real	0m3.531s
+user	0m3.179s
+sys	0m4.999s
+```
+### open_llama_3b_v2
+
+OpenLLaMA 3B-v2:
+- status: 0
+- perplexity:
+  - f16 @ 8.5327 OK
+  - q8_0 @ 8.5564 OK
+  - q4_0 @ 8.9652 OK
+  - q4_1 @ 9.1652 OK
+  - q5_0 @ 8.8144 OK
+  - q5_1 @ 8.7025 OK
+  - q2_k @ 11.8816 OK
+  - q3_k @ 9.6026 OK
+  - q4_k @ 9.0582 OK
+  - q5_k @ 8.6990 OK
+  - q6_k @ 8.5587 OK
+- f16: 
+```
++ ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 960 (5ddfbff)
+main: seed  = 1234
+llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin
+llama_model_load_internal: format     = ggjt v1 (pre #1405)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 3200
+llama_model_load_internal: n_mult     = 4320
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 26
+llama_model_load_internal: n_rot      = 100
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 8640
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 1 (mostly F16)
+llama_model_load_internal: model size = 3B
+llama_model_load_internal: ggml ctx size =    0.07 MB
+llama_model_load_internal: mem required  = 6535.88 MB (+  162.50 MB per state)
+llama_new_context_with_model: kv self size  =  162.50 MB
+llama_new_context_with_model: compute buffer total size =   70.09 MB
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 0
+
+
+ I believe the meaning of life is to do something great for humanity. If you are not doing that, then what's your purpose?
+To accomplish this goal in my work as a lawyer/attorney and entrepreneur has been quite an adventure already! When there wasn’t much going on around me at home or school I always found myself creating stories
+llama_print_timings:        load time =  2842.78 ms
+llama_print_timings:      sample time =    62.23 ms /    64 runs   (    0.97 ms per token,  1028.36 tokens per second)
+llama_print_timings: prompt eval time =  2433.70 ms /     8 tokens (  304.21 ms per token,     3.29 tokens per second)
+llama_print_timings:        eval time = 19848.35 ms /    63 runs   (  315.05 ms per token,     3.17 tokens per second)
+llama_print_timings:       total time = 22352.61 ms
+
+real	0m25.399s
+user	1m30.364s
+sys	0m2.779s
++ ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
+main: build = 960 (5ddfbff)
+main: seed  = 1691401301
+llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin
+llama_model_load_internal: format     = ggjt v1 (pre #1405)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 128
+llama_model_load_internal: n_embd     = 3200
+llama_model_load_internal: n_mult     = 4320
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 26
+llama_model_load_internal: n_rot      = 100
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 8640
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 1 (mostly F16)
+llama_model_load_internal: model size = 3B
+llama_model_load_internal: ggml ctx size =    0.07 MB
+llama_model_load_internal: mem required  = 6535.88 MB (+   40.62 MB per state)
+llama_new_context_with_model: kv self size  =   40.62 MB
+llama_new_context_with_model: compute buffer total size =   18.53 MB
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+perplexity: calculating perplexity over 3 chunks, batch_size=128
+perplexity: 38.55 seconds per pass - ETA 1 minutes
+[1]4.2642,[2]7.2763,[3]8.5327,
+llama_print_timings:        load time = 40906.29 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 115604.07 ms /   384 tokens (  301.05 ms per token,     3.32 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 118027.93 ms
+
+
+real	1m58.204s
+user	7m42.370s
+sys	0m2.604s
+```
+- q8_0:
+```
++ ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q8_0.bin -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 960 (5ddfbff)
+main: seed  = 1234
+llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q8_0.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 3200
+llama_model_load_internal: n_mult     = 4320
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 26
+llama_model_load_internal: n_rot      = 100
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 8640
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 7 (mostly Q8_0)
+llama_model_load_internal: model size = 3B
+llama_model_load_internal: ggml ctx size =    0.07 MB
+llama_model_load_internal: mem required  = 3451.16 MB (+  162.50 MB per state)
+llama_new_context_with_model: kv self size  =  162.50 MB
+llama_new_context_with_model: compute buffer total size =   70.09 MB
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 0
+
+
+ I believe the meaning of life is to do something with all your heart and soul.
+I have never been one for following rules, being parted from my family or any other person that comes into contact with me without a good reason (sad but true), especially when it’s just because you don’t like them! I am what most
+llama_print_timings:        load time =  1492.34 ms
+llama_print_timings:      sample time =    62.07 ms /    64 runs   (    0.97 ms per token,  1031.11 tokens per second)
+llama_print_timings: prompt eval time =   961.18 ms /     8 tokens (  120.15 ms per token,     8.32 tokens per second)
+llama_print_timings:        eval time =  8556.88 ms /    63 runs   (  135.82 ms per token,     7.36 tokens per second)
+llama_print_timings:       total time =  9588.23 ms
+
+real	0m11.367s
+user	0m38.575s
+sys	0m1.709s
++ ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q8_0.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
+main: build = 960 (5ddfbff)
+main: seed  = 1691401419
+llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q8_0.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 128
+llama_model_load_internal: n_embd     = 3200
+llama_model_load_internal: n_mult     = 4320
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 26
+llama_model_load_internal: n_rot      = 100
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 8640
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 7 (mostly Q8_0)
+llama_model_load_internal: model size = 3B
+llama_model_load_internal: ggml ctx size =    0.07 MB
+llama_model_load_internal: mem required  = 3451.16 MB (+   40.62 MB per state)
+llama_new_context_with_model: kv self size  =   40.62 MB
+llama_new_context_with_model: compute buffer total size =   18.53 MB
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+perplexity: calculating perplexity over 3 chunks, batch_size=128
+perplexity: 15.08 seconds per pass - ETA 0 minutes
+[1]4.2564,[2]7.3116,[3]8.5564,
+llama_print_timings:        load time = 16389.51 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 45197.79 ms /   384 tokens (  117.70 ms per token,     8.50 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 46573.84 ms
+
+
+real	0m46.720s
+user	3m0.829s
+sys	0m1.452s
+```
+- q4_0:
+```
++ ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q4_0.bin -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 960 (5ddfbff)
+main: seed  = 1234
+llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q4_0.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 3200
+llama_model_load_internal: n_mult     = 4320
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 26
+llama_model_load_internal: n_rot      = 100
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 8640
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 2 (mostly Q4_0)
+llama_model_load_internal: model size = 3B
+llama_model_load_internal: ggml ctx size =    0.07 MB
+llama_model_load_internal: mem required  = 1866.20 MB (+  162.50 MB per state)
+llama_new_context_with_model: kv self size  =  162.50 MB
+llama_new_context_with_model: compute buffer total size =   70.09 MB
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 0
+
+
+ I believe the meaning of life is to create, make love and have fun.
+I'm interested in meeting new people who are open minded... more about Lina from Kharkov: Hi :) My name is Anastasiya! ;)more
+As we know that it will be a little bit difficult for us but if you wanna start
+llama_print_timings:        load time =   861.90 ms
+llama_print_timings:      sample time =    62.32 ms /    64 runs   (    0.97 ms per token,  1026.96 tokens per second)
+llama_print_timings: prompt eval time =   968.82 ms /     8 tokens (  121.10 ms per token,     8.26 tokens per second)
+llama_print_timings:        eval time =  7967.10 ms /    63 runs   (  126.46 ms per token,     7.91 tokens per second)
+llama_print_timings:       total time =  9006.25 ms
+
+real	0m10.031s
+user	0m36.204s
+sys	0m0.969s
++ ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q4_0.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
+main: build = 960 (5ddfbff)
+main: seed  = 1691401465
+llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q4_0.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 128
+llama_model_load_internal: n_embd     = 3200
+llama_model_load_internal: n_mult     = 4320
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 26
+llama_model_load_internal: n_rot      = 100
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 8640
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 2 (mostly Q4_0)
+llama_model_load_internal: model size = 3B
+llama_model_load_internal: ggml ctx size =    0.07 MB
+llama_model_load_internal: mem required  = 1866.20 MB (+   40.62 MB per state)
+llama_new_context_with_model: kv self size  =   40.62 MB
+llama_new_context_with_model: compute buffer total size =   18.53 MB
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+perplexity: calculating perplexity over 3 chunks, batch_size=128
+perplexity: 15.61 seconds per pass - ETA 0 minutes
+[1]4.1721,[2]7.8340,[3]8.9652,
+llama_print_timings:        load time = 16346.92 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 46799.25 ms /   384 tokens (  121.87 ms per token,     8.21 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 47602.10 ms
+
+
+real	0m47.691s
+user	3m7.178s
+sys	0m0.876s
+```
+- q4_1:
+```
++ ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q4_1.bin -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 960 (5ddfbff)
+main: seed  = 1234
+llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q4_1.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 3200
+llama_model_load_internal: n_mult     = 4320
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 26
+llama_model_load_internal: n_rot      = 100
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 8640
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 3 (mostly Q4_1)
+llama_model_load_internal: model size = 3B
+llama_model_load_internal: ggml ctx size =    0.07 MB
+llama_model_load_internal: mem required  = 2064.32 MB (+  162.50 MB per state)
+llama_new_context_with_model: kv self size  =  162.50 MB
+llama_new_context_with_model: compute buffer total size =   70.09 MB
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 0
+
+
+ I believe the meaning of life is to have fun, so that's exactly what we did.
+I mean... look at this guy! (Donk) We were in New York City and ran into him on a street corner after he caught his pants down falling outta an old man's wheelchair while trying to make it back up 3
+llama_print_timings:        load time =   965.77 ms
+llama_print_timings:      sample time =    62.37 ms /    64 runs   (    0.97 ms per token,  1026.17 tokens per second)
+llama_print_timings: prompt eval time =   918.49 ms /     8 tokens (  114.81 ms per token,     8.71 tokens per second)
+llama_print_timings:        eval time =  7654.79 ms /    63 runs   (  121.50 ms per token,     8.23 tokens per second)
+llama_print_timings:       total time =  8643.94 ms
+
+real	0m9.797s
+user	0m34.714s
+sys	0m1.121s
++ ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q4_1.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
+main: build = 960 (5ddfbff)
+main: seed  = 1691401513
+llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q4_1.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 128
+llama_model_load_internal: n_embd     = 3200
+llama_model_load_internal: n_mult     = 4320
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 26
+llama_model_load_internal: n_rot      = 100
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 8640
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 3 (mostly Q4_1)
+llama_model_load_internal: model size = 3B
+llama_model_load_internal: ggml ctx size =    0.07 MB
+llama_model_load_internal: mem required  = 2064.32 MB (+   40.62 MB per state)
+llama_new_context_with_model: kv self size  =   40.62 MB
+llama_new_context_with_model: compute buffer total size =   18.53 MB
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+perplexity: calculating perplexity over 3 chunks, batch_size=128
+perplexity: 14.84 seconds per pass - ETA 0 minutes
+[1]4.4279,[2]8.0913,[3]9.1652,
+llama_print_timings:        load time = 15697.67 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 44464.59 ms /   384 tokens (  115.79 ms per token,     8.64 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 45391.45 ms
+
+
+real	0m45.498s
+user	2m57.847s
+sys	0m1.008s
+```
+- q5_0:
+```
++ ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q5_0.bin -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 960 (5ddfbff)
+main: seed  = 1234
+llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q5_0.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 3200
+llama_model_load_internal: n_mult     = 4320
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 26
+llama_model_load_internal: n_rot      = 100
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 8640
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 8 (mostly Q5_0)
+llama_model_load_internal: model size = 3B
+llama_model_load_internal: ggml ctx size =    0.07 MB
+llama_model_load_internal: mem required  = 2262.44 MB (+  162.50 MB per state)
+llama_new_context_with_model: kv self size  =  162.50 MB
+llama_new_context_with_model: compute buffer total size =   70.09 MB
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 0
+
+
+ I believe the meaning of life is to discover our unique way and purpose, which we can do by understanding ourselves.
+I am a person with interests in many areas including health care, social studies education, history, philosophy as well as psychology or counselling itself for helping people find their inner self through knowledge about themselves. As I have been reading up on
+llama_print_timings:        load time =  1056.21 ms
+llama_print_timings:      sample time =    62.21 ms /    64 runs   (    0.97 ms per token,  1028.79 tokens per second)
+llama_print_timings: prompt eval time =  1269.19 ms /     8 tokens (  158.65 ms per token,     6.30 tokens per second)
+llama_print_timings:        eval time = 10534.28 ms /    63 runs   (  167.21 ms per token,     5.98 tokens per second)
+llama_print_timings:       total time = 11873.81 ms
+
+real	0m13.124s
+user	0m47.808s
+sys	0m1.174s
++ ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q5_0.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
+main: build = 960 (5ddfbff)
+main: seed  = 1691401559
+llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q5_0.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 128
+llama_model_load_internal: n_embd     = 3200
+llama_model_load_internal: n_mult     = 4320
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 26
+llama_model_load_internal: n_rot      = 100
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 8640
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 8 (mostly Q5_0)
+llama_model_load_internal: model size = 3B
+llama_model_load_internal: ggml ctx size =    0.07 MB
+llama_model_load_internal: mem required  = 2262.44 MB (+   40.62 MB per state)
+llama_new_context_with_model: kv self size  =   40.62 MB
+llama_new_context_with_model: compute buffer total size =   18.53 MB
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+perplexity: calculating perplexity over 3 chunks, batch_size=128
+perplexity: 20.77 seconds per pass - ETA 1 minutes
+[1]4.3678,[2]7.5989,[3]8.8144,
+llama_print_timings:        load time = 21685.47 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 62268.20 ms /   384 tokens (  162.16 ms per token,     6.17 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 63252.21 ms
+
+
+real	1m3.357s
+user	4m9.046s
+sys	0m1.080s
+```
+- q5_1:
+```
++ ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q5_1.bin -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 960 (5ddfbff)
+main: seed  = 1234
+llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q5_1.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 3200
+llama_model_load_internal: n_mult     = 4320
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 26
+llama_model_load_internal: n_rot      = 100
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 8640
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 9 (mostly Q5_1)
+llama_model_load_internal: model size = 3B
+llama_model_load_internal: ggml ctx size =    0.07 MB
+llama_model_load_internal: mem required  = 2460.56 MB (+  162.50 MB per state)
+llama_new_context_with_model: kv self size  =  162.50 MB
+llama_new_context_with_model: compute buffer total size =   70.09 MB
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 0
+
+
+ I believe the meaning of life is to give something back and help others, so that’s what we are doing.
+We have been on an unplanned journey for over a year now…….and it has not always gone according to our plan – sometimes amazing things happen when you least expect them! So here goes……..our story…..Our
+llama_print_timings:        load time =  1156.43 ms
+llama_print_timings:      sample time =    67.16 ms /    64 runs   (    1.05 ms per token,   952.96 tokens per second)
+llama_print_timings: prompt eval time =  1259.42 ms /     8 tokens (  157.43 ms per token,     6.35 tokens per second)
+llama_print_timings:        eval time = 10345.15 ms /    63 runs   (  164.21 ms per token,     6.09 tokens per second)
+llama_print_timings:       total time = 11679.67 ms
+
+real	0m13.040s
+user	0m47.045s
+sys	0m1.256s
++ ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q5_1.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
+main: build = 960 (5ddfbff)
+main: seed  = 1691401622
+llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q5_1.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 128
+llama_model_load_internal: n_embd     = 3200
+llama_model_load_internal: n_mult     = 4320
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 26
+llama_model_load_internal: n_rot      = 100
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 8640
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 9 (mostly Q5_1)
+llama_model_load_internal: model size = 3B
+llama_model_load_internal: ggml ctx size =    0.07 MB
+llama_model_load_internal: mem required  = 2460.56 MB (+   40.62 MB per state)
+llama_new_context_with_model: kv self size  =   40.62 MB
+llama_new_context_with_model: compute buffer total size =   18.53 MB
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+perplexity: calculating perplexity over 3 chunks, batch_size=128
+perplexity: 20.21 seconds per pass - ETA 1 minutes
+[1]4.2759,[2]7.4287,[3]8.7025,
+llama_print_timings:        load time = 21136.83 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 60585.24 ms /   384 tokens (  157.77 ms per token,     6.34 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 61577.68 ms
+
+
+real	1m1.680s
+user	4m2.381s
+sys	0m1.017s
+```
+- q2_k:
+```
++ ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q2_k.bin -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 960 (5ddfbff)
+main: seed  = 1234
+llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q2_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 3200
+llama_model_load_internal: n_mult     = 4320
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 26
+llama_model_load_internal: n_rot      = 100
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 8640
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 10 (mostly Q2_K)
+llama_model_load_internal: model size = 3B
+llama_model_load_internal: ggml ctx size =    0.07 MB
+llama_model_load_internal: mem required  = 1532.88 MB (+  162.50 MB per state)
+llama_new_context_with_model: kv self size  =  162.50 MB
+llama_new_context_with_model: compute buffer total size =   70.09 MB
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 0
+
+
+ I believe the meaning of life is to find your purpose, and that in doing so you will discover why it’s important for us all to give what we can.
+As a business owner on my own terms; as an entrepreneur who inspires people into believing anything is possible when they see themselves succeeding at their goals (and not just making the
+llama_print_timings:        load time =   719.37 ms
+llama_print_timings:      sample time =    62.00 ms /    64 runs   (    0.97 ms per token,  1032.32 tokens per second)
+llama_print_timings: prompt eval time =   877.68 ms /     8 tokens (  109.71 ms per token,     9.11 tokens per second)
+llama_print_timings:        eval time =  7282.29 ms /    63 runs   (  115.59 ms per token,     8.65 tokens per second)
+llama_print_timings:       total time =  8230.28 ms
+
+real	0m9.083s
+user	0m33.050s
+sys	0m0.814s
++ ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q2_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
+main: build = 960 (5ddfbff)
+main: seed  = 1691401684
+llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q2_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 128
+llama_model_load_internal: n_embd     = 3200
+llama_model_load_internal: n_mult     = 4320
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 26
+llama_model_load_internal: n_rot      = 100
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 8640
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 10 (mostly Q2_K)
+llama_model_load_internal: model size = 3B
+llama_model_load_internal: ggml ctx size =    0.07 MB
+llama_model_load_internal: mem required  = 1532.88 MB (+   40.62 MB per state)
+llama_new_context_with_model: kv self size  =   40.62 MB
+llama_new_context_with_model: compute buffer total size =   18.53 MB
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+perplexity: calculating perplexity over 3 chunks, batch_size=128
+perplexity: 14.18 seconds per pass - ETA 0 minutes
+[1]4.8023,[2]9.6403,[3]11.8816,
+llama_print_timings:        load time = 14755.70 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 42481.80 ms /   384 tokens (  110.63 ms per token,     9.04 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 43127.93 ms
+
+
+real	0m43.198s
+user	2m49.922s
+sys	0m0.689s
+```
+- q3_k:
+```
++ ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q3_k.bin -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 960 (5ddfbff)
+main: seed  = 1234
+llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q3_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 3200
+llama_model_load_internal: n_mult     = 4320
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 26
+llama_model_load_internal: n_rot      = 100
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 8640
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 12 (mostly Q3_K - Medium)
+llama_model_load_internal: model size = 3B
+llama_model_load_internal: ggml ctx size =    0.07 MB
+llama_model_load_internal: mem required  = 1656.42 MB (+  162.50 MB per state)
+llama_new_context_with_model: kv self size  =  162.50 MB
+llama_new_context_with_model: compute buffer total size =   70.09 MB
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 0
+
+
+ I believe the meaning of life is to make it worthwhile, and that whatever you do in this world counts.
+I am a proud Canadian! One day we will all look back on our days here with pride...and when people ask who made America strong for so long? It's going to be us Canadians - because they didn’t stand up
+llama_print_timings:        load time =   761.30 ms
+llama_print_timings:      sample time =    62.03 ms /    64 runs   (    0.97 ms per token,  1031.78 tokens per second)
+llama_print_timings: prompt eval time =   972.56 ms /     8 tokens (  121.57 ms per token,     8.23 tokens per second)
+llama_print_timings:        eval time =  8031.31 ms /    63 runs   (  127.48 ms per token,     7.84 tokens per second)
+llama_print_timings:       total time =  9073.57 ms
+
+real	0m9.980s
+user	0m36.486s
+sys	0m0.844s
++ ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q3_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
+main: build = 960 (5ddfbff)
+main: seed  = 1691401727
+llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q3_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 128
+llama_model_load_internal: n_embd     = 3200
+llama_model_load_internal: n_mult     = 4320
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 26
+llama_model_load_internal: n_rot      = 100
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 8640
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 12 (mostly Q3_K - Medium)
+llama_model_load_internal: model size = 3B
+llama_model_load_internal: ggml ctx size =    0.07 MB
+llama_model_load_internal: mem required  = 1656.42 MB (+   40.62 MB per state)
+llama_new_context_with_model: kv self size  =   40.62 MB
+llama_new_context_with_model: compute buffer total size =   18.53 MB
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+perplexity: calculating perplexity over 3 chunks, batch_size=128
+perplexity: 15.69 seconds per pass - ETA 0 minutes
+[1]4.4163,[2]8.0763,[3]9.6026,
+llama_print_timings:        load time = 16322.79 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 47034.71 ms /   384 tokens (  122.49 ms per token,     8.16 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 47734.20 ms
+
+
+real	0m47.813s
+user	3m8.118s
+sys	0m0.765s
+```
+- q4_k:
+```
++ ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q4_k.bin -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 960 (5ddfbff)
+main: seed  = 1234
+llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q4_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 3200
+llama_model_load_internal: n_mult     = 4320
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 26
+llama_model_load_internal: n_rot      = 100
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 8640
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 15 (mostly Q4_K - Medium)
+llama_model_load_internal: model size = 3B
+llama_model_load_internal: ggml ctx size =    0.07 MB
+llama_model_load_internal: mem required  = 2082.69 MB (+  162.50 MB per state)
+llama_new_context_with_model: kv self size  =  162.50 MB
+llama_new_context_with_model: compute buffer total size =   70.09 MB
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 0
+
+
+ I believe the meaning of life is to make a difference, and that by doing so we are making this world a better place.
+I love living an active lifestyle! Being physically fit has made such a positive impact on my body and mind that it inspired me with how much more there could be in life if you just get up off the couch/bed
+llama_print_timings:        load time =   909.96 ms
+llama_print_timings:      sample time =    61.96 ms /    64 runs   (    0.97 ms per token,  1032.87 tokens per second)
+llama_print_timings: prompt eval time =   864.27 ms /     8 tokens (  108.03 ms per token,     9.26 tokens per second)
+llama_print_timings:        eval time =  7289.04 ms /    63 runs   (  115.70 ms per token,     8.64 tokens per second)
+llama_print_timings:       total time =  8223.15 ms
+
+real	0m9.311s
+user	0m33.055s
+sys	0m1.021s
++ ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q4_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
+main: build = 960 (5ddfbff)
+main: seed  = 1691401775
+llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q4_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 128
+llama_model_load_internal: n_embd     = 3200
+llama_model_load_internal: n_mult     = 4320
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 26
+llama_model_load_internal: n_rot      = 100
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 8640
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 15 (mostly Q4_K - Medium)
+llama_model_load_internal: model size = 3B
+llama_model_load_internal: ggml ctx size =    0.07 MB
+llama_model_load_internal: mem required  = 2082.69 MB (+   40.62 MB per state)
+llama_new_context_with_model: kv self size  =   40.62 MB
+llama_new_context_with_model: compute buffer total size =   18.53 MB
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+perplexity: calculating perplexity over 3 chunks, batch_size=128
+perplexity: 13.91 seconds per pass - ETA 0 minutes
+[1]4.2661,[2]7.7216,[3]9.0582,
+llama_print_timings:        load time = 14753.50 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 41668.86 ms /   384 tokens (  108.51 ms per token,     9.22 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 42587.47 ms
+
+
+real	0m42.687s
+user	2m46.683s
+sys	0m0.976s
+```
+- q5_k:
+```
++ ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q5_k.bin -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 960 (5ddfbff)
+main: seed  = 1234
+llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q5_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 3200
+llama_model_load_internal: n_mult     = 4320
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 26
+llama_model_load_internal: n_rot      = 100
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 8640
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 17 (mostly Q5_K - Medium)
+llama_model_load_internal: model size = 3B
+llama_model_load_internal: ggml ctx size =    0.07 MB
+llama_model_load_internal: mem required  = 2420.21 MB (+  162.50 MB per state)
+llama_new_context_with_model: kv self size  =  162.50 MB
+llama_new_context_with_model: compute buffer total size =   70.09 MB
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 0
+
+
+ I believe the meaning of life is to enjoy and celebrate, not just on special occasions but every day.
+I have a passion for creating meaningful moments throughout your wedding celebration that reflect who you are as people; what matters most in life...your personalities, joys and passions! It’s about celebrating each other with friends & family while making memories
+llama_print_timings:        load time =  1054.85 ms
+llama_print_timings:      sample time =    62.05 ms /    64 runs   (    0.97 ms per token,  1031.34 tokens per second)
+llama_print_timings: prompt eval time =  1148.90 ms /     8 tokens (  143.61 ms per token,     6.96 tokens per second)
+llama_print_timings:        eval time =  9405.98 ms /    63 runs   (  149.30 ms per token,     6.70 tokens per second)
+llama_print_timings:       total time = 10625.11 ms
+
+real	0m11.876s
+user	0m42.766s
+sys	0m1.176s
++ ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q5_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
+main: build = 960 (5ddfbff)
+main: seed  = 1691401817
+llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q5_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 128
+llama_model_load_internal: n_embd     = 3200
+llama_model_load_internal: n_mult     = 4320
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 26
+llama_model_load_internal: n_rot      = 100
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 8640
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 17 (mostly Q5_K - Medium)
+llama_model_load_internal: model size = 3B
+llama_model_load_internal: ggml ctx size =    0.07 MB
+llama_model_load_internal: mem required  = 2420.21 MB (+   40.62 MB per state)
+llama_new_context_with_model: kv self size  =   40.62 MB
+llama_new_context_with_model: compute buffer total size =   18.53 MB
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+perplexity: calculating perplexity over 3 chunks, batch_size=128
+perplexity: 18.45 seconds per pass - ETA 0 minutes
+[1]4.3370,[2]7.5215,[3]8.6990,
+llama_print_timings:        load time = 19389.39 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 55291.95 ms /   384 tokens (  143.99 ms per token,     6.94 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 56304.48 ms
+
+
+real	0m56.408s
+user	3m41.165s
+sys	0m1.084s
+```
+- q6_k:
+```
++ ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q6_k.bin -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 960 (5ddfbff)
+main: seed  = 1234
+llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q6_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 3200
+llama_model_load_internal: n_mult     = 4320
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 26
+llama_model_load_internal: n_rot      = 100
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 8640
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 18 (mostly Q6_K)
+llama_model_load_internal: model size = 3B
+llama_model_load_internal: ggml ctx size =    0.07 MB
+llama_model_load_internal: mem required  = 2757.74 MB (+  162.50 MB per state)
+llama_new_context_with_model: kv self size  =  162.50 MB
+llama_new_context_with_model: compute buffer total size =   70.09 MB
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 0
+
+
+ I believe the meaning of life is to experience all you can, and this includes love. Love in whatever form it comes your way; whether through marriage, friendship or a simple encounter with someone who genuinely cares about what’s going on around them – especially when no one asks for their opinion but they give anyways because that person has something important inside of
+llama_print_timings:        load time =  1248.37 ms
+llama_print_timings:      sample time =    62.08 ms /    64 runs   (    0.97 ms per token,  1030.99 tokens per second)
+llama_print_timings: prompt eval time =  1201.85 ms /     8 tokens (  150.23 ms per token,     6.66 tokens per second)
+llama_print_timings:        eval time =  9944.66 ms /    63 runs   (  157.85 ms per token,     6.34 tokens per second)
+llama_print_timings:       total time = 11217.07 ms
+
+real	0m12.681s
+user	0m45.178s
+sys	0m1.371s
++ ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q6_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
+main: build = 960 (5ddfbff)
+main: seed  = 1691401874
+llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q6_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 128
+llama_model_load_internal: n_embd     = 3200
+llama_model_load_internal: n_mult     = 4320
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 26
+llama_model_load_internal: n_rot      = 100
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 8640
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 18 (mostly Q6_K)
+llama_model_load_internal: model size = 3B
+llama_model_load_internal: ggml ctx size =    0.07 MB
+llama_model_load_internal: mem required  = 2757.74 MB (+   40.62 MB per state)
+llama_new_context_with_model: kv self size  =   40.62 MB
+llama_new_context_with_model: compute buffer total size =   18.53 MB
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+perplexity: calculating perplexity over 3 chunks, batch_size=128
+perplexity: 19.31 seconds per pass - ETA 0 minutes
+[1]4.2756,[2]7.3111,[3]8.5587,
+llama_print_timings:        load time = 20362.96 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 57842.06 ms /   384 tokens (  150.63 ms per token,     6.64 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 58967.31 ms
+
+
+real	0m59.073s
+user	3m51.356s
+sys	0m1.205s
+```
+## Diff with parent commit
+
+<details><summary>click to expand</summary>
+
+```diff
+--- /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/stdall	2023-08-07 08:27:24.617361134 +0000
++++ /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/stdall	2023-08-07 09:52:13.567027553 +0000
+@@ -1,17 +1,26 @@
+-rm: cannot remove '/home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/*.log': No such file or directory
+-rm: cannot remove '/home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/*.exit': No such file or directory
+-rm: cannot remove '/home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/*.md': No such file or directory
++rm: cannot remove '/home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/*.log': No such file or directory
++rm: cannot remove '/home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/*.exit': No such file or directory
++rm: cannot remove '/home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/*.md': No such file or directory
+ Defaulting to user installation because normal site-packages is not writeable
+-Requirement already satisfied: numpy==1.24 in /home/ggml/.local/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/requirements.txt (line 1)) (1.24.0)
++Collecting numpy==1.24
++  Using cached numpy-1.24.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (14.0 MB)
+ Requirement already satisfied: sentencepiece==0.1.98 in /home/ggml/.local/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/requirements.txt (line 2)) (0.1.98)
++Installing collected packages: numpy
++  Attempting uninstall: numpy
++    Found existing installation: numpy 1.24.3
++    Uninstalling numpy-1.24.3:
++      Successfully uninstalled numpy-1.24.3
++  WARNING: The scripts f2py, f2py3 and f2py3.10 are installed in '/home/ggml/.local/bin' which is not on PATH.
++  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
++Successfully installed numpy-1.24.0
+ + gg_run_ctest_debug
+ + cd /home/ggml/work/llama.cpp
+-+ tee /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/ctest_debug.log
+++ tee /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/ctest_debug.log
+ + rm -rf build-ci-debug
+ + mkdir build-ci-debug
+ + cd build-ci-debug
+ + set -e
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/ctest_debug-cmake.log
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/ctest_debug-cmake.log
+ + cmake -DCMAKE_BUILD_TYPE=Debug ..
+ -- The C compiler identification is GNU 11.4.0
+ -- The CXX compiler identification is GNU 11.4.0
+@@ -37,15 +46,15 @@
+ -- Generating done
+ -- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-debug
+ 
+-real	0m0.669s
+-user	0m0.325s
+-sys	0m0.347s
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/ctest_debug-make.log
++real	0m0.670s
++user	0m0.343s
++sys	0m0.330s
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/ctest_debug-make.log
+ + make -j
+-[  6%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+-[  6%] Building C object CMakeFiles/ggml.dir/k_quants.c.o
+ [  6%] Built target BUILD_INFO
++[  6%] Building C object CMakeFiles/ggml.dir/k_quants.c.o
+ [  8%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
++[  8%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+ /home/ggml/work/llama.cpp/k_quants.c: In function ‘ggml_vec_dot_q2_K_q8_K’:
+ /home/ggml/work/llama.cpp/k_quants.c:1275:36: warning: missing braces around initializer [-Wmissing-braces]
+  1275 |         const int16x8x2_t mins16 = {vreinterpretq_s16_u16(vmovl_u8(vget_low_u8(mins))), vreinterpretq_s16_u16(vmovl_u8(vget_high_u8(mins)))};
+@@ -67,71 +76,71 @@
+  3607 |     const int32x4_t  vzero = vdupq_n_s32(0);
+       |                      ^~~~~
+ [  8%] Built target ggml
+-[ 10%] Linking C static library libggml_static.a
++[ 12%] Linking C static library libggml_static.a
+ [ 12%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+ [ 12%] Built target ggml_static
+ [ 14%] Linking CXX static library libllama.a
+ [ 14%] Built target llama
+-[ 18%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+-[ 20%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
+-[ 20%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+-[ 22%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
++[ 16%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
++[ 18%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
++[ 20%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
++[ 22%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+ [ 24%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/test-tokenizer-0.cpp.o
+-[ 26%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
++[ 26%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
+ [ 28%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+-[ 30%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+-[ 32%] Building CXX object examples/CMakeFiles/common.dir/console.cpp.o
++[ 30%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+ [ 34%] Building CXX object examples/CMakeFiles/common.dir/grammar-parser.cpp.o
+-[ 36%] Linking CXX executable ../bin/test-grad0
++[ 34%] Building CXX object examples/CMakeFiles/common.dir/console.cpp.o
++[ 36%] Linking CXX executable ../../bin/quantize
+ [ 38%] Linking CXX executable ../bin/test-quantize-fns
+-[ 38%] Built target test-grad0
+-[ 40%] Linking CXX executable ../../bin/quantize
+-[ 40%] Built target test-quantize-fns
++[ 40%] Linking CXX executable ../bin/test-grad0
+ [ 42%] Linking CXX executable ../bin/test-tokenizer-0
+ [ 44%] Linking CXX executable ../bin/test-sampling
++[ 44%] Built target test-quantize-fns
++[ 44%] Built target test-grad0
++[ 44%] Built target quantize
+ [ 46%] Linking CXX executable ../bin/test-quantize-perf
+-[ 46%] Built target quantize
+ [ 46%] Built target test-tokenizer-0
+-[ 46%] Built target test-quantize-perf
+ [ 46%] Built target test-sampling
++[ 46%] Built target test-quantize-perf
+ [ 46%] Built target common
+-[ 48%] Building CXX object examples/main/CMakeFiles/main.dir/main.cpp.o
+-[ 50%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
++[ 48%] Building CXX object examples/perplexity/CMakeFiles/perplexity.dir/perplexity.cpp.o
++[ 50%] Building CXX object examples/main/CMakeFiles/main.dir/main.cpp.o
+ [ 52%] Building CXX object examples/embedding/CMakeFiles/embedding.dir/embedding.cpp.o
+-[ 56%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
+-[ 58%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
+-[ 54%] Building CXX object examples/perplexity/CMakeFiles/perplexity.dir/perplexity.cpp.o
+-[ 60%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
+-[ 62%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
+-[ 64%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
+-[ 66%] Building CXX object pocs/vdot/CMakeFiles/vdot.dir/vdot.cpp.o
+-[ 68%] Building CXX object examples/embd-input/CMakeFiles/embdinput.dir/embd-input-lib.cpp.o
++[ 54%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
++[ 56%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
++[ 58%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
++[ 60%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
++[ 64%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
++[ 64%] Building CXX object examples/embd-input/CMakeFiles/embdinput.dir/embd-input-lib.cpp.o
++[ 66%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
++[ 68%] Building CXX object pocs/vdot/CMakeFiles/vdot.dir/vdot.cpp.o
+ [ 70%] Building CXX object pocs/vdot/CMakeFiles/q8dot.dir/q8dot.cpp.o
+ /home/ggml/work/llama.cpp/examples/baby-llama/baby-llama.cpp: In function ‘int main(int, char**)’:
+ /home/ggml/work/llama.cpp/examples/baby-llama/baby-llama.cpp:1620:32: warning: variable ‘opt_params_adam’ set but not used [-Wunused-but-set-variable]
+  1620 |         struct ggml_opt_params opt_params_adam = ggml_opt_default_params(GGML_OPT_ADAM);
+       |                                ^~~~~~~~~~~~~~~
+-[ 72%] Linking CXX executable ../../bin/embedding
+-[ 74%] Linking CXX executable ../../bin/baby-llama
+-[ 76%] Linking CXX executable ../../bin/save-load-state
+-[ 78%] Linking CXX executable ../../bin/simple
+-[ 80%] Linking CXX executable ../../bin/benchmark
+-[ 82%] Linking CXX static library libembdinput.a
+-[ 82%] Built target embedding
+-[ 84%] Linking CXX executable ../../bin/q8dot
+-[ 84%] Built target embdinput
+-[ 84%] Built target save-load-state
+-[ 84%] Built target baby-llama
+-[ 86%] Building CXX object examples/embd-input/CMakeFiles/embd-input-test.dir/embd-input-test.cpp.o
+-[ 88%] Linking CXX executable ../../bin/vdot
+-[ 88%] Built target benchmark
+-[ 90%] Linking CXX executable ../../bin/perplexity
+-[ 90%] Built target simple
+-[ 90%] Built target q8dot
+-[ 90%] Built target vdot
+-[ 90%] Built target perplexity
+-[ 92%] Linking CXX executable ../../bin/embd-input-test
+-[ 94%] Linking CXX executable ../../bin/main
++[ 72%] Linking CXX executable ../../bin/baby-llama
++[ 74%] Linking CXX executable ../../bin/embedding
++[ 76%] Linking CXX executable ../../bin/benchmark
++[ 78%] Linking CXX executable ../../bin/save-load-state
++[ 80%] Linking CXX executable ../../bin/vdot
++[ 80%] Built target embedding
++[ 82%] Linking CXX executable ../../bin/q8dot
++[ 82%] Built target baby-llama
++[ 84%] Linking CXX executable ../../bin/simple
++[ 86%] Linking CXX executable ../../bin/perplexity
++[ 86%] Built target save-load-state
++[ 86%] Built target benchmark
++[ 86%] Built target q8dot
++[ 88%] Linking CXX static library libembdinput.a
++[ 88%] Built target vdot
++[ 88%] Built target embdinput
++[ 90%] Linking CXX executable ../../bin/main
++[ 92%] Building CXX object examples/embd-input/CMakeFiles/embd-input-test.dir/embd-input-test.cpp.o
++[ 92%] Built target simple
++[ 92%] Built target perplexity
++[ 92%] Built target main
+ In file included from /usr/include/c++/11/cassert:44,
+                  from /home/ggml/work/llama.cpp/examples/server/json.hpp:2541,
+                  from /home/ggml/work/llama.cpp/examples/server/server.cpp:11:
+@@ -139,19 +148,19 @@
+ /home/ggml/work/llama.cpp/examples/server/server.cpp:964:27: warning: comparison of integer expressions of different signedness: ‘const int32_t’ {aka ‘const int’} and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+   964 |     assert(timings.n_eval == llama.num_tokens_predicted);
+       |            ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-[ 94%] Built target embd-input-test
+-[ 94%] Built target main
++[ 94%] Linking CXX executable ../../bin/embd-input-test
+ [ 96%] Linking CXX executable ../../bin/train-text-from-scratch
++[ 96%] Built target embd-input-test
+ [ 98%] Linking CXX executable ../../bin/quantize-stats
+ [ 98%] Built target train-text-from-scratch
+ [ 98%] Built target quantize-stats
+ [100%] Linking CXX executable ../../bin/server
+ [100%] Built target server
+ 
+-real	0m20.217s
+-user	0m35.819s
+-sys	0m4.829s
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/ctest_debug-ctest.log
++real	0m20.244s
++user	0m35.779s
++sys	0m5.144s
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/ctest_debug-ctest.log
+ + ctest --output-on-failure -E test-opt
+ Test project /home/ggml/work/llama.cpp/build-ci-debug
+     Start 1: test-quantize-fns
+@@ -163,27 +172,27 @@
+     Start 4: test-tokenizer-0
+ 4/5 Test #4: test-tokenizer-0 .................   Passed    0.03 sec
+     Start 5: test-grad0
+-5/5 Test #5: test-grad0 .......................   Passed    3.49 sec
++5/5 Test #5: test-grad0 .......................   Passed    3.58 sec
+ 
+ 100% tests passed, 0 tests failed out of 5
+ 
+-Total Test time (real) =   3.62 sec
++Total Test time (real) =   3.71 sec
+ 
+-real	0m3.637s
+-user	0m3.568s
+-sys	0m4.881s
++real	0m3.724s
++user	0m3.748s
++sys	0m4.799s
+ + set +e
+ + cur=0
+ + echo 0
+ + set +x
+ + gg_run_ctest_release
+-+ tee /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/ctest_release.log
+++ tee /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/ctest_release.log
+ + cd /home/ggml/work/llama.cpp
+ + rm -rf build-ci-release
+ + mkdir build-ci-release
+ + cd build-ci-release
+ + set -e
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/ctest_release-cmake.log
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/ctest_release-cmake.log
+ + cmake -DCMAKE_BUILD_TYPE=Release ..
+ -- The C compiler identification is GNU 11.4.0
+ -- The CXX compiler identification is GNU 11.4.0
+@@ -209,15 +218,15 @@
+ -- Generating done
+ -- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-release
+ 
+-real	0m0.681s
+-user	0m0.353s
+-sys	0m0.331s
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/ctest_release-make.log
++real	0m0.683s
++user	0m0.336s
++sys	0m0.349s
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/ctest_release-make.log
+ + make -j
+-[  2%] Built target BUILD_INFO
+-[  6%] Building C object CMakeFiles/ggml.dir/k_quants.c.o
+-[  6%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
++[  4%] Built target BUILD_INFO
++[  4%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+ [  8%] Building C object CMakeFiles/ggml.dir/ggml.c.o
++[  8%] Building C object CMakeFiles/ggml.dir/k_quants.c.o
+ /home/ggml/work/llama.cpp/k_quants.c: In function ‘ggml_vec_dot_q2_K_q8_K’:
+ /home/ggml/work/llama.cpp/k_quants.c:1275:36: warning: missing braces around initializer [-Wmissing-braces]
+  1275 |         const int16x8x2_t mins16 = {vreinterpretq_s16_u16(vmovl_u8(vget_low_u8(mins))), vreinterpretq_s16_u16(vmovl_u8(vget_high_u8(mins)))};
+@@ -282,73 +291,73 @@
+    30 |                                  __glibc_objsize0 (__dest));
+       |                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~
+ [  8%] Built target ggml
+-[ 10%] Linking C static library libggml_static.a
+ [ 12%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
++[ 12%] Linking C static library libggml_static.a
+ [ 12%] Built target ggml_static
+ [ 14%] Linking CXX static library libllama.a
+ [ 14%] Built target llama
+-[ 16%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
++[ 18%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+ [ 18%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+-[ 20%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/test-tokenizer-0.cpp.o
+ [ 22%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
++[ 22%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
+ [ 24%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+-[ 26%] Building CXX object examples/CMakeFiles/common.dir/grammar-parser.cpp.o
+-[ 28%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+-[ 30%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
+-[ 32%] Building CXX object examples/CMakeFiles/common.dir/console.cpp.o
+-[ 34%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
++[ 26%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/test-tokenizer-0.cpp.o
++[ 28%] Building CXX object examples/CMakeFiles/common.dir/console.cpp.o
++[ 30%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
++[ 32%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
++[ 34%] Building CXX object examples/CMakeFiles/common.dir/grammar-parser.cpp.o
+ [ 36%] Linking CXX executable ../bin/test-quantize-fns
+ [ 38%] Linking CXX executable ../../bin/quantize
+ [ 38%] Built target test-quantize-fns
+ [ 38%] Built target quantize
+-[ 40%] Linking CXX executable ../bin/test-tokenizer-0
+-[ 42%] Linking CXX executable ../bin/test-quantize-perf
++[ 40%] Linking CXX executable ../bin/test-sampling
++[ 42%] Linking CXX executable ../bin/test-tokenizer-0
++[ 42%] Built target test-sampling
+ [ 42%] Built target test-tokenizer-0
+-[ 44%] Linking CXX executable ../bin/test-sampling
++[ 44%] Linking CXX executable ../bin/test-quantize-perf
++[ 44%] Built target test-quantize-perf
+ [ 46%] Linking CXX executable ../bin/test-grad0
+-[ 46%] Built target test-quantize-perf
+ [ 46%] Built target test-grad0
+-[ 46%] Built target test-sampling
+ [ 46%] Built target common
+ [ 48%] Building CXX object examples/main/CMakeFiles/main.dir/main.cpp.o
+-[ 50%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
++[ 50%] Building CXX object examples/perplexity/CMakeFiles/perplexity.dir/perplexity.cpp.o
+ [ 52%] Building CXX object examples/embedding/CMakeFiles/embedding.dir/embedding.cpp.o
+-[ 54%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
+-[ 56%] Building CXX object examples/perplexity/CMakeFiles/perplexity.dir/perplexity.cpp.o
+-[ 58%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
+-[ 60%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
++[ 54%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
++[ 56%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
++[ 58%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
++[ 60%] Building CXX object examples/embd-input/CMakeFiles/embdinput.dir/embd-input-lib.cpp.o
+ [ 62%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
+ [ 64%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
+-[ 66%] Building CXX object examples/embd-input/CMakeFiles/embdinput.dir/embd-input-lib.cpp.o
++[ 66%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
+ [ 68%] Building CXX object pocs/vdot/CMakeFiles/vdot.dir/vdot.cpp.o
+ [ 70%] Building CXX object pocs/vdot/CMakeFiles/q8dot.dir/q8dot.cpp.o
+ /home/ggml/work/llama.cpp/examples/baby-llama/baby-llama.cpp: In function ‘int main(int, char**)’:
+ /home/ggml/work/llama.cpp/examples/baby-llama/baby-llama.cpp:1620:32: warning: variable ‘opt_params_adam’ set but not used [-Wunused-but-set-variable]
+  1620 |         struct ggml_opt_params opt_params_adam = ggml_opt_default_params(GGML_OPT_ADAM);
+       |                                ^~~~~~~~~~~~~~~
+-[ 72%] Linking CXX executable ../../bin/embedding
+-[ 72%] Built target embedding
+-[ 74%] Linking CXX executable ../../bin/perplexity
+-[ 76%] Linking CXX executable ../../bin/q8dot
++[ 72%] Linking CXX executable ../../bin/benchmark
++[ 74%] Linking CXX executable ../../bin/embedding
++[ 76%] Linking CXX executable ../../bin/simple
++[ 76%] Built target benchmark
+ [ 78%] Linking CXX executable ../../bin/save-load-state
+-[ 80%] Linking CXX executable ../../bin/benchmark
+-[ 82%] Linking CXX executable ../../bin/vdot
+-[ 82%] Built target perplexity
++[ 80%] Linking CXX executable ../../bin/vdot
++[ 80%] Built target simple
++[ 80%] Built target embedding
++[ 80%] Built target save-load-state
++[ 82%] Linking CXX executable ../../bin/q8dot
++[ 82%] Built target vdot
+ [ 82%] Built target q8dot
+-[ 84%] Linking CXX executable ../../bin/simple
+-[ 84%] Built target benchmark
+-[ 84%] Built target save-load-state
+-[ 86%] Linking CXX executable ../../bin/baby-llama
+-[ 86%] Built target vdot
+-[ 88%] Linking CXX executable ../../bin/main
+-[ 88%] Built target simple
+-[ 88%] Built target baby-llama
+-[ 88%] Built target main
+-[ 90%] Linking CXX static library libembdinput.a
+-[ 90%] Built target embdinput
+-[ 92%] Building CXX object examples/embd-input/CMakeFiles/embd-input-test.dir/embd-input-test.cpp.o
+-[ 94%] Linking CXX executable ../../bin/embd-input-test
++[ 84%] Linking CXX executable ../../bin/perplexity
++[ 86%] Linking CXX static library libembdinput.a
++[ 86%] Built target embdinput
++[ 88%] Linking CXX executable ../../bin/baby-llama
++[ 90%] Building CXX object examples/embd-input/CMakeFiles/embd-input-test.dir/embd-input-test.cpp.o
++[ 90%] Built target perplexity
++[ 90%] Built target baby-llama
++[ 92%] Linking CXX executable ../../bin/embd-input-test
++[ 94%] Linking CXX executable ../../bin/main
+ [ 94%] Built target embd-input-test
++[ 94%] Built target main
+ [ 96%] Linking CXX executable ../../bin/quantize-stats
+ [ 96%] Built target quantize-stats
+ [ 98%] Linking CXX executable ../../bin/train-text-from-scratch
+@@ -356,11 +365,11 @@
+ [100%] Linking CXX executable ../../bin/server
+ [100%] Built target server
+ 
+-real	0m35.030s
+-user	0m57.217s
+-sys	0m4.322s
++real	0m35.073s
++user	0m57.441s
++sys	0m4.264s
+ + '[' -z ']'
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/ctest_release-ctest.log
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/ctest_release-ctest.log
+ + ctest --output-on-failure
+ Test project /home/ggml/work/llama.cpp/build-ci-release
+     Start 1: test-quantize-fns
+@@ -378,15 +387,15 @@
+ 
+ Total Test time (real) =   3.52 sec
+ 
+-real	0m3.532s
+-user	0m3.196s
+-sys	0m4.982s
++real	0m3.531s
++user	0m3.179s
++sys	0m4.999s
+ + set +e
+ + cur=0
+ + echo 0
+ + set +x
+ + gg_run_open_llama_3b_v2
+-+ tee /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2.log
+++ tee /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2.log
+ + cd /home/ggml/work/llama.cpp
+ + gg_wget models-mnt/open-llama/3B-v2/ https://huggingface.co/openlm-research/open_llama_3b_v2/raw/main/config.json
+ + local out=models-mnt/open-llama/3B-v2/
+@@ -397,7 +406,7 @@
+ + cd models-mnt/open-llama/3B-v2/
+ + wget -nv -N https://huggingface.co/openlm-research/open_llama_3b_v2/raw/main/config.json
+ Last-modified header missing -- time-stamps turned off.
+-2023-08-07 08:11:28 URL:https://huggingface.co/openlm-research/open_llama_3b_v2/raw/main/config.json [506/506] -> "config.json" [1]
++2023-08-07 09:36:19 URL:https://huggingface.co/openlm-research/open_llama_3b_v2/raw/main/config.json [506/506] -> "config.json" [1]
+ + cd /home/ggml/work/llama.cpp
+ + gg_wget models-mnt/open-llama/3B-v2/ https://huggingface.co/openlm-research/open_llama_3b_v2/resolve/main/tokenizer.model
+ + local out=models-mnt/open-llama/3B-v2/
+@@ -417,7 +426,7 @@
+ + cd models-mnt/open-llama/3B-v2/
+ + wget -nv -N https://huggingface.co/openlm-research/open_llama_3b_v2/raw/main/tokenizer_config.json
+ Last-modified header missing -- time-stamps turned off.
+-2023-08-07 08:11:28 URL:https://huggingface.co/openlm-research/open_llama_3b_v2/raw/main/tokenizer_config.json [593/593] -> "tokenizer_config.json" [1]
++2023-08-07 09:36:19 URL:https://huggingface.co/openlm-research/open_llama_3b_v2/raw/main/tokenizer_config.json [593/593] -> "tokenizer_config.json" [1]
+ + cd /home/ggml/work/llama.cpp
+ + gg_wget models-mnt/open-llama/3B-v2/ https://huggingface.co/openlm-research/open_llama_3b_v2/raw/main/special_tokens_map.json
+ + local out=models-mnt/open-llama/3B-v2/
+@@ -428,7 +437,7 @@
+ + cd models-mnt/open-llama/3B-v2/
+ + wget -nv -N https://huggingface.co/openlm-research/open_llama_3b_v2/raw/main/special_tokens_map.json
+ Last-modified header missing -- time-stamps turned off.
+-2023-08-07 08:11:28 URL:https://huggingface.co/openlm-research/open_llama_3b_v2/raw/main/special_tokens_map.json [330/330] -> "special_tokens_map.json" [1]
++2023-08-07 09:36:19 URL:https://huggingface.co/openlm-research/open_llama_3b_v2/raw/main/special_tokens_map.json [330/330] -> "special_tokens_map.json" [1]
+ + cd /home/ggml/work/llama.cpp
+ + gg_wget models-mnt/open-llama/3B-v2/ https://huggingface.co/openlm-research/open_llama_3b_v2/resolve/main/pytorch_model.bin
+ + local out=models-mnt/open-llama/3B-v2/
+@@ -448,7 +457,7 @@
+ + cd models-mnt/open-llama/3B-v2/
+ + wget -nv -N https://huggingface.co/openlm-research/open_llama_3b_v2/raw/main/generation_config.json
+ Last-modified header missing -- time-stamps turned off.
+-2023-08-07 08:11:28 URL:https://huggingface.co/openlm-research/open_llama_3b_v2/raw/main/generation_config.json [137/137] -> "generation_config.json" [1]
++2023-08-07 09:36:19 URL:https://huggingface.co/openlm-research/open_llama_3b_v2/raw/main/generation_config.json [137/137] -> "generation_config.json" [1]
+ + cd /home/ggml/work/llama.cpp
+ + gg_wget models-mnt/wikitext/ https://s3.amazonaws.com/research.metamind.io/wikitext/wikitext-2-raw-v1.zip
+ + local out=models-mnt/wikitext/
+@@ -471,7 +480,7 @@
+ + mkdir build-ci-release
+ + cd build-ci-release
+ + set -e
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-cmake.log
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-cmake.log
+ + cmake -DCMAKE_BUILD_TYPE=Release -DLLAMA_QKK_64=1 ..
+ -- The C compiler identification is GNU 11.4.0
+ -- The CXX compiler identification is GNU 11.4.0
+@@ -497,15 +506,15 @@
+ -- Generating done
+ -- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-release
+ 
+-real	0m0.672s
+-user	0m0.350s
+-sys	0m0.324s
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-make.log
++real	0m0.692s
++user	0m0.359s
++sys	0m0.335s
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-make.log
+ + make -j
+-[  8%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+-[  8%] Building C object CMakeFiles/ggml.dir/k_quants.c.o
+-[  8%] Building C object CMakeFiles/ggml.dir/ggml.c.o
++[  4%] Building C object CMakeFiles/ggml.dir/ggml.c.o
++[  4%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+ [  8%] Built target BUILD_INFO
++[  8%] Building C object CMakeFiles/ggml.dir/k_quants.c.o
+ /home/ggml/work/llama.cpp/k_quants.c: In function ‘ggml_vec_dot_q2_K_q8_K’:
+ /home/ggml/work/llama.cpp/k_quants.c:1559:22: warning: unused variable ‘vzero’ [-Wunused-variable]
+  1559 |     const int32x4_t  vzero = vdupq_n_s32(0);
+@@ -562,73 +571,73 @@
+    30 |                                  __glibc_objsize0 (__dest));
+       |                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~
+ [  8%] Built target ggml
+-[ 10%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+-[ 12%] Linking C static library libggml_static.a
++[ 10%] Linking C static library libggml_static.a
++[ 12%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+ [ 12%] Built target ggml_static
+ [ 14%] Linking CXX static library libllama.a
+ [ 14%] Built target llama
+ [ 18%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/test-tokenizer-0.cpp.o
+-[ 18%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+-[ 22%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+-[ 22%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
+-[ 24%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
+-[ 26%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
++[ 20%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
++[ 22%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+ [ 28%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+-[ 30%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+-[ 32%] Building CXX object examples/CMakeFiles/common.dir/console.cpp.o
+-[ 34%] Building CXX object examples/CMakeFiles/common.dir/grammar-parser.cpp.o
++[ 28%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
++[ 28%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
++[ 28%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
++[ 30%] Building CXX object examples/CMakeFiles/common.dir/grammar-parser.cpp.o
++[ 32%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
++[ 34%] Building CXX object examples/CMakeFiles/common.dir/console.cpp.o
+ [ 36%] Linking CXX executable ../../bin/quantize
+-[ 38%] Linking CXX executable ../bin/test-quantize-fns
+-[ 38%] Built target quantize
+-[ 40%] Linking CXX executable ../bin/test-tokenizer-0
+-[ 40%] Built target test-quantize-fns
+-[ 42%] Linking CXX executable ../bin/test-sampling
++[ 38%] Linking CXX executable ../bin/test-tokenizer-0
++[ 40%] Linking CXX executable ../bin/test-sampling
++[ 42%] Linking CXX executable ../bin/test-quantize-fns
++[ 42%] Built target quantize
+ [ 42%] Built target test-tokenizer-0
+ [ 42%] Built target test-sampling
+-[ 44%] Linking CXX executable ../bin/test-quantize-perf
++[ 42%] Built target test-quantize-fns
++[ 46%] Linking CXX executable ../bin/test-quantize-perf
+ [ 46%] Linking CXX executable ../bin/test-grad0
+ [ 46%] Built target test-grad0
+ [ 46%] Built target test-quantize-perf
+ [ 46%] Built target common
+ [ 48%] Building CXX object examples/perplexity/CMakeFiles/perplexity.dir/perplexity.cpp.o
+-[ 50%] Building CXX object examples/embedding/CMakeFiles/embedding.dir/embedding.cpp.o
+-[ 52%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
+-[ 54%] Building CXX object examples/embd-input/CMakeFiles/embdinput.dir/embd-input-lib.cpp.o
+-[ 56%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
+-[ 60%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
++[ 52%] Building CXX object examples/embedding/CMakeFiles/embedding.dir/embedding.cpp.o
++[ 52%] Building CXX object examples/main/CMakeFiles/main.dir/main.cpp.o
++[ 54%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
++[ 58%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
+ [ 58%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
+-[ 62%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
+-[ 64%] Building CXX object examples/main/CMakeFiles/main.dir/main.cpp.o
+-[ 66%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
++[ 60%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
++[ 62%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
++[ 64%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
++[ 66%] Building CXX object examples/embd-input/CMakeFiles/embdinput.dir/embd-input-lib.cpp.o
+ [ 68%] Building CXX object pocs/vdot/CMakeFiles/vdot.dir/vdot.cpp.o
+ [ 70%] Building CXX object pocs/vdot/CMakeFiles/q8dot.dir/q8dot.cpp.o
+ /home/ggml/work/llama.cpp/examples/baby-llama/baby-llama.cpp: In function ‘int main(int, char**)’:
+ /home/ggml/work/llama.cpp/examples/baby-llama/baby-llama.cpp:1620:32: warning: variable ‘opt_params_adam’ set but not used [-Wunused-but-set-variable]
+  1620 |         struct ggml_opt_params opt_params_adam = ggml_opt_default_params(GGML_OPT_ADAM);
+       |                                ^~~~~~~~~~~~~~~
+-[ 72%] Linking CXX executable ../../bin/benchmark
+-[ 74%] Linking CXX executable ../../bin/embedding
+-[ 74%] Built target benchmark
+-[ 74%] Built target embedding
++[ 72%] Linking CXX executable ../../bin/embedding
++[ 74%] Linking CXX executable ../../bin/benchmark
+ [ 76%] Linking CXX executable ../../bin/vdot
++[ 76%] Built target embedding
++[ 76%] Built target vdot
++[ 76%] Built target benchmark
+ [ 78%] Linking CXX executable ../../bin/q8dot
+-[ 80%] Linking CXX executable ../../bin/simple
+-[ 80%] Built target vdot
+-[ 80%] Built target q8dot
+-[ 82%] Linking CXX executable ../../bin/save-load-state
+-[ 82%] Built target simple
+-[ 84%] Linking CXX executable ../../bin/baby-llama
++[ 80%] Linking CXX executable ../../bin/save-load-state
++[ 82%] Linking CXX executable ../../bin/simple
++[ 82%] Built target q8dot
++[ 84%] Linking CXX static library libembdinput.a
+ [ 84%] Built target save-load-state
+-[ 86%] Linking CXX static library libembdinput.a
+-[ 86%] Built target baby-llama
+-[ 86%] Built target embdinput
+-[ 88%] Building CXX object examples/embd-input/CMakeFiles/embd-input-test.dir/embd-input-test.cpp.o
++[ 84%] Built target simple
++[ 84%] Built target embdinput
++[ 86%] Building CXX object examples/embd-input/CMakeFiles/embd-input-test.dir/embd-input-test.cpp.o
++[ 88%] Linking CXX executable ../../bin/baby-llama
++[ 88%] Built target baby-llama
+ [ 90%] Linking CXX executable ../../bin/perplexity
+ [ 90%] Built target perplexity
+-[ 92%] Linking CXX executable ../../bin/main
+-[ 92%] Built target main
+-[ 94%] Linking CXX executable ../../bin/embd-input-test
++[ 92%] Linking CXX executable ../../bin/embd-input-test
++[ 94%] Linking CXX executable ../../bin/main
+ [ 94%] Built target embd-input-test
++[ 94%] Built target main
+ [ 96%] Linking CXX executable ../../bin/quantize-stats
+ [ 96%] Built target quantize-stats
+ [ 98%] Linking CXX executable ../../bin/train-text-from-scratch
+@@ -636,9 +645,9 @@
+ [100%] Linking CXX executable ../../bin/server
+ [100%] Built target server
+ 
+-real	0m34.993s
+-user	0m56.966s
+-sys	0m4.333s
++real	0m34.749s
++user	0m56.569s
++sys	0m4.522s
+ + python3 ../convert.py ../models-mnt/open-llama/3B-v2
+ Loading model file ../models-mnt/open-llama/3B-v2/pytorch_model.bin
+ vocabtype: spm
+@@ -896,7 +905,7 @@
+ + model_q6_k=../models-mnt/open-llama/3B-v2/ggml-model-q6_k.bin
+ + wiki_test_60=../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw
+ + ./bin/quantize ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin ../models-mnt/open-llama/3B-v2/ggml-model-q8_0.bin q8_0
+-main: build = 959 (3d9a551)
++main: build = 960 (5ddfbff)
+ main: quantizing '../models-mnt/open-llama/3B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/3B-v2/ggml-model-q8_0.bin' as Q8_0
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin
+ llama.cpp: saving model to ../models-mnt/open-llama/3B-v2/ggml-model-q8_0.bin
+@@ -1141,10 +1150,10 @@
+ llama_model_quantize_internal: quant size  =  3451.09 MB
+ llama_model_quantize_internal: hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
+ 
+-main: quantize time = 14047.44 ms
+-main:    total time = 14047.44 ms
++main: quantize time = 14110.06 ms
++main:    total time = 14110.06 ms
+ + ./bin/quantize ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin ../models-mnt/open-llama/3B-v2/ggml-model-q4_0.bin q4_0
+-main: build = 959 (3d9a551)
++main: build = 960 (5ddfbff)
+ main: quantizing '../models-mnt/open-llama/3B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/3B-v2/ggml-model-q4_0.bin' as Q4_0
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin
+ llama.cpp: saving model to ../models-mnt/open-llama/3B-v2/ggml-model-q4_0.bin
+@@ -1389,10 +1398,10 @@
+ llama_model_quantize_internal: quant size  =  1866.13 MB
+ llama_model_quantize_internal: hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
+ 
+-main: quantize time = 10396.41 ms
+-main:    total time = 10396.41 ms
++main: quantize time = 10435.85 ms
++main:    total time = 10435.85 ms
+ + ./bin/quantize ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin ../models-mnt/open-llama/3B-v2/ggml-model-q4_1.bin q4_1
+-main: build = 959 (3d9a551)
++main: build = 960 (5ddfbff)
+ main: quantizing '../models-mnt/open-llama/3B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/3B-v2/ggml-model-q4_1.bin' as Q4_1
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin
+ llama.cpp: saving model to ../models-mnt/open-llama/3B-v2/ggml-model-q4_1.bin
+@@ -1637,10 +1646,10 @@
+ llama_model_quantize_internal: quant size  =  2064.25 MB
+ llama_model_quantize_internal: hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
+ 
+-main: quantize time = 11240.80 ms
+-main:    total time = 11240.80 ms
++main: quantize time = 11290.32 ms
++main:    total time = 11290.32 ms
+ + ./bin/quantize ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin ../models-mnt/open-llama/3B-v2/ggml-model-q5_0.bin q5_0
+-main: build = 959 (3d9a551)
++main: build = 960 (5ddfbff)
+ main: quantizing '../models-mnt/open-llama/3B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/3B-v2/ggml-model-q5_0.bin' as Q5_0
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin
+ llama.cpp: saving model to ../models-mnt/open-llama/3B-v2/ggml-model-q5_0.bin
+@@ -1885,10 +1894,10 @@
+ llama_model_quantize_internal: quant size  =  2262.37 MB
+ llama_model_quantize_internal: hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.066 0.070 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
+ 
+-main: quantize time = 11733.75 ms
+-main:    total time = 11733.75 ms
++main: quantize time = 11554.60 ms
++main:    total time = 11554.60 ms
+ + ./bin/quantize ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin ../models-mnt/open-llama/3B-v2/ggml-model-q5_1.bin q5_1
+-main: build = 959 (3d9a551)
++main: build = 960 (5ddfbff)
+ main: quantizing '../models-mnt/open-llama/3B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/3B-v2/ggml-model-q5_1.bin' as Q5_1
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin
+ llama.cpp: saving model to ../models-mnt/open-llama/3B-v2/ggml-model-q5_1.bin
+@@ -2133,10 +2142,10 @@
+ llama_model_quantize_internal: quant size  =  2460.49 MB
+ llama_model_quantize_internal: hist: 0.075 0.061 0.062 0.062 0.063 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.066 
+ 
+-main: quantize time = 12095.37 ms
+-main:    total time = 12095.37 ms
++main: quantize time = 11885.52 ms
++main:    total time = 11885.52 ms
+ + ./bin/quantize ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin ../models-mnt/open-llama/3B-v2/ggml-model-q2_k.bin q2_k
+-main: build = 959 (3d9a551)
++main: build = 960 (5ddfbff)
+ main: quantizing '../models-mnt/open-llama/3B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/3B-v2/ggml-model-q2_k.bin' as Q2_K
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin
+ llama.cpp: saving model to ../models-mnt/open-llama/3B-v2/ggml-model-q2_k.bin
+@@ -2380,10 +2389,10 @@
+ llama_model_quantize_internal: model size  =  6535.80 MB
+ llama_model_quantize_internal: quant size  =  1532.81 MB
+ 
+-main: quantize time = 14947.34 ms
+-main:    total time = 14947.34 ms
++main: quantize time = 14943.81 ms
++main:    total time = 14943.81 ms
+ + ./bin/quantize ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin ../models-mnt/open-llama/3B-v2/ggml-model-q3_k.bin q3_k
+-main: build = 959 (3d9a551)
++main: build = 960 (5ddfbff)
+ main: quantizing '../models-mnt/open-llama/3B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/3B-v2/ggml-model-q3_k.bin' as Q3_K
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin
+ llama.cpp: saving model to ../models-mnt/open-llama/3B-v2/ggml-model-q3_k.bin
+@@ -2627,10 +2636,10 @@
+ llama_model_quantize_internal: model size  =  6535.80 MB
+ llama_model_quantize_internal: quant size  =  1656.35 MB
+ 
+-main: quantize time = 14646.28 ms
+-main:    total time = 14646.28 ms
++main: quantize time = 14493.22 ms
++main:    total time = 14493.22 ms
+ + ./bin/quantize ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin ../models-mnt/open-llama/3B-v2/ggml-model-q4_k.bin q4_k
+-main: build = 959 (3d9a551)
++main: build = 960 (5ddfbff)
+ main: quantizing '../models-mnt/open-llama/3B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/3B-v2/ggml-model-q4_k.bin' as Q4_K
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin
+ llama.cpp: saving model to ../models-mnt/open-llama/3B-v2/ggml-model-q4_k.bin
+@@ -2874,10 +2883,10 @@
+ llama_model_quantize_internal: model size  =  6535.80 MB
+ llama_model_quantize_internal: quant size  =  2082.62 MB
+ 
+-main: quantize time = 15931.81 ms
+-main:    total time = 15931.81 ms
++main: quantize time = 15933.51 ms
++main:    total time = 15933.51 ms
+ + ./bin/quantize ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin ../models-mnt/open-llama/3B-v2/ggml-model-q5_k.bin q5_k
+-main: build = 959 (3d9a551)
++main: build = 960 (5ddfbff)
+ main: quantizing '../models-mnt/open-llama/3B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/3B-v2/ggml-model-q5_k.bin' as Q5_K
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin
+ llama.cpp: saving model to ../models-mnt/open-llama/3B-v2/ggml-model-q5_k.bin
+@@ -3121,10 +3130,10 @@
+ llama_model_quantize_internal: model size  =  6535.80 MB
+ llama_model_quantize_internal: quant size  =  2420.14 MB
+ 
+-main: quantize time = 16695.38 ms
+-main:    total time = 16695.38 ms
++main: quantize time = 16693.53 ms
++main:    total time = 16693.53 ms
+ + ./bin/quantize ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin ../models-mnt/open-llama/3B-v2/ggml-model-q6_k.bin q6_k
+-main: build = 959 (3d9a551)
++main: build = 960 (5ddfbff)
+ main: quantizing '../models-mnt/open-llama/3B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/3B-v2/ggml-model-q6_k.bin' as Q6_K
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin
+ llama.cpp: saving model to ../models-mnt/open-llama/3B-v2/ggml-model-q6_k.bin
+@@ -3368,11 +3377,11 @@
+ llama_model_quantize_internal: model size  =  6535.80 MB
+ llama_model_quantize_internal: quant size  =  2757.67 MB
+ 
+-main: quantize time = 15787.77 ms
+-main:    total time = 15787.77 ms
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-f16.log
++main: quantize time = 15709.92 ms
++main:    total time = 15709.92 ms
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-f16.log
+ + ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+-main: build = 959 (3d9a551)
++main: build = 960 (5ddfbff)
+ main: seed  = 1234
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin
+ llama_model_load_internal: format     = ggjt v1 (pre #1405)
+@@ -3403,18 +3412,18 @@
+ 
+  I believe the meaning of life is to do something great for humanity. If you are not doing that, then what's your purpose?
+ To accomplish this goal in my work as a lawyer/attorney and entrepreneur has been quite an adventure already! When there wasn’t much going on around me at home or school I always found myself creating stories
+-llama_print_timings:        load time =  2875.61 ms
+-llama_print_timings:      sample time =    62.25 ms /    64 runs   (    0.97 ms per token,  1028.11 tokens per second)
+-llama_print_timings: prompt eval time =  2433.37 ms /     8 tokens (  304.17 ms per token,     3.29 tokens per second)
+-llama_print_timings:        eval time = 19835.54 ms /    63 runs   (  314.85 ms per token,     3.18 tokens per second)
+-llama_print_timings:       total time = 22339.62 ms
+-
+-real	0m25.433s
+-user	1m30.253s
+-sys	0m2.882s
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q8_0.log
++llama_print_timings:        load time =  2842.78 ms
++llama_print_timings:      sample time =    62.23 ms /    64 runs   (    0.97 ms per token,  1028.36 tokens per second)
++llama_print_timings: prompt eval time =  2433.70 ms /     8 tokens (  304.21 ms per token,     3.29 tokens per second)
++llama_print_timings:        eval time = 19848.35 ms /    63 runs   (  315.05 ms per token,     3.17 tokens per second)
++llama_print_timings:       total time = 22352.61 ms
++
++real	0m25.399s
++user	1m30.364s
++sys	0m2.779s
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q8_0.log
+ + ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q8_0.bin -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+-main: build = 959 (3d9a551)
++main: build = 960 (5ddfbff)
+ main: seed  = 1234
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q8_0.bin
+ llama_model_load_internal: format     = ggjt v3 (latest)
+@@ -3445,18 +3454,18 @@
+ 
+  I believe the meaning of life is to do something with all your heart and soul.
+ I have never been one for following rules, being parted from my family or any other person that comes into contact with me without a good reason (sad but true), especially when it’s just because you don’t like them! I am what most
+-llama_print_timings:        load time =  1483.93 ms
+-llama_print_timings:      sample time =    62.11 ms /    64 runs   (    0.97 ms per token,  1030.46 tokens per second)
+-llama_print_timings: prompt eval time =   961.90 ms /     8 tokens (  120.24 ms per token,     8.32 tokens per second)
+-llama_print_timings:        eval time =  8557.95 ms /    63 runs   (  135.84 ms per token,     7.36 tokens per second)
+-llama_print_timings:       total time =  9590.34 ms
+-
+-real	0m11.356s
+-user	0m38.633s
+-sys	0m1.642s
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q4_0.log
++llama_print_timings:        load time =  1492.34 ms
++llama_print_timings:      sample time =    62.07 ms /    64 runs   (    0.97 ms per token,  1031.11 tokens per second)
++llama_print_timings: prompt eval time =   961.18 ms /     8 tokens (  120.15 ms per token,     8.32 tokens per second)
++llama_print_timings:        eval time =  8556.88 ms /    63 runs   (  135.82 ms per token,     7.36 tokens per second)
++llama_print_timings:       total time =  9588.23 ms
++
++real	0m11.367s
++user	0m38.575s
++sys	0m1.709s
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q4_0.log
+ + ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q4_0.bin -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+-main: build = 959 (3d9a551)
++main: build = 960 (5ddfbff)
+ main: seed  = 1234
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q4_0.bin
+ llama_model_load_internal: format     = ggjt v3 (latest)
+@@ -3488,18 +3497,18 @@
+  I believe the meaning of life is to create, make love and have fun.
+ I'm interested in meeting new people who are open minded... more about Lina from Kharkov: Hi :) My name is Anastasiya! ;)more
+ As we know that it will be a little bit difficult for us but if you wanna start
+-llama_print_timings:        load time =   884.37 ms
+-llama_print_timings:      sample time =    62.13 ms /    64 runs   (    0.97 ms per token,  1030.10 tokens per second)
+-llama_print_timings: prompt eval time =   967.48 ms /     8 tokens (  120.93 ms per token,     8.27 tokens per second)
+-llama_print_timings:        eval time =  7972.92 ms /    63 runs   (  126.55 ms per token,     7.90 tokens per second)
+-llama_print_timings:       total time =  9010.92 ms
+-
+-real	0m10.059s
+-user	0m36.202s
+-sys	0m1.007s
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q4_1.log
++llama_print_timings:        load time =   861.90 ms
++llama_print_timings:      sample time =    62.32 ms /    64 runs   (    0.97 ms per token,  1026.96 tokens per second)
++llama_print_timings: prompt eval time =   968.82 ms /     8 tokens (  121.10 ms per token,     8.26 tokens per second)
++llama_print_timings:        eval time =  7967.10 ms /    63 runs   (  126.46 ms per token,     7.91 tokens per second)
++llama_print_timings:       total time =  9006.25 ms
++
++real	0m10.031s
++user	0m36.204s
++sys	0m0.969s
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q4_1.log
+ + ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q4_1.bin -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+-main: build = 959 (3d9a551)
++main: build = 960 (5ddfbff)
+ main: seed  = 1234
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q4_1.bin
+ llama_model_load_internal: format     = ggjt v3 (latest)
+@@ -3530,18 +3539,18 @@
+ 
+  I believe the meaning of life is to have fun, so that's exactly what we did.
+ I mean... look at this guy! (Donk) We were in New York City and ran into him on a street corner after he caught his pants down falling outta an old man's wheelchair while trying to make it back up 3
+-llama_print_timings:        load time =   915.78 ms
+-llama_print_timings:      sample time =    62.13 ms /    64 runs   (    0.97 ms per token,  1030.07 tokens per second)
+-llama_print_timings: prompt eval time =   919.82 ms /     8 tokens (  114.98 ms per token,     8.70 tokens per second)
+-llama_print_timings:        eval time =  7657.95 ms /    63 runs   (  121.55 ms per token,     8.23 tokens per second)
+-llama_print_timings:       total time =  8648.29 ms
+-
+-real	0m9.751s
+-user	0m34.744s
+-sys	0m1.056s
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q5_0.log
++llama_print_timings:        load time =   965.77 ms
++llama_print_timings:      sample time =    62.37 ms /    64 runs   (    0.97 ms per token,  1026.17 tokens per second)
++llama_print_timings: prompt eval time =   918.49 ms /     8 tokens (  114.81 ms per token,     8.71 tokens per second)
++llama_print_timings:        eval time =  7654.79 ms /    63 runs   (  121.50 ms per token,     8.23 tokens per second)
++llama_print_timings:       total time =  8643.94 ms
++
++real	0m9.797s
++user	0m34.714s
++sys	0m1.121s
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q5_0.log
+ + ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q5_0.bin -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+-main: build = 959 (3d9a551)
++main: build = 960 (5ddfbff)
+ main: seed  = 1234
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q5_0.bin
+ llama_model_load_internal: format     = ggjt v3 (latest)
+@@ -3572,18 +3581,18 @@
+ 
+  I believe the meaning of life is to discover our unique way and purpose, which we can do by understanding ourselves.
+ I am a person with interests in many areas including health care, social studies education, history, philosophy as well as psychology or counselling itself for helping people find their inner self through knowledge about themselves. As I have been reading up on
+-llama_print_timings:        load time =  1054.70 ms
+-llama_print_timings:      sample time =    62.14 ms /    64 runs   (    0.97 ms per token,  1029.95 tokens per second)
+-llama_print_timings: prompt eval time =  1272.54 ms /     8 tokens (  159.07 ms per token,     6.29 tokens per second)
+-llama_print_timings:        eval time = 10563.06 ms /    63 runs   (  167.67 ms per token,     5.96 tokens per second)
+-llama_print_timings:       total time = 11906.60 ms
+-
+-real	0m13.155s
+-user	0m47.947s
+-sys	0m1.162s
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q5_1.log
++llama_print_timings:        load time =  1056.21 ms
++llama_print_timings:      sample time =    62.21 ms /    64 runs   (    0.97 ms per token,  1028.79 tokens per second)
++llama_print_timings: prompt eval time =  1269.19 ms /     8 tokens (  158.65 ms per token,     6.30 tokens per second)
++llama_print_timings:        eval time = 10534.28 ms /    63 runs   (  167.21 ms per token,     5.98 tokens per second)
++llama_print_timings:       total time = 11873.81 ms
++
++real	0m13.124s
++user	0m47.808s
++sys	0m1.174s
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q5_1.log
+ + ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q5_1.bin -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+-main: build = 959 (3d9a551)
++main: build = 960 (5ddfbff)
+ main: seed  = 1234
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q5_1.bin
+ llama_model_load_internal: format     = ggjt v3 (latest)
+@@ -3614,18 +3623,18 @@
+ 
+  I believe the meaning of life is to give something back and help others, so that’s what we are doing.
+ We have been on an unplanned journey for over a year now…….and it has not always gone according to our plan – sometimes amazing things happen when you least expect them! So here goes……..our story…..Our
+-llama_print_timings:        load time =  1126.58 ms
+-llama_print_timings:      sample time =    62.26 ms /    64 runs   (    0.97 ms per token,  1027.95 tokens per second)
+-llama_print_timings: prompt eval time =  1260.31 ms /     8 tokens (  157.54 ms per token,     6.35 tokens per second)
+-llama_print_timings:        eval time = 10369.03 ms /    63 runs   (  164.59 ms per token,     6.08 tokens per second)
+-llama_print_timings:       total time = 11700.51 ms
+-
+-real	0m13.032s
+-user	0m47.122s
+-sys	0m1.243s
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q2_k.log
++llama_print_timings:        load time =  1156.43 ms
++llama_print_timings:      sample time =    67.16 ms /    64 runs   (    1.05 ms per token,   952.96 tokens per second)
++llama_print_timings: prompt eval time =  1259.42 ms /     8 tokens (  157.43 ms per token,     6.35 tokens per second)
++llama_print_timings:        eval time = 10345.15 ms /    63 runs   (  164.21 ms per token,     6.09 tokens per second)
++llama_print_timings:       total time = 11679.67 ms
++
++real	0m13.040s
++user	0m47.045s
++sys	0m1.256s
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q2_k.log
+ + ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q2_k.bin -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+-main: build = 959 (3d9a551)
++main: build = 960 (5ddfbff)
+ main: seed  = 1234
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q2_k.bin
+ llama_model_load_internal: format     = ggjt v3 (latest)
+@@ -3656,18 +3665,18 @@
+ 
+  I believe the meaning of life is to find your purpose, and that in doing so you will discover why it’s important for us all to give what we can.
+ As a business owner on my own terms; as an entrepreneur who inspires people into believing anything is possible when they see themselves succeeding at their goals (and not just making the
+-llama_print_timings:        load time =   718.88 ms
+-llama_print_timings:      sample time =    62.14 ms /    64 runs   (    0.97 ms per token,  1030.00 tokens per second)
+-llama_print_timings: prompt eval time =   878.44 ms /     8 tokens (  109.81 ms per token,     9.11 tokens per second)
+-llama_print_timings:        eval time =  7292.44 ms /    63 runs   (  115.75 ms per token,     8.64 tokens per second)
+-llama_print_timings:       total time =  8241.34 ms
+-
+-real	0m9.094s
+-user	0m33.080s
+-sys	0m0.824s
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q3_k.log
++llama_print_timings:        load time =   719.37 ms
++llama_print_timings:      sample time =    62.00 ms /    64 runs   (    0.97 ms per token,  1032.32 tokens per second)
++llama_print_timings: prompt eval time =   877.68 ms /     8 tokens (  109.71 ms per token,     9.11 tokens per second)
++llama_print_timings:        eval time =  7282.29 ms /    63 runs   (  115.59 ms per token,     8.65 tokens per second)
++llama_print_timings:       total time =  8230.28 ms
++
++real	0m9.083s
++user	0m33.050s
++sys	0m0.814s
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q3_k.log
+ + ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q3_k.bin -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+-main: build = 959 (3d9a551)
++main: build = 960 (5ddfbff)
+ main: seed  = 1234
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q3_k.bin
+ llama_model_load_internal: format     = ggjt v3 (latest)
+@@ -3698,18 +3707,18 @@
+ 
+  I believe the meaning of life is to make it worthwhile, and that whatever you do in this world counts.
+ I am a proud Canadian! One day we will all look back on our days here with pride...and when people ask who made America strong for so long? It's going to be us Canadians - because they didn’t stand up
+-llama_print_timings:        load time =   803.39 ms
+-llama_print_timings:      sample time =    62.24 ms /    64 runs   (    0.97 ms per token,  1028.23 tokens per second)
+-llama_print_timings: prompt eval time =   972.58 ms /     8 tokens (  121.57 ms per token,     8.23 tokens per second)
+-llama_print_timings:        eval time =  8044.93 ms /    63 runs   (  127.70 ms per token,     7.83 tokens per second)
+-llama_print_timings:       total time =  9087.35 ms
+-
+-real	0m10.040s
+-user	0m36.567s
+-sys	0m0.859s
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q4_k.log
++llama_print_timings:        load time =   761.30 ms
++llama_print_timings:      sample time =    62.03 ms /    64 runs   (    0.97 ms per token,  1031.78 tokens per second)
++llama_print_timings: prompt eval time =   972.56 ms /     8 tokens (  121.57 ms per token,     8.23 tokens per second)
++llama_print_timings:        eval time =  8031.31 ms /    63 runs   (  127.48 ms per token,     7.84 tokens per second)
++llama_print_timings:       total time =  9073.57 ms
++
++real	0m9.980s
++user	0m36.486s
++sys	0m0.844s
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q4_k.log
+ + ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q4_k.bin -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+-main: build = 959 (3d9a551)
++main: build = 960 (5ddfbff)
+ main: seed  = 1234
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q4_k.bin
+ llama_model_load_internal: format     = ggjt v3 (latest)
+@@ -3740,18 +3749,18 @@
+ 
+  I believe the meaning of life is to make a difference, and that by doing so we are making this world a better place.
+ I love living an active lifestyle! Being physically fit has made such a positive impact on my body and mind that it inspired me with how much more there could be in life if you just get up off the couch/bed
+-llama_print_timings:        load time =   933.68 ms
+-llama_print_timings:      sample time =    61.99 ms /    64 runs   (    0.97 ms per token,  1032.39 tokens per second)
+-llama_print_timings: prompt eval time =   865.27 ms /     8 tokens (  108.16 ms per token,     9.25 tokens per second)
+-llama_print_timings:        eval time =  7348.99 ms /    63 runs   (  116.65 ms per token,     8.57 tokens per second)
+-llama_print_timings:       total time =  8284.62 ms
+-
+-real	0m9.402s
+-user	0m33.247s
+-sys	0m1.101s
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q5_k.log
++llama_print_timings:        load time =   909.96 ms
++llama_print_timings:      sample time =    61.96 ms /    64 runs   (    0.97 ms per token,  1032.87 tokens per second)
++llama_print_timings: prompt eval time =   864.27 ms /     8 tokens (  108.03 ms per token,     9.26 tokens per second)
++llama_print_timings:        eval time =  7289.04 ms /    63 runs   (  115.70 ms per token,     8.64 tokens per second)
++llama_print_timings:       total time =  8223.15 ms
++
++real	0m9.311s
++user	0m33.055s
++sys	0m1.021s
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q5_k.log
+ + ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q5_k.bin -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+-main: build = 959 (3d9a551)
++main: build = 960 (5ddfbff)
+ main: seed  = 1234
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q5_k.bin
+ llama_model_load_internal: format     = ggjt v3 (latest)
+@@ -3782,18 +3791,18 @@
+ 
+  I believe the meaning of life is to enjoy and celebrate, not just on special occasions but every day.
+ I have a passion for creating meaningful moments throughout your wedding celebration that reflect who you are as people; what matters most in life...your personalities, joys and passions! It’s about celebrating each other with friends & family while making memories
+-llama_print_timings:        load time =  1094.43 ms
+-llama_print_timings:      sample time =    62.27 ms /    64 runs   (    0.97 ms per token,  1027.83 tokens per second)
+-llama_print_timings: prompt eval time =  1145.70 ms /     8 tokens (  143.21 ms per token,     6.98 tokens per second)
+-llama_print_timings:        eval time =  9422.91 ms /    63 runs   (  149.57 ms per token,     6.69 tokens per second)
+-llama_print_timings:       total time = 10639.55 ms
+-
+-real	0m11.932s
+-user	0m42.847s
+-sys	0m1.191s
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q6_k.log
++llama_print_timings:        load time =  1054.85 ms
++llama_print_timings:      sample time =    62.05 ms /    64 runs   (    0.97 ms per token,  1031.34 tokens per second)
++llama_print_timings: prompt eval time =  1148.90 ms /     8 tokens (  143.61 ms per token,     6.96 tokens per second)
++llama_print_timings:        eval time =  9405.98 ms /    63 runs   (  149.30 ms per token,     6.70 tokens per second)
++llama_print_timings:       total time = 10625.11 ms
++
++real	0m11.876s
++user	0m42.766s
++sys	0m1.176s
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q6_k.log
+ + ./bin/main --model ../models-mnt/open-llama/3B-v2/ggml-model-q6_k.bin -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+-main: build = 959 (3d9a551)
++main: build = 960 (5ddfbff)
+ main: seed  = 1234
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q6_k.bin
+ llama_model_load_internal: format     = ggjt v3 (latest)
+@@ -3823,19 +3832,19 @@
+ 
+ 
+  I believe the meaning of life is to experience all you can, and this includes love. Love in whatever form it comes your way; whether through marriage, friendship or a simple encounter with someone who genuinely cares about what’s going on around them – especially when no one asks for their opinion but they give anyways because that person has something important inside of
+-llama_print_timings:        load time =  1287.55 ms
+-llama_print_timings:      sample time =    62.11 ms /    64 runs   (    0.97 ms per token,  1030.45 tokens per second)
+-llama_print_timings: prompt eval time =  1201.72 ms /     8 tokens (  150.22 ms per token,     6.66 tokens per second)
+-llama_print_timings:        eval time =  9959.13 ms /    63 runs   (  158.08 ms per token,     6.33 tokens per second)
+-llama_print_timings:       total time = 11231.64 ms
+-
+-real	0m12.734s
+-user	0m45.201s
+-sys	0m1.442s
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-f16.log
++llama_print_timings:        load time =  1248.37 ms
++llama_print_timings:      sample time =    62.08 ms /    64 runs   (    0.97 ms per token,  1030.99 tokens per second)
++llama_print_timings: prompt eval time =  1201.85 ms /     8 tokens (  150.23 ms per token,     6.66 tokens per second)
++llama_print_timings:        eval time =  9944.66 ms /    63 runs   (  157.85 ms per token,     6.34 tokens per second)
++llama_print_timings:       total time = 11217.07 ms
++
++real	0m12.681s
++user	0m45.178s
++sys	0m1.371s
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-f16.log
+ + ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
+-main: build = 959 (3d9a551)
+-main: seed  = 1691396211
++main: build = 960 (5ddfbff)
++main: seed  = 1691401301
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-f16.bin
+ llama_model_load_internal: format     = ggjt v1 (pre #1405)
+ llama_model_load_internal: n_vocab    = 32000
+@@ -3860,22 +3869,22 @@
+ 
+ system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+ perplexity: calculating perplexity over 3 chunks, batch_size=128
+-perplexity: 38.58 seconds per pass - ETA 1 minutes
++perplexity: 38.55 seconds per pass - ETA 1 minutes
+ [1]4.2642,[2]7.2763,[3]8.5327,
+-llama_print_timings:        load time = 41059.16 ms
++llama_print_timings:        load time = 40906.29 ms
+ llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings: prompt eval time = 115675.38 ms /   384 tokens (  301.24 ms per token,     3.32 tokens per second)
++llama_print_timings: prompt eval time = 115604.07 ms /   384 tokens (  301.05 ms per token,     3.32 tokens per second)
+ llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings:       total time = 118227.36 ms
++llama_print_timings:       total time = 118027.93 ms
+ 
+ 
+-real	1m58.425s
+-user	7m42.686s
+-sys	0m2.724s
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q8_0.log
++real	1m58.204s
++user	7m42.370s
++sys	0m2.604s
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q8_0.log
+ + ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q8_0.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
+-main: build = 959 (3d9a551)
+-main: seed  = 1691396330
++main: build = 960 (5ddfbff)
++main: seed  = 1691401419
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q8_0.bin
+ llama_model_load_internal: format     = ggjt v3 (latest)
+ llama_model_load_internal: n_vocab    = 32000
+@@ -3900,22 +3909,22 @@
+ 
+ system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+ perplexity: calculating perplexity over 3 chunks, batch_size=128
+-perplexity: 15.09 seconds per pass - ETA 0 minutes
++perplexity: 15.08 seconds per pass - ETA 0 minutes
+ [1]4.2564,[2]7.3116,[3]8.5564,
+-llama_print_timings:        load time = 16405.87 ms
++llama_print_timings:        load time = 16389.51 ms
+ llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings: prompt eval time = 45215.79 ms /   384 tokens (  117.75 ms per token,     8.49 tokens per second)
++llama_print_timings: prompt eval time = 45197.79 ms /   384 tokens (  117.70 ms per token,     8.50 tokens per second)
+ llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings:       total time = 46606.21 ms
++llama_print_timings:       total time = 46573.84 ms
+ 
+ 
+-real	0m46.754s
+-user	3m0.834s
+-sys	0m1.532s
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q4_0.log
++real	0m46.720s
++user	3m0.829s
++sys	0m1.452s
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q4_0.log
+ + ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q4_0.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
+-main: build = 959 (3d9a551)
+-main: seed  = 1691396376
++main: build = 960 (5ddfbff)
++main: seed  = 1691401465
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q4_0.bin
+ llama_model_load_internal: format     = ggjt v3 (latest)
+ llama_model_load_internal: n_vocab    = 32000
+@@ -3940,22 +3949,22 @@
+ 
+ system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+ perplexity: calculating perplexity over 3 chunks, batch_size=128
+-perplexity: 15.60 seconds per pass - ETA 0 minutes
++perplexity: 15.61 seconds per pass - ETA 0 minutes
+ [1]4.1721,[2]7.8340,[3]8.9652,
+-llama_print_timings:        load time = 16341.21 ms
++llama_print_timings:        load time = 16346.92 ms
+ llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings: prompt eval time = 46793.22 ms /   384 tokens (  121.86 ms per token,     8.21 tokens per second)
++llama_print_timings: prompt eval time = 46799.25 ms /   384 tokens (  121.87 ms per token,     8.21 tokens per second)
+ llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings:       total time = 47601.55 ms
++llama_print_timings:       total time = 47602.10 ms
+ 
+ 
+ real	0m47.691s
+-user	3m7.153s
+-sys	0m0.884s
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q4_1.log
++user	3m7.178s
++sys	0m0.876s
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q4_1.log
+ + ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q4_1.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
+-main: build = 959 (3d9a551)
+-main: seed  = 1691396424
++main: build = 960 (5ddfbff)
++main: seed  = 1691401513
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q4_1.bin
+ llama_model_load_internal: format     = ggjt v3 (latest)
+ llama_model_load_internal: n_vocab    = 32000
+@@ -3980,22 +3989,22 @@
+ 
+ system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+ perplexity: calculating perplexity over 3 chunks, batch_size=128
+-perplexity: 14.83 seconds per pass - ETA 0 minutes
++perplexity: 14.84 seconds per pass - ETA 0 minutes
+ [1]4.4279,[2]8.0913,[3]9.1652,
+-llama_print_timings:        load time = 15676.87 ms
++llama_print_timings:        load time = 15697.67 ms
+ llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings: prompt eval time = 44444.10 ms /   384 tokens (  115.74 ms per token,     8.64 tokens per second)
++llama_print_timings: prompt eval time = 44464.59 ms /   384 tokens (  115.79 ms per token,     8.64 tokens per second)
+ llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings:       total time = 45358.88 ms
++llama_print_timings:       total time = 45391.45 ms
+ 
+ 
+-real	0m45.465s
+-user	2m57.756s
++real	0m45.498s
++user	2m57.847s
+ sys	0m1.008s
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q5_0.log
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q5_0.log
+ + ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q5_0.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
+-main: build = 959 (3d9a551)
+-main: seed  = 1691396470
++main: build = 960 (5ddfbff)
++main: seed  = 1691401559
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q5_0.bin
+ llama_model_load_internal: format     = ggjt v3 (latest)
+ llama_model_load_internal: n_vocab    = 32000
+@@ -4020,22 +4029,22 @@
+ 
+ system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+ perplexity: calculating perplexity over 3 chunks, batch_size=128
+-perplexity: 20.45 seconds per pass - ETA 1 minutes
++perplexity: 20.77 seconds per pass - ETA 1 minutes
+ [1]4.3678,[2]7.5989,[3]8.8144,
+-llama_print_timings:        load time = 21345.23 ms
++llama_print_timings:        load time = 21685.47 ms
+ llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings: prompt eval time = 61303.07 ms /   384 tokens (  159.64 ms per token,     6.26 tokens per second)
++llama_print_timings: prompt eval time = 62268.20 ms /   384 tokens (  162.16 ms per token,     6.17 tokens per second)
+ llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings:       total time = 62266.62 ms
++llama_print_timings:       total time = 63252.21 ms
+ 
+ 
+-real	1m2.371s
+-user	4m5.177s
+-sys	0m1.064s
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q5_1.log
++real	1m3.357s
++user	4m9.046s
++sys	0m1.080s
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q5_1.log
+ + ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q5_1.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
+-main: build = 959 (3d9a551)
+-main: seed  = 1691396532
++main: build = 960 (5ddfbff)
++main: seed  = 1691401622
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q5_1.bin
+ llama_model_load_internal: format     = ggjt v3 (latest)
+ llama_model_load_internal: n_vocab    = 32000
+@@ -4060,22 +4069,22 @@
+ 
+ system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+ perplexity: calculating perplexity over 3 chunks, batch_size=128
+-perplexity: 20.22 seconds per pass - ETA 1 minutes
++perplexity: 20.21 seconds per pass - ETA 1 minutes
+ [1]4.2759,[2]7.4287,[3]8.7025,
+-llama_print_timings:        load time = 21204.69 ms
++llama_print_timings:        load time = 21136.83 ms
+ llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings: prompt eval time = 60604.31 ms /   384 tokens (  157.82 ms per token,     6.34 tokens per second)
++llama_print_timings: prompt eval time = 60585.24 ms /   384 tokens (  157.77 ms per token,     6.34 tokens per second)
+ llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings:       total time = 61662.36 ms
++llama_print_timings:       total time = 61577.68 ms
+ 
+ 
+-real	1m1.770s
+-user	4m2.414s
+-sys	0m1.132s
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q2_k.log
++real	1m1.680s
++user	4m2.381s
++sys	0m1.017s
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q2_k.log
+ + ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q2_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
+-main: build = 959 (3d9a551)
+-main: seed  = 1691396594
++main: build = 960 (5ddfbff)
++main: seed  = 1691401684
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q2_k.bin
+ llama_model_load_internal: format     = ggjt v3 (latest)
+ llama_model_load_internal: n_vocab    = 32000
+@@ -4102,20 +4111,20 @@
+ perplexity: calculating perplexity over 3 chunks, batch_size=128
+ perplexity: 14.18 seconds per pass - ETA 0 minutes
+ [1]4.8023,[2]9.6403,[3]11.8816,
+-llama_print_timings:        load time = 14779.56 ms
++llama_print_timings:        load time = 14755.70 ms
+ llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings: prompt eval time = 42492.84 ms /   384 tokens (  110.66 ms per token,     9.04 tokens per second)
++llama_print_timings: prompt eval time = 42481.80 ms /   384 tokens (  110.63 ms per token,     9.04 tokens per second)
+ llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings:       total time = 43160.85 ms
++llama_print_timings:       total time = 43127.93 ms
+ 
+ 
+-real	0m43.234s
+-user	2m49.959s
+-sys	0m0.717s
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q3_k.log
++real	0m43.198s
++user	2m49.922s
++sys	0m0.689s
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q3_k.log
+ + ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q3_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
+-main: build = 959 (3d9a551)
+-main: seed  = 1691396637
++main: build = 960 (5ddfbff)
++main: seed  = 1691401727
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q3_k.bin
+ llama_model_load_internal: format     = ggjt v3 (latest)
+ llama_model_load_internal: n_vocab    = 32000
+@@ -4140,22 +4149,22 @@
+ 
+ system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+ perplexity: calculating perplexity over 3 chunks, batch_size=128
+-perplexity: 15.70 seconds per pass - ETA 0 minutes
++perplexity: 15.69 seconds per pass - ETA 0 minutes
+ [1]4.4163,[2]8.0763,[3]9.6026,
+-llama_print_timings:        load time = 16369.50 ms
++llama_print_timings:        load time = 16322.79 ms
+ llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings: prompt eval time = 47040.98 ms /   384 tokens (  122.50 ms per token,     8.16 tokens per second)
++llama_print_timings: prompt eval time = 47034.71 ms /   384 tokens (  122.49 ms per token,     8.16 tokens per second)
+ llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings:       total time = 47784.73 ms
++llama_print_timings:       total time = 47734.20 ms
+ 
+ 
+-real	0m47.867s
+-user	3m8.167s
+-sys	0m0.788s
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q4_k.log
++real	0m47.813s
++user	3m8.118s
++sys	0m0.765s
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q4_k.log
+ + ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q4_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
+-main: build = 959 (3d9a551)
+-main: seed  = 1691396685
++main: build = 960 (5ddfbff)
++main: seed  = 1691401775
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q4_k.bin
+ llama_model_load_internal: format     = ggjt v3 (latest)
+ llama_model_load_internal: n_vocab    = 32000
+@@ -4182,20 +4191,20 @@
+ perplexity: calculating perplexity over 3 chunks, batch_size=128
+ perplexity: 13.91 seconds per pass - ETA 0 minutes
+ [1]4.2661,[2]7.7216,[3]9.0582,
+-llama_print_timings:        load time = 14695.49 ms
++llama_print_timings:        load time = 14753.50 ms
+ llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings: prompt eval time = 41670.47 ms /   384 tokens (  108.52 ms per token,     9.22 tokens per second)
++llama_print_timings: prompt eval time = 41668.86 ms /   384 tokens (  108.51 ms per token,     9.22 tokens per second)
+ llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings:       total time = 42530.03 ms
++llama_print_timings:       total time = 42587.47 ms
+ 
+ 
+-real	0m42.626s
+-user	2m46.684s
+-sys	0m0.920s
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q5_k.log
++real	0m42.687s
++user	2m46.683s
++sys	0m0.976s
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q5_k.log
+ + ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q5_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
+-main: build = 959 (3d9a551)
+-main: seed  = 1691396727
++main: build = 960 (5ddfbff)
++main: seed  = 1691401817
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q5_k.bin
+ llama_model_load_internal: format     = ggjt v3 (latest)
+ llama_model_load_internal: n_vocab    = 32000
+@@ -4220,22 +4229,22 @@
+ 
+ system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+ perplexity: calculating perplexity over 3 chunks, batch_size=128
+-perplexity: 18.44 seconds per pass - ETA 0 minutes
++perplexity: 18.45 seconds per pass - ETA 0 minutes
+ [1]4.3370,[2]7.5215,[3]8.6990,
+-llama_print_timings:        load time = 19387.78 ms
++llama_print_timings:        load time = 19389.39 ms
+ llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings: prompt eval time = 55293.52 ms /   384 tokens (  143.99 ms per token,     6.94 tokens per second)
++llama_print_timings: prompt eval time = 55291.95 ms /   384 tokens (  143.99 ms per token,     6.94 tokens per second)
+ llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings:       total time = 56308.09 ms
++llama_print_timings:       total time = 56304.48 ms
+ 
+ 
+-real	0m56.411s
+-user	3m41.142s
+-sys	0m1.112s
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q6_k.log
++real	0m56.408s
++user	3m41.165s
++sys	0m1.084s
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q6_k.log
+ + ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q6_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
+-main: build = 959 (3d9a551)
+-main: seed  = 1691396784
++main: build = 960 (5ddfbff)
++main: seed  = 1691401874
+ llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q6_k.bin
+ llama_model_load_internal: format     = ggjt v3 (latest)
+ llama_model_load_internal: n_vocab    = 32000
+@@ -4260,20 +4269,20 @@
+ 
+ system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | VSX = 0 | 
+ perplexity: calculating perplexity over 3 chunks, batch_size=128
+-perplexity: 19.30 seconds per pass - ETA 0 minutes
++perplexity: 19.31 seconds per pass - ETA 0 minutes
+ [1]4.2756,[2]7.3111,[3]8.5587,
+-llama_print_timings:        load time = 20324.51 ms
++llama_print_timings:        load time = 20362.96 ms
+ llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings: prompt eval time = 57869.96 ms /   384 tokens (  150.70 ms per token,     6.64 tokens per second)
++llama_print_timings: prompt eval time = 57842.06 ms /   384 tokens (  150.63 ms per token,     6.64 tokens per second)
+ llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings:       total time = 58962.05 ms
++llama_print_timings:       total time = 58967.31 ms
+ 
+ 
+-real	0m59.068s
+-user	3m51.452s
+-sys	0m1.188s
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-ppl.log
+-++ cat /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-f16.log
++real	0m59.073s
++user	3m51.356s
++sys	0m1.205s
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-f16.log
+ ++ grep '^\[1\]'
+ + check_ppl f16 '[1]4.2642,[2]7.2763,[3]8.5327,'
+ + qnt=f16
+@@ -4287,8 +4296,8 @@
+ + printf '  - %s @ %s OK\n' f16 8.5327
+ + return 0
+   - f16 @ 8.5327 OK
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-ppl.log
+-++ cat /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q8_0.log
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q8_0.log
+ ++ grep '^\[1\]'
+ + check_ppl q8_0 '[1]4.2564,[2]7.3116,[3]8.5564,'
+ + qnt=q8_0
+@@ -4302,8 +4311,8 @@
+ + printf '  - %s @ %s OK\n' q8_0 8.5564
+ + return 0
+   - q8_0 @ 8.5564 OK
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-ppl.log
+-++ cat /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q4_0.log
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q4_0.log
+ ++ grep '^\[1\]'
+ + check_ppl q4_0 '[1]4.1721,[2]7.8340,[3]8.9652,'
+ + qnt=q4_0
+@@ -4317,8 +4326,8 @@
+ + printf '  - %s @ %s OK\n' q4_0 8.9652
+ + return 0
+   - q4_0 @ 8.9652 OK
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-ppl.log
+-++ cat /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q4_1.log
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q4_1.log
+ ++ grep '^\[1\]'
+ + check_ppl q4_1 '[1]4.4279,[2]8.0913,[3]9.1652,'
+ + qnt=q4_1
+@@ -4332,8 +4341,8 @@
+ + printf '  - %s @ %s OK\n' q4_1 9.1652
+ + return 0
+   - q4_1 @ 9.1652 OK
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-ppl.log
+-++ cat /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q5_0.log
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q5_0.log
+ ++ grep '^\[1\]'
+ + check_ppl q5_0 '[1]4.3678,[2]7.5989,[3]8.8144,'
+ + qnt=q5_0
+@@ -4347,8 +4356,8 @@
+ + printf '  - %s @ %s OK\n' q5_0 8.8144
+ + return 0
+   - q5_0 @ 8.8144 OK
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-ppl.log
+-++ cat /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q5_1.log
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q5_1.log
+ ++ grep '^\[1\]'
+ + check_ppl q5_1 '[1]4.2759,[2]7.4287,[3]8.7025,'
+ + qnt=q5_1
+@@ -4362,8 +4371,8 @@
+ + printf '  - %s @ %s OK\n' q5_1 8.7025
+ + return 0
+   - q5_1 @ 8.7025 OK
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-ppl.log
+-++ cat /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q2_k.log
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q2_k.log
+ ++ grep '^\[1\]'
+ + check_ppl q2_k '[1]4.8023,[2]9.6403,[3]11.8816,'
+ + qnt=q2_k
+@@ -4377,8 +4386,8 @@
+ + printf '  - %s @ %s OK\n' q2_k 11.8816
+ + return 0
+   - q2_k @ 11.8816 OK
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-ppl.log
+-++ cat /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q3_k.log
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q3_k.log
+ ++ grep '^\[1\]'
+ + check_ppl q3_k '[1]4.4163,[2]8.0763,[3]9.6026,'
+ + qnt=q3_k
+@@ -4392,8 +4401,8 @@
+ + printf '  - %s @ %s OK\n' q3_k 9.6026
+ + return 0
+   - q3_k @ 9.6026 OK
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-ppl.log
+-++ cat /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q4_k.log
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q4_k.log
+ ++ grep '^\[1\]'
+ + check_ppl q4_k '[1]4.2661,[2]7.7216,[3]9.0582,'
+ + qnt=q4_k
+@@ -4407,8 +4416,8 @@
+ + printf '  - %s @ %s OK\n' q4_k 9.0582
+ + return 0
+   - q4_k @ 9.0582 OK
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-ppl.log
+-++ cat /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q5_k.log
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q5_k.log
+ ++ grep '^\[1\]'
+ + check_ppl q5_k '[1]4.3370,[2]7.5215,[3]8.6990,'
+ + qnt=q5_k
+@@ -4422,8 +4431,8 @@
+ + printf '  - %s @ %s OK\n' q5_k 8.6990
+ + return 0
+   - q5_k @ 8.6990 OK
+-+ tee -a /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-ppl.log
+-++ cat /home/ggml/results/llama.cpp/3d/9a55181603e85a26378a850a14068034e5002d/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q6_k.log
+++ tee -a /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/5d/dfbffbaff1b6acffc966c0848c4d3a86031d45/ggml-3-arm64-cpu/open_llama_3b_v2-tg-q6_k.log
+ ++ grep '^\[1\]'
+ + check_ppl q6_k '[1]4.2756,[2]7.3111,[3]8.5587,'
+ + qnt=q6_k
+```
+</details>
+
