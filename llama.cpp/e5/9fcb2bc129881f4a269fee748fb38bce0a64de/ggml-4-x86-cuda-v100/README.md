@@ -1,0 +1,2752 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 17:34.28
+- date:    Thu Aug 10 14:46:09 UTC 2023
+- repo:    https://github.com/ggerganov/llama.cpp
+- commit:  https://github.com/ggerganov/llama.cpp/commit/e59fcb2bc129881f4a269fee748fb38bce0a64de
+- author:  Christian Demsar
+```
+Add --n-predict -2 for stopping generation on full context (#2565)
+```
+
+## Environment
+
+```
+GG_BUILD_CUDA=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-debug
+    Start 1: test-quantize-fns
+1/5 Test #1: test-quantize-fns ................   Passed    0.01 sec
+    Start 2: test-quantize-perf
+2/5 Test #2: test-quantize-perf ...............   Passed    0.06 sec
+    Start 3: test-sampling
+3/5 Test #3: test-sampling ....................   Passed    0.00 sec
+    Start 4: test-tokenizer-0
+4/5 Test #4: test-tokenizer-0 .................   Passed    0.03 sec
+    Start 5: test-grad0
+5/5 Test #5: test-grad0 .......................   Passed    4.50 sec
+
+100% tests passed, 0 tests failed out of 5
+
+Total Test time (real) =   4.61 sec
+
+real	0m4.646s
+user	0m5.242s
+sys	0m5.280s
+```
+
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure
+Test project /home/ggml/work/llama.cpp/build-ci-release
+    Start 1: test-quantize-fns
+1/5 Test #1: test-quantize-fns ................   Passed    0.01 sec
+    Start 2: test-quantize-perf
+2/5 Test #2: test-quantize-perf ...............   Passed    0.01 sec
+    Start 3: test-sampling
+3/5 Test #3: test-sampling ....................   Passed    0.00 sec
+    Start 4: test-tokenizer-0
+4/5 Test #4: test-tokenizer-0 .................   Passed    0.01 sec
+    Start 5: test-grad0
+5/5 Test #5: test-grad0 .......................   Passed    4.41 sec
+
+100% tests passed, 0 tests failed out of 5
+
+Total Test time (real) =   4.45 sec
+
+real	0m4.479s
+user	0m4.643s
+sys	0m5.396s
+```
+### open_llama_7b_v2
+
+OpenLLaMA 7B-v2:
+- status: 0
+- perplexity:
+  - f16 @ 7.2503 OK
+  - q8_0 @ 7.2548 OK
+  - q4_0 @ 7.3883 OK
+  - q4_1 @ 7.3921 OK
+  - q5_0 @ 7.3005 OK
+  - q5_1 @ 7.2858 OK
+  - q2_k @ 8.1531 OK
+  - q3_k @ 7.5160 OK
+  - q4_k @ 7.3431 OK
+  - q5_k @ 7.2794 OK
+  - q6_k @ 7.2585 OK
+- f16: 
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 974 (e59fcb2)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
+llama_model_load_internal: format     = ggjt v1 (pre #1405)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 1 (mostly F16)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  552.09 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 13148 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to do with having an impact on those around you. To make someone smile, or laugh at a time when all they want to do it cry and be unhappy; this makes me feel alive in some kind of way..”
+I think if we are given one chance then why not take that leap of faith? Why go back to the same place everyday just for money instead of making ourselves happy too. Happiness is something you can create by yourself so I believe it’s up to us as individuals what our next step should be, however when your in debt its hard sometimes but i know deep down if we do make that leap then good things will happen..
+The meaning behind life; my interpretation of the word ‘meaning’. For me this all depends on personal preference. I think it’s important to find out what other people believe and why they feel as such, so you can understand their point of view without judgement or criticism but just be able to take it in at face value rather than judging them for having a different opinion from yours..
+In my perspective the meaning is that everything we do has an impact on someone’s life whether good or bad. So I believe its upto us individually as individuals what our next step should be and how we can
+llama_print_timings:        load time =  2717.75 ms
+llama_print_timings:      sample time =   148.98 ms /   256 runs   (    0.58 ms per token,  1718.39 tokens per second)
+llama_print_timings: prompt eval time =   171.31 ms /     8 tokens (   21.41 ms per token,    46.70 tokens per second)
+llama_print_timings:        eval time =  4917.97 ms /   255 runs   (   19.29 ms per token,    51.85 tokens per second)
+llama_print_timings:       total time =  5307.31 ms
+
+real	0m10.707s
+user	0m17.058s
+sys	0m3.518s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 974 (e59fcb2)
+main: seed  = 1691678554
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
+llama_model_load_internal: format     = ggjt v1 (pre #1405)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 1 (mostly F16)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  648.09 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 14012 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.38 seconds per pass - ETA 0 minutes
+[1]4.7952,[2]6.3520,[3]7.3679,[4]7.2503,
+llama_print_timings:        load time =  4643.35 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 12663.49 ms /  8192 tokens (    1.55 ms per token,   646.90 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 18805.99 ms
+
+
+real	0m21.688s
+user	0m13.295s
+sys	0m8.328s
+```
+- q8_0:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 974 (e59fcb2)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 7 (mostly Q8_0)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  434.90 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 7210 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to give yourself purpose, and then create a plan that will help you achieve your goals.
+I think every business owner should have their own personal brand as much as they do for their businesses brands because once it comes time we all need someone in our corner fighting on behalf of us! We can never let go or fall asleep at the wheel when something isn’t working out right away and continue pushing hard towards a better tomorrow.
+This is why you should always be willing to take risks if they are worth taking which means trusting others will help make this world more peaceful one person at time, no matter how much it hurts because we deserve happiness too! It takes courage not just talent… To succeed in life’s challenges that may seem insurmountable. But with dedication commitment and hard work anything is possible – even if you don’t think so initially
+The meaning of success depends on what kind person they are looking for themselves when starting out, but most importantly how much risk-taking skills come into play once those risks become too big or risky because then there’s no turning back without consequences (like losing all your hard work). So if you want something good enough never give up until it becomes yours!
+Everyone has dreams that they wish would
+llama_print_timings:        load time =  1520.14 ms
+llama_print_timings:      sample time =   147.91 ms /   256 runs   (    0.58 ms per token,  1730.84 tokens per second)
+llama_print_timings: prompt eval time =   169.96 ms /     8 tokens (   21.24 ms per token,    47.07 tokens per second)
+llama_print_timings:        eval time =  3333.76 ms /   255 runs   (   13.07 ms per token,    76.49 tokens per second)
+llama_print_timings:       total time =  3719.76 ms
+
+real	0m7.725s
+user	0m11.393s
+sys	0m3.010s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 974 (e59fcb2)
+main: seed  = 1691678576
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 7 (mostly Q8_0)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  530.90 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 8074 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.38 seconds per pass - ETA 0 minutes
+[1]4.7990,[2]6.3552,[3]7.3735,[4]7.2548,
+llama_print_timings:        load time =  3487.23 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 12662.82 ms /  8192 tokens (    1.55 ms per token,   646.93 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 17661.39 ms
+
+
+real	0m20.483s
+user	0m12.487s
+sys	0m7.940s
+```
+- q4_0:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 974 (e59fcb2)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 2 (mostly Q4_0)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  372.40 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 4122 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to make others feel like they are making a difference.
+I know that sounds very cliche, but what my mom always told me growing up was: “It isn’t about you.” She would remind us all our lives… we live in this world so as not only to survive and be happy ourselves; no, it is better than just surviving – it’s much more important for each of use (regardless of background or education) to have the ability AND desire to make others feel like they are making a difference.
+This lesson has made me one heck of an optimist with great hope in humanity because I see how far we as people can go when focused on helping and loving other humans, rather than ourselves.. even if it’s just by doing something nice for someone – or saying that you care about them… (and not necessarily to a new person every day)
+I have been very fortunate my entire life. My parents raised me with great values; they told us we are nothing without love and caring, compassion is the key in everything I am trying to achieve now: success at what ever level or position you may be working towards today – remember that it’s about others not just yourself…
+- Be a good friend! (and
+llama_print_timings:        load time =   937.33 ms
+llama_print_timings:      sample time =   147.70 ms /   256 runs   (    0.58 ms per token,  1733.25 tokens per second)
+llama_print_timings: prompt eval time =   125.89 ms /     8 tokens (   15.74 ms per token,    63.55 tokens per second)
+llama_print_timings:        eval time =  2285.08 ms /   255 runs   (    8.96 ms per token,   111.59 tokens per second)
+llama_print_timings:       total time =  2625.19 ms
+
+real	0m5.905s
+user	0m7.720s
+sys	0m2.676s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 974 (e59fcb2)
+main: seed  = 1691678596
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 2 (mostly Q4_0)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  468.40 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 4986 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.19 seconds per pass - ETA 0 minutes
+[1]4.8783,[2]6.4528,[3]7.5000,[4]7.3883,
+llama_print_timings:        load time =  2922.49 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 11917.40 ms /  8192 tokens (    1.45 ms per token,   687.40 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 16389.13 ms
+
+
+real	0m18.995s
+user	0m11.511s
+sys	0m7.402s
+```
+- q4_1:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 974 (e59fcb2)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 3 (mostly Q4_1)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  380.21 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 4508 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to love what you do, and then some.
+I am a creative who loves all things design related! When working at my full time job in advertising/marketing i get paid for it but its not me….but with CreativeLynx Design Group – that’s where im meant to be!! I have many hobbies such as photography, gardening and baking.
+Creative Lynx is a graphic communications firm whose main aim was born out of the creative desire from co-founders Kylie Dudley & Leanne Davies…to put passion into print! Their combined knowledge in business development (Kylie)and marketing/advertising design has enabled them to develop and create this company that they could be proud of.
+The CreativeLynx team consists of professionals who work diligently on your project, from start to finish with a focus not just on the end result but also ensuring you are kept informed every step along the way! We’re passionate about what we do & have a love for our designs and getting them right.
+We believe in developing long term client relationships by working closely with each other to ensure all expectations of both parties are met, at an affordable price point that will make your business flourish!! So as
+llama_print_timings:        load time =   999.38 ms
+llama_print_timings:      sample time =   145.80 ms /   256 runs   (    0.57 ms per token,  1755.87 tokens per second)
+llama_print_timings: prompt eval time =   125.75 ms /     8 tokens (   15.72 ms per token,    63.62 tokens per second)
+llama_print_timings:        eval time =  2392.27 ms /   255 runs   (    9.38 ms per token,   106.59 tokens per second)
+llama_print_timings:       total time =  2729.53 ms
+
+real	0m6.099s
+user	0m8.048s
+sys	0m2.748s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 974 (e59fcb2)
+main: seed  = 1691678615
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 3 (mostly Q4_1)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  476.21 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 5372 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.19 seconds per pass - ETA 0 minutes
+[1]4.9223,[2]6.4608,[3]7.4928,[4]7.3921,
+llama_print_timings:        load time =  2972.63 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 11926.06 ms /  8192 tokens (    1.46 ms per token,   686.90 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 16468.56 ms
+
+
+real	0m19.139s
+user	0m11.617s
+sys	0m7.450s
+```
+- q5_0:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_0.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 974 (e59fcb2)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_0.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 8 (mostly Q5_0)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  388.03 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 4894 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to give yourself over, completely and unconditionally.
+To live as a servant for others without expecting anything in return . To love all beings regardless of their shape , size or form with an open heart..to trust that everyone wants your happiness more than you want theirs...and when they do not have the courage yet themselves to be loving like this, then give yourself over completely and unconditionally.
+My first glimpse at realisation was in 2011 ..when I had a dream about myself as an old woman having lived life fully....with no regrets for how i'd done it or what decisions i'd made...and when awakening from this, my whole world shifted..and with that shift came the knowledge of why we are here to begin with
+We all have so much love in us ..but there are times where our hearts break and ache because they want more than anything else , but it is not allowed by the mind. So rather then focus on what you do not have, try looking at how great your life actually is....and when something happens to hurt or disappoint you...remember this moment was never meant for happiness ..it happened just so that your soul could grow
+We are all connected , we were born here
+llama_print_timings:        load time =  1071.67 ms
+llama_print_timings:      sample time =   144.86 ms /   256 runs   (    0.57 ms per token,  1767.21 tokens per second)
+llama_print_timings: prompt eval time =   124.95 ms /     8 tokens (   15.62 ms per token,    64.03 tokens per second)
+llama_print_timings:        eval time =  2633.18 ms /   255 runs   (   10.33 ms per token,    96.84 tokens per second)
+llama_print_timings:       total time =  2969.38 ms
+
+real	0m6.393s
+user	0m8.809s
+sys	0m2.778s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_0.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 974 (e59fcb2)
+main: seed  = 1691678635
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_0.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 8 (mostly Q5_0)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  484.03 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 5758 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.18 seconds per pass - ETA 0 minutes
+[1]4.7986,[2]6.3775,[3]7.4120,[4]7.3005,
+llama_print_timings:        load time =  3060.13 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 11853.69 ms /  8192 tokens (    1.45 ms per token,   691.09 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 16498.48 ms
+
+
+real	0m19.156s
+user	0m11.839s
+sys	0m7.254s
+```
+- q5_1:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 974 (e59fcb2)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 9 (mostly Q5_1)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  395.84 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 5280 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to give, serve and love. And that’s what we do here at The Village Church!
+In all walks of our lives it would be impossible not find a need for help or encouragement; whether spiritual growth within marriage family relationships children finances work school health friends etc… We are called by God into this world with His unique plan to fulfill his mission and purpose. And that is something we look forward each day in the midst, chaos , difficulties of life!
+We can always find a reason for self- pity or lack thereof but it comes down to one thing - how you respond… Do your words encourage others? We all have an opportunity every moment throughout our days and moments as well. To be encouraging supportive uplifting inspiring compassionate giving unselfish humble positive patient forgiving etc….
+The world is a beautiful place so lets not let the little things get in the way of seeing it! And we are to see beyond ourselves into what really matters, people helping each other regardless their faith or belief system… Let us be an instrument for God and others; encouraging one another toward love life hope peace joy patience kindness goodness gentleness humility self control forgiveness etc….
+And when someone’s heart is being opened up with encouragement we are to speak truth in
+llama_print_timings:        load time =  1151.12 ms
+llama_print_timings:      sample time =   149.54 ms /   256 runs   (    0.58 ms per token,  1711.93 tokens per second)
+llama_print_timings: prompt eval time =   126.83 ms /     8 tokens (   15.85 ms per token,    63.08 tokens per second)
+llama_print_timings:        eval time =  2698.59 ms /   255 runs   (   10.58 ms per token,    94.49 tokens per second)
+llama_print_timings:       total time =  3041.88 ms
+
+real	0m6.550s
+user	0m9.058s
+sys	0m2.777s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 974 (e59fcb2)
+main: seed  = 1691678654
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 9 (mostly Q5_1)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  491.84 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 6144 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.17 seconds per pass - ETA 0 minutes
+[1]4.8305,[2]6.3757,[3]7.3951,[4]7.2858,
+llama_print_timings:        load time =  3098.43 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 11867.42 ms /  8192 tokens (    1.45 ms per token,   690.29 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 16546.93 ms
+
+
+real	0m19.211s
+user	0m11.659s
+sys	0m7.481s
+```
+- q2_k:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 974 (e59fcb2)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 10 (mostly Q2_K)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  343.10 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 3237 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to find out who we are and be happy with that.
+—Joseph Campbell, The Power of Myth: Who and What We Are in This Life (1979) 2018-2034." [Pause.] You know what? It's okay if you don't understand everything I am telling you right now. Let me tell it to your mother and she may have something more for you, that can help a little bit with this too. But let us begin by beginning at the start of these three things: life as an event in our universe which is here on earth where we are living...
+"And so I would like if there could be one thing to say about it right now, and then leave you to wonder what else might come up later." [Pause.] Well why don't. And that may not always happen exactly the way in our life as a series of events where we are here living on earth today too... But I do want to talk with all this because there is something more, and maybe it will become clearer by having gone through some things like these so far, or at least have begun to get them together.
+This would be the meaning in life that comes from a
+llama_print_timings:        load time =   792.80 ms
+llama_print_timings:      sample time =   155.15 ms /   256 runs   (    0.61 ms per token,  1649.97 tokens per second)
+llama_print_timings: prompt eval time =   136.24 ms /     8 tokens (   17.03 ms per token,    58.72 tokens per second)
+llama_print_timings:        eval time =  2392.16 ms /   255 runs   (    9.38 ms per token,   106.60 tokens per second)
+llama_print_timings:       total time =  2750.41 ms
+
+real	0m5.843s
+user	0m7.948s
+sys	0m2.629s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 974 (e59fcb2)
+main: seed  = 1691678673
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 10 (mostly Q2_K)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  439.10 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 4101 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.24 seconds per pass - ETA 0 minutes
+[1]5.2845,[2]6.9991,[3]8.1187,[4]8.1531,
+llama_print_timings:        load time =  2729.21 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 12080.09 ms /  8192 tokens (    1.47 ms per token,   678.14 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 16367.79 ms
+
+
+real	0m18.908s
+user	0m11.732s
+sys	0m7.117s
+```
+- q3_k:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q3_k.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 974 (e59fcb2)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q3_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 12 (mostly Q3_K - Medium)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  355.80 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 3621 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to love, laugh and live. If you can do these things everyday then your on a good path! You want people in your life who make you happy are there for you when times get tough or share those hilarious inside jokes that only you two know about? Life isn’t always easy but if we stick together through the struggles as well as celebrate all our victories, I believe it makes life easier to face everyday.
+I am proud of my past and excited for what is yet to come! My future will hopefully be bright with wonderful things in store like owning a home, traveling on an international trip or even taking over someone’s business; whatever the case may be there are endless possibilities all we have to do it work hard and dream big.
+Throughout your life you meet people who change how they view themselves based from what others think about them whether good or bad! You want these relationships with other individuals so badly that when something happens within a relationship where someone wants more control over their lives then suddenly becomes unreasonable, maybe even mean; there isn’t anything else than can compare for those moments.
+I believe it is okay to be selfish at times because you don’t know what tomorrow has in store but if your heart tells me that I
+llama_print_timings:        load time =   851.02 ms
+llama_print_timings:      sample time =   144.56 ms /   256 runs   (    0.56 ms per token,  1770.89 tokens per second)
+llama_print_timings: prompt eval time =   164.74 ms /     8 tokens (   20.59 ms per token,    48.56 tokens per second)
+llama_print_timings:        eval time =  2867.30 ms /   255 runs   (   11.24 ms per token,    88.93 tokens per second)
+llama_print_timings:       total time =  3242.28 ms
+
+real	0m6.455s
+user	0m9.413s
+sys	0m2.760s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q3_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 974 (e59fcb2)
+main: seed  = 1691678692
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q3_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 12 (mostly Q3_K - Medium)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  451.80 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 4485 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.35 seconds per pass - ETA 0 minutes
+[1]4.9390,[2]6.5302,[3]7.5792,[4]7.5160,
+llama_print_timings:        load time =  2829.75 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 12582.83 ms /  8192 tokens (    1.54 ms per token,   651.05 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 16921.69 ms
+
+
+real	0m19.507s
+user	0m11.952s
+sys	0m7.490s
+```
+- q4_k:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_k.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 974 (e59fcb2)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 15 (mostly Q4_K - Medium)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  372.40 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 4365 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to give your heart.
+I do not know what my purpose in this world will be, but it could come back and haunt me one day for that very reason; giving up too soon or trying too hard. It really comes down how well we can live with ourselves if our hearts are broken because they were given away as much to others whom had nothing left of their own lives than what was taken from them once, either in times past or present and all I have been able to do is give it a try for the rest will be only speculation on my part.
+We can make up words but not excuses nor reasons that explain why we cannot stand ourselves if our hearts are broken because they were given away as much to others whom had nothing left of their own lives than what was taken from them once, either in times past or present and all I have been able to do is give it a try for the rest will be only speculation on my part.
+This place has become too quiet lately; not enough words are being thrown around like they used to when there were more people who would take their time out of life's busy schedule, from whatever was keeping them going at any given moment in order that we could get a better perspective and maybe some understanding or insight
+llama_print_timings:        load time =   975.29 ms
+llama_print_timings:      sample time =   145.92 ms /   256 runs   (    0.57 ms per token,  1754.43 tokens per second)
+llama_print_timings: prompt eval time =   157.34 ms /     8 tokens (   19.67 ms per token,    50.85 tokens per second)
+llama_print_timings:        eval time =  2577.76 ms /   255 runs   (   10.11 ms per token,    98.92 tokens per second)
+llama_print_timings:       total time =  2949.43 ms
+
+real	0m6.264s
+user	0m8.716s
+sys	0m2.667s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 974 (e59fcb2)
+main: seed  = 1691678711
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 15 (mostly Q4_K - Medium)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  468.40 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 5229 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.31 seconds per pass - ETA 0 minutes
+[1]4.8779,[2]6.4223,[3]7.4394,[4]7.3431,
+llama_print_timings:        load time =  2967.15 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 12396.76 ms /  8192 tokens (    1.51 ms per token,   660.82 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 16873.52 ms
+
+
+real	0m19.501s
+user	0m11.946s
+sys	0m7.481s
+```
+- q5_k:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 974 (e59fcb2)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 17 (mostly Q5_K - Medium)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  388.03 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 5019 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to do with having an impact on someone else’s.
+I feel that we are all here for a purpose in this world, and there may be many meanings behind it but one thing stays constant: everything has got me exactly where i am today (in my personal opinion). If you think about the word “purpose”-what comes to mind? Does someone else’s life come into focus as part of that sentence. I believe we have a purpose for being here, and if our goal is not fulfilled by death then something will give us another chance/goal at it so there really isn’t any such thing like “the meaning in my life”.
+I do think though the meanings are different to everyone else because no one can know what happens after you die. So we don’t have a clear idea of where, or how our lives will end up but i believe that is why it has so much mystery and intrigue around us – its like “it could happen any moment now”.
+I do not think there IS such thing as meaning in my life because I dont know if something can be defined by one word/concept. However, the most important part of finding a purpose are having goals that you want to achieve or change things for other
+llama_print_timings:        load time =  1085.31 ms
+llama_print_timings:      sample time =   144.99 ms /   256 runs   (    0.57 ms per token,  1765.69 tokens per second)
+llama_print_timings: prompt eval time =   124.88 ms /     8 tokens (   15.61 ms per token,    64.06 tokens per second)
+llama_print_timings:        eval time =  2807.44 ms /   255 runs   (   11.01 ms per token,    90.83 tokens per second)
+llama_print_timings:       total time =  3148.49 ms
+
+real	0m6.595s
+user	0m9.379s
+sys	0m2.756s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 974 (e59fcb2)
+main: seed  = 1691678731
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 17 (mostly Q5_K - Medium)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  484.03 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 5883 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.17 seconds per pass - ETA 0 minutes
+[1]4.8115,[2]6.3743,[3]7.3920,[4]7.2794,
+llama_print_timings:        load time =  3013.85 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 11840.05 ms /  8192 tokens (    1.45 ms per token,   691.89 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 16411.47 ms
+
+
+real	0m19.054s
+user	0m11.551s
+sys	0m7.435s
+```
+- q6_k:
+```
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q6_k.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 974 (e59fcb2)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q6_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 18 (mostly Q6_K)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  404.63 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 5714 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to love God, enjoy Him and find joy in serving others. That’s why we do what we do! This blog will be about that journey as well has some thoughts on living a happy & healthy full-filled existence so you can get through your day with ease…
+My name is Jami Smith (pronounced Jamie). I am the owner and operator of “Jamie’s Creative Living Studio”. What started out in 1996 by offering my services as an interior decorator has grown into a multifaceted home based business that offers Interior Design Services, Professional Organizing & Coaching for busy women to create more time. In addition I also offer the following:
+- Consignment Sales – We sell new and gently used furniture/home furnishings at consignment sales throughout our community (Sales are held 2 x a year)
+- Gift Baskets – Custom designed gift baskets with unique items that will delight anyone on your list! Just in time for Christmas…these beautiful hand made creations can be ordered now & delivered to your door or as gifts during the holidays. The perfect addition of holiday cheer and joy!! (Limited quantity so order early)
+- Furniture/Accessories – We stock an array of furniture,
+llama_print_timings:        load time =  1199.93 ms
+llama_print_timings:      sample time =   144.61 ms /   256 runs   (    0.56 ms per token,  1770.27 tokens per second)
+llama_print_timings: prompt eval time =   118.86 ms /     8 tokens (   14.86 ms per token,    67.31 tokens per second)
+llama_print_timings:        eval time =  3097.34 ms /   255 runs   (   12.15 ms per token,    82.33 tokens per second)
+llama_print_timings:       total time =  3427.43 ms
+
+real	0m6.983s
+user	0m10.270s
+sys	0m2.816s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q6_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 974 (e59fcb2)
+main: seed  = 1691678750
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q6_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 18 (mostly Q6_K)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  500.63 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 6578 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.16 seconds per pass - ETA 0 minutes
+[1]4.8081,[2]6.3609,[3]7.3754,[4]7.2585,
+llama_print_timings:        load time =  3104.81 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 11817.72 ms /  8192 tokens (    1.44 ms per token,   693.20 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 16500.90 ms
+
+
+real	0m19.200s
+user	0m11.818s
+sys	0m7.308s
+```
+## Diff with parent commit
+
+<details><summary>click to expand</summary>
+
+```diff
+--- /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/stdall	2023-08-10 10:34:20.431575403 +0000
++++ /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/stdall	2023-08-10 14:46:09.706709346 +0000
+@@ -1,17 +1,17 @@
+-rm: cannot remove '/home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/*.log': No such file or directory
+-rm: cannot remove '/home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/*.exit': No such file or directory
+-rm: cannot remove '/home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/*.md': No such file or directory
++rm: cannot remove '/home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/*.log': No such file or directory
++rm: cannot remove '/home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/*.exit': No such file or directory
++rm: cannot remove '/home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/*.md': No such file or directory
+ Defaulting to user installation because normal site-packages is not writeable
+ Requirement already satisfied: numpy==1.24 in /home/ggml/.local/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/requirements.txt (line 1)) (1.24.0)
+ Requirement already satisfied: sentencepiece==0.1.98 in /home/ggml/.local/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/requirements.txt (line 2)) (0.1.98)
+ + gg_run_ctest_debug
+ + cd /home/ggml/work/llama.cpp
+ + rm -rf build-ci-debug
+-+ tee /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/ctest_debug.log
+++ tee /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/ctest_debug.log
+ + mkdir build-ci-debug
+ + cd build-ci-debug
+ + set -e
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/ctest_debug-cmake.log
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/ctest_debug-cmake.log
+ + cmake -DCMAKE_BUILD_TYPE=Debug ..
+ -- The C compiler identification is GNU 11.4.0
+ -- The CXX compiler identification is GNU 11.4.0
+@@ -35,18 +35,18 @@
+ -- Generating done (0.1s)
+ -- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-debug
+ 
+-real	0m0.528s
+-user	0m0.384s
+-sys	0m0.148s
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/ctest_debug-make.log
++real	0m0.526s
++user	0m0.383s
++sys	0m0.146s
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/ctest_debug-make.log
+ + make -j
+ [  2%] Built target BUILD_INFO
+-[  6%] Building C object CMakeFiles/ggml.dir/ggml.c.o
++[  4%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+ [  6%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+ [  8%] Building C object CMakeFiles/ggml.dir/k_quants.c.o
+ [  8%] Built target ggml
+-[ 10%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+-[ 12%] Linking C static library libggml_static.a
++[ 10%] Linking C static library libggml_static.a
++[ 12%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+ [ 12%] Built target ggml_static
+ [ 14%] Linking CXX static library libllama.a
+ [ 14%] Built target llama
+@@ -56,19 +56,19 @@
+ [ 22%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/test-tokenizer-0.cpp.o
+ [ 24%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+ [ 26%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+-[ 28%] Building CXX object examples/CMakeFiles/common.dir/grammar-parser.cpp.o
+-[ 30%] Building CXX object examples/CMakeFiles/common.dir/console.cpp.o
+-[ 32%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
+-[ 34%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+-[ 36%] Linking CXX executable ../bin/test-grad0
+-[ 38%] Linking CXX executable ../bin/test-quantize-fns
+-[ 40%] Linking CXX executable ../bin/test-tokenizer-0
+-[ 42%] Linking CXX executable ../../bin/quantize
+-[ 42%] Built target test-grad0
+-[ 42%] Built target test-quantize-fns
++[ 28%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
++[ 30%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
++[ 32%] Building CXX object examples/CMakeFiles/common.dir/grammar-parser.cpp.o
++[ 34%] Building CXX object examples/CMakeFiles/common.dir/console.cpp.o
++[ 36%] Linking CXX executable ../../bin/quantize
++[ 38%] Linking CXX executable ../bin/test-grad0
++[ 38%] Built target test-grad0
++[ 40%] Linking CXX executable ../bin/test-quantize-fns
++[ 42%] Linking CXX executable ../bin/test-tokenizer-0
+ [ 42%] Built target quantize
+-[ 42%] Built target test-tokenizer-0
++[ 42%] Built target test-quantize-fns
+ [ 44%] Linking CXX executable ../bin/test-sampling
++[ 44%] Built target test-tokenizer-0
+ [ 44%] Built target test-sampling
+ [ 46%] Linking CXX executable ../bin/test-quantize-perf
+ [ 46%] Built target test-quantize-perf
+@@ -78,10 +78,10 @@
+ [ 52%] Building CXX object examples/embedding/CMakeFiles/embedding.dir/embedding.cpp.o
+ [ 54%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
+ [ 56%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
+-[ 58%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
+-[ 60%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
+-[ 62%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
+-[ 64%] Building CXX object examples/embd-input/CMakeFiles/embdinput.dir/embd-input-lib.cpp.o
++[ 58%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
++[ 60%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
++[ 62%] Building CXX object examples/embd-input/CMakeFiles/embdinput.dir/embd-input-lib.cpp.o
++[ 64%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
+ [ 66%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
+ [ 68%] Building CXX object pocs/vdot/CMakeFiles/vdot.dir/vdot.cpp.o
+ [ 70%] Building CXX object pocs/vdot/CMakeFiles/q8dot.dir/q8dot.cpp.o
+@@ -89,32 +89,32 @@
+ /home/ggml/work/llama.cpp/examples/baby-llama/baby-llama.cpp:1620:32: warning: variable ‘opt_params_adam’ set but not used [-Wunused-but-set-variable]
+  1620 |         struct ggml_opt_params opt_params_adam = ggml_opt_default_params(GGML_OPT_ADAM);
+       |                                ^~~~~~~~~~~~~~~
+-[ 72%] Linking CXX executable ../../bin/benchmark
++[ 72%] Linking CXX executable ../../bin/embedding
+ [ 74%] Linking CXX executable ../../bin/baby-llama
+-[ 76%] Linking CXX executable ../../bin/embedding
+-[ 78%] Linking CXX executable ../../bin/q8dot
+-[ 80%] Linking CXX executable ../../bin/save-load-state
+-[ 82%] Linking CXX executable ../../bin/simple
++[ 76%] Linking CXX executable ../../bin/q8dot
++[ 78%] Linking CXX executable ../../bin/benchmark
++[ 80%] Linking CXX executable ../../bin/vdot
++[ 82%] Linking CXX executable ../../bin/save-load-state
+ [ 82%] Built target baby-llama
+-[ 84%] Linking CXX executable ../../bin/vdot
++[ 82%] Built target q8dot
++[ 82%] Built target embedding
++[ 82%] Built target vdot
++[ 84%] Linking CXX executable ../../bin/simple
+ [ 84%] Built target benchmark
+-[ 84%] Built target embedding
+-[ 84%] Built target q8dot
++[ 84%] Built target save-load-state
+ [ 86%] Linking CXX executable ../../bin/perplexity
+-[ 86%] Built target save-load-state
+-[ 86%] Built target simple
+-[ 86%] Built target vdot
+ [ 88%] Linking CXX static library libembdinput.a
++[ 88%] Built target simple
+ [ 88%] Built target embdinput
+ [ 90%] Building CXX object examples/embd-input/CMakeFiles/embd-input-test.dir/embd-input-test.cpp.o
+-[ 90%] Built target perplexity
+ [ 92%] Linking CXX executable ../../bin/main
++[ 92%] Built target perplexity
+ [ 92%] Built target main
+ [ 94%] Linking CXX executable ../../bin/quantize-stats
+-[ 96%] Linking CXX executable ../../bin/embd-input-test
+-[ 98%] Linking CXX executable ../../bin/train-text-from-scratch
++[ 96%] Linking CXX executable ../../bin/train-text-from-scratch
++[ 98%] Linking CXX executable ../../bin/embd-input-test
+ [ 98%] Built target quantize-stats
+-[ 98%] Built target embd-input-test
++[ 98%] Built target train-text-from-scratch
+ In file included from /usr/include/c++/11/cassert:44,
+                  from /home/ggml/work/llama.cpp/examples/server/json.hpp:2541,
+                  from /home/ggml/work/llama.cpp/examples/server/server.cpp:12:
+@@ -122,14 +122,14 @@
+ /home/ggml/work/llama.cpp/examples/server/server.cpp:1008:27: warning: comparison of integer expressions of different signedness: ‘const int32_t’ {aka ‘const int’} and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+  1008 |     assert(timings.n_eval == llama.num_tokens_predicted);
+       |            ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-[ 98%] Built target train-text-from-scratch
++[ 98%] Built target embd-input-test
+ [100%] Linking CXX executable ../../bin/server
+ [100%] Built target server
+ 
+-real	0m22.776s
+-user	0m39.077s
+-sys	0m3.772s
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/ctest_debug-ctest.log
++real	0m22.716s
++user	0m39.039s
++sys	0m3.881s
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/ctest_debug-ctest.log
+ + ctest --output-on-failure -E test-opt
+ Test project /home/ggml/work/llama.cpp/build-ci-debug
+     Start 1: test-quantize-fns
+@@ -141,27 +141,27 @@
+     Start 4: test-tokenizer-0
+ 4/5 Test #4: test-tokenizer-0 .................   Passed    0.03 sec
+     Start 5: test-grad0
+-5/5 Test #5: test-grad0 .......................   Passed    4.53 sec
++5/5 Test #5: test-grad0 .......................   Passed    4.50 sec
+ 
+ 100% tests passed, 0 tests failed out of 5
+ 
+-Total Test time (real) =   4.64 sec
++Total Test time (real) =   4.61 sec
+ 
+-real	0m4.677s
+-user	0m5.315s
+-sys	0m5.235s
++real	0m4.646s
++user	0m5.242s
++sys	0m5.280s
+ + set +e
+ + cur=0
+ + echo 0
+ + set +x
+ + gg_run_ctest_release
+ + cd /home/ggml/work/llama.cpp
+-+ tee /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/ctest_release.log
+++ tee /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/ctest_release.log
+ + rm -rf build-ci-release
+ + mkdir build-ci-release
+ + cd build-ci-release
+ + set -e
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/ctest_release-cmake.log
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/ctest_release-cmake.log
+ + cmake -DCMAKE_BUILD_TYPE=Release ..
+ -- The C compiler identification is GNU 11.4.0
+ -- The CXX compiler identification is GNU 11.4.0
+@@ -185,14 +185,14 @@
+ -- Generating done (0.1s)
+ -- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-release
+ 
+-real	0m0.522s
+-user	0m0.384s
+-sys	0m0.142s
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/ctest_release-make.log
++real	0m0.528s
++user	0m0.377s
++sys	0m0.155s
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/ctest_release-make.log
+ + make -j
+-[  2%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+-[  4%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+-[  6%] Built target BUILD_INFO
++[  2%] Built target BUILD_INFO
++[  4%] Building C object CMakeFiles/ggml.dir/ggml.c.o
++[  6%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+ [  8%] Building C object CMakeFiles/ggml.dir/k_quants.c.o
+ [  8%] Built target ggml
+ [ 10%] Linking C static library libggml_static.a
+@@ -200,68 +200,68 @@
+ [ 12%] Built target ggml_static
+ [ 14%] Linking CXX static library libllama.a
+ [ 14%] Built target llama
+-[ 16%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+-[ 18%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
+-[ 20%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
++[ 16%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
++[ 18%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
++[ 20%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
+ [ 22%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/test-tokenizer-0.cpp.o
+ [ 24%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+ [ 26%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+-[ 28%] Building CXX object examples/CMakeFiles/common.dir/grammar-parser.cpp.o
+-[ 30%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
++[ 28%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
++[ 30%] Building CXX object examples/CMakeFiles/common.dir/console.cpp.o
+ [ 32%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
+-[ 34%] Building CXX object examples/CMakeFiles/common.dir/console.cpp.o
++[ 34%] Building CXX object examples/CMakeFiles/common.dir/grammar-parser.cpp.o
+ [ 36%] Linking CXX executable ../bin/test-quantize-fns
+ [ 38%] Linking CXX executable ../../bin/quantize
+-[ 40%] Linking CXX executable ../bin/test-tokenizer-0
++[ 38%] Built target test-quantize-fns
++[ 38%] Built target quantize
++[ 40%] Linking CXX executable ../bin/test-grad0
+ [ 42%] Linking CXX executable ../bin/test-sampling
+-[ 42%] Built target test-quantize-fns
+-[ 42%] Built target test-tokenizer-0
+-[ 42%] Built target quantize
+-[ 42%] Built target test-sampling
+-[ 44%] Linking CXX executable ../bin/test-grad0
++[ 44%] Linking CXX executable ../bin/test-tokenizer-0
+ [ 44%] Built target test-grad0
++[ 44%] Built target test-sampling
++[ 44%] Built target test-tokenizer-0
+ [ 46%] Linking CXX executable ../bin/test-quantize-perf
+ [ 46%] Built target test-quantize-perf
+ [ 46%] Built target common
+ [ 48%] Building CXX object examples/main/CMakeFiles/main.dir/main.cpp.o
+ [ 50%] Building CXX object examples/perplexity/CMakeFiles/perplexity.dir/perplexity.cpp.o
+ [ 52%] Building CXX object examples/embedding/CMakeFiles/embedding.dir/embedding.cpp.o
+-[ 54%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
+-[ 56%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
+-[ 58%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
+-[ 60%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
++[ 54%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
++[ 56%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
++[ 58%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
++[ 60%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
+ [ 62%] Building CXX object examples/embd-input/CMakeFiles/embdinput.dir/embd-input-lib.cpp.o
+-[ 64%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
++[ 64%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
+ [ 66%] Building CXX object pocs/vdot/CMakeFiles/vdot.dir/vdot.cpp.o
+-[ 70%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
++[ 68%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
+ [ 70%] Building CXX object pocs/vdot/CMakeFiles/q8dot.dir/q8dot.cpp.o
+ /home/ggml/work/llama.cpp/examples/baby-llama/baby-llama.cpp: In function ‘int main(int, char**)’:
+ /home/ggml/work/llama.cpp/examples/baby-llama/baby-llama.cpp:1620:32: warning: variable ‘opt_params_adam’ set but not used [-Wunused-but-set-variable]
+  1620 |         struct ggml_opt_params opt_params_adam = ggml_opt_default_params(GGML_OPT_ADAM);
+       |                                ^~~~~~~~~~~~~~~
+-[ 72%] Linking CXX executable ../../bin/q8dot
+-[ 74%] Linking CXX executable ../../bin/benchmark
+-[ 76%] Linking CXX executable ../../bin/embedding
+-[ 76%] Built target q8dot
+-[ 78%] Linking CXX executable ../../bin/save-load-state
++[ 72%] Linking CXX executable ../../bin/embedding
++[ 74%] Linking CXX executable ../../bin/q8dot
++[ 74%] Built target q8dot
++[ 74%] Built target embedding
++[ 76%] Linking CXX executable ../../bin/save-load-state
++[ 78%] Linking CXX executable ../../bin/benchmark
++[ 78%] Built target save-load-state
++[ 78%] Built target benchmark
+ [ 80%] Linking CXX executable ../../bin/vdot
+ [ 82%] Linking CXX executable ../../bin/simple
+-[ 82%] Built target benchmark
+-[ 82%] Built target embedding
+ [ 82%] Built target vdot
+-[ 82%] Built target save-load-state
++[ 82%] Built target simple
+ [ 84%] Linking CXX executable ../../bin/perplexity
+-[ 84%] Built target simple
+ [ 86%] Linking CXX executable ../../bin/baby-llama
+ [ 86%] Built target perplexity
++[ 86%] Built target baby-llama
+ [ 88%] Linking CXX static library libembdinput.a
+-[ 88%] Built target baby-llama
+ [ 88%] Built target embdinput
+ [ 90%] Building CXX object examples/embd-input/CMakeFiles/embd-input-test.dir/embd-input-test.cpp.o
+-[ 92%] Linking CXX executable ../../bin/main
+-[ 92%] Built target main
+-[ 94%] Linking CXX executable ../../bin/embd-input-test
++[ 92%] Linking CXX executable ../../bin/embd-input-test
++[ 94%] Linking CXX executable ../../bin/main
+ [ 94%] Built target embd-input-test
++[ 94%] Built target main
+ [ 96%] Linking CXX executable ../../bin/quantize-stats
+ [ 96%] Built target quantize-stats
+ [ 98%] Linking CXX executable ../../bin/train-text-from-scratch
+@@ -269,11 +269,11 @@
+ [100%] Linking CXX executable ../../bin/server
+ [100%] Built target server
+ 
+-real	0m37.337s
+-user	1m0.835s
+-sys	0m3.132s
++real	0m36.928s
++user	1m0.675s
++sys	0m3.103s
+ + '[' -z ']'
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/ctest_release-ctest.log
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/ctest_release-ctest.log
+ + ctest --output-on-failure
+ Test project /home/ggml/work/llama.cpp/build-ci-release
+     Start 1: test-quantize-fns
+@@ -285,21 +285,21 @@
+     Start 4: test-tokenizer-0
+ 4/5 Test #4: test-tokenizer-0 .................   Passed    0.01 sec
+     Start 5: test-grad0
+-5/5 Test #5: test-grad0 .......................   Passed    4.32 sec
++5/5 Test #5: test-grad0 .......................   Passed    4.41 sec
+ 
+ 100% tests passed, 0 tests failed out of 5
+ 
+-Total Test time (real) =   4.36 sec
++Total Test time (real) =   4.45 sec
+ 
+-real	0m4.396s
+-user	0m4.462s
+-sys	0m5.307s
++real	0m4.479s
++user	0m4.643s
++sys	0m5.396s
+ + set +e
+ + cur=0
+ + echo 0
+ + set +x
+ + gg_run_open_llama_7b_v2
+-+ tee /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2.log
+++ tee /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2.log
+ + cd /home/ggml/work/llama.cpp
+ + gg_wget models-mnt/open-llama/7B-v2/ https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/config.json
+ + local out=models-mnt/open-llama/7B-v2/
+@@ -310,7 +310,7 @@
+ + cd models-mnt/open-llama/7B-v2/
+ + wget -nv -N https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/config.json
+ Last-modified header missing -- time-stamps turned off.
+-2023-08-10 10:17:55 URL:https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/config.json [502/502] -> "config.json" [1]
++2023-08-10 14:29:47 URL:https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/config.json [502/502] -> "config.json" [1]
+ + cd /home/ggml/work/llama.cpp
+ + gg_wget models-mnt/open-llama/7B-v2/ https://huggingface.co/openlm-research/open_llama_7b_v2/resolve/main/tokenizer.model
+ + local out=models-mnt/open-llama/7B-v2/
+@@ -330,7 +330,7 @@
+ + cd models-mnt/open-llama/7B-v2/
+ + wget -nv -N https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/tokenizer_config.json
+ Last-modified header missing -- time-stamps turned off.
+-2023-08-10 10:17:55 URL:https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/tokenizer_config.json [593/593] -> "tokenizer_config.json" [1]
++2023-08-10 14:29:47 URL:https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/tokenizer_config.json [593/593] -> "tokenizer_config.json" [1]
+ + cd /home/ggml/work/llama.cpp
+ + gg_wget models-mnt/open-llama/7B-v2/ https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/special_tokens_map.json
+ + local out=models-mnt/open-llama/7B-v2/
+@@ -341,7 +341,7 @@
+ + cd models-mnt/open-llama/7B-v2/
+ + wget -nv -N https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/special_tokens_map.json
+ Last-modified header missing -- time-stamps turned off.
+-2023-08-10 10:17:55 URL:https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/special_tokens_map.json [330/330] -> "special_tokens_map.json" [1]
++2023-08-10 14:29:47 URL:https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/special_tokens_map.json [330/330] -> "special_tokens_map.json" [1]
+ + cd /home/ggml/work/llama.cpp
+ + gg_wget models-mnt/open-llama/7B-v2/ https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/pytorch_model.bin.index.json
+ + local out=models-mnt/open-llama/7B-v2/
+@@ -352,7 +352,7 @@
+ + cd models-mnt/open-llama/7B-v2/
+ + wget -nv -N https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/pytorch_model.bin.index.json
+ Last-modified header missing -- time-stamps turned off.
+-2023-08-10 10:17:55 URL:https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/pytorch_model.bin.index.json [26788/26788] -> "pytorch_model.bin.index.json" [1]
++2023-08-10 14:29:48 URL:https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/pytorch_model.bin.index.json [26788/26788] -> "pytorch_model.bin.index.json" [1]
+ + cd /home/ggml/work/llama.cpp
+ + gg_wget models-mnt/open-llama/7B-v2/ https://huggingface.co/openlm-research/open_llama_7b_v2/resolve/main/pytorch_model-00001-of-00002.bin
+ + local out=models-mnt/open-llama/7B-v2/
+@@ -381,7 +381,7 @@
+ + cd models-mnt/open-llama/7B-v2/
+ + wget -nv -N https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/generation_config.json
+ Last-modified header missing -- time-stamps turned off.
+-2023-08-10 10:17:56 URL:https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/generation_config.json [132/132] -> "generation_config.json" [1]
++2023-08-10 14:29:48 URL:https://huggingface.co/openlm-research/open_llama_7b_v2/raw/main/generation_config.json [132/132] -> "generation_config.json" [1]
+ + cd /home/ggml/work/llama.cpp
+ + gg_wget models-mnt/wikitext/ https://s3.amazonaws.com/research.metamind.io/wikitext/wikitext-2-raw-v1.zip
+ + local out=models-mnt/wikitext/
+@@ -403,7 +403,7 @@
+ + mkdir build-ci-release
+ + cd build-ci-release
+ + set -e
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-cmake.log
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-cmake.log
+ + cmake -DCMAKE_BUILD_TYPE=Release -DLLAMA_CUBLAS=1 ..
+ -- The C compiler identification is GNU 11.4.0
+ -- The CXX compiler identification is GNU 11.4.0
+@@ -432,14 +432,14 @@
+ -- Using CUDA architectures: 52;61;70
+ -- CMAKE_SYSTEM_PROCESSOR: x86_64
+ -- x86 detected
+--- Configuring done (4.6s)
++-- Configuring done (4.5s)
+ -- Generating done (0.1s)
+ -- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-release
+ 
+-real	0m4.677s
+-user	0m2.324s
+-sys	0m2.293s
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-make.log
++real	0m4.675s
++user	0m2.395s
++sys	0m2.213s
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-make.log
+ + make -j
+ [  1%] Built target BUILD_INFO
+ [  3%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+@@ -447,30 +447,30 @@
+ [  7%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda.cu.o
+ [  9%] Building C object CMakeFiles/ggml.dir/k_quants.c.o
+ [  9%] Built target ggml
+-[ 11%] Linking CUDA static library libggml_static.a
++[ 13%] Linking CUDA static library libggml_static.a
+ [ 13%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+ [ 13%] Built target ggml_static
+ [ 15%] Linking CXX static library libllama.a
+ [ 15%] Built target llama
+ [ 17%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+ [ 19%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+-[ 21%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/test-tokenizer-0.cpp.o
+-[ 25%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
++[ 21%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
++[ 23%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/test-tokenizer-0.cpp.o
+ [ 25%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+ [ 27%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+-[ 31%] Building CXX object examples/CMakeFiles/common.dir/console.cpp.o
+-[ 33%] Building CXX object examples/CMakeFiles/common.dir/grammar-parser.cpp.o
+-[ 29%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
++[ 29%] Building CXX object examples/CMakeFiles/common.dir/console.cpp.o
++[ 31%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+ [ 35%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
++[ 35%] Building CXX object examples/CMakeFiles/common.dir/grammar-parser.cpp.o
+ [ 37%] Linking CXX executable ../../bin/quantize
+-[ 37%] Built target quantize
+ [ 39%] Linking CXX executable ../bin/test-quantize-fns
++[ 39%] Built target quantize
++[ 39%] Built target test-quantize-fns
+ [ 41%] Linking CXX executable ../bin/test-sampling
+ [ 43%] Linking CXX executable ../bin/test-tokenizer-0
+-[ 43%] Built target test-quantize-fns
+-[ 43%] Built target test-sampling
+-[ 43%] Built target test-tokenizer-0
+ [ 45%] Linking CXX executable ../bin/test-grad0
++[ 45%] Built target test-sampling
++[ 45%] Built target test-tokenizer-0
+ [ 45%] Built target test-grad0
+ [ 47%] Linking CXX executable ../bin/test-quantize-perf
+ [ 47%] Built target test-quantize-perf
+@@ -478,52 +478,52 @@
+ [ 49%] Built target quantize-stats
+ [ 49%] Built target common
+ [ 50%] Building CXX object examples/main/CMakeFiles/main.dir/main.cpp.o
+-[ 54%] Building CXX object examples/perplexity/CMakeFiles/perplexity.dir/perplexity.cpp.o
++[ 52%] Building CXX object examples/perplexity/CMakeFiles/perplexity.dir/perplexity.cpp.o
+ [ 54%] Building CXX object examples/embedding/CMakeFiles/embedding.dir/embedding.cpp.o
+-[ 56%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
+-[ 58%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
+-[ 60%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
++[ 56%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
++[ 58%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
++[ 60%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
+ [ 62%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
+ [ 64%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
+-[ 66%] Building CXX object examples/embd-input/CMakeFiles/embdinput.dir/embd-input-lib.cpp.o
+-[ 68%] Building CXX object pocs/vdot/CMakeFiles/vdot.dir/vdot.cpp.o
+-[ 70%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
++[ 66%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
++[ 68%] Building CXX object examples/embd-input/CMakeFiles/embdinput.dir/embd-input-lib.cpp.o
++[ 70%] Building CXX object pocs/vdot/CMakeFiles/vdot.dir/vdot.cpp.o
+ [ 72%] Building CXX object pocs/vdot/CMakeFiles/q8dot.dir/q8dot.cpp.o
+ /home/ggml/work/llama.cpp/examples/baby-llama/baby-llama.cpp: In function ‘int main(int, char**)’:
+ /home/ggml/work/llama.cpp/examples/baby-llama/baby-llama.cpp:1620:32: warning: variable ‘opt_params_adam’ set but not used [-Wunused-but-set-variable]
+  1620 |         struct ggml_opt_params opt_params_adam = ggml_opt_default_params(GGML_OPT_ADAM);
+       |                                ^~~~~~~~~~~~~~~
+ [ 74%] Linking CXX executable ../../bin/embedding
+-[ 76%] Linking CXX executable ../../bin/q8dot
+-[ 78%] Linking CXX executable ../../bin/benchmark
+-[ 80%] Linking CXX executable ../../bin/vdot
++[ 76%] Linking CXX executable ../../bin/benchmark
++[ 78%] Linking CXX executable ../../bin/q8dot
++[ 80%] Linking CXX executable ../../bin/save-load-state
++[ 80%] Built target embedding
+ [ 82%] Linking CXX executable ../../bin/simple
+-[ 82%] Built target embedding
+-[ 84%] Linking CXX executable ../../bin/save-load-state
+-[ 84%] Built target q8dot
++[ 82%] Built target save-load-state
++[ 84%] Linking CXX executable ../../bin/vdot
+ [ 84%] Built target benchmark
+-[ 84%] Built target vdot
+-[ 84%] Built target save-load-state
++[ 84%] Built target q8dot
+ [ 84%] Built target simple
+-[ 86%] Linking CXX executable ../../bin/baby-llama
+-[ 88%] Linking CXX executable ../../bin/perplexity
+-[ 88%] Built target baby-llama
+-[ 88%] Built target perplexity
++[ 84%] Built target vdot
++[ 86%] Linking CXX executable ../../bin/perplexity
++[ 88%] Linking CXX executable ../../bin/baby-llama
+ [ 90%] Linking CXX static library libembdinput.a
+ [ 90%] Built target embdinput
+ [ 92%] Building CXX object examples/embd-input/CMakeFiles/embd-input-test.dir/embd-input-test.cpp.o
++[ 92%] Built target perplexity
++[ 92%] Built target baby-llama
+ [ 94%] Linking CXX executable ../../bin/main
+-[ 94%] Built target main
+ [ 96%] Linking CXX executable ../../bin/embd-input-test
++[ 96%] Built target main
+ [ 96%] Built target embd-input-test
+ [ 98%] Linking CXX executable ../../bin/train-text-from-scratch
+ [ 98%] Built target train-text-from-scratch
+ [100%] Linking CXX executable ../../bin/server
+ [100%] Built target server
+ 
+-real	2m20.160s
+-user	2m49.933s
+-sys	0m4.623s
++real	2m20.236s
++user	2m50.193s
++sys	0m4.785s
+ + python3 ../convert.py ../models-mnt/open-llama/7B-v2
+ Loading model file ../models-mnt/open-llama/7B-v2/pytorch_model-00001-of-00002.bin
+ Loading model file ../models-mnt/open-llama/7B-v2/pytorch_model-00001-of-00002.bin
+@@ -839,7 +839,7 @@
+ + ./bin/quantize ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin q8_0
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+-main: build = 973 (1638757)
++main: build = 974 (e59fcb2)
+ main: quantizing '../models-mnt/open-llama/7B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin' as Q8_0
+ llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
+ llama.cpp: saving model to ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin
+@@ -1138,12 +1138,12 @@
+ llama_model_quantize_internal: quant size  =  6798.37 MB
+ llama_model_quantize_internal: hist: 0.000 0.027 0.020 0.032 0.048 0.067 0.088 0.106 0.226 0.106 0.088 0.067 0.048 0.032 0.020 0.027 
+ 
+-main: quantize time = 55891.25 ms
+-main:    total time = 55891.25 ms
++main: quantize time = 55618.83 ms
++main:    total time = 55618.83 ms
+ + ./bin/quantize ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.bin q4_0
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+-main: build = 973 (1638757)
++main: build = 974 (e59fcb2)
+ main: quantizing '../models-mnt/open-llama/7B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/7B-v2/ggml-model-q4_0.bin' as Q4_0
+ llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
+ llama.cpp: saving model to ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.bin
+@@ -1442,12 +1442,12 @@
+ llama_model_quantize_internal: quant size  =  3647.87 MB
+ llama_model_quantize_internal: hist: 0.036 0.016 0.025 0.039 0.056 0.077 0.096 0.111 0.117 0.111 0.096 0.077 0.057 0.039 0.025 0.021 
+ 
+-main: quantize time = 33560.62 ms
+-main:    total time = 33560.62 ms
++main: quantize time = 33469.77 ms
++main:    total time = 33469.77 ms
+ + ./bin/quantize ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin q4_1
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+-main: build = 973 (1638757)
++main: build = 974 (e59fcb2)
+ main: quantizing '../models-mnt/open-llama/7B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin' as Q4_1
+ llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
+ llama.cpp: saving model to ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin
+@@ -1746,12 +1746,12 @@
+ llama_model_quantize_internal: quant size  =  4041.68 MB
+ llama_model_quantize_internal: hist: 0.040 0.025 0.037 0.051 0.067 0.083 0.095 0.102 0.102 0.095 0.082 0.067 0.051 0.037 0.025 0.040 
+ 
+-main: quantize time = 35149.57 ms
+-main:    total time = 35149.57 ms
++main: quantize time = 35152.32 ms
++main:    total time = 35152.32 ms
+ + ./bin/quantize ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin ../models-mnt/open-llama/7B-v2/ggml-model-q5_0.bin q5_0
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+-main: build = 973 (1638757)
++main: build = 974 (e59fcb2)
+ main: quantizing '../models-mnt/open-llama/7B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/7B-v2/ggml-model-q5_0.bin' as Q5_0
+ llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
+ llama.cpp: saving model to ../models-mnt/open-llama/7B-v2/ggml-model-q5_0.bin
+@@ -2050,12 +2050,12 @@
+ llama_model_quantize_internal: quant size  =  4435.49 MB
+ llama_model_quantize_internal: hist: 0.078 0.063 0.060 0.059 0.059 0.062 0.066 0.071 0.078 0.063 0.060 0.056 0.054 0.055 0.057 0.059 
+ 
+-main: quantize time = 40267.84 ms
+-main:    total time = 40267.84 ms
++main: quantize time = 40371.38 ms
++main:    total time = 40371.38 ms
+ + ./bin/quantize ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.bin q5_1
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+-main: build = 973 (1638757)
++main: build = 974 (e59fcb2)
+ main: quantizing '../models-mnt/open-llama/7B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/7B-v2/ggml-model-q5_1.bin' as Q5_1
+ llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
+ llama.cpp: saving model to ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.bin
+@@ -2354,12 +2354,12 @@
+ llama_model_quantize_internal: quant size  =  4829.30 MB
+ llama_model_quantize_internal: hist: 0.075 0.061 0.062 0.062 0.064 0.065 0.065 0.078 0.069 0.058 0.057 0.056 0.055 0.054 0.054 0.065 
+ 
+-main: quantize time = 41487.17 ms
+-main:    total time = 41487.17 ms
++main: quantize time = 41648.89 ms
++main:    total time = 41648.89 ms
+ + ./bin/quantize ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin q2_k
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+-main: build = 973 (1638757)
++main: build = 974 (e59fcb2)
+ main: quantizing '../models-mnt/open-llama/7B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin' as Q2_K
+ llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
+ llama.cpp: saving model to ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin
+@@ -2657,12 +2657,12 @@
+ llama_model_quantize_internal: model size  = 12853.02 MB
+ llama_model_quantize_internal: quant size  =  2733.57 MB
+ 
+-main: quantize time = 42443.80 ms
+-main:    total time = 42443.80 ms
++main: quantize time = 42546.95 ms
++main:    total time = 42546.95 ms
+ + ./bin/quantize ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin ../models-mnt/open-llama/7B-v2/ggml-model-q3_k.bin q3_k
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+-main: build = 973 (1638757)
++main: build = 974 (e59fcb2)
+ main: quantizing '../models-mnt/open-llama/7B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/7B-v2/ggml-model-q3_k.bin' as Q3_K
+ llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
+ llama.cpp: saving model to ../models-mnt/open-llama/7B-v2/ggml-model-q3_k.bin
+@@ -2960,12 +2960,12 @@
+ llama_model_quantize_internal: model size  = 12853.02 MB
+ llama_model_quantize_internal: quant size  =  3129.77 MB
+ 
+-main: quantize time = 44188.65 ms
+-main:    total time = 44188.65 ms
++main: quantize time = 43895.68 ms
++main:    total time = 43895.68 ms
+ + ./bin/quantize ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin ../models-mnt/open-llama/7B-v2/ggml-model-q4_k.bin q4_k
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+-main: build = 973 (1638757)
++main: build = 974 (e59fcb2)
+ main: quantizing '../models-mnt/open-llama/7B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/7B-v2/ggml-model-q4_k.bin' as Q4_K
+ llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
+ llama.cpp: saving model to ../models-mnt/open-llama/7B-v2/ggml-model-q4_k.bin
+@@ -3263,12 +3263,12 @@
+ llama_model_quantize_internal: model size  = 12853.02 MB
+ llama_model_quantize_internal: quant size  =  3891.24 MB
+ 
+-main: quantize time = 48317.05 ms
+-main:    total time = 48317.05 ms
++main: quantize time = 47955.33 ms
++main:    total time = 47955.34 ms
+ + ./bin/quantize ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin q5_k
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+-main: build = 973 (1638757)
++main: build = 974 (e59fcb2)
+ main: quantizing '../models-mnt/open-llama/7B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin' as Q5_K
+ llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
+ llama.cpp: saving model to ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin
+@@ -3566,12 +3566,12 @@
+ llama_model_quantize_internal: model size  = 12853.02 MB
+ llama_model_quantize_internal: quant size  =  4560.87 MB
+ 
+-main: quantize time = 54571.47 ms
+-main:    total time = 54571.47 ms
++main: quantize time = 54655.31 ms
++main:    total time = 54655.31 ms
+ + ./bin/quantize ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin ../models-mnt/open-llama/7B-v2/ggml-model-q6_k.bin q6_k
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+-main: build = 973 (1638757)
++main: build = 974 (e59fcb2)
+ main: quantizing '../models-mnt/open-llama/7B-v2/ggml-model-f16.bin' to '../models-mnt/open-llama/7B-v2/ggml-model-q6_k.bin' as Q6_K
+ llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
+ llama.cpp: saving model to ../models-mnt/open-llama/7B-v2/ggml-model-q6_k.bin
+@@ -3869,11 +3869,11 @@
+ llama_model_quantize_internal: model size  = 12853.02 MB
+ llama_model_quantize_internal: quant size  =  5272.34 MB
+ 
+-main: quantize time = 55100.44 ms
+-main:    total time = 55100.44 ms
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-f16.log
++main: quantize time = 55076.80 ms
++main:    total time = 55076.80 ms
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-f16.log
+ + ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+-main: build = 973 (1638757)
++main: build = 974 (e59fcb2)
+ main: seed  = 1234
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+@@ -3915,18 +3915,18 @@
+ I think if we are given one chance then why not take that leap of faith? Why go back to the same place everyday just for money instead of making ourselves happy too. Happiness is something you can create by yourself so I believe it’s up to us as individuals what our next step should be, however when your in debt its hard sometimes but i know deep down if we do make that leap then good things will happen..
+ The meaning behind life; my interpretation of the word ‘meaning’. For me this all depends on personal preference. I think it’s important to find out what other people believe and why they feel as such, so you can understand their point of view without judgement or criticism but just be able to take it in at face value rather than judging them for having a different opinion from yours..
+ In my perspective the meaning is that everything we do has an impact on someone’s life whether good or bad. So I believe its upto us individually as individuals what our next step should be and how we can
+-llama_print_timings:        load time =  2710.18 ms
+-llama_print_timings:      sample time =   146.55 ms /   256 runs   (    0.57 ms per token,  1746.84 tokens per second)
+-llama_print_timings: prompt eval time =   167.24 ms /     8 tokens (   20.90 ms per token,    47.84 tokens per second)
+-llama_print_timings:        eval time =  4913.26 ms /   255 runs   (   19.27 ms per token,    51.90 tokens per second)
+-llama_print_timings:       total time =  5293.76 ms
+-
+-real	0m10.704s
+-user	0m16.990s
+-sys	0m3.549s
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q8_0.log
++llama_print_timings:        load time =  2717.75 ms
++llama_print_timings:      sample time =   148.98 ms /   256 runs   (    0.58 ms per token,  1718.39 tokens per second)
++llama_print_timings: prompt eval time =   171.31 ms /     8 tokens (   21.41 ms per token,    46.70 tokens per second)
++llama_print_timings:        eval time =  4917.97 ms /   255 runs   (   19.29 ms per token,    51.85 tokens per second)
++llama_print_timings:       total time =  5307.31 ms
++
++real	0m10.707s
++user	0m17.058s
++sys	0m3.518s
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q8_0.log
+ + ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+-main: build = 973 (1638757)
++main: build = 974 (e59fcb2)
+ main: seed  = 1234
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+@@ -3969,18 +3969,18 @@
+ This is why you should always be willing to take risks if they are worth taking which means trusting others will help make this world more peaceful one person at time, no matter how much it hurts because we deserve happiness too! It takes courage not just talent… To succeed in life’s challenges that may seem insurmountable. But with dedication commitment and hard work anything is possible – even if you don’t think so initially
+ The meaning of success depends on what kind person they are looking for themselves when starting out, but most importantly how much risk-taking skills come into play once those risks become too big or risky because then there’s no turning back without consequences (like losing all your hard work). So if you want something good enough never give up until it becomes yours!
+ Everyone has dreams that they wish would
+-llama_print_timings:        load time =  1518.93 ms
+-llama_print_timings:      sample time =   146.02 ms /   256 runs   (    0.57 ms per token,  1753.23 tokens per second)
+-llama_print_timings: prompt eval time =   169.21 ms /     8 tokens (   21.15 ms per token,    47.28 tokens per second)
+-llama_print_timings:        eval time =  3320.92 ms /   255 runs   (   13.02 ms per token,    76.79 tokens per second)
+-llama_print_timings:       total time =  3704.34 ms
+-
+-real	0m7.727s
+-user	0m11.281s
+-sys	0m3.078s
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_0.log
++llama_print_timings:        load time =  1520.14 ms
++llama_print_timings:      sample time =   147.91 ms /   256 runs   (    0.58 ms per token,  1730.84 tokens per second)
++llama_print_timings: prompt eval time =   169.96 ms /     8 tokens (   21.24 ms per token,    47.07 tokens per second)
++llama_print_timings:        eval time =  3333.76 ms /   255 runs   (   13.07 ms per token,    76.49 tokens per second)
++llama_print_timings:       total time =  3719.76 ms
++
++real	0m7.725s
++user	0m11.393s
++sys	0m3.010s
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_0.log
+ + ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+-main: build = 973 (1638757)
++main: build = 974 (e59fcb2)
+ main: seed  = 1234
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+@@ -4023,18 +4023,18 @@
+ This lesson has made me one heck of an optimist with great hope in humanity because I see how far we as people can go when focused on helping and loving other humans, rather than ourselves.. even if it’s just by doing something nice for someone – or saying that you care about them… (and not necessarily to a new person every day)
+ I have been very fortunate my entire life. My parents raised me with great values; they told us we are nothing without love and caring, compassion is the key in everything I am trying to achieve now: success at what ever level or position you may be working towards today – remember that it’s about others not just yourself…
+ - Be a good friend! (and
+-llama_print_timings:        load time =   940.13 ms
+-llama_print_timings:      sample time =   146.69 ms /   256 runs   (    0.57 ms per token,  1745.15 tokens per second)
+-llama_print_timings: prompt eval time =   125.80 ms /     8 tokens (   15.73 ms per token,    63.59 tokens per second)
+-llama_print_timings:        eval time =  2302.87 ms /   255 runs   (    9.03 ms per token,   110.73 tokens per second)
+-llama_print_timings:       total time =  2642.41 ms
+-
+-real	0m5.916s
+-user	0m7.733s
+-sys	0m2.721s
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_1.log
++llama_print_timings:        load time =   937.33 ms
++llama_print_timings:      sample time =   147.70 ms /   256 runs   (    0.58 ms per token,  1733.25 tokens per second)
++llama_print_timings: prompt eval time =   125.89 ms /     8 tokens (   15.74 ms per token,    63.55 tokens per second)
++llama_print_timings:        eval time =  2285.08 ms /   255 runs   (    8.96 ms per token,   111.59 tokens per second)
++llama_print_timings:       total time =  2625.19 ms
++
++real	0m5.905s
++user	0m7.720s
++sys	0m2.676s
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_1.log
+ + ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+-main: build = 973 (1638757)
++main: build = 974 (e59fcb2)
+ main: seed  = 1234
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+@@ -4077,18 +4077,18 @@
+ Creative Lynx is a graphic communications firm whose main aim was born out of the creative desire from co-founders Kylie Dudley & Leanne Davies…to put passion into print! Their combined knowledge in business development (Kylie)and marketing/advertising design has enabled them to develop and create this company that they could be proud of.
+ The CreativeLynx team consists of professionals who work diligently on your project, from start to finish with a focus not just on the end result but also ensuring you are kept informed every step along the way! We’re passionate about what we do & have a love for our designs and getting them right.
+ We believe in developing long term client relationships by working closely with each other to ensure all expectations of both parties are met, at an affordable price point that will make your business flourish!! So as
+-llama_print_timings:        load time =   994.85 ms
+-llama_print_timings:      sample time =   144.26 ms /   256 runs   (    0.56 ms per token,  1774.55 tokens per second)
+-llama_print_timings: prompt eval time =   125.76 ms /     8 tokens (   15.72 ms per token,    63.61 tokens per second)
+-llama_print_timings:        eval time =  2371.97 ms /   255 runs   (    9.30 ms per token,   107.51 tokens per second)
+-llama_print_timings:       total time =  2708.15 ms
++llama_print_timings:        load time =   999.38 ms
++llama_print_timings:      sample time =   145.80 ms /   256 runs   (    0.57 ms per token,  1755.87 tokens per second)
++llama_print_timings: prompt eval time =   125.75 ms /     8 tokens (   15.72 ms per token,    63.62 tokens per second)
++llama_print_timings:        eval time =  2392.27 ms /   255 runs   (    9.38 ms per token,   106.59 tokens per second)
++llama_print_timings:       total time =  2729.53 ms
+ 
+-real	0m6.043s
+-user	0m7.965s
++real	0m6.099s
++user	0m8.048s
+ sys	0m2.748s
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_0.log
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_0.log
+ + ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_0.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+-main: build = 973 (1638757)
++main: build = 974 (e59fcb2)
+ main: seed  = 1234
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+@@ -4131,18 +4131,18 @@
+ My first glimpse at realisation was in 2011 ..when I had a dream about myself as an old woman having lived life fully....with no regrets for how i'd done it or what decisions i'd made...and when awakening from this, my whole world shifted..and with that shift came the knowledge of why we are here to begin with
+ We all have so much love in us ..but there are times where our hearts break and ache because they want more than anything else , but it is not allowed by the mind. So rather then focus on what you do not have, try looking at how great your life actually is....and when something happens to hurt or disappoint you...remember this moment was never meant for happiness ..it happened just so that your soul could grow
+ We are all connected , we were born here
+-llama_print_timings:        load time =  1075.67 ms
+-llama_print_timings:      sample time =   145.03 ms /   256 runs   (    0.57 ms per token,  1765.14 tokens per second)
+-llama_print_timings: prompt eval time =   124.93 ms /     8 tokens (   15.62 ms per token,    64.03 tokens per second)
+-llama_print_timings:        eval time =  2653.82 ms /   255 runs   (   10.41 ms per token,    96.09 tokens per second)
+-llama_print_timings:       total time =  2989.41 ms
+-
+-real	0m6.444s
+-user	0m8.861s
+-sys	0m2.794s
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_1.log
++llama_print_timings:        load time =  1071.67 ms
++llama_print_timings:      sample time =   144.86 ms /   256 runs   (    0.57 ms per token,  1767.21 tokens per second)
++llama_print_timings: prompt eval time =   124.95 ms /     8 tokens (   15.62 ms per token,    64.03 tokens per second)
++llama_print_timings:        eval time =  2633.18 ms /   255 runs   (   10.33 ms per token,    96.84 tokens per second)
++llama_print_timings:       total time =  2969.38 ms
++
++real	0m6.393s
++user	0m8.809s
++sys	0m2.778s
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_1.log
+ + ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+-main: build = 973 (1638757)
++main: build = 974 (e59fcb2)
+ main: seed  = 1234
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+@@ -4185,18 +4185,18 @@
+ We can always find a reason for self- pity or lack thereof but it comes down to one thing - how you respond… Do your words encourage others? We all have an opportunity every moment throughout our days and moments as well. To be encouraging supportive uplifting inspiring compassionate giving unselfish humble positive patient forgiving etc….
+ The world is a beautiful place so lets not let the little things get in the way of seeing it! And we are to see beyond ourselves into what really matters, people helping each other regardless their faith or belief system… Let us be an instrument for God and others; encouraging one another toward love life hope peace joy patience kindness goodness gentleness humility self control forgiveness etc….
+ And when someone’s heart is being opened up with encouragement we are to speak truth in
+-llama_print_timings:        load time =  1103.92 ms
+-llama_print_timings:      sample time =   144.12 ms /   256 runs   (    0.56 ms per token,  1776.27 tokens per second)
+-llama_print_timings: prompt eval time =   125.69 ms /     8 tokens (   15.71 ms per token,    63.65 tokens per second)
+-llama_print_timings:        eval time =  2692.43 ms /   255 runs   (   10.56 ms per token,    94.71 tokens per second)
+-llama_print_timings:       total time =  3027.79 ms
+-
+-real	0m6.499s
+-user	0m9.097s
+-sys	0m2.713s
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q2_k.log
++llama_print_timings:        load time =  1151.12 ms
++llama_print_timings:      sample time =   149.54 ms /   256 runs   (    0.58 ms per token,  1711.93 tokens per second)
++llama_print_timings: prompt eval time =   126.83 ms /     8 tokens (   15.85 ms per token,    63.08 tokens per second)
++llama_print_timings:        eval time =  2698.59 ms /   255 runs   (   10.58 ms per token,    94.49 tokens per second)
++llama_print_timings:       total time =  3041.88 ms
++
++real	0m6.550s
++user	0m9.058s
++sys	0m2.777s
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q2_k.log
+ + ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+-main: build = 973 (1638757)
++main: build = 974 (e59fcb2)
+ main: seed  = 1234
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+@@ -4238,18 +4238,18 @@
+ —Joseph Campbell, The Power of Myth: Who and What We Are in This Life (1979) 2018-2034." [Pause.] You know what? It's okay if you don't understand everything I am telling you right now. Let me tell it to your mother and she may have something more for you, that can help a little bit with this too. But let us begin by beginning at the start of these three things: life as an event in our universe which is here on earth where we are living...
+ "And so I would like if there could be one thing to say about it right now, and then leave you to wonder what else might come up later." [Pause.] Well why don't. And that may not always happen exactly the way in our life as a series of events where we are here living on earth today too... But I do want to talk with all this because there is something more, and maybe it will become clearer by having gone through some things like these so far, or at least have begun to get them together.
+ This would be the meaning in life that comes from a
+-llama_print_timings:        load time =   784.53 ms
+-llama_print_timings:      sample time =   148.86 ms /   256 runs   (    0.58 ms per token,  1719.69 tokens per second)
+-llama_print_timings: prompt eval time =   134.98 ms /     8 tokens (   16.87 ms per token,    59.27 tokens per second)
+-llama_print_timings:        eval time =  2389.95 ms /   255 runs   (    9.37 ms per token,   106.70 tokens per second)
+-llama_print_timings:       total time =  2742.92 ms
+-
+-real	0m5.879s
+-user	0m7.880s
+-sys	0m2.712s
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q3_k.log
++llama_print_timings:        load time =   792.80 ms
++llama_print_timings:      sample time =   155.15 ms /   256 runs   (    0.61 ms per token,  1649.97 tokens per second)
++llama_print_timings: prompt eval time =   136.24 ms /     8 tokens (   17.03 ms per token,    58.72 tokens per second)
++llama_print_timings:        eval time =  2392.16 ms /   255 runs   (    9.38 ms per token,   106.60 tokens per second)
++llama_print_timings:       total time =  2750.41 ms
++
++real	0m5.843s
++user	0m7.948s
++sys	0m2.629s
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q3_k.log
+ + ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q3_k.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+-main: build = 973 (1638757)
++main: build = 974 (e59fcb2)
+ main: seed  = 1234
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+@@ -4291,18 +4291,18 @@
+ I am proud of my past and excited for what is yet to come! My future will hopefully be bright with wonderful things in store like owning a home, traveling on an international trip or even taking over someone’s business; whatever the case may be there are endless possibilities all we have to do it work hard and dream big.
+ Throughout your life you meet people who change how they view themselves based from what others think about them whether good or bad! You want these relationships with other individuals so badly that when something happens within a relationship where someone wants more control over their lives then suddenly becomes unreasonable, maybe even mean; there isn’t anything else than can compare for those moments.
+ I believe it is okay to be selfish at times because you don’t know what tomorrow has in store but if your heart tells me that I
+-llama_print_timings:        load time =   840.39 ms
+-llama_print_timings:      sample time =   145.74 ms /   256 runs   (    0.57 ms per token,  1756.56 tokens per second)
+-llama_print_timings: prompt eval time =   164.06 ms /     8 tokens (   20.51 ms per token,    48.76 tokens per second)
+-llama_print_timings:        eval time =  2847.45 ms /   255 runs   (   11.17 ms per token,    89.55 tokens per second)
+-llama_print_timings:       total time =  3223.05 ms
+-
+-real	0m6.363s
+-user	0m9.373s
+-sys	0m2.689s
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_k.log
++llama_print_timings:        load time =   851.02 ms
++llama_print_timings:      sample time =   144.56 ms /   256 runs   (    0.56 ms per token,  1770.89 tokens per second)
++llama_print_timings: prompt eval time =   164.74 ms /     8 tokens (   20.59 ms per token,    48.56 tokens per second)
++llama_print_timings:        eval time =  2867.30 ms /   255 runs   (   11.24 ms per token,    88.93 tokens per second)
++llama_print_timings:       total time =  3242.28 ms
++
++real	0m6.455s
++user	0m9.413s
++sys	0m2.760s
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_k.log
+ + ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_k.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+-main: build = 973 (1638757)
++main: build = 974 (e59fcb2)
+ main: seed  = 1234
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+@@ -4344,18 +4344,18 @@
+ I do not know what my purpose in this world will be, but it could come back and haunt me one day for that very reason; giving up too soon or trying too hard. It really comes down how well we can live with ourselves if our hearts are broken because they were given away as much to others whom had nothing left of their own lives than what was taken from them once, either in times past or present and all I have been able to do is give it a try for the rest will be only speculation on my part.
+ We can make up words but not excuses nor reasons that explain why we cannot stand ourselves if our hearts are broken because they were given away as much to others whom had nothing left of their own lives than what was taken from them once, either in times past or present and all I have been able to do is give it a try for the rest will be only speculation on my part.
+ This place has become too quiet lately; not enough words are being thrown around like they used to when there were more people who would take their time out of life's busy schedule, from whatever was keeping them going at any given moment in order that we could get a better perspective and maybe some understanding or insight
+-llama_print_timings:        load time =   992.72 ms
+-llama_print_timings:      sample time =   146.46 ms /   256 runs   (    0.57 ms per token,  1747.92 tokens per second)
+-llama_print_timings: prompt eval time =   156.36 ms /     8 tokens (   19.54 ms per token,    51.16 tokens per second)
+-llama_print_timings:        eval time =  2573.96 ms /   255 runs   (   10.09 ms per token,    99.07 tokens per second)
+-llama_print_timings:       total time =  2943.48 ms
+-
+-real	0m6.283s
+-user	0m8.689s
+-sys	0m2.723s
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_k.log
++llama_print_timings:        load time =   975.29 ms
++llama_print_timings:      sample time =   145.92 ms /   256 runs   (    0.57 ms per token,  1754.43 tokens per second)
++llama_print_timings: prompt eval time =   157.34 ms /     8 tokens (   19.67 ms per token,    50.85 tokens per second)
++llama_print_timings:        eval time =  2577.76 ms /   255 runs   (   10.11 ms per token,    98.92 tokens per second)
++llama_print_timings:       total time =  2949.43 ms
++
++real	0m6.264s
++user	0m8.716s
++sys	0m2.667s
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_k.log
+ + ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+-main: build = 973 (1638757)
++main: build = 974 (e59fcb2)
+ main: seed  = 1234
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+@@ -4397,18 +4397,18 @@
+ I feel that we are all here for a purpose in this world, and there may be many meanings behind it but one thing stays constant: everything has got me exactly where i am today (in my personal opinion). If you think about the word “purpose”-what comes to mind? Does someone else’s life come into focus as part of that sentence. I believe we have a purpose for being here, and if our goal is not fulfilled by death then something will give us another chance/goal at it so there really isn’t any such thing like “the meaning in my life”.
+ I do think though the meanings are different to everyone else because no one can know what happens after you die. So we don’t have a clear idea of where, or how our lives will end up but i believe that is why it has so much mystery and intrigue around us – its like “it could happen any moment now”.
+ I do not think there IS such thing as meaning in my life because I dont know if something can be defined by one word/concept. However, the most important part of finding a purpose are having goals that you want to achieve or change things for other
+-llama_print_timings:        load time =  1082.80 ms
+-llama_print_timings:      sample time =   145.78 ms /   256 runs   (    0.57 ms per token,  1756.02 tokens per second)
+-llama_print_timings: prompt eval time =   125.00 ms /     8 tokens (   15.62 ms per token,    64.00 tokens per second)
+-llama_print_timings:        eval time =  2790.33 ms /   255 runs   (   10.94 ms per token,    91.39 tokens per second)
+-llama_print_timings:       total time =  3129.30 ms
+-
+-real	0m6.588s
+-user	0m9.307s
+-sys	0m2.766s
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q6_k.log
++llama_print_timings:        load time =  1085.31 ms
++llama_print_timings:      sample time =   144.99 ms /   256 runs   (    0.57 ms per token,  1765.69 tokens per second)
++llama_print_timings: prompt eval time =   124.88 ms /     8 tokens (   15.61 ms per token,    64.06 tokens per second)
++llama_print_timings:        eval time =  2807.44 ms /   255 runs   (   11.01 ms per token,    90.83 tokens per second)
++llama_print_timings:       total time =  3148.49 ms
++
++real	0m6.595s
++user	0m9.379s
++sys	0m2.756s
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q6_k.log
+ + ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q6_k.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+-main: build = 973 (1638757)
++main: build = 974 (e59fcb2)
+ main: seed  = 1234
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+@@ -4451,19 +4451,19 @@
+ - Consignment Sales – We sell new and gently used furniture/home furnishings at consignment sales throughout our community (Sales are held 2 x a year)
+ - Gift Baskets – Custom designed gift baskets with unique items that will delight anyone on your list! Just in time for Christmas…these beautiful hand made creations can be ordered now & delivered to your door or as gifts during the holidays. The perfect addition of holiday cheer and joy!! (Limited quantity so order early)
+ - Furniture/Accessories – We stock an array of furniture,
+-llama_print_timings:        load time =  1190.19 ms
+-llama_print_timings:      sample time =   145.76 ms /   256 runs   (    0.57 ms per token,  1756.34 tokens per second)
+-llama_print_timings: prompt eval time =   118.97 ms /     8 tokens (   14.87 ms per token,    67.25 tokens per second)
+-llama_print_timings:        eval time =  3099.68 ms /   255 runs   (   12.16 ms per token,    82.27 tokens per second)
+-llama_print_timings:       total time =  3431.88 ms
+-
+-real	0m7.031s
+-user	0m10.355s
+-sys	0m2.784s
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-f16.log
++llama_print_timings:        load time =  1199.93 ms
++llama_print_timings:      sample time =   144.61 ms /   256 runs   (    0.56 ms per token,  1770.27 tokens per second)
++llama_print_timings: prompt eval time =   118.86 ms /     8 tokens (   14.86 ms per token,    67.31 tokens per second)
++llama_print_timings:        eval time =  3097.34 ms /   255 runs   (   12.15 ms per token,    82.33 tokens per second)
++llama_print_timings:       total time =  3427.43 ms
++
++real	0m6.983s
++user	0m10.270s
++sys	0m2.816s
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-f16.log
+ + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+-main: build = 973 (1638757)
+-main: seed  = 1691663443
++main: build = 974 (e59fcb2)
++main: seed  = 1691678554
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+ llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
+@@ -4497,22 +4497,22 @@
+ 
+ system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+ perplexity: calculating perplexity over 4 chunks, batch_size=512
+-perplexity: 3.37 seconds per pass - ETA 0 minutes
++perplexity: 3.38 seconds per pass - ETA 0 minutes
+ [1]4.7952,[2]6.3520,[3]7.3679,[4]7.2503,
+-llama_print_timings:        load time =  4636.57 ms
++llama_print_timings:        load time =  4643.35 ms
+ llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings: prompt eval time = 12640.32 ms /  8192 tokens (    1.54 ms per token,   648.08 tokens per second)
++llama_print_timings: prompt eval time = 12663.49 ms /  8192 tokens (    1.55 ms per token,   646.90 tokens per second)
+ llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings:       total time = 18777.51 ms
++llama_print_timings:       total time = 18805.99 ms
+ 
+ 
+-real	0m21.608s
+-user	0m13.202s
+-sys	0m8.340s
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q8_0.log
++real	0m21.688s
++user	0m13.295s
++sys	0m8.328s
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q8_0.log
+ + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+-main: build = 973 (1638757)
+-main: seed  = 1691663464
++main: build = 974 (e59fcb2)
++main: seed  = 1691678576
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+ llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.bin
+@@ -4546,22 +4546,22 @@
+ 
+ system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+ perplexity: calculating perplexity over 4 chunks, batch_size=512
+-perplexity: 3.37 seconds per pass - ETA 0 minutes
++perplexity: 3.38 seconds per pass - ETA 0 minutes
+ [1]4.7990,[2]6.3552,[3]7.3735,[4]7.2548,
+-llama_print_timings:        load time =  3533.67 ms
++llama_print_timings:        load time =  3487.23 ms
+ llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings: prompt eval time = 12644.81 ms /  8192 tokens (    1.54 ms per token,   647.85 tokens per second)
++llama_print_timings: prompt eval time = 12662.82 ms /  8192 tokens (    1.55 ms per token,   646.93 tokens per second)
+ llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings:       total time = 17697.01 ms
++llama_print_timings:       total time = 17661.39 ms
+ 
+ 
+-real	0m20.559s
+-user	0m12.278s
+-sys	0m8.193s
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_0.log
++real	0m20.483s
++user	0m12.487s
++sys	0m7.940s
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_0.log
+ + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+-main: build = 973 (1638757)
+-main: seed  = 1691663485
++main: build = 974 (e59fcb2)
++main: seed  = 1691678596
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+ llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.bin
+@@ -4597,20 +4597,20 @@
+ perplexity: calculating perplexity over 4 chunks, batch_size=512
+ perplexity: 3.19 seconds per pass - ETA 0 minutes
+ [1]4.8783,[2]6.4528,[3]7.5000,[4]7.3883,
+-llama_print_timings:        load time =  2891.88 ms
++llama_print_timings:        load time =  2922.49 ms
+ llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings: prompt eval time = 11890.04 ms /  8192 tokens (    1.45 ms per token,   688.98 tokens per second)
++llama_print_timings: prompt eval time = 11917.40 ms /  8192 tokens (    1.45 ms per token,   687.40 tokens per second)
+ llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings:       total time = 16351.34 ms
++llama_print_timings:       total time = 16389.13 ms
+ 
+ 
+-real	0m19.003s
+-user	0m11.357s
+-sys	0m7.579s
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_1.log
++real	0m18.995s
++user	0m11.511s
++sys	0m7.402s
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_1.log
+ + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+-main: build = 973 (1638757)
+-main: seed  = 1691663504
++main: build = 974 (e59fcb2)
++main: seed  = 1691678615
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+ llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.bin
+@@ -4644,22 +4644,22 @@
+ 
+ system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+ perplexity: calculating perplexity over 4 chunks, batch_size=512
+-perplexity: 3.18 seconds per pass - ETA 0 minutes
++perplexity: 3.19 seconds per pass - ETA 0 minutes
+ [1]4.9223,[2]6.4608,[3]7.4928,[4]7.3921,
+-llama_print_timings:        load time =  3000.30 ms
++llama_print_timings:        load time =  2972.63 ms
+ llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings: prompt eval time = 11898.40 ms /  8192 tokens (    1.45 ms per token,   688.50 tokens per second)
++llama_print_timings: prompt eval time = 11926.06 ms /  8192 tokens (    1.46 ms per token,   686.90 tokens per second)
+ llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings:       total time = 16450.60 ms
++llama_print_timings:       total time = 16468.56 ms
+ 
+ 
+-real	0m19.050s
+-user	0m11.723s
+-sys	0m7.263s
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_0.log
++real	0m19.139s
++user	0m11.617s
++sys	0m7.450s
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_0.log
+ + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_0.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+-main: build = 973 (1638757)
+-main: seed  = 1691663523
++main: build = 974 (e59fcb2)
++main: seed  = 1691678635
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+ llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_0.bin
+@@ -4693,22 +4693,22 @@
+ 
+ system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+ perplexity: calculating perplexity over 4 chunks, batch_size=512
+-perplexity: 3.17 seconds per pass - ETA 0 minutes
++perplexity: 3.18 seconds per pass - ETA 0 minutes
+ [1]4.7986,[2]6.3775,[3]7.4120,[4]7.3005,
+-llama_print_timings:        load time =  3006.52 ms
++llama_print_timings:        load time =  3060.13 ms
+ llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings: prompt eval time = 11845.68 ms /  8192 tokens (    1.45 ms per token,   691.56 tokens per second)
++llama_print_timings: prompt eval time = 11853.69 ms /  8192 tokens (    1.45 ms per token,   691.09 tokens per second)
+ llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings:       total time = 16403.88 ms
++llama_print_timings:       total time = 16498.48 ms
+ 
+ 
+-real	0m19.069s
+-user	0m11.704s
+-sys	0m7.296s
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_1.log
++real	0m19.156s
++user	0m11.839s
++sys	0m7.254s
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_1.log
+ + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+-main: build = 973 (1638757)
+-main: seed  = 1691663542
++main: build = 974 (e59fcb2)
++main: seed  = 1691678654
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+ llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.bin
+@@ -4742,22 +4742,22 @@
+ 
+ system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+ perplexity: calculating perplexity over 4 chunks, batch_size=512
+-perplexity: 3.18 seconds per pass - ETA 0 minutes
++perplexity: 3.17 seconds per pass - ETA 0 minutes
+ [1]4.8305,[2]6.3757,[3]7.3951,[4]7.2858,
+-llama_print_timings:        load time =  3085.19 ms
++llama_print_timings:        load time =  3098.43 ms
+ llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings: prompt eval time = 11864.74 ms /  8192 tokens (    1.45 ms per token,   690.45 tokens per second)
++llama_print_timings: prompt eval time = 11867.42 ms /  8192 tokens (    1.45 ms per token,   690.29 tokens per second)
+ llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings:       total time = 16484.81 ms
++llama_print_timings:       total time = 16546.93 ms
+ 
+ 
+-real	0m19.160s
+-user	0m11.713s
+-sys	0m7.377s
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q2_k.log
++real	0m19.211s
++user	0m11.659s
++sys	0m7.481s
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q2_k.log
+ + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+-main: build = 973 (1638757)
+-main: seed  = 1691663561
++main: build = 974 (e59fcb2)
++main: seed  = 1691678673
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+ llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin
+@@ -4791,22 +4791,22 @@
+ 
+ system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+ perplexity: calculating perplexity over 4 chunks, batch_size=512
+-perplexity: 3.22 seconds per pass - ETA 0 minutes
++perplexity: 3.24 seconds per pass - ETA 0 minutes
+ [1]5.2845,[2]6.9991,[3]8.1187,[4]8.1531,
+-llama_print_timings:        load time =  2755.25 ms
++llama_print_timings:        load time =  2729.21 ms
+ llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings: prompt eval time = 12059.63 ms /  8192 tokens (    1.47 ms per token,   679.29 tokens per second)
++llama_print_timings: prompt eval time = 12080.09 ms /  8192 tokens (    1.47 ms per token,   678.14 tokens per second)
+ llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings:       total time = 16339.53 ms
++llama_print_timings:       total time = 16367.79 ms
+ 
+ 
+-real	0m18.879s
+-user	0m11.520s
+-sys	0m7.282s
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q3_k.log
++real	0m18.908s
++user	0m11.732s
++sys	0m7.117s
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q3_k.log
+ + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q3_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+-main: build = 973 (1638757)
+-main: seed  = 1691663580
++main: build = 974 (e59fcb2)
++main: seed  = 1691678692
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+ llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q3_k.bin
+@@ -4842,20 +4842,20 @@
+ perplexity: calculating perplexity over 4 chunks, batch_size=512
+ perplexity: 3.35 seconds per pass - ETA 0 minutes
+ [1]4.9390,[2]6.5302,[3]7.5792,[4]7.5160,
+-llama_print_timings:        load time =  2851.58 ms
++llama_print_timings:        load time =  2829.75 ms
+ llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings: prompt eval time = 12566.92 ms /  8192 tokens (    1.53 ms per token,   651.87 tokens per second)
++llama_print_timings: prompt eval time = 12582.83 ms /  8192 tokens (    1.54 ms per token,   651.05 tokens per second)
+ llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings:       total time = 16922.32 ms
++llama_print_timings:       total time = 16921.69 ms
+ 
+ 
+-real	0m19.496s
+-user	0m11.873s
+-sys	0m7.555s
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_k.log
++real	0m19.507s
++user	0m11.952s
++sys	0m7.490s
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_k.log
+ + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+-main: build = 973 (1638757)
+-main: seed  = 1691663600
++main: build = 974 (e59fcb2)
++main: seed  = 1691678711
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+ llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_k.bin
+@@ -4889,22 +4889,22 @@
+ 
+ system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+ perplexity: calculating perplexity over 4 chunks, batch_size=512
+-perplexity: 3.30 seconds per pass - ETA 0 minutes
++perplexity: 3.31 seconds per pass - ETA 0 minutes
+ [1]4.8779,[2]6.4223,[3]7.4394,[4]7.3431,
+-llama_print_timings:        load time =  2986.58 ms
++llama_print_timings:        load time =  2967.15 ms
+ llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings: prompt eval time = 12391.19 ms /  8192 tokens (    1.51 ms per token,   661.11 tokens per second)
++llama_print_timings: prompt eval time = 12396.76 ms /  8192 tokens (    1.51 ms per token,   660.82 tokens per second)
+ llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings:       total time = 16902.09 ms
++llama_print_timings:       total time = 16873.52 ms
+ 
+ 
+-real	0m19.535s
+-user	0m11.961s
+-sys	0m7.499s
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_k.log
++real	0m19.501s
++user	0m11.946s
++sys	0m7.481s
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_k.log
+ + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+-main: build = 973 (1638757)
+-main: seed  = 1691663619
++main: build = 974 (e59fcb2)
++main: seed  = 1691678731
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+ llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin
+@@ -4940,20 +4940,20 @@
+ perplexity: calculating perplexity over 4 chunks, batch_size=512
+ perplexity: 3.17 seconds per pass - ETA 0 minutes
+ [1]4.8115,[2]6.3743,[3]7.3920,[4]7.2794,
+-llama_print_timings:        load time =  3027.26 ms
++llama_print_timings:        load time =  3013.85 ms
+ llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings: prompt eval time = 11848.29 ms /  8192 tokens (    1.45 ms per token,   691.41 tokens per second)
++llama_print_timings: prompt eval time = 11840.05 ms /  8192 tokens (    1.45 ms per token,   691.89 tokens per second)
+ llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings:       total time = 16413.92 ms
++llama_print_timings:       total time = 16411.47 ms
+ 
+ 
+-real	0m19.095s
+-user	0m11.667s
+-sys	0m7.364s
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q6_k.log
++real	0m19.054s
++user	0m11.551s
++sys	0m7.435s
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q6_k.log
+ + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q6_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+-main: build = 973 (1638757)
+-main: seed  = 1691663638
++main: build = 974 (e59fcb2)
++main: seed  = 1691678750
+ ggml_init_cublas: found 1 CUDA devices:
+   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+ llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q6_k.bin
+@@ -4989,18 +4989,18 @@
+ perplexity: calculating perplexity over 4 chunks, batch_size=512
+ perplexity: 3.16 seconds per pass - ETA 0 minutes
+ [1]4.8081,[2]6.3609,[3]7.3754,[4]7.2585,
+-llama_print_timings:        load time =  3201.98 ms
++llama_print_timings:        load time =  3104.81 ms
+ llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings: prompt eval time = 11812.01 ms /  8192 tokens (    1.44 ms per token,   693.53 tokens per second)
++llama_print_timings: prompt eval time = 11817.72 ms /  8192 tokens (    1.44 ms per token,   693.20 tokens per second)
+ llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+-llama_print_timings:       total time = 16569.85 ms
++llama_print_timings:       total time = 16500.90 ms
+ 
+ 
+-real	0m19.280s
+-user	0m11.622s
+-sys	0m7.582s
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
+-++ cat /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-f16.log
++real	0m19.200s
++user	0m11.818s
++sys	0m7.308s
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-f16.log
+ ++ grep '^\[1\]'
+ + check_ppl f16 '[1]4.7952,[2]6.3520,[3]7.3679,[4]7.2503,'
+ + qnt=f16
+@@ -5014,8 +5014,8 @@
+ + printf '  - %s @ %s OK\n' f16 7.2503
+ + return 0
+   - f16 @ 7.2503 OK
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
+-++ cat /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q8_0.log
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q8_0.log
+ ++ grep '^\[1\]'
+ + check_ppl q8_0 '[1]4.7990,[2]6.3552,[3]7.3735,[4]7.2548,'
+ + qnt=q8_0
+@@ -5029,8 +5029,8 @@
+ + printf '  - %s @ %s OK\n' q8_0 7.2548
+ + return 0
+   - q8_0 @ 7.2548 OK
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
+-++ cat /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_0.log
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_0.log
+ ++ grep '^\[1\]'
+ + check_ppl q4_0 '[1]4.8783,[2]6.4528,[3]7.5000,[4]7.3883,'
+ + qnt=q4_0
+@@ -5044,8 +5044,8 @@
+ + printf '  - %s @ %s OK\n' q4_0 7.3883
+ + return 0
+   - q4_0 @ 7.3883 OK
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
+-++ cat /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_1.log
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_1.log
+ ++ grep '^\[1\]'
+ + check_ppl q4_1 '[1]4.9223,[2]6.4608,[3]7.4928,[4]7.3921,'
+ + qnt=q4_1
+@@ -5059,8 +5059,8 @@
+ + printf '  - %s @ %s OK\n' q4_1 7.3921
+ + return 0
+   - q4_1 @ 7.3921 OK
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
+-++ cat /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_0.log
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_0.log
+ ++ grep '^\[1\]'
+ + check_ppl q5_0 '[1]4.7986,[2]6.3775,[3]7.4120,[4]7.3005,'
+ + qnt=q5_0
+@@ -5074,8 +5074,8 @@
+ + printf '  - %s @ %s OK\n' q5_0 7.3005
+ + return 0
+   - q5_0 @ 7.3005 OK
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
+-++ cat /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_1.log
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_1.log
+ ++ grep '^\[1\]'
+ + check_ppl q5_1 '[1]4.8305,[2]6.3757,[3]7.3951,[4]7.2858,'
+ + qnt=q5_1
+@@ -5089,8 +5089,8 @@
+ + printf '  - %s @ %s OK\n' q5_1 7.2858
+ + return 0
+   - q5_1 @ 7.2858 OK
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
+-++ cat /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q2_k.log
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q2_k.log
+ ++ grep '^\[1\]'
+ + check_ppl q2_k '[1]5.2845,[2]6.9991,[3]8.1187,[4]8.1531,'
+ + qnt=q2_k
+@@ -5104,8 +5104,8 @@
+ + printf '  - %s @ %s OK\n' q2_k 8.1531
+ + return 0
+   - q2_k @ 8.1531 OK
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
+-++ cat /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q3_k.log
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q3_k.log
+ ++ grep '^\[1\]'
+ + check_ppl q3_k '[1]4.9390,[2]6.5302,[3]7.5792,[4]7.5160,'
+ + qnt=q3_k
+@@ -5119,8 +5119,8 @@
+ + printf '  - %s @ %s OK\n' q3_k 7.5160
+ + return 0
+   - q3_k @ 7.5160 OK
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
+-++ cat /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_k.log
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q4_k.log
+ ++ grep '^\[1\]'
+ + check_ppl q4_k '[1]4.8779,[2]6.4223,[3]7.4394,[4]7.3431,'
+ + qnt=q4_k
+@@ -5134,8 +5134,8 @@
+ + printf '  - %s @ %s OK\n' q4_k 7.3431
+ + return 0
+   - q4_k @ 7.3431 OK
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
+-++ cat /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_k.log
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q5_k.log
+ ++ grep '^\[1\]'
+ + check_ppl q5_k '[1]4.8115,[2]6.3743,[3]7.3920,[4]7.2794,'
+ + qnt=q5_k
+@@ -5149,8 +5149,8 @@
+ + printf '  - %s @ %s OK\n' q5_k 7.2794
+ + return 0
+   - q5_k @ 7.2794 OK
+-+ tee -a /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
+-++ cat /home/ggml/results/llama.cpp/16/38757767072a4957f52b9e3594f0b67610631b/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q6_k.log
+++ tee -a /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-ppl.log
++++ cat /home/ggml/results/llama.cpp/e5/9fcb2bc129881f4a269fee748fb38bce0a64de/ggml-4-x86-cuda-v100/open_llama_7b_v2-tg-q6_k.log
+ ++ grep '^\[1\]'
+ + check_ppl q6_k '[1]4.8081,[2]6.3609,[3]7.3754,[4]7.2585,'
+ + qnt=q6_k
+```
+</details>
+
