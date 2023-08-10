@@ -1,0 +1,84 @@
++ make -j
+[  1%] Built target BUILD_INFO
+[  3%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  5%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  7%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda.cu.o
+[  9%] Building C object CMakeFiles/ggml.dir/k_quants.c.o
+[  9%] Built target ggml
+[ 11%] Linking CUDA static library libggml_static.a
+[ 13%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+[ 13%] Built target ggml_static
+[ 15%] Linking CXX static library libllama.a
+[ 15%] Built target llama
+[ 17%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 19%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 21%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
+[ 23%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/test-tokenizer-0.cpp.o
+[ 25%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+[ 27%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[ 29%] Building CXX object examples/CMakeFiles/common.dir/console.cpp.o
+[ 31%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
+[ 33%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+[ 35%] Building CXX object examples/CMakeFiles/common.dir/grammar-parser.cpp.o
+[ 37%] Linking CXX executable ../bin/test-quantize-fns
+[ 37%] Built target test-quantize-fns
+[ 39%] Linking CXX executable ../../bin/quantize
+[ 41%] Linking CXX executable ../bin/test-tokenizer-0
+[ 43%] Linking CXX executable ../bin/test-grad0
+[ 43%] Built target quantize
+[ 45%] Linking CXX executable ../bin/test-sampling
+[ 45%] Built target test-tokenizer-0
+[ 45%] Built target test-grad0
+[ 45%] Built target test-sampling
+[ 47%] Linking CXX executable ../bin/test-quantize-perf
+[ 47%] Built target test-quantize-perf
+[ 49%] Linking CXX executable ../../bin/quantize-stats
+[ 49%] Built target quantize-stats
+[ 49%] Built target common
+[ 50%] Building CXX object examples/main/CMakeFiles/main.dir/main.cpp.o
+[ 52%] Building CXX object examples/perplexity/CMakeFiles/perplexity.dir/perplexity.cpp.o
+[ 54%] Building CXX object examples/embedding/CMakeFiles/embedding.dir/embedding.cpp.o
+[ 56%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
+[ 58%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
+[ 60%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
+[ 62%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
+[ 64%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
+[ 66%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
+[ 68%] Building CXX object pocs/vdot/CMakeFiles/q8dot.dir/q8dot.cpp.o
+[ 70%] Building CXX object pocs/vdot/CMakeFiles/vdot.dir/vdot.cpp.o
+[ 72%] Building CXX object examples/embd-input/CMakeFiles/embdinput.dir/embd-input-lib.cpp.o
+/home/ggml/work/llama.cpp/examples/baby-llama/baby-llama.cpp: In function ‘int main(int, char**)’:
+/home/ggml/work/llama.cpp/examples/baby-llama/baby-llama.cpp:1620:32: warning: variable ‘opt_params_adam’ set but not used [-Wunused-but-set-variable]
+ 1620 |         struct ggml_opt_params opt_params_adam = ggml_opt_default_params(GGML_OPT_ADAM);
+      |                                ^~~~~~~~~~~~~~~
+[ 74%] Linking CXX executable ../../bin/embedding
+[ 76%] Linking CXX executable ../../bin/q8dot
+[ 78%] Linking CXX executable ../../bin/benchmark
+[ 80%] Linking CXX executable ../../bin/save-load-state
+[ 80%] Built target embedding
+[ 82%] Linking CXX executable ../../bin/vdot
+[ 82%] Built target q8dot
+[ 84%] Linking CXX executable ../../bin/simple
+[ 84%] Built target benchmark
+[ 84%] Built target save-load-state
+[ 84%] Built target vdot
+[ 86%] Linking CXX static library libembdinput.a
+[ 88%] Linking CXX executable ../../bin/baby-llama
+[ 88%] Built target simple
+[ 90%] Linking CXX executable ../../bin/perplexity
+[ 90%] Built target embdinput
+[ 92%] Building CXX object examples/embd-input/CMakeFiles/embd-input-test.dir/embd-input-test.cpp.o
+[ 92%] Built target baby-llama
+[ 92%] Built target perplexity
+[ 94%] Linking CXX executable ../../bin/embd-input-test
+[ 96%] Linking CXX executable ../../bin/main
+[ 96%] Built target embd-input-test
+[ 96%] Built target main
+[ 98%] Linking CXX executable ../../bin/train-text-from-scratch
+[ 98%] Built target train-text-from-scratch
+[100%] Linking CXX executable ../../bin/server
+[100%] Built target server
+
+real	2m21.273s
+user	2m50.745s
+sys	0m4.878s
