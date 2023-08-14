@@ -1,0 +1,100 @@
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 984 (348acf1)
+main: seed  = 1234
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 512
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 10 (mostly Q2_K)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  343.10 MB (+  256.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 288 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 3237 MB
+llama_new_context_with_model: kv self size  =  256.00 MB
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+sampling: repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.800000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000
+generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
+
+
+ I believe the meaning of life is to find out who we are and be happy with that.
+—Joseph Campbell, The Power of Myth: Who and What We Are in This Life (1979) 2018-2034." [Pause.] You know what? It's okay if you don't understand everything I am telling you right now. Let me tell it to your mother and she may have something more for you, that can help a little bit with this too. But let us begin by beginning at the start of these three things: life as an event in our universe which is here on earth where we are living...
+"And so I would like if there could be one thing to say about it right now, and then leave you to wonder what else might come up later." [Pause.] Well why don't. And that may not always happen exactly the way in our life as a series of events where we are here living on earth today too... But I do want to talk with all this because there is something more, and maybe it will become clearer by having gone through some things like these so far, or at least have begun to get them together.
+This would be the meaning in life that comes from a
+llama_print_timings:        load time =   815.99 ms
+llama_print_timings:      sample time =   145.36 ms /   256 runs   (    0.57 ms per token,  1761.13 tokens per second)
+llama_print_timings: prompt eval time =   137.89 ms /     8 tokens (   17.24 ms per token,    58.02 tokens per second)
+llama_print_timings:        eval time =  2394.39 ms /   255 runs   (    9.39 ms per token,   106.50 tokens per second)
+llama_print_timings:       total time =  2743.57 ms
+
+real	0m5.867s
+user	0m7.870s
+sys	0m2.703s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+main: build = 984 (348acf1)
+main: seed  = 1692021037
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin
+llama_model_load_internal: format     = ggjt v3 (latest)
+llama_model_load_internal: n_vocab    = 32000
+llama_model_load_internal: n_ctx      = 2048
+llama_model_load_internal: n_embd     = 4096
+llama_model_load_internal: n_mult     = 5504
+llama_model_load_internal: n_head     = 32
+llama_model_load_internal: n_head_kv  = 32
+llama_model_load_internal: n_layer    = 32
+llama_model_load_internal: n_rot      = 128
+llama_model_load_internal: n_gqa      = 1
+llama_model_load_internal: rnorm_eps  = 5.0e-06
+llama_model_load_internal: n_ff       = 11008
+llama_model_load_internal: freq_base  = 10000.0
+llama_model_load_internal: freq_scale = 1
+llama_model_load_internal: ftype      = 10 (mostly Q2_K)
+llama_model_load_internal: model size = 7B
+llama_model_load_internal: ggml ctx size =    0.08 MB
+llama_model_load_internal: using CUDA for GPU acceleration
+llama_model_load_internal: mem required  =  439.10 MB (+ 1024.00 MB per state)
+llama_model_load_internal: allocating batch_size x (512 kB + n_ctx x 128 B) = 384 MB VRAM for the scratch buffer
+llama_model_load_internal: offloading 32 repeating layers to GPU
+llama_model_load_internal: offloading non-repeating layers to GPU
+llama_model_load_internal: offloading v cache to GPU
+llama_model_load_internal: offloading k cache to GPU
+llama_model_load_internal: offloaded 35/35 layers to GPU
+llama_model_load_internal: total VRAM used: 4101 MB
+llama_new_context_with_model: kv self size  = 1024.00 MB
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
+perplexity: calculating perplexity over 4 chunks, batch_size=512
+perplexity: 3.23 seconds per pass - ETA 0 minutes
+[1]5.2845,[2]6.9991,[3]8.1187,[4]8.1531,
+llama_print_timings:        load time =  2781.24 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 12075.73 ms /  8192 tokens (    1.47 ms per token,   678.39 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 16413.76 ms
+
+
+real	0m18.996s
+user	0m11.525s
+sys	0m7.407s
