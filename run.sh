@@ -192,15 +192,15 @@ function gg_run {
         # if the output for the parent commit exists, append the "stdall" diff to the README.md
         out_parent=$(gg_out_for_commit ${repo} ${commit_parent})
 
-        if [ -f ${out_parent}/stdall ]; then
-            gg_printf ${out}/README.md '## Diff with parent commit\n\n'
+        #if [ -f ${out_parent}/stdall ]; then
+        #    gg_printf ${out}/README.md '## Diff with parent commit\n\n'
 
-            gg_printf ${out}/README.md '<details><summary>click to expand</summary>\n\n'
-            gg_printf ${out}/README.md '```diff\n'
-            gg_printf ${out}/README.md '%s\n' "$(diff -u ${out_parent}/stdall ${out}/stdall)"
-            gg_printf ${out}/README.md '```\n'
-            gg_printf ${out}/README.md '</details>\n\n'
-        fi
+        #    gg_printf ${out}/README.md '<details><summary>click to expand</summary>\n\n'
+        #    gg_printf ${out}/README.md '```diff\n'
+        #    gg_printf ${out}/README.md '%s\n' "$(diff -u ${out_parent}/stdall ${out}/stdall)"
+        #    gg_printf ${out}/README.md '```\n'
+        #    gg_printf ${out}/README.md '</details>\n\n'
+        #fi
 
         if [ ${result} -eq 0 ]; then
             gg_set_commit_status "${owner}" "${repo}" "${commit}" "success" "success in ${runtime}"
