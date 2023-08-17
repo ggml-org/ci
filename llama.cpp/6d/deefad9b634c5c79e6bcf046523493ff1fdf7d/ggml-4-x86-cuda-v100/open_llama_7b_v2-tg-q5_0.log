@@ -42,18 +42,18 @@ To live as a servant for others without expecting anything in return . To love a
 My first glimpse at realisation was in 2011 ..when I had a dream about myself as an old woman having lived life fully....with no regrets for how i'd done it or what decisions i'd made...and when awakening from this, my whole world shifted..and with that shift came the knowledge of why we are here to begin with
 We all have so much love in us ..but there are times where our hearts break and ache because they want more than anything else , but it is not allowed by the mind. So rather then focus on what you do not have, try looking at how great your life actually is....and when something happens to hurt or disappoint you...remember this moment was never meant for happiness ..it happened just so that your soul could grow
 We are all connected , we were born here
-llama_print_timings:        load time = 21564.14 ms
-llama_print_timings:      sample time =   160.57 ms /   256 runs   (    0.63 ms per token,  1594.33 tokens per second)
-llama_print_timings: prompt eval time =   133.10 ms /     8 tokens (   16.64 ms per token,    60.10 tokens per second)
-llama_print_timings:        eval time =  2698.54 ms /   255 runs   (   10.58 ms per token,    94.50 tokens per second)
-llama_print_timings:       total time =  3065.75 ms
+llama_print_timings:        load time =  1057.99 ms
+llama_print_timings:      sample time =   146.87 ms /   256 runs   (    0.57 ms per token,  1743.01 tokens per second)
+llama_print_timings: prompt eval time =   124.33 ms /     8 tokens (   15.54 ms per token,    64.34 tokens per second)
+llama_print_timings:        eval time =  2648.22 ms /   255 runs   (   10.39 ms per token,    96.29 tokens per second)
+llama_print_timings:       total time =  2986.07 ms
 
-real	0m26.974s
-user	0m8.971s
-sys	0m5.009s
+real	0m6.395s
+user	0m8.848s
+sys	0m2.756s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_0.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 997 (6ddeefa)
-main: seed  = 1692304155
+main: seed  = 1692307754
 ggml_init_cublas: found 1 CUDA devices:
   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
 llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_0.bin
@@ -87,15 +87,15 @@ llama_new_context_with_model: kv self size  = 1024.00 MB
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
 perplexity: calculating perplexity over 4 chunks, batch_size=512
-perplexity: 3.27 seconds per pass - ETA 0 minutes
+perplexity: 3.16 seconds per pass - ETA 0 minutes
 [1]4.7986,[2]6.3775,[3]7.4120,[4]7.3005,
-llama_print_timings:        load time =  3009.86 ms
+llama_print_timings:        load time =  3030.28 ms
 llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time = 11974.14 ms /  8192 tokens (    1.46 ms per token,   684.14 tokens per second)
+llama_print_timings: prompt eval time = 11827.39 ms /  8192 tokens (    1.44 ms per token,   692.63 tokens per second)
 llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time = 16674.08 ms
+llama_print_timings:       total time = 16397.88 ms
 
 
-real	0m19.150s
-user	0m11.546s
-sys	0m7.402s
+real	0m19.105s
+user	0m11.579s
+sys	0m7.443s

@@ -26,10 +26,10 @@
 -- Using CUDA architectures: 52;61;70
 -- CMAKE_SYSTEM_PROCESSOR: x86_64
 -- x86 detected
--- Configuring done (4.4s)
+-- Configuring done (4.6s)
 -- Generating done (0.1s)
 -- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-release
 
-real	0m4.580s
-user	0m2.338s
-sys	0m2.186s
+real	0m4.703s
+user	0m2.326s
+sys	0m2.249s

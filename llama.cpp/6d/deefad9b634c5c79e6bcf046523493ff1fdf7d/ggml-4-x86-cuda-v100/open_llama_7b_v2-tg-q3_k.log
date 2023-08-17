@@ -41,18 +41,18 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
 I am proud of my past and excited for what is yet to come! My future will hopefully be bright with wonderful things in store like owning a home, traveling on an international trip or even taking over someone’s business; whatever the case may be there are endless possibilities all we have to do it work hard and dream big.
 Throughout your life you meet people who change how they view themselves based from what others think about them whether good or bad! You want these relationships with other individuals so badly that when something happens within a relationship where someone wants more control over their lives then suddenly becomes unreasonable, maybe even mean; there isn’t anything else than can compare for those moments.
 I believe it is okay to be selfish at times because you don’t know what tomorrow has in store but if your heart tells me that I
-llama_print_timings:        load time = 15350.35 ms
-llama_print_timings:      sample time =   145.35 ms /   256 runs   (    0.57 ms per token,  1761.23 tokens per second)
-llama_print_timings: prompt eval time =   175.65 ms /     8 tokens (   21.96 ms per token,    45.55 tokens per second)
-llama_print_timings:        eval time =  2861.93 ms /   255 runs   (   11.22 ms per token,    89.10 tokens per second)
-llama_print_timings:       total time =  3249.99 ms
+llama_print_timings:        load time =   850.88 ms
+llama_print_timings:      sample time =   145.16 ms /   256 runs   (    0.57 ms per token,  1763.51 tokens per second)
+llama_print_timings: prompt eval time =   163.54 ms /     8 tokens (   20.44 ms per token,    48.92 tokens per second)
+llama_print_timings:        eval time =  2841.78 ms /   255 runs   (   11.14 ms per token,    89.73 tokens per second)
+llama_print_timings:       total time =  3217.66 ms
 
-real	0m20.927s
-user	0m9.314s
-sys	0m4.497s
+real	0m6.396s
+user	0m9.489s
+sys	0m2.595s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q3_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 997 (6ddeefa)
-main: seed  = 1692304212
+main: seed  = 1692307811
 ggml_init_cublas: found 1 CUDA devices:
   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
 llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q3_k.bin
@@ -86,15 +86,15 @@ llama_new_context_with_model: kv self size  = 1024.00 MB
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
 perplexity: calculating perplexity over 4 chunks, batch_size=512
-perplexity: 3.42 seconds per pass - ETA 0 minutes
+perplexity: 3.35 seconds per pass - ETA 0 minutes
 [1]4.9390,[2]6.5302,[3]7.5792,[4]7.5160,
-llama_print_timings:        load time =  2826.84 ms
+llama_print_timings:        load time =  2852.44 ms
 llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time = 12658.51 ms /  8192 tokens (    1.55 ms per token,   647.15 tokens per second)
+llama_print_timings: prompt eval time = 12562.76 ms /  8192 tokens (    1.53 ms per token,   652.09 tokens per second)
 llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time = 17137.65 ms
+llama_print_timings:       total time = 16925.88 ms
 
 
-real	0m19.599s
-user	0m11.917s
-sys	0m7.533s
+real	0m19.544s
+user	0m11.763s
+sys	0m7.718s

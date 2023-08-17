@@ -41,18 +41,18 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
 I feel that we are all here for a purpose in this world, and there may be many meanings behind it but one thing stays constant: everything has got me exactly where i am today (in my personal opinion). If you think about the word “purpose”-what comes to mind? Does someone else’s life come into focus as part of that sentence. I believe we have a purpose for being here, and if our goal is not fulfilled by death then something will give us another chance/goal at it so there really isn’t any such thing like “the meaning in my life”.
 I do think though the meanings are different to everyone else because no one can know what happens after you die. So we don’t have a clear idea of where, or how our lives will end up but i believe that is why it has so much mystery and intrigue around us – its like “it could happen any moment now”.
 I do not think there IS such thing as meaning in my life because I dont know if something can be defined by one word/concept. However, the most important part of finding a purpose are having goals that you want to achieve or change things for other
-llama_print_timings:        load time = 22142.52 ms
-llama_print_timings:      sample time =   146.25 ms /   256 runs   (    0.57 ms per token,  1750.44 tokens per second)
-llama_print_timings: prompt eval time =   134.50 ms /     8 tokens (   16.81 ms per token,    59.48 tokens per second)
-llama_print_timings:        eval time =  2806.42 ms /   255 runs   (   11.01 ms per token,    90.86 tokens per second)
-llama_print_timings:       total time =  3154.12 ms
+llama_print_timings:        load time =  1119.74 ms
+llama_print_timings:      sample time =   146.74 ms /   256 runs   (    0.57 ms per token,  1744.59 tokens per second)
+llama_print_timings: prompt eval time =   125.40 ms /     8 tokens (   15.67 ms per token,    63.80 tokens per second)
+llama_print_timings:        eval time =  2810.13 ms /   255 runs   (   11.02 ms per token,    90.74 tokens per second)
+llama_print_timings:       total time =  3148.76 ms
 
-real	0m27.704s
-user	0m9.223s
-sys	0m5.391s
+real	0m6.671s
+user	0m9.345s
+sys	0m2.864s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 997 (6ddeefa)
-main: seed  = 1692304251
+main: seed  = 1692307850
 ggml_init_cublas: found 1 CUDA devices:
   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
 llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.bin
@@ -86,15 +86,15 @@ llama_new_context_with_model: kv self size  = 1024.00 MB
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
 perplexity: calculating perplexity over 4 chunks, batch_size=512
-perplexity: 3.27 seconds per pass - ETA 0 minutes
+perplexity: 3.17 seconds per pass - ETA 0 minutes
 [1]4.8115,[2]6.3743,[3]7.3920,[4]7.2794,
-llama_print_timings:        load time =  3079.33 ms
+llama_print_timings:        load time =  3071.13 ms
 llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time = 12024.30 ms /  8192 tokens (    1.47 ms per token,   681.29 tokens per second)
+llama_print_timings: prompt eval time = 11840.59 ms /  8192 tokens (    1.45 ms per token,   691.86 tokens per second)
 llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time = 16741.16 ms
+llama_print_timings:       total time = 16464.81 ms
 
 
-real	0m19.278s
-user	0m11.869s
-sys	0m7.176s
+real	0m19.220s
+user	0m11.571s
+sys	0m7.580s

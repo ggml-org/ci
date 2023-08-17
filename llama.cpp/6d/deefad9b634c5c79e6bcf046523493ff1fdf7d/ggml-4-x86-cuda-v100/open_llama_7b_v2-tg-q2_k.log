@@ -41,18 +41,18 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
 —Joseph Campbell, The Power of Myth: Who and What We Are in This Life (1979) 2018-2034." [Pause.] You know what? It's okay if you don't understand everything I am telling you right now. Let me tell it to your mother and she may have something more for you, that can help a little bit with this too. But let us begin by beginning at the start of these three things: life as an event in our universe which is here on earth where we are living...
 "And so I would like if there could be one thing to say about it right now, and then leave you to wonder what else might come up later." [Pause.] Well why don't. And that may not always happen exactly the way in our life as a series of events where we are here living on earth today too... But I do want to talk with all this because there is something more, and maybe it will become clearer by having gone through some things like these so far, or at least have begun to get them together.
 This would be the meaning in life that comes from a
-llama_print_timings:        load time = 13444.60 ms
-llama_print_timings:      sample time =   144.86 ms /   256 runs   (    0.57 ms per token,  1767.21 tokens per second)
-llama_print_timings: prompt eval time =   149.03 ms /     8 tokens (   18.63 ms per token,    53.68 tokens per second)
-llama_print_timings:        eval time =  2414.82 ms /   255 runs   (    9.47 ms per token,   105.60 tokens per second)
-llama_print_timings:       total time =  2775.29 ms
+llama_print_timings:        load time =   801.96 ms
+llama_print_timings:      sample time =   145.39 ms /   256 runs   (    0.57 ms per token,  1760.77 tokens per second)
+llama_print_timings: prompt eval time =   135.13 ms /     8 tokens (   16.89 ms per token,    59.20 tokens per second)
+llama_print_timings:        eval time =  2380.91 ms /   255 runs   (    9.34 ms per token,   107.10 tokens per second)
+llama_print_timings:       total time =  2727.32 ms
 
-real	0m18.492s
-user	0m8.062s
-sys	0m3.970s
+real	0m5.839s
+user	0m7.851s
+sys	0m2.685s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 997 (6ddeefa)
-main: seed  = 1692304193
+main: seed  = 1692307792
 ggml_init_cublas: found 1 CUDA devices:
   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
 llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.bin
@@ -86,15 +86,15 @@ llama_new_context_with_model: kv self size  = 1024.00 MB
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
 perplexity: calculating perplexity over 4 chunks, batch_size=512
-perplexity: 3.30 seconds per pass - ETA 0 minutes
+perplexity: 3.22 seconds per pass - ETA 0 minutes
 [1]5.2845,[2]6.9991,[3]8.1187,[4]8.1531,
-llama_print_timings:        load time =  2704.61 ms
+llama_print_timings:        load time =  2720.70 ms
 llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time = 12150.54 ms /  8192 tokens (    1.48 ms per token,   674.21 tokens per second)
+llama_print_timings: prompt eval time = 12051.56 ms /  8192 tokens (    1.47 ms per token,   679.75 tokens per second)
 llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time = 16489.33 ms
+llama_print_timings:       total time = 16284.74 ms
 
 
-real	0m18.919s
-user	0m11.506s
-sys	0m7.266s
+real	0m18.907s
+user	0m11.544s
+sys	0m7.293s

@@ -42,18 +42,18 @@ I know that sounds very cliche, but what my mom always told me growing up was: �
 This lesson has made me one heck of an optimist with great hope in humanity because I see how far we as people can go when focused on helping and loving other humans, rather than ourselves.. even if it’s just by doing something nice for someone – or saying that you care about them… (and not necessarily to a new person every day)
 I have been very fortunate my entire life. My parents raised me with great values; they told us we are nothing without love and caring, compassion is the key in everything I am trying to achieve now: success at what ever level or position you may be working towards today – remember that it’s about others not just yourself…
 - Be a good friend! (and
-llama_print_timings:        load time = 17755.71 ms
-llama_print_timings:      sample time =   156.42 ms /   256 runs   (    0.61 ms per token,  1636.62 tokens per second)
-llama_print_timings: prompt eval time =   135.47 ms /     8 tokens (   16.93 ms per token,    59.05 tokens per second)
-llama_print_timings:        eval time =  2338.16 ms /   255 runs   (    9.17 ms per token,   109.06 tokens per second)
-llama_print_timings:       total time =  2702.81 ms
+llama_print_timings:        load time =   927.65 ms
+llama_print_timings:      sample time =   145.20 ms /   256 runs   (    0.57 ms per token,  1763.13 tokens per second)
+llama_print_timings: prompt eval time =   125.85 ms /     8 tokens (   15.73 ms per token,    63.57 tokens per second)
+llama_print_timings:        eval time =  2300.76 ms /   255 runs   (    9.02 ms per token,   110.83 tokens per second)
+llama_print_timings:       total time =  2638.56 ms
 
-real	0m22.793s
-user	0m7.840s
-sys	0m4.567s
+real	0m5.879s
+user	0m7.701s
+sys	0m2.675s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 997 (6ddeefa)
-main: seed  = 1692304116
+main: seed  = 1692307716
 ggml_init_cublas: found 1 CUDA devices:
   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
 llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.bin
@@ -87,15 +87,15 @@ llama_new_context_with_model: kv self size  = 1024.00 MB
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
 perplexity: calculating perplexity over 4 chunks, batch_size=512
-perplexity: 3.26 seconds per pass - ETA 0 minutes
+perplexity: 3.18 seconds per pass - ETA 0 minutes
 [1]4.8783,[2]6.4528,[3]7.5000,[4]7.3883,
-llama_print_timings:        load time =  2896.46 ms
+llama_print_timings:        load time =  2877.26 ms
 llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time = 12023.80 ms /  8192 tokens (    1.47 ms per token,   681.32 tokens per second)
+llama_print_timings: prompt eval time = 11878.55 ms /  8192 tokens (    1.45 ms per token,   689.65 tokens per second)
 llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time = 16558.26 ms
+llama_print_timings:       total time = 16304.00 ms
 
 
-real	0m18.988s
-user	0m11.574s
-sys	0m7.231s
+real	0m18.948s
+user	0m11.477s
+sys	0m7.401s

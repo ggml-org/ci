@@ -42,18 +42,18 @@ My name is Jami Smith (pronounced Jamie). I am the owner and operator of “Jami
 - Consignment Sales – We sell new and gently used furniture/home furnishings at consignment sales throughout our community (Sales are held 2 x a year)
 - Gift Baskets – Custom designed gift baskets with unique items that will delight anyone on your list! Just in time for Christmas…these beautiful hand made creations can be ordered now & delivered to your door or as gifts during the holidays. The perfect addition of holiday cheer and joy!! (Limited quantity so order early)
 - Furniture/Accessories – We stock an array of furniture,
-llama_print_timings:        load time = 25658.64 ms
-llama_print_timings:      sample time =   150.09 ms /   256 runs   (    0.59 ms per token,  1705.70 tokens per second)
-llama_print_timings: prompt eval time =   128.42 ms /     8 tokens (   16.05 ms per token,    62.30 tokens per second)
-llama_print_timings:        eval time =  3146.28 ms /   255 runs   (   12.34 ms per token,    81.05 tokens per second)
-llama_print_timings:       total time =  3492.72 ms
+llama_print_timings:        load time =  1186.69 ms
+llama_print_timings:      sample time =   146.78 ms /   256 runs   (    0.57 ms per token,  1744.09 tokens per second)
+llama_print_timings: prompt eval time =   118.69 ms /     8 tokens (   14.84 ms per token,    67.40 tokens per second)
+llama_print_timings:        eval time =  3109.44 ms /   255 runs   (   12.19 ms per token,    82.01 tokens per second)
+llama_print_timings:       total time =  3442.00 ms
 
-real	0m31.583s
-user	0m10.440s
-sys	0m5.697s
+real	0m7.004s
+user	0m10.331s
+sys	0m2.789s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q6_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 997 (6ddeefa)
-main: seed  = 1692304270
+main: seed  = 1692307869
 ggml_init_cublas: found 1 CUDA devices:
   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
 llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q6_k.bin
@@ -87,5 +87,15 @@ llama_new_context_with_model: kv self size  = 1024.00 MB
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
 perplexity: calculating perplexity over 4 chunks, batch_size=512
-perplexity: 3.25 seconds per pass - ETA 0 minutes
-[1]4.8081,
+perplexity: 3.16 seconds per pass - ETA 0 minutes
+[1]4.8081,[2]6.3609,[3]7.3754,[4]7.2585,
+llama_print_timings:        load time =  3192.16 ms
+llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time = 11806.11 ms /  8192 tokens (    1.44 ms per token,   693.88 tokens per second)
+llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time = 16532.35 ms
+
+
+real	0m19.311s
+user	0m11.605s
+sys	0m7.629s

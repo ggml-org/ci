@@ -41,18 +41,18 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
 I think if we are given one chance then why not take that leap of faith? Why go back to the same place everyday just for money instead of making ourselves happy too. Happiness is something you can create by yourself so I believe it’s up to us as individuals what our next step should be, however when your in debt its hard sometimes but i know deep down if we do make that leap then good things will happen..
 The meaning behind life; my interpretation of the word ‘meaning’. For me this all depends on personal preference. I think it’s important to find out what other people believe and why they feel as such, so you can understand their point of view without judgement or criticism but just be able to take it in at face value rather than judging them for having a different opinion from yours..
 In my perspective the meaning is that everything we do has an impact on someone’s life whether good or bad. So I believe its upto us individually as individuals what our next step should be and how we can
-llama_print_timings:        load time =  2457.44 ms
-llama_print_timings:      sample time =   150.58 ms /   256 runs   (    0.59 ms per token,  1700.13 tokens per second)
-llama_print_timings: prompt eval time =   181.37 ms /     8 tokens (   22.67 ms per token,    44.11 tokens per second)
-llama_print_timings:        eval time =  4907.71 ms /   255 runs   (   19.25 ms per token,    51.96 tokens per second)
-llama_print_timings:       total time =  5307.35 ms
+llama_print_timings:        load time =  2497.29 ms
+llama_print_timings:      sample time =   144.19 ms /   256 runs   (    0.56 ms per token,  1775.45 tokens per second)
+llama_print_timings: prompt eval time =   167.27 ms /     8 tokens (   20.91 ms per token,    47.83 tokens per second)
+llama_print_timings:        eval time =  4914.61 ms /   255 runs   (   19.27 ms per token,    51.89 tokens per second)
+llama_print_timings:       total time =  5291.63 ms
 
-real	0m10.327s
-user	0m16.836s
-sys	0m3.336s
+real	0m10.383s
+user	0m16.901s
+sys	0m3.333s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 997 (6ddeefa)
-main: seed  = 1692304072
+main: seed  = 1692307673
 ggml_init_cublas: found 1 CUDA devices:
   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
 llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-f16.bin
@@ -86,15 +86,15 @@ llama_new_context_with_model: kv self size  = 1024.00 MB
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
 perplexity: calculating perplexity over 4 chunks, batch_size=512
-perplexity: 4.05 seconds per pass - ETA 0 minutes
+perplexity: 3.46 seconds per pass - ETA 0 minutes
 [1]4.7952,[2]6.3520,[3]7.3679,[4]7.2503,
-llama_print_timings:        load time =  4789.58 ms
+llama_print_timings:        load time =  4455.68 ms
 llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time = 12831.78 ms /  8192 tokens (    1.57 ms per token,   638.41 tokens per second)
+llama_print_timings: prompt eval time = 12622.54 ms /  8192 tokens (    1.54 ms per token,   649.00 tokens per second)
 llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time = 20861.77 ms
+llama_print_timings:       total time = 18892.06 ms
 
 
-real	0m23.543s
-user	0m14.000s
-sys	0m9.472s
+real	0m21.691s
+user	0m13.421s
+sys	0m8.191s

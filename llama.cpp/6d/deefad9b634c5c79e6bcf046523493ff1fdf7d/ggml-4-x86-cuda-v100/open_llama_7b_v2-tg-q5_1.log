@@ -42,18 +42,18 @@ In all walks of our lives it would be impossible not find a need for help or enc
 We can always find a reason for self- pity or lack thereof but it comes down to one thing - how you respond… Do your words encourage others? We all have an opportunity every moment throughout our days and moments as well. To be encouraging supportive uplifting inspiring compassionate giving unselfish humble positive patient forgiving etc….
 The world is a beautiful place so lets not let the little things get in the way of seeing it! And we are to see beyond ourselves into what really matters, people helping each other regardless their faith or belief system… Let us be an instrument for God and others; encouraging one another toward love life hope peace joy patience kindness goodness gentleness humility self control forgiveness etc….
 And when someone’s heart is being opened up with encouragement we are to speak truth in
-llama_print_timings:        load time = 23401.73 ms
-llama_print_timings:      sample time =   161.36 ms /   256 runs   (    0.63 ms per token,  1586.55 tokens per second)
-llama_print_timings: prompt eval time =   131.74 ms /     8 tokens (   16.47 ms per token,    60.73 tokens per second)
-llama_print_timings:        eval time =  2742.22 ms /   255 runs   (   10.75 ms per token,    92.99 tokens per second)
-llama_print_timings:       total time =  3107.98 ms
+llama_print_timings:        load time =  1095.56 ms
+llama_print_timings:      sample time =   144.74 ms /   256 runs   (    0.57 ms per token,  1768.68 tokens per second)
+llama_print_timings: prompt eval time =   125.37 ms /     8 tokens (   15.67 ms per token,    63.81 tokens per second)
+llama_print_timings:        eval time =  2691.01 ms /   255 runs   (   10.55 ms per token,    94.76 tokens per second)
+llama_print_timings:       total time =  3029.24 ms
 
-real	0m28.895s
-user	0m9.128s
-sys	0m5.428s
+real	0m6.447s
+user	0m9.056s
+sys	0m2.712s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 997 (6ddeefa)
-main: seed  = 1692304174
+main: seed  = 1692307773
 ggml_init_cublas: found 1 CUDA devices:
   Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
 llama.cpp: loading model from ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.bin
@@ -87,15 +87,15 @@ llama_new_context_with_model: kv self size  = 1024.00 MB
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | VSX = 0 | 
 perplexity: calculating perplexity over 4 chunks, batch_size=512
-perplexity: 3.26 seconds per pass - ETA 0 minutes
+perplexity: 3.18 seconds per pass - ETA 0 minutes
 [1]4.8305,[2]6.3757,[3]7.3951,[4]7.2858,
-llama_print_timings:        load time =  3024.08 ms
+llama_print_timings:        load time =  3049.72 ms
 llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time = 11985.68 ms /  8192 tokens (    1.46 ms per token,   683.48 tokens per second)
+llama_print_timings: prompt eval time = 11856.71 ms /  8192 tokens (    1.45 ms per token,   690.92 tokens per second)
 llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time = 16702.74 ms
+llama_print_timings:       total time = 16455.20 ms
 
 
-real	0m19.160s
-user	0m11.586s
-sys	0m7.380s
+real	0m19.190s
+user	0m11.594s
+sys	0m7.522s
