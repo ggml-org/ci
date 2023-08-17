@@ -1,0 +1,651 @@
+Archive:  models-mnt/wikitext/wikitext-2-raw-v1.zip
+  inflating: models-mnt/wikitext/wikitext-2-raw/wiki.test.raw  
+  inflating: models-mnt/wikitext/wikitext-2-raw/wiki.valid.raw  
+  inflating: models-mnt/wikitext/wikitext-2-raw/wiki.train.raw  
++ cmake -DCMAKE_BUILD_TYPE=Release -DLLAMA_QKK_64=1 ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- CMAKE_SYSTEM_PROCESSOR: aarch64
+-- ARM detected
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-release
+
+real	0m0.685s
+user	0m0.348s
+sys	0m0.339s
++ make -j
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/k_quants.c.o
+[  5%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  6%] Built target BUILD_INFO
+/home/ggml/work/llama.cpp/k_quants.c: In function ‘ggml_vec_dot_q2_K_q8_K’:
+/home/ggml/work/llama.cpp/k_quants.c:1559:22: warning: unused variable ‘vzero’ [-Wunused-variable]
+ 1559 |     const int32x4_t  vzero = vdupq_n_s32(0);
+      |                      ^~~~~
+/home/ggml/work/llama.cpp/k_quants.c: In function ‘ggml_vec_dot_q5_K_q8_K’:
+/home/ggml/work/llama.cpp/k_quants.c:3388:21: warning: unused variable ‘mzero’ [-Wunused-variable]
+ 3388 |     const int32x4_t mzero = vdupq_n_s32(0);
+      |                     ^~~~~
+/home/ggml/work/llama.cpp/k_quants.c: In function ‘ggml_vec_dot_q6_K_q8_K’:
+/home/ggml/work/llama.cpp/k_quants.c:3996:22: warning: unused variable ‘vzero’ [-Wunused-variable]
+ 3996 |     const int32x4_t  vzero = vdupq_n_s32(0);
+      |                      ^~~~~
+[  6%] Built target ggml
+[  8%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+[ 10%] Linking C static library libggml_static.a
+[ 10%] Built target ggml_static
+[ 12%] Linking CXX static library libllama.a
+[ 12%] Built target llama
+[ 13%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/test-tokenizer-0.cpp.o
+[ 17%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 17%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
+[ 18%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 20%] Building CXX object tests/CMakeFiles/test-tokenizer-1.dir/test-tokenizer-1.cpp.o
+[ 22%] Building CXX object tests/CMakeFiles/test-llama-grammar.dir/test-llama-grammar.cpp.o
+[ 24%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[ 25%] Building CXX object tests/CMakeFiles/test-grammar-parser.dir/test-grammar-parser.cpp.o
+[ 27%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+[ 29%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
+[ 31%] Building CXX object examples/CMakeFiles/common.dir/grammar-parser.cpp.o
+[ 34%] Building CXX object examples/CMakeFiles/common.dir/console.cpp.o
+[ 32%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+[ 36%] Linking CXX executable ../bin/test-quantize-fns
+[ 37%] Linking CXX executable ../../bin/quantize
+[ 39%] Linking CXX executable ../bin/test-tokenizer-1
+[ 39%] Built target test-quantize-fns
+[ 41%] Linking CXX executable ../bin/test-quantize-perf
+[ 43%] Linking CXX executable ../bin/test-tokenizer-0
+[ 43%] Built target quantize
+[ 44%] Linking CXX executable ../bin/test-grad0
+[ 44%] Built target test-tokenizer-1
+[ 44%] Built target test-quantize-perf
+[ 46%] Linking CXX executable ../bin/test-sampling
+[ 46%] Built target test-grad0
+[ 46%] Built target test-tokenizer-0
+[ 46%] Built target test-sampling
+[ 46%] Built target common
+[ 48%] Linking CXX executable ../bin/test-grammar-parser
+[ 50%] Building CXX object examples/main/CMakeFiles/main.dir/main.cpp.o
+[ 51%] Building CXX object examples/perplexity/CMakeFiles/perplexity.dir/perplexity.cpp.o
+[ 53%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
+[ 55%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
+[ 56%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
+[ 58%] Building CXX object examples/embedding/CMakeFiles/embedding.dir/embedding.cpp.o
+[ 60%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
+[ 62%] Building CXX object examples/embd-input/CMakeFiles/embdinput.dir/embd-input-lib.cpp.o
+[ 63%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
+[ 65%] Building CXX object examples/convert-llama2c-to-ggml/CMakeFiles/convert-llama2c-to-ggml.dir/convert-llama2c-to-ggml.cpp.o
+[ 67%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
+[ 68%] Building CXX object pocs/vdot/CMakeFiles/vdot.dir/vdot.cpp.o
+[ 70%] Building CXX object pocs/vdot/CMakeFiles/q8dot.dir/q8dot.cpp.o
+[ 70%] Built target test-grammar-parser
+/home/ggml/work/llama.cpp/examples/convert-llama2c-to-ggml/convert-llama2c-to-ggml.cpp: In function ‘void save_as_llama_model(llama_vocab*, my_llama_model*, TransformerWeights*, const char*)’:
+/home/ggml/work/llama.cpp/examples/convert-llama2c-to-ggml/convert-llama2c-to-ggml.cpp:595:57: note: ‘#pragma message: TODO: implement file saving using gguf’
+  595 | #pragma message("TODO: implement file saving using gguf")
+      |                                                         ^
+/home/ggml/work/llama.cpp/examples/baby-llama/baby-llama.cpp: In function ‘int main(int, char**)’:
+/home/ggml/work/llama.cpp/examples/baby-llama/baby-llama.cpp:1620:32: warning: variable ‘opt_params_adam’ set but not used [-Wunused-but-set-variable]
+ 1620 |         struct ggml_opt_params opt_params_adam = ggml_opt_default_params(GGML_OPT_ADAM);
+      |                                ^~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp: In function ‘void save_as_llama_model(llama_vocab*, my_llama_model*, const char*)’:
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:2615:57: note: ‘#pragma message: TODO: implement file saving using gguf’
+ 2615 | #pragma message("TODO: implement file saving using gguf")
+      |                                                         ^
+[ 72%] Linking CXX executable ../../bin/embedding
+[ 74%] Linking CXX executable ../../bin/q8dot
+[ 75%] Linking CXX executable ../../bin/benchmark
+[ 77%] Linking CXX executable ../../bin/simple
+[ 79%] Linking CXX executable ../../bin/save-load-state
+[ 79%] Built target embedding
+[ 79%] Built target q8dot
+[ 81%] Linking CXX executable ../../bin/vdot
+[ 82%] Linking CXX static library libembdinput.a
+[ 82%] Built target simple
+[ 82%] Built target save-load-state
+[ 82%] Built target benchmark
+[ 82%] Built target embdinput
+[ 82%] Built target vdot
+[ 84%] Building CXX object examples/embd-input/CMakeFiles/embd-input-test.dir/embd-input-test.cpp.o
+[ 86%] Linking CXX executable ../../bin/convert-llama2c-to-ggml
+[ 86%] Built target convert-llama2c-to-ggml
+[ 87%] Linking CXX executable ../../bin/baby-llama
+[ 89%] Linking CXX executable ../../bin/perplexity
+[ 89%] Built target baby-llama
+[ 89%] Built target perplexity
+[ 91%] Linking CXX executable ../../bin/embd-input-test
+[ 91%] Built target embd-input-test
+[ 93%] Linking CXX executable ../../bin/main
+[ 93%] Built target main
+[ 94%] Linking CXX executable ../../bin/quantize-stats
+[ 94%] Built target quantize-stats
+[ 96%] Linking CXX executable ../../bin/train-text-from-scratch
+[ 96%] Built target train-text-from-scratch
+[ 98%] Linking CXX executable ../bin/test-llama-grammar
+[ 98%] Built target test-llama-grammar
+[100%] Linking CXX executable ../../bin/server
+[100%] Built target server
+
+real	0m36.341s
+user	1m8.943s
+sys	0m5.186s
+Loading model file ../models-mnt/open-llama/3B-v2/pytorch_model.bin
+params = Params(n_vocab=32000, n_embd=3200, n_mult=4320, n_layer=26, n_ctx=2048, n_ff=8640, n_head=32, n_head_kv=32, f_norm_eps=1e-06)
+Loading vocab file '../models-mnt/open-llama/3B-v2/tokenizer.model', type 'spm'
+model.embed_tokens.weight                        -> token_embd.weight                        | UnquantizedDataType(name='F16') | [32000, 3200]
+model.layers.0.self_attn.q_proj.weight           -> blk.0.attn_q.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.0.self_attn.k_proj.weight           -> blk.0.attn_k.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.0.self_attn.v_proj.weight           -> blk.0.attn_v.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.0.self_attn.o_proj.weight           -> blk.0.attn_output.weight                 | UnquantizedDataType(name='F16') | [3200, 3200]
+skipping tensor blk.0.attn_rot_embd
+model.layers.0.mlp.gate_proj.weight              -> blk.0.ffn_gate.weight                    | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.0.mlp.down_proj.weight              -> blk.0.ffn_down.weight                    | UnquantizedDataType(name='F16') | [3200, 8640]
+model.layers.0.mlp.up_proj.weight                -> blk.0.ffn_up.weight                      | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.0.input_layernorm.weight            -> blk.0.attn_norm.weight                   | UnquantizedDataType(name='F16') | [3200]
+model.layers.0.post_attention_layernorm.weight   -> blk.0.ffn_norm.weight                    | UnquantizedDataType(name='F16') | [3200]
+model.layers.1.self_attn.q_proj.weight           -> blk.1.attn_q.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.1.self_attn.k_proj.weight           -> blk.1.attn_k.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.1.self_attn.v_proj.weight           -> blk.1.attn_v.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.1.self_attn.o_proj.weight           -> blk.1.attn_output.weight                 | UnquantizedDataType(name='F16') | [3200, 3200]
+skipping tensor blk.1.attn_rot_embd
+model.layers.1.mlp.gate_proj.weight              -> blk.1.ffn_gate.weight                    | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.1.mlp.down_proj.weight              -> blk.1.ffn_down.weight                    | UnquantizedDataType(name='F16') | [3200, 8640]
+model.layers.1.mlp.up_proj.weight                -> blk.1.ffn_up.weight                      | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.1.input_layernorm.weight            -> blk.1.attn_norm.weight                   | UnquantizedDataType(name='F16') | [3200]
+model.layers.1.post_attention_layernorm.weight   -> blk.1.ffn_norm.weight                    | UnquantizedDataType(name='F16') | [3200]
+model.layers.2.self_attn.q_proj.weight           -> blk.2.attn_q.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.2.self_attn.k_proj.weight           -> blk.2.attn_k.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.2.self_attn.v_proj.weight           -> blk.2.attn_v.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.2.self_attn.o_proj.weight           -> blk.2.attn_output.weight                 | UnquantizedDataType(name='F16') | [3200, 3200]
+skipping tensor blk.2.attn_rot_embd
+model.layers.2.mlp.gate_proj.weight              -> blk.2.ffn_gate.weight                    | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.2.mlp.down_proj.weight              -> blk.2.ffn_down.weight                    | UnquantizedDataType(name='F16') | [3200, 8640]
+model.layers.2.mlp.up_proj.weight                -> blk.2.ffn_up.weight                      | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.2.input_layernorm.weight            -> blk.2.attn_norm.weight                   | UnquantizedDataType(name='F16') | [3200]
+model.layers.2.post_attention_layernorm.weight   -> blk.2.ffn_norm.weight                    | UnquantizedDataType(name='F16') | [3200]
+model.layers.3.self_attn.q_proj.weight           -> blk.3.attn_q.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.3.self_attn.k_proj.weight           -> blk.3.attn_k.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.3.self_attn.v_proj.weight           -> blk.3.attn_v.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.3.self_attn.o_proj.weight           -> blk.3.attn_output.weight                 | UnquantizedDataType(name='F16') | [3200, 3200]
+skipping tensor blk.3.attn_rot_embd
+model.layers.3.mlp.gate_proj.weight              -> blk.3.ffn_gate.weight                    | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.3.mlp.down_proj.weight              -> blk.3.ffn_down.weight                    | UnquantizedDataType(name='F16') | [3200, 8640]
+model.layers.3.mlp.up_proj.weight                -> blk.3.ffn_up.weight                      | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.3.input_layernorm.weight            -> blk.3.attn_norm.weight                   | UnquantizedDataType(name='F16') | [3200]
+model.layers.3.post_attention_layernorm.weight   -> blk.3.ffn_norm.weight                    | UnquantizedDataType(name='F16') | [3200]
+model.layers.4.self_attn.q_proj.weight           -> blk.4.attn_q.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.4.self_attn.k_proj.weight           -> blk.4.attn_k.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.4.self_attn.v_proj.weight           -> blk.4.attn_v.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.4.self_attn.o_proj.weight           -> blk.4.attn_output.weight                 | UnquantizedDataType(name='F16') | [3200, 3200]
+skipping tensor blk.4.attn_rot_embd
+model.layers.4.mlp.gate_proj.weight              -> blk.4.ffn_gate.weight                    | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.4.mlp.down_proj.weight              -> blk.4.ffn_down.weight                    | UnquantizedDataType(name='F16') | [3200, 8640]
+model.layers.4.mlp.up_proj.weight                -> blk.4.ffn_up.weight                      | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.4.input_layernorm.weight            -> blk.4.attn_norm.weight                   | UnquantizedDataType(name='F16') | [3200]
+model.layers.4.post_attention_layernorm.weight   -> blk.4.ffn_norm.weight                    | UnquantizedDataType(name='F16') | [3200]
+model.layers.5.self_attn.q_proj.weight           -> blk.5.attn_q.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.5.self_attn.k_proj.weight           -> blk.5.attn_k.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.5.self_attn.v_proj.weight           -> blk.5.attn_v.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.5.self_attn.o_proj.weight           -> blk.5.attn_output.weight                 | UnquantizedDataType(name='F16') | [3200, 3200]
+skipping tensor blk.5.attn_rot_embd
+model.layers.5.mlp.gate_proj.weight              -> blk.5.ffn_gate.weight                    | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.5.mlp.down_proj.weight              -> blk.5.ffn_down.weight                    | UnquantizedDataType(name='F16') | [3200, 8640]
+model.layers.5.mlp.up_proj.weight                -> blk.5.ffn_up.weight                      | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.5.input_layernorm.weight            -> blk.5.attn_norm.weight                   | UnquantizedDataType(name='F16') | [3200]
+model.layers.5.post_attention_layernorm.weight   -> blk.5.ffn_norm.weight                    | UnquantizedDataType(name='F16') | [3200]
+model.layers.6.self_attn.q_proj.weight           -> blk.6.attn_q.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.6.self_attn.k_proj.weight           -> blk.6.attn_k.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.6.self_attn.v_proj.weight           -> blk.6.attn_v.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.6.self_attn.o_proj.weight           -> blk.6.attn_output.weight                 | UnquantizedDataType(name='F16') | [3200, 3200]
+skipping tensor blk.6.attn_rot_embd
+model.layers.6.mlp.gate_proj.weight              -> blk.6.ffn_gate.weight                    | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.6.mlp.down_proj.weight              -> blk.6.ffn_down.weight                    | UnquantizedDataType(name='F16') | [3200, 8640]
+model.layers.6.mlp.up_proj.weight                -> blk.6.ffn_up.weight                      | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.6.input_layernorm.weight            -> blk.6.attn_norm.weight                   | UnquantizedDataType(name='F16') | [3200]
+model.layers.6.post_attention_layernorm.weight   -> blk.6.ffn_norm.weight                    | UnquantizedDataType(name='F16') | [3200]
+model.layers.7.self_attn.q_proj.weight           -> blk.7.attn_q.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.7.self_attn.k_proj.weight           -> blk.7.attn_k.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.7.self_attn.v_proj.weight           -> blk.7.attn_v.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.7.self_attn.o_proj.weight           -> blk.7.attn_output.weight                 | UnquantizedDataType(name='F16') | [3200, 3200]
+skipping tensor blk.7.attn_rot_embd
+model.layers.7.mlp.gate_proj.weight              -> blk.7.ffn_gate.weight                    | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.7.mlp.down_proj.weight              -> blk.7.ffn_down.weight                    | UnquantizedDataType(name='F16') | [3200, 8640]
+model.layers.7.mlp.up_proj.weight                -> blk.7.ffn_up.weight                      | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.7.input_layernorm.weight            -> blk.7.attn_norm.weight                   | UnquantizedDataType(name='F16') | [3200]
+model.layers.7.post_attention_layernorm.weight   -> blk.7.ffn_norm.weight                    | UnquantizedDataType(name='F16') | [3200]
+model.layers.8.self_attn.q_proj.weight           -> blk.8.attn_q.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.8.self_attn.k_proj.weight           -> blk.8.attn_k.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.8.self_attn.v_proj.weight           -> blk.8.attn_v.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.8.self_attn.o_proj.weight           -> blk.8.attn_output.weight                 | UnquantizedDataType(name='F16') | [3200, 3200]
+skipping tensor blk.8.attn_rot_embd
+model.layers.8.mlp.gate_proj.weight              -> blk.8.ffn_gate.weight                    | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.8.mlp.down_proj.weight              -> blk.8.ffn_down.weight                    | UnquantizedDataType(name='F16') | [3200, 8640]
+model.layers.8.mlp.up_proj.weight                -> blk.8.ffn_up.weight                      | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.8.input_layernorm.weight            -> blk.8.attn_norm.weight                   | UnquantizedDataType(name='F16') | [3200]
+model.layers.8.post_attention_layernorm.weight   -> blk.8.ffn_norm.weight                    | UnquantizedDataType(name='F16') | [3200]
+model.layers.9.self_attn.q_proj.weight           -> blk.9.attn_q.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.9.self_attn.k_proj.weight           -> blk.9.attn_k.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.9.self_attn.v_proj.weight           -> blk.9.attn_v.weight                      | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.9.self_attn.o_proj.weight           -> blk.9.attn_output.weight                 | UnquantizedDataType(name='F16') | [3200, 3200]
+skipping tensor blk.9.attn_rot_embd
+model.layers.9.mlp.gate_proj.weight              -> blk.9.ffn_gate.weight                    | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.9.mlp.down_proj.weight              -> blk.9.ffn_down.weight                    | UnquantizedDataType(name='F16') | [3200, 8640]
+model.layers.9.mlp.up_proj.weight                -> blk.9.ffn_up.weight                      | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.9.input_layernorm.weight            -> blk.9.attn_norm.weight                   | UnquantizedDataType(name='F16') | [3200]
+model.layers.9.post_attention_layernorm.weight   -> blk.9.ffn_norm.weight                    | UnquantizedDataType(name='F16') | [3200]
+model.layers.10.self_attn.q_proj.weight          -> blk.10.attn_q.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.10.self_attn.k_proj.weight          -> blk.10.attn_k.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.10.self_attn.v_proj.weight          -> blk.10.attn_v.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.10.self_attn.o_proj.weight          -> blk.10.attn_output.weight                | UnquantizedDataType(name='F16') | [3200, 3200]
+skipping tensor blk.10.attn_rot_embd
+model.layers.10.mlp.gate_proj.weight             -> blk.10.ffn_gate.weight                   | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.10.mlp.down_proj.weight             -> blk.10.ffn_down.weight                   | UnquantizedDataType(name='F16') | [3200, 8640]
+model.layers.10.mlp.up_proj.weight               -> blk.10.ffn_up.weight                     | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.10.input_layernorm.weight           -> blk.10.attn_norm.weight                  | UnquantizedDataType(name='F16') | [3200]
+model.layers.10.post_attention_layernorm.weight  -> blk.10.ffn_norm.weight                   | UnquantizedDataType(name='F16') | [3200]
+model.layers.11.self_attn.q_proj.weight          -> blk.11.attn_q.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.11.self_attn.k_proj.weight          -> blk.11.attn_k.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.11.self_attn.v_proj.weight          -> blk.11.attn_v.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.11.self_attn.o_proj.weight          -> blk.11.attn_output.weight                | UnquantizedDataType(name='F16') | [3200, 3200]
+skipping tensor blk.11.attn_rot_embd
+model.layers.11.mlp.gate_proj.weight             -> blk.11.ffn_gate.weight                   | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.11.mlp.down_proj.weight             -> blk.11.ffn_down.weight                   | UnquantizedDataType(name='F16') | [3200, 8640]
+model.layers.11.mlp.up_proj.weight               -> blk.11.ffn_up.weight                     | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.11.input_layernorm.weight           -> blk.11.attn_norm.weight                  | UnquantizedDataType(name='F16') | [3200]
+model.layers.11.post_attention_layernorm.weight  -> blk.11.ffn_norm.weight                   | UnquantizedDataType(name='F16') | [3200]
+model.layers.12.self_attn.q_proj.weight          -> blk.12.attn_q.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.12.self_attn.k_proj.weight          -> blk.12.attn_k.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.12.self_attn.v_proj.weight          -> blk.12.attn_v.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.12.self_attn.o_proj.weight          -> blk.12.attn_output.weight                | UnquantizedDataType(name='F16') | [3200, 3200]
+skipping tensor blk.12.attn_rot_embd
+model.layers.12.mlp.gate_proj.weight             -> blk.12.ffn_gate.weight                   | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.12.mlp.down_proj.weight             -> blk.12.ffn_down.weight                   | UnquantizedDataType(name='F16') | [3200, 8640]
+model.layers.12.mlp.up_proj.weight               -> blk.12.ffn_up.weight                     | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.12.input_layernorm.weight           -> blk.12.attn_norm.weight                  | UnquantizedDataType(name='F16') | [3200]
+model.layers.12.post_attention_layernorm.weight  -> blk.12.ffn_norm.weight                   | UnquantizedDataType(name='F16') | [3200]
+model.layers.13.self_attn.q_proj.weight          -> blk.13.attn_q.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.13.self_attn.k_proj.weight          -> blk.13.attn_k.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.13.self_attn.v_proj.weight          -> blk.13.attn_v.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.13.self_attn.o_proj.weight          -> blk.13.attn_output.weight                | UnquantizedDataType(name='F16') | [3200, 3200]
+skipping tensor blk.13.attn_rot_embd
+model.layers.13.mlp.gate_proj.weight             -> blk.13.ffn_gate.weight                   | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.13.mlp.down_proj.weight             -> blk.13.ffn_down.weight                   | UnquantizedDataType(name='F16') | [3200, 8640]
+model.layers.13.mlp.up_proj.weight               -> blk.13.ffn_up.weight                     | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.13.input_layernorm.weight           -> blk.13.attn_norm.weight                  | UnquantizedDataType(name='F16') | [3200]
+model.layers.13.post_attention_layernorm.weight  -> blk.13.ffn_norm.weight                   | UnquantizedDataType(name='F16') | [3200]
+model.layers.14.self_attn.q_proj.weight          -> blk.14.attn_q.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.14.self_attn.k_proj.weight          -> blk.14.attn_k.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.14.self_attn.v_proj.weight          -> blk.14.attn_v.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.14.self_attn.o_proj.weight          -> blk.14.attn_output.weight                | UnquantizedDataType(name='F16') | [3200, 3200]
+skipping tensor blk.14.attn_rot_embd
+model.layers.14.mlp.gate_proj.weight             -> blk.14.ffn_gate.weight                   | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.14.mlp.down_proj.weight             -> blk.14.ffn_down.weight                   | UnquantizedDataType(name='F16') | [3200, 8640]
+model.layers.14.mlp.up_proj.weight               -> blk.14.ffn_up.weight                     | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.14.input_layernorm.weight           -> blk.14.attn_norm.weight                  | UnquantizedDataType(name='F16') | [3200]
+model.layers.14.post_attention_layernorm.weight  -> blk.14.ffn_norm.weight                   | UnquantizedDataType(name='F16') | [3200]
+model.layers.15.self_attn.q_proj.weight          -> blk.15.attn_q.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.15.self_attn.k_proj.weight          -> blk.15.attn_k.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.15.self_attn.v_proj.weight          -> blk.15.attn_v.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.15.self_attn.o_proj.weight          -> blk.15.attn_output.weight                | UnquantizedDataType(name='F16') | [3200, 3200]
+skipping tensor blk.15.attn_rot_embd
+model.layers.15.mlp.gate_proj.weight             -> blk.15.ffn_gate.weight                   | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.15.mlp.down_proj.weight             -> blk.15.ffn_down.weight                   | UnquantizedDataType(name='F16') | [3200, 8640]
+model.layers.15.mlp.up_proj.weight               -> blk.15.ffn_up.weight                     | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.15.input_layernorm.weight           -> blk.15.attn_norm.weight                  | UnquantizedDataType(name='F16') | [3200]
+model.layers.15.post_attention_layernorm.weight  -> blk.15.ffn_norm.weight                   | UnquantizedDataType(name='F16') | [3200]
+model.layers.16.self_attn.q_proj.weight          -> blk.16.attn_q.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.16.self_attn.k_proj.weight          -> blk.16.attn_k.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.16.self_attn.v_proj.weight          -> blk.16.attn_v.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.16.self_attn.o_proj.weight          -> blk.16.attn_output.weight                | UnquantizedDataType(name='F16') | [3200, 3200]
+skipping tensor blk.16.attn_rot_embd
+model.layers.16.mlp.gate_proj.weight             -> blk.16.ffn_gate.weight                   | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.16.mlp.down_proj.weight             -> blk.16.ffn_down.weight                   | UnquantizedDataType(name='F16') | [3200, 8640]
+model.layers.16.mlp.up_proj.weight               -> blk.16.ffn_up.weight                     | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.16.input_layernorm.weight           -> blk.16.attn_norm.weight                  | UnquantizedDataType(name='F16') | [3200]
+model.layers.16.post_attention_layernorm.weight  -> blk.16.ffn_norm.weight                   | UnquantizedDataType(name='F16') | [3200]
+model.layers.17.self_attn.q_proj.weight          -> blk.17.attn_q.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.17.self_attn.k_proj.weight          -> blk.17.attn_k.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.17.self_attn.v_proj.weight          -> blk.17.attn_v.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.17.self_attn.o_proj.weight          -> blk.17.attn_output.weight                | UnquantizedDataType(name='F16') | [3200, 3200]
+skipping tensor blk.17.attn_rot_embd
+model.layers.17.mlp.gate_proj.weight             -> blk.17.ffn_gate.weight                   | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.17.mlp.down_proj.weight             -> blk.17.ffn_down.weight                   | UnquantizedDataType(name='F16') | [3200, 8640]
+model.layers.17.mlp.up_proj.weight               -> blk.17.ffn_up.weight                     | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.17.input_layernorm.weight           -> blk.17.attn_norm.weight                  | UnquantizedDataType(name='F16') | [3200]
+model.layers.17.post_attention_layernorm.weight  -> blk.17.ffn_norm.weight                   | UnquantizedDataType(name='F16') | [3200]
+model.layers.18.self_attn.q_proj.weight          -> blk.18.attn_q.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.18.self_attn.k_proj.weight          -> blk.18.attn_k.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.18.self_attn.v_proj.weight          -> blk.18.attn_v.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.18.self_attn.o_proj.weight          -> blk.18.attn_output.weight                | UnquantizedDataType(name='F16') | [3200, 3200]
+skipping tensor blk.18.attn_rot_embd
+model.layers.18.mlp.gate_proj.weight             -> blk.18.ffn_gate.weight                   | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.18.mlp.down_proj.weight             -> blk.18.ffn_down.weight                   | UnquantizedDataType(name='F16') | [3200, 8640]
+model.layers.18.mlp.up_proj.weight               -> blk.18.ffn_up.weight                     | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.18.input_layernorm.weight           -> blk.18.attn_norm.weight                  | UnquantizedDataType(name='F16') | [3200]
+model.layers.18.post_attention_layernorm.weight  -> blk.18.ffn_norm.weight                   | UnquantizedDataType(name='F16') | [3200]
+model.layers.19.self_attn.q_proj.weight          -> blk.19.attn_q.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.19.self_attn.k_proj.weight          -> blk.19.attn_k.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.19.self_attn.v_proj.weight          -> blk.19.attn_v.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.19.self_attn.o_proj.weight          -> blk.19.attn_output.weight                | UnquantizedDataType(name='F16') | [3200, 3200]
+skipping tensor blk.19.attn_rot_embd
+model.layers.19.mlp.gate_proj.weight             -> blk.19.ffn_gate.weight                   | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.19.mlp.down_proj.weight             -> blk.19.ffn_down.weight                   | UnquantizedDataType(name='F16') | [3200, 8640]
+model.layers.19.mlp.up_proj.weight               -> blk.19.ffn_up.weight                     | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.19.input_layernorm.weight           -> blk.19.attn_norm.weight                  | UnquantizedDataType(name='F16') | [3200]
+model.layers.19.post_attention_layernorm.weight  -> blk.19.ffn_norm.weight                   | UnquantizedDataType(name='F16') | [3200]
+model.layers.20.self_attn.q_proj.weight          -> blk.20.attn_q.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.20.self_attn.k_proj.weight          -> blk.20.attn_k.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.20.self_attn.v_proj.weight          -> blk.20.attn_v.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.20.self_attn.o_proj.weight          -> blk.20.attn_output.weight                | UnquantizedDataType(name='F16') | [3200, 3200]
+skipping tensor blk.20.attn_rot_embd
+model.layers.20.mlp.gate_proj.weight             -> blk.20.ffn_gate.weight                   | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.20.mlp.down_proj.weight             -> blk.20.ffn_down.weight                   | UnquantizedDataType(name='F16') | [3200, 8640]
+model.layers.20.mlp.up_proj.weight               -> blk.20.ffn_up.weight                     | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.20.input_layernorm.weight           -> blk.20.attn_norm.weight                  | UnquantizedDataType(name='F16') | [3200]
+model.layers.20.post_attention_layernorm.weight  -> blk.20.ffn_norm.weight                   | UnquantizedDataType(name='F16') | [3200]
+model.layers.21.self_attn.q_proj.weight          -> blk.21.attn_q.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.21.self_attn.k_proj.weight          -> blk.21.attn_k.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.21.self_attn.v_proj.weight          -> blk.21.attn_v.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.21.self_attn.o_proj.weight          -> blk.21.attn_output.weight                | UnquantizedDataType(name='F16') | [3200, 3200]
+skipping tensor blk.21.attn_rot_embd
+model.layers.21.mlp.gate_proj.weight             -> blk.21.ffn_gate.weight                   | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.21.mlp.down_proj.weight             -> blk.21.ffn_down.weight                   | UnquantizedDataType(name='F16') | [3200, 8640]
+model.layers.21.mlp.up_proj.weight               -> blk.21.ffn_up.weight                     | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.21.input_layernorm.weight           -> blk.21.attn_norm.weight                  | UnquantizedDataType(name='F16') | [3200]
+model.layers.21.post_attention_layernorm.weight  -> blk.21.ffn_norm.weight                   | UnquantizedDataType(name='F16') | [3200]
+model.layers.22.self_attn.q_proj.weight          -> blk.22.attn_q.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.22.self_attn.k_proj.weight          -> blk.22.attn_k.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.22.self_attn.v_proj.weight          -> blk.22.attn_v.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.22.self_attn.o_proj.weight          -> blk.22.attn_output.weight                | UnquantizedDataType(name='F16') | [3200, 3200]
+skipping tensor blk.22.attn_rot_embd
+model.layers.22.mlp.gate_proj.weight             -> blk.22.ffn_gate.weight                   | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.22.mlp.down_proj.weight             -> blk.22.ffn_down.weight                   | UnquantizedDataType(name='F16') | [3200, 8640]
+model.layers.22.mlp.up_proj.weight               -> blk.22.ffn_up.weight                     | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.22.input_layernorm.weight           -> blk.22.attn_norm.weight                  | UnquantizedDataType(name='F16') | [3200]
+model.layers.22.post_attention_layernorm.weight  -> blk.22.ffn_norm.weight                   | UnquantizedDataType(name='F16') | [3200]
+model.layers.23.self_attn.q_proj.weight          -> blk.23.attn_q.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.23.self_attn.k_proj.weight          -> blk.23.attn_k.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.23.self_attn.v_proj.weight          -> blk.23.attn_v.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.23.self_attn.o_proj.weight          -> blk.23.attn_output.weight                | UnquantizedDataType(name='F16') | [3200, 3200]
+skipping tensor blk.23.attn_rot_embd
+model.layers.23.mlp.gate_proj.weight             -> blk.23.ffn_gate.weight                   | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.23.mlp.down_proj.weight             -> blk.23.ffn_down.weight                   | UnquantizedDataType(name='F16') | [3200, 8640]
+model.layers.23.mlp.up_proj.weight               -> blk.23.ffn_up.weight                     | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.23.input_layernorm.weight           -> blk.23.attn_norm.weight                  | UnquantizedDataType(name='F16') | [3200]
+model.layers.23.post_attention_layernorm.weight  -> blk.23.ffn_norm.weight                   | UnquantizedDataType(name='F16') | [3200]
+model.layers.24.self_attn.q_proj.weight          -> blk.24.attn_q.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.24.self_attn.k_proj.weight          -> blk.24.attn_k.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.24.self_attn.v_proj.weight          -> blk.24.attn_v.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.24.self_attn.o_proj.weight          -> blk.24.attn_output.weight                | UnquantizedDataType(name='F16') | [3200, 3200]
+skipping tensor blk.24.attn_rot_embd
+model.layers.24.mlp.gate_proj.weight             -> blk.24.ffn_gate.weight                   | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.24.mlp.down_proj.weight             -> blk.24.ffn_down.weight                   | UnquantizedDataType(name='F16') | [3200, 8640]
+model.layers.24.mlp.up_proj.weight               -> blk.24.ffn_up.weight                     | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.24.input_layernorm.weight           -> blk.24.attn_norm.weight                  | UnquantizedDataType(name='F16') | [3200]
+model.layers.24.post_attention_layernorm.weight  -> blk.24.ffn_norm.weight                   | UnquantizedDataType(name='F16') | [3200]
+model.layers.25.self_attn.q_proj.weight          -> blk.25.attn_q.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.25.self_attn.k_proj.weight          -> blk.25.attn_k.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.25.self_attn.v_proj.weight          -> blk.25.attn_v.weight                     | UnquantizedDataType(name='F16') | [3200, 3200]
+model.layers.25.self_attn.o_proj.weight          -> blk.25.attn_output.weight                | UnquantizedDataType(name='F16') | [3200, 3200]
+skipping tensor blk.25.attn_rot_embd
+model.layers.25.mlp.gate_proj.weight             -> blk.25.ffn_gate.weight                   | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.25.mlp.down_proj.weight             -> blk.25.ffn_down.weight                   | UnquantizedDataType(name='F16') | [3200, 8640]
+model.layers.25.mlp.up_proj.weight               -> blk.25.ffn_up.weight                     | UnquantizedDataType(name='F16') | [8640, 3200]
+model.layers.25.input_layernorm.weight           -> blk.25.attn_norm.weight                  | UnquantizedDataType(name='F16') | [3200]
+model.layers.25.post_attention_layernorm.weight  -> blk.25.ffn_norm.weight                   | UnquantizedDataType(name='F16') | [3200]
+model.norm.weight                                -> output_norm.weight                       | UnquantizedDataType(name='F16') | [3200]
+lm_head.weight                                   -> output.weight                            | UnquantizedDataType(name='F16') | [32000, 3200]
+[  1/237] Writing tensor token_embd.weight                      | size  32000 x   3200  | type UnquantizedDataType(name='F16')
+[  2/237] Writing tensor blk.0.attn_q.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[  3/237] Writing tensor blk.0.attn_k.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[  4/237] Writing tensor blk.0.attn_v.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[  5/237] Writing tensor blk.0.attn_output.weight               | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[  6/237] Writing tensor blk.0.ffn_gate.weight                  | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[  7/237] Writing tensor blk.0.ffn_down.weight                  | size   3200 x   8640  | type UnquantizedDataType(name='F16')
+[  8/237] Writing tensor blk.0.ffn_up.weight                    | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[  9/237] Writing tensor blk.0.attn_norm.weight                 | size   3200           | type UnquantizedDataType(name='F32')
+[ 10/237] Writing tensor blk.0.ffn_norm.weight                  | size   3200           | type UnquantizedDataType(name='F32')
+[ 11/237] Writing tensor blk.1.attn_q.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 12/237] Writing tensor blk.1.attn_k.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 13/237] Writing tensor blk.1.attn_v.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 14/237] Writing tensor blk.1.attn_output.weight               | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 15/237] Writing tensor blk.1.ffn_gate.weight                  | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[ 16/237] Writing tensor blk.1.ffn_down.weight                  | size   3200 x   8640  | type UnquantizedDataType(name='F16')
+[ 17/237] Writing tensor blk.1.ffn_up.weight                    | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[ 18/237] Writing tensor blk.1.attn_norm.weight                 | size   3200           | type UnquantizedDataType(name='F32')
+[ 19/237] Writing tensor blk.1.ffn_norm.weight                  | size   3200           | type UnquantizedDataType(name='F32')
+[ 20/237] Writing tensor blk.2.attn_q.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 21/237] Writing tensor blk.2.attn_k.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 22/237] Writing tensor blk.2.attn_v.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 23/237] Writing tensor blk.2.attn_output.weight               | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 24/237] Writing tensor blk.2.ffn_gate.weight                  | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[ 25/237] Writing tensor blk.2.ffn_down.weight                  | size   3200 x   8640  | type UnquantizedDataType(name='F16')
+[ 26/237] Writing tensor blk.2.ffn_up.weight                    | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[ 27/237] Writing tensor blk.2.attn_norm.weight                 | size   3200           | type UnquantizedDataType(name='F32')
+[ 28/237] Writing tensor blk.2.ffn_norm.weight                  | size   3200           | type UnquantizedDataType(name='F32')
+[ 29/237] Writing tensor blk.3.attn_q.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 30/237] Writing tensor blk.3.attn_k.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 31/237] Writing tensor blk.3.attn_v.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 32/237] Writing tensor blk.3.attn_output.weight               | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 33/237] Writing tensor blk.3.ffn_gate.weight                  | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[ 34/237] Writing tensor blk.3.ffn_down.weight                  | size   3200 x   8640  | type UnquantizedDataType(name='F16')
+[ 35/237] Writing tensor blk.3.ffn_up.weight                    | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[ 36/237] Writing tensor blk.3.attn_norm.weight                 | size   3200           | type UnquantizedDataType(name='F32')
+[ 37/237] Writing tensor blk.3.ffn_norm.weight                  | size   3200           | type UnquantizedDataType(name='F32')
+[ 38/237] Writing tensor blk.4.attn_q.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 39/237] Writing tensor blk.4.attn_k.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 40/237] Writing tensor blk.4.attn_v.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 41/237] Writing tensor blk.4.attn_output.weight               | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 42/237] Writing tensor blk.4.ffn_gate.weight                  | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[ 43/237] Writing tensor blk.4.ffn_down.weight                  | size   3200 x   8640  | type UnquantizedDataType(name='F16')
+[ 44/237] Writing tensor blk.4.ffn_up.weight                    | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[ 45/237] Writing tensor blk.4.attn_norm.weight                 | size   3200           | type UnquantizedDataType(name='F32')
+[ 46/237] Writing tensor blk.4.ffn_norm.weight                  | size   3200           | type UnquantizedDataType(name='F32')
+[ 47/237] Writing tensor blk.5.attn_q.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 48/237] Writing tensor blk.5.attn_k.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 49/237] Writing tensor blk.5.attn_v.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 50/237] Writing tensor blk.5.attn_output.weight               | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 51/237] Writing tensor blk.5.ffn_gate.weight                  | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[ 52/237] Writing tensor blk.5.ffn_down.weight                  | size   3200 x   8640  | type UnquantizedDataType(name='F16')
+[ 53/237] Writing tensor blk.5.ffn_up.weight                    | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[ 54/237] Writing tensor blk.5.attn_norm.weight                 | size   3200           | type UnquantizedDataType(name='F32')
+[ 55/237] Writing tensor blk.5.ffn_norm.weight                  | size   3200           | type UnquantizedDataType(name='F32')
+[ 56/237] Writing tensor blk.6.attn_q.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 57/237] Writing tensor blk.6.attn_k.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 58/237] Writing tensor blk.6.attn_v.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 59/237] Writing tensor blk.6.attn_output.weight               | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 60/237] Writing tensor blk.6.ffn_gate.weight                  | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[ 61/237] Writing tensor blk.6.ffn_down.weight                  | size   3200 x   8640  | type UnquantizedDataType(name='F16')
+[ 62/237] Writing tensor blk.6.ffn_up.weight                    | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[ 63/237] Writing tensor blk.6.attn_norm.weight                 | size   3200           | type UnquantizedDataType(name='F32')
+[ 64/237] Writing tensor blk.6.ffn_norm.weight                  | size   3200           | type UnquantizedDataType(name='F32')
+[ 65/237] Writing tensor blk.7.attn_q.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 66/237] Writing tensor blk.7.attn_k.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 67/237] Writing tensor blk.7.attn_v.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 68/237] Writing tensor blk.7.attn_output.weight               | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 69/237] Writing tensor blk.7.ffn_gate.weight                  | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[ 70/237] Writing tensor blk.7.ffn_down.weight                  | size   3200 x   8640  | type UnquantizedDataType(name='F16')
+[ 71/237] Writing tensor blk.7.ffn_up.weight                    | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[ 72/237] Writing tensor blk.7.attn_norm.weight                 | size   3200           | type UnquantizedDataType(name='F32')
+[ 73/237] Writing tensor blk.7.ffn_norm.weight                  | size   3200           | type UnquantizedDataType(name='F32')
+[ 74/237] Writing tensor blk.8.attn_q.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 75/237] Writing tensor blk.8.attn_k.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 76/237] Writing tensor blk.8.attn_v.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 77/237] Writing tensor blk.8.attn_output.weight               | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 78/237] Writing tensor blk.8.ffn_gate.weight                  | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[ 79/237] Writing tensor blk.8.ffn_down.weight                  | size   3200 x   8640  | type UnquantizedDataType(name='F16')
+[ 80/237] Writing tensor blk.8.ffn_up.weight                    | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[ 81/237] Writing tensor blk.8.attn_norm.weight                 | size   3200           | type UnquantizedDataType(name='F32')
+[ 82/237] Writing tensor blk.8.ffn_norm.weight                  | size   3200           | type UnquantizedDataType(name='F32')
+[ 83/237] Writing tensor blk.9.attn_q.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 84/237] Writing tensor blk.9.attn_k.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 85/237] Writing tensor blk.9.attn_v.weight                    | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 86/237] Writing tensor blk.9.attn_output.weight               | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 87/237] Writing tensor blk.9.ffn_gate.weight                  | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[ 88/237] Writing tensor blk.9.ffn_down.weight                  | size   3200 x   8640  | type UnquantizedDataType(name='F16')
+[ 89/237] Writing tensor blk.9.ffn_up.weight                    | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[ 90/237] Writing tensor blk.9.attn_norm.weight                 | size   3200           | type UnquantizedDataType(name='F32')
+[ 91/237] Writing tensor blk.9.ffn_norm.weight                  | size   3200           | type UnquantizedDataType(name='F32')
+[ 92/237] Writing tensor blk.10.attn_q.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 93/237] Writing tensor blk.10.attn_k.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 94/237] Writing tensor blk.10.attn_v.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 95/237] Writing tensor blk.10.attn_output.weight              | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[ 96/237] Writing tensor blk.10.ffn_gate.weight                 | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[ 97/237] Writing tensor blk.10.ffn_down.weight                 | size   3200 x   8640  | type UnquantizedDataType(name='F16')
+[ 98/237] Writing tensor blk.10.ffn_up.weight                   | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[ 99/237] Writing tensor blk.10.attn_norm.weight                | size   3200           | type UnquantizedDataType(name='F32')
+[100/237] Writing tensor blk.10.ffn_norm.weight                 | size   3200           | type UnquantizedDataType(name='F32')
+[101/237] Writing tensor blk.11.attn_q.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[102/237] Writing tensor blk.11.attn_k.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[103/237] Writing tensor blk.11.attn_v.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[104/237] Writing tensor blk.11.attn_output.weight              | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[105/237] Writing tensor blk.11.ffn_gate.weight                 | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[106/237] Writing tensor blk.11.ffn_down.weight                 | size   3200 x   8640  | type UnquantizedDataType(name='F16')
+[107/237] Writing tensor blk.11.ffn_up.weight                   | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[108/237] Writing tensor blk.11.attn_norm.weight                | size   3200           | type UnquantizedDataType(name='F32')
+[109/237] Writing tensor blk.11.ffn_norm.weight                 | size   3200           | type UnquantizedDataType(name='F32')
+[110/237] Writing tensor blk.12.attn_q.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[111/237] Writing tensor blk.12.attn_k.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[112/237] Writing tensor blk.12.attn_v.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[113/237] Writing tensor blk.12.attn_output.weight              | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[114/237] Writing tensor blk.12.ffn_gate.weight                 | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[115/237] Writing tensor blk.12.ffn_down.weight                 | size   3200 x   8640  | type UnquantizedDataType(name='F16')
+[116/237] Writing tensor blk.12.ffn_up.weight                   | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[117/237] Writing tensor blk.12.attn_norm.weight                | size   3200           | type UnquantizedDataType(name='F32')
+[118/237] Writing tensor blk.12.ffn_norm.weight                 | size   3200           | type UnquantizedDataType(name='F32')
+[119/237] Writing tensor blk.13.attn_q.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[120/237] Writing tensor blk.13.attn_k.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[121/237] Writing tensor blk.13.attn_v.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[122/237] Writing tensor blk.13.attn_output.weight              | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[123/237] Writing tensor blk.13.ffn_gate.weight                 | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[124/237] Writing tensor blk.13.ffn_down.weight                 | size   3200 x   8640  | type UnquantizedDataType(name='F16')
+[125/237] Writing tensor blk.13.ffn_up.weight                   | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[126/237] Writing tensor blk.13.attn_norm.weight                | size   3200           | type UnquantizedDataType(name='F32')
+[127/237] Writing tensor blk.13.ffn_norm.weight                 | size   3200           | type UnquantizedDataType(name='F32')
+[128/237] Writing tensor blk.14.attn_q.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[129/237] Writing tensor blk.14.attn_k.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[130/237] Writing tensor blk.14.attn_v.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[131/237] Writing tensor blk.14.attn_output.weight              | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[132/237] Writing tensor blk.14.ffn_gate.weight                 | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[133/237] Writing tensor blk.14.ffn_down.weight                 | size   3200 x   8640  | type UnquantizedDataType(name='F16')
+[134/237] Writing tensor blk.14.ffn_up.weight                   | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[135/237] Writing tensor blk.14.attn_norm.weight                | size   3200           | type UnquantizedDataType(name='F32')
+[136/237] Writing tensor blk.14.ffn_norm.weight                 | size   3200           | type UnquantizedDataType(name='F32')
+[137/237] Writing tensor blk.15.attn_q.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[138/237] Writing tensor blk.15.attn_k.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[139/237] Writing tensor blk.15.attn_v.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[140/237] Writing tensor blk.15.attn_output.weight              | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[141/237] Writing tensor blk.15.ffn_gate.weight                 | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[142/237] Writing tensor blk.15.ffn_down.weight                 | size   3200 x   8640  | type UnquantizedDataType(name='F16')
+[143/237] Writing tensor blk.15.ffn_up.weight                   | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[144/237] Writing tensor blk.15.attn_norm.weight                | size   3200           | type UnquantizedDataType(name='F32')
+[145/237] Writing tensor blk.15.ffn_norm.weight                 | size   3200           | type UnquantizedDataType(name='F32')
+[146/237] Writing tensor blk.16.attn_q.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[147/237] Writing tensor blk.16.attn_k.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[148/237] Writing tensor blk.16.attn_v.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[149/237] Writing tensor blk.16.attn_output.weight              | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[150/237] Writing tensor blk.16.ffn_gate.weight                 | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[151/237] Writing tensor blk.16.ffn_down.weight                 | size   3200 x   8640  | type UnquantizedDataType(name='F16')
+[152/237] Writing tensor blk.16.ffn_up.weight                   | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[153/237] Writing tensor blk.16.attn_norm.weight                | size   3200           | type UnquantizedDataType(name='F32')
+[154/237] Writing tensor blk.16.ffn_norm.weight                 | size   3200           | type UnquantizedDataType(name='F32')
+[155/237] Writing tensor blk.17.attn_q.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[156/237] Writing tensor blk.17.attn_k.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[157/237] Writing tensor blk.17.attn_v.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[158/237] Writing tensor blk.17.attn_output.weight              | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[159/237] Writing tensor blk.17.ffn_gate.weight                 | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[160/237] Writing tensor blk.17.ffn_down.weight                 | size   3200 x   8640  | type UnquantizedDataType(name='F16')
+[161/237] Writing tensor blk.17.ffn_up.weight                   | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[162/237] Writing tensor blk.17.attn_norm.weight                | size   3200           | type UnquantizedDataType(name='F32')
+[163/237] Writing tensor blk.17.ffn_norm.weight                 | size   3200           | type UnquantizedDataType(name='F32')
+[164/237] Writing tensor blk.18.attn_q.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[165/237] Writing tensor blk.18.attn_k.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[166/237] Writing tensor blk.18.attn_v.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[167/237] Writing tensor blk.18.attn_output.weight              | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[168/237] Writing tensor blk.18.ffn_gate.weight                 | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[169/237] Writing tensor blk.18.ffn_down.weight                 | size   3200 x   8640  | type UnquantizedDataType(name='F16')
+[170/237] Writing tensor blk.18.ffn_up.weight                   | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[171/237] Writing tensor blk.18.attn_norm.weight                | size   3200           | type UnquantizedDataType(name='F32')
+[172/237] Writing tensor blk.18.ffn_norm.weight                 | size   3200           | type UnquantizedDataType(name='F32')
+[173/237] Writing tensor blk.19.attn_q.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[174/237] Writing tensor blk.19.attn_k.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[175/237] Writing tensor blk.19.attn_v.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[176/237] Writing tensor blk.19.attn_output.weight              | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[177/237] Writing tensor blk.19.ffn_gate.weight                 | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[178/237] Writing tensor blk.19.ffn_down.weight                 | size   3200 x   8640  | type UnquantizedDataType(name='F16')
+[179/237] Writing tensor blk.19.ffn_up.weight                   | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[180/237] Writing tensor blk.19.attn_norm.weight                | size   3200           | type UnquantizedDataType(name='F32')
+[181/237] Writing tensor blk.19.ffn_norm.weight                 | size   3200           | type UnquantizedDataType(name='F32')
+[182/237] Writing tensor blk.20.attn_q.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[183/237] Writing tensor blk.20.attn_k.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[184/237] Writing tensor blk.20.attn_v.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[185/237] Writing tensor blk.20.attn_output.weight              | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[186/237] Writing tensor blk.20.ffn_gate.weight                 | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[187/237] Writing tensor blk.20.ffn_down.weight                 | size   3200 x   8640  | type UnquantizedDataType(name='F16')
+[188/237] Writing tensor blk.20.ffn_up.weight                   | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[189/237] Writing tensor blk.20.attn_norm.weight                | size   3200           | type UnquantizedDataType(name='F32')
+[190/237] Writing tensor blk.20.ffn_norm.weight                 | size   3200           | type UnquantizedDataType(name='F32')
+[191/237] Writing tensor blk.21.attn_q.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[192/237] Writing tensor blk.21.attn_k.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[193/237] Writing tensor blk.21.attn_v.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[194/237] Writing tensor blk.21.attn_output.weight              | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[195/237] Writing tensor blk.21.ffn_gate.weight                 | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[196/237] Writing tensor blk.21.ffn_down.weight                 | size   3200 x   8640  | type UnquantizedDataType(name='F16')
+[197/237] Writing tensor blk.21.ffn_up.weight                   | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[198/237] Writing tensor blk.21.attn_norm.weight                | size   3200           | type UnquantizedDataType(name='F32')
+[199/237] Writing tensor blk.21.ffn_norm.weight                 | size   3200           | type UnquantizedDataType(name='F32')
+[200/237] Writing tensor blk.22.attn_q.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[201/237] Writing tensor blk.22.attn_k.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[202/237] Writing tensor blk.22.attn_v.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[203/237] Writing tensor blk.22.attn_output.weight              | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[204/237] Writing tensor blk.22.ffn_gate.weight                 | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[205/237] Writing tensor blk.22.ffn_down.weight                 | size   3200 x   8640  | type UnquantizedDataType(name='F16')
+[206/237] Writing tensor blk.22.ffn_up.weight                   | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[207/237] Writing tensor blk.22.attn_norm.weight                | size   3200           | type UnquantizedDataType(name='F32')
+[208/237] Writing tensor blk.22.ffn_norm.weight                 | size   3200           | type UnquantizedDataType(name='F32')
+[209/237] Writing tensor blk.23.attn_q.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[210/237] Writing tensor blk.23.attn_k.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[211/237] Writing tensor blk.23.attn_v.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[212/237] Writing tensor blk.23.attn_output.weight              | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[213/237] Writing tensor blk.23.ffn_gate.weight                 | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[214/237] Writing tensor blk.23.ffn_down.weight                 | size   3200 x   8640  | type UnquantizedDataType(name='F16')
+[215/237] Writing tensor blk.23.ffn_up.weight                   | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[216/237] Writing tensor blk.23.attn_norm.weight                | size   3200           | type UnquantizedDataType(name='F32')
+[217/237] Writing tensor blk.23.ffn_norm.weight                 | size   3200           | type UnquantizedDataType(name='F32')
+[218/237] Writing tensor blk.24.attn_q.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[219/237] Writing tensor blk.24.attn_k.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[220/237] Writing tensor blk.24.attn_v.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[221/237] Writing tensor blk.24.attn_output.weight              | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[222/237] Writing tensor blk.24.ffn_gate.weight                 | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[223/237] Writing tensor blk.24.ffn_down.weight                 | size   3200 x   8640  | type UnquantizedDataType(name='F16')
+[224/237] Writing tensor blk.24.ffn_up.weight                   | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[225/237] Writing tensor blk.24.attn_norm.weight                | size   3200           | type UnquantizedDataType(name='F32')
+[226/237] Writing tensor blk.24.ffn_norm.weight                 | size   3200           | type UnquantizedDataType(name='F32')
+[227/237] Writing tensor blk.25.attn_q.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[228/237] Writing tensor blk.25.attn_k.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[229/237] Writing tensor blk.25.attn_v.weight                   | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[230/237] Writing tensor blk.25.attn_output.weight              | size   3200 x   3200  | type UnquantizedDataType(name='F16')
+[231/237] Writing tensor blk.25.ffn_gate.weight                 | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[232/237] Writing tensor blk.25.ffn_down.weight                 | size   3200 x   8640  | type UnquantizedDataType(name='F16')
+[233/237] Writing tensor blk.25.ffn_up.weight                   | size   8640 x   3200  | type UnquantizedDataType(name='F16')
+[234/237] Writing tensor blk.25.attn_norm.weight                | size   3200           | type UnquantizedDataType(name='F32')
+[235/237] Writing tensor blk.25.ffn_norm.weight                 | size   3200           | type UnquantizedDataType(name='F32')
+[236/237] Writing tensor output_norm.weight                     | size   3200           | type UnquantizedDataType(name='F32')
+[237/237] Writing tensor output.weight                          | size  32000 x   3200  | type UnquantizedDataType(name='F16')
+Wrote ../models-mnt/open-llama/3B-v2/ggml-model-f16.gguf
