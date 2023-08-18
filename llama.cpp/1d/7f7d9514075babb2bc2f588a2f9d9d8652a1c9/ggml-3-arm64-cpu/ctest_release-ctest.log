@@ -13,12 +13,12 @@ Test project /home/ggml/work/llama.cpp/build-ci-release
     Start 6: test-llama-grammar
 6/7 Test #6: test-llama-grammar ...............   Passed    0.00 sec
     Start 7: test-grad0
-7/7 Test #7: test-grad0 .......................   Passed    3.43 sec
+7/7 Test #7: test-grad0 .......................   Passed    3.39 sec
 
 100% tests passed, 0 tests failed out of 7
 
-Total Test time (real) =   3.48 sec
+Total Test time (real) =   3.44 sec
 
-real	0m3.493s
-user	0m3.204s
-sys	0m4.884s
+real	0m3.458s
+user	0m2.837s
+sys	0m5.131s

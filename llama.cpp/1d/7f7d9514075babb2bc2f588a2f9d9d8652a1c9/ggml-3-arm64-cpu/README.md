@@ -2,7 +2,7 @@
 
 - status:  FAILURE ❌ (124)
 - runtime: 
-- date:    Fri Aug 18 01:36:20 UTC 2023
+- date:    Fri Aug 18 09:51:47 UTC 2023
 - repo:    https://github.com/ggerganov/llama.cpp
 - commit:  https://github.com/ggerganov/llama.cpp/commit/1d7f7d9514075babb2bc2f588a2f9d9d8652a1c9
 - author:  slaren
@@ -41,15 +41,15 @@ Test project /home/ggml/work/llama.cpp/build-ci-debug
     Start 6: test-llama-grammar
 6/7 Test #6: test-llama-grammar ...............   Passed    0.00 sec
     Start 7: test-grad0
-7/7 Test #7: test-grad0 .......................   Passed    3.61 sec
+7/7 Test #7: test-grad0 .......................   Passed    3.62 sec
 
 100% tests passed, 0 tests failed out of 7
 
 Total Test time (real) =   3.75 sec
 
-real	0m3.760s
-user	0m3.892s
-sys	0m4.838s
+real	0m3.767s
+user	0m3.677s
+sys	0m4.955s
 ```
 
 ### ctest_release
@@ -72,13 +72,13 @@ Test project /home/ggml/work/llama.cpp/build-ci-release
     Start 6: test-llama-grammar
 6/7 Test #6: test-llama-grammar ...............   Passed    0.00 sec
     Start 7: test-grad0
-7/7 Test #7: test-grad0 .......................   Passed    3.43 sec
+7/7 Test #7: test-grad0 .......................   Passed    3.39 sec
 
 100% tests passed, 0 tests failed out of 7
 
-Total Test time (real) =   3.48 sec
+Total Test time (real) =   3.44 sec
 
-real	0m3.493s
-user	0m3.204s
-sys	0m4.884s
+real	0m3.458s
+user	0m2.837s
+sys	0m5.131s
 ```

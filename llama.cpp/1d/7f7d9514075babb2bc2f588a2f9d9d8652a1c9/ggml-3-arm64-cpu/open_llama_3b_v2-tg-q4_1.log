@@ -30,18 +30,18 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 0
 
  I believe the meaning of life is to have fun, so that's exactly what we did.
 I mean... look at this guy! (Donk) We were in New York City and ran into him on a street corner after he caught his pants down falling outta an old man's wheelchair while trying to make it back up 3
-llama_print_timings:        load time =   903.02 ms
-llama_print_timings:      sample time =    61.93 ms /    64 runs   (    0.97 ms per token,  1033.46 tokens per second)
-llama_print_timings: prompt eval time =   921.25 ms /     8 tokens (  115.16 ms per token,     8.68 tokens per second)
-llama_print_timings:        eval time =  7686.46 ms /    63 runs   (  122.01 ms per token,     8.20 tokens per second)
-llama_print_timings:       total time =  8678.08 ms
+llama_print_timings:        load time =   956.59 ms
+llama_print_timings:      sample time =    61.96 ms /    64 runs   (    0.97 ms per token,  1032.91 tokens per second)
+llama_print_timings: prompt eval time =   922.36 ms /     8 tokens (  115.29 ms per token,     8.67 tokens per second)
+llama_print_timings:        eval time =  7677.89 ms /    63 runs   (  121.87 ms per token,     8.21 tokens per second)
+llama_print_timings:       total time =  8670.86 ms
 
-real	0m9.756s
+real	0m9.807s
 user	0m34.874s
-sys	0m1.027s
+sys	0m1.055s
 + ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q4_1.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
 main: build = 1000 (1d7f7d9)
-main: seed  = 1692321984
+main: seed  = 1692351708
 llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q4_1.bin
 llama_model_load_internal: format     = ggjt v3 (latest)
 llama_model_load_internal: n_vocab    = 32000
@@ -68,13 +68,13 @@ system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI =
 perplexity: calculating perplexity over 3 chunks, batch_size=128
 perplexity: 14.86 seconds per pass - ETA 0 minutes
 [1]4.4279,[2]8.0913,[3]9.1652,
-llama_print_timings:        load time = 15671.39 ms
+llama_print_timings:        load time = 15638.44 ms
 llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time = 44535.26 ms /   384 tokens (  115.98 ms per token,     8.62 tokens per second)
+llama_print_timings: prompt eval time = 44522.99 ms /   384 tokens (  115.95 ms per token,     8.62 tokens per second)
 llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time = 45415.78 ms
+llama_print_timings:       total time = 45373.32 ms
 
 
-real	0m45.513s
-user	2m58.148s
-sys	0m0.937s
+real	0m45.468s
+user	2m58.063s
+sys	0m0.940s

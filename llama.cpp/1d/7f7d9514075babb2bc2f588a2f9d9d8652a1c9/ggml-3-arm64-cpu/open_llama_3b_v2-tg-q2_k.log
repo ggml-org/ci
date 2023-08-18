@@ -30,18 +30,18 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 0
 
  I believe the meaning of life is to find your purpose, and that in doing so you will discover why it’s important for us all to give what we can.
 As a business owner on my own terms; as an entrepreneur who inspires people into believing anything is possible when they see themselves succeeding at their goals (and not just making the
-llama_print_timings:        load time =   721.54 ms
-llama_print_timings:      sample time =    62.02 ms /    64 runs   (    0.97 ms per token,  1031.89 tokens per second)
-llama_print_timings: prompt eval time =   885.96 ms /     8 tokens (  110.75 ms per token,     9.03 tokens per second)
-llama_print_timings:        eval time =  7323.33 ms /    63 runs   (  116.24 ms per token,     8.60 tokens per second)
-llama_print_timings:       total time =  8279.15 ms
+llama_print_timings:        load time =   696.88 ms
+llama_print_timings:      sample time =    62.02 ms /    64 runs   (    0.97 ms per token,  1031.94 tokens per second)
+llama_print_timings: prompt eval time =   885.96 ms /     8 tokens (  110.74 ms per token,     9.03 tokens per second)
+llama_print_timings:        eval time =  7314.83 ms /    63 runs   (  116.11 ms per token,     8.61 tokens per second)
+llama_print_timings:       total time =  8271.09 ms
 
-real	0m9.140s
-user	0m33.220s
-sys	0m0.849s
+real	0m9.103s
+user	0m33.186s
+sys	0m0.824s
 + ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q2_k.bin -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 3
 main: build = 1000 (1d7f7d9)
-main: seed  = 1692322154
+main: seed  = 1692351878
 llama.cpp: loading model from ../models-mnt/open-llama/3B-v2/ggml-model-q2_k.bin
 llama_model_load_internal: format     = ggjt v3 (latest)
 llama_model_load_internal: n_vocab    = 32000
@@ -68,13 +68,13 @@ system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI =
 perplexity: calculating perplexity over 3 chunks, batch_size=128
 perplexity: 14.15 seconds per pass - ETA 0 minutes
 [1]4.8023,[2]9.6403,[3]11.8816,
-llama_print_timings:        load time = 14727.66 ms
+llama_print_timings:        load time = 14727.35 ms
 llama_print_timings:      sample time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time = 42386.92 ms /   384 tokens (  110.38 ms per token,     9.06 tokens per second)
+llama_print_timings: prompt eval time = 42388.36 ms /   384 tokens (  110.39 ms per token,     9.06 tokens per second)
 llama_print_timings:        eval time =     0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time = 43037.32 ms
+llama_print_timings:       total time = 43037.75 ms
 
 
-real	0m43.113s
-user	2m49.504s
-sys	0m0.736s
+real	0m43.112s
+user	2m49.540s
+sys	0m0.704s
