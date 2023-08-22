@@ -1,0 +1,107 @@
++ ./bin/mpt --model ../models-mnt/mpt/7B/ggml-model-f16.bin -s 1234 -n 64 -p 'I believe the meaning of life is'
+main: seed      = 1234
+main: n_threads = 4
+main: n_batch   = 8
+main: n_ctx     = 512
+main: n_predict = 64
+
+mpt_model_load: loading model from '../models-mnt/mpt/7B/ggml-model-f16.bin' - please wait ...
+mpt_model_load: d_model        = 4096
+mpt_model_load: max_seq_len    = 2048
+mpt_model_load: n_ctx          = 512
+mpt_model_load: n_heads        = 32
+mpt_model_load: n_layers       = 32
+mpt_model_load: n_vocab        = 50432
+mpt_model_load: alibi_bias_max = 8.000000
+mpt_model_load: clip_qkv       = 0.000000
+mpt_model_load: ftype          = 1
+mpt_model_load: qntvr          = 0
+mpt_model_load: ggml ctx size = 12939.11 MB
+mpt_model_load: memory_size =   256.00 MB, n_mem = 16384
+mpt_model_load: ........................extract_tests_from_file : No test file found.
+test_gpt_tokenizer : 0 tests failed out of 0 tests.
+ done
+mpt_model_load: model size = 12683.02 MB / num tensors = 194
+
+main: temp           = 0.800
+main: top_k          = 50432
+main: top_p          = 1.000
+main: repeat_last_n  = 64
+main: repeat_penalty = 1.020
+
+main: number of tokens in prompt = 7
+main: token[0] =     42
+main: token[1] =   2868
+main: token[2] =    253
+main: token[3] =   4495
+main: token[4] =    273
+main: token[5] =   1495
+main: token[6] =    310
+
+I believe the meaning of life is to seek and follow Jesus Christ. It is my desire to share that message with as many people as I can—to show them what life looks like when your heart is set on following God’s ultimate purpose. In 2002, I graduated from Trinity International University with a degree in Biblical Studies, then spent the next
+
+
+main: sampled tokens =       64
+main:  mem per token =   356508 bytes
+main:      load time =  7976.48 ms
+main:    sample time =   623.71 ms / 9.75 ms per token
+main:      eval time = 25372.54 ms / 362.46 ms per token
+main:     total time = 34876.19 ms
+
+real	0m35.486s
+user	1m45.559s
+sys	0m8.631s
++ ./bin/mpt --model ../models-mnt/mpt/7B/ggml-model-q4_0.bin -s 1234 -n 64 -p 'I believe the meaning of life is'
+main: seed      = 1234
+main: n_threads = 4
+main: n_batch   = 8
+main: n_ctx     = 512
+main: n_predict = 64
+
+mpt_model_load: loading model from '../models-mnt/mpt/7B/ggml-model-q4_0.bin' - please wait ...
+mpt_model_load: d_model        = 4096
+mpt_model_load: max_seq_len    = 2048
+mpt_model_load: n_ctx          = 512
+mpt_model_load: n_heads        = 32
+mpt_model_load: n_layers       = 32
+mpt_model_load: n_vocab        = 50432
+mpt_model_load: alibi_bias_max = 8.000000
+mpt_model_load: clip_qkv       = 0.000000
+mpt_model_load: ftype          = 2002
+mpt_model_load: qntvr          = 2
+mpt_model_load: ggml ctx size = 3823.92 MB
+mpt_model_load: memory_size =   256.00 MB, n_mem = 16384
+mpt_model_load: ........................extract_tests_from_file : No test file found.
+test_gpt_tokenizer : 0 tests failed out of 0 tests.
+ done
+mpt_model_load: model size =  3567.83 MB / num tensors = 194
+
+main: temp           = 0.800
+main: top_k          = 50432
+main: top_p          = 1.000
+main: repeat_last_n  = 64
+main: repeat_penalty = 1.020
+
+main: number of tokens in prompt = 7
+main: token[0] =     42
+main: token[1] =   2868
+main: token[2] =    253
+main: token[3] =   4495
+main: token[4] =    273
+main: token[5] =   1495
+main: token[6] =    310
+
+I believe the meaning of life is to learn how to do what you want, when you want, in the way you want.
+So where there is a will there is a way! Think about it, if you think something is on the left then follow your thoughts and make sure you keep going in that direction. You can take action in any number
+
+
+main: sampled tokens =       64
+main:  mem per token =   341148 bytes
+main:      load time =  1937.63 ms
+main:    sample time =   611.21 ms / 9.55 ms per token
+main:      eval time = 12458.86 ms / 177.98 ms per token
+main:     total time = 15613.18 ms
+
+real	0m15.746s
+user	0m52.669s
+sys	0m2.157s
