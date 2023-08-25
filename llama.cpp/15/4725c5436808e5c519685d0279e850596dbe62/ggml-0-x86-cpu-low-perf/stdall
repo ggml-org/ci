@@ -1,0 +1,384 @@
+mkdir: cannot create directory ‘/mnt/llama.cpp’: Permission denied
+rm: cannot remove '/home/ggml/results/llama.cpp/15/4725c5436808e5c519685d0279e850596dbe62/ggml-0-x86-cpu-low-perf/*.log': No such file or directory
+rm: cannot remove '/home/ggml/results/llama.cpp/15/4725c5436808e5c519685d0279e850596dbe62/ggml-0-x86-cpu-low-perf/*.exit': No such file or directory
+rm: cannot remove '/home/ggml/results/llama.cpp/15/4725c5436808e5c519685d0279e850596dbe62/ggml-0-x86-cpu-low-perf/*.md': No such file or directory
++ gg_run_ctest_debug
++ cd /home/ggml/work/llama.cpp
++ rm -rf build-ci-debug
++ tee /home/ggml/results/llama.cpp/15/4725c5436808e5c519685d0279e850596dbe62/ggml-0-x86-cpu-low-perf/ctest_debug.log
++ mkdir build-ci-debug
++ cd build-ci-debug
++ set -e
++ tee -a /home/ggml/results/llama.cpp/15/4725c5436808e5c519685d0279e850596dbe62/ggml-0-x86-cpu-low-perf/ctest_debug-cmake.log
++ cmake -DCMAKE_BUILD_TYPE=Debug ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- x86 detected
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-debug
+
+real	0m0.401s
+user	0m0.251s
+sys	0m0.129s
++ tee -a /home/ggml/results/llama.cpp/15/4725c5436808e5c519685d0279e850596dbe62/ggml-0-x86-cpu-low-perf/ctest_debug-make.log
++ make -j
+[  5%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  5%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  5%] Built target BUILD_INFO
+[  6%] Building C object CMakeFiles/ggml.dir/k_quants.c.o
+/home/ggml/work/llama.cpp/k_quants.c:182:14: warning: ‘make_qkx1_quants’ defined but not used [-Wunused-function]
+  182 | static float make_qkx1_quants(int n, int nmax, const float * restrict x, uint8_t * restrict L, float * restrict the_min,
+      |              ^~~~~~~~~~~~~~~~
+[  6%] Built target ggml
+[ 10%] Linking C static library libggml_static.a
+[ 10%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+[ 10%] Built target ggml_static
+[ 11%] Linking CXX static library libllama.a
+[ 11%] Built target llama
+[ 13%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
+[ 15%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+[ 16%] Building CXX object common/CMakeFiles/common.dir/common.cpp.o
+[ 18%] Building CXX object common/CMakeFiles/common.dir/console.cpp.o
+[ 20%] Building CXX object common/CMakeFiles/common.dir/grammar-parser.cpp.o
+[ 21%] Linking CXX executable ../../bin/quantize
+[ 21%] Built target quantize
+[ 21%] Built target common
+[ 23%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 25%] Building CXX object tests/CMakeFiles/test-grammar-parser.dir/test-grammar-parser.cpp.o
+[ 26%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 28%] Building CXX object tests/CMakeFiles/test-tokenizer-1.dir/test-tokenizer-1.cpp.o
+[ 30%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/test-tokenizer-0.cpp.o
+[ 31%] Building CXX object tests/CMakeFiles/test-llama-grammar.dir/test-llama-grammar.cpp.o
+[ 33%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
+[ 35%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+[ 36%] Building CXX object examples/main/CMakeFiles/main.dir/main.cpp.o
+[ 38%] Building CXX object examples/perplexity/CMakeFiles/perplexity.dir/perplexity.cpp.o
+[ 40%] Building CXX object examples/embedding/CMakeFiles/embedding.dir/embedding.cpp.o
+[ 41%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
+[ 43%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
+[ 45%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
+[ 46%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
+[ 48%] Building CXX object examples/convert-llama2c-to-ggml/CMakeFiles/convert-llama2c-to-ggml.dir/convert-llama2c-to-ggml.cpp.o
+[ 50%] Building CXX object examples/embd-input/CMakeFiles/embdinput.dir/embd-input-lib.cpp.o
+[ 51%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
+[ 53%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
+[ 55%] Building CXX object examples/llama-bench/CMakeFiles/llama-bench.dir/llama-bench.cpp.o
+[ 56%] Building CXX object pocs/vdot/CMakeFiles/vdot.dir/vdot.cpp.o
+[ 58%] Building CXX object pocs/vdot/CMakeFiles/q8dot.dir/q8dot.cpp.o
+[ 60%] Linking CXX executable ../bin/test-grad0
+[ 61%] Linking CXX executable ../bin/test-quantize-fns
+/home/ggml/work/llama.cpp/examples/baby-llama/baby-llama.cpp: In function ‘int main(int, char**)’:
+/home/ggml/work/llama.cpp/examples/baby-llama/baby-llama.cpp:1620:32: warning: variable ‘opt_params_adam’ set but not used [-Wunused-but-set-variable]
+ 1620 |         struct ggml_opt_params opt_params_adam = ggml_opt_default_params(GGML_OPT_ADAM);
+      |                                ^~~~~~~~~~~~~~~
+[ 63%] Linking CXX executable ../bin/test-grammar-parser
+/home/ggml/work/llama.cpp/examples/convert-llama2c-to-ggml/convert-llama2c-to-ggml.cpp: In function ‘void load_vocab(const char*, Config*, llama_vocab*)’:
+/home/ggml/work/llama.cpp/examples/convert-llama2c-to-ggml/convert-llama2c-to-ggml.cpp:540:64: note: ‘#pragma message: TODO: implement reading vocabulary using gguf’
+  540 | #pragma message("TODO: implement reading vocabulary using gguf")
+      |                                                                ^
+/home/ggml/work/llama.cpp/examples/convert-llama2c-to-ggml/convert-llama2c-to-ggml.cpp:573:47: warning: format ‘%hhX’ expects argument of type ‘unsigned char*’, but argument 3 has type ‘char*’ [-Wformat=]
+  573 |             if (sscanf(text.c_str(), "<0x%02hhX>", &byte_val) == 1) {
+      |                                          ~~~~~^    ~~~~~~~~~
+      |                                               |    |
+      |                                               |    char*
+      |                                               unsigned char*
+      |                                          %02hhX
+/home/ggml/work/llama.cpp/examples/convert-llama2c-to-ggml/convert-llama2c-to-ggml.cpp: In function ‘void save_as_llama_model(llama_vocab*, my_llama_model*, TransformerWeights*, const char*)’:
+/home/ggml/work/llama.cpp/examples/convert-llama2c-to-ggml/convert-llama2c-to-ggml.cpp:627:57: note: ‘#pragma message: TODO: implement file saving using gguf’
+  627 | #pragma message("TODO: implement file saving using gguf")
+      |                                                         ^
+[ 65%] Linking CXX executable ../bin/test-sampling
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp: In function ‘void save_as_llama_model(llama_vocab*, my_llama_model*, const char*)’:
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:2617:57: note: ‘#pragma message: TODO: implement file saving using gguf’
+ 2617 | #pragma message("TODO: implement file saving using gguf")
+      |                                                         ^
+[ 65%] Built target test-grad0
+[ 66%] Linking CXX executable ../bin/test-tokenizer-1
+[ 68%] Linking CXX executable ../../bin/benchmark
+[ 68%] Built target test-quantize-fns
+[ 70%] Linking CXX executable ../../bin/baby-llama
+[ 71%] Linking CXX executable ../../bin/embedding
+[ 73%] Linking CXX executable ../../bin/q8dot
+[ 75%] Linking CXX executable ../bin/test-tokenizer-0
+[ 76%] Linking CXX executable ../../bin/simple
+[ 78%] Linking CXX executable ../../bin/vdot
+[ 80%] Linking CXX executable ../../bin/save-load-state
+[ 80%] Built target test-grammar-parser
+[ 81%] Linking CXX executable ../../bin/convert-llama2c-to-ggml
+[ 81%] Built target test-sampling
+[ 83%] Linking CXX executable ../bin/test-quantize-perf
+[ 83%] Built target test-tokenizer-1
+[ 83%] Built target benchmark
+[ 83%] Built target baby-llama
+[ 83%] Built target q8dot
+[ 85%] Linking CXX static library libembdinput.a
+[ 86%] Linking CXX executable ../../bin/perplexity
+[ 86%] Built target embedding
+[ 86%] Built target test-tokenizer-0
+[ 86%] Built target embdinput
+[ 86%] Built target simple
+[ 86%] Built target vdot
+[ 88%] Building CXX object examples/embd-input/CMakeFiles/embd-input-test.dir/embd-input-test.cpp.o
+[ 88%] Built target save-load-state
+[ 90%] Linking CXX executable ../../bin/main
+[ 90%] Built target convert-llama2c-to-ggml
+[ 90%] Built target test-quantize-perf
+[ 90%] Built target perplexity
+[ 90%] Built target main
+[ 91%] Linking CXX executable ../../bin/embd-input-test
+[ 93%] Linking CXX executable ../../bin/quantize-stats
+[ 95%] Linking CXX executable ../../bin/train-text-from-scratch
+In file included from /usr/include/c++/11/cassert:44,
+                 from /home/ggml/work/llama.cpp/examples/server/json.hpp:2541,
+                 from /home/ggml/work/llama.cpp/examples/server/server.cpp:12:
+/home/ggml/work/llama.cpp/examples/server/server.cpp: In function ‘json format_timings(llama_server_context&)’:
+/home/ggml/work/llama.cpp/examples/server/server.cpp:1043:27: warning: comparison of integer expressions of different signedness: ‘const int32_t’ {aka ‘const int’} and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+ 1043 |     assert(timings.n_eval == llama.num_tokens_predicted);
+      |            ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 95%] Built target embd-input-test
+[ 95%] Built target quantize-stats
+[ 95%] Built target train-text-from-scratch
+[ 96%] Linking CXX executable ../../bin/llama-bench
+[ 96%] Built target llama-bench
+[ 98%] Linking CXX executable ../bin/test-llama-grammar
+[ 98%] Built target test-llama-grammar
+[100%] Linking CXX executable ../../bin/server
+[100%] Built target server
+
+real	0m24.896s
+user	0m55.167s
+sys	0m4.675s
++ tee -a /home/ggml/results/llama.cpp/15/4725c5436808e5c519685d0279e850596dbe62/ggml-0-x86-cpu-low-perf/ctest_debug-ctest.log
++ ctest --output-on-failure -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-debug
+    Start 1: test-quantize-fns
+1/7 Test #1: test-quantize-fns ................   Passed    0.03 sec
+    Start 2: test-quantize-perf
+2/7 Test #2: test-quantize-perf ...............   Passed    0.21 sec
+    Start 3: test-sampling
+3/7 Test #3: test-sampling ....................   Passed    0.00 sec
+    Start 4: test-tokenizer-0.llama
+4/7 Test #4: test-tokenizer-0.llama ...........   Passed    0.02 sec
+    Start 5: test-grammar-parser
+5/7 Test #5: test-grammar-parser ..............   Passed    0.00 sec
+    Start 6: test-llama-grammar
+6/7 Test #6: test-llama-grammar ...............   Passed    0.00 sec
+    Start 7: test-grad0
+7/7 Test #7: test-grad0 .......................   Passed    4.21 sec
+
+100% tests passed, 0 tests failed out of 7
+
+Total Test time (real) =   4.48 sec
+
+real	0m4.486s
+user	0m7.921s
+sys	0m3.013s
++ set +e
++ cur=0
++ echo 0
++ set +x
++ gg_run_ctest_release
++ cd /home/ggml/work/llama.cpp
++ rm -rf build-ci-release
++ tee /home/ggml/results/llama.cpp/15/4725c5436808e5c519685d0279e850596dbe62/ggml-0-x86-cpu-low-perf/ctest_release.log
++ mkdir build-ci-release
++ cd build-ci-release
++ set -e
++ tee -a /home/ggml/results/llama.cpp/15/4725c5436808e5c519685d0279e850596dbe62/ggml-0-x86-cpu-low-perf/ctest_release-cmake.log
++ cmake -DCMAKE_BUILD_TYPE=Release ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- x86 detected
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-release
+
+real	0m0.399s
+user	0m0.265s
+sys	0m0.115s
++ tee -a /home/ggml/results/llama.cpp/15/4725c5436808e5c519685d0279e850596dbe62/ggml-0-x86-cpu-low-perf/ctest_release-make.log
++ make -j
+[  3%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  6%] Built target BUILD_INFO
+[  6%] Building C object CMakeFiles/ggml.dir/k_quants.c.o
+[  6%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+/home/ggml/work/llama.cpp/k_quants.c:182:14: warning: ‘make_qkx1_quants’ defined but not used [-Wunused-function]
+  182 | static float make_qkx1_quants(int n, int nmax, const float * restrict x, uint8_t * restrict L, float * restrict the_min,
+      |              ^~~~~~~~~~~~~~~~
+[  6%] Built target ggml
+[ 10%] Linking C static library libggml_static.a
+[ 10%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+[ 10%] Built target ggml_static
+[ 11%] Linking CXX static library libllama.a
+[ 11%] Built target llama
+[ 13%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+[ 15%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
+[ 16%] Building CXX object common/CMakeFiles/common.dir/common.cpp.o
+[ 18%] Building CXX object common/CMakeFiles/common.dir/console.cpp.o
+[ 20%] Building CXX object common/CMakeFiles/common.dir/grammar-parser.cpp.o
+[ 21%] Linking CXX executable ../../bin/quantize
+[ 21%] Built target quantize
+[ 21%] Built target common
+[ 23%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 25%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 26%] Building CXX object tests/CMakeFiles/test-tokenizer-1.dir/test-tokenizer-1.cpp.o
+[ 28%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
+[ 30%] Building CXX object tests/CMakeFiles/test-grammar-parser.dir/test-grammar-parser.cpp.o
+[ 31%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/test-tokenizer-0.cpp.o
+[ 33%] Building CXX object examples/main/CMakeFiles/main.dir/main.cpp.o
+[ 35%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+[ 36%] Building CXX object tests/CMakeFiles/test-llama-grammar.dir/test-llama-grammar.cpp.o
+[ 40%] Building CXX object examples/perplexity/CMakeFiles/perplexity.dir/perplexity.cpp.o
+[ 40%] Building CXX object examples/embedding/CMakeFiles/embedding.dir/embedding.cpp.o
+[ 41%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
+[ 43%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
+[ 45%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
+[ 46%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
+[ 48%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
+[ 50%] Building CXX object examples/convert-llama2c-to-ggml/CMakeFiles/convert-llama2c-to-ggml.dir/convert-llama2c-to-ggml.cpp.o
+[ 51%] Building CXX object examples/llama-bench/CMakeFiles/llama-bench.dir/llama-bench.cpp.o
+[ 53%] Building CXX object examples/embd-input/CMakeFiles/embdinput.dir/embd-input-lib.cpp.o
+[ 55%] Building CXX object pocs/vdot/CMakeFiles/vdot.dir/vdot.cpp.o
+[ 56%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
+[ 58%] Building CXX object pocs/vdot/CMakeFiles/q8dot.dir/q8dot.cpp.o
+/home/ggml/work/llama.cpp/examples/baby-llama/baby-llama.cpp: In function ‘int main(int, char**)’:
+/home/ggml/work/llama.cpp/examples/baby-llama/baby-llama.cpp:1620:32: warning: variable ‘opt_params_adam’ set but not used [-Wunused-but-set-variable]
+ 1620 |         struct ggml_opt_params opt_params_adam = ggml_opt_default_params(GGML_OPT_ADAM);
+      |                                ^~~~~~~~~~~~~~~
+[ 60%] Linking CXX executable ../bin/test-quantize-fns
+/home/ggml/work/llama.cpp/examples/convert-llama2c-to-ggml/convert-llama2c-to-ggml.cpp: In function ‘void load_vocab(const char*, Config*, llama_vocab*)’:
+/home/ggml/work/llama.cpp/examples/convert-llama2c-to-ggml/convert-llama2c-to-ggml.cpp:540:64: note: ‘#pragma message: TODO: implement reading vocabulary using gguf’
+  540 | #pragma message("TODO: implement reading vocabulary using gguf")
+      |                                                                ^
+/home/ggml/work/llama.cpp/examples/convert-llama2c-to-ggml/convert-llama2c-to-ggml.cpp:573:47: warning: format ‘%hhX’ expects argument of type ‘unsigned char*’, but argument 3 has type ‘char*’ [-Wformat=]
+  573 |             if (sscanf(text.c_str(), "<0x%02hhX>", &byte_val) == 1) {
+      |                                          ~~~~~^    ~~~~~~~~~
+      |                                               |    |
+      |                                               |    char*
+      |                                               unsigned char*
+      |                                          %02hhX
+/home/ggml/work/llama.cpp/examples/convert-llama2c-to-ggml/convert-llama2c-to-ggml.cpp: In function ‘void save_as_llama_model(llama_vocab*, my_llama_model*, TransformerWeights*, const char*)’:
+/home/ggml/work/llama.cpp/examples/convert-llama2c-to-ggml/convert-llama2c-to-ggml.cpp:627:57: note: ‘#pragma message: TODO: implement file saving using gguf’
+  627 | #pragma message("TODO: implement file saving using gguf")
+      |                                                         ^
+[ 61%] Linking CXX executable ../bin/test-tokenizer-1
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp: In function ‘void save_as_llama_model(llama_vocab*, my_llama_model*, const char*)’:
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:2617:57: note: ‘#pragma message: TODO: implement file saving using gguf’
+ 2617 | #pragma message("TODO: implement file saving using gguf")
+      |                                                         ^
+[ 61%] Built target test-quantize-fns
+[ 63%] Linking CXX executable ../bin/test-grammar-parser
+[ 65%] Linking CXX executable ../../bin/embedding
+[ 65%] Built target test-tokenizer-1
+[ 66%] Linking CXX executable ../../bin/q8dot
+[ 68%] Linking CXX executable ../../bin/simple
+[ 70%] Linking CXX executable ../bin/test-sampling
+[ 71%] Linking CXX executable ../../bin/benchmark
+[ 73%] Linking CXX executable ../../bin/save-load-state
+[ 73%] Built target test-grammar-parser
+[ 73%] Built target embedding
+[ 73%] Built target q8dot
+[ 73%] Built target simple
+[ 75%] Linking CXX executable ../../bin/vdot
+[ 75%] Built target test-sampling
+[ 75%] Built target benchmark
+[ 75%] Built target save-load-state
+[ 75%] Built target vdot
+[ 76%] Linking CXX executable ../bin/test-grad0
+[ 78%] Linking CXX executable ../bin/test-tokenizer-0
+[ 78%] Built target test-grad0
+[ 80%] Linking CXX executable ../../bin/baby-llama
+[ 80%] Built target test-tokenizer-0
+[ 81%] Linking CXX static library libembdinput.a
+[ 83%] Linking CXX executable ../bin/test-quantize-perf
+[ 83%] Built target embdinput
+[ 85%] Building CXX object examples/embd-input/CMakeFiles/embd-input-test.dir/embd-input-test.cpp.o
+[ 86%] Linking CXX executable ../../bin/perplexity
+[ 86%] Built target baby-llama
+[ 88%] Linking CXX executable ../../bin/convert-llama2c-to-ggml
+[ 88%] Built target test-quantize-perf
+[ 88%] Built target perplexity
+[ 88%] Built target convert-llama2c-to-ggml
+[ 90%] Linking CXX executable ../../bin/main
+[ 90%] Built target main
+[ 91%] Linking CXX executable ../../bin/embd-input-test
+[ 91%] Built target embd-input-test
+[ 93%] Linking CXX executable ../../bin/quantize-stats
+[ 93%] Built target quantize-stats
+[ 95%] Linking CXX executable ../../bin/train-text-from-scratch
+[ 95%] Built target train-text-from-scratch
+[ 96%] Linking CXX executable ../../bin/llama-bench
+[ 96%] Built target llama-bench
+[ 98%] Linking CXX executable ../bin/test-llama-grammar
+[ 98%] Built target test-llama-grammar
+[100%] Linking CXX executable ../../bin/server
+[100%] Built target server
+
+real	0m38.844s
+user	1m21.113s
+sys	0m3.679s
++ '[' -z 1 ']'
++ tee -a /home/ggml/results/llama.cpp/15/4725c5436808e5c519685d0279e850596dbe62/ggml-0-x86-cpu-low-perf/ctest_release-ctest.log
++ ctest --output-on-failure -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-release
+    Start 1: test-quantize-fns
+1/7 Test #1: test-quantize-fns ................   Passed    0.01 sec
+    Start 2: test-quantize-perf
+2/7 Test #2: test-quantize-perf ...............   Passed    0.04 sec
+    Start 3: test-sampling
+3/7 Test #3: test-sampling ....................   Passed    0.00 sec
+    Start 4: test-tokenizer-0.llama
+4/7 Test #4: test-tokenizer-0.llama ...........   Passed    0.01 sec
+    Start 5: test-grammar-parser
+5/7 Test #5: test-grammar-parser ..............   Passed    0.00 sec
+    Start 6: test-llama-grammar
+6/7 Test #6: test-llama-grammar ...............   Passed    0.00 sec
+    Start 7: test-grad0
+7/7 Test #7: test-grad0 .......................   Passed    4.26 sec
+
+100% tests passed, 0 tests failed out of 7
+
+Total Test time (real) =   4.32 sec
+
+real	0m4.327s
+user	0m7.861s
+sys	0m2.951s
++ set +e
++ cur=0
++ echo 0
++ set +x
