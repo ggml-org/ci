@@ -1,0 +1,101 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 1:53.90
+- date:    Thu Sep 14 04:16:51 PM UTC 2023
+- repo:    https://github.com/ggerganov/llama.cpp
+- commit:  https://github.com/ggerganov/llama.cpp/commit/35f73049af6c676a106a5a990a819ae0bc3fcd7d
+- author:  Leng Yue
+```
+speculative : add heuristic algorithm (#3006)
+
+* Add heuristic algo for speculative
+
+* Constrain minimum n_draft to 2
+
+* speculative : improve heuristic impl
+
+* speculative : be more rewarding upon guessing max drafted tokens
+
+* speculative : fix typos
+
+---------
+
+Co-authored-by: Georgi Gerganov <ggerganov@gmail.com>
+```
+
+## Environment
+
+```
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+GG_BUILD_LOW_PERF=1
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-debug
+    Start 1: test-quantize-fns
+1/8 Test #1: test-quantize-fns ................   Passed    0.04 sec
+    Start 2: test-quantize-perf
+2/8 Test #2: test-quantize-perf ...............   Passed    0.29 sec
+    Start 3: test-sampling
+3/8 Test #3: test-sampling ....................   Passed    0.00 sec
+    Start 4: test-tokenizer-0-llama
+4/8 Test #4: test-tokenizer-0-llama ...........   Passed    0.03 sec
+    Start 5: test-tokenizer-1-llama
+5/8 Test #5: test-tokenizer-1-llama ...........   Passed   11.09 sec
+    Start 6: test-grammar-parser
+6/8 Test #6: test-grammar-parser ..............   Passed    0.00 sec
+    Start 7: test-llama-grammar
+7/8 Test #7: test-llama-grammar ...............   Passed    0.00 sec
+    Start 8: test-grad0
+8/8 Test #8: test-grad0 .......................   Passed    3.52 sec
+
+100% tests passed, 0 tests failed out of 8
+
+Total Test time (real) =  15.00 sec
+
+real	0m15.013s
+user	0m15.534s
+sys	0m4.390s
+```
+
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-release
+    Start 1: test-quantize-fns
+1/8 Test #1: test-quantize-fns ................   Passed    0.01 sec
+    Start 2: test-quantize-perf
+2/8 Test #2: test-quantize-perf ...............   Passed    0.05 sec
+    Start 3: test-sampling
+3/8 Test #3: test-sampling ....................   Passed    0.00 sec
+    Start 4: test-tokenizer-0-llama
+4/8 Test #4: test-tokenizer-0-llama ...........   Passed    0.02 sec
+    Start 5: test-tokenizer-1-llama
+5/8 Test #5: test-tokenizer-1-llama ...........   Passed    3.14 sec
+    Start 6: test-grammar-parser
+6/8 Test #6: test-grammar-parser ..............   Passed    0.00 sec
+    Start 7: test-llama-grammar
+7/8 Test #7: test-llama-grammar ...............   Passed    0.00 sec
+    Start 8: test-grad0
+8/8 Test #8: test-grad0 .......................   Passed    3.38 sec
+
+100% tests passed, 0 tests failed out of 8
+
+Total Test time (real) =   6.62 sec
+
+real	0m6.638s
+user	0m6.825s
+sys	0m4.438s
+```
