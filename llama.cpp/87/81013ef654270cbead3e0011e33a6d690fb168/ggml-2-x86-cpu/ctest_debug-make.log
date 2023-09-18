@@ -1,0 +1,277 @@
++ make -j
+[  1%] Built target BUILD_INFO
+[  2%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/k_quants.c.o
+[  5%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  5%] Built target ggml
+[  7%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+[  8%] Linking C static library libggml_static.a
+[  8%] Built target ggml_static
+[ 10%] Linking CXX static library libllama.a
+[ 10%] Built target llama
+[ 11%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
+[ 13%] Building C object tests/CMakeFiles/test-c.dir/test-c.c.o
+[ 14%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+[ 16%] Building CXX object common/CMakeFiles/common.dir/common.cpp.o
+[ 17%] Building CXX object common/CMakeFiles/common.dir/grammar-parser.cpp.o
+[ 19%] Building CXX object common/CMakeFiles/common.dir/console.cpp.o
+[ 20%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
+[ 22%] Linking CXX executable ../bin/test-c
+[ 22%] Built target test-c
+[ 23%] Linking CXX executable ../../bin/quantize
+/home/ggml/work/llama.cpp/examples/benchmark/benchmark-matmult.cpp:24:6: warning: no previous declaration for ‘void ggml_graph_compute_helper(std::vector<unsigned char>&, ggml_cgraph*, int)’ [-Wmissing-declarations]
+   24 | void ggml_graph_compute_helper(std::vector<uint8_t> & buf, ggml_cgraph * graph, int n_threads) {
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/benchmark/benchmark-matmult.cpp:35:7: warning: no previous declaration for ‘float tensor_sum_elements(const ggml_tensor*)’ [-Wmissing-declarations]
+   35 | float tensor_sum_elements(const ggml_tensor * tensor) {
+      |       ^~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/benchmark/benchmark-matmult.cpp:47:6: warning: no previous declaration for ‘void tensor_dump(const ggml_tensor*, const char*)’ [-Wmissing-declarations]
+   47 | void tensor_dump(const ggml_tensor * tensor, const char * name) {
+      |      ^~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/benchmark/benchmark-matmult.cpp:62:6: warning: no previous declaration for ‘void print_usage(int, char**, benchmark_params_struct)’ [-Wmissing-declarations]
+   62 | void print_usage(int /*argc*/, char ** argv, struct benchmark_params_struct params) {
+      |      ^~~~~~~~~~~
+[ 25%] Linking CXX executable ../../bin/benchmark
+[ 25%] Built target quantize
+[ 25%] Built target benchmark
+[ 26%] Linking CXX executable ../../bin/quantize-stats
+[ 26%] Built target common
+[ 27%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 29%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 30%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
+[ 32%] Building CXX object tests/CMakeFiles/test-grammar-parser.dir/test-grammar-parser.cpp.o
+[ 33%] Building CXX object tests/CMakeFiles/test-tokenizer-1-llama.dir/test-tokenizer-1-llama.cpp.o
+[ 35%] Building CXX object tests/CMakeFiles/test-tokenizer-0-llama.dir/test-tokenizer-0-llama.cpp.o
+[ 36%] Building CXX object tests/CMakeFiles/test-llama-grammar.dir/test-llama-grammar.cpp.o
+[ 38%] Building CXX object tests/CMakeFiles/test-tokenizer-0-falcon.dir/test-tokenizer-0-falcon.cpp.o
+[ 39%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+[ 41%] Building CXX object examples/main/CMakeFiles/main.dir/main.cpp.o
+[ 42%] Building CXX object examples/perplexity/CMakeFiles/perplexity.dir/perplexity.cpp.o
+[ 44%] Building CXX object examples/embedding/CMakeFiles/embedding.dir/embedding.cpp.o
+[ 45%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
+[ 47%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
+[ 48%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
+[ 50%] Building CXX object examples/convert-llama2c-to-ggml/CMakeFiles/convert-llama2c-to-ggml.dir/convert-llama2c-to-ggml.cpp.o
+[ 51%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
+[ 52%] Building CXX object examples/speculative/CMakeFiles/speculative.dir/speculative.cpp.o
+[ 54%] Building CXX object examples/embd-input/CMakeFiles/embdinput.dir/embd-input-lib.cpp.o
+[ 55%] Building CXX object examples/beam-search/CMakeFiles/beam-search.dir/beam-search.cpp.o
+[ 57%] Building CXX object examples/llama-bench/CMakeFiles/llama-bench.dir/llama-bench.cpp.o
+[ 58%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
+[ 60%] Building CXX object pocs/vdot/CMakeFiles/vdot.dir/vdot.cpp.o
+[ 61%] Building CXX object pocs/vdot/CMakeFiles/q8dot.dir/q8dot.cpp.o
+[ 63%] Linking CXX executable ../bin/test-grad0
+[ 63%] Built target quantize-stats
+[ 64%] Linking CXX executable ../bin/test-quantize-fns
+/home/ggml/work/llama.cpp/pocs/vdot/q8dot.cpp:57:6: warning: no previous declaration for ‘void fillQ80blocks(std::vector<block_q8_0>&, std::mt19937&)’ [-Wmissing-declarations]
+   57 | void fillQ80blocks(std::vector<block_q8_0>& blocks, std::mt19937& rndm) {
+      |      ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/pocs/vdot/q8dot.cpp:69:7: warning: no previous declaration for ‘float simpleDot(const block_q4_0&, const block_q8_0&)’ [-Wmissing-declarations]
+   69 | float simpleDot(const block_q4_0& x, const block_q8_0& y) {
+      |       ^~~~~~~~~
+/home/ggml/work/llama.cpp/pocs/vdot/q8dot.cpp:84:7: warning: no previous declaration for ‘float simpleDot(const block_q4_1&, const block_q8_0&)’ [-Wmissing-declarations]
+   84 | float simpleDot(const block_q4_1& x, const block_q8_0& y) {
+      |       ^~~~~~~~~
+[ 66%] Linking CXX executable ../bin/test-sampling
+[ 67%] Linking CXX executable ../bin/test-grammar-parser
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:33:6: warning: no previous declaration for ‘void init_random_normal_distribution(random_normal_distribution*, int, float, float, float, float)’ [-Wmissing-declarations]
+   33 | void init_random_normal_distribution(struct random_normal_distribution * rnd, int seed, float mean, float std, float min, float max) {
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:40:6: warning: no previous declaration for ‘void init_random_uniform_distribution(random_uniform_distribution*, int, float, float)’ [-Wmissing-declarations]
+   40 | void init_random_uniform_distribution(struct random_uniform_distribution * rnd, int seed, float min, float max) {
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:45:5: warning: no previous declaration for ‘int clamp(int, int, int)’ [-Wmissing-declarations]
+   45 | int clamp(const int v, const int min, const int max) {
+      |     ^~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:49:7: warning: no previous declaration for ‘float fclamp(float, float, float)’ [-Wmissing-declarations]
+   49 | float fclamp(const float v, const float min, const float max) {
+      |       ^~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:53:7: warning: no previous declaration for ‘float frand()’ [-Wmissing-declarations]
+   53 | float frand() {
+      |       ^~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:57:7: warning: no previous declaration for ‘float frand_normal(random_normal_distribution*)’ [-Wmissing-declarations]
+   57 | float frand_normal(struct random_normal_distribution * rnd) {
+      |       ^~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:61:7: warning: no previous declaration for ‘float frand_uniform(random_uniform_distribution*)’ [-Wmissing-declarations]
+   61 | float frand_uniform(struct random_uniform_distribution * rnd) {
+      |       ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:65:22: warning: no previous declaration for ‘ggml_tensor* randomize_tensor_normal(ggml_tensor*, random_normal_distribution*)’ [-Wmissing-declarations]
+   65 | struct ggml_tensor * randomize_tensor_normal(struct ggml_tensor * tensor, struct random_normal_distribution * rnd) {
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:114:22: warning: no previous declaration for ‘ggml_tensor* randomize_tensor_uniform(ggml_tensor*, random_uniform_distribution*)’ [-Wmissing-declarations]
+  114 | struct ggml_tensor * randomize_tensor_uniform(struct ggml_tensor * tensor, struct random_uniform_distribution * rnd) {
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:289:6: warning: no previous declaration for ‘void print_params(my_llama_hparams*)’ [-Wmissing-declarations]
+  289 | void print_params(struct my_llama_hparams * params) {
+      |      ^~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:299:6: warning: no previous declaration for ‘void init_model(my_llama_model*)’ [-Wmissing-declarations]
+  299 | void init_model(struct my_llama_model * model) {
+      |      ^~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:366:6: warning: no previous declaration for ‘void set_param_model(my_llama_model*)’ [-Wmissing-declarations]
+  366 | void set_param_model(struct my_llama_model * model) {
+      |      ^~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:392:6: warning: no previous declaration for ‘void randomize_model(my_llama_model*, int, float, float, float, float)’ [-Wmissing-declarations]
+  392 | void randomize_model(struct my_llama_model * model, int seed, float mean, float std, float min, float max) {
+      |      ^~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:421:6: warning: no previous declaration for ‘void assert_shape_1d(ggml_tensor*, int64_t)’ [-Wmissing-declarations]
+  421 | void assert_shape_1d(struct ggml_tensor * tensor, int64_t ne0) {
+      |      ^~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:426:6: warning: no previous declaration for ‘void assert_shape_2d(ggml_tensor*, int64_t, int64_t)’ [-Wmissing-declarations]
+  426 | void assert_shape_2d(struct ggml_tensor * tensor, int64_t ne0, int64_t ne1) {
+      |      ^~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:432:6: warning: no previous declaration for ‘void assert_shape_3d(ggml_tensor*, int64_t, int64_t, int64_t)’ [-Wmissing-declarations]
+  432 | void assert_shape_3d(struct ggml_tensor * tensor, int64_t ne0, int64_t ne1, int64_t ne2) {
+      |      ^~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:439:6: warning: no previous declaration for ‘void assert_shape_4d(ggml_tensor*, int64_t, int64_t, int64_t, int64_t)’ [-Wmissing-declarations]
+  439 | void assert_shape_4d(struct ggml_tensor * tensor, int64_t ne0, int64_t ne1, int64_t ne2, int64_t ne3) {
+      |      ^~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:493:19: warning: no previous declaration for ‘hash_map* new_hash_map()’ [-Wmissing-declarations]
+  493 | struct hash_map * new_hash_map() {
+      |                   ^~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:502:6: warning: no previous declaration for ‘void free_hash_map(hash_map*)’ [-Wmissing-declarations]
+  502 | void free_hash_map(struct hash_map * map) {
+      |      ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:533:22: warning: no previous declaration for ‘ggml_tensor* ggml_recompute_graph_node(ggml_context*, ggml_cgraph*, hash_map*, ggml_tensor*)’ [-Wmissing-declarations]
+  533 | struct ggml_tensor * ggml_recompute_graph_node(
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~
+[ 67%] Built target test-grad0
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:599:6: warning: no previous declaration for ‘void ggml_build_backward_gradient_checkpointing(ggml_context*, ggml_cgraph*, ggml_cgraph*, ggml_cgraph*, ggml_tensor**, int)’ [-Wmissing-declarations]
+  599 | void ggml_build_backward_gradient_checkpointing(
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:645:22: warning: no previous declaration for ‘ggml_tensor* llama_build_train_graphs(my_llama_model*, ggml_allocr*, ggml_context*, ggml_cgraph*, ggml_cgraph*, ggml_cgraph*, ggml_tensor**, ggml_tensor*, ggml_tensor*, int, int, bool, bool)’ [-Wmissing-declarations]
+  645 | struct ggml_tensor * llama_build_train_graphs(
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:829:6: warning: no previous declaration for ‘void set_f32_3d(ggml_tensor*, int64_t, int64_t, int64_t, float)’ [-Wmissing-declarations]
+  829 | void set_f32_3d(struct ggml_tensor * tensor, int64_t i0, int64_t i1, int64_t i2, float value) {
+      |      ^~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:834:6: warning: no previous declaration for ‘void set_f32_2d(ggml_tensor*, int64_t, int64_t, float)’ [-Wmissing-declarations]
+  834 | void set_f32_2d(struct ggml_tensor * tensor, int64_t i0, int64_t i1, float value) {
+      |      ^~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:839:6: warning: no previous declaration for ‘void set_i32_2d(ggml_tensor*, int64_t, int64_t, int32_t)’ [-Wmissing-declarations]
+  839 | void set_i32_2d(struct ggml_tensor * tensor, int64_t i0, int64_t i1, int32_t value) {
+      |      ^~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:844:7: warning: no previous declaration for ‘float get_f32_2d(ggml_tensor*, int64_t, int64_t)’ [-Wmissing-declarations]
+  844 | float get_f32_2d(struct ggml_tensor * tensor, int64_t i0, int64_t i1) {
+      |       ^~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:849:9: warning: no previous declaration for ‘int32_t get_i32_2d(ggml_tensor*, int64_t, int64_t)’ [-Wmissing-declarations]
+  849 | int32_t get_i32_2d(struct ggml_tensor * tensor, int64_t i0, int64_t i1) {
+      |         ^~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:854:6: warning: no previous declaration for ‘void print_row(ggml_tensor*, int)’ [-Wmissing-declarations]
+  854 | void print_row(struct ggml_tensor * probs, int i) {
+      |      ^~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:862:6: warning: no previous declaration for ‘void print_matrix(ggml_tensor*)’ [-Wmissing-declarations]
+  862 | void print_matrix(struct ggml_tensor * probs) {
+      |      ^~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:873:6: warning: no previous declaration for ‘void get_example_targets(llama_context*, const int*, size_t, const llama_token*, size_t, int, ggml_tensor*, ggml_tensor*, ggml_tensor*)’ [-Wmissing-declarations]
+  873 | void get_example_targets(struct llama_context * lctx, const int * train_samples, size_t n_train_samples, const llama_token * train_data, size_t n_train_data, int example_id, struct ggml_tensor * tokens_input, struct ggml_tensor * target_logits, struct ggml_tensor * target_probs) {
+      |      ^~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:893:6: warning: no previous declaration for ‘void get_example_targets_batch(llama_context*, const int*, size_t, const llama_token*, size_t, int, ggml_tensor*, ggml_tensor*, ggml_tensor*)’ [-Wmissing-declarations]
+  893 | void get_example_targets_batch(struct llama_context * lctx, const int * train_samples, size_t n_train_samples, const llama_token * train_data, size_t n_train_data, int example_id, struct ggml_tensor * tokens_input, struct ggml_tensor * target_logits, struct ggml_tensor * target_probs) {
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:928:5: warning: no previous declaration for ‘int tokenize_file(llama_context*, const char*, std::vector<int>&)’ [-Wmissing-declarations]
+  928 | int tokenize_file(struct llama_context * lctx, const char * filename, std::vector<llama_token>& out) {
+      |     ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:999:6: warning: no previous declaration for ‘void shuffle_ints(int*, int*)’ [-Wmissing-declarations]
+  999 | void shuffle_ints(int * begin, int * end) {
+      |      ^~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:1033:6: warning: no previous declaration for ‘bool are_same_layout(ggml_tensor*, ggml_tensor*)’ [-Wmissing-declarations]
+ 1033 | bool are_same_layout(struct ggml_tensor * a, struct ggml_tensor * b) {
+      |      ^~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:1043:6: warning: no previous declaration for ‘void read_tensor_by_name(ggml_tensor*, ggml_context*, const char*)’ [-Wmissing-declarations]
+ 1043 | void read_tensor_by_name(struct ggml_tensor * dst, struct ggml_context * ctx, const char * name) {
+      |      ^~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:1056:6: warning: no previous declaration for ‘void load_opt_context_gguf(gguf_context*, ggml_context*, ggml_opt_context*)’ [-Wmissing-declarations]
+ 1056 | void load_opt_context_gguf(struct gguf_context * fctx, struct ggml_context * f_ggml_ctx, struct ggml_opt_context * opt) {
+      |      ^~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:1117:6: warning: no previous declaration for ‘void save_opt_context_gguf(gguf_context*, ggml_opt_context*)’ [-Wmissing-declarations]
+ 1117 | void save_opt_context_gguf(struct gguf_context * fctx, struct ggml_opt_context * opt) {
+      |      ^~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:1184:6: warning: no previous declaration for ‘void load_llama_model_gguf(gguf_context*, ggml_context*, my_llama_model*)’ [-Wmissing-declarations]
+ 1184 | void load_llama_model_gguf(struct gguf_context * fctx, struct ggml_context * f_ggml_ctx, struct my_llama_model * model) {
+      |      ^~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:1255:6: warning: no previous declaration for ‘void save_llama_model_gguf(gguf_context*, const char*, my_llama_model*)’ [-Wmissing-declarations]
+ 1255 | void save_llama_model_gguf(struct gguf_context * fctx, const char * fn_vocab_model, struct my_llama_model * model) {
+      |      ^~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:1398:6: warning: no previous declaration for ‘void save_llama_model_file(const char*, const char*, my_llama_model*)’ [-Wmissing-declarations]
+ 1398 | void save_llama_model_file(const char * filename, const char * fn_vocab_model, struct my_llama_model * model) {
+      |      ^~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:1409:6: warning: no previous declaration for ‘void load_checkpoint_gguf(gguf_context*, ggml_context*, my_llama_model*, ggml_opt_context*)’ [-Wmissing-declarations]
+ 1409 | void load_checkpoint_gguf(struct gguf_context * fctx, struct ggml_context * f_ggml_ctx, struct my_llama_model * model, struct ggml_opt_context * opt) {
+      |      ^~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:1423:6: warning: no previous declaration for ‘void save_checkpoint_gguf(gguf_context*, const char*, my_llama_model*, ggml_opt_context*)’ [-Wmissing-declarations]
+ 1423 | void save_checkpoint_gguf(struct gguf_context * fctx, const char * fn_vocab_model, struct my_llama_model * model, struct ggml_opt_context * opt) {
+      |      ^~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:1434:6: warning: no previous declaration for ‘bool load_checkpoint_file(const char*, my_llama_model*, ggml_opt_context*)’ [-Wmissing-declarations]
+ 1434 | bool load_checkpoint_file(const char * filename, struct my_llama_model * model, struct ggml_opt_context * opt) {
+      |      ^~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:1449:6: warning: no previous declaration for ‘void save_checkpoint_file(const char*, const char*, my_llama_model*, ggml_opt_context*)’ [-Wmissing-declarations]
+ 1449 | void save_checkpoint_file(const char * filename, const char * fn_vocab_model, struct my_llama_model * model, struct ggml_opt_context * opt) {
+      |      ^~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:1460:7: warning: no previous declaration for ‘float cosine_decay(int, float, int)’ [-Wmissing-declarations]
+ 1460 | float cosine_decay(const int decay_steps, const float minimum, int step) {
+      |       ^~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:1469:7: warning: no previous declaration for ‘float cosine_decay_restart(int, float, int, float, bool)’ [-Wmissing-declarations]
+ 1469 | float cosine_decay_restart(int decay_steps, const float minimum, int step, float restart_step_mult, bool enable_restart) {
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:1537:21: warning: no previous declaration for ‘train_params get_default_train_params()’ [-Wmissing-declarations]
+ 1537 | struct train_params get_default_train_params() {
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:1597:6: warning: no previous declaration for ‘void train_print_usage(int, char**, const train_params*)’ [-Wmissing-declarations]
+ 1597 | void train_print_usage(int /*argc*/, char ** argv, const struct train_params * params) {
+      |      ^~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:1654:6: warning: no previous declaration for ‘bool train_params_parse(int, char**, train_params*)’ [-Wmissing-declarations]
+ 1654 | bool train_params_parse(int argc, char ** argv, struct train_params * params) {
+      |      ^~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/train-text-from-scratch/train-text-from-scratch.cpp:1948:6: warning: no previous declaration for ‘void opt_callback(void*, float*)’ [-Wmissing-declarations]
+ 1948 | void opt_callback(void * vdata, float * sched) {
+      |      ^~~~~~~~~~~~
+[ 69%] Linking CXX executable ../../bin/baby-llama
+[ 70%] Linking CXX executable ../../bin/q8dot
+[ 70%] Built target test-quantize-fns
+[ 72%] Linking CXX executable ../bin/test-tokenizer-1-llama
+[ 73%] Linking CXX executable ../../bin/embedding
+[ 75%] Linking CXX executable ../../bin/vdot
+[ 76%] Linking CXX executable ../../bin/simple
+[ 77%] Linking CXX executable ../bin/test-tokenizer-0-falcon
+[ 79%] Linking CXX executable ../../bin/beam-search
+[ 80%] Linking CXX executable ../../bin/save-load-state
+[ 82%] Linking CXX executable ../bin/test-tokenizer-0-llama
+[ 83%] Linking CXX executable ../bin/test-quantize-perf
+[ 83%] Built target test-grammar-parser
+[ 83%] Built target baby-llama
+[ 83%] Built target test-sampling
+[ 85%] Linking CXX static library libembdinput.a
+[ 85%] Built target q8dot
+[ 86%] Linking CXX executable ../../bin/speculative
+[ 88%] Linking CXX executable ../../bin/perplexity
+[ 89%] Linking CXX executable ../../bin/convert-llama2c-to-ggml
+[ 89%] Built target test-tokenizer-1-llama
+[ 89%] Built target embedding
+[ 89%] Built target simple
+[ 89%] Built target embdinput
+[ 89%] Built target vdot
+[ 89%] Built target beam-search
+[ 89%] Built target test-tokenizer-0-falcon
+[ 91%] Building CXX object examples/embd-input/CMakeFiles/embd-input-test.dir/embd-input-test.cpp.o
+[ 91%] Built target test-tokenizer-0-llama
+[ 91%] Built target save-load-state
+[ 91%] Built target speculative
+[ 91%] Built target test-quantize-perf
+[ 92%] Linking CXX executable ../../bin/train-text-from-scratch
+[ 94%] Linking CXX executable ../../bin/main
+[ 94%] Built target perplexity
+[ 94%] Built target convert-llama2c-to-ggml
+[ 94%] Built target train-text-from-scratch
+[ 94%] Built target main
+[ 95%] Linking CXX executable ../../bin/embd-input-test
+[ 95%] Built target embd-input-test
+[ 97%] Linking CXX executable ../../bin/llama-bench
+[ 97%] Built target llama-bench
+[ 98%] Linking CXX executable ../bin/test-llama-grammar
+[ 98%] Built target test-llama-grammar
+[100%] Linking CXX executable ../../bin/server
+[100%] Built target server
+
+real	0m21.963s
+user	0m59.403s
+sys	0m5.558s
