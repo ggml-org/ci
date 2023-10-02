@@ -1,0 +1,28 @@
++ ctest --output-on-failure -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-debug
+    Start 1: test-quantize-fns
+1/9 Test #1: test-quantize-fns ................   Passed    0.04 sec
+    Start 2: test-quantize-perf
+2/9 Test #2: test-quantize-perf ...............   Passed    0.26 sec
+    Start 3: test-sampling
+3/9 Test #3: test-sampling ....................   Passed    0.00 sec
+    Start 4: test-tokenizer-0-llama
+4/9 Test #4: test-tokenizer-0-llama ...........   Passed    0.03 sec
+    Start 5: test-tokenizer-1-llama
+5/9 Test #5: test-tokenizer-1-llama ...........   Passed   10.33 sec
+    Start 6: test-grammar-parser
+6/9 Test #6: test-grammar-parser ..............   Passed    0.00 sec
+    Start 7: test-llama-grammar
+7/9 Test #7: test-llama-grammar ...............   Passed    0.00 sec
+    Start 8: test-grad0
+8/9 Test #8: test-grad0 .......................   Passed    6.55 sec
+    Start 9: test-rope
+9/9 Test #9: test-rope ........................   Passed    0.07 sec
+
+100% tests passed, 0 tests failed out of 9
+
+Total Test time (real) =  17.29 sec
+
+real	0m17.328s
+user	0m17.755s
+sys	0m6.921s
