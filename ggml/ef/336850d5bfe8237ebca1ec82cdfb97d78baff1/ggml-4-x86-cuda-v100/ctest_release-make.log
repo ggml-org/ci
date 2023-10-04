@@ -1,0 +1,132 @@
++ make -j
+[  1%] Building C object src/CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  3%] Building C object src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  4%] Linking CXX static library libcommon.a
+[  4%] Built target common
+[  5%] Linking C shared library libggml.so
+[  5%] Built target ggml
+[  7%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
+[  8%] Building C object tests/CMakeFiles/test-vec1.dir/test-vec1.c.o
+[  9%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+[ 10%] Building CXX object tests/CMakeFiles/test-opt.dir/test-opt.cpp.o
+[ 11%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 12%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 14%] Building C object tests/CMakeFiles/test-mul-mat0.dir/test-mul-mat0.c.o
+[ 15%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
+[ 16%] Building C object tests/CMakeFiles/test-mul-mat2.dir/test-mul-mat2.c.o
+[ 17%] Building C object tests/CMakeFiles/test3.dir/test3.c.o
+[ 18%] Building C object tests/CMakeFiles/test1.dir/test1.c.o
+[ 20%] Building C object tests/CMakeFiles/test2.dir/test2.c.o
+[ 21%] Building C object tests/CMakeFiles/test-pool.dir/test-pool.c.o
+[ 22%] Building C object tests/CMakeFiles/test-conv-transpose.dir/test-conv-transpose.c.o
+[ 23%] Linking C executable ../bin/test0
+[ 24%] Linking C executable ../bin/test-vec0
+[ 25%] Building C object tests/CMakeFiles/test-rel-pos.dir/test-rel-pos.c.o
+[ 27%] Building C object tests/CMakeFiles/test-customop.dir/test-customop.c.o
+[ 28%] Building C object tests/CMakeFiles/test-xpos.dir/test-xpos.c.o
+[ 29%] Building CXX object examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o
+[ 30%] Building CXX object examples/mnist/CMakeFiles/mnist.dir/main.cpp.o
+[ 31%] Building CXX object examples/whisper/CMakeFiles/whisper-cpp.dir/whisper.cpp.o
+[ 31%] Built target test0
+[ 32%] Building CXX object examples/mnist/CMakeFiles/mnist-cnn.dir/main-cnn.cpp.o
+[ 34%] Linking CXX executable ../bin/test-opt
+[ 35%] Building CXX object examples/mnist/CMakeFiles/mnist-cpu.dir/main-cpu.cpp.o
+[ 35%] Built target test-vec0
+[ 36%] Building CXX object examples/sam/CMakeFiles/sam.dir/main.cpp.o
+[ 37%] Linking C executable ../bin/test-conv-transpose
+[ 38%] Linking C executable ../bin/test-rel-pos
+[ 40%] Linking C executable ../bin/test1
+[ 41%] Linking C executable ../bin/test3
+[ 42%] Linking C executable ../bin/test-pool
+[ 42%] Built target test-opt
+[ 42%] Built target test-conv-transpose
+[ 42%] Built target test-rel-pos
+[ 43%] Linking C executable ../bin/test2
+[ 43%] Built target test1
+[ 43%] Built target test3
+[ 44%] Linking C executable ../bin/test-xpos
+[ 44%] Built target test-pool
+[ 44%] Built target test2
+[ 44%] Built target test-xpos
+[ 45%] Linking C executable ../bin/test-customop
+[ 47%] Linking C executable ../bin/test-mul-mat0
+[ 47%] Built target test-mul-mat0
+[ 47%] Built target test-customop
+[ 48%] Linking CXX executable ../bin/test-quantize-fns
+[ 49%] Linking C executable ../bin/test-vec1
+[ 49%] Built target test-vec1
+[ 49%] Built target test-quantize-fns
+[ 50%] Linking CXX executable ../../bin/mnist-cpu
+[ 50%] Built target mnist-cpu
+[ 51%] Linking CXX executable ../../bin/mnist
+[ 52%] Linking CXX executable ../../bin/mnist-cnn
+[ 54%] Linking CXX executable ../bin/test-grad0
+[ 54%] Built target mnist
+[ 54%] Built target test-grad0
+[ 55%] Linking C executable ../bin/test-mul-mat2
+[ 55%] Built target mnist-cnn
+[ 55%] Built target test-mul-mat2
+[ 56%] Linking CXX executable ../bin/test-quantize-perf
+[ 56%] Built target test-quantize-perf
+[ 57%] Linking CXX static library libcommon-ggml.a
+[ 57%] Built target common-ggml
+[ 58%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2.dir/main.cpp.o
+[ 60%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-quantize.dir/quantize.cpp.o
+[ 61%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j.dir/main.cpp.o
+[ 62%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j-quantize.dir/quantize.cpp.o
+[ 63%] Building CXX object examples/gpt-neox/CMakeFiles/gpt-neox.dir/main.cpp.o
+[ 64%] Building CXX object examples/whisper/CMakeFiles/whisper-quantize.dir/quantize.cpp.o
+[ 65%] Building CXX object examples/dolly-v2/CMakeFiles/dollyv2.dir/main.cpp.o
+[ 67%] Building CXX object examples/gpt-neox/CMakeFiles/gpt-neox-quantize.dir/quantize.cpp.o
+[ 68%] Building CXX object examples/replit/CMakeFiles/replit-quantize.dir/quantize.cpp.o
+[ 69%] Building CXX object examples/replit/CMakeFiles/replit.dir/main.cpp.o
+[ 70%] Building CXX object examples/mpt/CMakeFiles/mpt.dir/main.cpp.o
+[ 71%] Building CXX object examples/dolly-v2/CMakeFiles/dollyv2-quantize.dir/quantize.cpp.o
+[ 72%] Building CXX object examples/mpt/CMakeFiles/mpt-quantize.dir/quantize.cpp.o
+[ 74%] Building CXX object examples/starcoder/CMakeFiles/starcoder.dir/main.cpp.o
+[ 75%] Building CXX object examples/starcoder/CMakeFiles/starcoder-mmap.dir/starcoder-mmap.cpp.o
+[ 76%] Building CXX object examples/starcoder/CMakeFiles/starcoder-quantize.dir/quantize.cpp.o
+[ 77%] Linking CXX executable ../../bin/replit-quantize
+[ 78%] Linking CXX executable ../../bin/mpt-quantize
+[ 78%] Built target replit-quantize
+[ 78%] Built target mpt-quantize
+[ 80%] Linking CXX executable ../../bin/gpt-j-quantize
+[ 81%] Linking CXX executable ../../bin/dollyv2-quantize
+[ 82%] Linking CXX executable ../../bin/gpt-neox-quantize
+[ 83%] Linking CXX executable ../../bin/gpt-2-quantize
+[ 84%] Linking CXX executable ../../bin/starcoder-quantize
+[ 85%] Linking CXX executable ../../bin/whisper-quantize
+[ 85%] Built target gpt-j-quantize
+[ 85%] Built target gpt-neox-quantize
+[ 85%] Built target gpt-2-quantize
+[ 85%] Built target whisper-quantize
+[ 85%] Built target dollyv2-quantize
+[ 85%] Built target starcoder-quantize
+[ 87%] Linking CXX executable ../../bin/dollyv2
+[ 87%] Built target dollyv2
+[ 88%] Linking CXX executable ../../bin/gpt-j
+[ 89%] Linking CXX executable ../../bin/starcoder-mmap
+[ 90%] Linking CXX executable ../../bin/gpt-neox
+[ 91%] Linking CXX executable ../../bin/gpt-2
+[ 92%] Linking CXX executable ../../bin/mpt
+[ 92%] Built target gpt-j
+[ 94%] Linking CXX executable ../../bin/starcoder
+[ 94%] Built target starcoder-mmap
+[ 94%] Built target gpt-neox
+[ 94%] Built target mpt
+[ 94%] Built target gpt-2
+[ 95%] Linking CXX executable ../../bin/replit
+[ 95%] Built target starcoder
+[ 95%] Built target replit
+[ 96%] Linking CXX executable ../../bin/sam
+[ 96%] Built target sam
+[ 97%] Linking CXX shared library libwhisper-cpp.so
+[ 97%] Built target whisper-cpp
+[ 98%] Building CXX object examples/whisper/CMakeFiles/whisper.dir/main.cpp.o
+[100%] Linking CXX executable ../../bin/whisper
+[100%] Built target whisper
+
+real	0m25.867s
+user	1m14.971s
+sys	0m4.244s
