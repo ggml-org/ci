@@ -1,0 +1,29 @@
++ make -j
+[  1%] Built target BUILD_INFO
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/k_quants.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+/home/ggml/work/llama.cpp/k_quants.c: In function ‘ggml_vec_dot_q2_K_q8_K’:
+/home/ggml/work/llama.cpp/k_quants.c:1358:36: warning: missing braces around initializer [-Wmissing-braces]
+ 1358 |         const int16x8x2_t mins16 = {vreinterpretq_s16_u16(vmovl_u8(vget_low_u8(mins))), vreinterpretq_s16_u16(vmovl_u8(vget_high_u8(mins)))};
+      |                                    ^
+      |                                     {                                                                                                      }
+/home/ggml/work/llama.cpp/k_quants.c: In function ‘ggml_vec_dot_q6_K_q8_K’:
+/home/ggml/work/llama.cpp/k_quants.c:4307:38: warning: missing braces around initializer [-Wmissing-braces]
+ 4307 |         const int16x8x2_t q6scales = {vmovl_s8(vget_low_s8(scales)), vmovl_s8(vget_high_s8(scales))};
+      |                                      ^
+      |                                       {                                                            }
+In file included from /home/ggml/work/llama.cpp/ggml.c:15:
+/home/ggml/work/llama.cpp/ggml.c: In function ‘ggml_compute_forward_alibi_f32’:
+/home/ggml/work/llama.cpp/ggml.c:13089:12: error: ‘n_past’ undeclared (first use in this function)
+13089 |     assert(n_past >= 0);
+      |            ^~~~~~
+/home/ggml/work/llama.cpp/ggml.c:13089:12: note: each undeclared identifier is reported only once for each function it appears in
+make[2]: *** [CMakeFiles/ggml.dir/build.make:76: CMakeFiles/ggml.dir/ggml.c.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:612: CMakeFiles/ggml.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m0.431s
+user	0m0.713s
+sys	0m0.209s
