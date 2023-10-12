@@ -78,13 +78,13 @@ function gg_set_commit_status {
 ## general env
 
 # here we will clone and build the projects
-gg_export GG_WORK_PATH     $(realpath ~/work)
+gg_export GG_WORK_PATH     $(realpath ~)/work
 gg_export GG_WORK_BRANCHES ${GG_WORK_PATH}/branches
 
 gg_export GG_CI_KEYWORD "ggml-ci"
 
 # here we will store all results
-gg_export GG_RESULTS_PATH     $(realpath ~/results)
+gg_export GG_RESULTS_PATH     $(realpath ~)/results
 gg_export GG_RESULTS_REPO     "https://github.com/ggml-org/ci"
 gg_export GG_RESULTS_REPO_SSH "git@github.com:ggml-org/ci.git"
 gg_export GG_RESULTS_BRANCH   "results"
