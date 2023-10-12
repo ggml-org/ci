@@ -21,10 +21,10 @@
 -- ARM detected
 -- Performing Test COMPILER_SUPPORTS_FP16_FORMAT_I3E
 -- Performing Test COMPILER_SUPPORTS_FP16_FORMAT_I3E - Failed
--- Configuring done (0.5s)
--- Generating done (0.1s)
+-- Configuring done (0.8s)
+-- Generating done (0.2s)
 -- Build files have been written to: /Users/ggml/work/llama.cpp/build-ci-debug
 
-real	0m0.699s
-user	0m0.327s
-sys	0m0.314s
+real	0m1.217s
+user	0m0.344s
+sys	0m0.369s
