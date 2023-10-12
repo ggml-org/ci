@@ -1,0 +1,232 @@
++ make -j
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  2%] Building C object CMakeFiles/ggml.dir/k_quants.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-metal.m.o
+[  4%] Built target BUILD_INFO
+[  5%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  6%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+/Users/ggml/work/llama.cpp/ggml-metal.m:121:25: warning: unused variable 'msl_library_source' [-Wunused-const-variable]
+static NSString * const msl_library_source = @"see metal.metal";
+                        ^
+1 warning generated.
+/Users/ggml/work/llama.cpp/ggml.c:11845:17: warning: 'cblas_sgemm' is only available on macOS 13.3 or newer [-Wunguarded-availability-new]
+                cblas_sgemm(CblasRowMajor, CblasNoTrans, CblasTrans,
+                ^~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/vecLib.framework/Headers/cblas_new.h:891:6: note: 'cblas_sgemm' has been marked as being introduced in macOS 13.3 here, but the deployment target is macOS 13.0.0
+void cblas_sgemm(const enum CBLAS_ORDER ORDER,
+     ^
+/Users/ggml/work/llama.cpp/ggml.c:11845:17: note: enclose 'cblas_sgemm' in a __builtin_available check to silence this warning
+                cblas_sgemm(CblasRowMajor, CblasNoTrans, CblasTrans,
+                ^~~~~~~~~~~
+1 warning generated.
+[  6%] Built target ggml
+[ 10%] Building CXX object examples/metal/CMakeFiles/metal.dir/metal.cpp.o
+[ 10%] Linking C static library libggml_static.a
+[ 10%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+[ 10%] Built target ggml_static
+1 warning generated.
+[ 11%] Linking CXX executable ../../bin/metal
+[ 11%] Built target metal
+1 warning generated.
+[ 12%] Linking CXX static library libllama.a
+[ 12%] Built target llama
+[ 14%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
+[ 14%] Building CXX object common/CMakeFiles/common.dir/grammar-parser.cpp.o
+[ 15%] Building CXX object common/CMakeFiles/common.dir/sampling.cpp.o
+[ 17%] Building CXX object common/CMakeFiles/common.dir/train.cpp.o
+[ 19%] Building CXX object common/CMakeFiles/common.dir/console.cpp.o
+[ 19%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+[ 20%] Building C object tests/CMakeFiles/test-c.dir/test-c.c.o
+[ 21%] Building CXX object common/CMakeFiles/common.dir/common.cpp.o
+[ 22%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+[ 23%] Linking CXX executable ../bin/test-c
+[ 23%] Built target test-c
+1 warning generated.
+1 warning generated.
+[ 25%] Linking CXX executable ../../bin/quantize
+1 warning generated.
+1 warning generated.
+1 warning generated.
+[ 26%] Linking CXX executable ../../bin/benchmark
+[ 26%] Built target quantize
+1 warning generated.
+[ 26%] Built target benchmark
+1 warning generated.
+[ 27%] Linking CXX executable ../../bin/quantize-stats
+1 warning generated.
+[ 27%] Built target common
+[ 27%] Built target quantize-stats
+[ 28%] Building CXX object tests/CMakeFiles/test-tokenizer-1-bpe.dir/test-tokenizer-1-bpe.cpp.o
+[ 29%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 31%] Building CXX object tests/CMakeFiles/test-tokenizer-0-llama.dir/test-tokenizer-0-llama.cpp.o
+[ 30%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
+[ 32%] Building CXX object tests/CMakeFiles/test-rope.dir/test-rope.cpp.o
+[ 34%] Building CXX object tests/CMakeFiles/test-tokenizer-0-falcon.dir/test-tokenizer-0-falcon.cpp.o
+[ 35%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+[ 36%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
+[ 37%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 38%] Building CXX object examples/main/CMakeFiles/main.dir/main.cpp.o
+[ 40%] Building CXX object examples/finetune/CMakeFiles/finetune.dir/finetune.cpp.o
+[ 40%] Building CXX object examples/embedding/CMakeFiles/embedding.dir/embedding.cpp.o
+[ 42%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
+[ 44%] Building CXX object examples/convert-llama2c-to-ggml/CMakeFiles/convert-llama2c-to-ggml.dir/convert-llama2c-to-ggml.cpp.o
+[ 44%] Building CXX object examples/perplexity/CMakeFiles/perplexity.dir/perplexity.cpp.o
+[ 45%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
+[ 46%] Building CXX object examples/batched-bench/CMakeFiles/batched-bench.dir/batched-bench.cpp.o
+[ 47%] Building CXX object tests/CMakeFiles/test-grammar-parser.dir/test-grammar-parser.cpp.o
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+[ 48%] Building CXX object tests/CMakeFiles/test-llama-grammar.dir/test-llama-grammar.cpp.o
+[ 50%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+[ 51%] Building CXX object examples/batched/CMakeFiles/batched.dir/batched.cpp.o
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+[ 52%] Building CXX object tests/CMakeFiles/test-tokenizer-1-llama.dir/test-tokenizer-1-llama.cpp.o
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+[ 53%] Building CXX object examples/speculative/CMakeFiles/speculative.dir/speculative.cpp.o
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+[ 55%] Building CXX object examples/parallel/CMakeFiles/parallel.dir/parallel.cpp.o
+[ 55%] Building CXX object examples/embd-input/CMakeFiles/embdinput.dir/embd-input-lib.cpp.o
+[ 56%] Building CXX object examples/llama-bench/CMakeFiles/llama-bench.dir/llama-bench.cpp.o
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+[ 57%] Building CXX object examples/beam-search/CMakeFiles/beam-search.dir/beam-search.cpp.o
+[ 59%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
+[ 61%] Building CXX object pocs/vdot/CMakeFiles/vdot.dir/vdot.cpp.o
+[ 61%] Building CXX object pocs/vdot/CMakeFiles/q8dot.dir/q8dot.cpp.o
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+[ 62%] Building CXX object examples/export-lora/CMakeFiles/export-lora.dir/export-lora.cpp.o
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+1 warning generated.
+[ 63%] Linking CXX executable ../bin/test-grad0
+1 warning generated.
+[ 63%] Built target test-grad0
+[ 64%] Linking CXX executable ../bin/test-rope
+[ 64%] Built target test-rope
+1 warning generated.
+[ 65%] Linking CXX executable ../bin/test-quantize-fns
+1 warning generated.
+1 warning generated.
+1 warning generated.
+[ 67%] Linking CXX executable ../../bin/baby-llama
+[ 68%] Linking CXX executable ../bin/test-sampling
+[ 69%] Linking CXX executable ../bin/test-grammar-parser
+1 warning generated.
+[ 70%] Linking CXX executable ../../bin/q8dot
+1 warning generated.
+[ 71%] Linking CXX executable ../../bin/vdot
+[ 71%] Built target test-quantize-fns
+1 warning generated.
+[ 72%] Linking CXX executable ../../bin/embedding
+[ 72%] Built target test-grammar-parser
+[ 72%] Built target baby-llama
+1 warning generated.
+1 warning generated.
+[ 73%] Linking CXX executable ../../bin/batched-bench
+[ 75%] Linking CXX executable ../../bin/save-load-state
+[ 75%] Built target test-sampling
+1 warning generated.
+[ 75%] Built target vdot
+[ 76%] Linking CXX executable ../../bin/simple
+1 warning generated.
+[ 77%] Linking CXX executable ../../bin/batched
+[ 77%] Built target q8dot
+[ 77%] Built target embedding
+[ 77%] Built target batched-bench
+1 warning generated.
+1 warning generated.
+[ 78%] Linking CXX executable ../../bin/beam-search
+[ 79%] Linking CXX executable ../bin/test-tokenizer-0-falcon
+1 warning generated.
+1 warning generated.
+[ 79%] Built target save-load-state
+[ 80%] Linking CXX executable ../bin/test-tokenizer-0-llama
+[ 81%] Linking CXX executable ../../bin/export-lora
+1 warning generated.
+[ 81%] Built target batched
+[ 81%] Built target simple
+[ 82%] Linking CXX executable ../../bin/train-text-from-scratch
+1 warning generated.
+[ 84%] Linking CXX executable ../bin/test-quantize-perf
+1 warning generated.
+[ 84%] Built target beam-search
+[ 85%] Linking CXX executable ../../bin/perplexity
+1 warning generated.
+[ 85%] Built target test-tokenizer-0-falcon
+[ 86%] Linking CXX executable ../../bin/finetune
+1 warning generated.
+1 warning generated.
+1 warning generated.
+[ 87%] Linking CXX executable ../../bin/speculative
+[ 88%] Linking CXX executable ../../bin/convert-llama2c-to-ggml
+[ 89%] Linking CXX executable ../../bin/parallel
+[ 89%] Built target test-tokenizer-0-llama
+[ 89%] Built target export-lora
+1 warning generated.
+[ 89%] Built target test-quantize-perf
+[ 90%] Linking CXX static library libembdinput.a
+[ 90%] Built target convert-llama2c-to-ggml
+[ 90%] Built target finetune
+[ 90%] Built target speculative
+[ 90%] Built target train-text-from-scratch
+[ 90%] Built target parallel
+[ 90%] Built target perplexity
+[ 90%] Built target embdinput
+[ 92%] Building CXX object examples/embd-input/CMakeFiles/embd-input-test.dir/embd-input-test.cpp.o
+warning: unknown warning option '-Wunreachable-code-return -Wmissing-prototypes'; did you mean '-Wunreachable-code-return'? [-Wunknown-warning-option]
+1 warning generated.
+[ 93%] Linking CXX executable ../../bin/main
+1 warning generated.
+[ 94%] Linking CXX executable ../bin/test-tokenizer-1-bpe
+1 warning generated.
+[ 95%] Linking CXX executable ../bin/test-tokenizer-1-llama
+[ 95%] Built target main
+[ 95%] Built target test-tokenizer-1-bpe
+[ 95%] Built target test-tokenizer-1-llama
+1 warning generated.
+[ 96%] Linking CXX executable ../../bin/embd-input-test
+1 warning generated.
+[ 97%] Linking CXX executable ../../bin/llama-bench
+[ 97%] Built target embd-input-test
+[ 97%] Built target llama-bench
+1 warning generated.
+[ 98%] Linking CXX executable ../bin/test-llama-grammar
+[ 98%] Built target test-llama-grammar
+1 warning generated.
+[100%] Linking CXX executable ../../bin/server
+[100%] Built target server
+
+real	0m11.250s
+user	0m39.003s
+sys	0m4.609s
