@@ -1,0 +1,1577 @@
+image_encoder.neck.0.weight torch.Size([256, 768, 1, 1])
+image_encoder.neck.1.weight torch.Size([256])
+image_encoder.neck.1.bias torch.Size([256])
+image_encoder.neck.2.weight torch.Size([256, 256, 3, 3])
+image_encoder.neck.3.weight torch.Size([256])
+image_encoder.neck.3.bias torch.Size([256])
+image_encoder.patch_embed.proj.weight torch.Size([768, 3, 16, 16])
+image_encoder.patch_embed.proj.bias torch.Size([768])
+image_encoder.blocks.0.norm1.weight torch.Size([768])
+image_encoder.blocks.0.norm1.bias torch.Size([768])
+image_encoder.blocks.0.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.0.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.0.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.0.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.0.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.0.attn.proj.bias torch.Size([768])
+image_encoder.blocks.0.norm2.weight torch.Size([768])
+image_encoder.blocks.0.norm2.bias torch.Size([768])
+image_encoder.blocks.0.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.0.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.0.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.0.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.1.norm1.weight torch.Size([768])
+image_encoder.blocks.1.norm1.bias torch.Size([768])
+image_encoder.blocks.1.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.1.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.1.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.1.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.1.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.1.attn.proj.bias torch.Size([768])
+image_encoder.blocks.1.norm2.weight torch.Size([768])
+image_encoder.blocks.1.norm2.bias torch.Size([768])
+image_encoder.blocks.1.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.1.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.1.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.1.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.2.norm1.weight torch.Size([768])
+image_encoder.blocks.2.norm1.bias torch.Size([768])
+image_encoder.blocks.2.attn.rel_pos_h torch.Size([127, 64])
+image_encoder.blocks.2.attn.rel_pos_w torch.Size([127, 64])
+image_encoder.blocks.2.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.2.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.2.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.2.attn.proj.bias torch.Size([768])
+image_encoder.blocks.2.norm2.weight torch.Size([768])
+image_encoder.blocks.2.norm2.bias torch.Size([768])
+image_encoder.blocks.2.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.2.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.2.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.2.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.3.norm1.weight torch.Size([768])
+image_encoder.blocks.3.norm1.bias torch.Size([768])
+image_encoder.blocks.3.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.3.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.3.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.3.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.3.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.3.attn.proj.bias torch.Size([768])
+image_encoder.blocks.3.norm2.weight torch.Size([768])
+image_encoder.blocks.3.norm2.bias torch.Size([768])
+image_encoder.blocks.3.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.3.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.3.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.3.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.4.norm1.weight torch.Size([768])
+image_encoder.blocks.4.norm1.bias torch.Size([768])
+image_encoder.blocks.4.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.4.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.4.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.4.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.4.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.4.attn.proj.bias torch.Size([768])
+image_encoder.blocks.4.norm2.weight torch.Size([768])
+image_encoder.blocks.4.norm2.bias torch.Size([768])
+image_encoder.blocks.4.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.4.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.4.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.4.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.5.norm1.weight torch.Size([768])
+image_encoder.blocks.5.norm1.bias torch.Size([768])
+image_encoder.blocks.5.attn.rel_pos_h torch.Size([127, 64])
+image_encoder.blocks.5.attn.rel_pos_w torch.Size([127, 64])
+image_encoder.blocks.5.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.5.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.5.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.5.attn.proj.bias torch.Size([768])
+image_encoder.blocks.5.norm2.weight torch.Size([768])
+image_encoder.blocks.5.norm2.bias torch.Size([768])
+image_encoder.blocks.5.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.5.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.5.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.5.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.6.norm1.weight torch.Size([768])
+image_encoder.blocks.6.norm1.bias torch.Size([768])
+image_encoder.blocks.6.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.6.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.6.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.6.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.6.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.6.attn.proj.bias torch.Size([768])
+image_encoder.blocks.6.norm2.weight torch.Size([768])
+image_encoder.blocks.6.norm2.bias torch.Size([768])
+image_encoder.blocks.6.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.6.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.6.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.6.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.7.norm1.weight torch.Size([768])
+image_encoder.blocks.7.norm1.bias torch.Size([768])
+image_encoder.blocks.7.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.7.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.7.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.7.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.7.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.7.attn.proj.bias torch.Size([768])
+image_encoder.blocks.7.norm2.weight torch.Size([768])
+image_encoder.blocks.7.norm2.bias torch.Size([768])
+image_encoder.blocks.7.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.7.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.7.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.7.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.8.norm1.weight torch.Size([768])
+image_encoder.blocks.8.norm1.bias torch.Size([768])
+image_encoder.blocks.8.attn.rel_pos_h torch.Size([127, 64])
+image_encoder.blocks.8.attn.rel_pos_w torch.Size([127, 64])
+image_encoder.blocks.8.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.8.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.8.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.8.attn.proj.bias torch.Size([768])
+image_encoder.blocks.8.norm2.weight torch.Size([768])
+image_encoder.blocks.8.norm2.bias torch.Size([768])
+image_encoder.blocks.8.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.8.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.8.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.8.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.9.norm1.weight torch.Size([768])
+image_encoder.blocks.9.norm1.bias torch.Size([768])
+image_encoder.blocks.9.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.9.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.9.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.9.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.9.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.9.attn.proj.bias torch.Size([768])
+image_encoder.blocks.9.norm2.weight torch.Size([768])
+image_encoder.blocks.9.norm2.bias torch.Size([768])
+image_encoder.blocks.9.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.9.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.9.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.9.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.10.norm1.weight torch.Size([768])
+image_encoder.blocks.10.norm1.bias torch.Size([768])
+image_encoder.blocks.10.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.10.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.10.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.10.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.10.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.10.attn.proj.bias torch.Size([768])
+image_encoder.blocks.10.norm2.weight torch.Size([768])
+image_encoder.blocks.10.norm2.bias torch.Size([768])
+image_encoder.blocks.10.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.10.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.10.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.10.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.11.norm1.weight torch.Size([768])
+image_encoder.blocks.11.norm1.bias torch.Size([768])
+image_encoder.blocks.11.attn.rel_pos_h torch.Size([127, 64])
+image_encoder.blocks.11.attn.rel_pos_w torch.Size([127, 64])
+image_encoder.blocks.11.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.11.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.11.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.11.attn.proj.bias torch.Size([768])
+image_encoder.blocks.11.norm2.weight torch.Size([768])
+image_encoder.blocks.11.norm2.bias torch.Size([768])
+image_encoder.blocks.11.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.11.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.11.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.11.mlp.lin2.bias torch.Size([768])
+prompt_encoder.pe_layer.positional_encoding_gaussian_matrix torch.Size([2, 128])
+mask_decoder.transformer.layers.0.self_attn.q_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.0.self_attn.q_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.0.self_attn.k_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.0.self_attn.k_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.0.self_attn.v_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.0.self_attn.v_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.0.self_attn.out_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.0.self_attn.out_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.0.norm1.weight torch.Size([256])
+mask_decoder.transformer.layers.0.norm1.bias torch.Size([256])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.q_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.q_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.k_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.k_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.v_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.v_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.out_proj.weight torch.Size([256, 128])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.out_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.0.norm2.weight torch.Size([256])
+mask_decoder.transformer.layers.0.norm2.bias torch.Size([256])
+mask_decoder.transformer.layers.0.mlp.lin1.weight torch.Size([2048, 256])
+mask_decoder.transformer.layers.0.mlp.lin1.bias torch.Size([2048])
+mask_decoder.transformer.layers.0.mlp.lin2.weight torch.Size([256, 2048])
+mask_decoder.transformer.layers.0.mlp.lin2.bias torch.Size([256])
+mask_decoder.transformer.layers.0.norm3.weight torch.Size([256])
+mask_decoder.transformer.layers.0.norm3.bias torch.Size([256])
+mask_decoder.transformer.layers.0.norm4.weight torch.Size([256])
+mask_decoder.transformer.layers.0.norm4.bias torch.Size([256])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.q_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.q_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.k_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.k_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.v_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.v_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.out_proj.weight torch.Size([256, 128])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.out_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.1.self_attn.q_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.1.self_attn.q_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.1.self_attn.k_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.1.self_attn.k_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.1.self_attn.v_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.1.self_attn.v_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.1.self_attn.out_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.1.self_attn.out_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.1.norm1.weight torch.Size([256])
+mask_decoder.transformer.layers.1.norm1.bias torch.Size([256])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.q_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.q_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.k_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.k_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.v_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.v_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.out_proj.weight torch.Size([256, 128])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.out_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.1.norm2.weight torch.Size([256])
+mask_decoder.transformer.layers.1.norm2.bias torch.Size([256])
+mask_decoder.transformer.layers.1.mlp.lin1.weight torch.Size([2048, 256])
+mask_decoder.transformer.layers.1.mlp.lin1.bias torch.Size([2048])
+mask_decoder.transformer.layers.1.mlp.lin2.weight torch.Size([256, 2048])
+mask_decoder.transformer.layers.1.mlp.lin2.bias torch.Size([256])
+mask_decoder.transformer.layers.1.norm3.weight torch.Size([256])
+mask_decoder.transformer.layers.1.norm3.bias torch.Size([256])
+mask_decoder.transformer.layers.1.norm4.weight torch.Size([256])
+mask_decoder.transformer.layers.1.norm4.bias torch.Size([256])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.q_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.q_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.k_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.k_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.v_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.v_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.out_proj.weight torch.Size([256, 128])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.out_proj.bias torch.Size([256])
+mask_decoder.transformer.final_attn_token_to_image.q_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.final_attn_token_to_image.q_proj.bias torch.Size([128])
+mask_decoder.transformer.final_attn_token_to_image.k_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.final_attn_token_to_image.k_proj.bias torch.Size([128])
+mask_decoder.transformer.final_attn_token_to_image.v_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.final_attn_token_to_image.v_proj.bias torch.Size([128])
+mask_decoder.transformer.final_attn_token_to_image.out_proj.weight torch.Size([256, 128])
+mask_decoder.transformer.final_attn_token_to_image.out_proj.bias torch.Size([256])
+mask_decoder.transformer.norm_final_attn.weight torch.Size([256])
+mask_decoder.transformer.norm_final_attn.bias torch.Size([256])
+prompt_encoder.point_embeddings.0.weight torch.Size([1, 256])
+prompt_encoder.point_embeddings.1.weight torch.Size([1, 256])
+prompt_encoder.point_embeddings.2.weight torch.Size([1, 256])
+prompt_encoder.point_embeddings.3.weight torch.Size([1, 256])
+prompt_encoder.not_a_point_embed.weight torch.Size([1, 256])
+mask_decoder.output_upscaling.0.weight torch.Size([256, 64, 2, 2])
+mask_decoder.output_upscaling.0.bias torch.Size([64])
+mask_decoder.output_upscaling.1.weight torch.Size([64])
+mask_decoder.output_upscaling.1.bias torch.Size([64])
+mask_decoder.output_upscaling.3.weight torch.Size([64, 32, 2, 2])
+mask_decoder.output_upscaling.3.bias torch.Size([32])
+mask_decoder.output_hypernetworks_mlps.0.layers.0.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.0.layers.0.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.0.layers.1.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.0.layers.1.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.0.layers.2.weight torch.Size([32, 256])
+mask_decoder.output_hypernetworks_mlps.0.layers.2.bias torch.Size([32])
+mask_decoder.output_hypernetworks_mlps.1.layers.0.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.1.layers.0.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.1.layers.1.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.1.layers.1.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.1.layers.2.weight torch.Size([32, 256])
+mask_decoder.output_hypernetworks_mlps.1.layers.2.bias torch.Size([32])
+mask_decoder.output_hypernetworks_mlps.2.layers.0.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.2.layers.0.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.2.layers.1.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.2.layers.1.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.2.layers.2.weight torch.Size([32, 256])
+mask_decoder.output_hypernetworks_mlps.2.layers.2.bias torch.Size([32])
+mask_decoder.output_hypernetworks_mlps.3.layers.0.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.3.layers.0.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.3.layers.1.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.3.layers.1.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.3.layers.2.weight torch.Size([32, 256])
+mask_decoder.output_hypernetworks_mlps.3.layers.2.bias torch.Size([32])
+prompt_encoder.mask_downscaling.0.weight torch.Size([4, 1, 2, 2])
+prompt_encoder.mask_downscaling.0.bias torch.Size([4])
+prompt_encoder.mask_downscaling.1.weight torch.Size([4])
+prompt_encoder.mask_downscaling.1.bias torch.Size([4])
+prompt_encoder.mask_downscaling.3.weight torch.Size([16, 4, 2, 2])
+prompt_encoder.mask_downscaling.3.bias torch.Size([16])
+prompt_encoder.mask_downscaling.4.weight torch.Size([16])
+prompt_encoder.mask_downscaling.4.bias torch.Size([16])
+prompt_encoder.mask_downscaling.6.weight torch.Size([256, 16, 1, 1])
+prompt_encoder.mask_downscaling.6.bias torch.Size([256])
+prompt_encoder.no_mask_embed.weight torch.Size([1, 256])
+mask_decoder.iou_prediction_head.layers.0.weight torch.Size([256, 256])
+mask_decoder.iou_prediction_head.layers.0.bias torch.Size([256])
+mask_decoder.iou_prediction_head.layers.1.weight torch.Size([256, 256])
+mask_decoder.iou_prediction_head.layers.1.bias torch.Size([256])
+mask_decoder.iou_prediction_head.layers.2.weight torch.Size([4, 256])
+mask_decoder.iou_prediction_head.layers.2.bias torch.Size([4])
+mask_decoder.iou_token.weight torch.Size([1, 256])
+mask_decoder.mask_tokens.weight torch.Size([4, 256])
+image_encoder.pos_embed torch.Size([1, 64, 64, 768])
+{'n_enc_state': 768, 'n_enc_layers': 12, 'n_enc_heads': 12, 'n_enc_out_chans': 256, 'n_pt_embd': 4}
+image_encoder.neck.0.weight torch.Size([256, 768, 1, 1])
+image_encoder.neck.1.weight torch.Size([256])
+image_encoder.neck.1.bias torch.Size([256])
+image_encoder.neck.2.weight torch.Size([256, 256, 3, 3])
+image_encoder.neck.3.weight torch.Size([256])
+image_encoder.neck.3.bias torch.Size([256])
+image_encoder.patch_embed.proj.weight torch.Size([768, 3, 16, 16])
+image_encoder.patch_embed.proj.bias torch.Size([768])
+image_encoder.blocks.0.norm1.weight torch.Size([768])
+image_encoder.blocks.0.norm1.bias torch.Size([768])
+image_encoder.blocks.0.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.0.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.0.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.0.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.0.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.0.attn.proj.bias torch.Size([768])
+image_encoder.blocks.0.norm2.weight torch.Size([768])
+image_encoder.blocks.0.norm2.bias torch.Size([768])
+image_encoder.blocks.0.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.0.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.0.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.0.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.1.norm1.weight torch.Size([768])
+image_encoder.blocks.1.norm1.bias torch.Size([768])
+image_encoder.blocks.1.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.1.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.1.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.1.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.1.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.1.attn.proj.bias torch.Size([768])
+image_encoder.blocks.1.norm2.weight torch.Size([768])
+image_encoder.blocks.1.norm2.bias torch.Size([768])
+image_encoder.blocks.1.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.1.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.1.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.1.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.2.norm1.weight torch.Size([768])
+image_encoder.blocks.2.norm1.bias torch.Size([768])
+image_encoder.blocks.2.attn.rel_pos_h torch.Size([127, 64])
+image_encoder.blocks.2.attn.rel_pos_w torch.Size([127, 64])
+image_encoder.blocks.2.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.2.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.2.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.2.attn.proj.bias torch.Size([768])
+image_encoder.blocks.2.norm2.weight torch.Size([768])
+image_encoder.blocks.2.norm2.bias torch.Size([768])
+image_encoder.blocks.2.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.2.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.2.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.2.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.3.norm1.weight torch.Size([768])
+image_encoder.blocks.3.norm1.bias torch.Size([768])
+image_encoder.blocks.3.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.3.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.3.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.3.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.3.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.3.attn.proj.bias torch.Size([768])
+image_encoder.blocks.3.norm2.weight torch.Size([768])
+image_encoder.blocks.3.norm2.bias torch.Size([768])
+image_encoder.blocks.3.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.3.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.3.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.3.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.4.norm1.weight torch.Size([768])
+image_encoder.blocks.4.norm1.bias torch.Size([768])
+image_encoder.blocks.4.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.4.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.4.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.4.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.4.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.4.attn.proj.bias torch.Size([768])
+image_encoder.blocks.4.norm2.weight torch.Size([768])
+image_encoder.blocks.4.norm2.bias torch.Size([768])
+image_encoder.blocks.4.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.4.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.4.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.4.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.5.norm1.weight torch.Size([768])
+image_encoder.blocks.5.norm1.bias torch.Size([768])
+image_encoder.blocks.5.attn.rel_pos_h torch.Size([127, 64])
+image_encoder.blocks.5.attn.rel_pos_w torch.Size([127, 64])
+image_encoder.blocks.5.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.5.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.5.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.5.attn.proj.bias torch.Size([768])
+image_encoder.blocks.5.norm2.weight torch.Size([768])
+image_encoder.blocks.5.norm2.bias torch.Size([768])
+image_encoder.blocks.5.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.5.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.5.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.5.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.6.norm1.weight torch.Size([768])
+image_encoder.blocks.6.norm1.bias torch.Size([768])
+image_encoder.blocks.6.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.6.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.6.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.6.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.6.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.6.attn.proj.bias torch.Size([768])
+image_encoder.blocks.6.norm2.weight torch.Size([768])
+image_encoder.blocks.6.norm2.bias torch.Size([768])
+image_encoder.blocks.6.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.6.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.6.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.6.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.7.norm1.weight torch.Size([768])
+image_encoder.blocks.7.norm1.bias torch.Size([768])
+image_encoder.blocks.7.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.7.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.7.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.7.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.7.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.7.attn.proj.bias torch.Size([768])
+image_encoder.blocks.7.norm2.weight torch.Size([768])
+image_encoder.blocks.7.norm2.bias torch.Size([768])
+image_encoder.blocks.7.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.7.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.7.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.7.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.8.norm1.weight torch.Size([768])
+image_encoder.blocks.8.norm1.bias torch.Size([768])
+image_encoder.blocks.8.attn.rel_pos_h torch.Size([127, 64])
+image_encoder.blocks.8.attn.rel_pos_w torch.Size([127, 64])
+image_encoder.blocks.8.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.8.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.8.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.8.attn.proj.bias torch.Size([768])
+image_encoder.blocks.8.norm2.weight torch.Size([768])
+image_encoder.blocks.8.norm2.bias torch.Size([768])
+image_encoder.blocks.8.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.8.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.8.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.8.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.9.norm1.weight torch.Size([768])
+image_encoder.blocks.9.norm1.bias torch.Size([768])
+image_encoder.blocks.9.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.9.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.9.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.9.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.9.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.9.attn.proj.bias torch.Size([768])
+image_encoder.blocks.9.norm2.weight torch.Size([768])
+image_encoder.blocks.9.norm2.bias torch.Size([768])
+image_encoder.blocks.9.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.9.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.9.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.9.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.10.norm1.weight torch.Size([768])
+image_encoder.blocks.10.norm1.bias torch.Size([768])
+image_encoder.blocks.10.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.10.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.10.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.10.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.10.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.10.attn.proj.bias torch.Size([768])
+image_encoder.blocks.10.norm2.weight torch.Size([768])
+image_encoder.blocks.10.norm2.bias torch.Size([768])
+image_encoder.blocks.10.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.10.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.10.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.10.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.11.norm1.weight torch.Size([768])
+image_encoder.blocks.11.norm1.bias torch.Size([768])
+image_encoder.blocks.11.attn.rel_pos_h torch.Size([127, 64])
+image_encoder.blocks.11.attn.rel_pos_w torch.Size([127, 64])
+image_encoder.blocks.11.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.11.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.11.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.11.attn.proj.bias torch.Size([768])
+image_encoder.blocks.11.norm2.weight torch.Size([768])
+image_encoder.blocks.11.norm2.bias torch.Size([768])
+image_encoder.blocks.11.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.11.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.11.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.11.mlp.lin2.bias torch.Size([768])
+prompt_encoder.pe_layer.positional_encoding_gaussian_matrix torch.Size([2, 128])
+mask_decoder.transformer.layers.0.self_attn.q_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.0.self_attn.q_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.0.self_attn.k_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.0.self_attn.k_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.0.self_attn.v_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.0.self_attn.v_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.0.self_attn.out_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.0.self_attn.out_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.0.norm1.weight torch.Size([256])
+mask_decoder.transformer.layers.0.norm1.bias torch.Size([256])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.q_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.q_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.k_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.k_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.v_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.v_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.out_proj.weight torch.Size([256, 128])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.out_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.0.norm2.weight torch.Size([256])
+mask_decoder.transformer.layers.0.norm2.bias torch.Size([256])
+mask_decoder.transformer.layers.0.mlp.lin1.weight torch.Size([2048, 256])
+mask_decoder.transformer.layers.0.mlp.lin1.bias torch.Size([2048])
+mask_decoder.transformer.layers.0.mlp.lin2.weight torch.Size([256, 2048])
+mask_decoder.transformer.layers.0.mlp.lin2.bias torch.Size([256])
+mask_decoder.transformer.layers.0.norm3.weight torch.Size([256])
+mask_decoder.transformer.layers.0.norm3.bias torch.Size([256])
+mask_decoder.transformer.layers.0.norm4.weight torch.Size([256])
+mask_decoder.transformer.layers.0.norm4.bias torch.Size([256])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.q_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.q_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.k_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.k_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.v_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.v_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.out_proj.weight torch.Size([256, 128])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.out_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.1.self_attn.q_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.1.self_attn.q_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.1.self_attn.k_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.1.self_attn.k_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.1.self_attn.v_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.1.self_attn.v_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.1.self_attn.out_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.1.self_attn.out_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.1.norm1.weight torch.Size([256])
+mask_decoder.transformer.layers.1.norm1.bias torch.Size([256])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.q_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.q_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.k_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.k_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.v_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.v_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.out_proj.weight torch.Size([256, 128])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.out_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.1.norm2.weight torch.Size([256])
+mask_decoder.transformer.layers.1.norm2.bias torch.Size([256])
+mask_decoder.transformer.layers.1.mlp.lin1.weight torch.Size([2048, 256])
+mask_decoder.transformer.layers.1.mlp.lin1.bias torch.Size([2048])
+mask_decoder.transformer.layers.1.mlp.lin2.weight torch.Size([256, 2048])
+mask_decoder.transformer.layers.1.mlp.lin2.bias torch.Size([256])
+mask_decoder.transformer.layers.1.norm3.weight torch.Size([256])
+mask_decoder.transformer.layers.1.norm3.bias torch.Size([256])
+mask_decoder.transformer.layers.1.norm4.weight torch.Size([256])
+mask_decoder.transformer.layers.1.norm4.bias torch.Size([256])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.q_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.q_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.k_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.k_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.v_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.v_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.out_proj.weight torch.Size([256, 128])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.out_proj.bias torch.Size([256])
+mask_decoder.transformer.final_attn_token_to_image.q_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.final_attn_token_to_image.q_proj.bias torch.Size([128])
+mask_decoder.transformer.final_attn_token_to_image.k_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.final_attn_token_to_image.k_proj.bias torch.Size([128])
+mask_decoder.transformer.final_attn_token_to_image.v_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.final_attn_token_to_image.v_proj.bias torch.Size([128])
+mask_decoder.transformer.final_attn_token_to_image.out_proj.weight torch.Size([256, 128])
+mask_decoder.transformer.final_attn_token_to_image.out_proj.bias torch.Size([256])
+mask_decoder.transformer.norm_final_attn.weight torch.Size([256])
+mask_decoder.transformer.norm_final_attn.bias torch.Size([256])
+prompt_encoder.point_embeddings.0.weight torch.Size([1, 256])
+prompt_encoder.point_embeddings.1.weight torch.Size([1, 256])
+prompt_encoder.point_embeddings.2.weight torch.Size([1, 256])
+prompt_encoder.point_embeddings.3.weight torch.Size([1, 256])
+prompt_encoder.not_a_point_embed.weight torch.Size([1, 256])
+mask_decoder.output_upscaling.0.weight torch.Size([256, 64, 2, 2])
+mask_decoder.output_upscaling.0.bias torch.Size([64])
+mask_decoder.output_upscaling.1.weight torch.Size([64])
+mask_decoder.output_upscaling.1.bias torch.Size([64])
+mask_decoder.output_upscaling.3.weight torch.Size([64, 32, 2, 2])
+mask_decoder.output_upscaling.3.bias torch.Size([32])
+mask_decoder.output_hypernetworks_mlps.0.layers.0.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.0.layers.0.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.0.layers.1.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.0.layers.1.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.0.layers.2.weight torch.Size([32, 256])
+mask_decoder.output_hypernetworks_mlps.0.layers.2.bias torch.Size([32])
+mask_decoder.output_hypernetworks_mlps.1.layers.0.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.1.layers.0.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.1.layers.1.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.1.layers.1.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.1.layers.2.weight torch.Size([32, 256])
+mask_decoder.output_hypernetworks_mlps.1.layers.2.bias torch.Size([32])
+mask_decoder.output_hypernetworks_mlps.2.layers.0.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.2.layers.0.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.2.layers.1.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.2.layers.1.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.2.layers.2.weight torch.Size([32, 256])
+mask_decoder.output_hypernetworks_mlps.2.layers.2.bias torch.Size([32])
+mask_decoder.output_hypernetworks_mlps.3.layers.0.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.3.layers.0.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.3.layers.1.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.3.layers.1.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.3.layers.2.weight torch.Size([32, 256])
+mask_decoder.output_hypernetworks_mlps.3.layers.2.bias torch.Size([32])
+prompt_encoder.mask_downscaling.0.weight torch.Size([4, 1, 2, 2])
+prompt_encoder.mask_downscaling.0.bias torch.Size([4])
+prompt_encoder.mask_downscaling.1.weight torch.Size([4])
+prompt_encoder.mask_downscaling.1.bias torch.Size([4])
+prompt_encoder.mask_downscaling.3.weight torch.Size([16, 4, 2, 2])
+prompt_encoder.mask_downscaling.3.bias torch.Size([16])
+prompt_encoder.mask_downscaling.4.weight torch.Size([16])
+prompt_encoder.mask_downscaling.4.bias torch.Size([16])
+prompt_encoder.mask_downscaling.6.weight torch.Size([256, 16, 1, 1])
+prompt_encoder.mask_downscaling.6.bias torch.Size([256])
+prompt_encoder.no_mask_embed.weight torch.Size([1, 256])
+mask_decoder.iou_prediction_head.layers.0.weight torch.Size([256, 256])
+mask_decoder.iou_prediction_head.layers.0.bias torch.Size([256])
+mask_decoder.iou_prediction_head.layers.1.weight torch.Size([256, 256])
+mask_decoder.iou_prediction_head.layers.1.bias torch.Size([256])
+mask_decoder.iou_prediction_head.layers.2.weight torch.Size([4, 256])
+mask_decoder.iou_prediction_head.layers.2.bias torch.Size([4])
+mask_decoder.iou_token.weight torch.Size([1, 256])
+mask_decoder.mask_tokens.weight torch.Size([4, 256])
+image_encoder.pos_embed torch.Size([1, 64, 64, 768])
+Processing variable: image_encoder.neck.0.weight with shape:  torch.Size([256, 768, 1, 1])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 768, 1, 1)
+Processing variable: image_encoder.neck.1.weight with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: image_encoder.neck.1.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: image_encoder.neck.2.weight with shape:  torch.Size([256, 256, 3, 3])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256, 3, 3)
+Processing variable: image_encoder.neck.3.weight with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: image_encoder.neck.3.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: image_encoder.patch_embed.proj.weight with shape:  torch.Size([768, 3, 16, 16])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 3, 16, 16)
+Processing variable: image_encoder.patch_embed.proj.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (1, 768, 1, 1)
+Processing variable: image_encoder.blocks.0.norm1.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.0.norm1.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.0.attn.rel_pos_h with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.0.attn.rel_pos_w with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.0.attn.qkv.weight with shape:  torch.Size([2304, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (2304, 768)
+Processing variable: image_encoder.blocks.0.attn.qkv.bias with shape:  torch.Size([2304])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2304,)
+Processing variable: image_encoder.blocks.0.attn.proj.weight with shape:  torch.Size([768, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 768)
+Processing variable: image_encoder.blocks.0.attn.proj.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.0.norm2.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.0.norm2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.0.mlp.lin1.weight with shape:  torch.Size([3072, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (3072, 768)
+Processing variable: image_encoder.blocks.0.mlp.lin1.bias with shape:  torch.Size([3072])  and type:  torch.float32
+  Converting to float32
+  New shape:  (3072,)
+Processing variable: image_encoder.blocks.0.mlp.lin2.weight with shape:  torch.Size([768, 3072])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 3072)
+Processing variable: image_encoder.blocks.0.mlp.lin2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.1.norm1.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.1.norm1.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.1.attn.rel_pos_h with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.1.attn.rel_pos_w with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.1.attn.qkv.weight with shape:  torch.Size([2304, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (2304, 768)
+Processing variable: image_encoder.blocks.1.attn.qkv.bias with shape:  torch.Size([2304])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2304,)
+Processing variable: image_encoder.blocks.1.attn.proj.weight with shape:  torch.Size([768, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 768)
+Processing variable: image_encoder.blocks.1.attn.proj.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.1.norm2.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.1.norm2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.1.mlp.lin1.weight with shape:  torch.Size([3072, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (3072, 768)
+Processing variable: image_encoder.blocks.1.mlp.lin1.bias with shape:  torch.Size([3072])  and type:  torch.float32
+  Converting to float32
+  New shape:  (3072,)
+Processing variable: image_encoder.blocks.1.mlp.lin2.weight with shape:  torch.Size([768, 3072])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 3072)
+Processing variable: image_encoder.blocks.1.mlp.lin2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.2.norm1.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.2.norm1.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.2.attn.rel_pos_h with shape:  torch.Size([127, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (127, 64)
+Processing variable: image_encoder.blocks.2.attn.rel_pos_w with shape:  torch.Size([127, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (127, 64)
+Processing variable: image_encoder.blocks.2.attn.qkv.weight with shape:  torch.Size([2304, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (2304, 768)
+Processing variable: image_encoder.blocks.2.attn.qkv.bias with shape:  torch.Size([2304])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2304,)
+Processing variable: image_encoder.blocks.2.attn.proj.weight with shape:  torch.Size([768, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 768)
+Processing variable: image_encoder.blocks.2.attn.proj.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.2.norm2.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.2.norm2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.2.mlp.lin1.weight with shape:  torch.Size([3072, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (3072, 768)
+Processing variable: image_encoder.blocks.2.mlp.lin1.bias with shape:  torch.Size([3072])  and type:  torch.float32
+  Converting to float32
+  New shape:  (3072,)
+Processing variable: image_encoder.blocks.2.mlp.lin2.weight with shape:  torch.Size([768, 3072])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 3072)
+Processing variable: image_encoder.blocks.2.mlp.lin2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.3.norm1.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.3.norm1.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.3.attn.rel_pos_h with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.3.attn.rel_pos_w with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.3.attn.qkv.weight with shape:  torch.Size([2304, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (2304, 768)
+Processing variable: image_encoder.blocks.3.attn.qkv.bias with shape:  torch.Size([2304])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2304,)
+Processing variable: image_encoder.blocks.3.attn.proj.weight with shape:  torch.Size([768, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 768)
+Processing variable: image_encoder.blocks.3.attn.proj.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.3.norm2.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.3.norm2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.3.mlp.lin1.weight with shape:  torch.Size([3072, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (3072, 768)
+Processing variable: image_encoder.blocks.3.mlp.lin1.bias with shape:  torch.Size([3072])  and type:  torch.float32
+  Converting to float32
+  New shape:  (3072,)
+Processing variable: image_encoder.blocks.3.mlp.lin2.weight with shape:  torch.Size([768, 3072])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 3072)
+Processing variable: image_encoder.blocks.3.mlp.lin2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.4.norm1.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.4.norm1.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.4.attn.rel_pos_h with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.4.attn.rel_pos_w with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.4.attn.qkv.weight with shape:  torch.Size([2304, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (2304, 768)
+Processing variable: image_encoder.blocks.4.attn.qkv.bias with shape:  torch.Size([2304])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2304,)
+Processing variable: image_encoder.blocks.4.attn.proj.weight with shape:  torch.Size([768, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 768)
+Processing variable: image_encoder.blocks.4.attn.proj.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.4.norm2.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.4.norm2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.4.mlp.lin1.weight with shape:  torch.Size([3072, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (3072, 768)
+Processing variable: image_encoder.blocks.4.mlp.lin1.bias with shape:  torch.Size([3072])  and type:  torch.float32
+  Converting to float32
+  New shape:  (3072,)
+Processing variable: image_encoder.blocks.4.mlp.lin2.weight with shape:  torch.Size([768, 3072])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 3072)
+Processing variable: image_encoder.blocks.4.mlp.lin2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.5.norm1.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.5.norm1.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.5.attn.rel_pos_h with shape:  torch.Size([127, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (127, 64)
+Processing variable: image_encoder.blocks.5.attn.rel_pos_w with shape:  torch.Size([127, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (127, 64)
+Processing variable: image_encoder.blocks.5.attn.qkv.weight with shape:  torch.Size([2304, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (2304, 768)
+Processing variable: image_encoder.blocks.5.attn.qkv.bias with shape:  torch.Size([2304])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2304,)
+Processing variable: image_encoder.blocks.5.attn.proj.weight with shape:  torch.Size([768, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 768)
+Processing variable: image_encoder.blocks.5.attn.proj.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.5.norm2.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.5.norm2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.5.mlp.lin1.weight with shape:  torch.Size([3072, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (3072, 768)
+Processing variable: image_encoder.blocks.5.mlp.lin1.bias with shape:  torch.Size([3072])  and type:  torch.float32
+  Converting to float32
+  New shape:  (3072,)
+Processing variable: image_encoder.blocks.5.mlp.lin2.weight with shape:  torch.Size([768, 3072])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 3072)
+Processing variable: image_encoder.blocks.5.mlp.lin2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.6.norm1.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.6.norm1.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.6.attn.rel_pos_h with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.6.attn.rel_pos_w with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.6.attn.qkv.weight with shape:  torch.Size([2304, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (2304, 768)
+Processing variable: image_encoder.blocks.6.attn.qkv.bias with shape:  torch.Size([2304])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2304,)
+Processing variable: image_encoder.blocks.6.attn.proj.weight with shape:  torch.Size([768, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 768)
+Processing variable: image_encoder.blocks.6.attn.proj.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.6.norm2.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.6.norm2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.6.mlp.lin1.weight with shape:  torch.Size([3072, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (3072, 768)
+Processing variable: image_encoder.blocks.6.mlp.lin1.bias with shape:  torch.Size([3072])  and type:  torch.float32
+  Converting to float32
+  New shape:  (3072,)
+Processing variable: image_encoder.blocks.6.mlp.lin2.weight with shape:  torch.Size([768, 3072])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 3072)
+Processing variable: image_encoder.blocks.6.mlp.lin2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.7.norm1.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.7.norm1.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.7.attn.rel_pos_h with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.7.attn.rel_pos_w with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.7.attn.qkv.weight with shape:  torch.Size([2304, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (2304, 768)
+Processing variable: image_encoder.blocks.7.attn.qkv.bias with shape:  torch.Size([2304])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2304,)
+Processing variable: image_encoder.blocks.7.attn.proj.weight with shape:  torch.Size([768, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 768)
+Processing variable: image_encoder.blocks.7.attn.proj.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.7.norm2.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.7.norm2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.7.mlp.lin1.weight with shape:  torch.Size([3072, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (3072, 768)
+Processing variable: image_encoder.blocks.7.mlp.lin1.bias with shape:  torch.Size([3072])  and type:  torch.float32
+  Converting to float32
+  New shape:  (3072,)
+Processing variable: image_encoder.blocks.7.mlp.lin2.weight with shape:  torch.Size([768, 3072])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 3072)
+Processing variable: image_encoder.blocks.7.mlp.lin2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.8.norm1.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.8.norm1.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.8.attn.rel_pos_h with shape:  torch.Size([127, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (127, 64)
+Processing variable: image_encoder.blocks.8.attn.rel_pos_w with shape:  torch.Size([127, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (127, 64)
+Processing variable: image_encoder.blocks.8.attn.qkv.weight with shape:  torch.Size([2304, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (2304, 768)
+Processing variable: image_encoder.blocks.8.attn.qkv.bias with shape:  torch.Size([2304])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2304,)
+Processing variable: image_encoder.blocks.8.attn.proj.weight with shape:  torch.Size([768, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 768)
+Processing variable: image_encoder.blocks.8.attn.proj.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.8.norm2.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.8.norm2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.8.mlp.lin1.weight with shape:  torch.Size([3072, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (3072, 768)
+Processing variable: image_encoder.blocks.8.mlp.lin1.bias with shape:  torch.Size([3072])  and type:  torch.float32
+  Converting to float32
+  New shape:  (3072,)
+Processing variable: image_encoder.blocks.8.mlp.lin2.weight with shape:  torch.Size([768, 3072])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 3072)
+Processing variable: image_encoder.blocks.8.mlp.lin2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.9.norm1.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.9.norm1.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.9.attn.rel_pos_h with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.9.attn.rel_pos_w with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.9.attn.qkv.weight with shape:  torch.Size([2304, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (2304, 768)
+Processing variable: image_encoder.blocks.9.attn.qkv.bias with shape:  torch.Size([2304])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2304,)
+Processing variable: image_encoder.blocks.9.attn.proj.weight with shape:  torch.Size([768, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 768)
+Processing variable: image_encoder.blocks.9.attn.proj.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.9.norm2.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.9.norm2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.9.mlp.lin1.weight with shape:  torch.Size([3072, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (3072, 768)
+Processing variable: image_encoder.blocks.9.mlp.lin1.bias with shape:  torch.Size([3072])  and type:  torch.float32
+  Converting to float32
+  New shape:  (3072,)
+Processing variable: image_encoder.blocks.9.mlp.lin2.weight with shape:  torch.Size([768, 3072])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 3072)
+Processing variable: image_encoder.blocks.9.mlp.lin2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.10.norm1.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.10.norm1.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.10.attn.rel_pos_h with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.10.attn.rel_pos_w with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.10.attn.qkv.weight with shape:  torch.Size([2304, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (2304, 768)
+Processing variable: image_encoder.blocks.10.attn.qkv.bias with shape:  torch.Size([2304])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2304,)
+Processing variable: image_encoder.blocks.10.attn.proj.weight with shape:  torch.Size([768, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 768)
+Processing variable: image_encoder.blocks.10.attn.proj.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.10.norm2.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.10.norm2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.10.mlp.lin1.weight with shape:  torch.Size([3072, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (3072, 768)
+Processing variable: image_encoder.blocks.10.mlp.lin1.bias with shape:  torch.Size([3072])  and type:  torch.float32
+  Converting to float32
+  New shape:  (3072,)
+Processing variable: image_encoder.blocks.10.mlp.lin2.weight with shape:  torch.Size([768, 3072])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 3072)
+Processing variable: image_encoder.blocks.10.mlp.lin2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.11.norm1.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.11.norm1.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.11.attn.rel_pos_h with shape:  torch.Size([127, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (127, 64)
+Processing variable: image_encoder.blocks.11.attn.rel_pos_w with shape:  torch.Size([127, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (127, 64)
+Processing variable: image_encoder.blocks.11.attn.qkv.weight with shape:  torch.Size([2304, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (2304, 768)
+Processing variable: image_encoder.blocks.11.attn.qkv.bias with shape:  torch.Size([2304])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2304,)
+Processing variable: image_encoder.blocks.11.attn.proj.weight with shape:  torch.Size([768, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 768)
+Processing variable: image_encoder.blocks.11.attn.proj.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.11.norm2.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.11.norm2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.11.mlp.lin1.weight with shape:  torch.Size([3072, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (3072, 768)
+Processing variable: image_encoder.blocks.11.mlp.lin1.bias with shape:  torch.Size([3072])  and type:  torch.float32
+  Converting to float32
+  New shape:  (3072,)
+Processing variable: image_encoder.blocks.11.mlp.lin2.weight with shape:  torch.Size([768, 3072])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 3072)
+Processing variable: image_encoder.blocks.11.mlp.lin2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: prompt_encoder.pe_layer.positional_encoding_gaussian_matrix with shape:  torch.Size([2, 128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2, 128)
+Processing variable: mask_decoder.transformer.layers.0.self_attn.q_proj.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.transformer.layers.0.self_attn.q_proj.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.0.self_attn.k_proj.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.transformer.layers.0.self_attn.k_proj.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.0.self_attn.v_proj.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.transformer.layers.0.self_attn.v_proj.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.0.self_attn.out_proj.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.transformer.layers.0.self_attn.out_proj.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.0.norm1.weight with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.0.norm1.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_token_to_image.q_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_token_to_image.q_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_token_to_image.k_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_token_to_image.k_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_token_to_image.v_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_token_to_image.v_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_token_to_image.out_proj.weight with shape:  torch.Size([256, 128])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 128)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_token_to_image.out_proj.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.0.norm2.weight with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.0.norm2.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.0.mlp.lin1.weight with shape:  torch.Size([2048, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (2048, 256)
+Processing variable: mask_decoder.transformer.layers.0.mlp.lin1.bias with shape:  torch.Size([2048])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2048,)
+Processing variable: mask_decoder.transformer.layers.0.mlp.lin2.weight with shape:  torch.Size([256, 2048])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 2048)
+Processing variable: mask_decoder.transformer.layers.0.mlp.lin2.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.0.norm3.weight with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.0.norm3.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.0.norm4.weight with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.0.norm4.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_image_to_token.q_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_image_to_token.q_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_image_to_token.k_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_image_to_token.k_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_image_to_token.v_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_image_to_token.v_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_image_to_token.out_proj.weight with shape:  torch.Size([256, 128])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 128)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_image_to_token.out_proj.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.self_attn.q_proj.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.transformer.layers.1.self_attn.q_proj.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.self_attn.k_proj.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.transformer.layers.1.self_attn.k_proj.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.self_attn.v_proj.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.transformer.layers.1.self_attn.v_proj.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.self_attn.out_proj.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.transformer.layers.1.self_attn.out_proj.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.norm1.weight with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.norm1.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_token_to_image.q_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_token_to_image.q_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_token_to_image.k_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_token_to_image.k_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_token_to_image.v_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_token_to_image.v_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_token_to_image.out_proj.weight with shape:  torch.Size([256, 128])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 128)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_token_to_image.out_proj.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.norm2.weight with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.norm2.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.mlp.lin1.weight with shape:  torch.Size([2048, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (2048, 256)
+Processing variable: mask_decoder.transformer.layers.1.mlp.lin1.bias with shape:  torch.Size([2048])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2048,)
+Processing variable: mask_decoder.transformer.layers.1.mlp.lin2.weight with shape:  torch.Size([256, 2048])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 2048)
+Processing variable: mask_decoder.transformer.layers.1.mlp.lin2.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.norm3.weight with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.norm3.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.norm4.weight with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.norm4.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_image_to_token.q_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_image_to_token.q_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_image_to_token.k_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_image_to_token.k_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_image_to_token.v_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_image_to_token.v_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_image_to_token.out_proj.weight with shape:  torch.Size([256, 128])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 128)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_image_to_token.out_proj.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.final_attn_token_to_image.q_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.final_attn_token_to_image.q_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.final_attn_token_to_image.k_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.final_attn_token_to_image.k_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.final_attn_token_to_image.v_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.final_attn_token_to_image.v_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.final_attn_token_to_image.out_proj.weight with shape:  torch.Size([256, 128])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 128)
+Processing variable: mask_decoder.transformer.final_attn_token_to_image.out_proj.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.norm_final_attn.weight with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.norm_final_attn.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: prompt_encoder.point_embeddings.0.weight with shape:  torch.Size([1, 256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (1, 256)
+Processing variable: prompt_encoder.point_embeddings.1.weight with shape:  torch.Size([1, 256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (1, 256)
+Processing variable: prompt_encoder.point_embeddings.2.weight with shape:  torch.Size([1, 256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (1, 256)
+Processing variable: prompt_encoder.point_embeddings.3.weight with shape:  torch.Size([1, 256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (1, 256)
+Processing variable: prompt_encoder.not_a_point_embed.weight with shape:  torch.Size([1, 256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (1, 256)
+Processing variable: mask_decoder.output_upscaling.0.weight with shape:  torch.Size([256, 64, 2, 2])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 64, 2, 2)
+Processing variable: mask_decoder.output_upscaling.0.bias with shape:  torch.Size([64])  and type:  torch.float32
+  Converting to float32
+  New shape:  (64,)
+Processing variable: mask_decoder.output_upscaling.1.weight with shape:  torch.Size([64])  and type:  torch.float32
+  Converting to float32
+  New shape:  (64,)
+Processing variable: mask_decoder.output_upscaling.1.bias with shape:  torch.Size([64])  and type:  torch.float32
+  Converting to float32
+  New shape:  (64,)
+Processing variable: mask_decoder.output_upscaling.3.weight with shape:  torch.Size([64, 32, 2, 2])  and type:  torch.float32
+  Converting to float16
+  New shape:  (64, 32, 2, 2)
+Processing variable: mask_decoder.output_upscaling.3.bias with shape:  torch.Size([32])  and type:  torch.float32
+  Converting to float32
+  New shape:  (32,)
+Processing variable: mask_decoder.output_hypernetworks_mlps.0.layers.0.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.output_hypernetworks_mlps.0.layers.0.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.output_hypernetworks_mlps.0.layers.1.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.output_hypernetworks_mlps.0.layers.1.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.output_hypernetworks_mlps.0.layers.2.weight with shape:  torch.Size([32, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (32, 256)
+Processing variable: mask_decoder.output_hypernetworks_mlps.0.layers.2.bias with shape:  torch.Size([32])  and type:  torch.float32
+  Converting to float32
+  New shape:  (32,)
+Processing variable: mask_decoder.output_hypernetworks_mlps.1.layers.0.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.output_hypernetworks_mlps.1.layers.0.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.output_hypernetworks_mlps.1.layers.1.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.output_hypernetworks_mlps.1.layers.1.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.output_hypernetworks_mlps.1.layers.2.weight with shape:  torch.Size([32, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (32, 256)
+Processing variable: mask_decoder.output_hypernetworks_mlps.1.layers.2.bias with shape:  torch.Size([32])  and type:  torch.float32
+  Converting to float32
+  New shape:  (32,)
+Processing variable: mask_decoder.output_hypernetworks_mlps.2.layers.0.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.output_hypernetworks_mlps.2.layers.0.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.output_hypernetworks_mlps.2.layers.1.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.output_hypernetworks_mlps.2.layers.1.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.output_hypernetworks_mlps.2.layers.2.weight with shape:  torch.Size([32, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (32, 256)
+Processing variable: mask_decoder.output_hypernetworks_mlps.2.layers.2.bias with shape:  torch.Size([32])  and type:  torch.float32
+  Converting to float32
+  New shape:  (32,)
+Processing variable: mask_decoder.output_hypernetworks_mlps.3.layers.0.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.output_hypernetworks_mlps.3.layers.0.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.output_hypernetworks_mlps.3.layers.1.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.output_hypernetworks_mlps.3.layers.1.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.output_hypernetworks_mlps.3.layers.2.weight with shape:  torch.Size([32, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (32, 256)
+Processing variable: mask_decoder.output_hypernetworks_mlps.3.layers.2.bias with shape:  torch.Size([32])  and type:  torch.float32
+  Converting to float32
+  New shape:  (32,)
+Processing variable: prompt_encoder.no_mask_embed.weight with shape:  torch.Size([1, 256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (1, 256)
+Processing variable: mask_decoder.iou_prediction_head.layers.0.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.iou_prediction_head.layers.0.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.iou_prediction_head.layers.1.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.iou_prediction_head.layers.1.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.iou_prediction_head.layers.2.weight with shape:  torch.Size([4, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (4, 256)
+Processing variable: mask_decoder.iou_prediction_head.layers.2.bias with shape:  torch.Size([4])  and type:  torch.float32
+  Converting to float32
+  New shape:  (4,)
+Processing variable: mask_decoder.iou_token.weight with shape:  torch.Size([1, 256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (1, 256)
+Processing variable: mask_decoder.mask_tokens.weight with shape:  torch.Size([4, 256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (4, 256)
+Processing variable: image_encoder.pos_embed with shape:  torch.Size([1, 64, 64, 768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (1, 64, 64, 768)
+Done. Output file: ../models-mnt/sam///ggml-model-f16.bin
+
++ ./bin/sam -m ../models-mnt/sam//ggml-model-f16.bin -i ../models-mnt/sam//img.jpg
+main: seed = 1698171135
+main: loaded image '../models-mnt/sam//img.jpg' (680 x 453)
+sam_image_preprocess: scale = 0.664062
+main: preprocessed image (1024 x 1024)
+sam_model_load: loading model from '../models-mnt/sam//ggml-model-f16.bin' - please wait ...
+operator(): ggml ctx size = 202.33 MB
+sam_model_load: .sam_model_load: n_enc_state      = 768
+sam_model_load: n_enc_layer      = 12
+sam_model_load: n_enc_head       = 12
+sam_model_load: n_enc_out_chans  = 256
+sam_model_load: n_pt_embd        = 4
+sam_model_load: ftype            = 1
+sam_model_load: qntvr            = 0
+..................................... done
+sam_model_load: model size =   185.05 MB / num tensors = 304
+
+
+main:     load time =    87.31 ms
+main:    total time = 39397.43 ms
+embd_img
+dims:  64  64  256  1 f32
+First & Last 10 elements:
+-0.05100 -0.06348 -0.07114 -0.06838 -0.06826 -0.06972 -0.07148 -0.07087 -0.06775 -0.05427 
+0.01574 0.01770 0.02246 0.01671 0.01754 0.01669 0.01797 0.02047 0.02103 0.03390 
+sum:  12757.146535
+
+Skipping mask 0 with iou 0.705888 below threshold 0.880000
+Skipping mask 1 with iou 0.762569 below threshold 0.880000
+Mask 2: iou = 0.946929, stability_score = 0.956250, bbox (371, 436), (144, 168)
+
+real	0m39.470s
+user	2m36.054s
+sys	0m0.400s
