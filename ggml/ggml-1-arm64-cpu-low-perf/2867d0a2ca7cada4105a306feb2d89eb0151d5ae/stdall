@@ -1,5 +1,0 @@
-ci/run.sh: line 134: 0: command not found
-ci/run.sh: line 135: 0: command not found
-ci/run.sh: line 136: 0: command not found
-0.00user 0.00system 0:00.00elapsed 88%CPU (0avgtext+0avgdata 3144maxresident)k
-0inputs+8outputs (0major+642minor)pagefaults 0swaps
