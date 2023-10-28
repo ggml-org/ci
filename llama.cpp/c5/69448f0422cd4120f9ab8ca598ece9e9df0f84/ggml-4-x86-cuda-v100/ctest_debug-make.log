@@ -1,0 +1,37 @@
++ make -j
+[  1%] Built target BUILD_INFO
+[  2%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  5%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+/home/ggml/work/llama.cpp/ggml-quants.c:2287:21: error: redefinition of ‘hsum_float_8’
+ 2287 | static inline float hsum_float_8(const __m256 x) {
+      |                     ^~~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:84:21: note: previous definition of ‘hsum_float_8’ with type ‘float(const __m256)’
+   84 | static inline float hsum_float_8(const __m256 x) {
+      |                     ^~~~~~~~~~~~
+make[2]: *** [CMakeFiles/ggml.dir/build.make:118: CMakeFiles/ggml.dir/ggml-quants.c.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+/home/ggml/work/llama.cpp/ggml.c: In function ‘ggml_compute_forward_pool_1d_sk_p0’:
+/home/ggml/work/llama.cpp/ggml.c:12661:53: error: ‘FLT_MAX’ undeclared (first use in this function)
+12661 |                 case GGML_OP_POOL_MAX:   drow[i] = -FLT_MAX; break;
+      |                                                     ^~~~~~~
+/home/ggml/work/llama.cpp/ggml.c:291:1: note: ‘FLT_MAX’ is defined in header ‘<float.h>’; did you forget to ‘#include <float.h>’?
+  290 | #include <immintrin.h>
+  +++ |+#include <float.h>
+  291 | #endif
+/home/ggml/work/llama.cpp/ggml.c:12661:53: note: each undeclared identifier is reported only once for each function it appears in
+12661 |                 case GGML_OP_POOL_MAX:   drow[i] = -FLT_MAX; break;
+      |                                                     ^~~~~~~
+/home/ggml/work/llama.cpp/ggml.c: In function ‘ggml_compute_forward_pool_2d_sk_p0’:
+/home/ggml/work/llama.cpp/ggml.c:12736:56: error: ‘FLT_MAX’ undeclared (first use in this function)
+12736 |                     case GGML_OP_POOL_MAX:     *out = -FLT_MAX; break;
+      |                                                        ^~~~~~~
+/home/ggml/work/llama.cpp/ggml.c:12736:56: note: ‘FLT_MAX’ is defined in header ‘<float.h>’; did you forget to ‘#include <float.h>’?
+make[2]: *** [CMakeFiles/ggml.dir/build.make:76: CMakeFiles/ggml.dir/ggml.c.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:648: CMakeFiles/ggml.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m0.477s
+user	0m0.755s
+sys	0m0.150s
