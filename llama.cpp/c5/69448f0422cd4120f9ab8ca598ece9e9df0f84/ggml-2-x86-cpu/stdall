@@ -1,0 +1,108 @@
+rm: cannot remove '/home/ggml/results/llama.cpp/c5/69448f0422cd4120f9ab8ca598ece9e9df0f84/ggml-2-x86-cpu/*.log': No such file or directory
+rm: cannot remove '/home/ggml/results/llama.cpp/c5/69448f0422cd4120f9ab8ca598ece9e9df0f84/ggml-2-x86-cpu/*.exit': No such file or directory
+rm: cannot remove '/home/ggml/results/llama.cpp/c5/69448f0422cd4120f9ab8ca598ece9e9df0f84/ggml-2-x86-cpu/*.md': No such file or directory
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: numpy==1.24.4 in /home/ggml/.local/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/requirements.txt (line 1)) (1.24.4)
+Requirement already satisfied: sentencepiece==0.1.98 in /home/ggml/.local/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/requirements.txt (line 2)) (0.1.98)
+Requirement already satisfied: gguf>=0.1.0 in /home/ggml/.local/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/requirements.txt (line 3)) (0.4.5)
+Defaulting to user installation because normal site-packages is not writeable
+Obtaining file:///home/ggml/work/llama.cpp/gguf-py
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: numpy>=1.17 in /home/ggml/.local/lib/python3.10/site-packages (from gguf==0.4.5) (1.24.4)
+Building wheels for collected packages: gguf
+  Building editable for gguf (pyproject.toml): started
+  Building editable for gguf (pyproject.toml): finished with status 'done'
+  Created wheel for gguf: filename=gguf-0.4.5-py3-none-any.whl size=2717 sha256=4e24a28fd02df7a12935d66b81b6f9fa627ee5417517bcb759f587cbde3f68ff
+  Stored in directory: /tmp/pip-ephem-wheel-cache-xedgyr1w/wheels/a3/4c/52/c5934ad001d1a70ca5434f11ddc622cad9c0a484e9bf6feda3
+Successfully built gguf
+Installing collected packages: gguf
+  Attempting uninstall: gguf
+    Found existing installation: gguf 0.4.5
+    Uninstalling gguf-0.4.5:
+      Successfully uninstalled gguf-0.4.5
+Successfully installed gguf-0.4.5
++ gg_run_ctest_debug
++ cd /home/ggml/work/llama.cpp
++ tee /home/ggml/results/llama.cpp/c5/69448f0422cd4120f9ab8ca598ece9e9df0f84/ggml-2-x86-cpu/ctest_debug.log
++ rm -rf build-ci-debug
++ mkdir build-ci-debug
++ cd build-ci-debug
++ set -e
++ tee -a /home/ggml/results/llama.cpp/c5/69448f0422cd4120f9ab8ca598ece9e9df0f84/ggml-2-x86-cpu/ctest_debug-cmake.log
++ cmake -DCMAKE_BUILD_TYPE=Debug ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- x86 detected
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-debug
+
+real	0m0.419s
+user	0m0.261s
+sys	0m0.142s
++ tee -a /home/ggml/results/llama.cpp/c5/69448f0422cd4120f9ab8ca598ece9e9df0f84/ggml-2-x86-cpu/ctest_debug-make.log
++ make -j
+[  1%] Built target BUILD_INFO
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  5%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  5%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+/home/ggml/work/llama.cpp/ggml-quants.c:2287:21: error: redefinition of ‘hsum_float_8’
+ 2287 | static inline float hsum_float_8(const __m256 x) {
+      |                     ^~~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:84:21: note: previous definition of ‘hsum_float_8’ with type ‘float(const __m256)’
+   84 | static inline float hsum_float_8(const __m256 x) {
+      |                     ^~~~~~~~~~~~
+make[2]: *** [CMakeFiles/ggml.dir/build.make:118: CMakeFiles/ggml.dir/ggml-quants.c.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+/home/ggml/work/llama.cpp/ggml.c: In function ‘ggml_compute_forward_pool_1d_sk_p0’:
+/home/ggml/work/llama.cpp/ggml.c:12661:53: error: ‘FLT_MAX’ undeclared (first use in this function)
+12661 |                 case GGML_OP_POOL_MAX:   drow[i] = -FLT_MAX; break;
+      |                                                     ^~~~~~~
+/home/ggml/work/llama.cpp/ggml.c:291:1: note: ‘FLT_MAX’ is defined in header ‘<float.h>’; did you forget to ‘#include <float.h>’?
+  290 | #include <immintrin.h>
+  +++ |+#include <float.h>
+  291 | #endif
+/home/ggml/work/llama.cpp/ggml.c:12661:53: note: each undeclared identifier is reported only once for each function it appears in
+12661 |                 case GGML_OP_POOL_MAX:   drow[i] = -FLT_MAX; break;
+      |                                                     ^~~~~~~
+/home/ggml/work/llama.cpp/ggml.c: In function ‘ggml_compute_forward_pool_2d_sk_p0’:
+/home/ggml/work/llama.cpp/ggml.c:12736:56: error: ‘FLT_MAX’ undeclared (first use in this function)
+12736 |                     case GGML_OP_POOL_MAX:     *out = -FLT_MAX; break;
+      |                                                        ^~~~~~~
+/home/ggml/work/llama.cpp/ggml.c:12736:56: note: ‘FLT_MAX’ is defined in header ‘<float.h>’; did you forget to ‘#include <float.h>’?
+make[2]: *** [CMakeFiles/ggml.dir/build.make:76: CMakeFiles/ggml.dir/ggml.c.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:648: CMakeFiles/ggml.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m0.274s
+user	0m0.436s
+sys	0m0.091s
++ cur=2
++ echo 2
++ set +x
+cat: /home/ggml/results/llama.cpp/c5/69448f0422cd4120f9ab8ca598ece9e9df0f84/ggml-2-x86-cpu/ctest_debug-ctest.log: No such file or directory
