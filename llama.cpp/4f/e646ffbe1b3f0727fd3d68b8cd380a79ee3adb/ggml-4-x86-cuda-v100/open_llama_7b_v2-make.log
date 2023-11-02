@@ -1,0 +1,75 @@
++ make -j
+[  2%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  5%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  5%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda.cu.o
+[  6%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  7%] Built target build_info
+/home/ggml/work/llama.cpp/ggml-cuda.cu(7652): error: identifier "GGML_MAX_NODES" is undefined
+          g_temp_tensor_extras = new ggml_tensor_extra_gpu[GGML_MAX_NODES];
+                                                           ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(7656): error: identifier "GGML_MAX_NODES" is undefined
+      g_temp_tensor_extra_index = (g_temp_tensor_extra_index + 1) % GGML_MAX_NODES;
+                                                                    ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(7946): error: pointer to incomplete class type "ggml_backend" is not allowed
+      ggml_backend_context_cuda * cuda_ctx = (ggml_backend_context_cuda *)backend->context;
+                                                                          ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(7948): warning #414-D: delete of pointer to incomplete class
+      delete backend;
+             ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(7963): error: identifier "GGML_MAX_NODES" is undefined
+              temp_tensor_extras = new ggml_tensor_extra_gpu[GGML_MAX_NODES];
+                                                             ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(7967): error: identifier "GGML_MAX_NODES" is undefined
+          temp_tensor_extra_index = (temp_tensor_extra_index + 1) % GGML_MAX_NODES;
+                                                                    ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(7976): error: pointer to incomplete class type "ggml_backend_buffer" is not allowed
+      ggml_backend_buffer_context_cuda * ctx = (ggml_backend_buffer_context_cuda *)buffer->context;
+                                                                                   ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(7982): error: pointer to incomplete class type "ggml_backend_buffer" is not allowed
+      ggml_backend_buffer_context_cuda * ctx = (ggml_backend_buffer_context_cuda *)buffer->context;
+                                                                                   ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(8008): error: pointer to incomplete class type "ggml_backend_buffer" is not allowed
+      ggml_backend_buffer_context_cuda * ctx = (ggml_backend_buffer_context_cuda *)buffer->context;
+                                                                                   ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(8041): error: incomplete type is not allowed
+  static struct ggml_backend_buffer_i cuda_backend_buffer_interface = {
+                                      ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(8054): error: identifier "ggml_backend_buffer_init" is undefined
+      return ggml_backend_buffer_init(backend, cuda_backend_buffer_interface, ctx, size);
+             ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(8160): error: identifier "ggml_backend_i" is undefined
+  static ggml_backend_i cuda_backend_i = {
+         ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(8182): error: incomplete type is not allowed
+      ggml_backend_t cuda_backend = new ggml_backend {
+                                        ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(8184): error: too many initializer values
+                             ctx
+                             ^
+
+13 errors detected in the compilation of "/home/ggml/work/llama.cpp/ggml-cuda.cu".
+make[2]: *** [CMakeFiles/ggml.dir/build.make:133: CMakeFiles/ggml.dir/ggml-cuda.cu.o] Error 2
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:622: CMakeFiles/ggml.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m8.624s
+user	0m12.199s
+sys	0m0.675s
