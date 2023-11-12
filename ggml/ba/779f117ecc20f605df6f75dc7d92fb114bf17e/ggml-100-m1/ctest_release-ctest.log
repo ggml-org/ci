@@ -1,0 +1,48 @@
++ ctest --output-on-failure
+Test project /Users/ggml/work/ggml/build-ci-release
+      Start  1: test-grad0
+ 1/19 Test  #1: test-grad0 .......................   Passed    1.13 sec
+      Start  2: test-opt
+ 2/19 Test  #2: test-opt .........................   Passed    2.58 sec
+      Start  3: test-quantize-fns
+ 3/19 Test  #3: test-quantize-fns ................   Passed    0.26 sec
+      Start  4: test-quantize-perf
+ 4/19 Test  #4: test-quantize-perf ...............   Passed    0.36 sec
+      Start  5: test-mul-mat0
+ 5/19 Test  #5: test-mul-mat0 ....................   Passed    0.44 sec
+      Start  6: test-blas0
+ 6/19 Test  #6: test-blas0 .......................   Passed    0.24 sec
+      Start  7: test-mul-mat2
+ 7/19 Test  #7: test-mul-mat2 ....................   Passed    2.43 sec
+      Start  8: test0
+ 8/19 Test  #8: test0 ............................   Passed    0.24 sec
+      Start  9: test1
+ 9/19 Test  #9: test1 ............................   Passed    0.25 sec
+      Start 10: test2
+10/19 Test #10: test2 ............................   Passed    0.27 sec
+      Start 11: test3
+11/19 Test #11: test3 ............................   Passed    0.26 sec
+      Start 12: test-pool
+12/19 Test #12: test-pool ........................   Passed    0.24 sec
+      Start 13: test-conv-transpose
+13/19 Test #13: test-conv-transpose ..............   Passed    0.24 sec
+      Start 14: test-rel-pos
+14/19 Test #14: test-rel-pos .....................   Passed    0.23 sec
+      Start 15: test-customop
+15/19 Test #15: test-customop ....................   Passed    0.24 sec
+      Start 16: test-xpos
+16/19 Test #16: test-xpos ........................   Passed    0.24 sec
+      Start 17: test-conv1d
+17/19 Test #17: test-conv1d ......................   Passed    0.24 sec
+      Start 18: test-conv2d
+18/19 Test #18: test-conv2d ......................   Passed    0.24 sec
+      Start 19: test-mul-mat
+19/19 Test #19: test-mul-mat .....................   Passed    0.24 sec
+
+100% tests passed, 0 tests failed out of 19
+
+Total Test time (real) =  10.36 sec
+
+real	0m10.365s
+user	0m4.985s
+sys	0m0.941s
