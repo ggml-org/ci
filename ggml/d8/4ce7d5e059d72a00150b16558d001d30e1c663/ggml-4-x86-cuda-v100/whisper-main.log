@@ -1,0 +1,51 @@
++ ./bin/whisper -m ../models-mnt/whisper//ggml-base.en.bin -f ../models-mnt/whisper//jfk.wav
+whisper_init_from_file_with_params_no_state: loading model from '../models-mnt/whisper//ggml-base.en.bin'
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51864
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 512
+whisper_model_load: n_audio_head  = 8
+whisper_model_load: n_audio_layer = 6
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 512
+whisper_model_load: n_text_head   = 8
+whisper_model_load: n_text_layer  = 6
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 2 (base)
+whisper_model_load: adding 1607 extra tokens
+whisper_model_load: n_langs       = 99
+ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
+ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0
+whisper_model_load:      CPU buffer size =   149.41 MB
+whisper_model_load: model size    =  149.32 MB
+whisper_init_state: kv self size  =    5.25 MB
+whisper_init_state: kv cross size =   17.58 MB
+whisper_init_state: compute buffer (conv)   =   14.11 MB
+whisper_init_state: compute buffer (encode) =   81.95 MB
+whisper_init_state: compute buffer (cross)  =    4.49 MB
+whisper_init_state: compute buffer (decode) =   24.70 MB
+
+system_info: n_threads = 4 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | METAL = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | CUDA = 1 | COREML = 0 | OPENVINO = 0 | 
+
+main: processing '../models-mnt/whisper//jfk.wav' (176000 samples, 11.0 sec), 4 threads, 1 processors, lang = en, task = transcribe, timestamps = 1 ...
+
+
+[00:00:00.000 --> 00:00:11.000]   And so my fellow Americans, ask not what your country can do for you, ask what you can do for your country.
+
+whisper_print_timings:     load time =   940.16 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =    17.80 ms
+whisper_print_timings:   sample time =    20.28 ms /    27 runs (    0.75 ms per run)
+whisper_print_timings:   encode time =   480.57 ms /     1 runs (  480.57 ms per run)
+whisper_print_timings:   decode time =   128.37 ms /    27 runs (    4.75 ms per run)
+whisper_print_timings:   prompt time =     0.00 ms /     1 runs (    0.00 ms per run)
+whisper_print_timings:    total time =  1594.50 ms
+
+
+real	0m1.750s
+user	0m2.485s
+sys	0m0.671s
