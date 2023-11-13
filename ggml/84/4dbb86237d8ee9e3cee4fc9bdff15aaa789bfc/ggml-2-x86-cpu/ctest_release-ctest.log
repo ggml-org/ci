@@ -1,0 +1,46 @@
++ ctest --output-on-failure
+Test project /home/ggml/work/ggml/build-ci-release
+      Start  1: test-grad0
+ 1/18 Test  #1: test-grad0 .......................   Passed    3.29 sec
+      Start  2: test-opt
+ 2/18 Test  #2: test-opt .........................   Passed    1.60 sec
+      Start  3: test-quantize-fns
+ 3/18 Test  #3: test-quantize-fns ................   Passed    0.01 sec
+      Start  4: test-quantize-perf
+ 4/18 Test  #4: test-quantize-perf ...............   Passed    0.04 sec
+      Start  5: test-mul-mat0
+ 5/18 Test  #5: test-mul-mat0 ....................   Passed    0.56 sec
+      Start  6: test-mul-mat2
+ 6/18 Test  #6: test-mul-mat2 ....................   Passed    2.81 sec
+      Start  7: test0
+ 7/18 Test  #7: test0 ............................   Passed    0.00 sec
+      Start  8: test1
+ 8/18 Test  #8: test1 ............................   Passed    0.00 sec
+      Start  9: test2
+ 9/18 Test  #9: test2 ............................   Passed    0.02 sec
+      Start 10: test3
+10/18 Test #10: test3 ............................   Passed    0.02 sec
+      Start 11: test-pool
+11/18 Test #11: test-pool ........................   Passed    0.00 sec
+      Start 12: test-conv-transpose
+12/18 Test #12: test-conv-transpose ..............   Passed    0.00 sec
+      Start 13: test-rel-pos
+13/18 Test #13: test-rel-pos .....................   Passed    0.00 sec
+      Start 14: test-customop
+14/18 Test #14: test-customop ....................   Passed    0.00 sec
+      Start 15: test-xpos
+15/18 Test #15: test-xpos ........................   Passed    0.00 sec
+      Start 16: test-conv1d
+16/18 Test #16: test-conv1d ......................   Passed    0.00 sec
+      Start 17: test-conv2d
+17/18 Test #17: test-conv2d ......................   Passed    0.00 sec
+      Start 18: test-mul-mat
+18/18 Test #18: test-mul-mat .....................   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 18
+
+Total Test time (real) =   8.39 sec
+
+real	0m8.392s
+user	0m7.472s
+sys	0m4.660s
