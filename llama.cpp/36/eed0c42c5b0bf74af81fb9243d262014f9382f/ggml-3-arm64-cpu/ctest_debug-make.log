@@ -1,0 +1,149 @@
++ make -j
+[  1%] Generating build details from Git
+[  3%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  5%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  6%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  6%] Built target build_info
+/home/ggml/work/llama.cpp/ggml-quants.c: In function ‘ggml_vec_dot_q2_K_q8_K’:
+/home/ggml/work/llama.cpp/ggml-quants.c:3675:41: warning: missing braces around initializer [-Wmissing-braces]
+ 3675 |         const ggml_int16x8x2_t mins16 = {vreinterpretq_s16_u16(vmovl_u8(vget_low_u8(mins))), vreinterpretq_s16_u16(vmovl_u8(vget_high_u8(mins)))};
+      |                                         ^
+      |                                          {                                                                                                      }
+/home/ggml/work/llama.cpp/ggml-quants.c: In function ‘ggml_vec_dot_q6_K_q8_K’:
+/home/ggml/work/llama.cpp/ggml-quants.c:6624:43: warning: missing braces around initializer [-Wmissing-braces]
+ 6624 |         const ggml_int16x8x2_t q6scales = {vmovl_s8(vget_low_s8(scales)), vmovl_s8(vget_high_s8(scales))};
+      |                                           ^
+      |                                            {                                                            }
+[  6%] Built target ggml
+[  8%] Linking C static library libggml_static.a
+[  8%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+[  8%] Built target ggml_static
+[ 10%] Linking CXX static library libllama.a
+[ 10%] Built target llama
+[ 12%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+[ 12%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
+[ 13%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
+[ 14%] Building C object tests/CMakeFiles/test-c.dir/test-c.c.o
+[ 16%] Building CXX object examples/llava/CMakeFiles/llava.dir/clip.cpp.o
+[ 16%] Building CXX object examples/llava/CMakeFiles/llava.dir/llava.cpp.o
+[ 17%] Building CXX object common/CMakeFiles/common.dir/sampling.cpp.o
+[ 18%] Building CXX object common/CMakeFiles/common.dir/common.cpp.o
+[ 20%] Building CXX object common/CMakeFiles/common.dir/grammar-parser.cpp.o
+[ 21%] Building CXX object common/CMakeFiles/common.dir/console.cpp.o
+[ 22%] Building CXX object common/CMakeFiles/common.dir/train.cpp.o
+[ 23%] Linking CXX executable ../bin/test-c
+[ 23%] Built target test-c
+[ 24%] Linking CXX executable ../../bin/benchmark
+[ 24%] Built target benchmark
+[ 25%] Linking CXX executable ../../bin/quantize
+[ 25%] Built target quantize
+[ 26%] Linking CXX executable ../../bin/quantize-stats
+[ 26%] Built target llava
+[ 27%] Linking CXX static library libllava_static.a
+[ 27%] Built target quantize-stats
+[ 27%] Built target llava_static
+[ 28%] Linking CXX static library libcommon.a
+[ 28%] Built target common
+[ 30%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 31%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 32%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
+[ 33%] Building CXX object tests/CMakeFiles/test-tokenizer-0-falcon.dir/test-tokenizer-0-falcon.cpp.o
+[ 34%] Building CXX object tests/CMakeFiles/test-tokenizer-0-llama.dir/test-tokenizer-0-llama.cpp.o
+[ 35%] Building CXX object tests/CMakeFiles/test-tokenizer-1-bpe.dir/test-tokenizer-1-bpe.cpp.o
+[ 36%] Building CXX object tests/CMakeFiles/test-grammar-parser.dir/test-grammar-parser.cpp.o
+[ 37%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+[ 38%] Building CXX object tests/CMakeFiles/test-tokenizer-1-llama.dir/test-tokenizer-1-llama.cpp.o
+[ 40%] Building CXX object tests/CMakeFiles/test-llama-grammar.dir/test-llama-grammar.cpp.o
+[ 41%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
+[ 42%] Building CXX object tests/CMakeFiles/test-rope.dir/test-rope.cpp.o
+[ 43%] Building CXX object examples/batched/CMakeFiles/batched.dir/batched.cpp.o
+[ 44%] Building CXX object examples/batched-bench/CMakeFiles/batched-bench.dir/batched-bench.cpp.o
+[ 45%] Building CXX object examples/beam-search/CMakeFiles/beam-search.dir/beam-search.cpp.o
+[ 46%] Building CXX object examples/convert-llama2c-to-ggml/CMakeFiles/convert-llama2c-to-ggml.dir/convert-llama2c-to-ggml.cpp.o
+[ 47%] Building CXX object examples/embedding/CMakeFiles/embedding.dir/embedding.cpp.o
+[ 48%] Building CXX object examples/infill/CMakeFiles/infill.dir/infill.cpp.o
+[ 50%] Building CXX object examples/finetune/CMakeFiles/finetune.dir/finetune.cpp.o
+[ 51%] Building CXX object examples/llama-bench/CMakeFiles/llama-bench.dir/llama-bench.cpp.o
+[ 52%] Building CXX object examples/llava/CMakeFiles/llava-cli.dir/llava-cli.cpp.o
+[ 53%] Building CXX object examples/main/CMakeFiles/main.dir/main.cpp.o
+[ 54%] Building CXX object examples/parallel/CMakeFiles/parallel.dir/parallel.cpp.o
+[ 55%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
+[ 56%] Building CXX object examples/perplexity/CMakeFiles/perplexity.dir/perplexity.cpp.o
+[ 57%] Linking CXX executable ../bin/test-grad0
+[ 58%] Building CXX object examples/speculative/CMakeFiles/speculative.dir/speculative.cpp.o
+[ 60%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
+[ 61%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
+[ 62%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
+[ 63%] Building CXX object examples/export-lora/CMakeFiles/export-lora.dir/export-lora.cpp.o
+[ 64%] Building CXX object pocs/vdot/CMakeFiles/q8dot.dir/q8dot.cpp.o
+[ 65%] Building CXX object pocs/vdot/CMakeFiles/vdot.dir/vdot.cpp.o
+[ 66%] Linking CXX executable ../bin/test-rope
+[ 66%] Built target test-grad0
+[ 67%] Linking CXX executable ../bin/test-quantize-fns
+[ 68%] Linking CXX executable ../bin/test-sampling
+[ 68%] Built target test-rope
+[ 70%] Linking CXX executable ../bin/test-grammar-parser
+[ 70%] Built target test-quantize-fns
+[ 70%] Built target test-grammar-parser
+[ 71%] Linking CXX executable ../../bin/baby-llama
+[ 72%] Linking CXX executable ../bin/test-quantize-perf
+[ 72%] Built target test-sampling
+[ 73%] Linking CXX executable ../bin/test-tokenizer-0-llama
+[ 74%] Linking CXX executable ../../bin/embedding
+[ 75%] Linking CXX executable ../bin/test-tokenizer-0-falcon
+[ 76%] Linking CXX executable ../../bin/batched-bench
+[ 77%] Linking CXX executable ../../bin/q8dot
+[ 77%] Built target test-quantize-perf
+[ 78%] Linking CXX executable ../../bin/beam-search
+[ 80%] Linking CXX executable ../../bin/vdot
+[ 80%] Built target q8dot
+[ 81%] Linking CXX executable ../../bin/save-load-state
+[ 82%] Linking CXX executable ../../bin/batched
+[ 82%] Built target baby-llama
+[ 82%] Built target vdot
+[ 83%] Linking CXX executable ../../bin/convert-llama2c-to-ggml
+[ 84%] Linking CXX executable ../../bin/simple
+[ 84%] Built target test-tokenizer-0-llama
+[ 84%] Built target embedding
+[ 85%] Linking CXX executable ../../bin/llava-cli
+[ 85%] Built target convert-llama2c-to-ggml
+[ 86%] Linking CXX executable ../../bin/parallel
+[ 86%] Built target test-tokenizer-0-falcon
+[ 86%] Built target batched-bench
+[ 87%] Linking CXX executable ../../bin/speculative
+[ 88%] Linking CXX executable ../../bin/export-lora
+[ 90%] Linking CXX executable ../../bin/infill
+[ 90%] Built target beam-search
+[ 90%] Built target export-lora
+[ 91%] Linking CXX executable ../../bin/train-text-from-scratch
+[ 91%] Built target save-load-state
+[ 91%] Built target batched
+[ 91%] Built target simple
+[ 92%] Linking CXX executable ../../bin/perplexity
+[ 93%] Linking CXX executable ../bin/test-tokenizer-1-bpe
+[ 93%] Built target llava-cli
+[ 94%] Linking CXX executable ../../bin/finetune
+[ 95%] Linking CXX executable ../bin/test-tokenizer-1-llama
+[ 96%] Linking CXX executable ../../bin/main
+[ 96%] Built target parallel
+[ 96%] Built target speculative
+[ 96%] Built target infill
+[ 96%] Built target train-text-from-scratch
+[ 96%] Built target perplexity
+[ 96%] Built target finetune
+[ 96%] Built target test-tokenizer-1-bpe
+[ 96%] Built target test-tokenizer-1-llama
+[ 96%] Built target main
+[ 97%] Linking CXX executable ../../bin/llama-bench
+[ 97%] Built target llama-bench
+[ 98%] Linking CXX executable ../bin/test-llama-grammar
+[ 98%] Built target test-llama-grammar
+[100%] Linking CXX executable ../../bin/server
+[100%] Built target server
+
+real	0m30.621s
+user	1m19.414s
+sys	0m9.558s
