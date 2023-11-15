@@ -1,0 +1,199 @@
++ make -j
+[  1%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  5%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  5%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  6%] Built target build_info
+/home/ggml/work/llama.cpp/ggml.c: In function ‘ggml_get_n_tasks’:
+/home/ggml/work/llama.cpp/ggml.c:2019:24: warning: array subscript 69 is above array bounds of ‘const char *[68]’ [-Warray-bounds]
+ 2019 |     return GGML_OP_NAME[op];
+      |            ~~~~~~~~~~~~^~~~
+/home/ggml/work/llama.cpp/ggml.c:1589:21: note: while referencing ‘GGML_OP_NAME’
+ 1589 | static const char * GGML_OP_NAME[GGML_OP_COUNT] = {
+      |                     ^~~~~~~~~~~~
+[  6%] Built target ggml
+[  7%] Linking C static library libggml_static.a
+[  8%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+[  8%] Built target ggml_static
+[ 10%] Linking CXX static library libllama.a
+[ 10%] Built target llama
+[ 11%] Building C object tests/CMakeFiles/test-c.dir/test-c.c.o
+[ 12%] Building CXX object examples/llava/CMakeFiles/llava.dir/llava.cpp.o
+[ 13%] Building CXX object examples/llava/CMakeFiles/llava.dir/clip.cpp.o
+[ 14%] Building CXX object common/CMakeFiles/common.dir/common.cpp.o
+[ 15%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
+[ 16%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+[ 17%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
+[ 18%] Building CXX object common/CMakeFiles/common.dir/train.cpp.o
+[ 20%] Building CXX object common/CMakeFiles/common.dir/grammar-parser.cpp.o
+[ 21%] Building CXX object common/CMakeFiles/common.dir/console.cpp.o
+[ 22%] Building CXX object common/CMakeFiles/common.dir/sampling.cpp.o
+[ 23%] Linking CXX executable ../bin/test-c
+[ 23%] Built target test-c
+/home/ggml/work/llama.cpp/examples/llava/llava.cpp: In function ‘bool load_file_to_bytes(const char*, unsigned char**, long int*)’:
+/home/ggml/work/llama.cpp/examples/llava/llava.cpp:130:10: warning: ignoring return value of ‘size_t fread(void*, size_t, size_t, FILE*)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  130 |     fread(buffer, 1, fileSize, file); // Read the file into the buffer
+      |     ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 24%] Linking CXX executable ../../bin/quantize
+[ 24%] Built target quantize
+[ 25%] Linking CXX executable ../../bin/benchmark
+[ 25%] Built target benchmark
+[ 26%] Linking CXX executable ../../bin/quantize-stats
+[ 26%] Built target quantize-stats
+[ 27%] Linking CXX static library libcommon.a
+[ 27%] Built target common
+[ 28%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 30%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 31%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
+[ 33%] Building CXX object tests/CMakeFiles/test-tokenizer-0-llama.dir/test-tokenizer-0-llama.cpp.o
+[ 33%] Building CXX object tests/CMakeFiles/test-tokenizer-0-falcon.dir/test-tokenizer-0-falcon.cpp.o
+[ 34%] Building CXX object tests/CMakeFiles/test-tokenizer-1-bpe.dir/test-tokenizer-1-bpe.cpp.o
+[ 35%] Building CXX object tests/CMakeFiles/test-grammar-parser.dir/test-grammar-parser.cpp.o
+[ 36%] Building CXX object tests/CMakeFiles/test-tokenizer-1-llama.dir/test-tokenizer-1-llama.cpp.o
+[ 37%] Building CXX object tests/CMakeFiles/test-llama-grammar.dir/test-llama-grammar.cpp.o
+[ 38%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+[ 40%] Building CXX object tests/CMakeFiles/test-rope.dir/test-rope.cpp.o
+[ 41%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
+[ 42%] Building CXX object examples/batched/CMakeFiles/batched.dir/batched.cpp.o
+[ 43%] Building CXX object examples/beam-search/CMakeFiles/beam-search.dir/beam-search.cpp.o
+[ 44%] Building CXX object examples/convert-llama2c-to-ggml/CMakeFiles/convert-llama2c-to-ggml.dir/convert-llama2c-to-ggml.cpp.o
+[ 45%] Building CXX object examples/batched-bench/CMakeFiles/batched-bench.dir/batched-bench.cpp.o
+[ 46%] Building CXX object examples/finetune/CMakeFiles/finetune.dir/finetune.cpp.o
+[ 47%] Building CXX object examples/infill/CMakeFiles/infill.dir/infill.cpp.o
+[ 48%] Building CXX object examples/embedding/CMakeFiles/embedding.dir/embedding.cpp.o
+[ 50%] Building CXX object examples/llama-bench/CMakeFiles/llama-bench.dir/llama-bench.cpp.o
+[ 51%] Building CXX object examples/main/CMakeFiles/main.dir/main.cpp.o
+[ 52%] Building CXX object examples/parallel/CMakeFiles/parallel.dir/parallel.cpp.o
+[ 53%] Building CXX object examples/perplexity/CMakeFiles/perplexity.dir/perplexity.cpp.o
+[ 54%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
+[ 55%] Building CXX object examples/speculative/CMakeFiles/speculative.dir/speculative.cpp.o
+[ 56%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
+[ 57%] Building CXX object examples/export-lora/CMakeFiles/export-lora.dir/export-lora.cpp.o
+[ 58%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
+[ 60%] Building CXX object pocs/vdot/CMakeFiles/vdot.dir/vdot.cpp.o
+[ 61%] Building CXX object pocs/vdot/CMakeFiles/q8dot.dir/q8dot.cpp.o
+[ 62%] Linking CXX executable ../bin/test-quantize-fns
+[ 63%] Linking CXX executable ../bin/test-rope
+[ 63%] Built target test-quantize-fns
+[ 64%] Linking CXX executable ../bin/test-grammar-parser
+[ 64%] Built target test-rope
+[ 65%] Linking CXX executable ../bin/test-sampling
+[ 65%] Built target test-grammar-parser
+[ 65%] Built target test-sampling
+[ 66%] Linking CXX executable ../../bin/baby-llama
+[ 67%] Linking CXX executable ../../bin/q8dot
+[ 68%] Linking CXX executable ../../bin/vdot
+[ 70%] Linking CXX executable ../bin/test-quantize-perf
+[ 70%] Built target q8dot
+[ 71%] Linking CXX executable ../../bin/beam-search
+[ 71%] Built target baby-llama
+[ 72%] Linking CXX executable ../../bin/save-load-state
+[ 73%] Linking CXX executable ../../bin/embedding
+[ 73%] Built target vdot
+[ 73%] Built target beam-search
+[ 74%] Linking CXX executable ../../bin/batched
+[ 74%] Built target save-load-state
+[ 74%] Built target test-quantize-perf
+[ 75%] Linking CXX executable ../bin/test-grad0
+[ 75%] Built target embedding
+[ 75%] Built target test-grad0
+[ 75%] Built target batched
+[ 76%] Linking CXX executable ../bin/test-tokenizer-1-llama
+[ 77%] Linking CXX executable ../../bin/batched-bench
+[ 78%] Linking CXX executable ../../bin/simple
+[ 80%] Linking CXX executable ../bin/test-tokenizer-0-falcon
+[ 81%] Linking CXX executable ../bin/test-tokenizer-0-llama
+[ 82%] Linking CXX executable ../../bin/export-lora
+[ 83%] Linking CXX executable ../bin/test-tokenizer-1-bpe
+[ 83%] Built target test-tokenizer-1-llama
+[ 83%] Built target batched-bench
+[ 83%] Built target simple
+[ 83%] Built target export-lora
+[ 83%] Built target test-tokenizer-0-falcon
+[ 84%] Linking CXX executable ../../bin/parallel
+[ 84%] Built target test-tokenizer-1-bpe
+[ 84%] Built target test-tokenizer-0-llama
+[ 84%] Built target parallel
+[ 85%] Linking CXX executable ../../bin/convert-llama2c-to-ggml
+[ 85%] Built target convert-llama2c-to-ggml
+[ 86%] Linking CXX executable ../../bin/perplexity
+[ 87%] Linking CXX executable ../../bin/speculative
+[ 87%] Built target perplexity
+[ 87%] Built target speculative
+[ 88%] Linking CXX executable ../../bin/train-text-from-scratch
+[ 88%] Built target train-text-from-scratch
+[ 90%] Linking CXX executable ../../bin/infill
+[ 91%] Linking CXX executable ../../bin/main
+[ 91%] Built target infill
+[ 91%] Built target main
+[ 92%] Linking CXX executable ../../bin/finetune
+[ 92%] Built target finetune
+[ 92%] Built target llava
+[ 93%] Linking CXX static library libllava_static.a
+[ 94%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
+[ 95%] Building CXX object examples/llava/CMakeFiles/llava-cli.dir/llava-cli.cpp.o
+[ 95%] Built target llava_static
+[ 96%] Linking CXX executable ../../bin/llava-cli
+[ 96%] Built target llava-cli
+[ 97%] Linking CXX executable ../../bin/llama-bench
+[ 97%] Built target llama-bench
+[ 98%] Linking CXX executable ../bin/test-llama-grammar
+[ 98%] Built target test-llama-grammar
+In copy constructor ‘task_result::task_result(const task_result&)’,
+    inlined from ‘void __gnu_cxx::new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = task_result; _Args = {const task_result&}; _Tp = task_result]’ at /usr/include/c++/11/ext/new_allocator.h:162:4,
+    inlined from ‘static void std::allocator_traits<std::allocator<_Tp1> >::construct(std::allocator_traits<std::allocator<_Tp1> >::allocator_type&, _Up*, _Args&& ...) [with _Up = task_result; _Args = {const task_result&}; _Tp = task_result]’ at /usr/include/c++/11/bits/alloc_traits.h:516:17,
+    inlined from ‘void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = task_result; _Alloc = std::allocator<task_result>]’ at /usr/include/c++/11/bits/stl_vector.h:1192:30,
+    inlined from ‘void llama_server_context::send_error(int, std::string)’ at /home/ggml/work/llama.cpp/examples/server/server.cpp:1097:32:
+/home/ggml/work/llama.cpp/examples/server/server.cpp:154:8: warning: ‘res.task_result::stop’ may be used uninitialized [-Wmaybe-uninitialized]
+  154 | struct task_result {
+      |        ^~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/server/server.cpp: In member function ‘void llama_server_context::send_error(int, std::string)’:
+/home/ggml/work/llama.cpp/examples/server/server.cpp:1093:21: note: ‘res’ declared here
+ 1093 |         task_result res;
+      |                     ^~~
+In copy constructor ‘task_server::task_server(const task_server&)’,
+    inlined from ‘void __gnu_cxx::new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = task_server; _Args = {const task_server&}; _Tp = task_server]’ at /usr/include/c++/11/ext/new_allocator.h:162:4,
+    inlined from ‘static void std::allocator_traits<std::allocator<_Tp1> >::construct(std::allocator_traits<std::allocator<_Tp1> >::allocator_type&, _Up*, _Args&& ...) [with _Up = task_server; _Args = {const task_server&}; _Tp = task_server]’ at /usr/include/c++/11/bits/alloc_traits.h:516:17,
+    inlined from ‘void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = task_server; _Alloc = std::allocator<task_server>]’ at /usr/include/c++/11/bits/stl_vector.h:1192:30,
+    inlined from ‘int llama_server_context::request_completion(json, bool, bool)’ at /home/ggml/work/llama.cpp/examples/server/server.cpp:1259:30,
+    inlined from ‘main(int, char**)::<lambda(const httplib::Request&, httplib::Response&)>’ at /home/ggml/work/llama.cpp/examples/server/server.cpp:2333:61:
+/home/ggml/work/llama.cpp/examples/server/server.cpp:145:8: warning: ‘task.task_server::target_id’ may be used uninitialized [-Wmaybe-uninitialized]
+  145 | struct task_server {
+      |        ^~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/server/server.cpp: In lambda function:
+/home/ggml/work/llama.cpp/examples/server/server.cpp:1253:21: note: ‘task’ declared here
+ 1253 |         task_server task;
+      |                     ^~~~
+In copy constructor ‘task_server::task_server(const task_server&)’,
+    inlined from ‘void __gnu_cxx::new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = task_server; _Args = {const task_server&}; _Tp = task_server]’ at /usr/include/c++/11/ext/new_allocator.h:162:4,
+    inlined from ‘static void std::allocator_traits<std::allocator<_Tp1> >::construct(std::allocator_traits<std::allocator<_Tp1> >::allocator_type&, _Up*, _Args&& ...) [with _Up = task_server; _Args = {const task_server&}; _Tp = task_server]’ at /usr/include/c++/11/bits/alloc_traits.h:516:17,
+    inlined from ‘void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = task_server; _Alloc = std::allocator<task_server>]’ at /usr/include/c++/11/bits/stl_vector.h:1192:30,
+    inlined from ‘int llama_server_context::request_completion(json, bool, bool)’ at /home/ggml/work/llama.cpp/examples/server/server.cpp:1259:30,
+    inlined from ‘main(int, char**)::<lambda(const httplib::Request&, httplib::Response&)>’ at /home/ggml/work/llama.cpp/examples/server/server.cpp:2388:61:
+/home/ggml/work/llama.cpp/examples/server/server.cpp:145:8: warning: ‘task.task_server::target_id’ may be used uninitialized [-Wmaybe-uninitialized]
+  145 | struct task_server {
+      |        ^~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/server/server.cpp: In lambda function:
+/home/ggml/work/llama.cpp/examples/server/server.cpp:1253:21: note: ‘task’ declared here
+ 1253 |         task_server task;
+      |                     ^~~~
+In copy constructor ‘task_server::task_server(const task_server&)’,
+    inlined from ‘void __gnu_cxx::new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = task_server; _Args = {const task_server&}; _Tp = task_server]’ at /usr/include/c++/11/ext/new_allocator.h:162:4,
+    inlined from ‘static void std::allocator_traits<std::allocator<_Tp1> >::construct(std::allocator_traits<std::allocator<_Tp1> >::allocator_type&, _Up*, _Args&& ...) [with _Up = task_server; _Args = {const task_server&}; _Tp = task_server]’ at /usr/include/c++/11/bits/alloc_traits.h:516:17,
+    inlined from ‘void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = task_server; _Alloc = std::allocator<task_server>]’ at /usr/include/c++/11/bits/stl_vector.h:1192:30,
+    inlined from ‘int llama_server_context::request_completion(json, bool, bool)’ at /home/ggml/work/llama.cpp/examples/server/server.cpp:1259:30,
+    inlined from ‘main(int, char**)::<lambda(const httplib::Request&, httplib::Response&)>’ at /home/ggml/work/llama.cpp/examples/server/server.cpp:2492:61:
+/home/ggml/work/llama.cpp/examples/server/server.cpp:145:8: warning: ‘task.task_server::target_id’ may be used uninitialized [-Wmaybe-uninitialized]
+  145 | struct task_server {
+      |        ^~~~~~~~~~~
+/home/ggml/work/llama.cpp/examples/server/server.cpp: In lambda function:
+/home/ggml/work/llama.cpp/examples/server/server.cpp:1253:21: note: ‘task’ declared here
+ 1253 |         task_server task;
+      |                     ^~~~
+[100%] Linking CXX executable ../../bin/server
+[100%] Built target server
+
+real	0m42.454s
+user	1m49.139s
+sys	0m5.114s
