@@ -1,0 +1,112 @@
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 8
+```
++ ctest --output-on-failure -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-debug
+      Start  1: test-quantize-fns
+ 1/18 Test  #1: test-quantize-fns ...................   Passed    0.04 sec
+      Start  2: test-quantize-perf
+ 2/18 Test  #2: test-quantize-perf ..................   Passed    0.25 sec
+      Start  3: test-sampling
+ 3/18 Test  #3: test-sampling .......................   Passed    0.00 sec
+      Start  4: test-tokenizer-0-llama
+ 4/18 Test  #4: test-tokenizer-0-llama ..............   Passed    0.18 sec
+      Start  5: test-tokenizer-0-falcon
+ 5/18 Test  #5: test-tokenizer-0-falcon .............   Passed    1.21 sec
+      Start  6: test-tokenizer-1-llama
+ 6/18 Test  #6: test-tokenizer-1-llama ..............   Passed   18.39 sec
+      Start  7: test-tokenizer-1-baichuan
+ 7/18 Test  #7: test-tokenizer-1-baichuan ...........   Passed   18.79 sec
+      Start  8: test-tokenizer-1-falcon
+ 8/18 Test  #8: test-tokenizer-1-falcon .............   Passed   16.31 sec
+      Start  9: test-tokenizer-1-aquila
+ 9/18 Test  #9: test-tokenizer-1-aquila .............   Passed   19.99 sec
+      Start 10: test-tokenizer-1-mpt
+10/18 Test #10: test-tokenizer-1-mpt ................   Passed   14.89 sec
+      Start 11: test-tokenizer-1-stablelm-3b-4e1t
+11/18 Test #11: test-tokenizer-1-stablelm-3b-4e1t ...Subprocess aborted***Exception:   1.11 sec
+main : reading vocab from: '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-stablelm-3b-4e1t.gguf'
+llama_model_loader: loaded meta data with 16 key-value pairs and 0 tensors from /home/ggml/work/llama.cpp/tests/../models/ggml-vocab-stablelm-3b-4e1t.gguf (version GGUF V3 (latest))
+llama_model_loader: - kv   0:                       general.architecture str              = stablelm
+llama_model_loader: - kv   1:                               general.name str              = stablelm-3b-4e1t
+llama_model_loader: - kv   2:                    stablelm.context_length u32              = 4096
+llama_model_loader: - kv   3:                  stablelm.embedding_length u32              = 2560
+llama_model_loader: - kv   4:                       stablelm.block_count u32              = 32
+llama_model_loader: - kv   5:               stablelm.feed_forward_length u32              = 6912
+llama_model_loader: - kv   6:              stablelm.rope.dimension_count u32              = 20
+llama_model_loader: - kv   7:              stablelm.attention.head_count u32              = 32
+llama_model_loader: - kv   8:             stablelm.use_parallel_residual bool             = true
+llama_model_loader: - kv   9:      stablelm.attention.layer_norm_epsilon f32              = 0.000010
+llama_model_loader: - kv  10:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  11:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+llama_model_loader: - kv  12:                  tokenizer.ggml.token_type arr[i32,50304]   = [4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  13:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+llama_model_loader: - kv  14:                tokenizer.ggml.bos_token_id u32              = 0
+llama_model_loader: - kv  15:                tokenizer.ggml.eos_token_id u32              = 0
+llm_load_vocab: mismatch in special tokens definition ( 31/50304 vs 52/50304 ).
+llm_load_print_meta: format           = GGUF V3 (latest)
+llm_load_print_meta: arch             = stablelm
+llm_load_print_meta: vocab type       = BPE
+llm_load_print_meta: n_vocab          = 50304
+llm_load_print_meta: n_merges         = 50009
+llm_load_print_meta: n_ctx_train      = 4096
+llm_load_print_meta: n_embd           = 2560
+llm_load_print_meta: n_head           = 32
+llm_load_print_meta: n_head_kv        = 32
+llm_load_print_meta: n_layer          = 32
+llm_load_print_meta: n_rot            = 20
+llm_load_print_meta: n_gqa            = 1
+llm_load_print_meta: f_norm_eps       = 1.0e-05
+llm_load_print_meta: f_norm_rms_eps   = 0.0e+00
+llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+llm_load_print_meta: n_ff             = 6912
+llm_load_print_meta: rope scaling     = linear
+llm_load_print_meta: freq_base_train  = 10000.0
+llm_load_print_meta: freq_scale_train = 1
+llm_load_print_meta: n_yarn_orig_ctx  = 4096
+llm_load_print_meta: rope_finetuned   = unknown
+llm_load_print_meta: model type       = 3B
+llm_load_print_meta: model ftype      = all F32 (guessed)
+llm_load_print_meta: model params     = 0.00 B
+llm_load_print_meta: model size       = 0.00 MiB (-nan BPW) 
+llm_load_print_meta: general.name     = stablelm-3b-4e1t
+llm_load_print_meta: BOS token        = 0 '<|endoftext|>'
+llm_load_print_meta: EOS token        = 0 '<|endoftext|>'
+llm_load_print_meta: LF token         = 128 'Ä'
+llama_model_load: vocab only - skipping tensors
+llama_new_context_with_model: n_ctx      = 512
+llama_new_context_with_model: freq_base  = 10000.0
+llama_new_context_with_model: freq_scale = 1
+GGML_ASSERT: /home/ggml/work/llama.cpp/llama.cpp:8744: hparams.n_embd_head() % ggml_blck_size(k_type) == 0
+
+      Start 12: test-tokenizer-1-gpt-neox
+12/18 Test #12: test-tokenizer-1-gpt-neox ...........   Passed   14.86 sec
+      Start 13: test-tokenizer-1-refact
+13/18 Test #13: test-tokenizer-1-refact .............   Passed   14.57 sec
+      Start 14: test-tokenizer-1-starcoder
+14/18 Test #14: test-tokenizer-1-starcoder ..........   Passed   14.60 sec
+      Start 15: test-grammar-parser
+15/18 Test #15: test-grammar-parser .................   Passed    0.00 sec
+      Start 16: test-llama-grammar
+16/18 Test #16: test-llama-grammar ..................   Passed    0.00 sec
+      Start 17: test-grad0
+17/18 Test #17: test-grad0 ..........................   Passed    5.72 sec
+      Start 18: test-rope
+18/18 Test #18: test-rope ...........................   Passed    0.08 sec
+
+94% tests passed, 1 tests failed out of 18
+
+Total Test time (real) = 141.01 sec
+
+The following tests FAILED:
+	 11 - test-tokenizer-1-stablelm-3b-4e1t (Subprocess aborted)
+Errors while running CTest
+
+real	2m21.048s
+user	2m20.881s
+sys	0m7.453s
+```
+
