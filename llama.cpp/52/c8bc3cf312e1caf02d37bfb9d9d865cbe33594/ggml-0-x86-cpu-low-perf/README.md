@@ -1,0 +1,149 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 3:50.65
+- date:    Tue Dec  5 10:09:43 UTC 2023
+- repo:    https://github.com/ggerganov/llama.cpp
+- commit:  https://github.com/ggerganov/llama.cpp/commit/52c8bc3cf312e1caf02d37bfb9d9d865cbe33594
+- author:  MaggotHATE
+```
+sampling : custom samplers order (#4285)
+
+* Samplers sequence order w parameter
+
+* Cleaned commented code
+
+* Fixed formatting
+
+* Rewrote with unordered_map
+
+* Revert and rewrite, too many problems and safeguards would be needed
+
+* Fixed code style
+
+* Code style fixes according to review
+
+* More readable samplers input string, fixed help
+
+* Style fix in sampler_queue
+
+* Formatting fixes
+
+* Fixing whitespaces
+```
+
+## Environment
+
+```
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+GG_BUILD_LOW_PERF=1
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-debug
+      Start  1: test-quantize-fns
+ 1/18 Test  #1: test-quantize-fns ...................   Passed    0.03 sec
+      Start  2: test-quantize-perf
+ 2/18 Test  #2: test-quantize-perf ..................   Passed    0.21 sec
+      Start  3: test-sampling
+ 3/18 Test  #3: test-sampling .......................   Passed    0.00 sec
+      Start  4: test-tokenizer-0-llama
+ 4/18 Test  #4: test-tokenizer-0-llama ..............   Passed    0.14 sec
+      Start  5: test-tokenizer-0-falcon
+ 5/18 Test  #5: test-tokenizer-0-falcon .............   Passed    0.88 sec
+      Start  6: test-tokenizer-1-llama
+ 6/18 Test  #6: test-tokenizer-1-llama ..............   Passed   14.77 sec
+      Start  7: test-tokenizer-1-baichuan
+ 7/18 Test  #7: test-tokenizer-1-baichuan ...........   Passed   15.01 sec
+      Start  8: test-tokenizer-1-falcon
+ 8/18 Test  #8: test-tokenizer-1-falcon .............   Passed   12.62 sec
+      Start  9: test-tokenizer-1-aquila
+ 9/18 Test  #9: test-tokenizer-1-aquila .............   Passed   15.35 sec
+      Start 10: test-tokenizer-1-mpt
+10/18 Test #10: test-tokenizer-1-mpt ................   Passed   11.48 sec
+      Start 11: test-tokenizer-1-stablelm-3b-4e1t
+11/18 Test #11: test-tokenizer-1-stablelm-3b-4e1t ...   Passed   11.47 sec
+      Start 12: test-tokenizer-1-gpt-neox
+12/18 Test #12: test-tokenizer-1-gpt-neox ...........   Passed   11.46 sec
+      Start 13: test-tokenizer-1-refact
+13/18 Test #13: test-tokenizer-1-refact .............   Passed   11.34 sec
+      Start 14: test-tokenizer-1-starcoder
+14/18 Test #14: test-tokenizer-1-starcoder ..........   Passed   11.32 sec
+      Start 15: test-grammar-parser
+15/18 Test #15: test-grammar-parser .................   Passed    0.00 sec
+      Start 16: test-llama-grammar
+16/18 Test #16: test-llama-grammar ..................   Passed    0.00 sec
+      Start 17: test-grad0
+17/18 Test #17: test-grad0 ..........................   Passed    5.40 sec
+      Start 18: test-rope
+18/18 Test #18: test-rope ...........................   Passed    0.07 sec
+
+100% tests passed, 0 tests failed out of 18
+
+Total Test time (real) = 121.58 sec
+
+real	2m1.585s
+user	2m5.699s
+sys	0m4.259s
+```
+
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-release
+      Start  1: test-quantize-fns
+ 1/18 Test  #1: test-quantize-fns ...................   Passed    0.01 sec
+      Start  2: test-quantize-perf
+ 2/18 Test  #2: test-quantize-perf ..................   Passed    0.04 sec
+      Start  3: test-sampling
+ 3/18 Test  #3: test-sampling .......................   Passed    0.00 sec
+      Start  4: test-tokenizer-0-llama
+ 4/18 Test  #4: test-tokenizer-0-llama ..............   Passed    0.03 sec
+      Start  5: test-tokenizer-0-falcon
+ 5/18 Test  #5: test-tokenizer-0-falcon .............   Passed    0.19 sec
+      Start  6: test-tokenizer-1-llama
+ 6/18 Test  #6: test-tokenizer-1-llama ..............   Passed    1.52 sec
+      Start  7: test-tokenizer-1-baichuan
+ 7/18 Test  #7: test-tokenizer-1-baichuan ...........   Passed    1.60 sec
+      Start  8: test-tokenizer-1-falcon
+ 8/18 Test  #8: test-tokenizer-1-falcon .............   Passed    1.24 sec
+      Start  9: test-tokenizer-1-aquila
+ 9/18 Test  #9: test-tokenizer-1-aquila .............   Passed    1.63 sec
+      Start 10: test-tokenizer-1-mpt
+10/18 Test #10: test-tokenizer-1-mpt ................   Passed    1.10 sec
+      Start 11: test-tokenizer-1-stablelm-3b-4e1t
+11/18 Test #11: test-tokenizer-1-stablelm-3b-4e1t ...   Passed    1.11 sec
+      Start 12: test-tokenizer-1-gpt-neox
+12/18 Test #12: test-tokenizer-1-gpt-neox ...........   Passed    1.10 sec
+      Start 13: test-tokenizer-1-refact
+13/18 Test #13: test-tokenizer-1-refact .............   Passed    1.10 sec
+      Start 14: test-tokenizer-1-starcoder
+14/18 Test #14: test-tokenizer-1-starcoder ..........   Passed    1.11 sec
+      Start 15: test-grammar-parser
+15/18 Test #15: test-grammar-parser .................   Passed    0.00 sec
+      Start 16: test-llama-grammar
+16/18 Test #16: test-llama-grammar ..................   Passed    0.00 sec
+      Start 17: test-grad0
+17/18 Test #17: test-grad0 ..........................   Passed    5.13 sec
+      Start 18: test-rope
+18/18 Test #18: test-rope ...........................   Passed    0.05 sec
+
+100% tests passed, 0 tests failed out of 18
+
+Total Test time (real) =  16.98 sec
+
+real	0m16.985s
+user	0m20.642s
+sys	0m4.105s
+```
