@@ -385,20 +385,20 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
 I think it’s important not just to focus on yourself but also your friends, family or anyone who surround you as they all play an essential role at achieving a successful persona for ourselves both inside and out! I believe happiness is something everyone strives towards no matter what obstacles life throws in our way however there are many ways we can achieve it. For example the key to being happy may just lie within us but sometimes external factors such as people, places or things could help influence this change too ☺️
 “There’s only one rule that I know of: children, always take your parents to lunch.” – Alistair Cooke (American journalist)”Happiness is not something ready made. It comes from your own actions”. Dalai Lama XIV “If you have good thoughts they will shine out of your face like sunbeams and you will always look lovely
 I believe that life has many different paths to take, for example we can choose between a job or study which both give us the opportunity to live in comfort. However if there was only one path it would be so much easier! It’s important not just focus on yourself
-llama_print_timings:        load time =    1417.62 ms
-llama_print_timings:      sample time =     116.45 ms /   256 runs   (    0.45 ms per token,  2198.46 tokens per second)
-llama_print_timings: prompt eval time =      24.86 ms /     8 tokens (    3.11 ms per token,   321.78 tokens per second)
-llama_print_timings:        eval time =    3237.58 ms /   255 runs   (   12.70 ms per token,    78.76 tokens per second)
-llama_print_timings:       total time =    3458.95 ms
+llama_print_timings:        load time =    1442.51 ms
+llama_print_timings:      sample time =     117.27 ms /   256 runs   (    0.46 ms per token,  2182.92 tokens per second)
+llama_print_timings: prompt eval time =      24.86 ms /     8 tokens (    3.11 ms per token,   321.85 tokens per second)
+llama_print_timings:        eval time =    3259.43 ms /   255 runs   (   12.78 ms per token,    78.23 tokens per second)
+llama_print_timings:       total time =    3484.27 ms
 Log end
 
-real	0m5.972s
-user	0m4.474s
-sys	0m1.495s
+real	0m6.034s
+user	0m4.494s
+sys	0m1.537s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 1619 (1a1a1c3)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1701863497
+main: seed  = 1701873966
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
 ggml_init_cublas: found 1 CUDA devices:
@@ -771,18 +771,18 @@ llama_new_context_with_model: total VRAM used: 7875.83 MiB (model: 6695.83 MiB, 
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 1030.67 ms
+perplexity: tokenization took 995.584 ms
 perplexity: calculating perplexity over 4 chunks, batch_size=512
-perplexity: 1.17 seconds per pass - ETA 0.07 minutes
+perplexity: 1.18 seconds per pass - ETA 0.07 minutes
 [1]5.5319,[2]6.8326,[3]7.4388,[4]6.8806,
-llama_print_timings:        load time =    1948.42 ms
+llama_print_timings:        load time =    1968.84 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    3790.31 ms /  8192 tokens (    0.46 ms per token,  2161.30 tokens per second)
+llama_print_timings: prompt eval time =    3797.02 ms /  8192 tokens (    0.46 ms per token,  2157.48 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    5692.34 ms
+llama_print_timings:       total time =    5645.26 ms
 
 Final estimate: PPL = 6.8806 +/- 0.25603
 
-real	0m8.620s
-user	0m6.487s
-sys	0m2.735s
+real	0m8.570s
+user	0m6.385s
+sys	0m2.822s

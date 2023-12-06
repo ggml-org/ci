@@ -22,6 +22,6 @@ GNU ld (GNU Binutils for Ubuntu) 2.38
 -- Generating done (0.1s)
 -- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-debug
 
-real	0m0.609s
-user	0m0.451s
-sys	0m0.162s
+real	0m0.624s
+user	0m0.447s
+sys	0m0.179s
