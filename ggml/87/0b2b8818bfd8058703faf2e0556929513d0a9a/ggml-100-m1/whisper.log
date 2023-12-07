@@ -1,0 +1,28 @@
++ ./bin/whisper -m ../models-mnt/whisper//ggml-base.en.bin -f ../models-mnt/whisper//jfk.wav
+whisper_init_from_file_with_params_no_state: loading model from '../models-mnt/whisper//ggml-base.en.bin'
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51864
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 512
+whisper_model_load: n_audio_head  = 8
+whisper_model_load: n_audio_layer = 6
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 512
+whisper_model_load: n_text_head   = 8
+whisper_model_load: n_text_layer  = 6
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 2 (base)
+whisper_model_load: adding 1607 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_backend_init: using Metal backend
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M1
+ggml_metal_init: picking default device: Apple M1
+ggml_metal_init: default.metallib not found, loading from source
+ggml_metal_init: error: could not use bundle path to find ggml-metal.metal, falling back to trying cwd
+ggml_metal_init: loading 'ggml-metal.metal'
+ggml_metal_init: error: Error Domain=NSCocoaErrorDomain Code=260 "The file “ggml-metal.metal” couldn’t be opened because there is no such file." UserInfo={NSFilePath=ggml-metal.metal, NSUnderlyingError=0x6000008bd710 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+whisper_backend_init: ggml_backend_metal_init() failed
+ci/run.sh: line 219: 66794 Segmentation fault: 11  ./bin/whisper -m ${model_f16} -f ${audio_0}
