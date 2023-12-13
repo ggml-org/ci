@@ -1,0 +1,25 @@
++ make -j
+[  1%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  5%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  6%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda.cu.o
+[  7%] Built target build_info
+/home/ggml/work/llama.cpp/ggml-cuda.cu(7608): error: argument of type "int32_t" is incompatible with parameter of type "cudaStream_t"
+          ofs0, ofs1, s0, s1, p0, p1, d0, d1, main_stream);
+                                      ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(7608): error: too many arguments in function call
+          ofs0, ofs1, s0, s1, p0, p1, d0, d1, main_stream);
+                                          ^
+
+2 errors detected in the compilation of "/home/ggml/work/llama.cpp/ggml-cuda.cu".
+make[2]: *** [CMakeFiles/ggml.dir/build.make:133: CMakeFiles/ggml.dir/ggml-cuda.cu.o] Error 2
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:662: CMakeFiles/ggml.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m8.455s
+user	0m12.304s
+sys	0m0.675s
