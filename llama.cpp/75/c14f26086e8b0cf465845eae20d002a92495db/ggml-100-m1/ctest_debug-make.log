@@ -1,0 +1,36 @@
++ make -j
+[  1%] Generating build details from Git
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  4%] Compiling Metal kernels
+[  5%] Building C object CMakeFiles/ggml.dir/ggml-metal.m.o
+[  6%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  7%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+xcrun: error: unable to find utility "metal", not a developer tool or in PATH
+make[2]: *** [bin/ggml.metallib] Error 72
+make[1]: *** [CMakeFiles/ggml-metal.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+-- Found Git: /usr/bin/git (found version "2.39.2 (Apple Git-143)") 
+[  8%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  8%] Built target build_info
+/Users/ggml/work/llama.cpp/ggml.c:9670:17: warning: 'cblas_sgemm' is only available on macOS 13.3 or newer [-Wunguarded-availability-new]
+                cblas_sgemm(CblasRowMajor, CblasNoTrans, CblasTrans,
+                ^~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/vecLib.framework/Headers/cblas_new.h:891:6: note: 'cblas_sgemm' has been marked as being introduced in macOS 13.3 here, but the deployment target is macOS 13.0.0
+void cblas_sgemm(const enum CBLAS_ORDER ORDER,
+     ^
+/Users/ggml/work/llama.cpp/ggml.c:9670:17: note: enclose 'cblas_sgemm' in a __builtin_available check to silence this warning
+                cblas_sgemm(CblasRowMajor, CblasNoTrans, CblasTrans,
+                ^~~~~~~~~~~
+/Users/ggml/work/llama.cpp/ggml.c:10080:9: warning: 'cblas_sgemm' is only available on macOS 13.3 or newer [-Wunguarded-availability-new]
+        cblas_sgemm(CblasRowMajor, transposeA, CblasNoTrans, m, n, k, 1.0, a, lda, b, n, 0.0, c, n);
+        ^~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/vecLib.framework/Headers/cblas_new.h:891:6: note: 'cblas_sgemm' has been marked as being introduced in macOS 13.3 here, but the deployment target is macOS 13.0.0
+void cblas_sgemm(const enum CBLAS_ORDER ORDER,
+     ^
+/Users/ggml/work/llama.cpp/ggml.c:10080:9: note: enclose 'cblas_sgemm' in a __builtin_available check to silence this warning
+        cblas_sgemm(CblasRowMajor, transposeA, CblasNoTrans, m, n, k, 1.0, a, lda, b, n, 0.0, c, n);
+        ^~~~~~~~~~~
+2 warnings generated.
+[  8%] Built target ggml
+make: *** [all] Error 2
