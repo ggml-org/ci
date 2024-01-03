@@ -32,10 +32,10 @@ This warning is for project developers.  Use -Wno-dev to suppress it.
 
 -- ARM detected
 -- Accelerate framework found
--- Configuring done (1.0s)
+-- Configuring done (0.9s)
 -- Generating done (0.1s)
 -- Build files have been written to: /Users/ggml/work/ggml/build-ci-debug
 
-real	0m1.128s
-user	0m0.359s
-sys	0m0.677s
+real	0m1.114s
+user	0m0.344s
+sys	0m0.672s
