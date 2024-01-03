@@ -1,27 +1,3 @@
-## Summary
-
-- status:  SUCCESS ✅
-- runtime: 8:55.21
-- date:    Wed Jan  3 11:22:32 UTC 2024
-- repo:    https://github.com/ggerganov/ggml
-- commit:  https://github.com/ggerganov/ggml/commit/ec9d3e5fc5c6311131677eebb079e587b51f654e
-- author:  Georgi Gerganov
-```
-cuda : mark I16 and I32 ops as unsupported
-
-ggml-ci
-```
-
-## Environment
-
-```
-GG_BUILD_CUDA=1
-GG_BUILD_CXX_COMPILER=g++
-GG_BUILD_C_COMPILER=gcc
-```
-
-## Output
-
 ### ctest_debug
 
 Runs ctest in debug mode
@@ -30,53 +6,53 @@ Runs ctest in debug mode
 + ctest --output-on-failure -E test-opt
 Test project /home/ggml/work/ggml/build-ci-debug
       Start  1: test-grad0
- 1/20 Test  #1: test-grad0 .......................   Passed    6.53 sec
+ 1/20 Test  #1: test-grad0 .......................   Passed    6.64 sec
       Start  2: test-quantize-fns
  2/20 Test  #2: test-quantize-fns ................   Passed    0.57 sec
       Start  3: test-quantize-perf
- 3/20 Test  #3: test-quantize-perf ...............   Passed    0.78 sec
+ 3/20 Test  #3: test-quantize-perf ...............   Passed    0.79 sec
       Start  4: test-mul-mat0
- 4/20 Test  #4: test-mul-mat0 ....................   Passed    1.08 sec
+ 4/20 Test  #4: test-mul-mat0 ....................   Passed    1.07 sec
       Start  5: test-mul-mat2
- 5/20 Test  #5: test-mul-mat2 ....................   Passed    7.91 sec
+ 5/20 Test  #5: test-mul-mat2 ....................   Passed    7.89 sec
       Start  6: test0
- 6/20 Test  #6: test0 ............................   Passed    0.53 sec
+ 6/20 Test  #6: test0 ............................   Passed    0.54 sec
       Start  7: test1
- 7/20 Test  #7: test1 ............................   Passed    0.56 sec
+ 7/20 Test  #7: test1 ............................   Passed    0.53 sec
       Start  8: test2
- 8/20 Test  #8: test2 ............................   Passed    7.94 sec
+ 8/20 Test  #8: test2 ............................   Passed    8.07 sec
       Start  9: test3
- 9/20 Test  #9: test3 ............................   Passed    1.12 sec
+ 9/20 Test  #9: test3 ............................   Passed    1.11 sec
       Start 10: test-pool
-10/20 Test #10: test-pool ........................   Passed    0.54 sec
+10/20 Test #10: test-pool ........................   Passed    0.55 sec
       Start 11: test-conv-transpose
-11/20 Test #11: test-conv-transpose ..............   Passed    0.53 sec
+11/20 Test #11: test-conv-transpose ..............   Passed    0.55 sec
       Start 12: test-dup
-12/20 Test #12: test-dup .........................   Passed    0.53 sec
+12/20 Test #12: test-dup .........................   Passed    0.54 sec
       Start 13: test-rel-pos
-13/20 Test #13: test-rel-pos .....................   Passed    0.56 sec
+13/20 Test #13: test-rel-pos .....................   Passed    0.54 sec
       Start 14: test-customop
 14/20 Test #14: test-customop ....................   Passed    0.54 sec
       Start 15: test-xpos
-15/20 Test #15: test-xpos ........................   Passed    0.55 sec
+15/20 Test #15: test-xpos ........................   Passed    0.54 sec
       Start 16: test-conv1d
-16/20 Test #16: test-conv1d ......................   Passed    0.55 sec
+16/20 Test #16: test-conv1d ......................   Passed    0.56 sec
       Start 17: test-conv2d
-17/20 Test #17: test-conv2d ......................   Passed    0.58 sec
+17/20 Test #17: test-conv2d ......................   Passed    0.54 sec
       Start 18: test-mul-mat
-18/20 Test #18: test-mul-mat .....................   Passed    0.55 sec
+18/20 Test #18: test-mul-mat .....................   Passed    0.54 sec
       Start 19: test-backend-buffer
 19/20 Test #19: test-backend-buffer ..............   Passed    0.54 sec
       Start 20: test-backend-ops
-20/20 Test #20: test-backend-ops .................   Passed   61.80 sec
+20/20 Test #20: test-backend-ops .................   Passed   58.67 sec
 
 100% tests passed, 0 tests failed out of 20
 
-Total Test time (real) =  94.27 sec
+Total Test time (real) =  91.32 sec
 
-real	1m34.305s
-user	3m25.328s
-sys	0m31.230s
+real	1m31.381s
+user	3m25.756s
+sys	0m28.726s
 ```
 
 ### ctest_release
@@ -87,55 +63,55 @@ Runs ctest in release mode
 + ctest --output-on-failure
 Test project /home/ggml/work/ggml/build-ci-release
       Start  1: test-grad0
- 1/21 Test  #1: test-grad0 .......................   Passed    6.68 sec
+ 1/21 Test  #1: test-grad0 .......................   Passed    6.62 sec
       Start  2: test-opt
- 2/21 Test  #2: test-opt .........................   Passed    3.61 sec
+ 2/21 Test  #2: test-opt .........................   Passed    3.59 sec
       Start  3: test-quantize-fns
- 3/21 Test  #3: test-quantize-fns ................   Passed    0.54 sec
+ 3/21 Test  #3: test-quantize-fns ................   Passed    0.55 sec
       Start  4: test-quantize-perf
  4/21 Test  #4: test-quantize-perf ...............   Passed    0.58 sec
       Start  5: test-mul-mat0
- 5/21 Test  #5: test-mul-mat0 ....................   Passed    1.15 sec
+ 5/21 Test  #5: test-mul-mat0 ....................   Passed    1.09 sec
       Start  6: test-mul-mat2
- 6/21 Test  #6: test-mul-mat2 ....................   Passed    3.30 sec
+ 6/21 Test  #6: test-mul-mat2 ....................   Passed    3.25 sec
       Start  7: test0
  7/21 Test  #7: test0 ............................   Passed    0.54 sec
       Start  8: test1
- 8/21 Test  #8: test1 ............................   Passed    0.56 sec
+ 8/21 Test  #8: test1 ............................   Passed    0.54 sec
       Start  9: test2
- 9/21 Test  #9: test2 ............................   Passed    8.06 sec
+ 9/21 Test  #9: test2 ............................   Passed    8.07 sec
       Start 10: test3
-10/21 Test #10: test3 ............................   Passed    1.10 sec
+10/21 Test #10: test3 ............................   Passed    1.09 sec
       Start 11: test-pool
 11/21 Test #11: test-pool ........................   Passed    0.54 sec
       Start 12: test-conv-transpose
-12/21 Test #12: test-conv-transpose ..............   Passed    0.53 sec
+12/21 Test #12: test-conv-transpose ..............   Passed    0.52 sec
       Start 13: test-dup
 13/21 Test #13: test-dup .........................   Passed    0.55 sec
       Start 14: test-rel-pos
-14/21 Test #14: test-rel-pos .....................   Passed    0.52 sec
+14/21 Test #14: test-rel-pos .....................   Passed    0.55 sec
       Start 15: test-customop
-15/21 Test #15: test-customop ....................   Passed    0.53 sec
+15/21 Test #15: test-customop ....................   Passed    0.56 sec
       Start 16: test-xpos
-16/21 Test #16: test-xpos ........................   Passed    0.52 sec
+16/21 Test #16: test-xpos ........................   Passed    0.54 sec
       Start 17: test-conv1d
-17/21 Test #17: test-conv1d ......................   Passed    0.55 sec
+17/21 Test #17: test-conv1d ......................   Passed    0.56 sec
       Start 18: test-conv2d
-18/21 Test #18: test-conv2d ......................   Passed    0.55 sec
+18/21 Test #18: test-conv2d ......................   Passed    0.59 sec
       Start 19: test-mul-mat
-19/21 Test #19: test-mul-mat .....................   Passed    0.56 sec
+19/21 Test #19: test-mul-mat .....................   Passed    0.55 sec
       Start 20: test-backend-buffer
 20/21 Test #20: test-backend-buffer ..............   Passed    0.54 sec
       Start 21: test-backend-ops
-21/21 Test #21: test-backend-ops .................   Passed   23.59 sec
+21/21 Test #21: test-backend-ops .................   Passed   22.56 sec
 
 100% tests passed, 0 tests failed out of 21
 
-Total Test time (real) =  55.11 sec
+Total Test time (real) =  53.98 sec
 
-real	0m55.140s
-user	1m25.320s
-sys	0m31.227s
+real	0m54.013s
+user	1m25.337s
+sys	0m30.161s
 ```
 ### gpt_2
 
@@ -192,14 +168,14 @@ If we look at what we're talking about and then look at the evidence and the evi
 
 Asked about the possibility that ISIS may have used the United States as a vehicle to recruit followers and commit violence in
 
-main:     load time =   948.92 ms
-main:   sample time =    37.10 ms
-main:  predict time =   569.71 ms / 8.90 ms per token
-main:    total time =  1579.65 ms
+main:     load time =   565.91 ms
+main:   sample time =    34.11 ms
+main:  predict time =   571.51 ms / 8.93 ms per token
+main:    total time =  1195.94 ms
 
-real	0m1.738s
-user	0m2.255s
-sys	0m0.726s
+real	0m1.357s
+user	0m2.257s
+sys	0m0.666s
 + ./bin/gpt-2-backend2 --model ../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin -s 1234 -n 64 -p 'I believe the meaning of life is'
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
@@ -230,14 +206,14 @@ I believe the meaning of life is not one that you must be able to answer for.
 
 If you do not believe in God, then why does his word make you feel better? Why do he make you feel better? It's because I don't think the "good" life you choose is for you. I don't think it's worth
 
-main:     load time =   566.25 ms
-main:   sample time =    34.49 ms
-main:  predict time =   601.22 ms / 8.59 ms per token
-main:    total time =  1206.02 ms
+main:     load time =   581.87 ms
+main:   sample time =    34.78 ms
+main:  predict time =   589.03 ms / 8.41 ms per token
+main:    total time =  1209.97 ms
 
-real	0m1.366s
-user	0m2.365s
-sys	0m0.648s
+real	0m1.367s
+user	0m2.317s
+sys	0m0.670s
 + ./bin/gpt-2-batched --model ../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin -s 1234 -n 64 -np 8 -p 'I believe the meaning of life is'
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
@@ -332,14 +308,14 @@ I believe the meaning of life is a gift for life." In a recent interview with Th
 
 
 main:     n_decoded =      504
-main:     load time =   548.61 ms
-main:   sample time =   235.65 ms
-main:  predict time =  2294.02 ms
-main:    total time =  3128.74 ms
+main:     load time =   538.35 ms
+main:   sample time =   244.62 ms
+main:  predict time =  2325.78 ms
+main:    total time =  3154.47 ms
 
-real	0m3.295s
-user	0m9.446s
-sys	0m0.716s
+real	0m3.312s
+user	0m9.563s
+sys	0m0.675s
 ```
 ### mnist
 
@@ -355,24 +331,24 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-_ _ _ _ _ _ _ _ _ * * _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-_ _ _ _ _ _ _ _ * * _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-_ _ _ _ _ _ _ _ * * _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-_ _ _ _ _ _ _ _ * * _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-_ _ _ _ _ _ _ * * * _ _ _ _ _ _ _ _ _ _ * _ _ _ _ _ _ _ 
-_ _ _ _ _ _ _ * * _ _ _ _ _ _ _ _ _ _ * * * * _ _ _ _ _ 
-_ _ _ _ _ _ _ * * _ _ _ _ _ _ _ _ _ * * * * * _ _ _ _ _ 
-_ _ _ _ _ _ * * * _ _ _ _ _ _ _ _ * * _ * * * * _ _ _ _ 
-_ _ _ _ _ _ * * _ _ _ _ _ _ _ _ * * * _ _ * * * _ _ _ _ 
-_ _ _ _ _ * * * _ _ _ _ _ _ _ * * * _ _ _ _ * * _ _ _ _ 
-_ _ _ _ _ _ * * _ _ _ _ _ _ * * * _ _ _ _ * * * _ _ _ _ 
-_ _ _ _ _ _ * * _ _ _ _ _ _ * * * _ _ _ _ * * * _ _ _ _ 
-_ _ _ _ _ _ * * _ _ _ _ _ _ * * * _ _ * * * * _ _ _ _ _ 
-_ _ _ _ _ _ * * * _ _ _ _ * * * * * * * * * _ _ _ _ _ _ 
-_ _ _ _ _ _ * * * _ _ _ * * * * * * * * * _ _ _ _ _ _ _ 
-_ _ _ _ _ _ _ * * * * * * * * * * * * _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ * * * * * * * * * * * * * _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ * * * * * * * * * * _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ * * * * * * _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ * * * * _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ * * * * * * _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ * * * * * * * _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ * * * _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ * * _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ * * _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ * _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ * * * * * * * * _ _ _ _ _ * _ _ _ _ _ _ _ 
+_ _ _ _ _ _ * * * * * * * * * * _ _ _ * * _ _ _ _ _ _ _ 
+_ _ _ _ _ * * * * * * * * * * * * * * * * _ _ _ _ _ _ _ 
 _ _ _ _ _ _ _ _ * * * * * * * * * * _ _ _ _ _ _ _ _ _ _ 
-_ _ _ _ _ _ _ _ * * * * * * * * _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
@@ -382,7 +358,7 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 mnist_model_load: loading model from './models/mnist/ggml-model-f32.bin'
 mnist_model_load: ggml ctx size =   1.52 MB
-main: loaded model in   391.48 ms
+main: loaded model in   398.61 ms
 ggml_graph_dump_dot: dot -Tpng mnist.dot -o mnist.dot.png && open mnist.dot.png
 
 magic            67676d6c
@@ -392,42 +368,42 @@ nodes                   6
 eval             6144
 
 TYPE   OP              NDIMS      NE0      NE1      NE2      NE3              NB0              NB1              NB2              NB3             DATA             NAME
-f32    NONE                2 500 10 1 1                4             2000            20000            20000   0x7f28d65b6990                       fc2_weight
-f32    NONE                2 784 500 1 1                4             3136          1568000          1568000   0x7f28d64371a0                       fc1_weight
-f32    NONE                1 784 1 1 1                4             3136             3136             3136   0x5604bac57fd0                            input
-f32    NONE                1 500 1 1 1                4             2000             2000             2000   0x7f28d65b6030                         fc1_bias
-f32    NONE                1 10 1 1 1                4               40               40               40   0x7f28d65bb940                         fc2_bias
+f32    NONE                2 500 10 1 1                4             2000            20000            20000   0x7fcb055b6990                       fc2_weight
+f32    NONE                2 784 500 1 1                4             3136          1568000          1568000   0x7fcb054371a0                       fc1_weight
+f32    NONE                1 784 1 1 1                4             3136             3136             3136   0x55add4cd5db0                            input
+f32    NONE                1 500 1 1 1                4             2000             2000             2000   0x7fcb055b6030                         fc1_bias
+f32    NONE                1 10 1 1 1                4               40               40               40   0x7fcb055bb940                         fc2_bias
 
 ARG    TYPE   OP              NDIMS      NE0      NE1      NE2      NE3              NB0              NB1              NB2              NB3   NTASKS             DATA             NAME
-DST    f32    MUL_MAT             1 500 1 1 1                4             2000             2000             2000   0x5604bac58da0                           node_0
-SRC    f32    NONE                2 784 500 1 1                4             3136          1568000          1568000   0x7f28d64371a0                       fc1_weight
-SRC    f32    NONE                1 784 1 1 1                4             3136             3136             3136   0x5604bac57fd0                            input
+DST    f32    MUL_MAT             1 500 1 1 1                4             2000             2000             2000   0x55add4cd6b80                           node_0
+SRC    f32    NONE                2 784 500 1 1                4             3136          1568000          1568000   0x7fcb054371a0                       fc1_weight
+SRC    f32    NONE                1 784 1 1 1                4             3136             3136             3136   0x55add4cd5db0                            input
 
-DST    f32    ADD                 1 500 1 1 1                4             2000             2000             2000   0x5604bac59700                           node_1
-SRC    f32    MUL_MAT             1 500 1 1 1                4             2000             2000             2000   0x5604bac58da0                           node_0
-SRC    f32    NONE                1 500 1 1 1                4             2000             2000             2000   0x7f28d65b6030                         fc1_bias
+DST    f32    ADD                 1 500 1 1 1                4             2000             2000             2000   0x55add4cd74e0                           node_1
+SRC    f32    MUL_MAT             1 500 1 1 1                4             2000             2000             2000   0x55add4cd6b80                           node_0
+SRC    f32    NONE                1 500 1 1 1                4             2000             2000             2000   0x7fcb055b6030                         fc1_bias
 
-DST    f32    UNARY               1 500 1 1 1                4             2000             2000             2000   0x5604bac5a060                           node_2
-SRC    f32    ADD                 1 500 1 1 1                4             2000             2000             2000   0x5604bac59700                           node_1
+DST    f32    UNARY               1 500 1 1 1                4             2000             2000             2000   0x55add4cd7e40                           node_2
+SRC    f32    ADD                 1 500 1 1 1                4             2000             2000             2000   0x55add4cd74e0                           node_1
 
-DST    f32    MUL_MAT             1 10 1 1 1                4               40               40               40   0x5604bac5a9c0                           node_3
-SRC    f32    NONE                2 500 10 1 1                4             2000            20000            20000   0x7f28d65b6990                       fc2_weight
-SRC    f32    UNARY               1 500 1 1 1                4             2000             2000             2000   0x5604bac5a060                           node_2
+DST    f32    MUL_MAT             1 10 1 1 1                4               40               40               40   0x55add4cd87a0                           node_3
+SRC    f32    NONE                2 500 10 1 1                4             2000            20000            20000   0x7fcb055b6990                       fc2_weight
+SRC    f32    UNARY               1 500 1 1 1                4             2000             2000             2000   0x55add4cd7e40                           node_2
 
-DST    f32    ADD                 1 10 1 1 1                4               40               40               40   0x5604bac5ab80                           node_4
-SRC    f32    MUL_MAT             1 10 1 1 1                4               40               40               40   0x5604bac5a9c0                           node_3
-SRC    f32    NONE                1 10 1 1 1                4               40               40               40   0x7f28d65bb940                         fc2_bias
+DST    f32    ADD                 1 10 1 1 1                4               40               40               40   0x55add4cd8960                           node_4
+SRC    f32    MUL_MAT             1 10 1 1 1                4               40               40               40   0x55add4cd87a0                           node_3
+SRC    f32    NONE                1 10 1 1 1                4               40               40               40   0x7fcb055bb940                         fc2_bias
 
-DST    f32    SOFT_MAX            1 10 1 1 1                4               40               40               40   0x5604bac5ad40                            probs
-SRC    f32    ADD                 1 10 1 1 1                4               40               40               40   0x5604bac5ab80       mnist_eval: exported compute graph to 'mnist.ggml'
+DST    f32    SOFT_MAX            1 10 1 1 1                4               40               40               40   0x55add4cd8b20                            probs
+SRC    f32    ADD                 1 10 1 1 1                4               40               40               40   0x55add4cd8960       mnist_eval: exported compute graph to 'mnist.ggml'
                     node_4
 
 
-main: predicted digit is 6
+main: predicted digit is 5
 
-real	0m0.560s
-user	0m0.061s
-sys	0m0.497s
+real	0m0.545s
+user	0m0.064s
+sys	0m0.478s
 + ./bin/mnist-cpu ./mnist.ggml ../examples/mnist/models/mnist/t10k-images.idx3-ubyte
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
@@ -436,26 +412,26 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-_ _ _ _ _ _ _ _ _ _ _ * * * _ _ * * _ _ _ _ _ _ _ _ _ _ 
-_ _ _ _ _ _ _ * * * * * * * * * * * * * _ _ _ _ _ _ _ _ 
-_ _ _ _ _ _ _ * * * * * * * * * * * * * _ _ _ _ _ _ _ _ 
-_ _ _ _ _ _ _ * * * * * * * * * * * * * * _ _ _ _ _ _ _ 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ * * * _ _ _ _ _ _ _ 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ * * * _ _ _ _ _ _ _ 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ * * * * _ _ _ _ _ _ _ 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ * * * * _ _ _ _ _ _ _ _ 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ * * * * * _ _ _ _ _ _ _ _ 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ * * * * * _ _ _ _ _ _ _ _ _ 
-_ _ _ _ _ _ _ _ _ _ _ _ _ * * * * * _ _ _ _ _ _ _ _ _ _ 
-_ _ _ _ _ _ _ _ _ _ _ _ * * * * _ _ _ _ _ _ _ _ _ _ _ _ 
-_ _ _ _ _ _ _ _ _ _ _ * * * * _ _ _ _ _ _ _ _ _ _ _ _ _ 
-_ _ _ _ _ _ _ _ _ _ * * * * * _ _ _ _ _ _ _ _ _ _ _ _ _ 
-_ _ _ _ _ _ _ _ _ _ * * * * _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-_ _ _ _ _ _ _ _ _ _ * * * _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-_ _ _ _ _ _ _ _ _ * * * * _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-_ _ _ _ _ _ _ _ _ * * * * _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-_ _ _ _ _ _ _ _ _ * * * _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-_ _ _ _ _ _ _ _ _ * * * _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ * * * * _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ * * _ _ _ _ _ _ * _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ * * _ _ _ _ _ _ _ * _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ * * _ _ _ _ _ _ _ * _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ * _ _ _ _ _ _ _ * * _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ * _ _ _ _ _ _ _ * * _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ * _ _ _ _ _ * * _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ * * _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ * _ _ * * _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ * _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ * * _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ * * _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ * _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ * _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ * _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ * _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ * _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ * * _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ * * _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
@@ -473,11 +449,11 @@ ggml_graph_import: loaded node 2: '          node_2',      2000 bytes
 ggml_graph_import: loaded node 3: '          node_3',        40 bytes
 ggml_graph_import: loaded node 4: '          node_4',        40 bytes
 ggml_graph_import: loaded node 5: '           probs',        40 bytes
-main: predicted digit is 7
+main: predicted digit is 9
 
-real	0m0.530s
-user	0m0.076s
-sys	0m0.446s
+real	0m0.528s
+user	0m0.048s
+sys	0m0.472s
 ```
 ### whisper
 
@@ -524,20 +500,20 @@ main: processing '../models-mnt/whisper//jfk.wav' (176000 samples, 11.0 sec), 4 
 
 [00:00:00.000 --> 00:00:11.000]   And so my fellow Americans, ask not what your country can do for you, ask what you can do for your country.
 
-whisper_print_timings:     load time =   490.42 ms
+whisper_print_timings:     load time =   510.10 ms
 whisper_print_timings:     fallbacks =   0 p /   0 h
-whisper_print_timings:      mel time =    17.54 ms
-whisper_print_timings:   sample time =    66.52 ms /   131 runs (    0.51 ms per run)
-whisper_print_timings:   encode time =    34.12 ms /     1 runs (   34.12 ms per run)
-whisper_print_timings:   decode time =    13.83 ms /     2 runs (    6.92 ms per run)
-whisper_print_timings:   batchd time =    80.88 ms /   125 runs (    0.65 ms per run)
+whisper_print_timings:      mel time =    22.11 ms
+whisper_print_timings:   sample time =    65.57 ms /   131 runs (    0.50 ms per run)
+whisper_print_timings:   encode time =    33.99 ms /     1 runs (   33.99 ms per run)
+whisper_print_timings:   decode time =    13.04 ms /     2 runs (    6.52 ms per run)
+whisper_print_timings:   batchd time =    82.51 ms /   125 runs (    0.66 ms per run)
 whisper_print_timings:   prompt time =     0.00 ms /     1 runs (    0.00 ms per run)
-whisper_print_timings:    total time =   711.91 ms
+whisper_print_timings:    total time =   735.89 ms
 
 
-real	0m0.874s
-user	0m0.456s
-sys	0m0.543s
+real	0m0.912s
+user	0m0.441s
+sys	0m0.596s
 ```
 ### sam
 
@@ -545,7 +521,7 @@ Run SAM
 - status: 0
 ```
 + ./bin/sam -m ../models-mnt/sam//ggml-model-f16.bin -i ../models-mnt/sam//img.jpg
-main: seed = 1704280713
+main: seed = 1704284708
 main: loaded image '../models-mnt/sam//img.jpg' (680 x 453)
 sam_image_preprocess: scale = 0.664062
 main: preprocessed image (1024 x 1024)
@@ -567,8 +543,8 @@ sam_model_load: model size =   185.05 MB / num tensors = 304
 prompt: (414.375000, 162.796875)
 
 
-main:     load time =   489.28 ms
-main:    total time =  8091.87 ms
+main:     load time =   494.49 ms
+main:    total time =  8168.63 ms
 embd_img
 dims:  64  64  256  1 f32
 First & Last 10 elements:
@@ -580,9 +556,9 @@ Skipping mask 0 with iou 0.706267 below threshold 0.880000
 Skipping mask 1 with iou 0.762381 below threshold 0.880000
 Mask 2: iou = 0.947879, stability_score = 0.956250, bbox (371, 436), (144, 168)
 
-real	0m8.245s
-user	0m29.184s
-sys	0m0.833s
+real	0m8.322s
+user	0m29.423s
+sys	0m0.872s
 ```
 ### yolo
 
@@ -620,11 +596,11 @@ car: 52%
 truck: 56%
 car: 62%
 bicycle: 59%
-Detected objects saved in 'predictions.jpg' (time: 0.654000 sec.)
+Detected objects saved in 'predictions.jpg' (time: 0.639000 sec.)
 
-real	0m1.248s
-user	0m0.686s
-sys	0m0.553s
+real	0m1.264s
+user	0m0.648s
+sys	0m0.607s
 ```
 ### mpt
 
@@ -680,14 +656,14 @@ I believe the meaning of life is to seek and follow Jesus Christ. It is my desir
 
 main: sampled tokens =       64
 main:  mem per token =   395960 bytes
-main:      load time = 36213.32 ms
-main:    sample time =   541.05 ms / 8.45 ms per token
-main:      eval time = 25097.13 ms / 358.53 ms per token
-main:     total time = 62762.67 ms
+main:      load time =  8087.29 ms
+main:    sample time =   546.92 ms / 8.55 ms per token
+main:      eval time = 26054.18 ms / 372.20 ms per token
+main:     total time = 35566.35 ms
 
-real	1m3.264s
-user	1m44.454s
-sys	0m10.017s
+real	0m36.199s
+user	1m48.122s
+sys	0m8.743s
 + ./bin/mpt --model ../models-mnt/mpt/7B/ggml-model-q4_0.bin -s 1234 -n 64 -p 'I believe the meaning of life is'
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
@@ -738,12 +714,12 @@ So where there is a will there is a way! Think about it, if you think something 
 
 main: sampled tokens =       64
 main:  mem per token =   380600 bytes
-main:      load time = 11205.04 ms
-main:    sample time =   544.10 ms / 8.50 ms per token
-main:      eval time = 12433.88 ms / 177.63 ms per token
-main:     total time = 24830.47 ms
+main:      load time =  2191.73 ms
+main:    sample time =   543.03 ms / 8.48 ms per token
+main:      eval time = 12568.20 ms / 179.55 ms per token
+main:     total time = 15949.54 ms
 
-real	0m25.005s
-user	0m52.696s
-sys	0m3.116s
+real	0m16.121s
+user	0m53.230s
+sys	0m2.384s
 ```

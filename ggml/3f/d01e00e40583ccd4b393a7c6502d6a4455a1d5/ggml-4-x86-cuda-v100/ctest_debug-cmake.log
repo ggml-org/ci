@@ -39,10 +39,10 @@ GNU ld (GNU Binutils for Ubuntu) 2.38
 -- GGML Configuring CUDA architectures 52;61;70
 -- x86 detected
 -- Linux detected
--- Configuring done (3.0s)
+-- Configuring done (3.2s)
 -- Generating done (0.1s)
 -- Build files have been written to: /home/ggml/work/ggml/build-ci-debug
 
-real	0m3.213s
-user	0m2.351s
-sys	0m0.858s
+real	0m3.365s
+user	0m2.462s
+sys	0m0.822s
