@@ -105,20 +105,20 @@ I think we need more people who understand that a person can live for themselves
 This year my family moved from our country house into a small condo downtown by the harbor of San Juan Bay in Puerto Rico (just over an hour south of New York City). My parents are both artists who have always lived on or near water and had never been able to afford their own space before this past spring.
 This change has given me new perspective, as I’ve moved closer into the city center with my family than ever before in our lives together (my mother is 72 years old; father is just a few years younger). This means we are now much more exposed to people who have never experienced what life was like growing up poor or having less.
 I believe that if everyone took one day out of their week and spent it at the local shelter for homeless, hungry, abused
-llama_print_timings:        load time =    1064.70 ms
-llama_print_timings:      sample time =     129.32 ms /   256 runs   (    0.51 ms per token,  1979.55 tokens per second)
-llama_print_timings: prompt eval time =      19.36 ms /     8 tokens (    2.42 ms per token,   413.29 tokens per second)
-llama_print_timings:        eval time =    2253.68 ms /   255 runs   (    8.84 ms per token,   113.15 tokens per second)
-llama_print_timings:       total time =    2495.05 ms
+llama_print_timings:        load time =    1084.26 ms
+llama_print_timings:      sample time =     140.13 ms /   256 runs   (    0.55 ms per token,  1826.88 tokens per second)
+llama_print_timings: prompt eval time =      18.93 ms /     8 tokens (    2.37 ms per token,   422.65 tokens per second)
+llama_print_timings:        eval time =    2249.31 ms /   255 runs   (    8.82 ms per token,   113.37 tokens per second)
+llama_print_timings:       total time =    2501.43 ms
 Log end
 
-real	0m4.187s
-user	0m3.091s
-sys	0m1.095s
+real	0m4.269s
+user	0m3.114s
+sys	0m1.154s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 1805 (4f56458)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1704846303
+main: seed  = 1704873781
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
 ggml_init_cublas: found 1 CUDA devices:
@@ -208,18 +208,18 @@ llama_new_context_with_model: total VRAM used: 4757.56 MiB (model: 3577.55 MiB, 
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 1019.97 ms
+perplexity: tokenization took 1046.35 ms
 perplexity: calculating perplexity over 4 chunks, batch_size=512
 perplexity: 0.97 seconds per pass - ETA 0.05 minutes
 [1]5.6359,[2]6.9331,[3]7.5730,[4]7.0135,
-llama_print_timings:        load time =     902.08 ms
+llama_print_timings:        load time =     935.68 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    3005.67 ms /  8192 tokens (    0.37 ms per token,  2725.51 tokens per second)
+llama_print_timings: prompt eval time =    3011.56 ms /  8192 tokens (    0.37 ms per token,  2720.19 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    4875.11 ms
+llama_print_timings:       total time =    4913.64 ms
 
 Final estimate: PPL = 7.0135 +/- 0.26115
 
-real	0m6.397s
-user	0m5.328s
-sys	0m1.717s
+real	0m6.480s
+user	0m5.289s
+sys	0m1.810s

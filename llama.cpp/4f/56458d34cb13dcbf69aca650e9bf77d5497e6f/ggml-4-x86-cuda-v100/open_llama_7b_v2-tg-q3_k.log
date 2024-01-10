@@ -106,20 +106,20 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
 If there was ever one thing that should make us stop in our tracks it would surely be when we were shown all these things…we must never forget them! We can only hope for forgiveness if they do so first before asking of ours. Only then will the world know true happiness and freedom from what’s to come..
 I don’t believe anything is ever truly lost, everything happens in its own time- it might just not be your time yet or never at all! You could find something you once thought was long gone when least expected…or lose someone who seemed so close by. There are a million things that can happen to us each day but we need only hope and pray for the best..
 I believe in being strong enough as well as weak, knowing how far I’ve come from where it all began yet still seeing what could be ahead! As long as there is tomorrow then surely everything else will fall into place…but if not at least you tried to make things better today than yesterday. What we choose doesn’t always have an effect on those around us, but sometimes just knowing that someone cares about
-llama_print_timings:        load time =     901.55 ms
-llama_print_timings:      sample time =     131.89 ms /   256 runs   (    0.52 ms per token,  1941.04 tokens per second)
-llama_print_timings: prompt eval time =      36.10 ms /     8 tokens (    4.51 ms per token,   221.58 tokens per second)
-llama_print_timings:        eval time =    2781.34 ms /   255 runs   (   10.91 ms per token,    91.68 tokens per second)
-llama_print_timings:       total time =    3041.30 ms
+llama_print_timings:        load time =     911.74 ms
+llama_print_timings:      sample time =     132.97 ms /   256 runs   (    0.52 ms per token,  1925.26 tokens per second)
+llama_print_timings: prompt eval time =      36.89 ms /     8 tokens (    4.61 ms per token,   216.85 tokens per second)
+llama_print_timings:        eval time =    2777.07 ms /   255 runs   (   10.89 ms per token,    91.82 tokens per second)
+llama_print_timings:       total time =    3038.89 ms
 Log end
 
-real	0m4.586s
-user	0m3.592s
-sys	0m0.989s
+real	0m4.575s
+user	0m3.620s
+sys	0m0.946s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q3_k.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 1805 (4f56458)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1704846336
+main: seed  = 1704873814
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
 ggml_init_cublas: found 1 CUDA devices:
@@ -211,18 +211,18 @@ llama_new_context_with_model: total VRAM used: 4270.81 MiB (model: 3090.80 MiB, 
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 1039.94 ms
+perplexity: tokenization took 1017.55 ms
 perplexity: calculating perplexity over 4 chunks, batch_size=512
-perplexity: 1.08 seconds per pass - ETA 0.07 minutes
-[1]5.6685,[2]7.0257,[3]7.6440,[4]7.1112,
-llama_print_timings:        load time =     767.11 ms
+perplexity: 1.09 seconds per pass - ETA 0.07 minutes
+[1]5.6685,[2]7.0221,[3]7.6414,[4]7.1094,
+llama_print_timings:        load time =     777.61 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    3456.78 ms /  8192 tokens (    0.42 ms per token,  2369.83 tokens per second)
+llama_print_timings: prompt eval time =    3456.47 ms /  8192 tokens (    0.42 ms per token,  2370.05 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    5337.90 ms
+llama_print_timings:       total time =    5330.67 ms
 
-Final estimate: PPL = 7.1112 +/- 0.26591
+Final estimate: PPL = 7.1094 +/- 0.26584
 
-real	0m6.742s
-user	0m5.560s
-sys	0m1.820s
+real	0m6.741s
+user	0m5.630s
+sys	0m1.757s

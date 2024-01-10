@@ -104,20 +104,20 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
 I know this sounds cliche, but it's true - if we don't live our lives for ourselves, then what are we living them for? Why should a man (or woman) choose some random job or relationship just because someone else wants him to be happy and settled down in life by having kids.
 We must follow the path that makes us feel fulfilled and like you know it will make your mom proud of whatever decision you've made, but we also need to live a little and not stick so closely with others. We have our own lives too! You can choose whether or not you want children - for me personally I would love kids one day when the right man comes along (and he has his own child) because i think having an extra person in your life is always good, but that doesn't mean we should be forced to do it.
 I am 20 years old and just finished my first year of university studying a double major - sociology/psychology & law (which I really enjoy). There are many paths you can take when entering the "working world" so don't feel like this is your last chance at life because it isn'
-llama_print_timings:        load time =    1331.92 ms
-llama_print_timings:      sample time =     133.50 ms /   256 runs   (    0.52 ms per token,  1917.56 tokens per second)
-llama_print_timings: prompt eval time =      23.95 ms /     8 tokens (    2.99 ms per token,   334.10 tokens per second)
-llama_print_timings:        eval time =    2631.20 ms /   255 runs   (   10.32 ms per token,    96.91 tokens per second)
-llama_print_timings:       total time =    2881.80 ms
+llama_print_timings:        load time =    1353.04 ms
+llama_print_timings:      sample time =     135.34 ms /   256 runs   (    0.53 ms per token,  1891.50 tokens per second)
+llama_print_timings: prompt eval time =      24.51 ms /     8 tokens (    3.06 ms per token,   326.45 tokens per second)
+llama_print_timings:        eval time =    2640.32 ms /   255 runs   (   10.35 ms per token,    96.58 tokens per second)
+llama_print_timings:       total time =    2891.09 ms
 Log end
 
-real	0m4.839s
-user	0m3.635s
-sys	0m1.203s
+real	0m4.866s
+user	0m3.678s
+sys	0m1.187s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 1805 (4f56458)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1704846323
+main: seed  = 1704873800
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
 ggml_init_cublas: found 1 CUDA devices:
@@ -207,18 +207,18 @@ llama_new_context_with_model: total VRAM used: 5915.56 MiB (model: 4735.55 MiB, 
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 1015.51 ms
+perplexity: tokenization took 1045.5 ms
 perplexity: calculating perplexity over 4 chunks, batch_size=512
-perplexity: 0.97 seconds per pass - ETA 0.05 minutes
-[1]5.5680,[2]6.8487,[3]7.4566,[4]6.9077,
-llama_print_timings:        load time =    1133.00 ms
+perplexity: 1.00 seconds per pass - ETA 0.05 minutes
+[1]5.5660,[2]6.8475,[3]7.4557,[4]6.9074,
+llama_print_timings:        load time =    1141.28 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    3025.30 ms /  8192 tokens (    0.37 ms per token,  2707.83 tokens per second)
+llama_print_timings: prompt eval time =    3051.27 ms /  8192 tokens (    0.37 ms per token,  2684.78 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    4883.17 ms
+llama_print_timings:       total time =    4960.66 ms
 
-Final estimate: PPL = 6.9077 +/- 0.25712
+Final estimate: PPL = 6.9074 +/- 0.25708
 
-real	0m6.654s
-user	0m5.439s
-sys	0m1.842s
+real	0m6.740s
+user	0m5.535s
+sys	0m1.835s

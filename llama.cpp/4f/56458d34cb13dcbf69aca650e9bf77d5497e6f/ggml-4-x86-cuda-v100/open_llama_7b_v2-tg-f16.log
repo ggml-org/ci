@@ -103,20 +103,20 @@ I think it’s important not just to focus on yourself but also others as well, 
 My main aim is to help others as much possible while also making sure that my own well-being does not suffer too badly – sometimes it’s hard not feeling selfish when trying so desperately for other people but still having enough energy left over after everything else has been dealt with (or maybe even before). If everyone had this attitude, then surely no one would ever feel alone or neglected again?
 I think I am a good person because of the way that my family raised me. They taught me about respect and kindness towards others without expecting anything in return; not only that but they also made sure we were always doing something fun together such as going on trips away with friends/family members where there would be plenty more opportunities for interacting with strangers too!
 I think it’s
-llama_print_timings:        load time =    2775.89 ms
-llama_print_timings:      sample time =     128.52 ms /   256 runs   (    0.50 ms per token,  1991.91 tokens per second)
-llama_print_timings: prompt eval time =      27.15 ms /     8 tokens (    3.39 ms per token,   294.64 tokens per second)
-llama_print_timings:        eval time =    4848.49 ms /   255 runs   (   19.01 ms per token,    52.59 tokens per second)
-llama_print_timings:       total time =    5096.18 ms
+llama_print_timings:        load time =    2758.10 ms
+llama_print_timings:      sample time =     129.14 ms /   256 runs   (    0.50 ms per token,  1982.36 tokens per second)
+llama_print_timings: prompt eval time =      26.43 ms /     8 tokens (    3.30 ms per token,   302.71 tokens per second)
+llama_print_timings:        eval time =    4856.35 ms /   255 runs   (   19.04 ms per token,    52.51 tokens per second)
+llama_print_timings:       total time =    5111.39 ms
 Log end
 
-real	0m8.499s
-user	0m6.881s
-sys	0m1.617s
+real	0m8.501s
+user	0m6.867s
+sys	0m1.633s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-f16.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 1805 (4f56458)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1704846288
+main: seed  = 1704873765
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
 ggml_init_cublas: found 1 CUDA devices:
@@ -204,18 +204,18 @@ llama_new_context_with_model: total VRAM used: 13783.02 MiB (model: 12603.02 MiB
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 1011.76 ms
+perplexity: tokenization took 1033.8 ms
 perplexity: calculating perplexity over 4 chunks, batch_size=512
 perplexity: 0.87 seconds per pass - ETA 0.05 minutes
-[1]5.5314,[2]6.8315,[3]7.4349,[4]6.8779,
-llama_print_timings:        load time =    2757.10 ms
+[1]5.5314,[2]6.8315,[3]7.4349,[4]6.8783,
+llama_print_timings:        load time =    2804.50 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    2602.48 ms /  8192 tokens (    0.32 ms per token,  3147.77 tokens per second)
+llama_print_timings: prompt eval time =    2608.40 ms /  8192 tokens (    0.32 ms per token,  3140.62 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    4464.50 ms
+llama_print_timings:       total time =    4497.57 ms
 
-Final estimate: PPL = 6.8779 +/- 0.25577
+Final estimate: PPL = 6.8783 +/- 0.25579
 
-real	0m7.856s
-user	0m6.104s
-sys	0m2.388s
+real	0m7.952s
+user	0m6.204s
+sys	0m2.389s

@@ -1,8 +1,8 @@
 ## Summary
 
 - status:  SUCCESS ✅
-- runtime: 21:50.73
-- date:    Wed Jan 10 00:26:34 UTC 2024
+- runtime: 21:52.64
+- date:    Wed Jan 10 08:04:32 UTC 2024
 - repo:    https://github.com/ggerganov/llama.cpp
 - commit:  https://github.com/ggerganov/llama.cpp/commit/4f56458d34cb13dcbf69aca650e9bf77d5497e6f
 - author:  Johannes Gäßler
@@ -36,45 +36,45 @@ Test project /home/ggml/work/llama.cpp/build-ci-debug
       Start  4: test-tokenizer-0-llama
  4/20 Test  #4: test-tokenizer-0-llama ..............   Passed    0.18 sec
       Start  5: test-tokenizer-0-falcon
- 5/20 Test  #5: test-tokenizer-0-falcon .............   Passed    1.21 sec
+ 5/20 Test  #5: test-tokenizer-0-falcon .............   Passed    1.25 sec
       Start  6: test-tokenizer-1-llama
- 6/20 Test  #6: test-tokenizer-1-llama ..............   Passed   18.74 sec
+ 6/20 Test  #6: test-tokenizer-1-llama ..............   Passed   18.40 sec
       Start  7: test-tokenizer-1-baichuan
- 7/20 Test  #7: test-tokenizer-1-baichuan ...........   Passed   18.77 sec
+ 7/20 Test  #7: test-tokenizer-1-baichuan ...........   Passed   18.80 sec
       Start  8: test-tokenizer-1-falcon
- 8/20 Test  #8: test-tokenizer-1-falcon .............   Passed   15.70 sec
+ 8/20 Test  #8: test-tokenizer-1-falcon .............   Passed   15.77 sec
       Start  9: test-tokenizer-1-aquila
- 9/20 Test  #9: test-tokenizer-1-aquila .............   Passed   19.23 sec
+ 9/20 Test  #9: test-tokenizer-1-aquila .............   Passed   19.15 sec
       Start 10: test-tokenizer-1-mpt
-10/20 Test #10: test-tokenizer-1-mpt ................   Passed   14.32 sec
+10/20 Test #10: test-tokenizer-1-mpt ................   Passed   14.25 sec
       Start 11: test-tokenizer-1-stablelm-3b-4e1t
-11/20 Test #11: test-tokenizer-1-stablelm-3b-4e1t ...   Passed   14.19 sec
+11/20 Test #11: test-tokenizer-1-stablelm-3b-4e1t ...   Passed   14.38 sec
       Start 12: test-tokenizer-1-gpt-neox
-12/20 Test #12: test-tokenizer-1-gpt-neox ...........   Passed   14.13 sec
+12/20 Test #12: test-tokenizer-1-gpt-neox ...........   Passed   14.25 sec
       Start 13: test-tokenizer-1-refact
-13/20 Test #13: test-tokenizer-1-refact .............   Passed   13.94 sec
+13/20 Test #13: test-tokenizer-1-refact .............   Passed   14.15 sec
       Start 14: test-tokenizer-1-starcoder
-14/20 Test #14: test-tokenizer-1-starcoder ..........   Passed   14.02 sec
+14/20 Test #14: test-tokenizer-1-starcoder ..........   Passed   14.06 sec
       Start 15: test-tokenizer-1-gpt2
-15/20 Test #15: test-tokenizer-1-gpt2 ...............   Passed   14.36 sec
+15/20 Test #15: test-tokenizer-1-gpt2 ...............   Passed   14.27 sec
       Start 16: test-grammar-parser
 16/20 Test #16: test-grammar-parser .................   Passed    0.00 sec
       Start 17: test-llama-grammar
 17/20 Test #17: test-llama-grammar ..................   Passed    0.00 sec
       Start 18: test-grad0
-18/20 Test #18: test-grad0 ..........................   Passed    5.85 sec
+18/20 Test #18: test-grad0 ..........................   Passed    5.78 sec
       Start 19: test-backend-ops
-19/20 Test #19: test-backend-ops ....................   Passed   42.33 sec
+19/20 Test #19: test-backend-ops ....................   Passed   43.08 sec
       Start 20: test-rope
 20/20 Test #20: test-rope ...........................   Passed    0.08 sec
 
 100% tests passed, 0 tests failed out of 20
 
-Total Test time (real) = 207.35 sec
+Total Test time (real) = 208.16 sec
 
-real	3m27.383s
-user	4m13.810s
-sys	0m20.045s
+real	3m28.192s
+user	4m13.837s
+sys	0m21.080s
 ```
 
 ### ctest_release
@@ -87,7 +87,7 @@ Test project /home/ggml/work/llama.cpp/build-ci-release
       Start  1: test-quantize-fns
  1/20 Test  #1: test-quantize-fns ...................   Passed    0.01 sec
       Start  2: test-quantize-perf
- 2/20 Test  #2: test-quantize-perf ..................   Passed    0.06 sec
+ 2/20 Test  #2: test-quantize-perf ..................   Passed    0.05 sec
       Start  3: test-sampling
  3/20 Test  #3: test-sampling .......................   Passed    0.00 sec
       Start  4: test-tokenizer-0-llama
@@ -95,62 +95,62 @@ Test project /home/ggml/work/llama.cpp/build-ci-release
       Start  5: test-tokenizer-0-falcon
  5/20 Test  #5: test-tokenizer-0-falcon .............   Passed    0.29 sec
       Start  6: test-tokenizer-1-llama
- 6/20 Test  #6: test-tokenizer-1-llama ..............   Passed    2.20 sec
+ 6/20 Test  #6: test-tokenizer-1-llama ..............   Passed    2.17 sec
       Start  7: test-tokenizer-1-baichuan
- 7/20 Test  #7: test-tokenizer-1-baichuan ...........   Passed    2.36 sec
+ 7/20 Test  #7: test-tokenizer-1-baichuan ...........   Passed    2.26 sec
       Start  8: test-tokenizer-1-falcon
- 8/20 Test  #8: test-tokenizer-1-falcon .............   Passed    1.87 sec
+ 8/20 Test  #8: test-tokenizer-1-falcon .............   Passed    1.88 sec
       Start  9: test-tokenizer-1-aquila
- 9/20 Test  #9: test-tokenizer-1-aquila .............   Passed    2.44 sec
+ 9/20 Test  #9: test-tokenizer-1-aquila .............   Passed    2.47 sec
       Start 10: test-tokenizer-1-mpt
-10/20 Test #10: test-tokenizer-1-mpt ................   Passed    1.69 sec
+10/20 Test #10: test-tokenizer-1-mpt ................   Passed    1.64 sec
       Start 11: test-tokenizer-1-stablelm-3b-4e1t
-11/20 Test #11: test-tokenizer-1-stablelm-3b-4e1t ...   Passed    1.65 sec
+11/20 Test #11: test-tokenizer-1-stablelm-3b-4e1t ...   Passed    1.66 sec
       Start 12: test-tokenizer-1-gpt-neox
-12/20 Test #12: test-tokenizer-1-gpt-neox ...........   Passed    1.66 sec
+12/20 Test #12: test-tokenizer-1-gpt-neox ...........   Passed    1.65 sec
       Start 13: test-tokenizer-1-refact
-13/20 Test #13: test-tokenizer-1-refact .............   Passed    1.64 sec
+13/20 Test #13: test-tokenizer-1-refact .............   Passed    1.63 sec
       Start 14: test-tokenizer-1-starcoder
-14/20 Test #14: test-tokenizer-1-starcoder ..........   Passed    1.70 sec
+14/20 Test #14: test-tokenizer-1-starcoder ..........   Passed    1.65 sec
       Start 15: test-tokenizer-1-gpt2
-15/20 Test #15: test-tokenizer-1-gpt2 ...............   Passed    1.65 sec
+15/20 Test #15: test-tokenizer-1-gpt2 ...............   Passed    1.66 sec
       Start 16: test-grammar-parser
 16/20 Test #16: test-grammar-parser .................   Passed    0.00 sec
       Start 17: test-llama-grammar
 17/20 Test #17: test-llama-grammar ..................   Passed    0.00 sec
       Start 18: test-grad0
-18/20 Test #18: test-grad0 ..........................   Passed    5.70 sec
+18/20 Test #18: test-grad0 ..........................   Passed    5.57 sec
       Start 19: test-backend-ops
-19/20 Test #19: test-backend-ops ....................   Passed   15.11 sec
+19/20 Test #19: test-backend-ops ....................   Passed   14.80 sec
       Start 20: test-rope
 20/20 Test #20: test-rope ...........................   Passed    0.06 sec
 
 100% tests passed, 0 tests failed out of 20
 
-Total Test time (real) =  40.17 sec
+Total Test time (real) =  39.53 sec
 
-real	0m40.206s
-user	0m37.116s
-sys	0m18.865s
+real	0m39.566s
+user	0m36.656s
+sys	0m18.671s
 ```
 ### open_llama_7b_v2
 
 OpenLLaMA 7B-v2:
 - status: 0
 - perplexity:
-  - f16 @ 6.8779 OK
-  - q8_0 @ 6.8802 OK
+  - f16 @ 6.8783 OK
+  - q8_0 @ 6.8816 OK
   - q4_0 @ 7.0135 OK
-  - q4_1 @ 7.0156 OK
+  - q4_1 @ 7.0174 OK
   - q5_0 @ 6.9230 OK
-  - q5_1 @ 6.9077 OK
+  - q5_1 @ 6.9074 OK
   - q2_k @ 7.5741 OK
-  - q3_k @ 7.1112 OK
+  - q3_k @ 7.1094 OK
   - q4_k @ 6.9394 OK
   - q5_k @ 6.8915 OK
   - q6_k @ 6.8910 OK
 - lora:
-  - f16 shakespeare @ 11.2261 8.7622 OK
+  - f16 shakespeare @ 11.2243 8.7622 OK
 - f16: 
 ```
 + ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-f16.gguf -t 1 -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
@@ -258,20 +258,20 @@ I think it’s important not just to focus on yourself but also others as well, 
 My main aim is to help others as much possible while also making sure that my own well-being does not suffer too badly – sometimes it’s hard not feeling selfish when trying so desperately for other people but still having enough energy left over after everything else has been dealt with (or maybe even before). If everyone had this attitude, then surely no one would ever feel alone or neglected again?
 I think I am a good person because of the way that my family raised me. They taught me about respect and kindness towards others without expecting anything in return; not only that but they also made sure we were always doing something fun together such as going on trips away with friends/family members where there would be plenty more opportunities for interacting with strangers too!
 I think it’s
-llama_print_timings:        load time =    2775.89 ms
-llama_print_timings:      sample time =     128.52 ms /   256 runs   (    0.50 ms per token,  1991.91 tokens per second)
-llama_print_timings: prompt eval time =      27.15 ms /     8 tokens (    3.39 ms per token,   294.64 tokens per second)
-llama_print_timings:        eval time =    4848.49 ms /   255 runs   (   19.01 ms per token,    52.59 tokens per second)
-llama_print_timings:       total time =    5096.18 ms
+llama_print_timings:        load time =    2758.10 ms
+llama_print_timings:      sample time =     129.14 ms /   256 runs   (    0.50 ms per token,  1982.36 tokens per second)
+llama_print_timings: prompt eval time =      26.43 ms /     8 tokens (    3.30 ms per token,   302.71 tokens per second)
+llama_print_timings:        eval time =    4856.35 ms /   255 runs   (   19.04 ms per token,    52.51 tokens per second)
+llama_print_timings:       total time =    5111.39 ms
 Log end
 
-real	0m8.499s
-user	0m6.881s
-sys	0m1.617s
+real	0m8.501s
+user	0m6.867s
+sys	0m1.633s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-f16.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 1805 (4f56458)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1704846288
+main: seed  = 1704873765
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
 ggml_init_cublas: found 1 CUDA devices:
@@ -359,21 +359,21 @@ llama_new_context_with_model: total VRAM used: 13783.02 MiB (model: 12603.02 MiB
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 1011.76 ms
+perplexity: tokenization took 1033.8 ms
 perplexity: calculating perplexity over 4 chunks, batch_size=512
 perplexity: 0.87 seconds per pass - ETA 0.05 minutes
-[1]5.5314,[2]6.8315,[3]7.4349,[4]6.8779,
-llama_print_timings:        load time =    2757.10 ms
+[1]5.5314,[2]6.8315,[3]7.4349,[4]6.8783,
+llama_print_timings:        load time =    2804.50 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    2602.48 ms /  8192 tokens (    0.32 ms per token,  3147.77 tokens per second)
+llama_print_timings: prompt eval time =    2608.40 ms /  8192 tokens (    0.32 ms per token,  3140.62 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    4464.50 ms
+llama_print_timings:       total time =    4497.57 ms
 
-Final estimate: PPL = 6.8779 +/- 0.25577
+Final estimate: PPL = 6.8783 +/- 0.25579
 
-real	0m7.856s
-user	0m6.104s
-sys	0m2.388s
+real	0m7.952s
+user	0m6.204s
+sys	0m2.389s
 ```
 - q8_0:
 ```
@@ -482,20 +482,20 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
 I think it’s important not just to focus on yourself but also your friends, family or anyone who surround you as they all play an essential role at achieving a successful persona for ourselves both inside and out! I believe happiness is something everyone strives towards no matter what obstacles life throws in our way however there are many ways we can achieve it. For example the key to being happy may just lie within us but sometimes external factors such as people, places or things could help influence this change too ☺️
 “There’s only one rule that I know of: children, always take your parents to lunch.” – Alistair Cooke (American journalist)”Happiness is not something ready made. It comes from your own actions”. Dalai Lama XIV “If you have good thoughts they will shine out of your face like sunbeams and you will always look lovely
 I believe that life has many different paths to take, for example we can choose between a job or study which both give us the opportunity to live in comfort. However if there was only one path it would be so much easier! It’s important not just focus on yourself
-llama_print_timings:        load time =    1942.01 ms
-llama_print_timings:      sample time =     132.07 ms /   256 runs   (    0.52 ms per token,  1938.29 tokens per second)
-llama_print_timings: prompt eval time =      25.67 ms /     8 tokens (    3.21 ms per token,   311.60 tokens per second)
-llama_print_timings:        eval time =    3277.90 ms /   255 runs   (   12.85 ms per token,    77.79 tokens per second)
-llama_print_timings:       total time =    3527.36 ms
+llama_print_timings:        load time =    1959.88 ms
+llama_print_timings:      sample time =     133.55 ms /   256 runs   (    0.52 ms per token,  1916.90 tokens per second)
+llama_print_timings: prompt eval time =      25.71 ms /     8 tokens (    3.21 ms per token,   311.22 tokens per second)
+llama_print_timings:        eval time =    3290.01 ms /   255 runs   (   12.90 ms per token,    77.51 tokens per second)
+llama_print_timings:       total time =    3546.56 ms
 Log end
 
-real	0m6.092s
-user	0m4.526s
-sys	0m1.557s
+real	0m6.147s
+user	0m4.546s
+sys	0m1.596s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q8_0.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 1805 (4f56458)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1704846296
+main: seed  = 1704873773
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
 ggml_init_cublas: found 1 CUDA devices:
@@ -584,21 +584,21 @@ llama_new_context_with_model: total VRAM used: 7875.83 MiB (model: 6695.83 MiB, 
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 1067.5 ms
+perplexity: tokenization took 1017.63 ms
 perplexity: calculating perplexity over 4 chunks, batch_size=512
-perplexity: 1.00 seconds per pass - ETA 0.07 minutes
-[1]5.5306,[2]6.8318,[3]7.4382,[4]6.8802,
-llama_print_timings:        load time =    1651.14 ms
+perplexity: 0.99 seconds per pass - ETA 0.05 minutes
+[1]5.5319,[2]6.8326,[3]7.4401,[4]6.8816,
+llama_print_timings:        load time =    1661.71 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    3093.03 ms /  8192 tokens (    0.38 ms per token,  2648.54 tokens per second)
+llama_print_timings: prompt eval time =    3101.67 ms /  8192 tokens (    0.38 ms per token,  2641.16 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    5026.48 ms
+llama_print_timings:       total time =    4970.32 ms
 
-Final estimate: PPL = 6.8802 +/- 0.25599
+Final estimate: PPL = 6.8816 +/- 0.25611
 
-real	0m7.309s
-user	0m5.731s
-sys	0m2.224s
+real	0m7.273s
+user	0m5.735s
+sys	0m2.183s
 ```
 - q4_0:
 ```
@@ -709,20 +709,20 @@ I think we need more people who understand that a person can live for themselves
 This year my family moved from our country house into a small condo downtown by the harbor of San Juan Bay in Puerto Rico (just over an hour south of New York City). My parents are both artists who have always lived on or near water and had never been able to afford their own space before this past spring.
 This change has given me new perspective, as I’ve moved closer into the city center with my family than ever before in our lives together (my mother is 72 years old; father is just a few years younger). This means we are now much more exposed to people who have never experienced what life was like growing up poor or having less.
 I believe that if everyone took one day out of their week and spent it at the local shelter for homeless, hungry, abused
-llama_print_timings:        load time =    1064.70 ms
-llama_print_timings:      sample time =     129.32 ms /   256 runs   (    0.51 ms per token,  1979.55 tokens per second)
-llama_print_timings: prompt eval time =      19.36 ms /     8 tokens (    2.42 ms per token,   413.29 tokens per second)
-llama_print_timings:        eval time =    2253.68 ms /   255 runs   (    8.84 ms per token,   113.15 tokens per second)
-llama_print_timings:       total time =    2495.05 ms
+llama_print_timings:        load time =    1084.26 ms
+llama_print_timings:      sample time =     140.13 ms /   256 runs   (    0.55 ms per token,  1826.88 tokens per second)
+llama_print_timings: prompt eval time =      18.93 ms /     8 tokens (    2.37 ms per token,   422.65 tokens per second)
+llama_print_timings:        eval time =    2249.31 ms /   255 runs   (    8.82 ms per token,   113.37 tokens per second)
+llama_print_timings:       total time =    2501.43 ms
 Log end
 
-real	0m4.187s
-user	0m3.091s
-sys	0m1.095s
+real	0m4.269s
+user	0m3.114s
+sys	0m1.154s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 1805 (4f56458)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1704846303
+main: seed  = 1704873781
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
 ggml_init_cublas: found 1 CUDA devices:
@@ -812,21 +812,21 @@ llama_new_context_with_model: total VRAM used: 4757.56 MiB (model: 3577.55 MiB, 
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 1019.97 ms
+perplexity: tokenization took 1046.35 ms
 perplexity: calculating perplexity over 4 chunks, batch_size=512
 perplexity: 0.97 seconds per pass - ETA 0.05 minutes
 [1]5.6359,[2]6.9331,[3]7.5730,[4]7.0135,
-llama_print_timings:        load time =     902.08 ms
+llama_print_timings:        load time =     935.68 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    3005.67 ms /  8192 tokens (    0.37 ms per token,  2725.51 tokens per second)
+llama_print_timings: prompt eval time =    3011.56 ms /  8192 tokens (    0.37 ms per token,  2720.19 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    4875.11 ms
+llama_print_timings:       total time =    4913.64 ms
 
 Final estimate: PPL = 7.0135 +/- 0.26115
 
-real	0m6.397s
-user	0m5.328s
-sys	0m1.717s
+real	0m6.480s
+user	0m5.289s
+sys	0m1.810s
 ```
 - q4_1:
 ```
@@ -934,20 +934,20 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
 
  I believe the meaning of life is to enjoy each moment as much as possible, and that’s why we decided on a destination wedding. We wanted it be different from all other weddings out there…we didn’t want cake or favors (though many people brought both). There would have been no gifts at our ceremony because instead the guests were asked for donations to charity which is something I personally feel strongly about, and not everyone agrees with me on that point so we got creative. We had a donation tree in lieu of favor bags where each guest could put any amount they wanted into their own personalized bag! The money was given as gifts at our reception towards the charities (a local shelter for girls who are victims to sex trafficking, an organization dedicated to ending human and civil rights violations against women around the world) that were close to us. It’s hard in this day and age when everyone is so focused on themselves but I would rather be remembered as someone who was kind than someone who made a lot of money or had tons of material things!
 My best friend, Michelle Fiorella (a professional makeup artist), did my make up for our wedding. She has done other brides’ makeup and helped with hair before so she knew exactly how I wanted to look on my big day which was
-llama_print_timings:        load time =    1112.43 ms
-llama_print_timings:      sample time =     131.52 ms /   256 runs   (    0.51 ms per token,  1946.46 tokens per second)
-llama_print_timings: prompt eval time =      16.65 ms /     8 tokens (    2.08 ms per token,   480.48 tokens per second)
-llama_print_timings:        eval time =    2333.97 ms /   255 runs   (    9.15 ms per token,   109.26 tokens per second)
-llama_print_timings:       total time =    2573.82 ms
+llama_print_timings:        load time =    1118.91 ms
+llama_print_timings:      sample time =     132.80 ms /   256 runs   (    0.52 ms per token,  1927.70 tokens per second)
+llama_print_timings: prompt eval time =      17.30 ms /     8 tokens (    2.16 ms per token,   462.43 tokens per second)
+llama_print_timings:        eval time =    2321.17 ms /   255 runs   (    9.10 ms per token,   109.86 tokens per second)
+llama_print_timings:       total time =    2563.44 ms
 Log end
 
-real	0m4.343s
-user	0m3.207s
-sys	0m1.129s
+real	0m4.293s
+user	0m3.188s
+sys	0m1.104s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 1805 (4f56458)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1704846310
+main: seed  = 1704873787
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
 ggml_init_cublas: found 1 CUDA devices:
@@ -1037,21 +1037,21 @@ llama_new_context_with_model: total VRAM used: 5143.56 MiB (model: 3963.55 MiB, 
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 1009.72 ms
+perplexity: tokenization took 1033.13 ms
 perplexity: calculating perplexity over 4 chunks, batch_size=512
-perplexity: 0.97 seconds per pass - ETA 0.05 minutes
-[1]5.6919,[2]6.9505,[3]7.5628,[4]7.0156,
-llama_print_timings:        load time =     965.63 ms
+perplexity: 0.98 seconds per pass - ETA 0.05 minutes
+[1]5.6919,[2]6.9540,[3]7.5653,[4]7.0174,
+llama_print_timings:        load time =     978.71 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    3010.21 ms /  8192 tokens (    0.37 ms per token,  2721.40 tokens per second)
+llama_print_timings: prompt eval time =    3015.24 ms /  8192 tokens (    0.37 ms per token,  2716.86 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    4878.87 ms
+llama_print_timings:       total time =    4904.48 ms
 
-Final estimate: PPL = 7.0156 +/- 0.26044
+Final estimate: PPL = 7.0174 +/- 0.26052
 
-real	0m6.474s
-user	0m5.231s
-sys	0m1.874s
+real	0m6.505s
+user	0m5.336s
+sys	0m1.798s
 ```
 - q5_0:
 ```
@@ -1163,20 +1163,20 @@ The Meaning Of Life: What Is The True Purpose Of Existence? #Quotes. I’ve alwa
 Source: The Meaning Of Life – What Is It? | BoredPanda.com by Gianluca Neri at boredpanda.com/the-meaning-of-life-what-is-it-. Posted 12 October, 2019 on the ‘Bored Panda’ site
 I believe that life is a journey and we all are going through it together! We need to learn from our mistakes so as not to repeat them again. Life is short – do what makes you happy because your happiness can make someone else feel better too 😊🙏
 What Does The Meaning Of
-llama_print_timings:        load time =    1239.75 ms
-llama_print_timings:      sample time =     148.25 ms /   256 runs   (    0.58 ms per token,  1726.75 tokens per second)
-llama_print_timings: prompt eval time =      30.03 ms /     8 tokens (    3.75 ms per token,   266.42 tokens per second)
-llama_print_timings:        eval time =    2602.88 ms /   255 runs   (   10.21 ms per token,    97.97 tokens per second)
-llama_print_timings:       total time =    2878.09 ms
+llama_print_timings:        load time =    1239.27 ms
+llama_print_timings:      sample time =     143.98 ms /   256 runs   (    0.56 ms per token,  1778.07 tokens per second)
+llama_print_timings: prompt eval time =      30.63 ms /     8 tokens (    3.83 ms per token,   261.16 tokens per second)
+llama_print_timings:        eval time =    2600.81 ms /   255 runs   (   10.20 ms per token,    98.05 tokens per second)
+llama_print_timings:       total time =    2868.33 ms
 Log end
 
-real	0m4.739s
-user	0m3.586s
-sys	0m1.152s
+real	0m4.740s
+user	0m3.571s
+sys	0m1.166s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_0.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 1805 (4f56458)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1704846316
+main: seed  = 1704873794
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
 ggml_init_cublas: found 1 CUDA devices:
@@ -1266,21 +1266,21 @@ llama_new_context_with_model: total VRAM used: 5529.56 MiB (model: 4349.55 MiB, 
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 1035.17 ms
+perplexity: tokenization took 1047.46 ms
 perplexity: calculating perplexity over 4 chunks, batch_size=512
 perplexity: 0.98 seconds per pass - ETA 0.05 minutes
 [1]5.5346,[2]6.8547,[3]7.4729,[4]6.9230,
-llama_print_timings:        load time =    1037.69 ms
+llama_print_timings:        load time =    1047.06 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    3032.25 ms /  8192 tokens (    0.37 ms per token,  2701.63 tokens per second)
+llama_print_timings: prompt eval time =    3027.80 ms /  8192 tokens (    0.37 ms per token,  2705.59 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    4950.08 ms
+llama_print_timings:       total time =    4933.37 ms
 
 Final estimate: PPL = 6.9230 +/- 0.25774
 
-real	0m6.630s
-user	0m5.482s
-sys	0m1.834s
+real	0m6.627s
+user	0m5.384s
+sys	0m1.864s
 ```
 - q5_1:
 ```
@@ -1390,20 +1390,20 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
 I know this sounds cliche, but it's true - if we don't live our lives for ourselves, then what are we living them for? Why should a man (or woman) choose some random job or relationship just because someone else wants him to be happy and settled down in life by having kids.
 We must follow the path that makes us feel fulfilled and like you know it will make your mom proud of whatever decision you've made, but we also need to live a little and not stick so closely with others. We have our own lives too! You can choose whether or not you want children - for me personally I would love kids one day when the right man comes along (and he has his own child) because i think having an extra person in your life is always good, but that doesn't mean we should be forced to do it.
 I am 20 years old and just finished my first year of university studying a double major - sociology/psychology & law (which I really enjoy). There are many paths you can take when entering the "working world" so don't feel like this is your last chance at life because it isn'
-llama_print_timings:        load time =    1331.92 ms
-llama_print_timings:      sample time =     133.50 ms /   256 runs   (    0.52 ms per token,  1917.56 tokens per second)
-llama_print_timings: prompt eval time =      23.95 ms /     8 tokens (    2.99 ms per token,   334.10 tokens per second)
-llama_print_timings:        eval time =    2631.20 ms /   255 runs   (   10.32 ms per token,    96.91 tokens per second)
-llama_print_timings:       total time =    2881.80 ms
+llama_print_timings:        load time =    1353.04 ms
+llama_print_timings:      sample time =     135.34 ms /   256 runs   (    0.53 ms per token,  1891.50 tokens per second)
+llama_print_timings: prompt eval time =      24.51 ms /     8 tokens (    3.06 ms per token,   326.45 tokens per second)
+llama_print_timings:        eval time =    2640.32 ms /   255 runs   (   10.35 ms per token,    96.58 tokens per second)
+llama_print_timings:       total time =    2891.09 ms
 Log end
 
-real	0m4.839s
-user	0m3.635s
-sys	0m1.203s
+real	0m4.866s
+user	0m3.678s
+sys	0m1.187s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 1805 (4f56458)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1704846323
+main: seed  = 1704873800
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
 ggml_init_cublas: found 1 CUDA devices:
@@ -1493,21 +1493,21 @@ llama_new_context_with_model: total VRAM used: 5915.56 MiB (model: 4735.55 MiB, 
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 1015.51 ms
+perplexity: tokenization took 1045.5 ms
 perplexity: calculating perplexity over 4 chunks, batch_size=512
-perplexity: 0.97 seconds per pass - ETA 0.05 minutes
-[1]5.5680,[2]6.8487,[3]7.4566,[4]6.9077,
-llama_print_timings:        load time =    1133.00 ms
+perplexity: 1.00 seconds per pass - ETA 0.05 minutes
+[1]5.5660,[2]6.8475,[3]7.4557,[4]6.9074,
+llama_print_timings:        load time =    1141.28 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    3025.30 ms /  8192 tokens (    0.37 ms per token,  2707.83 tokens per second)
+llama_print_timings: prompt eval time =    3051.27 ms /  8192 tokens (    0.37 ms per token,  2684.78 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    4883.17 ms
+llama_print_timings:       total time =    4960.66 ms
 
-Final estimate: PPL = 6.9077 +/- 0.25712
+Final estimate: PPL = 6.9074 +/- 0.25708
 
-real	0m6.654s
-user	0m5.439s
-sys	0m1.842s
+real	0m6.740s
+user	0m5.535s
+sys	0m1.835s
 ```
 - q2_k:
 ```
@@ -1619,20 +1619,20 @@ I am a very hard worker who strives for perfection in everything that she does a
 My greatest strength is my ability to get what I need in the most efficient way possible, so that everyone’s time and energy will not go wasted . My biggest weakness may just possibly have something do with me wanting a bit too much out of life ( like some people) but on another hand it could also be considered as an asset.
 I am honest , hardworking & reliable person who has been described by the majority I worked for, to always complete tasks in time and make sure that any deadlines are met . My ability is my willingness to help others succeed at whatever they need from me without having a negative effect on them or myself ! With many years of experience with various industries , it will be easy for someone who wants to learn how things work while being very detailed oriented.
 I am an honest hard worker & reliable person that has been described by the majority I worked in, as completing tasks
-llama_print_timings:        load time =     785.55 ms
-llama_print_timings:      sample time =     129.20 ms /   256 runs   (    0.50 ms per token,  1981.39 tokens per second)
-llama_print_timings: prompt eval time =      42.07 ms /     8 tokens (    5.26 ms per token,   190.17 tokens per second)
-llama_print_timings:        eval time =    2887.77 ms /   255 runs   (   11.32 ms per token,    88.30 tokens per second)
-llama_print_timings:       total time =    3150.70 ms
+llama_print_timings:        load time =     833.54 ms
+llama_print_timings:      sample time =     132.92 ms /   256 runs   (    0.52 ms per token,  1926.00 tokens per second)
+llama_print_timings: prompt eval time =      41.18 ms /     8 tokens (    5.15 ms per token,   194.28 tokens per second)
+llama_print_timings:        eval time =    2893.46 ms /   255 runs   (   11.35 ms per token,    88.13 tokens per second)
+llama_print_timings:       total time =    3162.57 ms
 Log end
 
-real	0m4.566s
-user	0m3.630s
+real	0m4.609s
+user	0m3.671s
 sys	0m0.935s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 1805 (4f56458)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1704846329
+main: seed  = 1704873807
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
 ggml_init_cublas: found 1 CUDA devices:
@@ -1723,21 +1723,21 @@ llama_new_context_with_model: total VRAM used: 3833.31 MiB (model: 2653.30 MiB, 
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 1048.79 ms
+perplexity: tokenization took 1016.39 ms
 perplexity: calculating perplexity over 4 chunks, batch_size=512
 perplexity: 1.06 seconds per pass - ETA 0.07 minutes
 [1]6.0780,[2]7.4722,[3]8.1313,[4]7.5741,
-llama_print_timings:        load time =     686.08 ms
+llama_print_timings:        load time =     697.99 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    3375.13 ms /  8192 tokens (    0.41 ms per token,  2427.17 tokens per second)
+llama_print_timings: prompt eval time =    3372.79 ms /  8192 tokens (    0.41 ms per token,  2428.85 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    5273.92 ms
+llama_print_timings:       total time =    5256.94 ms
 
 Final estimate: PPL = 7.5741 +/- 0.28373
 
-real	0m6.587s
-user	0m5.538s
-sys	0m1.676s
+real	0m6.599s
+user	0m5.483s
+sys	0m1.773s
 ```
 - q3_k:
 ```
@@ -1849,20 +1849,20 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
 If there was ever one thing that should make us stop in our tracks it would surely be when we were shown all these things…we must never forget them! We can only hope for forgiveness if they do so first before asking of ours. Only then will the world know true happiness and freedom from what’s to come..
 I don’t believe anything is ever truly lost, everything happens in its own time- it might just not be your time yet or never at all! You could find something you once thought was long gone when least expected…or lose someone who seemed so close by. There are a million things that can happen to us each day but we need only hope and pray for the best..
 I believe in being strong enough as well as weak, knowing how far I’ve come from where it all began yet still seeing what could be ahead! As long as there is tomorrow then surely everything else will fall into place…but if not at least you tried to make things better today than yesterday. What we choose doesn’t always have an effect on those around us, but sometimes just knowing that someone cares about
-llama_print_timings:        load time =     901.55 ms
-llama_print_timings:      sample time =     131.89 ms /   256 runs   (    0.52 ms per token,  1941.04 tokens per second)
-llama_print_timings: prompt eval time =      36.10 ms /     8 tokens (    4.51 ms per token,   221.58 tokens per second)
-llama_print_timings:        eval time =    2781.34 ms /   255 runs   (   10.91 ms per token,    91.68 tokens per second)
-llama_print_timings:       total time =    3041.30 ms
+llama_print_timings:        load time =     911.74 ms
+llama_print_timings:      sample time =     132.97 ms /   256 runs   (    0.52 ms per token,  1925.26 tokens per second)
+llama_print_timings: prompt eval time =      36.89 ms /     8 tokens (    4.61 ms per token,   216.85 tokens per second)
+llama_print_timings:        eval time =    2777.07 ms /   255 runs   (   10.89 ms per token,    91.82 tokens per second)
+llama_print_timings:       total time =    3038.89 ms
 Log end
 
-real	0m4.586s
-user	0m3.592s
-sys	0m0.989s
+real	0m4.575s
+user	0m3.620s
+sys	0m0.946s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q3_k.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 1805 (4f56458)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1704846336
+main: seed  = 1704873814
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
 ggml_init_cublas: found 1 CUDA devices:
@@ -1954,21 +1954,21 @@ llama_new_context_with_model: total VRAM used: 4270.81 MiB (model: 3090.80 MiB, 
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 1039.94 ms
+perplexity: tokenization took 1017.55 ms
 perplexity: calculating perplexity over 4 chunks, batch_size=512
-perplexity: 1.08 seconds per pass - ETA 0.07 minutes
-[1]5.6685,[2]7.0257,[3]7.6440,[4]7.1112,
-llama_print_timings:        load time =     767.11 ms
+perplexity: 1.09 seconds per pass - ETA 0.07 minutes
+[1]5.6685,[2]7.0221,[3]7.6414,[4]7.1094,
+llama_print_timings:        load time =     777.61 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    3456.78 ms /  8192 tokens (    0.42 ms per token,  2369.83 tokens per second)
+llama_print_timings: prompt eval time =    3456.47 ms /  8192 tokens (    0.42 ms per token,  2370.05 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    5337.90 ms
+llama_print_timings:       total time =    5330.67 ms
 
-Final estimate: PPL = 7.1112 +/- 0.26591
+Final estimate: PPL = 7.1094 +/- 0.26584
 
-real	0m6.742s
-user	0m5.560s
-sys	0m1.820s
+real	0m6.741s
+user	0m5.630s
+sys	0m1.757s
 ```
 - q4_k:
 ```
@@ -2078,20 +2078,20 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
 The pressures on teenagers today can take their toll and cause stress that sometimes leads to unhappiness or anxiety/depression disorders (which may even lead to suicide). I have seen many people around me deal with these issues. Sometimes they don’t get help right away, but it is important for someone to understand the feelings of being unhappy so much so as an adult and a parent that you are able to recognize when something isn’t right in your own life or childs’.
 When I was 13 years old my parents got divorced. This made me feel very anxious about what would happen next, but luckily for all three of us (my mom & two sisters) it turned out good and we ended up with a great family situation! My dad is still married to his wife now who has helped raise the girls since they were 10 years old. I’m thankful that my parents took the time in the beginning of their separation to try to work things out for us (their children) even though it was extremely hard at first and there were many tears shed.
 After being a teenager myself, having experienced
-llama_print_timings:        load time =    1049.93 ms
-llama_print_timings:      sample time =     134.44 ms /   256 runs   (    0.53 ms per token,  1904.27 tokens per second)
-llama_print_timings: prompt eval time =      23.63 ms /     8 tokens (    2.95 ms per token,   338.58 tokens per second)
-llama_print_timings:        eval time =    2502.99 ms /   255 runs   (    9.82 ms per token,   101.88 tokens per second)
-llama_print_timings:       total time =    2752.72 ms
+llama_print_timings:        load time =    1056.96 ms
+llama_print_timings:      sample time =     139.41 ms /   256 runs   (    0.54 ms per token,  1836.38 tokens per second)
+llama_print_timings: prompt eval time =      23.78 ms /     8 tokens (    2.97 ms per token,   336.49 tokens per second)
+llama_print_timings:        eval time =    2517.21 ms /   255 runs   (    9.87 ms per token,   101.30 tokens per second)
+llama_print_timings:       total time =    2776.12 ms
 Log end
 
-real	0m4.423s
-user	0m3.374s
-sys	0m1.047s
+real	0m4.492s
+user	0m3.459s
+sys	0m1.030s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_k.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 1805 (4f56458)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1704846343
+main: seed  = 1704873820
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
 ggml_init_cublas: found 1 CUDA devices:
@@ -2181,21 +2181,21 @@ llama_new_context_with_model: total VRAM used: 5000.93 MiB (model: 3820.93 MiB, 
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 1016.78 ms
+perplexity: tokenization took 1041.76 ms
 perplexity: calculating perplexity over 4 chunks, batch_size=512
-perplexity: 1.07 seconds per pass - ETA 0.07 minutes
+perplexity: 1.08 seconds per pass - ETA 0.07 minutes
 [1]5.5837,[2]6.8710,[3]7.4811,[4]6.9394,
-llama_print_timings:        load time =     877.42 ms
+llama_print_timings:        load time =     891.86 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    3429.49 ms /  8192 tokens (    0.42 ms per token,  2388.69 tokens per second)
+llama_print_timings: prompt eval time =    3434.36 ms /  8192 tokens (    0.42 ms per token,  2385.31 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    5298.23 ms
+llama_print_timings:       total time =    5326.69 ms
 
 Final estimate: PPL = 6.9394 +/- 0.25792
 
-real	0m6.798s
-user	0m5.477s
-sys	0m1.957s
+real	0m6.868s
+user	0m5.695s
+sys	0m1.814s
 ```
 - q5_k:
 ```
@@ -2306,20 +2306,20 @@ I am a writer because it’s my passion; writing stories makes me feel alive! An
 I am an author of contemporary romance, women’s fiction with a healthy dose of fluff! My books will make your heart feel full; they are filled to overflowing with love stories that center around characters who aren’t perfect but have one thing in common – their quest for true love and the ability to forgive.
 I live on an island called Kauai, Hawaii surrounded by waterfalls (and a few of my own). I was born and raised in Southern California where there are palm trees everywhere! My family is still near me; they’re all very supportive with what I do as well 🙂 They keep reminding me that it takes hard work to become successful at writing. But when you love something, the time and effort put forth will always be worth it!
 My books have been described by many reviewers (and readers) in a few ways; some
-llama_print_timings:        load time =    1191.24 ms
-llama_print_timings:      sample time =     130.88 ms /   256 runs   (    0.51 ms per token,  1955.93 tokens per second)
-llama_print_timings: prompt eval time =      27.61 ms /     8 tokens (    3.45 ms per token,   289.72 tokens per second)
-llama_print_timings:        eval time =    2733.59 ms /   255 runs   (   10.72 ms per token,    93.28 tokens per second)
-llama_print_timings:       total time =    2984.48 ms
+llama_print_timings:        load time =    1193.07 ms
+llama_print_timings:      sample time =     128.72 ms /   256 runs   (    0.50 ms per token,  1988.86 tokens per second)
+llama_print_timings: prompt eval time =      27.07 ms /     8 tokens (    3.38 ms per token,   295.48 tokens per second)
+llama_print_timings:        eval time =    2730.34 ms /   255 runs   (   10.71 ms per token,    93.39 tokens per second)
+llama_print_timings:       total time =    2976.21 ms
 Log end
 
-real	0m4.805s
-user	0m3.687s
-sys	0m1.108s
+real	0m4.794s
+user	0m3.652s
+sys	0m1.136s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 1805 (4f56458)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1704846350
+main: seed  = 1704873827
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
 ggml_init_cublas: found 1 CUDA devices:
@@ -2409,21 +2409,21 @@ llama_new_context_with_model: total VRAM used: 5654.93 MiB (model: 4474.93 MiB, 
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 1051.69 ms
+perplexity: tokenization took 1029.71 ms
 perplexity: calculating perplexity over 4 chunks, batch_size=512
 perplexity: 1.03 seconds per pass - ETA 0.07 minutes
 [1]5.5219,[2]6.8171,[3]7.4368,[4]6.8915,
-llama_print_timings:        load time =    1025.61 ms
+llama_print_timings:        load time =    1038.95 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    3253.44 ms /  8192 tokens (    0.40 ms per token,  2517.95 tokens per second)
+llama_print_timings: prompt eval time =    3257.84 ms /  8192 tokens (    0.40 ms per token,  2514.55 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    5163.92 ms
+llama_print_timings:       total time =    5127.07 ms
 
 Final estimate: PPL = 6.8915 +/- 0.25645
 
-real	0m6.832s
-user	0m5.621s
-sys	0m1.846s
+real	0m6.787s
+user	0m5.623s
+sys	0m1.786s
 ```
 - q6_k:
 ```
@@ -2532,20 +2532,20 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
 In today's world, there seem to be more issues than ever before - wars; global warming; lack of resources including money but most importantly TIME! There seems little or no hope that we will all find our own personal 'Happy Place'. It may have been lost in the maze created by social media which has changed life for many. The ability to get on with your day without worrying about what others are doing; how much they are spending, where is it going? How fast can I drive my car or am I really driving a smart one now that all those features have been added and who's the latest celebrity couple this week - so often we need an update before breakfast.
 What if you could be happy in your day to day life without having to spend hours on social media? What would it feel like not worrying about what others are doing or where they are going but living a quieter more fulfilling existence, one that brings happiness and fulfillment rather than frustration! Imagine how much time you have freed up.
 What if there was an app which enabled people who were feeling low to seek advice from experts with real life experience of dealing
-llama_print_timings:        load time =    1362.07 ms
-llama_print_timings:      sample time =     129.27 ms /   256 runs   (    0.50 ms per token,  1980.31 tokens per second)
-llama_print_timings: prompt eval time =      28.78 ms /     8 tokens (    3.60 ms per token,   278.01 tokens per second)
-llama_print_timings:        eval time =    3025.15 ms /   255 runs   (   11.86 ms per token,    84.29 tokens per second)
-llama_print_timings:       total time =    3274.01 ms
+llama_print_timings:        load time =    1361.70 ms
+llama_print_timings:      sample time =     136.54 ms /   256 runs   (    0.53 ms per token,  1874.85 tokens per second)
+llama_print_timings: prompt eval time =      28.87 ms /     8 tokens (    3.61 ms per token,   277.07 tokens per second)
+llama_print_timings:        eval time =    3045.48 ms /   255 runs   (   11.94 ms per token,    83.73 tokens per second)
+llama_print_timings:       total time =    3301.51 ms
 Log end
 
-real	0m5.253s
-user	0m4.076s
-sys	0m1.173s
+real	0m5.283s
+user	0m4.077s
+sys	0m1.205s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q6_k.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 1805 (4f56458)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1704846356
+main: seed  = 1704873834
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
 ggml_init_cublas: found 1 CUDA devices:
@@ -2634,21 +2634,21 @@ llama_new_context_with_model: total VRAM used: 6349.81 MiB (model: 5169.80 MiB, 
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 1025.63 ms
+perplexity: tokenization took 1061.61 ms
 perplexity: calculating perplexity over 4 chunks, batch_size=512
 perplexity: 1.04 seconds per pass - ETA 0.07 minutes
 [1]5.5561,[2]6.8405,[3]7.4444,[4]6.8910,
-llama_print_timings:        load time =    1144.74 ms
+llama_print_timings:        load time =    1162.50 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    3289.44 ms /  8192 tokens (    0.40 ms per token,  2490.40 tokens per second)
+llama_print_timings: prompt eval time =    3290.36 ms /  8192 tokens (    0.40 ms per token,  2489.69 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    5170.48 ms
+llama_print_timings:       total time =    5205.39 ms
 
 Final estimate: PPL = 6.8910 +/- 0.25648
 
-real	0m6.987s
-user	0m5.666s
-sys	0m1.962s
+real	0m6.990s
+user	0m5.614s
+sys	0m2.000s
 ```
 - save-load-state: 
 ```
@@ -2745,21 +2745,23 @@ llama_new_context_with_model: compute buffer total size = 73.69 MiB
 
 main : success
 
-first run: The quick brown fox jumps over a lazy dog’s >>squarepusher<< fugazi.
+first run: The quick brown fox jumps over the lazy dog_.
+This is a test post to check whether ping
 
 
-second run: The quick brown fox jumps over a lazy dog’s >>squarepusher<< fugazi.
+second run: The quick brown fox jumps over the lazy dog_.
+This is a test post to check whether ping
 
-real	0m11.096s
-user	0m27.235s
-sys	0m2.151s
+real	0m11.126s
+user	0m27.369s
+sys	0m2.091s
 ```
 - shakespeare (f16):
 ```
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-f16.gguf -f ../models-mnt/shakespeare/shakespeare.txt -t 1 -ngl 999 -c 2048 -b 512 --chunks 3
 main: build = 1805 (4f56458)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1704846378
+main: seed  = 1704873856
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
 ggml_init_cublas: found 1 CUDA devices:
@@ -2847,28 +2849,28 @@ llama_new_context_with_model: total VRAM used: 13783.02 MiB (model: 12603.02 MiB
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 60.241 ms
+perplexity: tokenization took 61.352 ms
 perplexity: calculating perplexity over 3 chunks, batch_size=512
-perplexity: 0.87 seconds per pass - ETA 0.03 minutes
-[1]14.1679,[2]11.8169,[3]11.2261,
-llama_print_timings:        load time =    2767.57 ms
+perplexity: 0.86 seconds per pass - ETA 0.03 minutes
+[1]14.1610,[2]11.8140,[3]11.2243,
+llama_print_timings:        load time =    2781.95 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    1967.24 ms /  6144 tokens (    0.32 ms per token,  3123.16 tokens per second)
+llama_print_timings: prompt eval time =    1961.92 ms /  6144 tokens (    0.32 ms per token,  3131.62 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    2682.20 ms
+llama_print_timings:       total time =    2650.54 ms
 
-Final estimate: PPL = 11.2261 +/- 0.52159
+Final estimate: PPL = 11.2243 +/- 0.52147
 
 real	0m6.090s
-user	0m4.351s
-sys	0m2.219s
+user	0m4.426s
+sys	0m2.124s
 ```
 - shakespeare (f16 lora):
 ```
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-f16.gguf -f ../models-mnt/shakespeare/shakespeare.txt --lora ../models-mnt/open-llama/7B-v2/lora/ggml-adapter-model.bin -t 1 -ngl 999 -c 2048 -b 512 --chunks 3
 main: build = 1805 (4f56458)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1704846384
+main: seed  = 1704873862
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
 ggml_init_cublas: found 1 CUDA devices:
@@ -2956,23 +2958,23 @@ llama_new_context_with_model: total VRAM used: 13783.02 MiB (model: 12603.02 MiB
 llama_apply_lora_from_file_internal: applying lora adapter from '../models-mnt/open-llama/7B-v2/lora/ggml-adapter-model.bin' - please wait ...
 llama_apply_lora_from_file_internal: r = 64, alpha = 128, scaling = 2.00
 llama_apply_lora_from_file_internal: allocating 1500 MB for lora temporary buffer
-................ done (518.26 ms)
+................ done (525.12 ms)
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 66.895 ms
+perplexity: tokenization took 64.42 ms
 perplexity: calculating perplexity over 3 chunks, batch_size=512
 perplexity: 0.87 seconds per pass - ETA 0.03 minutes
 [1]11.5881,[2]9.1780,[3]8.7622,
-llama_print_timings:        load time =    6137.44 ms
+llama_print_timings:        load time =    6341.13 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    1972.13 ms /  6144 tokens (    0.32 ms per token,  3115.42 tokens per second)
+llama_print_timings: prompt eval time =    1962.69 ms /  6144 tokens (    0.32 ms per token,  3130.39 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    2677.96 ms
+llama_print_timings:       total time =    2679.65 ms
 
 Final estimate: PPL = 8.7622 +/- 0.39497
 
-real	0m9.475s
-user	0m4.395s
-sys	0m5.556s
+real	0m9.699s
+user	0m4.459s
+sys	0m5.725s
 ```

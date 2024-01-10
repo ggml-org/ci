@@ -104,20 +104,20 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
 The pressures on teenagers today can take their toll and cause stress that sometimes leads to unhappiness or anxiety/depression disorders (which may even lead to suicide). I have seen many people around me deal with these issues. Sometimes they don’t get help right away, but it is important for someone to understand the feelings of being unhappy so much so as an adult and a parent that you are able to recognize when something isn’t right in your own life or childs’.
 When I was 13 years old my parents got divorced. This made me feel very anxious about what would happen next, but luckily for all three of us (my mom & two sisters) it turned out good and we ended up with a great family situation! My dad is still married to his wife now who has helped raise the girls since they were 10 years old. I’m thankful that my parents took the time in the beginning of their separation to try to work things out for us (their children) even though it was extremely hard at first and there were many tears shed.
 After being a teenager myself, having experienced
-llama_print_timings:        load time =    1049.93 ms
-llama_print_timings:      sample time =     134.44 ms /   256 runs   (    0.53 ms per token,  1904.27 tokens per second)
-llama_print_timings: prompt eval time =      23.63 ms /     8 tokens (    2.95 ms per token,   338.58 tokens per second)
-llama_print_timings:        eval time =    2502.99 ms /   255 runs   (    9.82 ms per token,   101.88 tokens per second)
-llama_print_timings:       total time =    2752.72 ms
+llama_print_timings:        load time =    1056.96 ms
+llama_print_timings:      sample time =     139.41 ms /   256 runs   (    0.54 ms per token,  1836.38 tokens per second)
+llama_print_timings: prompt eval time =      23.78 ms /     8 tokens (    2.97 ms per token,   336.49 tokens per second)
+llama_print_timings:        eval time =    2517.21 ms /   255 runs   (    9.87 ms per token,   101.30 tokens per second)
+llama_print_timings:       total time =    2776.12 ms
 Log end
 
-real	0m4.423s
-user	0m3.374s
-sys	0m1.047s
+real	0m4.492s
+user	0m3.459s
+sys	0m1.030s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_k.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 1805 (4f56458)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1704846343
+main: seed  = 1704873820
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
 ggml_init_cublas: found 1 CUDA devices:
@@ -207,18 +207,18 @@ llama_new_context_with_model: total VRAM used: 5000.93 MiB (model: 3820.93 MiB, 
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 1016.78 ms
+perplexity: tokenization took 1041.76 ms
 perplexity: calculating perplexity over 4 chunks, batch_size=512
-perplexity: 1.07 seconds per pass - ETA 0.07 minutes
+perplexity: 1.08 seconds per pass - ETA 0.07 minutes
 [1]5.5837,[2]6.8710,[3]7.4811,[4]6.9394,
-llama_print_timings:        load time =     877.42 ms
+llama_print_timings:        load time =     891.86 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    3429.49 ms /  8192 tokens (    0.42 ms per token,  2388.69 tokens per second)
+llama_print_timings: prompt eval time =    3434.36 ms /  8192 tokens (    0.42 ms per token,  2385.31 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    5298.23 ms
+llama_print_timings:       total time =    5326.69 ms
 
 Final estimate: PPL = 6.9394 +/- 0.25792
 
-real	0m6.798s
-user	0m5.477s
-sys	0m1.957s
+real	0m6.868s
+user	0m5.695s
+sys	0m1.814s

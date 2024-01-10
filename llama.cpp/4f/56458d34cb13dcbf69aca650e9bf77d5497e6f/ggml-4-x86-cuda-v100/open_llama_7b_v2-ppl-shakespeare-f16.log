@@ -1,7 +1,7 @@
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-f16.gguf -f ../models-mnt/shakespeare/shakespeare.txt -t 1 -ngl 999 -c 2048 -b 512 --chunks 3
 main: build = 1805 (4f56458)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1704846378
+main: seed  = 1704873856
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
 ggml_init_cublas: found 1 CUDA devices:
@@ -89,18 +89,18 @@ llama_new_context_with_model: total VRAM used: 13783.02 MiB (model: 12603.02 MiB
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 60.241 ms
+perplexity: tokenization took 61.352 ms
 perplexity: calculating perplexity over 3 chunks, batch_size=512
-perplexity: 0.87 seconds per pass - ETA 0.03 minutes
-[1]14.1679,[2]11.8169,[3]11.2261,
-llama_print_timings:        load time =    2767.57 ms
+perplexity: 0.86 seconds per pass - ETA 0.03 minutes
+[1]14.1610,[2]11.8140,[3]11.2243,
+llama_print_timings:        load time =    2781.95 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    1967.24 ms /  6144 tokens (    0.32 ms per token,  3123.16 tokens per second)
+llama_print_timings: prompt eval time =    1961.92 ms /  6144 tokens (    0.32 ms per token,  3131.62 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    2682.20 ms
+llama_print_timings:       total time =    2650.54 ms
 
-Final estimate: PPL = 11.2261 +/- 0.52159
+Final estimate: PPL = 11.2243 +/- 0.52147
 
 real	0m6.090s
-user	0m4.351s
-sys	0m2.219s
+user	0m4.426s
+sys	0m2.124s

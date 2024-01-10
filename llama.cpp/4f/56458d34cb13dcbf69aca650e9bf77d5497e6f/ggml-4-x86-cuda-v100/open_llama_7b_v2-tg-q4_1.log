@@ -102,20 +102,20 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
 
  I believe the meaning of life is to enjoy each moment as much as possible, and that’s why we decided on a destination wedding. We wanted it be different from all other weddings out there…we didn’t want cake or favors (though many people brought both). There would have been no gifts at our ceremony because instead the guests were asked for donations to charity which is something I personally feel strongly about, and not everyone agrees with me on that point so we got creative. We had a donation tree in lieu of favor bags where each guest could put any amount they wanted into their own personalized bag! The money was given as gifts at our reception towards the charities (a local shelter for girls who are victims to sex trafficking, an organization dedicated to ending human and civil rights violations against women around the world) that were close to us. It’s hard in this day and age when everyone is so focused on themselves but I would rather be remembered as someone who was kind than someone who made a lot of money or had tons of material things!
 My best friend, Michelle Fiorella (a professional makeup artist), did my make up for our wedding. She has done other brides’ makeup and helped with hair before so she knew exactly how I wanted to look on my big day which was
-llama_print_timings:        load time =    1112.43 ms
-llama_print_timings:      sample time =     131.52 ms /   256 runs   (    0.51 ms per token,  1946.46 tokens per second)
-llama_print_timings: prompt eval time =      16.65 ms /     8 tokens (    2.08 ms per token,   480.48 tokens per second)
-llama_print_timings:        eval time =    2333.97 ms /   255 runs   (    9.15 ms per token,   109.26 tokens per second)
-llama_print_timings:       total time =    2573.82 ms
+llama_print_timings:        load time =    1118.91 ms
+llama_print_timings:      sample time =     132.80 ms /   256 runs   (    0.52 ms per token,  1927.70 tokens per second)
+llama_print_timings: prompt eval time =      17.30 ms /     8 tokens (    2.16 ms per token,   462.43 tokens per second)
+llama_print_timings:        eval time =    2321.17 ms /   255 runs   (    9.10 ms per token,   109.86 tokens per second)
+llama_print_timings:       total time =    2563.44 ms
 Log end
 
-real	0m4.343s
-user	0m3.207s
-sys	0m1.129s
+real	0m4.293s
+user	0m3.188s
+sys	0m1.104s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_1.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 1805 (4f56458)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1704846310
+main: seed  = 1704873787
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
 ggml_init_cublas: found 1 CUDA devices:
@@ -205,18 +205,18 @@ llama_new_context_with_model: total VRAM used: 5143.56 MiB (model: 3963.55 MiB, 
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 1009.72 ms
+perplexity: tokenization took 1033.13 ms
 perplexity: calculating perplexity over 4 chunks, batch_size=512
-perplexity: 0.97 seconds per pass - ETA 0.05 minutes
-[1]5.6919,[2]6.9505,[3]7.5628,[4]7.0156,
-llama_print_timings:        load time =     965.63 ms
+perplexity: 0.98 seconds per pass - ETA 0.05 minutes
+[1]5.6919,[2]6.9540,[3]7.5653,[4]7.0174,
+llama_print_timings:        load time =     978.71 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    3010.21 ms /  8192 tokens (    0.37 ms per token,  2721.40 tokens per second)
+llama_print_timings: prompt eval time =    3015.24 ms /  8192 tokens (    0.37 ms per token,  2716.86 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    4878.87 ms
+llama_print_timings:       total time =    4904.48 ms
 
-Final estimate: PPL = 7.0156 +/- 0.26044
+Final estimate: PPL = 7.0174 +/- 0.26052
 
-real	0m6.474s
-user	0m5.231s
-sys	0m1.874s
+real	0m6.505s
+user	0m5.336s
+sys	0m1.798s

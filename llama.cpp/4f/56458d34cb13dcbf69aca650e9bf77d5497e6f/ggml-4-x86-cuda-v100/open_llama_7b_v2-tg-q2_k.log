@@ -106,20 +106,20 @@ I am a very hard worker who strives for perfection in everything that she does a
 My greatest strength is my ability to get what I need in the most efficient way possible, so that everyone’s time and energy will not go wasted . My biggest weakness may just possibly have something do with me wanting a bit too much out of life ( like some people) but on another hand it could also be considered as an asset.
 I am honest , hardworking & reliable person who has been described by the majority I worked for, to always complete tasks in time and make sure that any deadlines are met . My ability is my willingness to help others succeed at whatever they need from me without having a negative effect on them or myself ! With many years of experience with various industries , it will be easy for someone who wants to learn how things work while being very detailed oriented.
 I am an honest hard worker & reliable person that has been described by the majority I worked in, as completing tasks
-llama_print_timings:        load time =     785.55 ms
-llama_print_timings:      sample time =     129.20 ms /   256 runs   (    0.50 ms per token,  1981.39 tokens per second)
-llama_print_timings: prompt eval time =      42.07 ms /     8 tokens (    5.26 ms per token,   190.17 tokens per second)
-llama_print_timings:        eval time =    2887.77 ms /   255 runs   (   11.32 ms per token,    88.30 tokens per second)
-llama_print_timings:       total time =    3150.70 ms
+llama_print_timings:        load time =     833.54 ms
+llama_print_timings:      sample time =     132.92 ms /   256 runs   (    0.52 ms per token,  1926.00 tokens per second)
+llama_print_timings: prompt eval time =      41.18 ms /     8 tokens (    5.15 ms per token,   194.28 tokens per second)
+llama_print_timings:        eval time =    2893.46 ms /   255 runs   (   11.35 ms per token,    88.13 tokens per second)
+llama_print_timings:       total time =    3162.57 ms
 Log end
 
-real	0m4.566s
-user	0m3.630s
+real	0m4.609s
+user	0m3.671s
 sys	0m0.935s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q2_k.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 1805 (4f56458)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1704846329
+main: seed  = 1704873807
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
 ggml_init_cublas: found 1 CUDA devices:
@@ -210,18 +210,18 @@ llama_new_context_with_model: total VRAM used: 3833.31 MiB (model: 2653.30 MiB, 
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 1048.79 ms
+perplexity: tokenization took 1016.39 ms
 perplexity: calculating perplexity over 4 chunks, batch_size=512
 perplexity: 1.06 seconds per pass - ETA 0.07 minutes
 [1]6.0780,[2]7.4722,[3]8.1313,[4]7.5741,
-llama_print_timings:        load time =     686.08 ms
+llama_print_timings:        load time =     697.99 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    3375.13 ms /  8192 tokens (    0.41 ms per token,  2427.17 tokens per second)
+llama_print_timings: prompt eval time =    3372.79 ms /  8192 tokens (    0.41 ms per token,  2428.85 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    5273.92 ms
+llama_print_timings:       total time =    5256.94 ms
 
 Final estimate: PPL = 7.5741 +/- 0.28373
 
-real	0m6.587s
-user	0m5.538s
-sys	0m1.676s
+real	0m6.599s
+user	0m5.483s
+sys	0m1.773s

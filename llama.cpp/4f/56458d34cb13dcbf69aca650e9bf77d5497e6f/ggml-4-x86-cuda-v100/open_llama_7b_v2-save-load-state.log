@@ -91,11 +91,13 @@ llama_new_context_with_model: compute buffer total size = 73.69 MiB
 
 main : success
 
-first run: The quick brown fox jumps over a lazy dog’s >>squarepusher<< fugazi.
+first run: The quick brown fox jumps over the lazy dog_.
+This is a test post to check whether ping
 
 
-second run: The quick brown fox jumps over a lazy dog’s >>squarepusher<< fugazi.
+second run: The quick brown fox jumps over the lazy dog_.
+This is a test post to check whether ping
 
-real	0m11.096s
-user	0m27.235s
-sys	0m2.151s
+real	0m11.126s
+user	0m27.369s
+sys	0m2.091s

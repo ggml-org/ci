@@ -103,20 +103,20 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 256, n_keep = 0
 In today's world, there seem to be more issues than ever before - wars; global warming; lack of resources including money but most importantly TIME! There seems little or no hope that we will all find our own personal 'Happy Place'. It may have been lost in the maze created by social media which has changed life for many. The ability to get on with your day without worrying about what others are doing; how much they are spending, where is it going? How fast can I drive my car or am I really driving a smart one now that all those features have been added and who's the latest celebrity couple this week - so often we need an update before breakfast.
 What if you could be happy in your day to day life without having to spend hours on social media? What would it feel like not worrying about what others are doing or where they are going but living a quieter more fulfilling existence, one that brings happiness and fulfillment rather than frustration! Imagine how much time you have freed up.
 What if there was an app which enabled people who were feeling low to seek advice from experts with real life experience of dealing
-llama_print_timings:        load time =    1362.07 ms
-llama_print_timings:      sample time =     129.27 ms /   256 runs   (    0.50 ms per token,  1980.31 tokens per second)
-llama_print_timings: prompt eval time =      28.78 ms /     8 tokens (    3.60 ms per token,   278.01 tokens per second)
-llama_print_timings:        eval time =    3025.15 ms /   255 runs   (   11.86 ms per token,    84.29 tokens per second)
-llama_print_timings:       total time =    3274.01 ms
+llama_print_timings:        load time =    1361.70 ms
+llama_print_timings:      sample time =     136.54 ms /   256 runs   (    0.53 ms per token,  1874.85 tokens per second)
+llama_print_timings: prompt eval time =      28.87 ms /     8 tokens (    3.61 ms per token,   277.07 tokens per second)
+llama_print_timings:        eval time =    3045.48 ms /   255 runs   (   11.94 ms per token,    83.73 tokens per second)
+llama_print_timings:       total time =    3301.51 ms
 Log end
 
-real	0m5.253s
-user	0m4.076s
-sys	0m1.173s
+real	0m5.283s
+user	0m4.077s
+sys	0m1.205s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q6_k.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 1805 (4f56458)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1704846356
+main: seed  = 1704873834
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
 ggml_init_cublas: found 1 CUDA devices:
@@ -205,18 +205,18 @@ llama_new_context_with_model: total VRAM used: 6349.81 MiB (model: 5169.80 MiB, 
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 1025.63 ms
+perplexity: tokenization took 1061.61 ms
 perplexity: calculating perplexity over 4 chunks, batch_size=512
 perplexity: 1.04 seconds per pass - ETA 0.07 minutes
 [1]5.5561,[2]6.8405,[3]7.4444,[4]6.8910,
-llama_print_timings:        load time =    1144.74 ms
+llama_print_timings:        load time =    1162.50 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    3289.44 ms /  8192 tokens (    0.40 ms per token,  2490.40 tokens per second)
+llama_print_timings: prompt eval time =    3290.36 ms /  8192 tokens (    0.40 ms per token,  2489.69 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    5170.48 ms
+llama_print_timings:       total time =    5205.39 ms
 
 Final estimate: PPL = 6.8910 +/- 0.25648
 
-real	0m6.987s
-user	0m5.666s
-sys	0m1.962s
+real	0m6.990s
+user	0m5.614s
+sys	0m2.000s

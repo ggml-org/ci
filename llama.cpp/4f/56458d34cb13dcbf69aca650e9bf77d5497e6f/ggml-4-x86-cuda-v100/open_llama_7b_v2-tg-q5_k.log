@@ -105,20 +105,20 @@ I am a writer because it’s my passion; writing stories makes me feel alive! An
 I am an author of contemporary romance, women’s fiction with a healthy dose of fluff! My books will make your heart feel full; they are filled to overflowing with love stories that center around characters who aren’t perfect but have one thing in common – their quest for true love and the ability to forgive.
 I live on an island called Kauai, Hawaii surrounded by waterfalls (and a few of my own). I was born and raised in Southern California where there are palm trees everywhere! My family is still near me; they’re all very supportive with what I do as well 🙂 They keep reminding me that it takes hard work to become successful at writing. But when you love something, the time and effort put forth will always be worth it!
 My books have been described by many reviewers (and readers) in a few ways; some
-llama_print_timings:        load time =    1191.24 ms
-llama_print_timings:      sample time =     130.88 ms /   256 runs   (    0.51 ms per token,  1955.93 tokens per second)
-llama_print_timings: prompt eval time =      27.61 ms /     8 tokens (    3.45 ms per token,   289.72 tokens per second)
-llama_print_timings:        eval time =    2733.59 ms /   255 runs   (   10.72 ms per token,    93.28 tokens per second)
-llama_print_timings:       total time =    2984.48 ms
+llama_print_timings:        load time =    1193.07 ms
+llama_print_timings:      sample time =     128.72 ms /   256 runs   (    0.50 ms per token,  1988.86 tokens per second)
+llama_print_timings: prompt eval time =      27.07 ms /     8 tokens (    3.38 ms per token,   295.48 tokens per second)
+llama_print_timings:        eval time =    2730.34 ms /   255 runs   (   10.71 ms per token,    93.39 tokens per second)
+llama_print_timings:       total time =    2976.21 ms
 Log end
 
-real	0m4.805s
-user	0m3.687s
-sys	0m1.108s
+real	0m4.794s
+user	0m3.652s
+sys	0m1.136s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_k.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 1805 (4f56458)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1704846350
+main: seed  = 1704873827
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
 ggml_init_cublas: found 1 CUDA devices:
@@ -208,18 +208,18 @@ llama_new_context_with_model: total VRAM used: 5654.93 MiB (model: 4474.93 MiB, 
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 1051.69 ms
+perplexity: tokenization took 1029.71 ms
 perplexity: calculating perplexity over 4 chunks, batch_size=512
 perplexity: 1.03 seconds per pass - ETA 0.07 minutes
 [1]5.5219,[2]6.8171,[3]7.4368,[4]6.8915,
-llama_print_timings:        load time =    1025.61 ms
+llama_print_timings:        load time =    1038.95 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    3253.44 ms /  8192 tokens (    0.40 ms per token,  2517.95 tokens per second)
+llama_print_timings: prompt eval time =    3257.84 ms /  8192 tokens (    0.40 ms per token,  2514.55 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    5163.92 ms
+llama_print_timings:       total time =    5127.07 ms
 
 Final estimate: PPL = 6.8915 +/- 0.25645
 
-real	0m6.832s
-user	0m5.621s
-sys	0m1.846s
+real	0m6.787s
+user	0m5.623s
+sys	0m1.786s

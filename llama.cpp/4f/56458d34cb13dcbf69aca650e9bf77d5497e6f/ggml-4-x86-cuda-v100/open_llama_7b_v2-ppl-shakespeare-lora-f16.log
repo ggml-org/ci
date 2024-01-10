@@ -1,7 +1,7 @@
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-f16.gguf -f ../models-mnt/shakespeare/shakespeare.txt --lora ../models-mnt/open-llama/7B-v2/lora/ggml-adapter-model.bin -t 1 -ngl 999 -c 2048 -b 512 --chunks 3
 main: build = 1805 (4f56458)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1704846384
+main: seed  = 1704873862
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
 ggml_init_cublas: found 1 CUDA devices:
@@ -89,22 +89,22 @@ llama_new_context_with_model: total VRAM used: 13783.02 MiB (model: 12603.02 MiB
 llama_apply_lora_from_file_internal: applying lora adapter from '../models-mnt/open-llama/7B-v2/lora/ggml-adapter-model.bin' - please wait ...
 llama_apply_lora_from_file_internal: r = 64, alpha = 128, scaling = 2.00
 llama_apply_lora_from_file_internal: allocating 1500 MB for lora temporary buffer
-................ done (518.26 ms)
+................ done (525.12 ms)
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 66.895 ms
+perplexity: tokenization took 64.42 ms
 perplexity: calculating perplexity over 3 chunks, batch_size=512
 perplexity: 0.87 seconds per pass - ETA 0.03 minutes
 [1]11.5881,[2]9.1780,[3]8.7622,
-llama_print_timings:        load time =    6137.44 ms
+llama_print_timings:        load time =    6341.13 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    1972.13 ms /  6144 tokens (    0.32 ms per token,  3115.42 tokens per second)
+llama_print_timings: prompt eval time =    1962.69 ms /  6144 tokens (    0.32 ms per token,  3130.39 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    2677.96 ms
+llama_print_timings:       total time =    2679.65 ms
 
 Final estimate: PPL = 8.7622 +/- 0.39497
 
-real	0m9.475s
-user	0m4.395s
-sys	0m5.556s
+real	0m9.699s
+user	0m4.459s
+sys	0m5.725s

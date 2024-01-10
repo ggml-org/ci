@@ -106,20 +106,20 @@ The Meaning Of Life: What Is The True Purpose Of Existence? #Quotes. I’ve alwa
 Source: The Meaning Of Life – What Is It? | BoredPanda.com by Gianluca Neri at boredpanda.com/the-meaning-of-life-what-is-it-. Posted 12 October, 2019 on the ‘Bored Panda’ site
 I believe that life is a journey and we all are going through it together! We need to learn from our mistakes so as not to repeat them again. Life is short – do what makes you happy because your happiness can make someone else feel better too 😊🙏
 What Does The Meaning Of
-llama_print_timings:        load time =    1239.75 ms
-llama_print_timings:      sample time =     148.25 ms /   256 runs   (    0.58 ms per token,  1726.75 tokens per second)
-llama_print_timings: prompt eval time =      30.03 ms /     8 tokens (    3.75 ms per token,   266.42 tokens per second)
-llama_print_timings:        eval time =    2602.88 ms /   255 runs   (   10.21 ms per token,    97.97 tokens per second)
-llama_print_timings:       total time =    2878.09 ms
+llama_print_timings:        load time =    1239.27 ms
+llama_print_timings:      sample time =     143.98 ms /   256 runs   (    0.56 ms per token,  1778.07 tokens per second)
+llama_print_timings: prompt eval time =      30.63 ms /     8 tokens (    3.83 ms per token,   261.16 tokens per second)
+llama_print_timings:        eval time =    2600.81 ms /   255 runs   (   10.20 ms per token,    98.05 tokens per second)
+llama_print_timings:       total time =    2868.33 ms
 Log end
 
-real	0m4.739s
-user	0m3.586s
-sys	0m1.152s
+real	0m4.740s
+user	0m3.571s
+sys	0m1.166s
 + ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_0.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 1805 (4f56458)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1704846316
+main: seed  = 1704873794
 ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
 ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
 ggml_init_cublas: found 1 CUDA devices:
@@ -209,18 +209,18 @@ llama_new_context_with_model: total VRAM used: 5529.56 MiB (model: 4349.55 MiB, 
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 1035.17 ms
+perplexity: tokenization took 1047.46 ms
 perplexity: calculating perplexity over 4 chunks, batch_size=512
 perplexity: 0.98 seconds per pass - ETA 0.05 minutes
 [1]5.5346,[2]6.8547,[3]7.4729,[4]6.9230,
-llama_print_timings:        load time =    1037.69 ms
+llama_print_timings:        load time =    1047.06 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    3032.25 ms /  8192 tokens (    0.37 ms per token,  2701.63 tokens per second)
+llama_print_timings: prompt eval time =    3027.80 ms /  8192 tokens (    0.37 ms per token,  2705.59 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    4950.08 ms
+llama_print_timings:       total time =    4933.37 ms
 
 Final estimate: PPL = 6.9230 +/- 0.25774
 
-real	0m6.630s
-user	0m5.482s
-sys	0m1.834s
+real	0m6.627s
+user	0m5.384s
+sys	0m1.864s
