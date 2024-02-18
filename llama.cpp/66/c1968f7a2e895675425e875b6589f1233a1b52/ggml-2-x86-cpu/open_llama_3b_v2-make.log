@@ -1,0 +1,101 @@
++ make -j
+[  1%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  3%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  4%] Built target build_info
+/home/ggml/work/llama.cpp/ggml-quants.c: In function ‘quantize_row_q2_K_impl’:
+/home/ggml/work/llama.cpp/ggml-quants.c:1840:52: error: iteration 4 invokes undefined behavior [-Werror=aggressive-loop-optimizations]
+ 1840 |             for (int l = 0; l < 16; ++l) weight[l] = qw[l] * sqrtf(sigma2 + x[16*j + l]*x[16*j + l]);
+      |                                          ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1840:31: note: within this loop
+ 1840 |             for (int l = 0; l < 16; ++l) weight[l] = qw[l] * sqrtf(sigma2 + x[16*j + l]*x[16*j + l]);
+      |                             ~~^~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1841:57: error: iteration 4 invokes undefined behavior [-Werror=aggressive-loop-optimizations]
+ 1841 |             for (int l = 0; l < 16; ++l) sw[j] += weight[l];
+      |                                                   ~~~~~~^~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1841:31: note: within this loop
+ 1841 |             for (int l = 0; l < 16; ++l) sw[j] += weight[l];
+      |                             ~~^~~~
+/home/ggml/work/llama.cpp/ggml-quants.c: In function ‘quantize_q2_K’:
+/home/ggml/work/llama.cpp/ggml-quants.c:1841:57: error: array subscript 4 is above array bounds of ‘float[4]’ [-Werror=array-bounds]
+ 1841 |             for (int l = 0; l < 16; ++l) sw[j] += weight[l];
+      |                                                   ~~~~~~^~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1830:11: note: while referencing ‘weight’
+ 1830 |     float weight[QK_K/16];
+      |           ^~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1841:57: error: array subscript 5 is above array bounds of ‘float[4]’ [-Werror=array-bounds]
+ 1841 |             for (int l = 0; l < 16; ++l) sw[j] += weight[l];
+      |                                                   ~~~~~~^~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1830:11: note: while referencing ‘weight’
+ 1830 |     float weight[QK_K/16];
+      |           ^~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1841:57: error: array subscript 6 is above array bounds of ‘float[4]’ [-Werror=array-bounds]
+ 1841 |             for (int l = 0; l < 16; ++l) sw[j] += weight[l];
+      |                                                   ~~~~~~^~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1830:11: note: while referencing ‘weight’
+ 1830 |     float weight[QK_K/16];
+      |           ^~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1841:57: error: array subscript 7 is above array bounds of ‘float[4]’ [-Werror=array-bounds]
+ 1841 |             for (int l = 0; l < 16; ++l) sw[j] += weight[l];
+      |                                                   ~~~~~~^~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1830:11: note: while referencing ‘weight’
+ 1830 |     float weight[QK_K/16];
+      |           ^~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1841:57: error: array subscript 8 is above array bounds of ‘float[4]’ [-Werror=array-bounds]
+ 1841 |             for (int l = 0; l < 16; ++l) sw[j] += weight[l];
+      |                                                   ~~~~~~^~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1830:11: note: while referencing ‘weight’
+ 1830 |     float weight[QK_K/16];
+      |           ^~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1841:57: error: array subscript 9 is above array bounds of ‘float[4]’ [-Werror=array-bounds]
+ 1841 |             for (int l = 0; l < 16; ++l) sw[j] += weight[l];
+      |                                                   ~~~~~~^~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1830:11: note: while referencing ‘weight’
+ 1830 |     float weight[QK_K/16];
+      |           ^~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1841:57: error: array subscript 10 is above array bounds of ‘float[4]’ [-Werror=array-bounds]
+ 1841 |             for (int l = 0; l < 16; ++l) sw[j] += weight[l];
+      |                                                   ~~~~~~^~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1830:11: note: while referencing ‘weight’
+ 1830 |     float weight[QK_K/16];
+      |           ^~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1841:57: error: array subscript 11 is above array bounds of ‘float[4]’ [-Werror=array-bounds]
+ 1841 |             for (int l = 0; l < 16; ++l) sw[j] += weight[l];
+      |                                                   ~~~~~~^~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1830:11: note: while referencing ‘weight’
+ 1830 |     float weight[QK_K/16];
+      |           ^~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1841:57: error: array subscript 12 is above array bounds of ‘float[4]’ [-Werror=array-bounds]
+ 1841 |             for (int l = 0; l < 16; ++l) sw[j] += weight[l];
+      |                                                   ~~~~~~^~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1830:11: note: while referencing ‘weight’
+ 1830 |     float weight[QK_K/16];
+      |           ^~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1841:57: error: array subscript 13 is above array bounds of ‘float[4]’ [-Werror=array-bounds]
+ 1841 |             for (int l = 0; l < 16; ++l) sw[j] += weight[l];
+      |                                                   ~~~~~~^~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1830:11: note: while referencing ‘weight’
+ 1830 |     float weight[QK_K/16];
+      |           ^~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1841:57: error: array subscript 14 is above array bounds of ‘float[4]’ [-Werror=array-bounds]
+ 1841 |             for (int l = 0; l < 16; ++l) sw[j] += weight[l];
+      |                                                   ~~~~~~^~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1830:11: note: while referencing ‘weight’
+ 1830 |     float weight[QK_K/16];
+      |           ^~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1841:57: error: array subscript 15 is above array bounds of ‘float[4]’ [-Werror=array-bounds]
+ 1841 |             for (int l = 0; l < 16; ++l) sw[j] += weight[l];
+      |                                                   ~~~~~~^~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1830:11: note: while referencing ‘weight’
+ 1830 |     float weight[QK_K/16];
+      |           ^~~~~~
+cc1: all warnings being treated as errors
+make[2]: *** [CMakeFiles/ggml.dir/build.make:118: CMakeFiles/ggml.dir/ggml-quants.c.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:738: CMakeFiles/ggml.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m2.603s
+user	0m2.550s
+sys	0m0.113s
