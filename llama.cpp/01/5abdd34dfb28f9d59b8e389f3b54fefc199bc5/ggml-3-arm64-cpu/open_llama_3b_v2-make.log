@@ -1,0 +1,88 @@
++ make -j
+[  0%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  4%] Built target build_info
+/home/ggml/work/llama.cpp/ggml-quants.c: In function ‘quantize_q2_K’:
+/home/ggml/work/llama.cpp/ggml-quants.c:1678:40: error: array subscript 4 is outside array bounds of ‘float[4]’ [-Werror=array-bounds]
+ 1678 |         float w = weights ? weights[i] : x[i]*x[i];
+      |                   ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1830:11: note: while referencing ‘weight’
+ 1830 |     float weight[QK_K/16];
+      |           ^~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1678:40: error: array subscript 5 is outside array bounds of ‘float[4]’ [-Werror=array-bounds]
+ 1678 |         float w = weights ? weights[i] : x[i]*x[i];
+      |                   ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1830:11: note: while referencing ‘weight’
+ 1830 |     float weight[QK_K/16];
+      |           ^~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1678:40: error: array subscript 6 is outside array bounds of ‘float[4]’ [-Werror=array-bounds]
+ 1678 |         float w = weights ? weights[i] : x[i]*x[i];
+      |                   ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1830:11: note: while referencing ‘weight’
+ 1830 |     float weight[QK_K/16];
+      |           ^~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1678:40: error: array subscript 7 is outside array bounds of ‘float[4]’ [-Werror=array-bounds]
+ 1678 |         float w = weights ? weights[i] : x[i]*x[i];
+      |                   ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1830:11: note: while referencing ‘weight’
+ 1830 |     float weight[QK_K/16];
+      |           ^~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1678:40: error: array subscript 8 is outside array bounds of ‘float[4]’ [-Werror=array-bounds]
+ 1678 |         float w = weights ? weights[i] : x[i]*x[i];
+      |                   ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1830:11: note: while referencing ‘weight’
+ 1830 |     float weight[QK_K/16];
+      |           ^~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1678:40: error: array subscript 9 is outside array bounds of ‘float[4]’ [-Werror=array-bounds]
+ 1678 |         float w = weights ? weights[i] : x[i]*x[i];
+      |                   ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1830:11: note: while referencing ‘weight’
+ 1830 |     float weight[QK_K/16];
+      |           ^~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1678:40: error: array subscript 10 is outside array bounds of ‘float[4]’ [-Werror=array-bounds]
+ 1678 |         float w = weights ? weights[i] : x[i]*x[i];
+      |                   ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1830:11: note: while referencing ‘weight’
+ 1830 |     float weight[QK_K/16];
+      |           ^~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1678:40: error: array subscript 11 is outside array bounds of ‘float[4]’ [-Werror=array-bounds]
+ 1678 |         float w = weights ? weights[i] : x[i]*x[i];
+      |                   ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1830:11: note: while referencing ‘weight’
+ 1830 |     float weight[QK_K/16];
+      |           ^~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1678:40: error: array subscript 12 is outside array bounds of ‘float[4]’ [-Werror=array-bounds]
+ 1678 |         float w = weights ? weights[i] : x[i]*x[i];
+      |                   ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1830:11: note: while referencing ‘weight’
+ 1830 |     float weight[QK_K/16];
+      |           ^~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1678:40: error: array subscript 13 is outside array bounds of ‘float[4]’ [-Werror=array-bounds]
+ 1678 |         float w = weights ? weights[i] : x[i]*x[i];
+      |                   ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1830:11: note: while referencing ‘weight’
+ 1830 |     float weight[QK_K/16];
+      |           ^~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1678:40: error: array subscript 14 is outside array bounds of ‘float[4]’ [-Werror=array-bounds]
+ 1678 |         float w = weights ? weights[i] : x[i]*x[i];
+      |                   ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1830:11: note: while referencing ‘weight’
+ 1830 |     float weight[QK_K/16];
+      |           ^~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1678:40: error: array subscript 15 is outside array bounds of ‘float[4]’ [-Werror=array-bounds]
+ 1678 |         float w = weights ? weights[i] : x[i]*x[i];
+      |                   ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:1830:11: note: while referencing ‘weight’
+ 1830 |     float weight[QK_K/16];
+      |           ^~~~~~
+cc1: all warnings being treated as errors
+make[2]: *** [CMakeFiles/ggml.dir/build.make:118: CMakeFiles/ggml.dir/ggml-quants.c.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:738: CMakeFiles/ggml.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m3.160s
+user	0m3.083s
+sys	0m0.220s
