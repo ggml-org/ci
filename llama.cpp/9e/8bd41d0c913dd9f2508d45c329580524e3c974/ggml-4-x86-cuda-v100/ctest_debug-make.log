@@ -1,0 +1,26 @@
++ make -j
+[  1%] Generating build details from Git
+[  2%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  4%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda.cu.o
+[  5%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  6%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  6%] Built target build_info
+/home/ggml/work/llama.cpp/ggml.c: In function ‘ggml_compute_forward_alibi’:
+/home/ggml/work/llama.cpp/ggml.c:12101:5: error: enumeration value ‘GGML_TYPE_IQ4_NL’ not handled in switch [-Werror=switch]
+12101 |     switch (src0->type) {
+      |     ^~~~~~
+/home/ggml/work/llama.cpp/ggml.c: In function ‘ggml_compute_forward_clamp’:
+/home/ggml/work/llama.cpp/ggml.c:12186:5: error: enumeration value ‘GGML_TYPE_IQ4_NL’ not handled in switch [-Werror=switch]
+12186 |     switch (src0->type) {
+      |     ^~~~~~
+cc1: all warnings being treated as errors
+make[2]: *** [CMakeFiles/ggml.dir/build.make:76: CMakeFiles/ggml.dir/ggml.c.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:740: CMakeFiles/ggml.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m1.646s
+user	0m1.567s
+sys	0m0.213s
