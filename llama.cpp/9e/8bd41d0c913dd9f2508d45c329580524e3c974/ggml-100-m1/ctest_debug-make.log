@@ -1,0 +1,29 @@
++ make -j
+[  1%] Generating build details from Git
+[  2%] Compiling Metal kernels
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  5%] Building C object CMakeFiles/ggml.dir/ggml-metal.m.o
+[  6%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+-- Found Git: /usr/bin/git (found version "2.39.3 (Apple Git-145)") 
+[  7%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  7%] Built target build_info
+/Users/ggml/work/llama.cpp/ggml.c:12101:13: error: enumeration value 'GGML_TYPE_IQ4_NL' not handled in switch [-Werror,-Wswitch]
+    switch (src0->type) {
+            ^~~~~~~~~~
+/Users/ggml/work/llama.cpp/ggml.c:12101:13: note: add missing switch cases
+    switch (src0->type) {
+            ^
+/Users/ggml/work/llama.cpp/ggml.c:12186:13: error: enumeration value 'GGML_TYPE_IQ4_NL' not handled in switch [-Werror,-Wswitch]
+    switch (src0->type) {
+            ^~~~~~~~~~
+/Users/ggml/work/llama.cpp/ggml.c:12186:13: note: add missing switch cases
+    switch (src0->type) {
+            ^
+2 errors generated.
+make[2]: *** [CMakeFiles/ggml.dir/ggml.c.o] Error 1
+make[1]: *** [CMakeFiles/ggml.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[  7%] Built target ggml-metal
+make: *** [all] Error 2
