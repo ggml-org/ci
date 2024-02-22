@@ -1,0 +1,84 @@
++ LLAMACPP_TEST_MODELFILE=/mnt/llama.cpp/models/open-llama/3B-v2/ggml-model-f16.gguf
++ time ctest --output-on-failure -L model
+Test project /home/ggml/work/llama.cpp/build-ci-debug
+    Start 22: test-model-load-cancel
+Could not find executable /home/ggml/work/llama.cpp/build-ci-debug/bin/test-model-load-cancel
+Looked in the following places:
+/home/ggml/work/llama.cpp/build-ci-debug/bin/test-model-load-cancel
+/home/ggml/work/llama.cpp/build-ci-debug/bin/test-model-load-cancel
+/home/ggml/work/llama.cpp/build-ci-debug/bin/Release/test-model-load-cancel
+/home/ggml/work/llama.cpp/build-ci-debug/bin/Release/test-model-load-cancel
+/home/ggml/work/llama.cpp/build-ci-debug/bin/Debug/test-model-load-cancel
+/home/ggml/work/llama.cpp/build-ci-debug/bin/Debug/test-model-load-cancel
+/home/ggml/work/llama.cpp/build-ci-debug/bin/MinSizeRel/test-model-load-cancel
+/home/ggml/work/llama.cpp/build-ci-debug/bin/MinSizeRel/test-model-load-cancel
+/home/ggml/work/llama.cpp/build-ci-debug/bin/RelWithDebInfo/test-model-load-cancel
+/home/ggml/work/llama.cpp/build-ci-debug/bin/RelWithDebInfo/test-model-load-cancel
+/home/ggml/work/llama.cpp/build-ci-debug/bin/Deployment/test-model-load-cancel
+/home/ggml/work/llama.cpp/build-ci-debug/bin/Deployment/test-model-load-cancel
+/home/ggml/work/llama.cpp/build-ci-debug/bin/Development/test-model-load-cancel
+/home/ggml/work/llama.cpp/build-ci-debug/bin/Development/test-model-load-cancel
+home/ggml/work/llama.cpp/build-ci-debug/bin/test-model-load-cancel
+home/ggml/work/llama.cpp/build-ci-debug/bin/test-model-load-cancel
+home/ggml/work/llama.cpp/build-ci-debug/bin/Release/test-model-load-cancel
+home/ggml/work/llama.cpp/build-ci-debug/bin/Release/test-model-load-cancel
+home/ggml/work/llama.cpp/build-ci-debug/bin/Debug/test-model-load-cancel
+home/ggml/work/llama.cpp/build-ci-debug/bin/Debug/test-model-load-cancel
+home/ggml/work/llama.cpp/build-ci-debug/bin/MinSizeRel/test-model-load-cancel
+home/ggml/work/llama.cpp/build-ci-debug/bin/MinSizeRel/test-model-load-cancel
+home/ggml/work/llama.cpp/build-ci-debug/bin/RelWithDebInfo/test-model-load-cancel
+home/ggml/work/llama.cpp/build-ci-debug/bin/RelWithDebInfo/test-model-load-cancel
+home/ggml/work/llama.cpp/build-ci-debug/bin/Deployment/test-model-load-cancel
+home/ggml/work/llama.cpp/build-ci-debug/bin/Deployment/test-model-load-cancel
+home/ggml/work/llama.cpp/build-ci-debug/bin/Development/test-model-load-cancel
+home/ggml/work/llama.cpp/build-ci-debug/bin/Development/test-model-load-cancel
+Unable to find executable: /home/ggml/work/llama.cpp/build-ci-debug/bin/test-model-load-cancel
+1/2 Test #22: test-model-load-cancel ...........***Not Run   0.00 sec
+    Start 23: test-autorelease
+Could not find executable /home/ggml/work/llama.cpp/build-ci-debug/bin/test-autorelease
+Looked in the following places:
+/home/ggml/work/llama.cpp/build-ci-debug/bin/test-autorelease
+/home/ggml/work/llama.cpp/build-ci-debug/bin/test-autorelease
+/home/ggml/work/llama.cpp/build-ci-debug/bin/Release/test-autorelease
+/home/ggml/work/llama.cpp/build-ci-debug/bin/Release/test-autorelease
+/home/ggml/work/llama.cpp/build-ci-debug/bin/Debug/test-autorelease
+/home/ggml/work/llama.cpp/build-ci-debug/bin/Debug/test-autorelease
+/home/ggml/work/llama.cpp/build-ci-debug/bin/MinSizeRel/test-autorelease
+/home/ggml/work/llama.cpp/build-ci-debug/bin/MinSizeRel/test-autorelease
+/home/ggml/work/llama.cpp/build-ci-debug/bin/RelWithDebInfo/test-autorelease
+/home/ggml/work/llama.cpp/build-ci-debug/bin/RelWithDebInfo/test-autorelease
+/home/ggml/work/llama.cpp/build-ci-debug/bin/Deployment/test-autorelease
+/home/ggml/work/llama.cpp/build-ci-debug/bin/Deployment/test-autorelease
+/home/ggml/work/llama.cpp/build-ci-debug/bin/Development/test-autorelease
+/home/ggml/work/llama.cpp/build-ci-debug/bin/Development/test-autorelease
+home/ggml/work/llama.cpp/build-ci-debug/bin/test-autorelease
+home/ggml/work/llama.cpp/build-ci-debug/bin/test-autorelease
+home/ggml/work/llama.cpp/build-ci-debug/bin/Release/test-autorelease
+home/ggml/work/llama.cpp/build-ci-debug/bin/Release/test-autorelease
+home/ggml/work/llama.cpp/build-ci-debug/bin/Debug/test-autorelease
+home/ggml/work/llama.cpp/build-ci-debug/bin/Debug/test-autorelease
+home/ggml/work/llama.cpp/build-ci-debug/bin/MinSizeRel/test-autorelease
+home/ggml/work/llama.cpp/build-ci-debug/bin/MinSizeRel/test-autorelease
+home/ggml/work/llama.cpp/build-ci-debug/bin/RelWithDebInfo/test-autorelease
+home/ggml/work/llama.cpp/build-ci-debug/bin/RelWithDebInfo/test-autorelease
+home/ggml/work/llama.cpp/build-ci-debug/bin/Deployment/test-autorelease
+home/ggml/work/llama.cpp/build-ci-debug/bin/Deployment/test-autorelease
+home/ggml/work/llama.cpp/build-ci-debug/bin/Development/test-autorelease
+home/ggml/work/llama.cpp/build-ci-debug/bin/Development/test-autorelease
+Unable to find executable: /home/ggml/work/llama.cpp/build-ci-debug/bin/test-autorelease
+2/2 Test #23: test-autorelease .................***Not Run   0.00 sec
+
+0% tests passed, 2 tests failed out of 2
+
+Label Time Summary:
+model    =   0.00 sec*proc (2 tests)
+
+Total Test time (real) =   0.00 sec
+
+The following tests FAILED:
+	 22 - test-model-load-cancel (Not Run)
+	 23 - test-autorelease (Not Run)
+Errors while running CTest
+Command exited with non-zero status 8
+0.00user 0.01system 0:00.01elapsed 93%CPU (0avgtext+0avgdata 14464maxresident)k
+0inputs+32outputs (0major+774minor)pagefaults 0swaps

@@ -1,28 +1,3 @@
-## Summary
-
-- status:  FAILURE ❌ (8)
-- runtime: 
-- date:    Thu Feb 22 16:55:24 UTC 2024
-- repo:    https://github.com/ggerganov/llama.cpp
-- commit:  https://github.com/ggerganov/llama.cpp/commit/4cb4d8b22d4fda971621a68c570ce84d66897c37
-- author:  Someone
-```
-workflows: nix: hardcode cachix ids, build unconditionally (#5663)
-
-GitHub does not expose environment and repository variables to PRs coming from forks implies that we've been disabling the Nix CI actions for most PRs. 
-
-The `if:` also didn't make much sense, because we can always pull from cachix, and there's no point (albeit no risk either) in pushing cache for the untrusted code.
-```
-
-## Environment
-
-```
-GG_BUILD_CXX_COMPILER=g++
-GG_BUILD_C_COMPILER=gcc
-```
-
-## Output
-
 ### ctest_debug
 
 Runs ctest in debug mode
