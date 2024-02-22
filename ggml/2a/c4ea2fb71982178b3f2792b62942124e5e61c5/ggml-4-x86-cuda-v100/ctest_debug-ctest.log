@@ -1,0 +1,50 @@
++ ctest --output-on-failure -E test-opt
+Test project /home/ggml/work/ggml/build-ci-debug
+      Start  1: test-grad0
+ 1/20 Test  #1: test-grad0 .......................   Passed    4.74 sec
+      Start  2: test-quantize-fns
+ 2/20 Test  #2: test-quantize-fns ................   Passed    5.97 sec
+      Start  3: test-quantize-perf
+ 3/20 Test  #3: test-quantize-perf ...............   Passed    1.44 sec
+      Start  4: test-mul-mat0
+ 4/20 Test  #4: test-mul-mat0 ....................   Passed    1.07 sec
+      Start  5: test-mul-mat2
+ 5/20 Test  #5: test-mul-mat2 ....................   Passed    8.20 sec
+      Start  6: test0
+ 6/20 Test  #6: test0 ............................   Passed    0.51 sec
+      Start  7: test1
+ 7/20 Test  #7: test1 ............................   Passed    0.52 sec
+      Start  8: test2
+ 8/20 Test  #8: test2 ............................   Passed   20.79 sec
+      Start  9: test3
+ 9/20 Test  #9: test3 ............................   Passed    2.01 sec
+      Start 10: test-pool
+10/20 Test #10: test-pool ........................   Passed    0.52 sec
+      Start 11: test-conv-transpose
+11/20 Test #11: test-conv-transpose ..............   Passed    0.52 sec
+      Start 12: test-dup
+12/20 Test #12: test-dup .........................   Passed    0.51 sec
+      Start 13: test-rel-pos
+13/20 Test #13: test-rel-pos .....................   Passed    0.52 sec
+      Start 14: test-customop
+14/20 Test #14: test-customop ....................   Passed    0.53 sec
+      Start 15: test-xpos
+15/20 Test #15: test-xpos ........................   Passed    0.51 sec
+      Start 16: test-conv1d
+16/20 Test #16: test-conv1d ......................   Passed    0.54 sec
+      Start 17: test-conv2d
+17/20 Test #17: test-conv2d ......................   Passed    0.56 sec
+      Start 18: test-mul-mat
+18/20 Test #18: test-mul-mat .....................   Passed    0.54 sec
+      Start 19: test-backend-buffer
+19/20 Test #19: test-backend-buffer ..............   Passed    0.52 sec
+      Start 20: test-backend-ops
+20/20 Test #20: test-backend-ops .................   Passed  148.84 sec
+
+100% tests passed, 0 tests failed out of 20
+
+Total Test time (real) = 199.36 sec
+
+real	3m19.394s
+user	6m30.733s
+sys	0m28.768s
