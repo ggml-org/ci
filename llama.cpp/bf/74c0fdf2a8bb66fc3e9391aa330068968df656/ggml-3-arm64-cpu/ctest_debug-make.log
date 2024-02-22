@@ -1,0 +1,83 @@
++ make -j
+[  0%] Generating build details from Git
+[  1%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  5%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  5%] Built target build_info
+/home/ggml/work/llama.cpp/ggml.c: In function ‘ggml_vec_dot_f16’:
+/home/ggml/work/llama.cpp/ggml.c:1336:45: error: passing argument 1 of ‘vld1_f16’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+ 1336 |             ax[j] = GGML_F16_VEC_LOAD(x + i + j*GGML_F16_EPR, j);
+      |                                             ^
+      |                                             |
+      |                                             ggml_fp16_t * {aka short unsigned int *}
+/home/ggml/work/llama.cpp/ggml.c:844:60: note: in definition of macro ‘GGML_F32Cx4_LOAD’
+  844 |     #define GGML_F32Cx4_LOAD(x)      vcvt_f32_f16(vld1_f16(x))
+      |                                                            ^
+/home/ggml/work/llama.cpp/ggml.c:1336:21: note: in expansion of macro ‘GGML_F16_VEC_LOAD’
+ 1336 |             ax[j] = GGML_F16_VEC_LOAD(x + i + j*GGML_F16_EPR, j);
+      |                     ^~~~~~~~~~~~~~~~~
+In file included from /home/ggml/work/llama.cpp/ggml-impl.h:54,
+                 from /home/ggml/work/llama.cpp/ggml.c:4:
+/usr/lib/gcc/aarch64-linux-gnu/11/include/arm_neon.h:15583:28: note: expected ‘const float16_t *’ {aka ‘const __fp16 *’} but argument is of type ‘ggml_fp16_t *’ {aka ‘short unsigned int *’}
+15583 | vld1_f16 (const float16_t *__a)
+      |           ~~~~~~~~~~~~~~~~~^~~
+/home/ggml/work/llama.cpp/ggml.c:1337:45: error: passing argument 1 of ‘vld1_f16’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+ 1337 |             ay[j] = GGML_F16_VEC_LOAD(y + i + j*GGML_F16_EPR, j);
+      |                                             ^
+      |                                             |
+      |                                             ggml_fp16_t * {aka short unsigned int *}
+/home/ggml/work/llama.cpp/ggml.c:844:60: note: in definition of macro ‘GGML_F32Cx4_LOAD’
+  844 |     #define GGML_F32Cx4_LOAD(x)      vcvt_f32_f16(vld1_f16(x))
+      |                                                            ^
+/home/ggml/work/llama.cpp/ggml.c:1337:21: note: in expansion of macro ‘GGML_F16_VEC_LOAD’
+ 1337 |             ay[j] = GGML_F16_VEC_LOAD(y + i + j*GGML_F16_EPR, j);
+      |                     ^~~~~~~~~~~~~~~~~
+In file included from /home/ggml/work/llama.cpp/ggml-impl.h:54,
+                 from /home/ggml/work/llama.cpp/ggml.c:4:
+/usr/lib/gcc/aarch64-linux-gnu/11/include/arm_neon.h:15583:28: note: expected ‘const float16_t *’ {aka ‘const __fp16 *’} but argument is of type ‘ggml_fp16_t *’ {aka ‘short unsigned int *’}
+15583 | vld1_f16 (const float16_t *__a)
+      |           ~~~~~~~~~~~~~~~~~^~~
+/home/ggml/work/llama.cpp/ggml.c: In function ‘ggml_vec_dot_f16_unroll’:
+/home/ggml/work/llama.cpp/ggml.c:1380:45: error: passing argument 1 of ‘vld1_f16’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+ 1380 |             ay[j] = GGML_F16_VEC_LOAD(y + i + j*GGML_F16_EPR, j);
+      |                                             ^
+      |                                             |
+      |                                             ggml_fp16_t * {aka short unsigned int *}
+/home/ggml/work/llama.cpp/ggml.c:844:60: note: in definition of macro ‘GGML_F32Cx4_LOAD’
+  844 |     #define GGML_F32Cx4_LOAD(x)      vcvt_f32_f16(vld1_f16(x))
+      |                                                            ^
+/home/ggml/work/llama.cpp/ggml.c:1380:21: note: in expansion of macro ‘GGML_F16_VEC_LOAD’
+ 1380 |             ay[j] = GGML_F16_VEC_LOAD(y + i + j*GGML_F16_EPR, j);
+      |                     ^~~~~~~~~~~~~~~~~
+In file included from /home/ggml/work/llama.cpp/ggml-impl.h:54,
+                 from /home/ggml/work/llama.cpp/ggml.c:4:
+/usr/lib/gcc/aarch64-linux-gnu/11/include/arm_neon.h:15583:28: note: expected ‘const float16_t *’ {aka ‘const __fp16 *’} but argument is of type ‘ggml_fp16_t *’ {aka ‘short unsigned int *’}
+15583 | vld1_f16 (const float16_t *__a)
+      |           ~~~~~~~~~~~~~~~~~^~~
+/home/ggml/work/llama.cpp/ggml.c:1383:52: error: passing argument 1 of ‘vld1_f16’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+ 1383 |                 ax[j] = GGML_F16_VEC_LOAD(x[k] + i + j*GGML_F16_EPR, j);
+      |                                                    ^
+      |                                                    |
+      |                                                    ggml_fp16_t * {aka short unsigned int *}
+/home/ggml/work/llama.cpp/ggml.c:844:60: note: in definition of macro ‘GGML_F32Cx4_LOAD’
+  844 |     #define GGML_F32Cx4_LOAD(x)      vcvt_f32_f16(vld1_f16(x))
+      |                                                            ^
+/home/ggml/work/llama.cpp/ggml.c:1383:25: note: in expansion of macro ‘GGML_F16_VEC_LOAD’
+ 1383 |                 ax[j] = GGML_F16_VEC_LOAD(x[k] + i + j*GGML_F16_EPR, j);
+      |                         ^~~~~~~~~~~~~~~~~
+In file included from /home/ggml/work/llama.cpp/ggml-impl.h:54,
+                 from /home/ggml/work/llama.cpp/ggml.c:4:
+/usr/lib/gcc/aarch64-linux-gnu/11/include/arm_neon.h:15583:28: note: expected ‘const float16_t *’ {aka ‘const __fp16 *’} but argument is of type ‘ggml_fp16_t *’ {aka ‘short unsigned int *’}
+15583 | vld1_f16 (const float16_t *__a)
+      |           ~~~~~~~~~~~~~~~~~^~~
+cc1: all warnings being treated as errors
+make[2]: *** [CMakeFiles/ggml.dir/build.make:76: CMakeFiles/ggml.dir/ggml.c.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:740: CMakeFiles/ggml.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m1.524s
+user	0m2.853s
+sys	0m0.476s
