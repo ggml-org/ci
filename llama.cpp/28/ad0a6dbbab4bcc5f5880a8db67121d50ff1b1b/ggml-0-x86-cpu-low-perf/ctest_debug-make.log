@@ -1,0 +1,23 @@
++ make -j
+[  0%] Generating build details from Git
+[  1%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  5%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  5%] Built target build_info
+/home/ggml/work/llama.cpp/ggml.c:358:6: error: no previous prototype for ‘ggml_i32_to_f32_row’ [-Werror=missing-prototypes]
+  358 | void ggml_i32_to_f32_row(const int32_t * x, float * y, int n) {
+      |      ^~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml.c:364:6: error: no previous prototype for ‘ggml_f32_to_i32_row’ [-Werror=missing-prototypes]
+  364 | void ggml_f32_to_i32_row(const float * x, int32_t * y, int n) {
+      |      ^~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+make[2]: *** [CMakeFiles/ggml.dir/build.make:76: CMakeFiles/ggml.dir/ggml.c.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:740: CMakeFiles/ggml.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m1.184s
+user	0m2.324s
+sys	0m0.227s
