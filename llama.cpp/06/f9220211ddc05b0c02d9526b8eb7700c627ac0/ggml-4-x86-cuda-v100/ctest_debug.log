@@ -1,0 +1,706 @@
++ cmake -DCMAKE_BUILD_TYPE=Debug -DLLAMA_FATAL_WARNINGS=ON -DLLAMA_CUBLAS=1 ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found CUDAToolkit: /usr/local/cuda-12.2/include (found version "12.2.140") 
+-- cuBLAS found
+-- The CUDA compiler identification is NVIDIA 12.2.140
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda-12.2/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- Using CUDA architectures: 52;61;70
+-- CUDA host compiler is GNU 11.4.0
+
+-- ccache found, compilation results will be cached. Disable with LLAMA_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- x86 detected
+-- Configuring done (3.2s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-debug
+
+real	0m3.390s
+user	0m2.562s
+sys	0m0.813s
++ make -j
+[  1%] Generating build details from Git
+[  2%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  5%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda.cu.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  6%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  6%] Built target build_info
+[  6%] Built target ggml
+[  7%] Linking CUDA static library libggml_static.a
+[  7%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+[  8%] Building CXX object examples/gguf/CMakeFiles/gguf.dir/gguf.cpp.o
+[  8%] Linking CXX executable ../../bin/gguf
+[  8%] Built target ggml_static
+[  8%] Built target gguf
+[  9%] Linking CXX static library libllama.a
+[  9%] Built target llama
+[ 11%] Building C object tests/CMakeFiles/test-c.dir/test-c.c.o
+[ 12%] Building CXX object common/CMakeFiles/common.dir/sampling.cpp.o
+[ 12%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
+[ 13%] Building CXX object common/CMakeFiles/common.dir/common.cpp.o
+[ 14%] Building CXX object examples/llava/CMakeFiles/llava.dir/llava.cpp.o
+[ 14%] Building CXX object examples/llava/CMakeFiles/llava.dir/clip.cpp.o
+[ 14%] Building CXX object common/CMakeFiles/common.dir/console.cpp.o
+[ 14%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
+[ 15%] Building CXX object common/CMakeFiles/common.dir/grammar-parser.cpp.o
+[ 16%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+[ 16%] Linking CXX executable ../../bin/benchmark
+[ 17%] Linking CXX executable ../bin/test-c
+[ 18%] Building CXX object common/CMakeFiles/common.dir/train.cpp.o
+[ 19%] Linking CXX executable ../../bin/quantize
+[ 20%] Linking CXX executable ../../bin/quantize-stats
+[ 20%] Built target llava
+[ 21%] Linking CXX static library libllava_static.a
+[ 21%] Built target test-c
+[ 22%] Linking CXX static library libcommon.a
+[ 22%] Built target llava_static
+[ 22%] Built target benchmark
+[ 22%] Built target common
+[ 22%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 23%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 24%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/get-model.cpp.o
+[ 25%] Building CXX object tests/CMakeFiles/test-chat-template.dir/test-chat-template.cpp.o
+[ 25%] Building CXX object tests/CMakeFiles/test-sampling.dir/get-model.cpp.o
+[ 26%] Building CXX object tests/CMakeFiles/test-tokenizer-0-falcon.dir/test-tokenizer-0-falcon.cpp.o
+[ 27%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/get-model.cpp.o
+[ 28%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
+[ 29%] Building CXX object tests/CMakeFiles/test-tokenizer-1-llama.dir/test-tokenizer-1-llama.cpp.o
+[ 30%] Building CXX object tests/CMakeFiles/test-tokenizer-0-falcon.dir/get-model.cpp.o
+[ 30%] Building CXX object tests/CMakeFiles/test-tokenizer-0-llama.dir/test-tokenizer-0-llama.cpp.o
+[ 31%] Building CXX object tests/CMakeFiles/test-tokenizer-1-llama.dir/get-model.cpp.o
+[ 31%] Building CXX object tests/CMakeFiles/test-chat-template.dir/get-model.cpp.o
+[ 32%] Building CXX object tests/CMakeFiles/test-grammar-parser.dir/get-model.cpp.o
+[ 32%] Building CXX object tests/CMakeFiles/test-grammar-parser.dir/test-grammar-parser.cpp.o
+[ 33%] Building CXX object tests/CMakeFiles/test-tokenizer-0-llama.dir/get-model.cpp.o
+[ 34%] Building CXX object tests/CMakeFiles/test-tokenizer-1-bpe.dir/get-model.cpp.o
+[ 35%] Linking CXX executable ../bin/test-quantize-fns
+[ 36%] Building CXX object tests/CMakeFiles/test-tokenizer-1-bpe.dir/test-tokenizer-1-bpe.cpp.o
+[ 37%] Building CXX object tests/CMakeFiles/test-llama-grammar.dir/test-llama-grammar.cpp.o
+[ 38%] Linking CXX executable ../bin/test-tokenizer-1-llama
+[ 39%] Building CXX object tests/CMakeFiles/test-grad0.dir/get-model.cpp.o
+[ 40%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+[ 41%] Building CXX object tests/CMakeFiles/test-llama-grammar.dir/get-model.cpp.o
+[ 42%] Linking CXX executable ../bin/test-tokenizer-0-llama
+[ 43%] Linking CXX executable ../bin/test-grammar-parser
+[ 44%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 45%] Linking CXX executable ../bin/test-tokenizer-0-falcon
+[ 45%] Linking CXX executable ../bin/test-tokenizer-1-bpe
+[ 46%] Linking CXX executable ../bin/test-sampling
+[ 47%] Linking CXX executable ../bin/test-chat-template
+[ 47%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/get-model.cpp.o
+[ 47%] Linking CXX executable ../bin/test-quantize-perf
+[ 48%] Linking CXX executable ../bin/test-grad0
+[ 49%] Building CXX object tests/CMakeFiles/test-rope.dir/test-rope.cpp.o
+[ 50%] Building CXX object tests/CMakeFiles/test-autorelease.dir/test-autorelease.cpp.o
+[ 51%] Building CXX object tests/CMakeFiles/test-autorelease.dir/get-model.cpp.o
+[ 52%] Building CXX object tests/CMakeFiles/test-rope.dir/get-model.cpp.o
+[ 53%] Building CXX object tests/CMakeFiles/test-model-load-cancel.dir/test-model-load-cancel.cpp.o
+[ 54%] Linking CXX executable ../bin/test-backend-ops
+[ 54%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
+[ 55%] Building CXX object tests/CMakeFiles/test-model-load-cancel.dir/get-model.cpp.o
+[ 56%] Building CXX object examples/batched/CMakeFiles/batched.dir/batched.cpp.o
+[ 57%] Building CXX object examples/beam-search/CMakeFiles/beam-search.dir/beam-search.cpp.o
+[ 57%] Building CXX object examples/batched-bench/CMakeFiles/batched-bench.dir/batched-bench.cpp.o
+[ 58%] Linking CXX executable ../bin/test-rope
+[ 59%] Linking CXX executable ../bin/test-autorelease
+[ 60%] Building CXX object examples/embedding/CMakeFiles/embedding.dir/embedding.cpp.o
+[ 61%] Linking CXX executable ../../bin/baby-llama
+[ 62%] Building CXX object examples/convert-llama2c-to-ggml/CMakeFiles/convert-llama2c-to-ggml.dir/convert-llama2c-to-ggml.cpp.o
+[ 62%] Building CXX object examples/finetune/CMakeFiles/finetune.dir/finetune.cpp.o
+[ 63%] Linking CXX executable ../bin/test-model-load-cancel
+[ 64%] Building CXX object examples/infill/CMakeFiles/infill.dir/infill.cpp.o
+[ 65%] Linking CXX executable ../../bin/batched
+[ 66%] Linking CXX executable ../../bin/beam-search
+[ 67%] Linking CXX executable ../../bin/batched-bench
+[ 68%] Building CXX object examples/llama-bench/CMakeFiles/llama-bench.dir/llama-bench.cpp.o
+[ 68%] Linking CXX executable ../../bin/convert-llama2c-to-ggml
+[ 69%] Building CXX object examples/tokenize/CMakeFiles/tokenize.dir/tokenize.cpp.o
+[ 70%] Building CXX object examples/llava/CMakeFiles/llava-cli.dir/llava-cli.cpp.o
+[ 71%] Linking CXX executable ../../bin/finetune
+[ 72%] Building CXX object examples/main/CMakeFiles/main.dir/main.cpp.o
+[ 72%] Building CXX object examples/parallel/CMakeFiles/parallel.dir/parallel.cpp.o
+[ 73%] Linking CXX executable ../../bin/embedding
+[ 74%] Building CXX object examples/perplexity/CMakeFiles/perplexity.dir/perplexity.cpp.o
+[ 75%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
+[ 76%] Linking CXX executable ../../bin/infill
+[ 77%] Linking CXX executable ../../bin/llava-cli
+[ 78%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
+[ 79%] Linking CXX executable ../../bin/main
+[ 80%] Building CXX object examples/passkey/CMakeFiles/passkey.dir/passkey.cpp.o
+[ 80%] Linking CXX executable ../../bin/tokenize
+[ 81%] Linking CXX executable ../../bin/parallel
+[ 82%] Building CXX object examples/speculative/CMakeFiles/speculative.dir/speculative.cpp.o
+[ 83%] Building CXX object examples/lookahead/CMakeFiles/lookahead.dir/lookahead.cpp.o
+[ 84%] Building CXX object examples/lookup/CMakeFiles/lookup.dir/lookup.cpp.o
+[ 85%] Linking CXX executable ../../bin/llama-bench
+[ 86%] Linking CXX executable ../../bin/passkey
+[ 86%] Linking CXX executable ../../bin/perplexity
+[ 87%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
+[ 88%] Linking CXX executable ../../bin/simple
+[ 89%] Linking CXX executable ../../bin/save-load-state
+[ 90%] Building CXX object examples/imatrix/CMakeFiles/imatrix.dir/imatrix.cpp.o
+[ 90%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
+[ 90%] Linking CXX executable ../../bin/lookahead
+[ 91%] Linking CXX executable ../../bin/lookup
+[ 91%] Linking CXX executable ../../bin/speculative
+[ 92%] Building CXX object examples/export-lora/CMakeFiles/export-lora.dir/export-lora.cpp.o
+[ 93%] Building CXX object pocs/vdot/CMakeFiles/q8dot.dir/q8dot.cpp.o
+[ 95%] Linking CXX executable ../../bin/train-text-from-scratch
+[ 95%] Linking CXX executable ../../bin/imatrix
+[ 96%] Building CXX object pocs/vdot/CMakeFiles/vdot.dir/vdot.cpp.o
+[ 97%] Linking CXX executable ../../bin/q8dot
+[ 98%] Linking CXX executable ../../bin/export-lora
+[ 99%] Linking CXX executable ../../bin/vdot
+[ 99%] Built target test-grad0
+[ 99%] Built target test-grammar-parser
+[100%] Linking CXX executable ../../bin/server
+[100%] Built target convert-llama2c-to-ggml
+[100%] Built target test-quantize-fns
+[100%] Built target test-quantize-perf
+[100%] Built target quantize
+[100%] Built target test-rope
+[100%] Built target quantize-stats
+[100%] Built target test-backend-ops
+[100%] Built target q8dot
+[100%] Built target export-lora
+[100%] Built target vdot
+[100%] Built target test-sampling
+[100%] Built target test-chat-template
+[100%] Built target save-load-state
+[100%] Built target test-autorelease
+[100%] Built target test-model-load-cancel
+[100%] Built target tokenize
+[100%] Built target test-tokenizer-0-llama
+[100%] Built target test-tokenizer-0-falcon
+[100%] Built target test-tokenizer-1-llama
+[100%] Built target passkey
+[100%] Built target test-tokenizer-1-bpe
+[100%] Built target parallel
+[100%] Built target beam-search
+[100%] Built target infill
+[100%] Built target batched
+[100%] Built target lookup
+[100%] Built target batched-bench
+[100%] Built target baby-llama
+[100%] Built target perplexity
+[100%] Built target finetune
+[100%] Built target embedding
+[100%] Built target imatrix
+[100%] Built target train-text-from-scratch
+[100%] Built target main
+[100%] Built target simple
+[100%] Built target speculative
+[100%] Built target lookahead
+[100%] Built target llama-bench
+[100%] Built target llava-cli
+[100%] Built target server
+[100%] Linking CXX executable ../bin/test-llama-grammar
+[100%] Built target test-llama-grammar
+
+real	0m28.199s
+user	0m44.042s
+sys	0m6.787s
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-debug
+      Start  1: test-quantize-fns
+ 1/21 Test  #1: test-quantize-fns ...................Subprocess aborted***Exception:   5.62 sec
+ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
+ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0, VMM: yes
+free(): invalid pointer
+
+      Start  2: test-quantize-perf
+ 2/21 Test  #2: test-quantize-perf ..................***Exception: SegFault  1.37 sec
+ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
+ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0, VMM: yes
+f16
+  quantize_row_q_reference
+    4096 values (0.02 MB)
+      min cycles/32 vals   :     46.74
+      avg cycles/32 vals   :     47.48
+      float32 throughput   :      6.10 GB/s
+      quantized throughput :      3.05 GB/s
+
+  quantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :     46.86
+      avg cycles/32 vals   :     47.46
+      float32 throughput   :      6.10 GB/s
+      quantized throughput :      3.05 GB/s
+
+  dequantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    411.55
+      avg cycles/32 vals   :    453.56
+      float32 throughput   :      0.68 GB/s
+      quantized throughput :      0.34 GB/s
+
+  quantize_row_q_dot
+    4096 values (0.02 MB)
+      min cycles/32 vals   :     46.88
+      avg cycles/32 vals   :     47.48
+      float32 throughput   :      6.63 GB/s
+      quantized throughput :      3.32 GB/s
+
+  vec_dot_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    110.09
+      avg cycles/32 vals   :    110.60
+      float32 throughput   :      2.83 GB/s
+      quantized throughput :      1.41 GB/s
+
+q4_0
+  quantize_row_q_reference
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    675.58
+      avg cycles/32 vals   :    678.68
+      float32 throughput   :      0.46 GB/s
+      quantized throughput :      0.06 GB/s
+
+  quantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    676.35
+      avg cycles/32 vals   :    678.37
+      float32 throughput   :      0.46 GB/s
+      quantized throughput :      0.06 GB/s
+
+  dequantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    299.49
+      avg cycles/32 vals   :    302.25
+      float32 throughput   :      1.02 GB/s
+      quantized throughput :      0.14 GB/s
+
+  quantize_row_q_dot
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    247.84
+      avg cycles/32 vals   :    249.29
+      float32 throughput   :      1.25 GB/s
+      quantized throughput :      0.18 GB/s
+
+  vec_dot_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    354.83
+      avg cycles/32 vals   :    366.00
+      float32 throughput   :      0.84 GB/s
+      quantized throughput :      0.12 GB/s
+
+q4_1
+  quantize_row_q_reference
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    735.43
+      avg cycles/32 vals   :    738.98
+      float32 throughput   :      0.42 GB/s
+      quantized throughput :      0.07 GB/s
+
+  quantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    733.04
+      avg cycles/32 vals   :    735.82
+      float32 throughput   :      0.42 GB/s
+      quantized throughput :      0.07 GB/s
+
+  dequantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    313.41
+      avg cycles/32 vals   :    315.66
+      float32 throughput   :      0.97 GB/s
+      quantized throughput :      0.15 GB/s
+
+  quantize_row_q_dot
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    333.56
+      avg cycles/32 vals   :    334.04
+      float32 throughput   :      0.92 GB/s
+      quantized throughput :      0.14 GB/s
+
+  vec_dot_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    234.52
+      avg cycles/32 vals   :    235.63
+      float32 throughput   :      1.32 GB/s
+      quantized throughput :      0.21 GB/s
+
+q5_0
+  quantize_row_q_reference
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    707.20
+      avg cycles/32 vals   :    713.58
+      float32 throughput   :      0.43 GB/s
+      quantized throughput :      0.07 GB/s
+
+  quantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    643.09
+      avg cycles/32 vals   :    709.54
+      float32 throughput   :      0.43 GB/s
+      quantized throughput :      0.07 GB/s
+
+  dequantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    314.66
+      avg cycles/32 vals   :    315.33
+      float32 throughput   :      0.98 GB/s
+      quantized throughput :      0.17 GB/s
+
+  quantize_row_q_dot
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    247.98
+      avg cycles/32 vals   :    248.65
+      float32 throughput   :      1.24 GB/s
+      quantized throughput :      0.21 GB/s
+
+  vec_dot_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    394.83
+      avg cycles/32 vals   :    396.13
+      float32 throughput   :      0.77 GB/s
+      quantized throughput :      0.13 GB/s
+
+q5_1
+  quantize_row_q_reference
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    876.04
+      avg cycles/32 vals   :    896.56
+      float32 throughput   :      0.34 GB/s
+      quantized throughput :      0.06 GB/s
+
+  quantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    893.10
+      avg cycles/32 vals   :    897.11
+      float32 throughput   :      0.34 GB/s
+      quantized throughput :      0.06 GB/s
+
+  dequantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    385.05
+      avg cycles/32 vals   :    410.63
+      float32 throughput   :      0.75 GB/s
+      quantized throughput :      0.14 GB/s
+
+  quantize_row_q_dot
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    333.56
+      avg cycles/32 vals   :    334.17
+      float32 throughput   :      0.92 GB/s
+      quantized throughput :      0.17 GB/s
+
+  vec_dot_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    378.38
+      avg cycles/32 vals   :    380.61
+      float32 throughput   :      0.81 GB/s
+      quantized throughput :      0.15 GB/s
+
+q8_0
+  quantize_row_q_reference
+    4096 values (0.02 MB)
+      min cycles/32 vals   :   1045.85
+      avg cycles/32 vals   :   1051.48
+      float32 throughput   :      0.29 GB/s
+      quantized throughput :      0.08 GB/s
+
+  quantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    246.95
+      avg cycles/32 vals   :    247.48
+      float32 throughput   :      1.25 GB/s
+      quantized throughput :      0.33 GB/s
+
+  dequantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    283.47
+      avg cycles/32 vals   :    285.13
+      float32 throughput   :      1.08 GB/s
+      quantized throughput :      0.29 GB/s
+
+  quantize_row_q_dot
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    247.79
+      avg cycles/32 vals   :    248.90
+      float32 throughput   :      1.25 GB/s
+      quantized throughput :      0.33 GB/s
+
+  vec_dot_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    137.96
+      avg cycles/32 vals   :    140.58
+      float32 throughput   :      2.18 GB/s
+      quantized throughput :      0.58 GB/s
+
+q2_K
+  quantize_row_q_reference
+    4096 values (0.02 MB)
+      min cycles/32 vals   :  34317.42
+      avg cycles/32 vals   :  34533.73
+      float32 throughput   :      0.01 GB/s
+      quantized throughput :      0.00 GB/s
+
+  quantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :  34323.66
+      avg cycles/32 vals   :  34525.96
+      float32 throughput   :      0.01 GB/s
+      quantized throughput :      0.00 GB/s
+
+  dequantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    270.67
+      avg cycles/32 vals   :    271.81
+      float32 throughput   :      1.13 GB/s
+      quantized throughput :      0.09 GB/s
+
+  quantize_row_q_dot
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    976.09
+      avg cycles/32 vals   :   1027.71
+      float32 throughput   :      0.30 GB/s
+      quantized throughput :      0.02 GB/s
+
+  vec_dot_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :     50.01
+      avg cycles/32 vals   :     50.41
+      float32 throughput   :      6.36 GB/s
+      quantized throughput :      0.52 GB/s
+
+q3_K
+  quantize_row_q_reference
+    4096 values (0.02 MB)
+      min cycles/32 vals   :   3170.42
+      avg cycles/32 vals   :   3356.77
+      float32 throughput   :      0.09 GB/s
+      quantized throughput :      0.01 GB/s
+
+  quantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :   3169.16
+      avg cycles/32 vals   :   3184.80
+      float32 throughput   :      0.10 GB/s
+      quantized throughput :      0.01 GB/s
+
+  dequantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    304.41
+      avg cycles/32 vals   :    306.36
+      float32 throughput   :      1.00 GB/s
+      quantized throughput :      0.11 GB/s
+
+  quantize_row_q_dot
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    974.98
+      avg cycles/32 vals   :    975.79
+      float32 throughput   :      0.32 GB/s
+      quantized throughput :      0.03 GB/s
+
+  vec_dot_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :     73.05
+      avg cycles/32 vals   :     73.50
+      float32 throughput   :      4.12 GB/s
+      quantized throughput :      0.44 GB/s
+
+q4_K
+  quantize_row_q_reference
+    4096 values (0.02 MB)
+      min cycles/32 vals   :  45352.69
+      avg cycles/32 vals   :  45901.37
+      float32 throughput   :      0.01 GB/s
+      quantized throughput :      0.00 GB/s
+
+  quantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :  44921.23
+      avg cycles/32 vals   :  45242.92
+      float32 throughput   :      0.01 GB/s
+      quantized throughput :      0.00 GB/s
+
+  dequantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    256.75
+      avg cycles/32 vals   :    260.92
+      float32 throughput   :      1.18 GB/s
+      quantized throughput :      0.17 GB/s
+
+  quantize_row_q_dot
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    975.77
+      avg cycles/32 vals   :    976.55
+      float32 throughput   :      0.32 GB/s
+      quantized throughput :      0.04 GB/s
+
+  vec_dot_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :     60.64
+      avg cycles/32 vals   :     60.87
+      float32 throughput   :      5.09 GB/s
+      quantized throughput :      0.72 GB/s
+
+q5_K
+  quantize_row_q_reference
+    4096 values (0.02 MB)
+      min cycles/32 vals   :  35604.74
+      avg cycles/32 vals   :  35858.61
+      float32 throughput   :      0.01 GB/s
+      quantized throughput :      0.00 GB/s
+
+  quantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :  35269.49
+      avg cycles/32 vals   :  35413.09
+      float32 throughput   :      0.01 GB/s
+      quantized throughput :      0.00 GB/s
+
+  dequantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    291.46
+      avg cycles/32 vals   :    291.96
+      float32 throughput   :      1.05 GB/s
+      quantized throughput :      0.18 GB/s
+
+  quantize_row_q_dot
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    974.84
+      avg cycles/32 vals   :   1103.00
+      float32 throughput   :      0.28 GB/s
+      quantized throughput :      0.05 GB/s
+
+  vec_dot_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :     84.34
+      avg cycles/32 vals   :     84.59
+      float32 throughput   :      3.63 GB/s
+      quantized throughput :      0.62 GB/s
+
+q6_K
+  quantize_row_q_reference
+    4096 values (0.02 MB)
+      min cycles/32 vals   :  22026.59
+      avg cycles/32 vals   :  22140.89
+      float32 throughput   :      0.01 GB/s
+      quantized throughput :      0.00 GB/s
+
+  quantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :  22030.89
+      avg cycles/32 vals   :  22161.68
+      float32 throughput   :      0.01 GB/s
+      quantized throughput :      0.00 GB/s
+
+  dequantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    322.88
+      avg cycles/32 vals   :    324.09
+      float32 throughput   :      0.95 GB/s
+      quantized throughput :      0.19 GB/s
+
+  quantize_row_q_dot
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    975.00
+      avg cycles/32 vals   :    987.71
+      float32 throughput   :      0.31 GB/s
+      quantized throughput :      0.06 GB/s
+
+  vec_dot_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :     65.30
+      avg cycles/32 vals   :     65.67
+      float32 throughput   :      4.62 GB/s
+      quantized throughput :      0.95 GB/s
+
+iq3_xxs
+================================================================= iq3xs_init_impl(grid_size = 256)
+iq3xs_init_impl: 18985 neighbours in total
+  quantize_row_q_reference
+    4096 values (0.02 MB)
+      min cycles/32 vals   : 149957.23
+      avg cycles/32 vals   : 154911.88
+      float32 throughput   :      0.00 GB/s
+      quantized throughput :      0.00 GB/s
+
+  quantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   : 150027.75
+      avg cycles/32 vals   : 150568.22
+      float32 throughput   :      0.00 GB/s
+      quantized throughput :
+
+      Start  3: test-sampling
+ 3/21 Test  #3: test-sampling .......................   Passed    0.07 sec
+      Start  4: test-chat-template
+ 4/21 Test  #4: test-chat-template ..................   Passed    0.04 sec
+      Start  5: test-tokenizer-0-llama
+ 5/21 Test  #5: test-tokenizer-0-llama ..............   Passed    0.72 sec
+      Start  6: test-tokenizer-0-falcon
+ 6/21 Test  #6: test-tokenizer-0-falcon .............   Passed    1.91 sec
+      Start  7: test-tokenizer-1-llama
+ 7/21 Test  #7: test-tokenizer-1-llama ..............   Passed    4.58 sec
+      Start  8: test-tokenizer-1-baichuan
+ 8/21 Test  #8: test-tokenizer-1-baichuan ...........   Passed    4.87 sec
+      Start  9: test-tokenizer-1-falcon
+ 9/21 Test  #9: test-tokenizer-1-falcon .............   Passed    8.58 sec
+      Start 10: test-tokenizer-1-aquila
+10/21 Test #10: test-tokenizer-1-aquila .............   Passed   12.66 sec
+      Start 11: test-tokenizer-1-mpt
+11/21 Test #11: test-tokenizer-1-mpt ................   Passed    7.24 sec
+      Start 12: test-tokenizer-1-stablelm-3b-4e1t
+12/21 Test #12: test-tokenizer-1-stablelm-3b-4e1t ...   Passed    6.91 sec
+      Start 13: test-tokenizer-1-gpt-neox
+13/21 Test #13: test-tokenizer-1-gpt-neox ...........   Passed    7.50 sec
+      Start 14: test-tokenizer-1-refact
+14/21 Test #14: test-tokenizer-1-refact .............   Passed    7.11 sec
+      Start 15: test-tokenizer-1-starcoder
+15/21 Test #15: test-tokenizer-1-starcoder ..........   Passed    6.67 sec
+      Start 16: test-tokenizer-1-gpt2
+16/21 Test #16: test-tokenizer-1-gpt2 ...............   Passed    7.10 sec
+      Start 17: test-grammar-parser
+17/21 Test #17: test-grammar-parser .................   Passed    0.00 sec
+      Start 18: test-llama-grammar
+18/21 Test #18: test-llama-grammar ..................   Passed    0.04 sec
+      Start 19: test-grad0
+19/21 Test #19: test-grad0 ..........................   Passed    5.59 sec
+      Start 20: test-backend-ops
+20/21 Test #20: test-backend-ops ....................   Passed  153.26 sec
+      Start 21: test-rope
+21/21 Test #21: test-rope ...........................   Passed    0.63 sec
+
+90% tests passed, 2 tests failed out of 21
+
+Label Time Summary:
+main    = 242.49 sec*proc (21 tests)
+
+Total Test time (real) = 242.50 sec
+
+The following tests FAILED:
+	  1 - test-quantize-fns (Subprocess aborted)
+	  2 - test-quantize-perf (SEGFAULT)
+Errors while running CTest
+
+real	4m2.535s
+user	7m1.020s
+sys	0m25.274s
