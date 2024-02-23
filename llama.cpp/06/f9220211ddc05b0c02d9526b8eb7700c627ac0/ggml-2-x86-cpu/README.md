@@ -1,0 +1,505 @@
+## Summary
+
+- status:  FAILURE ❌ (8)
+- runtime: 2:44.34
+- date:    Fri Feb 23 12:18:37 UTC 2024
+- repo:    https://github.com/ggerganov/llama.cpp
+- commit:  https://github.com/ggerganov/llama.cpp/commit/06f9220211ddc05b0c02d9526b8eb7700c627ac0
+- author:  Georgi Gerganov
+```
+ggml : add I32 <-> F32 conversion
+
+ggml-ci
+```
+
+## Environment
+
+```
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 8
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-debug
+      Start  1: test-quantize-fns
+ 1/21 Test  #1: test-quantize-fns ...................Subprocess aborted***Exception:   4.31 sec
+free(): invalid pointer
+
+      Start  2: test-quantize-perf
+ 2/21 Test  #2: test-quantize-perf ..................***Exception: SegFault  0.69 sec
+f16
+  quantize_row_q_reference
+    4096 values (0.02 MB)
+      min cycles/32 vals   :     35.55
+      avg cycles/32 vals   :     36.08
+      float32 throughput   :      8.98 GB/s
+      quantized throughput :      4.49 GB/s
+
+  quantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :     35.52
+      avg cycles/32 vals   :     36.00
+      float32 throughput   :      8.98 GB/s
+      quantized throughput :      4.49 GB/s
+
+  dequantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    302.39
+      avg cycles/32 vals   :    303.99
+      float32 throughput   :      1.09 GB/s
+      quantized throughput :      0.54 GB/s
+
+  quantize_row_q_dot
+    4096 values (0.02 MB)
+      min cycles/32 vals   :     35.97
+      avg cycles/32 vals   :     36.45
+      float32 throughput   :      8.48 GB/s
+      quantized throughput :      4.24 GB/s
+
+  vec_dot_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :     69.75
+      avg cycles/32 vals   :     70.52
+      float32 throughput   :      4.77 GB/s
+      quantized throughput :      2.38 GB/s
+
+q4_0
+  quantize_row_q_reference
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    494.70
+      avg cycles/32 vals   :    495.52
+      float32 throughput   :      0.68 GB/s
+      quantized throughput :      0.09 GB/s
+
+  quantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    492.17
+      avg cycles/32 vals   :    494.19
+      float32 throughput   :      0.67 GB/s
+      quantized throughput :      0.09 GB/s
+
+  dequantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    222.03
+      avg cycles/32 vals   :    223.23
+      float32 throughput   :      1.48 GB/s
+      quantized throughput :      0.21 GB/s
+
+  quantize_row_q_dot
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    193.41
+      avg cycles/32 vals   :    194.72
+      float32 throughput   :      1.70 GB/s
+      quantized throughput :      0.24 GB/s
+
+  vec_dot_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    203.66
+      avg cycles/32 vals   :    204.59
+      float32 throughput   :      1.62 GB/s
+      quantized throughput :      0.23 GB/s
+
+q4_1
+  quantize_row_q_reference
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    528.36
+      avg cycles/32 vals   :    536.03
+      float32 throughput   :      0.62 GB/s
+      quantized throughput :      0.10 GB/s
+
+  quantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    525.12
+      avg cycles/32 vals   :    526.35
+      float32 throughput   :      0.63 GB/s
+      quantized throughput :      0.10 GB/s
+
+  dequantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    292.09
+      avg cycles/32 vals   :    294.38
+      float32 throughput   :      1.12 GB/s
+      quantized throughput :      0.18 GB/s
+
+  quantize_row_q_dot
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    227.39
+      avg cycles/32 vals   :    229.16
+      float32 throughput   :      1.45 GB/s
+      quantized throughput :      0.23 GB/s
+
+  vec_dot_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    150.84
+      avg cycles/32 vals   :    151.70
+      float32 throughput   :      2.18 GB/s
+      quantized throughput :      0.34 GB/s
+
+q5_0
+  quantize_row_q_reference
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    511.72
+      avg cycles/32 vals   :    559.57
+      float32 throughput   :      0.60 GB/s
+      quantized throughput :      0.10 GB/s
+
+  quantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    511.19
+      avg cycles/32 vals   :    512.70
+      float32 throughput   :      0.65 GB/s
+      quantized throughput :      0.11 GB/s
+
+  dequantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    258.17
+      avg cycles/32 vals   :    259.88
+      float32 throughput   :      1.29 GB/s
+      quantized throughput :      0.22 GB/s
+
+  quantize_row_q_dot
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    193.92
+      avg cycles/32 vals   :    195.19
+      float32 throughput   :      1.73 GB/s
+      quantized throughput :      0.30 GB/s
+
+  vec_dot_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    233.59
+      avg cycles/32 vals   :    234.67
+      float32 throughput   :      1.40 GB/s
+      quantized throughput :      0.24 GB/s
+
+q5_1
+  quantize_row_q_reference
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    535.03
+      avg cycles/32 vals   :    537.11
+      float32 throughput   :      0.62 GB/s
+      quantized throughput :      0.12 GB/s
+
+  quantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    534.88
+      avg cycles/32 vals   :    536.52
+      float32 throughput   :      0.62 GB/s
+      quantized throughput :      0.12 GB/s
+
+  dequantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    319.88
+      avg cycles/32 vals   :    321.42
+      float32 throughput   :      1.03 GB/s
+      quantized throughput :      0.19 GB/s
+
+  quantize_row_q_dot
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    227.33
+      avg cycles/32 vals   :    228.71
+      float32 throughput   :      1.45 GB/s
+      quantized throughput :      0.27 GB/s
+
+  vec_dot_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    222.23
+      avg cycles/32 vals   :    223.21
+      float32 throughput   :      1.50 GB/s
+      quantized throughput :      0.28 GB/s
+
+q8_0
+  quantize_row_q_reference
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    661.84
+      avg cycles/32 vals   :    663.63
+      float32 throughput   :      0.50 GB/s
+      quantized throughput :      0.13 GB/s
+
+  quantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    189.88
+      avg cycles/32 vals   :    190.55
+      float32 throughput   :      1.75 GB/s
+      quantized throughput :      0.47 GB/s
+
+  dequantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    218.58
+      avg cycles/32 vals   :    219.92
+      float32 throughput   :      1.51 GB/s
+      quantized throughput :      0.40 GB/s
+
+  quantize_row_q_dot
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    193.88
+      avg cycles/32 vals   :    194.95
+      float32 throughput   :      1.70 GB/s
+      quantized throughput :      0.45 GB/s
+
+  vec_dot_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :     86.20
+      avg cycles/32 vals   :     87.11
+      float32 throughput   :      3.72 GB/s
+      quantized throughput :      0.99 GB/s
+
+q2_K
+  quantize_row_q_reference
+    4096 values (0.02 MB)
+      min cycles/32 vals   :  32337.56
+      avg cycles/32 vals   :  32489.40
+      float32 throughput   :      0.01 GB/s
+      quantized throughput :      0.00 GB/s
+
+  quantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :  32241.35
+      avg cycles/32 vals   :  32420.48
+      float32 throughput   :      0.01 GB/s
+      quantized throughput :      0.00 GB/s
+
+  dequantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    328.58
+      avg cycles/32 vals   :    328.82
+      float32 throughput   :      1.01 GB/s
+      quantized throughput :      0.08 GB/s
+
+  quantize_row_q_dot
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    808.52
+      avg cycles/32 vals   :    810.12
+      float32 throughput   :      0.41 GB/s
+      quantized throughput :      0.03 GB/s
+
+  vec_dot_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :     35.17
+      avg cycles/32 vals   :     72.00
+      float32 throughput   :      4.77 GB/s
+      quantized throughput :      0.39 GB/s
+
+q3_K
+  quantize_row_q_reference
+    4096 values (0.02 MB)
+      min cycles/32 vals   :   2590.17
+      avg cycles/32 vals   :   2596.26
+      float32 throughput   :      0.13 GB/s
+      quantized throughput :      0.01 GB/s
+
+  quantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :   2586.16
+      avg cycles/32 vals   :   2598.31
+      float32 throughput   :      0.13 GB/s
+      quantized throughput :      0.01 GB/s
+
+  dequantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    244.94
+      avg cycles/32 vals   :    247.27
+      float32 throughput   :      1.34 GB/s
+      quantized throughput :      0.14 GB/s
+
+  quantize_row_q_dot
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    808.42
+      avg cycles/32 vals   :    810.36
+      float32 throughput   :      0.41 GB/s
+      quantized throughput :      0.04 GB/s
+
+  vec_dot_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :     53.88
+      avg cycles/32 vals   :     54.29
+      float32 throughput   :      6.10 GB/s
+      quantized throughput :      0.66 GB/s
+
+q4_K
+  quantize_row_q_reference
+    4096 values (0.02 MB)
+      min cycles/32 vals   :  43120.23
+      avg cycles/32 vals   :  43205.02
+      float32 throughput   :      0.01 GB/s
+      quantized throughput :      0.00 GB/s
+
+  quantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :  43142.82
+      avg cycles/32 vals   :  43207.99
+      float32 throughput   :      0.01 GB/s
+      quantized throughput :      0.00 GB/s
+
+  dequantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    317.80
+      avg cycles/32 vals   :    318.40
+      float32 throughput   :      1.04 GB/s
+      quantized throughput :      0.15 GB/s
+
+  quantize_row_q_dot
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    809.39
+      avg cycles/32 vals   :    818.46
+      float32 throughput   :      0.41 GB/s
+      quantized throughput :      0.06 GB/s
+
+  vec_dot_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :     40.30
+      avg cycles/32 vals   :     40.99
+      float32 throughput   :      8.98 GB/s
+      quantized throughput :      1.26 GB/s
+
+q5_K
+  quantize_row_q_reference
+    4096 values (0.02 MB)
+      min cycles/32 vals   :  33682.23
+      avg cycles/32 vals   :  33835.29
+      float32 throughput   :      0.01 GB/s
+      quantized throughput :      0.00 GB/s
+
+  quantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :  33739.23
+      avg cycles/32 vals   :  33851.31
+      float32 throughput   :      0.01 GB/s
+      quantized throughput :      0.00 GB/s
+
+  dequantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    320.38
+      avg cycles/32 vals   :    321.07
+      float32 throughput   :      1.03 GB/s
+      quantized throughput :      0.18 GB/s
+
+  quantize_row_q_dot
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    809.27
+      avg cycles/32 vals   :    810.38
+      float32 throughput   :      0.41 GB/s
+      quantized throughput :      0.07 GB/s
+
+  vec_dot_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :     55.84
+      avg cycles/32 vals   :     56.21
+      float32 throughput   :      5.65 GB/s
+      quantized throughput :      0.97 GB/s
+
+q6_K
+  quantize_row_q_reference
+    4096 values (0.02 MB)
+      min cycles/32 vals   :  19297.21
+      avg cycles/32 vals   :  19328.01
+      float32 throughput   :      0.02 GB/s
+      quantized throughput :      0.00 GB/s
+
+  quantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :  19314.66
+      avg cycles/32 vals   :  19339.16
+      float32 throughput   :      0.02 GB/s
+      quantized throughput :      0.00 GB/s
+
+  dequantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    319.78
+      avg cycles/32 vals   :    327.69
+      float32 throughput   :      1.01 GB/s
+      quantized throughput :      0.21 GB/s
+
+  quantize_row_q_dot
+    4096 values (0.02 MB)
+      min cycles/32 vals   :    809.67
+      avg cycles/32 vals   :    810.76
+      float32 throughput   :      0.41 GB/s
+      quantized throughput :      0.08 GB/s
+
+  vec_dot_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   :     48.86
+      avg cycles/32 vals   :     82.95
+      float32 throughput   :      3.91 GB/s
+      quantized throughput :      0.80 GB/s
+
+iq3_xxs
+================================================================= iq3xs_init_impl(grid_size = 256)
+iq3xs_init_impl: 18985 neighbours in total
+  quantize_row_q_reference
+    4096 values (0.02 MB)
+      min cycles/32 vals   : 128823.11
+      avg cycles/32 vals   : 128901.85
+      float32 throughput   :      0.00 GB/s
+      quantized throughput :      0.00 GB/s
+
+  quantize_row_q
+    4096 values (0.02 MB)
+      min cycles/32 vals   : 129566.47
+      avg cycles/32 vals   : 129751.80
+      float32 throughput   :      0.00 GB/s
+      quantized throughput :
+
+      Start  3: test-sampling
+ 3/21 Test  #3: test-sampling .......................   Passed    0.03 sec
+      Start  4: test-chat-template
+ 4/21 Test  #4: test-chat-template ..................   Passed    0.00 sec
+      Start  5: test-tokenizer-0-llama
+ 5/21 Test  #5: test-tokenizer-0-llama ..............   Passed    0.13 sec
+      Start  6: test-tokenizer-0-falcon
+ 6/21 Test  #6: test-tokenizer-0-falcon .............   Passed    0.88 sec
+      Start  7: test-tokenizer-1-llama
+ 7/21 Test  #7: test-tokenizer-1-llama ..............   Passed    3.37 sec
+      Start  8: test-tokenizer-1-baichuan
+ 8/21 Test  #8: test-tokenizer-1-baichuan ...........   Passed    3.62 sec
+      Start  9: test-tokenizer-1-falcon
+ 9/21 Test  #9: test-tokenizer-1-falcon .............   Passed    6.09 sec
+      Start 10: test-tokenizer-1-aquila
+10/21 Test #10: test-tokenizer-1-aquila .............   Passed    8.62 sec
+      Start 11: test-tokenizer-1-mpt
+11/21 Test #11: test-tokenizer-1-mpt ................   Passed    5.08 sec
+      Start 12: test-tokenizer-1-stablelm-3b-4e1t
+12/21 Test #12: test-tokenizer-1-stablelm-3b-4e1t ...   Passed    5.03 sec
+      Start 13: test-tokenizer-1-gpt-neox
+13/21 Test #13: test-tokenizer-1-gpt-neox ...........   Passed    5.05 sec
+      Start 14: test-tokenizer-1-refact
+14/21 Test #14: test-tokenizer-1-refact .............   Passed    4.86 sec
+      Start 15: test-tokenizer-1-starcoder
+15/21 Test #15: test-tokenizer-1-starcoder ..........   Passed    4.85 sec
+      Start 16: test-tokenizer-1-gpt2
+16/21 Test #16: test-tokenizer-1-gpt2 ...............   Passed    5.09 sec
+      Start 17: test-grammar-parser
+17/21 Test #17: test-grammar-parser .................   Passed    0.00 sec
+      Start 18: test-llama-grammar
+18/21 Test #18: test-llama-grammar ..................   Passed    0.00 sec
+      Start 19: test-grad0
+19/21 Test #19: test-grad0 ..........................   Passed    2.40 sec
+      Start 20: test-backend-ops
+20/21 Test #20: test-backend-ops ....................   Passed   80.00 sec
+      Start 21: test-rope
+21/21 Test #21: test-rope ...........................   Passed    0.06 sec
+
+90% tests passed, 2 tests failed out of 21
+
+Label Time Summary:
+main    = 140.18 sec*proc (21 tests)
+
+Total Test time (real) = 140.19 sec
+
+The following tests FAILED:
+	  1 - test-quantize-fns (Subprocess aborted)
+	  2 - test-quantize-perf (SEGFAULT)
+Errors while running CTest
+
+real	2m20.210s
+user	5m13.689s
+sys	0m8.631s
+```
+
