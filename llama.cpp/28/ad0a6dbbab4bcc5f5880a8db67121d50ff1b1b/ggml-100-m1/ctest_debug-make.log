@@ -1,0 +1,31 @@
++ make -j
+[  1%] Generating build details from Git
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  3%] Compiling Metal kernels
+[  4%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  5%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  6%] Building C object CMakeFiles/ggml.dir/ggml-metal.m.o
+-- Found Git: /usr/bin/git (found version "2.39.3 (Apple Git-145)") 
+[  7%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  7%] Built target build_info
+/Users/ggml/work/llama.cpp/ggml.c:358:6: error: no previous prototype for function 'ggml_i32_to_f32_row' [-Werror,-Wmissing-prototypes]
+void ggml_i32_to_f32_row(const int32_t * x, float * y, int n) {
+     ^
+/Users/ggml/work/llama.cpp/ggml.c:358:1: note: declare 'static' if the function is not intended to be used outside of this translation unit
+void ggml_i32_to_f32_row(const int32_t * x, float * y, int n) {
+^
+static 
+/Users/ggml/work/llama.cpp/ggml.c:364:6: error: no previous prototype for function 'ggml_f32_to_i32_row' [-Werror,-Wmissing-prototypes]
+void ggml_f32_to_i32_row(const float * x, int32_t * y, int n) {
+     ^
+/Users/ggml/work/llama.cpp/ggml.c:364:1: note: declare 'static' if the function is not intended to be used outside of this translation unit
+void ggml_f32_to_i32_row(const float * x, int32_t * y, int n) {
+^
+static 
+2 errors generated.
+make[2]: *** [CMakeFiles/ggml.dir/ggml.c.o] Error 1
+make[1]: *** [CMakeFiles/ggml.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[  7%] Built target ggml-metal
+make: *** [all] Error 2
