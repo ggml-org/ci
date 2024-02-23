@@ -1,0 +1,36 @@
++ make -j
+[  1%] Generating build details from Git
+[  2%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  5%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda.cu.o
+[  5%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  6%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  6%] Built target build_info
+/home/ggml/work/llama.cpp/ggml-cuda.cu(6130): error: more than one instance of overloaded function "min" matches the argument list:
+            function "min(int, int)" (declared at line 1126 of /usr/local/cuda-12.2/include/crt/math_functions.hpp)
+            function "min(unsigned int, int)" (declared at line 878 of /usr/local/cuda-12.2/include/crt/math_functions.hpp)
+            function "min(float, float)" (declared at line 973 of /usr/local/cuda-12.2/include/crt/math_functions.hpp)
+            function "min(float, double)" (declared at line 983 of /usr/local/cuda-12.2/include/crt/math_functions.hpp)
+            argument types are: (const float, int)
+      const float theta = min(p, n_ctx - 2)*freq_scale*col_theta_scale;
+                          ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(6140): error: more than one instance of overloaded function "max" matches the argument list:
+            function "max(int, int)" (declared at line 1147 of /usr/local/cuda-12.2/include/crt/math_functions.hpp)
+            function "max(unsigned int, int)" (declared at line 1003 of /usr/local/cuda-12.2/include/crt/math_functions.hpp)
+            function "max(float, float)" (declared at line 1097 of /usr/local/cuda-12.2/include/crt/math_functions.hpp)
+            function "max(float, double)" (declared at line 1107 of /usr/local/cuda-12.2/include/crt/math_functions.hpp)
+            argument types are: (float, int)
+      const float block_theta = ((float)max(p - n_ctx - 2, 0))*col_theta_scale;
+                                        ^
+
+2 errors detected in the compilation of "/home/ggml/work/llama.cpp/ggml-cuda.cu".
+make[2]: *** [CMakeFiles/ggml.dir/build.make:133: CMakeFiles/ggml.dir/ggml-cuda.cu.o] Error 2
+make[1]: *** [CMakeFiles/Makefile2:740: CMakeFiles/ggml.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m2.097s
+user	0m1.809s
+sys	0m0.392s
