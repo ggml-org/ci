@@ -1,0 +1,98 @@
++ cmake -DCMAKE_BUILD_TYPE=Debug -DLLAMA_FATAL_WARNINGS=ON -DLLAMA_CUBLAS=1 ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found CUDAToolkit: /usr/local/cuda-12.2/include (found version "12.2.140") 
+-- cuBLAS found
+-- The CUDA compiler identification is NVIDIA 12.2.140
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda-12.2/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- Using CUDA architectures: 52;61;70
+-- CUDA host compiler is GNU 11.4.0
+
+-- ccache found, compilation results will be cached. Disable with LLAMA_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- x86 detected
+-- Configuring done (3.0s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-debug
+
+real	0m3.250s
+user	0m2.541s
+sys	0m0.700s
++ make -j
+[  1%] Generating build details from Git
+[  2%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  5%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda.cu.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  6%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  6%] Built target build_info
+/home/ggml/work/llama.cpp/ggml-cuda.cu(6130): error: more than one instance of overloaded function "min" matches the argument list:
+            function "min(int, int)" (declared at line 1126 of /usr/local/cuda-12.2/include/crt/math_functions.hpp)
+            function "min(unsigned int, int)" (declared at line 878 of /usr/local/cuda-12.2/include/crt/math_functions.hpp)
+            function "min(float, float)" (declared at line 973 of /usr/local/cuda-12.2/include/crt/math_functions.hpp)
+            function "min(float, double)" (declared at line 983 of /usr/local/cuda-12.2/include/crt/math_functions.hpp)
+            argument types are: (const float, int)
+      const float theta = min(p, n_ctx - 2)*freq_scale*col_theta_scale;
+                          ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(6140): error: more than one instance of overloaded function "max" matches the argument list:
+            function "max(int, int)" (declared at line 1147 of /usr/local/cuda-12.2/include/crt/math_functions.hpp)
+            function "max(unsigned int, int)" (declared at line 1003 of /usr/local/cuda-12.2/include/crt/math_functions.hpp)
+            function "max(float, float)" (declared at line 1097 of /usr/local/cuda-12.2/include/crt/math_functions.hpp)
+            function "max(float, double)" (declared at line 1107 of /usr/local/cuda-12.2/include/crt/math_functions.hpp)
+            argument types are: (float, int)
+      const float block_theta = ((float)max(p - n_ctx - 2, 0))*col_theta_scale;
+                                        ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(9054): error: argument of type "const int32_t *" is incompatible with parameter of type "const float *"
+          rope_glm_f32_cuda(src0_dd, dst_dd, ne00, nrows, pos, freq_scale, ne01, freq_base, n_ctx, main_stream);
+                                                          ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(9057): error: no instance of function template "rope_neox_cuda" matches the argument list
+            argument types are: (const float *, float *, const int64_t, const int, const int64_t, const int32_t *, float, const int64_t, float, float, float, rope_corr_dims, cudaStream_t)
+              rope_neox_cuda(
+              ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(9062): error: no instance of function template "rope_neox_cuda" matches the argument list
+            argument types are: (const half *, half *, const int64_t, const int, const int64_t, const int32_t *, float, const int64_t, float, float, float, rope_corr_dims, cudaStream_t)
+              rope_neox_cuda(
+              ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(9071): error: no instance of function template "rope_cuda" matches the argument list
+            argument types are: (const float *, float *, const int64_t, const int64_t, const int32_t *, float, const int64_t, float, float, float, rope_corr_dims, cudaStream_t)
+              rope_cuda(
+              ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(9076): error: no instance of function template "rope_cuda" matches the argument list
+            argument types are: (const half *, half *, const int64_t, const int64_t, const int32_t *, float, const int64_t, float, float, float, rope_corr_dims, cudaStream_t)
+              rope_cuda(
+              ^
+
+7 errors detected in the compilation of "/home/ggml/work/llama.cpp/ggml-cuda.cu".
+make[2]: *** [CMakeFiles/ggml.dir/build.make:133: CMakeFiles/ggml.dir/ggml-cuda.cu.o] Error 2
+make[1]: *** [CMakeFiles/Makefile2:740: CMakeFiles/ggml.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m2.043s
+user	0m3.425s
+sys	0m0.481s
