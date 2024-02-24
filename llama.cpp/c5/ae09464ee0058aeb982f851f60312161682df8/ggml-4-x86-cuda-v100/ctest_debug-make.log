@@ -1,0 +1,37 @@
++ make -j
+[  1%] Generating build details from Git
+[  2%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  5%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda.cu.o
+[  6%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  6%] Built target ggml
+[  7%] Built target build_info
+[  7%] Linking CUDA static library libggml_static.a
+[  8%] Building CXX object examples/gguf/CMakeFiles/gguf.dir/gguf.cpp.o
+[  8%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+[  8%] Linking CXX executable ../../bin/gguf
+[  8%] Built target ggml_static
+[  8%] Built target gguf
+/home/ggml/work/llama.cpp/llama.cpp:2660:14: error: explicit specialization in non-namespace scope ‘struct llama_model_loader’
+ 2660 |     template<>
+      |              ^
+/home/ggml/work/llama.cpp/llama.cpp: In instantiation of ‘class GGUFMeta::GKV<llama_pooling_type>’:
+/home/ggml/work/llama.cpp/llama.cpp:2646:49:   required from ‘bool llama_model_loader::get_key(const string&, T&, bool) [with T = llama_pooling_type; std::string = std::__cxx11::basic_string<char>]’
+/home/ggml/work/llama.cpp/llama.cpp:2657:23:   required from ‘bool llama_model_loader::get_key(llm_kv, T&, bool) [with T = llama_pooling_type]’
+/home/ggml/work/llama.cpp/llama.cpp:3125:27:   required from here
+/home/ggml/work/llama.cpp/llama.cpp:2334:11: error: invalid use of incomplete type ‘struct GGUFMeta::GKV_Base<llama_pooling_type>’
+ 2334 |     class GKV : public GKV_Base<T> {
+      |           ^~~
+/home/ggml/work/llama.cpp/llama.cpp:2292:33: note: declaration of ‘struct GGUFMeta::GKV_Base<llama_pooling_type>’
+ 2292 |     template<typename T> struct GKV_Base;
+      |                                 ^~~~~~~~
+make[2]: *** [CMakeFiles/llama.dir/build.make:76: CMakeFiles/llama.dir/llama.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:792: CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m3.984s
+user	0m3.853s
+sys	0m0.513s
