@@ -1,0 +1,33 @@
++ make -j
+[  1%] Generating build details from Git
+[  2%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  5%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda.cu.o
+[  6%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  6%] Built target ggml
+[  6%] Built target build_info
+[  7%] Linking CUDA static library libggml_static.a
+[  7%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+[  8%] Building CXX object examples/gguf/CMakeFiles/gguf.dir/gguf.cpp.o
+[  8%] Linking CXX executable ../../bin/gguf
+[  8%] Built target ggml_static
+[  8%] Built target gguf
+/home/ggml/work/llama.cpp/llama.cpp: In function ‘llama_context* llama_new_context_with_model(llama_model*, llama_context_params)’:
+/home/ggml/work/llama.cpp/llama.cpp:11547:38: error: ‘LLAMA_SPLIT__NONE’ was not declared in this scope; did you mean ‘LLAMA_SPLIT_NONE’?
+11547 |             if (model->split_mode == LLAMA_SPLIT__NONE || model->split_mode == LLAMA_SPLIT__ROW) {
+      |                                      ^~~~~~~~~~~~~~~~~
+      |                                      LLAMA_SPLIT_NONE
+/home/ggml/work/llama.cpp/llama.cpp:11547:80: error: ‘LLAMA_SPLIT__ROW’ was not declared in this scope; did you mean ‘LLAMA_SPLIT_ROW’?
+11547 |             if (model->split_mode == LLAMA_SPLIT__NONE || model->split_mode == LLAMA_SPLIT__ROW) {
+      |                                                                                ^~~~~~~~~~~~~~~~
+      |                                                                                LLAMA_SPLIT_ROW
+make[2]: *** [CMakeFiles/llama.dir/build.make:76: CMakeFiles/llama.dir/llama.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:792: CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m3.580s
+user	0m3.492s
+sys	0m0.467s
