@@ -1,0 +1,37 @@
++ make -j
+[  0%] Generating build details from Git
+[  1%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  4%] Built target ggml
+[  4%] Linking C static library libggml_static.a
+[  5%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+[  6%] Building CXX object examples/gguf/CMakeFiles/gguf.dir/gguf.cpp.o
+[  7%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  8%] Linking CXX executable ../../bin/gguf
+[  8%] Built target ggml_static
+[  8%] Built target build_info
+[  8%] Built target gguf
+/home/ggml/work/llama.cpp/llama.cpp: In function ‘void llama_kv_cache_defrag_internal(llama_context&)’:
+/home/ggml/work/llama.cpp/llama.cpp:8102:20: error: unused variable ‘n_layer’ [-Werror=unused-variable]
+ 8102 |     const uint32_t n_layer      = hparams.n_layer;
+      |                    ^~~~~~~
+/home/ggml/work/llama.cpp/llama.cpp:8103:20: error: unused variable ‘n_embd_k_gqa’ [-Werror=unused-variable]
+ 8103 |     const uint32_t n_embd_k_gqa = hparams.n_embd_k_gqa();
+      |                    ^~~~~~~~~~~~
+/home/ggml/work/llama.cpp/llama.cpp:8104:20: error: unused variable ‘n_embd_v_gqa’ [-Werror=unused-variable]
+ 8104 |     const uint32_t n_embd_v_gqa = hparams.n_embd_v_gqa();
+      |                    ^~~~~~~~~~~~
+/home/ggml/work/llama.cpp/llama.cpp:8108:20: error: unused variable ‘kv_size’ [-Werror=unused-variable]
+ 8108 |     const uint32_t kv_size = kv_self.size;
+      |                    ^~~~~~~
+cc1plus: all warnings being treated as errors
+make[2]: *** [CMakeFiles/llama.dir/build.make:76: CMakeFiles/llama.dir/llama.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:792: CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m6.342s
+user	0m6.073s
+sys	0m0.429s
