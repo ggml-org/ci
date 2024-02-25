@@ -1,0 +1,186 @@
++ make -j
+[  2%] Building C object src/CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building C object src/CMakeFiles/ggml.dir/ggml-quants.c.o
+[  4%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  4%] Building C object src/CMakeFiles/ggml.dir/ggml-backend.c.o
+[  6%] Building C object src/CMakeFiles/ggml.dir/ggml-metal.m.o
+[  6%] Building C object src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  7%] Linking C shared library libggml.dylib
+[  7%] Built target ggml
+[  8%] Building CXX object tests/CMakeFiles/test-conv2d.dir/test-conv2d.cpp.o
+[  9%] Building C object tests/CMakeFiles/test3.dir/test3.c.o
+[ 10%] Building CXX object tests/CMakeFiles/test-opt.dir/test-opt.cpp.o
+[ 11%] Building C object tests/CMakeFiles/test-mul-mat2.dir/test-mul-mat2.c.o
+[ 12%] Building C object tests/CMakeFiles/test-blas0.dir/test-blas0.c.o
+[ 13%] Building C object tests/CMakeFiles/test-mul-mat0.dir/test-mul-mat0.c.o
+[ 14%] Building C object tests/CMakeFiles/test2.dir/test2.c.o
+[ 15%] Building C object tests/CMakeFiles/test-conv-transpose.dir/test-conv-transpose.c.o
+[ 16%] Building C object tests/CMakeFiles/test-mul-mat1.dir/test-mul-mat1.c.o
+[ 17%] Building CXX object examples/mnist/CMakeFiles/mnist-mtl.dir/main-mtl.cpp.o
+[ 18%] Building C object tests/CMakeFiles/test-customop.dir/test-customop.c.o
+[ 19%] Building C object tests/CMakeFiles/test1.dir/test1.c.o
+[ 20%] Building CXX object tests/CMakeFiles/test-conv1d.dir/test-conv1d.cpp.o
+[ 22%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 22%] Building C object tests/CMakeFiles/test-rel-pos.dir/test-rel-pos.c.o
+[ 23%] Building CXX object examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o
+[ 25%] Building C object tests/CMakeFiles/test-vec2.dir/test-vec2.c.o
+[ 26%] Building C object tests/CMakeFiles/test-dup.dir/test-dup.c.o
+[ 27%] Building C object examples/mnist/CMakeFiles/mnist-mtl.dir/main-mtl.m.o
+[ 28%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 29%] Building CXX object tests/CMakeFiles/test-backend-buffer.dir/test-backend-buffer.cpp.o
+[ 30%] Building C object tests/CMakeFiles/test-pool.dir/test-pool.c.o
+[ 31%] Building CXX object tests/CMakeFiles/test-mul-mat.dir/test-mul-mat.cpp.o
+[ 32%] Building CXX object examples/mnist/CMakeFiles/mnist-cpu.dir/main-cpu.cpp.o
+[ 33%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+[ 34%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
+/Users/ggml/work/ggml/tests/test3.c:19:65: error: use of undeclared identifier 'GGML_OPT_LBFGS'; did you mean 'GGML_OP_LOG'?
+    struct ggml_opt_params opt_params = ggml_opt_default_params(GGML_OPT_LBFGS);
+                                                                ^~~~~~~~~~~~~~
+                                                                GGML_OP_LOG
+/Users/ggml/work/ggml/src/../include/ggml/ggml.h:409:9: note: 'GGML_OP_LOG' declared here
+        GGML_OP_LOG,
+        ^
+/Users/ggml/work/ggml/tests/test3.c:19:65: warning: implicit conversion from enumeration type 'enum ggml_op' to different enumeration type 'enum ggml_opt_type' [-Wenum-conversion]
+    struct ggml_opt_params opt_params = ggml_opt_default_params(GGML_OPT_LBFGS);
+                                        ~~~~~~~~~~~~~~~~~~~~~~~ ^~~~~~~~~~~~~~
+/Users/ggml/work/ggml/tests/test3.c:71:28: error: use of undeclared identifier 'GGML_OPT_OK'; did you mean 'GGML_OP_LOG'?
+        GGML_ASSERT(res == GGML_OPT_OK);
+                           ^~~~~~~~~~~
+                           GGML_OP_LOG
+/Users/ggml/work/ggml/src/../include/ggml/ggml.h:258:15: note: expanded from macro 'GGML_ASSERT'
+        if (!(x)) { \
+              ^
+/Users/ggml/work/ggml/src/../include/ggml/ggml.h:409:9: note: 'GGML_OP_LOG' declared here
+        GGML_OP_LOG,
+        ^
+1 warning and 2 errors generated.
+make[2]: *** [tests/CMakeFiles/test3.dir/test3.c.o] Error 1
+make[1]: *** [tests/CMakeFiles/test3.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[ 35%] Building CXX object examples/whisper/CMakeFiles/whisper-cpp.dir/whisper.cpp.o
+[ 36%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
+[ 37%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+/Users/ggml/work/ggml/tests/test2.c:26:65: error: use of undeclared identifier 'GGML_OPT_LBFGS'; did you mean 'GGML_OP_LOG'?
+    struct ggml_opt_params opt_params = ggml_opt_default_params(GGML_OPT_LBFGS);
+                                                                ^~~~~~~~~~~~~~
+                                                                GGML_OP_LOG
+/Users/ggml/work/ggml/src/../include/ggml/ggml.h:409:9: note: 'GGML_OP_LOG' declared here
+        GGML_OP_LOG,
+        ^
+/Users/ggml/work/ggml/tests/test2.c:26:65: warning: implicit conversion from enumeration type 'enum ggml_op' to different enumeration type 'enum ggml_opt_type' [-Wenum-conversion]
+    struct ggml_opt_params opt_params = ggml_opt_default_params(GGML_OPT_LBFGS);
+                                        ~~~~~~~~~~~~~~~~~~~~~~~ ^~~~~~~~~~~~~~
+[ 38%] Building C object tests/CMakeFiles/test-xpos.dir/test-xpos.c.o
+/Users/ggml/work/ggml/tests/test2.c:82:28: error: use of undeclared identifier 'GGML_OPT_OK'; did you mean 'GGML_OP_LOG'?
+        GGML_ASSERT(res == GGML_OPT_OK);
+                           ^~~~~~~~~~~
+                           GGML_OP_LOG
+/Users/ggml/work/ggml/src/../include/ggml/ggml.h:258:15: note: expanded from macro 'GGML_ASSERT'
+        if (!(x)) { \
+              ^
+/Users/ggml/work/ggml/src/../include/ggml/ggml.h:409:9: note: 'GGML_OP_LOG' declared here
+        GGML_OP_LOG,
+        ^
+/Users/ggml/work/ggml/tests/test2.c:113:28: error: use of undeclared identifier 'GGML_OPT_OK'; did you mean 'GGML_OP_LOG'?
+        GGML_ASSERT(res == GGML_OPT_OK);
+                           ^~~~~~~~~~~
+                           GGML_OP_LOG
+/Users/ggml/work/ggml/src/../include/ggml/ggml.h:258:15: note: expanded from macro 'GGML_ASSERT'
+        if (!(x)) { \
+              ^
+/Users/ggml/work/ggml/src/../include/ggml/ggml.h:409:9: note: 'GGML_OP_LOG' declared here
+        GGML_OP_LOG,
+        ^
+/Users/ggml/work/ggml/tests/test2.c:134:28: error: use of undeclared identifier 'GGML_OPT_OK'; did you mean 'GGML_OP_LOG'?
+        GGML_ASSERT(res == GGML_OPT_OK);
+                           ^~~~~~~~~~~
+                           GGML_OP_LOG
+/Users/ggml/work/ggml/src/../include/ggml/ggml.h:258:15: note: expanded from macro 'GGML_ASSERT'
+        if (!(x)) { \
+              ^
+/Users/ggml/work/ggml/src/../include/ggml/ggml.h:409:9: note: 'GGML_OP_LOG' declared here
+        GGML_OP_LOG,
+        ^
+/Users/ggml/work/ggml/tests/test2.c:172:28: error: use of undeclared identifier 'GGML_OPT_OK'; did you mean 'GGML_OP_LOG'?
+        GGML_ASSERT(res == GGML_OPT_OK);
+                           ^~~~~~~~~~~
+                           GGML_OP_LOG
+/Users/ggml/work/ggml/src/../include/ggml/ggml.h:258:15: note: expanded from macro 'GGML_ASSERT'
+        if (!(x)) { \
+              ^
+/Users/ggml/work/ggml/src/../include/ggml/ggml.h:409:9: note: 'GGML_OP_LOG' declared here
+        GGML_OP_LOG,
+        ^
+1 warning and 5 errors generated.
+make[2]: *** [tests/CMakeFiles/test2.dir/test2.c.o] Error 1
+make[1]: *** [tests/CMakeFiles/test2.dir/all] Error 2
+[ 39%] Linking C executable ../bin/test-pool
+[ 40%] Linking C executable ../bin/test-customop
+[ 41%] Linking C executable ../bin/test-vec0
+[ 42%] Linking C executable ../bin/test-rel-pos
+[ 43%] Linking C executable ../bin/test0
+[ 45%] Linking C executable ../bin/test-conv-transpose
+[ 45%] Linking C executable ../bin/test-xpos
+[ 47%] Linking C executable ../bin/test1
+[ 47%] Linking C executable ../bin/test-dup
+[ 48%] Linking C executable ../bin/test-mul-mat0
+[ 50%] Linking CXX executable ../bin/test-backend-buffer
+[ 51%] Linking CXX executable ../bin/test-opt
+[ 52%] Linking C executable ../bin/test-vec2
+[ 52%] Built target test0
+[ 52%] Built target test1
+[ 52%] Built target test-dup
+[ 52%] Built target test-pool
+[ 52%] Built target test-xpos
+[ 52%] Built target test-conv-transpose
+[ 52%] Built target test-mul-mat0
+[ 52%] Built target test-vec0
+[ 52%] Built target test-customop
+[ 52%] Built target test-rel-pos
+[ 52%] Built target test-backend-buffer
+[ 53%] Linking CXX executable ../bin/test-grad0
+[ 53%] Built target test-opt
+[ 53%] Built target test-vec2
+[ 54%] Linking C executable ../bin/test-mul-mat2
+[ 54%] Built target test-grad0
+[ 54%] Built target test-mul-mat2
+[ 55%] Linking CXX executable ../bin/test-quantize-fns
+[ 55%] Built target test-quantize-fns
+/Users/ggml/work/ggml/examples/common-ggml.cpp:50:13: warning: enumeration value 'GGML_FTYPE_MOSTLY_IQ3_S' not handled in switch [-Wswitch]
+    switch (ftype) {
+            ^~~~~
+/Users/ggml/work/ggml/examples/common-ggml.cpp:50:13: note: add missing switch cases
+    switch (ftype) {
+            ^
+[ 56%] Linking CXX executable ../../bin/mnist-cpu
+[ 57%] Linking CXX executable ../bin/test-conv2d
+/Users/ggml/work/ggml/examples/common-ggml.cpp:178:21: warning: enumeration value 'GGML_TYPE_IQ3_S' not handled in switch [-Wswitch]
+            switch ((ggml_type) ttype) {
+                    ^~~~~~~~~~~~~~~~~
+/Users/ggml/work/ggml/examples/common-ggml.cpp:178:21: note: add missing switch cases
+            switch ((ggml_type) ttype) {
+                    ^
+[ 58%] Linking CXX executable ../bin/test-conv1d
+[ 59%] Linking CXX executable ../../bin/mnist-mtl
+[ 60%] Linking C executable ../bin/test-mul-mat1
+[ 61%] Linking CXX static library libcommon.a
+[ 62%] Linking C executable ../bin/test-blas0
+[ 63%] Linking CXX executable ../bin/test-mul-mat
+[ 63%] Built target common
+[ 63%] Built target mnist-cpu
+[ 63%] Built target mnist-mtl
+[ 63%] Built target test-conv2d
+[ 63%] Built target test-conv1d
+[ 63%] Built target test-mul-mat1
+[ 63%] Built target test-blas0
+[ 63%] Built target test-mul-mat
+[ 64%] Linking CXX executable ../bin/test-quantize-perf
+[ 65%] Linking CXX executable ../bin/test-backend-ops
+[ 65%] Built target test-quantize-perf
+[ 65%] Built target test-backend-ops
+2 warnings generated.
+[ 66%] Linking CXX static library libcommon-ggml.a
+[ 66%] Built target common-ggml
+[ 67%] Linking CXX static library libwhisper-cpp.a
+[ 67%] Built target whisper-cpp
+make: *** [all] Error 2
