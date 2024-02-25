@@ -1,0 +1,99 @@
++ make -j
+[  1%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  2%] Building C object src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  3%] Building C object src/CMakeFiles/ggml.dir/ggml.c.o
+[  4%] Building C object src/CMakeFiles/ggml.dir/ggml-quants.c.o
+[  5%] Building C object src/CMakeFiles/ggml.dir/ggml-backend.c.o
+[  6%] Linking C shared library libggml.so
+[  6%] Built target ggml
+[  8%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
+[  9%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+[ 10%] Building C object tests/CMakeFiles/test-mul-mat2.dir/test-mul-mat2.c.o
+[ 11%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 12%] Building CXX object tests/CMakeFiles/test-opt.dir/test-opt.cpp.o
+[ 13%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 15%] Building C object tests/CMakeFiles/test2.dir/test2.c.o
+[ 16%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
+[ 17%] Building C object tests/CMakeFiles/test1.dir/test1.c.o
+[ 18%] Building C object tests/CMakeFiles/test-mul-mat0.dir/test-mul-mat0.c.o
+[ 19%] Building C object tests/CMakeFiles/test3.dir/test3.c.o
+[ 20%] Building C object tests/CMakeFiles/test-pool.dir/test-pool.c.o
+[ 22%] Building C object tests/CMakeFiles/test-conv-transpose.dir/test-conv-transpose.c.o
+[ 23%] Linking C executable ../bin/test-vec0
+[ 24%] Building C object tests/CMakeFiles/test-dup.dir/test-dup.c.o
+/home/ggml/work/ggml/tests/test2.c: In function ‘main’:
+/home/ggml/work/ggml/tests/test2.c:26:65: error: ‘GGML_OPT_LBFGS’ undeclared (first use in this function); did you mean ‘GGML_OP_LOG’?
+   26 |     struct ggml_opt_params opt_params = ggml_opt_default_params(GGML_OPT_LBFGS);
+      |                                                                 ^~~~~~~~~~~~~~
+      |                                                                 GGML_OP_LOG
+/home/ggml/work/ggml/tests/test2.c:26:65: note: each undeclared identifier is reported only once for each function it appears in
+In file included from /home/ggml/work/ggml/tests/test2.c:2:
+/home/ggml/work/ggml/tests/test2.c:82:28: error: ‘GGML_OPT_OK’ undeclared (first use in this function); did you mean ‘GGML_OP_LOG’?
+   82 |         GGML_ASSERT(res == GGML_OPT_OK);
+      |                            ^~~~~~~~~~~
+/home/ggml/work/ggml/src/../include/ggml/ggml.h:258:15: note: in definition of macro ‘GGML_ASSERT’
+  258 |         if (!(x)) { \
+      |               ^
+make[2]: *** [tests/CMakeFiles/test2.dir/build.make:76: tests/CMakeFiles/test2.dir/test2.c.o] Error 1
+[ 25%] Building C object tests/CMakeFiles/test-rel-pos.dir/test-rel-pos.c.o
+[ 26%] Building C object tests/CMakeFiles/test-customop.dir/test-customop.c.o
+/home/ggml/work/ggml/tests/test3.c: In function ‘main’:
+/home/ggml/work/ggml/tests/test3.c:19:65: error: ‘GGML_OPT_LBFGS’ undeclared (first use in this function); did you mean ‘GGML_OP_LOG’?
+   19 |     struct ggml_opt_params opt_params = ggml_opt_default_params(GGML_OPT_LBFGS);
+      |                                                                 ^~~~~~~~~~~~~~
+      |                                                                 GGML_OP_LOG
+/home/ggml/work/ggml/tests/test3.c:19:65: note: each undeclared identifier is reported only once for each function it appears in
+make[1]: *** [CMakeFiles/Makefile2:565: tests/CMakeFiles/test2.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+In file included from /home/ggml/work/ggml/tests/test3.c:1:
+/home/ggml/work/ggml/tests/test3.c:71:28: error: ‘GGML_OPT_OK’ undeclared (first use in this function); did you mean ‘GGML_OP_LOG’?
+   71 |         GGML_ASSERT(res == GGML_OPT_OK);
+      |                            ^~~~~~~~~~~
+/home/ggml/work/ggml/src/../include/ggml/ggml.h:258:15: note: in definition of macro ‘GGML_ASSERT’
+  258 |         if (!(x)) { \
+      |               ^
+[ 27%] Building C object tests/CMakeFiles/test-xpos.dir/test-xpos.c.o
+make[2]: *** [tests/CMakeFiles/test3.dir/build.make:76: tests/CMakeFiles/test3.dir/test3.c.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:591: tests/CMakeFiles/test3.dir/all] Error 2
+[ 29%] Building CXX object tests/CMakeFiles/test-conv1d.dir/test-conv1d.cpp.o
+[ 30%] Linking CXX executable ../bin/test-opt
+[ 31%] Linking C executable ../bin/test1
+[ 32%] Linking C executable ../bin/test0
+[ 33%] Linking C executable ../bin/test-rel-pos
+[ 34%] Linking C executable ../bin/test-pool
+[ 34%] Built target test-vec0
+[ 36%] Linking C executable ../bin/test-conv-transpose
+[ 37%] Linking C executable ../bin/test-mul-mat0
+[ 37%] Built target test-pool
+[ 37%] Built target test-opt
+[ 38%] Linking C executable ../bin/test-customop
+[ 39%] Linking C executable ../bin/test-dup
+[ 40%] Linking C executable ../bin/test-xpos
+[ 40%] Built target test1
+[ 40%] Built target test-conv-transpose
+[ 40%] Built target test-rel-pos
+[ 40%] Built target test0
+[ 41%] Linking CXX executable ../bin/test-grad0
+[ 41%] Built target test-mul-mat0
+[ 41%] Built target test-dup
+[ 41%] Built target test-customop
+[ 41%] Built target test-xpos
+[ 43%] Linking CXX executable ../bin/test-quantize-fns
+[ 44%] Linking C executable ../bin/test-mul-mat2
+[ 44%] Built target test-grad0
+[ 44%] Built target test-mul-mat2
+[ 44%] Built target test-quantize-fns
+/home/ggml/work/ggml/tests/test-conv1d.cpp:24:13: warning: ‘void ggml_log_callback_default(ggml_log_level, const char*, void*)’ defined but not used [-Wunused-function]
+   24 | static void ggml_log_callback_default(ggml_log_level level, const char * text, void * user_data) {
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~
+[ 45%] Linking CXX executable ../bin/test-conv1d
+[ 45%] Built target test-conv1d
+[ 46%] Linking CXX executable ../bin/test-quantize-perf
+[ 46%] Built target test-quantize-perf
+[ 47%] Linking CXX static library libcommon.a
+[ 47%] Built target common
+make: *** [Makefile:146: all] Error 2
+
+real	0m4.473s
+user	0m9.806s
+sys	0m2.162s
