@@ -1,0 +1,31 @@
++ make -j
+[  0%] Generating build details from Git
+[  1%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  4%] Built target ggml
+[  5%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  6%] Building CXX object examples/gguf/CMakeFiles/gguf.dir/gguf.cpp.o
+[  6%] Linking C static library libggml_static.a
+[  7%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+[  8%] Linking CXX executable ../../bin/gguf
+[  8%] Built target build_info
+[  8%] Built target ggml_static
+[  8%] Built target gguf
+/home/ggml/work/llama.cpp/llama.cpp: In function ‘void llama_kv_cache_defrag_internal(llama_context&)’:
+/home/ggml/work/llama.cpp/llama.cpp:8122:19: error: unused variable ‘t_start’ [-Werror=unused-variable]
+ 8122 |     const int64_t t_start = ggml_time_us();
+      |                   ^~~~~~~
+/home/ggml/work/llama.cpp/llama.cpp:8316:19: error: unused variable ‘t_end’ [-Werror=unused-variable]
+ 8316 |     const int64_t t_end = ggml_time_us();
+      |                   ^~~~~
+cc1plus: all warnings being treated as errors
+make[2]: *** [CMakeFiles/llama.dir/build.make:76: CMakeFiles/llama.dir/llama.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:792: CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m8.601s
+user	0m8.213s
+sys	0m0.861s
