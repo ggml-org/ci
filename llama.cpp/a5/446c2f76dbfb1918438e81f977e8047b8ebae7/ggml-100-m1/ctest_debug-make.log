@@ -1,0 +1,29 @@
++ make -j
+[  1%] Generating build details from Git
+[  1%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  2%] Compiling Metal kernels
+[  3%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  5%] Building C object CMakeFiles/ggml.dir/ggml-metal.m.o
+[  5%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  6%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+-- Found Git: /usr/bin/git (found version "2.39.3 (Apple Git-145)") 
+[  6%] Built target ggml
+[  7%] Linking C static library libggml_static.a
+[  7%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+[  8%] Building CXX object examples/gguf/CMakeFiles/gguf.dir/gguf.cpp.o
+[  9%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  9%] Built target ggml_static
+[ 10%] Linking CXX executable ../../bin/gguf
+[ 10%] Built target build_info
+[ 10%] Built target gguf
+[ 10%] Built target ggml-metal
+/Users/ggml/work/llama.cpp/llama.cpp:8122:19: error: unused variable 't_start' [-Werror,-Wunused-variable]
+    const int64_t t_start = ggml_time_us();
+                  ^
+/Users/ggml/work/llama.cpp/llama.cpp:8316:19: error: unused variable 't_end' [-Werror,-Wunused-variable]
+    const int64_t t_end = ggml_time_us();
+                  ^
+2 errors generated.
+make[2]: *** [CMakeFiles/llama.dir/llama.cpp.o] Error 1
+make[1]: *** [CMakeFiles/llama.dir/all] Error 2
+make: *** [all] Error 2
