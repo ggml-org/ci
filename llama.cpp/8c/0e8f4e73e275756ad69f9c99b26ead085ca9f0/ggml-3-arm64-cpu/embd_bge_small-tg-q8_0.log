@@ -1,7 +1,7 @@
 + ./bin/embedding --model ../models-mnt/bge-small/ggml-model-q8_0.gguf -p 'I believe the meaning of life is'
 main: build = 2291 (8c0e8f4e)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for aarch64-linux-gnu
-main: seed  = 1709113330
+main: seed  = 1709116681
 llama_model_loader: loaded meta data with 20 key-value pairs and 197 tensors from ../models-mnt/bge-small/ggml-model-q8_0.gguf (version GGUF V3 (latest))
 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
 llama_model_loader: - kv   0:                       general.architecture str              = bert
@@ -85,12 +85,12 @@ embedding 0: -0.044648 -0.020095 0.008152 -0.001860 0.002470 -0.037214 0.108845 
 
 
 
-llama_print_timings:        load time =      23.12 ms
+llama_print_timings:        load time =      22.72 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =       9.26 ms /     9 tokens (    1.03 ms per token,   971.71 tokens per second)
+llama_print_timings: prompt eval time =       9.27 ms /     9 tokens (    1.03 ms per token,   970.66 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =      75.48 ms /    10 tokens
+llama_print_timings:       total time =      75.59 ms /    10 tokens
 
-real	0m0.183s
-user	0m0.169s
-sys	0m0.050s
+real	0m0.182s
+user	0m0.168s
+sys	0m0.049s

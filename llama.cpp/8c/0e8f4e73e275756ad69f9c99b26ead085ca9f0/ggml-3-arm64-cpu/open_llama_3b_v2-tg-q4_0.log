@@ -94,20 +94,20 @@ generate: n_ctx = 512, n_batch = 512, n_predict = 64, n_keep = 1
 
  I believe the meaning of life is to experience all that this world has in store for us. To take risks, and make mistakes so we can grow as people who have been given a chance on earth with another opportunity at life after death comes knocking your door….
 I love living here because there are no boundaries or limitations when it come s to the
-llama_print_timings:        load time =     966.12 ms
-llama_print_timings:      sample time =      11.77 ms /    64 runs   (    0.18 ms per token,  5439.86 tokens per second)
-llama_print_timings: prompt eval time =     964.10 ms /     8 tokens (  120.51 ms per token,     8.30 tokens per second)
-llama_print_timings:        eval time =    7951.79 ms /    63 runs   (  126.22 ms per token,     7.92 tokens per second)
-llama_print_timings:       total time =    8938.84 ms /    71 tokens
+llama_print_timings:        load time =    1008.19 ms
+llama_print_timings:      sample time =      11.83 ms /    64 runs   (    0.18 ms per token,  5411.35 tokens per second)
+llama_print_timings: prompt eval time =     963.85 ms /     8 tokens (  120.48 ms per token,     8.30 tokens per second)
+llama_print_timings:        eval time =    7957.24 ms /    63 runs   (  126.31 ms per token,     7.92 tokens per second)
+llama_print_timings:       total time =    8944.34 ms /    71 tokens
 Log end
 
-real	0m10.095s
-user	0m36.387s
-sys	0m1.073s
+real	0m10.145s
+user	0m36.520s
+sys	0m1.004s
 + ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q4_0.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 2
 main: build = 2291 (8c0e8f4e)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for aarch64-linux-gnu
-main: seed  = 1709113909
+main: seed  = 1709117138
 llama_model_loader: loaded meta data with 21 key-value pairs and 237 tensors from ../models-mnt/open-llama/3B-v2/ggml-model-q4_0.gguf (version GGUF V3 (latest))
 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
 llama_model_loader: - kv   0:                       general.architecture str              = llama
@@ -189,18 +189,18 @@ llama_new_context_with_model: graph splits (measure): 1
 
 system_info: n_threads = 4 / 8 | AVX = 0 | AVX_VNNI = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | SSSE3 = 0 | VSX = 0 | MATMUL_INT8 = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 9.914 ms
+perplexity: tokenization took 9.903 ms
 perplexity: calculating perplexity over 2 chunks, batch_size=128
-perplexity: 15.49 seconds per pass - ETA 0.50 minutes
+perplexity: 15.50 seconds per pass - ETA 0.50 minutes
 [1]4.1750,[2]7.8608,
-llama_print_timings:        load time =     972.45 ms
+llama_print_timings:        load time =     978.25 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =   30973.23 ms /   256 tokens (  120.99 ms per token,     8.27 tokens per second)
+llama_print_timings: prompt eval time =   30983.07 ms /   256 tokens (  121.03 ms per token,     8.26 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =   30986.98 ms /   257 tokens
+llama_print_timings:       total time =   30996.80 ms /   257 tokens
 
 Final estimate: PPL = 7.8608 +/- 1.78065
 
-real	0m32.074s
-user	2m4.394s
-sys	0m1.324s
+real	0m32.090s
+user	2m4.390s
+sys	0m1.375s

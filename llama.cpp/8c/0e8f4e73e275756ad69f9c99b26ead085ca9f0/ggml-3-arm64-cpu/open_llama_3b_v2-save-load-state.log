@@ -79,7 +79,7 @@ llama_new_context_with_model: KV self size  =  162.50 MiB, K (f16):   81.25 MiB,
 llama_new_context_with_model:        CPU input buffer size   =     8.26 MiB
 llama_new_context_with_model:        CPU compute buffer size =    68.75 MiB
 llama_new_context_with_model: graph splits (measure): 1
-main : serialized state into 1804912 out of a maximum of 235995204 bytes
+main : serialized state into 1804896 out of a maximum of 235995204 bytes
 llama_new_context_with_model: n_ctx      = 512
 llama_new_context_with_model: freq_base  = 10000.0
 llama_new_context_with_model: freq_scale = 1
@@ -88,15 +88,17 @@ llama_new_context_with_model: KV self size  =  162.50 MiB, K (f16):   81.25 MiB,
 llama_new_context_with_model:        CPU input buffer size   =     8.26 MiB
 llama_new_context_with_model:        CPU compute buffer size =    68.75 MiB
 llama_new_context_with_model: graph splits (measure): 1
-main : deserialized state from 1804912 out of a maximum of 235995204 bytes
+main : deserialized state from 1804896 out of a maximum of 235995204 bytes
 
 main : success
 
-first run: The quick brown fox jumps over the lazy dog provides a complex brief with answers to the following questions:
+first run: The quick brown fox jumped over the lazy dog
+The IFD shirt was such a big hit,
 
 
-second run: The quick brown fox jumps over the lazy dog provides a complex brief with answers to the following questions:
+second run: The quick brown fox jumped over the lazy dog
+The IFD shirt was such a big hit,
 
-real	0m6.073s
-user	0m19.401s
-sys	0m1.180s
+real	0m6.038s
+user	0m19.488s
+sys	0m1.062s

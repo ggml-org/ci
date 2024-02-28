@@ -1,7 +1,7 @@
 + ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-q8_0.gguf -f ../models-mnt/shakespeare/shakespeare.txt --lora ../models-mnt/open-llama/3B-v2/lora/ggml-adapter-model.bin -c 128 -b 128 --chunks 2
 main: build = 2291 (8c0e8f4e)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for aarch64-linux-gnu
-main: seed  = 1709114537
+main: seed  = 1709117767
 llama_model_loader: loaded meta data with 21 key-value pairs and 237 tensors from ../models-mnt/open-llama/3B-v2/ggml-model-q8_0.gguf (version GGUF V3 (latest))
 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
 llama_model_loader: - kv   0:                       general.architecture str              = llama
@@ -82,22 +82,22 @@ llama_new_context_with_model: graph splits (measure): 1
 llama_apply_lora_from_file_internal: applying lora adapter from '../models-mnt/open-llama/3B-v2/lora/ggml-adapter-model.bin' - please wait ...
 llama_apply_lora_from_file_internal: r = 64, alpha = 128, scaling = 2.00
 llama_apply_lora_from_file_internal: warning: using a lora adapter with a quantized model may result in poor quality, use a f16 or f32 base model with --lora-base
-............. done (2913.86 ms)
+............. done (2847.68 ms)
 
 system_info: n_threads = 4 / 8 | AVX = 0 | AVX_VNNI = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | SSSE3 = 0 | VSX = 0 | MATMUL_INT8 = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 58.527 ms
+perplexity: tokenization took 62.522 ms
 perplexity: calculating perplexity over 2 chunks, batch_size=128
-perplexity: 14.73 seconds per pass - ETA 0.48 minutes
+perplexity: 14.75 seconds per pass - ETA 0.48 minutes
 [1]6.9856,[2]4.4043,
-llama_print_timings:        load time =    4527.14 ms
+llama_print_timings:        load time =    4457.37 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =   29461.33 ms /   256 tokens (  115.08 ms per token,     8.69 tokens per second)
+llama_print_timings: prompt eval time =   29484.56 ms /   256 tokens (  115.17 ms per token,     8.68 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =   29523.19 ms /   257 tokens
+llama_print_timings:       total time =   29550.82 ms /   257 tokens
 
 Final estimate: PPL = 4.4043 +/- 0.76375
 
-real	0m34.300s
-user	2m7.235s
-sys	0m3.653s
+real	0m34.248s
+user	2m7.184s
+sys	0m3.684s
