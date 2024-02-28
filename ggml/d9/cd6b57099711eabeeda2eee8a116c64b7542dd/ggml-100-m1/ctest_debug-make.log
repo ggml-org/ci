@@ -1,0 +1,128 @@
++ make -j
+[  1%] Building C object src/CMakeFiles/ggml.dir/ggml-quants.c.o
+[  2%] Building C object src/CMakeFiles/ggml.dir/ggml-backend.c.o
+[  3%] Building C object src/CMakeFiles/ggml.dir/ggml.c.o
+[  4%] Building C object src/CMakeFiles/ggml.dir/ggml-metal.m.o
+[  4%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  5%] Building C object src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  6%] Linking C shared library libggml.dylib
+[  6%] Built target ggml
+[  7%] Building C object tests/CMakeFiles/test-mul-mat1.dir/test-mul-mat1.c.o
+[  8%] Building CXX object tests/CMakeFiles/test-opt.dir/test-opt.cpp.o
+[  9%] Building C object tests/CMakeFiles/test-mul-mat0.dir/test-mul-mat0.c.o
+[ 11%] Building C object tests/CMakeFiles/test-mul-mat2.dir/test-mul-mat2.c.o
+[ 11%] Building C object tests/CMakeFiles/test-vec2.dir/test-vec2.c.o
+[ 12%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 13%] Building CXX object examples/mnist/CMakeFiles/mnist-cpu.dir/main-cpu.cpp.o
+[ 14%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 15%] Building CXX object tests/CMakeFiles/test-conv2d.dir/test-conv2d.cpp.o
+[ 17%] Building CXX object examples/whisper/CMakeFiles/whisper-cpp.dir/whisper.cpp.o
+[ 17%] Building C object tests/CMakeFiles/test-customop.dir/test-customop.c.o
+[ 18%] Building CXX object tests/CMakeFiles/test-conv1d.dir/test-conv1d.cpp.o
+[ 18%] Building CXX object examples/simple/CMakeFiles/simple-ctx.dir/simple-ctx.cpp.o
+[ 19%] Building CXX object examples/mnist/CMakeFiles/mnist-mtl.dir/main-mtl.cpp.o
+[ 20%] Building C object tests/CMakeFiles/test-xpos.dir/test-xpos.c.o
+[ 21%] Building CXX object examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o
+[ 22%] Building C object examples/mnist/CMakeFiles/mnist-mtl.dir/main-mtl.m.o
+[ 23%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
+[ 24%] Building CXX object tests/CMakeFiles/test-mul-mat.dir/test-mul-mat.cpp.o
+[ 25%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 26%] Building C object tests/CMakeFiles/test-rel-pos.dir/test-rel-pos.c.o
+[ 27%] Building C object tests/CMakeFiles/test3.dir/test3.c.o
+[ 28%] Building C object tests/CMakeFiles/test2.dir/test2.c.o
+[ 29%] Building C object tests/CMakeFiles/test-blas0.dir/test-blas0.c.o
+[ 31%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
+[ 31%] Building C object tests/CMakeFiles/test1.dir/test1.c.o
+[ 32%] Building CXX object examples/simple/CMakeFiles/simple-backend.dir/simple-backend.cpp.o
+[ 33%] Building C object tests/CMakeFiles/test-pool.dir/test-pool.c.o
+[ 34%] Building C object tests/CMakeFiles/test-conv-transpose.dir/test-conv-transpose.c.o
+[ 35%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+[ 36%] Building CXX object tests/CMakeFiles/test-backend-buffer.dir/test-backend-buffer.cpp.o
+[ 37%] Building C object tests/CMakeFiles/test-dup.dir/test-dup.c.o
+[ 38%] Linking C executable ../bin/test3
+[ 39%] Linking C executable ../bin/test-xpos
+[ 40%] Linking C executable ../bin/test-customop
+[ 41%] Linking C executable ../bin/test-mul-mat0
+[ 42%] Linking C executable ../bin/test-rel-pos
+[ 43%] Linking C executable ../bin/test2
+[ 44%] Linking C executable ../bin/test0
+[ 45%] Linking C executable ../bin/test-conv-transpose
+[ 46%] Linking C executable ../bin/test-pool
+[ 47%] Linking CXX executable ../bin/test-backend-buffer
+[ 48%] Linking C executable ../bin/test-vec0
+[ 49%] Linking C executable ../bin/test1
+[ 50%] Linking C executable ../bin/test-dup
+[ 51%] Linking CXX executable ../bin/test-opt
+[ 52%] Linking C executable ../bin/test-vec2
+[ 52%] Built target test-mul-mat0
+[ 53%] Linking CXX executable ../bin/test-grad0
+[ 53%] Built target test-backend-buffer
+[ 53%] Built target test-xpos
+[ 53%] Built target test3
+[ 53%] Built target test2
+[ 53%] Built target test-dup
+[ 53%] Built target test-pool
+[ 53%] Built target test-customop
+[ 53%] Built target test-vec0
+[ 53%] Built target test0
+[ 53%] Built target test-rel-pos
+[ 53%] Built target test-conv-transpose
+[ 53%] Built target test-opt
+[ 53%] Built target test1
+[ 53%] Built target test-vec2
+[ 54%] Linking C executable ../bin/test-mul-mat2
+[ 54%] Built target test-grad0
+[ 54%] Built target test-mul-mat2
+[ 55%] Linking CXX executable ../bin/test-quantize-fns
+/Users/ggml/work/ggml/examples/simple/simple-ctx.cpp:111:57: warning: format specifies type 'int' but the argument has type 'int64_t' (aka 'long long') [-Wformat]
+    printf("mul mat (%d x %d) (transposed result):\n[", result->ne[0], result->ne[1]);
+                     ~~                                 ^~~~~~~~~~~~~
+                     %lld
+/Users/ggml/work/ggml/examples/simple/simple-ctx.cpp:111:72: warning: format specifies type 'int' but the argument has type 'int64_t' (aka 'long long') [-Wformat]
+    printf("mul mat (%d x %d) (transposed result):\n[", result->ne[0], result->ne[1]);
+                          ~~                                           ^~~~~~~~~~~~~
+                          %lld
+[ 55%] Built target test-quantize-fns
+/Users/ggml/work/ggml/examples/simple/simple-backend.cpp:50:33: error: use of undeclared identifier 'ggml_log_callback_default'
+    ggml_metal_log_set_callback(ggml_log_callback_default, nullptr);
+                                ^
+/Users/ggml/work/ggml/examples/simple/simple-backend.cpp:194:57: warning: format specifies type 'int' but the argument has type 'int64_t' (aka 'long long') [-Wformat]
+    printf("mul mat (%d x %d) (transposed result):\n[", result->ne[0], result->ne[1]);
+                     ~~                                 ^~~~~~~~~~~~~
+                     %lld
+/Users/ggml/work/ggml/examples/simple/simple-backend.cpp:194:72: warning: format specifies type 'int' but the argument has type 'int64_t' (aka 'long long') [-Wformat]
+    printf("mul mat (%d x %d) (transposed result):\n[", result->ne[0], result->ne[1]);
+                          ~~                                           ^~~~~~~~~~~~~
+                          %lld
+[ 56%] Linking CXX executable ../bin/test-mul-mat
+2 warnings and 1 error generated.
+make[2]: *** [examples/simple/CMakeFiles/simple-backend.dir/simple-backend.cpp.o] Error 1
+make[1]: *** [examples/simple/CMakeFiles/simple-backend.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+2 warnings generated.
+[ 57%] Linking CXX executable ../bin/test-conv2d
+[ 58%] Linking CXX executable ../../bin/mnist-cpu
+[ 59%] Linking CXX executable ../../bin/simple-ctx
+[ 60%] Linking C executable ../bin/test-mul-mat1
+[ 61%] Linking C executable ../bin/test-blas0
+[ 62%] Linking CXX executable ../../bin/mnist-mtl
+[ 63%] Linking CXX executable ../bin/test-conv1d
+[ 63%] Built target test-conv2d
+[ 63%] Built target simple-ctx
+[ 63%] Built target mnist-cpu
+[ 63%] Built target test-mul-mat
+[ 63%] Built target test-blas0
+[ 63%] Built target test-mul-mat1
+[ 64%] Linking CXX static library libcommon.a
+[ 64%] Built target mnist-mtl
+[ 64%] Built target test-conv1d
+[ 65%] Linking CXX executable ../bin/test-quantize-perf
+[ 65%] Built target common
+[ 65%] Built target test-quantize-perf
+[ 66%] Linking CXX executable ../bin/test-backend-ops
+[ 66%] Built target test-backend-ops
+[ 67%] Linking CXX static library libcommon-ggml.a
+[ 67%] Built target common-ggml
+[ 68%] Linking CXX static library libwhisper-cpp.a
+[ 68%] Built target whisper-cpp
+make: *** [all] Error 2
