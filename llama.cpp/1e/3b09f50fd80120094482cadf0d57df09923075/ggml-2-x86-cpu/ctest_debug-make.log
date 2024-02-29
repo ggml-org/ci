@@ -1,0 +1,49 @@
++ make -j
+[  0%] Generating build details from Git
+[  1%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  4%] Built target ggml
+[  4%] Linking C static library libggml_static.a
+[  5%] Building CXX object examples/gguf/CMakeFiles/gguf.dir/gguf.cpp.o
+[  6%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+[  7%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  8%] Linking CXX executable ../../bin/gguf
+[  8%] Built target ggml_static
+[  8%] Built target build_info
+[  8%] Built target gguf
+/home/ggml/work/llama.cpp/llama.cpp: In function ‘int llama_decode_internal(llama_context&, llama_batch)’:
+/home/ggml/work/llama.cpp/llama.cpp:8100:36: error: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long int’ [-Werror=format=]
+ 8100 |                 printf("reading: [%d, %d], embeddings_out.size() = %d, n_tokens = %d, n_embd = %d\n", (n_embd*i), n_embd, embeddings_out.size(), n_tokens, n_embd);
+      |                                   ~^                                                                  ~~~~~~~~~~
+      |                                    |                                                                         |
+      |                                    int                                                                       long int
+      |                                   %ld
+/home/ggml/work/llama.cpp/llama.cpp:8100:40: error: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘long int’ [-Werror=format=]
+ 8100 |                 printf("reading: [%d, %d], embeddings_out.size() = %d, n_tokens = %d, n_embd = %d\n", (n_embd*i), n_embd, embeddings_out.size(), n_tokens, n_embd);
+      |                                       ~^                                                                          ~~~~~~
+      |                                        |                                                                          |
+      |                                        int                                                                        long int
+      |                                       %ld
+/home/ggml/work/llama.cpp/llama.cpp:8100:69: error: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘std::vector<float>::size_type’ {aka ‘long unsigned int’} [-Werror=format=]
+ 8100 |                 printf("reading: [%d, %d], embeddings_out.size() = %d, n_tokens = %d, n_embd = %d\n", (n_embd*i), n_embd, embeddings_out.size(), n_tokens, n_embd);
+      |                                                                    ~^                                                     ~~~~~~~~~~~~~~~~~~~~~
+      |                                                                     |                                                                        |
+      |                                                                     int                                                                      std::vector<float>::size_type {aka long unsigned int}
+      |                                                                    %ld
+/home/ggml/work/llama.cpp/llama.cpp:8100:97: error: format ‘%d’ expects argument of type ‘int’, but argument 6 has type ‘long int’ [-Werror=format=]
+ 8100 |                 printf("reading: [%d, %d], embeddings_out.size() = %d, n_tokens = %d, n_embd = %d\n", (n_embd*i), n_embd, embeddings_out.size(), n_tokens, n_embd);
+      |                                                                                                ~^                                                          ~~~~~~
+      |                                                                                                 |                                                          |
+      |                                                                                                 int                                                        long int
+      |                                                                                                %ld
+cc1plus: all warnings being treated as errors
+make[2]: *** [CMakeFiles/llama.dir/build.make:76: CMakeFiles/llama.dir/llama.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:792: CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m16.666s
+user	0m16.424s
+sys	0m0.398s
