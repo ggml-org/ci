@@ -1,0 +1,3 @@
+  - f16 shakespeare @ 9.1008 7.0174 OK
+  - q8_0 shakespeare @ 9.1648 7.0025 OK
+  - q8_0 / f16 base shakespeare @ 9.1648 7.0381 OK
