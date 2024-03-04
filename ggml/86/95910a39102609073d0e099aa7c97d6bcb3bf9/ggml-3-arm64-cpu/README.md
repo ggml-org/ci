@@ -1,0 +1,561 @@
+## Summary
+
+- status:  FAILURE ❌ (10)
+- runtime: 4:26.58
+- date:    Mon Mar  4 09:37:41 UTC 2024
+- repo:    https://github.com/ggerganov/ggml
+- commit:  https://github.com/ggerganov/ggml/commit/8695910a39102609073d0e099aa7c97d6bcb3bf9
+- author:  Michael Podvitskiy
+```
+ggml : introduce ggml_status (#750)
+
+* using enum as an exit code instead of macros
+
+* update return type from enum to unsigned int
+
+* indentation fix
+
+* compound update
+ggml_compute_exit_code -> ggml_status
+changed ggml_status from a bit-field type to simple codes
+ggml_status to string cast
+
+* ggml_status to string cast
+
+* GGML_CALL was removed
+
+Co-authored-by: slaren <slarengh@gmail.com>
+
+---------
+
+Co-authored-by: slaren <slarengh@gmail.com>
+Co-authored-by: Georgi Gerganov <ggerganov@gmail.com>
+```
+
+## Environment
+
+```
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -E test-opt
+Test project /home/ggml/work/ggml/build-ci-debug
+      Start  1: test-grad0
+ 1/22 Test  #1: test-grad0 .......................   Passed    3.13 sec
+      Start  2: test-quantize-fns
+ 2/22 Test  #2: test-quantize-fns ................   Passed   13.29 sec
+      Start  3: test-quantize-perf
+ 3/22 Test  #3: test-quantize-perf ...............   Passed   10.69 sec
+      Start  4: test-mul-mat0
+ 4/22 Test  #4: test-mul-mat0 ....................   Passed    0.54 sec
+      Start  5: test-mul-mat2
+ 5/22 Test  #5: test-mul-mat2 ....................   Passed    8.65 sec
+      Start  6: test0
+ 6/22 Test  #6: test0 ............................   Passed    0.01 sec
+      Start  7: test1
+ 7/22 Test  #7: test1 ............................   Passed    0.01 sec
+      Start  8: test2
+ 8/22 Test  #8: test2 ............................   Passed    0.03 sec
+      Start  9: test3
+ 9/22 Test  #9: test3 ............................   Passed    0.04 sec
+      Start 10: test-pool
+10/22 Test #10: test-pool ........................   Passed    0.01 sec
+      Start 11: test-arange
+11/22 Test #11: test-arange ......................   Passed    0.01 sec
+      Start 12: test-timestep_embedding
+12/22 Test #12: test-timestep_embedding ..........   Passed    0.01 sec
+      Start 13: test-conv-transpose
+13/22 Test #13: test-conv-transpose ..............   Passed    0.01 sec
+      Start 14: test-dup
+14/22 Test #14: test-dup .........................   Passed    0.01 sec
+      Start 15: test-rel-pos
+15/22 Test #15: test-rel-pos .....................   Passed    0.01 sec
+      Start 16: test-customop
+16/22 Test #16: test-customop ....................   Passed    0.01 sec
+      Start 17: test-xpos
+17/22 Test #17: test-xpos ........................   Passed    0.01 sec
+      Start 18: test-conv1d
+18/22 Test #18: test-conv1d ......................   Passed    0.01 sec
+      Start 19: test-conv2d
+19/22 Test #19: test-conv2d ......................   Passed    0.01 sec
+      Start 20: test-mul-mat
+20/22 Test #20: test-mul-mat .....................   Passed    0.01 sec
+      Start 21: test-backend-buffer
+21/22 Test #21: test-backend-buffer ..............   Passed    0.01 sec
+      Start 22: test-backend-ops
+22/22 Test #22: test-backend-ops .................   Passed  127.63 sec
+
+100% tests passed, 0 tests failed out of 22
+
+Total Test time (real) = 164.12 sec
+
+real	2m44.136s
+user	3m57.193s
+sys	0m15.896s
+```
+
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure
+Test project /home/ggml/work/ggml/build-ci-release
+      Start  1: test-grad0
+ 1/23 Test  #1: test-grad0 .......................   Passed    2.97 sec
+      Start  2: test-opt
+ 2/23 Test  #2: test-opt .........................   Passed    2.17 sec
+      Start  3: test-quantize-fns
+ 3/23 Test  #3: test-quantize-fns ................   Passed    7.06 sec
+      Start  4: test-quantize-perf
+ 4/23 Test  #4: test-quantize-perf ...............   Passed    4.96 sec
+      Start  5: test-mul-mat0
+ 5/23 Test  #5: test-mul-mat0 ....................   Passed    0.54 sec
+      Start  6: test-mul-mat2
+ 6/23 Test  #6: test-mul-mat2 ....................   Passed    1.77 sec
+      Start  7: test0
+ 7/23 Test  #7: test0 ............................   Passed    0.00 sec
+      Start  8: test1
+ 8/23 Test  #8: test1 ............................   Passed    0.01 sec
+      Start  9: test2
+ 9/23 Test  #9: test2 ............................   Passed    0.02 sec
+      Start 10: test3
+10/23 Test #10: test3 ............................   Passed    0.03 sec
+      Start 11: test-pool
+11/23 Test #11: test-pool ........................   Passed    0.00 sec
+      Start 12: test-arange
+12/23 Test #12: test-arange ......................   Passed    0.01 sec
+      Start 13: test-timestep_embedding
+13/23 Test #13: test-timestep_embedding ..........   Passed    0.01 sec
+      Start 14: test-conv-transpose
+14/23 Test #14: test-conv-transpose ..............   Passed    0.00 sec
+      Start 15: test-dup
+15/23 Test #15: test-dup .........................   Passed    0.00 sec
+      Start 16: test-rel-pos
+16/23 Test #16: test-rel-pos .....................   Passed    0.00 sec
+      Start 17: test-customop
+17/23 Test #17: test-customop ....................   Passed    0.00 sec
+      Start 18: test-xpos
+18/23 Test #18: test-xpos ........................   Passed    0.00 sec
+      Start 19: test-conv1d
+19/23 Test #19: test-conv1d ......................   Passed    0.01 sec
+      Start 20: test-conv2d
+20/23 Test #20: test-conv2d ......................   Passed    0.01 sec
+      Start 21: test-mul-mat
+21/23 Test #21: test-mul-mat .....................   Passed    0.01 sec
+      Start 22: test-backend-buffer
+22/23 Test #22: test-backend-buffer ..............   Passed    0.00 sec
+      Start 23: test-backend-ops
+23/23 Test #23: test-backend-ops .................   Passed   31.21 sec
+
+100% tests passed, 0 tests failed out of 23
+
+Total Test time (real) =  50.81 sec
+
+real	0m50.822s
+user	0m50.373s
+sys	0m9.554s
+```
+### gpt_2
+
+Runs short GPT-2 text generation
+- status: 0
+```
++ ./bin/gpt-2-backend --model ../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin -s 1234 -n 64 -tt ../examples/prompts/gpt-2.txt
+gpt2_model_load: using CPU backend
+test_gpt_tokenizer : failed test: 'I l0ve t0 tr@vel @r0und the w0rld.'
+test_gpt_tokenizer : tokens in hf:   I(40),  l(300), 0(15), ve(303),  t(256), 0(15),  tr(491), @(31), vel(626),  @(2488), r(81), 0(15), und(917),  the(262),  w(266), 0(15), r(81), ld(335), .(13), 
+test_gpt_tokenizer : tokens in ggml: I(40),  l(300), 0(15), ve(303),  t(256), 0(15),  tr(491), @(31), vel(626),  @(2488), r(81), 0(15), und(917),  the(262),  w(266), 0(15), rl(45895), d(67), .(13), 
+test_gpt_tokenizer : failed test: 'She danced gracefully on the stage.'
+test_gpt_tokenizer : tokens in hf:   She(3347),  danced(39480),  grace(11542), fully(2759),  on(319),  the(262),  stage(3800), .(13), 
+test_gpt_tokenizer : tokens in ggml: She(3347),  danced(39480),  graceful(44363), ly(306),  on(319),  the(262),  stage(3800), .(13), 
+test_gpt_tokenizer : failed test: 'She dances gracefully to the music.'
+test_gpt_tokenizer : tokens in hf:   She(3347),  dances(38207),  grace(11542), fully(2759),  to(284),  the(262),  music(2647), .(13), 
+test_gpt_tokenizer : tokens in ggml: She(3347),  dances(38207),  graceful(44363), ly(306),  to(284),  the(262),  music(2647), .(13), 
+test_gpt_tokenizer : failed test: 'The birds are chirping in the trees.'
+test_gpt_tokenizer : tokens in hf:   The(464),  birds(10087),  are(389),  ch(442), ir(343), ping(13886),  in(287),  the(262),  trees(7150), .(13), 
+test_gpt_tokenizer : tokens in ggml: The(464),  birds(10087),  are(389),  chi(33166), r(81), ping(13886),  in(287),  the(262),  trees(7150), .(13), 
+test_gpt_tokenizer : failed test: 'The flowers are blooming in the garden.'
+test_gpt_tokenizer : tokens in hf:   The(464),  flowers(12734),  are(389),  blo(24924), oming(3383),  in(287),  the(262),  garden(11376), .(13), 
+test_gpt_tokenizer : tokens in ggml: The(464),  flowers(12734),  are(389),  bloom(29955), ing(278),  in(287),  the(262),  garden(11376), .(13), 
+test_gpt_tokenizer : failed test: 'The flowers in the garden are blooming.'
+test_gpt_tokenizer : tokens in hf:   The(464),  flowers(12734),  in(287),  the(262),  garden(11376),  are(389),  blo(24924), oming(3383), .(13), 
+test_gpt_tokenizer : tokens in ggml: The(464),  flowers(12734),  in(287),  the(262),  garden(11376),  are(389),  bloom(29955), ing(278), .(13), 
+test_gpt_tokenizer : failed test: 'Wh@t's y0ur f@v0rite m0vie?'
+test_gpt_tokenizer : tokens in hf:   Wh(1199), @(31), t(83), 's(338),  y(331), 0(15), ur(333),  f(277), @(31), v(85), 0(15), rite(6525),  m(285), 0(15), v(85), ie(494), ?(30), 
+test_gpt_tokenizer : tokens in ggml: Wh(1199), @(31), t(83), 's(338),  y(331), 0(15), ur(333),  f(277), @(31), v(85), 0(15), rite(6525),  m(285), 0(15), vi(8903), e(68), ?(30), 
+test_gpt_tokenizer : 7 tests failed out of 100 tests.
+main: compute buffer size: 6.87 MB
+main: seed = 1234
+gpt2_model_load: loading model from '../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin'
+gpt2_model_load: n_vocab = 50257
+gpt2_model_load: n_ctx   = 1024
+gpt2_model_load: n_embd  = 768
+gpt2_model_load: n_head  = 12
+gpt2_model_load: n_layer = 12
+gpt2_model_load: ftype   = 1
+gpt2_model_load: qntvr   = 0
+gpt2_model_load: ggml tensor size    = 368 bytes
+gpt2_model_load: backend buffer size = 312.70 MB
+gpt2_model_load: memory size =   144.00 MB, n_mem = 24576
+gpt2_model_load: model size  =   239.08 MB
+main: prompt: 'If'
+main: number of tokens in prompt = 1, first 8 tokens: 1532 
+
+If we look at what we're talking about and then look at the evidence and the evidence of the United States, what we're dealing with, we've got a huge problem in the world of terrorism."
+
+Asked about the possibility that ISIS may have used the United States as a vehicle to recruit followers and commit violence in
+
+main:     load time =   148.96 ms
+main:   sample time =    17.11 ms
+main:  predict time =   889.12 ms / 13.89 ms per token
+main:    total time =  1077.08 ms
+
+real	0m1.110s
+user	0m3.551s
+sys	0m0.169s
++ ./bin/gpt-2-backend --model ../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin -s 1234 -n 64 -p 'I believe the meaning of life is'
+gpt2_model_load: using CPU backend
+extract_tests_from_file : No test file found.
+test_gpt_tokenizer : 0 tests failed out of 0 tests.
+main: compute buffer size: 6.87 MB
+main: seed = 1234
+gpt2_model_load: loading model from '../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin'
+gpt2_model_load: n_vocab = 50257
+gpt2_model_load: n_ctx   = 1024
+gpt2_model_load: n_embd  = 768
+gpt2_model_load: n_head  = 12
+gpt2_model_load: n_layer = 12
+gpt2_model_load: ftype   = 1
+gpt2_model_load: qntvr   = 0
+gpt2_model_load: ggml tensor size    = 368 bytes
+gpt2_model_load: backend buffer size = 312.70 MB
+gpt2_model_load: memory size =   144.00 MB, n_mem = 24576
+gpt2_model_load: model size  =   239.08 MB
+main: prompt: 'I believe the meaning of life is'
+main: number of tokens in prompt = 7, first 8 tokens: 40 1975 262 3616 286 1204 318 
+
+I believe the meaning of life is not one that you must be able to answer for.
+
+If you do not believe in God, then why does his word make you feel better? Why do he make you feel better? It's because I don't think the gospel is true. It's because it's not true.
+
+The gospel tells
+
+main:     load time =   151.75 ms
+main:   sample time =    17.13 ms
+main:  predict time =   970.77 ms / 13.87 ms per token
+main:    total time =  1142.35 ms
+
+real	0m1.176s
+user	0m3.859s
+sys	0m0.171s
++ ./bin/gpt-2-sched --model ../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin -s 1234 -n 64 -p 'I believe the meaning of life is'
+extract_tests_from_file : No test file found.
+test_gpt_tokenizer : 0 tests failed out of 0 tests.
+main: seed = 1234
+gpt2_model_load: loading model from '../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin'
+gpt2_model_load: n_vocab = 50257
+gpt2_model_load: n_ctx   = 1024
+gpt2_model_load: n_embd  = 768
+gpt2_model_load: n_head  = 12
+gpt2_model_load: n_layer = 12
+gpt2_model_load: ftype   = 1
+gpt2_model_load: qntvr   = 0
+gpt2_model_load:      CPU buffer size =   312.77 MB
+gpt2_model_load: memory size =    72.00 MB, n_mem = 12288
+gpt2_model_load: backend_kv = CPU
+gpt2_model_load: model size  =   312.70 MB
+gpt2_model_load: backend_in = CPU (8192 bytes)
+main:      CPU compute buffer size =     3.49 MB
+main: total compute buffer size: 3.49 MB
+main: prompt: 'I believe the meaning of life is'
+main: number of tokens in prompt = 7, first 8 tokens: 40 1975 262 3616 286 1204 318 
+
+I believe the meaning of life is not one that you must be able to answer for.
+
+If you do not believe in God, then why does his word make you feel better? Why do he make you feel better? It's because I don't think the gospel is true. It's because it's not true.
+
+The gospel tells
+
+main:     load time =   181.51 ms
+main:   sample time =    17.08 ms
+main:  predict time =   977.49 ms / 13.96 ms per token
+main:    total time =  1179.29 ms
+
+real	0m1.220s
+user	0m3.863s
+sys	0m0.209s
++ ./bin/gpt-2-batched --model ../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin -s 1234 -n 64 -np 8 -p 'I believe the meaning of life is'
+gpt2_model_load: using CPU backend
+extract_tests_from_file : No test file found.
+test_gpt_tokenizer : 0 tests failed out of 0 tests.
+main: compute buffer size: 6.93 MB
+main: seed = 1234
+gpt2_model_load: loading model from '../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin'
+gpt2_model_load: n_vocab = 50257
+gpt2_model_load: n_ctx   = 1024
+gpt2_model_load: n_embd  = 768
+gpt2_model_load: n_head  = 12
+gpt2_model_load: n_layer = 12
+gpt2_model_load: ftype   = 1
+gpt2_model_load: qntvr   = 0
+gpt2_model_load: ggml tensor size    = 368 bytes
+gpt2_model_load: backend buffer size = 312.82 MB
+gpt2_model_load: memory size =   144.00 MB, n_mem = 24576
+gpt2_model_load: model size  =   239.08 MB
+
+
+main: generating 8 sequences ...
+main: prompt: 'I believe the meaning of life is'
+main: number of tokens in prompt = 7, first 8 tokens: 40 1975 262 3616 286 1204 318 
+
+
+main: stream 0 finished at n_cur = 70
+main: stream 1 finished at n_cur = 70
+main: stream 2 finished at n_cur = 70
+main: stream 3 finished at n_cur = 70
+main: stream 4 finished at n_cur = 70
+main: stream 5 finished at n_cur = 70
+main: stream 6 finished at n_cur = 70
+main: stream 7 finished at n_cur = 70
+sequence 0:
+
+I believe the meaning of life is not to be confused with life. It is to be understood as a system of thought. It is to be understood as the "truth." And if there is not this truth, there is nothing to be found. The world is made of nothing but the truth." —Hume
+
+The word "truth"
+
+sequence 1:
+
+I believe the meaning of life is a matter of personal satisfaction.
+
+A great philosopher, who was a well-known philosopher of science, has said,
+
+"It is in our nature to be happy that we have, that we live in harmony with Nature, and that our happiness and the good life will be as great as those which
+
+sequence 2:
+
+I believe the meaning of life is that it is not a complete mystery. The key is the understanding that life is not just a place of possibility, but also of existence itself. It is a human activity which creates and nourishes the world and the human body. Life's existence is a continuous process. It's a process that can be traced back
+
+sequence 3:
+
+I believe the meaning of life is in the way we are created and that we can evolve as a species into the kind of people we are today. That's why I'm so proud of the fact that this country is finally starting to get it together and we are making some progress.
+
+MADDOW: Governor Romney, in the last hour
+
+sequence 4:
+
+I believe the meaning of life is one of love. We don't know who is happy or unhappy with what we live for. That's why we don't have a definition of happiness in our lives."
+
+But the study did find that people who have a positive attitude about life, such as having a good job or living a good life,
+
+sequence 5:
+
+I believe the meaning of life is to die and die and die, and we must learn how to live. That is what we all need to do."
+
+HuffPost: Is it okay for you to kill yourself?
+
+Dr. Mankiw: "I don't know. You know, I don't know. I don
+
+sequence 6:
+
+I believe the meaning of life is to live without fear, so that you may be free from all thoughts, fears, thoughts, and passions. This is an essential principle of the Buddhist philosophy."
+
+This quotation from the Bhagavad Gita is one of the earliest known quotes from the Bhagavad Gita. The Buddha is
+
+sequence 7:
+
+I believe the meaning of life is a gift for life." In a recent interview with The New York Times, I spoke to the author of a book on the subject, Michael Fassbender, about his experiences as a child raised by his parents in Alaska. He told me, "It's so strange to live in a world where you can't
+
+
+
+main:     n_decoded =      504
+main:     load time =   151.85 ms
+main:   sample time =   128.18 ms
+main:  predict time =  6447.14 ms
+main:    total time =  6809.69 ms
+
+real	0m6.846s
+user	0m26.143s
+sys	0m0.205s
+```
+### mnist
+
+MNIST
+- status: 0
+```
++ ./bin/mnist ./models/mnist/ggml-model-f32.bin ../examples/mnist/models/mnist/t10k-images.idx3-ubyte
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ * * * * * * _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ * _ _ _ _ _ _ * _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ * _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ * _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ * * _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ * _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ * _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ * _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ * * _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ * _ _ _ _ _ _ _ _ _ _ _ * _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ * _ _ _ _ _ _ _ _ _ * * _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ * * _ _ _ _ _ * * * * _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ * * * * * * * _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ * * * * * _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+mnist_model_load: loading model from './models/mnist/ggml-model-f32.bin'
+mnist_model_load: ggml ctx size =   1.52 MB
+main: loaded model in     3.55 ms
+ggml_graph_dump_dot: dot -Tpng mnist.dot -o mnist.dot.png && open mnist.dot.png
+
+magic            67676d6c
+version                 1
+leafs                   5
+nodes                   6
+eval             6144
+
+TYPE   OP              NDIMS      NE0      NE1      NE2      NE3              NB0              NB1              NB2              NB3             DATA             NAME
+f32    NONE                2 500 10 1 1                4             2000            20000            20000   0xffffa7f0a990                       fc2_weight
+f32    NONE                2 784 500 1 1                4             3136          1568000          1568000   0xffffa7d8b1a0                       fc1_weight
+f32    NONE                1 784 1 1 1                4             3136             3136             3136   0xaaab0cdbece0                            input
+f32    NONE                1 500 1 1 1                4             2000             2000             2000   0xffffa7f0a030                         fc1_bias
+f32    NONE                1 10 1 1 1                4               40               40               40   0xffffa7f0f940                         fc2_bias
+
+ARG    TYPE   OP              NDIMS      NE0      NE1      NE2      NE3              NB0              NB1              NB2              NB3   NTASKS             DATA             NAME
+DST    f32    MUL_MAT             1 500 1 1 1                4             2000             2000             2000   0xaaab0cdbfab0                           node_0
+SRC    f32    NONE                2 784 500 1 1                4             3136          1568000          1568000   0xffffa7d8b1a0                       fc1_weight
+SRC    f32    NONE                1 784 1 1 1                4             3136             3136             3136   0xaaab0cdbece0                            input
+
+DST    f32    ADD                 1 500 1 1 1                4             2000             2000             2000   0xaaab0cdc0410                           node_1
+SRC    f32    MUL_MAT             1 500 1 1 1                4             2000             2000             2000   0xaaab0cdbfab0                           node_0
+SRC    f32    NONE                1 500 1 1 1                4             2000             2000             2000   0xffffa7f0a030                         fc1_bias
+
+DST    f32    UNARY               1 500 1 1 1                4             2000             2000             2000   0xaaab0cdc0d70                           node_2
+SRC    f32    ADD                 1 500 1 1 1                4             2000             2000             2000   0xaaab0cdc0410                           node_1
+
+DST    f32    MUL_MAT             1 10 1 1 1                4               40               40               40   0xaaab0cdc16d0                           node_3
+SRC    f32    NONE                2 500 10 1 1                4             2000            20000            20000   0xffffa7f0a990                       fc2_weight
+SRC    f32    UNARY               1 500 1 1 1                4             2000             2000             2000   0xaaab0cdc0d70                           node_2
+
+DST    f32    ADD                 1 10 1 1 1                4               40               40               40   0xaaab0cdc1890                           node_4
+SRC    f32    MUL_MAT             1 10 1 1 1                4               40               40               40   0xaaab0cdc16d0                           node_3
+SRC    f32    NONE                1 10 1 1 1                4               40               40               40   0xffffa7f0f940                         fc2_bias
+
+DST    f32    SOFT_MAX            1 10 1 1 1                4               40               40               40   0xaaab0cdc1a50                            probs
+SRC    f32    ADD                 1 10 1 1 1                4               40               40               40   0xaaab0cdc1890       mnist_eval: exported compute graph to 'mnist.ggml'
+                    node_4
+
+
+main: predicted digit is 2
+
+real	0m0.009s
+user	0m0.001s
+sys	0m0.008s
++ ./bin/mnist-cpu ./mnist.ggml ../examples/mnist/models/mnist/t10k-images.idx3-ubyte
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ * * * * * * _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ * _ _ _ _ _ _ * _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ * _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ * _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ * * _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ * _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ * _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ * _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ * * _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ * _ _ _ _ _ _ _ _ _ _ _ * _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ * _ _ _ _ _ _ _ _ _ * * _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ * * _ _ _ _ _ * * * * _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ * * * * * * * _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ * * * * * _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+ggml_graph_import: loaded leaf 0: '      fc2_weight',     20000 bytes
+ggml_graph_import: loaded leaf 1: '      fc1_weight',   1568000 bytes
+ggml_graph_import: loaded leaf 2: '           input',      3136 bytes
+ggml_graph_import: loaded leaf 3: '        fc1_bias',      2000 bytes
+ggml_graph_import: loaded leaf 4: '        fc2_bias',        40 bytes
+ggml_graph_import: loaded node 0: '          node_0',      2000 bytes
+ggml_graph_import: loaded node 1: '          node_1',      2000 bytes
+ggml_graph_import: loaded node 2: '          node_2',      2000 bytes
+ggml_graph_import: loaded node 3: '          node_3',        40 bytes
+ggml_graph_import: loaded node 4: '          node_4',        40 bytes
+ggml_graph_import: loaded node 5: '           probs',        40 bytes
+main: predicted digit is 2
+
+real	0m0.007s
+user	0m0.004s
+sys	0m0.003s
+```
+### whisper
+
+Runs short Whisper transcription
+- status: 10
+```
++ ./bin/whisper -m ../models-mnt/whisper//ggml-base.en.bin -f ../models-mnt/whisper//jfk.wav
+whisper_init_from_file_with_params_no_state: loading model from '../models-mnt/whisper//ggml-base.en.bin'
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51864
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 512
+whisper_model_load: n_audio_head  = 8
+whisper_model_load: n_audio_layer = 6
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 512
+whisper_model_load: n_text_head   = 8
+whisper_model_load: n_text_layer  = 6
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 2 (base)
+whisper_model_load: adding 1607 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:      CPU total size =   147.37 MB
+whisper_model_load: model size    =  147.37 MB
+whisper_init_state: kv self size  =   16.52 MB
+whisper_init_state: kv cross size =   18.43 MB
+whisper_init_state: compute buffer (conv)   =   16.39 MB
+whisper_init_state: compute buffer (encode) =  132.07 MB
+whisper_init_state: compute buffer (cross)  =    4.78 MB
+whisper_init_state: compute buffer (decode) =   96.48 MB
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | METAL = 0 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | SSSE3 = 0 | VSX = 0 | CUDA = 0 | COREML = 0 | OPENVINO = 0 | 
+
+main: processing '../models-mnt/whisper//jfk.wav' (176000 samples, 11.0 sec), 4 threads, 1 processors, 5 beams + best of 5, lang = en, task = transcribe, timestamps = 1 ...
+
+whisper_full_with_state: failed to encode
+./bin/whisper: failed to process audio
+
+real	0m0.287s
+user	0m0.642s
+sys	0m0.095s
+```
