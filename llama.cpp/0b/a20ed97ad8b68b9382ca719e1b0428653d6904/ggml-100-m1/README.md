@@ -1,0 +1,390 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 492.49
+- date:    Thu Mar  7 16:43:36 EET 2024
+- repo:    https://github.com/ggerganov/llama.cpp
+- commit:  https://github.com/ggerganov/llama.cpp/commit/0ba20ed97ad8b68b9382ca719e1b0428653d6904
+- author:  Georgi Gerganov
+```
+llama : compute BERT graph with F16 K, V
+
+ggml-ci
+```
+
+## Environment
+
+```
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+GG_BUILD_METAL=1
+GG_BUILD_VRAM_GB=4
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /Users/ggml/work/llama.cpp/build-ci-debug
+      Start  1: test-quantize-fns
+ 1/21 Test  #1: test-quantize-fns ...................   Passed   14.06 sec
+      Start  2: test-quantize-perf
+ 2/21 Test  #2: test-quantize-perf ..................   Passed   10.28 sec
+      Start  3: test-sampling
+ 3/21 Test  #3: test-sampling .......................   Passed    0.23 sec
+      Start  4: test-chat-template
+ 4/21 Test  #4: test-chat-template ..................   Passed    0.21 sec
+      Start  5: test-tokenizer-0-llama
+ 5/21 Test  #5: test-tokenizer-0-llama ..............   Passed    0.36 sec
+      Start  6: test-tokenizer-0-falcon
+ 6/21 Test  #6: test-tokenizer-0-falcon .............   Passed    1.10 sec
+      Start  7: test-tokenizer-1-llama
+ 7/21 Test  #7: test-tokenizer-1-llama ..............   Passed    3.23 sec
+      Start  8: test-tokenizer-1-baichuan
+ 8/21 Test  #8: test-tokenizer-1-baichuan ...........   Passed    3.21 sec
+      Start  9: test-tokenizer-1-falcon
+ 9/21 Test  #9: test-tokenizer-1-falcon .............   Passed    6.21 sec
+      Start 10: test-tokenizer-1-aquila
+10/21 Test #10: test-tokenizer-1-aquila .............   Passed    8.55 sec
+      Start 11: test-tokenizer-1-mpt
+11/21 Test #11: test-tokenizer-1-mpt ................   Passed    4.93 sec
+      Start 12: test-tokenizer-1-stablelm-3b-4e1t
+12/21 Test #12: test-tokenizer-1-stablelm-3b-4e1t ...   Passed    4.93 sec
+      Start 13: test-tokenizer-1-gpt-neox
+13/21 Test #13: test-tokenizer-1-gpt-neox ...........   Passed    4.92 sec
+      Start 14: test-tokenizer-1-refact
+14/21 Test #14: test-tokenizer-1-refact .............   Passed    4.73 sec
+      Start 15: test-tokenizer-1-starcoder
+15/21 Test #15: test-tokenizer-1-starcoder ..........   Passed    4.74 sec
+      Start 16: test-tokenizer-1-gpt2
+16/21 Test #16: test-tokenizer-1-gpt2 ...............   Passed    4.99 sec
+      Start 17: test-grammar-parser
+17/21 Test #17: test-grammar-parser .................   Passed    0.30 sec
+      Start 18: test-llama-grammar
+18/21 Test #18: test-llama-grammar ..................   Passed    0.21 sec
+      Start 19: test-grad0
+19/21 Test #19: test-grad0 ..........................   Passed    0.85 sec
+      Start 20: test-backend-ops
+20/21 Test #20: test-backend-ops ....................   Passed  149.70 sec
+      Start 21: test-rope
+21/21 Test #21: test-rope ...........................   Passed    0.33 sec
+
+100% tests passed, 0 tests failed out of 21
+
+Label Time Summary:
+main    = 228.06 sec*proc (21 tests)
+
+Total Test time (real) = 228.07 sec
+
+real	3m48.087s
+user	6m5.300s
+sys	0m8.152s
+```
+
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main
+Test project /Users/ggml/work/llama.cpp/build-ci-release
+      Start  1: test-quantize-fns
+ 1/21 Test  #1: test-quantize-fns ...................   Passed    8.08 sec
+      Start  2: test-quantize-perf
+ 2/21 Test  #2: test-quantize-perf ..................   Passed    5.70 sec
+      Start  3: test-sampling
+ 3/21 Test  #3: test-sampling .......................   Passed    0.19 sec
+      Start  4: test-chat-template
+ 4/21 Test  #4: test-chat-template ..................   Passed    0.18 sec
+      Start  5: test-tokenizer-0-llama
+ 5/21 Test  #5: test-tokenizer-0-llama ..............   Passed    0.24 sec
+      Start  6: test-tokenizer-0-falcon
+ 6/21 Test  #6: test-tokenizer-0-falcon .............   Passed    0.35 sec
+      Start  7: test-tokenizer-1-llama
+ 7/21 Test  #7: test-tokenizer-1-llama ..............   Passed    0.56 sec
+      Start  8: test-tokenizer-1-baichuan
+ 8/21 Test  #8: test-tokenizer-1-baichuan ...........   Passed    0.40 sec
+      Start  9: test-tokenizer-1-falcon
+ 9/21 Test  #9: test-tokenizer-1-falcon .............   Passed    0.80 sec
+      Start 10: test-tokenizer-1-aquila
+10/21 Test #10: test-tokenizer-1-aquila .............   Passed    0.88 sec
+      Start 11: test-tokenizer-1-mpt
+11/21 Test #11: test-tokenizer-1-mpt ................   Passed    0.47 sec
+      Start 12: test-tokenizer-1-stablelm-3b-4e1t
+12/21 Test #12: test-tokenizer-1-stablelm-3b-4e1t ...   Passed    0.47 sec
+      Start 13: test-tokenizer-1-gpt-neox
+13/21 Test #13: test-tokenizer-1-gpt-neox ...........   Passed    0.47 sec
+      Start 14: test-tokenizer-1-refact
+14/21 Test #14: test-tokenizer-1-refact .............   Passed    0.47 sec
+      Start 15: test-tokenizer-1-starcoder
+15/21 Test #15: test-tokenizer-1-starcoder ..........   Passed    0.47 sec
+      Start 16: test-tokenizer-1-gpt2
+16/21 Test #16: test-tokenizer-1-gpt2 ...............   Passed    0.48 sec
+      Start 17: test-grammar-parser
+17/21 Test #17: test-grammar-parser .................   Passed    0.18 sec
+      Start 18: test-llama-grammar
+18/21 Test #18: test-llama-grammar ..................   Passed    0.21 sec
+      Start 19: test-grad0
+19/21 Test #19: test-grad0 ..........................   Passed    0.83 sec
+      Start 20: test-backend-ops
+20/21 Test #20: test-backend-ops ....................   Passed   33.34 sec
+      Start 21: test-rope
+21/21 Test #21: test-rope ...........................   Passed    0.22 sec
+
+100% tests passed, 0 tests failed out of 21
+
+Label Time Summary:
+main    =  55.00 sec*proc (21 tests)
+
+Total Test time (real) =  55.01 sec
+
+real	0m55.017s
+user	1m2.429s
+sys	0m6.248s
+```
+### embd_bge_small
+
+BGE Small (BERT):
+- status: 0
+- f16: 
+```
++ ./bin/embedding --model ../models-mnt/bge-small/ggml-model-f16.gguf -p 'I believe the meaning of life is'
+main: build = 2361 (0ba20ed9)
+main: built with Apple clang version 15.0.0 (clang-1500.1.0.2.5) for arm64-apple-darwin23.2.0
+main: seed  = 1709822616
+llama_model_loader: loaded meta data with 19 key-value pairs and 197 tensors from ../models-mnt/bge-small/ggml-model-f16.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = bert
+llama_model_loader: - kv   1:                               general.name str              = bge-small
+llama_model_loader: - kv   2:                           bert.block_count u32              = 12
+llama_model_loader: - kv   3:                        bert.context_length u32              = 512
+llama_model_loader: - kv   4:                      bert.embedding_length u32              = 384
+llama_model_loader: - kv   5:                   bert.feed_forward_length u32              = 1536
+llama_model_loader: - kv   6:                  bert.attention.head_count u32              = 12
+llama_model_loader: - kv   7:          bert.attention.layer_norm_epsilon f32              = 0.000000
+llama_model_loader: - kv   8:                          general.file_type u32              = 1
+llama_model_loader: - kv   9:                      bert.attention.causal bool             = false
+llama_model_loader: - kv  10:                          bert.pooling_type u32              = 2
+llama_model_loader: - kv  11:            tokenizer.ggml.token_type_count u32              = 2
+llama_model_loader: - kv  12:                tokenizer.ggml.bos_token_id u32              = 101
+llama_model_loader: - kv  13:                tokenizer.ggml.eos_token_id u32              = 102
+llama_model_loader: - kv  14:                       tokenizer.ggml.model str              = bert
+llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,30522]   = ["[PAD]", "[unused0]", "[unused1]", "...
+llama_model_loader: - kv  16:                      tokenizer.ggml.scores arr[f32,30522]   = [-1000.000000, -1000.000000, -1000.00...
+llama_model_loader: - kv  17:                  tokenizer.ggml.token_type arr[i32,30522]   = [3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  18:            tokenizer.ggml.padding_token_id u32              = 0
+llama_model_loader: - type  f32:  123 tensors
+llama_model_loader: - type  f16:   74 tensors
+llm_load_vocab: mismatch in special tokens definition ( 7104/30522 vs 5/30522 ).
+llm_load_print_meta: format           = GGUF V3 (latest)
+llm_load_print_meta: arch             = bert
+llm_load_print_meta: vocab type       = WPM
+llm_load_print_meta: n_vocab          = 30522
+llm_load_print_meta: n_merges         = 0
+llm_load_print_meta: n_ctx_train      = 512
+llm_load_print_meta: n_embd           = 384
+llm_load_print_meta: n_head           = 12
+llm_load_print_meta: n_head_kv        = 12
+llm_load_print_meta: n_layer          = 12
+llm_load_print_meta: n_rot            = 32
+llm_load_print_meta: n_embd_head_k    = 32
+llm_load_print_meta: n_embd_head_v    = 32
+llm_load_print_meta: n_gqa            = 1
+llm_load_print_meta: n_embd_k_gqa     = 384
+llm_load_print_meta: n_embd_v_gqa     = 384
+llm_load_print_meta: f_norm_eps       = 1.0e-12
+llm_load_print_meta: f_norm_rms_eps   = 0.0e+00
+llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+llm_load_print_meta: n_ff             = 1536
+llm_load_print_meta: n_expert         = 0
+llm_load_print_meta: n_expert_used    = 0
+llm_load_print_meta: pooling type     = 2
+llm_load_print_meta: rope type        = 2
+llm_load_print_meta: rope scaling     = linear
+llm_load_print_meta: freq_base_train  = 10000.0
+llm_load_print_meta: freq_scale_train = 1
+llm_load_print_meta: n_yarn_orig_ctx  = 512
+llm_load_print_meta: rope_finetuned   = unknown
+llm_load_print_meta: model type       = 33M
+llm_load_print_meta: model ftype      = F16
+llm_load_print_meta: model params     = 33.21 M
+llm_load_print_meta: model size       = 63.46 MiB (16.03 BPW) 
+llm_load_print_meta: general.name     = bge-small
+llm_load_print_meta: BOS token        = 101 '[CLS]'
+llm_load_print_meta: EOS token        = 102 '[SEP]'
+llm_load_print_meta: UNK token        = 100 '[UNK]'
+llm_load_print_meta: PAD token        = 0 '[PAD]'
+llm_load_tensors: ggml ctx size =    0.15 MiB
+ggml_backend_metal_buffer_from_ptr: allocated buffer, size =    40.75 MiB, (   40.81 /  5461.34)
+llm_load_tensors: offloading 12 repeating layers to GPU
+llm_load_tensors: offloading non-repeating layers to GPU
+llm_load_tensors: offloaded 13/13 layers to GPU
+llm_load_tensors:        CPU buffer size =    22.73 MiB
+llm_load_tensors:      Metal buffer size =    40.74 MiB
+.................................................
+llama_new_context_with_model: n_ctx      = 512
+llama_new_context_with_model: freq_base  = 10000.0
+llama_new_context_with_model: freq_scale = 1
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M1
+ggml_metal_init: picking default device: Apple M1
+ggml_metal_init: loading '/Users/ggml/work/llama.cpp/build-ci-release/bin/default.metallib'
+ggml_metal_init: GPU name:   Apple M1
+ggml_metal_init: GPU family: MTLGPUFamilyApple7  (1007)
+ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+ggml_metal_init: simdgroup reduction support   = true
+ggml_metal_init: simdgroup matrix mul. support = true
+ggml_metal_init: hasUnifiedMemory              = true
+ggml_metal_init: recommendedMaxWorkingSetSize  =  5726.63 MB
+ggml_backend_metal_buffer_type_alloc_buffer: allocated buffer, size =     9.00 MiB, (   51.62 /  5461.34)
+llama_kv_cache_init:      Metal KV buffer size =     9.00 MiB
+llama_new_context_with_model: KV self size  =    9.00 MiB, K (f16):    4.50 MiB, V (f16):    4.50 MiB
+llama_new_context_with_model:        CPU input buffer size   =     2.76 MiB
+ggml_backend_metal_buffer_type_alloc_buffer: allocated buffer, size =    16.27 MiB, (   67.89 /  5461.34)
+llama_new_context_with_model:      Metal compute buffer size =    16.25 MiB
+llama_new_context_with_model:        CPU compute buffer size =     1.50 MiB
+llama_new_context_with_model: graph splits (measure): 2
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX_VNNI = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 1 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 0 | SSSE3 = 0 | VSX = 0 | MATMUL_INT8 = 0 | 
+batch_decode: n_tokens = 9, n_seq = 1
+embedding 0: -0.043994 -0.019916 0.007655 -0.000819 0.001388 -0.037025 0.109446 0.042584 0.092049 -0.015914 0.006759 -0.035696 -0.017905 0.015043 0.018142 0.015855 -0.011310 0.010419 -0.085225 -0.008453 0.091384 -0.017064 -0.060342 -0.024488 0.027512 0.076049 0.027982 -0.014562 0.017640 -0.033270 -0.037869 -0.019018 0.068680 -0.009834 -0.025020 0.072357 -0.046556 0.011016 -0.050248 0.047689 0.032381 -0.011766 0.022043 0.049632 0.010480 0.005786 -0.028860 0.008942 -0.018496 -0.051463 -0.046043 0.030510 -0.035439 0.054235 -0.069652 0.044234 0.029789 0.046312 0.073429 -0.042581 0.076111 0.038853 -0.181160 0.082508 0.042228 -0.064555 -0.060105 -0.017848 0.006483 0.005861 0.017195 -0.026619 0.064571 0.112607 0.035167 -0.067413 0.027080 -0.067290 -0.033489 -0.033220 0.033219 0.013522 -0.003354 -0.037477 -0.052039 0.055149 -0.001984 -0.038280 0.064446 0.028815 -0.043327 -0.029239 -0.039484 0.036319 0.008374 -0.015491 -0.036557 0.018130 0.028612 0.342833 -0.044472 0.056123 0.017636 -0.020843 -0.066778 0.000137 -0.037904 -0.030031 -0.008543 -0.021575 0.000551 -0.003230 0.004001 0.018908 -0.008548 0.025846 0.049420 0.000109 0.050922 -0.042478 -0.031912 0.023596 0.030701 -0.023139 -0.046271 -0.079267 0.115201 0.046759 0.027831 -0.040711 0.067786 -0.022939 0.010319 -0.032948 -0.018307 0.043832 0.024273 0.052425 0.007493 0.008896 0.011222 -0.074651 -0.065553 -0.026738 -0.041180 -0.023905 0.026704 0.006908 0.027739 0.052891 -0.036691 0.057695 -0.000178 0.031762 -0.019779 -0.022090 0.041050 -0.058909 0.019616 0.043145 0.043581 0.041606 -0.022540 0.027030 -0.021834 0.005407 -0.041331 -0.001243 0.024445 0.002084 0.044323 -0.022746 0.043659 0.064760 0.055432 0.037051 -0.000904 0.046113 0.045805 -0.008484 0.063048 -0.073221 -0.011933 0.032123 0.023950 0.014723 -0.033690 0.001102 -0.015841 -0.018993 0.047856 0.110837 0.028425 0.031365 -0.013281 -0.057491 0.006637 0.005147 -0.012258 -0.051445 -0.000955 -0.017629 -0.019459 -0.040928 0.009212 -0.057971 0.050959 0.052345 -0.009613 -0.040276 -0.014086 -0.024868 -0.017266 0.006298 0.006574 -0.026913 0.015617 0.030767 0.002563 0.023213 -0.022197 -0.098556 -0.051099 -0.278028 -0.014981 -0.061556 -0.027219 0.017667 -0.010936 -0.017081 0.035050 0.046992 -0.015415 0.015227 -0.025483 0.047858 -0.005941 -0.000743 -0.060997 -0.068956 -0.060363 -0.035952 0.043327 -0.055059 0.015056 0.000527 -0.058185 -0.010431 0.012635 0.151482 0.127111 -0.013604 0.041992 -0.025675 0.014018 -0.001053 -0.150470 0.044864 0.005315 -0.036271 -0.029799 -0.020192 -0.034896 0.010222 0.033545 -0.048179 -0.051800 -0.017462 -0.023503 0.047348 0.052080 -0.016788 -0.055456 0.025831 -0.005713 0.010710 0.038693 0.008208 -0.009752 -0.105770 -0.027417 -0.096101 0.025076 -0.011267 0.092357 0.056118 0.003755 0.027797 0.002085 -0.051098 -0.039891 -0.013545 -0.044962 -0.015343 0.002901 -0.043489 -0.077941 0.065206 -0.006823 -0.001624 -0.014654 0.071580 0.023715 -0.037165 0.009189 0.001557 -0.032257 0.015463 0.037872 0.000353 -0.053209 0.021327 -0.039836 0.000039 0.013397 0.019801 -0.057887 0.006477 -0.049533 -0.267860 0.039162 -0.067976 0.038246 -0.012333 0.041493 -0.016126 0.052385 -0.071379 0.011375 0.024728 -0.007200 0.082081 0.028551 -0.021505 0.040492 -0.004571 -0.074605 -0.014748 0.020043 0.002294 0.023140 0.197206 -0.043229 -0.025995 -0.004964 -0.019268 0.074273 0.001737 -0.031958 -0.036596 -0.045072 0.000553 -0.011565 0.018111 -0.029465 -0.008461 0.006424 0.050803 -0.014966 0.006178 0.026082 -0.030821 0.048055 0.114087 -0.040846 -0.011463 0.005410 -0.003602 0.025164 -0.059127 0.013759 -0.010384 0.038702 0.051432 0.035404 0.035023 -0.017017 0.026367 -0.014504 -0.050026 0.003243 0.054116 0.039726 -0.039149 
+
+
+
+llama_print_timings:        load time =      54.14 ms
+llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time =      10.10 ms /     9 tokens (    1.12 ms per token,   890.91 tokens per second)
+llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time =      34.67 ms /    10 tokens
+ggml_metal_free: deallocating
+
+real	0m0.326s
+user	0m0.097s
+sys	0m0.027s
+```
+- q8_0:
+```
++ ./bin/embedding --model ../models-mnt/bge-small/ggml-model-q8_0.gguf -p 'I believe the meaning of life is'
+main: build = 2361 (0ba20ed9)
+main: built with Apple clang version 15.0.0 (clang-1500.1.0.2.5) for arm64-apple-darwin23.2.0
+main: seed  = 1709822616
+llama_model_loader: loaded meta data with 20 key-value pairs and 197 tensors from ../models-mnt/bge-small/ggml-model-q8_0.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = bert
+llama_model_loader: - kv   1:                               general.name str              = bge-small
+llama_model_loader: - kv   2:                           bert.block_count u32              = 12
+llama_model_loader: - kv   3:                        bert.context_length u32              = 512
+llama_model_loader: - kv   4:                      bert.embedding_length u32              = 384
+llama_model_loader: - kv   5:                   bert.feed_forward_length u32              = 1536
+llama_model_loader: - kv   6:                  bert.attention.head_count u32              = 12
+llama_model_loader: - kv   7:          bert.attention.layer_norm_epsilon f32              = 0.000000
+llama_model_loader: - kv   8:                          general.file_type u32              = 7
+llama_model_loader: - kv   9:                      bert.attention.causal bool             = false
+llama_model_loader: - kv  10:                          bert.pooling_type u32              = 2
+llama_model_loader: - kv  11:            tokenizer.ggml.token_type_count u32              = 2
+llama_model_loader: - kv  12:                tokenizer.ggml.bos_token_id u32              = 101
+llama_model_loader: - kv  13:                tokenizer.ggml.eos_token_id u32              = 102
+llama_model_loader: - kv  14:                       tokenizer.ggml.model str              = bert
+llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,30522]   = ["[PAD]", "[unused0]", "[unused1]", "...
+llama_model_loader: - kv  16:                      tokenizer.ggml.scores arr[f32,30522]   = [-1000.000000, -1000.000000, -1000.00...
+llama_model_loader: - kv  17:                  tokenizer.ggml.token_type arr[i32,30522]   = [3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  18:            tokenizer.ggml.padding_token_id u32              = 0
+llama_model_loader: - kv  19:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:  123 tensors
+llama_model_loader: - type  f16:    1 tensors
+llama_model_loader: - type q8_0:   73 tensors
+llm_load_vocab: mismatch in special tokens definition ( 7104/30522 vs 5/30522 ).
+llm_load_print_meta: format           = GGUF V3 (latest)
+llm_load_print_meta: arch             = bert
+llm_load_print_meta: vocab type       = WPM
+llm_load_print_meta: n_vocab          = 30522
+llm_load_print_meta: n_merges         = 0
+llm_load_print_meta: n_ctx_train      = 512
+llm_load_print_meta: n_embd           = 384
+llm_load_print_meta: n_head           = 12
+llm_load_print_meta: n_head_kv        = 12
+llm_load_print_meta: n_layer          = 12
+llm_load_print_meta: n_rot            = 32
+llm_load_print_meta: n_embd_head_k    = 32
+llm_load_print_meta: n_embd_head_v    = 32
+llm_load_print_meta: n_gqa            = 1
+llm_load_print_meta: n_embd_k_gqa     = 384
+llm_load_print_meta: n_embd_v_gqa     = 384
+llm_load_print_meta: f_norm_eps       = 1.0e-12
+llm_load_print_meta: f_norm_rms_eps   = 0.0e+00
+llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+llm_load_print_meta: n_ff             = 1536
+llm_load_print_meta: n_expert         = 0
+llm_load_print_meta: n_expert_used    = 0
+llm_load_print_meta: pooling type     = 2
+llm_load_print_meta: rope type        = 2
+llm_load_print_meta: rope scaling     = linear
+llm_load_print_meta: freq_base_train  = 10000.0
+llm_load_print_meta: freq_scale_train = 1
+llm_load_print_meta: n_yarn_orig_ctx  = 512
+llm_load_print_meta: rope_finetuned   = unknown
+llm_load_print_meta: model type       = 33M
+llm_load_print_meta: model ftype      = Q8_0
+llm_load_print_meta: model params     = 33.21 M
+llm_load_print_meta: model size       = 34.00 MiB (8.59 BPW) 
+llm_load_print_meta: general.name     = bge-small
+llm_load_print_meta: BOS token        = 101 '[CLS]'
+llm_load_print_meta: EOS token        = 102 '[SEP]'
+llm_load_print_meta: UNK token        = 100 '[UNK]'
+llm_load_print_meta: PAD token        = 0 '[PAD]'
+llm_load_tensors: ggml ctx size =    0.15 MiB
+ggml_backend_metal_buffer_from_ptr: allocated buffer, size =    21.77 MiB, (   21.83 /  5461.34)
+llm_load_tensors: offloading 12 repeating layers to GPU
+llm_load_tensors: offloading non-repeating layers to GPU
+llm_load_tensors: offloaded 13/13 layers to GPU
+llm_load_tensors:        CPU buffer size =    12.25 MiB
+llm_load_tensors:      Metal buffer size =    21.76 MiB
+.................................................
+llama_new_context_with_model: n_ctx      = 512
+llama_new_context_with_model: freq_base  = 10000.0
+llama_new_context_with_model: freq_scale = 1
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M1
+ggml_metal_init: picking default device: Apple M1
+ggml_metal_init: loading '/Users/ggml/work/llama.cpp/build-ci-release/bin/default.metallib'
+ggml_metal_init: GPU name:   Apple M1
+ggml_metal_init: GPU family: MTLGPUFamilyApple7  (1007)
+ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+ggml_metal_init: simdgroup reduction support   = true
+ggml_metal_init: simdgroup matrix mul. support = true
+ggml_metal_init: hasUnifiedMemory              = true
+ggml_metal_init: recommendedMaxWorkingSetSize  =  5726.63 MB
+ggml_backend_metal_buffer_type_alloc_buffer: allocated buffer, size =     9.00 MiB, (   32.64 /  5461.34)
+llama_kv_cache_init:      Metal KV buffer size =     9.00 MiB
+llama_new_context_with_model: KV self size  =    9.00 MiB, K (f16):    4.50 MiB, V (f16):    4.50 MiB
+llama_new_context_with_model:        CPU input buffer size   =     2.76 MiB
+ggml_backend_metal_buffer_type_alloc_buffer: allocated buffer, size =    16.27 MiB, (   48.91 /  5461.34)
+llama_new_context_with_model:      Metal compute buffer size =    16.25 MiB
+llama_new_context_with_model:        CPU compute buffer size =     1.50 MiB
+llama_new_context_with_model: graph splits (measure): 2
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX_VNNI = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 1 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 0 | SSSE3 = 0 | VSX = 0 | MATMUL_INT8 = 0 | 
+batch_decode: n_tokens = 9, n_seq = 1
+embedding 0: -0.044998 -0.019850 0.007986 -0.001417 0.001545 -0.036281 0.109386 0.043262 0.092839 -0.015201 0.005983 -0.036332 -0.018157 0.015023 0.017670 0.014497 -0.011800 0.011804 -0.084757 -0.008089 0.091644 -0.017641 -0.061089 -0.025069 0.026857 0.076163 0.028253 -0.014284 0.017420 -0.033532 -0.037509 -0.018281 0.068848 -0.010133 -0.024900 0.071960 -0.046406 0.011467 -0.050358 0.048938 0.032316 -0.012107 0.021823 0.049792 0.010369 0.005272 -0.028672 0.008569 -0.018511 -0.052362 -0.046403 0.029433 -0.034985 0.053272 -0.069849 0.043787 0.029276 0.046753 0.073653 -0.043088 0.075208 0.038635 -0.180502 0.081642 0.043387 -0.065614 -0.059877 -0.017380 0.006898 0.005155 0.017160 -0.026668 0.064335 0.112564 0.034855 -0.067788 0.027118 -0.066982 -0.034300 -0.033348 0.033192 0.014323 -0.004255 -0.036939 -0.052020 0.054164 -0.001711 -0.038106 0.063003 0.028660 -0.041661 -0.028869 -0.039251 0.036879 0.007718 -0.015639 -0.036268 0.018697 0.029790 0.344935 -0.043883 0.056490 0.018028 -0.021461 -0.065296 0.000267 -0.037922 -0.029674 -0.008819 -0.020650 0.001168 -0.003511 0.003093 0.018580 -0.009638 0.025311 0.049296 -0.000938 0.051564 -0.042355 -0.031538 0.023317 0.030056 -0.023268 -0.045491 -0.079649 0.114497 0.047508 0.027211 -0.041467 0.067721 -0.022866 0.010247 -0.033469 -0.017206 0.044324 0.022958 0.052204 0.008126 0.008119 0.009939 -0.074640 -0.065037 -0.025944 -0.040824 -0.024537 0.027416 0.006069 0.027698 0.052233 -0.036563 0.058703 0.001460 0.032202 -0.019974 -0.021821 0.041807 -0.058810 0.019334 0.042633 0.044003 0.040922 -0.021908 0.028014 -0.022795 0.005526 -0.041271 -0.000094 0.024319 0.001525 0.044806 -0.022890 0.043060 0.065018 0.056295 0.037675 -0.001003 0.047538 0.045631 -0.008622 0.062284 -0.073309 -0.011723 0.032699 0.023340 0.014643 -0.033919 0.001150 -0.015872 -0.018985 0.047985 0.110730 0.029175 0.030888 -0.012321 -0.057845 0.006938 0.004384 -0.011857 -0.051743 -0.003021 -0.017761 -0.020058 -0.041022 0.009121 -0.058568 0.050640 0.051787 -0.008953 -0.040673 -0.014776 -0.024311 -0.015975 0.005829 0.007153 -0.027317 0.016282 0.030749 0.002341 0.023178 -0.022140 -0.098060 -0.050885 -0.277240 -0.015116 -0.061565 -0.026217 0.017147 -0.010278 -0.017532 0.034734 0.047893 -0.016589 0.015507 -0.024141 0.048609 -0.004975 -0.000014 -0.060869 -0.068353 -0.059634 -0.036145 0.043597 -0.056372 0.014728 0.000293 -0.058621 -0.010995 0.012277 0.151594 0.127027 -0.012590 0.042777 -0.025218 0.013632 -0.000382 -0.150676 0.043968 0.004723 -0.036959 -0.029598 -0.019857 -0.034068 0.009507 0.033998 -0.048918 -0.051753 -0.017240 -0.025083 0.047586 0.050998 -0.017560 -0.056751 0.024050 -0.006294 0.010998 0.038724 0.008084 -0.008602 -0.106375 -0.027378 -0.096959 0.025315 -0.011083 0.091582 0.056179 0.004499 0.028054 0.001704 -0.051379 -0.039507 -0.013811 -0.045904 -0.015241 0.002896 -0.043944 -0.077721 0.066125 -0.006198 -0.000880 -0.013764 0.071565 0.023838 -0.036372 0.007862 0.001485 -0.032923 0.016336 0.037380 0.000635 -0.052393 0.021538 -0.039709 -0.000026 0.013479 0.020426 -0.057510 0.005889 -0.049902 -0.267547 0.038669 -0.067509 0.037449 -0.011461 0.041558 -0.015900 0.051346 -0.072303 0.012566 0.024798 -0.007419 0.082069 0.028162 -0.021947 0.040718 -0.003938 -0.074178 -0.014913 0.020411 0.002665 0.023219 0.197157 -0.043068 -0.025866 -0.004877 -0.018587 0.073940 0.001340 -0.031662 -0.037139 -0.044259 0.000034 -0.010744 0.018211 -0.028034 -0.008822 0.006034 0.050180 -0.015032 0.007027 0.025897 -0.030623 0.048061 0.112800 -0.039983 -0.011692 0.005051 -0.002798 0.025083 -0.059713 0.014182 -0.010020 0.038102 0.051094 0.034720 0.035951 -0.017031 0.027248 -0.015400 -0.051196 0.003734 0.053927 0.040012 -0.039135 
+
+
+
+llama_print_timings:        load time =      51.28 ms
+llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time =      13.28 ms /     9 tokens (    1.48 ms per token,   677.56 tokens per second)
+llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time =      35.73 ms /    10 tokens
+ggml_metal_free: deallocating
+
+real	0m0.133s
+user	0m0.068s
+sys	0m0.020s
+```
