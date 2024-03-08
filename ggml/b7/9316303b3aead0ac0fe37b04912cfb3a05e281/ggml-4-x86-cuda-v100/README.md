@@ -1,0 +1,1066 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 10:49.50
+- date:    Fri Mar  8 10:19:35 UTC 2024
+- repo:    https://github.com/ggerganov/ggml
+- commit:  https://github.com/ggerganov/ggml/commit/b79316303b3aead0ac0fe37b04912cfb3a05e281
+- author:  Neo Zhang Jianyu
+```
+fix mul_mat fault in CI/unit-test (llama/5862)
+
+* fix mul_mat fault in cpy_f32_f16
+
+* rm unused function
+
+* add wait() for memcpy
+
+* restore ci/run.sh, rename struct defination, fix bug in ggml_sycl_op_mul_mat_sycl
+
+* fix format issue
+
+* llama : fix segfault from unknown model arch name (llama/5820)
+
+* llama : fix segfault from unknown model arch name
+
+* llama : make all LLM maps const
+
+This also requires using `std::map::at` instead of its `operator[]`
+which does not exist for const maps.
+
+* llama : name LLM_ARCH_UNKNOWN to "(unknown)"
+
+This avoids errors from `std::map::at` when
+getting the general name of the model architecture.
+Using "(unknown)" instead of an empty string as per suggestion
+https://github.com/ggerganov/llama.cpp/pull/5820#issuecomment-1973735284
+
+* llama : remove redundant inner const for LLM_TENSOR_NAMES
+
+The extra const won't do anything here as const maps
+return const references to values.
+
+Co-authored-by: Jared Van Bortel <cebtenzzre@gmail.com>
+
+* llama : remove redundant nullptr check in llm_arch_from_string
+
+Since LLM_ARCH_NAMES is a const map, no spurious elements
+with a NULL name are inserted anymore, so this check is dead code.
+
+---------
+
+Co-authored-by: Jared Van Bortel <cebtenzzre@gmail.com>
+
+* llama : refactor internal quantization functions (llama/5830)
+
+* scripts : add pod-llama.sh
+
+* ggml : IQ3_S improvements (llama/5829)
+
+* iq3_s: somewhat faster AVX2 dot product
+
+On Ryzen a 7950X TG-128 increases to 16 t/s from 15.5 t/s using
+16 threads. For 8 threads it is 13.85 t/s vs 11.75 t/s.
+PP-512 increases to 28.5 t/s from 23.8 t/s.
+
+* iq3_s: somewhat faster ARM_NEON dot product
+
+Still dog slow - 10.7 t/s up from 9.9 t/s.
+
+* iq3_s: another small ARM_NEON improvement
+
+10.7 -> 11.0 t/s. Using vmulq_s8 is faster than the xor - sub trick
+that works best on AVX2.
+
+* iq3_s: minor improvement on Metal
+
+49.4 t/s -> 50.3 t/s
+
+* iq3_s: PPL improvement
+
+E.g., for a context of 4096 LLaMA-v2-7B goes to 5.1340 from 5.1653.
+
+* iq3_s: use new grid everywhere
+
+* Fix ARM_NEON
+
+---------
+
+Co-authored-by: Iwan Kawrakow <iwan.kawrakow@gmail.com>
+
+* convert-hf : make model class definitions self-contained (llama/5825)
+
+* convert : automatically fall back to HfVocab if tokenizer.model doesn't exist (llama/5821)
+
+* ggml : fix IQ3_S AVX implementation (llama/5834)
+
+ggml-ci
+
+* llama : add abort_callback to interrupt computation (llama/5409)
+
+* using abort_callback from ggml to stop llama computation
+
+* format fix
+
+* a brief explaining comment
+
+---------
+
+Co-authored-by: Georgi Gerganov <ggerganov@gmail.com>
+
+* server: tests: passkey challenge /  self-extend with context shift demo (llama/5832)
+
+* server: tests: add models endpoint scenario
+
+* server: /v1/models add some metadata
+
+* server: tests: add debug field in context before scenario
+
+* server: tests: download model from HF, add batch size
+
+* server: tests: add passkey test
+
+* server: tests: add group attention params
+
+* server: do not truncate prompt tokens if self-extend through group attention is enabled
+
+* server: logs: do not truncate log values
+
+* server: tests - passkey - first good working value of nga
+
+* server: tests: fix server timeout
+
+* server: tests: fix passkey, add doc, fix regex content matching, fix timeout
+
+* server: tests: fix regex content matching
+
+* server: tests: schedule slow tests on master
+
+* server: metrics: fix when no prompt processed
+
+* server: tests: self-extend add llama-2-7B and Mixtral-8x7B-v0.1
+
+* server: tests: increase timeout for completion
+
+* server: tests: keep only the PHI-2 test
+
+* server: tests: passkey add a negative test
+
+* flake.lock: Update (llama/5842)
+
+Flake lock file updates:
+
+• Updated input 'flake-parts':
+    'github:hercules-ci/flake-parts/b253292d9c0a5ead9bc98c4e9a26c6312e27d69f' (2024-02-01)
+  → 'github:hercules-ci/flake-parts/f7b3c975cf067e56e7cda6cb098ebe3fb4d74ca2' (2024-03-01)
+• Updated input 'flake-parts/nixpkgs-lib':
+    'github:NixOS/nixpkgs/97b17f32362e475016f942bbdfda4a4a72a8a652?dir=lib' (2024-01-29)
+  → 'github:NixOS/nixpkgs/1536926ef5621b09bba54035ae2bb6d806d72ac8?dir=lib' (2024-02-29)
+• Updated input 'nixpkgs':
+    'github:NixOS/nixpkgs/cbc4211f0afffe6dfd2478a62615dd5175a13f9a' (2024-02-23)
+  → 'github:NixOS/nixpkgs/1536926ef5621b09bba54035ae2bb6d806d72ac8' (2024-02-29)
+
+Co-authored-by: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+
+* server : init http requests thread pool with --parallel if set (llama/5836)
+
+* ci : schedule slow server tests only on Release or on demand (llama/5839)
+
+* llama : fix llama_copy_state_data with fragmented KV cache (llama/5840)
+
+The row size of the saved states was based on kv_self.head while
+it should be based on llama_kv_cache_cell_max.
+
+Existing session files should still work.
+
+* llama : fix llama_kv_cache_cell_max inability to return 1
+
+I've also changed its return type to uint32_t,
+because this function is always used to set the value of uint32_t variables,
+and because the index already has this type.
+
+* llama : fix state size calculation
+
+Some bytes in the state were unaccounted for in llama_get_state_size.
+Since the logits reserve so much space, it did not cause problems.
+
+* gguf-dump : support i-quants (llama/5841)
+
+Co-authored-by: Black_Fox <radekliska@gmail.com>
+
+* llama : allow for user specified embedding pooling type (llama/5849)
+
+* allow for user specified pooling type
+
+* llama : use enum types over int
+
+---------
+
+Co-authored-by: Georgi Gerganov <ggerganov@gmail.com>
+
+* readme : add API changes section
+
+* cuda : fix data race in soft max (llama/5853)
+
+* main : support special tokens as reverse/anti prompt (llama/5847)
+
+* Support special tokens as reverse/anti prompt.
+
+* Tokenize antiprompts only once.
+
+* main : minor
+
+---------
+
+Co-authored-by: Georgi Gerganov <ggerganov@gmail.com>
+
+* common : use LLAMA_DEFAULT_SEED (llama/5855)
+
+* add some new ops, fix some operators and add batch operations to certain operators. (ggml/747)
+
+* cuda: fix group_norm
+
+* cuda: add batch inference support for ggml_pad/ggml_upscale
+
+* add ggml_arrange
+
+* add ggml_timestep_embedding
+
+* update ggml_arange/ggml_timestep_embedding tests
+
+* cuda: fix im2col
+
+* add ggml_arange/ggml_timestep_embbeding support for metal backend
+
+* fix some bugs
+
+* fix some bugs
+
+* Update ggml.h
+
+Co-authored-by: Georgi Gerganov <ggerganov@gmail.com>
+
+* Update ggml-cuda.cu
+
+Co-authored-by: Georgi Gerganov <ggerganov@gmail.com>
+
+* Update ggml-metal.m
+
+Co-authored-by: Georgi Gerganov <ggerganov@gmail.com>
+
+* Update ggml-metal.m
+
+Co-authored-by: Georgi Gerganov <ggerganov@gmail.com>
+
+* Update ggml-metal.metal
+
+Co-authored-by: Georgi Gerganov <ggerganov@gmail.com>
+
+* modify according to the review comments
+
+* ggml : fix compile warnings + code style
+
+* ggml : normalize compute_forward calls + fix seg fault in debug
+
+* minor
+
+---------
+
+Co-authored-by: Georgi Gerganov <ggerganov@gmail.com>
+Co-authored-by: slaren <slarengh@gmail.com>
+
+* sync : ggml
+
+* add alias for chat template (llama/5858)
+
+* speculative : implement stochastic speculative sampling (llama/5625)
+
+* (WIP) Implement stochastic speculative decoding
+
+* sample from residual distribution on draft accept failure
+
+* fix #5657: force greedy sampling with probs when temp is 0
+
+* remove p_accept parameter
+
+* fix style
+
+* remove unused variables
+
+* add srand() in speculative.cpp
+
+* replace use of rand() with mt19937 sampling
+
+* fixes based on review (@JohannesGaessler)
+
+* fix r random generation
+
+* randomly select next sequence to verify + fix bug in memory freeing
+
+* fix bug in active_seqs sync
+
+* fix uniform int distribution initialization
+
+* remove warnings from comparison between int and size_t
+
+* check grammar in `llama_sample_probability_distribution_impl`
+
+* remove malloc code by utilizing vectors
+
+* add PR link to README
+
+* cmake : handle cases where git index is not found in .git (llama/5844)
+
+* Update CMakeLists.txt
+
+* Update CMakeLists.txt
+
+* ggml : introduce ggml_status (ggml/750)
+
+* using enum as an exit code instead of macros
+
+* update return type from enum to unsigned int
+
+* indentation fix
+
+* compound update
+ggml_compute_exit_code -> ggml_status
+changed ggml_status from a bit-field type to simple codes
+ggml_status to string cast
+
+* ggml_status to string cast
+
+* GGML_CALL was removed
+
+Co-authored-by: slaren <slarengh@gmail.com>
+
+---------
+
+Co-authored-by: slaren <slarengh@gmail.com>
+Co-authored-by: Georgi Gerganov <ggerganov@gmail.com>
+
+* sync : ggml
+
+ggml-ci
+
+* ggml : fix unknown status (llama/0)
+
+* flake : fix
+
+* llama : fix embeddings (llama/5796)
+
+* llama : fix embeddings
+
+ggml-ci
+
+* llama : do not use KV cache for non-causal models
+
+ggml-ci
+
+* embeddings : fix llama_batch_init arg
+
+* llama : add pooling switch
+
+* llama : distinguish token vs sequence embeddings
+
+ggml-ci
+
+* llama : assert pooling tensor
+
+* llama : simplify causal mask condition
+
+ggml-ci
+
+* llama : assert input batch with pooling enabled
+
+* readme : update API changes list
+
+* nix: static build (llama/5814)
+
+* fix speculative decoding build on windows (llama/5874)
+
+* rebase and rm tailing space
+
+---------
+
+Co-authored-by: LiangtaoJin <liang-tao.jin@intel.com>
+Co-authored-by: compilade <113953597+compilade@users.noreply.github.com>
+Co-authored-by: Jared Van Bortel <cebtenzzre@gmail.com>
+Co-authored-by: Xuan Son Nguyen <thichthat@gmail.com>
+Co-authored-by: Georgi Gerganov <ggerganov@gmail.com>
+Co-authored-by: Kawrakow <48489457+ikawrakow@users.noreply.github.com>
+Co-authored-by: Iwan Kawrakow <iwan.kawrakow@gmail.com>
+Co-authored-by: Jared Van Bortel <jared@nomic.ai>
+Co-authored-by: Michael Podvitskiy <podvitskiymichael@gmail.com>
+Co-authored-by: Pierrick Hymbert <pierrick.hymbert@gmail.com>
+Co-authored-by: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+Co-authored-by: Nindaleth <Nindaleth@users.noreply.github.com>
+Co-authored-by: Black_Fox <radekliska@gmail.com>
+Co-authored-by: Douglas Hanley <thesecretaryofwar@gmail.com>
+Co-authored-by: slaren <slarengh@gmail.com>
+Co-authored-by: DAN™ <dranger003@gmail.com>
+Co-authored-by: leejet <leejet714@gmail.com>
+Co-authored-by: Minsoo Cheong <54794500+mscheong01@users.noreply.github.com>
+Co-authored-by: Dane Madsen <dane_madsen@hotmail.com>
+Co-authored-by: hutli <6594598+hutli@users.noreply.github.com>
+Co-authored-by: Jeffrey Quesnelle <emozilla@nousresearch.com>
+```
+
+## Environment
+
+```
+GG_BUILD_CUDA=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -E test-opt
+Test project /home/ggml/work/ggml/build-ci-debug
+      Start  1: test-grad0
+ 1/22 Test  #1: test-grad0 .......................   Passed    4.96 sec
+      Start  2: test-quantize-fns
+ 2/22 Test  #2: test-quantize-fns ................   Passed   16.13 sec
+      Start  3: test-quantize-perf
+ 3/22 Test  #3: test-quantize-perf ...............   Passed   11.79 sec
+      Start  4: test-mul-mat0
+ 4/22 Test  #4: test-mul-mat0 ....................   Passed    1.09 sec
+      Start  5: test-mul-mat2
+ 5/22 Test  #5: test-mul-mat2 ....................   Passed    8.39 sec
+      Start  6: test0
+ 6/22 Test  #6: test0 ............................   Passed    0.53 sec
+      Start  7: test1
+ 7/22 Test  #7: test1 ............................   Passed    0.56 sec
+      Start  8: test2
+ 8/22 Test  #8: test2 ............................   Passed   20.67 sec
+      Start  9: test3
+ 9/22 Test  #9: test3 ............................   Passed    2.02 sec
+      Start 10: test-pool
+10/22 Test #10: test-pool ........................   Passed    0.54 sec
+      Start 11: test-arange
+11/22 Test #11: test-arange ......................   Passed    0.61 sec
+      Start 12: test-timestep_embedding
+12/22 Test #12: test-timestep_embedding ..........   Passed    0.56 sec
+      Start 13: test-conv-transpose
+13/22 Test #13: test-conv-transpose ..............   Passed    0.53 sec
+      Start 14: test-dup
+14/22 Test #14: test-dup .........................   Passed    0.53 sec
+      Start 15: test-rel-pos
+15/22 Test #15: test-rel-pos .....................   Passed    0.54 sec
+      Start 16: test-customop
+16/22 Test #16: test-customop ....................   Passed    0.53 sec
+      Start 17: test-xpos
+17/22 Test #17: test-xpos ........................   Passed    0.53 sec
+      Start 18: test-conv1d
+18/22 Test #18: test-conv1d ......................   Passed    0.58 sec
+      Start 19: test-conv2d
+19/22 Test #19: test-conv2d ......................   Passed    0.63 sec
+      Start 20: test-mul-mat
+20/22 Test #20: test-mul-mat .....................   Passed    0.59 sec
+      Start 21: test-backend-buffer
+21/22 Test #21: test-backend-buffer ..............   Passed    0.54 sec
+      Start 22: test-backend-ops
+22/22 Test #22: test-backend-ops .................   Passed  189.31 sec
+
+100% tests passed, 0 tests failed out of 22
+
+Total Test time (real) = 262.18 sec
+
+real	4m22.218s
+user	7m36.867s
+sys	0m35.065s
+```
+
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure
+Test project /home/ggml/work/ggml/build-ci-release
+      Start  1: test-grad0
+ 1/23 Test  #1: test-grad0 .......................   Passed    5.28 sec
+      Start  2: test-opt
+ 2/23 Test  #2: test-opt .........................   Passed    3.64 sec
+      Start  3: test-quantize-fns
+ 3/23 Test  #3: test-quantize-fns ................   Passed    9.03 sec
+      Start  4: test-quantize-perf
+ 4/23 Test  #4: test-quantize-perf ...............   Passed    6.64 sec
+      Start  5: test-mul-mat0
+ 5/23 Test  #5: test-mul-mat0 ....................   Passed    1.16 sec
+      Start  6: test-mul-mat2
+ 6/23 Test  #6: test-mul-mat2 ....................   Passed    3.39 sec
+      Start  7: test0
+ 7/23 Test  #7: test0 ............................   Passed    0.53 sec
+      Start  8: test1
+ 8/23 Test  #8: test1 ............................   Passed    0.53 sec
+      Start  9: test2
+ 9/23 Test  #9: test2 ............................   Passed   20.73 sec
+      Start 10: test3
+10/23 Test #10: test3 ............................   Passed    2.06 sec
+      Start 11: test-pool
+11/23 Test #11: test-pool ........................   Passed    0.58 sec
+      Start 12: test-arange
+12/23 Test #12: test-arange ......................   Passed    0.56 sec
+      Start 13: test-timestep_embedding
+13/23 Test #13: test-timestep_embedding ..........   Passed    0.56 sec
+      Start 14: test-conv-transpose
+14/23 Test #14: test-conv-transpose ..............   Passed    0.55 sec
+      Start 15: test-dup
+15/23 Test #15: test-dup .........................   Passed    0.56 sec
+      Start 16: test-rel-pos
+16/23 Test #16: test-rel-pos .....................   Passed    0.53 sec
+      Start 17: test-customop
+17/23 Test #17: test-customop ....................   Passed    0.54 sec
+      Start 18: test-xpos
+18/23 Test #18: test-xpos ........................   Passed    0.54 sec
+      Start 19: test-conv1d
+19/23 Test #19: test-conv1d ......................   Passed    0.62 sec
+      Start 20: test-conv2d
+20/23 Test #20: test-conv2d ......................   Passed    0.68 sec
+      Start 21: test-mul-mat
+21/23 Test #21: test-mul-mat .....................   Passed    0.61 sec
+      Start 22: test-backend-buffer
+22/23 Test #22: test-backend-buffer ..............   Passed    0.59 sec
+      Start 23: test-backend-ops
+23/23 Test #23: test-backend-ops .................   Passed   57.37 sec
+
+100% tests passed, 0 tests failed out of 23
+
+Total Test time (real) = 117.27 sec
+
+real	1m57.307s
+user	3m28.607s
+sys	0m31.937s
+```
+### gpt_2
+
+Runs short GPT-2 text generation
+- status: 0
+```
++ ./bin/gpt-2-backend --model ../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin -s 1234 -n 64 -tt ../examples/prompts/gpt-2.txt
+ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
+ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0, VMM: yes
+gpt2_model_load: using CPU backend
+test_gpt_tokenizer : failed test: 'I l0ve t0 tr@vel @r0und the w0rld.'
+test_gpt_tokenizer : tokens in hf:   I(40),  l(300), 0(15), ve(303),  t(256), 0(15),  tr(491), @(31), vel(626),  @(2488), r(81), 0(15), und(917),  the(262),  w(266), 0(15), r(81), ld(335), .(13), 
+test_gpt_tokenizer : tokens in ggml: I(40),  l(300), 0(15), ve(303),  t(256), 0(15),  tr(491), @(31), vel(626),  @(2488), r(81), 0(15), und(917),  the(262),  w(266), 0(15), rl(45895), d(67), .(13), 
+test_gpt_tokenizer : failed test: 'She danced gracefully on the stage.'
+test_gpt_tokenizer : tokens in hf:   She(3347),  danced(39480),  grace(11542), fully(2759),  on(319),  the(262),  stage(3800), .(13), 
+test_gpt_tokenizer : tokens in ggml: She(3347),  danced(39480),  graceful(44363), ly(306),  on(319),  the(262),  stage(3800), .(13), 
+test_gpt_tokenizer : failed test: 'She dances gracefully to the music.'
+test_gpt_tokenizer : tokens in hf:   She(3347),  dances(38207),  grace(11542), fully(2759),  to(284),  the(262),  music(2647), .(13), 
+test_gpt_tokenizer : tokens in ggml: She(3347),  dances(38207),  graceful(44363), ly(306),  to(284),  the(262),  music(2647), .(13), 
+test_gpt_tokenizer : failed test: 'The birds are chirping in the trees.'
+test_gpt_tokenizer : tokens in hf:   The(464),  birds(10087),  are(389),  ch(442), ir(343), ping(13886),  in(287),  the(262),  trees(7150), .(13), 
+test_gpt_tokenizer : tokens in ggml: The(464),  birds(10087),  are(389),  chi(33166), r(81), ping(13886),  in(287),  the(262),  trees(7150), .(13), 
+test_gpt_tokenizer : failed test: 'The flowers are blooming in the garden.'
+test_gpt_tokenizer : tokens in hf:   The(464),  flowers(12734),  are(389),  blo(24924), oming(3383),  in(287),  the(262),  garden(11376), .(13), 
+test_gpt_tokenizer : tokens in ggml: The(464),  flowers(12734),  are(389),  bloom(29955), ing(278),  in(287),  the(262),  garden(11376), .(13), 
+test_gpt_tokenizer : failed test: 'The flowers in the garden are blooming.'
+test_gpt_tokenizer : tokens in hf:   The(464),  flowers(12734),  in(287),  the(262),  garden(11376),  are(389),  blo(24924), oming(3383), .(13), 
+test_gpt_tokenizer : tokens in ggml: The(464),  flowers(12734),  in(287),  the(262),  garden(11376),  are(389),  bloom(29955), ing(278), .(13), 
+test_gpt_tokenizer : failed test: 'Wh@t's y0ur f@v0rite m0vie?'
+test_gpt_tokenizer : tokens in hf:   Wh(1199), @(31), t(83), 's(338),  y(331), 0(15), ur(333),  f(277), @(31), v(85), 0(15), rite(6525),  m(285), 0(15), v(85), ie(494), ?(30), 
+test_gpt_tokenizer : tokens in ggml: Wh(1199), @(31), t(83), 's(338),  y(331), 0(15), ur(333),  f(277), @(31), v(85), 0(15), rite(6525),  m(285), 0(15), vi(8903), e(68), ?(30), 
+test_gpt_tokenizer : 7 tests failed out of 100 tests.
+main: compute buffer size: 6.87 MB
+main: seed = 1234
+gpt2_model_load: loading model from '../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin'
+gpt2_model_load: n_vocab = 50257
+gpt2_model_load: n_ctx   = 1024
+gpt2_model_load: n_embd  = 768
+gpt2_model_load: n_head  = 12
+gpt2_model_load: n_layer = 12
+gpt2_model_load: ftype   = 1
+gpt2_model_load: qntvr   = 0
+gpt2_model_load: ggml tensor size    = 368 bytes
+gpt2_model_load: backend buffer size = 312.70 MB
+gpt2_model_load: memory size =   144.00 MB, n_mem = 24576
+gpt2_model_load: model size  =   239.08 MB
+main: prompt: 'If'
+main: number of tokens in prompt = 1, first 8 tokens: 1532 
+
+If we look at what we're talking about and then look at the evidence and the evidence of the United States, what we're dealing with, we've got a huge problem in the world of terrorism."
+
+Asked about the possibility that ISIS may have used the United States as a vehicle to recruit followers and commit violence in
+
+main:     load time =   534.11 ms
+main:   sample time =    33.71 ms
+main:  predict time =   650.83 ms / 10.17 ms per token
+main:    total time =  1241.16 ms
+
+real	0m1.396s
+user	0m2.604s
+sys	0m0.660s
++ ./bin/gpt-2-backend --model ../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin -s 1234 -n 64 -p 'I believe the meaning of life is'
+ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
+ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0, VMM: yes
+gpt2_model_load: using CPU backend
+extract_tests_from_file : No test file found.
+test_gpt_tokenizer : 0 tests failed out of 0 tests.
+main: compute buffer size: 6.87 MB
+main: seed = 1234
+gpt2_model_load: loading model from '../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin'
+gpt2_model_load: n_vocab = 50257
+gpt2_model_load: n_ctx   = 1024
+gpt2_model_load: n_embd  = 768
+gpt2_model_load: n_head  = 12
+gpt2_model_load: n_layer = 12
+gpt2_model_load: ftype   = 1
+gpt2_model_load: qntvr   = 0
+gpt2_model_load: ggml tensor size    = 368 bytes
+gpt2_model_load: backend buffer size = 312.70 MB
+gpt2_model_load: memory size =   144.00 MB, n_mem = 24576
+gpt2_model_load: model size  =   239.08 MB
+main: prompt: 'I believe the meaning of life is'
+main: number of tokens in prompt = 7, first 8 tokens: 40 1975 262 3616 286 1204 318 
+
+I believe the meaning of life is not one that you must be able to answer for.
+
+If you do not believe in God, then why does his word make you feel better? Why do he make you feel better? It's because I don't think the "good" life you choose is for you. I don't think it's worth
+
+main:     load time =   533.06 ms
+main:   sample time =    33.63 ms
+main:  predict time =   680.98 ms / 9.73 ms per token
+main:    total time =  1251.43 ms
+
+real	0m1.403s
+user	0m2.696s
+sys	0m0.669s
++ ./bin/gpt-2-sched --model ../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin -s 1234 -n 64 -p 'I believe the meaning of life is'
+ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
+ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0, VMM: yes
+extract_tests_from_file : No test file found.
+test_gpt_tokenizer : 0 tests failed out of 0 tests.
+main: seed = 1234
+gpt2_model_load: loading model from '../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin'
+gpt2_model_load: n_vocab = 50257
+gpt2_model_load: n_ctx   = 1024
+gpt2_model_load: n_embd  = 768
+gpt2_model_load: n_head  = 12
+gpt2_model_load: n_layer = 12
+gpt2_model_load: ftype   = 1
+gpt2_model_load: qntvr   = 0
+gpt2_model_load:      CPU buffer size =   312.77 MB
+gpt2_model_load: memory size =    72.00 MB, n_mem = 12288
+gpt2_model_load: backend_kv = CPU
+gpt2_model_load: model size  =   312.70 MB
+gpt2_model_load: backend_in = CPU (8192 bytes)
+main:      CPU compute buffer size =     3.49 MB
+main: total compute buffer size: 3.49 MB
+main: prompt: 'I believe the meaning of life is'
+main: number of tokens in prompt = 7, first 8 tokens: 40 1975 262 3616 286 1204 318 
+
+I believe the meaning of life is not one that you must be able to answer for.
+
+If you do not believe in God, then why does his word make you feel better? Why do he make you feel better? It's because I don't think the "good" life you choose is for you. I don't think it's worth
+
+main:     load time =   568.58 ms
+main:   sample time =    41.19 ms
+main:  predict time =   797.59 ms / 11.39 ms per token
+main:    total time =  1412.46 ms
+
+real	0m1.570s
+user	0m3.085s
+sys	0m0.699s
++ ./bin/gpt-2-batched --model ../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin -s 1234 -n 64 -np 8 -p 'I believe the meaning of life is'
+ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
+ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0, VMM: yes
+gpt2_model_load: using CPU backend
+extract_tests_from_file : No test file found.
+test_gpt_tokenizer : 0 tests failed out of 0 tests.
+main: compute buffer size: 6.93 MB
+main: seed = 1234
+gpt2_model_load: loading model from '../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin'
+gpt2_model_load: n_vocab = 50257
+gpt2_model_load: n_ctx   = 1024
+gpt2_model_load: n_embd  = 768
+gpt2_model_load: n_head  = 12
+gpt2_model_load: n_layer = 12
+gpt2_model_load: ftype   = 1
+gpt2_model_load: qntvr   = 0
+gpt2_model_load: ggml tensor size    = 368 bytes
+gpt2_model_load: backend buffer size = 312.82 MB
+gpt2_model_load: memory size =   144.00 MB, n_mem = 24576
+gpt2_model_load: model size  =   239.08 MB
+
+
+main: generating 8 sequences ...
+main: prompt: 'I believe the meaning of life is'
+main: number of tokens in prompt = 7, first 8 tokens: 40 1975 262 3616 286 1204 318 
+
+
+main: stream 0 finished at n_cur = 70
+main: stream 1 finished at n_cur = 70
+main: stream 2 finished at n_cur = 70
+main: stream 3 finished at n_cur = 70
+main: stream 4 finished at n_cur = 70
+main: stream 5 finished at n_cur = 70
+main: stream 6 finished at n_cur = 70
+main: stream 7 finished at n_cur = 70
+sequence 0:
+
+I believe the meaning of life is not to be confused with life. It is to be understood as a system of thought. It is to be understood as the universal rule of the human mind and of its activities.
+
+I believe that human life is not to be defined only by its actions and its attitudes. It is to be defined in its
+
+sequence 1:
+
+I believe the meaning of life is a matter of personal satisfaction.
+
+A great philosopher, who was a well-known philosopher of the early Middle Ages, had this to say about the meaning of life:
+
+"In the time of the Greeks, and the Babylonians, the meaning of life was like a well-known proverb, '
+
+sequence 2:
+
+I believe the meaning of life is that it is not a complete mystery. The key is the understanding that life is not just a place to go, but a destination to visit.
+
+I am a writer, a thinker, a social activist and an educator. I believe life is a place where you can go anywhere.
+
+I believe that
+
+sequence 3:
+
+I believe the meaning of life is in the way we are going about it. The key is to be free, to be able to live free, to be able to love what you love and to have people take care of you. That is what we have to do."
+
+The first of its three episodes in March will be about a young
+
+sequence 4:
+
+I believe the meaning of life is one of love. We don't know who is happy or unhappy with what we live for. We don't know what our world is like. We don't know what we've done and how many days we've gone on. We don't know what it's like to be around someone you're not happy with
+
+sequence 5:
+
+I believe the meaning of life is to die and die and die, and we must learn how to live. That is what we should do."
+
+And the man went to a hospital where he and his family had been told they would have to be flown to New York.
+
+"And what a difference a year makes," he said.
+
+sequence 6:
+
+I believe the meaning of life is to live without fear, so that you may be free from all thoughts, fears, thoughts, prejudices, and passions.
+
+
+In this life you are free from all earthly things, and your life will be the beginning of your own good.
+
+
+In this life you are free from all passions, all fears
+
+sequence 7:
+
+I believe the meaning of life is a gift for life." In a recent interview with The New York Times, I spoke to the author of the book, Dr. Daniel Levy, a leading authority on the relationship between humans and nature. He told me, "The world is full of people who have been around for very long and who are very curious
+
+
+
+main:     n_decoded =      504
+main:     load time =   558.56 ms
+main:   sample time =   259.16 ms
+main:  predict time =  3334.68 ms
+main:    total time =  4207.78 ms
+
+real	0m4.367s
+user	0m13.547s
+sys	0m0.793s
+```
+### mnist
+
+MNIST
+- status: 0
+```
++ ./bin/mnist ./models/mnist/ggml-model-f32.bin ../examples/mnist/models/mnist/t10k-images.idx3-ubyte
+ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
+ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0, VMM: yes
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ * _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ * * * _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ * * * * * _ _ _ _ _ _ * _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ * * * * * _ _ _ _ _ _ * _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ * * * * * _ _ _ _ _ _ _ * _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ * * * * * _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ * * * * * * _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ * * * * * _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ * * * * * _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ * * * * * _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ * * * * _ _ _ _ _ _ * * * _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ * * * * * _ _ _ _ * * * * * _ _ _ _ _ _ _ 
+_ _ _ _ _ _ * * * * * _ _ _ * * * * * * * * _ _ _ _ _ _ 
+_ _ _ _ _ _ * * * * * _ _ * * * * * * * * * _ _ _ _ _ _ 
+_ _ _ _ _ _ * * * * * _ * * * * * * * * * * * _ _ _ _ _ 
+_ _ _ _ _ _ * * * * * * * * * * * * * * * * * _ _ _ _ _ 
+_ _ _ _ _ _ * * * * * * * * * * * * * * * * _ _ _ _ _ _ 
+_ _ _ _ _ _ * * * * * * * * * * * * * * _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ * * * * * * * * * * _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ * * * * _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+mnist_model_load: loading model from './models/mnist/ggml-model-f32.bin'
+mnist_model_load: ggml ctx size =   1.52 MB
+main: loaded model in   395.12 ms
+ggml_graph_dump_dot: dot -Tpng mnist.dot -o mnist.dot.png && open mnist.dot.png
+
+magic            67676d6c
+version                 1
+leafs                   5
+nodes                   6
+eval             6144
+
+TYPE   OP              NDIMS      NE0      NE1      NE2      NE3              NB0              NB1              NB2              NB3             DATA             NAME
+f32    NONE                2 500 10 1 1                4             2000            20000            20000   0x7f3db59b6990                       fc2_weight
+f32    NONE                2 784 500 1 1                4             3136          1568000          1568000   0x7f3db58371a0                       fc1_weight
+f32    NONE                1 784 1 1 1                4             3136             3136             3136   0x5605720d9f60                            input
+f32    NONE                1 500 1 1 1                4             2000             2000             2000   0x7f3db59b6030                         fc1_bias
+f32    NONE                1 10 1 1 1                4               40               40               40   0x7f3db59bb940                         fc2_bias
+
+ARG    TYPE   OP              NDIMS      NE0      NE1      NE2      NE3              NB0              NB1              NB2              NB3   NTASKS             DATA             NAME
+DST    f32    MUL_MAT             1 500 1 1 1                4             2000             2000             2000   0x5605720dad30                           node_0
+SRC    f32    NONE                2 784 500 1 1                4             3136          1568000          1568000   0x7f3db58371a0                       fc1_weight
+SRC    f32    NONE                1 784 1 1 1                4             3136             3136             3136   0x5605720d9f60                            input
+
+DST    f32    ADD                 1 500 1 1 1                4             2000             2000             2000   0x5605720db690                           node_1
+SRC    f32    MUL_MAT             1 500 1 1 1                4             2000             2000             2000   0x5605720dad30                           node_0
+SRC    f32    NONE                1 500 1 1 1                4             2000             2000             2000   0x7f3db59b6030                         fc1_bias
+
+DST    f32    UNARY               1 500 1 1 1                4             2000             2000             2000   0x5605720dbff0                           node_2
+SRC    f32    ADD                 1 500 1 1 1                4             2000             2000             2000   0x5605720db690                           node_1
+
+DST    f32    MUL_MAT             1 10 1 1 1                4               40               40               40   0x5605720dc950                           node_3
+SRC    f32    NONE                2 500 10 1 1                4             2000            20000            20000   0x7f3db59b6990                       fc2_weight
+SRC    f32    UNARY               1 500 1 1 1                4             2000             2000             2000   0x5605720dbff0                           node_2
+
+DST    f32    ADD                 1 10 1 1 1                4               40               40               40   0x5605720dcb10                           node_4
+SRC    f32    MUL_MAT             1 10 1 1 1                4               40               40               40   0x5605720dc950                           node_3
+SRC    f32    NONE                1 10 1 1 1                4               40               40               40   0x7f3db59bb940                         fc2_bias
+
+DST    f32    SOFT_MAX            1 10 1 1 1                4               40               40               40   0x5605720dccd0                            probs
+SRC    f32    ADD                 1 10 1 1 1                4               40               40               40   0x5605720dcb10       mnist_eval: exported compute graph to 'mnist.ggml'
+                    node_4
+
+
+main: predicted digit is 6
+
+real	0m0.540s
+user	0m0.041s
+sys	0m0.494s
++ ./bin/mnist-cpu ./mnist.ggml ../examples/mnist/models/mnist/t10k-images.idx3-ubyte
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ * * * * _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ * * * * * _ * _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ * * * * _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ * * * _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ * * * _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ * * * _ _ _ _ _ _ _ _ _ * * * _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ * * * * * _ _ _ _ _ * * * _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ * * * * * * * * * * _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ * * * * * _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ * * * _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ * * _ _ * * _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ * * _ _ _ * _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ * * _ _ _ _ * _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ * * _ _ _ _ * _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ * * _ _ _ * * _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ * * * * * * _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ * * * * * * _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ * * _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
+ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0, VMM: yes
+ggml_graph_import: loaded leaf 0: '      fc2_weight',     20000 bytes
+ggml_graph_import: loaded leaf 1: '      fc1_weight',   1568000 bytes
+ggml_graph_import: loaded leaf 2: '           input',      3136 bytes
+ggml_graph_import: loaded leaf 3: '        fc1_bias',      2000 bytes
+ggml_graph_import: loaded leaf 4: '        fc2_bias',        40 bytes
+ggml_graph_import: loaded node 0: '          node_0',      2000 bytes
+ggml_graph_import: loaded node 1: '          node_1',      2000 bytes
+ggml_graph_import: loaded node 2: '          node_2',      2000 bytes
+ggml_graph_import: loaded node 3: '          node_3',        40 bytes
+ggml_graph_import: loaded node 4: '          node_4',        40 bytes
+ggml_graph_import: loaded node 5: '           probs',        40 bytes
+main: predicted digit is 8
+
+real	0m0.534s
+user	0m0.052s
+sys	0m0.463s
+```
+### whisper
+
+Runs short Whisper transcription
+- status: 0
+```
++ ./bin/whisper -m ../models-mnt/whisper//ggml-base.en.bin -f ../models-mnt/whisper//jfk.wav
+whisper_init_from_file_with_params_no_state: loading model from '../models-mnt/whisper//ggml-base.en.bin'
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51864
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 512
+whisper_model_load: n_audio_head  = 8
+whisper_model_load: n_audio_layer = 6
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 512
+whisper_model_load: n_text_head   = 8
+whisper_model_load: n_text_layer  = 6
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 2 (base)
+whisper_model_load: adding 1607 extra tokens
+whisper_model_load: n_langs       = 99
+ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
+ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0, VMM: yes
+whisper_backend_init: using CUDA backend
+whisper_model_load:    CUDA0 total size =   147.37 MB
+whisper_model_load: model size    =  147.37 MB
+whisper_backend_init: using CUDA backend
+whisper_init_state: kv self size  =   16.52 MB
+whisper_init_state: kv cross size =   18.43 MB
+whisper_init_state: compute buffer (conv)   =   16.39 MB
+whisper_init_state: compute buffer (encode) =  132.07 MB
+whisper_init_state: compute buffer (cross)  =    4.78 MB
+whisper_init_state: compute buffer (decode) =   96.48 MB
+
+system_info: n_threads = 4 / 6 | AVX = 1 | AVX2 = 1 | AVX512 = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | METAL = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | CUDA = 1 | COREML = 0 | OPENVINO = 0 | 
+
+main: processing '../models-mnt/whisper//jfk.wav' (176000 samples, 11.0 sec), 4 threads, 1 processors, 5 beams + best of 5, lang = en, task = transcribe, timestamps = 1 ...
+
+
+[00:00:00.000 --> 00:00:11.000]   And so my fellow Americans, ask not what your country can do for you, ask what you can do for your country.
+
+whisper_print_timings:     load time =   501.31 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =    18.35 ms
+whisper_print_timings:   sample time =    70.34 ms /   131 runs (    0.54 ms per run)
+whisper_print_timings:   encode time =    36.45 ms /     1 runs (   36.45 ms per run)
+whisper_print_timings:   decode time =    21.11 ms /     2 runs (   10.55 ms per run)
+whisper_print_timings:   batchd time =    84.23 ms /   125 runs (    0.67 ms per run)
+whisper_print_timings:   prompt time =     0.00 ms /     1 runs (    0.00 ms per run)
+whisper_print_timings:    total time =   741.70 ms
+
+
+real	0m0.902s
+user	0m0.454s
+sys	0m0.578s
+```
+### sam
+
+Run SAM
+- status: 0
+```
++ ./bin/sam -m ../models-mnt/sam//ggml-model-f16.bin -i ../models-mnt/sam//img.jpg
+main: seed = 1709893164
+main: loaded image '../models-mnt/sam//img.jpg' (680 x 453)
+sam_image_preprocess: scale = 0.664062
+main: preprocessed image (1024 x 1024)
+sam_model_load: loading model from '../models-mnt/sam//ggml-model-f16.bin' - please wait ...
+operator(): ggml ctx size = 202.33 MB
+ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
+ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0, VMM: yes
+sam_model_load: .sam_model_load: n_enc_state      = 768
+sam_model_load: n_enc_layer      = 12
+sam_model_load: n_enc_head       = 12
+sam_model_load: n_enc_out_chans  = 256
+sam_model_load: n_pt_embd        = 4
+sam_model_load: ftype            = 1
+sam_model_load: qntvr            = 0
+..................................... done
+sam_model_load: model size =   185.05 MB / num tensors = 304
+prompt: (414.375000, 162.796875)
+
+
+main:     load time =   534.74 ms
+main:    total time =  8337.45 ms
+embd_img
+dims:  64  64  256  1 f32
+First & Last 10 elements:
+-0.05098 -0.06350 -0.07114 -0.06840 -0.06827 -0.06965 -0.07145 -0.07089 -0.06780 -0.05429 
+0.01584 0.01786 0.02235 0.01660 0.01758 0.01668 0.01793 0.02042 0.02101 0.03383 
+sum:  12757.097307
+
+Skipping mask 0 with iou 0.706267 below threshold 0.880000
+Skipping mask 1 with iou 0.762381 below threshold 0.880000
+Mask 2: iou = 0.947879, stability_score = 0.956250, bbox (371, 436), (144, 168)
+
+real	0m8.487s
+user	0m30.624s
+sys	0m1.018s
+```
+### yolo
+
+Run YOLO
+- status: 0
+```
++ ./bin/yolov3-tiny -m yolov3-tiny.gguf -i ../models-mnt/yolo//dog.jpg
+ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
+ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0, VMM: yes
+Layer  0 output shape:  416 x 416 x   16 x   1
+Layer  1 output shape:  208 x 208 x   16 x   1
+Layer  2 output shape:  208 x 208 x   32 x   1
+Layer  3 output shape:  104 x 104 x   32 x   1
+Layer  4 output shape:  104 x 104 x   64 x   1
+Layer  5 output shape:   52 x  52 x   64 x   1
+Layer  6 output shape:   52 x  52 x  128 x   1
+Layer  7 output shape:   26 x  26 x  128 x   1
+Layer  8 output shape:   26 x  26 x  256 x   1
+Layer  9 output shape:   13 x  13 x  256 x   1
+Layer 10 output shape:   13 x  13 x  512 x   1
+Layer 11 output shape:   13 x  13 x  512 x   1
+Layer 12 output shape:   13 x  13 x 1024 x   1
+Layer 13 output shape:   13 x  13 x  256 x   1
+Layer 14 output shape:   13 x  13 x  512 x   1
+Layer 15 output shape:   13 x  13 x  255 x   1
+Layer 18 output shape:   13 x  13 x  128 x   1
+Layer 19 output shape:   26 x  26 x  128 x   1
+Layer 20 output shape:   26 x  26 x  384 x   1
+Layer 21 output shape:   26 x  26 x  256 x   1
+Layer 22 output shape:   26 x  26 x  255 x   1
+dog: 57%
+car: 52%
+truck: 56%
+car: 62%
+bicycle: 59%
+Detected objects saved in 'predictions.jpg' (time: 0.662000 sec.)
+
+real	0m1.256s
+user	0m0.701s
+sys	0m0.554s
+```
