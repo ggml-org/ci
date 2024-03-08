@@ -1,0 +1,244 @@
++ cmake -DCMAKE_BUILD_TYPE=Debug -DLLAMA_FATAL_WARNINGS=ON -DLLAMA_CUBLAS=1 ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found CUDAToolkit: /usr/local/cuda-12.2/include (found version "12.2.140") 
+-- cuBLAS found
+-- The CUDA compiler identification is NVIDIA 12.2.140
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda-12.2/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- Using CUDA architectures: 52;61;70
+-- CUDA host compiler is GNU 11.4.0
+
+-- ccache found, compilation results will be cached. Disable with LLAMA_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- x86 detected
+-- Configuring done (3.1s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-debug
+
+real	0m3.329s
+user	0m2.528s
+sys	0m0.793s
++ make -j
+[  1%] Generating build details from Git
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  5%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda.cu.o
+[  6%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  6%] Built target build_info
+/home/ggml/work/llama.cpp/ggml-common.h(18): error: identifier "half" is undefined
+  typedef half ggml_fp16_t;
+          ^
+
+/home/ggml/work/llama.cpp/ggml-common.h(18): error: invalid redeclaration of type name "ggml_fp16_t" (declared at line 328 of /home/ggml/work/llama.cpp/ggml.h)
+  typedef half ggml_fp16_t;
+               ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(979): error: class "block_q4_1" has no member "dm"
+      const dfloat d = __low2half(x[ib].dm);
+                                        ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(980): error: class "block_q4_1" has no member "dm"
+      const dfloat m = __high2half(x[ib].dm);
+                                         ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(1022): error: class "block_q5_1" has no member "dm"
+      const dfloat d = __low2half(x[ib].dm);
+                                        ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(1023): error: class "block_q5_1" has no member "dm"
+      const dfloat m = __high2half(x[ib].dm);
+                                         ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(1104): error: class "block_q4_1" has no member "dm"
+      const float2 d = __half22float2(x->dm);
+                                         ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(1131): error: class "block_q2_K" has no member "dm"
+      float dall = __low2half(x[i].dm);
+                                   ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(1132): error: class "block_q2_K" has no member "dm"
+      float dmin = __high2half(x[i].dm);
+                                    ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(1231): error: class "block_q4_K" has no member "dm"
+      const float dall = __low2half(x[i].dm);
+                                         ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(1232): error: class "block_q4_K" has no member "dm"
+      const float dmin = __high2half(x[i].dm);
+                                          ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(1271): error: class "block_q5_K" has no member "dm"
+      const float dall = __low2half(x[i].dm);
+                                         ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(1272): error: class "block_q5_K" has no member "dm"
+      const float dmin = __high2half(x[i].dm);
+                                          ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(1586): error: class "block_q2_K" has no member "dm"
+          const float dall = __low2half(x[i].dm);
+                                             ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(1587): error: class "block_q2_K" has no member "dm"
+          const float dmin = __high2half(x[i].dm);
+                                              ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(1801): error: class "block_q4_K" has no member "dm"
+          const float dall = __low2half(x[i].dm);
+                                             ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(1802): error: class "block_q4_K" has no member "dm"
+          const float dmin = __high2half(x[i].dm);
+                                              ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(1931): error: class "block_q5_K" has no member "dm"
+          const float dall = __low2half(x[i].dm);
+                                             ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(1932): error: class "block_q5_K" has no member "dm"
+          const float dmin = __high2half(x[i].dm);
+                                              ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(2146): error: class "block_q8_1" has no member "ds"
+      reinterpret_cast<half&>(y[ib].ds.x) = d;
+                                    ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(2147): error: class "block_q8_1" has no member "ds"
+      reinterpret_cast<half&>(y[ib].ds.y) = sum;
+                                    ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(2836): error: class "block_q8_1" has no member "ds"
+      return vec_dot_q4_0_q8_1_impl<2>(v, u, bq4_0->d, bq8_1->ds);
+                                                              ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(2932): error: class "block_q4_1" has no member "dm"
+      return vec_dot_q4_1_q8_1_impl<2>(v, u, bq4_1->dm, bq8_1->ds);
+                                                    ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(2932): error: class "block_q8_1" has no member "ds"
+      return vec_dot_q4_1_q8_1_impl<2>(v, u, bq4_1->dm, bq8_1->ds);
+                                                               ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(2986): error: class "block_q4_1" has no member "dm"
+          x_dm[i * (32/(32 / (4 * 2))) + i / (32 / (4 * 2)) + kbxd] = bxi->dm;
+                                                                           ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(3027): error: class "block_q8_1" has no member "ds"
+      return vec_dot_q5_0_q8_1_impl<2>(vl, vh, u, bq5_0->d, bq8_1->ds);
+                                                                   ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(3144): error: class "block_q5_1" has no member "dm"
+      return vec_dot_q5_1_q8_1_impl<2>(vl, vh, u, bq5_1->dm, bq8_1->ds);
+                                                         ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(3144): error: class "block_q8_1" has no member "ds"
+      return vec_dot_q5_1_q8_1_impl<2>(vl, vh, u, bq5_1->dm, bq8_1->ds);
+                                                                    ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(3215): error: class "block_q5_1" has no member "dm"
+          x_dm[i * (32/(32 / (4 * 2))) + i / (32 / (4 * 2)) + kbxd] = bxi->dm;
+                                                                           ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(3253): error: class "block_q8_1" has no member "ds"
+      return vec_dot_q8_0_q8_1_impl<2>(v, u, bq8_0->d, __low2half(bq8_1->ds));
+                                                                         ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(3342): error: class "block_q8_1" has no member "ds"
+          d8[i] = __low2half(bq8_1[bq8_offset + i].ds);
+                                                   ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(3345): error: class "block_q2_K" has no member "dm"
+      return vec_dot_q2_K_q8_1_impl_mmvq(v, u, scales, bq2_K->dm, d8);
+                                                              ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(3401): error: class "block_q2_K" has no member "dm"
+          x_dm[i * (32/(256 / (4*4))) + i / (256 / (4*4)) + kbxd] = bxi->dm;
+                                                                         ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(3464): error: class "block_q8_1" has no member "ds"
+          d8[i] = __low2half(bq8_1[bq8_offset + i].ds);
+                                                   ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(3633): error: class "block_q8_1" has no member "ds"
+          d8[i] = __low2half(bq8i->ds);
+                                   ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(3640): error: class "block_q4_K" has no member "dm"
+      return vec_dot_q4_K_q8_1_impl_vmmq(v, u, sc, m, bq4_K->dm, d8);
+                                                             ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(3743): error: class "block_q4_K" has no member "dm"
+          x_dm[i * (32/(256 / (4*2))) + i / (256 / (4*2)) + kbxd] = bxi->dm;
+                                                                         ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(3820): error: class "block_q8_1" has no member "ds"
+          d8[i] = __low2float(bq8i->ds);
+                                    ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(3827): error: class "block_q5_K" has no member "dm"
+      return vec_dot_q5_K_q8_1_impl_vmmq(vl, vh, u, sc, m, bq5_K->dm, d8);
+                                                                  ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(3939): error: class "block_q5_K" has no member "dm"
+          x_dm[i * (32/(256 / (4*2))) + i / (256 / (4*2)) + kbxd] = bxi->dm;
+                                                                         ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(3998): error: class "block_q8_1" has no member "ds"
+          d8[i] = __low2half(bq8_1[bq8_offset + 2*i].ds);
+                                                     ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(4124): error: class "block_q8_1" has no member "ds"
+      const float d = (float)bq2->d * (0.5f + aux32) * __low2float(bq8_1[ib32].ds) * 0.25f;
+                                                                               ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(4349): error: class "block_q8_1" has no member "ds"
+      const float d = (float)bq1->d * __low2float(bq8_1[ib32].ds);
+                                                              ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(4404): error: class "block_q8_1" has no member "ds"
+      const float d = (float)bq->d * __low2float(bq8_1->ds);
+                                                        ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(4537): error: class "block_q8_1" has no member "ds"
+                  const half2 * dsi_src = &y[col_y_eff*blocks_per_col_y + ib0 * (qk/32) + ir*(32/(32 / (4 * 1))) + kby].ds;
+                                                                                                                        ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(5625): error: class "block_q4_1" has no member "dm"
+      dsti->dm.x = d;
+            ^
+
+/home/ggml/work/llama.cpp/ggml-cuda.cu(5626): error: class "block_q4_1" has no member "dm"
+      dsti->dm.y = vmin;
+            ^
+
+47 errors detected in the compilation of "/home/ggml/work/llama.cpp/ggml-cuda.cu".
+make[2]: *** [CMakeFiles/ggml.dir/build.make:133: CMakeFiles/ggml.dir/ggml-cuda.cu.o] Error 2
+make[1]: *** [CMakeFiles/Makefile2:740: CMakeFiles/ggml.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m2.087s
+user	0m4.413s
+sys	0m0.648s
