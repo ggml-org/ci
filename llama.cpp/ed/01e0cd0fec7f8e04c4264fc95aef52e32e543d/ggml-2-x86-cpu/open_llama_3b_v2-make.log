@@ -1,0 +1,18 @@
++ make -j
+[  1%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  1%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  3%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  5%] Built target build_info
+/home/ggml/work/llama.cpp/ggml.c:751:44: error: invalid application of ‘sizeof’ to incomplete type ‘block_iq4_xs’ {aka ‘struct block_iq4_nl’}
+  751 |         .type_size                = sizeof(block_iq4_xs),
+      |                                            ^~~~~~~~~~~~
+make[2]: *** [CMakeFiles/ggml.dir/build.make:76: CMakeFiles/ggml.dir/ggml.c.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:758: CMakeFiles/ggml.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m3.771s
+user	0m4.006s
+sys	0m0.179s
