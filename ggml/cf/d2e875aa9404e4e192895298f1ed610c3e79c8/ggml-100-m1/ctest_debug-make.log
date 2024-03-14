@@ -1,0 +1,24 @@
++ make -j
+[  0%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  1%] Building C object src/CMakeFiles/ggml.dir/ggml-quants.c.o
+[  2%] Building C object src/CMakeFiles/ggml.dir/ggml.c.o
+[  3%] Building C object src/CMakeFiles/ggml.dir/ggml-backend.c.o
+[  4%] Building C object src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  5%] Building C object src/CMakeFiles/ggml.dir/ggml-metal.m.o
+/Users/ggml/work/ggml/src/ggml-quants.c:2:10: fatal error: 'ggml-common.h' file not found
+#include "ggml-common.h"
+         ^~~~~~~~~~~~~~~
+In file included from /Users/ggml/work/ggml/src/ggml.c:5:
+/Users/ggml/work/ggml/src/./ggml-quants.h:4:10: fatal error: 'ggml-common.h' file not found
+#include "ggml-common.h"
+         ^~~~~~~~~~~~~~~
+1 error generated.
+make[2]: *** [src/CMakeFiles/ggml.dir/ggml-quants.c.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+1 error generated.
+make[2]: *** [src/CMakeFiles/ggml.dir/ggml.c.o] Error 1
+make[1]: *** [src/CMakeFiles/ggml.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[  6%] Linking CXX static library libcommon.a
+[  6%] Built target common
+make: *** [all] Error 2
