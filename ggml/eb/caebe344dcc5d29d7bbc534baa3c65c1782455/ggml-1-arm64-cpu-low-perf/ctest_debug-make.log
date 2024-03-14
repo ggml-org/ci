@@ -1,0 +1,27 @@
++ make -j
+[  2%] Building C object src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  2%] Building C object src/CMakeFiles/ggml.dir/ggml.c.o
+[  3%] Building C object src/CMakeFiles/ggml.dir/ggml-backend.c.o
+[  4%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  5%] Building C object src/CMakeFiles/ggml.dir/ggml-quants.c.o
+/home/ggml/work/ggml/src/ggml-quants.c:2:10: fatal error: ggml-common.h: No such file or directory
+    2 | #include "ggml-common.h"
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+make[2]: *** [src/CMakeFiles/ggml.dir/build.make:118: src/CMakeFiles/ggml.dir/ggml-quants.c.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+In file included from /home/ggml/work/ggml/src/ggml.c:5:
+/home/ggml/work/ggml/src/ggml-quants.h:4:10: fatal error: ggml-common.h: No such file or directory
+    4 | #include "ggml-common.h"
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+make[2]: *** [src/CMakeFiles/ggml.dir/build.make:76: src/CMakeFiles/ggml.dir/ggml.c.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:347: src/CMakeFiles/ggml.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[  6%] Linking CXX static library libcommon.a
+[  6%] Built target common
+make: *** [Makefile:146: all] Error 2
+
+real	0m4.367s
+user	0m4.641s
+sys	0m0.580s
