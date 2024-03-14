@@ -1,0 +1,33 @@
++ make -j
+[  1%] Building C object src/CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building C object src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  3%] Building C object src/CMakeFiles/ggml.dir/ggml-backend.c.o
+[  4%] Building C object src/CMakeFiles/ggml.dir/ggml-quants.c.o
+[  5%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  6%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda.cu.o
+/home/ggml/work/ggml/src/ggml-quants.c:2:10: fatal error: ggml-common.h: No such file or directory
+    2 | #include "ggml-common.h"
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+make[2]: *** [src/CMakeFiles/ggml.dir/build.make:118: src/CMakeFiles/ggml.dir/ggml-quants.c.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+/home/ggml/work/ggml/src/ggml-cuda.cu:12:10: fatal error: ggml-common.h: No such file or directory
+   12 | #include "ggml-common.h"
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+make[2]: *** [src/CMakeFiles/ggml.dir/build.make:133: src/CMakeFiles/ggml.dir/ggml-cuda.cu.o] Error 1
+In file included from /home/ggml/work/ggml/src/ggml.c:5:
+/home/ggml/work/ggml/src/ggml-quants.h:4:10: fatal error: ggml-common.h: No such file or directory
+    4 | #include "ggml-common.h"
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+make[2]: *** [src/CMakeFiles/ggml.dir/build.make:76: src/CMakeFiles/ggml.dir/ggml.c.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:349: src/CMakeFiles/ggml.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[  7%] Linking CXX static library libcommon.a
+[  7%] Built target common
+make: *** [Makefile:146: all] Error 2
+
+real	0m4.481s
+user	0m5.173s
+sys	0m0.513s
