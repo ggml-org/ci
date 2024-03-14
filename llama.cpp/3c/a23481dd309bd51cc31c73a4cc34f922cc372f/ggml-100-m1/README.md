@@ -1,0 +1,171 @@
+## Summary
+
+- status:  FAILURE ❌ (1)
+- runtime: 563.01
+- date:    Thu Mar 14 12:47:57 EET 2024
+- repo:    https://github.com/ggerganov/llama.cpp
+- commit:  https://github.com/ggerganov/llama.cpp/commit/3ca23481dd309bd51cc31c73a4cc34f922cc372f
+- author:  Ondřej Čertík
+```
+gguf-py : add support for I8, I16 and I32 (#6045)
+
+* Refactor dtype handling to be extensible
+
+This code is equivalent as before, but now it is prepared to easily add
+more NumPy dtypes.
+
+* Add support for I8, I16 and I32
+
+These types are allowed in the GGUF specification.
+
+* Add support for I8, I16 and I32 to gguf_writer
+
+* Add support for I8, I16, I32 to gguf_reader
+```
+
+## Environment
+
+```
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+GG_BUILD_METAL=1
+GG_BUILD_VRAM_GB=4
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /Users/ggml/work/llama.cpp/build-ci-debug
+      Start  1: test-quantize-fns
+ 1/21 Test  #1: test-quantize-fns ...................   Passed   28.80 sec
+      Start  2: test-quantize-perf
+ 2/21 Test  #2: test-quantize-perf ..................   Passed   10.30 sec
+      Start  3: test-sampling
+ 3/21 Test  #3: test-sampling .......................   Passed    0.23 sec
+      Start  4: test-chat-template
+ 4/21 Test  #4: test-chat-template ..................   Passed    0.21 sec
+      Start  5: test-tokenizer-0-llama
+ 5/21 Test  #5: test-tokenizer-0-llama ..............   Passed    0.36 sec
+      Start  6: test-tokenizer-0-falcon
+ 6/21 Test  #6: test-tokenizer-0-falcon .............   Passed    1.01 sec
+      Start  7: test-tokenizer-1-llama
+ 7/21 Test  #7: test-tokenizer-1-llama ..............   Passed    3.20 sec
+      Start  8: test-tokenizer-1-baichuan
+ 8/21 Test  #8: test-tokenizer-1-baichuan ...........   Passed    3.19 sec
+      Start  9: test-tokenizer-1-falcon
+ 9/21 Test  #9: test-tokenizer-1-falcon .............   Passed    6.18 sec
+      Start 10: test-tokenizer-1-aquila
+10/21 Test #10: test-tokenizer-1-aquila .............   Passed    8.61 sec
+      Start 11: test-tokenizer-1-mpt
+11/21 Test #11: test-tokenizer-1-mpt ................   Passed    4.98 sec
+      Start 12: test-tokenizer-1-stablelm-3b-4e1t
+12/21 Test #12: test-tokenizer-1-stablelm-3b-4e1t ...   Passed    4.95 sec
+      Start 13: test-tokenizer-1-gpt-neox
+13/21 Test #13: test-tokenizer-1-gpt-neox ...........   Passed    4.96 sec
+      Start 14: test-tokenizer-1-refact
+14/21 Test #14: test-tokenizer-1-refact .............   Passed    4.76 sec
+      Start 15: test-tokenizer-1-starcoder
+15/21 Test #15: test-tokenizer-1-starcoder ..........   Passed    4.75 sec
+      Start 16: test-tokenizer-1-gpt2
+16/21 Test #16: test-tokenizer-1-gpt2 ...............   Passed    5.03 sec
+      Start 17: test-grammar-parser
+17/21 Test #17: test-grammar-parser .................   Passed    0.18 sec
+      Start 18: test-llama-grammar
+18/21 Test #18: test-llama-grammar ..................   Passed    0.21 sec
+      Start 19: test-grad0
+19/21 Test #19: test-grad0 ..........................   Passed    0.84 sec
+      Start 20: test-backend-ops
+20/21 Test #20: test-backend-ops ....................   Passed   99.59 sec
+      Start 21: test-rope
+21/21 Test #21: test-rope ...........................   Passed    0.37 sec
+
+100% tests passed, 0 tests failed out of 21
+
+Label Time Summary:
+main    = 192.71 sec*proc (21 tests)
+
+Total Test time (real) = 192.72 sec
+
+real	3m12.740s
+user	5m18.493s
+sys	0m4.406s
+```
+
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main
+Test project /Users/ggml/work/llama.cpp/build-ci-release
+      Start  1: test-quantize-fns
+ 1/21 Test  #1: test-quantize-fns ...................   Passed   16.38 sec
+      Start  2: test-quantize-perf
+ 2/21 Test  #2: test-quantize-perf ..................   Passed    5.71 sec
+      Start  3: test-sampling
+ 3/21 Test  #3: test-sampling .......................   Passed    0.21 sec
+      Start  4: test-chat-template
+ 4/21 Test  #4: test-chat-template ..................   Passed    0.18 sec
+      Start  5: test-tokenizer-0-llama
+ 5/21 Test  #5: test-tokenizer-0-llama ..............   Passed    0.24 sec
+      Start  6: test-tokenizer-0-falcon
+ 6/21 Test  #6: test-tokenizer-0-falcon .............   Passed    0.35 sec
+      Start  7: test-tokenizer-1-llama
+ 7/21 Test  #7: test-tokenizer-1-llama ..............   Passed    0.55 sec
+      Start  8: test-tokenizer-1-baichuan
+ 8/21 Test  #8: test-tokenizer-1-baichuan ...........   Passed    0.39 sec
+      Start  9: test-tokenizer-1-falcon
+ 9/21 Test  #9: test-tokenizer-1-falcon .............   Passed    0.80 sec
+      Start 10: test-tokenizer-1-aquila
+10/21 Test #10: test-tokenizer-1-aquila .............   Passed    0.90 sec
+      Start 11: test-tokenizer-1-mpt
+11/21 Test #11: test-tokenizer-1-mpt ................   Passed    0.49 sec
+      Start 12: test-tokenizer-1-stablelm-3b-4e1t
+12/21 Test #12: test-tokenizer-1-stablelm-3b-4e1t ...   Passed    0.51 sec
+      Start 13: test-tokenizer-1-gpt-neox
+13/21 Test #13: test-tokenizer-1-gpt-neox ...........   Passed    0.48 sec
+      Start 14: test-tokenizer-1-refact
+14/21 Test #14: test-tokenizer-1-refact .............   Passed    0.47 sec
+      Start 15: test-tokenizer-1-starcoder
+15/21 Test #15: test-tokenizer-1-starcoder ..........   Passed    0.48 sec
+      Start 16: test-tokenizer-1-gpt2
+16/21 Test #16: test-tokenizer-1-gpt2 ...............   Passed    0.48 sec
+      Start 17: test-grammar-parser
+17/21 Test #17: test-grammar-parser .................   Passed    0.18 sec
+      Start 18: test-llama-grammar
+18/21 Test #18: test-llama-grammar ..................   Passed    0.17 sec
+      Start 19: test-grad0
+19/21 Test #19: test-grad0 ..........................   Passed    0.83 sec
+      Start 20: test-backend-ops
+20/21 Test #20: test-backend-ops ....................   Passed   31.61 sec
+      Start 21: test-rope
+21/21 Test #21: test-rope ...........................   Passed    0.31 sec
+
+100% tests passed, 0 tests failed out of 21
+
+Label Time Summary:
+main    =  61.74 sec*proc (21 tests)
+
+Total Test time (real) =  61.76 sec
+
+real	1m1.761s
+user	1m8.563s
+sys	0m3.608s
+```
+### embd_bge_small
+
+BGE Small (BERT):
+- status: 1
+- f16: 
+```
+
+```
+- q8_0:
+```
+
+```
