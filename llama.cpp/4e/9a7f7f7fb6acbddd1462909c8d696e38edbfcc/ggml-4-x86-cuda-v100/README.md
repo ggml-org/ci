@@ -1,0 +1,379 @@
+## Summary
+
+- status:  FAILURE ❌ (124)
+- runtime: 
+- date:    Fri Mar 15 15:01:19 UTC 2024
+- repo:    https://github.com/ggerganov/llama.cpp
+- commit:  https://github.com/ggerganov/llama.cpp/commit/4e9a7f7f7fb6acbddd1462909c8d696e38edbfcc
+- author:  Ting Lou
+```
+llava : change API to pure C style for Rust FFI bindgen (#6079)
+
+Co-authored-by: Lou Ting <louting.t@alibaba-inc.com>
+```
+
+## Environment
+
+```
+GG_BUILD_CUDA=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-debug
+      Start  1: test-quantize-fns
+ 1/21 Test  #1: test-quantize-fns ...................   Passed   29.88 sec
+      Start  2: test-quantize-perf
+ 2/21 Test  #2: test-quantize-perf ..................   Passed   11.21 sec
+      Start  3: test-sampling
+ 3/21 Test  #3: test-sampling .......................   Passed    0.07 sec
+      Start  4: test-chat-template
+ 4/21 Test  #4: test-chat-template ..................   Passed    0.04 sec
+      Start  5: test-tokenizer-0-llama
+ 5/21 Test  #5: test-tokenizer-0-llama ..............   Passed    0.28 sec
+      Start  6: test-tokenizer-0-falcon
+ 6/21 Test  #6: test-tokenizer-0-falcon .............   Passed    1.31 sec
+      Start  7: test-tokenizer-1-llama
+ 7/21 Test  #7: test-tokenizer-1-llama ..............   Passed    4.33 sec
+      Start  8: test-tokenizer-1-baichuan
+ 8/21 Test  #8: test-tokenizer-1-baichuan ...........   Passed    4.19 sec
+      Start  9: test-tokenizer-1-falcon
+ 9/21 Test  #9: test-tokenizer-1-falcon .............   Passed    7.85 sec
+      Start 10: test-tokenizer-1-aquila
+10/21 Test #10: test-tokenizer-1-aquila .............   Passed   11.78 sec
+      Start 11: test-tokenizer-1-mpt
+11/21 Test #11: test-tokenizer-1-mpt ................   Passed    6.44 sec
+      Start 12: test-tokenizer-1-stablelm-3b-4e1t
+12/21 Test #12: test-tokenizer-1-stablelm-3b-4e1t ...   Passed    6.54 sec
+      Start 13: test-tokenizer-1-gpt-neox
+13/21 Test #13: test-tokenizer-1-gpt-neox ...........   Passed    7.13 sec
+      Start 14: test-tokenizer-1-refact
+14/21 Test #14: test-tokenizer-1-refact .............   Passed    6.58 sec
+      Start 15: test-tokenizer-1-starcoder
+15/21 Test #15: test-tokenizer-1-starcoder ..........   Passed    6.49 sec
+      Start 16: test-tokenizer-1-gpt2
+16/21 Test #16: test-tokenizer-1-gpt2 ...............   Passed    6.68 sec
+      Start 17: test-grammar-parser
+17/21 Test #17: test-grammar-parser .................   Passed    0.00 sec
+      Start 18: test-llama-grammar
+18/21 Test #18: test-llama-grammar ..................   Passed    0.04 sec
+      Start 19: test-grad0
+19/21 Test #19: test-grad0 ..........................   Passed    4.42 sec
+      Start 20: test-backend-ops
+20/21 Test #20: test-backend-ops ....................   Passed    0.10 sec
+      Start 21: test-rope
+21/21 Test #21: test-rope ...........................   Passed    0.18 sec
+
+100% tests passed, 0 tests failed out of 21
+
+Label Time Summary:
+main    = 115.54 sec*proc (21 tests)
+
+Total Test time (real) = 115.55 sec
+
+real	1m55.582s
+user	3m22.794s
+sys	0m3.522s
+```
+
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main
+Test project /home/ggml/work/llama.cpp/build-ci-release
+      Start  1: test-quantize-fns
+ 1/21 Test  #1: test-quantize-fns ...................   Passed   17.20 sec
+      Start  2: test-quantize-perf
+ 2/21 Test  #2: test-quantize-perf ..................   Passed    5.85 sec
+      Start  3: test-sampling
+ 3/21 Test  #3: test-sampling .......................   Passed    0.04 sec
+      Start  4: test-chat-template
+ 4/21 Test  #4: test-chat-template ..................   Passed    0.04 sec
+      Start  5: test-tokenizer-0-llama
+ 5/21 Test  #5: test-tokenizer-0-llama ..............   Passed    0.14 sec
+      Start  6: test-tokenizer-0-falcon
+ 6/21 Test  #6: test-tokenizer-0-falcon .............   Passed    0.40 sec
+      Start  7: test-tokenizer-1-llama
+ 7/21 Test  #7: test-tokenizer-1-llama ..............   Passed    0.58 sec
+      Start  8: test-tokenizer-1-baichuan
+ 8/21 Test  #8: test-tokenizer-1-baichuan ...........   Passed    0.64 sec
+      Start  9: test-tokenizer-1-falcon
+ 9/21 Test  #9: test-tokenizer-1-falcon .............   Passed    1.21 sec
+      Start 10: test-tokenizer-1-aquila
+10/21 Test #10: test-tokenizer-1-aquila .............   Passed    1.93 sec
+      Start 11: test-tokenizer-1-mpt
+11/21 Test #11: test-tokenizer-1-mpt ................   Passed    0.99 sec
+      Start 12: test-tokenizer-1-stablelm-3b-4e1t
+12/21 Test #12: test-tokenizer-1-stablelm-3b-4e1t ...   Passed    1.00 sec
+      Start 13: test-tokenizer-1-gpt-neox
+13/21 Test #13: test-tokenizer-1-gpt-neox ...........   Passed    0.96 sec
+      Start 14: test-tokenizer-1-refact
+14/21 Test #14: test-tokenizer-1-refact .............   Passed    1.04 sec
+      Start 15: test-tokenizer-1-starcoder
+15/21 Test #15: test-tokenizer-1-starcoder ..........   Passed    1.04 sec
+      Start 16: test-tokenizer-1-gpt2
+16/21 Test #16: test-tokenizer-1-gpt2 ...............   Passed    0.96 sec
+      Start 17: test-grammar-parser
+17/21 Test #17: test-grammar-parser .................   Passed    0.00 sec
+      Start 18: test-llama-grammar
+18/21 Test #18: test-llama-grammar ..................   Passed    0.04 sec
+      Start 19: test-grad0
+19/21 Test #19: test-grad0 ..........................   Passed    4.63 sec
+      Start 20: test-backend-ops
+20/21 Test #20: test-backend-ops ....................   Passed    0.09 sec
+      Start 21: test-rope
+21/21 Test #21: test-rope ...........................   Passed    0.16 sec
+
+100% tests passed, 0 tests failed out of 21
+
+Label Time Summary:
+main    =  38.95 sec*proc (21 tests)
+
+Total Test time (real) =  38.96 sec
+
+real	0m38.998s
+user	0m44.785s
+sys	0m3.550s
+```
+### embd_bge_small
+
+BGE Small (BERT):
+- status: 0
+- f16: 
+```
++ ./bin/embedding --model ../models-mnt/bge-small/ggml-model-f16.gguf -p 'I believe the meaning of life is'
+main: build = 2439 (4e9a7f7f)
+main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+main: seed  = 1710513285
+ggml_init_cublas: no CUDA devices found, CUDA will be disabled
+llama_model_loader: loaded meta data with 19 key-value pairs and 197 tensors from ../models-mnt/bge-small/ggml-model-f16.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = bert
+llama_model_loader: - kv   1:                               general.name str              = bge-small
+llama_model_loader: - kv   2:                           bert.block_count u32              = 12
+llama_model_loader: - kv   3:                        bert.context_length u32              = 512
+llama_model_loader: - kv   4:                      bert.embedding_length u32              = 384
+llama_model_loader: - kv   5:                   bert.feed_forward_length u32              = 1536
+llama_model_loader: - kv   6:                  bert.attention.head_count u32              = 12
+llama_model_loader: - kv   7:          bert.attention.layer_norm_epsilon f32              = 0.000000
+llama_model_loader: - kv   8:                          general.file_type u32              = 1
+llama_model_loader: - kv   9:                      bert.attention.causal bool             = false
+llama_model_loader: - kv  10:                          bert.pooling_type u32              = 2
+llama_model_loader: - kv  11:            tokenizer.ggml.token_type_count u32              = 2
+llama_model_loader: - kv  12:                tokenizer.ggml.bos_token_id u32              = 101
+llama_model_loader: - kv  13:                tokenizer.ggml.eos_token_id u32              = 102
+llama_model_loader: - kv  14:                       tokenizer.ggml.model str              = bert
+llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,30522]   = ["[PAD]", "[unused0]", "[unused1]", "...
+llama_model_loader: - kv  16:                      tokenizer.ggml.scores arr[f32,30522]   = [-1000.000000, -1000.000000, -1000.00...
+llama_model_loader: - kv  17:                  tokenizer.ggml.token_type arr[i32,30522]   = [3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  18:            tokenizer.ggml.padding_token_id u32              = 0
+llama_model_loader: - type  f32:  123 tensors
+llama_model_loader: - type  f16:   74 tensors
+llm_load_vocab: mismatch in special tokens definition ( 7104/30522 vs 5/30522 ).
+llm_load_print_meta: format           = GGUF V3 (latest)
+llm_load_print_meta: arch             = bert
+llm_load_print_meta: vocab type       = WPM
+llm_load_print_meta: n_vocab          = 30522
+llm_load_print_meta: n_merges         = 0
+llm_load_print_meta: n_ctx_train      = 512
+llm_load_print_meta: n_embd           = 384
+llm_load_print_meta: n_head           = 12
+llm_load_print_meta: n_head_kv        = 12
+llm_load_print_meta: n_layer          = 12
+llm_load_print_meta: n_rot            = 32
+llm_load_print_meta: n_embd_head_k    = 32
+llm_load_print_meta: n_embd_head_v    = 32
+llm_load_print_meta: n_gqa            = 1
+llm_load_print_meta: n_embd_k_gqa     = 384
+llm_load_print_meta: n_embd_v_gqa     = 384
+llm_load_print_meta: f_norm_eps       = 1.0e-12
+llm_load_print_meta: f_norm_rms_eps   = 0.0e+00
+llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+llm_load_print_meta: n_ff             = 1536
+llm_load_print_meta: n_expert         = 0
+llm_load_print_meta: n_expert_used    = 0
+llm_load_print_meta: causal attn      = 0
+llm_load_print_meta: pooling type     = 2
+llm_load_print_meta: rope type        = 2
+llm_load_print_meta: rope scaling     = linear
+llm_load_print_meta: freq_base_train  = 10000.0
+llm_load_print_meta: freq_scale_train = 1
+llm_load_print_meta: n_yarn_orig_ctx  = 512
+llm_load_print_meta: rope_finetuned   = unknown
+llm_load_print_meta: ssm_d_conv       = 0
+llm_load_print_meta: ssm_d_inner      = 0
+llm_load_print_meta: ssm_d_state      = 0
+llm_load_print_meta: ssm_dt_rank      = 0
+llm_load_print_meta: model type       = 33M
+llm_load_print_meta: model ftype      = F16
+llm_load_print_meta: model params     = 33.21 M
+llm_load_print_meta: model size       = 63.46 MiB (16.03 BPW) 
+llm_load_print_meta: general.name     = bge-small
+llm_load_print_meta: BOS token        = 101 '[CLS]'
+llm_load_print_meta: EOS token        = 102 '[SEP]'
+llm_load_print_meta: UNK token        = 100 '[UNK]'
+llm_load_print_meta: PAD token        = 0 '[PAD]'
+llm_load_tensors: ggml ctx size =    0.08 MiB
+llm_load_tensors: offloading 0 repeating layers to GPU
+llm_load_tensors: offloaded 0/13 layers to GPU
+llm_load_tensors:        CPU buffer size =    63.46 MiB
+.................................................
+llama_new_context_with_model: n_ctx      = 512
+llama_new_context_with_model: n_batch    = 2048
+llama_new_context_with_model: n_ubatch   = 512
+llama_new_context_with_model: freq_base  = 10000.0
+llama_new_context_with_model: freq_scale = 1
+WARNING: failed to allocate 9.00 MB of pinned memory: no CUDA-capable device is detected
+llama_kv_cache_init:        CPU KV buffer size =     9.00 MiB
+llama_new_context_with_model: KV self size  =    9.00 MiB, K (f16):    4.50 MiB, V (f16):    4.50 MiB
+WARNING: failed to allocate 241.45 MB of pinned memory: no CUDA-capable device is detected
+llama_new_context_with_model:        CPU  output buffer size =   241.45 MiB
+WARNING: failed to allocate 16.01 MB of pinned memory: no CUDA-capable device is detected
+llama_new_context_with_model:  CUDA_Host compute buffer size =    16.01 MiB
+llama_new_context_with_model: graph splits: 1
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | 
+batch_decode: n_tokens = 9, n_seq = 1
+
+llama_print_timings:        load time =      96.71 ms
+llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time =      15.09 ms /     9 tokens (    1.68 ms per token,   596.58 tokens per second)
+llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time =     114.46 ms /    10 tokens
+
+embedding 0: -0.043980 -0.019912  0.007672 -0.000847  0.001357 -0.037027  0.109449  0.042568  0.092071 -0.015919  0.006763 -0.035700 -0.017880  0.015042  0.018139  0.015873 
+
+cosine similarity matrix:
+
+  1.00 
+
+real	0m0.393s
+user	0m0.262s
+sys	0m0.164s
+```
+- q8_0:
+```
++ ./bin/embedding --model ../models-mnt/bge-small/ggml-model-q8_0.gguf -p 'I believe the meaning of life is'
+main: build = 2439 (4e9a7f7f)
+main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+main: seed  = 1710513285
+ggml_init_cublas: no CUDA devices found, CUDA will be disabled
+llama_model_loader: loaded meta data with 20 key-value pairs and 197 tensors from ../models-mnt/bge-small/ggml-model-q8_0.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = bert
+llama_model_loader: - kv   1:                               general.name str              = bge-small
+llama_model_loader: - kv   2:                           bert.block_count u32              = 12
+llama_model_loader: - kv   3:                        bert.context_length u32              = 512
+llama_model_loader: - kv   4:                      bert.embedding_length u32              = 384
+llama_model_loader: - kv   5:                   bert.feed_forward_length u32              = 1536
+llama_model_loader: - kv   6:                  bert.attention.head_count u32              = 12
+llama_model_loader: - kv   7:          bert.attention.layer_norm_epsilon f32              = 0.000000
+llama_model_loader: - kv   8:                          general.file_type u32              = 7
+llama_model_loader: - kv   9:                      bert.attention.causal bool             = false
+llama_model_loader: - kv  10:                          bert.pooling_type u32              = 2
+llama_model_loader: - kv  11:            tokenizer.ggml.token_type_count u32              = 2
+llama_model_loader: - kv  12:                tokenizer.ggml.bos_token_id u32              = 101
+llama_model_loader: - kv  13:                tokenizer.ggml.eos_token_id u32              = 102
+llama_model_loader: - kv  14:                       tokenizer.ggml.model str              = bert
+llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,30522]   = ["[PAD]", "[unused0]", "[unused1]", "...
+llama_model_loader: - kv  16:                      tokenizer.ggml.scores arr[f32,30522]   = [-1000.000000, -1000.000000, -1000.00...
+llama_model_loader: - kv  17:                  tokenizer.ggml.token_type arr[i32,30522]   = [3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  18:            tokenizer.ggml.padding_token_id u32              = 0
+llama_model_loader: - kv  19:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:  123 tensors
+llama_model_loader: - type  f16:    1 tensors
+llama_model_loader: - type q8_0:   73 tensors
+llm_load_vocab: mismatch in special tokens definition ( 7104/30522 vs 5/30522 ).
+llm_load_print_meta: format           = GGUF V3 (latest)
+llm_load_print_meta: arch             = bert
+llm_load_print_meta: vocab type       = WPM
+llm_load_print_meta: n_vocab          = 30522
+llm_load_print_meta: n_merges         = 0
+llm_load_print_meta: n_ctx_train      = 512
+llm_load_print_meta: n_embd           = 384
+llm_load_print_meta: n_head           = 12
+llm_load_print_meta: n_head_kv        = 12
+llm_load_print_meta: n_layer          = 12
+llm_load_print_meta: n_rot            = 32
+llm_load_print_meta: n_embd_head_k    = 32
+llm_load_print_meta: n_embd_head_v    = 32
+llm_load_print_meta: n_gqa            = 1
+llm_load_print_meta: n_embd_k_gqa     = 384
+llm_load_print_meta: n_embd_v_gqa     = 384
+llm_load_print_meta: f_norm_eps       = 1.0e-12
+llm_load_print_meta: f_norm_rms_eps   = 0.0e+00
+llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+llm_load_print_meta: n_ff             = 1536
+llm_load_print_meta: n_expert         = 0
+llm_load_print_meta: n_expert_used    = 0
+llm_load_print_meta: causal attn      = 0
+llm_load_print_meta: pooling type     = 2
+llm_load_print_meta: rope type        = 2
+llm_load_print_meta: rope scaling     = linear
+llm_load_print_meta: freq_base_train  = 10000.0
+llm_load_print_meta: freq_scale_train = 1
+llm_load_print_meta: n_yarn_orig_ctx  = 512
+llm_load_print_meta: rope_finetuned   = unknown
+llm_load_print_meta: ssm_d_conv       = 0
+llm_load_print_meta: ssm_d_inner      = 0
+llm_load_print_meta: ssm_d_state      = 0
+llm_load_print_meta: ssm_dt_rank      = 0
+llm_load_print_meta: model type       = 33M
+llm_load_print_meta: model ftype      = Q8_0
+llm_load_print_meta: model params     = 33.21 M
+llm_load_print_meta: model size       = 34.00 MiB (8.59 BPW) 
+llm_load_print_meta: general.name     = bge-small
+llm_load_print_meta: BOS token        = 101 '[CLS]'
+llm_load_print_meta: EOS token        = 102 '[SEP]'
+llm_load_print_meta: UNK token        = 100 '[UNK]'
+llm_load_print_meta: PAD token        = 0 '[PAD]'
+llm_load_tensors: ggml ctx size =    0.08 MiB
+llm_load_tensors: offloading 0 repeating layers to GPU
+llm_load_tensors: offloaded 0/13 layers to GPU
+llm_load_tensors:        CPU buffer size =    34.00 MiB
+.................................................
+llama_new_context_with_model: n_ctx      = 512
+llama_new_context_with_model: n_batch    = 2048
+llama_new_context_with_model: n_ubatch   = 512
+llama_new_context_with_model: freq_base  = 10000.0
+llama_new_context_with_model: freq_scale = 1
+WARNING: failed to allocate 9.00 MB of pinned memory: no CUDA-capable device is detected
+llama_kv_cache_init:        CPU KV buffer size =     9.00 MiB
+llama_new_context_with_model: KV self size  =    9.00 MiB, K (f16):    4.50 MiB, V (f16):    4.50 MiB
+WARNING: failed to allocate 241.45 MB of pinned memory: no CUDA-capable device is detected
+llama_new_context_with_model:        CPU  output buffer size =   241.45 MiB
+WARNING: failed to allocate 16.01 MB of pinned memory: no CUDA-capable device is detected
+llama_new_context_with_model:  CUDA_Host compute buffer size =    16.01 MiB
+llama_new_context_with_model: graph splits: 1
+
+system_info: n_threads = 3 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | 
+batch_decode: n_tokens = 9, n_seq = 1
+
+llama_print_timings:        load time =      95.94 ms
+llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time =      10.48 ms /     9 tokens (    1.16 ms per token,   859.02 tokens per second)
+llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time =     108.68 ms /    10 tokens
+
+embedding 0: -0.044454 -0.019806  0.008425 -0.001658  0.001779 -0.036759  0.109019  0.043373  0.091165 -0.015181  0.006789 -0.035570 -0.019173  0.013641  0.017719  0.015106 
+
+cosine similarity matrix:
+
+  1.00 
+
+real	0m0.389s
+user	0m0.234s
+sys	0m0.178s
+```
