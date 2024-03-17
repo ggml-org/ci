@@ -1,7 +1,7 @@
 + ./bin/embedding --model ../models-mnt/bge-small/ggml-model-f16.gguf -p 'I believe the meaning of life is'
 main: build = 2452 (d4e91877)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1710684474
+main: seed  = 1710697047
 llama_model_loader: loaded meta data with 19 key-value pairs and 197 tensors from ../models-mnt/bge-small/ggml-model-f16.gguf (version GGUF V3 (latest))
 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
 llama_model_loader: - kv   0:                       general.architecture str              = bert
@@ -72,7 +72,6 @@ llm_load_print_meta: EOS token        = 102 '[SEP]'
 llm_load_print_meta: UNK token        = 100 '[UNK]'
 llm_load_print_meta: PAD token        = 0 '[PAD]'
 llm_load_tensors: ggml ctx size =    0.08 MiB
-ggml_backend_cuda_register_host_buffer: warning: failed to register 63.46 MiB of pinned memory: no CUDA-capable device is detected
 llm_load_tensors: offloading 0 repeating layers to GPU
 llm_load_tensors: offloaded 0/13 layers to GPU
 llm_load_tensors:        CPU buffer size =    63.46 MiB
@@ -82,24 +81,26 @@ llama_new_context_with_model: n_batch    = 2048
 llama_new_context_with_model: n_ubatch   = 512
 llama_new_context_with_model: freq_base  = 10000.0
 llama_new_context_with_model: freq_scale = 1
-ggml_cuda_host_malloc: warning: failed to allocate 9.00 MiB of pinned memory: no CUDA-capable device is detected
-llama_kv_cache_init:        CPU KV buffer size =     9.00 MiB
+ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
+ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
+ggml_init_cublas: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0, VMM: yes
+llama_kv_cache_init:  CUDA_Host KV buffer size =     9.00 MiB
 llama_new_context_with_model: KV self size  =    9.00 MiB, K (f16):    4.50 MiB, V (f16):    4.50 MiB
-ggml_cuda_host_malloc: warning: failed to allocate 241.45 MiB of pinned memory: no CUDA-capable device is detected
-llama_new_context_with_model:        CPU  output buffer size =   241.45 MiB
-ggml_cuda_host_malloc: warning: failed to allocate 16.01 MiB of pinned memory: no CUDA-capable device is detected
-llama_new_context_with_model:  CUDA_Host compute buffer size =    16.01 MiB
+llama_new_context_with_model:  CUDA_Host  output buffer size =   241.45 MiB
+llama_new_context_with_model:      CUDA0 compute buffer size =    16.28 MiB
+llama_new_context_with_model:  CUDA_Host compute buffer size =     2.51 MiB
 llama_new_context_with_model: graph nodes  = 429
-llama_new_context_with_model: graph splits = 1
+llama_new_context_with_model: graph splits = 196
 
 system_info: n_threads = 3 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | 
 batch_decode: n_tokens = 9, n_seq = 1
 
-llama_print_timings:        load time =     153.91 ms
+llama_print_timings:        load time =     585.34 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =      10.74 ms /     9 tokens (    1.19 ms per token,   837.99 tokens per second)
+llama_print_timings: prompt eval time =      11.01 ms /     9 tokens (    1.22 ms per token,   817.29 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =     110.33 ms /    10 tokens
+llama_print_timings:       total time =     188.57 ms /    10 tokens
 
 embedding 0: -0.043980 -0.019912  0.007672 -0.000847  0.001357 -0.037027  0.109449  0.042568  0.092071 -0.015919  0.006763 -0.035700 -0.017880  0.015042  0.018139  0.015873 
 
@@ -107,6 +108,6 @@ cosine similarity matrix:
 
   1.00 
 
-real	0m0.400s
-user	0m0.287s
-sys	0m0.139s
+real	0m1.046s
+user	0m0.293s
+sys	0m0.677s

@@ -1,9 +1,9 @@
-+ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.gguf -t 1 -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
++ ./bin/main --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.gguf -t 1 -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
 Log start
 main: build = 2452 (d4e91877)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
 main: seed  = 1234
-llama_model_loader: loaded meta data with 22 key-value pairs and 291 tensors from ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.gguf (version GGUF V3 (latest))
+llama_model_loader: loaded meta data with 22 key-value pairs and 291 tensors from ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.gguf (version GGUF V3 (latest))
 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
 llama_model_loader: - kv   0:                       general.architecture str              = llama
 llama_model_loader: - kv   1:                               general.name str              = open-llama
@@ -16,7 +16,7 @@ llama_model_loader: - kv   7:                 llama.rope.dimension_count u32    
 llama_model_loader: - kv   8:                 llama.attention.head_count u32              = 32
 llama_model_loader: - kv   9:              llama.attention.head_count_kv u32              = 32
 llama_model_loader: - kv  10:     llama.attention.layer_norm_rms_epsilon f32              = 0.000001
-llama_model_loader: - kv  11:                          general.file_type u32              = 2
+llama_model_loader: - kv  11:                          general.file_type u32              = 9
 llama_model_loader: - kv  12:                       tokenizer.ggml.model str              = llama
 llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,32000]   = ["<unk>", "<s>", "</s>", "<0x00>", "<...
 llama_model_loader: - kv  14:                      tokenizer.ggml.scores arr[f32,32000]   = [0.000000, 0.000000, 0.000000, 0.0000...
@@ -28,7 +28,7 @@ llama_model_loader: - kv  19:               tokenizer.ggml.add_bos_token bool   
 llama_model_loader: - kv  20:               tokenizer.ggml.add_eos_token bool             = false
 llama_model_loader: - kv  21:               general.quantization_version u32              = 2
 llama_model_loader: - type  f32:   65 tensors
-llama_model_loader: - type q4_0:  225 tensors
+llama_model_loader: - type q5_1:  225 tensors
 llama_model_loader: - type q6_K:    1 tensors
 llm_load_vocab: special tokens definition check successful ( 259/32000 ).
 llm_load_print_meta: format           = GGUF V3 (latest)
@@ -68,9 +68,9 @@ llm_load_print_meta: ssm_d_inner      = 0
 llm_load_print_meta: ssm_d_state      = 0
 llm_load_print_meta: ssm_dt_rank      = 0
 llm_load_print_meta: model type       = 7B
-llm_load_print_meta: model ftype      = Q4_0
+llm_load_print_meta: model ftype      = Q5_1
 llm_load_print_meta: model params     = 6.74 B
-llm_load_print_meta: model size       = 3.56 GiB (4.54 BPW) 
+llm_load_print_meta: model size       = 4.72 GiB (6.01 BPW) 
 llm_load_print_meta: general.name     = open-llama
 llm_load_print_meta: BOS token        = 1 '<s>'
 llm_load_print_meta: EOS token        = 2 '</s>'
@@ -85,8 +85,8 @@ llm_load_tensors: ggml ctx size =    0.22 MiB
 llm_load_tensors: offloading 32 repeating layers to GPU
 llm_load_tensors: offloading non-repeating layers to GPU
 llm_load_tensors: offloaded 33/33 layers to GPU
-llm_load_tensors:        CPU buffer size =    70.31 MiB
-llm_load_tensors:      CUDA0 buffer size =  3577.56 MiB
+llm_load_tensors:        CPU buffer size =    93.75 MiB
+llm_load_tensors:      CUDA0 buffer size =  4735.56 MiB
 ..................................................................................................
 llama_new_context_with_model: n_ctx      = 512
 llama_new_context_with_model: n_batch    = 512
@@ -111,26 +111,26 @@ CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temperature
 generate: n_ctx = 512, n_batch = 2048, n_predict = 256, n_keep = 1
 
 
- I believe the meaning of life is to make others happy and help them, but sometimes it's hard for me.
-I am a good student; my grades are very high at school (10), so they don't need much effort from mine part- this should be enough! But what about making people around you happier? I have been helping in the orphanage here since last year, and sometimes it feels like nothing.
-It all started one day when our class went to visit some old houses; we were supposed to write down on a piece of paper how many persons lived there. We could not find any records from 1907-2008 because they had been destroyed during the war in Serbia, but I noticed that their families did not have enough money for rent and food (many people still don't).
-I am a good student; my grades are very high at school. So why do those kids need help? What can one person do to make them happy or even save someone from hunger in the world? My teacher said it is something I will have to find out myself and that was probably true, because noone else could teach me how- maybe only God knows!
-I am an average girl with a good education; my parents are
-llama_print_timings:        load time =    1287.59 ms
-llama_print_timings:      sample time =     131.95 ms /   256 runs   (    0.52 ms per token,  1940.07 tokens per second)
-llama_print_timings: prompt eval time =      19.68 ms /     8 tokens (    2.46 ms per token,   406.40 tokens per second)
-llama_print_timings:        eval time =    2326.37 ms /   255 runs   (    9.12 ms per token,   109.61 tokens per second)
-llama_print_timings:       total time =    2569.39 ms /   263 tokens
+ I believe the meaning of life is to find and create a good balance between our work, family, friends.
+I’m not sure why that doesn’t happen for most people (including myself) or if it does then they aren’t happy doing so; because their definition of happiness might be different from mine… but I do know this much: there is something more to life than just working and surviving. There has got to be a sense of peace, freedom and contentment in our daily lives as well….
+I believe that we all have the ability within us not only to make it happen (and live!) …but also…to truly enjoy ourselves while doing so! The key is having enough faith or hope for what you want out there. We needn’t fear failure, but rather embrace challenges and find solutions along the way….
+If we can do this then I believe that our lives will not only be more fulfilling than they are now…but also: it would give us a better perspective on life in general! What kind of world would it really become? Would there still exist any wars or famine if every person could truly find what makes them happy (and the right balance between work and play)? I believe this is possible.
+I think we are all capable not only
+llama_print_timings:        load time =    1463.38 ms
+llama_print_timings:      sample time =     118.73 ms /   256 runs   (    0.46 ms per token,  2156.13 tokens per second)
+llama_print_timings: prompt eval time =      20.57 ms /     8 tokens (    2.57 ms per token,   388.92 tokens per second)
+llama_print_timings:        eval time =    2623.14 ms /   255 runs   (   10.29 ms per token,    97.21 tokens per second)
+llama_print_timings:       total time =    2842.06 ms /   263 tokens
 Log end
 
-real	0m4.067s
-user	0m3.250s
-sys	0m0.807s
-+ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
+real	0m4.518s
+user	0m3.694s
+sys	0m0.817s
++ ./bin/perplexity --model ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 2452 (d4e91877)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1710697866
-llama_model_loader: loaded meta data with 22 key-value pairs and 291 tensors from ../models-mnt/open-llama/7B-v2/ggml-model-q4_0.gguf (version GGUF V3 (latest))
+main: seed  = 1710697884
+llama_model_loader: loaded meta data with 22 key-value pairs and 291 tensors from ../models-mnt/open-llama/7B-v2/ggml-model-q5_1.gguf (version GGUF V3 (latest))
 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
 llama_model_loader: - kv   0:                       general.architecture str              = llama
 llama_model_loader: - kv   1:                               general.name str              = open-llama
@@ -143,7 +143,7 @@ llama_model_loader: - kv   7:                 llama.rope.dimension_count u32    
 llama_model_loader: - kv   8:                 llama.attention.head_count u32              = 32
 llama_model_loader: - kv   9:              llama.attention.head_count_kv u32              = 32
 llama_model_loader: - kv  10:     llama.attention.layer_norm_rms_epsilon f32              = 0.000001
-llama_model_loader: - kv  11:                          general.file_type u32              = 2
+llama_model_loader: - kv  11:                          general.file_type u32              = 9
 llama_model_loader: - kv  12:                       tokenizer.ggml.model str              = llama
 llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,32000]   = ["<unk>", "<s>", "</s>", "<0x00>", "<...
 llama_model_loader: - kv  14:                      tokenizer.ggml.scores arr[f32,32000]   = [0.000000, 0.000000, 0.000000, 0.0000...
@@ -155,7 +155,7 @@ llama_model_loader: - kv  19:               tokenizer.ggml.add_bos_token bool   
 llama_model_loader: - kv  20:               tokenizer.ggml.add_eos_token bool             = false
 llama_model_loader: - kv  21:               general.quantization_version u32              = 2
 llama_model_loader: - type  f32:   65 tensors
-llama_model_loader: - type q4_0:  225 tensors
+llama_model_loader: - type q5_1:  225 tensors
 llama_model_loader: - type q6_K:    1 tensors
 llm_load_vocab: special tokens definition check successful ( 259/32000 ).
 llm_load_print_meta: format           = GGUF V3 (latest)
@@ -195,9 +195,9 @@ llm_load_print_meta: ssm_d_inner      = 0
 llm_load_print_meta: ssm_d_state      = 0
 llm_load_print_meta: ssm_dt_rank      = 0
 llm_load_print_meta: model type       = 7B
-llm_load_print_meta: model ftype      = Q4_0
+llm_load_print_meta: model ftype      = Q5_1
 llm_load_print_meta: model params     = 6.74 B
-llm_load_print_meta: model size       = 3.56 GiB (4.54 BPW) 
+llm_load_print_meta: model size       = 4.72 GiB (6.01 BPW) 
 llm_load_print_meta: general.name     = open-llama
 llm_load_print_meta: BOS token        = 1 '<s>'
 llm_load_print_meta: EOS token        = 2 '</s>'
@@ -212,8 +212,8 @@ llm_load_tensors: ggml ctx size =    0.22 MiB
 llm_load_tensors: offloading 32 repeating layers to GPU
 llm_load_tensors: offloading non-repeating layers to GPU
 llm_load_tensors: offloaded 33/33 layers to GPU
-llm_load_tensors:        CPU buffer size =    70.31 MiB
-llm_load_tensors:      CUDA0 buffer size =  3577.56 MiB
+llm_load_tensors:        CPU buffer size =    93.75 MiB
+llm_load_tensors:      CUDA0 buffer size =  4735.56 MiB
 ..................................................................................................
 llama_new_context_with_model: n_ctx      = 2048
 llama_new_context_with_model: n_batch    = 512
@@ -230,18 +230,18 @@ llama_new_context_with_model: graph splits = 2
 
 system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 1124.79 ms
+perplexity: tokenization took 1227.7 ms
 perplexity: calculating perplexity over 4 chunks, n_ctx=2048, batch_size=512, n_seq=1
-perplexity: 0.93 seconds per pass - ETA 0.05 minutes
-[1]5.6359,[2]6.9332,[3]7.5732,[4]7.0138,
-llama_print_timings:        load time =    1289.13 ms
+perplexity: 0.81 seconds per pass - ETA 0.05 minutes
+[1]5.5659,[2]6.8475,[3]7.4558,[4]6.9074,
+llama_print_timings:        load time =    1453.87 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    3267.84 ms /  8192 tokens (    0.40 ms per token,  2506.86 tokens per second)
+llama_print_timings: prompt eval time =    2821.41 ms /  8192 tokens (    0.34 ms per token,  2903.51 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    4713.19 ms /  8193 tokens
+llama_print_timings:       total time =    4370.46 ms /  8193 tokens
 
-Final estimate: PPL = 7.0138 +/- 0.26116
+Final estimate: PPL = 6.9074 +/- 0.25709
 
-real	0m6.246s
-user	0m5.598s
-sys	0m1.266s
+real	0m6.056s
+user	0m5.337s
+sys	0m1.362s

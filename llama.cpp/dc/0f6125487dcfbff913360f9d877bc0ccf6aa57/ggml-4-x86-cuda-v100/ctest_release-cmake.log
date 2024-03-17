@@ -29,10 +29,10 @@
 -- ccache found, compilation results will be cached. Disable with LLAMA_CCACHE=OFF.
 -- CMAKE_SYSTEM_PROCESSOR: x86_64
 -- x86 detected
--- Configuring done (3.0s)
--- Generating done (0.2s)
+-- Configuring done (2.9s)
+-- Generating done (0.1s)
 -- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-release
 
-real	0m3.257s
-user	0m2.454s
-sys	0m0.806s
+real	0m3.164s
+user	0m2.503s
+sys	0m0.668s

@@ -1,8 +1,9 @@
-+ ./bin/embedding --model ../models-mnt/bge-small/ggml-model-q8_0.gguf -p 'I believe the meaning of life is'
-main: build = 2452 (d4e91877)
++ ./bin/embedding --model ../models-mnt/bge-small/ggml-model-f16.gguf -p 'I believe the meaning of life is'
+main: build = 2448 (dc0f6125)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1710697048
-llama_model_loader: loaded meta data with 20 key-value pairs and 197 tensors from ../models-mnt/bge-small/ggml-model-q8_0.gguf (version GGUF V3 (latest))
+main: seed  = 1710695744
+ggml_init_cublas: no CUDA devices found, CUDA will be disabled
+llama_model_loader: loaded meta data with 19 key-value pairs and 197 tensors from ../models-mnt/bge-small/ggml-model-f16.gguf (version GGUF V3 (latest))
 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
 llama_model_loader: - kv   0:                       general.architecture str              = bert
 llama_model_loader: - kv   1:                               general.name str              = bge-small
@@ -12,7 +13,7 @@ llama_model_loader: - kv   4:                      bert.embedding_length u32    
 llama_model_loader: - kv   5:                   bert.feed_forward_length u32              = 1536
 llama_model_loader: - kv   6:                  bert.attention.head_count u32              = 12
 llama_model_loader: - kv   7:          bert.attention.layer_norm_epsilon f32              = 0.000000
-llama_model_loader: - kv   8:                          general.file_type u32              = 7
+llama_model_loader: - kv   8:                          general.file_type u32              = 1
 llama_model_loader: - kv   9:                      bert.attention.causal bool             = false
 llama_model_loader: - kv  10:                          bert.pooling_type u32              = 2
 llama_model_loader: - kv  11:            tokenizer.ggml.token_type_count u32              = 2
@@ -23,10 +24,8 @@ llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str
 llama_model_loader: - kv  16:                      tokenizer.ggml.scores arr[f32,30522]   = [-1000.000000, -1000.000000, -1000.00...
 llama_model_loader: - kv  17:                  tokenizer.ggml.token_type arr[i32,30522]   = [3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
 llama_model_loader: - kv  18:            tokenizer.ggml.padding_token_id u32              = 0
-llama_model_loader: - kv  19:               general.quantization_version u32              = 2
 llama_model_loader: - type  f32:  123 tensors
-llama_model_loader: - type  f16:    1 tensors
-llama_model_loader: - type q8_0:   73 tensors
+llama_model_loader: - type  f16:   74 tensors
 llm_load_vocab: mismatch in special tokens definition ( 7104/30522 vs 5/30522 ).
 llm_load_print_meta: format           = GGUF V3 (latest)
 llm_load_print_meta: arch             = bert
@@ -65,9 +64,9 @@ llm_load_print_meta: ssm_d_inner      = 0
 llm_load_print_meta: ssm_d_state      = 0
 llm_load_print_meta: ssm_dt_rank      = 0
 llm_load_print_meta: model type       = 33M
-llm_load_print_meta: model ftype      = Q8_0
+llm_load_print_meta: model ftype      = F16
 llm_load_print_meta: model params     = 33.21 M
-llm_load_print_meta: model size       = 34.00 MiB (8.59 BPW) 
+llm_load_print_meta: model size       = 63.46 MiB (16.03 BPW) 
 llm_load_print_meta: general.name     = bge-small
 llm_load_print_meta: BOS token        = 101 '[CLS]'
 llm_load_print_meta: EOS token        = 102 '[SEP]'
@@ -76,40 +75,37 @@ llm_load_print_meta: PAD token        = 0 '[PAD]'
 llm_load_tensors: ggml ctx size =    0.08 MiB
 llm_load_tensors: offloading 0 repeating layers to GPU
 llm_load_tensors: offloaded 0/13 layers to GPU
-llm_load_tensors:        CPU buffer size =    34.00 MiB
+llm_load_tensors:        CPU buffer size =    63.46 MiB
 .................................................
 llama_new_context_with_model: n_ctx      = 512
 llama_new_context_with_model: n_batch    = 2048
 llama_new_context_with_model: n_ubatch   = 512
 llama_new_context_with_model: freq_base  = 10000.0
 llama_new_context_with_model: freq_scale = 1
-ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
-ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
-ggml_init_cublas: found 1 CUDA devices:
-  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0, VMM: yes
-llama_kv_cache_init:  CUDA_Host KV buffer size =     9.00 MiB
+WARNING: failed to allocate 9.00 MB of pinned memory: no CUDA-capable device is detected
+llama_kv_cache_init:        CPU KV buffer size =     9.00 MiB
 llama_new_context_with_model: KV self size  =    9.00 MiB, K (f16):    4.50 MiB, V (f16):    4.50 MiB
-llama_new_context_with_model:  CUDA_Host  output buffer size =   241.45 MiB
-llama_new_context_with_model:      CUDA0 compute buffer size =    16.90 MiB
-llama_new_context_with_model:  CUDA_Host compute buffer size =     2.51 MiB
-llama_new_context_with_model: graph nodes  = 429
-llama_new_context_with_model: graph splits = 196
+WARNING: failed to allocate 241.45 MB of pinned memory: no CUDA-capable device is detected
+llama_new_context_with_model:        CPU  output buffer size =   241.45 MiB
+WARNING: failed to allocate 16.01 MB of pinned memory: no CUDA-capable device is detected
+llama_new_context_with_model:  CUDA_Host compute buffer size =    16.01 MiB
+llama_new_context_with_model: graph splits: 1
 
 system_info: n_threads = 3 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | 
 batch_decode: n_tokens = 9, n_seq = 1
 
-llama_print_timings:        load time =     549.47 ms
+llama_print_timings:        load time =     100.28 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =       8.93 ms /     9 tokens (    0.99 ms per token,  1007.61 tokens per second)
+llama_print_timings: prompt eval time =      11.36 ms /     9 tokens (    1.26 ms per token,   792.39 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =     108.70 ms /    10 tokens
+llama_print_timings:       total time =     110.35 ms /    10 tokens
 
-embedding 0: -0.044454 -0.019806  0.008425 -0.001658  0.001779 -0.036759  0.109019  0.043373  0.091165 -0.015181  0.006789 -0.035570 -0.019173  0.013641  0.017719  0.015106 
+embedding 0: -0.043980 -0.019912  0.007672 -0.000847  0.001357 -0.037027  0.109449  0.042568  0.092071 -0.015919  0.006763 -0.035700 -0.017880  0.015042  0.018139  0.015873 
 
 cosine similarity matrix:
 
   1.00 
 
-real	0m0.921s
-user	0m0.310s
-sys	0m0.616s
+real	0m0.396s
+user	0m0.244s
+sys	0m0.177s
