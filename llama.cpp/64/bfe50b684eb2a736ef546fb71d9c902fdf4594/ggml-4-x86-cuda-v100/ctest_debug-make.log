@@ -1,0 +1,234 @@
++ make -j
+[  1%] Generating build details from Git
+[  1%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  5%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda.cu.o
+[  6%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  6%] Built target build_info
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In destructor ‘virtual ggml_cuda_pool_leg::~ggml_cuda_pool_leg()’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:394:19: error: comparison of integer expressions of different signedness: ‘int’ and ‘const size_t’ {aka ‘const long unsigned int’} [-Werror=sign-compare]
+  394 |         for (int i = 0; i < MAX_CUDA_BUFFERS; ++i) {
+      |                 ~~^~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In member function ‘virtual void* ggml_cuda_pool_leg::alloc(size_t, size_t*)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:411:19: error: comparison of integer expressions of different signedness: ‘int’ and ‘const size_t’ {aka ‘const long unsigned int’} [-Werror=sign-compare]
+  411 |         for (int i = 0; i < MAX_CUDA_BUFFERS; ++i) {
+      |                 ~~^~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In member function ‘virtual void ggml_cuda_pool_leg::free(void*, size_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:457:19: error: comparison of integer expressions of different signedness: ‘int’ and ‘const size_t’ {aka ‘const long unsigned int’} [-Werror=sign-compare]
+  457 |         for (int i = 0; i < MAX_CUDA_BUFFERS; ++i) {
+      |                 ~~^~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_get_rows(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:8701:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 8700 | static void ggml_cuda_op_get_rows(
+      |                                   
+ 8701 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_acc(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:8785:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 8784 | static void ggml_cuda_op_acc(
+      |                              
+ 8785 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_gelu(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:8821:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 8820 | static void ggml_cuda_op_gelu(
+      |                               
+ 8821 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_silu(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:8836:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 8835 | static void ggml_cuda_op_silu(
+      |                               
+ 8836 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_gelu_quick(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:8851:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 8850 | static void ggml_cuda_op_gelu_quick(
+      |                                     
+ 8851 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_tanh(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:8866:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 8865 | static void ggml_cuda_op_tanh(
+      |                               
+ 8866 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_relu(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:8881:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 8880 | static void ggml_cuda_op_relu(
+      |                               
+ 8881 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_hardsigmoid(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:8896:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 8895 | static void ggml_cuda_op_hardsigmoid(
+      |                                      
+ 8896 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_hardswish(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:8911:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 8910 | static void ggml_cuda_op_hardswish(
+      |                                    
+ 8911 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_leaky_relu(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:8926:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 8925 | static void ggml_cuda_op_leaky_relu(
+      |                                     
+ 8926 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_sqr(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:8944:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 8943 | static void ggml_cuda_op_sqr(
+      |                              
+ 8944 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_norm(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:8959:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 8958 | static void ggml_cuda_op_norm(
+      |                               
+ 8959 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_group_norm(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:8980:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 8979 | static void ggml_cuda_op_group_norm(
+      |                                     
+ 8980 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_concat(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:8997:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 8996 | static void ggml_cuda_op_concat(
+      |                                 
+ 8997 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_upscale(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:9014:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 9013 | static void ggml_cuda_op_upscale(
+      |                                  
+ 9014 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_pad(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:9032:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 9031 | static void ggml_cuda_op_pad(
+      |                              
+ 9032 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_arange(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:9050:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 9049 | static void ggml_cuda_op_arange(
+      |                                 
+ 9050 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_timestep_embedding(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:9075:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 9074 | static void ggml_cuda_op_timestep_embedding(
+      |                                             
+ 9075 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_rms_norm(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:9093:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 9092 | static void ggml_cuda_op_rms_norm(
+      |                                   
+ 9093 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_dequantize_mul_mat_vec(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const char*, const float*, const char*, float*, int64_t, int64_t, int64_t, int64_t, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:9282:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 9281 | static void ggml_cuda_op_dequantize_mul_mat_vec(
+      |                                                 
+ 9282 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_rope(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:9459:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 9458 | static void ggml_cuda_op_rope(
+      |                               
+ 9459 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_alibi(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:9540:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 9539 | static void ggml_cuda_op_alibi(
+      |                                
+ 9540 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_pool2d(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:9572:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 9571 | static void ggml_cuda_op_pool2d(
+      |                                 
+ 9572 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_im2col(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:9606:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 9605 | static void ggml_cuda_op_im2col(
+      |                                 
+ 9606 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_sum_rows(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:9648:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 9647 | static void ggml_cuda_op_sum_rows(
+      |                                   
+ 9648 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_argsort(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:9666:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 9665 | static void ggml_cuda_op_argsort(
+      |                                  
+ 9666 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_diag_mask_inf(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:9686:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 9685 | static void ggml_cuda_op_diag_mask_inf(
+      |                                        
+ 9686 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_soft_max(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:9707:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 9706 | static void ggml_cuda_op_soft_max(
+      |                                   
+ 9707 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_scale(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:9740:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 9739 | static void ggml_cuda_op_scale(
+      |                                
+ 9740 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_op_clamp(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:9759:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 9758 | static void ggml_cuda_op_clamp(
+      |                                
+ 9759 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_set_peer_access(int, int)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:9807:63: error: unused parameter ‘main_device’ [-Werror=unused-parameter]
+ 9807 | static void ggml_cuda_set_peer_access(const int n_tokens, int main_device) {
+      |                                                           ~~~~^~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In function ‘void ggml_cuda_nop(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*)’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:10941:54: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+10941 | static void ggml_cuda_nop(ggml_backend_cuda_context & ctx, const ggml_tensor * src0, const ggml_tensor * src1, ggml_tensor * dst) {
+      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In instantiation of ‘void ggml_cuda_op_bin_bcast(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t) [with op = bin_bcast_cuda<op_repeat>; cudaStream_t = CUstream_st*]’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:8770:54:   required from here
+/home/ggml/work/llama.cpp/ggml-cuda.cu:8746:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+ 8745 | static void ggml_cuda_op_bin_bcast(
+      |                        ~~~~~~~~~~~~
+ 8746 |     ggml_backend_cuda_context & ctx,
+      | ^  
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In instantiation of ‘void ggml_cuda_op_bin_bcast(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t) [with op = bin_bcast_cuda<op_add>; cudaStream_t = CUstream_st*]’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:8781:51:   required from here
+/home/ggml/work/llama.cpp/ggml-cuda.cu:8746:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In instantiation of ‘void ggml_cuda_op_bin_bcast(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t) [with op = bin_bcast_cuda<op_mul>; cudaStream_t = CUstream_st*]’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:8809:51:   required from here
+/home/ggml/work/llama.cpp/ggml-cuda.cu:8746:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+/home/ggml/work/llama.cpp/ggml-cuda.cu: In instantiation of ‘void ggml_cuda_op_bin_bcast(ggml_backend_cuda_context&, const ggml_tensor*, const ggml_tensor*, ggml_tensor*, const float*, const float*, float*, cudaStream_t) [with op = bin_bcast_cuda<op_div>; cudaStream_t = CUstream_st*]’:
+/home/ggml/work/llama.cpp/ggml-cuda.cu:8817:51:   required from here
+/home/ggml/work/llama.cpp/ggml-cuda.cu:8746:1: error: unused parameter ‘ctx’ [-Werror=unused-parameter]
+cc1plus: all warnings being treated as errors
+make[2]: *** [CMakeFiles/ggml.dir/build.make:133: CMakeFiles/ggml.dir/ggml-cuda.cu.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:758: CMakeFiles/ggml.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	1m38.488s
+user	1m36.454s
+sys	0m1.960s
