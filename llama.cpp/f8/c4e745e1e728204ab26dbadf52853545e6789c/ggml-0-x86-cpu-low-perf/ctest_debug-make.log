@@ -1,0 +1,103 @@
++ make -j
+[  1%] Generating build details from Git
+[  1%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  5%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  5%] Built target build_info
+[  5%] Built target ggml
+[  6%] Building CXX object examples/gguf/CMakeFiles/gguf.dir/gguf.cpp.o
+[  6%] Linking C static library libggml_static.a
+[  7%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+[  8%] Building CXX object CMakeFiles/llama.dir/unicode.cpp.o
+[  8%] Built target ggml_static
+[  9%] Linking CXX executable ../../bin/gguf
+[  9%] Built target gguf
+[  9%] Linking CXX static library libllama.a
+[  9%] Built target llama
+[ 10%] Building CXX object common/CMakeFiles/common.dir/common.cpp.o
+[ 10%] Building CXX object common/CMakeFiles/common.dir/sampling.cpp.o
+[ 10%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+[ 10%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
+[ 11%] Building C object tests/CMakeFiles/test-c.dir/test-c.c.o
+[ 12%] Building CXX object common/CMakeFiles/common.dir/console.cpp.o
+[ 13%] Building CXX object examples/llava/CMakeFiles/llava.dir/llava.cpp.o
+[ 13%] Building CXX object examples/llava/CMakeFiles/llava.dir/clip.cpp.o
+[ 14%] Building CXX object common/CMakeFiles/common.dir/grammar-parser.cpp.o
+[ 15%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
+[ 16%] Building CXX object common/CMakeFiles/common.dir/train.cpp.o
+[ 17%] Linking CXX executable ../bin/test-c
+[ 17%] Built target test-c
+/home/ggml/work/llama.cpp/examples/llava/clip.cpp: In function ‘ggml_cgraph* clip_image_build_graph(clip_ctx*, const clip_image_f32_batch*)’:
+/home/ggml/work/llama.cpp/examples/llava/clip.cpp:816:67: error: ‘const struct clip_vision_model’ has no member named ‘mm_model_mlp_0_w’; did you mean ‘mm_model_mlp_1_w’?
+  816 |             struct ggml_tensor * mlp_0 = ggml_mul_mat(ctx0, model.mm_model_mlp_0_w, embeddings);
+      |                                                                   ^~~~~~~~~~~~~~~~
+      |                                                                   mm_model_mlp_1_w
+/home/ggml/work/llama.cpp/examples/llava/clip.cpp:817:49: error: ‘const struct clip_vision_model’ has no member named ‘mm_model_mlp_0_b’; did you mean ‘mm_model_mlp_1_b’?
+  817 |             mlp_0 = ggml_add(ctx0, mlp_0, model.mm_model_mlp_0_b);
+      |                                                 ^~~~~~~~~~~~~~~~
+      |                                                 mm_model_mlp_1_b
+/home/ggml/work/llama.cpp/examples/llava/clip.cpp:819:67: error: ‘const struct clip_vision_model’ has no member named ‘mm_model_mlp_2_w’; did you mean ‘mm_model_mlp_1_w’?
+  819 |             struct ggml_tensor * mlp_2 = ggml_mul_mat(ctx0, model.mm_model_mlp_2_w, mlp_0);
+      |                                                                   ^~~~~~~~~~~~~~~~
+      |                                                                   mm_model_mlp_1_w
+/home/ggml/work/llama.cpp/examples/llava/clip.cpp:820:49: error: ‘const struct clip_vision_model’ has no member named ‘mm_model_mlp_2_b’; did you mean ‘mm_model_mlp_1_b’?
+  820 |             mlp_2 = ggml_add(ctx0, mlp_2, model.mm_model_mlp_2_b);
+      |                                                 ^~~~~~~~~~~~~~~~
+      |                                                 mm_model_mlp_1_b
+/home/ggml/work/llama.cpp/examples/llava/clip.cpp:829:77: error: ‘const struct clip_vision_model’ has no member named ‘mm_model_peg_0_w’; did you mean ‘mm_model_mlp_1_w’?
+  829 |             struct ggml_tensor * peg_0 = ggml_conv_depthwise_2d(ctx0, model.mm_model_peg_0_w, mlp_2, 1, 1, 1, 1, 1, 1);
+      |                                                                             ^~~~~~~~~~~~~~~~
+      |                                                                             mm_model_mlp_1_w
+/home/ggml/work/llama.cpp/examples/llava/clip.cpp:832:49: error: ‘const struct clip_vision_model’ has no member named ‘mm_model_peg_0_b’; did you mean ‘mm_model_mlp_1_b’?
+  832 |             peg_0 = ggml_add(ctx0, peg_0, model.mm_model_peg_0_b);
+      |                                                 ^~~~~~~~~~~~~~~~
+      |                                                 mm_model_mlp_1_b
+/home/ggml/work/llama.cpp/examples/llava/clip.cpp: In function ‘clip_ctx* clip_model_load(const char*, int)’:
+/home/ggml/work/llama.cpp/examples/llava/clip.cpp:1210:26: error: ‘struct clip_vision_model’ has no member named ‘mm_model_mlp_0_w’; did you mean ‘mm_model_mlp_1_w’?
+ 1210 |             vision_model.mm_model_mlp_0_w = get_tensor(new_clip->ctx_data, format(TN_MVLM_PROJ_MLP, 0, "weight"));
+      |                          ^~~~~~~~~~~~~~~~
+      |                          mm_model_mlp_1_w
+/home/ggml/work/llama.cpp/examples/llava/clip.cpp:1211:26: error: ‘struct clip_vision_model’ has no member named ‘mm_model_mlp_0_b’; did you mean ‘mm_model_mlp_1_b’?
+ 1211 |             vision_model.mm_model_mlp_0_b = get_tensor(new_clip->ctx_data, format(TN_MVLM_PROJ_MLP, 0, "bias"));
+      |                          ^~~~~~~~~~~~~~~~
+      |                          mm_model_mlp_1_b
+/home/ggml/work/llama.cpp/examples/llava/clip.cpp:1212:26: error: ‘struct clip_vision_model’ has no member named ‘mm_model_mlp_2_w’; did you mean ‘mm_model_mlp_1_w’?
+ 1212 |             vision_model.mm_model_mlp_2_w = get_tensor(new_clip->ctx_data, format(TN_MVLM_PROJ_MLP, 2, "weight"));
+      |                          ^~~~~~~~~~~~~~~~
+      |                          mm_model_mlp_1_w
+/home/ggml/work/llama.cpp/examples/llava/clip.cpp:1213:26: error: ‘struct clip_vision_model’ has no member named ‘mm_model_mlp_2_b’; did you mean ‘mm_model_mlp_1_b’?
+ 1213 |             vision_model.mm_model_mlp_2_b = get_tensor(new_clip->ctx_data, format(TN_MVLM_PROJ_MLP, 2, "bias"));
+      |                          ^~~~~~~~~~~~~~~~
+      |                          mm_model_mlp_1_b
+/home/ggml/work/llama.cpp/examples/llava/clip.cpp:1214:26: error: ‘struct clip_vision_model’ has no member named ‘mm_model_peg_0_w’; did you mean ‘mm_model_mlp_1_w’?
+ 1214 |             vision_model.mm_model_peg_0_w = get_tensor(new_clip->ctx_data, format(TN_MVLM_PROJ_PEG, 0, "weight"));
+      |                          ^~~~~~~~~~~~~~~~
+      |                          mm_model_mlp_1_w
+/home/ggml/work/llama.cpp/examples/llava/clip.cpp:1215:26: error: ‘struct clip_vision_model’ has no member named ‘mm_model_peg_0_b’; did you mean ‘mm_model_mlp_1_b’?
+ 1215 |             vision_model.mm_model_peg_0_b = get_tensor(new_clip->ctx_data, format(TN_MVLM_PROJ_PEG, 0, "bias"));
+      |                          ^~~~~~~~~~~~~~~~
+      |                          mm_model_mlp_1_b
+/home/ggml/work/llama.cpp/examples/llava/clip.cpp: In function ‘int clip_n_mmproj_embd(const clip_ctx*)’:
+/home/ggml/work/llama.cpp/examples/llava/clip.cpp:2007:34: error: ‘const struct clip_vision_model’ has no member named ‘mm_model_peg_0_b’; did you mean ‘mm_model_mlp_1_b’?
+ 2007 |         return ctx->vision_model.mm_model_peg_0_b->ne[0];
+      |                                  ^~~~~~~~~~~~~~~~
+      |                                  mm_model_mlp_1_b
+[ 18%] Linking CXX executable ../../bin/benchmark
+[ 18%] Built target benchmark
+[ 19%] Linking CXX executable ../../bin/quantize
+make[2]: *** [examples/llava/CMakeFiles/llava.dir/build.make:90: examples/llava/CMakeFiles/llava.dir/clip.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:2446: examples/llava/CMakeFiles/llava.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[ 19%] Built target quantize
+[ 20%] Linking CXX executable ../../bin/quantize-stats
+[ 20%] Built target quantize-stats
+[ 20%] Linking CXX static library libcommon.a
+[ 20%] Built target common
+make: *** [Makefile:146: all] Error 2
+
+real	0m13.567s
+user	0m26.179s
+sys	0m2.180s
