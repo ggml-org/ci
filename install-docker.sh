@@ -35,6 +35,8 @@ sudo systemctl disable --now docker.service docker.socket
 
 sudo dockerd-rootless-setuptool.sh install
 dockerd-rootless-setuptool.sh install
+mv ~/.docker /mnt/
+ln -s /mnt/.docker ~/.docker
 systemctl --user start docker
 systemctl --user enable docker
 sudo loginctl enable-linger $(whoami)
