@@ -25,7 +25,6 @@ RUN set -eux ; \
     dpkg -i cuda-keyring_1.1-1_all.deb ; \
     apt-get update ; \
     apt-get -y install  \
-      cuda-drivers \
       cuda-nvcc-12-2 \
       libcublas-dev-12-2;
 

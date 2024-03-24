@@ -7,6 +7,7 @@ from pathlib import Path
 
 import docker
 import requests
+from docker.types import DeviceRequest
 from github import Auth
 from github import Github
 
@@ -33,7 +34,7 @@ def start_mainloop(args):
             for workflow_run in workflow.get_runs(status='queued'):
                 for job in workflow_run.jobs():
                     if [value for value in args.runner_label if value in job.raw_data['labels']]:
-                        runner_name = f"GGML-runner-{workflow.id}-{job.id}-{workflow_run.event}-{int(time.time())}"
+                        runner_name = f"ggml-runner-{workflow.id}-{job.id}-{workflow_run.event}-{int(time.time())}"
 
                         print(f"TRIGGERING {runner_name} for workflow_name={workflow.name}")
                         runner_dir = f'/runners/{runner_name}'
@@ -68,6 +69,9 @@ def start_mainloop(args):
                                                   entrypoint="/entrypoint.sh",
                                                   name=runner_name,
                                                   runtime="nvidia",
+                                                  device_requests=[
+                                                      DeviceRequest(device_ids=["all"],
+                                                                    capabilities=[['gpu']])],
                                                   user='1000:1000',
                                                   auto_remove=True,
                                                   tmpfs={

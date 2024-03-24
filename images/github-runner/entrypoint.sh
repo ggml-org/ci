@@ -9,6 +9,8 @@ then
   exit 1
 fi
 
+nvidia-smi || exit 1
+
 echo "RUNNER user: $(id)"
 echo "RUNNER version: $(./config.sh --commit)"
 
