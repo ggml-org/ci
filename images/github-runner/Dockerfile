@@ -16,6 +16,14 @@ RUN set -eux ; \
             language-pack-en \
             libcurl4-openssl-dev;
 
+# cuda install
+# https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html
+RUN set -eux ; \
+    wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-keyring_1.1-1_all.deb ; \
+    dpkg -i cuda-keyring_1.1-1_all.deb ; \
+    apt-get update ; \
+    apt-get -y install cuda-toolkit;
+
 ARG RUNNER_VERSION=2.314.1
 ARG RUNNER_VERSION_HASH=6c726a118bbe02cd32e222f890e1e476567bf299353a96886ba75b423c1137b5
 

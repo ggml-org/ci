@@ -3,11 +3,22 @@ import os
 import sys
 import time
 import traceback
+from pathlib import Path
 
 import docker
 import requests
 from github import Auth
 from github import Github
+
+
+def rmdir(directory):
+    directory = Path(directory)
+    for item in directory.iterdir():
+        if item.is_dir():
+            rmdir(item)
+        else:
+            item.unlink()
+    directory.rmdir()
 
 
 def start_mainloop(args):
@@ -25,9 +36,10 @@ def start_mainloop(args):
                         runner_name = f"GGML-runner-{workflow.id}-{job.id}-{workflow_run.event}-{int(time.time())}"
 
                         print(f"TRIGGERING {runner_name} for workflow_name={workflow.name}")
-                        os.makedirs(f'/runners/{runner_name}')
-                        os.chmod(f'/runners/{runner_name}', 0o755)
-                        os.chown(f'/runners/{runner_name}', 1000, 1000)
+                        runner_dir = f'/runners/{runner_name}'
+                        os.makedirs(runner_dir)
+                        os.chmod(runner_dir, 0o755)
+                        os.chown(runner_dir, 1000, 1000)
 
                         # Get a JIT runner config
                         jitrequest = {
@@ -66,6 +78,7 @@ def start_mainloop(args):
                         except Exception:
                             print("issue running github workflow:")
                             traceback.print_exc(file=sys.stdout)
+                        rmdir(Path(runner_dir))
 
         print("workflow iteration done")
         time.sleep(10)
