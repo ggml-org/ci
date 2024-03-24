@@ -29,11 +29,11 @@ sudo apt-get update
 sudo apt-get install -y nvidia-container-toolkit
 
 # Rootless mode
+# https://docs.docker.com/engine/security/rootless/
 sudo apt-get install -y dbus-user-session
 sudo systemctl stop docker docker.socket
 sudo systemctl disable --now docker.service docker.socket
 
-sudo dockerd-rootless-setuptool.sh install
 dockerd-rootless-setuptool.sh install
 mv ~/.docker /mnt/
 ln -s /mnt/.docker ~/.docker
@@ -47,3 +47,4 @@ systemctl --user restart docker
 sudo nvidia-ctk config --set nvidia-container-cli.no-cgroups --in-place
 
 docker run -it --rm --gpus all ubuntu nvidia-smi
+
