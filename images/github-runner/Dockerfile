@@ -14,7 +14,8 @@ RUN set -eux ; \
             python3-pip \
             wget \
             language-pack-en \
-            libcurl4-openssl-dev;
+            libcurl4-openssl-dev \
+            netcat;
 
 # cuda install
 # https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html
@@ -36,6 +37,11 @@ RUN set -eux ; \
     chown 1000:1000 /ggml-ci /tmp/github-runner ;
 
 WORKDIR /ggml-ci
+
+# User creation
+RUN set -eux ; \
+    groupadd --gid 1000 ggml ; \
+    useradd --uid 1000 --gid ggml --shell /bin/bash --create-home ggml ;
 
 USER 1000:1000
 

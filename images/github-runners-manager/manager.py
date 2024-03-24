@@ -69,8 +69,10 @@ def start_mainloop(args):
                                                   name=runner_name,
                                                   runtime="nvidia",
                                                   user='1000:1000',
-                                                  # privileged=False,
-                                                  # working_dir="/github-runner",
+                                                  auto_remove=True,
+                                                  tmpfs={
+                                                      f'/mnt/runners/{runner_name}/tmp': 'size=8G,uid=1000'
+                                                  },
                                                   volumes={
                                                       f'/mnt/runners/{runner_name}': {'bind': '/tmp/github-runner',
                                                                                       'mode': 'rw'}
@@ -78,6 +80,8 @@ def start_mainloop(args):
                         except Exception:
                             print("issue running github workflow:")
                             traceback.print_exc(file=sys.stdout)
+
+                        # cleanup
                         rmdir(Path(runner_dir))
 
         print("workflow iteration done")

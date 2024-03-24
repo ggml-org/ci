@@ -12,7 +12,7 @@ RUN set -eux ; \
             curl  \
             dbus-user-session  \
             uidmap ; \
-# Install docker
+# Install docker, docker daemon is running on the host, we just require the client here to pop the GitHub runner (docker in docker)
     curl -sSL https://get.docker.com/ | sh ;
 
 WORKDIR /ggml-ci
