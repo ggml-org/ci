@@ -12,16 +12,6 @@ from github import Auth
 from github import Github
 
 
-def rmdir(directory):
-    directory = Path(directory)
-    for item in directory.iterdir():
-        if item.is_dir():
-            rmdir(item)
-        else:
-            item.unlink()
-    directory.rmdir()
-
-
 def start_mainloop(args):
     auth = Auth.Token(args.token)
     g = Github(auth=auth)
@@ -37,17 +27,14 @@ def start_mainloop(args):
                         runner_name = f"ggml-runner-{workflow.id}-{job.id}-{workflow_run.event}-{int(time.time())}"
 
                         print(f"TRIGGERING {runner_name} for workflow_name={workflow.name}")
-                        runner_dir = f'/runners/{runner_name}'
-                        os.makedirs(runner_dir)
-                        os.chmod(runner_dir, 0o755)
-                        os.chown(runner_dir, 1000, 1000)
+                        work_folder = "/github-runner/_work"
 
                         # Get a JIT runner config
                         jitrequest = {
                             'name': runner_name,
                             'runner_group_id': 1,  # FIXME what to put here
                             'labels': ["self-hosted", "X64", "linux", *args.runner_label],
-                            'work_folder': "/tmp/github-runner/_work"
+                            'work_folder': work_folder
                         }
                         response = requests.post(
                             f" https://api.github.com/repos/{args.repo}/actions/runners/generate-jitconfig",
@@ -73,20 +60,20 @@ def start_mainloop(args):
                                                       DeviceRequest(device_ids=["all"],
                                                                     capabilities=[['gpu']])],
                                                   user='1000:1000',
+                                                  security_opt=["no-new-privileges:true"],
                                                   auto_remove=True,
                                                   tmpfs={
-                                                      f'/mnt/runners/{runner_name}/tmp': 'size=8G,uid=1000'
+                                                      f'/mnt/runners/{runner_name}/tmp': 'size=8G,uid=1000,destination=/tmp',
+                                                      # GitHub worker directory
+                                                      f'/mnt/runners/{runner_name}': f'size=128G,uid=1000,destination={work_folder}'
                                                   },
+                                                  # Models path to avoid downloading model everytime
                                                   volumes={
-                                                      f'/mnt/runners/{runner_name}': {'bind': '/tmp/github-runner',
-                                                                                      'mode': 'rw'}
+                                                      f'/mnt/models': {'bind': '/models', 'mode': 'ro'}
                                                   })
                         except Exception:
                             print("issue running github workflow:")
                             traceback.print_exc(file=sys.stdout)
-
-                        # cleanup
-                        rmdir(Path(runner_dir))
 
         print("workflow iteration done")
         time.sleep(10)
