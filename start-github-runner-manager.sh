@@ -53,6 +53,7 @@ if [ -z "$DOWNLOAD_MODELS" ] || [ "$DOWNLOAD_MODELS" == "ON" ] ; then
             --name llama.cpp-model-downloader \
             --gpus all \
             -t \
+            -u "1000:1000"
             -v $MODEL_FOLDERS:/models:rw \
             -e HF_REPO="$HF_REPO" \
             -e HF_FILE="$HF_FILE" \
