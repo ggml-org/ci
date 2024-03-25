@@ -69,7 +69,7 @@ def start_mainloop(args):
                                                   },
                                                   # Models path to avoid downloading models everytime
                                                   volumes={
-                                                      f'/mnt/models': {'bind': '/models', 'mode': 'ro'}
+                                                      '/mnt/models': {'bind': '/models', 'mode': 'ro'}
                                                   })
                             print(f"ggml-ci:     {runner_name} done")
                         except Exception:
