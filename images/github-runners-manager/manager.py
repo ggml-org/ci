@@ -63,11 +63,10 @@ def start_mainloop(args):
                                                   security_opt=["no-new-privileges:true"],
                                                   auto_remove=True,
                                                   tmpfs={
-                                                      f'/mnt/runners/{runner_name}/tmp': 'size=8G,uid=1000,destination=/tmp',
-                                                      # GitHub worker directory
-                                                      f'/mnt/runners/{runner_name}': f'size=128G,uid=1000,destination={work_folder}'
+                                                      '/tmp': 'size=32G,uid=1000',
+                                                      work_folder: f'size=256G,uid=1000'
                                                   },
-                                                  # Models path to avoid downloading model everytime
+                                                  # Models path to avoid downloading models everytime
                                                   volumes={
                                                       f'/mnt/models': {'bind': '/models', 'mode': 'ro'}
                                                   })

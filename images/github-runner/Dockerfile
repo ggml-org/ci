@@ -10,6 +10,7 @@ RUN set -eux ; \
             curl \
             wget \
             build-essential \
+            cmake \
             git \
             python3-pip \
             python3-venv \
