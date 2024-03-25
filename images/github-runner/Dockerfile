@@ -6,13 +6,13 @@ RUN set -eux ; \
     apt update ; \
     apt -y upgrade ; \
     apt -y install \
+            libicu-dev \
             curl \
-            libicu-dev  \
+            wget \
             build-essential \
             git \
-            cmake \
             python3-pip \
-            wget \
+            python3-venv \
             language-pack-en \
             libcurl4-openssl-dev \
             netcat;
