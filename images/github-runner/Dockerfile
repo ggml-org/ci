@@ -16,7 +16,8 @@ RUN set -eux ; \
             python3-venv \
             language-pack-en \
             libcurl4-openssl-dev \
-            netcat;
+            netcat \
+            strace ;
 
 # cuda install
 # https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html
@@ -54,3 +55,6 @@ RUN set -eux ; \
 
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT /entrypoint.sh
+
+WORKDIR /github-runner
+ENV LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/ggml-ci/bin

@@ -18,7 +18,7 @@ def start_mainloop(args):
     repo = g.get_repo(args.repo)
     client = docker.from_env()
     while True:
-        print("fetching workflows ...")
+        print(f"ggml-ci: fetching workflows of {args.repo} ...")
         workflows = repo.get_workflows()
         for workflow in workflows:
             for workflow_run in workflow.get_runs(status='queued'):
@@ -26,8 +26,9 @@ def start_mainloop(args):
                     if [value for value in args.runner_label if value in job.raw_data['labels']]:
                         runner_name = f"ggml-runner-{workflow.id}-{job.id}-{workflow_run.event}-{int(time.time())}"
 
-                        print(f"TRIGGERING {runner_name} for workflow_name={workflow.name}")
-                        work_folder = "/github-runner/_work"
+                        print(f"ggml-ci:     {runner_name} triggered for workflow_name={workflow.name}")
+                        runner_folder = "/github-runner"
+                        work_folder = f"{runner_folder}/_work"
 
                         # Get a JIT runner config
                         jitrequest = {
@@ -50,7 +51,7 @@ def start_mainloop(args):
 
                         # start the worker in its container and wait for finish
                         print(
-                            f"Running job runner id={jitconfig['runner']['id']} os={jitconfig['runner']['os']} labels={[value['name'] for value in jitconfig['runner']['labels']]}")
+                            f"ggml-ci:     {runner_name} running Github job runner id={jitconfig['runner']['id']} os={jitconfig['runner']['os']} labels={[value['name'] for value in jitconfig['runner']['labels']]}")
                         try:
                             client.containers.run("ggml-github-runner", jitconfig['encoded_jit_config'],
                                                   entrypoint="/entrypoint.sh",
@@ -63,18 +64,19 @@ def start_mainloop(args):
                                                   security_opt=["no-new-privileges:true"],
                                                   auto_remove=True,
                                                   tmpfs={
-                                                      '/tmp': 'size=32G,uid=1000',
-                                                      work_folder: f'size=256G,uid=1000'
+                                                      '/tmp': 'size=32G,uid=1000,gid=1000',
+                                                      runner_folder: f'size=256G,uid=1000,gid=1000,exec'
                                                   },
                                                   # Models path to avoid downloading models everytime
                                                   volumes={
                                                       f'/mnt/models': {'bind': '/models', 'mode': 'ro'}
                                                   })
+                            print(f"ggml-ci:     {runner_name} done")
                         except Exception:
-                            print("issue running github workflow:")
+                            print(f"ggml-ci:     {runner_name} issue running github workflow:")
                             traceback.print_exc(file=sys.stdout)
 
-        print("workflow iteration done")
+        print("ggml-ci: workflows iteration done.")
         time.sleep(10)
 
 
