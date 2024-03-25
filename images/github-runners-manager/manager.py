@@ -65,7 +65,7 @@ def start_mainloop(args):
                                                   auto_remove=True,
                                                   tmpfs={
                                                       '/tmp': 'size=32G,uid=1000,gid=1000',
-                                                      runner_folder: f'size=256G,uid=1000,gid=1000,exec'
+                                                      runner_folder: 'size=256G,uid=1000,gid=1000,exec'
                                                   },
                                                   # Models path to avoid downloading models everytime
                                                   volumes={
