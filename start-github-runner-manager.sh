@@ -39,21 +39,21 @@ if [ -z "$DOWNLOAD_MODELS" ] || [ "$DOWNLOAD_MODELS" == "ON" ] ; then
     (docker ps    | grep -q llama.cpp-model-downloader) && docker kill llama.cpp-model-downloader && sleep 5
     (docker ps -a | grep -q llama.cpp-model-downloader) && docker rm llama.cpp-model-downloader   && sleep 5
 
-    echo "Downloading models..."
+    echo "ggml-ci: downloading models..."
     MODELS="ggml-org/models:phi-2/ggml-model-q4_0.gguf ggml-org/models:phi-2/ggml-model-q8_0.gguf"
     for MODEL in $MODELS
     do
       IFS=':'; S=($MODEL); unset IFS;
       HF_REPO="${S[0]}"
       HF_FILE="${S[1]}"
-      echo "    HF_REPO=$HF_REPO HF_FILE=$HF_FILE"
+      echo "ggml-ci:     --hf-repo $HF_REPO --hf-file $HF_FILE"
       docker run \
             --rm \
             -it \
             --name llama.cpp-model-downloader \
             --gpus all \
             -t \
-            -u "1000:1000"
+            -u "1000:1000" \
             -v $MODEL_FOLDERS:/models:rw \
             -e HF_REPO="$HF_REPO" \
             -e HF_FILE="$HF_FILE" \
@@ -67,7 +67,7 @@ fi
 (docker ps -a | grep -q ggml-github-runners-manager) && docker rm ggml-github-runners-manager   && sleep 5
 
 # Start the runner
-echo "Starting github runner manager on repo=$1 label=$3..."
+echo "ggml-ci: starting github runner manager on repo=$1 label=$3..."
 docker run \
       --rm \
       --detach \
@@ -79,3 +79,8 @@ docker run \
       -e TOKEN="$2" \
       -e RUNNER_LABEL="$3" \
       ggml-github-runners-manager
+
+echo "ggml-ci: github runner manager started."
+echo "ggml-ci: github runner manager logs:"
+echo "         CTRL+C to stop logs pulling"
+docker logs -f ggml-github-runners-manager
