@@ -1,4 +1,4 @@
-+ cmake -DCMAKE_BUILD_TYPE=Debug -DGGML_CUBLAS=ON ..
++ cmake -DCMAKE_BUILD_TYPE=Release -DGGML_CUBLAS=ON ..
 -- The C compiler identification is GNU 11.4.0
 -- The CXX compiler identification is GNU 11.4.0
 -- Detecting C compiler ABI info
@@ -39,8 +39,8 @@ CMake Warning at src/CMakeLists.txt:209 (message):
 -- Linux detected
 -- Configuring done (3.0s)
 -- Generating done (0.1s)
--- Build files have been written to: /home/ggml/work/ggml/build-ci-debug
+-- Build files have been written to: /home/ggml/work/ggml/build-ci-release
 
-real	0m3.214s
-user	0m2.441s
-sys	0m0.768s
+real	0m3.205s
+user	0m2.486s
+sys	0m0.726s
