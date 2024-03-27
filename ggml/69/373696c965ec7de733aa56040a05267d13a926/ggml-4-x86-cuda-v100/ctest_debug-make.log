@@ -1,0 +1,22 @@
++ make -j
+[  1%] Building C object src/CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  3%] Building C object src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  4%] Building C object src/CMakeFiles/ggml.dir/ggml-backend.c.o
+[  5%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda.cu.o
+[  6%] Building C object src/CMakeFiles/ggml.dir/ggml-quants.c.o
+/home/ggml/work/ggml/src/ggml-cuda.cu:5:10: fatal error: ggml-cuda/common.cuh: No such file or directory
+    5 | #include "ggml-cuda/common.cuh"
+      |          ^~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[2]: *** [src/CMakeFiles/ggml.dir/build.make:133: src/CMakeFiles/ggml.dir/ggml-cuda.cu.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:349: src/CMakeFiles/ggml.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[  7%] Linking CXX static library libcommon.a
+[  7%] Built target common
+make: *** [Makefile:146: all] Error 2
+
+real	0m4.855s
+user	0m7.771s
+sys	0m0.748s
