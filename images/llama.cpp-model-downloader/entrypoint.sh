@@ -14,6 +14,9 @@ fi
 
 nvidia-smi || exit 1
 
+id
+ls -alR /models
+
 echo "HF_REPO ${HF_REPO}"
 echo "HF_FILE ${HF_FILE}"
 MODEL_DIR=$(dirname "${HF_FILE}")

@@ -26,6 +26,11 @@ if [ ! -d "$MODEL_FOLDERS" ]; then
   mkdir -p $MODEL_FOLDERS
 fi
 
+id
+ls -alR /mnt/models
+systemctl --user status docker && echo OK Docker rootless || echo "KO docker rootless"
+sudo systemctl status docker && echo KO Docker root || echo "OK Docker root stopped"
+
 if [ -z "$DOWNLOAD_MODELS" ] || [ "$DOWNLOAD_MODELS" == "ON" ] ; then
   (
     set +eu
