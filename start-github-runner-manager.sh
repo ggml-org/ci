@@ -61,7 +61,7 @@ if [ -z "$DOWNLOAD_MODELS" ] || [ "$DOWNLOAD_MODELS" == "ON" ] ; then
             -v $MODEL_FOLDERS:/models:rw \
             -e HF_REPO="$HF_REPO" \
             -e HF_FILE="$HF_FILE" \
-            llama.cpp-model-downloader > download_model."$(basename "$HF_FILE")".log 2>&1 || echo "Error in model downloader: " && cat download_model."$(basename "$HF_FILE")".log && exit 1
+            llama.cpp-model-downloader > download_model."$(basename "$HF_FILE")".log 2>&1
     done
   ) || exit 1
 fi
