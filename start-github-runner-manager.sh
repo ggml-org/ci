@@ -45,7 +45,7 @@ if [ -z "$DOWNLOAD_MODELS" ] || [ "$DOWNLOAD_MODELS" == "ON" ] ; then
     (docker ps -a | grep -q llama.cpp-model-downloader) && docker rm llama.cpp-model-downloader   && sleep 5
 
     echo "ggml-ci: downloading models..."
-    MODELS="ggml-org/models:phi-2/ggml-model-q4_0.gguf ggml-org/models:phi-2/ggml-model-q8_0.gguf"
+    MODELS="ggml-org/models:phi-2/ggml-model-q4_0.gguf ggml-org/models:phi-2/ggml-model-q8_0.gguf ggml-org/models:phi-2/ggml-model-f16.gguf"
     for MODEL in $MODELS
     do
       IFS=':'; S=($MODEL); unset IFS;
@@ -61,7 +61,7 @@ if [ -z "$DOWNLOAD_MODELS" ] || [ "$DOWNLOAD_MODELS" == "ON" ] ; then
             -v $MODEL_FOLDERS:/models:rw \
             -e HF_REPO="$HF_REPO" \
             -e HF_FILE="$HF_FILE" \
-            llama.cpp-model-downloader > download_model."$(basename "$HF_FILE")".log 2>&1 || echo "Error in model downloader: " && cat download_model."$(basename "$HF_FILE")".log && exit 1
+            llama.cpp-model-downloader > download_model."$(basename "$HF_FILE")".log 2>&1
     done
   ) || exit 1
 fi
