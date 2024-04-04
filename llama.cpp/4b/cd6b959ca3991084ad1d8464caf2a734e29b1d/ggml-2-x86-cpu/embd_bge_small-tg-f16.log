@@ -1,0 +1,107 @@
++ ./bin/embedding --model ../models-mnt/bge-small/ggml-model-f16.gguf -p 'I believe the meaning of life is'
+main: build = 2602 (4bcd6b95)
+main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+main: seed  = 1712217527
+llama_model_loader: loaded meta data with 23 key-value pairs and 197 tensors from ../models-mnt/bge-small/ggml-model-f16.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = bert
+llama_model_loader: - kv   1:                               general.name str              = bge-small
+llama_model_loader: - kv   2:                           bert.block_count u32              = 12
+llama_model_loader: - kv   3:                        bert.context_length u32              = 512
+llama_model_loader: - kv   4:                      bert.embedding_length u32              = 384
+llama_model_loader: - kv   5:                   bert.feed_forward_length u32              = 1536
+llama_model_loader: - kv   6:                  bert.attention.head_count u32              = 12
+llama_model_loader: - kv   7:          bert.attention.layer_norm_epsilon f32              = 0.000000
+llama_model_loader: - kv   8:                          general.file_type u32              = 1
+llama_model_loader: - kv   9:                      bert.attention.causal bool             = false
+llama_model_loader: - kv  10:                          bert.pooling_type u32              = 2
+llama_model_loader: - kv  11:            tokenizer.ggml.token_type_count u32              = 2
+llama_model_loader: - kv  12:                tokenizer.ggml.bos_token_id u32              = 101
+llama_model_loader: - kv  13:                tokenizer.ggml.eos_token_id u32              = 102
+llama_model_loader: - kv  14:                       tokenizer.ggml.model str              = bert
+llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,30522]   = ["[PAD]", "[unused0]", "[unused1]", "...
+llama_model_loader: - kv  16:                      tokenizer.ggml.scores arr[f32,30522]   = [-1000.000000, -1000.000000, -1000.00...
+llama_model_loader: - kv  17:                  tokenizer.ggml.token_type arr[i32,30522]   = [3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  18:            tokenizer.ggml.unknown_token_id u32              = 100
+llama_model_loader: - kv  19:          tokenizer.ggml.seperator_token_id u32              = 102
+llama_model_loader: - kv  20:            tokenizer.ggml.padding_token_id u32              = 0
+llama_model_loader: - kv  21:                tokenizer.ggml.cls_token_id u32              = 101
+llama_model_loader: - kv  22:               tokenizer.ggml.mask_token_id u32              = 103
+llama_model_loader: - type  f32:  123 tensors
+llama_model_loader: - type  f16:   74 tensors
+llm_load_vocab: mismatch in special tokens definition ( 7104/30522 vs 5/30522 ).
+llm_load_print_meta: format           = GGUF V3 (latest)
+llm_load_print_meta: arch             = bert
+llm_load_print_meta: vocab type       = WPM
+llm_load_print_meta: n_vocab          = 30522
+llm_load_print_meta: n_merges         = 0
+llm_load_print_meta: n_ctx_train      = 512
+llm_load_print_meta: n_embd           = 384
+llm_load_print_meta: n_head           = 12
+llm_load_print_meta: n_head_kv        = 12
+llm_load_print_meta: n_layer          = 12
+llm_load_print_meta: n_rot            = 32
+llm_load_print_meta: n_embd_head_k    = 32
+llm_load_print_meta: n_embd_head_v    = 32
+llm_load_print_meta: n_gqa            = 1
+llm_load_print_meta: n_embd_k_gqa     = 384
+llm_load_print_meta: n_embd_v_gqa     = 384
+llm_load_print_meta: f_norm_eps       = 1.0e-12
+llm_load_print_meta: f_norm_rms_eps   = 0.0e+00
+llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+llm_load_print_meta: f_logit_scale    = 0.0e+00
+llm_load_print_meta: n_ff             = 1536
+llm_load_print_meta: n_expert         = 0
+llm_load_print_meta: n_expert_used    = 0
+llm_load_print_meta: causal attn      = 0
+llm_load_print_meta: pooling type     = 2
+llm_load_print_meta: rope type        = 2
+llm_load_print_meta: rope scaling     = linear
+llm_load_print_meta: freq_base_train  = 10000.0
+llm_load_print_meta: freq_scale_train = 1
+llm_load_print_meta: n_yarn_orig_ctx  = 512
+llm_load_print_meta: rope_finetuned   = unknown
+llm_load_print_meta: ssm_d_conv       = 0
+llm_load_print_meta: ssm_d_inner      = 0
+llm_load_print_meta: ssm_d_state      = 0
+llm_load_print_meta: ssm_dt_rank      = 0
+llm_load_print_meta: model type       = 33M
+llm_load_print_meta: model ftype      = F16
+llm_load_print_meta: model params     = 33.21 M
+llm_load_print_meta: model size       = 63.46 MiB (16.03 BPW) 
+llm_load_print_meta: general.name     = bge-small
+llm_load_print_meta: BOS token        = 101 '[CLS]'
+llm_load_print_meta: EOS token        = 102 '[SEP]'
+llm_load_print_meta: UNK token        = 100 '[UNK]'
+llm_load_print_meta: SEP token        = 102 '[SEP]'
+llm_load_print_meta: PAD token        = 0 '[PAD]'
+llm_load_tensors: ggml ctx size =    0.08 MiB
+llm_load_tensors:        CPU buffer size =    63.46 MiB
+.................................................
+llama_new_context_with_model: n_ctx      = 512
+llama_new_context_with_model: n_batch    = 2048
+llama_new_context_with_model: n_ubatch   = 2048
+llama_new_context_with_model: freq_base  = 10000.0
+llama_new_context_with_model: freq_scale = 1
+llama_kv_cache_init:        CPU KV buffer size =     9.00 MiB
+llama_new_context_with_model: KV self size  =    9.00 MiB, K (f16):    4.50 MiB, V (f16):    4.50 MiB
+llama_new_context_with_model:        CPU  output buffer size =     0.00 MiB
+llama_new_context_with_model:        CPU compute buffer size =    16.01 MiB
+llama_new_context_with_model: graph nodes  = 429
+llama_new_context_with_model: graph splits = 1
+
+system_info: n_threads = 4 / 8 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | 
+batch_decode: n_tokens = 9, n_seq = 1
+
+llama_print_timings:        load time =      14.52 ms
+llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time =       5.80 ms /     9 tokens (    0.64 ms per token,  1552.26 tokens per second)
+llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time =      53.84 ms /    10 tokens
+
+embedding 0: -0.044003 -0.019931  0.007665 -0.000818  0.001378 -0.037049  0.109437  0.042565  0.092037 -0.015907  0.006781 -0.035718 -0.017895  0.015016  0.018091  0.015880 -0.011291  0.010464 -0.085210 -0.008467  0.091387 -0.017062 -0.060340 -0.024506  0.027555  0.076073  0.027972 -0.014567  0.017665 -0.033291 -0.037861 -0.018996  0.068695 -0.009840 -0.025031  0.072350 -0.046556  0.011012 -0.050253  0.047725  0.032371 -0.011724  0.022031  0.049648  0.010468  0.005802 -0.028872  0.008934 -0.018516 -0.051485 -0.046065  0.030514 -0.035416  0.054210 -0.069661  0.044246  0.029791  0.046303  0.073424 -0.042582  0.076085  0.038848 -0.181185  0.082496  0.042260 -0.064568 -0.060106 -0.017875  0.006467  0.005876  0.017182 -0.026617  0.064597  0.112594  0.035120 -0.067447  0.027069 -0.067294 -0.033502 -0.033216  0.033228  0.013528 -0.003307 -0.037472 -0.052057  0.055167 -0.001983 -0.038257  0.064434  0.028835 -0.043317 -0.029255 -0.039428  0.036320  0.008369 -0.015461 -0.036570  0.018131  0.028587  0.342774 -0.044490  0.056123  0.017644 -0.020886 -0.066822  0.000155 -0.037898 -0.030041 -0.008543 -0.021592  0.000532 -0.003235  0.004027  0.018936 -0.008572  0.025841  0.049397  0.000062  0.050941 -0.042496 -0.031865  0.023595  0.030699 -0.023150 -0.046259 -0.079274  0.115197  0.046711  0.027817 -0.040711  0.067819 -0.022999  0.010337 -0.032977 -0.018277  0.043832  0.024240  0.052415  0.007484  0.008909  0.011237 -0.074642 -0.065543 -0.026730 -0.041201 -0.023902  0.026694  0.006905  0.027743  0.052858 -0.036701  0.057730 -0.000156  0.031740 -0.019789 -0.022044  0.041041 -0.058931  0.019600  0.043121  0.043607  0.041603 -0.022523  0.027077 -0.021860  0.005448 -0.041319 -0.001232  0.024416  0.002113  0.044347 -0.022756  0.043676  0.064760  0.055444  0.037081 -0.000924  0.046123  0.045799 -0.008480  0.063077 -0.073243 -0.011955  0.032110  0.023939  0.014729 -0.033694  0.001092 -0.015861 -0.019012  0.047879  0.110851  0.028394  0.031385 -0.013287 -0.057480  0.006637  0.005144 -0.012240 -0.051461 -0.000951 -0.017654 -0.019428 -0.040939  0.009184 -0.057974  0.050967  0.052314 -0.009609 -0.040249 -0.014084 -0.024835 -0.017263  0.006296  0.006579 -0.026908  0.015629  0.030720  0.002600  0.023217 -0.022225 -0.098548 -0.051120 -0.278034 -0.014988 -0.061562 -0.027215  0.017702 -0.010952 -0.017106  0.035064  0.046995 -0.015450  0.015216 -0.025459  0.047851 -0.005922 -0.000741 -0.060997 -0.068928 -0.060382 -0.035951  0.043331 -0.055002  0.015053  0.000530 -0.058209 -0.010437  0.012630  0.151467  0.127111 -0.013598  0.041988 -0.025687  0.014028 -0.001041 -0.150482  0.044847  0.005320 -0.036269 -0.029772 -0.020189 -0.034876  0.010281  0.033555 -0.048174 -0.051838 -0.017456 -0.023475  0.047367  0.052072 -0.016804 -0.055468  0.025830 -0.005681  0.010699  0.038696  0.008193 -0.009760 -0.105763 -0.027451 -0.096121  0.025055 -0.011256  0.092360  0.056134  0.003767  0.027760  0.002097 -0.051055 -0.039892 -0.013533 -0.044975 -0.015339  0.002885 -0.043498 -0.077935  0.065221 -0.006836 -0.001621 -0.014624  0.071588  0.023735 -0.037183  0.009158  0.001564 -0.032269  0.015473  0.037914  0.000331 -0.053215  0.021305 -0.039841  0.000024  0.013403  0.019811 -0.057895  0.006477 -0.049552 -0.267856  0.039168 -0.067960  0.038264 -0.012335  0.041487 -0.016121  0.052381 -0.071374  0.011358  0.024708 -0.007225  0.082092  0.028530 -0.021477  0.040517 -0.004587 -0.074590 -0.014768  0.020045  0.002280  0.023140  0.197184 -0.043253 -0.025996 -0.004943 -0.019281  0.074273  0.001771 -0.031963 -0.036618 -0.045080  0.000557 -0.011571  0.018140 -0.029448 -0.008472  0.006418  0.050797 -0.014942  0.006163  0.026109 -0.030812  0.048059  0.114102 -0.040797 -0.011456  0.005436 -0.003570  0.025146 -0.059150  0.013766 -0.010380  0.038686  0.051438  0.035429  0.035024 -0.017048  0.026388 -0.014486 -0.049999  0.003225  0.054098  0.039748 -0.039116 
+
+real	0m0.127s
+user	0m0.113s
+sys	0m0.039s
