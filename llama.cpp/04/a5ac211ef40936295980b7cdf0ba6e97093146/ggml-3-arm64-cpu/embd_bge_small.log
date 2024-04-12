@@ -1,0 +1,709 @@
++ cmake -DCMAKE_BUILD_TYPE=Release -DLLAMA_FATAL_WARNINGS=ON ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- ccache found, compilation results will be cached. Disable with LLAMA_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: aarch64
+-- ARM detected
+-- Performing Test COMPILER_SUPPORTS_FP16_FORMAT_I3E
+-- Performing Test COMPILER_SUPPORTS_FP16_FORMAT_I3E - Failed
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-release
+
+real	0m0.811s
+user	0m0.446s
+sys	0m0.368s
++ make -j
+[  1%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  4%] Building CXX object common/CMakeFiles/json-schema-to-grammar.dir/json-schema-to-grammar.cpp.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  5%] Built target build_info
+[  5%] Built target ggml
+[  5%] Built target json-schema-to-grammar
+[  6%] Linking C static library libggml_static.a
+[  7%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+[  6%] Building CXX object CMakeFiles/llama.dir/unicode-data.cpp.o
+[  7%] Building CXX object examples/gguf/CMakeFiles/gguf.dir/gguf.cpp.o
+[  7%] Building CXX object CMakeFiles/llama.dir/unicode.cpp.o
+[  7%] Linking CXX executable ../../bin/gguf
+[  8%] Linking CXX static library libllama.a
+[  8%] Built target ggml_static
+[  8%] Built target llama
+[  8%] Built target gguf
+[ 10%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+[ 10%] Building CXX object examples/llava/CMakeFiles/llava.dir/clip.cpp.o
+[ 10%] Building CXX object examples/llava/CMakeFiles/llava.dir/llava.cpp.o
+[ 11%] Building CXX object common/CMakeFiles/common.dir/common.cpp.o
+[ 12%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
+[ 13%] Building CXX object common/CMakeFiles/common.dir/sampling.cpp.o
+[ 14%] Building CXX object common/CMakeFiles/common.dir/grammar-parser.cpp.o
+[ 15%] Building C object tests/CMakeFiles/test-c.dir/test-c.c.o
+[ 15%] Building CXX object common/CMakeFiles/common.dir/train.cpp.o
+[ 15%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
+[ 16%] Building CXX object common/CMakeFiles/common.dir/ngram-cache.cpp.o
+[ 16%] Building CXX object common/CMakeFiles/common.dir/console.cpp.o
+[ 17%] Linking CXX executable ../../bin/quantize
+[ 17%] Linking CXX executable ../bin/test-c
+[ 18%] Linking CXX executable ../../bin/quantize-stats
+[ 18%] Built target llava
+[ 18%] Linking CXX executable ../../bin/benchmark
+[ 18%] Linking CXX static library libcommon.a
+[ 19%] Linking CXX static library libllava_static.a
+[ 19%] Built target test-c
+[ 19%] Built target common
+[ 19%] Built target llava_static
+[ 19%] Built target quantize
+[ 20%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 21%] Building CXX object tests/CMakeFiles/test-chat-template.dir/test-chat-template.cpp.o
+[ 21%] Building CXX object tests/CMakeFiles/test-chat-template.dir/get-model.cpp.o
+[ 22%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
+[ 23%] Building CXX object tests/CMakeFiles/test-tokenizer-0-llama.dir/test-tokenizer-0-llama.cpp.o
+[ 24%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 24%] Built target quantize-stats
+[ 24%] Built target benchmark
+[ 25%] Building CXX object tests/CMakeFiles/test-tokenizer-1-llama.dir/test-tokenizer-1-llama.cpp.o
+[ 25%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/get-model.cpp.o
+[ 25%] Building CXX object tests/CMakeFiles/test-tokenizer-0-llama.dir/get-model.cpp.o
+[ 24%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/get-model.cpp.o
+[ 26%] Building CXX object tests/CMakeFiles/test-sampling.dir/get-model.cpp.o
+[ 27%] Building CXX object tests/CMakeFiles/test-tokenizer-1-baichuan.dir/test-tokenizer-1-llama.cpp.o
+[ 28%] Building CXX object tests/CMakeFiles/test-tokenizer-0-falcon.dir/test-tokenizer-0-falcon.cpp.o
+[ 29%] Building CXX object tests/CMakeFiles/test-tokenizer-1-falcon.dir/test-tokenizer-1-bpe.cpp.o
+[ 28%] Building CXX object tests/CMakeFiles/test-tokenizer-0-falcon.dir/get-model.cpp.o
+[ 30%] Building CXX object tests/CMakeFiles/test-tokenizer-1-llama.dir/get-model.cpp.o
+[ 31%] Linking CXX executable ../bin/test-chat-template
+[ 32%] Linking CXX executable ../bin/test-quantize-fns
+[ 33%] Building CXX object tests/CMakeFiles/test-tokenizer-1-baichuan.dir/get-model.cpp.o
+[ 33%] Building CXX object tests/CMakeFiles/test-tokenizer-1-falcon.dir/get-model.cpp.o
+[ 33%] Linking CXX executable ../bin/test-sampling
+[ 34%] Linking CXX executable ../bin/test-tokenizer-0-llama
+[ 34%] Building CXX object tests/CMakeFiles/test-tokenizer-1-aquila.dir/test-tokenizer-1-bpe.cpp.o
+[ 35%] Linking CXX executable ../bin/test-quantize-perf
+[ 36%] Building CXX object tests/CMakeFiles/test-tokenizer-1-mpt.dir/test-tokenizer-1-bpe.cpp.o
+[ 36%] Building CXX object tests/CMakeFiles/test-tokenizer-1-gpt-neox.dir/test-tokenizer-1-bpe.cpp.o
+[ 36%] Building CXX object tests/CMakeFiles/test-tokenizer-1-refact.dir/test-tokenizer-1-bpe.cpp.o
+[ 37%] Linking CXX executable ../bin/test-tokenizer-0-falcon
+[ 38%] Building CXX object tests/CMakeFiles/test-tokenizer-1-gpt-neox.dir/get-model.cpp.o
+[ 39%] Building CXX object tests/CMakeFiles/test-tokenizer-1-aquila.dir/get-model.cpp.o
+[ 40%] Linking CXX executable ../bin/test-tokenizer-1-falcon
+[ 40%] Building CXX object tests/CMakeFiles/test-tokenizer-1-stablelm-3b-4e1t.dir/test-tokenizer-1-bpe.cpp.o
+[ 40%] Linking CXX executable ../bin/test-tokenizer-1-baichuan
+[ 40%] Linking CXX executable ../bin/test-tokenizer-1-llama
+[ 41%] Building CXX object tests/CMakeFiles/test-tokenizer-1-refact.dir/get-model.cpp.o
+[ 41%] Building CXX object tests/CMakeFiles/test-tokenizer-1-mpt.dir/get-model.cpp.o
+[ 42%] Building CXX object tests/CMakeFiles/test-tokenizer-1-stablelm-3b-4e1t.dir/get-model.cpp.o
+[ 44%] Building CXX object tests/CMakeFiles/test-tokenizer-1-gpt2.dir/get-model.cpp.o
+[ 45%] Building CXX object tests/CMakeFiles/test-grammar-parser.dir/test-grammar-parser.cpp.o
+[ 46%] Building CXX object tests/CMakeFiles/test-tokenizer-1-starcoder.dir/test-tokenizer-1-bpe.cpp.o
+[ 46%] Building CXX object tests/CMakeFiles/test-tokenizer-1-starcoder.dir/get-model.cpp.o
+[ 46%] Building CXX object tests/CMakeFiles/test-grammar-parser.dir/get-model.cpp.o
+[ 46%] Building CXX object tests/CMakeFiles/test-tokenizer-1-gpt2.dir/test-tokenizer-1-bpe.cpp.o
+[ 46%] Linking CXX executable ../bin/test-tokenizer-1-aquila
+[ 47%] Linking CXX executable ../bin/test-tokenizer-1-gpt-neox
+[ 47%] Linking CXX executable ../bin/test-tokenizer-1-stablelm-3b-4e1t
+[ 48%] Linking CXX executable ../bin/test-tokenizer-1-refact
+[ 49%] Linking CXX executable ../bin/test-tokenizer-1-mpt
+[ 49%] Linking CXX executable ../bin/test-tokenizer-1-gpt2
+[ 50%] Building CXX object tests/CMakeFiles/test-llama-grammar.dir/get-model.cpp.o
+[ 50%] Building CXX object tests/CMakeFiles/test-llama-grammar.dir/test-llama-grammar.cpp.o
+[ 50%] Linking CXX executable ../bin/test-grammar-parser
+[ 50%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+[ 50%] Building CXX object tests/CMakeFiles/test-grammar-integration.dir/test-grammar-integration.cpp.o
+[ 51%] Building CXX object tests/CMakeFiles/test-grammar-integration.dir/get-model.cpp.o
+[ 51%] Building CXX object tests/CMakeFiles/test-rope.dir/test-rope.cpp.o
+[ 52%] Linking CXX executable ../bin/test-tokenizer-1-starcoder
+[ 53%] Building CXX object tests/CMakeFiles/test-grad0.dir/get-model.cpp.o
+[ 54%] Building CXX object tests/CMakeFiles/test-autorelease.dir/get-model.cpp.o
+[ 55%] Building CXX object tests/CMakeFiles/test-rope.dir/get-model.cpp.o
+[ 55%] Building CXX object tests/CMakeFiles/test-model-load-cancel.dir/test-model-load-cancel.cpp.o
+[ 55%] Building CXX object tests/CMakeFiles/test-autorelease.dir/test-autorelease.cpp.o
+[ 55%] Built target test-quantize-fns
+[ 56%] Building CXX object tests/CMakeFiles/test-json-schema-to-grammar.dir/test-json-schema-to-grammar.cpp.o
+[ 57%] Building CXX object tests/CMakeFiles/test-model-load-cancel.dir/get-model.cpp.o
+[ 58%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 58%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/get-model.cpp.o
+[ 58%] Building CXX object tests/CMakeFiles/test-json-schema-to-grammar.dir/get-model.cpp.o
+[ 58%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
+[ 59%] Linking CXX executable ../bin/test-grad0
+[ 60%] Linking CXX executable ../bin/test-llama-grammar
+[ 59%] Linking CXX executable ../bin/test-rope
+[ 60%] Built target test-chat-template
+[ 60%] Linking CXX executable ../bin/test-grammar-integration
+[ 60%] Linking CXX executable ../bin/test-autorelease
+[ 61%] Linking CXX executable ../bin/test-backend-ops
+[ 61%] Built target test-sampling
+[ 61%] Linking CXX executable ../bin/test-model-load-cancel
+[ 62%] Linking CXX executable ../bin/test-json-schema-to-grammar
+[ 62%] Building CXX object examples/batched/CMakeFiles/batched.dir/batched.cpp.o
+[ 62%] Building CXX object examples/batched-bench/CMakeFiles/batched-bench.dir/batched-bench.cpp.o
+[ 63%] Linking CXX executable ../../bin/baby-llama
+[ 63%] Built target test-tokenizer-1-aquila
+[ 64%] Linking CXX executable ../../bin/batched-bench
+[ 64%] Built target test-quantize-perf
+[ 66%] Building CXX object examples/convert-llama2c-to-ggml/CMakeFiles/convert-llama2c-to-ggml.dir/convert-llama2c-to-ggml.cpp.o
+[ 66%] Built target test-tokenizer-1-falcon
+[ 66%] Built target test-tokenizer-0-llama
+[ 65%] Building CXX object examples/beam-search/CMakeFiles/beam-search.dir/beam-search.cpp.o
+[ 67%] Linking CXX executable ../../bin/batched
+[ 67%] Built target test-tokenizer-0-falcon
+[ 67%] Building CXX object examples/eval-callback/CMakeFiles/eval-callback.dir/eval-callback.cpp.o
+[ 67%] Built target test-tokenizer-1-gpt-neox
+[ 68%] Built target test-tokenizer-1-llama
+[ 68%] Built target test-tokenizer-1-baichuan
+[ 69%] Linking CXX executable ../../bin/eval-callback
+[ 69%] Linking CXX executable ../../bin/beam-search
+[ 69%] Built target test-tokenizer-1-refact
+[ 69%] Built target test-tokenizer-1-stablelm-3b-4e1t
+[ 68%] Linking CXX executable ../../bin/convert-llama2c-to-ggml
+[ 69%] Built target test-tokenizer-1-mpt
+[ 69%] Built target test-tokenizer-1-gpt2
+[ 69%] Built target test-grammar-parser
+[ 69%] Built target test-tokenizer-1-starcoder
+[ 69%] Built target test-grad0
+[ 69%] Built target test-rope
+[ 69%] Built target test-autorelease
+[ 69%] Built target test-llama-grammar
+[ 69%] Built target test-grammar-integration
+[ 69%] Built target test-backend-ops
+[ 69%] Building CXX object examples/embedding/CMakeFiles/embedding.dir/embedding.cpp.o
+[ 69%] Built target test-model-load-cancel
+[ 70%] Building CXX object examples/gritlm/CMakeFiles/gritlm.dir/gritlm.cpp.o
+[ 71%] Building CXX object examples/finetune/CMakeFiles/finetune.dir/finetune.cpp.o
+[ 71%] Built target test-json-schema-to-grammar
+[ 71%] Built target baby-llama
+[ 72%] Linking CXX executable ../../bin/gritlm
+[ 72%] Built target batched-bench
+[ 72%] Linking CXX executable ../../bin/finetune
+[ 72%] Built target batched
+[ 73%] Linking CXX executable ../../bin/embedding
+[ 74%] Building CXX object examples/gguf-split/CMakeFiles/gguf-split.dir/gguf-split.cpp.o
+[ 74%] Building CXX object examples/infill/CMakeFiles/infill.dir/infill.cpp.o
+[ 74%] Built target beam-search
+[ 74%] Built target eval-callback
+[ 75%] Linking CXX executable ../../bin/infill
+[ 76%] Building CXX object examples/tokenize/CMakeFiles/tokenize.dir/tokenize.cpp.o
+[ 76%] Built target convert-llama2c-to-ggml
+[ 76%] Building CXX object examples/parallel/CMakeFiles/parallel.dir/parallel.cpp.o
+[ 76%] Building CXX object examples/main/CMakeFiles/main.dir/main.cpp.o
+[ 77%] Building CXX object examples/perplexity/CMakeFiles/perplexity.dir/perplexity.cpp.o
+[ 77%] Linking CXX executable ../../bin/gguf-split
+[ 77%] Building CXX object examples/llama-bench/CMakeFiles/llama-bench.dir/llama-bench.cpp.o
+[ 77%] Building CXX object examples/retrieval/CMakeFiles/retrieval.dir/retrieval.cpp.o
+[ 77%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
+[ 78%] Building CXX object examples/llava/CMakeFiles/llava-cli.dir/llava-cli.cpp.o
+[ 78%] Linking CXX executable ../../bin/perplexity
+[ 79%] Linking CXX executable ../../bin/parallel
+[ 79%] Linking CXX executable ../../bin/tokenize
+[ 80%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
+[ 81%] Linking CXX executable ../../bin/main
+[ 82%] Building CXX object examples/speculative/CMakeFiles/speculative.dir/speculative.cpp.o
+[ 83%] Building CXX object examples/passkey/CMakeFiles/passkey.dir/passkey.cpp.o
+[ 84%] Linking CXX executable ../../bin/llama-bench
+[ 85%] Linking CXX executable ../../bin/save-load-state
+[ 85%] Built target finetune
+[ 86%] Linking CXX executable ../../bin/retrieval
+[ 86%] Linking CXX executable ../../bin/llava-cli
+[ 86%] Building CXX object examples/lookahead/CMakeFiles/lookahead.dir/lookahead.cpp.o
+[ 86%] Linking CXX executable ../../bin/passkey
+[ 86%] Linking CXX executable ../../bin/simple
+[ 86%] Built target gritlm
+[ 87%] Linking CXX executable ../../bin/speculative
+[ 88%] Building CXX object examples/lookup/CMakeFiles/lookup.dir/lookup.cpp.o
+[ 86%] Built target embedding
+[ 89%] Building CXX object examples/lookup/CMakeFiles/lookup-merge.dir/lookup-merge.cpp.o
+[ 90%] Building CXX object examples/lookup/CMakeFiles/lookup-create.dir/lookup-create.cpp.o
+[ 90%] Built target infill
+[ 91%] Building CXX object examples/lookup/CMakeFiles/lookup-stats.dir/lookup-stats.cpp.o
+[ 92%] Linking CXX executable ../../bin/lookahead
+[ 93%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
+[ 94%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
+[ 94%] Building CXX object examples/imatrix/CMakeFiles/imatrix.dir/imatrix.cpp.o
+[ 94%] Built target gguf-split
+[ 94%] Linking CXX executable ../../bin/lookup-merge
+[ 94%] Linking CXX executable ../../bin/lookup
+[ 95%] Building CXX object examples/export-lora/CMakeFiles/export-lora.dir/export-lora.cpp.o
+[ 95%] Built target perplexity
+[ 95%] Linking CXX executable ../../bin/lookup-create
+[ 96%] Linking CXX executable ../../bin/lookup-stats
+[ 96%] Linking CXX executable ../../bin/train-text-from-scratch
+[ 96%] Built target llama-bench
+[ 96%] Built target main
+[ 97%] Building CXX object pocs/vdot/CMakeFiles/q8dot.dir/q8dot.cpp.o
+[ 98%] Building CXX object pocs/vdot/CMakeFiles/vdot.dir/vdot.cpp.o
+[ 99%] Linking CXX executable ../../bin/imatrix
+[ 99%] Linking CXX executable ../../bin/export-lora
+[100%] Linking CXX executable ../../bin/vdot
+[ 99%] Linking CXX executable ../../bin/server
+[100%] Built target parallel
+[100%] Built target save-load-state
+[100%] Built target simple
+[100%] Built target tokenize
+[100%] Built target retrieval
+[100%] Linking CXX executable ../../bin/q8dot
+[100%] Built target speculative
+[100%] Built target passkey
+[100%] Built target lookup-merge
+[100%] Built target lookahead
+[100%] Built target lookup-stats
+[100%] Built target llava-cli
+[100%] Built target lookup
+[100%] Built target vdot
+[100%] Built target train-text-from-scratch
+[100%] Built target lookup-create
+[100%] Built target export-lora
+[100%] Built target imatrix
+[100%] Built target q8dot
+[100%] Built target server
+
+real	0m2.076s
+user	0m8.267s
+sys	0m6.416s
+Loading model: bge-small
+gguf: This GGUF file is for Little Endian only
+Set model parameters
+gguf: context length = 512
+gguf: embedding length = 384
+gguf: feed forward length = 1536
+gguf: head count = 12
+gguf: layer norm epsilon = 1e-12
+gguf: file type = 1
+Set model tokenizer
+gguf: Setting special token type unk to 100
+gguf: Setting special token type sep to 102
+gguf: Setting special token type pad to 0
+gguf: Setting special token type cls to 101
+gguf: Setting special token type mask to 103
+Exporting model to '../models-mnt/bge-small/ggml-model-f16.gguf'
+gguf: loading model part 'pytorch_model.bin'
+token_embd.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+position_embd.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+token_types.weight, n_dims = 2, torch.float32 --> <class 'numpy.float32'>
+token_embd_norm.weight, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+token_embd_norm.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.0.attn_q.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.0.attn_q.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.0.attn_k.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.0.attn_k.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.0.attn_v.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.0.attn_v.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.0.attn_output.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.0.attn_output.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.0.attn_output_norm.weight, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.0.attn_output_norm.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.0.ffn_up.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.0.ffn_up.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.0.ffn_down.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.0.ffn_down.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.0.layer_output_norm.weight, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.0.layer_output_norm.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.1.attn_q.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.1.attn_q.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.1.attn_k.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.1.attn_k.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.1.attn_v.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.1.attn_v.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.1.attn_output.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.1.attn_output.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.1.attn_output_norm.weight, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.1.attn_output_norm.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.1.ffn_up.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.1.ffn_up.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.1.ffn_down.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.1.ffn_down.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.1.layer_output_norm.weight, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.1.layer_output_norm.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.2.attn_q.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.2.attn_q.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.2.attn_k.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.2.attn_k.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.2.attn_v.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.2.attn_v.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.2.attn_output.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.2.attn_output.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.2.attn_output_norm.weight, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.2.attn_output_norm.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.2.ffn_up.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.2.ffn_up.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.2.ffn_down.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.2.ffn_down.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.2.layer_output_norm.weight, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.2.layer_output_norm.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.3.attn_q.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.3.attn_q.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.3.attn_k.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.3.attn_k.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.3.attn_v.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.3.attn_v.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.3.attn_output.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.3.attn_output.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.3.attn_output_norm.weight, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.3.attn_output_norm.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.3.ffn_up.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.3.ffn_up.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.3.ffn_down.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.3.ffn_down.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.3.layer_output_norm.weight, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.3.layer_output_norm.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.4.attn_q.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.4.attn_q.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.4.attn_k.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.4.attn_k.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.4.attn_v.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.4.attn_v.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.4.attn_output.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.4.attn_output.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.4.attn_output_norm.weight, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.4.attn_output_norm.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.4.ffn_up.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.4.ffn_up.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.4.ffn_down.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.4.ffn_down.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.4.layer_output_norm.weight, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.4.layer_output_norm.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.5.attn_q.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.5.attn_q.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.5.attn_k.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.5.attn_k.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.5.attn_v.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.5.attn_v.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.5.attn_output.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.5.attn_output.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.5.attn_output_norm.weight, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.5.attn_output_norm.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.5.ffn_up.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.5.ffn_up.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.5.ffn_down.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.5.ffn_down.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.5.layer_output_norm.weight, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.5.layer_output_norm.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.6.attn_q.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.6.attn_q.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.6.attn_k.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.6.attn_k.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.6.attn_v.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.6.attn_v.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.6.attn_output.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.6.attn_output.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.6.attn_output_norm.weight, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.6.attn_output_norm.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.6.ffn_up.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.6.ffn_up.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.6.ffn_down.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.6.ffn_down.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.6.layer_output_norm.weight, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.6.layer_output_norm.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.7.attn_q.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.7.attn_q.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.7.attn_k.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.7.attn_k.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.7.attn_v.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.7.attn_v.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.7.attn_output.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.7.attn_output.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.7.attn_output_norm.weight, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.7.attn_output_norm.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.7.ffn_up.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.7.ffn_up.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.7.ffn_down.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.7.ffn_down.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.7.layer_output_norm.weight, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.7.layer_output_norm.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.8.attn_q.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.8.attn_q.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.8.attn_k.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.8.attn_k.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.8.attn_v.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.8.attn_v.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.8.attn_output.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.8.attn_output.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.8.attn_output_norm.weight, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.8.attn_output_norm.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.8.ffn_up.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.8.ffn_up.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.8.ffn_down.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.8.ffn_down.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.8.layer_output_norm.weight, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.8.layer_output_norm.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.9.attn_q.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.9.attn_q.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.9.attn_k.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.9.attn_k.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.9.attn_v.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.9.attn_v.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.9.attn_output.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.9.attn_output.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.9.attn_output_norm.weight, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.9.attn_output_norm.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.9.ffn_up.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.9.ffn_up.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.9.ffn_down.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.9.ffn_down.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.9.layer_output_norm.weight, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.9.layer_output_norm.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.10.attn_q.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.10.attn_q.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.10.attn_k.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.10.attn_k.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.10.attn_v.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.10.attn_v.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.10.attn_output.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.10.attn_output.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.10.attn_output_norm.weight, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.10.attn_output_norm.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.10.ffn_up.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.10.ffn_up.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.10.ffn_down.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.10.ffn_down.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.10.layer_output_norm.weight, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.10.layer_output_norm.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.11.attn_q.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.11.attn_q.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.11.attn_k.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.11.attn_k.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.11.attn_v.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.11.attn_v.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.11.attn_output.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.11.attn_output.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.11.attn_output_norm.weight, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.11.attn_output_norm.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.11.ffn_up.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.11.ffn_up.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.11.ffn_down.weight, n_dims = 2, torch.float32 --> <class 'numpy.float16'>
+blk.11.ffn_down.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.11.layer_output_norm.weight, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+blk.11.layer_output_norm.bias, n_dims = 1, torch.float32 --> <class 'numpy.float32'>
+Model successfully exported to '../models-mnt/bge-small/ggml-model-f16.gguf'
+
+main: quantize time =   141.27 ms
+main:    total time =   141.27 ms
++ ./bin/embedding --model ../models-mnt/bge-small/ggml-model-f16.gguf -p 'I believe the meaning of life is'
+main: build = 2654 (04a5ac21)
+main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for aarch64-linux-gnu
+main: seed  = 1712886548
+llama_model_loader: loaded meta data with 20 key-value pairs and 197 tensors from ../models-mnt/bge-small/ggml-model-f16.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = bert
+llama_model_loader: - kv   1:                               general.name str              = bge-small
+llama_model_loader: - kv   2:                           bert.block_count u32              = 12
+llama_model_loader: - kv   3:                        bert.context_length u32              = 512
+llama_model_loader: - kv   4:                      bert.embedding_length u32              = 384
+llama_model_loader: - kv   5:                   bert.feed_forward_length u32              = 1536
+llama_model_loader: - kv   6:                  bert.attention.head_count u32              = 12
+llama_model_loader: - kv   7:          bert.attention.layer_norm_epsilon f32              = 0.000000
+llama_model_loader: - kv   8:                          general.file_type u32              = 1
+llama_model_loader: - kv   9:                      bert.attention.causal bool             = false
+llama_model_loader: - kv  10:                          bert.pooling_type u32              = 2
+llama_model_loader: - kv  11:            tokenizer.ggml.token_type_count u32              = 2
+llama_model_loader: - kv  12:                       tokenizer.ggml.model str              = bert
+llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,30522]   = ["[PAD]", "[unused0]", "[unused1]", "...
+llama_model_loader: - kv  14:                  tokenizer.ggml.token_type arr[i32,30522]   = [3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  15:            tokenizer.ggml.unknown_token_id u32              = 100
+llama_model_loader: - kv  16:          tokenizer.ggml.seperator_token_id u32              = 102
+llama_model_loader: - kv  17:            tokenizer.ggml.padding_token_id u32              = 0
+llama_model_loader: - kv  18:                tokenizer.ggml.cls_token_id u32              = 101
+llama_model_loader: - kv  19:               tokenizer.ggml.mask_token_id u32              = 103
+llama_model_loader: - type  f32:  123 tensors
+llama_model_loader: - type  f16:   74 tensors
+llm_load_vocab: mismatch in special tokens definition ( 7104/30522 vs 5/30522 ).
+llm_load_print_meta: format           = GGUF V3 (latest)
+llm_load_print_meta: arch             = bert
+llm_load_print_meta: vocab type       = WPM
+llm_load_print_meta: n_vocab          = 30522
+llm_load_print_meta: n_merges         = 0
+llm_load_print_meta: n_ctx_train      = 512
+llm_load_print_meta: n_embd           = 384
+llm_load_print_meta: n_head           = 12
+llm_load_print_meta: n_head_kv        = 12
+llm_load_print_meta: n_layer          = 12
+llm_load_print_meta: n_rot            = 32
+llm_load_print_meta: n_embd_head_k    = 32
+llm_load_print_meta: n_embd_head_v    = 32
+llm_load_print_meta: n_gqa            = 1
+llm_load_print_meta: n_embd_k_gqa     = 384
+llm_load_print_meta: n_embd_v_gqa     = 384
+llm_load_print_meta: f_norm_eps       = 1.0e-12
+llm_load_print_meta: f_norm_rms_eps   = 0.0e+00
+llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+llm_load_print_meta: f_logit_scale    = 0.0e+00
+llm_load_print_meta: n_ff             = 1536
+llm_load_print_meta: n_expert         = 0
+llm_load_print_meta: n_expert_used    = 0
+llm_load_print_meta: causal attn      = 0
+llm_load_print_meta: pooling type     = 2
+llm_load_print_meta: rope type        = 2
+llm_load_print_meta: rope scaling     = linear
+llm_load_print_meta: freq_base_train  = 10000.0
+llm_load_print_meta: freq_scale_train = 1
+llm_load_print_meta: n_yarn_orig_ctx  = 512
+llm_load_print_meta: rope_finetuned   = unknown
+llm_load_print_meta: ssm_d_conv       = 0
+llm_load_print_meta: ssm_d_inner      = 0
+llm_load_print_meta: ssm_d_state      = 0
+llm_load_print_meta: ssm_dt_rank      = 0
+llm_load_print_meta: model type       = 33M
+llm_load_print_meta: model ftype      = F16
+llm_load_print_meta: model params     = 33.21 M
+llm_load_print_meta: model size       = 63.46 MiB (16.03 BPW) 
+llm_load_print_meta: general.name     = bge-small
+llm_load_print_meta: UNK token        = 100 '[UNK]'
+llm_load_print_meta: SEP token        = 102 '[SEP]'
+llm_load_print_meta: PAD token        = 0 '[PAD]'
+llm_load_print_meta: CLS token        = 101 '[CLS]'
+llm_load_print_meta: MASK token       = 103 '[MASK]'
+llm_load_print_meta: LF token         = 0 '[PAD]'
+llm_load_tensors: ggml ctx size =    0.08 MiB
+llm_load_tensors:        CPU buffer size =    63.46 MiB
+.................................................
+llama_new_context_with_model: n_ctx      = 512
+llama_new_context_with_model: n_batch    = 2048
+llama_new_context_with_model: n_ubatch   = 2048
+llama_new_context_with_model: freq_base  = 10000.0
+llama_new_context_with_model: freq_scale = 1
+llama_kv_cache_init:        CPU KV buffer size =     9.00 MiB
+llama_new_context_with_model: KV self size  =    9.00 MiB, K (f16):    4.50 MiB, V (f16):    4.50 MiB
+llama_new_context_with_model:        CPU  output buffer size =     0.00 MiB
+llama_new_context_with_model:        CPU compute buffer size =    16.01 MiB
+llama_new_context_with_model: graph nodes  = 429
+llama_new_context_with_model: graph splits = 1
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX_VNNI = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | SSSE3 = 0 | VSX = 0 | MATMUL_INT8 = 0 | 
+batch_decode: n_tokens = 9, n_seq = 1
+
+llama_print_timings:        load time =      39.78 ms
+llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time =      19.17 ms /     9 tokens (    2.13 ms per token,   469.46 tokens per second)
+llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time =      85.08 ms /    10 tokens
+
+embedding 0: -0.044007 -0.019911  0.007675 -0.000838  0.001372 -0.037058  0.109424  0.042576  0.092043 -0.015909  0.006781 -0.035701 -0.017898  0.015045  0.018116  0.015891 -0.011293  0.010445 -0.085229 -0.008448  0.091366 -0.017099 -0.060327 -0.024495  0.027507  0.076059  0.027992 -0.014563  0.017659 -0.033285 -0.037861 -0.019001  0.068707 -0.009850 -0.025018  0.072357 -0.046567  0.011044 -0.050265  0.047692  0.032376 -0.011712  0.022079  0.049627  0.010464  0.005794 -0.028874  0.008934 -0.018506 -0.051437 -0.046048  0.030504 -0.035416  0.054215 -0.069652  0.044245  0.029800  0.046327  0.073421 -0.042592  0.076109  0.038836 -0.181180  0.082502  0.042276 -0.064577 -0.060094 -0.017854  0.006459  0.005889  0.017179 -0.026607  0.064562  0.112560  0.035140 -0.067448  0.027061 -0.067285 -0.033497 -0.033224  0.033246  0.013507 -0.003342 -0.037476 -0.052074  0.055172 -0.001974 -0.038259  0.064444  0.028826 -0.043311 -0.029268 -0.039466  0.036314  0.008394 -0.015461 -0.036560  0.018143  0.028593  0.342798 -0.044484  0.056097  0.017603 -0.020869 -0.066827  0.000171 -0.037902 -0.030055 -0.008537 -0.021592  0.000545 -0.003217  0.003994  0.018930 -0.008552  0.025850  0.049417  0.000057  0.050935 -0.042486 -0.031896  0.023567  0.030689 -0.023160 -0.046254 -0.079292  0.115156  0.046746  0.027830 -0.040707  0.067798 -0.022951  0.010335 -0.032942 -0.018300  0.043844  0.024272  0.052408  0.007437  0.008896  0.011226 -0.074674 -0.065576 -0.026750 -0.041200 -0.023889  0.026714  0.006886  0.027783  0.052861 -0.036661  0.057709 -0.000172  0.031735 -0.019762 -0.022063  0.041035 -0.058899  0.019612  0.043153  0.043599  0.041570 -0.022537  0.027071 -0.021823  0.005460 -0.041321 -0.001245  0.024425  0.002096  0.044341 -0.022728  0.043676  0.064778  0.055436  0.037059 -0.000934  0.046111  0.045786 -0.008496  0.063063 -0.073243 -0.011935  0.032090  0.023941  0.014702 -0.033701  0.001095 -0.015867 -0.018997  0.047890  0.110883  0.028419  0.031356 -0.013271 -0.057519  0.006664  0.005152 -0.012240 -0.051454 -0.000949 -0.017657 -0.019438 -0.040934  0.009200 -0.057949  0.050981  0.052337 -0.009601 -0.040241 -0.014093 -0.024854 -0.017272  0.006315  0.006566 -0.026916  0.015603  0.030751  0.002570  0.023213 -0.022189 -0.098566 -0.051132 -0.278038 -0.014987 -0.061565 -0.027238  0.017687 -0.010942 -0.017095  0.035051  0.047010 -0.015423  0.015232 -0.025476  0.047845 -0.005957 -0.000760 -0.061026 -0.068917 -0.060382 -0.035944  0.043324 -0.055060  0.015062  0.000554 -0.058177 -0.010449  0.012648  0.151473  0.127109 -0.013611  0.042015 -0.025661  0.014009 -0.001075 -0.150478  0.044857  0.005318 -0.036273 -0.029789 -0.020170 -0.034902  0.010266  0.033546 -0.048187 -0.051786 -0.017462 -0.023485  0.047354  0.052064 -0.016770 -0.055470  0.025830 -0.005697  0.010714  0.038704  0.008223 -0.009738 -0.105745 -0.027416 -0.096121  0.025071 -0.011266  0.092350  0.056099  0.003741  0.027819  0.002071 -0.051058 -0.039901 -0.013533 -0.044943 -0.015324  0.002881 -0.043498 -0.077953  0.065239 -0.006812 -0.001618 -0.014646  0.071576  0.023714 -0.037180  0.009178  0.001562 -0.032290  0.015465  0.037925  0.000361 -0.053216  0.021305 -0.039827  0.000028  0.013413  0.019820 -0.057888  0.006450 -0.049524 -0.267849  0.039162 -0.067957  0.038283 -0.012334  0.041495 -0.016113  0.052413 -0.071387  0.011333  0.024699 -0.007251  0.082086  0.028563 -0.021489  0.040517 -0.004578 -0.074622 -0.014763  0.020041  0.002273  0.023136  0.197191 -0.043231 -0.026009 -0.004969 -0.019276  0.074260  0.001771 -0.031982 -0.036607 -0.045056  0.000542 -0.011573  0.018133 -0.029460 -0.008470  0.006395  0.050791 -0.014924  0.006187  0.026094 -0.030808  0.048056  0.114075 -0.040814 -0.011441  0.005435 -0.003575  0.025143 -0.059149  0.013761 -0.010408  0.038667  0.051437  0.035412  0.035043 -0.017007  0.026370 -0.014484 -0.049999  0.003224  0.054143  0.039722 -0.039132 
+
+real	0m0.199s
+user	0m0.197s
+sys	0m0.072s
++ ./bin/embedding --model ../models-mnt/bge-small/ggml-model-q8_0.gguf -p 'I believe the meaning of life is'
+main: build = 2654 (04a5ac21)
+main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for aarch64-linux-gnu
+main: seed  = 1712886548
+llama_model_loader: loaded meta data with 21 key-value pairs and 197 tensors from ../models-mnt/bge-small/ggml-model-q8_0.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = bert
+llama_model_loader: - kv   1:                               general.name str              = bge-small
+llama_model_loader: - kv   2:                           bert.block_count u32              = 12
+llama_model_loader: - kv   3:                        bert.context_length u32              = 512
+llama_model_loader: - kv   4:                      bert.embedding_length u32              = 384
+llama_model_loader: - kv   5:                   bert.feed_forward_length u32              = 1536
+llama_model_loader: - kv   6:                  bert.attention.head_count u32              = 12
+llama_model_loader: - kv   7:          bert.attention.layer_norm_epsilon f32              = 0.000000
+llama_model_loader: - kv   8:                          general.file_type u32              = 7
+llama_model_loader: - kv   9:                      bert.attention.causal bool             = false
+llama_model_loader: - kv  10:                          bert.pooling_type u32              = 2
+llama_model_loader: - kv  11:            tokenizer.ggml.token_type_count u32              = 2
+llama_model_loader: - kv  12:                       tokenizer.ggml.model str              = bert
+llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,30522]   = ["[PAD]", "[unused0]", "[unused1]", "...
+llama_model_loader: - kv  14:                  tokenizer.ggml.token_type arr[i32,30522]   = [3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  15:            tokenizer.ggml.unknown_token_id u32              = 100
+llama_model_loader: - kv  16:          tokenizer.ggml.seperator_token_id u32              = 102
+llama_model_loader: - kv  17:            tokenizer.ggml.padding_token_id u32              = 0
+llama_model_loader: - kv  18:                tokenizer.ggml.cls_token_id u32              = 101
+llama_model_loader: - kv  19:               tokenizer.ggml.mask_token_id u32              = 103
+llama_model_loader: - kv  20:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:  123 tensors
+llama_model_loader: - type  f16:    1 tensors
+llama_model_loader: - type q8_0:   73 tensors
+llm_load_vocab: mismatch in special tokens definition ( 7104/30522 vs 5/30522 ).
+llm_load_print_meta: format           = GGUF V3 (latest)
+llm_load_print_meta: arch             = bert
+llm_load_print_meta: vocab type       = WPM
+llm_load_print_meta: n_vocab          = 30522
+llm_load_print_meta: n_merges         = 0
+llm_load_print_meta: n_ctx_train      = 512
+llm_load_print_meta: n_embd           = 384
+llm_load_print_meta: n_head           = 12
+llm_load_print_meta: n_head_kv        = 12
+llm_load_print_meta: n_layer          = 12
+llm_load_print_meta: n_rot            = 32
+llm_load_print_meta: n_embd_head_k    = 32
+llm_load_print_meta: n_embd_head_v    = 32
+llm_load_print_meta: n_gqa            = 1
+llm_load_print_meta: n_embd_k_gqa     = 384
+llm_load_print_meta: n_embd_v_gqa     = 384
+llm_load_print_meta: f_norm_eps       = 1.0e-12
+llm_load_print_meta: f_norm_rms_eps   = 0.0e+00
+llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+llm_load_print_meta: f_logit_scale    = 0.0e+00
+llm_load_print_meta: n_ff             = 1536
+llm_load_print_meta: n_expert         = 0
+llm_load_print_meta: n_expert_used    = 0
+llm_load_print_meta: causal attn      = 0
+llm_load_print_meta: pooling type     = 2
+llm_load_print_meta: rope type        = 2
+llm_load_print_meta: rope scaling     = linear
+llm_load_print_meta: freq_base_train  = 10000.0
+llm_load_print_meta: freq_scale_train = 1
+llm_load_print_meta: n_yarn_orig_ctx  = 512
+llm_load_print_meta: rope_finetuned   = unknown
+llm_load_print_meta: ssm_d_conv       = 0
+llm_load_print_meta: ssm_d_inner      = 0
+llm_load_print_meta: ssm_d_state      = 0
+llm_load_print_meta: ssm_dt_rank      = 0
+llm_load_print_meta: model type       = 33M
+llm_load_print_meta: model ftype      = Q8_0
+llm_load_print_meta: model params     = 33.21 M
+llm_load_print_meta: model size       = 34.00 MiB (8.59 BPW) 
+llm_load_print_meta: general.name     = bge-small
+llm_load_print_meta: UNK token        = 100 '[UNK]'
+llm_load_print_meta: SEP token        = 102 '[SEP]'
+llm_load_print_meta: PAD token        = 0 '[PAD]'
+llm_load_print_meta: CLS token        = 101 '[CLS]'
+llm_load_print_meta: MASK token       = 103 '[MASK]'
+llm_load_print_meta: LF token         = 0 '[PAD]'
+llm_load_tensors: ggml ctx size =    0.08 MiB
+llm_load_tensors:        CPU buffer size =    34.00 MiB
+.................................................
+llama_new_context_with_model: n_ctx      = 512
+llama_new_context_with_model: n_batch    = 2048
+llama_new_context_with_model: n_ubatch   = 2048
+llama_new_context_with_model: freq_base  = 10000.0
+llama_new_context_with_model: freq_scale = 1
+llama_kv_cache_init:        CPU KV buffer size =     9.00 MiB
+llama_new_context_with_model: KV self size  =    9.00 MiB, K (f16):    4.50 MiB, V (f16):    4.50 MiB
+llama_new_context_with_model:        CPU  output buffer size =     0.00 MiB
+llama_new_context_with_model:        CPU compute buffer size =    16.01 MiB
+llama_new_context_with_model: graph nodes  = 429
+llama_new_context_with_model: graph splits = 1
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX_VNNI = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | SSSE3 = 0 | VSX = 0 | MATMUL_INT8 = 0 | 
+batch_decode: n_tokens = 9, n_seq = 1
+
+llama_print_timings:        load time =      25.77 ms
+llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time =       9.15 ms /     9 tokens (    1.02 ms per token,   983.50 tokens per second)
+llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time =      76.22 ms /    10 tokens
+
+embedding 0: -0.044660 -0.020685  0.008437 -0.001024  0.003019 -0.037369  0.108908  0.043496  0.092429 -0.014842  0.006213 -0.035864 -0.019461  0.014530  0.017036  0.013924 -0.013276  0.010890 -0.084548 -0.007167  0.092387 -0.018075 -0.062032 -0.025178  0.027372  0.077162  0.027567 -0.014752  0.018430 -0.034928 -0.038307 -0.018421  0.068320 -0.010384 -0.022877  0.072300 -0.046294  0.010846 -0.051338  0.049476  0.032615 -0.012213  0.021241  0.050034  0.010036  0.005481 -0.027705  0.008532 -0.019280 -0.053102 -0.045108  0.029669 -0.034854  0.053138 -0.068644  0.043175  0.029629  0.046147  0.073313 -0.043047  0.075461  0.038868 -0.181743  0.082173  0.043041 -0.066124 -0.059377 -0.017072  0.005878  0.005862  0.016845 -0.026935  0.065312  0.111083  0.035345 -0.067229  0.027613 -0.066671 -0.034696 -0.034657  0.032549  0.013384 -0.004591 -0.036785 -0.051621  0.054379 -0.003605 -0.036522  0.063018  0.028800 -0.040731 -0.028087 -0.039405  0.036279  0.007295 -0.014993 -0.035729  0.018139  0.030858  0.345921 -0.045010  0.056801  0.016095 -0.021209 -0.063465 -0.000045 -0.037899 -0.030358 -0.009055 -0.020592  0.000839 -0.004579  0.003938  0.018373 -0.010429  0.024701  0.048054 -0.001155  0.050504 -0.041406 -0.030797  0.023215  0.030370 -0.022495 -0.044581 -0.080071  0.114937  0.047392  0.027032 -0.040772  0.067819 -0.023267  0.010684 -0.034224 -0.017015  0.043799  0.022628  0.051012  0.008434  0.006672  0.010097 -0.075288 -0.064869 -0.026393 -0.040538 -0.024051  0.028096  0.006042  0.027188  0.052059 -0.037503  0.058633  0.001001  0.032501 -0.019734 -0.021308  0.042170 -0.059741  0.019336  0.042450  0.042362  0.040850 -0.021011  0.028609 -0.022844  0.006536 -0.041455  0.000483  0.024506  0.000863  0.042925 -0.023524  0.043161  0.065519  0.055712  0.038272  0.000362  0.047442  0.045455 -0.008719  0.060562 -0.072951 -0.011771  0.033622  0.023081  0.015470 -0.033410  0.000994 -0.015879 -0.018342  0.048125  0.110212  0.028976  0.031063 -0.011789 -0.056761  0.006193  0.005163 -0.012697 -0.052306 -0.002443 -0.017749 -0.020630 -0.040443  0.009383 -0.058023  0.050380  0.053019 -0.009789 -0.041281 -0.015999 -0.024466 -0.015232  0.006019  0.006900 -0.026397  0.016208  0.030124  0.000795  0.022265 -0.021545 -0.097501 -0.050740 -0.277660 -0.013602 -0.061246 -0.027066  0.017483 -0.009854 -0.016756  0.035140  0.048831 -0.016834  0.015571 -0.023724  0.049795 -0.006104  0.000356 -0.059554 -0.069783 -0.061052 -0.035498  0.044029 -0.055562  0.014881  0.000311 -0.058245 -0.011136  0.011301  0.150564  0.126358 -0.011910  0.043553 -0.025292  0.014557 -0.000628 -0.150017  0.042911  0.005253 -0.037266 -0.028969 -0.019134 -0.033908  0.010919  0.034581 -0.049971 -0.052215 -0.016746 -0.024579  0.048295  0.050131 -0.017739 -0.057042  0.023565 -0.005808  0.011984  0.039348  0.007786 -0.008632 -0.106961 -0.027378 -0.096206  0.024158 -0.010554  0.092844  0.055344  0.004300  0.028191  0.001434 -0.050493 -0.038943 -0.011967 -0.046076 -0.015074  0.002835 -0.045189 -0.076815  0.065757 -0.005955 -0.000552 -0.016030  0.069531  0.025068 -0.036617  0.008442  0.002066 -0.033306  0.015992  0.038031 -0.000379 -0.051558  0.022414 -0.038657  0.000481  0.013178  0.020186 -0.057914  0.005572 -0.050556 -0.268647  0.038804 -0.066575  0.038035 -0.011469  0.043923 -0.016644  0.051069 -0.071799  0.012381  0.024113 -0.007501  0.082198  0.029673 -0.021552  0.041400 -0.002683 -0.073990 -0.014561  0.019617  0.003116  0.023334  0.196670 -0.043814 -0.025805 -0.005977 -0.018530  0.073525  0.001418 -0.031095 -0.037183 -0.043311 -0.000080 -0.010754  0.018648 -0.026419 -0.009500  0.006691  0.050915 -0.014734  0.006921  0.027849 -0.031930  0.048440  0.112605 -0.041562 -0.012753  0.004124 -0.003594  0.025054 -0.061359  0.014250 -0.010986  0.037578  0.048842  0.034889  0.036728 -0.017179  0.026345 -0.015225 -0.050945  0.004287  0.054541  0.040305 -0.038189 
+
+real	0m0.179s
+user	0m0.160s
+sys	0m0.053s
