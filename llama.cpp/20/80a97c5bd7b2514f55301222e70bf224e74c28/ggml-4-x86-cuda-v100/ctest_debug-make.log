@@ -1,0 +1,66 @@
++ make -j
+[  0%] Generating build details from Git
+[  0%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  1%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  1%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  1%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/acc.cu.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  3%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/alibi.cu.o
+[  3%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/arange.cu.o
+[  3%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/cpy.cu.o
+[  4%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/convert.cu.o
+[  4%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/binbcast.cu.o
+[  5%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/argsort.cu.o
+[  5%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/dmmv.cu.o
+[  6%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/diagmask.cu.o
+[  7%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/clamp.cu.o
+[  7%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/concat.cu.o
+[  8%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/getrows.cu.o
+[  8%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/im2col.cu.o
+[ 10%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/mmq.cu.o
+[ 10%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[ 10%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/unary.cu.o
+[ 10%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/mmvq.cu.o
+[ 10%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda.cu.o
+[ 11%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/norm.cu.o
+[ 11%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/quantize.cu.o
+[ 11%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/scale.cu.o
+[ 11%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/pad.cu.o
+[ 12%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/upscale.cu.o
+[ 13%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/rope.cu.o
+[ 14%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/softmax.cu.o
+[ 15%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/tsembd.cu.o
+[ 15%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/sumrows.cu.o
+[ 16%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/pool2d.cu.o
+[ 16%] Built target build_info
+/home/ggml/work/llama.cpp/ggml-cuda/binbcast.cu(149): error #550-D: variable "ne00" was set but never used
+              int64_t ne00 = cne0[0]; (void)(ne00);
+                      ^
+          detected during instantiation of "void ggml_cuda_op_bin_bcast<op>(const ggml_tensor *, const ggml_tensor *, ggml_tensor *, const void *, const void *, void *, cudaStream_t) [with op=bin_bcast_cuda<op_repeat>]" at line 267
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/home/ggml/work/llama.cpp/ggml-cuda/binbcast.cu(150): error #550-D: variable "ne01" was set but never used
+              int64_t ne01 = cne0[1]; (void)(ne01);
+                      ^
+          detected during instantiation of "void ggml_cuda_op_bin_bcast<op>(const ggml_tensor *, const ggml_tensor *, ggml_tensor *, const void *, const void *, void *, cudaStream_t) [with op=bin_bcast_cuda<op_repeat>]" at line 267
+
+/home/ggml/work/llama.cpp/ggml-cuda/binbcast.cu(151): error #550-D: variable "ne02" was set but never used
+              int64_t ne02 = cne0[2]; (void)(ne02);
+                      ^
+          detected during instantiation of "void ggml_cuda_op_bin_bcast<op>(const ggml_tensor *, const ggml_tensor *, ggml_tensor *, const void *, const void *, void *, cudaStream_t) [with op=bin_bcast_cuda<op_repeat>]" at line 267
+
+/home/ggml/work/llama.cpp/ggml-cuda/binbcast.cu(152): error #550-D: variable "ne03" was set but never used
+              int64_t ne03 = cne0[3]; (void)(ne03);
+                      ^
+          detected during instantiation of "void ggml_cuda_op_bin_bcast<op>(const ggml_tensor *, const ggml_tensor *, ggml_tensor *, const void *, const void *, void *, cudaStream_t) [with op=bin_bcast_cuda<op_repeat>]" at line 267
+
+4 errors detected in the compilation of "/home/ggml/work/llama.cpp/ggml-cuda/binbcast.cu".
+make[2]: *** [CMakeFiles/ggml.dir/build.make:193: CMakeFiles/ggml.dir/ggml-cuda/binbcast.cu.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:838: CMakeFiles/ggml.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m3.422s
+user	0m10.406s
+sys	0m1.822s
