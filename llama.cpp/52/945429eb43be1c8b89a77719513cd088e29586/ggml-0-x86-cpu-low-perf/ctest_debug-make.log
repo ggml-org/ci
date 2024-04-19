@@ -1,0 +1,27 @@
++ make -j
+[  1%] Generating build details from Git
+[  1%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  3%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+/home/ggml/work/llama.cpp/ggml.c: In function ‘ggml_vec_mad_f16’:
+/home/ggml/work/llama.cpp/ggml.c:1061:69: error: cast discards ‘const’ qualifier from pointer target type [-Werror=cast-qual]
+ 1061 | #define GGML_F32Cx16_LOAD(x)     _mm512_cvtph_ps(_mm256_loadu_si256((__m256i *)(x)))
+      |                                                                     ^
+/home/ggml/work/llama.cpp/ggml.c:1087:37: note: in expansion of macro ‘GGML_F32Cx16_LOAD’
+ 1087 | #define GGML_F16_VEC_LOAD(p, i)     GGML_F32Cx16_LOAD(p)
+      |                                     ^~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml.c:1688:21: note: in expansion of macro ‘GGML_F16_VEC_LOAD’
+ 1688 |             ax[j] = GGML_F16_VEC_LOAD(x + i + j*GGML_F16_EPR, j);
+      |                     ^~~~~~~~~~~~~~~~~
+[  3%] Built target build_info
+cc1: all warnings being treated as errors
+make[2]: *** [CMakeFiles/ggml.dir/build.make:76: CMakeFiles/ggml.dir/ggml.c.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:838: CMakeFiles/ggml.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m1.215s
+user	0m2.495s
+sys	0m0.232s
