@@ -37,7 +37,7 @@ PASS
 Log start
 main: build = 2816 (f725ca90)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1713789475
+main: seed  = 1713801541
 llama_model_loader: additional 5 GGUFs metadata loaded.
 llama_model_loader: loaded meta data with 27 key-value pairs and 164 tensors from /mnt/llama.cpp/models/gguf-split/ggml-model-split-00001-of-00006.gguf (version GGUF V3 (latest))
 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
@@ -160,17 +160,14 @@ CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temperature
 generate: n_ctx = 512, n_batch = 2048, n_predict = 32, n_keep = 1
 
 
- import pandas as pd
+ Soar, a leading aviation technology company, has unveiled its vision to revolutionize air travel by combining advanced AI and automation.
 
-# Read the data from the CSV file
-df = pd.read_csv('data.csv')
-
-# Print the first few rows
-llama_print_timings:        load time =    3174.64 ms
-llama_print_timings:      sample time =      53.69 ms /    32 runs   (    1.68 ms per token,   595.99 tokens per second)
-llama_print_timings: prompt eval time =    2622.99 ms /     2 tokens ( 1311.50 ms per token,     0.76 tokens per second)
-llama_print_timings:        eval time =   50652.99 ms /    31 runs   ( 1633.97 ms per token,     0.61 tokens per second)
-llama_print_timings:       total time =   53517.56 ms /    33 tokens
+**Key Features of Soar'
+llama_print_timings:        load time =    3173.76 ms
+llama_print_timings:      sample time =      51.25 ms /    32 runs   (    1.60 ms per token,   624.38 tokens per second)
+llama_print_timings: prompt eval time =    2695.86 ms /     2 tokens ( 1347.93 ms per token,     0.74 tokens per second)
+llama_print_timings:        eval time =   50681.30 ms /    31 runs   ( 1634.88 ms per token,     0.61 tokens per second)
+llama_print_timings:       total time =   53610.33 ms /    33 tokens
 Log end
 + echo PASS
 PASS
@@ -199,7 +196,7 @@ PASS
 Log start
 main: build = 2816 (f725ca90)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1713789537
+main: seed  = 1713801603
 llama_model_loader: loaded meta data with 27 key-value pairs and 164 tensors from /mnt/llama.cpp/models/gguf-split/ggml-model-merge.gguf (version GGUF V3 (latest))
 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
 llama_model_loader: - kv   0:                       general.architecture str              = gemma
@@ -316,17 +313,14 @@ CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temperature
 generate: n_ctx = 512, n_batch = 2048, n_predict = 32, n_keep = 1
 
 
- Once upon a timeggml_gallocr_needs_realloc: node inp_embd is not valid
-ggml_gallocr_alloc_graph: cannot reallocate multi buffer graph automatically, call reserve
-ggml_backend_sched_alloc_splits: failed to allocate graph, reserving
-, in a quaint village nestled amidst rolling hills, there lived a young girl named Anya.
+ They say a picture is worth a thousand words, but what if the picture itself is a thousand words? 
 
-Anya had bright eyes that sparkled with curiosity and a smile
-llama_print_timings:        load time =    3366.41 ms
-llama_print_timings:      sample time =      52.48 ms /    32 runs   (    1.64 ms per token,   609.76 tokens per second)
-llama_print_timings: prompt eval time =    6694.51 ms /     5 tokens ( 1338.90 ms per token,     0.75 tokens per second)
-llama_print_timings:        eval time =   49855.88 ms /    31 runs   ( 1608.25 ms per token,     0.62 tokens per second)
-llama_print_timings:       total time =   56834.51 ms /    36 tokens
+This project investigates the possibilities of creating interactive narratives that
+llama_print_timings:        load time =    3358.87 ms
+llama_print_timings:      sample time =      54.56 ms /    32 runs   (    1.70 ms per token,   586.53 tokens per second)
+llama_print_timings: prompt eval time =    3085.72 ms /     2 tokens ( 1542.86 ms per token,     0.65 tokens per second)
+llama_print_timings:        eval time =   49860.54 ms /    31 runs   ( 1608.40 ms per token,     0.62 tokens per second)
+llama_print_timings:       total time =   53222.83 ms /    33 tokens
 Log end
 + echo PASS
 PASS
@@ -347,7 +341,7 @@ PASS
 Log start
 main: build = 2816 (f725ca90)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1713789602
+main: seed  = 1713801665
 llama_model_loader: additional 1 GGUFs metadata loaded.
 llama_model_loader: loaded meta data with 27 key-value pairs and 164 tensors from /mnt/llama.cpp/models/gguf-split/ggml-model-split-2G-00001-of-00002.gguf (version GGUF V3 (latest))
 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
@@ -466,14 +460,16 @@ CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temperature
 generate: n_ctx = 512, n_batch = 2048, n_predict = 32, n_keep = 1
 
 
- Soar, a company dedicated to empowering people to reach their full potential, has announced the launch of their innovative AI-powered career guidance platform.
+ If a function is continuous at a point, then it has a derivative at that point.
 
-**Key Features
-llama_print_timings:        load time =    3135.90 ms
-llama_print_timings:      sample time =      60.73 ms /    32 runs   (    1.90 ms per token,   526.97 tokens per second)
-llama_print_timings: prompt eval time =    2646.17 ms /     2 tokens ( 1323.08 ms per token,     0.76 tokens per second)
-llama_print_timings:        eval time =   49857.62 ms /    31 runs   ( 1608.31 ms per token,     0.62 tokens per second)
-llama_print_timings:       total time =   52818.71 ms /    33 tokens
+Is this statement true or false?
+
+If a function is continuous at
+llama_print_timings:        load time =    3136.49 ms
+llama_print_timings:      sample time =      51.40 ms /    32 runs   (    1.61 ms per token,   622.54 tokens per second)
+llama_print_timings: prompt eval time =    2659.16 ms /     2 tokens ( 1329.58 ms per token,     0.75 tokens per second)
+llama_print_timings:        eval time =   49664.00 ms /    31 runs   ( 1602.06 ms per token,     0.62 tokens per second)
+llama_print_timings:       total time =   52556.52 ms /    33 tokens
 Log end
 + echo PASS
 PASS
@@ -481,6 +477,6 @@ PASS
 
 + rm -f /mnt/llama.cpp/models/gguf-split/ggml-model-split-00001-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00002-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00003-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00004-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00005-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00006-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-2G-00001-of-00002.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-2G-00002-of-00002.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-merge.gguf
 
-real	3m16.509s
-user	8m33.523s
-sys	0m12.080s
+real	3m5.403s
+user	8m23.176s
+sys	0m12.714s
