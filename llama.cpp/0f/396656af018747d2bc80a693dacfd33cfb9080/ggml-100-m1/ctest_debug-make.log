@@ -1,0 +1,35 @@
++ make -j
+[  1%] Generating build details from Git
+[  1%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  1%] Compiling Metal kernels
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-metal.m.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+-- Found Git: /usr/bin/git (found version "2.39.3 (Apple Git-145)") 
+[  4%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  4%] Built target build_info
+/Users/ggml/work/llama.cpp/ggml.c:12420:32: error: '&&' within '||' [-Werror,-Wlogical-op-parentheses]
+    const bool use_f16 = (src1 && src1->type == GGML_TYPE_F16 || src2 && src2->type == GGML_TYPE_F16);
+                          ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~
+/Users/ggml/work/llama.cpp/ggml.c:12420:32: note: place parentheses around the '&&' expression to silence this warning
+    const bool use_f16 = (src1 && src1->type == GGML_TYPE_F16 || src2 && src2->type == GGML_TYPE_F16);
+                               ^
+                          (                                  )
+/Users/ggml/work/llama.cpp/ggml.c:12420:71: error: '&&' within '||' [-Werror,-Wlogical-op-parentheses]
+    const bool use_f16 = (src1 && src1->type == GGML_TYPE_F16 || src2 && src2->type == GGML_TYPE_F16);
+                                                              ~~ ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/ggml/work/llama.cpp/ggml.c:12420:71: note: place parentheses around the '&&' expression to silence this warning
+    const bool use_f16 = (src1 && src1->type == GGML_TYPE_F16 || src2 && src2->type == GGML_TYPE_F16);
+                                                                      ^
+                                                                 (                                  )
+2 errors generated.
+make[2]: *** [CMakeFiles/ggml.dir/ggml.c.o] Error 1
+make[1]: *** [CMakeFiles/ggml.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+/Users/ggml/work/llama.cpp/build-ci-debug/bin/ggml-metal.metal:2178:17: warning: unused variable 'Q8' [-Wunused-variable]
+    const short Q8 = Q/8;
+                ^
+1 warning generated.
+[  4%] Built target ggml-metal
+make: *** [all] Error 2
