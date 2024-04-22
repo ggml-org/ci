@@ -1,7 +1,7 @@
 + ./bin/imatrix --model ../models-mnt/open-llama/3B-v2/ggml-model-f16.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 1
 main: build = 2816 (f725ca90)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for aarch64-linux-gnu
-main: seed  = 1713788617
+main: seed  = 1713802148
 llama_model_loader: loaded meta data with 21 key-value pairs and 237 tensors from ../models-mnt/open-llama/3B-v2/ggml-model-f16.gguf (version GGUF V3 (latest))
 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
 llama_model_loader: - kv   0:                       general.architecture str              = llama
@@ -92,20 +92,20 @@ llama_new_context_with_model: graph splits = 1
 
 system_info: n_threads = 4 / 8 | AVX = 0 | AVX_VNNI = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | SSSE3 = 0 | VSX = 0 | MATMUL_INT8 = 0 | 
 compute_imatrix: tokenizing the input ..
-compute_imatrix: tokenization took 10.167 ms
+compute_imatrix: tokenization took 10.276 ms
 compute_imatrix: computing over 1 chunks with batch_size 128
-compute_imatrix: 75.97 seconds per pass - ETA 1.25 minutes
+compute_imatrix: 75.98 seconds per pass - ETA 1.25 minutes
 [1]7.8886,
 save_imatrix: stored collected data after 2 chunks in imatrix.dat
 
-llama_print_timings:        load time =   40704.36 ms
+llama_print_timings:        load time =   40648.11 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =   75948.50 ms /   256 tokens (  296.67 ms per token,     3.37 tokens per second)
+llama_print_timings: prompt eval time =   75963.90 ms /   256 tokens (  296.73 ms per token,     3.37 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =   78705.70 ms /   257 tokens
+llama_print_timings:       total time =   78644.50 ms /   257 tokens
 
 Final estimate: PPL = 7.8886 +/- 1.80844
 
-real	1m19.011s
-user	5m2.914s
-sys	0m3.611s
+real	1m18.951s
+user	5m2.989s
+sys	0m3.524s

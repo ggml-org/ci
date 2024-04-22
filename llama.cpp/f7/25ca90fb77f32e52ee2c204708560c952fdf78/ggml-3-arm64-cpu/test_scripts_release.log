@@ -37,7 +37,7 @@ PASS
 Log start
 main: build = 2816 (f725ca90)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for aarch64-linux-gnu
-main: seed  = 1713787576
+main: seed  = 1713801538
 llama_model_loader: additional 5 GGUFs metadata loaded.
 llama_model_loader: loaded meta data with 27 key-value pairs and 164 tensors from /mnt/llama.cpp/models/gguf-split/ggml-model-split-00001-of-00006.gguf (version GGUF V3 (latest))
 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
@@ -148,16 +148,12 @@ CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temperature
 generate: n_ctx = 512, n_batch = 2048, n_predict = 32, n_keep = 1
 
 
- Heirs of a Broken Past
-
-**Synopsis:**
-
-In the wake of a devastating war, the world has fragmented into isolated communities, each struggling to rebuild their lives
-llama_print_timings:        load time =    1171.34 ms
-llama_print_timings:      sample time =       8.35 ms /    32 runs   (    0.26 ms per token,  3831.88 tokens per second)
-llama_print_timings: prompt eval time =     168.96 ms /     2 tokens (   84.48 ms per token,    11.84 tokens per second)
-llama_print_timings:        eval time =    3178.02 ms /    31 runs   (  102.52 ms per token,     9.75 tokens per second)
-llama_print_timings:       total time =    3387.85 ms /    33 tokens
+ Hebe, the daughter of Atlas and Rhea, is often depicted holding a cornucopia overflowing with flowers. This image symbolizes the eternal youth and abundance that Hebe represents
+llama_print_timings:        load time =    1163.07 ms
+llama_print_timings:      sample time =       8.12 ms /    32 runs   (    0.25 ms per token,  3942.34 tokens per second)
+llama_print_timings: prompt eval time =     168.92 ms /     2 tokens (   84.46 ms per token,    11.84 tokens per second)
+llama_print_timings:        eval time =    3166.25 ms /    31 runs   (  102.14 ms per token,     9.79 tokens per second)
+llama_print_timings:       total time =    3376.03 ms /    33 tokens
 Log end
 + echo PASS
 PASS
@@ -186,7 +182,7 @@ PASS
 Log start
 main: build = 2816 (f725ca90)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for aarch64-linux-gnu
-main: seed  = 1713787583
+main: seed  = 1713801545
 llama_model_loader: loaded meta data with 27 key-value pairs and 164 tensors from /mnt/llama.cpp/models/gguf-split/ggml-model-merge.gguf (version GGUF V3 (latest))
 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
 llama_model_loader: - kv   0:                       general.architecture str              = gemma
@@ -291,12 +287,16 @@ CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temperature
 generate: n_ctx = 512, n_batch = 2048, n_predict = 32, n_keep = 1
 
 
- Healesville Sanctuary is located in Victoria, Australia. This sanctuary is home to native Australian animals, including koalas, wombats, kangaroos, and reptiles.
-llama_print_timings:        load time =    1161.40 ms
-llama_print_timings:      sample time =       8.08 ms /    32 runs   (    0.25 ms per token,  3960.89 tokens per second)
-llama_print_timings: prompt eval time =     169.63 ms /     2 tokens (   84.82 ms per token,    11.79 tokens per second)
-llama_print_timings:        eval time =    3182.01 ms /    31 runs   (  102.65 ms per token,     9.74 tokens per second)
-llama_print_timings:       total time =    3391.88 ms /    33 tokens
+ After much deliberation, I have decided to pursue a career in the field of Artificial Intelligence.
+
+**Questions:**
+
+1. What are the essential skills and knowledge required
+llama_print_timings:        load time =    1176.82 ms
+llama_print_timings:      sample time =       7.93 ms /    32 runs   (    0.25 ms per token,  4035.82 tokens per second)
+llama_print_timings: prompt eval time =     168.24 ms /     2 tokens (   84.12 ms per token,    11.89 tokens per second)
+llama_print_timings:        eval time =    3158.64 ms /    31 runs   (  101.89 ms per token,     9.81 tokens per second)
+llama_print_timings:       total time =    3367.19 ms /    33 tokens
 Log end
 + echo PASS
 PASS
@@ -317,7 +317,7 @@ PASS
 Log start
 main: build = 2816 (f725ca90)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for aarch64-linux-gnu
-main: seed  = 1713787591
+main: seed  = 1713801553
 llama_model_loader: additional 1 GGUFs metadata loaded.
 llama_model_loader: loaded meta data with 27 key-value pairs and 164 tensors from /mnt/llama.cpp/models/gguf-split/ggml-model-split-2G-00001-of-00002.gguf (version GGUF V3 (latest))
 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
@@ -424,14 +424,17 @@ CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temperature
 generate: n_ctx = 512, n_batch = 2048, n_predict = 32, n_keep = 1
 
 
- If 25% of the students have passed the exam and 10% have failed, then what percentage of the students have actually passed?
+ Sockets and UDP in Networking
 
-**Solution
-llama_print_timings:        load time =    1155.14 ms
-llama_print_timings:      sample time =       7.98 ms /    32 runs   (    0.25 ms per token,  4012.54 tokens per second)
-llama_print_timings: prompt eval time =     167.89 ms /     2 tokens (   83.95 ms per token,    11.91 tokens per second)
-llama_print_timings:        eval time =    3164.34 ms /    31 runs   (  102.08 ms per token,     9.80 tokens per second)
-llama_print_timings:       total time =    3372.28 ms /    33 tokens
+**What are Sockets and UDP?**
+
+- Sockets are software interfaces that enable applications to interact with network services.
+
+llama_print_timings:        load time =    1174.92 ms
+llama_print_timings:      sample time =       7.92 ms /    32 runs   (    0.25 ms per token,  4042.96 tokens per second)
+llama_print_timings: prompt eval time =     167.95 ms /     2 tokens (   83.98 ms per token,    11.91 tokens per second)
+llama_print_timings:        eval time =    3157.49 ms /    31 runs   (  101.85 ms per token,     9.82 tokens per second)
+llama_print_timings:       total time =    3365.69 ms /    33 tokens
 Log end
 + echo PASS
 PASS
@@ -439,6 +442,6 @@ PASS
 
 + rm -f /mnt/llama.cpp/models/gguf-split/ggml-model-split-00001-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00002-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00003-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00004-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00005-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00006-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-2G-00001-of-00002.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-2G-00002-of-00002.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-merge.gguf
 
-real	1m21.527s
-user	0m43.879s
-sys	0m11.372s
+real	0m23.974s
+user	0m43.718s
+sys	0m11.387s

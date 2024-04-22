@@ -1,7 +1,8 @@
-+ ./bin/save-load-state --model ../models-mnt/open-llama/3B-v2/ggml-model-q4_0.gguf
++ ./bin/perplexity --model ../models-mnt/open-llama/3B-v2/ggml-model-f16.gguf -f ../models-mnt/shakespeare/shakespeare.txt --lora ../models-mnt/open-llama/3B-v2/lora/ggml-adapter-model.bin -c 128 -b 128 --chunks 1
 main: build = 2816 (f725ca90)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for aarch64-linux-gnu
-llama_model_loader: loaded meta data with 22 key-value pairs and 237 tensors from ../models-mnt/open-llama/3B-v2/ggml-model-q4_0.gguf (version GGUF V3 (latest))
+main: seed  = 1713802281
+llama_model_loader: loaded meta data with 21 key-value pairs and 237 tensors from ../models-mnt/open-llama/3B-v2/ggml-model-f16.gguf (version GGUF V3 (latest))
 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
 llama_model_loader: - kv   0:                       general.architecture str              = llama
 llama_model_loader: - kv   1:                               general.name str              = open-llama
@@ -14,7 +15,7 @@ llama_model_loader: - kv   7:                 llama.rope.dimension_count u32    
 llama_model_loader: - kv   8:                 llama.attention.head_count u32              = 32
 llama_model_loader: - kv   9:              llama.attention.head_count_kv u32              = 32
 llama_model_loader: - kv  10:     llama.attention.layer_norm_rms_epsilon f32              = 0.000001
-llama_model_loader: - kv  11:                          general.file_type u32              = 2
+llama_model_loader: - kv  11:                          general.file_type u32              = 1
 llama_model_loader: - kv  12:                       tokenizer.ggml.model str              = llama
 llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,32000]   = ["<unk>", "<s>", "</s>", "<0x00>", "<...
 llama_model_loader: - kv  14:                      tokenizer.ggml.scores arr[f32,32000]   = [0.000000, 0.000000, 0.000000, 0.0000...
@@ -24,10 +25,8 @@ llama_model_loader: - kv  17:                tokenizer.ggml.eos_token_id u32    
 llama_model_loader: - kv  18:            tokenizer.ggml.padding_token_id u32              = 0
 llama_model_loader: - kv  19:               tokenizer.ggml.add_bos_token bool             = true
 llama_model_loader: - kv  20:               tokenizer.ggml.add_eos_token bool             = false
-llama_model_loader: - kv  21:               general.quantization_version u32              = 2
 llama_model_loader: - type  f32:   53 tensors
-llama_model_loader: - type q4_0:  183 tensors
-llama_model_loader: - type q6_K:    1 tensors
+llama_model_loader: - type  f16:  184 tensors
 llm_load_vocab: special tokens definition check successful ( 259/32000 ).
 llm_load_print_meta: format           = GGUF V3 (latest)
 llm_load_print_meta: arch             = llama
@@ -66,9 +65,9 @@ llm_load_print_meta: ssm_d_inner      = 0
 llm_load_print_meta: ssm_d_state      = 0
 llm_load_print_meta: ssm_dt_rank      = 0
 llm_load_print_meta: model type       = 3B
-llm_load_print_meta: model ftype      = Q4_0
+llm_load_print_meta: model ftype      = F16
 llm_load_print_meta: model params     = 3.43 B
-llm_load_print_meta: model size       = 1.82 GiB (4.57 BPW) 
+llm_load_print_meta: model size       = 6.38 GiB (16.00 BPW) 
 llm_load_print_meta: general.name     = open-llama
 llm_load_print_meta: BOS token        = 1 '<s>'
 llm_load_print_meta: EOS token        = 2 '</s>'
@@ -76,64 +75,38 @@ llm_load_print_meta: UNK token        = 0 '<unk>'
 llm_load_print_meta: PAD token        = 0 '<unk>'
 llm_load_print_meta: LF token         = 13 '<0x0A>'
 llm_load_tensors: ggml ctx size =    0.12 MiB
-llm_load_tensors:        CPU buffer size =  1866.13 MiB
-...............................................................................................
-llama_new_context_with_model: n_ctx      = 512
-llama_new_context_with_model: n_batch    = 512
-llama_new_context_with_model: n_ubatch   = 512
+llm_load_tensors:        CPU buffer size =  6535.80 MiB
+.................................................................................................
+llama_new_context_with_model: n_ctx      = 256
+llama_new_context_with_model: n_batch    = 128
+llama_new_context_with_model: n_ubatch   = 128
 llama_new_context_with_model: flash_attn = 0
 llama_new_context_with_model: freq_base  = 10000.0
 llama_new_context_with_model: freq_scale = 1
-llama_kv_cache_init:        CPU KV buffer size =   162.50 MiB
-llama_new_context_with_model: KV self size  =  162.50 MiB, K (f16):   81.25 MiB, V (f16):   81.25 MiB
-llama_new_context_with_model:        CPU  output buffer size =     0.12 MiB
-llama_new_context_with_model:        CPU compute buffer size =    68.75 MiB
+llama_kv_cache_init:        CPU KV buffer size =    81.25 MiB
+llama_new_context_with_model: KV self size  =   81.25 MiB, K (f16):   40.62 MiB, V (f16):   40.62 MiB
+llama_new_context_with_model:        CPU  output buffer size =     0.49 MiB
+llama_new_context_with_model:        CPU compute buffer size =    17.19 MiB
 llama_new_context_with_model: graph nodes  = 838
 llama_new_context_with_model: graph splits = 1
-main : serialized state into 1798825 out of a maximum of 236005460 bytes
-llama_new_context_with_model: n_ctx      = 512
-llama_new_context_with_model: n_batch    = 512
-llama_new_context_with_model: n_ubatch   = 512
-llama_new_context_with_model: flash_attn = 0
-llama_new_context_with_model: freq_base  = 10000.0
-llama_new_context_with_model: freq_scale = 1
-llama_kv_cache_init:        CPU KV buffer size =   162.50 MiB
-llama_new_context_with_model: KV self size  =  162.50 MiB, K (f16):   81.25 MiB, V (f16):   81.25 MiB
-llama_new_context_with_model:        CPU  output buffer size =     0.12 MiB
-llama_new_context_with_model:        CPU compute buffer size =    68.75 MiB
-llama_new_context_with_model: graph nodes  = 838
-llama_new_context_with_model: graph splits = 1
-main : deserialized state from 1798825 out of a maximum of 236005460 bytes
-llama_new_context_with_model: n_ctx      = 512
-llama_new_context_with_model: n_batch    = 512
-llama_new_context_with_model: n_ubatch   = 512
-llama_new_context_with_model: flash_attn = 0
-llama_new_context_with_model: freq_base  = 10000.0
-llama_new_context_with_model: freq_scale = 1
-llama_kv_cache_init:        CPU KV buffer size =   162.50 MiB
-llama_new_context_with_model: KV self size  =  162.50 MiB, K (f16):   81.25 MiB, V (f16):   81.25 MiB
-llama_new_context_with_model:        CPU  output buffer size =     0.12 MiB
-llama_new_context_with_model:        CPU compute buffer size =    68.75 MiB
-llama_new_context_with_model: graph nodes  = 838
-llama_new_context_with_model: graph splits = 1
-main : deserialized state from 1798825 out of a maximum of 236005460 bytes
-main : seq 0 copied, 1664660 bytes
-main : kv cache cleared
-main : seq 1 restored, 1664660 bytes
+llama_apply_lora_from_file_internal: applying lora adapter from '../models-mnt/open-llama/3B-v2/lora/ggml-adapter-model.bin' - please wait ...
+llama_apply_lora_from_file_internal: r = 64, alpha = 128, scaling = 2.00
+............. done (2839.19 ms)
 
-main : success
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX_VNNI = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | SSSE3 = 0 | VSX = 0 | MATMUL_INT8 = 0 | 
+perplexity: tokenizing the input ..
+perplexity: tokenization took 62.173 ms
+perplexity: calculating perplexity over 1 chunks, n_ctx=128, batch_size=128, n_seq=1
+perplexity: 36.85 seconds per pass - ETA 0.60 minutes
+[1]7.0171,
+llama_print_timings:        load time =    6334.12 ms
+llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings: prompt eval time =   36847.42 ms /   128 tokens (  287.87 ms per token,     3.47 tokens per second)
+llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+llama_print_timings:       total time =   36911.17 ms /   129 tokens
 
-first run: The quick brown fox
-In Hindi translations of the Jungle Book, the fourth pantheon,
+Final estimate: PPL = 7.0171 +/- 1.75945
 
-
-second run: The quick brown fox
-In Hindi translations of the Jungle Book, the fourth pantheon,
-
-
-single seq run: The quick brown fox
-In Hindi translations of the Jungle Book, the fourth pantheon,
-
-real	0m8.468s
-user	0m28.183s
-sys	0m1.343s
+real	0m43.627s
+user	2m38.269s
+sys	0m4.931s

@@ -37,7 +37,7 @@ PASS
 Log start
 main: build = 2816 (f725ca90)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for aarch64-linux-gnu
-main: seed  = 1713787339
+main: seed  = 1713801359
 llama_model_loader: additional 5 GGUFs metadata loaded.
 llama_model_loader: loaded meta data with 27 key-value pairs and 164 tensors from /mnt/llama.cpp/models/gguf-split/ggml-model-split-00001-of-00006.gguf (version GGUF V3 (latest))
 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
@@ -149,12 +149,16 @@ CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temperature
 generate: n_ctx = 512, n_batch = 2048, n_predict = 32, n_keep = 1
 
 
- The Walking Dead comic series, written by Robert Kirkman and illustrated by Charlie Adlard, has been a critical and commercial success. The series has been praised for its
-llama_print_timings:        load time =    3731.03 ms
-llama_print_timings:      sample time =      43.58 ms /    32 runs   (    1.36 ms per token,   734.33 tokens per second)
-llama_print_timings: prompt eval time =    2728.13 ms /     2 tokens ( 1364.07 ms per token,     0.73 tokens per second)
-llama_print_timings:        eval time =   48610.06 ms /    31 runs   ( 1568.07 ms per token,     0.64 tokens per second)
-llama_print_timings:       total time =   51496.94 ms /    33 tokens
+ Soar is a revolutionary new software platform designed to empower people to achieve their goals by offering a personalized, AI-powered coaching experience.
+
+**Key Features:**
+
+
+llama_print_timings:        load time =    3662.47 ms
+llama_print_timings:      sample time =      41.76 ms /    32 runs   (    1.31 ms per token,   766.21 tokens per second)
+llama_print_timings: prompt eval time =    2727.76 ms /     2 tokens ( 1363.88 ms per token,     0.73 tokens per second)
+llama_print_timings:        eval time =   48597.27 ms /    31 runs   ( 1567.65 ms per token,     0.64 tokens per second)
+llama_print_timings:       total time =   51480.51 ms /    33 tokens
 Log end
 + echo PASS
 PASS
@@ -183,7 +187,7 @@ PASS
 Log start
 main: build = 2816 (f725ca90)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for aarch64-linux-gnu
-main: seed  = 1713787399
+main: seed  = 1713801418
 llama_model_loader: loaded meta data with 27 key-value pairs and 164 tensors from /mnt/llama.cpp/models/gguf-split/ggml-model-merge.gguf (version GGUF V3 (latest))
 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
 llama_model_loader: - kv   0:                       general.architecture str              = gemma
@@ -289,14 +293,16 @@ CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temperature
 generate: n_ctx = 512, n_batch = 2048, n_predict = 32, n_keep = 1
 
 
- Heuristics in Decision Making
+ Soar! is a children's book series that celebrates the joy of learning and the power of imagination.
 
-**Heuristics** are mental shortcuts that people use to make decisions quickly and efficiently. They are cognitive strategies that simplify decision-
-llama_print_timings:        load time =    3731.70 ms
-llama_print_timings:      sample time =      41.56 ms /    32 runs   (    1.30 ms per token,   770.03 tokens per second)
-llama_print_timings: prompt eval time =    2732.44 ms /     2 tokens ( 1366.22 ms per token,     0.73 tokens per second)
-llama_print_timings:        eval time =   48670.47 ms /    31 runs   ( 1570.02 ms per token,     0.64 tokens per second)
-llama_print_timings:       total time =   51558.38 ms /    33 tokens
+**Soar!**
+
+* A young girl
+llama_print_timings:        load time =    3659.58 ms
+llama_print_timings:      sample time =      42.05 ms /    32 runs   (    1.31 ms per token,   761.02 tokens per second)
+llama_print_timings: prompt eval time =    2728.35 ms /     2 tokens ( 1364.17 ms per token,     0.73 tokens per second)
+llama_print_timings:        eval time =   48623.21 ms /    31 runs   ( 1568.49 ms per token,     0.64 tokens per second)
+llama_print_timings:       total time =   51507.34 ms /    33 tokens
 Log end
 + echo PASS
 PASS
@@ -317,7 +323,7 @@ PASS
 Log start
 main: build = 2816 (f725ca90)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for aarch64-linux-gnu
-main: seed  = 1713787458
+main: seed  = 1713801477
 llama_model_loader: additional 1 GGUFs metadata loaded.
 llama_model_loader: loaded meta data with 27 key-value pairs and 164 tensors from /mnt/llama.cpp/models/gguf-split/ggml-model-split-2G-00001-of-00002.gguf (version GGUF V3 (latest))
 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
@@ -425,16 +431,12 @@ CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temperature
 generate: n_ctx = 512, n_batch = 2048, n_predict = 32, n_keep = 1
 
 
- When Conducting a Controlled Experiment
-
-**Step 1: Define the Independent Variable and Dependent Variable**
-
-* Identify the factor or variable that you will manipulate or change to
-llama_print_timings:        load time =    3781.36 ms
-llama_print_timings:      sample time =      41.61 ms /    32 runs   (    1.30 ms per token,   769.06 tokens per second)
-llama_print_timings: prompt eval time =    2725.73 ms /     2 tokens ( 1362.87 ms per token,     0.73 tokens per second)
-llama_print_timings:        eval time =   48540.15 ms /    31 runs   ( 1565.81 ms per token,     0.64 tokens per second)
-llama_print_timings:       total time =   51420.76 ms /    33 tokens
+ After hours, I was awakened by a piercing scream that shook the walls of my house. I rushed to the source of the sound and found a young woman, unconscious
+llama_print_timings:        load time =    3648.92 ms
+llama_print_timings:      sample time =      42.50 ms /    32 runs   (    1.33 ms per token,   752.99 tokens per second)
+llama_print_timings: prompt eval time =    2724.14 ms /     2 tokens ( 1362.07 ms per token,     0.73 tokens per second)
+llama_print_timings:        eval time =   48523.63 ms /    31 runs   ( 1565.28 ms per token,     0.64 tokens per second)
+llama_print_timings:       total time =   51405.19 ms /    33 tokens
 Log end
 + echo PASS
 PASS
@@ -442,6 +444,6 @@ PASS
 
 + rm -f /mnt/llama.cpp/models/gguf-split/ggml-model-split-00001-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00002-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00003-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00004-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00005-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00006-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-2G-00001-of-00002.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-2G-00002-of-00002.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-merge.gguf
 
-real	3m7.103s
-user	10m52.338s
-sys	0m12.694s
+real	2m58.544s
+user	10m51.992s
+sys	0m12.327s
