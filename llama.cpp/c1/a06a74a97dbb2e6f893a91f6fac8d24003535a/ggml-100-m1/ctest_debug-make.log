@@ -1,0 +1,62 @@
++ make -j
+[  1%] Generating build details from Git
+[  1%] Compiling Metal kernels
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  5%] Building CXX object CMakeFiles/ggml.dir/sgemm.cpp.o
+[  5%] Building C object CMakeFiles/ggml.dir/ggml-metal.m.o
+-- Found Git: /usr/bin/git (found version "2.39.3 (Apple Git-145)") 
+[  5%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  5%] Built target build_info
+In file included from /Users/ggml/work/llama.cpp/ggml-quants.c:5:
+/Users/ggml/work/llama.cpp/./ggml-impl.h:310:48: error: expected ')' in preprocessor expression
+#if defined(__ARM_NEON) && (!defined(__MSC_VER)
+                            ~~~~~~~~~~~~~~~~~~~^
+/Users/ggml/work/llama.cpp/./ggml-impl.h:310:28: note: to match this '('
+#if defined(__ARM_NEON) && (!defined(__MSC_VER)
+                           ^
+In file included from /Users/ggml/work/llama.cpp/ggml-alloc.c:4:
+/Users/ggml/work/llama.cpp/./ggml-impl.h:310:48: error: expected ')' in preprocessor expression
+#if defined(__ARM_NEON) && (!defined(__MSC_VER)
+                            ~~~~~~~~~~~~~~~~~~~^
+/Users/ggml/work/llama.cpp/./ggml-impl.h:310:28: note: to match this '('
+#if defined(__ARM_NEON) && (!defined(__MSC_VER)
+                           ^
+1 error generated.
+make[2]: *** [CMakeFiles/ggml.dir/ggml-alloc.c.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+In file included from /Users/ggml/work/llama.cpp/ggml-backend.c:3:
+/Users/ggml/work/llama.cpp/./ggml-impl.h:310:48: error: expected ')' in preprocessor expression
+#if defined(__ARM_NEON) && (!defined(__MSC_VER)
+                            ~~~~~~~~~~~~~~~~~~~^
+/Users/ggml/work/llama.cpp/./ggml-impl.h:310:28: note: to match this '('
+#if defined(__ARM_NEON) && (!defined(__MSC_VER)
+                           ^
+1 error generated.
+make[2]: *** [CMakeFiles/ggml.dir/ggml-backend.c.o] Error 1
+1 error generated.
+make[2]: *** [CMakeFiles/ggml.dir/ggml-quants.c.o] Error 1
+In file included from /Users/ggml/work/llama.cpp/sgemm.cpp:54:
+/Users/ggml/work/llama.cpp/./ggml-impl.h:310:48: error: expected ')' in preprocessor expression
+#if defined(__ARM_NEON) && (!defined(__MSC_VER)
+                            ~~~~~~~~~~~~~~~~~~~^
+/Users/ggml/work/llama.cpp/./ggml-impl.h:310:28: note: to match this '('
+#if defined(__ARM_NEON) && (!defined(__MSC_VER)
+                           ^
+1 error generated.
+make[2]: *** [CMakeFiles/ggml.dir/sgemm.cpp.o] Error 1
+In file included from /Users/ggml/work/llama.cpp/ggml.c:4:
+/Users/ggml/work/llama.cpp/./ggml-impl.h:310:48: error: expected ')' in preprocessor expression
+#if defined(__ARM_NEON) && (!defined(__MSC_VER)
+                            ~~~~~~~~~~~~~~~~~~~^
+/Users/ggml/work/llama.cpp/./ggml-impl.h:310:28: note: to match this '('
+#if defined(__ARM_NEON) && (!defined(__MSC_VER)
+                           ^
+1 error generated.
+make[2]: *** [CMakeFiles/ggml.dir/ggml.c.o] Error 1
+make[1]: *** [CMakeFiles/ggml.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[  5%] Built target ggml-metal
+make: *** [all] Error 2
