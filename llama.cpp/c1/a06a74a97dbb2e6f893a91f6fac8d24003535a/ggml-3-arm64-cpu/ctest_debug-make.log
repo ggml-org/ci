@@ -1,0 +1,42 @@
++ make -j
+[  1%] Generating build details from Git
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  3%] Building CXX object CMakeFiles/ggml.dir/sgemm.cpp.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  4%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  4%] Built target build_info
+In file included from /home/ggml/work/llama.cpp/sgemm.cpp:54:
+/home/ggml/work/llama.cpp/ggml-impl.h:310:28: error: missing ')' in expression
+  310 | #if defined(__ARM_NEON) && (!defined(__MSC_VER)
+      |                            ^
+In file included from /home/ggml/work/llama.cpp/ggml-alloc.c:4:
+/home/ggml/work/llama.cpp/ggml-impl.h:310:28: error: missing ')' in expression
+  310 | #if defined(__ARM_NEON) && (!defined(__MSC_VER)
+      |                            ^
+In file included from /home/ggml/work/llama.cpp/ggml-backend.c:3:
+/home/ggml/work/llama.cpp/ggml-impl.h:310:28: error: missing ')' in expression
+  310 | #if defined(__ARM_NEON) && (!defined(__MSC_VER)
+      |                            ^
+make[2]: *** [CMakeFiles/ggml.dir/build.make:90: CMakeFiles/ggml.dir/ggml-alloc.c.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+In file included from /home/ggml/work/llama.cpp/ggml-quants.c:5:
+/home/ggml/work/llama.cpp/ggml-impl.h:310:28: error: missing ')' in expression
+  310 | #if defined(__ARM_NEON) && (!defined(__MSC_VER)
+      |                            ^
+make[2]: *** [CMakeFiles/ggml.dir/build.make:104: CMakeFiles/ggml.dir/ggml-backend.c.o] Error 1
+In file included from /home/ggml/work/llama.cpp/ggml.c:4:
+/home/ggml/work/llama.cpp/ggml-impl.h:310:28: error: missing ')' in expression
+  310 | #if defined(__ARM_NEON) && (!defined(__MSC_VER)
+      |                            ^
+make[2]: *** [CMakeFiles/ggml.dir/build.make:118: CMakeFiles/ggml.dir/ggml-quants.c.o] Error 1
+make[2]: *** [CMakeFiles/ggml.dir/build.make:132: CMakeFiles/ggml.dir/sgemm.cpp.o] Error 1
+make[2]: *** [CMakeFiles/ggml.dir/build.make:76: CMakeFiles/ggml.dir/ggml.c.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:838: CMakeFiles/ggml.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m0.587s
+user	0m1.799s
+sys	0m0.496s
