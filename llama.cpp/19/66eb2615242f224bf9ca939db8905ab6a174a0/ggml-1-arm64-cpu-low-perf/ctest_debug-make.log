@@ -1,0 +1,31 @@
++ make -j
+[  1%] Generating build details from Git
+[  2%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  4%] Building CXX object CMakeFiles/ggml.dir/sgemm.cpp.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  4%] Built target ggml
+[  4%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  4%] Building CXX object CMakeFiles/llama.dir/unicode.cpp.o
+[  5%] Linking CXX static library libggml_static.a
+[  4%] Building CXX object examples/gguf/CMakeFiles/gguf.dir/gguf.cpp.o
+[  6%] Building CXX object CMakeFiles/llama.dir/unicode-data.cpp.o
+[  7%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+[  8%] Linking CXX executable ../../bin/gguf
+[  8%] Built target build_info
+[  8%] Built target ggml_static
+[  8%] Built target gguf
+/home/ggml/work/llama.cpp/llama.cpp: In function ‘void llama_model_quantize_internal(const string&, const string&, const llama_model_quantize_params*)’:
+/home/ggml/work/llama.cpp/llama.cpp:14577:33: error: default argument specified for lambda parameter [-Werror=pedantic]
+14577 |     auto new_ofstream = [&](int index = 0) {
+      |                             ~~~~^~~~~~~~~
+cc1plus: all warnings being treated as errors
+make[2]: *** [CMakeFiles/llama.dir/build.make:76: CMakeFiles/llama.dir/llama.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:890: CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m9.133s
+user	0m8.727s
+sys	0m0.908s
