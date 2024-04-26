@@ -30,8 +30,10 @@ RUN set -eux ; \
       cuda-nvcc-12-2 \
       libcublas-dev-12-2;
 
+# https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/adding-self-hosted-runners
+# https://github.com/actions/runner/releases
 ARG RUNNER_VERSION=2.316.0
-ARG RUNNER_VERSION_HASH=6c726a118bbe02cd32e222f890e1e476567bf299353a96886ba75b423c1137b5
+ARG RUNNER_VERSION_HASH=64a47e18119f0c5d70e21b6050472c2af3f582633c9678d40cb5bcb852bcc18f
 
 RUN set -eux ; \
     mkdir /ggml-ci /tmp/github-runner ; \
