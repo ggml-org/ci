@@ -1,0 +1,22 @@
++ make -j
+[  1%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  1%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  1%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  3%] Building CXX object CMakeFiles/ggml.dir/sgemm.cpp.o
+[  4%] Built target build_info
+/home/ggml/work/llama.cpp/ggml-quants.c: In function ‘ggml_validate_row_data’:
+/home/ggml/work/llama.cpp/ggml-quants.c:12616:26: error: implicit declaration of function ‘validate_f16’; did you mean ‘validate_fp16’? [-Werror=implicit-function-declaration]
+12616 |                     if (!validate_f16(q[i].d, i)) {
+      |                          ^~~~~~~~~~~~
+      |                          validate_fp16
+cc1: all warnings being treated as errors
+make[2]: *** [CMakeFiles/ggml.dir/build.make:118: CMakeFiles/ggml.dir/ggml-quants.c.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:838: CMakeFiles/ggml.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m6.373s
+user	0m13.196s
+sys	0m0.334s
