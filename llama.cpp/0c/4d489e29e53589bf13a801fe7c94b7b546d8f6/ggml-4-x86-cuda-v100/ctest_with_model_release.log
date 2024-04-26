@@ -1,0 +1,4 @@
++ LLAMACPP_TEST_MODELFILE=/mnt/llama.cpp/models/open-llama/7B-v2/ggml-model-f16.gguf
++ time ctest --output-on-failure -L model
+Test project /home/ggml/work/llama.cpp/build-ci-release
+    Start 23: test-model-load-cancel
