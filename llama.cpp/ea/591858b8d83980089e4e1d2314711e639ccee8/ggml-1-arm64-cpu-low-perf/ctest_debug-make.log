@@ -1,0 +1,32 @@
++ make -j
+[  1%] Generating build details from Git
+[  2%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  3%] Building CXX object CMakeFiles/ggml.dir/sgemm.cpp.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  4%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  4%] Built target build_info
+/home/ggml/work/llama.cpp/ggml-quants.c: In function ‘ggml_validate_row_data’:
+/home/ggml/work/llama.cpp/ggml-quants.c:12524:21: note: use ‘-flax-vector-conversions’ to permit conversions between vectors with differing element types or numbers of subparts
+12524 |                     uint64_t mask = vget_lane_u64(vreinterpret_u64_u8(vshrn_n_u32(cmp, 8)), 0);
+      |                     ^~~~~~~~
+/home/ggml/work/llama.cpp/ggml-quants.c:12524:71: error: incompatible type for argument 1 of ‘vreinterpret_u64_u8’
+12524 |                     uint64_t mask = vget_lane_u64(vreinterpret_u64_u8(vshrn_n_u32(cmp, 8)), 0);
+      |                                                                       ^~~~~~~~~~~~~~~~~~~
+      |                                                                       |
+      |                                                                       uint16x4_t
+In file included from /home/ggml/work/llama.cpp/ggml-impl.h:54,
+                 from /home/ggml/work/llama.cpp/ggml-quants.c:5:
+/usr/lib/gcc/aarch64-linux-gnu/11/include/arm_neon.h:4819:32: note: expected ‘uint8x8_t’ but argument is of type ‘uint16x4_t’
+ 4819 | vreinterpret_u64_u8 (uint8x8_t __a)
+      |                      ~~~~~~~~~~^~~
+make[2]: *** [CMakeFiles/ggml.dir/build.make:118: CMakeFiles/ggml.dir/ggml-quants.c.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:838: CMakeFiles/ggml.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m2.005s
+user	0m3.415s
+sys	0m0.587s
