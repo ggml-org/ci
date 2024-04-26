@@ -30,7 +30,7 @@ RUN set -eux ; \
       cuda-nvcc-12-2 \
       libcublas-dev-12-2;
 
-ARG RUNNER_VERSION=2.314.1
+ARG RUNNER_VERSION=2.316.0
 ARG RUNNER_VERSION_HASH=6c726a118bbe02cd32e222f890e1e476567bf299353a96886ba75b423c1137b5
 
 RUN set -eux ; \
