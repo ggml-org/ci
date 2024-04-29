@@ -1,0 +1,119 @@
+## Summary
+
+- status:  FAILURE ❌ (8)
+- runtime: 9:00.58
+- date:    Mon Apr 29 07:56:18 UTC 2024
+- repo:    https://github.com/ggerganov/llama.cpp
+- commit:  https://github.com/ggerganov/llama.cpp/commit/43708d22c3f8a324f15c7d169e66f11908e49e43
+- author:  Georgi Gerganov
+```
+tests : refactor vocab tests
+
+ggml-ci
+```
+
+## Environment
+
+```
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 8
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-debug
+      Start  1: test-tokenizer-0-llama-spm
+ 1/26 Test  #1: test-tokenizer-0-llama-spm ........***Failed    0.01 sec
+main : reading vocab from: '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-spm.gguf'
+llama_model_load: error loading model: llama_model_loader: failed to load model from /home/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-spm.gguf
+
+llama_load_model_from_file: failed to load model
+main: error: failed to load vocab '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-spm.gguf'
+
+      Start  2: test-tokenizer-0-llama-bpe
+ 2/26 Test  #2: test-tokenizer-0-llama-bpe ........***Failed    0.01 sec
+main : reading vocab from: '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-bpe.gguf'
+llama_model_load: error loading model: llama_model_loader: failed to load model from /home/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-bpe.gguf
+
+llama_load_model_from_file: failed to load model
+main: error: failed to load vocab '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-bpe.gguf'
+
+      Start  3: test-tokenizer-0-falcon
+ 3/26 Test  #3: test-tokenizer-0-falcon ...........   Passed    0.87 sec
+      Start  4: test-tokenizer-0-deepseek-llm
+ 4/26 Test  #4: test-tokenizer-0-deepseek-llm .....   Passed    1.26 sec
+      Start  5: test-tokenizer-0-deepseek-coder
+ 5/26 Test  #5: test-tokenizer-0-deepseek-coder ...   Passed    0.58 sec
+      Start  6: test-tokenizer-1-falcon
+ 6/26 Test  #6: test-tokenizer-1-falcon ...........   Passed   60.31 sec
+      Start  7: test-tokenizer-1-aquila
+ 7/26 Test  #7: test-tokenizer-1-aquila ...........   Passed   74.59 sec
+      Start  8: test-tokenizer-1-mpt
+ 8/26 Test  #8: test-tokenizer-1-mpt ..............   Passed   54.66 sec
+      Start  9: test-tokenizer-1-stablelm
+ 9/26 Test  #9: test-tokenizer-1-stablelm .........   Passed   54.49 sec
+      Start 10: test-tokenizer-1-gpt-neox
+10/26 Test #10: test-tokenizer-1-gpt-neox .........   Passed   54.55 sec
+      Start 11: test-tokenizer-1-refact
+11/26 Test #11: test-tokenizer-1-refact ...........   Passed   53.95 sec
+      Start 12: test-tokenizer-1-starcoder
+12/26 Test #12: test-tokenizer-1-starcoder ........   Passed   53.78 sec
+      Start 13: test-tokenizer-1-gpt2
+13/26 Test #13: test-tokenizer-1-gpt2 .............   Passed   54.76 sec
+      Start 14: test-tokenizer-1-llama-spm
+14/26 Test #14: test-tokenizer-1-llama-spm ........***Failed    0.01 sec
+main : reading vocab from: '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-spm.gguf'
+llama_model_load: error loading model: llama_model_loader: failed to load model from /home/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-spm.gguf
+
+llama_load_model_from_file: failed to load model
+main: error: failed to load vocab '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-spm.gguf'
+
+      Start 15: test-tokenizer-1-baichuan
+15/26 Test #15: test-tokenizer-1-baichuan .........   Passed    3.62 sec
+      Start 16: test-quantize-fns
+16/26 Test #16: test-quantize-fns .................   Passed   31.00 sec
+      Start 17: test-quantize-perf
+17/26 Test #17: test-quantize-perf ................   Passed    9.07 sec
+      Start 18: test-sampling
+18/26 Test #18: test-sampling .....................   Passed    0.03 sec
+      Start 19: test-chat-template
+19/26 Test #19: test-chat-template ................   Passed    0.00 sec
+      Start 20: test-grammar-parser
+20/26 Test #20: test-grammar-parser ...............   Passed    0.00 sec
+      Start 21: test-llama-grammar
+21/26 Test #21: test-llama-grammar ................   Passed    0.00 sec
+      Start 22: test-grammar-integration
+22/26 Test #22: test-grammar-integration ..........   Passed    0.01 sec
+      Start 23: test-grad0
+23/26 Test #23: test-grad0 ........................   Passed    2.52 sec
+      Start 24: test-backend-ops
+24/26 Test #24: test-backend-ops ..................   Passed    0.00 sec
+      Start 25: test-rope
+25/26 Test #25: test-rope .........................   Passed    0.06 sec
+      Start 28: test-json-schema-to-grammar
+26/26 Test #28: test-json-schema-to-grammar .......   Passed    1.13 sec
+
+88% tests passed, 3 tests failed out of 26
+
+Label Time Summary:
+main    = 511.28 sec*proc (26 tests)
+
+Total Test time (real) = 511.29 sec
+
+The following tests FAILED:
+	  1 - test-tokenizer-0-llama-spm (Failed)
+	  2 - test-tokenizer-0-llama-bpe (Failed)
+	 14 - test-tokenizer-1-llama-spm (Failed)
+Errors while running CTest
+
+real	8m31.312s
+user	40m45.405s
+sys	0m3.580s
+```
+
