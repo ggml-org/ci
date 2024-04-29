@@ -1,0 +1,344 @@
++ cmake -DCMAKE_BUILD_TYPE=Debug -DLLAMA_FATAL_WARNINGS=ON ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Warning: ccache not found - consider installing it for faster compilation or disable this warning with LLAMA_CCACHE=OFF
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- x86 detected
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-debug
+
+real	0m0.554s
+user	0m0.341s
+sys	0m0.193s
++ make -j
+[  1%] Generating build details from Git
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  4%] Building CXX object CMakeFiles/ggml.dir/sgemm.cpp.o
+[  4%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  4%] Built target build_info
+[  4%] Built target ggml
+[  5%] Building CXX object examples/gguf/CMakeFiles/gguf.dir/gguf.cpp.o
+[  5%] Linking CXX static library libggml_static.a
+[  5%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+[  6%] Building CXX object CMakeFiles/llama.dir/unicode.cpp.o
+[  7%] Building CXX object CMakeFiles/llama.dir/unicode-data.cpp.o
+[  7%] Built target ggml_static
+[  8%] Linking CXX executable ../../bin/gguf
+[  8%] Built target gguf
+[  8%] Linking CXX static library libllama.a
+[  8%] Built target llama
+[  8%] Building C object tests/CMakeFiles/test-c.dir/test-c.c.o
+[  9%] Building CXX object common/CMakeFiles/common.dir/console.cpp.o
+[  9%] Building CXX object examples/llava/CMakeFiles/llava.dir/llava.cpp.o
+[ 10%] Building CXX object common/CMakeFiles/common.dir/common.cpp.o
+[ 10%] Building CXX object common/CMakeFiles/common.dir/sampling.cpp.o
+[ 11%] Building CXX object examples/llava/CMakeFiles/llava.dir/clip.cpp.o
+[ 11%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
+[ 12%] Building CXX object common/CMakeFiles/common.dir/grammar-parser.cpp.o
+[ 12%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
+[ 12%] Building CXX object common/CMakeFiles/common.dir/json-schema-to-grammar.cpp.o
+[ 13%] Building CXX object common/CMakeFiles/common.dir/train.cpp.o
+[ 14%] Building CXX object common/CMakeFiles/common.dir/ngram-cache.cpp.o
+[ 15%] Linking CXX executable ../bin/test-c
+[ 15%] Built target test-c
+[ 16%] Linking CXX executable ../../bin/benchmark
+[ 16%] Built target benchmark
+[ 17%] Linking CXX executable ../../bin/quantize-stats
+[ 17%] Built target quantize-stats
+[ 17%] Built target llava
+[ 18%] Linking CXX static library libllava_static.a
+[ 18%] Built target llava_static
+[ 18%] Linking CXX static library libcommon.a
+[ 18%] Built target common
+[ 19%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/get-model.cpp.o
+[ 19%] Building CXX object tests/CMakeFiles/test-tokenizer-1-spm.dir/test-tokenizer-1-spm.cpp.o
+[ 20%] Building CXX object tests/CMakeFiles/test-tokenizer-1-bpe.dir/test-tokenizer-1-bpe.cpp.o
+[ 21%] Building CXX object tests/CMakeFiles/test-tokenizer-1-llama-spm.dir/get-model.cpp.o
+[ 21%] Building CXX object tests/CMakeFiles/test-tokenizer-1-bpe.dir/get-model.cpp.o
+[ 22%] Building CXX object tests/CMakeFiles/test-tokenizer-1-spm.dir/get-model.cpp.o
+[ 22%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/test-tokenizer-0.cpp.o
+[ 23%] Building CXX object tests/CMakeFiles/test-tokenizer-1-baichuan.dir/test-tokenizer-1-spm.cpp.o
+[ 23%] Building CXX object tests/CMakeFiles/test-tokenizer-1-llama-spm.dir/test-tokenizer-1-spm.cpp.o
+[ 24%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 24%] Building CXX object tests/CMakeFiles/test-tokenizer-1-baichuan.dir/get-model.cpp.o
+[ 25%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 26%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/get-model.cpp.o
+[ 27%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
+[ 28%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/get-model.cpp.o
+[ 27%] Building CXX object tests/CMakeFiles/test-sampling.dir/get-model.cpp.o
+[ 29%] Building CXX object tests/CMakeFiles/test-chat-template.dir/test-chat-template.cpp.o
+[ 29%] Building CXX object tests/CMakeFiles/test-chat-template.dir/get-model.cpp.o
+[ 29%] Building CXX object tests/CMakeFiles/test-grammar-parser.dir/test-grammar-parser.cpp.o
+[ 31%] Building CXX object tests/CMakeFiles/test-grammar-integration.dir/test-grammar-integration.cpp.o
+[ 31%] Building CXX object tests/CMakeFiles/test-grad0.dir/get-model.cpp.o
+[ 31%] Building CXX object tests/CMakeFiles/test-llama-grammar.dir/test-llama-grammar.cpp.o
+[ 30%] Building CXX object tests/CMakeFiles/test-grammar-parser.dir/get-model.cpp.o
+[ 32%] Building CXX object tests/CMakeFiles/test-llama-grammar.dir/get-model.cpp.o
+[ 33%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+[ 33%] Building CXX object tests/CMakeFiles/test-grammar-integration.dir/get-model.cpp.o
+[ 34%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 34%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/get-model.cpp.o
+[ 35%] Building CXX object tests/CMakeFiles/test-rope.dir/test-rope.cpp.o
+[ 35%] Building CXX object tests/CMakeFiles/test-model-load-cancel.dir/test-model-load-cancel.cpp.o
+[ 36%] Building CXX object tests/CMakeFiles/test-model-load-cancel.dir/get-model.cpp.o
+[ 37%] Building CXX object tests/CMakeFiles/test-rope.dir/get-model.cpp.o
+[ 37%] Building CXX object tests/CMakeFiles/test-autorelease.dir/get-model.cpp.o
+[ 38%] Building CXX object tests/CMakeFiles/test-autorelease.dir/test-autorelease.cpp.o
+[ 38%] Building CXX object tests/CMakeFiles/test-json-schema-to-grammar.dir/test-json-schema-to-grammar.cpp.o
+[ 39%] Building CXX object tests/CMakeFiles/test-json-schema-to-grammar.dir/get-model.cpp.o
+[ 39%] Building CXX object examples/batched/CMakeFiles/batched.dir/batched.cpp.o
+[ 39%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
+[ 40%] Building CXX object examples/beam-search/CMakeFiles/beam-search.dir/beam-search.cpp.o
+[ 41%] Building CXX object examples/batched-bench/CMakeFiles/batched-bench.dir/batched-bench.cpp.o
+[ 42%] Building CXX object examples/convert-llama2c-to-ggml/CMakeFiles/convert-llama2c-to-ggml.dir/convert-llama2c-to-ggml.cpp.o
+[ 42%] Building CXX object examples/embedding/CMakeFiles/embedding.dir/embedding.cpp.o
+[ 42%] Building CXX object examples/eval-callback/CMakeFiles/eval-callback.dir/eval-callback.cpp.o
+[ 43%] Building CXX object examples/finetune/CMakeFiles/finetune.dir/finetune.cpp.o
+[ 44%] Building CXX object examples/gritlm/CMakeFiles/gritlm.dir/gritlm.cpp.o
+[ 44%] Building CXX object examples/gguf-split/CMakeFiles/gguf-split.dir/gguf-split.cpp.o
+[ 44%] Building CXX object examples/infill/CMakeFiles/infill.dir/infill.cpp.o
+[ 45%] Building CXX object examples/llama-bench/CMakeFiles/llama-bench.dir/llama-bench.cpp.o
+[ 46%] Building CXX object examples/llava/CMakeFiles/llava-cli.dir/llava-cli.cpp.o
+[ 47%] Building CXX object examples/main/CMakeFiles/main.dir/main.cpp.o
+[ 47%] Building CXX object examples/tokenize/CMakeFiles/tokenize.dir/tokenize.cpp.o
+[ 47%] Linking CXX executable ../bin/test-model-load-cancel
+[ 48%] Building CXX object examples/parallel/CMakeFiles/parallel.dir/parallel.cpp.o
+[ 48%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+[ 49%] Building CXX object examples/perplexity/CMakeFiles/perplexity.dir/perplexity.cpp.o
+[ 50%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
+[ 51%] Building CXX object examples/retrieval/CMakeFiles/retrieval.dir/retrieval.cpp.o
+[ 52%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
+[ 52%] Building CXX object examples/speculative/CMakeFiles/speculative.dir/speculative.cpp.o
+[ 52%] Building CXX object examples/passkey/CMakeFiles/passkey.dir/passkey.cpp.o
+[ 52%] Building CXX object examples/lookahead/CMakeFiles/lookahead.dir/lookahead.cpp.o
+[ 53%] Building CXX object examples/lookup/CMakeFiles/lookup.dir/lookup.cpp.o
+[ 54%] Building CXX object examples/lookup/CMakeFiles/lookup-create.dir/lookup-create.cpp.o
+[ 54%] Building CXX object examples/lookup/CMakeFiles/lookup-merge.dir/lookup-merge.cpp.o
+[ 55%] Building CXX object examples/lookup/CMakeFiles/lookup-stats.dir/lookup-stats.cpp.o
+[ 56%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
+[ 57%] Building CXX object examples/imatrix/CMakeFiles/imatrix.dir/imatrix.cpp.o
+[ 57%] Generating json-schema-to-grammar.mjs.hpp
+[ 58%] Generating completion.js.hpp
+[ 58%] Generating index.html.hpp
+[ 59%] Generating index.js.hpp
+[ 61%] Building CXX object examples/export-lora/CMakeFiles/export-lora.dir/export-lora.cpp.o
+[ 61%] Building CXX object pocs/vdot/CMakeFiles/vdot.dir/vdot.cpp.o
+[ 62%] Building CXX object pocs/vdot/CMakeFiles/q8dot.dir/q8dot.cpp.o
+[ 63%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
+[ 64%] Linking CXX executable ../bin/test-grad0
+[ 64%] Linking CXX executable ../bin/test-rope
+[ 64%] Built target test-grad0
+[ 64%] Built target test-rope
+[ 65%] Linking CXX executable ../bin/test-autorelease
+[ 65%] Linking CXX executable ../bin/test-quantize-fns
+[ 66%] Linking CXX executable ../bin/test-chat-template
+[ 66%] Built target test-quantize-fns
+[ 67%] Linking CXX executable ../bin/test-grammar-parser
+[ 68%] Linking CXX executable ../bin/test-sampling
+[ 68%] Built target test-grammar-parser
+[ 69%] Linking CXX executable ../../bin/baby-llama
+[ 69%] Built target test-model-load-cancel
+[ 70%] Linking CXX executable ../bin/test-grammar-integration
+[ 71%] Linking CXX executable ../../bin/q8dot
+[ 72%] Linking CXX executable ../../bin/vdot
+[ 73%] Linking CXX executable ../../bin/tokenize
+[ 74%] Linking CXX executable ../bin/test-tokenizer-1-llama-spm
+[ 75%] Linking CXX executable ../bin/test-tokenizer-1-bpe
+[ 77%] Linking CXX executable ../bin/test-tokenizer-1-spm
+[ 76%] Linking CXX executable ../bin/test-tokenizer-1-baichuan
+[ 77%] Built target q8dot
+[ 77%] Built target test-autorelease
+[ 77%] Built target vdot
+[ 77%] Linking CXX executable ../bin/test-quantize-perf
+[ 78%] Linking CXX executable ../../bin/lookup-merge
+[ 79%] Linking CXX executable ../../bin/eval-callback
+[ 79%] Built target test-chat-template
+[ 80%] Linking CXX executable ../bin/test-tokenizer-0
+[ 81%] Linking CXX executable ../../bin/beam-search
+[ 82%] Linking CXX executable ../../bin/gguf-split
+[ 83%] Linking CXX executable ../../bin/lookup-create
+[ 84%] Linking CXX executable ../../bin/save-load-state
+[ 85%] Linking CXX executable ../../bin/simple
+[ 85%] Linking CXX executable ../../bin/batched-bench
+[ 85%] Built target test-quantize-perf
+[ 86%] Linking CXX executable ../../bin/batched
+[ 86%] Linking CXX executable ../../bin/llava-cli
+[ 86%] Built target lookup-merge
+[ 87%] Linking CXX executable ../../bin/passkey
+[ 87%] Built target test-sampling
+[ 88%] Linking CXX executable ../../bin/embedding
+[ 88%] Linking CXX executable ../../bin/gritlm
+[ 88%] Linking CXX executable ../../bin/export-lora
+[ 88%] Linking CXX executable ../../bin/lookup-stats
+[ 89%] Linking CXX executable ../../bin/parallel
+[ 90%] Linking CXX executable ../../bin/lookahead
+[ 90%] Linking CXX executable ../../bin/train-text-from-scratch
+[ 90%] Linking CXX executable ../../bin/lookup
+[ 91%] Linking CXX executable ../../bin/finetune
+[ 91%] Built target export-lora
+[ 91%] Built target test-grammar-integration
+[ 92%] Linking CXX executable ../../bin/quantize
+[ 93%] Linking CXX executable ../../bin/infill
+[ 94%] Linking CXX executable ../../bin/convert-llama2c-to-ggml
+[ 94%] Linking CXX executable ../../bin/retrieval
+[ 94%] Built target convert-llama2c-to-ggml
+[ 94%] Linking CXX executable ../../bin/main
+[ 95%] Linking CXX executable ../../bin/speculative
+[ 95%] Built target gguf-split
+[ 95%] Built target baby-llama
+[ 96%] Linking CXX executable ../../bin/imatrix
+[ 96%] Built target tokenize
+[ 97%] Linking CXX executable ../bin/test-backend-ops
+[ 97%] Built target test-tokenizer-1-bpe
+[ 97%] Built target test-tokenizer-1-baichuan
+[ 97%] Built target test-tokenizer-1-llama-spm
+[ 97%] Built target test-tokenizer-1-spm
+[ 97%] Built target test-backend-ops
+[ 97%] Built target eval-callback
+[ 97%] Built target beam-search
+[ 97%] Built target batched-bench
+[ 97%] Built target test-tokenizer-0
+[ 97%] Built target simple
+[ 97%] Built target save-load-state
+[ 97%] Built target batched
+[ 97%] Built target lookup-create
+[ 97%] Built target passkey
+[ 97%] Built target embedding
+[ 97%] Built target gritlm
+[ 97%] Built target lookup-stats
+[ 97%] Built target finetune
+[ 97%] Built target llava-cli
+[ 97%] Built target parallel
+[ 97%] Built target lookahead
+[ 97%] Linking CXX executable ../../bin/perplexity
+[ 97%] Built target train-text-from-scratch
+[ 97%] Built target lookup
+[ 97%] Built target infill
+[ 97%] Built target quantize
+[ 97%] Built target main
+[ 97%] Built target retrieval
+[ 97%] Built target imatrix
+[ 97%] Built target speculative
+[ 97%] Built target perplexity
+[ 98%] Linking CXX executable ../../bin/llama-bench
+[ 99%] Linking CXX executable ../bin/test-json-schema-to-grammar
+[ 99%] Built target test-json-schema-to-grammar
+[ 99%] Built target llama-bench
+[100%] Linking CXX executable ../bin/test-llama-grammar
+[100%] Built target test-llama-grammar
+[100%] Linking CXX executable ../../bin/server
+[100%] Built target server
+
+real	1m6.134s
+user	3m12.243s
+sys	0m16.935s
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-debug
+      Start  1: test-tokenizer-0-llama-spm
+ 1/26 Test  #1: test-tokenizer-0-llama-spm ........***Failed    0.01 sec
+main : reading vocab from: '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-spm.gguf'
+llama_model_load: error loading model: llama_model_loader: failed to load model from /home/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-spm.gguf
+
+llama_load_model_from_file: failed to load model
+main: error: failed to load vocab '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-spm.gguf'
+
+      Start  2: test-tokenizer-0-llama-bpe
+ 2/26 Test  #2: test-tokenizer-0-llama-bpe ........***Failed    0.01 sec
+main : reading vocab from: '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-bpe.gguf'
+llama_model_load: error loading model: llama_model_loader: failed to load model from /home/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-bpe.gguf
+
+llama_load_model_from_file: failed to load model
+main: error: failed to load vocab '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-bpe.gguf'
+
+      Start  3: test-tokenizer-0-falcon
+ 3/26 Test  #3: test-tokenizer-0-falcon ...........   Passed    0.98 sec
+      Start  4: test-tokenizer-0-deepseek-llm
+ 4/26 Test  #4: test-tokenizer-0-deepseek-llm .....   Passed    1.38 sec
+      Start  5: test-tokenizer-0-deepseek-coder
+ 5/26 Test  #5: test-tokenizer-0-deepseek-coder ...   Passed    0.59 sec
+      Start  6: test-tokenizer-1-falcon
+ 6/26 Test  #6: test-tokenizer-1-falcon ...........   Passed  102.18 sec
+      Start  7: test-tokenizer-1-aquila
+ 7/26 Test  #7: test-tokenizer-1-aquila ...........   Passed  118.70 sec
+      Start  8: test-tokenizer-1-mpt
+ 8/26 Test  #8: test-tokenizer-1-mpt ..............   Passed   99.62 sec
+      Start  9: test-tokenizer-1-stablelm
+ 9/26 Test  #9: test-tokenizer-1-stablelm .........   Passed  105.56 sec
+      Start 10: test-tokenizer-1-gpt-neox
+10/26 Test #10: test-tokenizer-1-gpt-neox .........   Passed  105.48 sec
+      Start 11: test-tokenizer-1-refact
+11/26 Test #11: test-tokenizer-1-refact ...........   Passed  100.41 sec
+      Start 12: test-tokenizer-1-starcoder
+12/26 Test #12: test-tokenizer-1-starcoder ........   Passed  101.54 sec
+      Start 13: test-tokenizer-1-gpt2
+13/26 Test #13: test-tokenizer-1-gpt2 .............   Passed   99.65 sec
+      Start 14: test-tokenizer-1-llama-spm
+14/26 Test #14: test-tokenizer-1-llama-spm ........***Failed    0.01 sec
+main : reading vocab from: '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-spm.gguf'
+llama_model_load: error loading model: llama_model_loader: failed to load model from /home/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-spm.gguf
+
+llama_load_model_from_file: failed to load model
+main: error: failed to load vocab '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-spm.gguf'
+
+      Start 15: test-tokenizer-1-baichuan
+15/26 Test #15: test-tokenizer-1-baichuan .........   Passed    6.83 sec
+      Start 16: test-quantize-fns
+16/26 Test #16: test-quantize-fns .................   Passed   31.03 sec
+      Start 17: test-quantize-perf
+17/26 Test #17: test-quantize-perf ................   Passed    9.10 sec
+      Start 18: test-sampling
+18/26 Test #18: test-sampling .....................   Passed    0.03 sec
+      Start 19: test-chat-template
+19/26 Test #19: test-chat-template ................   Passed    0.00 sec
+      Start 20: test-grammar-parser
+20/26 Test #20: test-grammar-parser ...............   Passed    0.00 sec
+      Start 21: test-llama-grammar
+21/26 Test #21: test-llama-grammar ................   Passed    0.00 sec
+      Start 22: test-grammar-integration
+22/26 Test #22: test-grammar-integration ..........   Passed    0.01 sec
+      Start 23: test-grad0
+23/26 Test #23: test-grad0 ........................   Passed    4.60 sec
+      Start 24: test-backend-ops
+24/26 Test #24: test-backend-ops ..................   Passed    0.00 sec
+      Start 25: test-rope
+25/26 Test #25: test-rope .........................   Passed    0.07 sec
+      Start 28: test-json-schema-to-grammar
+26/26 Test #28: test-json-schema-to-grammar .......   Passed    0.04 sec
+
+88% tests passed, 3 tests failed out of 26
+
+Label Time Summary:
+main    = 887.84 sec*proc (26 tests)
+
+Total Test time (real) = 887.85 sec
+
+The following tests FAILED:
+	  1 - test-tokenizer-0-llama-spm (Failed)
+	  2 - test-tokenizer-0-llama-bpe (Failed)
+	 14 - test-tokenizer-1-llama-spm (Failed)
+Errors while running CTest
+
+real	14m47.858s
+user	47m13.554s
+sys	0m3.886s
