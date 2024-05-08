@@ -1,0 +1,145 @@
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 8
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-debug
+      Start  1: test-tokenizer-0-llama-spm
+ 1/21 Test  #1: test-tokenizer-0-llama-spm .......***Failed    0.01 sec
+main : reading vocab from: '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-spm.gguf'
+gguf_init_from_file: invalid magic characters 'vers'
+llama_model_load: error loading model: llama_model_loader: failed to load model from /home/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-spm.gguf
+
+llama_load_model_from_file: failed to load model
+main: error: failed to load vocab '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-spm.gguf'
+
+      Start  2: test-tokenizer-0-llama-bpe
+ 2/21 Test  #2: test-tokenizer-0-llama-bpe .......***Failed    0.01 sec
+main : reading vocab from: '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-bpe.gguf'
+gguf_init_from_file: invalid magic characters 'vers'
+llama_model_load: error loading model: llama_model_loader: failed to load model from /home/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-bpe.gguf
+
+llama_load_model_from_file: failed to load model
+main: error: failed to load vocab '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-bpe.gguf'
+
+      Start  3: test-tokenizer-0-phi-3
+ 3/21 Test  #3: test-tokenizer-0-phi-3 ...........***Failed    0.01 sec
+main : reading vocab from: '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-phi-3.gguf'
+gguf_init_from_file: invalid magic characters 'vers'
+llama_model_load: error loading model: llama_model_loader: failed to load model from /home/ggml/work/llama.cpp/tests/../models/ggml-vocab-phi-3.gguf
+
+llama_load_model_from_file: failed to load model
+main: error: failed to load vocab '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-phi-3.gguf'
+
+      Start  4: test-tokenizer-0-falcon
+ 4/21 Test  #4: test-tokenizer-0-falcon ..........***Failed    0.01 sec
+main : reading vocab from: '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-falcon.gguf'
+gguf_init_from_file: invalid magic characters 'vers'
+llama_model_load: error loading model: llama_model_loader: failed to load model from /home/ggml/work/llama.cpp/tests/../models/ggml-vocab-falcon.gguf
+
+llama_load_model_from_file: failed to load model
+main: error: failed to load vocab '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-falcon.gguf'
+
+      Start  5: test-tokenizer-0-bert-bge
+ 5/21 Test  #5: test-tokenizer-0-bert-bge ........***Failed    0.01 sec
+main : reading vocab from: '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-bert-bge.gguf'
+gguf_init_from_file: invalid magic characters 'vers'
+llama_model_load: error loading model: llama_model_loader: failed to load model from /home/ggml/work/llama.cpp/tests/../models/ggml-vocab-bert-bge.gguf
+
+llama_load_model_from_file: failed to load model
+main: error: failed to load vocab '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-bert-bge.gguf'
+
+      Start  6: test-tokenizer-0-starcoder
+ 6/21 Test  #6: test-tokenizer-0-starcoder .......***Failed    0.01 sec
+main : reading vocab from: '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-starcoder.gguf'
+gguf_init_from_file: invalid magic characters 'vers'
+llama_model_load: error loading model: llama_model_loader: failed to load model from /home/ggml/work/llama.cpp/tests/../models/ggml-vocab-starcoder.gguf
+
+llama_load_model_from_file: failed to load model
+main: error: failed to load vocab '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-starcoder.gguf'
+
+      Start  7: test-tokenizer-0-gpt-2
+ 7/21 Test  #7: test-tokenizer-0-gpt-2 ...........***Failed    0.01 sec
+main : reading vocab from: '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-gpt-2.gguf'
+gguf_init_from_file: invalid magic characters 'vers'
+llama_model_load: error loading model: llama_model_loader: failed to load model from /home/ggml/work/llama.cpp/tests/../models/ggml-vocab-gpt-2.gguf
+
+llama_load_model_from_file: failed to load model
+main: error: failed to load vocab '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-gpt-2.gguf'
+
+      Start  8: test-tokenizer-0-refact
+ 8/21 Test  #8: test-tokenizer-0-refact ..........***Failed    0.01 sec
+main : reading vocab from: '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-refact.gguf'
+gguf_init_from_file: invalid magic characters 'vers'
+llama_model_load: error loading model: llama_model_loader: failed to load model from /home/ggml/work/llama.cpp/tests/../models/ggml-vocab-refact.gguf
+
+llama_load_model_from_file: failed to load model
+main: error: failed to load vocab '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-refact.gguf'
+
+      Start  9: test-tokenizer-0-command-r
+ 9/21 Test  #9: test-tokenizer-0-command-r .......***Failed    0.01 sec
+main : reading vocab from: '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-command-r.gguf'
+gguf_init_from_file: invalid magic characters 'vers'
+llama_model_load: error loading model: llama_model_loader: failed to load model from /home/ggml/work/llama.cpp/tests/../models/ggml-vocab-command-r.gguf
+
+llama_load_model_from_file: failed to load model
+main: error: failed to load vocab '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-command-r.gguf'
+
+      Start 10: test-tokenizer-1-llama-spm
+10/21 Test #10: test-tokenizer-1-llama-spm .......***Failed    0.01 sec
+main : reading vocab from: '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-spm.gguf'
+gguf_init_from_file: invalid magic characters 'vers'
+llama_model_load: error loading model: llama_model_loader: failed to load model from /home/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-spm.gguf
+
+llama_load_model_from_file: failed to load model
+main: error: failed to load vocab '/home/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-spm.gguf'
+
+      Start 11: test-quantize-fns
+11/21 Test #11: test-quantize-fns ................   Passed   31.10 sec
+      Start 12: test-quantize-perf
+12/21 Test #12: test-quantize-perf ...............   Passed    9.14 sec
+      Start 13: test-sampling
+13/21 Test #13: test-sampling ....................   Passed    0.03 sec
+      Start 14: test-chat-template
+14/21 Test #14: test-chat-template ...............   Passed    0.00 sec
+      Start 15: test-grammar-parser
+15/21 Test #15: test-grammar-parser ..............   Passed    0.00 sec
+      Start 16: test-llama-grammar
+16/21 Test #16: test-llama-grammar ...............   Passed    0.00 sec
+      Start 17: test-grammar-integration
+17/21 Test #17: test-grammar-integration .........   Passed    0.01 sec
+      Start 18: test-grad0
+18/21 Test #18: test-grad0 .......................   Passed    3.91 sec
+      Start 19: test-backend-ops
+19/21 Test #19: test-backend-ops .................   Passed    0.00 sec
+      Start 20: test-rope
+20/21 Test #20: test-rope ........................   Passed    0.07 sec
+      Start 23: test-json-schema-to-grammar
+21/21 Test #23: test-json-schema-to-grammar ......   Passed    0.04 sec
+
+52% tests passed, 10 tests failed out of 21
+
+Label Time Summary:
+main    =  44.36 sec*proc (21 tests)
+
+Total Test time (real) =  44.37 sec
+
+The following tests FAILED:
+	  1 - test-tokenizer-0-llama-spm (Failed)
+	  2 - test-tokenizer-0-llama-bpe (Failed)
+	  3 - test-tokenizer-0-phi-3 (Failed)
+	  4 - test-tokenizer-0-falcon (Failed)
+	  5 - test-tokenizer-0-bert-bge (Failed)
+	  6 - test-tokenizer-0-starcoder (Failed)
+	  7 - test-tokenizer-0-gpt-2 (Failed)
+	  8 - test-tokenizer-0-refact (Failed)
+	  9 - test-tokenizer-0-command-r (Failed)
+	 10 - test-tokenizer-1-llama-spm (Failed)
+Errors while running CTest
+
+real	0m44.392s
+user	0m47.792s
+sys	0m2.821s
+```
+
