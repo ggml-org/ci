@@ -18,7 +18,7 @@ printf "\n"
 
 if [ -f /etc/lsb-release ] ; then
     sudo apt update
-    sudo apt install cmake g++ python3-pip python3-venv unzip ccache
+    sudo apt install cmake g++ python3-pip python3-venv unzip ccache git-lfs
 else
     date
 fi
