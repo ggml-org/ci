@@ -1,8 +1,8 @@
 ## Summary
 
 - status:  FAILURE ❌ (8)
-- runtime: 183.58
-- date:    Wed May  8 09:58:09 EEST 2024
+- runtime: 183.68
+- date:    Wed May  8 10:07:39 EEST 2024
 - repo:    https://github.com/ggerganov/llama.cpp
 - commit:  https://github.com/ggerganov/llama.cpp/commit/0dc0e9aa42216c0ff4b972e5235cb02344cb483b
 - author:  Georgi Gerganov
@@ -32,7 +32,7 @@ Runs ctest in debug mode
 + ctest --output-on-failure -L main -E test-opt
 Test project /Users/ggml/work/llama.cpp/build-ci-debug
       Start  1: test-tokenizer-0-llama-spm
- 1/21 Test  #1: test-tokenizer-0-llama-spm .......***Failed    0.29 sec
+ 1/21 Test  #1: test-tokenizer-0-llama-spm .......***Failed    0.23 sec
 main : reading vocab from: '/Users/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-spm.gguf'
 gguf_init_from_file: invalid magic characters 'vers'
 llama_model_load: error loading model: llama_model_loader: failed to load model from /Users/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-spm.gguf
@@ -113,7 +113,7 @@ llama_load_model_from_file: failed to load model
 main: error: failed to load vocab '/Users/ggml/work/llama.cpp/tests/../models/ggml-vocab-command-r.gguf'
 
       Start 10: test-tokenizer-1-llama-spm
-10/21 Test #10: test-tokenizer-1-llama-spm .......***Failed    0.25 sec
+10/21 Test #10: test-tokenizer-1-llama-spm .......***Failed    0.24 sec
 main : reading vocab from: '/Users/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-spm.gguf'
 gguf_init_from_file: invalid magic characters 'vers'
 llama_model_load: error loading model: llama_model_loader: failed to load model from /Users/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-spm.gguf
@@ -122,34 +122,34 @@ llama_load_model_from_file: failed to load model
 main: error: failed to load vocab '/Users/ggml/work/llama.cpp/tests/../models/ggml-vocab-llama-spm.gguf'
 
       Start 11: test-quantize-fns
-11/21 Test #11: test-quantize-fns ................   Passed   34.91 sec
+11/21 Test #11: test-quantize-fns ................   Passed   34.83 sec
       Start 12: test-quantize-perf
-12/21 Test #12: test-quantize-perf ...............   Passed   10.33 sec
+12/21 Test #12: test-quantize-perf ...............   Passed   10.26 sec
       Start 13: test-sampling
-13/21 Test #13: test-sampling ....................   Passed    0.21 sec
+13/21 Test #13: test-sampling ....................   Passed    0.24 sec
       Start 14: test-chat-template
-14/21 Test #14: test-chat-template ...............   Passed    0.21 sec
+14/21 Test #14: test-chat-template ...............   Passed    0.22 sec
       Start 15: test-grammar-parser
-15/21 Test #15: test-grammar-parser ..............   Passed    0.16 sec
+15/21 Test #15: test-grammar-parser ..............   Passed    0.18 sec
       Start 16: test-llama-grammar
-16/21 Test #16: test-llama-grammar ...............   Passed    0.21 sec
+16/21 Test #16: test-llama-grammar ...............   Passed    0.22 sec
       Start 17: test-grammar-integration
-17/21 Test #17: test-grammar-integration .........   Passed    0.22 sec
+17/21 Test #17: test-grammar-integration .........   Passed    0.23 sec
       Start 18: test-grad0
-18/21 Test #18: test-grad0 .......................   Passed    0.83 sec
+18/21 Test #18: test-grad0 .......................   Passed    0.85 sec
       Start 19: test-backend-ops
-19/21 Test #19: test-backend-ops .................   Passed  102.40 sec
+19/21 Test #19: test-backend-ops .................   Passed  102.12 sec
       Start 20: test-rope
-20/21 Test #20: test-rope ........................   Passed    0.29 sec
+20/21 Test #20: test-rope ........................   Passed    0.36 sec
       Start 23: test-json-schema-to-grammar
-21/21 Test #23: test-json-schema-to-grammar ......   Passed    1.42 sec
+21/21 Test #23: test-json-schema-to-grammar ......   Passed    1.45 sec
 
 52% tests passed, 10 tests failed out of 21
 
 Label Time Summary:
-main    = 151.92 sec*proc (21 tests)
+main    = 151.59 sec*proc (21 tests)
 
-Total Test time (real) = 151.93 sec
+Total Test time (real) = 151.61 sec
 
 The following tests FAILED:
 	  1 - test-tokenizer-0-llama-spm (Failed)
