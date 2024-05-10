@@ -1,0 +1,302 @@
++ make -j
+[  0%] Compiling Metal kernels
+[  0%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  1%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  2%] Building CXX object CMakeFiles/ggml.dir/sgemm.cpp.o
+[  3%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-metal.m.o
+[  5%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  6%] Built target build_info
+/Users/ggml/work/llama.cpp/build-ci-release/bin/ggml-metal.metal:2215:34: warning: comparison of integers of different signs: 'const short' and 'const constant uint32_t' (aka 'const constant unsigned int') [-Wsign-compare]
+            const float base = h < n_head_log2 ? m0 : m1;
+                               ~ ^ ~~~~~~~~~~~
+/Users/ggml/work/llama.cpp/build-ci-release/bin/ggml-metal.metal:2216:34: warning: comparison of integers of different signs: 'const short' and 'const constant uint32_t' (aka 'const constant unsigned int') [-Wsign-compare]
+            const int   exph = h < n_head_log2 ? h + 1 : 2*(h - n_head_log2) + 1;
+                               ~ ^ ~~~~~~~~~~~
+/Users/ggml/work/llama.cpp/build-ci-release/bin/ggml-metal.metal:2215:34: warning: comparison of integers of different signs: 'const short' and 'const constant uint32_t' (aka 'const constant unsigned int') [-Wsign-compare]
+            const float base = h < n_head_log2 ? m0 : m1;
+                               ~ ^ ~~~~~~~~~~~
+/Users/ggml/work/llama.cpp/build-ci-release/bin/ggml-metal.metal:2407:86: note: in instantiation of function template specialization 'kernel_flash_attn_ext_f16<64L, 8L, 32L>' requested here
+template [[host_name("kernel_flash_attn_ext_f16_h64" )]] kernel flash_attn_ext_f16_t kernel_flash_attn_ext_f16<64>;
+                                                                                     ^
+/Users/ggml/work/llama.cpp/build-ci-release/bin/ggml-metal.metal:2216:34: warning: comparison of integers of different signs: 'const short' and 'const constant uint32_t' (aka 'const constant unsigned int') [-Wsign-compare]
+            const int   exph = h < n_head_log2 ? h + 1 : 2*(h - n_head_log2) + 1;
+                               ~ ^ ~~~~~~~~~~~
+/Users/ggml/work/llama.cpp/build-ci-release/bin/ggml-metal.metal:2215:34: warning: comparison of integers of different signs: 'const short' and 'const constant uint32_t' (aka 'const constant unsigned int') [-Wsign-compare]
+            const float base = h < n_head_log2 ? m0 : m1;
+                               ~ ^ ~~~~~~~~~~~
+/Users/ggml/work/llama.cpp/build-ci-release/bin/ggml-metal.metal:2408:86: note: in instantiation of function template specialization 'kernel_flash_attn_ext_f16<80L, 8L, 32L>' requested here
+template [[host_name("kernel_flash_attn_ext_f16_h80" )]] kernel flash_attn_ext_f16_t kernel_flash_attn_ext_f16<80>;
+                                                                                     ^
+/Users/ggml/work/llama.cpp/build-ci-release/bin/ggml-metal.metal:2216:34: warning: comparison of integers of different signs: 'const short' and 'const constant uint32_t' (aka 'const constant unsigned int') [-Wsign-compare]
+            const int   exph = h < n_head_log2 ? h + 1 : 2*(h - n_head_log2) + 1;
+                               ~ ^ ~~~~~~~~~~~
+/Users/ggml/work/llama.cpp/build-ci-release/bin/ggml-metal.metal:2215:34: warning: comparison of integers of different signs: 'const short' and 'const constant uint32_t' (aka 'const constant unsigned int') [-Wsign-compare]
+            const float base = h < n_head_log2 ? m0 : m1;
+                               ~ ^ ~~~~~~~~~~~
+/Users/ggml/work/llama.cpp/build-ci-release/bin/ggml-metal.metal:2409:86: note: in instantiation of function template specialization 'kernel_flash_attn_ext_f16<96L, 8L, 32L>' requested here
+template [[host_name("kernel_flash_attn_ext_f16_h96" )]] kernel flash_attn_ext_f16_t kernel_flash_attn_ext_f16<96>;
+                                                                                     ^
+/Users/ggml/work/llama.cpp/build-ci-release/bin/ggml-metal.metal:2216:34: warning: comparison of integers of different signs: 'const short' and 'const constant uint32_t' (aka 'const constant unsigned int') [-Wsign-compare]
+            const int   exph = h < n_head_log2 ? h + 1 : 2*(h - n_head_log2) + 1;
+                               ~ ^ ~~~~~~~~~~~
+/Users/ggml/work/llama.cpp/build-ci-release/bin/ggml-metal.metal:2215:34: warning: comparison of integers of different signs: 'const short' and 'const constant uint32_t' (aka 'const constant unsigned int') [-Wsign-compare]
+            const float base = h < n_head_log2 ? m0 : m1;
+                               ~ ^ ~~~~~~~~~~~
+/Users/ggml/work/llama.cpp/build-ci-release/bin/ggml-metal.metal:2410:86: note: in instantiation of function template specialization 'kernel_flash_attn_ext_f16<112L, 8L, 32L>' requested here
+template [[host_name("kernel_flash_attn_ext_f16_h112")]] kernel flash_attn_ext_f16_t kernel_flash_attn_ext_f16<112>;
+                                                                                     ^
+/Users/ggml/work/llama.cpp/build-ci-release/bin/ggml-metal.metal:2216:34: warning: comparison of integers of different signs: 'const short' and 'const constant uint32_t' (aka 'const constant unsigned int') [-Wsign-compare]
+            const int   exph = h < n_head_log2 ? h + 1 : 2*(h - n_head_log2) + 1;
+                               ~ ^ ~~~~~~~~~~~
+/Users/ggml/work/llama.cpp/build-ci-release/bin/ggml-metal.metal:2215:34: warning: comparison of integers of different signs: 'const short' and 'const constant uint32_t' (aka 'const constant unsigned int') [-Wsign-compare]
+            const float base = h < n_head_log2 ? m0 : m1;
+                               ~ ^ ~~~~~~~~~~~
+/Users/ggml/work/llama.cpp/build-ci-release/bin/ggml-metal.metal:2411:86: note: in instantiation of function template specialization 'kernel_flash_attn_ext_f16<128L, 8L, 32L>' requested here
+template [[host_name("kernel_flash_attn_ext_f16_h128")]] kernel flash_attn_ext_f16_t kernel_flash_attn_ext_f16<128>;
+                                                                                     ^
+/Users/ggml/work/llama.cpp/build-ci-release/bin/ggml-metal.metal:2216:34: warning: comparison of integers of different signs: 'const short' and 'const constant uint32_t' (aka 'const constant unsigned int') [-Wsign-compare]
+            const int   exph = h < n_head_log2 ? h + 1 : 2*(h - n_head_log2) + 1;
+                               ~ ^ ~~~~~~~~~~~
+/Users/ggml/work/llama.cpp/build-ci-release/bin/ggml-metal.metal:2215:34: warning: comparison of integers of different signs: 'const short' and 'const constant uint32_t' (aka 'const constant unsigned int') [-Wsign-compare]
+            const float base = h < n_head_log2 ? m0 : m1;
+                               ~ ^ ~~~~~~~~~~~
+/Users/ggml/work/llama.cpp/build-ci-release/bin/ggml-metal.metal:2412:86: note: in instantiation of function template specialization 'kernel_flash_attn_ext_f16<256L, 8L, 32L>' requested here
+template [[host_name("kernel_flash_attn_ext_f16_h256")]] kernel flash_attn_ext_f16_t kernel_flash_attn_ext_f16<256>;
+                                                                                     ^
+/Users/ggml/work/llama.cpp/build-ci-release/bin/ggml-metal.metal:2216:34: warning: comparison of integers of different signs: 'const short' and 'const constant uint32_t' (aka 'const constant unsigned int') [-Wsign-compare]
+            const int   exph = h < n_head_log2 ? h + 1 : 2*(h - n_head_log2) + 1;
+                               ~ ^ ~~~~~~~~~~~
+/Users/ggml/work/llama.cpp/build-ci-release/bin/ggml-metal.metal:2471:30: warning: comparison of integers of different signs: 'const short' and 'const constant uint32_t' (aka 'const constant unsigned int') [-Wsign-compare]
+        const float base = h < n_head_log2 ? m0 : m1;
+                           ~ ^ ~~~~~~~~~~~
+/Users/ggml/work/llama.cpp/build-ci-release/bin/ggml-metal.metal:2472:30: warning: comparison of integers of different signs: 'const short' and 'const constant uint32_t' (aka 'const constant unsigned int') [-Wsign-compare]
+        const int   exp  = h < n_head_log2 ? h + 1 : 2*(h - n_head_log2) + 1;
+                           ~ ^ ~~~~~~~~~~~
+/Users/ggml/work/llama.cpp/build-ci-release/bin/ggml-metal.metal:2471:30: warning: comparison of integers of different signs: 'const short' and 'const constant uint32_t' (aka 'const constant unsigned int') [-Wsign-compare]
+        const float base = h < n_head_log2 ? m0 : m1;
+                           ~ ^ ~~~~~~~~~~~
+/Users/ggml/work/llama.cpp/build-ci-release/bin/ggml-metal.metal:2697:90: note: in instantiation of function template specialization 'kernel_flash_attn_ext_vec_f16<128L, 1L, 32L>' requested here
+template [[host_name("kernel_flash_attn_ext_vec_f16_h128")]] kernel flash_attn_ext_f16_t kernel_flash_attn_ext_vec_f16<128>;
+                                                                                         ^
+/Users/ggml/work/llama.cpp/build-ci-release/bin/ggml-metal.metal:2472:30: warning: comparison of integers of different signs: 'const short' and 'const constant uint32_t' (aka 'const constant unsigned int') [-Wsign-compare]
+        const int   exp  = h < n_head_log2 ? h + 1 : 2*(h - n_head_log2) + 1;
+                           ~ ^ ~~~~~~~~~~~
+/Users/ggml/work/llama.cpp/build-ci-release/bin/ggml-metal.metal:2471:30: warning: comparison of integers of different signs: 'const short' and 'const constant uint32_t' (aka 'const constant unsigned int') [-Wsign-compare]
+        const float base = h < n_head_log2 ? m0 : m1;
+                           ~ ^ ~~~~~~~~~~~
+/Users/ggml/work/llama.cpp/build-ci-release/bin/ggml-metal.metal:2698:90: note: in instantiation of function template specialization 'kernel_flash_attn_ext_vec_f16<256L, 1L, 32L>' requested here
+template [[host_name("kernel_flash_attn_ext_vec_f16_h256")]] kernel flash_attn_ext_f16_t kernel_flash_attn_ext_vec_f16<256>;
+                                                                                         ^
+/Users/ggml/work/llama.cpp/build-ci-release/bin/ggml-metal.metal:2472:30: warning: comparison of integers of different signs: 'const short' and 'const constant uint32_t' (aka 'const constant unsigned int') [-Wsign-compare]
+        const int   exp  = h < n_head_log2 ? h + 1 : 2*(h - n_head_log2) + 1;
+                           ~ ^ ~~~~~~~~~~~
+20 warnings generated.
+[  6%] Built target ggml-metal
+[  6%] Built target ggml
+[  8%] Building CXX object examples/gguf/CMakeFiles/gguf.dir/gguf.cpp.o
+[  8%] Building CXX object CMakeFiles/llama.dir/unicode.cpp.o
+[  9%] Building CXX object CMakeFiles/llama.dir/unicode-data.cpp.o
+[ 10%] Linking CXX static library libggml_static.a
+[ 10%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+[ 10%] Built target ggml_static
+[ 10%] Linking CXX executable ../../bin/gguf
+[ 10%] Built target gguf
+[ 10%] Linking CXX static library libllama.a
+[ 10%] Built target llama
+[ 11%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
+[ 11%] Building CXX object examples/llava/CMakeFiles/llava.dir/llava.cpp.o
+[ 11%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
+[ 12%] Building CXX object common/CMakeFiles/common.dir/console.cpp.o
+[ 12%] Building CXX object common/CMakeFiles/common.dir/common.cpp.o
+[ 13%] Building CXX object common/CMakeFiles/common.dir/sampling.cpp.o
+[ 14%] Building CXX object common/CMakeFiles/common.dir/grammar-parser.cpp.o
+[ 14%] Building C object tests/CMakeFiles/test-c.dir/test-c.c.o
+[ 14%] Building CXX object common/CMakeFiles/common.dir/ngram-cache.cpp.o
+[ 15%] Building CXX object common/CMakeFiles/common.dir/json-schema-to-grammar.cpp.o
+[ 16%] Building CXX object examples/llava/CMakeFiles/llava.dir/clip.cpp.o
+[ 17%] Building CXX object common/CMakeFiles/common.dir/train.cpp.o
+[ 18%] Linking CXX executable ../bin/test-c
+[ 18%] Built target test-c
+[ 18%] Linking CXX executable ../../bin/benchmark
+[ 18%] Built target benchmark
+[ 19%] Linking CXX executable ../../bin/quantize-stats
+[ 19%] Built target quantize-stats
+[ 19%] Built target llava
+[ 20%] Linking CXX static library libllava_static.a
+[ 20%] Built target llava_static
+[ 21%] Linking CXX static library libcommon.a
+[ 21%] Built target common
+[ 22%] Generating completion.js.hpp
+[ 22%] Building CXX object tests/CMakeFiles/test-llama-grammar.dir/test-llama-grammar.cpp.o
+[ 23%] Generating index.js.hpp
+[ 23%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 24%] Building CXX object examples/lookahead/CMakeFiles/lookahead.dir/lookahead.cpp.o
+[ 25%] Building CXX object tests/CMakeFiles/test-tokenizer-1-bpe.dir/test-tokenizer-1-bpe.cpp.o
+[ 26%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/get-model.cpp.o
+[ 27%] Building CXX object examples/batched/CMakeFiles/batched.dir/batched.cpp.o
+[ 27%] Building CXX object tests/CMakeFiles/test-chat-template.dir/test-chat-template.cpp.o
+[ 28%] Building CXX object tests/CMakeFiles/test-grammar-parser.dir/get-model.cpp.o
+[ 28%] Generating index.html.hpp
+[ 29%] Building CXX object examples/lookup/CMakeFiles/lookup-stats.dir/lookup-stats.cpp.o
+[ 29%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
+[ 29%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
+[ 30%] Building CXX object tests/CMakeFiles/test-llama-grammar.dir/get-model.cpp.o
+[ 32%] Building CXX object tests/CMakeFiles/test-chat-template.dir/get-model.cpp.o
+[ 32%] Building CXX object examples/finetune/CMakeFiles/finetune.dir/finetune.cpp.o
+[ 33%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
+[ 33%] Building CXX object examples/perplexity/CMakeFiles/perplexity.dir/perplexity.cpp.o
+[ 34%] Building CXX object tests/CMakeFiles/test-grad0.dir/get-model.cpp.o
+[ 35%] Building CXX object pocs/vdot/CMakeFiles/q8dot.dir/q8dot.cpp.o
+[ 37%] Building CXX object tests/CMakeFiles/test-rope.dir/get-model.cpp.o
+[ 38%] Building CXX object examples/passkey/CMakeFiles/passkey.dir/passkey.cpp.o
+[ 38%] Building CXX object tests/CMakeFiles/test-tokenizer-1-spm.dir/test-tokenizer-1-spm.cpp.o
+[ 38%] Generating json-schema-to-grammar.mjs.hpp
+[ 38%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 39%] Building CXX object examples/gguf-split/CMakeFiles/gguf-split.dir/gguf-split.cpp.o
+[ 39%] Building CXX object examples/tokenize/CMakeFiles/tokenize.dir/tokenize.cpp.o
+[ 40%] Building CXX object pocs/vdot/CMakeFiles/vdot.dir/vdot.cpp.o
+[ 40%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
+[ 41%] Building CXX object examples/parallel/CMakeFiles/parallel.dir/parallel.cpp.o
+[ 41%] Building CXX object tests/CMakeFiles/test-grammar-integration.dir/test-grammar-integration.cpp.o
+[ 41%] Building CXX object tests/CMakeFiles/test-grammar-parser.dir/test-grammar-parser.cpp.o
+[ 42%] Building CXX object tests/CMakeFiles/test-model-load-cancel.dir/get-model.cpp.o
+[ 42%] Building CXX object tests/CMakeFiles/test-rope.dir/test-rope.cpp.o
+[ 42%] Building CXX object tests/CMakeFiles/test-json-schema-to-grammar.dir/test-json-schema-to-grammar.cpp.o
+[ 43%] Building CXX object tests/CMakeFiles/test-autorelease.dir/test-autorelease.cpp.o
+[ 45%] Building CXX object examples/speculative/CMakeFiles/speculative.dir/speculative.cpp.o
+[ 45%] Building CXX object tests/CMakeFiles/test-sampling.dir/get-model.cpp.o
+[ 46%] Building CXX object examples/infill/CMakeFiles/infill.dir/infill.cpp.o
+[ 48%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
+[ 48%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+[ 49%] Building CXX object examples/export-lora/CMakeFiles/export-lora.dir/export-lora.cpp.o
+[ 50%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/get-model.cpp.o
+[ 51%] Building CXX object examples/lookup/CMakeFiles/lookup-merge.dir/lookup-merge.cpp.o
+[ 52%] Building CXX object examples/llava/CMakeFiles/llava-cli.dir/llava-cli.cpp.o
+[ 52%] Building CXX object examples/eval-callback/CMakeFiles/eval-callback.dir/eval-callback.cpp.o
+[ 53%] Building CXX object examples/llama-bench/CMakeFiles/llama-bench.dir/llama-bench.cpp.o
+[ 54%] Building CXX object examples/batched-bench/CMakeFiles/batched-bench.dir/batched-bench.cpp.o
+[ 54%] Building CXX object examples/gritlm/CMakeFiles/gritlm.dir/gritlm.cpp.o
+[ 55%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/get-model.cpp.o
+[ 55%] Building CXX object examples/beam-search/CMakeFiles/beam-search.dir/beam-search.cpp.o
+[ 56%] Building CXX object tests/CMakeFiles/test-autorelease.dir/get-model.cpp.o
+[ 57%] Building CXX object tests/CMakeFiles/test-grammar-integration.dir/get-model.cpp.o
+[ 57%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/test-tokenizer-0.cpp.o
+[ 57%] Building CXX object examples/main/CMakeFiles/main.dir/main.cpp.o
+[ 58%] Building CXX object examples/convert-llama2c-to-ggml/CMakeFiles/convert-llama2c-to-ggml.dir/convert-llama2c-to-ggml.cpp.o
+[ 59%] Building CXX object examples/embedding/CMakeFiles/embedding.dir/embedding.cpp.o
+[ 59%] Building CXX object tests/CMakeFiles/test-model-load-cancel.dir/test-model-load-cancel.cpp.o
+[ 59%] Building CXX object examples/lookup/CMakeFiles/lookup-create.dir/lookup-create.cpp.o
+[ 60%] Building CXX object tests/CMakeFiles/test-json-schema-to-grammar.dir/get-model.cpp.o
+[ 61%] Building CXX object examples/retrieval/CMakeFiles/retrieval.dir/retrieval.cpp.o
+[ 62%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 63%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+[ 63%] Building CXX object examples/imatrix/CMakeFiles/imatrix.dir/imatrix.cpp.o
+[ 64%] Building CXX object examples/lookup/CMakeFiles/lookup.dir/lookup.cpp.o
+[ 65%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
+[ 66%] Linking CXX executable ../bin/test-model-load-cancel
+[ 66%] Built target test-model-load-cancel
+[ 67%] Linking CXX executable ../bin/test-grad0
+[ 67%] Linking CXX executable ../bin/test-autorelease
+[ 68%] Linking CXX executable ../bin/test-quantize-fns
+[ 69%] Linking CXX executable ../bin/test-rope
+[ 69%] Built target test-grad0
+[ 69%] Built target test-autorelease
+[ 69%] Built target test-rope
+[ 69%] Built target test-quantize-fns
+[ 69%] Linking CXX executable ../../bin/q8dot
+[ 70%] Linking CXX executable ../bin/test-chat-template
+[ 71%] Linking CXX executable ../../bin/tokenize
+[ 71%] Built target q8dot
+[ 72%] Linking CXX executable ../../bin/vdot
+[ 73%] Linking CXX executable ../bin/test-grammar-parser
+[ 74%] Linking CXX executable ../../bin/baby-llama
+[ 74%] Built target tokenize
+[ 74%] Built target test-chat-template
+[ 75%] Linking CXX executable ../bin/test-sampling
+[ 75%] Built target vdot
+[ 76%] Linking CXX executable ../bin/test-tokenizer-1-spm
+[ 76%] Built target baby-llama
+[ 76%] Built target test-grammar-parser
+[ 76%] Linking CXX executable ../bin/test-tokenizer-1-bpe
+[ 76%] Built target test-tokenizer-1-spm
+[ 76%] Built target test-sampling
+[ 77%] Linking CXX executable ../../bin/eval-callback
+[ 77%] Built target test-tokenizer-1-bpe
+[ 78%] Linking CXX executable ../bin/test-grammar-integration
+[ 78%] Linking CXX executable ../../bin/lookup-merge
+[ 78%] Built target eval-callback
+[ 79%] Built target test-grammar-integration
+[ 79%] Linking CXX executable ../../bin/save-load-state
+[ 80%] Linking CXX executable ../../bin/simple
+[ 81%] Linking CXX executable ../../bin/lookup-create
+[ 81%] Built target lookup-merge
+[ 82%] Linking CXX executable ../../bin/beam-search
+[ 83%] Linking CXX executable ../../bin/batched-bench
+[ 84%] Linking CXX executable ../bin/test-quantize-perf
+[ 84%] Built target save-load-state
+[ 84%] Built target simple
+[ 84%] Built target lookup-create
+[ 85%] Linking CXX executable ../../bin/passkey
+[ 85%] Linking CXX executable ../../bin/batched
+[ 86%] Linking CXX executable ../../bin/embedding
+[ 86%] Built target beam-search
+[ 87%] Linking CXX executable ../../bin/gritlm
+[ 87%] Built target batched-bench
+[ 87%] Built target test-quantize-perf
+[ 87%] Built target passkey
+[ 87%] Built target batched
+[ 87%] Built target embedding
+[ 88%] Linking CXX executable ../../bin/gguf-split
+[ 88%] Built target gritlm
+[ 88%] Linking CXX executable ../../bin/llava-cli
+[ 89%] Linking CXX executable ../../bin/lookup-stats
+[ 90%] Linking CXX executable ../../bin/lookup
+[ 90%] Built target llava-cli
+[ 90%] Built target lookup-stats
+[ 90%] Built target gguf-split
+[ 91%] Linking CXX executable ../bin/test-tokenizer-0
+[ 91%] Linking CXX executable ../../bin/parallel
+[ 91%] Built target lookup
+[ 91%] Linking CXX executable ../../bin/export-lora
+[ 91%] Linking CXX executable ../../bin/lookahead
+[ 91%] Built target test-tokenizer-0
+[ 91%] Built target parallel
+[ 91%] Built target export-lora
+[ 91%] Built target lookahead
+[ 91%] Linking CXX executable ../../bin/train-text-from-scratch
+[ 92%] Linking CXX executable ../../bin/quantize
+ld: warning: ignoring duplicate libraries: '../../libllama.a'
+[ 93%] Linking CXX executable ../../bin/infill
+[ 93%] Linking CXX executable ../../bin/convert-llama2c-to-ggml
+[ 93%] Built target train-text-from-scratch
+[ 93%] Built target quantize
+[ 93%] Built target infill
+[ 93%] Built target convert-llama2c-to-ggml
+[ 93%] Linking CXX executable ../../bin/retrieval
+[ 94%] Linking CXX executable ../../bin/finetune
+[ 94%] Linking CXX executable ../../bin/imatrix
+[ 94%] Built target retrieval
+[ 94%] Built target finetune
+[ 94%] Linking CXX executable ../../bin/speculative
+[ 94%] Built target imatrix
+[ 95%] Linking CXX executable ../../bin/main
+[ 95%] Built target speculative
+[ 95%] Linking CXX executable ../bin/test-backend-ops
+[ 95%] Built target main
+[ 95%] Built target test-backend-ops
+[ 96%] Linking CXX executable ../../bin/perplexity
+[ 96%] Built target perplexity
+[ 97%] Linking CXX executable ../../bin/llama-bench
+[ 98%] Linking CXX executable ../bin/test-json-schema-to-grammar
+[ 98%] Built target llama-bench
+[ 98%] Built target test-json-schema-to-grammar
+[ 99%] Linking CXX executable ../bin/test-llama-grammar
+[ 99%] Built target test-llama-grammar
+[100%] Linking CXX executable ../../bin/server
+[100%] Built target server
+
+real	0m34.796s
+user	1m58.363s
+sys	0m12.131s
