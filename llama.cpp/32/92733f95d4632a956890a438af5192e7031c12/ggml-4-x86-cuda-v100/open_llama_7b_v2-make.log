@@ -1,0 +1,240 @@
++ make -j
+[  0%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  0%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  1%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  3%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/acc.cu.o
+[  3%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/binbcast.cu.o
+[  3%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/arange.cu.o
+[  5%] Built target build_info
+[  5%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/clamp.cu.o
+[  6%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/argsort.cu.o
+[  6%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/concat.cu.o
+[  7%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/convert.cu.o
+[  8%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/cpy.cu.o
+[  8%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/diagmask.cu.o
+[  9%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/dmmv.cu.o
+[  9%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/fattn.cu.o
+[ 10%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/getrows.cu.o
+[ 10%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/im2col.cu.o
+[ 11%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/mmq.cu.o
+[ 12%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/mmvq.cu.o
+[ 12%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/norm.cu.o
+[ 13%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/pad.cu.o
+[ 14%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/quantize.cu.o
+[ 14%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/pool2d.cu.o
+[ 15%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/scale.cu.o
+[ 15%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/rope.cu.o
+[ 16%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/softmax.cu.o
+[ 16%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/sumrows.cu.o
+[ 17%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/tsembd.cu.o
+[ 18%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/upscale.cu.o
+[ 18%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda.cu.o
+[ 18%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/unary.cu.o
+[ 19%] Building CXX object CMakeFiles/ggml.dir/sgemm.cpp.o
+[ 19%] Built target ggml
+[ 20%] Linking CXX static library libggml_static.a
+[ 20%] Building CXX object examples/gguf/CMakeFiles/gguf.dir/gguf.cpp.o
+[ 21%] Building CXX object CMakeFiles/llama.dir/unicode.cpp.o
+[ 21%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+[ 22%] Building CXX object CMakeFiles/llama.dir/unicode-data.cpp.o
+[ 23%] Linking CXX executable ../../bin/gguf
+[ 24%] Linking CXX static library libllama.a
+[ 24%] Built target gguf
+[ 24%] Built target ggml_static
+[ 24%] Built target llama
+[ 25%] Building CXX object common/CMakeFiles/common.dir/common.cpp.o
+[ 25%] Building C object tests/CMakeFiles/test-c.dir/test-c.c.o
+[ 26%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
+[ 27%] Building CXX object common/CMakeFiles/common.dir/console.cpp.o
+[ 27%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
+[ 28%] Building CXX object common/CMakeFiles/common.dir/sampling.cpp.o
+[ 28%] Building CXX object examples/llava/CMakeFiles/llava.dir/llava.cpp.o
+[ 29%] Building CXX object examples/llava/CMakeFiles/llava.dir/clip.cpp.o
+[ 30%] Building CXX object common/CMakeFiles/common.dir/grammar-parser.cpp.o
+[ 30%] Building CXX object common/CMakeFiles/common.dir/json-schema-to-grammar.cpp.o
+[ 31%] Linking CXX executable ../bin/test-c
+[ 31%] Linking CXX executable ../../bin/benchmark
+[ 31%] Linking CXX executable ../../bin/quantize-stats
+[ 31%] Building CXX object common/CMakeFiles/common.dir/ngram-cache.cpp.o
+[ 31%] Built target llava
+[ 32%] Building CXX object common/CMakeFiles/common.dir/train.cpp.o
+[ 33%] Linking CXX static library libllava_static.a
+[ 34%] Linking CXX static library libcommon.a
+[ 34%] Built target test-c
+[ 34%] Built target benchmark
+[ 34%] Built target quantize-stats
+[ 34%] Built target llava_static
+[ 34%] Built target common
+[ 35%] Building CXX object tests/CMakeFiles/test-tokenizer-1-spm.dir/test-tokenizer-1-spm.cpp.o
+[ 35%] Building CXX object tests/CMakeFiles/test-tokenizer-1-bpe.dir/test-tokenizer-1-bpe.cpp.o
+[ 35%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 35%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/test-tokenizer-0.cpp.o
+[ 36%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/get-model.cpp.o
+[ 37%] Building CXX object tests/CMakeFiles/test-chat-template.dir/get-model.cpp.o
+[ 37%] Building CXX object tests/CMakeFiles/test-chat-template.dir/test-chat-template.cpp.o
+[ 38%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
+[ 38%] Building CXX object tests/CMakeFiles/test-sampling.dir/get-model.cpp.o
+[ 39%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/get-model.cpp.o
+[ 39%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 40%] Linking CXX executable ../bin/test-tokenizer-1-bpe
+[ 41%] Building CXX object tests/CMakeFiles/test-grammar-parser.dir/test-grammar-parser.cpp.o
+[ 42%] Linking CXX executable ../bin/test-quantize-fns
+[ 42%] Linking CXX executable ../bin/test-tokenizer-1-spm
+[ 42%] Building CXX object tests/CMakeFiles/test-grammar-parser.dir/get-model.cpp.o
+[ 43%] Linking CXX executable ../bin/test-tokenizer-0
+[ 44%] Linking CXX executable ../bin/test-chat-template
+[ 45%] Linking CXX executable ../bin/test-sampling
+[ 45%] Linking CXX executable ../bin/test-quantize-perf
+[ 46%] Building CXX object tests/CMakeFiles/test-grammar-integration.dir/test-grammar-integration.cpp.o
+[ 47%] Building CXX object tests/CMakeFiles/test-llama-grammar.dir/get-model.cpp.o
+[ 48%] Building CXX object tests/CMakeFiles/test-rope.dir/test-rope.cpp.o
+[ 48%] Building CXX object tests/CMakeFiles/test-grammar-integration.dir/get-model.cpp.o
+[ 49%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 49%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/get-model.cpp.o
+[ 50%] Linking CXX executable ../bin/test-grammar-parser
+[ 51%] Building CXX object tests/CMakeFiles/test-llama-grammar.dir/test-llama-grammar.cpp.o
+[ 51%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+[ 53%] Building CXX object tests/CMakeFiles/test-model-load-cancel.dir/test-model-load-cancel.cpp.o
+[ 53%] Building CXX object tests/CMakeFiles/test-rope.dir/get-model.cpp.o
+[ 52%] Building CXX object tests/CMakeFiles/test-grad0.dir/get-model.cpp.o
+[ 54%] Linking CXX executable ../bin/test-grammar-integration
+[ 54%] Building CXX object tests/CMakeFiles/test-model-load-cancel.dir/get-model.cpp.o
+[ 55%] Linking CXX executable ../bin/test-backend-ops
+[ 56%] Linking CXX executable ../bin/test-rope
+[ 56%] Building CXX object tests/CMakeFiles/test-json-schema-to-grammar.dir/test-json-schema-to-grammar.cpp.o
+[ 57%] Building CXX object tests/CMakeFiles/test-json-schema-to-grammar.dir/get-model.cpp.o
+[ 57%] Linking CXX executable ../bin/test-grad0
+[ 58%] Building CXX object tests/CMakeFiles/test-autorelease.dir/test-autorelease.cpp.o
+[ 58%] Building CXX object tests/CMakeFiles/test-autorelease.dir/get-model.cpp.o
+[ 58%] Building CXX object examples/batched/CMakeFiles/batched.dir/batched.cpp.o
+[ 58%] Building CXX object examples/batched-bench/CMakeFiles/batched-bench.dir/batched-bench.cpp.o
+[ 59%] Linking CXX executable ../bin/test-model-load-cancel
+[ 59%] Building CXX object examples/baby-llama/CMakeFiles/baby-llama.dir/baby-llama.cpp.o
+[ 59%] Linking CXX executable ../bin/test-llama-grammar
+[ 59%] Linking CXX executable ../bin/test-json-schema-to-grammar
+[ 60%] Linking CXX executable ../../bin/batched-bench
+[ 61%] Linking CXX executable ../bin/test-autorelease
+[ 62%] Building CXX object examples/beam-search/CMakeFiles/beam-search.dir/beam-search.cpp.o
+[ 63%] Building CXX object examples/embedding/CMakeFiles/embedding.dir/embedding.cpp.o
+[ 64%] Linking CXX executable ../../bin/batched
+[ 65%] Building CXX object examples/eval-callback/CMakeFiles/eval-callback.dir/eval-callback.cpp.o
+[ 66%] Building CXX object examples/convert-llama2c-to-ggml/CMakeFiles/convert-llama2c-to-ggml.dir/convert-llama2c-to-ggml.cpp.o
+[ 66%] Building CXX object examples/finetune/CMakeFiles/finetune.dir/finetune.cpp.o
+[ 67%] Linking CXX executable ../../bin/baby-llama
+[ 67%] Building CXX object examples/gritlm/CMakeFiles/gritlm.dir/gritlm.cpp.o
+[ 67%] Linking CXX executable ../../bin/eval-callback
+[ 68%] Linking CXX executable ../../bin/finetune
+[ 68%] Linking CXX executable ../../bin/embedding
+[ 68%] Building CXX object examples/gguf-split/CMakeFiles/gguf-split.dir/gguf-split.cpp.o
+[ 68%] Linking CXX executable ../../bin/beam-search
+[ 68%] Linking CXX executable ../../bin/convert-llama2c-to-ggml
+[ 68%] Building CXX object examples/llama-bench/CMakeFiles/llama-bench.dir/llama-bench.cpp.o
+[ 69%] Building CXX object examples/infill/CMakeFiles/infill.dir/infill.cpp.o
+[ 70%] Linking CXX executable ../../bin/gritlm
+[ 71%] Building CXX object examples/main/CMakeFiles/main.dir/main.cpp.o
+[ 71%] Building CXX object examples/llava/CMakeFiles/llava-cli.dir/llava-cli.cpp.o
+[ 72%] Linking CXX executable ../../bin/gguf-split
+[ 73%] Building CXX object examples/tokenize/CMakeFiles/tokenize.dir/tokenize.cpp.o
+[ 74%] Building CXX object examples/parallel/CMakeFiles/parallel.dir/parallel.cpp.o
+[ 74%] Built target test-quantize-perf
+[ 75%] Linking CXX executable ../../bin/llama-bench
+[ 75%] Building CXX object examples/perplexity/CMakeFiles/perplexity.dir/perplexity.cpp.o
+[ 75%] Linking CXX executable ../../bin/infill
+[ 75%] Built target test-grammar-parser
+[ 75%] Built target test-quantize-fns
+[ 75%] Built target test-grad0
+[ 75%] Linking CXX executable ../../bin/main
+[ 76%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+[ 77%] Linking CXX executable ../../bin/llava-cli
+[ 77%] Linking CXX executable ../../bin/tokenize
+[ 78%] Linking CXX executable ../../bin/parallel
+[ 79%] Building CXX object examples/retrieval/CMakeFiles/retrieval.dir/retrieval.cpp.o
+[ 80%] Linking CXX executable ../../bin/perplexity
+[ 81%] Building CXX object examples/save-load-state/CMakeFiles/save-load-state.dir/save-load-state.cpp.o
+[ 81%] Linking CXX executable ../../bin/quantize
+[ 81%] Building CXX object examples/passkey/CMakeFiles/passkey.dir/passkey.cpp.o
+[ 81%] Built target test-rope
+[ 82%] Building CXX object examples/simple/CMakeFiles/simple.dir/simple.cpp.o
+[ 83%] Building CXX object examples/speculative/CMakeFiles/speculative.dir/speculative.cpp.o
+[ 83%] Linking CXX executable ../../bin/retrieval
+[ 84%] Linking CXX executable ../../bin/save-load-state
+[ 85%] Linking CXX executable ../../bin/passkey
+[ 85%] Linking CXX executable ../../bin/simple
+[ 85%] Building CXX object examples/lookahead/CMakeFiles/lookahead.dir/lookahead.cpp.o
+[ 85%] Building CXX object examples/lookup/CMakeFiles/lookup.dir/lookup.cpp.o
+[ 85%] Building CXX object examples/lookup/CMakeFiles/lookup-create.dir/lookup-create.cpp.o
+[ 86%] Linking CXX executable ../../bin/speculative
+[ 86%] Building CXX object examples/lookup/CMakeFiles/lookup-merge.dir/lookup-merge.cpp.o
+[ 87%] Generating json-schema-to-grammar.mjs.hpp
+[ 88%] Building CXX object examples/lookup/CMakeFiles/lookup-stats.dir/lookup-stats.cpp.o
+[ 88%] Generating completion.js.hpp
+[ 89%] Building CXX object examples/train-text-from-scratch/CMakeFiles/train-text-from-scratch.dir/train-text-from-scratch.cpp.o
+[ 90%] Building CXX object examples/imatrix/CMakeFiles/imatrix.dir/imatrix.cpp.o
+[ 90%] Generating index.html.hpp
+[ 91%] Linking CXX executable ../../bin/lookup-create
+[ 93%] Linking CXX executable ../../bin/lookahead
+[ 93%] Linking CXX executable ../../bin/lookup
+[ 93%] Built target test-json-schema-to-grammar
+[ 94%] Generating index.js.hpp
+[ 94%] Linking CXX executable ../../bin/lookup-merge
+[ 94%] Built target test-tokenizer-0
+[ 95%] Building CXX object examples/export-lora/CMakeFiles/export-lora.dir/export-lora.cpp.o
+[ 95%] Linking CXX executable ../../bin/train-text-from-scratch
+[ 95%] Linking CXX executable ../../bin/lookup-stats
+[ 95%] Linking CXX executable ../../bin/imatrix
+[ 96%] Building CXX object pocs/vdot/CMakeFiles/vdot.dir/vdot.cpp.o
+[ 96%] Building CXX object pocs/vdot/CMakeFiles/q8dot.dir/q8dot.cpp.o
+[ 97%] Linking CXX executable ../../bin/export-lora
+[ 97%] Built target convert-llama2c-to-ggml
+[ 98%] Linking CXX executable ../../bin/vdot
+[ 99%] Linking CXX executable ../../bin/q8dot
+[ 99%] Built target test-tokenizer-1-spm
+[ 99%] Building CXX object examples/server/CMakeFiles/server.dir/server.cpp.o
+[ 99%] Built target gguf-split
+[ 99%] Built target beam-search
+[ 99%] Built target test-sampling
+[ 99%] Built target test-backend-ops
+[ 99%] Built target lookup-merge
+[ 99%] Built target test-model-load-cancel
+[ 99%] Built target test-tokenizer-1-bpe
+[ 99%] Built target q8dot
+[ 99%] Built target vdot
+[ 99%] Built target test-chat-template
+[ 99%] Built target test-grammar-integration
+[ 99%] Built target baby-llama
+[ 99%] Built target eval-callback
+[ 99%] Built target test-llama-grammar
+[ 99%] Built target test-autorelease
+[ 99%] Built target gritlm
+[ 99%] Built target finetune
+[ 99%] Built target batched-bench
+[ 99%] Built target batched
+[ 99%] Built target perplexity
+[ 99%] Built target retrieval
+[ 99%] Built target infill
+[ 99%] Built target embedding
+[ 99%] Built target main
+[ 99%] Built target tokenize
+[ 99%] Built target train-text-from-scratch
+[ 99%] Built target parallel
+[ 99%] Built target export-lora
+[ 99%] Built target llama-bench
+[ 99%] Built target speculative
+[ 99%] Built target simple
+[ 99%] Built target lookahead
+[ 99%] Built target save-load-state
+[ 99%] Built target imatrix
+[ 99%] Built target lookup-create
+[ 99%] Built target passkey
+[ 99%] Built target llava-cli
+[ 99%] Built target lookup
+[ 99%] Built target lookup-stats
+[ 99%] Built target quantize
+[100%] Linking CXX executable ../../bin/server
+[100%] Built target server
+
+real	0m3.851s
+user	0m12.745s
+sys	0m5.049s
