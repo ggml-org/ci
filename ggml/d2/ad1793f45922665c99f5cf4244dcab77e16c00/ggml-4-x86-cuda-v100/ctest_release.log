@@ -1,0 +1,1493 @@
++ cmake -DCMAKE_BUILD_TYPE=Release -DGGML_CUBLAS=ON ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+GNU ld (GNU Binutils for Ubuntu) 2.38
+-- x86 detected
+-- Linux detected
+CMake Warning at src/CMakeLists.txt:209 (message):
+  GGML_CUBLAS is deprecated and will be removed in the future.
+
+  Use GGML_CUDA instead
+
+
+-- Found CUDAToolkit: /usr/local/cuda-12.2/include (found version "12.2.140") 
+-- CUDA found
+-- The CUDA compiler identification is NVIDIA 12.2.140
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda-12.2/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- GGML CUDA sources found
+-- GGML Configuring CUDA architectures 52;61;70
+-- x86 detected
+-- Linux detected
+-- Configuring done (3.1s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/ggml/work/ggml/build-ci-release
+
+real	0m3.263s
+user	0m2.456s
+sys	0m0.815s
++ make -j
+[  0%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  0%] Building C object src/CMakeFiles/ggml.dir/ggml.c.o
+[  1%] Building C object src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  2%] Building C object src/CMakeFiles/ggml.dir/ggml-backend.c.o
+[  3%] Building C object src/CMakeFiles/ggml.dir/ggml-quants.c.o
+[  4%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/acc.cu.o
+[  4%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/alibi.cu.o
+[  5%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/argsort.cu.o
+[  6%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/arange.cu.o
+[  7%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/binbcast.cu.o
+[  8%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/clamp.cu.o
+[  8%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/concat.cu.o
+[  9%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/convert.cu.o
+[ 10%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/cpy.cu.o
+[ 11%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/diagmask.cu.o
+[ 11%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/dmmv.cu.o
+[ 12%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/fattn.cu.o
+[ 13%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/getrows.cu.o
+[ 14%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/im2col.cu.o
+[ 15%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/mmq.cu.o
+[ 15%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/mmvq.cu.o
+[ 16%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/norm.cu.o
+[ 17%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/pad.cu.o
+In file included from /home/ggml/work/ggml/src/ggml-cuda/acc.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/acc.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+[ 18%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/pool2d.cu.o
+[ 19%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/quantize.cu.o
+[ 19%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/rope.cu.o
+[ 20%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/scale.cu.o
+[ 21%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/softmax.cu.o
+[ 22%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/sumrows.cu.o
+[ 22%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/tsembd.cu.o
+[ 23%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/unary.cu.o
+[ 24%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/upscale.cu.o
+[ 25%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda.cu.o
+In file included from /home/ggml/work/ggml/src/ggml-cuda/binbcast.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/binbcast.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/alibi.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/alibi.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/argsort.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/argsort.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/cpy.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/cpy.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/arange.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/arange.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/clamp.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/clamp.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/convert.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/convert.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+In file included from /home/ggml/work/ggml/src/ggml-cuda/concat.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/concat.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+In file included from /home/ggml/work/ggml/src/ggml-cuda/im2col.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/im2col.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/diagmask.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/diagmask.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/pad.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/pad.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/dmmv.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/dmmv.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/getrows.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/getrows.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/pool2d.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/pool2d.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/mmvq.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/mmvq.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/softmax.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/softmax.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/mmq.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/mmq.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/quantize.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/quantize.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+In file included from /home/ggml/work/ggml/src/ggml-cuda/norm.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/norm.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+In file included from /home/ggml/work/ggml/src/ggml-cuda/fattn.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:6:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+    6 | #if FP16_MMA_AVAILABLE
+      |     ^~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:6:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:50:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+   50 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:50:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:292:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  292 | #if FP16_MMA_AVAILABLE
+      |     ^~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:292:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:666:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  666 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:666:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda.cu:5:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+In file included from /home/ggml/work/ggml/src/ggml-cuda/tsembd.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/tsembd.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/acc.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/acc.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/upscale.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/upscale.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/scale.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/scale.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+In file included from /home/ggml/work/ggml/src/ggml-cuda/unary.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/unary.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/rope.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/rope.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/sumrows.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/sumrows.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/binbcast.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/binbcast.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/argsort.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/argsort.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/cpy.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/cpy.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+In file included from /home/ggml/work/ggml/src/ggml-cuda/alibi.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/alibi.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/clamp.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/clamp.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/arange.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/arange.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/im2col.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/im2col.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/concat.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/concat.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/convert.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/convert.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/pad.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/pad.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/pool2d.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/pool2d.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/dmmv.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/dmmv.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+In file included from /home/ggml/work/ggml/src/ggml-cuda/getrows.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/getrows.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+In file included from /home/ggml/work/ggml/src/ggml-cuda/diagmask.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/diagmask.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/fattn.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:6:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+    6 | #if FP16_MMA_AVAILABLE
+      |     ^~~~~~~~~~~~~~~~~~
+In file included from /home/ggml/work/ggml/src/ggml-cuda/quantize.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/quantize.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:6:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:50:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+   50 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:50:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:292:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  292 | #if FP16_MMA_AVAILABLE
+      |     ^~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:292:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:666:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  666 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:666:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/unary.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/unary.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+In file included from /home/ggml/work/ggml/src/ggml-cuda/softmax.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/softmax.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/norm.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/norm.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/mmvq.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/mmvq.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/tsembd.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/tsembd.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/mmq.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/mmq.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/upscale.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/upscale.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/acc.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/acc.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/rope.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/rope.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/scale.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/scale.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/sumrows.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/sumrows.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda.cu:5:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/binbcast.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/binbcast.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/argsort.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/argsort.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/cpy.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/cpy.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/alibi.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/alibi.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/pool2d.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/pool2d.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/arange.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/arange.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/clamp.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/clamp.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/concat.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/concat.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/im2col.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/im2col.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/mmvq.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/mmvq.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/dmmv.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/dmmv.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/pad.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/pad.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/mmq.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/mmq.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/convert.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/convert.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/rope.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/rope.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/getrows.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/getrows.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/fattn.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:6:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+    6 | #if FP16_MMA_AVAILABLE
+      |     ^~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:6:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/diagmask.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/diagmask.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:50:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+   50 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+In file included from /home/ggml/work/ggml/src/ggml-cuda/tsembd.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/tsembd.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:50:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:292:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  292 | #if FP16_MMA_AVAILABLE
+      |     ^~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:292:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:666:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  666 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:666:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/softmax.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/softmax.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/acc.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/acc.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/norm.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/norm.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+In file included from /home/ggml/work/ggml/src/ggml-cuda/unary.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/unary.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/quantize.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/quantize.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/scale.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/scale.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+In file included from /home/ggml/work/ggml/src/ggml-cuda/upscale.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/upscale.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/sumrows.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/sumrows.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/binbcast.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/binbcast.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/argsort.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/argsort.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda.cu:5:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/pool2d.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/pool2d.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/cpy.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/cpy.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/alibi.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/alibi.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/arange.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/arange.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/im2col.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/im2col.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/clamp.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/clamp.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+In file included from /home/ggml/work/ggml/src/ggml-cuda/mmq.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/mmq.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/dmmv.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/dmmv.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/concat.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/concat.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/pad.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/pad.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/mmvq.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/mmvq.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/convert.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/convert.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/rope.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/rope.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/getrows.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/getrows.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/softmax.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/softmax.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+In file included from /home/ggml/work/ggml/src/ggml-cuda/tsembd.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/tsembd.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/fattn.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:6:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+    6 | #if FP16_MMA_AVAILABLE
+      |     ^~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:6:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:50:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+   50 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:50:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:292:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  292 | #if FP16_MMA_AVAILABLE
+      |     ^~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:292:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/diagmask.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/diagmask.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:666:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  666 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/fattn.cu:666:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/unary.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/unary.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/norm.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/norm.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/scale.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/scale.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+In file included from /home/ggml/work/ggml/src/ggml-cuda/sumrows.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/sumrows.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/upscale.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/upscale.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda/quantize.cuh:1,
+                 from /home/ggml/work/ggml/src/ggml-cuda/quantize.cu:1:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+In file included from /home/ggml/work/ggml/src/ggml-cuda.cu:5:
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  369 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:369:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+  402 | #if FP16_AVAILABLE
+      |     ^~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cuda/common.cuh:402:5: warning: this use of "defined" may not be portable [-Wexpansion-to-defined]
+/home/ggml/work/ggml/src/ggml-cuda.cu(2412): warning #177-D: function "set_ggml_graph_node_properties" was declared but never referenced
+  static void set_ggml_graph_node_properties(ggml_tensor * node, ggml_graph_node_properties * graph_node_properties) {
+              ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/home/ggml/work/ggml/src/ggml-cuda.cu(2424): warning #177-D: function "ggml_graph_node_has_matching_properties" was declared but never referenced
+  static bool ggml_graph_node_has_matching_properties(ggml_tensor * node, ggml_graph_node_properties * graph_node_properties) {
+              ^
+
+/home/ggml/work/ggml/src/ggml-cuda.cu(2412): warning #177-D: function "set_ggml_graph_node_properties" was declared but never referenced
+  static void set_ggml_graph_node_properties(ggml_tensor * node, ggml_graph_node_properties * graph_node_properties) {
+              ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/home/ggml/work/ggml/src/ggml-cuda.cu(2424): warning #177-D: function "ggml_graph_node_has_matching_properties" was declared but never referenced
+  static bool ggml_graph_node_has_matching_properties(ggml_tensor * node, ggml_graph_node_properties * graph_node_properties) {
+              ^
+
+/home/ggml/work/ggml/src/ggml-cuda.cu(2412): warning #177-D: function "set_ggml_graph_node_properties" was declared but never referenced
+  static void set_ggml_graph_node_properties(ggml_tensor * node, ggml_graph_node_properties * graph_node_properties) {
+              ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/home/ggml/work/ggml/src/ggml-cuda.cu(2424): warning #177-D: function "ggml_graph_node_has_matching_properties" was declared but never referenced
+  static bool ggml_graph_node_has_matching_properties(ggml_tensor * node, ggml_graph_node_properties * graph_node_properties) {
+              ^
+
+[ 26%] Linking CXX static library libcommon.a
+[ 26%] Built target common
+[ 27%] Linking CUDA shared library libggml.so
+[ 27%] Built target ggml
+[ 27%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
+[ 28%] Building C object tests/CMakeFiles/test-vec1.dir/test-vec1.c.o
+[ 29%] Building CXX object tests/CMakeFiles/test-opt.dir/test-opt.cpp.o
+[ 30%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+[ 31%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 32%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 33%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
+[ 33%] Building C object tests/CMakeFiles/test-mul-mat2.dir/test-mul-mat2.c.o
+[ 34%] Building C object tests/CMakeFiles/test-mul-mat0.dir/test-mul-mat0.c.o
+[ 35%] Building C object tests/CMakeFiles/test1.dir/test1.c.o
+[ 37%] Building C object tests/CMakeFiles/test2.dir/test2.c.o
+[ 37%] Building C object tests/CMakeFiles/test3.dir/test3.c.o
+[ 38%] Building CXX object tests/CMakeFiles/test-arange.dir/test-arange.cpp.o
+[ 39%] Building C object tests/CMakeFiles/test-pool.dir/test-pool.c.o
+[ 40%] Building CXX object tests/CMakeFiles/test-timestep_embedding.dir/test-timestep_embedding.cpp.o
+[ 42%] Building C object tests/CMakeFiles/test-conv-transpose.dir/test-conv-transpose.c.o
+[ 42%] Linking C executable ../bin/test0
+[ 43%] Building C object tests/CMakeFiles/test-rel-pos.dir/test-rel-pos.c.o
+[ 44%] Building C object tests/CMakeFiles/test-dup.dir/test-dup.c.o
+[ 44%] Building C object tests/CMakeFiles/test-customop.dir/test-customop.c.o
+[ 45%] Building C object tests/CMakeFiles/test-xpos.dir/test-xpos.c.o
+[ 46%] Linking C executable ../bin/test-vec0
+[ 46%] Building CXX object tests/CMakeFiles/test-conv1d.dir/test-conv1d.cpp.o
+[ 47%] Building CXX object tests/CMakeFiles/test-conv2d.dir/test-conv2d.cpp.o
+[ 48%] Building CXX object tests/CMakeFiles/test-mul-mat.dir/test-mul-mat.cpp.o
+[ 49%] Linking CXX executable ../bin/test-opt
+[ 50%] Building CXX object tests/CMakeFiles/test-backend-buffer.dir/test-backend-buffer.cpp.o
+[ 51%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 52%] Building CXX object examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o
+[ 53%] Building CXX object examples/whisper/CMakeFiles/whisper-cpp.dir/whisper.cpp.o
+[ 54%] Building CXX object examples/mnist/CMakeFiles/mnist.dir/main.cpp.o
+[ 55%] Building CXX object examples/mnist/CMakeFiles/mnist-cnn.dir/main-cnn.cpp.o
+[ 56%] Linking CXX executable ../bin/test-arange
+[ 57%] Building CXX object examples/mnist/CMakeFiles/mnist-cpu.dir/main-cpu.cpp.o
+[ 57%] Building CXX object examples/sam/CMakeFiles/sam.dir/main.cpp.o
+[ 58%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolov3-tiny.cpp.o
+[ 58%] Built target test-vec0
+[ 59%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolo-image.cpp.o
+[ 59%] Linking C executable ../bin/test-pool
+[ 59%] Building CXX object examples/simple/CMakeFiles/simple-ctx.dir/simple-ctx.cpp.o
+[ 60%] Linking C executable ../bin/test-rel-pos
+[ 61%] Linking C executable ../bin/test3
+[ 62%] Building CXX object examples/simple/CMakeFiles/simple-backend.dir/simple-backend.cpp.o
+[ 63%] Linking C executable ../bin/test2
+[ 63%] Built target test0
+[ 64%] Linking C executable ../bin/test-customop
+[ 64%] Linking C executable ../bin/test-xpos
+[ 64%] Built target test-opt
+[ 65%] Linking C executable ../bin/test-dup
+[ 65%] Linking CXX executable ../bin/test-backend-buffer
+[ 65%] Linking C executable ../bin/test1
+[ 65%] Built target test-rel-pos
+[ 65%] Built target test-pool
+[ 65%] Built target test-arange
+[ 65%] Built target test-xpos
+[ 65%] Built target test-customop
+[ 66%] Linking C executable ../bin/test-mul-mat0
+[ 66%] Built target test3
+[ 66%] Built target test2
+[ 66%] Built target test-dup
+[ 67%] Linking CXX executable ../bin/test-quantize-fns
+[ 67%] Built target test-backend-buffer
+[ 67%] Built target test1
+[ 68%] Linking C executable ../bin/test-conv-transpose
+[ 68%] Built target test-mul-mat0
+[ 69%] Linking CXX executable ../bin/test-timestep_embedding
+[ 69%] Built target test-conv-transpose
+[ 69%] Built target test-quantize-fns
+/home/ggml/work/ggml/tests/test-conv1d.cpp:24:13: warning: ‘void ggml_log_callback_default(ggml_log_level, const char*, void*)’ defined but not used [-Wunused-function]
+   24 | static void ggml_log_callback_default(ggml_log_level level, const char * text, void * user_data) {
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~
+[ 69%] Built target test-timestep_embedding
+/home/ggml/work/ggml/tests/test-conv2d.cpp:24:13: warning: ‘void ggml_log_callback_default(ggml_log_level, const char*, void*)’ defined but not used [-Wunused-function]
+   24 | static void ggml_log_callback_default(ggml_log_level level, const char * text, void * user_data) {
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~
+[ 70%] Linking CXX executable ../bin/test-conv1d
+[ 71%] Linking CXX executable ../bin/test-conv2d
+[ 72%] Linking C executable ../bin/test-vec1
+[ 72%] Built target test-conv1d
+[ 73%] Linking CXX executable ../../bin/simple-ctx
+[ 74%] Linking CXX executable ../../bin/simple-backend
+[ 75%] Linking CXX executable ../../bin/mnist-cpu
+[ 76%] Linking CXX executable ../bin/test-mul-mat
+[ 76%] Built target test-conv2d
+[ 76%] Built target test-vec1
+[ 76%] Built target simple-ctx
+[ 76%] Built target mnist-cpu
+[ 76%] Built target simple-backend
+[ 76%] Built target test-mul-mat
+[ 77%] Linking CXX executable ../../bin/mnist-cnn
+[ 77%] Linking CXX executable ../../bin/mnist
+[ 78%] Linking C executable ../bin/test-mul-mat2
+[ 78%] Built target mnist-cnn
+[ 78%] Built target mnist
+[ 78%] Linking CXX executable ../bin/test-grad0
+[ 78%] Built target test-mul-mat2
+[ 78%] Built target test-grad0
+[ 78%] Linking CXX executable ../bin/test-quantize-perf
+[ 78%] Built target test-quantize-perf
+[ 79%] Linking CXX executable ../bin/test-backend-ops
+[ 79%] Built target test-backend-ops
+[ 80%] Linking CXX static library libcommon-ggml.a
+[ 80%] Built target common-ggml
+[ 81%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-ctx.dir/main-ctx.cpp.o
+[ 81%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-alloc.dir/main-alloc.cpp.o
+[ 81%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-sched.dir/main-sched.cpp.o
+[ 82%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-backend.dir/main-backend.cpp.o
+[ 83%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-quantize.dir/quantize.cpp.o
+[ 84%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-batched.dir/main-batched.cpp.o
+[ 84%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j-quantize.dir/quantize.cpp.o
+[ 85%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j.dir/main.cpp.o
+[ 85%] Building CXX object examples/whisper/CMakeFiles/whisper-quantize.dir/quantize.cpp.o
+[ 86%] Building CXX object examples/magika/CMakeFiles/magika.dir/main.cpp.o
+[ 87%] Linking CXX executable ../../bin/magika
+[ 87%] Built target magika
+[ 88%] Linking CXX executable ../../bin/gpt-j-quantize
+[ 89%] Linking CXX executable ../../bin/gpt-2-quantize
+[ 89%] Built target gpt-2-quantize
+[ 89%] Built target gpt-j-quantize
+[ 90%] Linking CXX executable ../../bin/whisper-quantize
+[ 90%] Built target whisper-quantize
+[ 91%] Linking CXX executable ../../bin/yolov3-tiny
+[ 92%] Linking CXX executable ../../bin/gpt-j
+[ 92%] Built target yolov3-tiny
+[ 93%] Linking CXX executable ../../bin/gpt-2-alloc
+[ 94%] Linking CXX executable ../../bin/gpt-2-ctx
+[ 95%] Linking CXX executable ../../bin/gpt-2-backend
+[ 95%] Built target gpt-j
+[ 95%] Built target gpt-2-ctx
+[ 95%] Built target gpt-2-alloc
+[ 95%] Built target gpt-2-backend
+[ 95%] Linking CXX executable ../../bin/gpt-2-batched
+[ 96%] Linking CXX executable ../../bin/gpt-2-sched
+[ 96%] Built target gpt-2-batched
+[ 96%] Built target gpt-2-sched
+[ 97%] Linking CXX executable ../../bin/sam
+[ 97%] Built target sam
+[ 98%] Linking CXX static library libwhisper-cpp.a
+[ 98%] Built target whisper-cpp
+[ 98%] Building CXX object examples/whisper/CMakeFiles/whisper.dir/main.cpp.o
+[ 99%] Building CXX object examples/whisper/CMakeFiles/whisper.dir/grammar-parser.cpp.o
+[100%] Linking CXX executable ../../bin/whisper
+[100%] Built target whisper
+
+real	2m55.866s
+user	7m19.481s
+sys	0m26.358s
++ ctest --output-on-failure
+Test project /home/ggml/work/ggml/build-ci-release
+      Start  1: test-grad0
+ 1/23 Test  #1: test-grad0 .......................   Passed    4.73 sec
+      Start  2: test-opt
+ 2/23 Test  #2: test-opt .........................   Passed    3.00 sec
+      Start  3: test-quantize-fns
+ 3/23 Test  #3: test-quantize-fns ................   Passed   21.00 sec
+      Start  4: test-quantize-perf
+ 4/23 Test  #4: test-quantize-perf ...............   Passed    5.80 sec
+      Start  5: test-mul-mat0
+ 5/23 Test  #5: test-mul-mat0 ....................   Passed    0.57 sec
+      Start  6: test-mul-mat2
+ 6/23 Test  #6: test-mul-mat2 ....................   Passed    2.80 sec
+      Start  7: test0
+ 7/23 Test  #7: test0 ............................   Passed    0.04 sec
+      Start  8: test1
+ 8/23 Test  #8: test1 ............................   Passed    0.04 sec
+      Start  9: test2
+ 9/23 Test  #9: test2 ............................   Passed   21.08 sec
+      Start 10: test3
+10/23 Test #10: test3 ............................   Passed    1.53 sec
+      Start 11: test-pool
+11/23 Test #11: test-pool ........................   Passed    0.04 sec
+      Start 12: test-arange
+12/23 Test #12: test-arange ......................   Passed    0.05 sec
+      Start 13: test-timestep_embedding
+13/23 Test #13: test-timestep_embedding ..........   Passed    0.04 sec
+      Start 14: test-conv-transpose
+14/23 Test #14: test-conv-transpose ..............   Passed    0.04 sec
+      Start 15: test-dup
+15/23 Test #15: test-dup .........................   Passed    0.04 sec
+      Start 16: test-rel-pos
+16/23 Test #16: test-rel-pos .....................   Passed    0.05 sec
+      Start 17: test-customop
+17/23 Test #17: test-customop ....................   Passed    0.05 sec
+      Start 18: test-xpos
+18/23 Test #18: test-xpos ........................   Passed    0.04 sec
+      Start 19: test-conv1d
+19/23 Test #19: test-conv1d ......................   Passed    0.04 sec
+      Start 20: test-conv2d
+20/23 Test #20: test-conv2d ......................   Passed    0.05 sec
+      Start 21: test-mul-mat
+21/23 Test #21: test-mul-mat .....................   Passed    0.04 sec
+      Start 22: test-backend-buffer
+22/23 Test #22: test-backend-buffer ..............   Passed    0.52 sec
+      Start 23: test-backend-ops
+23/23 Test #23: test-backend-ops .................   Passed   39.75 sec
+
+100% tests passed, 0 tests failed out of 23
+
+Total Test time (real) = 101.36 sec
+
+real	1m41.395s
+user	3m27.091s
+sys	0m6.262s
