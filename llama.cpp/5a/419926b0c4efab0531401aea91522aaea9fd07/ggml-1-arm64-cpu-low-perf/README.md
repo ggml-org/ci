@@ -1,0 +1,180 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 2:00.26
+- date:    Sat May 11 15:08:30 UTC 2024
+- repo:    https://github.com/ggerganov/llama.cpp
+- commit:  https://github.com/ggerganov/llama.cpp/commit/5a419926b0c4efab0531401aea91522aaea9fd07
+- author:  compilade
+```
+convert-hf : support bfloat16 conversion (#7158)
+
+* convert-hf : support bfloat16 conversion
+
+* gguf-py : flake8 fixes
+
+* convert-hf : add missing space after comma
+
+* convert-hf : get bit-exact same output as ./quantize
+
+The quantization version was missing.
+
+* convert-hf : don't round bf16 NANs
+
+* convert-hf : save some memory with np.int16 intermediate bf16 weights
+
+* convert-hf : more closely match llama.cpp with which weights to keep in f32
+
+* convert-hf : add --outtype auto-f16
+
+A reason for this to exist is for model quantizers who want an initial
+GGUF with the most fidelity to the original model while still using
+a 16-bit float type instead of 32-bit floats.
+
+* convert-hf : remove a semicolon because flake8 doesn't like it
+
+It's a reflex from when programming in C/C++, I guess.
+
+* convert-hf : support outtype templating in outfile name
+
+* convert-hf : rename --outtype auto-f16 to --outtype auto
+```
+
+## Environment
+
+```
+GG_BUILD_CLOUD=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+GG_BUILD_LOW_PERF=1
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-debug
+      Start  1: test-tokenizer-0-llama-spm
+ 1/22 Test  #1: test-tokenizer-0-llama-spm .......   Passed    0.18 sec
+      Start  2: test-tokenizer-0-llama-bpe
+ 2/22 Test  #2: test-tokenizer-0-llama-bpe .......   Passed    2.71 sec
+      Start  3: test-tokenizer-0-phi-3
+ 3/22 Test  #3: test-tokenizer-0-phi-3 ...........   Passed    0.18 sec
+      Start  4: test-tokenizer-0-falcon
+ 4/22 Test  #4: test-tokenizer-0-falcon ..........   Passed    1.04 sec
+      Start  5: test-tokenizer-0-bert-bge
+ 5/22 Test  #5: test-tokenizer-0-bert-bge ........   Passed    0.53 sec
+      Start  6: test-tokenizer-0-starcoder
+ 6/22 Test  #6: test-tokenizer-0-starcoder .......   Passed    0.86 sec
+      Start  7: test-tokenizer-0-gpt-2
+ 7/22 Test  #7: test-tokenizer-0-gpt-2 ...........   Passed    0.88 sec
+      Start  8: test-tokenizer-0-refact
+ 8/22 Test  #8: test-tokenizer-0-refact ..........   Passed    0.87 sec
+      Start  9: test-tokenizer-0-command-r
+ 9/22 Test  #9: test-tokenizer-0-command-r .......   Passed    3.76 sec
+      Start 10: test-tokenizer-0-qwen2
+10/22 Test #10: test-tokenizer-0-qwen2 ...........   Passed    2.24 sec
+      Start 11: test-tokenizer-1-llama-spm
+11/22 Test #11: test-tokenizer-1-llama-spm .......   Passed    4.61 sec
+      Start 12: test-quantize-fns
+12/22 Test #12: test-quantize-fns ................   Passed   35.02 sec
+      Start 13: test-quantize-perf
+13/22 Test #13: test-quantize-perf ...............   Passed   10.75 sec
+      Start 14: test-sampling
+14/22 Test #14: test-sampling ....................   Passed    0.03 sec
+      Start 15: test-chat-template
+15/22 Test #15: test-chat-template ...............   Passed    0.01 sec
+      Start 16: test-grammar-parser
+16/22 Test #16: test-grammar-parser ..............   Passed    0.00 sec
+      Start 17: test-llama-grammar
+17/22 Test #17: test-llama-grammar ...............   Passed    0.01 sec
+      Start 18: test-grammar-integration
+18/22 Test #18: test-grammar-integration .........   Passed    0.01 sec
+      Start 19: test-grad0
+19/22 Test #19: test-grad0 .......................   Passed    4.54 sec
+      Start 20: test-backend-ops
+20/22 Test #20: test-backend-ops .................   Passed    0.00 sec
+      Start 21: test-rope
+21/22 Test #21: test-rope ........................   Passed    0.08 sec
+      Start 24: test-json-schema-to-grammar
+22/22 Test #24: test-json-schema-to-grammar ......   Passed    0.04 sec
+
+100% tests passed, 0 tests failed out of 22
+
+Label Time Summary:
+main    =  68.36 sec*proc (22 tests)
+
+Total Test time (real) =  68.37 sec
+
+real	1m8.383s
+user	1m22.861s
+sys	0m3.956s
+```
+
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-release
+      Start  1: test-tokenizer-0-llama-spm
+ 1/22 Test  #1: test-tokenizer-0-llama-spm .......   Passed    0.06 sec
+      Start  2: test-tokenizer-0-llama-bpe
+ 2/22 Test  #2: test-tokenizer-0-llama-bpe .......   Passed    0.71 sec
+      Start  3: test-tokenizer-0-phi-3
+ 3/22 Test  #3: test-tokenizer-0-phi-3 ...........   Passed    0.06 sec
+      Start  4: test-tokenizer-0-falcon
+ 4/22 Test  #4: test-tokenizer-0-falcon ..........   Passed    0.27 sec
+      Start  5: test-tokenizer-0-bert-bge
+ 5/22 Test  #5: test-tokenizer-0-bert-bge ........   Passed    0.13 sec
+      Start  6: test-tokenizer-0-starcoder
+ 6/22 Test  #6: test-tokenizer-0-starcoder .......   Passed    0.21 sec
+      Start  7: test-tokenizer-0-gpt-2
+ 7/22 Test  #7: test-tokenizer-0-gpt-2 ...........   Passed    0.22 sec
+      Start  8: test-tokenizer-0-refact
+ 8/22 Test  #8: test-tokenizer-0-refact ..........   Passed    0.21 sec
+      Start  9: test-tokenizer-0-command-r
+ 9/22 Test  #9: test-tokenizer-0-command-r .......   Passed    1.14 sec
+      Start 10: test-tokenizer-0-qwen2
+10/22 Test #10: test-tokenizer-0-qwen2 ...........   Passed    0.60 sec
+      Start 11: test-tokenizer-1-llama-spm
+11/22 Test #11: test-tokenizer-1-llama-spm .......   Passed    0.63 sec
+      Start 12: test-quantize-fns
+12/22 Test #12: test-quantize-fns ................   Passed   19.72 sec
+      Start 13: test-quantize-perf
+13/22 Test #13: test-quantize-perf ...............   Passed    5.77 sec
+      Start 14: test-sampling
+14/22 Test #14: test-sampling ....................   Passed    0.01 sec
+      Start 15: test-chat-template
+15/22 Test #15: test-chat-template ...............   Passed    0.00 sec
+      Start 16: test-grammar-parser
+16/22 Test #16: test-grammar-parser ..............   Passed    0.00 sec
+      Start 17: test-llama-grammar
+17/22 Test #17: test-llama-grammar ...............   Passed    0.00 sec
+      Start 18: test-grammar-integration
+18/22 Test #18: test-grammar-integration .........   Passed    0.01 sec
+      Start 19: test-grad0
+19/22 Test #19: test-grad0 .......................   Passed    3.50 sec
+      Start 20: test-backend-ops
+20/22 Test #20: test-backend-ops .................   Passed    0.00 sec
+      Start 21: test-rope
+21/22 Test #21: test-rope ........................   Passed    0.05 sec
+      Start 24: test-json-schema-to-grammar
+22/22 Test #24: test-json-schema-to-grammar ......   Passed    0.01 sec
+
+100% tests passed, 0 tests failed out of 22
+
+Label Time Summary:
+main    =  33.32 sec*proc (22 tests)
+
+Total Test time (real) =  33.33 sec
+
+real	0m33.346s
+user	0m35.897s
+sys	0m4.049s
+```
