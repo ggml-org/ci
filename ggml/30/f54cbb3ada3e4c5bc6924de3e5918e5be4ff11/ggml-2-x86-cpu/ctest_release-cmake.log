@@ -25,6 +25,6 @@ GNU ld (GNU Binutils for Ubuntu) 2.38
 -- Generating done (0.0s)
 -- Build files have been written to: /home/ggml/work/ggml/build-ci-release
 
-real	0m0.444s
-user	0m0.353s
-sys	0m0.093s
+real	0m0.439s
+user	0m0.336s
+sys	0m0.107s

@@ -21,10 +21,10 @@ GNU ld (GNU Binutils for Ubuntu) 2.38
 -- Linux detected
 -- x86 detected
 -- Linux detected
--- Configuring done (0.3s)
+-- Configuring done (3.1s)
 -- Generating done (0.0s)
 -- Build files have been written to: /home/ggml/work/ggml/build-ci-debug
 
-real	0m0.443s
-user	0m0.318s
-sys	0m0.128s
+real	0m3.420s
+user	0m0.361s
+sys	0m0.146s
