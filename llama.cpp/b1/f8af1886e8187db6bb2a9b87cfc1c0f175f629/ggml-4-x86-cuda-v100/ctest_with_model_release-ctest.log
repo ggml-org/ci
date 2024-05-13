@@ -1,0 +1,16 @@
++ LLAMACPP_TEST_MODELFILE=/mnt/llama.cpp/models/open-llama/7B-v2/ggml-model-f16.gguf
++ time ctest --output-on-failure -L model
+Test project /home/ggml/work/llama.cpp/build-ci-release
+    Start 22: test-model-load-cancel
+1/2 Test #22: test-model-load-cancel ...........   Passed    9.71 sec
+    Start 23: test-autorelease
+2/2 Test #23: test-autorelease .................   Passed    2.00 sec
+
+100% tests passed, 0 tests failed out of 2
+
+Label Time Summary:
+model    =  11.72 sec*proc (2 tests)
+
+Total Test time (real) =  11.72 sec
+0.22user 11.49system 0:11.76elapsed 99%CPU (0avgtext+0avgdata 13700484maxresident)k
+4584inputs+72outputs (27major+3589487minor)pagefaults 0swaps
