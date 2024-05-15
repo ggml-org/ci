@@ -1,0 +1,35 @@
++ cmake -DCMAKE_BUILD_TYPE=Release -DGGML_METAL=ON -DGGML_METAL_EMBED_LIBRARY=ON ..
+-- The C compiler identification is AppleClang 15.0.0.15000100
+-- The CXX compiler identification is AppleClang 15.0.0.15000100
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.39.3 (Apple Git-145)") 
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- CMAKE_SYSTEM_PROCESSOR: arm64
+-- ARM detected
+-- Accelerate framework found
+-- The ASM compiler identification is AppleClang
+-- Found assembler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc
+CMake Warning (dev) at src/CMakeLists.txt:493 (install):
+  Target ggml has RESOURCE files but no RESOURCE DESTINATION.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- ARM detected
+-- Accelerate framework found
+-- Configuring done (0.6s)
+-- Generating done (0.1s)
+-- Build files have been written to: /Users/ggml/work/ggml/build-ci-release
+
+real	0m0.731s
+user	0m0.345s
+sys	0m0.331s
