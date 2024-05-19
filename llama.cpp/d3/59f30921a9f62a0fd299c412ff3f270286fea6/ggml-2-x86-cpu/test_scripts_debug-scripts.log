@@ -1,0 +1,695 @@
++ cd ./examples/gguf-split
++ bash tests.sh /home/ggml/work/llama.cpp/build-ci-debug/bin /mnt/llama.cpp/models
++ SPLIT=/home/ggml/work/llama.cpp/build-ci-debug/bin/gguf-split
++ MAIN=/home/ggml/work/llama.cpp/build-ci-debug/bin/main
++ WORK_PATH=/mnt/llama.cpp/models/gguf-split
++++ dirname tests.sh
+++ realpath ./../../
++ ROOT_DIR=/home/ggml/work/llama.cpp
++ mkdir -p /mnt/llama.cpp/models/gguf-split
++ rm -f '/mnt/llama.cpp/models/gguf-split/ggml-model-split*.gguf' '/mnt/llama.cpp/models/gguf-split/ggml-model-merge*.gguf'
++ cd /mnt/llama.cpp/models/gguf-split
++ /home/ggml/work/llama.cpp/scripts/hf.sh --repo ggml-org/gemma-1.1-2b-it-Q8_0-GGUF --file gemma-1.1-2b-it.Q8_0.gguf
+[+] attempting to download gemma-1.1-2b-it.Q8_0.gguf
+[+] wget -q --show-progress -c -O ./gemma-1.1-2b-it.Q8_0.gguf https://huggingface.co/ggml-org/gemma-1.1-2b-it-Q8_0-GGUF/resolve/main/gemma-1.1-2b-it.Q8_0.gguf
+./gemma-1.1-2b-it.Q8_0.gguf
++ echo PASS
+PASS
++ /home/ggml/work/llama.cpp/build-ci-debug/bin/gguf-split --split-max-tensors 28 /mnt/llama.cpp/models/gguf-split/gemma-1.1-2b-it.Q8_0.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split
+n_split: 6
+split 00001: n_tensors = 28, total_size = 871M
+split 00002: n_tensors = 28, total_size = 334M
+split 00003: n_tensors = 28, total_size = 402M
+split 00004: n_tensors = 28, total_size = 335M
+split 00005: n_tensors = 28, total_size = 338M
+split 00006: n_tensors = 24, total_size = 261M
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-00001-of-00006.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-00002-of-00006.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-00003-of-00006.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-00004-of-00006.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-00005-of-00006.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-00006-of-00006.gguf ... gguf_split: 6 gguf split written with a total of 164 tensors.
+done
++ echo PASS
+PASS
++ echo
+
++ /home/ggml/work/llama.cpp/build-ci-debug/bin/main --model /mnt/llama.cpp/models/gguf-split/ggml-model-split-00001-of-00006.gguf --random-prompt --n-predict 32
+Log start
+main: build = 2940 (d359f309)
+main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+main: seed  = 1716160789
+llama_model_loader: additional 5 GGUFs metadata loaded.
+llama_model_loader: loaded meta data with 27 key-value pairs and 164 tensors from /mnt/llama.cpp/models/gguf-split/ggml-model-split-00001-of-00006.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = gemma
+llama_model_loader: - kv   1:                               general.name str              = gemma-1.1-2b-it
+llama_model_loader: - kv   2:                       gemma.context_length u32              = 8192
+llama_model_loader: - kv   3:                     gemma.embedding_length u32              = 2048
+llama_model_loader: - kv   4:                          gemma.block_count u32              = 18
+llama_model_loader: - kv   5:                  gemma.feed_forward_length u32              = 16384
+llama_model_loader: - kv   6:                 gemma.attention.head_count u32              = 8
+llama_model_loader: - kv   7:              gemma.attention.head_count_kv u32              = 1
+llama_model_loader: - kv   8:     gemma.attention.layer_norm_rms_epsilon f32              = 0.000001
+llama_model_loader: - kv   9:                 gemma.attention.key_length u32              = 256
+llama_model_loader: - kv  10:               gemma.attention.value_length u32              = 256
+llama_model_loader: - kv  11:                          general.file_type u32              = 7
+llama_model_loader: - kv  12:                       tokenizer.ggml.model str              = llama
+llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,256000]  = ["<pad>", "<eos>", "<bos>", "<unk>", ...
+llama_model_loader: - kv  14:                      tokenizer.ggml.scores arr[f32,256000]  = [0.000000, 0.000000, 0.000000, 0.0000...
+llama_model_loader: - kv  15:                  tokenizer.ggml.token_type arr[i32,256000]  = [3, 3, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  16:                tokenizer.ggml.bos_token_id u32              = 2
+llama_model_loader: - kv  17:                tokenizer.ggml.eos_token_id u32              = 1
+llama_model_loader: - kv  18:            tokenizer.ggml.unknown_token_id u32              = 3
+llama_model_loader: - kv  19:            tokenizer.ggml.padding_token_id u32              = 0
+llama_model_loader: - kv  20:               tokenizer.ggml.add_bos_token bool             = true
+llama_model_loader: - kv  21:               tokenizer.ggml.add_eos_token bool             = false
+llama_model_loader: - kv  22:                    tokenizer.chat_template str              = {{ bos_token }}{% if messages[0]['rol...
+llama_model_loader: - kv  23:               general.quantization_version u32              = 2
+llama_model_loader: - kv  24:                                   split.no u16              = 0
+llama_model_loader: - kv  25:                                split.count u16              = 6
+llama_model_loader: - kv  26:                        split.tensors.count i32              = 164
+llama_model_loader: - type  f32:   37 tensors
+llama_model_loader: - type q8_0:  127 tensors
+llm_load_vocab: mismatch in special tokens definition ( 416/256000 vs 260/256000 ).
+llm_load_print_meta: format           = GGUF V3 (latest)
+llm_load_print_meta: arch             = gemma
+llm_load_print_meta: vocab type       = SPM
+llm_load_print_meta: n_vocab          = 256000
+llm_load_print_meta: n_merges         = 0
+llm_load_print_meta: n_ctx_train      = 8192
+llm_load_print_meta: n_embd           = 2048
+llm_load_print_meta: n_head           = 8
+llm_load_print_meta: n_head_kv        = 1
+llm_load_print_meta: n_layer          = 18
+llm_load_print_meta: n_rot            = 256
+llm_load_print_meta: n_embd_head_k    = 256
+llm_load_print_meta: n_embd_head_v    = 256
+llm_load_print_meta: n_gqa            = 8
+llm_load_print_meta: n_embd_k_gqa     = 256
+llm_load_print_meta: n_embd_v_gqa     = 256
+llm_load_print_meta: f_norm_eps       = 0.0e+00
+llm_load_print_meta: f_norm_rms_eps   = 1.0e-06
+llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+llm_load_print_meta: f_logit_scale    = 0.0e+00
+llm_load_print_meta: n_ff             = 16384
+llm_load_print_meta: n_expert         = 0
+llm_load_print_meta: n_expert_used    = 0
+llm_load_print_meta: causal attn      = 1
+llm_load_print_meta: pooling type     = 0
+llm_load_print_meta: rope type        = 2
+llm_load_print_meta: rope scaling     = linear
+llm_load_print_meta: freq_base_train  = 10000.0
+llm_load_print_meta: freq_scale_train = 1
+llm_load_print_meta: n_yarn_orig_ctx  = 8192
+llm_load_print_meta: rope_finetuned   = unknown
+llm_load_print_meta: ssm_d_conv       = 0
+llm_load_print_meta: ssm_d_inner      = 0
+llm_load_print_meta: ssm_d_state      = 0
+llm_load_print_meta: ssm_dt_rank      = 0
+llm_load_print_meta: model type       = 2B
+llm_load_print_meta: model ftype      = Q8_0
+llm_load_print_meta: model params     = 2.51 B
+llm_load_print_meta: model size       = 2.48 GiB (8.50 BPW) 
+llm_load_print_meta: general.name     = gemma-1.1-2b-it
+llm_load_print_meta: BOS token        = 2 '<bos>'
+llm_load_print_meta: EOS token        = 1 '<eos>'
+llm_load_print_meta: UNK token        = 3 '<unk>'
+llm_load_print_meta: PAD token        = 0 '<pad>'
+llm_load_print_meta: LF token         = 227 '<0x0A>'
+llm_load_print_meta: EOT token        = 107 '<end_of_turn>'
+llm_load_tensors: ggml ctx size =    0.08 MiB
+llm_load_tensors:        CPU buffer size =   865.98 MiB
+llm_load_tensors:        CPU buffer size =   334.74 MiB
+llm_load_tensors:        CPU buffer size =   402.73 MiB
+llm_load_tensors:        CPU buffer size =   335.27 MiB
+llm_load_tensors:        CPU buffer size =   338.98 MiB
+llm_load_tensors:        CPU buffer size =   261.96 MiB
+.............................................................
+llama_new_context_with_model: n_ctx      = 512
+llama_new_context_with_model: n_batch    = 512
+llama_new_context_with_model: n_ubatch   = 512
+llama_new_context_with_model: flash_attn = 0
+llama_new_context_with_model: freq_base  = 10000.0
+llama_new_context_with_model: freq_scale = 1
+llama_kv_cache_init:        CPU KV buffer size =     9.00 MiB
+llama_new_context_with_model: KV self size  =    9.00 MiB, K (f16):    4.50 MiB, V (f16):    4.50 MiB
+llama_new_context_with_model:        CPU  output buffer size =     0.98 MiB
+ggml_gallocr_reserve_n: reallocating CPU buffer from size 0.00 MiB to 504.00 MiB
+llama_new_context_with_model:        CPU compute buffer size =   504.00 MiB
+llama_new_context_with_model: graph nodes  = 601
+llama_new_context_with_model: graph splits = 1
+
+system_info: n_threads = 4 / 8 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
+sampling: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	top_k = 40, tfs_z = 1.000, top_p = 0.950, min_p = 0.050, typical_p = 1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+sampling order: 
+CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temperature 
+generate: n_ctx = 512, n_batch = 2048, n_predict = 32, n_keep = 1
+
+
+<bos> The Sims 4: Get to Work
+
+## Get to Work: A Career-Driven Expansion for The Sims 4
+
+**Get to Work** is the ultimate
+llama_print_timings:        load time =    1240.22 ms
+llama_print_timings:      sample time =      47.65 ms /    32 runs   (    1.49 ms per token,   671.58 tokens per second)
+llama_print_timings: prompt eval time =    1149.72 ms /     2 tokens (  574.86 ms per token,     1.74 tokens per second)
+llama_print_timings:        eval time =   20945.37 ms /    31 runs   (  675.66 ms per token,     1.48 tokens per second)
+llama_print_timings:       total time =   22279.39 ms /    33 tokens
+Log end
++ echo PASS
+PASS
++ echo
+
++ /home/ggml/work/llama.cpp/build-ci-debug/bin/gguf-split --merge /mnt/llama.cpp/models/gguf-split/ggml-model-split-00001-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-merge.gguf
+gguf_merge: /mnt/llama.cpp/models/gguf-split/ggml-model-split-00001-of-00006.gguf -> /mnt/llama.cpp/models/gguf-split/ggml-model-merge.gguf
+gguf_merge: reading metadata /mnt/llama.cpp/models/gguf-split/ggml-model-split-00001-of-00006.gguf ...[3Ddone
+gguf_merge: reading metadata /mnt/llama.cpp/models/gguf-split/ggml-model-split-00002-of-00006.gguf ...[3Ddone
+gguf_merge: reading metadata /mnt/llama.cpp/models/gguf-split/ggml-model-split-00003-of-00006.gguf ...[3Ddone
+gguf_merge: reading metadata /mnt/llama.cpp/models/gguf-split/ggml-model-split-00004-of-00006.gguf ...[3Ddone
+gguf_merge: reading metadata /mnt/llama.cpp/models/gguf-split/ggml-model-split-00005-of-00006.gguf ...[3Ddone
+gguf_merge: reading metadata /mnt/llama.cpp/models/gguf-split/ggml-model-split-00006-of-00006.gguf ...[3Ddone
+gguf_merge: writing tensors /mnt/llama.cpp/models/gguf-split/ggml-model-split-00001-of-00006.gguf ...[3Ddone
+gguf_merge: writing tensors /mnt/llama.cpp/models/gguf-split/ggml-model-split-00002-of-00006.gguf ...[3Ddone
+gguf_merge: writing tensors /mnt/llama.cpp/models/gguf-split/ggml-model-split-00003-of-00006.gguf ...[3Ddone
+gguf_merge: writing tensors /mnt/llama.cpp/models/gguf-split/ggml-model-split-00004-of-00006.gguf ...[3Ddone
+gguf_merge: writing tensors /mnt/llama.cpp/models/gguf-split/ggml-model-split-00005-of-00006.gguf ...[3Ddone
+gguf_merge: writing tensors /mnt/llama.cpp/models/gguf-split/ggml-model-split-00006-of-00006.gguf ...[3Ddone
+gguf_merge: /mnt/llama.cpp/models/gguf-split/ggml-model-merge.gguf merged from 6 split with 164 tensors.
++ echo PASS
+PASS
++ echo
+
++ /home/ggml/work/llama.cpp/build-ci-debug/bin/main --model /mnt/llama.cpp/models/gguf-split/ggml-model-merge.gguf --random-prompt --n-predict 32
+Log start
+main: build = 2940 (d359f309)
+main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+main: seed  = 1716160816
+llama_model_loader: loaded meta data with 27 key-value pairs and 164 tensors from /mnt/llama.cpp/models/gguf-split/ggml-model-merge.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = gemma
+llama_model_loader: - kv   1:                               general.name str              = gemma-1.1-2b-it
+llama_model_loader: - kv   2:                       gemma.context_length u32              = 8192
+llama_model_loader: - kv   3:                     gemma.embedding_length u32              = 2048
+llama_model_loader: - kv   4:                          gemma.block_count u32              = 18
+llama_model_loader: - kv   5:                  gemma.feed_forward_length u32              = 16384
+llama_model_loader: - kv   6:                 gemma.attention.head_count u32              = 8
+llama_model_loader: - kv   7:              gemma.attention.head_count_kv u32              = 1
+llama_model_loader: - kv   8:     gemma.attention.layer_norm_rms_epsilon f32              = 0.000001
+llama_model_loader: - kv   9:                 gemma.attention.key_length u32              = 256
+llama_model_loader: - kv  10:               gemma.attention.value_length u32              = 256
+llama_model_loader: - kv  11:                          general.file_type u32              = 7
+llama_model_loader: - kv  12:                       tokenizer.ggml.model str              = llama
+llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,256000]  = ["<pad>", "<eos>", "<bos>", "<unk>", ...
+llama_model_loader: - kv  14:                      tokenizer.ggml.scores arr[f32,256000]  = [0.000000, 0.000000, 0.000000, 0.0000...
+llama_model_loader: - kv  15:                  tokenizer.ggml.token_type arr[i32,256000]  = [3, 3, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  16:                tokenizer.ggml.bos_token_id u32              = 2
+llama_model_loader: - kv  17:                tokenizer.ggml.eos_token_id u32              = 1
+llama_model_loader: - kv  18:            tokenizer.ggml.unknown_token_id u32              = 3
+llama_model_loader: - kv  19:            tokenizer.ggml.padding_token_id u32              = 0
+llama_model_loader: - kv  20:               tokenizer.ggml.add_bos_token bool             = true
+llama_model_loader: - kv  21:               tokenizer.ggml.add_eos_token bool             = false
+llama_model_loader: - kv  22:                    tokenizer.chat_template str              = {{ bos_token }}{% if messages[0]['rol...
+llama_model_loader: - kv  23:               general.quantization_version u32              = 2
+llama_model_loader: - kv  24:                                   split.no u16              = 0
+llama_model_loader: - kv  25:                                split.count u16              = 0
+llama_model_loader: - kv  26:                        split.tensors.count i32              = 164
+llama_model_loader: - type  f32:   37 tensors
+llama_model_loader: - type q8_0:  127 tensors
+llm_load_vocab: mismatch in special tokens definition ( 416/256000 vs 260/256000 ).
+llm_load_print_meta: format           = GGUF V3 (latest)
+llm_load_print_meta: arch             = gemma
+llm_load_print_meta: vocab type       = SPM
+llm_load_print_meta: n_vocab          = 256000
+llm_load_print_meta: n_merges         = 0
+llm_load_print_meta: n_ctx_train      = 8192
+llm_load_print_meta: n_embd           = 2048
+llm_load_print_meta: n_head           = 8
+llm_load_print_meta: n_head_kv        = 1
+llm_load_print_meta: n_layer          = 18
+llm_load_print_meta: n_rot            = 256
+llm_load_print_meta: n_embd_head_k    = 256
+llm_load_print_meta: n_embd_head_v    = 256
+llm_load_print_meta: n_gqa            = 8
+llm_load_print_meta: n_embd_k_gqa     = 256
+llm_load_print_meta: n_embd_v_gqa     = 256
+llm_load_print_meta: f_norm_eps       = 0.0e+00
+llm_load_print_meta: f_norm_rms_eps   = 1.0e-06
+llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+llm_load_print_meta: f_logit_scale    = 0.0e+00
+llm_load_print_meta: n_ff             = 16384
+llm_load_print_meta: n_expert         = 0
+llm_load_print_meta: n_expert_used    = 0
+llm_load_print_meta: causal attn      = 1
+llm_load_print_meta: pooling type     = 0
+llm_load_print_meta: rope type        = 2
+llm_load_print_meta: rope scaling     = linear
+llm_load_print_meta: freq_base_train  = 10000.0
+llm_load_print_meta: freq_scale_train = 1
+llm_load_print_meta: n_yarn_orig_ctx  = 8192
+llm_load_print_meta: rope_finetuned   = unknown
+llm_load_print_meta: ssm_d_conv       = 0
+llm_load_print_meta: ssm_d_inner      = 0
+llm_load_print_meta: ssm_d_state      = 0
+llm_load_print_meta: ssm_dt_rank      = 0
+llm_load_print_meta: model type       = 2B
+llm_load_print_meta: model ftype      = Q8_0
+llm_load_print_meta: model params     = 2.51 B
+llm_load_print_meta: model size       = 2.48 GiB (8.50 BPW) 
+llm_load_print_meta: general.name     = gemma-1.1-2b-it
+llm_load_print_meta: BOS token        = 2 '<bos>'
+llm_load_print_meta: EOS token        = 1 '<eos>'
+llm_load_print_meta: UNK token        = 3 '<unk>'
+llm_load_print_meta: PAD token        = 0 '<pad>'
+llm_load_print_meta: LF token         = 227 '<0x0A>'
+llm_load_print_meta: EOT token        = 107 '<end_of_turn>'
+llm_load_tensors: ggml ctx size =    0.08 MiB
+llm_load_tensors:        CPU buffer size =  2539.66 MiB
+.............................................................
+llama_new_context_with_model: n_ctx      = 512
+llama_new_context_with_model: n_batch    = 512
+llama_new_context_with_model: n_ubatch   = 512
+llama_new_context_with_model: flash_attn = 0
+llama_new_context_with_model: freq_base  = 10000.0
+llama_new_context_with_model: freq_scale = 1
+llama_kv_cache_init:        CPU KV buffer size =     9.00 MiB
+llama_new_context_with_model: KV self size  =    9.00 MiB, K (f16):    4.50 MiB, V (f16):    4.50 MiB
+llama_new_context_with_model:        CPU  output buffer size =     0.98 MiB
+ggml_gallocr_reserve_n: reallocating CPU buffer from size 0.00 MiB to 504.00 MiB
+llama_new_context_with_model:        CPU compute buffer size =   504.00 MiB
+llama_new_context_with_model: graph nodes  = 601
+llama_new_context_with_model: graph splits = 1
+
+system_info: n_threads = 4 / 8 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
+sampling: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	top_k = 40, tfs_z = 1.000, top_p = 0.950, min_p = 0.050, typical_p = 1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+sampling order: 
+CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temperature 
+generate: n_ctx = 512, n_batch = 2048, n_predict = 32, n_keep = 1
+
+
+<bos> The Sims 4: Get Together
+
+**Get Together** is a pack for The Sims 4 that focuses on social interaction and community building. It adds new objects
+llama_print_timings:        load time =    1231.19 ms
+llama_print_timings:      sample time =      47.69 ms /    32 runs   (    1.49 ms per token,   670.97 tokens per second)
+llama_print_timings: prompt eval time =    1148.40 ms /     2 tokens (  574.20 ms per token,     1.74 tokens per second)
+llama_print_timings:        eval time =   20902.39 ms /    31 runs   (  674.27 ms per token,     1.48 tokens per second)
+llama_print_timings:       total time =   22233.76 ms /    33 tokens
+Log end
++ echo PASS
+PASS
++ echo
+
++ /home/ggml/work/llama.cpp/build-ci-debug/bin/gguf-split --split-max-tensors 32 --no-tensor-first-split /mnt/llama.cpp/models/gguf-split/ggml-model-merge.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors
+n_split: 7
+split 00001: n_tensors = 0, total_size = 5M
+split 00002: n_tensors = 32, total_size = 967M
+split 00003: n_tensors = 32, total_size = 344M
+split 00004: n_tensors = 32, total_size = 411M
+split 00005: n_tensors = 32, total_size = 437M
+split 00006: n_tensors = 32, total_size = 344M
+split 00007: n_tensors = 4, total_size = 34M
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00001-of-00007.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00002-of-00007.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00003-of-00007.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00004-of-00007.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00005-of-00007.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00006-of-00007.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00007-of-00007.gguf ... gguf_split: 7 gguf split written with a total of 164 tensors.
+done
++ echo PASS
+PASS
++ echo
+
++ /home/ggml/work/llama.cpp/build-ci-debug/bin/main --model /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00001-of-00007.gguf --random-prompt --n-predict 32
+Log start
+main: build = 2940 (d359f309)
+main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+main: seed  = 1716160842
+llama_model_loader: additional 6 GGUFs metadata loaded.
+llama_model_loader: loaded meta data with 27 key-value pairs and 164 tensors from /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00001-of-00007.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = gemma
+llama_model_loader: - kv   1:                               general.name str              = gemma-1.1-2b-it
+llama_model_loader: - kv   2:                       gemma.context_length u32              = 8192
+llama_model_loader: - kv   3:                     gemma.embedding_length u32              = 2048
+llama_model_loader: - kv   4:                          gemma.block_count u32              = 18
+llama_model_loader: - kv   5:                  gemma.feed_forward_length u32              = 16384
+llama_model_loader: - kv   6:                 gemma.attention.head_count u32              = 8
+llama_model_loader: - kv   7:              gemma.attention.head_count_kv u32              = 1
+llama_model_loader: - kv   8:     gemma.attention.layer_norm_rms_epsilon f32              = 0.000001
+llama_model_loader: - kv   9:                 gemma.attention.key_length u32              = 256
+llama_model_loader: - kv  10:               gemma.attention.value_length u32              = 256
+llama_model_loader: - kv  11:                          general.file_type u32              = 7
+llama_model_loader: - kv  12:                       tokenizer.ggml.model str              = llama
+llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,256000]  = ["<pad>", "<eos>", "<bos>", "<unk>", ...
+llama_model_loader: - kv  14:                      tokenizer.ggml.scores arr[f32,256000]  = [0.000000, 0.000000, 0.000000, 0.0000...
+llama_model_loader: - kv  15:                  tokenizer.ggml.token_type arr[i32,256000]  = [3, 3, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  16:                tokenizer.ggml.bos_token_id u32              = 2
+llama_model_loader: - kv  17:                tokenizer.ggml.eos_token_id u32              = 1
+llama_model_loader: - kv  18:            tokenizer.ggml.unknown_token_id u32              = 3
+llama_model_loader: - kv  19:            tokenizer.ggml.padding_token_id u32              = 0
+llama_model_loader: - kv  20:               tokenizer.ggml.add_bos_token bool             = true
+llama_model_loader: - kv  21:               tokenizer.ggml.add_eos_token bool             = false
+llama_model_loader: - kv  22:                    tokenizer.chat_template str              = {{ bos_token }}{% if messages[0]['rol...
+llama_model_loader: - kv  23:               general.quantization_version u32              = 2
+llama_model_loader: - kv  24:                                   split.no u16              = 0
+llama_model_loader: - kv  25:                                split.count u16              = 7
+llama_model_loader: - kv  26:                        split.tensors.count i32              = 164
+llama_model_loader: - type  f32:   37 tensors
+llama_model_loader: - type q8_0:  127 tensors
+llm_load_vocab: mismatch in special tokens definition ( 416/256000 vs 260/256000 ).
+llm_load_print_meta: format           = GGUF V3 (latest)
+llm_load_print_meta: arch             = gemma
+llm_load_print_meta: vocab type       = SPM
+llm_load_print_meta: n_vocab          = 256000
+llm_load_print_meta: n_merges         = 0
+llm_load_print_meta: n_ctx_train      = 8192
+llm_load_print_meta: n_embd           = 2048
+llm_load_print_meta: n_head           = 8
+llm_load_print_meta: n_head_kv        = 1
+llm_load_print_meta: n_layer          = 18
+llm_load_print_meta: n_rot            = 256
+llm_load_print_meta: n_embd_head_k    = 256
+llm_load_print_meta: n_embd_head_v    = 256
+llm_load_print_meta: n_gqa            = 8
+llm_load_print_meta: n_embd_k_gqa     = 256
+llm_load_print_meta: n_embd_v_gqa     = 256
+llm_load_print_meta: f_norm_eps       = 0.0e+00
+llm_load_print_meta: f_norm_rms_eps   = 1.0e-06
+llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+llm_load_print_meta: f_logit_scale    = 0.0e+00
+llm_load_print_meta: n_ff             = 16384
+llm_load_print_meta: n_expert         = 0
+llm_load_print_meta: n_expert_used    = 0
+llm_load_print_meta: causal attn      = 1
+llm_load_print_meta: pooling type     = 0
+llm_load_print_meta: rope type        = 2
+llm_load_print_meta: rope scaling     = linear
+llm_load_print_meta: freq_base_train  = 10000.0
+llm_load_print_meta: freq_scale_train = 1
+llm_load_print_meta: n_yarn_orig_ctx  = 8192
+llm_load_print_meta: rope_finetuned   = unknown
+llm_load_print_meta: ssm_d_conv       = 0
+llm_load_print_meta: ssm_d_inner      = 0
+llm_load_print_meta: ssm_d_state      = 0
+llm_load_print_meta: ssm_dt_rank      = 0
+llm_load_print_meta: model type       = 2B
+llm_load_print_meta: model ftype      = Q8_0
+llm_load_print_meta: model params     = 2.51 B
+llm_load_print_meta: model size       = 2.48 GiB (8.50 BPW) 
+llm_load_print_meta: general.name     = gemma-1.1-2b-it
+llm_load_print_meta: BOS token        = 2 '<bos>'
+llm_load_print_meta: EOS token        = 1 '<eos>'
+llm_load_print_meta: UNK token        = 3 '<unk>'
+llm_load_print_meta: PAD token        = 0 '<pad>'
+llm_load_print_meta: LF token         = 227 '<0x0A>'
+llm_load_print_meta: EOT token        = 107 '<end_of_turn>'
+llm_load_tensors: ggml ctx size =    0.08 MiB
+llm_load_tensors:        CPU buffer size =   967.99 MiB
+llm_load_tensors:        CPU buffer size =   344.30 MiB
+llm_load_tensors:        CPU buffer size =   411.77 MiB
+llm_load_tensors:        CPU buffer size =   437.27 MiB
+llm_load_tensors:        CPU buffer size =   344.30 MiB
+llm_load_tensors:        CPU buffer size =    34.02 MiB
+.............................................................
+llama_new_context_with_model: n_ctx      = 512
+llama_new_context_with_model: n_batch    = 512
+llama_new_context_with_model: n_ubatch   = 512
+llama_new_context_with_model: flash_attn = 0
+llama_new_context_with_model: freq_base  = 10000.0
+llama_new_context_with_model: freq_scale = 1
+llama_kv_cache_init:        CPU KV buffer size =     9.00 MiB
+llama_new_context_with_model: KV self size  =    9.00 MiB, K (f16):    4.50 MiB, V (f16):    4.50 MiB
+llama_new_context_with_model:        CPU  output buffer size =     0.98 MiB
+ggml_gallocr_reserve_n: reallocating CPU buffer from size 0.00 MiB to 504.00 MiB
+llama_new_context_with_model:        CPU compute buffer size =   504.00 MiB
+llama_new_context_with_model: graph nodes  = 601
+llama_new_context_with_model: graph splits = 1
+
+system_info: n_threads = 4 / 8 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
+sampling: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	top_k = 40, tfs_z = 1.000, top_p = 0.950, min_p = 0.050, typical_p = 1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+sampling order: 
+CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temperature 
+generate: n_ctx = 512, n_batch = 2048, n_predict = 32, n_keep = 1
+
+
+<bos> Once upon a time, there was a magical forest that thrived in a mystical land. The trees whispered secrets, the flowers sang melodies, and the creatures danced in harmony.
+
+One
+llama_print_timings:        load time =    1227.64 ms
+llama_print_timings:      sample time =      47.51 ms /    32 runs   (    1.48 ms per token,   673.50 tokens per second)
+llama_print_timings: prompt eval time =    2674.12 ms /     5 tokens (  534.82 ms per token,     1.87 tokens per second)
+llama_print_timings:        eval time =   20960.72 ms /    31 runs   (  676.15 ms per token,     1.48 tokens per second)
+llama_print_timings:       total time =   23818.23 ms /    36 tokens
+Log end
++ echo PASS
+PASS
++ echo
+
++ /home/ggml/work/llama.cpp/build-ci-debug/bin/gguf-split --split-max-size 2G /mnt/llama.cpp/models/gguf-split/ggml-model-merge.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-2G
+n_split: 2
+split 00001: n_tensors = 118, total_size = 2021M
+split 00002: n_tensors = 46, total_size = 523M
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-2G-00001-of-00002.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-2G-00002-of-00002.gguf ... gguf_split: 2 gguf split written with a total of 164 tensors.
+done
++ echo PASS
+PASS
++ echo
+
++ /home/ggml/work/llama.cpp/build-ci-debug/bin/main --model /mnt/llama.cpp/models/gguf-split/ggml-model-split-2G-00001-of-00002.gguf --random-prompt --n-predict 32
+Log start
+main: build = 2940 (d359f309)
+main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+main: seed  = 1716160871
+llama_model_loader: additional 1 GGUFs metadata loaded.
+llama_model_loader: loaded meta data with 27 key-value pairs and 164 tensors from /mnt/llama.cpp/models/gguf-split/ggml-model-split-2G-00001-of-00002.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = gemma
+llama_model_loader: - kv   1:                               general.name str              = gemma-1.1-2b-it
+llama_model_loader: - kv   2:                       gemma.context_length u32              = 8192
+llama_model_loader: - kv   3:                     gemma.embedding_length u32              = 2048
+llama_model_loader: - kv   4:                          gemma.block_count u32              = 18
+llama_model_loader: - kv   5:                  gemma.feed_forward_length u32              = 16384
+llama_model_loader: - kv   6:                 gemma.attention.head_count u32              = 8
+llama_model_loader: - kv   7:              gemma.attention.head_count_kv u32              = 1
+llama_model_loader: - kv   8:     gemma.attention.layer_norm_rms_epsilon f32              = 0.000001
+llama_model_loader: - kv   9:                 gemma.attention.key_length u32              = 256
+llama_model_loader: - kv  10:               gemma.attention.value_length u32              = 256
+llama_model_loader: - kv  11:                          general.file_type u32              = 7
+llama_model_loader: - kv  12:                       tokenizer.ggml.model str              = llama
+llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,256000]  = ["<pad>", "<eos>", "<bos>", "<unk>", ...
+llama_model_loader: - kv  14:                      tokenizer.ggml.scores arr[f32,256000]  = [0.000000, 0.000000, 0.000000, 0.0000...
+llama_model_loader: - kv  15:                  tokenizer.ggml.token_type arr[i32,256000]  = [3, 3, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  16:                tokenizer.ggml.bos_token_id u32              = 2
+llama_model_loader: - kv  17:                tokenizer.ggml.eos_token_id u32              = 1
+llama_model_loader: - kv  18:            tokenizer.ggml.unknown_token_id u32              = 3
+llama_model_loader: - kv  19:            tokenizer.ggml.padding_token_id u32              = 0
+llama_model_loader: - kv  20:               tokenizer.ggml.add_bos_token bool             = true
+llama_model_loader: - kv  21:               tokenizer.ggml.add_eos_token bool             = false
+llama_model_loader: - kv  22:                    tokenizer.chat_template str              = {{ bos_token }}{% if messages[0]['rol...
+llama_model_loader: - kv  23:               general.quantization_version u32              = 2
+llama_model_loader: - kv  24:                                   split.no u16              = 0
+llama_model_loader: - kv  25:                                split.count u16              = 2
+llama_model_loader: - kv  26:                        split.tensors.count i32              = 164
+llama_model_loader: - type  f32:   37 tensors
+llama_model_loader: - type q8_0:  127 tensors
+llm_load_vocab: mismatch in special tokens definition ( 416/256000 vs 260/256000 ).
+llm_load_print_meta: format           = GGUF V3 (latest)
+llm_load_print_meta: arch             = gemma
+llm_load_print_meta: vocab type       = SPM
+llm_load_print_meta: n_vocab          = 256000
+llm_load_print_meta: n_merges         = 0
+llm_load_print_meta: n_ctx_train      = 8192
+llm_load_print_meta: n_embd           = 2048
+llm_load_print_meta: n_head           = 8
+llm_load_print_meta: n_head_kv        = 1
+llm_load_print_meta: n_layer          = 18
+llm_load_print_meta: n_rot            = 256
+llm_load_print_meta: n_embd_head_k    = 256
+llm_load_print_meta: n_embd_head_v    = 256
+llm_load_print_meta: n_gqa            = 8
+llm_load_print_meta: n_embd_k_gqa     = 256
+llm_load_print_meta: n_embd_v_gqa     = 256
+llm_load_print_meta: f_norm_eps       = 0.0e+00
+llm_load_print_meta: f_norm_rms_eps   = 1.0e-06
+llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+llm_load_print_meta: f_logit_scale    = 0.0e+00
+llm_load_print_meta: n_ff             = 16384
+llm_load_print_meta: n_expert         = 0
+llm_load_print_meta: n_expert_used    = 0
+llm_load_print_meta: causal attn      = 1
+llm_load_print_meta: pooling type     = 0
+llm_load_print_meta: rope type        = 2
+llm_load_print_meta: rope scaling     = linear
+llm_load_print_meta: freq_base_train  = 10000.0
+llm_load_print_meta: freq_scale_train = 1
+llm_load_print_meta: n_yarn_orig_ctx  = 8192
+llm_load_print_meta: rope_finetuned   = unknown
+llm_load_print_meta: ssm_d_conv       = 0
+llm_load_print_meta: ssm_d_inner      = 0
+llm_load_print_meta: ssm_d_state      = 0
+llm_load_print_meta: ssm_dt_rank      = 0
+llm_load_print_meta: model type       = 2B
+llm_load_print_meta: model ftype      = Q8_0
+llm_load_print_meta: model params     = 2.51 B
+llm_load_print_meta: model size       = 2.48 GiB (8.50 BPW) 
+llm_load_print_meta: general.name     = gemma-1.1-2b-it
+llm_load_print_meta: BOS token        = 2 '<bos>'
+llm_load_print_meta: EOS token        = 1 '<eos>'
+llm_load_print_meta: UNK token        = 3 '<unk>'
+llm_load_print_meta: PAD token        = 0 '<pad>'
+llm_load_print_meta: LF token         = 227 '<0x0A>'
+llm_load_print_meta: EOT token        = 107 '<end_of_turn>'
+llm_load_tensors: ggml ctx size =    0.08 MiB
+llm_load_tensors:        CPU buffer size =  2015.76 MiB
+llm_load_tensors:        CPU buffer size =   523.91 MiB
+.............................................................
+llama_new_context_with_model: n_ctx      = 512
+llama_new_context_with_model: n_batch    = 512
+llama_new_context_with_model: n_ubatch   = 512
+llama_new_context_with_model: flash_attn = 0
+llama_new_context_with_model: freq_base  = 10000.0
+llama_new_context_with_model: freq_scale = 1
+llama_kv_cache_init:        CPU KV buffer size =     9.00 MiB
+llama_new_context_with_model: KV self size  =    9.00 MiB, K (f16):    4.50 MiB, V (f16):    4.50 MiB
+llama_new_context_with_model:        CPU  output buffer size =     0.98 MiB
+ggml_gallocr_reserve_n: reallocating CPU buffer from size 0.00 MiB to 504.00 MiB
+llama_new_context_with_model:        CPU compute buffer size =   504.00 MiB
+llama_new_context_with_model: graph nodes  = 601
+llama_new_context_with_model: graph splits = 1
+
+system_info: n_threads = 4 / 8 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
+sampling: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	top_k = 40, tfs_z = 1.000, top_p = 0.950, min_p = 0.050, typical_p = 1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+sampling order: 
+CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temperature 
+generate: n_ctx = 512, n_batch = 2048, n_predict = 32, n_keep = 1
+
+
+<bos> Once upon a time, there lived a little girl named Lily. She had a bright smile, sparkling eyes, and a heart full of joy.
+
+One sunny morning, Lily decided
+llama_print_timings:        load time =    1258.66 ms
+llama_print_timings:      sample time =      47.32 ms /    32 runs   (    1.48 ms per token,   676.30 tokens per second)
+llama_print_timings: prompt eval time =    2649.60 ms /     5 tokens (  529.92 ms per token,     1.89 tokens per second)
+llama_print_timings:        eval time =   21084.95 ms /    31 runs   (  680.16 ms per token,     1.47 tokens per second)
+llama_print_timings:       total time =   23917.17 ms /    36 tokens
+Log end
++ echo PASS
+PASS
++ echo
+
++ rm -f /mnt/llama.cpp/models/gguf-split/ggml-model-split-00001-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00002-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00003-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00004-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00005-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00006-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-2G-00001-of-00002.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-2G-00002-of-00002.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00001-of-00007.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00002-of-00007.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00003-of-00007.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00004-of-00007.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00005-of-00007.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00006-of-00007.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00007-of-00007.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-merge.gguf
+
+real	1m51.067s
+user	6m28.344s
+sys	0m9.550s
++ cd ./examples/quantize
++ bash tests.sh /home/ggml/work/llama.cpp/build-ci-debug/bin /mnt/llama.cpp/models
++ SPLIT=/home/ggml/work/llama.cpp/build-ci-debug/bin/gguf-split
++ QUANTIZE=/home/ggml/work/llama.cpp/build-ci-debug/bin/quantize
++ MAIN=/home/ggml/work/llama.cpp/build-ci-debug/bin/main
++ WORK_PATH=/mnt/llama.cpp/models/quantize
++++ dirname tests.sh
+++ realpath ./../../
++ ROOT_DIR=/home/ggml/work/llama.cpp
++ mkdir -p /mnt/llama.cpp/models/quantize
++ rm -f /mnt/llama.cpp/models/quantize/ggml-model-split-00001-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-split-00002-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-split-00003-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-split-00004-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-split-00005-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-split-00006-of-00006.gguf '/mnt/llama.cpp/models/quantize/ggml-model-requant*.gguf'
++ cd /mnt/llama.cpp/models/quantize
++ /home/ggml/work/llama.cpp/scripts/hf.sh --repo ggml-org/gemma-1.1-2b-it-Q8_0-GGUF --file gemma-1.1-2b-it.Q8_0.gguf
+[+] attempting to download gemma-1.1-2b-it.Q8_0.gguf
+[+] wget -q --show-progress -c -O ./gemma-1.1-2b-it.Q8_0.gguf https://huggingface.co/ggml-org/gemma-1.1-2b-it-Q8_0-GGUF/resolve/main/gemma-1.1-2b-it.Q8_0.gguf
+./gemma-1.1-2b-it.Q8_0.gguf
++ echo PASS
+PASS
++ /home/ggml/work/llama.cpp/build-ci-debug/bin/gguf-split --split-max-tensors 28 /mnt/llama.cpp/models/quantize/gemma-1.1-2b-it.Q8_0.gguf /mnt/llama.cpp/models/quantize/ggml-model-split
+n_split: 6
+split 00001: n_tensors = 28, total_size = 871M
+split 00002: n_tensors = 28, total_size = 334M
+split 00003: n_tensors = 28, total_size = 402M
+split 00004: n_tensors = 28, total_size = 335M
+split 00005: n_tensors = 28, total_size = 338M
+split 00006: n_tensors = 24, total_size = 261M
+Writing file /mnt/llama.cpp/models/quantize/ggml-model-split-00001-of-00006.gguf ... done
+Writing file /mnt/llama.cpp/models/quantize/ggml-model-split-00002-of-00006.gguf ... done
+Writing file /mnt/llama.cpp/models/quantize/ggml-model-split-00003-of-00006.gguf ... done
+Writing file /mnt/llama.cpp/models/quantize/ggml-model-split-00004-of-00006.gguf ... done
+Writing file /mnt/llama.cpp/models/quantize/ggml-model-split-00005-of-00006.gguf ... done
+Writing file /mnt/llama.cpp/models/quantize/ggml-model-split-00006-of-00006.gguf ... gguf_split: 6 gguf split written with a total of 164 tensors.
+done
++ echo PASS
+PASS
++ echo
+
++ /home/ggml/work/llama.cpp/build-ci-debug/bin/quantize --allow-requantize --keep_split /mnt/llama.cpp/models/quantize/ggml-model-split-00001-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-requant.gguf Q4_K
+usage: /home/ggml/work/llama.cpp/build-ci-debug/bin/quantize [--help] [--allow-requantize] [--leave-output-tensor] [--pure] [--imatrix] [--include-weights] [--exclude-weights] [--output-tensor-type] [--token-embedding-type] [--override-kv] model-f32.gguf [model-quant.gguf] type [nthreads]
+
+  --allow-requantize: Allows requantizing tensors that have already been quantized. Warning: This can severely reduce quality compared to quantizing from 16bit or 32bit
+  --leave-output-tensor: Will leave output.weight un(re)quantized. Increases model size but may also increase quality, especially when requantizing
+  --pure: Disable k-quant mixtures and quantize all tensors to the same type
+  --imatrix file_name: use data in file_name as importance matrix for quant optimizations
+  --include-weights tensor_name: use importance matrix for this/these tensor(s)
+  --exclude-weights tensor_name: use importance matrix for this/these tensor(s)
+  --output-tensor-type ggml_type: use this ggml_type for the output.weight tensor
+  --token-embedding-type ggml_type: use this ggml_type for the token embeddings tensor
+  --keep-split: will generate quatized model in the same shards as input  --override-kv KEY=TYPE:VALUE
+      Advanced option to override model metadata by key in the quantized model. May be specified multiple times.
+Note: --include-weights and --exclude-weights cannot be used together
+
+Allowed quantization types:
+   2  or  Q4_0    :  3.56G, +0.2166 ppl @ LLaMA-v1-7B
+   3  or  Q4_1    :  3.90G, +0.1585 ppl @ LLaMA-v1-7B
+   8  or  Q5_0    :  4.33G, +0.0683 ppl @ LLaMA-v1-7B
+   9  or  Q5_1    :  4.70G, +0.0349 ppl @ LLaMA-v1-7B
+  19  or  IQ2_XXS :  2.06 bpw quantization
+  20  or  IQ2_XS  :  2.31 bpw quantization
+  28  or  IQ2_S   :  2.5  bpw quantization
+  29  or  IQ2_M   :  2.7  bpw quantization
+  24  or  IQ1_S   :  1.56 bpw quantization
+  31  or  IQ1_M   :  1.75 bpw quantization
+  10  or  Q2_K    :  2.63G, +0.6717 ppl @ LLaMA-v1-7B
+  21  or  Q2_K_S  :  2.16G, +9.0634 ppl @ LLaMA-v1-7B
+  23  or  IQ3_XXS :  3.06 bpw quantization
+  26  or  IQ3_S   :  3.44 bpw quantization
+  27  or  IQ3_M   :  3.66 bpw quantization mix
+  12  or  Q3_K    : alias for Q3_K_M
+  22  or  IQ3_XS  :  3.3 bpw quantization
+  11  or  Q3_K_S  :  2.75G, +0.5551 ppl @ LLaMA-v1-7B
+  12  or  Q3_K_M  :  3.07G, +0.2496 ppl @ LLaMA-v1-7B
+  13  or  Q3_K_L  :  3.35G, +0.1764 ppl @ LLaMA-v1-7B
+  25  or  IQ4_NL  :  4.50 bpw non-linear quantization
+  30  or  IQ4_XS  :  4.25 bpw non-linear quantization
+  15  or  Q4_K    : alias for Q4_K_M
+  14  or  Q4_K_S  :  3.59G, +0.0992 ppl @ LLaMA-v1-7B
+  15  or  Q4_K_M  :  3.80G, +0.0532 ppl @ LLaMA-v1-7B
+  17  or  Q5_K    : alias for Q5_K_M
+  16  or  Q5_K_S  :  4.33G, +0.0400 ppl @ LLaMA-v1-7B
+  17  or  Q5_K_M  :  4.45G, +0.0122 ppl @ LLaMA-v1-7B
+  18  or  Q6_K    :  5.15G, +0.0008 ppl @ LLaMA-v1-7B
+   7  or  Q8_0    :  6.70G, +0.0004 ppl @ LLaMA-v1-7B
+   1  or  F16     : 14.00G, -0.0020 ppl @ Mistral-7B
+  32  or  BF16    : 14.00G, -0.0050 ppl @ Mistral-7B
+   0  or  F32     : 26.00G              @ 7B
+          COPY    : only copy tensors, no quantizing
+
+real	0m2.361s
+user	0m0.125s
+sys	0m2.116s
