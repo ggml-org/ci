@@ -1,0 +1,55 @@
++ make -j
+[  1%] Generating build details from Git
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  2%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  4%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/acc.cu.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  5%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/arange.cu.o
+[  5%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/argsort.cu.o
+[  6%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/binbcast.cu.o
+[  6%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/clamp.cu.o
+[  7%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/concat.cu.o
+[  7%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  7%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/convert.cu.o
+[  8%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/cpy.cu.o
+[ 10%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/diagmask.cu.o
+[  9%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/fattn-tile-f16.cu.o
+[ 10%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/fattn-tile-f32.cu.o
+[ 11%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/fattn-vec-f16.cu.o
+[ 11%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/dmmv.cu.o
+[ 11%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/fattn-vec-f32.cu.o
+[ 12%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/fattn.cu.o
+[ 12%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/getrows.cu.o
+[ 13%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/im2col.cu.o
+[ 13%] Built target build_info
+[ 14%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/mmq.cu.o
+[ 14%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/mmvq.cu.o
+[ 16%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/norm.cu.o
+[ 16%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/pool2d.cu.o
+[ 16%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/pad.cu.o
+[ 16%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/quantize.cu.o
+[ 17%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/rope.cu.o
+[ 18%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/softmax.cu.o
+[ 18%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/scale.cu.o
+[ 19%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/sumrows.cu.o
+[ 19%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/tsembd.cu.o
+[ 20%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/unary.cu.o
+[ 20%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda/upscale.cu.o
+[ 21%] Building CUDA object CMakeFiles/ggml.dir/ggml-cuda.cu.o
+[ 21%] Building CXX object CMakeFiles/ggml.dir/sgemm.cpp.o
+/home/ggml/work/llama.cpp/ggml-cuda/mmq.cu(1185): error #177-D: function "get_arch_config_device" was declared but never referenced
+                             mmq_arch_config_t get_arch_config_device(mmq_config_t mmq_config) {
+                                               ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+1 error detected in the compilation of "/home/ggml/work/llama.cpp/ggml-cuda/mmq.cu".
+make[2]: *** [CMakeFiles/ggml.dir/build.make:388: CMakeFiles/ggml.dir/ggml-cuda/mmq.cu.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:820: CMakeFiles/ggml.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m2.649s
+user	0m2.545s
+sys	0m0.744s
