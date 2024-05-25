@@ -1,8 +1,8 @@
 ## Summary
 
-- status:  FAILURE ❌ (127)
-- runtime: 0:00.12
-- date:    2024年 05月 26日 星期日 00:52:51 CST
+- status:  FAILURE ❌ (1)
+- runtime: 0:08.15
+- date:    2024年 05月 26日 星期日 00:55:05 CST
 - repo:    https://github.com/ggerganov/llama.cpp
 - commit:  https://github.com/ggerganov/llama.cpp/commit/9588f196b1d7b21bdff013fcf958c249576b2619
 - author:  Georgi Gerganov
@@ -23,7 +23,7 @@ GG_BUILD_CXX_COMPILER=g++
 ### ctest_debug
 
 Runs ctest in debug mode
-- status: 127
+- status: 1
 ```
 
 ```

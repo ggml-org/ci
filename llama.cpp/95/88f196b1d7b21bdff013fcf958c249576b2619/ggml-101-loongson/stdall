@@ -1,17 +1,10 @@
-The virtual environment was not created successfully because ensurepip is not
-available.  On Debian/Ubuntu systems, you need to install the python3-venv
-package using the following command.
-
-    apt-get install python3-venv
-
-You may need to use sudo with that command.  After installing the python3-venv
-package, recreate your virtual environment.
-
-Failing command: ['/data/opt/ggml-ci/llama.cpp/venv/bin/python3', '-Im', 'ensurepip', '--upgrade', '--default-pip']
-
-ci/run.sh:行724: /data/opt/ggml-ci/llama.cpp/venv/bin/activate: 没有那个文件或目录
-ci/run.sh:行726: pip：未找到命令
-ci/run.sh:行727: pip：未找到命令
+Looking in indexes: https://pypi.loongnix.cn/loongson/pypi, https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting numpy~=1.24.4 (from -r /home/loongson/work/llama.cpp/./requirements/requirements-convert.txt (line 1))
+/data/opt/ggml-ci/llama.cpp/venv/share/python-wheels/urllib3-1.24.1-py2.py3-none-any.whl/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+/data/opt/ggml-ci/llama.cpp/venv/share/python-wheels/urllib3-1.24.1-py2.py3-none-any.whl/urllib3/connectionpool.py:849: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  Could not find a version that satisfies the requirement numpy~=1.24.4 (from -r /home/loongson/work/llama.cpp/./requirements/requirements-convert.txt (line 1)) (from versions: 1.3.0, 1.4.1, 1.5.0, 1.5.1, 1.6.0, 1.6.1, 1.6.2, 1.7.0, 1.7.1, 1.7.2, 1.8.0, 1.8.1, 1.8.2, 1.9.0, 1.9.1, 1.9.2, 1.9.3, 1.10.0.post2, 1.10.1, 1.10.2, 1.10.4, 1.11.0, 1.11.1, 1.11.2, 1.11.3, 1.12.0, 1.12.1, 1.13.0, 1.13.1, 1.13.3, 1.14.0, 1.14.1, 1.14.2, 1.14.3, 1.14.4, 1.14.5, 1.14.6, 1.15.0, 1.15.1, 1.15.2, 1.15.3, 1.15.4, 1.16.0, 1.16.1, 1.16.2, 1.16.3, 1.16.4, 1.16.5, 1.16.6, 1.17.0, 1.17.1, 1.17.2, 1.17.3, 1.17.4, 1.17.5, 1.18.0, 1.18.1, 1.18.2, 1.18.3, 1.18.4, 1.18.5, 1.19.0, 1.19.1, 1.19.2, 1.19.3, 1.19.4, 1.19.5, 1.20.0, 1.20.1, 1.20.2, 1.20.3, 1.21.0, 1.21.1, 1.21.2, 1.21.3, 1.21.4, 1.21.5, 1.21.6)
+No matching distribution found for numpy~=1.24.4 (from -r /home/loongson/work/llama.cpp/./requirements/requirements-convert.txt (line 1))
+Directory 'gguf-py' is not installable. File 'setup.py' not found.
 + gg_run_ctest_debug
 + tee /home/loongson/results/llama.cpp/95/88f196b1d7b21bdff013fcf958c249576b2619/ggml-101-loongson/ctest_debug.log
 + cd /home/loongson/work/llama.cpp
@@ -21,12 +14,16 @@ ci/run.sh:行727: pip：未找到命令
 + set -e
 + tee -a /home/loongson/results/llama.cpp/95/88f196b1d7b21bdff013fcf958c249576b2619/ggml-101-loongson/ctest_debug-cmake.log
 + cmake -DCMAKE_BUILD_TYPE=Debug -DLLAMA_FATAL_WARNINGS=ON ..
-ci/run.sh:行106: cmake：未找到命令
+CMake Error at CMakeLists.txt:1 (cmake_minimum_required):
+  CMake 3.14 or higher is required.  You are running version 3.13.4
 
-real	0m0.001s
-user	0m0.001s
-sys	0m0.000s
-+ cur=127
-+ echo 127
+
+-- Configuring incomplete, errors occurred!
+
+real	0m0.025s
+user	0m0.018s
+sys	0m0.004s
++ cur=1
++ echo 1
 + set +x
 cat: /home/loongson/results/llama.cpp/95/88f196b1d7b21bdff013fcf958c249576b2619/ggml-101-loongson/ctest_debug-ctest.log: 没有那个文件或目录

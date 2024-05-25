@@ -1,7 +1,7 @@
 ### ctest_debug
 
 Runs ctest in debug mode
-- status: 127
+- status: 1
 ```
 
 ```

@@ -1,6 +1,10 @@
 + cmake -DCMAKE_BUILD_TYPE=Debug -DLLAMA_FATAL_WARNINGS=ON ..
-ci/run.sh:行106: cmake：未找到命令
+CMake Error at CMakeLists.txt:1 (cmake_minimum_required):
+  CMake 3.14 or higher is required.  You are running version 3.13.4
 
-real	0m0.001s
-user	0m0.001s
-sys	0m0.000s
+
+-- Configuring incomplete, errors occurred!
+
+real	0m0.025s
+user	0m0.018s
+sys	0m0.004s
