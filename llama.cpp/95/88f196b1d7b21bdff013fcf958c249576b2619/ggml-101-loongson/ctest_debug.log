@@ -1,0 +1,6 @@
++ cmake -DCMAKE_BUILD_TYPE=Debug -DLLAMA_FATAL_WARNINGS=ON ..
+ci/run.sh:行106: cmake：未找到命令
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s

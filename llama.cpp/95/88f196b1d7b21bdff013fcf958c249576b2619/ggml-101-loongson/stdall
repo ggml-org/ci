@@ -1,1 +1,32 @@
-timeout: 无法运行命令“time”: 没有那个文件或目录
+The virtual environment was not created successfully because ensurepip is not
+available.  On Debian/Ubuntu systems, you need to install the python3-venv
+package using the following command.
+
+    apt-get install python3-venv
+
+You may need to use sudo with that command.  After installing the python3-venv
+package, recreate your virtual environment.
+
+Failing command: ['/data/opt/ggml-ci/llama.cpp/venv/bin/python3', '-Im', 'ensurepip', '--upgrade', '--default-pip']
+
+ci/run.sh:行724: /data/opt/ggml-ci/llama.cpp/venv/bin/activate: 没有那个文件或目录
+ci/run.sh:行726: pip：未找到命令
+ci/run.sh:行727: pip：未找到命令
++ gg_run_ctest_debug
++ tee /home/loongson/results/llama.cpp/95/88f196b1d7b21bdff013fcf958c249576b2619/ggml-101-loongson/ctest_debug.log
++ cd /home/loongson/work/llama.cpp
++ rm -rf build-ci-debug
++ mkdir build-ci-debug
++ cd build-ci-debug
++ set -e
++ tee -a /home/loongson/results/llama.cpp/95/88f196b1d7b21bdff013fcf958c249576b2619/ggml-101-loongson/ctest_debug-cmake.log
++ cmake -DCMAKE_BUILD_TYPE=Debug -DLLAMA_FATAL_WARNINGS=ON ..
+ci/run.sh:行106: cmake：未找到命令
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
++ cur=127
++ echo 127
++ set +x
+cat: /home/loongson/results/llama.cpp/95/88f196b1d7b21bdff013fcf958c249576b2619/ggml-101-loongson/ctest_debug-ctest.log: 没有那个文件或目录
