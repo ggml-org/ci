@@ -4,6 +4,6 @@ main: failed to load model from '../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin'
 main: seed = 1234
 gpt2_model_load: loading model from '../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin'
 
-real	0m0.006s
+real	0m0.003s
 user	0m0.000s
-sys	0m0.005s
+sys	0m0.003s

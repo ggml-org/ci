@@ -29,6 +29,6 @@ GNU ld (GNU Binutils for Loongnix) 2.31.1-system.20190122
 -- Generating done (0.1s)
 -- Build files have been written to: /home/loongson/work/ggml/build-ci-release
 
-real	0m1.004s
-user	0m0.726s
-sys	0m0.289s
+real	0m0.993s
+user	0m0.749s
+sys	0m0.253s

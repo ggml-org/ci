@@ -25,10 +25,10 @@ GNU ld (GNU Binutils for Loongnix) 2.31.1-system.20190122
 -- Linux detected
 -- x86 detected
 -- Linux detected
--- Configuring done (0.9s)
+-- Configuring done (0.8s)
 -- Generating done (0.1s)
 -- Build files have been written to: /home/loongson/work/ggml/build-ci-debug
 
-real	0m1.002s
-user	0m0.746s
-sys	0m0.260s
+real	0m0.984s
+user	0m0.778s
+sys	0m0.204s

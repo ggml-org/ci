@@ -1,23 +1,23 @@
 + ctest --output-on-failure -E test-opt
 Test project /home/loongson/work/ggml/build-ci-debug
       Start  1: test-grad0
- 1/22 Test  #1: test-grad0 .......................   Passed  133.21 sec
+ 1/22 Test  #1: test-grad0 .......................   Passed  132.00 sec
       Start  2: test-quantize-fns
- 2/22 Test  #2: test-quantize-fns ................   Passed  105.61 sec
+ 2/22 Test  #2: test-quantize-fns ................   Passed  105.33 sec
       Start  3: test-quantize-perf
- 3/22 Test  #3: test-quantize-perf ...............   Passed   31.48 sec
+ 3/22 Test  #3: test-quantize-perf ...............   Passed   31.47 sec
       Start  4: test-mul-mat0
  4/22 Test  #4: test-mul-mat0 ....................   Passed    0.47 sec
       Start  5: test-mul-mat2
- 5/22 Test  #5: test-mul-mat2 ....................   Passed   17.05 sec
+ 5/22 Test  #5: test-mul-mat2 ....................   Passed   16.96 sec
       Start  6: test0
  6/22 Test  #6: test0 ............................   Passed    0.02 sec
       Start  7: test1
  7/22 Test  #7: test1 ............................   Passed    0.04 sec
       Start  8: test2
- 8/22 Test  #8: test2 ............................   Passed    1.28 sec
+ 8/22 Test  #8: test2 ............................   Passed    1.26 sec
       Start  9: test3
- 9/22 Test  #9: test3 ............................   Passed    0.19 sec
+ 9/22 Test  #9: test3 ............................   Passed    0.20 sec
       Start 10: test-pool
 10/22 Test #10: test-pool ........................   Passed    0.02 sec
       Start 11: test-arange
@@ -47,8 +47,8 @@ Test project /home/loongson/work/ggml/build-ci-debug
 
 100% tests passed, 0 tests failed out of 22
 
-Total Test time (real) = 289.64 sec
+Total Test time (real) = 288.03 sec
 
-real	4m49.649s
-user	7m25.041s
-sys	0m0.608s
+real	4m48.040s
+user	7m21.748s
+sys	0m0.539s
