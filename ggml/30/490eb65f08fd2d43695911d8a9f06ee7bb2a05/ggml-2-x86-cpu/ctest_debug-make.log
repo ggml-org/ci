@@ -1,0 +1,126 @@
++ make -j
+[  1%] Building C object src/CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building C object src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  3%] Building C object src/CMakeFiles/ggml.dir/ggml-backend.c.o
+[  4%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  5%] Building C object src/CMakeFiles/ggml.dir/ggml-quants.c.o
+[  6%] Linking C shared library libggml.so
+[  6%] Built target ggml
+[  7%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
+[  8%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+[  9%] Building CXX object tests/CMakeFiles/test-opt.dir/test-opt.cpp.o
+[ 10%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 11%] Building C object tests/CMakeFiles/test-vec1.dir/test-vec1.c.o
+[ 12%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 13%] Building C object tests/CMakeFiles/test-mul-mat0.dir/test-mul-mat0.c.o
+[ 14%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
+[ 15%] Building C object tests/CMakeFiles/test-mul-mat2.dir/test-mul-mat2.c.o
+[ 16%] Building C object tests/CMakeFiles/test2.dir/test2.c.o
+[ 17%] Building C object tests/CMakeFiles/test-pool.dir/test-pool.c.o
+[ 19%] Building C object tests/CMakeFiles/test1.dir/test1.c.o
+[ 19%] Building C object tests/CMakeFiles/test3.dir/test3.c.o
+[ 20%] Linking C executable ../bin/test-vec0
+[ 21%] Building CXX object tests/CMakeFiles/test-arange.dir/test-arange.cpp.o
+[ 22%] Building CXX object tests/CMakeFiles/test-timestep_embedding.dir/test-timestep_embedding.cpp.o
+[ 23%] Building C object tests/CMakeFiles/test-conv-transpose.dir/test-conv-transpose.c.o
+[ 24%] Linking C executable ../bin/test-pool
+[ 25%] Linking C executable ../bin/test-mul-mat0
+[ 26%] Building C object tests/CMakeFiles/test-rel-pos.dir/test-rel-pos.c.o
+[ 27%] Building C object tests/CMakeFiles/test-dup.dir/test-dup.c.o
+[ 27%] Built target test-vec0
+[ 28%] Building C object tests/CMakeFiles/test-customop.dir/test-customop.c.o
+[ 29%] Linking CXX executable ../bin/test-opt
+[ 30%] Linking C executable ../bin/test0
+[ 31%] Building C object tests/CMakeFiles/test-xpos.dir/test-xpos.c.o
+[ 32%] Linking C executable ../bin/test1
+[ 33%] Linking C executable ../bin/test2
+[ 34%] Building CXX object tests/CMakeFiles/test-conv1d.dir/test-conv1d.cpp.o
+[ 35%] Building CXX object tests/CMakeFiles/test-conv2d.dir/test-conv2d.cpp.o
+[ 36%] Linking C executable ../bin/test-conv-transpose
+[ 38%] Linking C executable ../bin/test3
+[ 37%] Building CXX object tests/CMakeFiles/test-mul-mat.dir/test-mul-mat.cpp.o
+[ 39%] Building CXX object tests/CMakeFiles/test-backend-buffer.dir/test-backend-buffer.cpp.o
+[ 40%] Linking CXX executable ../bin/test-arange
+[ 41%] Linking C executable ../bin/test-customop
+[ 42%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 43%] Building CXX object examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o
+[ 43%] Built target test-mul-mat0
+[ 43%] Built target test-opt
+[ 43%] Built target test-pool
+[ 43%] Built target test1
+[ 43%] Built target test2
+[ 44%] Linking C executable ../bin/test-rel-pos
+[ 45%] Building CXX object examples/whisper/CMakeFiles/whisper-cpp.dir/whisper.cpp.o
+[ 46%] Linking CXX executable ../bin/test-backend-buffer
+/home/ggml/work/ggml/tests/test-xpos.c: In function ‘main’:
+[ 46%] Built target test-customop
+[ 46%] Built target test0
+/home/ggml/work/ggml/tests/test-xpos.c:39:31: warning: implicit declaration of function ‘ggml_rope_xpos_inplace’; did you mean ‘ggml_rope_ext_inplace’? [-Wimplicit-function-declaration]
+   39 |     struct ggml_tensor * Qx = ggml_rope_xpos_inplace(ctx, Q, KQ_pos, n_embd_head, 512.0f, false);
+      |                               ^~~~~~~~~~~~~~~~~~~~~~
+      |                               ggml_rope_ext_inplace
+/home/ggml/work/ggml/tests/test-xpos.c:39:31: warning: initialization of ‘struct ggml_tensor *’ from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+/home/ggml/work/ggml/tests/test-xpos.c:40:31: warning: initialization of ‘struct ggml_tensor *’ from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+   40 |     struct ggml_tensor * Kx = ggml_rope_xpos_inplace(ctx, K, KQ_pos, n_embd_head, 512.0f, true);
+      |                               ^~~~~~~~~~~~~~~~~~~~~~
+[ 47%] Linking C executable ../bin/test-dup
+[ 47%] Built target test-conv-transpose
+[ 47%] Built target test3
+[ 47%] Built target test-arange
+[ 48%] Linking CXX executable ../bin/test-grad0
+[ 48%] Built target test-rel-pos
+[ 49%] Building CXX object examples/mnist/CMakeFiles/mnist-cpu.dir/main-cpu.cpp.o
+[ 50%] Linking C executable ../bin/test-xpos
+[ 50%] Built target test-backend-buffer
+[ 50%] Built target test-dup
+[ 51%] Building CXX object examples/simple/CMakeFiles/simple-ctx.dir/simple-ctx.cpp.o
+[ 52%] Building CXX object examples/simple/CMakeFiles/simple-backend.dir/simple-backend.cpp.o
+[ 53%] Linking C executable ../bin/test-vec1
+/usr/bin/ld: CMakeFiles/test-xpos.dir/test-xpos.c.o: in function `main':
+/home/ggml/work/ggml/tests/test-xpos.c:39: undefined reference to `ggml_rope_xpos_inplace'
+/usr/bin/ld: /home/ggml/work/ggml/tests/test-xpos.c:40: undefined reference to `ggml_rope_xpos_inplace'
+collect2: error: ld returned 1 exit status
+make[2]: *** [tests/CMakeFiles/test-xpos.dir/build.make:99: bin/test-xpos] Error 1
+make[1]: *** [CMakeFiles/Makefile2:869: tests/CMakeFiles/test-xpos.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[ 53%] Built target test-grad0
+[ 54%] Linking CXX executable ../bin/test-quantize-fns
+[ 54%] Built target test-vec1
+[ 55%] Linking CXX executable ../bin/test-timestep_embedding
+[ 56%] Linking C executable ../bin/test-mul-mat2
+[ 56%] Built target test-mul-mat2
+[ 56%] Built target test-quantize-fns
+[ 57%] Linking CXX executable ../bin/test-mul-mat
+/home/ggml/work/ggml/tests/test-conv2d.cpp:24:13: warning: ‘void ggml_log_callback_default(ggml_log_level, const char*, void*)’ defined but not used [-Wunused-function]
+   24 | static void ggml_log_callback_default(ggml_log_level level, const char * text, void * user_data) {
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~
+[ 57%] Built target test-timestep_embedding
+[ 57%] Built target test-mul-mat
+/home/ggml/work/ggml/tests/test-conv1d.cpp:24:13: warning: ‘void ggml_log_callback_default(ggml_log_level, const char*, void*)’ defined but not used [-Wunused-function]
+   24 | static void ggml_log_callback_default(ggml_log_level level, const char * text, void * user_data) {
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~
+[ 58%] Linking CXX executable ../bin/test-conv2d
+[ 59%] Linking CXX executable ../bin/test-conv1d
+[ 59%] Built target test-conv2d
+[ 60%] Linking CXX executable ../../bin/simple-backend
+[ 61%] Linking CXX executable ../../bin/mnist-cpu
+[ 61%] Built target test-conv1d
+[ 62%] Linking CXX executable ../../bin/simple-ctx
+[ 62%] Built target simple-backend
+[ 62%] Built target mnist-cpu
+[ 62%] Built target simple-ctx
+[ 63%] Linking CXX executable ../bin/test-quantize-perf
+[ 63%] Built target test-quantize-perf
+[ 64%] Linking CXX executable ../bin/test-backend-ops
+[ 64%] Built target test-backend-ops
+[ 65%] Linking CXX static library libcommon.a
+[ 65%] Built target common
+[ 66%] Linking CXX static library libcommon-ggml.a
+[ 66%] Built target common-ggml
+[ 67%] Linking CXX static library libwhisper-cpp.a
+[ 67%] Built target whisper-cpp
+make: *** [Makefile:146: all] Error 2
+
+real	0m7.195s
+user	0m21.708s
+sys	0m1.972s
