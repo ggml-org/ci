@@ -1,0 +1,105 @@
++ make -j
+[  1%] Generating build details from Git
+-- Found Git: /usr/bin/git (found version "2.20.1") 
+[  2%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  4%] Building CXX object CMakeFiles/ggml.dir/sgemm.cpp.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  5%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  5%] Built target build_info
+/home/loongson/work/llama.cpp/ggml-quants.c: In function ‘ggml_vec_dot_q4_K_q8_K’:
+/home/loongson/work/llama.cpp/ggml-quants.c:6979:27: error: unused variable ‘kmask3’ [-Werror=unused-variable]
+     static const uint32_t kmask3 = 0x03030303;
+                           ^~~~~~
+/home/loongson/work/llama.cpp/ggml-quants.c:6978:27: error: unused variable ‘kmask2’ [-Werror=unused-variable]
+     static const uint32_t kmask2 = 0x0f0f0f0f;
+                           ^~~~~~
+/home/loongson/work/llama.cpp/ggml-quants.c:6977:27: error: unused variable ‘kmask1’ [-Werror=unused-variable]
+     static const uint32_t kmask1 = 0x3f3f3f3f;
+                           ^~~~~~
+/home/loongson/work/llama.cpp/ggml-quants.c: In function ‘ggml_vec_dot_q5_K_q8_K’:
+/home/loongson/work/llama.cpp/ggml-quants.c:7537:27: error: unused variable ‘kmask3’ [-Werror=unused-variable]
+     static const uint32_t kmask3 = 0x03030303;
+                           ^~~~~~
+/home/loongson/work/llama.cpp/ggml-quants.c:7536:27: error: unused variable ‘kmask2’ [-Werror=unused-variable]
+     static const uint32_t kmask2 = 0x0f0f0f0f;
+                           ^~~~~~
+/home/loongson/work/llama.cpp/ggml-quants.c:7535:27: error: unused variable ‘kmask1’ [-Werror=unused-variable]
+     static const uint32_t kmask1 = 0x3f3f3f3f;
+                           ^~~~~~
+At top level:
+/home/loongson/work/llama.cpp/ggml-quants.c:7535:27: error: ‘kmask1’ defined but not used [-Werror=unused-const-variable=]
+/home/loongson/work/llama.cpp/ggml-quants.c:7536:27: error: ‘kmask2’ defined but not used [-Werror=unused-const-variable=]
+     static const uint32_t kmask2 = 0x0f0f0f0f;
+                           ^~~~~~
+/home/loongson/work/llama.cpp/ggml-quants.c:7537:27: error: ‘kmask3’ defined but not used [-Werror=unused-const-variable=]
+     static const uint32_t kmask3 = 0x03030303;
+                           ^~~~~~
+/home/loongson/work/llama.cpp/ggml-quants.c:6977:27: error: ‘kmask1’ defined but not used [-Werror=unused-const-variable=]
+     static const uint32_t kmask1 = 0x3f3f3f3f;
+                           ^~~~~~
+/home/loongson/work/llama.cpp/ggml-quants.c:6978:27: error: ‘kmask2’ defined but not used [-Werror=unused-const-variable=]
+     static const uint32_t kmask2 = 0x0f0f0f0f;
+                           ^~~~~~
+/home/loongson/work/llama.cpp/ggml-quants.c:6979:27: error: ‘kmask3’ defined but not used [-Werror=unused-const-variable=]
+     static const uint32_t kmask3 = 0x03030303;
+                           ^~~~~~
+In file included from /home/loongson/work/llama.cpp/ggml-impl.h:464,
+                 from /home/loongson/work/llama.cpp/ggml-quants.c:5:
+/home/loongson/work/llama.cpp/ggml-quants.c: In function ‘ggml_vec_dot_q3_K_q8_K’:
+/home/loongson/work/llama.cpp/ggml-quants.c:6841:90: error: invalid argument to built-in function
+             const __m256i q3h_0 = __lasx_xvslli_h(__lasx_xvsrli_h(__lasx_xvandn_v(hbits, __lasx_xvslli_h(mone, bit)), bit), 2);
+                                                                                          ^~~~~~~~~~~~~~~
+/home/loongson/work/llama.cpp/ggml-quants.c:6841:35: error: invalid argument to built-in function
+             const __m256i q3h_0 = __lasx_xvslli_h(__lasx_xvsrli_h(__lasx_xvandn_v(hbits, __lasx_xvslli_h(mone, bit)), bit), 2);
+                                   ^~~~~~~~~~~~~~~
+/home/loongson/work/llama.cpp/ggml-quants.c:6845:90: error: invalid argument to built-in function
+             const __m256i q3h_1 = __lasx_xvslli_h(__lasx_xvsrli_h(__lasx_xvandn_v(hbits, __lasx_xvslli_h(mone, bit)), bit), 2);
+                                                                                          ^~~~~~~~~~~~~~~
+/home/loongson/work/llama.cpp/ggml-quants.c:6845:35: error: invalid argument to built-in function
+             const __m256i q3h_1 = __lasx_xvslli_h(__lasx_xvsrli_h(__lasx_xvandn_v(hbits, __lasx_xvslli_h(mone, bit)), bit), 2);
+                                   ^~~~~~~~~~~~~~~
+/home/loongson/work/llama.cpp/ggml-quants.c:6849:90: error: invalid argument to built-in function
+             const __m256i q3h_2 = __lasx_xvslli_h(__lasx_xvsrli_h(__lasx_xvandn_v(hbits, __lasx_xvslli_h(mone, bit)), bit), 2);
+                                                                                          ^~~~~~~~~~~~~~~
+/home/loongson/work/llama.cpp/ggml-quants.c:6849:35: error: invalid argument to built-in function
+             const __m256i q3h_2 = __lasx_xvslli_h(__lasx_xvsrli_h(__lasx_xvandn_v(hbits, __lasx_xvslli_h(mone, bit)), bit), 2);
+                                   ^~~~~~~~~~~~~~~
+/home/loongson/work/llama.cpp/ggml-quants.c:6853:90: error: invalid argument to built-in function
+             const __m256i q3h_3 = __lasx_xvslli_h(__lasx_xvsrli_h(__lasx_xvandn_v(hbits, __lasx_xvslli_h(mone, bit)), bit), 2);
+                                                                                          ^~~~~~~~~~~~~~~
+/home/loongson/work/llama.cpp/ggml-quants.c:6853:35: error: invalid argument to built-in function
+             const __m256i q3h_3 = __lasx_xvslli_h(__lasx_xvsrli_h(__lasx_xvandn_v(hbits, __lasx_xvslli_h(mone, bit)), bit), 2);
+                                   ^~~~~~~~~~~~~~~
+/home/loongson/work/llama.cpp/ggml-quants.c: In function ‘ggml_vec_dot_q5_K_q8_K’:
+/home/loongson/work/llama.cpp/ggml-quants.c:8045:35: error: invalid argument to built-in function
+             const __m256i q5h_0 = __lasx_xvslli_h(__lasx_xvsrli_h(__lasx_xvand_v(hbits, hmask), bit++), 4);
+                                   ^~~~~~~~~~~~~~~
+/home/loongson/work/llama.cpp/ggml-quants.c:8050:35: error: invalid argument to built-in function
+             const __m256i q5h_1 = __lasx_xvslli_h(__lasx_xvsrli_h(__lasx_xvand_v(hbits, hmask), bit++), 4);
+                                   ^~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+make[2]: *** [CMakeFiles/ggml.dir/build.make:118：CMakeFiles/ggml.dir/ggml-quants.c.o] 错误 1
+make[2]: *** 正在等待未完成的任务....
+/home/loongson/work/llama.cpp/ggml.c: In function ‘ggml_vec_mad_f16’:
+/home/loongson/work/llama.cpp/ggml.c:2040:45: error: passing argument 1 of ‘__lasx_f32cx8_load’ discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+             ax[j] = GGML_F16_VEC_LOAD(x + i + j*GGML_F16_EPR, j);
+                                             ^
+/home/loongson/work/llama.cpp/ggml.c:1591:52: note: in definition of macro ‘GGML_F32Cx8_LOAD’
+ #define GGML_F32Cx8_LOAD(x)     __lasx_f32cx8_load(x)
+                                                    ^
+/home/loongson/work/llama.cpp/ggml.c:2040:21: note: in expansion of macro ‘GGML_F16_VEC_LOAD’
+             ax[j] = GGML_F16_VEC_LOAD(x + i + j*GGML_F16_EPR, j);
+                     ^~~~~~~~~~~~~~~~~
+/home/loongson/work/llama.cpp/ggml.c:1574:54: note: expected ‘ggml_fp16_t *’ {aka ‘short unsigned int *’} but argument is of type ‘const ggml_fp16_t * restrict’ {aka ‘const short unsigned int * restrict’}
+ static inline __m256 __lasx_f32cx8_load(ggml_fp16_t *x) {
+                                         ~~~~~~~~~~~~~^
+cc1: all warnings being treated as errors
+make[2]: *** [CMakeFiles/ggml.dir/build.make:76：CMakeFiles/ggml.dir/ggml.c.o] 错误 1
+make[1]: *** [CMakeFiles/Makefile2:820：CMakeFiles/ggml.dir/all] 错误 2
+make: *** [Makefile:146：all] 错误 2
+
+real	0m2.392s
+user	0m3.414s
+sys	0m0.151s
