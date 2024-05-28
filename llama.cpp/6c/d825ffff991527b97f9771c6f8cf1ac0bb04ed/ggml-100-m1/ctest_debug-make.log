@@ -1,0 +1,42 @@
++ make -j
+[  1%] Generating build details from Git
+[  1%] Compiling Metal kernels
+[  1%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  1%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  3%] Building CXX object CMakeFiles/ggml.dir/sgemm.cpp.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  5%] Building C object CMakeFiles/ggml.dir/ggml-metal.m.o
+-- Found Git: /usr/bin/git (found version "2.39.3 (Apple Git-145)") 
+[  6%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  6%] Built target build_info
+/Users/ggml/work/llama.cpp/ggml.c:10999:57: error: arithmetic on a pointer to void is a GNU extension [-Werror,-Wgnu-pointer-arith]
+                        x = (const float *) (src0->data + (i0       )*nb00 + (i1       )*nb01 + (i2       )*nb02 + (i3       )*nb03);
+                                             ~~~~~~~~~~ ^
+/Users/ggml/work/llama.cpp/ggml.c:10999:76: error: arithmetic on a pointer to void is a GNU extension [-Werror,-Wgnu-pointer-arith]
+                        x = (const float *) (src0->data + (i0       )*nb00 + (i1       )*nb01 + (i2       )*nb02 + (i3       )*nb03);
+                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+/Users/ggml/work/llama.cpp/ggml.c:10999:95: error: arithmetic on a pointer to void is a GNU extension [-Werror,-Wgnu-pointer-arith]
+                        x = (const float *) (src0->data + (i0       )*nb00 + (i1       )*nb01 + (i2       )*nb02 + (i3       )*nb03);
+                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+/Users/ggml/work/llama.cpp/ggml.c:10999:114: error: arithmetic on a pointer to void is a GNU extension [-Werror,-Wgnu-pointer-arith]
+                        x = (const float *) (src0->data + (i0       )*nb00 + (i1       )*nb01 + (i2       )*nb02 + (i3       )*nb03);
+                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+/Users/ggml/work/llama.cpp/ggml.c:11001:57: error: arithmetic on a pointer to void is a GNU extension [-Werror,-Wgnu-pointer-arith]
+                        x = (const float *) (src1->data + (i0 - o[0])*nb10 + (i1 - o[1])*nb11 + (i2 - o[2])*nb12 + (i3 - o[3])*nb13);
+                                             ~~~~~~~~~~ ^
+/Users/ggml/work/llama.cpp/ggml.c:11001:76: error: arithmetic on a pointer to void is a GNU extension [-Werror,-Wgnu-pointer-arith]
+                        x = (const float *) (src1->data + (i0 - o[0])*nb10 + (i1 - o[1])*nb11 + (i2 - o[2])*nb12 + (i3 - o[3])*nb13);
+                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+/Users/ggml/work/llama.cpp/ggml.c:11001:95: error: arithmetic on a pointer to void is a GNU extension [-Werror,-Wgnu-pointer-arith]
+                        x = (const float *) (src1->data + (i0 - o[0])*nb10 + (i1 - o[1])*nb11 + (i2 - o[2])*nb12 + (i3 - o[3])*nb13);
+                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+/Users/ggml/work/llama.cpp/ggml.c:11001:114: error: arithmetic on a pointer to void is a GNU extension [-Werror,-Wgnu-pointer-arith]
+                        x = (const float *) (src1->data + (i0 - o[0])*nb10 + (i1 - o[1])*nb11 + (i2 - o[2])*nb12 + (i3 - o[3])*nb13);
+                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+8 errors generated.
+make[2]: *** [CMakeFiles/ggml.dir/ggml.c.o] Error 1
+make[1]: *** [CMakeFiles/ggml.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[  6%] Built target ggml-metal
+make: *** [all] Error 2
