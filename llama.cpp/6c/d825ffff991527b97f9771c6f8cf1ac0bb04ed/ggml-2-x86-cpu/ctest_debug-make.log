@@ -1,0 +1,43 @@
++ make -j
+[  1%] Generating build details from Git
+[  1%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  4%] Building CXX object CMakeFiles/ggml.dir/sgemm.cpp.o
+-- Found Git: /usr/bin/git (found version "2.34.1")
+[  5%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  5%] Built target build_info
+/home/ggml/work/llama.cpp/ggml.c: In function ‘ggml_compute_forward_concat_f32’:
+/home/ggml/work/llama.cpp/ggml.c:10999:57: error: pointer of type ‘void *’ used in arithmetic [-Werror=pointer-arith]
+10999 |                         x = (const float *) (src0->data + (i0       )*nb00 + (i1       )*nb01 + (i2       )*nb02 + (i3       )*nb03);
+      |                                                         ^
+/home/ggml/work/llama.cpp/ggml.c:10999:76: error: pointer of type ‘void *’ used in arithmetic [-Werror=pointer-arith]
+10999 |                         x = (const float *) (src0->data + (i0       )*nb00 + (i1       )*nb01 + (i2       )*nb02 + (i3       )*nb03);
+      |                                                                            ^
+/home/ggml/work/llama.cpp/ggml.c:10999:95: error: pointer of type ‘void *’ used in arithmetic [-Werror=pointer-arith]
+10999 |                         x = (const float *) (src0->data + (i0       )*nb00 + (i1       )*nb01 + (i2       )*nb02 + (i3       )*nb03);
+      |                                                                                               ^
+/home/ggml/work/llama.cpp/ggml.c:10999:114: error: pointer of type ‘void *’ used in arithmetic [-Werror=pointer-arith]
+10999 |                         x = (const float *) (src0->data + (i0       )*nb00 + (i1       )*nb01 + (i2       )*nb02 + (i3       )*nb03);
+      |                                                                                                                  ^
+/home/ggml/work/llama.cpp/ggml.c:11001:57: error: pointer of type ‘void *’ used in arithmetic [-Werror=pointer-arith]
+11001 |                         x = (const float *) (src1->data + (i0 - o[0])*nb10 + (i1 - o[1])*nb11 + (i2 - o[2])*nb12 + (i3 - o[3])*nb13);
+      |                                                         ^
+/home/ggml/work/llama.cpp/ggml.c:11001:76: error: pointer of type ‘void *’ used in arithmetic [-Werror=pointer-arith]
+11001 |                         x = (const float *) (src1->data + (i0 - o[0])*nb10 + (i1 - o[1])*nb11 + (i2 - o[2])*nb12 + (i3 - o[3])*nb13);
+      |                                                                            ^
+/home/ggml/work/llama.cpp/ggml.c:11001:95: error: pointer of type ‘void *’ used in arithmetic [-Werror=pointer-arith]
+11001 |                         x = (const float *) (src1->data + (i0 - o[0])*nb10 + (i1 - o[1])*nb11 + (i2 - o[2])*nb12 + (i3 - o[3])*nb13);
+      |                                                                                               ^
+/home/ggml/work/llama.cpp/ggml.c:11001:114: error: pointer of type ‘void *’ used in arithmetic [-Werror=pointer-arith]
+11001 |                         x = (const float *) (src1->data + (i0 - o[0])*nb10 + (i1 - o[1])*nb11 + (i2 - o[2])*nb12 + (i3 - o[3])*nb13);
+      |                                                                                                                  ^
+cc1: all warnings being treated as errors
+make[2]: *** [CMakeFiles/ggml.dir/build.make:76: CMakeFiles/ggml.dir/ggml.c.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:820: CMakeFiles/ggml.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m1.162s
+user	0m1.126s
+sys	0m0.114s
