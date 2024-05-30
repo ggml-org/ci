@@ -1,0 +1,556 @@
+rm: 无法删除'/home/loongson/results/ggml/ef/5d14de79eb5f28b87d11391513cf4dc421d19d/ggml-101-loongson/*.log': 没有那个文件或目录
+rm: 无法删除'/home/loongson/results/ggml/ef/5d14de79eb5f28b87d11391513cf4dc421d19d/ggml-101-loongson/*.exit': 没有那个文件或目录
+rm: 无法删除'/home/loongson/results/ggml/ef/5d14de79eb5f28b87d11391513cf4dc421d19d/ggml-101-loongson/*.md': 没有那个文件或目录
+Defaulting to user installation because normal site-packages is not writeable
+Looking in indexes: https://pypi.loongnix.cn/loongson/pypi, https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting accelerate==0.19.0 (from -r /home/loongson/work/ggml/requirements.txt (line 1))
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fe/03/08a2f414de4ce11fae93a079e4184a7397f34d956c894359ed801b89dae0/accelerate-0.19.0-py3-none-any.whl (219 kB)
+ERROR: Ignored the following versions that require a different python version: 0.21.0 Requires-Python >=3.8.0; 0.22.0 Requires-Python >=3.8.0; 0.23.0 Requires-Python >=3.8.0; 0.24.0 Requires-Python >=3.8.0; 0.24.1 Requires-Python >=3.8.0; 0.25.0 Requires-Python >=3.8.0; 0.26.0 Requires-Python >=3.8.0; 0.26.1 Requires-Python >=3.8.0; 0.27.0 Requires-Python >=3.8.0; 0.27.1 Requires-Python >=3.8.0; 0.27.2 Requires-Python >=3.8.0; 0.28.0 Requires-Python >=3.8.0; 0.29.0 Requires-Python >=3.8.0; 0.29.1 Requires-Python >=3.8.0; 0.29.2 Requires-Python >=3.8.0; 0.29.3 Requires-Python >=3.8.0; 0.30.0 Requires-Python >=3.8.0; 0.30.0rc0 Requires-Python >=3.8.0; 0.30.1 Requires-Python >=3.8.0; 1.22.0 Requires-Python >=3.8; 1.22.1 Requires-Python >=3.8; 1.22.2 Requires-Python >=3.8; 1.22.3 Requires-Python >=3.8; 1.22.4 Requires-Python >=3.8; 1.23.0 Requires-Python >=3.8; 1.23.0rc1 Requires-Python >=3.8; 1.23.0rc2 Requires-Python >=3.8; 1.23.0rc3 Requires-Python >=3.8; 1.23.1 Requires-Python >=3.8; 1.23.2 Requires-Python >=3.8; 1.23.3 Requires-Python >=3.8; 1.23.4 Requires-Python >=3.8; 1.23.5 Requires-Python >=3.8; 1.24.0 Requires-Python >=3.8; 1.24.0rc1 Requires-Python >=3.8; 1.24.0rc2 Requires-Python >=3.8; 1.24.1 Requires-Python >=3.8; 1.24.2 Requires-Python >=3.8; 1.24.3 Requires-Python >=3.8; 1.24.4 Requires-Python >=3.8; 1.25.0 Requires-Python >=3.9; 1.25.0rc1 Requires-Python >=3.9; 1.25.1 Requires-Python >=3.9; 1.25.2 Requires-Python >=3.9; 1.26.0 Requires-Python <3.13,>=3.9; 1.26.0b1 Requires-Python <3.13,>=3.9; 1.26.0rc1 Requires-Python <3.13,>=3.9; 1.26.1 Requires-Python <3.13,>=3.9; 1.26.2 Requires-Python >=3.9; 1.26.3 Requires-Python >=3.9; 1.26.4 Requires-Python >=3.9; 2.0.0b1 Requires-Python >=3.9; 2.0.0rc1 Requires-Python >=3.9; 2.0.0rc2 Requires-Python >=3.9
+ERROR: Could not find a version that satisfies the requirement numpy>=1.24.4 (from versions: 1.3.0, 1.4.1, 1.5.0, 1.5.1, 1.6.0, 1.6.1, 1.6.2, 1.7.0, 1.7.1, 1.7.2, 1.8.0, 1.8.1, 1.8.2, 1.9.0, 1.9.1, 1.9.2, 1.9.3, 1.10.0.post2, 1.10.1, 1.10.2, 1.10.4, 1.11.0, 1.11.1, 1.11.2, 1.11.3, 1.12.0, 1.12.1, 1.13.0, 1.13.1, 1.13.3, 1.14.0, 1.14.1, 1.14.2, 1.14.3, 1.14.4, 1.14.5, 1.14.6, 1.15.0, 1.15.1, 1.15.2, 1.15.3, 1.15.4, 1.16.0, 1.16.1, 1.16.2, 1.16.3, 1.16.4, 1.16.5, 1.16.6, 1.17.0, 1.17.1, 1.17.2, 1.17.3, 1.17.4, 1.17.5, 1.18.0, 1.18.1, 1.18.2, 1.18.3, 1.18.4, 1.18.5, 1.19.0, 1.19.1, 1.19.2, 1.19.3, 1.19.4, 1.19.5, 1.20.0, 1.20.1, 1.20.2, 1.20.3, 1.21.0, 1.21.1, 1.21.2, 1.21.3, 1.21.4, 1.21.5, 1.21.6)
+ERROR: No matching distribution found for numpy>=1.24.4
++ gg_run_ctest_debug
++ cd /home/loongson/work/ggml
++ rm -rf build-ci-debug
++ tee /home/loongson/results/ggml/ef/5d14de79eb5f28b87d11391513cf4dc421d19d/ggml-101-loongson/ctest_debug.log
++ mkdir build-ci-debug
++ cd build-ci-debug
++ set -e
++ tee -a /home/loongson/results/ggml/ef/5d14de79eb5f28b87d11391513cf4dc421d19d/ggml-101-loongson/ctest_debug-cmake.log
++ cmake -DCMAKE_BUILD_TYPE=Debug ..
+-- The C compiler identification is GNU 8.3.0
+-- The CXX compiler identification is GNU 8.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.20.1") 
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- CMAKE_SYSTEM_PROCESSOR: loongarch64
+GNU ld (GNU Binutils for Loongnix) 2.31.1-system.20190122
+-- x86 detected
+-- Linux detected
+-- x86 detected
+-- Linux detected
+-- Configuring done (0.9s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/loongson/work/ggml/build-ci-debug
+
+real	0m0.994s
+user	0m0.741s
+sys	0m0.262s
++ tee -a /home/loongson/results/ggml/ef/5d14de79eb5f28b87d11391513cf4dc421d19d/ggml-101-loongson/ctest_debug-make.log
++ make -j
+[  1%] Building C object src/CMakeFiles/ggml.dir/ggml-backend.c.o
+[  5%] Building C object src/CMakeFiles/ggml.dir/ggml-quants.c.o
+[  5%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  5%] Building C object src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  5%] Building C object src/CMakeFiles/ggml.dir/ggml.c.o
+[  6%] Linking C shared library libggml.so
+[  6%] Built target ggml
+[  7%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+[  9%] Building CXX object tests/CMakeFiles/test-opt.dir/test-opt.cpp.o
+[  9%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 10%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
+[ 11%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 12%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
+[ 13%] Building C object tests/CMakeFiles/test-mul-mat2.dir/test-mul-mat2.c.o
+[ 24%] Building C object tests/CMakeFiles/test-customop.dir/test-customop.c.o
+[ 21%] Building C object tests/CMakeFiles/test2.dir/test2.c.o
+[ 24%] Building C object tests/CMakeFiles/test-conv-transpose.dir/test-conv-transpose.c.o
+[ 24%] Building C object tests/CMakeFiles/test-rel-pos.dir/test-rel-pos.c.o
+[ 21%] Building C object tests/CMakeFiles/test1.dir/test1.c.o
+[ 24%] Building C object tests/CMakeFiles/test-xpos.dir/test-xpos.c.o
+[ 24%] Building C object tests/CMakeFiles/test-dup.dir/test-dup.c.o
+[ 24%] Building CXX object tests/CMakeFiles/test-timestep_embedding.dir/test-timestep_embedding.cpp.o
+[ 24%] Building C object tests/CMakeFiles/test-pool.dir/test-pool.c.o
+[ 21%] Building C object tests/CMakeFiles/test-mul-mat0.dir/test-mul-mat0.c.o
+[ 21%] Building CXX object tests/CMakeFiles/test-arange.dir/test-arange.cpp.o
+[ 29%] Building CXX object examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o
+[ 32%] Building CXX object examples/whisper/CMakeFiles/whisper-cpp.dir/whisper.cpp.o
+[ 32%] Building C object tests/CMakeFiles/test3.dir/test3.c.o
+[ 29%] Building CXX object tests/CMakeFiles/test-conv2d.dir/test-conv2d.cpp.o
+[ 34%] Building CXX object tests/CMakeFiles/test-mul-mat.dir/test-mul-mat.cpp.o
+[ 34%] Building CXX object tests/CMakeFiles/test-conv1d.dir/test-conv1d.cpp.o
+[ 36%] Building CXX object examples/simple/CMakeFiles/simple-backend.dir/simple-backend.cpp.o
+[ 36%] Building CXX object examples/simple/CMakeFiles/simple-ctx.dir/simple-ctx.cpp.o
+[ 36%] Building CXX object examples/mnist/CMakeFiles/mnist-cpu.dir/main-cpu.cpp.o
+[ 34%] Building CXX object tests/CMakeFiles/test-backend-buffer.dir/test-backend-buffer.cpp.o
+[ 34%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 37%] Linking C executable ../bin/test-vec0
+[ 38%] Linking C executable ../bin/test0
+[ 39%] Linking C executable ../bin/test-rel-pos
+[ 40%] Linking C executable ../bin/test-dup
+[ 41%] Linking C executable ../bin/test-customop
+[ 42%] Linking CXX executable ../bin/test-arange
+[ 43%] Linking C executable ../bin/test-pool
+[ 44%] Linking C executable ../bin/test-conv-transpose
+[ 45%] Linking C executable ../bin/test-xpos
+[ 46%] Linking C executable ../bin/test2
+[ 46%] Built target test-vec0
+[ 47%] Linking C executable ../bin/test3
+[ 47%] Built target test0
+[ 48%] Linking CXX executable ../bin/test-backend-buffer
+[ 48%] Built target test-rel-pos
+[ 49%] Linking C executable ../bin/test-mul-mat0
+[ 50%] Linking C executable ../bin/test1
+[ 51%] Linking CXX executable ../bin/test-opt
+[ 51%] Built target test-dup
+[ 51%] Built target test-pool
+[ 51%] Built target test-conv-transpose
+[ 51%] Built target test-xpos
+[ 51%] Built target test-customop
+[ 51%] Built target test2
+[ 51%] Built target test-arange
+[ 51%] Built target test3
+[ 51%] Built target test-mul-mat0
+[ 51%] Built target test1
+[ 52%] Linking C executable ../bin/test-mul-mat2
+[ 52%] Built target test-backend-buffer
+[ 52%] Built target test-opt
+[ 52%] Built target test-mul-mat2
+[ 53%] Linking CXX executable ../bin/test-grad0
+[ 54%] Linking CXX executable ../bin/test-timestep_embedding
+[ 54%] Built target test-grad0
+[ 54%] Built target test-timestep_embedding
+[ 55%] Linking CXX executable ../bin/test-quantize-fns
+[ 55%] Built target test-quantize-fns
+/home/loongson/work/ggml/tests/test-conv2d.cpp:24:13: warning: ‘void ggml_log_callback_default(ggml_log_level, const char*, void*)’ defined but not used [-Wunused-function]
+ static void ggml_log_callback_default(ggml_log_level level, const char * text, void * user_data) {
+             ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/loongson/work/ggml/tests/test-conv1d.cpp:24:13: warning: ‘void ggml_log_callback_default(ggml_log_level, const char*, void*)’ defined but not used [-Wunused-function]
+ static void ggml_log_callback_default(ggml_log_level level, const char * text, void * user_data) {
+             ^~~~~~~~~~~~~~~~~~~~~~~~~
+[ 56%] Linking CXX executable ../../bin/simple-ctx
+[ 57%] Linking CXX executable ../bin/test-mul-mat
+[ 58%] Linking CXX executable ../../bin/simple-backend
+[ 59%] Linking CXX executable ../../bin/mnist-cpu
+[ 60%] Linking CXX executable ../bin/test-conv2d
+[ 61%] Linking CXX executable ../bin/test-conv1d
+[ 61%] Built target simple-ctx
+[ 61%] Built target test-mul-mat
+[ 61%] Built target simple-backend
+[ 61%] Built target test-conv2d
+[ 61%] Built target test-conv1d
+[ 61%] Built target mnist-cpu
+[ 62%] Linking CXX executable ../bin/test-quantize-perf
+[ 62%] Built target test-quantize-perf
+[ 63%] Linking CXX executable ../bin/test-backend-ops
+[ 63%] Built target test-backend-ops
+[ 64%] Linking CXX static library libcommon.a
+[ 64%] Built target common
+[ 67%] Building CXX object examples/sam/CMakeFiles/sam.dir/main.cpp.o
+[ 67%] Building CXX object examples/mnist/CMakeFiles/mnist.dir/main.cpp.o
+[ 69%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolov3-tiny.cpp.o
+[ 69%] Building CXX object examples/mnist/CMakeFiles/mnist-cnn.dir/main-cnn.cpp.o
+[ 70%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolo-image.cpp.o
+[ 71%] Linking CXX static library libcommon-ggml.a
+[ 71%] Built target common-ggml
+[ 72%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-alloc.dir/main-alloc.cpp.o
+[ 74%] Building CXX object examples/whisper/CMakeFiles/whisper-quantize.dir/quantize.cpp.o
+[ 76%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-ctx.dir/main-ctx.cpp.o
+[ 76%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-quantize.dir/quantize.cpp.o
+[ 76%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-sched.dir/main-sched.cpp.o
+[ 78%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-batched.dir/main-batched.cpp.o
+[ 78%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-backend.dir/main-backend.cpp.o
+[ 79%] Building CXX object examples/magika/CMakeFiles/magika.dir/main.cpp.o
+[ 80%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j-quantize.dir/quantize.cpp.o
+[ 81%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j.dir/main.cpp.o
+[ 82%] Linking CXX executable ../../bin/mnist-cnn
+[ 83%] Linking CXX executable ../../bin/mnist
+[ 83%] Built target mnist-cnn
+[ 84%] Linking CXX executable ../../bin/magika
+[ 84%] Built target mnist
+[ 84%] Built target magika
+[ 85%] Linking CXX executable ../../bin/yolov3-tiny
+[ 85%] Built target yolov3-tiny
+[ 86%] Linking CXX executable ../../bin/gpt-2-quantize
+[ 87%] Linking CXX executable ../../bin/whisper-quantize
+[ 88%] Linking CXX executable ../../bin/gpt-j-quantize
+[ 88%] Built target gpt-2-quantize
+[ 89%] Linking CXX executable ../../bin/gpt-2-backend
+[ 90%] Linking CXX executable ../../bin/gpt-2-ctx
+[ 91%] Linking CXX executable ../../bin/gpt-2-alloc
+[ 91%] Built target whisper-quantize
+[ 92%] Linking CXX executable ../../bin/gpt-j
+[ 92%] Built target gpt-j-quantize
+[ 93%] Linking CXX executable ../../bin/gpt-2-batched
+[ 93%] Built target gpt-2-ctx
+[ 93%] Built target gpt-2-backend
+[ 93%] Built target gpt-2-alloc
+[ 93%] Built target gpt-j
+[ 93%] Built target gpt-2-batched
+[ 94%] Linking CXX executable ../../bin/gpt-2-sched
+[ 95%] Linking CXX executable ../../bin/sam
+[ 95%] Built target sam
+[ 95%] Built target gpt-2-sched
+[ 96%] Linking CXX static library libwhisper-cpp.a
+[ 96%] Built target whisper-cpp
+[ 98%] Building CXX object examples/whisper/CMakeFiles/whisper.dir/grammar-parser.cpp.o
+[ 98%] Building CXX object examples/whisper/CMakeFiles/whisper.dir/main.cpp.o
+[100%] Linking CXX executable ../../bin/whisper
+[100%] Built target whisper
+
+real	0m17.647s
+user	1m14.923s
+sys	0m4.690s
++ '[' '!' -z ']'
++ tee -a /home/loongson/results/ggml/ef/5d14de79eb5f28b87d11391513cf4dc421d19d/ggml-101-loongson/ctest_debug-ctest.log
++ ctest --output-on-failure -E test-opt
+Test project /home/loongson/work/ggml/build-ci-debug
+      Start  1: test-grad0
+ 1/22 Test  #1: test-grad0 .......................   Passed  132.90 sec
+      Start  2: test-quantize-fns
+ 2/22 Test  #2: test-quantize-fns ................   Passed  103.71 sec
+      Start  3: test-quantize-perf
+ 3/22 Test  #3: test-quantize-perf ...............   Passed   31.06 sec
+      Start  4: test-mul-mat0
+ 4/22 Test  #4: test-mul-mat0 ....................   Passed    0.51 sec
+      Start  5: test-mul-mat2
+ 5/22 Test  #5: test-mul-mat2 ....................   Passed   16.99 sec
+      Start  6: test0
+ 6/22 Test  #6: test0 ............................   Passed    0.02 sec
+      Start  7: test1
+ 7/22 Test  #7: test1 ............................   Passed    0.03 sec
+      Start  8: test2
+ 8/22 Test  #8: test2 ............................   Passed    1.21 sec
+      Start  9: test3
+ 9/22 Test  #9: test3 ............................   Passed    0.18 sec
+      Start 10: test-pool
+10/22 Test #10: test-pool ........................   Passed    0.02 sec
+      Start 11: test-arange
+11/22 Test #11: test-arange ......................   Passed    0.02 sec
+      Start 12: test-timestep_embedding
+12/22 Test #12: test-timestep_embedding ..........   Passed    0.02 sec
+      Start 13: test-conv-transpose
+13/22 Test #13: test-conv-transpose ..............   Passed    0.02 sec
+      Start 14: test-dup
+14/22 Test #14: test-dup .........................   Passed    0.02 sec
+      Start 15: test-rel-pos
+15/22 Test #15: test-rel-pos .....................   Passed    0.02 sec
+      Start 16: test-customop
+16/22 Test #16: test-customop ....................   Passed    0.02 sec
+      Start 17: test-xpos
+17/22 Test #17: test-xpos ........................   Passed    0.02 sec
+      Start 18: test-conv1d
+18/22 Test #18: test-conv1d ......................   Passed    0.02 sec
+      Start 19: test-conv2d
+19/22 Test #19: test-conv2d ......................   Passed    0.02 sec
+      Start 20: test-mul-mat
+20/22 Test #20: test-mul-mat .....................   Passed    0.02 sec
+      Start 21: test-backend-buffer
+21/22 Test #21: test-backend-buffer ..............   Passed    0.02 sec
+      Start 22: test-backend-ops
+22/22 Test #22: test-backend-ops .................   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 22
+
+Total Test time (real) = 286.89 sec
+
+real	4m46.900s
+user	7m21.883s
+sys	0m0.580s
++ set +e
++ cur=0
++ echo 0
++ set +x
++ gg_run_ctest_release
++ cd /home/loongson/work/ggml
++ rm -rf build-ci-release
++ tee /home/loongson/results/ggml/ef/5d14de79eb5f28b87d11391513cf4dc421d19d/ggml-101-loongson/ctest_release.log
++ mkdir build-ci-release
++ cd build-ci-release
++ set -e
++ tee -a /home/loongson/results/ggml/ef/5d14de79eb5f28b87d11391513cf4dc421d19d/ggml-101-loongson/ctest_release-cmake.log
++ cmake -DCMAKE_BUILD_TYPE=Release ..
+-- The C compiler identification is GNU 8.3.0
+-- The CXX compiler identification is GNU 8.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.20.1") 
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- CMAKE_SYSTEM_PROCESSOR: loongarch64
+GNU ld (GNU Binutils for Loongnix) 2.31.1-system.20190122
+-- x86 detected
+-- Linux detected
+-- x86 detected
+-- Linux detected
+-- Configuring done (0.9s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/loongson/work/ggml/build-ci-release
+
+real	0m0.993s
+user	0m0.787s
+sys	0m0.216s
++ tee -a /home/loongson/results/ggml/ef/5d14de79eb5f28b87d11391513cf4dc421d19d/ggml-101-loongson/ctest_release-make.log
++ make -j
+[  3%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  3%] Building C object src/CMakeFiles/ggml.dir/ggml.c.o
+[  3%] Building C object src/CMakeFiles/ggml.dir/ggml-backend.c.o
+[  5%] Building C object src/CMakeFiles/ggml.dir/ggml-quants.c.o
+[  5%] Building C object src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  6%] Linking CXX static library libcommon.a
+[  6%] Built target common
+[  7%] Linking C shared library libggml.so
+[  7%] Built target ggml
+[  8%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+[ 12%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
+[ 12%] Building CXX object tests/CMakeFiles/test-opt.dir/test-opt.cpp.o
+[ 12%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
+[ 12%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 14%] Building C object tests/CMakeFiles/test-mul-mat0.dir/test-mul-mat0.c.o
+[ 14%] Building C object tests/CMakeFiles/test2.dir/test2.c.o
+[ 15%] Building C object tests/CMakeFiles/test3.dir/test3.c.o
+[ 16%] Building CXX object tests/CMakeFiles/test-timestep_embedding.dir/test-timestep_embedding.cpp.o
+[ 17%] Building C object tests/CMakeFiles/test-conv-transpose.dir/test-conv-transpose.c.o
+[ 18%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 19%] Building C object tests/CMakeFiles/test-pool.dir/test-pool.c.o
+[ 20%] Building C object tests/CMakeFiles/test-rel-pos.dir/test-rel-pos.c.o
+[ 21%] Building C object tests/CMakeFiles/test1.dir/test1.c.o
+[ 23%] Building CXX object tests/CMakeFiles/test-arange.dir/test-arange.cpp.o
+[ 35%] Building C object tests/CMakeFiles/test-customop.dir/test-customop.c.o
+[ 35%] Building C object tests/CMakeFiles/test-xpos.dir/test-xpos.c.o
+[ 35%] Building CXX object examples/mnist/CMakeFiles/mnist-cnn.dir/main-cnn.cpp.o
+[ 35%] Building C object tests/CMakeFiles/test-mul-mat2.dir/test-mul-mat2.c.o
+[ 35%] Building CXX object examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o
+[ 35%] Building CXX object tests/CMakeFiles/test-backend-buffer.dir/test-backend-buffer.cpp.o
+[ 35%] Building C object tests/CMakeFiles/test-dup.dir/test-dup.c.o
+[ 35%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 35%] Building CXX object examples/whisper/CMakeFiles/whisper-cpp.dir/whisper.cpp.o
+[ 35%] Building CXX object examples/sam/CMakeFiles/sam.dir/main.cpp.o
+[ 35%] Building CXX object tests/CMakeFiles/test-mul-mat.dir/test-mul-mat.cpp.o
+[ 35%] Building CXX object examples/mnist/CMakeFiles/mnist-cpu.dir/main-cpu.cpp.o
+[ 40%] Building CXX object examples/simple/CMakeFiles/simple-ctx.dir/simple-ctx.cpp.o
+[ 40%] Building CXX object examples/mnist/CMakeFiles/mnist.dir/main.cpp.o
+[ 40%] Building CXX object examples/simple/CMakeFiles/simple-backend.dir/simple-backend.cpp.o
+[ 40%] Building CXX object tests/CMakeFiles/test-conv1d.dir/test-conv1d.cpp.o
+[ 40%] Building CXX object tests/CMakeFiles/test-conv2d.dir/test-conv2d.cpp.o
+[ 42%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolo-image.cpp.o
+[ 42%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolov3-tiny.cpp.o
+[ 43%] Linking C executable ../bin/test0
+[ 44%] Linking CXX executable ../bin/test-arange
+[ 45%] Linking C executable ../bin/test-rel-pos
+[ 46%] Linking CXX executable ../bin/test-backend-buffer
+[ 47%] Linking C executable ../bin/test3
+[ 48%] Linking C executable ../bin/test-xpos
+[ 50%] Linking CXX executable ../bin/test-opt
+[ 50%] Linking C executable ../bin/test2
+[ 50%] Built target test0
+[ 51%] Linking C executable ../bin/test-dup
+[ 51%] Built target test-rel-pos
+[ 52%] Linking C executable ../bin/test-vec0
+[ 53%] Linking C executable ../bin/test-pool
+[ 53%] Built target test-xpos
+[ 53%] Built target test3
+[ 53%] Built target test-arange
+[ 53%] Built target test2
+[ 53%] Built target test-backend-buffer
+[ 53%] Built target test-dup
+[ 53%] Built target test-vec0
+[ 54%] Linking C executable ../bin/test1
+[ 54%] Built target test-pool
+[ 55%] Linking C executable ../bin/test-customop
+[ 55%] Built target test-opt
+[ 55%] Built target test1
+[ 55%] Built target test-customop
+[ 56%] Linking C executable ../bin/test-conv-transpose
+[ 57%] Linking C executable ../bin/test-mul-mat0
+[ 57%] Built target test-conv-transpose
+[ 57%] Built target test-mul-mat0
+[ 58%] Linking CXX executable ../bin/test-timestep_embedding
+[ 58%] Built target test-timestep_embedding
+[ 59%] Linking CXX executable ../bin/test-quantize-fns
+/home/loongson/work/ggml/tests/test-conv1d.cpp:24:13: warning: ‘void ggml_log_callback_default(ggml_log_level, const char*, void*)’ defined but not used [-Wunused-function]
+ static void ggml_log_callback_default(ggml_log_level level, const char * text, void * user_data) {
+             ^~~~~~~~~~~~~~~~~~~~~~~~~
+[ 59%] Built target test-quantize-fns
+/home/loongson/work/ggml/tests/test-conv2d.cpp:24:13: warning: ‘void ggml_log_callback_default(ggml_log_level, const char*, void*)’ defined but not used [-Wunused-function]
+ static void ggml_log_callback_default(ggml_log_level level, const char * text, void * user_data) {
+             ^~~~~~~~~~~~~~~~~~~~~~~~~
+[ 60%] Linking CXX executable ../../bin/simple-backend
+[ 61%] Linking CXX executable ../../bin/simple-ctx
+[ 62%] Linking CXX executable ../../bin/mnist-cpu
+[ 63%] Linking CXX executable ../bin/test-conv1d
+[ 63%] Built target simple-backend
+[ 64%] Linking CXX executable ../bin/test-mul-mat
+[ 64%] Built target simple-ctx
+[ 65%] Linking CXX executable ../bin/test-conv2d
+[ 65%] Built target test-conv1d
+[ 65%] Built target mnist-cpu
+[ 65%] Built target test-mul-mat
+[ 65%] Built target test-conv2d
+[ 67%] Linking C executable ../bin/test-mul-mat2
+[ 67%] Built target test-mul-mat2
+[ 68%] Linking CXX executable ../../bin/mnist-cnn
+[ 69%] Linking CXX executable ../bin/test-grad0
+[ 69%] Built target mnist-cnn
+[ 70%] Linking CXX executable ../../bin/mnist
+[ 70%] Built target test-grad0
+[ 71%] Linking CXX executable ../bin/test-quantize-perf
+[ 71%] Built target mnist
+[ 71%] Built target test-quantize-perf
+[ 72%] Linking CXX executable ../bin/test-backend-ops
+[ 72%] Built target test-backend-ops
+[ 73%] Linking CXX static library libcommon-ggml.a
+[ 73%] Built target common-ggml
+[ 75%] Building CXX object examples/magika/CMakeFiles/magika.dir/main.cpp.o
+[ 75%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-alloc.dir/main-alloc.cpp.o
+[ 78%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-quantize.dir/quantize.cpp.o
+[ 79%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j-quantize.dir/quantize.cpp.o
+[ 79%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-backend.dir/main-backend.cpp.o
+[ 81%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-sched.dir/main-sched.cpp.o
+[ 81%] Building CXX object examples/whisper/CMakeFiles/whisper-quantize.dir/quantize.cpp.o
+[ 81%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-ctx.dir/main-ctx.cpp.o
+[ 83%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j.dir/main.cpp.o
+[ 83%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-batched.dir/main-batched.cpp.o
+[ 84%] Linking CXX executable ../../bin/magika
+[ 84%] Built target magika
+[ 85%] Linking CXX executable ../../bin/yolov3-tiny
+[ 85%] Built target yolov3-tiny
+[ 86%] Linking CXX executable ../../bin/gpt-j-quantize
+[ 87%] Linking CXX executable ../../bin/gpt-2-quantize
+[ 88%] Linking CXX executable ../../bin/whisper-quantize
+[ 88%] Built target gpt-j-quantize
+[ 88%] Built target whisper-quantize
+[ 88%] Built target gpt-2-quantize
+[ 89%] Linking CXX executable ../../bin/gpt-j
+[ 89%] Built target gpt-j
+[ 90%] Linking CXX executable ../../bin/gpt-2-ctx
+[ 91%] Linking CXX executable ../../bin/gpt-2-alloc
+[ 91%] Built target gpt-2-ctx
+[ 91%] Built target gpt-2-alloc
+[ 92%] Linking CXX executable ../../bin/gpt-2-backend
+[ 92%] Built target gpt-2-backend
+[ 93%] Linking CXX executable ../../bin/gpt-2-sched
+[ 93%] Built target gpt-2-sched
+[ 94%] Linking CXX executable ../../bin/gpt-2-batched
+[ 94%] Built target gpt-2-batched
+[ 95%] Linking CXX executable ../../bin/sam
+[ 95%] Built target sam
+[ 96%] Linking CXX static library libwhisper-cpp.a
+[ 96%] Built target whisper-cpp
+[ 98%] Building CXX object examples/whisper/CMakeFiles/whisper.dir/grammar-parser.cpp.o
+[ 98%] Building CXX object examples/whisper/CMakeFiles/whisper.dir/main.cpp.o
+[100%] Linking CXX executable ../../bin/whisper
+[100%] Built target whisper
+
+real	0m38.636s
+user	2m21.459s
+sys	0m4.234s
++ '[' '!' -z ']'
++ '[' -z 1 ']'
++ tee -a /home/loongson/results/ggml/ef/5d14de79eb5f28b87d11391513cf4dc421d19d/ggml-101-loongson/ctest_release-ctest.log
++ ctest --output-on-failure -E test-opt
+Test project /home/loongson/work/ggml/build-ci-release
+      Start  1: test-grad0
+ 1/22 Test  #1: test-grad0 .......................   Passed  134.03 sec
+      Start  2: test-quantize-fns
+ 2/22 Test  #2: test-quantize-fns ................   Passed   35.03 sec
+      Start  3: test-quantize-perf
+ 3/22 Test  #3: test-quantize-perf ...............   Passed    9.86 sec
+      Start  4: test-mul-mat0
+ 4/22 Test  #4: test-mul-mat0 ....................   Passed    0.37 sec
+      Start  5: test-mul-mat2
+ 5/22 Test  #5: test-mul-mat2 ....................   Passed    6.46 sec
+      Start  6: test0
+ 6/22 Test  #6: test0 ............................   Passed    0.01 sec
+      Start  7: test1
+ 7/22 Test  #7: test1 ............................   Passed    0.03 sec
+      Start  8: test2
+ 8/22 Test  #8: test2 ............................   Passed    1.15 sec
+      Start  9: test3
+ 9/22 Test  #9: test3 ............................   Passed    0.09 sec
+      Start 10: test-pool
+10/22 Test #10: test-pool ........................   Passed    0.01 sec
+      Start 11: test-arange
+11/22 Test #11: test-arange ......................   Passed    0.01 sec
+      Start 12: test-timestep_embedding
+12/22 Test #12: test-timestep_embedding ..........   Passed    0.01 sec
+      Start 13: test-conv-transpose
+13/22 Test #13: test-conv-transpose ..............   Passed    0.01 sec
+      Start 14: test-dup
+14/22 Test #14: test-dup .........................   Passed    0.01 sec
+      Start 15: test-rel-pos
+15/22 Test #15: test-rel-pos .....................   Passed    0.01 sec
+      Start 16: test-customop
+16/22 Test #16: test-customop ....................   Passed    0.01 sec
+      Start 17: test-xpos
+17/22 Test #17: test-xpos ........................   Passed    0.01 sec
+      Start 18: test-conv1d
+18/22 Test #18: test-conv1d ......................   Passed    0.01 sec
+      Start 19: test-conv2d
+19/22 Test #19: test-conv2d ......................   Passed    0.01 sec
+      Start 20: test-mul-mat
+20/22 Test #20: test-mul-mat .....................   Passed    0.01 sec
+      Start 21: test-backend-buffer
+21/22 Test #21: test-backend-buffer ..............   Passed    0.01 sec
+      Start 22: test-backend-ops
+22/22 Test #22: test-backend-ops .................   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 22
+
+Total Test time (real) = 187.13 sec
+
+real	3m7.133s
+user	5m43.661s
+sys	0m0.521s
++ set +e
++ cur=0
++ echo 0
++ set +x
++ gg_run_gpt_2
++ cd /home/loongson/work/ggml
++ gg_wget models-mnt/gpt-2 https://huggingface.co/ggerganov/ggml/resolve/main/ggml-model-gpt-2-117M.bin
++ tee /home/loongson/results/ggml/ef/5d14de79eb5f28b87d11391513cf4dc421d19d/ggml-101-loongson/gpt_2.log
++ local out=models-mnt/gpt-2
++ local url=https://huggingface.co/ggerganov/ggml/resolve/main/ggml-model-gpt-2-117M.bin
+++ pwd
++ local cwd=/home/loongson/work/ggml
++ mkdir -p models-mnt/gpt-2
++ cd models-mnt/gpt-2
++ wget -nv -N https://huggingface.co/ggerganov/ggml/resolve/main/ggml-model-gpt-2-117M.bin
+失败：连接超时。
+失败：网络不可达。
++ cd /home/loongson/work/ggml
++ cd build-ci-release
++ set -e
++ model=../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin
++ prompts=../examples/prompts/gpt-2.txt
++ tee -a /home/loongson/results/ggml/ef/5d14de79eb5f28b87d11391513cf4dc421d19d/ggml-101-loongson/gpt_2-tg.log
++ ./bin/gpt-2-backend --model ../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin -s 1234 -n 64 -tt ../examples/prompts/gpt-2.txt
+gpt2_model_load: failed to open '../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin'
+main: failed to load model from '../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin'
+main: seed = 1234
+gpt2_model_load: loading model from '../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin'
+
+real	0m0.004s
+user	0m0.000s
+sys	0m0.003s
++ cur=1
++ echo 1
++ set +x
