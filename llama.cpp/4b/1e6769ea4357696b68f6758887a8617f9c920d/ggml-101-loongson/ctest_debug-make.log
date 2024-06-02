@@ -1,0 +1,56 @@
++ make -j
+[  1%] Generating build details from Git
+-- Found Git: /usr/bin/git (found version "2.20.1") 
+[  2%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  2%] Building CXX object CMakeFiles/ggml.dir/sgemm.cpp.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  5%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  5%] Built target build_info
+/home/loongson/work/llama.cpp/ggml-quants.c: In function ‘ggml_vec_dot_q4_K_q8_K’:
+/home/loongson/work/llama.cpp/ggml-quants.c:6984:27: error: unused variable ‘kmask3’ [-Werror=unused-variable]
+     static const uint32_t kmask3 = 0x03030303;
+                           ^~~~~~
+/home/loongson/work/llama.cpp/ggml-quants.c:6983:27: error: unused variable ‘kmask2’ [-Werror=unused-variable]
+     static const uint32_t kmask2 = 0x0f0f0f0f;
+                           ^~~~~~
+/home/loongson/work/llama.cpp/ggml-quants.c:6982:27: error: unused variable ‘kmask1’ [-Werror=unused-variable]
+     static const uint32_t kmask1 = 0x3f3f3f3f;
+                           ^~~~~~
+/home/loongson/work/llama.cpp/ggml-quants.c: In function ‘ggml_vec_dot_q5_K_q8_K’:
+/home/loongson/work/llama.cpp/ggml-quants.c:7542:27: error: unused variable ‘kmask3’ [-Werror=unused-variable]
+     static const uint32_t kmask3 = 0x03030303;
+                           ^~~~~~
+/home/loongson/work/llama.cpp/ggml-quants.c:7541:27: error: unused variable ‘kmask2’ [-Werror=unused-variable]
+     static const uint32_t kmask2 = 0x0f0f0f0f;
+                           ^~~~~~
+/home/loongson/work/llama.cpp/ggml-quants.c:7540:27: error: unused variable ‘kmask1’ [-Werror=unused-variable]
+     static const uint32_t kmask1 = 0x3f3f3f3f;
+                           ^~~~~~
+At top level:
+/home/loongson/work/llama.cpp/ggml-quants.c:7540:27: error: ‘kmask1’ defined but not used [-Werror=unused-const-variable=]
+/home/loongson/work/llama.cpp/ggml-quants.c:7541:27: error: ‘kmask2’ defined but not used [-Werror=unused-const-variable=]
+     static const uint32_t kmask2 = 0x0f0f0f0f;
+                           ^~~~~~
+/home/loongson/work/llama.cpp/ggml-quants.c:7542:27: error: ‘kmask3’ defined but not used [-Werror=unused-const-variable=]
+     static const uint32_t kmask3 = 0x03030303;
+                           ^~~~~~
+/home/loongson/work/llama.cpp/ggml-quants.c:6982:27: error: ‘kmask1’ defined but not used [-Werror=unused-const-variable=]
+     static const uint32_t kmask1 = 0x3f3f3f3f;
+                           ^~~~~~
+/home/loongson/work/llama.cpp/ggml-quants.c:6983:27: error: ‘kmask2’ defined but not used [-Werror=unused-const-variable=]
+     static const uint32_t kmask2 = 0x0f0f0f0f;
+                           ^~~~~~
+/home/loongson/work/llama.cpp/ggml-quants.c:6984:27: error: ‘kmask3’ defined but not used [-Werror=unused-const-variable=]
+     static const uint32_t kmask3 = 0x03030303;
+                           ^~~~~~
+cc1: all warnings being treated as errors
+make[2]: *** [CMakeFiles/ggml.dir/build.make:118：CMakeFiles/ggml.dir/ggml-quants.c.o] 错误 1
+make[2]: *** 正在等待未完成的任务....
+make[1]: *** [CMakeFiles/Makefile2:820：CMakeFiles/ggml.dir/all] 错误 2
+make: *** [Makefile:146：all] 错误 2
+
+real	0m2.819s
+user	0m5.084s
+sys	0m0.334s
