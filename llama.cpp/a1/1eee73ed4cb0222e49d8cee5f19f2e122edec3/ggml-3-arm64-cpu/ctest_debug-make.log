@@ -1,0 +1,57 @@
++ make -j
+[  0%] Generating build details from Git
+[  1%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  4%] Building CXX object CMakeFiles/ggml.dir/sgemm.cpp.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  4%] Built target ggml
+[  5%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  5%] Linking CXX static library libggml_static.a
+[  6%] Building CXX object examples/gguf/CMakeFiles/gguf.dir/gguf.cpp.o
+[  7%] Building CXX object CMakeFiles/llama.dir/llama.cpp.o
+[  8%] Building CXX object CMakeFiles/llama.dir/unicode.cpp.o
+[  8%] Building CXX object CMakeFiles/llama.dir/unicode-data.cpp.o
+[  8%] Linking CXX executable ../../bin/gguf
+[  8%] Built target build_info
+[  8%] Built target ggml_static
+[  8%] Built target gguf
+[  9%] Linking CXX static library libllama.a
+[  9%] Built target llama
+[ 10%] Building C object tests/CMakeFiles/test-c.dir/test-c.c.o
+[ 11%] Building CXX object common/CMakeFiles/common.dir/common.cpp.o
+[ 12%] Building CXX object examples/llava/CMakeFiles/llava.dir/clip.cpp.o
+[ 12%] Building CXX object examples/llava/CMakeFiles/llava.dir/llava.cpp.o
+[ 12%] Building CXX object common/CMakeFiles/common.dir/sampling.cpp.o
+[ 12%] Building CXX object examples/benchmark/CMakeFiles/benchmark.dir/benchmark-matmult.cpp.o
+[ 13%] Building CXX object common/CMakeFiles/common.dir/grammar-parser.cpp.o
+[ 14%] Building CXX object examples/quantize-stats/CMakeFiles/quantize-stats.dir/quantize-stats.cpp.o
+[ 15%] Building CXX object common/CMakeFiles/common.dir/console.cpp.o
+[ 15%] Building CXX object common/CMakeFiles/common.dir/json-schema-to-grammar.cpp.o
+[ 15%] Linking CXX executable ../bin/test-c
+[ 16%] Building CXX object common/CMakeFiles/common.dir/ngram-cache.cpp.o
+[ 16%] Building CXX object common/CMakeFiles/common.dir/train.cpp.o
+[ 16%] Built target test-c
+[ 17%] Linking CXX executable ../../bin/benchmark
+[ 17%] Built target benchmark
+[ 17%] Built target llava
+[ 17%] Linking CXX static library libllava_static.a
+[ 17%] Built target llava_static
+/home/ggml/work/llama.cpp/common/common.cpp: In constructor ‘gpt_params_print_usage(int, char**, const gpt_params&)::option_info::option_info(const string&, const char*, const char*, ...)’:
+/home/ggml/work/llama.cpp/common/common.cpp:1519:13: error: ‘va_start’ was not declared in this scope
+ 1519 |             va_start(args_list, desc);
+      |             ^~~~~~~~
+/home/ggml/work/llama.cpp/common/common.cpp:1522:13: error: ‘va_end’ was not declared in this scope
+ 1522 |             va_end(args_list);
+      |             ^~~~~~
+make[2]: *** [common/CMakeFiles/common.dir/build.make:76: common/CMakeFiles/common.dir/common.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1654: common/CMakeFiles/common.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[ 17%] Linking CXX executable ../../bin/quantize-stats
+[ 17%] Built target quantize-stats
+make: *** [Makefile:146: all] Error 2
+
+real	0m15.606s
+user	0m22.843s
+sys	0m2.439s
