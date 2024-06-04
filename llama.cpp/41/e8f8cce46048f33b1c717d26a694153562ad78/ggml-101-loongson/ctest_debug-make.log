@@ -1,0 +1,21 @@
++ make -j
+[  1%] Generating build details from Git
+[  2%] Building C object CMakeFiles/ggml.dir/ggml-backend.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml.c.o
+[  3%] Building C object CMakeFiles/ggml.dir/ggml-alloc.c.o
+-- Found Git: /usr/bin/git (found version "2.20.1") 
+[  4%] Building C object CMakeFiles/ggml.dir/ggml-quants.c.o
+[  4%] Building CXX object CMakeFiles/ggml.dir/sgemm.cpp.o
+[  4%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  4%] Built target build_info
+/home/loongson/work/llama.cpp/ggml.c:2277:8: error: missing terminating " character [-Werror]
+ #error "ref: https://github.com/ggerganov/llama.cpp/pull/7154#issuecomment-2143844461
+        ^
+cc1: all warnings being treated as errors
+make[2]: *** [CMakeFiles/ggml.dir/build.make:76：CMakeFiles/ggml.dir/ggml.c.o] 错误 1
+make[1]: *** [CMakeFiles/Makefile2:818：CMakeFiles/ggml.dir/all] 错误 2
+make: *** [Makefile:146：all] 错误 2
+
+real	0m2.387s
+user	0m2.449s
+sys	0m0.136s
