@@ -89,7 +89,7 @@ llama_new_context_with_model:        CPU  output buffer size =     0.19 MiB
 llama_new_context_with_model:        CPU compute buffer size =   102.25 MiB
 llama_new_context_with_model: graph nodes  = 967
 llama_new_context_with_model: graph splits = 1
-main : serialized state into 1191084 out of a maximum of 814850136 bytes
+main : serialized state into 1191101 out of a maximum of 814850136 bytes
 llama_new_context_with_model: n_ctx      = 2048
 llama_new_context_with_model: n_batch    = 2048
 llama_new_context_with_model: n_ubatch   = 512
@@ -102,7 +102,7 @@ llama_new_context_with_model:        CPU  output buffer size =     0.19 MiB
 llama_new_context_with_model:        CPU compute buffer size =   102.25 MiB
 llama_new_context_with_model: graph nodes  = 967
 llama_new_context_with_model: graph splits = 1
-main : deserialized state from 1191084 out of a maximum of 814850136 bytes
+main : deserialized state from 1191101 out of a maximum of 814850136 bytes
 llama_new_context_with_model: n_ctx      = 2048
 llama_new_context_with_model: n_batch    = 2048
 llama_new_context_with_model: n_ubatch   = 512
@@ -115,30 +115,30 @@ llama_new_context_with_model:        CPU  output buffer size =     0.19 MiB
 llama_new_context_with_model:        CPU compute buffer size =   102.25 MiB
 llama_new_context_with_model: graph nodes  = 967
 llama_new_context_with_model: graph splits = 1
-main : deserialized state from 1191084 out of a maximum of 814850136 bytes
+main : deserialized state from 1191101 out of a maximum of 814850136 bytes
 main : seq 0 copied, 983652 bytes
 main : kv cache cleared
 main : seq 1 restored, 983652 bytes
 
 main : success
 
-first run: The quick brown fox jumps over the lazy doe,
-Through dappled sunlight,
-Ac
+first run: The quick brown fox jump over
+
+The days of the black and white dog eat dog Chicago roller
 
 
-second run: The quick brown fox jumps over the lazy doe,
-Through dappled sunlight,
-Ac
+second run: The quick brown fox jump over
+
+The days of the black and white dog eat dog Chicago roller
 
 
-single seq run: The quick brown fox jumps over the lazy doe,
-Through dappled sunlight,
-Ac
+single seq run: The quick brown fox jump over
 
-real	0m2.898s
-user	0m7.579s
-sys	0m0.747s
+The days of the black and white dog eat dog Chicago roller
+
+real	0m2.876s
+user	0m7.607s
+sys	0m0.729s
 + ./bin/save-load-state -fa --model ../models-mnt/pythia/1.4B/ggml-model-q4_0.gguf
 main: build = 3101 (ee459f40)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
@@ -230,7 +230,7 @@ llama_new_context_with_model:        CPU  output buffer size =     0.19 MiB
 llama_new_context_with_model:        CPU compute buffer size =   102.25 MiB
 llama_new_context_with_model: graph nodes  = 872
 llama_new_context_with_model: graph splits = 1
-main : serialized state into 1191096 out of a maximum of 814850136 bytes
+main : serialized state into 1191119 out of a maximum of 814850136 bytes
 llama_new_context_with_model: n_ctx      = 2048
 llama_new_context_with_model: n_batch    = 2048
 llama_new_context_with_model: n_ubatch   = 512
@@ -243,7 +243,7 @@ llama_new_context_with_model:        CPU  output buffer size =     0.19 MiB
 llama_new_context_with_model:        CPU compute buffer size =   102.25 MiB
 llama_new_context_with_model: graph nodes  = 872
 llama_new_context_with_model: graph splits = 1
-main : deserialized state from 1191096 out of a maximum of 814850136 bytes
+main : deserialized state from 1191119 out of a maximum of 814850136 bytes
 llama_new_context_with_model: n_ctx      = 2048
 llama_new_context_with_model: n_batch    = 2048
 llama_new_context_with_model: n_ubatch   = 512
@@ -256,27 +256,21 @@ llama_new_context_with_model:        CPU  output buffer size =     0.19 MiB
 llama_new_context_with_model:        CPU compute buffer size =   102.25 MiB
 llama_new_context_with_model: graph nodes  = 872
 llama_new_context_with_model: graph splits = 1
-main : deserialized state from 1191096 out of a maximum of 814850136 bytes
+main : deserialized state from 1191119 out of a maximum of 814850136 bytes
 main : seq 0 copied, 983652 bytes
 main : kv cache cleared
 main : seq 1 restored, 983652 bytes
 
 main : success
 
-first run: The quick brown fox jumps over the lazy dog in The Spy Story
-
-Bit salt and quickly.
+first run: The quick brown fox jumps over the lazy dog means the fox is done: Tali Atlas explains the
 
 
-second run: The quick brown fox jumps over the lazy dog in The Spy Story
-
-Bit salt and quickly.
+second run: The quick brown fox jumps over the lazy dog means the fox is done: Tali Atlas explains the
 
 
-single seq run: The quick brown fox jumps over the lazy dog in The Spy Story
+single seq run: The quick brown fox jumps over the lazy dog means the fox is done: Tali Atlas explains the
 
-Bit salt and quickly.
-
-real	0m2.874s
-user	0m7.504s
-sys	0m0.768s
+real	0m2.875s
+user	0m7.592s
+sys	0m0.748s

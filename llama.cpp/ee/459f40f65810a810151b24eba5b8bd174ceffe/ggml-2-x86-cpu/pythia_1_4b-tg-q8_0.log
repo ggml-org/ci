@@ -106,20 +106,20 @@ I believe the meaning of life is to know yourself, that you are exactly who you 
 -Buddha
 
 "You can learn to love yourself, but it's not so easy. Love your self, love who you are, and you will love others
-llama_print_timings:        load time =     259.07 ms
-llama_print_timings:      sample time =       2.26 ms /    64 runs   (    0.04 ms per token, 28306.06 tokens per second)
-llama_print_timings: prompt eval time =      87.64 ms /     8 tokens (   10.96 ms per token,    91.28 tokens per second)
-llama_print_timings:        eval time =    2624.75 ms /    63 runs   (   41.66 ms per token,    24.00 tokens per second)
-llama_print_timings:       total time =    2739.18 ms /    71 tokens
+llama_print_timings:        load time =     254.62 ms
+llama_print_timings:      sample time =       2.22 ms /    64 runs   (    0.03 ms per token, 28776.98 tokens per second)
+llama_print_timings: prompt eval time =      86.85 ms /     8 tokens (   10.86 ms per token,    92.11 tokens per second)
+llama_print_timings:        eval time =    2547.92 ms /    63 runs   (   40.44 ms per token,    24.73 tokens per second)
+llama_print_timings:       total time =    2662.04 ms /    71 tokens
 Log end
 
-real	0m3.155s
-user	0m11.301s
-sys	0m0.256s
+real	0m3.071s
+user	0m11.025s
+sys	0m0.220s
 + ./bin/perplexity --model ../models-mnt/pythia/1.4B/ggml-model-q8_0.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 1
 main: build = 3101 (ee459f40)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1717691647
+main: seed  = 1717740771
 llama_model_loader: loaded meta data with 20 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q8_0.gguf (version GGUF V3 (latest))
 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
 llama_model_loader: - kv   0:                       general.architecture str              = gptneox
@@ -210,18 +210,18 @@ llama_new_context_with_model: graph splits = 1
 
 system_info: n_threads = 4 / 8 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 0 | FMA = 1 | NEON = 0 | SVE = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 9.722 ms
+perplexity: tokenization took 9.804 ms
 perplexity: calculating perplexity over 1 chunks, n_ctx=128, batch_size=128, n_seq=1
-perplexity: 1.11 seconds per pass - ETA 0.02 minutes
+perplexity: 1.10 seconds per pass - ETA 0.02 minutes
 [1]9.5664,
-llama_print_timings:        load time =     147.19 ms
+llama_print_timings:        load time =     148.45 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    1112.78 ms /   128 tokens (    8.69 ms per token,   115.03 tokens per second)
+llama_print_timings: prompt eval time =    1102.85 ms /   128 tokens (    8.62 ms per token,   116.06 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    1128.76 ms /   129 tokens
+llama_print_timings:       total time =    1119.35 ms /   129 tokens
 
 Final estimate: PPL = 9.5664 +/- 3.00955
 
-real	0m1.422s
-user	0m4.778s
-sys	0m0.179s
+real	0m1.409s
+user	0m4.742s
+sys	0m0.160s

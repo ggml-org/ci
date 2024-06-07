@@ -109,20 +109,20 @@ I believe the meaning of life is the right to do everything you can for your fel
 What is the meaning of life?
 
 The meaning of life is a great question. It is an interesting question, I think, because it is the only question of that nature. You have to ask the question, because the answer is so simple
-llama_print_timings:        load time =     195.36 ms
-llama_print_timings:      sample time =       2.26 ms /    64 runs   (    0.04 ms per token, 28343.67 tokens per second)
-llama_print_timings: prompt eval time =     114.50 ms /     8 tokens (   14.31 ms per token,    69.87 tokens per second)
-llama_print_timings:        eval time =    1787.89 ms /    63 runs   (   28.38 ms per token,    35.24 tokens per second)
-llama_print_timings:       total time =    1929.81 ms /    71 tokens
+llama_print_timings:        load time =     191.58 ms
+llama_print_timings:      sample time =       2.24 ms /    64 runs   (    0.04 ms per token, 28533.21 tokens per second)
+llama_print_timings: prompt eval time =     113.25 ms /     8 tokens (   14.16 ms per token,    70.64 tokens per second)
+llama_print_timings:        eval time =    1733.07 ms /    63 runs   (   27.51 ms per token,    36.35 tokens per second)
+llama_print_timings:       total time =    1873.67 ms /    71 tokens
 Log end
 
-real	0m2.247s
-user	0m7.884s
-sys	0m0.300s
+real	0m2.187s
+user	0m7.660s
+sys	0m0.296s
 + ./bin/perplexity --model ../models-mnt/pythia/1.4B/ggml-model-q3_k.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 1
 main: build = 3101 (ee459f40)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1717691659
+main: seed  = 1717740783
 llama_model_loader: loaded meta data with 20 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q3_k.gguf (version GGUF V3 (latest))
 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
 llama_model_loader: - kv   0:                       general.architecture str              = gptneox
@@ -216,18 +216,18 @@ llama_new_context_with_model: graph splits = 1
 
 system_info: n_threads = 4 / 8 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 0 | FMA = 1 | NEON = 0 | SVE = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 9.82 ms
+perplexity: tokenization took 9.788 ms
 perplexity: calculating perplexity over 1 chunks, n_ctx=128, batch_size=128, n_seq=1
-perplexity: 1.69 seconds per pass - ETA 0.02 minutes
+perplexity: 1.68 seconds per pass - ETA 0.02 minutes
 [1]11.5044,
-llama_print_timings:        load time =      90.01 ms
+llama_print_timings:        load time =      89.95 ms
 llama_print_timings:      sample time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings: prompt eval time =    1683.95 ms /   128 tokens (   13.16 ms per token,    76.01 tokens per second)
+llama_print_timings: prompt eval time =    1674.79 ms /   128 tokens (   13.08 ms per token,    76.43 tokens per second)
 llama_print_timings:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_print_timings:       total time =    1700.03 ms /   129 tokens
+llama_print_timings:       total time =    1690.76 ms /   129 tokens
 
 Final estimate: PPL = 11.5044 +/- 3.67936
 
-real	0m1.910s
-user	0m6.839s
-sys	0m0.284s
+real	0m1.898s
+user	0m6.852s
+sys	0m0.232s

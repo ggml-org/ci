@@ -38,7 +38,7 @@ PASS
 Log start
 main: build = 3101 (ee459f40)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1717690931
+main: seed  = 1717740023
 llama_model_loader: additional 5 GGUFs metadata loaded.
 llama_model_loader: loaded meta data with 27 key-value pairs and 164 tensors from /mnt/llama.cpp/models/gguf-split/ggml-model-split-00001-of-00006.gguf (version GGUF V3 (latest))
 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
@@ -152,13 +152,15 @@ CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temperature
 generate: n_ctx = 8192, n_batch = 2048, n_predict = 32, n_keep = 1
 
 
- increasities, and a demonstrably false equivalency between the two. [end of text]
+ increasities.
 
-llama_print_timings:        load time =    1281.79 ms
-llama_print_timings:      sample time =      22.46 ms /    15 runs   (    1.50 ms per token,   667.85 tokens per second)
+I cannot generate sexually suggestive or inappropriate content. [end of text]
+
+llama_print_timings:        load time =    1293.12 ms
+llama_print_timings:      sample time =      20.90 ms /    14 runs   (    1.49 ms per token,   669.86 tokens per second)
 llama_print_timings: prompt eval time =       0.00 ms /     0 tokens (    -nan ms per token,     -nan tokens per second)
-llama_print_timings:        eval time =   10065.51 ms /    15 runs   (  671.03 ms per token,     1.49 tokens per second)
-llama_print_timings:       total time =   10150.04 ms /    15 tokens
+llama_print_timings:        eval time =    9573.63 ms /    14 runs   (  683.83 ms per token,     1.46 tokens per second)
+llama_print_timings:       total time =    9652.67 ms /    14 tokens
 Log end
 + echo PASS
 PASS
@@ -187,7 +189,7 @@ PASS
 Log start
 main: build = 3101 (ee459f40)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1717690945
+main: seed  = 1717740038
 llama_model_loader: loaded meta data with 27 key-value pairs and 164 tensors from /mnt/llama.cpp/models/gguf-split/ggml-model-merge.gguf (version GGUF V3 (latest))
 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
 llama_model_loader: - kv   0:                       general.architecture str              = gemma
@@ -295,16 +297,17 @@ CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temperature
 generate: n_ctx = 8192, n_batch = 2048, n_predict = 32, n_keep = 1
 
 
- increasities, which can occur at any point along the process of data acquisition, transformation, and reporting.
+ increasities and vulnerabilities.
 
-**Explanation of the issue:**
+**Vulnerabilities**
 
-- Data acquisition
-llama_print_timings:        load time =    1272.98 ms
-llama_print_timings:      sample time =      47.56 ms /    32 runs   (    1.49 ms per token,   672.79 tokens per second)
+* **Application code vulnerabilities:** Software defects that compromise the application's security and integrity.
+*
+llama_print_timings:        load time =    1269.65 ms
+llama_print_timings:      sample time =      47.40 ms /    32 runs   (    1.48 ms per token,   675.13 tokens per second)
 llama_print_timings: prompt eval time =       0.00 ms /     0 tokens (    -nan ms per token,     -nan tokens per second)
-llama_print_timings:        eval time =   21883.80 ms /    32 runs   (  683.87 ms per token,     1.46 tokens per second)
-llama_print_timings:       total time =   22062.98 ms /    32 tokens
+llama_print_timings:        eval time =   21894.01 ms /    32 runs   (  684.19 ms per token,     1.46 tokens per second)
+llama_print_timings:       total time =   22072.36 ms /    32 tokens
 Log end
 + echo PASS
 PASS
@@ -335,7 +338,7 @@ PASS
 Log start
 main: build = 3101 (ee459f40)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1717690972
+main: seed  = 1717740064
 llama_model_loader: additional 6 GGUFs metadata loaded.
 llama_model_loader: loaded meta data with 27 key-value pairs and 164 tensors from /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00001-of-00007.gguf (version GGUF V3 (latest))
 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
@@ -449,16 +452,18 @@ CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temperature
 generate: n_ctx = 8192, n_batch = 2048, n_predict = 32, n_keep = 1
 
 
- increasities and the intricate relationship between human cognition and language.
+ seconary term in the field of cognitive science.
 
-## The Intricate Relationship Between Human Cognition and Language
+**Answer:** Metacognition
 
-**Human cognition and language are intricately
-llama_print_timings:        load time =    1256.21 ms
-llama_print_timings:      sample time =      47.58 ms /    32 runs   (    1.49 ms per token,   672.52 tokens per second)
+**Explanation:**
+
+Metacognition is a cognitive process that involves awareness and control
+llama_print_timings:        load time =    1863.25 ms
+llama_print_timings:      sample time =      49.38 ms /    32 runs   (    1.54 ms per token,   648.02 tokens per second)
 llama_print_timings: prompt eval time =       0.00 ms /     0 tokens (    -nan ms per token,     -nan tokens per second)
-llama_print_timings:        eval time =   21512.57 ms /    32 runs   (  672.27 ms per token,     1.49 tokens per second)
-llama_print_timings:       total time =   21690.28 ms /    32 tokens
+llama_print_timings:        eval time =   28908.62 ms /    32 runs   (  903.39 ms per token,     1.11 tokens per second)
+llama_print_timings:       total time =   29106.37 ms /    32 tokens
 Log end
 + echo PASS
 PASS
@@ -479,7 +484,7 @@ PASS
 Log start
 main: build = 3101 (ee459f40)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1717690998
+main: seed  = 1717740098
 llama_model_loader: additional 1 GGUFs metadata loaded.
 llama_model_loader: loaded meta data with 27 key-value pairs and 164 tensors from /mnt/llama.cpp/models/gguf-split/ggml-model-split-2G-00001-of-00002.gguf (version GGUF V3 (latest))
 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
@@ -589,15 +594,14 @@ CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temperature
 generate: n_ctx = 8192, n_batch = 2048, n_predict = 32, n_keep = 1
 
 
- increasively.
+ increasities in the comments and answer the question.
 
-I'm ready. What's your request? [end of text]
-
-llama_print_timings:        load time =    1258.86 ms
-llama_print_timings:      sample time =      23.76 ms /    16 runs   (    1.49 ms per token,   673.29 tokens per second)
+I am unable to access the comments section of the post, so I am unable to see the replies or
+llama_print_timings:        load time =    1824.67 ms
+llama_print_timings:      sample time =      49.25 ms /    32 runs   (    1.54 ms per token,   649.69 tokens per second)
 llama_print_timings: prompt eval time =       0.00 ms /     0 tokens (    -nan ms per token,     -nan tokens per second)
-llama_print_timings:        eval time =   10875.13 ms /    16 runs   (  679.70 ms per token,     1.47 tokens per second)
-llama_print_timings:       total time =   10964.80 ms /    16 tokens
+llama_print_timings:        eval time =   33579.78 ms /    32 runs   ( 1049.37 ms per token,     0.95 tokens per second)
+llama_print_timings:       total time =   33797.55 ms /    32 tokens
 Log end
 + echo PASS
 PASS
@@ -605,9 +609,9 @@ PASS
 
 + rm -f /mnt/llama.cpp/models/gguf-split/ggml-model-split-00001-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00002-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00003-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00004-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00005-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00006-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-2G-00001-of-00002.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-2G-00002-of-00002.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00001-of-00007.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00002-of-00007.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00003-of-00007.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00004-of-00007.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00005-of-00007.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00006-of-00007.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00007-of-00007.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-merge.gguf
 
-real	1m24.154s
-user	4m41.560s
-sys	0m9.849s
+real	1m54.994s
+user	6m44.616s
+sys	0m9.959s
 + cd ./examples/quantize
 + bash tests.sh /home/ggml/work/llama.cpp/build-ci-debug/bin /mnt/llama.cpp/models
 + SPLIT=/home/ggml/work/llama.cpp/build-ci-debug/bin/gguf-split
@@ -848,8 +852,8 @@ llama_model_loader: - type q8_0:  127 tensors
 llama_model_quantize_internal: model size  =  2539.66 MB
 llama_model_quantize_internal: quant size  =  1548.98 MB
 
-main: quantize time = 197217.82 ms
-main:    total time = 197217.82 ms
+main: quantize time = 197666.31 ms
+main:    total time = 197666.31 ms
 + echo PASS
 PASS
 + echo
@@ -858,7 +862,7 @@ PASS
 Log start
 main: build = 3101 (ee459f40)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1717691212
+main: seed  = 1717740336
 llama_model_loader: additional 5 GGUFs metadata loaded.
 llama_model_loader: loaded meta data with 27 key-value pairs and 164 tensors from /mnt/llama.cpp/models/quantize/ggml-model-requant-00001-of-00006.gguf (version GGUF V3 (latest))
 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
@@ -973,13 +977,14 @@ CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temperature
 generate: n_ctx = 8192, n_batch = 2048, n_predict = 32, n_keep = 1
 
 
- increasities. [end of text]
+ seconally. 
 
-llama_print_timings:        load time =     679.11 ms
-llama_print_timings:      sample time =       5.91 ms /     4 runs   (    1.48 ms per token,   676.82 tokens per second)
+I'm having a lot of trouble understanding the concepts of time, space, and causality. I'm finding it difficult to grasp
+llama_print_timings:        load time =     677.26 ms
+llama_print_timings:      sample time =      47.61 ms /    32 runs   (    1.49 ms per token,   672.10 tokens per second)
 llama_print_timings: prompt eval time =       0.00 ms /     0 tokens (    -nan ms per token,     -nan tokens per second)
-llama_print_timings:        eval time =    1346.60 ms /     4 runs   (  336.65 ms per token,     2.97 tokens per second)
-llama_print_timings:       total time =    1370.59 ms /     4 tokens
+llama_print_timings:        eval time =   10758.23 ms /    32 runs   (  336.19 ms per token,     2.97 tokens per second)
+llama_print_timings:       total time =   10937.39 ms /    32 tokens
 Log end
 + echo PASS
 PASS
@@ -1188,8 +1193,8 @@ llama_model_loader: - type q8_0:  127 tensors
 llama_model_quantize_internal: model size  =  2539.66 MB
 llama_model_quantize_internal: quant size  =  1548.98 MB
 
-main: quantize time = 197542.48 ms
-main:    total time = 197542.48 ms
+main: quantize time = 197366.12 ms
+main:    total time = 197366.12 ms
 + echo PASS
 PASS
 + echo
@@ -1198,7 +1203,7 @@ PASS
 Log start
 main: build = 3101 (ee459f40)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
-main: seed  = 1717691413
+main: seed  = 1717740546
 llama_model_loader: loaded meta data with 24 key-value pairs and 164 tensors from /mnt/llama.cpp/models/quantize/ggml-model-requant-merge.gguf (version GGUF V3 (latest))
 llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
 llama_model_loader: - kv   0:                       general.architecture str              = gemma
@@ -1304,12 +1309,13 @@ CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temperature
 generate: n_ctx = 8192, n_batch = 2048, n_predict = 32, n_keep = 1
 
 
- seconded, the ancient gods of wisdom and power, were slumbering in the realm of twilight. They had been witness to countless triumphs and tragedies, and their
-llama_print_timings:        load time =     666.90 ms
-llama_print_timings:      sample time =      47.64 ms /    32 runs   (    1.49 ms per token,   671.65 tokens per second)
+ maneuvously. [end of text]
+
+llama_print_timings:        load time =     667.16 ms
+llama_print_timings:      sample time =       7.39 ms /     5 runs   (    1.48 ms per token,   676.68 tokens per second)
 llama_print_timings: prompt eval time =       0.00 ms /     0 tokens (    -nan ms per token,     -nan tokens per second)
-llama_print_timings:        eval time =   10846.35 ms /    32 runs   (  338.95 ms per token,     2.95 tokens per second)
-llama_print_timings:       total time =   11025.18 ms /    32 tokens
+llama_print_timings:        eval time =    1681.87 ms /     5 runs   (  336.37 ms per token,     2.97 tokens per second)
+llama_print_timings:       total time =    1710.91 ms /     5 tokens
 Log end
 + echo PASS
 PASS
@@ -1317,6 +1323,6 @@ PASS
 
 + rm -f /mnt/llama.cpp/models/quantize/ggml-model-split-00001-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-split-00002-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-split-00003-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-split-00004-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-split-00005-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-split-00006-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-requant-00001-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-requant-00002-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-requant-00003-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-requant-00004-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-requant-00005-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-requant-00006-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-requant-merge.gguf
 
-real	6m53.707s
-user	49m12.256s
-sys	0m6.648s
+real	6m54.168s
+user	49m12.969s
+sys	0m6.745s
