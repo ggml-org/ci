@@ -1,0 +1,3 @@
++ ctest --output-on-failure -E test-opt
+Test project /home/loongson/work/ggml/build-ci-debug
+      Start  1: test-grad0
