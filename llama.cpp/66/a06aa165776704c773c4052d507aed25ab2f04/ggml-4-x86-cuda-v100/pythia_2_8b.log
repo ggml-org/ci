@@ -1,0 +1,1261 @@
+Archive:  models-mnt/wikitext/wikitext-2-raw-v1.zip
+  inflating: models-mnt/wikitext/wikitext-2-raw/wiki.test.raw  
+  inflating: models-mnt/wikitext/wikitext-2-raw/wiki.valid.raw  
+  inflating: models-mnt/wikitext/wikitext-2-raw/wiki.train.raw  
++ cmake -DCMAKE_BUILD_TYPE=Release -DLLAMA_FATAL_WARNINGS=ON -DGGML_CUDA=1 -DGGML_CUDA=1 ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found OpenMP_C: -fopenmp (found version "4.5") 
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5")  
+-- OpenMP found
+-- Using ggml SGEMM
+-- Found CUDAToolkit: /usr/local/cuda-12.2/include (found version "12.2.140") 
+-- CUDA found
+-- Using CUDA architectures: 52;61;70
+-- The CUDA compiler identification is NVIDIA 12.2.140
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda-12.2/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- CUDA host compiler is GNU 11.4.0
+
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- x86 detected
+-- Configuring done (4.3s)
+CMake Warning (dev) in src/CMakeLists.txt:
+  Policy CMP0104 is not set: CMAKE_CUDA_ARCHITECTURES now detected for NVCC,
+  empty CUDA_ARCHITECTURES not allowed.  Run "cmake --help-policy CMP0104"
+  for policy details.  Use the cmake_policy command to set the policy and
+  suppress this warning.
+
+  CUDA_ARCHITECTURES is empty for target "llama".
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) in examples/gguf/CMakeLists.txt:
+  Policy CMP0104 is not set: CMAKE_CUDA_ARCHITECTURES now detected for NVCC,
+  empty CUDA_ARCHITECTURES not allowed.  Run "cmake --help-policy CMP0104"
+  for policy details.  Use the cmake_policy command to set the policy and
+  suppress this warning.
+
+  CUDA_ARCHITECTURES is empty for target "llama-gguf".
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) in examples/llava/CMakeLists.txt:
+  Policy CMP0104 is not set: CMAKE_CUDA_ARCHITECTURES now detected for NVCC,
+  empty CUDA_ARCHITECTURES not allowed.  Run "cmake --help-policy CMP0104"
+  for policy details.  Use the cmake_policy command to set the policy and
+  suppress this warning.
+
+  CUDA_ARCHITECTURES is empty for target "llava_shared".
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Generating done (0.2s)
+-- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-release
+
+real	0m4.622s
+user	0m3.544s
+sys	0m1.082s
++ make -j
+[  0%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  1%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml.c.o
+[  1%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-backend.c.o
+[  1%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  1%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/acc.cu.o
+[  2%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/arange.cu.o
+[  3%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-quants.c.o
+[  3%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/argsort.cu.o
+[  3%] Built target build_info
+[  4%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/binbcast.cu.o
+[  4%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/clamp.cu.o
+[  5%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/concat.cu.o
+[  5%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/convert.cu.o
+[  6%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/cpy.cu.o
+[  6%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/diagmask.cu.o
+[  6%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/fattn-tile-f16.cu.o
+[  7%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/dmmv.cu.o
+[  7%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/fattn-tile-f32.cu.o
+[  8%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/fattn.cu.o
+[  8%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/getrows.cu.o
+[  9%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/im2col.cu.o
+[  9%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/mmq.cu.o
+[ 10%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/mmvq.cu.o
+[ 10%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/norm.cu.o
+[ 11%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/pad.cu.o
+[ 11%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/pool2d.cu.o
+[ 11%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/rope.cu.o
+[ 12%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/quantize.cu.o
+[ 13%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/scale.cu.o
+[ 13%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/softmax.cu.o
+[ 14%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/tsembd.cu.o
+[ 14%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/sumrows.cu.o
+[ 14%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda.cu.o
+[ 15%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/upscale.cu.o
+[ 15%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/unary.cu.o
+[ 16%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-wmma-f16-instance-kqfloat-cpb16.cu.o
+[ 16%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-wmma-f16-instance-kqfloat-cpb32.cu.o
+[ 16%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-wmma-f16-instance-kqhalf-cpb32.cu.o
+[ 17%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-wmma-f16-instance-kqhalf-cpb16.cu.o
+[ 18%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-wmma-f16-instance-kqhalf-cpb8.cu.o
+[ 18%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q2_k.cu.o
+[ 19%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q3_k.cu.o
+[ 19%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q4_0.cu.o
+[ 19%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q4_1.cu.o
+[ 19%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q5_0.cu.o
+[ 20%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q5_1.cu.o
+[ 21%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q4_k.cu.o
+[ 21%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q5_k.cu.o
+[ 22%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q6_k.cu.o
+[ 22%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q8_0.cu.o
+[ 22%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f32-instance-hs128-q4_0-q4_0.cu.o
+[ 23%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f16-instance-hs128-q4_0-q4_0.cu.o
+[ 23%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f32-instance-hs128-q8_0-q8_0.cu.o
+[ 24%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f16-instance-hs128-q8_0-q8_0.cu.o
+[ 25%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f16-instance-hs128-f16-f16.cu.o
+[ 25%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f16-instance-hs256-f16-f16.cu.o
+[ 26%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f32-instance-hs64-f16-f16.cu.o
+[ 26%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f32-instance-hs256-f16-f16.cu.o
+[ 27%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f32-instance-hs128-f16-f16.cu.o
+[ 27%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f16-instance-hs64-f16-f16.cu.o
+[ 27%] Building CXX object ggml/src/CMakeFiles/ggml.dir/sgemm.cpp.o
+[ 27%] Built target ggml
+[ 27%] Linking CXX static library libggml_static.a
+[ 28%] Linking CXX shared library libggml_shared.so
+[ 29%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 29%] Building CXX object src/CMakeFiles/llama.dir/unicode.cpp.o
+[ 30%] Building CXX object src/CMakeFiles/llama.dir/unicode-data.cpp.o
+[ 31%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 31%] Linking CXX executable ../../bin/llama-gguf
+[ 31%] Linking CXX shared library libllama.so
+[ 31%] Built target ggml_shared
+[ 31%] Built target llama-gguf
+[ 31%] Built target llama
+[ 31%] Building C object tests/CMakeFiles/test-c.dir/test-c.c.o
+[ 31%] Building CXX object examples/benchmark/CMakeFiles/llama-bench-matmult.dir/benchmark-matmult.cpp.o
+[ 32%] Building CXX object common/CMakeFiles/common.dir/common.cpp.o
+[ 33%] Building CXX object examples/llava/CMakeFiles/llava.dir/clip.cpp.o
+[ 33%] Building CXX object examples/quantize-stats/CMakeFiles/llama-quantize-stats.dir/quantize-stats.cpp.o
+[ 33%] Building CXX object common/CMakeFiles/common.dir/grammar-parser.cpp.o
+[ 33%] Building CXX object examples/llava/CMakeFiles/llava.dir/llava.cpp.o
+[ 34%] Building CXX object common/CMakeFiles/common.dir/console.cpp.o
+[ 35%] Building CXX object common/CMakeFiles/common.dir/json-schema-to-grammar.cpp.o
+[ 35%] Building CXX object common/CMakeFiles/common.dir/sampling.cpp.o
+[ 35%] Building CXX object common/CMakeFiles/common.dir/train.cpp.o
+[ 36%] Building CXX object common/CMakeFiles/common.dir/ngram-cache.cpp.o
+[ 37%] Linking C executable ../bin/test-c
+[ 38%] Linking CXX executable ../../bin/llama-bench-matmult
+[ 39%] Linking CXX executable ../../bin/llama-quantize-stats
+[ 39%] Built target llava
+[ 39%] Linking CXX static library libcommon.a
+[ 40%] Linking CXX static library libllava_static.a
+[ 40%] Linking CXX shared library libllava_shared.so
+[ 40%] Built target test-c
+[ 40%] Built target llama-quantize-stats
+[ 40%] Built target llama-bench-matmult
+[ 40%] Built target common
+[ 40%] Built target llava_static
+[ 40%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/test-tokenizer-0.cpp.o
+[ 40%] Building CXX object tests/CMakeFiles/test-tokenizer-1-bpe.dir/test-tokenizer-1-bpe.cpp.o
+[ 41%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 42%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
+[ 42%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 42%] Building CXX object tests/CMakeFiles/test-tokenizer-1-spm.dir/test-tokenizer-1-spm.cpp.o
+[ 42%] Building CXX object tests/CMakeFiles/test-sampling.dir/get-model.cpp.o
+[ 43%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/get-model.cpp.o
+[ 44%] Linking CXX executable ../bin/test-tokenizer-0
+[ 44%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/get-model.cpp.o
+[ 45%] Linking CXX executable ../bin/test-tokenizer-1-bpe
+[ 46%] Building CXX object tests/CMakeFiles/test-grammar-parser.dir/get-model.cpp.o
+[ 46%] Building CXX object tests/CMakeFiles/test-grammar-parser.dir/test-grammar-parser.cpp.o
+[ 47%] Building CXX object tests/CMakeFiles/test-llama-grammar.dir/test-llama-grammar.cpp.o
+[ 48%] Linking CXX executable ../bin/test-tokenizer-1-spm
+[ 48%] Building CXX object tests/CMakeFiles/test-chat-template.dir/test-chat-template.cpp.o
+[ 48%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+[ 48%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/get-model.cpp.o
+[ 48%] Building CXX object tests/CMakeFiles/test-llama-grammar.dir/get-model.cpp.o
+[ 48%] Building CXX object tests/CMakeFiles/test-chat-template.dir/get-model.cpp.o
+[ 49%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 50%] Linking CXX executable ../bin/test-quantize-fns
+[ 50%] Linking CXX executable ../bin/test-quantize-perf
+[ 51%] Building CXX object tests/CMakeFiles/test-grad0.dir/get-model.cpp.o
+[ 52%] Building CXX object tests/CMakeFiles/test-grammar-integration.dir/test-grammar-integration.cpp.o
+[ 53%] Linking CXX executable ../bin/test-sampling
+[ 53%] Linking CXX executable ../bin/test-grammar-parser
+[ 53%] Building CXX object tests/CMakeFiles/test-grammar-integration.dir/get-model.cpp.o
+[ 53%] Built target ggml_static
+[ 54%] Linking CXX executable ../bin/test-llama-grammar
+[ 54%] Building CXX object tests/CMakeFiles/test-model-load-cancel.dir/test-model-load-cancel.cpp.o
+[ 55%] Building CXX object tests/CMakeFiles/test-json-schema-to-grammar.dir/test-json-schema-to-grammar.cpp.o
+[ 56%] Building CXX object tests/CMakeFiles/test-model-load-cancel.dir/get-model.cpp.o
+[ 56%] Linking CXX executable ../bin/test-grad0
+[ 57%] Linking CXX executable ../bin/test-chat-template
+[ 57%] Building CXX object tests/CMakeFiles/test-autorelease.dir/test-autorelease.cpp.o
+[ 57%] Building CXX object tests/CMakeFiles/test-json-schema-to-grammar.dir/get-model.cpp.o
+[ 58%] Building CXX object tests/CMakeFiles/test-autorelease.dir/get-model.cpp.o
+[ 58%] Building CXX object tests/CMakeFiles/test-rope.dir/test-rope.cpp.o
+[ 59%] Linking CXX executable ../bin/test-backend-ops
+[ 60%] Building CXX object examples/baby-llama/CMakeFiles/llama-baby-llama.dir/baby-llama.cpp.o
+[ 61%] Linking CXX executable ../bin/test-grammar-integration
+[ 62%] Building CXX object tests/CMakeFiles/test-rope.dir/get-model.cpp.o
+[ 62%] Building CXX object examples/cvector-generator/CMakeFiles/llama-cvector-generator.dir/cvector-generator.cpp.o
+[ 62%] Linking CXX executable ../bin/test-model-load-cancel
+[ 62%] Linking CXX executable ../bin/test-autorelease
+[ 62%] Linking CXX executable ../bin/test-json-schema-to-grammar
+[ 62%] Building CXX object examples/batched-bench/CMakeFiles/llama-batched-bench.dir/batched-bench.cpp.o
+[ 62%] Building CXX object examples/batched/CMakeFiles/llama-batched.dir/batched.cpp.o
+[ 62%] Linking CXX executable ../bin/test-rope
+[ 62%] Linking CXX executable ../../bin/llama-baby-llama
+[ 62%] Building CXX object examples/convert-llama2c-to-ggml/CMakeFiles/llama-convert-llama2c-to-ggml.dir/convert-llama2c-to-ggml.cpp.o
+[ 63%] Building CXX object examples/embedding/CMakeFiles/llama-embedding.dir/embedding.cpp.o
+[ 64%] Building CXX object examples/export-lora/CMakeFiles/llama-export-lora.dir/export-lora.cpp.o
+[ 64%] Linking CXX executable ../../bin/llama-cvector-generator
+[ 65%] Building CXX object examples/eval-callback/CMakeFiles/llama-eval-callback.dir/eval-callback.cpp.o
+[ 66%] Building CXX object examples/finetune/CMakeFiles/llama-finetune.dir/finetune.cpp.o
+[ 67%] Linking CXX executable ../../bin/llama-batched-bench
+[ 68%] Linking CXX executable ../../bin/llama-batched
+[ 68%] Built target test-tokenizer-0
+[ 69%] Linking CXX executable ../../bin/llama-convert-llama2c-to-ggml
+[ 69%] Linking CXX executable ../../bin/llama-embedding
+[ 70%] Building CXX object examples/gbnf-validator/CMakeFiles/llama-gbnf-validator.dir/gbnf-validator.cpp.o
+[ 70%] Building CXX object examples/gguf-split/CMakeFiles/llama-gguf-split.dir/gguf-split.cpp.o
+[ 70%] Building CXX object examples/gritlm/CMakeFiles/llama-gritlm.dir/gritlm.cpp.o
+[ 70%] Built target llava_shared
+[ 70%] Linking CXX executable ../../bin/llama-eval-callback
+[ 70%] Linking CXX executable ../../bin/llama-finetune
+[ 70%] Building CXX object examples/imatrix/CMakeFiles/llama-imatrix.dir/imatrix.cpp.o
+[ 70%] Linking CXX executable ../../bin/llama-gbnf-validator
+[ 71%] Linking CXX executable ../../bin/llama-gritlm
+[ 71%] Building CXX object examples/infill/CMakeFiles/llama-infill.dir/infill.cpp.o
+[ 72%] Linking CXX executable ../../bin/llama-gguf-split
+[ 72%] Building CXX object examples/llava/CMakeFiles/llama-llava-cli.dir/llava-cli.cpp.o
+[ 72%] Building CXX object examples/llama-bench/CMakeFiles/llama-bench.dir/llama-bench.cpp.o
+[ 72%] Building CXX object examples/lookahead/CMakeFiles/llama-lookahead.dir/lookahead.cpp.o
+[ 74%] Building CXX object examples/lookup/CMakeFiles/llama-lookup.dir/lookup.cpp.o
+[ 74%] Linking CXX executable ../../bin/llama-imatrix
+[ 72%] Built target test-quantize-perf
+[ 75%] Building CXX object examples/lookup/CMakeFiles/llama-lookup-create.dir/lookup-create.cpp.o
+[ 76%] Linking CXX executable ../../bin/llama-bench
+[ 76%] Built target test-quantize-fns
+[ 76%] Linking CXX executable ../../bin/llama-lookahead
+[ 76%] Linking CXX executable ../../bin/llama-lookup
+[ 77%] Building CXX object examples/lookup/CMakeFiles/llama-lookup-merge.dir/lookup-merge.cpp.o
+[ 78%] Linking CXX executable ../../bin/llama-llava-cli
+[ 79%] Linking CXX executable ../../bin/llama-infill
+[ 79%] Linking CXX executable ../../bin/llama-export-lora
+[ 80%] Building CXX object examples/lookup/CMakeFiles/llama-lookup-stats.dir/lookup-stats.cpp.o
+[ 80%] Built target test-chat-template
+[ 80%] Building CXX object examples/main/CMakeFiles/llama-cli.dir/main.cpp.o
+[ 80%] Built target test-grammar-parser
+[ 80%] Built target test-llama-grammar
+[ 80%] Linking CXX executable ../../bin/llama-lookup-create
+[ 80%] Built target test-tokenizer-1-bpe
+[ 80%] Linking CXX executable ../../bin/llama-lookup-merge
+[ 80%] Built target test-rope
+[ 80%] Built target test-backend-ops
+[ 80%] Linking CXX executable ../../bin/llama-lookup-stats
+[ 81%] Building CXX object examples/parallel/CMakeFiles/llama-parallel.dir/parallel.cpp.o
+[ 81%] Built target test-tokenizer-1-spm
+[ 81%] Built target test-model-load-cancel
+[ 81%] Built target test-sampling
+[ 82%] Linking CXX executable ../../bin/llama-cli
+[ 82%] Built target test-grad0
+[ 82%] Built target llama-baby-llama
+[ 82%] Built target test-autorelease
+[ 82%] Linking CXX executable ../../bin/llama-parallel
+[ 82%] Built target llama-batched
+[ 83%] Building CXX object examples/passkey/CMakeFiles/llama-passkey.dir/passkey.cpp.o
+[ 83%] Built target llama-finetune
+[ 83%] Building CXX object examples/perplexity/CMakeFiles/llama-perplexity.dir/perplexity.cpp.o
+[ 83%] Building CXX object examples/quantize/CMakeFiles/llama-quantize.dir/quantize.cpp.o
+[ 83%] Building CXX object examples/retrieval/CMakeFiles/llama-retrieval.dir/retrieval.cpp.o
+[ 83%] Built target llama-gbnf-validator
+[ 83%] Built target test-grammar-integration
+[ 83%] Generating theme-snowstorm.css.hpp
+[ 83%] Generating colorthemes.css.hpp
+[ 83%] Generating completion.js.hpp
+[ 84%] Linking CXX executable ../../bin/llama-quantize
+[ 84%] Linking CXX executable ../../bin/llama-passkey
+[ 84%] Building CXX object examples/save-load-state/CMakeFiles/llama-save-load-state.dir/save-load-state.cpp.o
+[ 84%] Generating index-new.html.hpp
+[ 85%] Linking CXX executable ../../bin/llama-perplexity
+[ 85%] Built target test-json-schema-to-grammar
+[ 86%] Linking CXX executable ../../bin/llama-retrieval
+[ 86%] Built target llama-convert-llama2c-to-ggml
+[ 87%] Generating index.html.hpp
+[ 88%] Generating index.js.hpp
+[ 90%] Building CXX object examples/speculative/CMakeFiles/llama-speculative.dir/speculative.cpp.o
+[ 90%] Built target llama-cvector-generator
+[ 89%] Building CXX object examples/simple/CMakeFiles/llama-simple.dir/simple.cpp.o
+[ 90%] Built target llama-gguf-split
+[ 91%] Linking CXX executable ../../bin/llama-save-load-state
+[ 91%] Built target llama-cli
+[ 91%] Built target llama-batched-bench
+[ 91%] Linking CXX executable ../../bin/llama-speculative
+[ 91%] Built target llama-imatrix
+[ 91%] Built target llama-eval-callback
+[ 91%] Built target llama-infill
+[ 92%] Building CXX object examples/tokenize/CMakeFiles/llama-tokenize.dir/tokenize.cpp.o
+[ 92%] Generating json-schema-to-grammar.mjs.hpp
+[ 92%] Built target llama-export-lora
+[ 93%] Building CXX object pocs/vdot/CMakeFiles/llama-vdot.dir/vdot.cpp.o
+[ 93%] Generating prompt-formats.js.hpp
+[ 93%] Linking CXX executable ../../bin/llama-simple
+[ 93%] Generating style.css.hpp
+[ 94%] Generating system-prompts.js.hpp
+[ 95%] Building CXX object examples/train-text-from-scratch/CMakeFiles/llama-train-text-from-scratch.dir/train-text-from-scratch.cpp.o
+[ 95%] Built target llama-embedding
+[ 95%] Building CXX object pocs/vdot/CMakeFiles/llama-q8dot.dir/q8dot.cpp.o
+[ 95%] Built target llama-gritlm
+[ 96%] Generating theme-beeninorder.css.hpp
+[ 96%] Linking CXX executable ../../bin/llama-tokenize
+[ 96%] Generating theme-ketivah.css.hpp
+[ 96%] Linking CXX executable ../../bin/llama-vdot
+[ 97%] Generating theme-mangotango.css.hpp
+[ 97%] Generating theme-playground.css.hpp
+[ 97%] Linking CXX executable ../../bin/llama-train-text-from-scratch
+[ 97%] Built target llama-lookup-merge
+[ 97%] Built target llama-lookup
+[ 98%] Linking CXX executable ../../bin/llama-q8dot
+[ 98%] Built target llama-llava-cli
+[ 99%] Generating theme-polarnight.css.hpp
+[ 99%] Built target llama-save-load-state
+[ 99%] Built target llama-lookahead
+[ 99%] Built target llama-bench
+[ 99%] Built target llama-lookup-create
+[ 99%] Built target llama-lookup-stats
+[ 99%] Built target llama-parallel
+[ 99%] Built target llama-retrieval
+[100%] Building CXX object examples/server/CMakeFiles/llama-server.dir/server.cpp.o
+[100%] Built target llama-passkey
+[100%] Built target llama-speculative
+[100%] Built target llama-quantize
+[100%] Linking CXX executable ../../bin/llama-server
+[100%] Built target llama-vdot
+[100%] Built target llama-q8dot
+[100%] Built target llama-perplexity
+[100%] Built target llama-tokenize
+[100%] Built target llama-train-text-from-scratch
+[100%] Built target llama-simple
+[100%] Built target llama-server
+
+real	0m2.970s
+user	0m10.081s
+sys	0m3.965s
+
+main: quantize time = 20378.75 ms
+main:    total time = 20378.75 ms
+
+main: quantize time = 11938.06 ms
+main:    total time = 11938.06 ms
+
+main: quantize time = 13139.02 ms
+main:    total time = 13139.02 ms
+
+main: quantize time = 13673.10 ms
+main:    total time = 13673.10 ms
+
+main: quantize time = 15457.82 ms
+main:    total time = 15457.82 ms
+
+main: quantize time = 33403.45 ms
+main:    total time = 33403.45 ms
+
+main: quantize time = 40061.11 ms
+main:    total time = 40061.11 ms
+
+main: quantize time = 50905.38 ms
+main:    total time = 50905.38 ms
+
+main: quantize time = 40058.88 ms
+main:    total time = 40058.88 ms
+
+main: quantize time = 33005.90 ms
+main:    total time = 33005.90 ms
++ ./bin/llama-cli --model ../models-mnt/pythia/2.8B/ggml-model-f16.gguf -t 1 -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+warning: not compiled with GPU offload support, --gpu-layers option will be ignored
+warning: see main README.md for information on enabling GPU BLAS support
+Log start
+main: build = 3217 (66a06aa1)
+main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+main: seed  = 1234
+llama_model_loader: loaded meta data with 19 key-value pairs and 388 tensors from ../models-mnt/pythia/2.8B/ggml-model-f16.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+llama_model_loader: - kv   1:                               general.name str              = 2.8B
+llama_model_loader: - kv   2:                     gptneox.context_length u32              = 2048
+llama_model_loader: - kv   3:                   gptneox.embedding_length u32              = 2560
+llama_model_loader: - kv   4:                        gptneox.block_count u32              = 32
+llama_model_loader: - kv   5:                gptneox.feed_forward_length u32              = 10240
+llama_model_loader: - kv   6:               gptneox.rope.dimension_count u32              = 20
+llama_model_loader: - kv   7:               gptneox.attention.head_count u32              = 32
+llama_model_loader: - kv   8:              gptneox.use_parallel_residual bool             = true
+llama_model_loader: - kv   9:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+llama_model_loader: - kv  10:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  11:                         tokenizer.ggml.pre str              = olmo
+llama_model_loader: - kv  12:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+llama_model_loader: - kv  13:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  14:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+llama_model_loader: - kv  15:                tokenizer.ggml.bos_token_id u32              = 0
+llama_model_loader: - kv  16:                tokenizer.ggml.eos_token_id u32              = 0
+llama_model_loader: - kv  17:            tokenizer.ggml.unknown_token_id u32              = 0
+llama_model_loader: - kv  18:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:  258 tensors
+llama_model_loader: - type  f16:  130 tensors
+llm_load_vocab: special tokens cache size = 52
+llm_load_vocab: token to piece cache size = 0.2987 MB
+llm_load_print_meta: format           = GGUF V3 (latest)
+llm_load_print_meta: arch             = gptneox
+llm_load_print_meta: vocab type       = BPE
+llm_load_print_meta: n_vocab          = 50304
+llm_load_print_meta: n_merges         = 50009
+llm_load_print_meta: n_ctx_train      = 2048
+llm_load_print_meta: n_embd           = 2560
+llm_load_print_meta: n_head           = 32
+llm_load_print_meta: n_head_kv        = 32
+llm_load_print_meta: n_layer          = 32
+llm_load_print_meta: n_rot            = 20
+llm_load_print_meta: n_embd_head_k    = 80
+llm_load_print_meta: n_embd_head_v    = 80
+llm_load_print_meta: n_gqa            = 1
+llm_load_print_meta: n_embd_k_gqa     = 2560
+llm_load_print_meta: n_embd_v_gqa     = 2560
+llm_load_print_meta: f_norm_eps       = 1.0e-05
+llm_load_print_meta: f_norm_rms_eps   = 0.0e+00
+llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+llm_load_print_meta: f_logit_scale    = 0.0e+00
+llm_load_print_meta: n_ff             = 10240
+llm_load_print_meta: n_expert         = 0
+llm_load_print_meta: n_expert_used    = 0
+llm_load_print_meta: causal attn      = 1
+llm_load_print_meta: pooling type     = 0
+llm_load_print_meta: rope type        = 2
+llm_load_print_meta: rope scaling     = linear
+llm_load_print_meta: freq_base_train  = 10000.0
+llm_load_print_meta: freq_scale_train = 1
+llm_load_print_meta: n_ctx_orig_yarn  = 2048
+llm_load_print_meta: rope_finetuned   = unknown
+llm_load_print_meta: ssm_d_conv       = 0
+llm_load_print_meta: ssm_d_inner      = 0
+llm_load_print_meta: ssm_d_state      = 0
+llm_load_print_meta: ssm_dt_rank      = 0
+llm_load_print_meta: model type       = 2.8B
+llm_load_print_meta: model ftype      = all F32 (guessed)
+llm_load_print_meta: model params     = 2.78 B
+llm_load_print_meta: model size       = 5.17 GiB (16.01 BPW) 
+llm_load_print_meta: general.name     = 2.8B
+llm_load_print_meta: BOS token        = 0 '<|endoftext|>'
+llm_load_print_meta: EOS token        = 0 '<|endoftext|>'
+llm_load_print_meta: UNK token        = 0 '<|endoftext|>'
+llm_load_print_meta: LF token         = 128 'Ä'
+llm_load_print_meta: EOT token        = 0 '<|endoftext|>'
+llm_load_print_meta: max token length = 1024
+llm_load_tensors: ggml ctx size =    0.17 MiB
+llm_load_tensors:        CPU buffer size =  5295.33 MiB
+.............................................................................................
+llama_new_context_with_model: n_ctx      = 2048
+llama_new_context_with_model: n_batch    = 2048
+llama_new_context_with_model: n_ubatch   = 512
+llama_new_context_with_model: flash_attn = 0
+llama_new_context_with_model: freq_base  = 10000.0
+llama_new_context_with_model: freq_scale = 1
+llama_kv_cache_init:        CPU KV buffer size =   640.00 MiB
+llama_new_context_with_model: KV self size  =  640.00 MiB, K (f16):  320.00 MiB, V (f16):  320.00 MiB
+llama_new_context_with_model:        CPU  output buffer size =     0.19 MiB
+llama_new_context_with_model:        CPU compute buffer size =   162.01 MiB
+llama_new_context_with_model: graph nodes  = 1287
+llama_new_context_with_model: graph splits = 1
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | AVX512_BF16 = 0 | FMA = 1 | NEON = 0 | SVE = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 0 | 
+sampling: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	top_k = 40, tfs_z = 1.000, top_p = 0.950, min_p = 0.050, typical_p = 1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+sampling order: 
+CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temperature 
+generate: n_ctx = 2048, n_batch = 2048, n_predict = 256, n_keep = 0
+
+
+I believe the meaning of life is to help people live well." "So I'm going to give you this." "It's a gift." "I know what to do with it." "You will have a new family." "I'll take care of them." "I've already begun the arrangements." "You'll be married to a rich man." "You'll have a beautiful house, a car..." "I know what to do with this gift." "I'll give you two." "No, thanks." "I don't need money." "I'll manage." "I'll take care of everything." "You'll be happy." "No, thank you." "I can't accept it." "Please take it." "You're giving it to me?" "You're so nice." "I don't have anything else." "You don't need anything else." "This is all I have." "You'll have everything." "You have everything I've got." "You have everything I've got." "You have everything I have." "You have everything I have." "You have everything I have." "You have everything I have." "You have everything I have." "You have everything I have." "You have everything I have." "You have everything I have
+llama_print_timings:        load time =    1185.37 ms
+llama_print_timings:      sample time =      11.95 ms /   256 runs   (    0.05 ms per token, 21431.56 tokens per second)
+llama_print_timings: prompt eval time =    1394.47 ms /     7 tokens (  199.21 ms per token,     5.02 tokens per second)
+llama_print_timings:        eval time =  135259.48 ms /   255 runs   (  530.43 ms per token,     1.89 tokens per second)
+llama_print_timings:       total time =  136830.95 ms /   262 tokens
+Log end
+
+real	2m18.348s
+user	2m17.652s
+sys	0m0.697s
++ ./bin/llama-cli --model ../models-mnt/pythia/2.8B/ggml-model-q8_0.gguf -t 1 -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+warning: not compiled with GPU offload support, --gpu-layers option will be ignored
+warning: see main README.md for information on enabling GPU BLAS support
+Log start
+main: build = 3217 (66a06aa1)
+main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+main: seed  = 1234
+llama_model_loader: loaded meta data with 20 key-value pairs and 388 tensors from ../models-mnt/pythia/2.8B/ggml-model-q8_0.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+llama_model_loader: - kv   1:                               general.name str              = 2.8B
+llama_model_loader: - kv   2:                     gptneox.context_length u32              = 2048
+llama_model_loader: - kv   3:                   gptneox.embedding_length u32              = 2560
+llama_model_loader: - kv   4:                        gptneox.block_count u32              = 32
+llama_model_loader: - kv   5:                gptneox.feed_forward_length u32              = 10240
+llama_model_loader: - kv   6:               gptneox.rope.dimension_count u32              = 20
+llama_model_loader: - kv   7:               gptneox.attention.head_count u32              = 32
+llama_model_loader: - kv   8:              gptneox.use_parallel_residual bool             = true
+llama_model_loader: - kv   9:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+llama_model_loader: - kv  10:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  11:                         tokenizer.ggml.pre str              = olmo
+llama_model_loader: - kv  12:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+llama_model_loader: - kv  13:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  14:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+llama_model_loader: - kv  15:                tokenizer.ggml.bos_token_id u32              = 0
+llama_model_loader: - kv  16:                tokenizer.ggml.eos_token_id u32              = 0
+llama_model_loader: - kv  17:            tokenizer.ggml.unknown_token_id u32              = 0
+llama_model_loader: - kv  18:               general.quantization_version u32              = 2
+llama_model_loader: - kv  19:                          general.file_type u32              = 7
+llama_model_loader: - type  f32:  258 tensors
+llama_model_loader: - type q8_0:  130 tensors
+llm_load_vocab: special tokens cache size = 52
+llm_load_vocab: token to piece cache size = 0.2987 MB
+llm_load_print_meta: format           = GGUF V3 (latest)
+llm_load_print_meta: arch             = gptneox
+llm_load_print_meta: vocab type       = BPE
+llm_load_print_meta: n_vocab          = 50304
+llm_load_print_meta: n_merges         = 50009
+llm_load_print_meta: n_ctx_train      = 2048
+llm_load_print_meta: n_embd           = 2560
+llm_load_print_meta: n_head           = 32
+llm_load_print_meta: n_head_kv        = 32
+llm_load_print_meta: n_layer          = 32
+llm_load_print_meta: n_rot            = 20
+llm_load_print_meta: n_embd_head_k    = 80
+llm_load_print_meta: n_embd_head_v    = 80
+llm_load_print_meta: n_gqa            = 1
+llm_load_print_meta: n_embd_k_gqa     = 2560
+llm_load_print_meta: n_embd_v_gqa     = 2560
+llm_load_print_meta: f_norm_eps       = 1.0e-05
+llm_load_print_meta: f_norm_rms_eps   = 0.0e+00
+llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+llm_load_print_meta: f_logit_scale    = 0.0e+00
+llm_load_print_meta: n_ff             = 10240
+llm_load_print_meta: n_expert         = 0
+llm_load_print_meta: n_expert_used    = 0
+llm_load_print_meta: causal attn      = 1
+llm_load_print_meta: pooling type     = 0
+llm_load_print_meta: rope type        = 2
+llm_load_print_meta: rope scaling     = linear
+llm_load_print_meta: freq_base_train  = 10000.0
+llm_load_print_meta: freq_scale_train = 1
+llm_load_print_meta: n_ctx_orig_yarn  = 2048
+llm_load_print_meta: rope_finetuned   = unknown
+llm_load_print_meta: ssm_d_conv       = 0
+llm_load_print_meta: ssm_d_inner      = 0
+llm_load_print_meta: ssm_d_state      = 0
+llm_load_print_meta: ssm_dt_rank      = 0
+llm_load_print_meta: model type       = 2.8B
+llm_load_print_meta: model ftype      = Q8_0
+llm_load_print_meta: model params     = 2.78 B
+llm_load_print_meta: model size       = 2.75 GiB (8.51 BPW) 
+llm_load_print_meta: general.name     = 2.8B
+llm_load_print_meta: BOS token        = 0 '<|endoftext|>'
+llm_load_print_meta: EOS token        = 0 '<|endoftext|>'
+llm_load_print_meta: UNK token        = 0 '<|endoftext|>'
+llm_load_print_meta: LF token         = 128 'Ä'
+llm_load_print_meta: EOT token        = 0 '<|endoftext|>'
+llm_load_print_meta: max token length = 1024
+llm_load_tensors: ggml ctx size =    0.17 MiB
+llm_load_tensors:        CPU buffer size =  2815.06 MiB
+.............................................................................................
+llama_new_context_with_model: n_ctx      = 2048
+llama_new_context_with_model: n_batch    = 2048
+llama_new_context_with_model: n_ubatch   = 512
+llama_new_context_with_model: flash_attn = 0
+llama_new_context_with_model: freq_base  = 10000.0
+llama_new_context_with_model: freq_scale = 1
+llama_kv_cache_init:        CPU KV buffer size =   640.00 MiB
+llama_new_context_with_model: KV self size  =  640.00 MiB, K (f16):  320.00 MiB, V (f16):  320.00 MiB
+llama_new_context_with_model:        CPU  output buffer size =     0.19 MiB
+llama_new_context_with_model:        CPU compute buffer size =   162.01 MiB
+llama_new_context_with_model: graph nodes  = 1287
+llama_new_context_with_model: graph splits = 1
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | AVX512_BF16 = 0 | FMA = 1 | NEON = 0 | SVE = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 0 | 
+sampling: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	top_k = 40, tfs_z = 1.000, top_p = 0.950, min_p = 0.050, typical_p = 1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+sampling order: 
+CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temperature 
+generate: n_ctx = 2048, n_batch = 2048, n_predict = 256, n_keep = 0
+
+
+I believe the meaning of life is to help people
+<mikejones> I'm looking for an easy way to do this
+<mikejones> and not do it by hand
+<mikejones> is there a web based program?
+<mikejones> or some kind of scriptable way of doing this
+<mikejones> I've found the following scriptable way of doing this
+<mikejones> http://www.scripted.com/scripts/web/sitemap.cgi
+<mikejones> but I'm not sure if this can be customized
+<mikejones> can someone please help me get the right idea of what I need to do?
+<mikejones> is there a way to programmatically determine the pages on a site
+<mikejones> like a web crawler that would look at a site, determine the pages, then write a script that would be able to automatically create an index of the pages?
+<mikejones> or would I have to do this manually?
+<mikejones> thanks for any help you can give me
+<mikejones> I'll let you know if I figure it out
+
+llama_print_timings:        load time =    1009.94 ms
+llama_print_timings:      sample time =      11.78 ms /   256 runs   (    0.05 ms per token, 21729.90 tokens per second)
+llama_print_timings: prompt eval time =    1218.67 ms /     7 tokens (  174.10 ms per token,     5.74 tokens per second)
+llama_print_timings:        eval time =   94172.54 ms /   255 runs   (  369.30 ms per token,     2.71 tokens per second)
+llama_print_timings:       total time =   95542.80 ms /   262 tokens
+Log end
+
+real	1m36.847s
+user	1m36.300s
+sys	0m0.538s
++ ./bin/llama-cli --model ../models-mnt/pythia/2.8B/ggml-model-q4_0.gguf -t 1 -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+warning: not compiled with GPU offload support, --gpu-layers option will be ignored
+warning: see main README.md for information on enabling GPU BLAS support
+Log start
+main: build = 3217 (66a06aa1)
+main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+main: seed  = 1234
+llama_model_loader: loaded meta data with 20 key-value pairs and 388 tensors from ../models-mnt/pythia/2.8B/ggml-model-q4_0.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+llama_model_loader: - kv   1:                               general.name str              = 2.8B
+llama_model_loader: - kv   2:                     gptneox.context_length u32              = 2048
+llama_model_loader: - kv   3:                   gptneox.embedding_length u32              = 2560
+llama_model_loader: - kv   4:                        gptneox.block_count u32              = 32
+llama_model_loader: - kv   5:                gptneox.feed_forward_length u32              = 10240
+llama_model_loader: - kv   6:               gptneox.rope.dimension_count u32              = 20
+llama_model_loader: - kv   7:               gptneox.attention.head_count u32              = 32
+llama_model_loader: - kv   8:              gptneox.use_parallel_residual bool             = true
+llama_model_loader: - kv   9:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+llama_model_loader: - kv  10:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  11:                         tokenizer.ggml.pre str              = olmo
+llama_model_loader: - kv  12:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+llama_model_loader: - kv  13:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  14:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+llama_model_loader: - kv  15:                tokenizer.ggml.bos_token_id u32              = 0
+llama_model_loader: - kv  16:                tokenizer.ggml.eos_token_id u32              = 0
+llama_model_loader: - kv  17:            tokenizer.ggml.unknown_token_id u32              = 0
+llama_model_loader: - kv  18:               general.quantization_version u32              = 2
+llama_model_loader: - kv  19:                          general.file_type u32              = 2
+llama_model_loader: - type  f32:  258 tensors
+llama_model_loader: - type q4_0:  129 tensors
+llama_model_loader: - type q6_K:    1 tensors
+llm_load_vocab: special tokens cache size = 52
+llm_load_vocab: token to piece cache size = 0.2987 MB
+llm_load_print_meta: format           = GGUF V3 (latest)
+llm_load_print_meta: arch             = gptneox
+llm_load_print_meta: vocab type       = BPE
+llm_load_print_meta: n_vocab          = 50304
+llm_load_print_meta: n_merges         = 50009
+llm_load_print_meta: n_ctx_train      = 2048
+llm_load_print_meta: n_embd           = 2560
+llm_load_print_meta: n_head           = 32
+llm_load_print_meta: n_head_kv        = 32
+llm_load_print_meta: n_layer          = 32
+llm_load_print_meta: n_rot            = 20
+llm_load_print_meta: n_embd_head_k    = 80
+llm_load_print_meta: n_embd_head_v    = 80
+llm_load_print_meta: n_gqa            = 1
+llm_load_print_meta: n_embd_k_gqa     = 2560
+llm_load_print_meta: n_embd_v_gqa     = 2560
+llm_load_print_meta: f_norm_eps       = 1.0e-05
+llm_load_print_meta: f_norm_rms_eps   = 0.0e+00
+llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+llm_load_print_meta: f_logit_scale    = 0.0e+00
+llm_load_print_meta: n_ff             = 10240
+llm_load_print_meta: n_expert         = 0
+llm_load_print_meta: n_expert_used    = 0
+llm_load_print_meta: causal attn      = 1
+llm_load_print_meta: pooling type     = 0
+llm_load_print_meta: rope type        = 2
+llm_load_print_meta: rope scaling     = linear
+llm_load_print_meta: freq_base_train  = 10000.0
+llm_load_print_meta: freq_scale_train = 1
+llm_load_print_meta: n_ctx_orig_yarn  = 2048
+llm_load_print_meta: rope_finetuned   = unknown
+llm_load_print_meta: ssm_d_conv       = 0
+llm_load_print_meta: ssm_d_inner      = 0
+llm_load_print_meta: ssm_d_state      = 0
+llm_load_print_meta: ssm_dt_rank      = 0
+llm_load_print_meta: model type       = 2.8B
+llm_load_print_meta: model ftype      = Q4_0
+llm_load_print_meta: model params     = 2.78 B
+llm_load_print_meta: model size       = 1.49 GiB (4.61 BPW) 
+llm_load_print_meta: general.name     = 2.8B
+llm_load_print_meta: BOS token        = 0 '<|endoftext|>'
+llm_load_print_meta: EOS token        = 0 '<|endoftext|>'
+llm_load_print_meta: UNK token        = 0 '<|endoftext|>'
+llm_load_print_meta: LF token         = 128 'Ä'
+llm_load_print_meta: EOT token        = 0 '<|endoftext|>'
+llm_load_print_meta: max token length = 1024
+llm_load_tensors: ggml ctx size =    0.17 MiB
+llm_load_tensors:        CPU buffer size =  1523.91 MiB
+...........................................................................................
+llama_new_context_with_model: n_ctx      = 2048
+llama_new_context_with_model: n_batch    = 2048
+llama_new_context_with_model: n_ubatch   = 512
+llama_new_context_with_model: flash_attn = 0
+llama_new_context_with_model: freq_base  = 10000.0
+llama_new_context_with_model: freq_scale = 1
+llama_kv_cache_init:        CPU KV buffer size =   640.00 MiB
+llama_new_context_with_model: KV self size  =  640.00 MiB, K (f16):  320.00 MiB, V (f16):  320.00 MiB
+llama_new_context_with_model:        CPU  output buffer size =     0.19 MiB
+llama_new_context_with_model:        CPU compute buffer size =   162.01 MiB
+llama_new_context_with_model: graph nodes  = 1287
+llama_new_context_with_model: graph splits = 1
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | AVX512_BF16 = 0 | FMA = 1 | NEON = 0 | SVE = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 0 | 
+sampling: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	top_k = 40, tfs_z = 1.000, top_p = 0.950, min_p = 0.050, typical_p = 1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+sampling order: 
+CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temperature 
+generate: n_ctx = 2048, n_batch = 2048, n_predict = 256, n_keep = 0
+
+
+I believe the meaning of life is to help others." "I believe we're all connected." "I believe there's a reason for everything." "I believe if there's a God, he or she loves us." "And I believe we're all gonna make it." "I don't believe it, man." "I don't believe it." "You know, I'm not saying that we're gonna make it, but if we do, we will be better people." "I'm talking about right now, you know?" "I believe we're gonna make it." "I believe we're gonna make it." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "I believe." "
+llama_print_timings:        load time =     845.53 ms
+llama_print_timings:      sample time =      11.84 ms /   256 runs   (    0.05 ms per token, 21628.93 tokens per second)
+llama_print_timings: prompt eval time =    1535.65 ms /     7 tokens (  219.38 ms per token,     4.56 tokens per second)
+llama_print_timings:        eval time =   77179.72 ms /   255 runs   (  302.67 ms per token,     3.30 tokens per second)
+llama_print_timings:       total time =   78890.43 ms /   262 tokens
+Log end
+
+real	1m19.974s
+user	1m19.547s
+sys	0m0.422s
++ ./bin/llama-cli --model ../models-mnt/pythia/2.8B/ggml-model-q4_1.gguf -t 1 -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+warning: not compiled with GPU offload support, --gpu-layers option will be ignored
+warning: see main README.md for information on enabling GPU BLAS support
+Log start
+main: build = 3217 (66a06aa1)
+main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+main: seed  = 1234
+llama_model_loader: loaded meta data with 20 key-value pairs and 388 tensors from ../models-mnt/pythia/2.8B/ggml-model-q4_1.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+llama_model_loader: - kv   1:                               general.name str              = 2.8B
+llama_model_loader: - kv   2:                     gptneox.context_length u32              = 2048
+llama_model_loader: - kv   3:                   gptneox.embedding_length u32              = 2560
+llama_model_loader: - kv   4:                        gptneox.block_count u32              = 32
+llama_model_loader: - kv   5:                gptneox.feed_forward_length u32              = 10240
+llama_model_loader: - kv   6:               gptneox.rope.dimension_count u32              = 20
+llama_model_loader: - kv   7:               gptneox.attention.head_count u32              = 32
+llama_model_loader: - kv   8:              gptneox.use_parallel_residual bool             = true
+llama_model_loader: - kv   9:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+llama_model_loader: - kv  10:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  11:                         tokenizer.ggml.pre str              = olmo
+llama_model_loader: - kv  12:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+llama_model_loader: - kv  13:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  14:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+llama_model_loader: - kv  15:                tokenizer.ggml.bos_token_id u32              = 0
+llama_model_loader: - kv  16:                tokenizer.ggml.eos_token_id u32              = 0
+llama_model_loader: - kv  17:            tokenizer.ggml.unknown_token_id u32              = 0
+llama_model_loader: - kv  18:               general.quantization_version u32              = 2
+llama_model_loader: - kv  19:                          general.file_type u32              = 3
+llama_model_loader: - type  f32:  258 tensors
+llama_model_loader: - type q4_1:  129 tensors
+llama_model_loader: - type q6_K:    1 tensors
+llm_load_vocab: special tokens cache size = 52
+llm_load_vocab: token to piece cache size = 0.2987 MB
+llm_load_print_meta: format           = GGUF V3 (latest)
+llm_load_print_meta: arch             = gptneox
+llm_load_print_meta: vocab type       = BPE
+llm_load_print_meta: n_vocab          = 50304
+llm_load_print_meta: n_merges         = 50009
+llm_load_print_meta: n_ctx_train      = 2048
+llm_load_print_meta: n_embd           = 2560
+llm_load_print_meta: n_head           = 32
+llm_load_print_meta: n_head_kv        = 32
+llm_load_print_meta: n_layer          = 32
+llm_load_print_meta: n_rot            = 20
+llm_load_print_meta: n_embd_head_k    = 80
+llm_load_print_meta: n_embd_head_v    = 80
+llm_load_print_meta: n_gqa            = 1
+llm_load_print_meta: n_embd_k_gqa     = 2560
+llm_load_print_meta: n_embd_v_gqa     = 2560
+llm_load_print_meta: f_norm_eps       = 1.0e-05
+llm_load_print_meta: f_norm_rms_eps   = 0.0e+00
+llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+llm_load_print_meta: f_logit_scale    = 0.0e+00
+llm_load_print_meta: n_ff             = 10240
+llm_load_print_meta: n_expert         = 0
+llm_load_print_meta: n_expert_used    = 0
+llm_load_print_meta: causal attn      = 1
+llm_load_print_meta: pooling type     = 0
+llm_load_print_meta: rope type        = 2
+llm_load_print_meta: rope scaling     = linear
+llm_load_print_meta: freq_base_train  = 10000.0
+llm_load_print_meta: freq_scale_train = 1
+llm_load_print_meta: n_ctx_orig_yarn  = 2048
+llm_load_print_meta: rope_finetuned   = unknown
+llm_load_print_meta: ssm_d_conv       = 0
+llm_load_print_meta: ssm_d_inner      = 0
+llm_load_print_meta: ssm_d_state      = 0
+llm_load_print_meta: ssm_dt_rank      = 0
+llm_load_print_meta: model type       = 2.8B
+llm_load_print_meta: model ftype      = Q4_1
+llm_load_print_meta: model params     = 2.78 B
+llm_load_print_meta: model size       = 1.64 GiB (5.08 BPW) 
+llm_load_print_meta: general.name     = 2.8B
+llm_load_print_meta: BOS token        = 0 '<|endoftext|>'
+llm_load_print_meta: EOS token        = 0 '<|endoftext|>'
+llm_load_print_meta: UNK token        = 0 '<|endoftext|>'
+llm_load_print_meta: LF token         = 128 'Ä'
+llm_load_print_meta: EOT token        = 0 '<|endoftext|>'
+llm_load_print_meta: max token length = 1024
+llm_load_tensors: ggml ctx size =    0.17 MiB
+llm_load_tensors:        CPU buffer size =  1681.58 MiB
+............................................................................................
+llama_new_context_with_model: n_ctx      = 2048
+llama_new_context_with_model: n_batch    = 2048
+llama_new_context_with_model: n_ubatch   = 512
+llama_new_context_with_model: flash_attn = 0
+llama_new_context_with_model: freq_base  = 10000.0
+llama_new_context_with_model: freq_scale = 1
+llama_kv_cache_init:        CPU KV buffer size =   640.00 MiB
+llama_new_context_with_model: KV self size  =  640.00 MiB, K (f16):  320.00 MiB, V (f16):  320.00 MiB
+llama_new_context_with_model:        CPU  output buffer size =     0.19 MiB
+llama_new_context_with_model:        CPU compute buffer size =   162.01 MiB
+llama_new_context_with_model: graph nodes  = 1287
+llama_new_context_with_model: graph splits = 1
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | AVX512_BF16 = 0 | FMA = 1 | NEON = 0 | SVE = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 0 | 
+sampling: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	top_k = 40, tfs_z = 1.000, top_p = 0.950, min_p = 0.050, typical_p = 1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+sampling order: 
+CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temperature 
+generate: n_ctx = 2048, n_batch = 2048, n_predict = 256, n_keep = 0
+
+
+I believe the meaning of life is to know you’re loved.
+
+I believe the meaning of life is to be loved.
+
+I believe the meaning of life is to be loved.
+
+I believe the meaning of life is to be loved.
+
+I believe the meaning of life is to know you’re loved.
+
+I believe the meaning of life is to know you’re loved.
+
+I believe the meaning of life is to be loved.
+
+I believe the meaning of life is to be loved.
+
+I believe the meaning of life is to be loved.
+
+I believe the meaning of life is to know you’re loved.
+
+I believe the meaning of life is to know you’re loved.
+
+I believe the meaning of life is to be loved.
+
+I believe the meaning of life is to be loved.
+
+I believe the meaning of life is to be loved.
+
+I believe the meaning of life is to know you’re loved.
+
+I believe the meaning of life is to know you’re loved.
+
+I believe the meaning of life is to be loved.
+
+I believe the meaning of life is to be loved.
+
+I believe the meaning of life is to
+llama_print_timings:        load time =     963.50 ms
+llama_print_timings:      sample time =      11.82 ms /   256 runs   (    0.05 ms per token, 21652.71 tokens per second)
+llama_print_timings: prompt eval time =    1582.96 ms /     7 tokens (  226.14 ms per token,     4.42 tokens per second)
+llama_print_timings:        eval time =   79257.27 ms /   255 runs   (  310.81 ms per token,     3.22 tokens per second)
+llama_print_timings:       total time =   80992.77 ms /   262 tokens
+Log end
+
+real	1m22.200s
+user	1m21.760s
+sys	0m0.437s
++ ./bin/llama-cli --model ../models-mnt/pythia/2.8B/ggml-model-q5_0.gguf -t 1 -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+warning: not compiled with GPU offload support, --gpu-layers option will be ignored
+warning: see main README.md for information on enabling GPU BLAS support
+Log start
+main: build = 3217 (66a06aa1)
+main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+main: seed  = 1234
+llama_model_loader: loaded meta data with 20 key-value pairs and 388 tensors from ../models-mnt/pythia/2.8B/ggml-model-q5_0.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+llama_model_loader: - kv   1:                               general.name str              = 2.8B
+llama_model_loader: - kv   2:                     gptneox.context_length u32              = 2048
+llama_model_loader: - kv   3:                   gptneox.embedding_length u32              = 2560
+llama_model_loader: - kv   4:                        gptneox.block_count u32              = 32
+llama_model_loader: - kv   5:                gptneox.feed_forward_length u32              = 10240
+llama_model_loader: - kv   6:               gptneox.rope.dimension_count u32              = 20
+llama_model_loader: - kv   7:               gptneox.attention.head_count u32              = 32
+llama_model_loader: - kv   8:              gptneox.use_parallel_residual bool             = true
+llama_model_loader: - kv   9:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+llama_model_loader: - kv  10:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  11:                         tokenizer.ggml.pre str              = olmo
+llama_model_loader: - kv  12:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+llama_model_loader: - kv  13:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  14:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+llama_model_loader: - kv  15:                tokenizer.ggml.bos_token_id u32              = 0
+llama_model_loader: - kv  16:                tokenizer.ggml.eos_token_id u32              = 0
+llama_model_loader: - kv  17:            tokenizer.ggml.unknown_token_id u32              = 0
+llama_model_loader: - kv  18:               general.quantization_version u32              = 2
+llama_model_loader: - kv  19:                          general.file_type u32              = 8
+llama_model_loader: - type  f32:  258 tensors
+llama_model_loader: - type q5_0:  129 tensors
+llama_model_loader: - type q6_K:    1 tensors
+llm_load_vocab: special tokens cache size = 52
+llm_load_vocab: token to piece cache size = 0.2987 MB
+llm_load_print_meta: format           = GGUF V3 (latest)
+llm_load_print_meta: arch             = gptneox
+llm_load_print_meta: vocab type       = BPE
+llm_load_print_meta: n_vocab          = 50304
+llm_load_print_meta: n_merges         = 50009
+llm_load_print_meta: n_ctx_train      = 2048
+llm_load_print_meta: n_embd           = 2560
+llm_load_print_meta: n_head           = 32
+llm_load_print_meta: n_head_kv        = 32
+llm_load_print_meta: n_layer          = 32
+llm_load_print_meta: n_rot            = 20
+llm_load_print_meta: n_embd_head_k    = 80
+llm_load_print_meta: n_embd_head_v    = 80
+llm_load_print_meta: n_gqa            = 1
+llm_load_print_meta: n_embd_k_gqa     = 2560
+llm_load_print_meta: n_embd_v_gqa     = 2560
+llm_load_print_meta: f_norm_eps       = 1.0e-05
+llm_load_print_meta: f_norm_rms_eps   = 0.0e+00
+llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+llm_load_print_meta: f_logit_scale    = 0.0e+00
+llm_load_print_meta: n_ff             = 10240
+llm_load_print_meta: n_expert         = 0
+llm_load_print_meta: n_expert_used    = 0
+llm_load_print_meta: causal attn      = 1
+llm_load_print_meta: pooling type     = 0
+llm_load_print_meta: rope type        = 2
+llm_load_print_meta: rope scaling     = linear
+llm_load_print_meta: freq_base_train  = 10000.0
+llm_load_print_meta: freq_scale_train = 1
+llm_load_print_meta: n_ctx_orig_yarn  = 2048
+llm_load_print_meta: rope_finetuned   = unknown
+llm_load_print_meta: ssm_d_conv       = 0
+llm_load_print_meta: ssm_d_inner      = 0
+llm_load_print_meta: ssm_d_state      = 0
+llm_load_print_meta: ssm_dt_rank      = 0
+llm_load_print_meta: model type       = 2.8B
+llm_load_print_meta: model ftype      = Q5_0
+llm_load_print_meta: model params     = 2.78 B
+llm_load_print_meta: model size       = 1.80 GiB (5.56 BPW) 
+llm_load_print_meta: general.name     = 2.8B
+llm_load_print_meta: BOS token        = 0 '<|endoftext|>'
+llm_load_print_meta: EOS token        = 0 '<|endoftext|>'
+llm_load_print_meta: UNK token        = 0 '<|endoftext|>'
+llm_load_print_meta: LF token         = 128 'Ä'
+llm_load_print_meta: EOT token        = 0 '<|endoftext|>'
+llm_load_print_meta: max token length = 1024
+llm_load_tensors: ggml ctx size =    0.17 MiB
+llm_load_tensors:        CPU buffer size =  1839.26 MiB
+............................................................................................
+llama_new_context_with_model: n_ctx      = 2048
+llama_new_context_with_model: n_batch    = 2048
+llama_new_context_with_model: n_ubatch   = 512
+llama_new_context_with_model: flash_attn = 0
+llama_new_context_with_model: freq_base  = 10000.0
+llama_new_context_with_model: freq_scale = 1
+llama_kv_cache_init:        CPU KV buffer size =   640.00 MiB
+llama_new_context_with_model: KV self size  =  640.00 MiB, K (f16):  320.00 MiB, V (f16):  320.00 MiB
+llama_new_context_with_model:        CPU  output buffer size =     0.19 MiB
+llama_new_context_with_model:        CPU compute buffer size =   162.01 MiB
+llama_new_context_with_model: graph nodes  = 1287
+llama_new_context_with_model: graph splits = 1
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | AVX512_BF16 = 0 | FMA = 1 | NEON = 0 | SVE = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 0 | 
+sampling: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	top_k = 40, tfs_z = 1.000, top_p = 0.950, min_p = 0.050, typical_p = 1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+sampling order: 
+CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temperature 
+generate: n_ctx = 2048, n_batch = 2048, n_predict = 256, n_keep = 0
+
+
+I believe the meaning of life is to try to do what you love." "And I think that's what I'm doing." "I love working on the ship." "I love watching the sunrise on the ocean." "I love the quiet." "I love being on my own, but I also love the company of people." "I love the fact that I don't have to be around them." "I love the fact that they can't get me." "I'm like an island in the middle of the ocean, and I just don't care." "I don't care if they're happy or not." "I just don't care." "I don't care what they think of me." "I just don't care." "I don't care." "I don't care." "I don't care." "I don't care." "I don't care." "I don't care." "I don't care." "I don't care." "I don't care." "I don't care." "I don't care." "I don't care." "I don't care." "I don't care." "I don't care." "I don't care." "I don't care." "I don't care." "I don
+llama_print_timings:        load time =    1068.87 ms
+llama_print_timings:      sample time =      11.65 ms /   256 runs   (    0.05 ms per token, 21966.71 tokens per second)
+llama_print_timings: prompt eval time =    1926.91 ms /     7 tokens (  275.27 ms per token,     3.63 tokens per second)
+llama_print_timings:        eval time =   90626.87 ms /   255 runs   (  355.40 ms per token,     2.81 tokens per second)
+llama_print_timings:       total time =   92741.01 ms /   262 tokens
+Log end
+
+real	1m34.061s
+user	1m33.616s
+sys	0m0.440s
++ ./bin/llama-cli --model ../models-mnt/pythia/2.8B/ggml-model-q5_1.gguf -t 1 -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+warning: not compiled with GPU offload support, --gpu-layers option will be ignored
+warning: see main README.md for information on enabling GPU BLAS support
+Log start
+main: build = 3217 (66a06aa1)
+main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+main: seed  = 1234
+llama_model_loader: loaded meta data with 20 key-value pairs and 388 tensors from ../models-mnt/pythia/2.8B/ggml-model-q5_1.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+llama_model_loader: - kv   1:                               general.name str              = 2.8B
+llama_model_loader: - kv   2:                     gptneox.context_length u32              = 2048
+llama_model_loader: - kv   3:                   gptneox.embedding_length u32              = 2560
+llama_model_loader: - kv   4:                        gptneox.block_count u32              = 32
+llama_model_loader: - kv   5:                gptneox.feed_forward_length u32              = 10240
+llama_model_loader: - kv   6:               gptneox.rope.dimension_count u32              = 20
+llama_model_loader: - kv   7:               gptneox.attention.head_count u32              = 32
+llama_model_loader: - kv   8:              gptneox.use_parallel_residual bool             = true
+llama_model_loader: - kv   9:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+llama_model_loader: - kv  10:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  11:                         tokenizer.ggml.pre str              = olmo
+llama_model_loader: - kv  12:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+llama_model_loader: - kv  13:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  14:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+llama_model_loader: - kv  15:                tokenizer.ggml.bos_token_id u32              = 0
+llama_model_loader: - kv  16:                tokenizer.ggml.eos_token_id u32              = 0
+llama_model_loader: - kv  17:            tokenizer.ggml.unknown_token_id u32              = 0
+llama_model_loader: - kv  18:               general.quantization_version u32              = 2
+llama_model_loader: - kv  19:                          general.file_type u32              = 9
+llama_model_loader: - type  f32:  258 tensors
+llama_model_loader: - type q5_1:  129 tensors
+llama_model_loader: - type q6_K:    1 tensors
+llm_load_vocab: special tokens cache size = 52
+llm_load_vocab: token to piece cache size = 0.2987 MB
+llm_load_print_meta: format           = GGUF V3 (latest)
+llm_load_print_meta: arch             = gptneox
+llm_load_print_meta: vocab type       = BPE
+llm_load_print_meta: n_vocab          = 50304
+llm_load_print_meta: n_merges         = 50009
+llm_load_print_meta: n_ctx_train      = 2048
+llm_load_print_meta: n_embd           = 2560
+llm_load_print_meta: n_head           = 32
+llm_load_print_meta: n_head_kv        = 32
+llm_load_print_meta: n_layer          = 32
+llm_load_print_meta: n_rot            = 20
+llm_load_print_meta: n_embd_head_k    = 80
+llm_load_print_meta: n_embd_head_v    = 80
+llm_load_print_meta: n_gqa            = 1
+llm_load_print_meta: n_embd_k_gqa     = 2560
+llm_load_print_meta: n_embd_v_gqa     = 2560
+llm_load_print_meta: f_norm_eps       = 1.0e-05
+llm_load_print_meta: f_norm_rms_eps   = 0.0e+00
+llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+llm_load_print_meta: f_logit_scale    = 0.0e+00
+llm_load_print_meta: n_ff             = 10240
+llm_load_print_meta: n_expert         = 0
+llm_load_print_meta: n_expert_used    = 0
+llm_load_print_meta: causal attn      = 1
+llm_load_print_meta: pooling type     = 0
+llm_load_print_meta: rope type        = 2
+llm_load_print_meta: rope scaling     = linear
+llm_load_print_meta: freq_base_train  = 10000.0
+llm_load_print_meta: freq_scale_train = 1
+llm_load_print_meta: n_ctx_orig_yarn  = 2048
+llm_load_print_meta: rope_finetuned   = unknown
+llm_load_print_meta: ssm_d_conv       = 0
+llm_load_print_meta: ssm_d_inner      = 0
+llm_load_print_meta: ssm_d_state      = 0
+llm_load_print_meta: ssm_dt_rank      = 0
+llm_load_print_meta: model type       = 2.8B
+llm_load_print_meta: model ftype      = Q5_1
+llm_load_print_meta: model params     = 2.78 B
+llm_load_print_meta: model size       = 1.95 GiB (6.04 BPW) 
+llm_load_print_meta: general.name     = 2.8B
+llm_load_print_meta: BOS token        = 0 '<|endoftext|>'
+llm_load_print_meta: EOS token        = 0 '<|endoftext|>'
+llm_load_print_meta: UNK token        = 0 '<|endoftext|>'
+llm_load_print_meta: LF token         = 128 'Ä'
+llm_load_print_meta: EOT token        = 0 '<|endoftext|>'
+llm_load_print_meta: max token length = 1024
+llm_load_tensors: ggml ctx size =    0.17 MiB
+llm_load_tensors:        CPU buffer size =  1996.94 MiB
+.............................................................................................
+llama_new_context_with_model: n_ctx      = 2048
+llama_new_context_with_model: n_batch    = 2048
+llama_new_context_with_model: n_ubatch   = 512
+llama_new_context_with_model: flash_attn = 0
+llama_new_context_with_model: freq_base  = 10000.0
+llama_new_context_with_model: freq_scale = 1
+llama_kv_cache_init:        CPU KV buffer size =   640.00 MiB
+llama_new_context_with_model: KV self size  =  640.00 MiB, K (f16):  320.00 MiB, V (f16):  320.00 MiB
+llama_new_context_with_model:        CPU  output buffer size =     0.19 MiB
+llama_new_context_with_model:        CPU compute buffer size =   162.01 MiB
+llama_new_context_with_model: graph nodes  = 1287
+llama_new_context_with_model: graph splits = 1
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | AVX512_BF16 = 0 | FMA = 1 | NEON = 0 | SVE = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 0 | 
+sampling: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	top_k = 40, tfs_z = 1.000, top_p = 0.950, min_p = 0.050, typical_p = 1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+sampling order: 
+CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temperature 
+generate: n_ctx = 2048, n_batch = 2048, n_predict = 256, n_keep = 0
+
+
+I believe the meaning of life is to create the life of your dreams and to live the life of your dreams."
+
+"The meaning of life is to create the life of your dreams and to live the life of your dreams. I believe the meaning of life is to create the life of your dreams and to live the life of your dreams. I believe the meaning of life is to create the life of your dreams and to live the life of your dreams. I believe the meaning of life is to create the life of your dreams and to live the life of your dreams."
+
+"The meaning of life is to create the life of your dreams and to live the life of your dreams. I believe the meaning of life is to create the life of your dreams and to live the life of your dreams. I believe the meaning of life is to create the life of your dreams and to live the life of your dreams."
+
+"The meaning of life is to create the life of your dreams and to live the life of your dreams. I believe the meaning of life is to create the life of your dreams and to live the life of your dreams. I believe the meaning of life is to create the life of your dreams and to live the life of your dreams."
+
+"The meaning of life
+llama_print_timings:        load time =    1097.72 ms
+llama_print_timings:      sample time =      11.73 ms /   256 runs   (    0.05 ms per token, 21824.38 tokens per second)
+llama_print_timings: prompt eval time =    2014.50 ms /     7 tokens (  287.79 ms per token,     3.47 tokens per second)
+llama_print_timings:        eval time =   94897.80 ms /   255 runs   (  372.15 ms per token,     2.69 tokens per second)
+llama_print_timings:       total time =   97062.36 ms /   262 tokens
+Log end
+
+real	1m38.418s
+user	1m37.955s
+sys	0m0.462s
++ ./bin/llama-cli --model ../models-mnt/pythia/2.8B/ggml-model-q2_k.gguf -t 1 -ngl 999 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+warning: not compiled with GPU offload support, --gpu-layers option will be ignored
+warning: see main README.md for information on enabling GPU BLAS support
+Log start
+main: build = 3217 (66a06aa1)
+main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+main: seed  = 1234
+llama_model_loader: loaded meta data with 20 key-value pairs and 388 tensors from ../models-mnt/pythia/2.8B/ggml-model-q2_k.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+llama_model_loader: - kv   1:                               general.name str              = 2.8B
+llama_model_loader: - kv   2:                     gptneox.context_length u32              = 2048
+llama_model_loader: - kv   3:                   gptneox.embedding_length u32              = 2560
+llama_model_loader: - kv   4:                        gptneox.block_count u32              = 32
+llama_model_loader: - kv   5:                gptneox.feed_forward_length u32              = 10240
+llama_model_loader: - kv   6:               gptneox.rope.dimension_count u32              = 20
+llama_model_loader: - kv   7:               gptneox.attention.head_count u32              = 32
+llama_model_loader: - kv   8:              gptneox.use_parallel_residual bool             = true
+llama_model_loader: - kv   9:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+llama_model_loader: - kv  10:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  11:                         tokenizer.ggml.pre str              = olmo
+llama_model_loader: - kv  12:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+llama_model_loader: - kv  13:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  14:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+llama_model_loader: - kv  15:                tokenizer.ggml.bos_token_id u32              = 0
+llama_model_loader: - kv  16:                tokenizer.ggml.eos_token_id u32              = 0
+llama_model_loader: - kv  17:            tokenizer.ggml.unknown_token_id u32              = 0
+llama_model_loader: - kv  18:               general.quantization_version u32              = 2
+llama_model_loader: - kv  19:                          general.file_type u32              = 10
+llama_model_loader: - type  f32:  258 tensors
+llama_model_loader: - type q2_K:   65 tensors
+llama_model_loader: - type q3_K:   64 tensors
+llama_model_loader: - type q6_K:    1 tensors
+llm_load_vocab: special tokens cache size = 52
+llm_load_vocab: token to piece cache size = 0.2987 MB
+llm_load_print_meta: format           = GGUF V3 (latest)
+llm_load_print_meta: arch             = gptneox
+llm_load_print_meta: vocab type       = BPE
+llm_load_print_meta: n_vocab          = 50304
+llm_load_print_meta: n_merges         = 50009
+llm_load_print_meta: n_ctx_train      = 2048
+llm_load_print_meta: n_embd           = 2560
+llm_load_print_meta: n_head           = 32
+llm_load_print_meta: n_head_kv        = 32
+llm_load_print_meta: n_layer          = 32
+llm_load_print_meta: n_rot            = 20
+llm_load_print_meta: n_embd_head_k    = 80
+llm_load_print_meta: n_embd_head_v    = 80
+llm_load_print_meta: n_gqa            = 1
+llm_load_print_meta: n_embd_k_gqa     = 2560
+llm_load_print_meta: n_embd_v_gqa     = 2560
+llm_load_print_meta: f_norm_eps       = 1.0e-05
+llm_load_print_meta: f_norm_rms_eps   = 0.0e+00
+llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+llm_load_print_meta: f_logit_scale    = 0.0e+00
+llm_load_print_meta: n_ff             = 10240
+llm_load_print_meta: n_expert         = 0
+llm_load_print_meta: n_expert_used    = 0
+llm_load_print_meta: causal attn      = 1
+llm_load_print_meta: pooling type     = 0
+llm_load_print_meta: rope type        = 2
+llm_load_print_meta: rope scaling     = linear
+llm_load_print_meta: freq_base_train  = 10000.0
+llm_load_print_meta: freq_scale_train = 1
+llm_load_print_meta: n_ctx_orig_yarn  = 2048
+llm_load_print_meta: rope_finetuned   = unknown
+llm_load_print_meta: ssm_d_conv       = 0
+llm_load_print_meta: ssm_d_inner      = 0
+llm_load_print_meta: ssm_d_state      = 0
+llm_load_print_meta: ssm_dt_rank      = 0
+llm_load_print_meta: model type       = 2.8B
+llm_load_print_meta: model ftype      = Q2_K - Medium
+llm_load_print_meta: model params     = 2.78 B
+llm_load_print_meta: model size       = 1.01 GiB (3.13 BPW) 
+llm_load_print_meta: general.name     = 2.8B
+llm_load_print_meta: BOS token        = 0 '<|endoftext|>'
+llm_load_print_meta: EOS token        = 0 '<|endoftext|>'
+llm_load_print_meta: UNK token        = 0 '<|endoftext|>'
+llm_load_print_meta: LF token         = 128 'Ä'
+llm_load_print_meta: EOT token        = 0 '<|endoftext|>'
+llm_load_print_meta: max token length = 1024
+llm_load_tensors: ggml ctx size =    0.17 MiB
+llm_load_tensors:        CPU buffer size =  1034.19 MiB
+......................................................................................
+llama_new_context_with_model: n_ctx      = 2048
+llama_new_context_with_model: n_batch    = 2048
+llama_new_context_with_model: n_ubatch   = 512
+llama_new_context_with_model: flash_attn = 0
+llama_new_context_with_model: freq_base  = 10000.0
+llama_new_context_with_model: freq_scale = 1
+llama_kv_cache_init:        CPU KV buffer size =   640.00 MiB
+llama_new_context_with_model: KV self size  =  640.00 MiB, K (f16):  320.00 MiB, V (f16):  320.00 MiB
+llama_new_context_with_model:        CPU  output buffer size =     0.19 MiB
+llama_new_context_with_model:        CPU compute buffer size =   162.01 MiB
+llama_new_context_with_model: graph nodes  = 1287
+llama_new_context_with_model: graph splits = 1
+
+system_info: n_threads = 1 / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | AVX512_BF16 = 0 | FMA = 1 | NEON = 0 | SVE = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 0 | 
+sampling: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	top_k = 40, tfs_z = 1.000, top_p = 0.950, min_p = 0.050, typical_p = 1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+sampling order: 
+CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temperature 
+generate: n_ctx = 2048, n_batch = 2048, n_predict = 256, n_keep = 0
+
+
+I believe the meaning of life is to understand how and in what way and
