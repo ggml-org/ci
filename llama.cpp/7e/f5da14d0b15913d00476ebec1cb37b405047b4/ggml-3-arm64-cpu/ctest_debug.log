@@ -1,0 +1,11 @@
++ cmake -DCMAKE_BUILD_TYPE=Debug -DLLAMA_FATAL_WARNINGS=ON ..
+CMake Error at CMakeLists.txt:70:
+  Parse error.  Expected a command name, got unquoted argument with text
+  "<<<<<<<".
+
+
+-- Configuring incomplete, errors occurred!
+
+real	0m0.009s
+user	0m0.000s
+sys	0m0.008s
