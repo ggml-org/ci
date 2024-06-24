@@ -1,0 +1,23 @@
++ gg_run_ctest_debug
++ cd /home/ggml/work/llama.cpp
++ rm -rf build-ci-debug
++ tee /home/ggml/results/llama.cpp/7e/f5da14d0b15913d00476ebec1cb37b405047b4/ggml-0-x86-cpu-low-perf/ctest_debug.log
++ mkdir build-ci-debug
++ cd build-ci-debug
++ set -e
++ tee -a /home/ggml/results/llama.cpp/7e/f5da14d0b15913d00476ebec1cb37b405047b4/ggml-0-x86-cpu-low-perf/ctest_debug-cmake.log
++ cmake -DCMAKE_BUILD_TYPE=Debug -DLLAMA_FATAL_WARNINGS=ON ..
+CMake Error at CMakeLists.txt:70:
+  Parse error.  Expected a command name, got unquoted argument with text
+  "<<<<<<<".
+
+
+-- Configuring incomplete, errors occurred!
+
+real	0m0.023s
+user	0m0.020s
+sys	0m0.004s
++ cur=1
++ echo 1
++ set +x
+cat: /home/ggml/results/llama.cpp/7e/f5da14d0b15913d00476ebec1cb37b405047b4/ggml-0-x86-cpu-low-perf/ctest_debug-ctest.log: No such file or directory
