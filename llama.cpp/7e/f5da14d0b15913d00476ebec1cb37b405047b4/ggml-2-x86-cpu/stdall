@@ -1,0 +1,85 @@
+Requirement already satisfied: numpy~=1.26.4 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert-legacy-llama.txt (line 1)) (1.26.4)
+Requirement already satisfied: sentencepiece~=0.2.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert-legacy-llama.txt (line 2)) (0.2.0)
+Requirement already satisfied: transformers<5.0.0,>=4.40.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert-legacy-llama.txt (line 3)) (4.40.2)
+Requirement already satisfied: gguf>=0.1.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert-legacy-llama.txt (line 4)) (0.9.0)
+Requirement already satisfied: protobuf<5.0.0,>=4.21.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert-legacy-llama.txt (line 5)) (4.25.3)
+Requirement already satisfied: torch~=2.2.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert-hf-to-gguf.txt (line 2)) (2.2.2)
+Requirement already satisfied: regex!=2019.12.17 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.40.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-legacy-llama.txt (line 3)) (2024.5.10)
+Requirement already satisfied: pyyaml>=5.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.40.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-legacy-llama.txt (line 3)) (6.0.1)
+Requirement already satisfied: packaging>=20.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.40.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-legacy-llama.txt (line 3)) (24.0)
+Requirement already satisfied: filelock in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.40.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-legacy-llama.txt (line 3)) (3.14.0)
+Requirement already satisfied: requests in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.40.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-legacy-llama.txt (line 3)) (2.31.0)
+Requirement already satisfied: tqdm>=4.27 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.40.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-legacy-llama.txt (line 3)) (4.66.4)
+Requirement already satisfied: tokenizers<0.20,>=0.19 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.40.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-legacy-llama.txt (line 3)) (0.19.1)
+Requirement already satisfied: huggingface-hub<1.0,>=0.19.3 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.40.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-legacy-llama.txt (line 3)) (0.23.0)
+Requirement already satisfied: safetensors>=0.4.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.40.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-legacy-llama.txt (line 3)) (0.4.3)
+Requirement already satisfied: nvidia-nvtx-cu12==12.1.105 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-hf-to-gguf.txt (line 2)) (12.1.105)
+Requirement already satisfied: nvidia-cublas-cu12==12.1.3.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-hf-to-gguf.txt (line 2)) (12.1.3.1)
+Requirement already satisfied: nvidia-nccl-cu12==2.19.3 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-hf-to-gguf.txt (line 2)) (2.19.3)
+Requirement already satisfied: fsspec in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-hf-to-gguf.txt (line 2)) (2024.3.1)
+Requirement already satisfied: sympy in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-hf-to-gguf.txt (line 2)) (1.12)
+Requirement already satisfied: jinja2 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-hf-to-gguf.txt (line 2)) (3.1.4)
+Requirement already satisfied: typing-extensions>=4.8.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-hf-to-gguf.txt (line 2)) (4.11.0)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.1.105 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-hf-to-gguf.txt (line 2)) (12.1.105)
+Requirement already satisfied: nvidia-cusparse-cu12==12.1.0.106 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-hf-to-gguf.txt (line 2)) (12.1.0.106)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.1.105 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-hf-to-gguf.txt (line 2)) (12.1.105)
+Requirement already satisfied: nvidia-cufft-cu12==11.0.2.54 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-hf-to-gguf.txt (line 2)) (11.0.2.54)
+Requirement already satisfied: triton==2.2.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-hf-to-gguf.txt (line 2)) (2.2.0)
+Requirement already satisfied: nvidia-cusolver-cu12==11.4.5.107 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-hf-to-gguf.txt (line 2)) (11.4.5.107)
+Requirement already satisfied: nvidia-curand-cu12==10.3.2.106 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-hf-to-gguf.txt (line 2)) (10.3.2.106)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.1.105 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-hf-to-gguf.txt (line 2)) (12.1.105)
+Requirement already satisfied: networkx in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-hf-to-gguf.txt (line 2)) (3.3)
+Requirement already satisfied: nvidia-cudnn-cu12==8.9.2.26 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-hf-to-gguf.txt (line 2)) (8.9.2.26)
+Requirement already satisfied: nvidia-nvjitlink-cu12 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from nvidia-cusolver-cu12==11.4.5.107->torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-hf-to-gguf.txt (line 2)) (12.4.127)
+Requirement already satisfied: MarkupSafe>=2.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from jinja2->torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-hf-to-gguf.txt (line 2)) (2.1.5)
+Requirement already satisfied: certifi>=2017.4.17 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from requests->transformers<5.0.0,>=4.40.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-legacy-llama.txt (line 3)) (2024.2.2)
+Requirement already satisfied: idna<4,>=2.5 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from requests->transformers<5.0.0,>=4.40.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-legacy-llama.txt (line 3)) (3.7)
+Requirement already satisfied: charset-normalizer<4,>=2 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from requests->transformers<5.0.0,>=4.40.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-legacy-llama.txt (line 3)) (3.3.2)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from requests->transformers<5.0.0,>=4.40.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-legacy-llama.txt (line 3)) (2.2.1)
+Requirement already satisfied: mpmath>=0.19 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from sympy->torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert-hf-to-gguf.txt (line 2)) (1.3.0)
+Obtaining file:///home/ggml/work/llama.cpp/gguf-py
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: numpy>=1.17 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from gguf==0.9.0) (1.26.4)
+Requirement already satisfied: tqdm>=4.27 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from gguf==0.9.0) (4.66.4)
+Building wheels for collected packages: gguf
+  Building editable for gguf (pyproject.toml): started
+  Building editable for gguf (pyproject.toml): finished with status 'done'
+  Created wheel for gguf: filename=gguf-0.9.0-py3-none-any.whl size=3289 sha256=701cc7c488d402c0e365bf43e84e57e5e97e1457a1f9d18440c8a81f13890b31
+  Stored in directory: /tmp/pip-ephem-wheel-cache-09cdiray/wheels/a3/4c/52/c5934ad001d1a70ca5434f11ddc622cad9c0a484e9bf6feda3
+Successfully built gguf
+Installing collected packages: gguf
+  Attempting uninstall: gguf
+    Found existing installation: gguf 0.9.0
+    Uninstalling gguf-0.9.0:
+      Successfully uninstalled gguf-0.9.0
+Successfully installed gguf-0.9.0
++ gg_run_ctest_debug
++ cd /home/ggml/work/llama.cpp
++ rm -rf build-ci-debug
++ tee /home/ggml/results/llama.cpp/7e/f5da14d0b15913d00476ebec1cb37b405047b4/ggml-2-x86-cpu/ctest_debug.log
++ mkdir build-ci-debug
++ cd build-ci-debug
++ set -e
++ tee -a /home/ggml/results/llama.cpp/7e/f5da14d0b15913d00476ebec1cb37b405047b4/ggml-2-x86-cpu/ctest_debug-cmake.log
++ cmake -DCMAKE_BUILD_TYPE=Debug -DLLAMA_FATAL_WARNINGS=ON ..
+CMake Error at CMakeLists.txt:70:
+  Parse error.  Expected a command name, got unquoted argument with text
+  "<<<<<<<".
+
+
+-- Configuring incomplete, errors occurred!
+
+real	0m0.067s
+user	0m0.059s
+sys	0m0.007s
++ cur=1
++ echo 1
++ set +x
+cat: /home/ggml/results/llama.cpp/7e/f5da14d0b15913d00476ebec1cb37b405047b4/ggml-2-x86-cpu/ctest_debug-ctest.log: No such file or directory
