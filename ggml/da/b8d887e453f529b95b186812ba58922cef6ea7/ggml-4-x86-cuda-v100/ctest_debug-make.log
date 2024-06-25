@@ -1,0 +1,1468 @@
++ make -j
+[  1%] Building C object src/CMakeFiles/ggml.dir/ggml.c.o
+[  3%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  3%] Building C object src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  4%] Building C object src/CMakeFiles/ggml.dir/ggml-backend.c.o
+[  5%] Building C object src/CMakeFiles/ggml.dir/ggml-quants.c.o
+[  5%] Built target ggml
+[  6%] Linking C static library libggml_static.a
+[  7%] Linking C shared library libggml_shared.so
+[  8%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
+[  9%] Building C object tests/CMakeFiles/test-vec1.dir/test-vec1.c.o
+[ 10%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+[ 12%] Building CXX object tests/CMakeFiles/test-opt.dir/test-opt.cpp.o
+[ 13%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 14%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 15%] Building C object tests/CMakeFiles/test-mul-mat0.dir/test-mul-mat0.c.o
+[ 16%] Building C object tests/CMakeFiles/test-mul-mat2.dir/test-mul-mat2.c.o
+[ 17%] Building C object tests/CMakeFiles/test1.dir/test1.c.o
+[ 18%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
+[ 18%] Built target ggml_static
+[ 19%] Building C object tests/CMakeFiles/test2.dir/test2.c.o
+[ 20%] Building C object tests/CMakeFiles/test3.dir/test3.c.o
+[ 20%] Built target ggml_shared
+[ 21%] Linking C executable ../bin/test-vec0
+[ 23%] Building C object tests/CMakeFiles/test-pool.dir/test-pool.c.o
+[ 24%] Building CXX object tests/CMakeFiles/test-arange.dir/test-arange.cpp.o
+[ 25%] Building CXX object tests/CMakeFiles/test-timestep_embedding.dir/test-timestep_embedding.cpp.o
+[ 26%] Building C object tests/CMakeFiles/test-conv-transpose.dir/test-conv-transpose.c.o
+[ 27%] Building C object tests/CMakeFiles/test-dup.dir/test-dup.c.o
+[ 28%] Building C object tests/CMakeFiles/test-rel-pos.dir/test-rel-pos.c.o
+[ 29%] Building C object tests/CMakeFiles/test-customop.dir/test-customop.c.o
+[ 30%] Building CXX object tests/CMakeFiles/test-conv1d.dir/test-conv1d.cpp.o
+[ 31%] Linking C executable ../bin/test0
+[ 32%] Building CXX object tests/CMakeFiles/test-mul-mat.dir/test-mul-mat.cpp.o
+/usr/bin/ld: [ 34%] Building CXX object tests/CMakeFiles/test-conv2d.dir/test-conv2d.cpp.o
+[ 35%] Building CXX object tests/CMakeFiles/test-backend-buffer.dir/test-backend-buffer.cpp.o
+[ 36%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 37%] Building CXX object examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o
+[ 38%] Building CXX object examples/mnist/CMakeFiles/mnist-cpu.dir/main-cpu.cpp.o
+[ 39%] Linking C executable ../bin/test2
+[ 40%] Building CXX object examples/simple/CMakeFiles/simple-ctx.dir/simple-ctx.cpp.o
+[ 41%] Linking C executable ../bin/test3
+[ 42%] Building CXX object examples/simple/CMakeFiles/simple-backend.dir/simple-backend.cpp.o
+[ 43%] Linking C executable ../bin/test-mul-mat0
+[ 45%] Linking C executable ../bin/test1
+/usr/bin/ld: [ 46%] Linking C executable ../bin/test-pool
+[ 47%] Linking C executable ../bin/test-conv-transpose
+/usr/bin/ld: [ 48%] Linking C executable ../bin/test-rel-pos
+[ 49%] Linking CXX executable ../bin/test-opt
+[ 50%] Linking C executable ../bin/test-dup
+/usr/bin/ld[ 51%] Linking C executable ../bin/test-customop
+../src/CMakeFiles/ggml.dir/ggml.c.o: : in function `ggml_vec_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:2172: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_sqrt_f32':
+/home/ggml/work/ggml/src/ggml.c:2174: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_log_f32':
+/home/ggml/work/ggml/src/ggml.c:2175: undefined reference to `logf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_tanh_f32':
+/home/ggml/work/ggml/src/ggml.c:2179: undefined reference to `tanhf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_elu_f32':
+/home/ggml/work/ggml/src/ggml.c:2180: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_sigmoid_f32':
+/home/ggml/work/ggml/src/ggml.c:2183: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_hardswish_f32':
+/home/ggml/work/ggml/src/ggml.c:2185: undefined reference to `fmaxf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:2185: undefined reference to `fminf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_hardsigmoid_f32':
+/home/ggml/work/ggml/src/ggml.c:2186: undefined reference to `fmaxf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:2186: undefined reference to `fminf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_gelu_f32':
+/home/ggml/work/ggml/src/ggml.c:2193: undefined reference to `tanhf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_gelu_quick_f32':
+/home/ggml/work/ggml/src/ggml.c:2227: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_silu_f32':
+/home/ggml/work/ggml/src/ggml.c:2256: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_soft_max_f32':
+/home/ggml/work/ggml/src/ggml.c:2527: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_silu_backward_f32':
+/home/ggml/work/ggml/src/ggml.c:2535: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_arange':
+/home/ggml/work/ggml/src/ggml.c:6862: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11666: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rms_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11734: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rms_norm_back_f32':
+/home/ggml/work/ggml/src/ggml.c:11806: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_group_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11997: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_soft_max_f32':
+/home/ggml/work/ggml/src/ggml.c:13478: undefined reference to `log2'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13478: undefined reference to `floor'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13480: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13481: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13500: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13500: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `rope_yarn':
+/home/ggml/work/ggml/src/ggml.c:13769: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13771: undefined reference to `cosf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13772: undefined reference to `sinf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_rope_yarn_corr_dim':
+/home/ggml/work/ggml/src/ggml.c:13778: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13778: undefined reference to `logf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_rope_yarn_corr_dims':
+/home/ggml/work/ggml/src/ggml.c:13801: undefined reference to `floorf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13802: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rope_f32':
+/home/ggml/work/ggml/src/ggml.c:13856: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rope_f16':
+/home/ggml/work/ggml/src/ggml.c:13981: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_arange_f32':
+/home/ggml/work/ggml/src/ggml.c:14850: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_timestep_embedding_f32':
+/home/ggml/work/ggml/src/ggml.c:14897: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14897: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14899: undefined reference to `cosf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14900: undefined reference to `sinf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_flash_attn_ext_f16':
+/home/ggml/work/ggml/src/ggml.c:15057: undefined reference to `log2'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15057: undefined reference to `floor'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15059: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15060: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15075: undefined reference to `powf'
+/usr/bin/ld: /usr/bin/ld/home/ggml/work/ggml/src/ggml.c:15075: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15131: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15137: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15146: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15152: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_flash_attn_back_f32':
+/home/ggml/work/ggml/src/ggml.c:15310: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_ssm_scan_f32':
+/home/ggml/work/ggml/src/ggml.c:15743: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15743: undefined reference to `log1pf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15750: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_opt_adam':
+/home/ggml/work/ggml/src/ggml.c:19633: undefined reference to `sqrt'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19638: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19639: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19651: undefined reference to `sqrtf'
+/usr/bin/ld/usr/bin/ld[ 52%] Linking CXX executable ../bin/test-arange
+: : : /usr/bin/ld: [ 53%] Linking CXX executable ../bin/test-grad0
+/usr/bin/ld: /usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q8_0_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:861: undefined reference to `roundf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q8_1_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:1176: undefined reference to `roundf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml-quants.c:1177: undefined reference to `roundf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `make_qx_quants':
+/home/ggml/work/ggml/src/ggml-quants.c:1677: undefined reference to `sqrtf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml-quants.c:1693: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q2_K_impl':
+/home/ggml/work/ggml/src/ggml-quants.c:2185: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q3_K_impl':
+/home/ggml/work/ggml/src/ggml-quants.c:2393: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q4_K_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:2493: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o:/home/ggml/work/ggml/src/ggml-quants.c:2596: more undefined references to `sqrtf' follow
+[ 54%] Linking CXX executable ../bin/test-backend-buffer
+collect2: error: ld returned 1 exit status
+make[2]: *** [tests/CMakeFiles/test-vec0.dir/build.make:107: bin/test-vec0] Error 1
+make[1]: *** [CMakeFiles/Makefile2:407: tests/CMakeFiles/test-vec0.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:2172: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_sqrt_f32':
+/home/ggml/work/ggml/src/ggml.c:2174: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_log_f32':
+/home/ggml/work/ggml/src/ggml.c:2175: undefined reference to `logf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_tanh_f32':
+/home/ggml/work/ggml/src/ggml.c:2179: undefined reference to `tanhf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_elu_f32':
+/home/ggml/work/ggml/src/ggml.c:2180: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_sigmoid_f32':
+/home/ggml/work/ggml/src/ggml.c:2183: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_hardswish_f32':
+/home/ggml/work/ggml/src/ggml.c:2185: undefined reference to `fmaxf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:2185: undefined reference to `fminf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_hardsigmoid_f32':
+/home/ggml/work/ggml/src/ggml.c:2186: undefined reference to `fmaxf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:2186: undefined reference to `fminf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_gelu_f32':
+/home/ggml/work/ggml/src/ggml.c:2193: undefined reference to `tanhf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_gelu_quick_f32':
+/home/ggml/work/ggml/src/ggml.c:2227: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_silu_f32':
+/home/ggml/work/ggml/src/ggml.c:2256: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_soft_max_f32':
+/home/ggml/work/ggml/src/ggml.c:2527: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_silu_backward_f32':
+/home/ggml/work/ggml/src/ggml.c:2535: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_arange':
+/home/ggml/work/ggml/src/ggml.c:6862: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11666: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rms_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11734: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rms_norm_back_f32':
+/home/ggml/work/ggml/src/ggml.c:11806: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_group_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11997: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_soft_max_f32':
+/home/ggml/work/ggml/src/ggml.c:13478: undefined reference to `log2'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13478: undefined reference to `floor'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13480: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13481: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13500: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13500: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `rope_yarn':
+/home/ggml/work/ggml/src/ggml.c:13769: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13771: undefined reference to `cosf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13772: undefined reference to `sinf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_rope_yarn_corr_dim':
+/home/ggml/work/ggml/src/ggml.c:13778: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13778: undefined reference to `logf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_rope_yarn_corr_dims':
+/home/ggml/work/ggml/src/ggml.c:13801: undefined reference to `floorf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13802: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rope_f32':
+/home/ggml/work/ggml/src/ggml.c:13856: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rope_f16':
+/home/ggml/work/ggml/src/ggml.c:13981: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_arange_f32':
+/home/ggml/work/ggml/src/ggml.c:14850: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_timestep_embedding_f32':
+/home/ggml/work/ggml/src/ggml.c:14897: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14897: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14899: undefined reference to `cosf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14900: undefined reference to `sinf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_flash_attn_ext_f16':
+/home/ggml/work/ggml/src/ggml.c:15057: undefined reference to `log2'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15057: undefined reference to `floor'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15059: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15060: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15075: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15075: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15131: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15137: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15146: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15152: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_flash_attn_back_f32':
+/home/ggml/work/ggml/src/ggml.c:15310: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_ssm_scan_f32':
+/home/ggml/work/ggml/src/ggml.c:15743: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15743: undefined reference to `log1pf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15750: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_opt_adam':
+/home/ggml/work/ggml/src/ggml.c:19633: undefined reference to `sqrt'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19638: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19639: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19651: undefined reference to `sqrtf'
+/usr/bin/ld: /usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:2172: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_sqrt_f32':
+/home/ggml/work/ggml/src/ggml.c:2174: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_log_f32':
+/home/ggml/work/ggml/src/ggml.c:2175: undefined reference to `logf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_tanh_f32':
+/home/ggml/work/ggml/src/ggml.c:2179: undefined reference to `tanhf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_elu_f32':
+/home/ggml/work/ggml/src/ggml.c:2180: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_sigmoid_f32':
+/home/ggml/work/ggml/src/ggml.c:2183: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_hardswish_f32':
+/home/ggml/work/ggml/src/ggml.c:2185: undefined reference to `fmaxf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:2185: undefined reference to `fminf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_hardsigmoid_f32':
+/home/ggml/work/ggml/src/ggml.c:2186: undefined reference to `fmaxf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:2186: undefined reference to `fminf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_gelu_f32':
+/home/ggml/work/ggml/src/ggml.c:2193: undefined reference to `tanhf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_gelu_quick_f32':
+/home/ggml/work/ggml/src/ggml.c:2227: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_silu_f32':
+/home/ggml/work/ggml/src/ggml.c:2256: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_soft_max_f32':
+/home/ggml/work/ggml/src/ggml.c:2527: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_silu_backward_f32':
+/home/ggml/work/ggml/src/ggml.c:2535: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_arange':
+/home/ggml/work/ggml/src/ggml.c:6862: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11666: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rms_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11734: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rms_norm_back_f32':
+/home/ggml/work/ggml/src/ggml.c:11806: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_group_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11997: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_soft_max_f32':
+/home/ggml/work/ggml/src/ggml.c:13478: undefined reference to `log2'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13478: undefined reference to `floor'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13480: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13481: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13500: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13500: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `rope_yarn':
+/home/ggml/work/ggml/src/ggml.c:13769: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13771: undefined reference to `cosf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13772: undefined reference to `sinf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_rope_yarn_corr_dim':
+/home/ggml/work/ggml/src/ggml.c:13778: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13778: undefined reference to `logf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_rope_yarn_corr_dims':
+/home/ggml/work/ggml/src/ggml.c:13801: undefined reference to `floorf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13802: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rope_f32':
+/home/ggml/work/ggml/src/ggml.c:13856: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rope_f16':
+/home/ggml/work/ggml/src/ggml.c:13981: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_arange_f32':
+/home/ggml/work/ggml/src/ggml.c:14850: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_timestep_embedding_f32':
+/home/ggml/work/ggml/src/ggml.c:14897: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14897: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14899: undefined reference to `cosf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14900: undefined reference to `sinf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_flash_attn_ext_f16':
+/home/ggml/work/ggml/src/ggml.c:15057: undefined reference to `log2'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15057: undefined reference to `floor'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15059: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15060: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15075: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15075: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15131: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15137: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15146: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15152: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_flash_attn_back_f32':
+/home/ggml/work/ggml/src/ggml.c:15310: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_ssm_scan_f32':
+/home/ggml/work/ggml/src/ggml.c:15743: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15743: undefined reference to `log1pf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15750: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_opt_adam':
+/home/ggml/work/ggml/src/ggml.c:19633: undefined reference to `sqrt'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19638: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19639: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19651: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o[ 54%] Built target test-opt
+: in function `quantize_row_q8_0_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:861: undefined reference to `roundf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q8_1_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:1176: undefined reference to `roundf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml-quants.c:1177: undefined reference to `roundf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `make_qx_quants':
+/home/ggml/work/ggml/src/ggml-quants.c:1677: undefined reference to `sqrtf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml-quants.c:1693: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q2_K_impl':
+/home/ggml/work/ggml/src/ggml-quants.c:2185: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q3_K_impl':
+/home/ggml/work/ggml/src/ggml-quants.c:2393: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q4_K_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:2493: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o:/home/ggml/work/ggml/src/ggml-quants.c:2596: more undefined references to `sqrtf' follow
+collect2: error: ld returned 1 exit status
+make[2]: *** [tests/CMakeFiles/test2.dir/build.make:107: bin/test2] Error 1
+make[1]: *** [CMakeFiles/Makefile2:667: tests/CMakeFiles/test2.dir/all] Error 2
+../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:2172: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_sqrt_f32':
+/home/ggml/work/ggml/src/ggml.c:2174: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_log_f32':
+/home/ggml/work/ggml/src/ggml.c:2175: undefined reference to `logf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_tanh_f32':
+/home/ggml/work/ggml/src/ggml.c:2179: undefined reference to `tanhf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_elu_f32':
+/home/ggml/work/ggml/src/ggml.c:2180: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_sigmoid_f32':
+/home/ggml/work/ggml/src/ggml.c:2183: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_hardswish_f32':
+/home/ggml/work/ggml/src/ggml.c:2185: undefined reference to `fmaxf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:2185: undefined reference to `fminf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_hardsigmoid_f32':
+/home/ggml/work/ggml/src/ggml.c:2186: undefined reference to `fmaxf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:2186: undefined reference to `fminf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_gelu_f32':
+/home/ggml/work/ggml/src/ggml.c:2193: undefined reference to `tanhf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_gelu_quick_f32':
+/home/ggml/work/ggml/src/ggml.c:2227: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_silu_f32':
+/home/ggml/work/ggml/src/ggml.c:2256: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_soft_max_f32':
+/home/ggml/work/ggml/src/ggml.c:2527: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_silu_backward_f32':
+/home/ggml/work/ggml/src/ggml.c:2535: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_arange':
+/home/ggml/work/ggml/src/ggml.c:6862: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11666: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rms_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11734: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rms_norm_back_f32':
+/home/ggml/work/ggml/src/ggml.c:11806: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_group_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11997: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_soft_max_f32':
+/home/ggml/work/ggml/src/ggml.c:13478: undefined reference to `log2'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13478: undefined reference to `floor'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13480: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13481: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13500: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13500: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `rope_yarn':
+/home/ggml/work/ggml/src/ggml.c:13769: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13771: undefined reference to `cosf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13772: undefined reference to `sinf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_rope_yarn_corr_dim':
+/home/ggml/work/ggml/src/ggml.c:13778: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13778: undefined reference to `logf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_rope_yarn_corr_dims':
+/home/ggml/work/ggml/src/ggml.c:13801: undefined reference to `floorf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13802: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rope_f32':
+/home/ggml/work/ggml/src/ggml.c:13856: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rope_f16':
+/home/ggml/work/ggml/src/ggml.c:13981: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_arange_f32':
+/home/ggml/work/ggml/src/ggml.c:14850: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_timestep_embedding_f32':
+/home/ggml/work/ggml/src/ggml.c:14897: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14897: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14899: undefined reference to `cosf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14900: undefined reference to `sinf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_flash_attn_ext_f16':
+/home/ggml/work/ggml/src/ggml.c:15057: undefined reference to `log2'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15057: undefined reference to `floor'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15059: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15060: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15075: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15075: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15131: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15137: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15146: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15152: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_flash_attn_back_f32':
+/home/ggml/work/ggml/src/ggml.c:15310: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_ssm_scan_f32':
+/home/ggml/work/ggml/src/ggml.c:15743: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15743: undefined reference to `log1pf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15750: undefined reference to `expf'
+../src/CMakeFiles/ggml.dir/ggml.c.o/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_opt_adam':
+/home/ggml/work/ggml/src/ggml.c:19633: undefined reference to `sqrt'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19638: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19639: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19651: undefined reference to `sqrtf'
+: in function `ggml_vec_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:2172: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_sqrt_f32':
+/home/ggml/work/ggml/src/ggml.c:2174: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_log_f32':
+/home/ggml/work/ggml/src/ggml.c:2175: undefined reference to `logf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_tanh_f32':
+/home/ggml/work/ggml/src/ggml.c:2179: undefined reference to `tanhf'
+/usr/bin/ld: /usr/bin/ld../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_elu_f32':
+/home/ggml/work/ggml/src/ggml.c:2180: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_sigmoid_f32':
+/home/ggml/work/ggml/src/ggml.c:2183: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_hardswish_f32':
+/home/ggml/work/ggml/src/ggml.c:2185: undefined reference to `fmaxf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:2185: undefined reference to `fminf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_hardsigmoid_f32':
+/home/ggml/work/ggml/src/ggml.c:2186: undefined reference to `fmaxf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:2186: undefined reference to `fminf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_gelu_f32':
+/home/ggml/work/ggml/src/ggml.c:2193: undefined reference to `tanhf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_gelu_quick_f32':
+/home/ggml/work/ggml/src/ggml.c:2227: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_silu_f32':
+/home/ggml/work/ggml/src/ggml.c:2256: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_soft_max_f32':
+/home/ggml/work/ggml/src/ggml.c:2527: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_silu_backward_f32':
+/home/ggml/work/ggml/src/ggml.c:2535: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_arange':
+/home/ggml/work/ggml/src/ggml.c:6862: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11666: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rms_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11734: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rms_norm_back_f32':
+/home/ggml/work/ggml/src/ggml.c:11806: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_group_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11997: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_soft_max_f32':
+/home/ggml/work/ggml/src/ggml.c:13478: undefined reference to `log2'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13478: undefined reference to `floor'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13480: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13481: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13500: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13500: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `rope_yarn':
+/home/ggml/work/ggml/src/ggml.c:13769: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13771: undefined reference to `cosf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13772: undefined reference to `sinf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_rope_yarn_corr_dim':
+/home/ggml/work/ggml/src/ggml.c:13778: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13778: undefined reference to `logf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_rope_yarn_corr_dims':
+/home/ggml/work/ggml/src/ggml.c:13801: undefined reference to `floorf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13802: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rope_f32':
+/home/ggml/work/ggml/src/ggml.c:13856: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rope_f16':
+/home/ggml/work/ggml/src/ggml.c:13981: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_arange_f32':
+/home/ggml/work/ggml/src/ggml.c:14850: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_timestep_embedding_f32':
+/home/ggml/work/ggml/src/ggml.c:14897: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14897: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14899: undefined reference to `cosf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14900: undefined reference to `sinf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_flash_attn_ext_f16':
+/home/ggml/work/ggml/src/ggml.c:15057: undefined reference to `log2'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15057: undefined reference to `floor'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15059: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15060: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15075: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15075: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15131: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15137: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15146: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15152: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_flash_attn_back_f32':
+/home/ggml/work/ggml/src/ggml.c:15310: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_ssm_scan_f32':
+/home/ggml/work/ggml/src/ggml.c:15743: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15743: undefined reference to `log1pf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15750: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_opt_adam':
+/home/ggml/work/ggml/src/ggml.c:19633: undefined reference to `sqrt'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19638: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19639: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19651: undefined reference to `sqrtf'
+/usr/bin/ld: : ../src/CMakeFiles/ggml.dir/ggml-quants.c.o../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:2172: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_sqrt_f32':
+/home/ggml/work/ggml/src/ggml.c:2174: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_log_f32':
+/home/ggml/work/ggml/src/ggml.c:2175: undefined reference to `logf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_tanh_f32':
+/home/ggml/work/ggml/src/ggml.c:2179: undefined reference to `tanhf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_elu_f32':
+/home/ggml/work/ggml/src/ggml.c:2180: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_sigmoid_f32':
+/home/ggml/work/ggml/src/ggml.c:2183: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_hardswish_f32':
+/home/ggml/work/ggml/src/ggml.c:2185: undefined reference to `fmaxf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:2185: undefined reference to `fminf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_hardsigmoid_f32':
+/home/ggml/work/ggml/src/ggml.c:2186: undefined reference to `fmaxf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:2186: undefined reference to `fminf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_gelu_f32':
+/home/ggml/work/ggml/src/ggml.c:2193: undefined reference to `tanhf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_gelu_quick_f32':
+/home/ggml/work/ggml/src/ggml.c:2227: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_silu_f32':
+/home/ggml/work/ggml/src/ggml.c:2256: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_soft_max_f32':
+/home/ggml/work/ggml/src/ggml.c:2527: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_silu_backward_f32':
+/home/ggml/work/ggml/src/ggml.c:2535: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_arange':
+/home/ggml/work/ggml/src/ggml.c:6862: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:: in function `quantize_row_q8_0_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:861: undefined reference to `roundf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q8_1_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:1176: undefined reference to `roundf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml-quants.c:1177: undefined reference to `roundf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `make_qx_quants':
+/home/ggml/work/ggml/src/ggml-quants.c:1677: undefined reference to `sqrtf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml-quants.c:1693: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q2_K_impl':
+/home/ggml/work/ggml/src/ggml-quants.c:2185: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q3_K_impl':
+/home/ggml/work/ggml/src/ggml-quants.c:2393: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q4_K_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:2493: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o:/home/ggml/work/ggml/src/ggml-quants.c:2596: more undefined references to `sqrtf' follow
+11666: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rms_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11734: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rms_norm_back_f32':
+/home/ggml/work/ggml/src/ggml.c:11806: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_group_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11997: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_soft_max_f32':
+/home/ggml/work/ggml/src/ggml.c:13478: undefined reference to `log2'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13478: undefined reference to `floor'
+/usr/bin/ldcollect2: error: ld returned 1 exit status
+: make[2]: *** [tests/CMakeFiles/test0.dir/build.make:107: bin/test0] Error 1
+/home/ggml/work/ggml/src/ggml.c:13480: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13481: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13500: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13500: undefined reference to `powf'
+../src/CMakeFiles/ggml.dir/ggml.c.o/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `rope_yarn':
+/home/ggml/work/ggml/src/ggml.c:13769: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:../src/CMakeFiles/ggml.dir/ggml.c.o13771: undefined reference to `cosf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13772: in function `: undefined reference to `sinfggml_vec_norm_f32':
+'
+/home/ggml/work/ggml/src/ggml.c:/usr/bin/ld2172: undefined reference to `sqrtf'
+: ../src/CMakeFiles/ggml.dir/ggml.c.o/usr/bin/ld: : in function `ggml_rope_yarn_corr_dim../src/CMakeFiles/ggml.dir/ggml.c.o':
+: in function `ggml_vec_sqrt_f32/home/ggml/work/ggml/src/ggml.c:':
+/home/ggml/work/ggml/src/ggml.c:137782174: undefined reference to `: undefined reference to `sqrtflogf'
+'
+/usr/bin/ld/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: /home/ggml/work/ggml/src/ggml.c:13778: in function `ggml_vec_log_f32: undefined reference to `':
+/home/ggml/work/ggml/src/ggml.c:logf2175: undefined reference to `'
+logf/usr/bin/ld'
+/usr/bin/ld: : ../src/CMakeFiles/ggml.dir/ggml.c.o../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_tanh_f32':
+: in function `/home/ggml/work/ggml/src/ggml.c:ggml_rope_yarn_corr_dims2179: undefined reference to `':
+tanhf'
+/home/ggml/work/ggml/src/ggml.c:/usr/bin/ld13801: : undefined reference to `../src/CMakeFiles/ggml.dir/ggml.c.ofloorf: in function `ggml_vec_elu_f32'
+':
+/home/ggml/work/ggml/src/ggml.c:/usr/bin/ld2180: undefined reference to `expf'
+: /usr/bin/ld/home/ggml/work/ggml/src/ggml.c:: ../src/CMakeFiles/ggml.dir/ggml.c.o13802: in function `ggml_vec_sigmoid_f32: undefined reference to `':
+/home/ggml/work/ggml/src/ggml.c:ceilf2183: undefined reference to `'
+expf'
+/usr/bin/ld/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `: ../src/CMakeFiles/ggml.dir/ggml.c.oggml_vec_hardswish_f32':
+/home/ggml/work/ggml/src/ggml.c:: in function `2185ggml_compute_forward_rope_f32: undefined reference to `fmaxf':
+'
+/home/ggml/work/ggml/src/ggml.c:/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:2185: undefined reference to `fminf'
+/usr/bin/ld13856: ../src/CMakeFiles/ggml.dir/ggml.c.o: undefined reference to `: in function `ggml_vec_hardsigmoid_f32powf':
+/home/ggml/work/ggml/src/ggml.c:'
+2186: undefined reference to `/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rope_f16':
+/home/ggml/work/ggml/src/ggml.c:13981: undefined reference to `powf'
+fmaxf/usr/bin/ld: '
+../src/CMakeFiles/ggml.dir/ggml.c.o/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:: in function `2186ggml_compute_forward_arange_f32: undefined reference to `fminf':
+'
+/home/ggml/work/ggml/src/ggml.c:/usr/bin/ld: 14850../src/CMakeFiles/ggml.dir/ggml.c.o: undefined reference to `: in function `ggml_gelu_f32ceilf':
+/home/ggml/work/ggml/src/ggml.c:'
+2193: undefined reference to `tanhf/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_timestep_embedding_f32':
+/home/ggml/work/ggml/src/ggml.c:14897: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14897: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14899: undefined reference to `cosf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14900: undefined reference to `sinf'
+/usr/bin/ld'
+: /usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_gelu_quick_f32':
+: in function `/home/ggml/work/ggml/src/ggml.c:ggml_compute_forward_flash_attn_ext_f162227: undefined reference to `':
+expf/home/ggml/work/ggml/src/ggml.c:'
+/usr/bin/ld15057: : undefined reference to `../src/CMakeFiles/ggml.dir/ggml.c.olog2: in function `ggml_silu_f32'
+':
+/home/ggml/work/ggml/src/ggml.c:/usr/bin/ld2256: undefined reference to `expf'
+: /home/ggml/work/ggml/src/ggml.c:/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o15057: in function `ggml_vec_soft_max_f32: undefined reference to `':
+/home/ggml/work/ggml/src/ggml.c:floor2527: undefined reference to `'
+expf/usr/bin/ld'
+/usr/bin/ld: : ../src/CMakeFiles/ggml.dir/ggml.c.o/home/ggml/work/ggml/src/ggml.c:: in function `ggml_silu_backward_f32':
+15059/home/ggml/work/ggml/src/ggml.c:2535: undefined reference to `: undefined reference to `expfpowf'
+'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15060: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15075: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15075: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15131: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15137: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15146: undefined reference to `expf/usr/bin/ld: '
+/usr/bin/ld../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_arange: ':
+/home/ggml/work/ggml/src/ggml.c:/home/ggml/work/ggml/src/ggml.c:6862: undefined reference to `ceilf'
+15152: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_flash_attn_back_f32':
+/home/ggml/work/ggml/src/ggml.c:15310: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_ssm_scan_f32':
+/home/ggml/work/ggml/src/ggml.c:15743: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15743: undefined reference to `log1pf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15750: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_opt_adam':
+/home/ggml/work/ggml/src/ggml.c:19633: undefined reference to `sqrt'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19638: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19639: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19651: undefined reference to `sqrtf'
+ggml_compute_forward_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11666: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rms_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11734: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rms_norm_back_f32':
+/home/ggml/work/ggml/src/ggml.c:11806: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_group_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11997: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_soft_max_f32':
+/home/ggml/work/ggml/src/ggml.c:13478: undefined reference to `log2'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13478: undefined reference to `floor'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13480: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13481: undefined reference to `powf'
+/usr/bin/ld: in function `ggml_vec_norm_f32: ':
+/home/ggml/work/ggml/src/ggml.c:/home/ggml/work/ggml/src/ggml.c:135002172: undefined reference to `: undefined reference to `powf'
+sqrtf'
+/usr/bin/ld/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_sqrt_f32':
+/home/ggml/work/ggml/src/ggml.c:2174: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_log_f32':
+/home/ggml/work/ggml/src/ggml.c:2175: undefined reference to `logf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_tanh_f32':
+/home/ggml/work/ggml/src/ggml.c:2179: undefined reference to `tanhf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_elu_f32':
+/home/ggml/work/ggml/src/ggml.c:2180: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_sigmoid_f32':
+/home/ggml/work/ggml/src/ggml.c:2183: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_hardswish_f32':
+/home/ggml/work/ggml/src/ggml.c:2185: undefined reference to `fmaxf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:2185: undefined reference to `fminf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_hardsigmoid_f32':
+/home/ggml/work/ggml/src/ggml.c:2186: undefined reference to `fmaxf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:2186: undefined reference to `fminf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_gelu_f32':
+/home/ggml/work/ggml/src/ggml.c:2193: undefined reference to `tanhf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_gelu_quick_f32':
+/home/ggml/work/ggml/src/ggml.c:2227: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_silu_f32':
+/home/ggml/work/ggml/src/ggml.c:2256: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_soft_max_f32':
+/home/ggml/work/ggml/src/ggml.c:2527: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_silu_backward_f32':
+/home/ggml/work/ggml/src/ggml.c:2535: undefined reference to `expf'
+: /home/ggml/work/ggml/src/ggml.c:13500: undefined reference to `powf/usr/bin/ld'
+: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `/usr/bin/ldggml_arange: ':
+/home/ggml/work/ggml/src/ggml.c:../src/CMakeFiles/ggml.dir/ggml.c.o: in function `rope_yarn6862':
+/home/ggml/work/ggml/src/ggml.c:: undefined reference to `13769ceilf: undefined reference to `logf'
+'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13771: undefined reference to `cosf'
+/usr/bin/ld/usr/bin/ld: : ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11666: undefined reference to `sqrtf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13772: undefined reference to `../src/CMakeFiles/ggml.dir/ggml.c.osinf'
+: in function `/usr/bin/ldggml_compute_forward_rms_norm_f32: ':
+../src/CMakeFiles/ggml.dir/ggml.c.o/home/ggml/work/ggml/src/ggml.c:: in function `ggml_rope_yarn_corr_dim11734: undefined reference to `':
+/home/ggml/work/ggml/src/ggml.c:13778sqrtf: undefined reference to `'
+logf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rms_norm_back_f32':
+/home/ggml/work/ggml/src/ggml.c:11806: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_group_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11997: undefined reference to `sqrtf'
+/usr/bin/ld: /usr/bin/ld/home/ggml/work/ggml/src/ggml.c:: 13778: undefined reference to `../src/CMakeFiles/ggml.dir/ggml.c.ologf'
+/usr/bin/ld: in function `: ggml_compute_forward_soft_max_f32../src/CMakeFiles/ggml.dir/ggml.c.o':
+: in function `ggml_rope_yarn_corr_dims/home/ggml/work/ggml/src/ggml.c:':
+/home/ggml/work/ggml/src/ggml.c:13801: undefined reference to `floorf'
+/usr/bin/ld/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13802: undefined reference to `ceilf'
+/usr/bin/ld: : ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rope_f32':
+/home/ggml/work/ggml/src/ggml.c:13856: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rope_f16':
+/home/ggml/work/ggml/src/ggml.c:13981: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_arange_f32':
+/home/ggml/work/ggml/src/ggml.c:14850: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_timestep_embedding_f32':
+/home/ggml/work/ggml/src/ggml.c:14897: undefined reference to `logf'
+/usr/bin/ldmake[1]: *** [CMakeFiles/Makefile2:615: tests/CMakeFiles/test0.dir/all] Error 2
+: /home/ggml/work/ggml/src/ggml.c:14897: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14899: undefined reference to `cosf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14900: undefined reference to `sinf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_flash_attn_ext_f16':
+/home/ggml/work/ggml/src/ggml.c:15057: undefined reference to `log2'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15057: undefined reference to `floor'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15059: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15060: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15075: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15075: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15131: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15137: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15146: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15152: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_flash_attn_back_f32':
+/home/ggml/work/ggml/src/ggml.c:15310: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_ssm_scan_f32':
+/home/ggml/work/ggml/src/ggml.c:15743: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15743: undefined reference to `log1pf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15750: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_opt_adam':
+/home/ggml/work/ggml/src/ggml.c:19633: undefined reference to `sqrt'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19638: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19639: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19651: undefined reference to `sqrtf'
+13478: undefined reference to `log2'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13478: undefined reference to `floor'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13480: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13481: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13500/usr/bin/ld: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13500: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `rope_yarn':
+/home/ggml/work/ggml/src/ggml.c:13769[ 54%] Built target test-grad0
+: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13771: undefined reference to `cosf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13772: undefined reference to `sinf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_rope_yarn_corr_dim':
+/home/ggml/work/ggml/src/ggml.c:13778: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13778: undefined reference to `logf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_rope_yarn_corr_dims':
+/home/ggml/work/ggml/src/ggml.c:13801: undefined reference to `floorf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13802: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rope_f32':
+/home/ggml/work/ggml/src/ggml.c:13856: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rope_f16':
+/home/ggml/work/ggml/src/ggml.c:13981: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_arange_f32':
+/home/ggml/work/ggml/src/ggml.c:14850: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_timestep_embedding_f32':
+/home/ggml/work/ggml/src/ggml.c:14897: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14897: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14899: undefined reference to `cosf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14900: undefined reference to `sinf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_flash_attn_ext_f16':
+/home/ggml/work/ggml/src/ggml.c:15057: undefined reference to `log2'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15057: undefined reference to `floor'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15059: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15060: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15075: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15075: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15131: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15137: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15146: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15152: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_flash_attn_back_f32':
+/home/ggml/work/ggml/src/ggml.c:15310: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: : in function `ggml_compute_forward_ssm_scan_f32':
+/home/ggml/work/ggml/src/ggml.c:15743: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15743: undefined reference to `log1pf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15750: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_opt_adam':
+/home/ggml/work/ggml/src/ggml.c:19633: undefined reference to `sqrt'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19638: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19639: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19651: undefined reference to `sqrtf'
+[ 54%] Built target test-arange
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o[ 54%] Built target test-backend-buffer
+../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q8_0_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:861: undefined reference to `roundf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q8_1_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:1176: undefined reference to `roundf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml-quants.c:1177: undefined reference to `roundf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `make_qx_quants':
+/home/ggml/work/ggml/src/ggml-quants.c:1677: undefined reference to `sqrtf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml-quants.c:1693: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q2_K_impl':
+/home/ggml/work/ggml/src/ggml-quants.c:2185: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q3_K_impl':
+/home/ggml/work/ggml/src/ggml-quants.c:2393: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q4_K_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:2493: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o:/home/ggml/work/ggml/src/ggml-quants.c:2596: more undefined references to `sqrtf' follow
+: in function `quantize_row_q8_0_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:861: undefined reference to `roundf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q8_1_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:1176: undefined reference to `roundf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml-quants.c:1177: undefined reference to `roundf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `make_qx_quants':
+/home/ggml/work/ggml/src/ggml-quants.c:1677: undefined reference to `sqrtf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml-quants.c:1693: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q2_K_impl':
+/home/ggml/work/ggml/src/ggml-quants.c:2185: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q3_K_impl':
+/home/ggml/work/ggml/src/ggml-quants.c:2393: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q4_K_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:2493: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o:/home/ggml/work/ggml/src/ggml-quants.c:2596: more undefined references to `sqrtf' follow
+collect2: error: ld returned 1 exit status
+make[2]: *** [tests/CMakeFiles/test-mul-mat0.dir/build.make:107: bin/test-mul-mat0] Error 1
+make[1]: *** [CMakeFiles/Makefile2:563: tests/CMakeFiles/test-mul-mat0.dir/all] Error 2
+collect2: error: ld returned 1 exit status
+make[2]: *** [tests/CMakeFiles/test1.dir/build.make:107: bin/test1] Error 1
+make[1]: *** [CMakeFiles/Makefile2:641: tests/CMakeFiles/test1.dir/all] Error 2
+../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:2172: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_sqrt_f32':
+/home/ggml/work/ggml/src/ggml.c:2174: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_log_f32':
+/home/ggml/work/ggml/src/ggml.c:2175: undefined reference to `logf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_tanh_f32':
+/home/ggml/work/ggml/src/ggml.c:2179: undefined reference to `tanhf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_elu_f32':
+/home/ggml/work/ggml/src/ggml.c:2180: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_sigmoid_f32':
+/home/ggml/work/ggml/src/ggml.c:2183: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_hardswish_f32':
+/home/ggml/work/ggml/src/ggml.c:2185: undefined reference to `fmaxf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:2185: undefined reference to `fminf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_hardsigmoid_f32':
+/home/ggml/work/ggml/src/ggml.c:2186: undefined reference to `fmaxf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:2186: undefined reference to `fminf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_gelu_f32':
+/home/ggml/work/ggml/src/ggml.c:2193: undefined reference to `tanhf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_gelu_quick_f32':
+/home/ggml/work/ggml/src/ggml.c:2227: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_silu_f32':
+/home/ggml/work/ggml/src/ggml.c:2256: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_soft_max_f32':
+/home/ggml/work/ggml/src/ggml.c:2527: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_silu_backward_f32':
+/home/ggml/work/ggml/src/ggml.c:2535: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_arange':
+/home/ggml/work/ggml/src/ggml.c:6862: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11666: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rms_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11734: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rms_norm_back_f32':
+/home/ggml/work/ggml/src/ggml.c:11806: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_group_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11997: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_soft_max_f32':
+/home/ggml/work/ggml/src/ggml.c:13478: undefined reference to `log2'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13478: undefined reference to `floor'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13480: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13481: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13500: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13500: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `rope_yarn':
+/home/ggml/work/ggml/src/ggml.c:13769: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13771: undefined reference to `cosf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13772: undefined reference to `sinf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_rope_yarn_corr_dim':
+/home/ggml/work/ggml/src/ggml.c:13778: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13778: undefined reference to `logf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_rope_yarn_corr_dims':
+/home/ggml/work/ggml/src/ggml.c:13801: undefined reference to `floorf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13802: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rope_f32':
+/home/ggml/work/ggml/src/ggml.c:13856: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rope_f16':
+/home/ggml/work/ggml/src/ggml.c:13981: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_arange_f32':
+/home/ggml/work/ggml/src/ggml.c:14850: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_timestep_embedding_f32':
+/home/ggml/work/ggml/src/ggml.c:14897: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14897: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14899: undefined reference to `cosf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14900: undefined reference to `sinf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_flash_attn_ext_f16':
+/home/ggml/work/ggml/src/ggml.c:15057: undefined reference to `log2'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15057: undefined reference to `floor'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15059: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15060: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15075: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15075: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15131: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15137: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15146: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15152: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_flash_attn_back_f32':
+/home/ggml/work/ggml/src/ggml.c:15310: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_ssm_scan_f32':
+/home/ggml/work/ggml/src/ggml.c:15743: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15743: undefined reference to `log1pf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15750: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_opt_adam':
+/home/ggml/work/ggml/src/ggml.c:19633: undefined reference to `sqrt'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19638: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19639: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19651: undefined reference to `sqrtf'
+../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q8_0_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:861: undefined reference to `roundf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q8_1_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:1176: undefined reference to `roundf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml-quants.c:1177: undefined reference to `roundf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `make_qx_quants':
+/home/ggml/work/ggml/src/ggml-quants.c:1677: undefined reference to `sqrtf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml-quants.c:1693: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q2_K_impl':
+/home/ggml/work/ggml/src/ggml-quants.c:2185: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q3_K_impl':
+/home/ggml/work/ggml/src/ggml-quants.c:2393: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q4_K_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:2493: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o:/home/ggml/work/ggml/src/ggml-quants.c:2596: more undefined references to `sqrtf' follow
+/usr/bin/ld: collect2: error: ld returned 1 exit status
+make[2]: *** [tests/CMakeFiles/test3.dir/build.make:107: bin/test3] Error 1
+make[1]: *** [CMakeFiles/Makefile2:693: tests/CMakeFiles/test3.dir/all] Error 2
+../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q8_0_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:861: undefined reference to `roundf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q8_1_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:1176: undefined reference to `roundf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml-quants.c:1177: undefined reference to `roundf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `make_qx_quants':
+/home/ggml/work/ggml/src/ggml-quants.c:1677: undefined reference to `sqrtf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml-quants.c:1693: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q2_K_impl':
+/home/ggml/work/ggml/src/ggml-quants.c:2185: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q3_K_impl':
+/home/ggml/work/ggml/src/ggml-quants.c:2393: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q4_K_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:2493: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o:/home/ggml/work/ggml/src/ggml-quants.c:2596: more undefined references to `sqrtf' follow
+../src/CMakeFiles/ggml.dir/ggml-quants.c.ocollect2: error: ld returned 1 exit status
+make[2]: *** [tests/CMakeFiles/test-pool.dir/build.make:107: bin/test-pool] Error 1
+make[1]: *** [CMakeFiles/Makefile2:719: tests/CMakeFiles/test-pool.dir/all] Error 2
+../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:2172: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_sqrt_f32':
+/home/ggml/work/ggml/src/ggml.c:2174: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_log_f32':
+/home/ggml/work/ggml/src/ggml.c:2175: undefined reference to `logf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_tanh_f32':
+/home/ggml/work/ggml/src/ggml.c:2179: undefined reference to `tanhf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_elu_f32':
+/home/ggml/work/ggml/src/ggml.c:2180: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_sigmoid_f32':
+/home/ggml/work/ggml/src/ggml.c:2183: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_hardswish_f32':
+/home/ggml/work/ggml/src/ggml.c:2185: undefined reference to `fmaxf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:2185: undefined reference to `fminf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_hardsigmoid_f32':
+/home/ggml/work/ggml/src/ggml.c:2186: undefined reference to `fmaxf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:2186: undefined reference to `fminf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_gelu_f32':
+/home/ggml/work/ggml/src/ggml.c:2193: undefined reference to `tanhf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_gelu_quick_f32':
+/home/ggml/work/ggml/src/ggml.c:2227: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_silu_f32':
+/home/ggml/work/ggml/src/ggml.c:2256: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_soft_max_f32':
+/home/ggml/work/ggml/src/ggml.c:2527: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_silu_backward_f32':
+/home/ggml/work/ggml/src/ggml.c:2535: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_arange':
+/home/ggml/work/ggml/src/ggml.c:6862: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11666: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rms_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11734: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rms_norm_back_f32':
+/home/ggml/work/ggml/src/ggml.c:11806: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_group_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11997: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_soft_max_f32':
+/home/ggml/work/ggml/src/ggml.c:13478: undefined reference to `log2'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13478: undefined reference to `floor'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13480: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13481: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13500: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13500: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `rope_yarn':
+/home/ggml/work/ggml/src/ggml.c:13769: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13771: undefined reference to `cosf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13772: undefined reference to `sinf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_rope_yarn_corr_dim':
+/home/ggml/work/ggml/src/ggml.c:13778: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13778: undefined reference to `logf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_rope_yarn_corr_dims':
+/home/ggml/work/ggml/src/ggml.c:13801: undefined reference to `floorf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13802: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rope_f32':
+/home/ggml/work/ggml/src/ggml.c:13856: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rope_f16':
+/home/ggml/work/ggml/src/ggml.c:13981: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_arange_f32':
+/home/ggml/work/ggml/src/ggml.c:14850: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_timestep_embedding_f32':
+/home/ggml/work/ggml/src/ggml.c:14897: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14897: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14899: undefined reference to `cosf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14900: undefined reference to `sinf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_flash_attn_ext_f16':
+/home/ggml/work/ggml/src/ggml.c:15057: undefined reference to `log2'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15057: undefined reference to `floor'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15059: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15060: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15075: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15075: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15131: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15137: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15146: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15152: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_flash_attn_back_f32':
+/home/ggml/work/ggml/src/ggml.c:15310: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_ssm_scan_f32':
+/home/ggml/work/ggml/src/ggml.c:15743: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15743: undefined reference to `log1pf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15750: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_opt_adam':
+/home/ggml/work/ggml/src/ggml.c:19633: undefined reference to `sqrt'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19638: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19639: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19651: undefined reference to `sqrtf'
+: in function `quantize_row_q8_0_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:861: undefined reference to `roundf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q8_1_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:1176: undefined reference to `roundf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml-quants.c:1177: undefined reference to `roundf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `make_qx_quants':
+/home/ggml/work/ggml/src/ggml-quants.c:1677: undefined reference to `sqrtf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml-quants.c:1693: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q2_K_impl':
+/home/ggml/work/ggml/src/ggml-quants.c:2185: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q3_K_impl':
+/home/ggml/work/ggml/src/ggml-quants.c:2393: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q4_K_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:2493: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o:/home/ggml/work/ggml/src/ggml-quants.c:2596: more undefined references to `sqrtf' follow
+collect2: error: ld returned 1 exit status
+/usr/bin/ld: make[2]: *** [tests/CMakeFiles/test-conv-transpose.dir/build.make:107: bin/test-conv-transpose] Error 1
+make[1]: *** [CMakeFiles/Makefile2:797: tests/CMakeFiles/test-conv-transpose.dir/all] Error 2
+../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:2172: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_sqrt_f32':
+/home/ggml/work/ggml/src/ggml.c:2174: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_log_f32':
+/home/ggml/work/ggml/src/ggml.c:2175: undefined reference to `logf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_tanh_f32':
+/home/ggml/work/ggml/src/ggml.c:2179: undefined reference to `tanhf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_elu_f32':
+/home/ggml/work/ggml/src/ggml.c:2180: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_sigmoid_f32':
+/home/ggml/work/ggml/src/ggml.c:2183: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_hardswish_f32':
+/home/ggml/work/ggml/src/ggml.c:2185: undefined reference to `fmaxf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:2185: undefined reference to `fminf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_hardsigmoid_f32':
+/home/ggml/work/ggml/src/ggml.c:2186: undefined reference to `fmaxf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:2186: undefined reference to `fminf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_gelu_f32':
+/home/ggml/work/ggml/src/ggml.c:2193: undefined reference to `tanhf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_gelu_quick_f32':
+/home/ggml/work/ggml/src/ggml.c:2227: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_silu_f32':
+/home/ggml/work/ggml/src/ggml.c:2256: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_soft_max_f32':
+/home/ggml/work/ggml/src/ggml.c:2527: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_silu_backward_f32':
+/home/ggml/work/ggml/src/ggml.c:2535: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_arange':
+/home/ggml/work/ggml/src/ggml.c:6862: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11666: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rms_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11734: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rms_norm_back_f32':
+/home/ggml/work/ggml/src/ggml.c:11806: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_group_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11997: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_soft_max_f32':
+/home/ggml/work/ggml/src/ggml.c:13478: undefined reference to `log2'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13478: undefined reference to `floor'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13480: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13481: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13500: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13500: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `rope_yarn':
+/home/ggml/work/ggml/src/ggml.c:13769: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13771: undefined reference to `cosf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13772: undefined reference to `sinf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_rope_yarn_corr_dim':
+/home/ggml/work/ggml/src/ggml.c:13778: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13778: undefined reference to `logf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_rope_yarn_corr_dims':
+/home/ggml/work/ggml/src/ggml.c:13801: undefined reference to `floorf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13802: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rope_f32':
+/home/ggml/work/ggml/src/ggml.c:13856: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rope_f16':
+/home/ggml/work/ggml/src/ggml.c:13981: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_arange_f32':
+/home/ggml/work/ggml/src/ggml.c:14850: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_timestep_embedding_f32':
+/home/ggml/work/ggml/src/ggml.c:14897: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14897: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14899: undefined reference to `cosf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14900: undefined reference to `sinf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_flash_attn_ext_f16':
+/home/ggml/work/ggml/src/ggml.c:15057: undefined reference to `log2'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15057: undefined reference to `floor'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15059: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15060: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15075: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15075: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15131: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15137: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15146: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15152: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_flash_attn_back_f32':
+/home/ggml/work/ggml/src/ggml.c:15310: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_ssm_scan_f32':
+/home/ggml/work/ggml/src/ggml.c:15743: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15743: undefined reference to `log1pf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15750: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_opt_adam':
+/home/ggml/work/ggml/src/ggml.c:19633: undefined reference to `sqrt'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19638: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19639: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19651: undefined reference to `sqrtf'
+../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q8_0_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:861: undefined reference to `roundf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q8_1_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:1176: undefined reference to `roundf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml-quants.c:1177: undefined reference to `roundf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `make_qx_quants':
+/home/ggml/work/ggml/src/ggml-quants.c:1677: undefined reference to `sqrtf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml-quants.c:1693: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q2_K_impl':
+/home/ggml/work/ggml/src/ggml-quants.c:2185: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q3_K_impl':
+/home/ggml/work/ggml/src/ggml-quants.c:2393: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q4_K_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:2493: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o/usr/bin/ld: :/home/ggml/work/ggml/src/ggml-quants.c:2596: more undefined references to `sqrtf' follow
+collect2: error: ld returned 1 exit status
+make[2]: *** [tests/CMakeFiles/test-rel-pos.dir/build.make:107: bin/test-rel-pos] Error 1
+make[1]: *** [CMakeFiles/Makefile2:849: tests/CMakeFiles/test-rel-pos.dir/all] Error 2
+[ 56%] Linking C executable ../bin/test-vec1
+../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q8_0_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:861: undefined reference to `roundf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q8_1_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:1176: undefined reference to `roundf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml-quants.c:1177: undefined reference to `roundf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `make_qx_quants':
+/home/ggml/work/ggml/src/ggml-quants.c:1677: undefined reference to `sqrtf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml-quants.c:1693: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q2_K_impl':
+/home/ggml/work/ggml/src/ggml-quants.c:2185: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q3_K_impl':
+/home/ggml/work/ggml/src/ggml-quants.c:2393: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q4_K_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:2493: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o:/home/ggml/work/ggml/src/ggml-quants.c:2596: more undefined references to `sqrtf' follow
+collect2: error: ld returned 1 exit status
+make[2]: *** [tests/CMakeFiles/test-dup.dir/build.make:107: bin/test-dup] Error 1
+make[1]: *** [CMakeFiles/Makefile2:823: tests/CMakeFiles/test-dup.dir/all] Error 2
+../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q8_0_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:861: undefined reference to `roundf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q8_1_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:1176: undefined reference to `roundf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml-quants.c:1177: undefined reference to `roundf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `make_qx_quants':
+/home/ggml/work/ggml/src/ggml-quants.c:1677: undefined reference to `sqrtf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml-quants.c:1693: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q2_K_impl':
+/home/ggml/work/ggml/src/ggml-quants.c:2185: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q3_K_impl':
+/home/ggml/work/ggml/src/ggml-quants.c:2393: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q4_K_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:2493: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o:/home/ggml/work/ggml/src/ggml-quants.c:2596: more undefined references to `sqrtf' follow
+collect2: error: ld returned 1 exit status
+make[2]: *** [tests/CMakeFiles/test-customop.dir/build.make:107: bin/test-customop] Error 1
+make[1]: *** [CMakeFiles/Makefile2:875: tests/CMakeFiles/test-customop.dir/all] Error 2
+/usr/bin/ld: [ 57%] Linking CXX executable ../bin/test-timestep_embedding
+../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:2172: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_sqrt_f32':
+/home/ggml/work/ggml/src/ggml.c:2174: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_log_f32':
+/home/ggml/work/ggml/src/ggml.c:2175: undefined reference to `logf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_tanh_f32':
+/home/ggml/work/ggml/src/ggml.c:2179: undefined reference to `tanhf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_elu_f32':
+/home/ggml/work/ggml/src/ggml.c:2180: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_sigmoid_f32':
+/home/ggml/work/ggml/src/ggml.c:2183: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_hardswish_f32':
+/home/ggml/work/ggml/src/ggml.c:2185: undefined reference to `fmaxf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:2185: undefined reference to `fminf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_hardsigmoid_f32':
+/home/ggml/work/ggml/src/ggml.c:2186: undefined reference to `fmaxf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:2186: undefined reference to `fminf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_gelu_f32':
+/home/ggml/work/ggml/src/ggml.c:2193: undefined reference to `tanhf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_gelu_quick_f32':
+/home/ggml/work/ggml/src/ggml.c:2227: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_silu_f32':
+/home/ggml/work/ggml/src/ggml.c:2256: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_soft_max_f32':
+/home/ggml/work/ggml/src/ggml.c:2527: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_silu_backward_f32':
+/home/ggml/work/ggml/src/ggml.c:2535: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_arange':
+/home/ggml/work/ggml/src/ggml.c:6862: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11666: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rms_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11734: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rms_norm_back_f32':
+/home/ggml/work/ggml/src/ggml.c:11806: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_group_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11997: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_soft_max_f32':
+/home/ggml/work/ggml/src/ggml.c:13478: undefined reference to `log2'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13478: undefined reference to `floor'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13480: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13481: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13500: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13500: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `rope_yarn':
+/home/ggml/work/ggml/src/ggml.c:13769: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13771: undefined reference to `cosf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13772: undefined reference to `sinf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_rope_yarn_corr_dim':
+/home/ggml/work/ggml/src/ggml.c:13778: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13778: undefined reference to `logf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_rope_yarn_corr_dims':
+/home/ggml/work/ggml/src/ggml.c:13801: undefined reference to `floorf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13802: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rope_f32':
+/home/ggml/work/ggml/src/ggml.c:13856: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rope_f16':
+/home/ggml/work/ggml/src/ggml.c:13981: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_arange_f32':
+/home/ggml/work/ggml/src/ggml.c:14850: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_timestep_embedding_f32':
+/home/ggml/work/ggml/src/ggml.c:14897: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14897: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14899: undefined reference to `cosf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14900: undefined reference to `sinf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_flash_attn_ext_f16':
+/home/ggml/work/ggml/src/ggml.c:15057: undefined reference to `log2'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15057: undefined reference to `floor'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15059: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15060: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15075: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15075: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15131: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15137: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15146: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15152: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_flash_attn_back_f32':
+/home/ggml/work/ggml/src/ggml.c:15310: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_ssm_scan_f32':
+/home/ggml/work/ggml/src/ggml.c:15743: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15743: undefined reference to `log1pf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15750: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_opt_adam':
+/home/ggml/work/ggml/src/ggml.c:19633: undefined reference to `sqrt'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19638: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19639: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19651: undefined reference to `sqrtf'
+/usr/bin/ld: [ 58%] Linking CXX executable ../bin/test-quantize-fns
+../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q8_0_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:861: undefined reference to `roundf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q8_1_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:1176: undefined reference to `roundf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml-quants.c:1177: undefined reference to `roundf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `make_qx_quants':
+/home/ggml/work/ggml/src/ggml-quants.c:1677: undefined reference to `sqrtf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml-quants.c:1693: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q2_K_impl':
+/home/ggml/work/ggml/src/ggml-quants.c:2185: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q3_K_impl':
+/home/ggml/work/ggml/src/ggml-quants.c:2393: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q4_K_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:2493: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o:/home/ggml/work/ggml/src/ggml-quants.c:2596: more undefined references to `sqrtf' follow
+collect2: error: ld returned 1 exit status
+make[2]: *** [tests/CMakeFiles/test-vec1.dir/build.make:107: bin/test-vec1] Error 1
+make[1]: *** [CMakeFiles/Makefile2:433: tests/CMakeFiles/test-vec1.dir/all] Error 2
+[ 59%] Linking C executable ../bin/test-mul-mat2
+[ 59%] Built target test-quantize-fns
+/usr/bin/ld: [ 59%] Built target test-timestep_embedding
+[ 60%] Linking CXX executable ../bin/test-conv1d
+[ 61%] Linking CXX executable ../../bin/simple-ctx
+../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:2172: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_sqrt_f32':
+/home/ggml/work/ggml/src/ggml.c:2174: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_log_f32':
+/home/ggml/work/ggml/src/ggml.c:2175: undefined reference to `logf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_tanh_f32':
+/home/ggml/work/ggml/src/ggml.c:2179: undefined reference to `tanhf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_elu_f32':
+/home/ggml/work/ggml/src/ggml.c:2180: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_sigmoid_f32':
+/home/ggml/work/ggml/src/ggml.c:2183: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_hardswish_f32':
+/home/ggml/work/ggml/src/ggml.c:2185: undefined reference to `fmaxf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:2185: undefined reference to `fminf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_hardsigmoid_f32':
+/home/ggml/work/ggml/src/ggml.c:2186: undefined reference to `fmaxf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:2186: undefined reference to `fminf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_gelu_f32':
+/home/ggml/work/ggml/src/ggml.c:2193: undefined reference to `tanhf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_gelu_quick_f32':
+/home/ggml/work/ggml/src/ggml.c:2227: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_silu_f32':
+/home/ggml/work/ggml/src/ggml.c:2256: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_vec_soft_max_f32':
+/home/ggml/work/ggml/src/ggml.c:2527: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_silu_backward_f32':
+/home/ggml/work/ggml/src/ggml.c:2535: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_arange':
+/home/ggml/work/ggml/src/ggml.c:6862: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11666: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rms_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11734: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rms_norm_back_f32':
+/home/ggml/work/ggml/src/ggml.c:11806: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_group_norm_f32':
+/home/ggml/work/ggml/src/ggml.c:11997: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_soft_max_f32':
+/home/ggml/work/ggml/src/ggml.c:13478: undefined reference to `log2'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13478: undefined reference to `floor'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13480: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13481: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13500: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13500: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `rope_yarn':
+/home/ggml/work/ggml/src/ggml.c:13769: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13771: undefined reference to `cosf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13772: undefined reference to `sinf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_rope_yarn_corr_dim':
+/home/ggml/work/ggml/src/ggml.c:13778: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13778: undefined reference to `logf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_rope_yarn_corr_dims':
+/home/ggml/work/ggml/src/ggml.c:13801: undefined reference to `floorf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:13802: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rope_f32':
+/home/ggml/work/ggml/src/ggml.c:13856: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_rope_f16':
+/home/ggml/work/ggml/src/ggml.c:13981: undefined reference to `powf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_arange_f32':
+/home/ggml/work/ggml/src/ggml.c:14850: undefined reference to `ceilf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_timestep_embedding_f32':
+/home/ggml/work/ggml/src/ggml.c:14897: undefined reference to `logf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14897: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14899: undefined reference to `cosf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:14900: undefined reference to `sinf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_flash_attn_ext_f16':
+/home/ggml/work/ggml/src/ggml.c:15057: undefined reference to `log2'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15057: undefined reference to `floor'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15059: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15060: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15075: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15075: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15131: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15137: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15146: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15152: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_flash_attn_back_f32':
+/home/ggml/work/ggml/src/ggml.c:15310: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_compute_forward_ssm_scan_f32':
+/home/ggml/work/ggml/src/ggml.c:15743: undefined reference to `expf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15743: undefined reference to `log1pf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:15750: undefined reference to `expf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml.c.o: in function `ggml_opt_adam':
+/home/ggml/work/ggml/src/ggml.c:19633: undefined reference to `sqrt'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19638: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19639: undefined reference to `powf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml.c:19651: undefined reference to `sqrtf'
+/usr/bin/ld: [ 62%] Linking CXX executable ../../bin/mnist-cpu
+../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q8_0_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:861: undefined reference to `roundf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q8_1_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:1176: undefined reference to `roundf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml-quants.c:1177: undefined reference to `roundf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `make_qx_quants':
+/home/ggml/work/ggml/src/ggml-quants.c:1677: undefined reference to `sqrtf'
+/usr/bin/ld: /home/ggml/work/ggml/src/ggml-quants.c:1693: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q2_K_impl':
+/home/ggml/work/ggml/src/ggml-quants.c:2185: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q3_K_impl':
+/home/ggml/work/ggml/src/ggml-quants.c:2393: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o: in function `quantize_row_q4_K_reference':
+/home/ggml/work/ggml/src/ggml-quants.c:2493: undefined reference to `sqrtf'
+/usr/bin/ld: ../src/CMakeFiles/ggml.dir/ggml-quants.c.o:/home/ggml/work/ggml/src/ggml-quants.c:2596: more undefined references to `sqrtf' follow
+collect2: error: ld returned 1 exit status
+make[2]: *** [tests/CMakeFiles/test-mul-mat2.dir/build.make:107: bin/test-mul-mat2] Error 1
+make[1]: *** [CMakeFiles/Makefile2:589: tests/CMakeFiles/test-mul-mat2.dir/all] Error 2
+[ 62%] Built target simple-ctx
+[ 62%] Built target test-conv1d
+[ 63%] Linking CXX executable ../bin/test-conv2d
+[ 64%] Linking CXX executable ../bin/test-mul-mat
+[ 64%] Built target mnist-cpu
+[ 64%] Built target test-conv2d
+[ 65%] Linking CXX executable ../../bin/simple-backend
+[ 65%] Built target test-mul-mat
+[ 65%] Built target simple-backend
+[ 67%] Linking CXX executable ../bin/test-quantize-perf
+[ 67%] Built target test-quantize-perf
+[ 68%] Linking CXX executable ../bin/test-backend-ops
+[ 68%] Built target test-backend-ops
+[ 69%] Linking CXX static library libcommon.a
+[ 69%] Built target common
+[ 70%] Linking CXX static library libcommon-ggml.a
+[ 70%] Built target common-ggml
+make: *** [Makefile:146: all] Error 2
+
+real	0m6.464s
+user	0m22.036s
+sys	0m3.152s
