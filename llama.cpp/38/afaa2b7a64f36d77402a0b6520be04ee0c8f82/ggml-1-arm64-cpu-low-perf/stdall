@@ -1,0 +1,37 @@
++ gg_run_ctest_debug
++ tee /home/ggml/results/llama.cpp/38/afaa2b7a64f36d77402a0b6520be04ee0c8f82/ggml-1-arm64-cpu-low-perf/ctest_debug.log
++ cd /home/ggml/work/llama.cpp
++ rm -rf build-ci-debug
++ mkdir build-ci-debug
++ cd build-ci-debug
++ set -e
++ tee -a /home/ggml/results/llama.cpp/38/afaa2b7a64f36d77402a0b6520be04ee0c8f82/ggml-1-arm64-cpu-low-perf/ctest_debug-cmake.log
++ cmake -DCMAKE_BUILD_TYPE=Debug -DLLAMA_FATAL_WARNINGS=ON ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+CMake Error at ggml/CMakeLists.txt:116:
+  Parse error.  Expected a command name, got quoted argument with text "ggml:
+  iters./thread per block for Q2_K/Q6_K".
+
+
+-- Configuring incomplete, errors occurred!
+See also "/home/ggml/work/llama.cpp/build-ci-debug/CMakeFiles/CMakeOutput.log".
+
+real	0m0.298s
+user	0m0.191s
+sys	0m0.110s
++ cur=1
++ echo 1
++ set +x
+cat: /home/ggml/results/llama.cpp/38/afaa2b7a64f36d77402a0b6520be04ee0c8f82/ggml-1-arm64-cpu-low-perf/ctest_debug-ctest.log: No such file or directory
