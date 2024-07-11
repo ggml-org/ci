@@ -1,0 +1,62 @@
++ make -j
+[  0%] Generating build details from Git
+[  1%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  3%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  3%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1")
+[  4%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-backend.c.o
+[  4%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  5%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-quants.c.o
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml.dir/llamafile/sgemm.cpp.o
+[  6%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-aarch64.c.o
+[  6%] Built target sha1
+[  6%] Built target xxhash
+[  6%] Built target sha256
+[  7%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  7%] Built target build_info
+[  8%] Linking CXX shared library libggml.so
+[  8%] Built target ggml
+[  8%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 10%] Building CXX object src/CMakeFiles/llama.dir/unicode.cpp.o
+[ 10%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 10%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 10%] Building CXX object src/CMakeFiles/llama.dir/unicode-data.cpp.o
+[ 11%] Linking CXX executable ../../bin/llama-gguf
+[ 11%] Built target llama-gguf
+[ 12%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 12%] Built target llama-gguf-hash
+[ 13%] Linking CXX shared library libllama.so
+[ 13%] Built target llama
+[ 14%] Building CXX object examples/llava/CMakeFiles/llava.dir/llava.cpp.o
+[ 15%] Building CXX object examples/llava/CMakeFiles/llava.dir/clip.cpp.o
+[ 15%] Building CXX object examples/benchmark/CMakeFiles/llama-bench-matmult.dir/benchmark-matmult.cpp.o
+[ 15%] Building CXX object common/CMakeFiles/common.dir/common.cpp.o
+[ 16%] Building CXX object common/CMakeFiles/common.dir/sampling.cpp.o
+[ 16%] Building CXX object common/CMakeFiles/common.dir/console.cpp.o
+[ 16%] Building C object tests/CMakeFiles/test-c.dir/test-c.c.o
+[ 17%] Building CXX object common/CMakeFiles/common.dir/json-schema-to-grammar.cpp.o
+[ 18%] Building CXX object common/CMakeFiles/common.dir/grammar-parser.cpp.o
+[ 18%] Building CXX object examples/quantize-stats/CMakeFiles/llama-quantize-stats.dir/quantize-stats.cpp.o
+[ 18%] Building CXX object common/CMakeFiles/common.dir/train.cpp.o
+[ 19%] Building CXX object common/CMakeFiles/common.dir/ngram-cache.cpp.o
+[ 20%] Linking C executable ../bin/test-c
+[ 20%] Built target test-c
+[ 21%] Linking CXX executable ../../bin/llama-bench-matmult
+[ 21%] Built target llama-bench-matmult
+/home/ggml/work/llama.cpp/examples/quantize-stats/quantize-stats.cpp: In function ‘void test_roundtrip_on_chunk(const ggml_tensor*, int64_t, int64_t, const ggml_type_traits_t&, bool, float*, char*, float*, error_stats&)’:
+/home/ggml/work/llama.cpp/examples/quantize-stats/quantize-stats.cpp:157:14: error: ‘const struct ggml_type_traits_t’ has no member named ‘from_float_reference’; did you mean ‘from_float_ref’?
+  157 |         qfns.from_float_reference(input_scratch, quantized_scratch, chunk_size);
+      |              ^~~~~~~~~~~~~~~~~~~~
+      |              from_float_ref
+make[2]: *** [examples/quantize-stats/CMakeFiles/llama-quantize-stats.dir/build.make:76: examples/quantize-stats/CMakeFiles/llama-quantize-stats.dir/quantize-stats.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:3204: examples/quantize-stats/CMakeFiles/llama-quantize-stats.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[ 21%] Built target llava
+[ 21%] Linking CXX static library libcommon.a
+[ 21%] Built target common
+make: *** [Makefile:146: all] Error 2
+
+real	0m17.118s
+user	0m37.922s
+sys	0m3.212s
