@@ -1,0 +1,46 @@
++ make -j
+[  0%] Generating build details from Git
+[  0%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  1%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  2%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-backend.c.o
+[  3%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  4%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  5%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-quants.c.o
+[  6%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-aarch64.c.o
+[  6%] Building CXX object ggml/src/CMakeFiles/ggml.dir/llamafile/sgemm.cpp.o
+-- Found Git: /usr/bin/git (found version "2.34.1")
+[  6%] Built target sha256
+[  6%] Built target xxhash
+[  6%] Built target sha1
+[  6%] Linking CXX shared library libggml.so
+[  7%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  7%] Built target build_info
+[  7%] Built target ggml
+[  7%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[  8%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[  8%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[  9%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+[  9%] Building CXX object src/CMakeFiles/llama.dir/llama-vocab.cpp.o
+[ 11%] Building CXX object src/CMakeFiles/llama.dir/unicode-data.cpp.o
+[ 11%] Building CXX object src/CMakeFiles/llama.dir/llama-sampling.cpp.o
+[ 11%] Building CXX object src/CMakeFiles/llama.dir/unicode.cpp.o
+[ 13%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 13%] Linking CXX executable ../../bin/llama-gguf
+[ 13%] Built target llama-gguf
+[ 13%] Built target llama-gguf-hash
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp: In function ‘void llama_grammar_advance_stack(const std::vector<std::vector<llama_grammar_element> >&, const std::vector<const llama_grammar_element*>&, std::vector<std::vector<const llama_grammar_element*> >&)’:
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:176:18: error: ‘find’ is not a member of ‘std’
+  176 |         if (std::find(new_stacks.begin(), new_stacks.end(), stack) == new_stacks.end()) {
+      |                  ^~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:216:22: error: ‘find’ is not a member of ‘std’
+  216 |             if (std::find(new_stacks.begin(), new_stacks.end(), stack) == new_stacks.end()) {
+      |                      ^~~~
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:104: src/CMakeFiles/llama.dir/llama-grammar.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:1663: src/CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m8.132s
+user	0m9.772s
+sys	0m0.798s
