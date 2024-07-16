@@ -1,0 +1,103 @@
++ make -j
+[  0%] Generating build details from Git
+[  0%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  1%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  1%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  1%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  3%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/arange.cu.o
+[  3%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-backend.c.o
+[  4%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-quants.c.o
+[  4%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/acc.cu.o
+[  4%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/argsort.cu.o
+[  4%] Built target sha256
+[  4%] Built target xxhash
+[  4%] Built target sha1
+[  4%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/binbcast.cu.o
+[  5%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/clamp.cu.o
+[  5%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/concat.cu.o
+[  6%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/conv-transpose-1d.cu.o
+[  6%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/convert.cu.o
+[  7%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/cpy.cu.o
+[  7%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/diagmask.cu.o
+[  8%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/fattn-tile-f16.cu.o
+[  8%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/fattn-tile-f32.cu.o
+[  8%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  8%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/dmmv.cu.o
+[  9%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/fattn.cu.o
+[ 10%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/im2col.cu.o
+[ 10%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/getrows.cu.o
+[ 10%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/mmq.cu.o
+[ 11%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/mmvq.cu.o
+[ 11%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/norm.cu.o
+[ 11%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/pad.cu.o
+[ 12%] Built target build_info
+[ 12%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/pool2d.cu.o
+[ 12%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/quantize.cu.o
+[ 12%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/scale.cu.o
+[ 13%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/softmax.cu.o
+[ 14%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/rope.cu.o
+[ 14%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/sumrows.cu.o
+[ 15%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/unary.cu.o
+[ 16%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda.cu.o
+[ 16%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/upscale.cu.o
+[ 17%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-wmma-f16-instance-kqfloat-cpb32.cu.o
+[ 17%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/tsembd.cu.o
+[ 17%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-wmma-f16-instance-kqfloat-cpb16.cu.o
+[ 17%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-wmma-f16-instance-kqhalf-cpb16.cu.o
+[ 18%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-wmma-f16-instance-kqhalf-cpb32.cu.o
+[ 18%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-iq4_nl.cu.o
+[ 18%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-wmma-f16-instance-kqhalf-cpb8.cu.o
+[ 19%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-iq4_xs.cu.o
+[ 19%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q2_k.cu.o
+[ 19%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q4_0.cu.o
+[ 20%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q4_1.cu.o
+[ 20%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q4_k.cu.o
+[ 21%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q5_0.cu.o
+[ 22%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q3_k.cu.o
+[ 22%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q5_1.cu.o
+[ 22%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q5_k.cu.o
+[ 23%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q6_k.cu.o
+[ 23%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q8_0.cu.o
+[ 24%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f16-instance-hs128-q4_0-q4_0.cu.o
+[ 24%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f32-instance-hs128-q4_0-q4_0.cu.o
+[ 25%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f16-instance-hs128-q8_0-q8_0.cu.o
+[ 25%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f32-instance-hs128-q8_0-q8_0.cu.o
+[ 25%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f16-instance-hs128-f16-f16.cu.o
+[ 26%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f16-instance-hs256-f16-f16.cu.o
+[ 26%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f32-instance-hs256-f16-f16.cu.o
+[ 26%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f16-instance-hs64-f16-f16.cu.o
+[ 27%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f32-instance-hs128-f16-f16.cu.o
+[ 28%] Building CUDA object ggml/src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f32-instance-hs64-f16-f16.cu.o
+[ 28%] Building CXX object ggml/src/CMakeFiles/ggml.dir/llamafile/sgemm.cpp.o
+[ 29%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-aarch64.c.o
+[ 29%] Linking CXX shared library libggml.so
+[ 29%] Built target ggml
+[ 29%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 30%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 31%] Building CXX object src/CMakeFiles/llama.dir/llama-vocab.cpp.o
+[ 32%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 32%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+[ 32%] Building CXX object src/CMakeFiles/llama.dir/unicode.cpp.o
+[ 33%] Building CXX object src/CMakeFiles/llama.dir/llama-sampling.cpp.o
+[ 34%] Building CXX object src/CMakeFiles/llama.dir/unicode-data.cpp.o
+[ 34%] Linking CXX executable ../../bin/llama-gguf
+[ 34%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 34%] Built target llama-gguf-hash
+[ 34%] Built target llama-gguf
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp: In function ‘void llama_grammar_advance_stack(const std::vector<std::vector<llama_grammar_element> >&, const std::vector<const llama_grammar_element*>&, std::vector<std::vector<const llama_grammar_element*> >&)’:
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:176:18: error: ‘find’ is not a member of ‘std’
+  176 |         if (std::find(new_stacks.begin(), new_stacks.end(), stack) == new_stacks.end()) {
+      |                  ^~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:216:22: error: ‘find’ is not a member of ‘std’
+  216 |             if (std::find(new_stacks.begin(), new_stacks.end(), stack) == new_stacks.end()) {
+      |                      ^~~~
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:104: src/CMakeFiles/llama.dir/llama-grammar.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:1663: src/CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m13.737s
+user	0m16.052s
+sys	0m2.340s
