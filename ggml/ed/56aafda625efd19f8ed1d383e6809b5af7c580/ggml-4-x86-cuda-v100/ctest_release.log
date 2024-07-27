@@ -1,0 +1,344 @@
++ cmake -DCMAKE_BUILD_TYPE=Release -DGGML_CUDA=ON ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found OpenMP_C: -fopenmp (found version "4.5") 
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5")  
+-- OpenMP found
+-- Found CUDAToolkit: /usr/local/cuda-12.2/include (found version "12.2.140") 
+-- CUDA found
+-- Using CUDA architectures: 52;61;70;75
+-- The CUDA compiler identification is NVIDIA 12.2.140
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda-12.2/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- CUDA host compiler is GNU 11.4.0
+
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- x86 detected
+-- x86 detected
+-- Linux detected
+-- Configuring done (4.7s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/ggml/work/ggml/build-ci-release
+
+real	0m4.830s
+user	0m3.816s
+sys	0m1.016s
++ make -j
+[  0%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  1%] Building C object src/CMakeFiles/ggml.dir/ggml.c.o
+[  1%] Building C object src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  2%] Building C object src/CMakeFiles/ggml.dir/ggml-backend.c.o
+[  3%] Building C object src/CMakeFiles/ggml.dir/ggml-quants.c.o
+[  3%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/acc.cu.o
+[  4%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/arange.cu.o
+[  5%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/argsort.cu.o
+[  6%] Linking CXX static library libcommon.a
+[  6%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/binbcast.cu.o
+[  7%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/clamp.cu.o
+[  8%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/conv-transpose-1d.cu.o
+[  9%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/diagmask.cu.o
+[ 10%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/convert.cu.o
+[ 10%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/concat.cu.o
+[ 11%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/fattn-tile-f32.cu.o
+[ 11%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/fattn-tile-f16.cu.o
+[ 11%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/cpy.cu.o
+[ 11%] Built target common
+[ 12%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/dmmv.cu.o
+[ 13%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/fattn.cu.o
+[ 13%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/getrows.cu.o
+[ 14%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/im2col.cu.o
+[ 15%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/mmq.cu.o
+[ 15%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/mmvq.cu.o
+[ 16%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/norm.cu.o
+[ 17%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/pool2d.cu.o
+[ 17%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/pad.cu.o
+[ 18%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/quantize.cu.o
+[ 18%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/rope.cu.o
+[ 19%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/scale.cu.o
+[ 19%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/sumrows.cu.o
+[ 20%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/tsembd.cu.o
+[ 21%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/unary.cu.o
+[ 22%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/softmax.cu.o
+[ 22%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/upscale.cu.o
+[ 23%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda.cu.o
+[ 23%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-wmma-f16-instance-kqfloat-cpb32.cu.o
+[ 24%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-wmma-f16-instance-kqfloat-cpb16.cu.o
+[ 25%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-wmma-f16-instance-kqhalf-cpb16.cu.o
+[ 25%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-wmma-f16-instance-kqhalf-cpb32.cu.o
+[ 26%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-wmma-f16-instance-kqhalf-cpb8.cu.o
+/home/ggml/work/ggml/src/ggml-cuda.cu(2403): warning #177-D: function "set_ggml_graph_node_properties" was declared but never referenced
+  static void set_ggml_graph_node_properties(ggml_tensor * node, ggml_graph_node_properties * graph_node_properties) {
+              ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/home/ggml/work/ggml/src/ggml-cuda.cu(2415): warning #177-D: function "ggml_graph_node_has_matching_properties" was declared but never referenced
+  static bool ggml_graph_node_has_matching_properties(ggml_tensor * node, ggml_graph_node_properties * graph_node_properties) {
+              ^
+
+/home/ggml/work/ggml/src/ggml-cuda.cu(2403): warning #177-D: function "set_ggml_graph_node_properties" was declared but never referenced
+  static void set_ggml_graph_node_properties(ggml_tensor * node, ggml_graph_node_properties * graph_node_properties) {
+              ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/home/ggml/work/ggml/src/ggml-cuda.cu(2415): warning #177-D: function "ggml_graph_node_has_matching_properties" was declared but never referenced
+  static bool ggml_graph_node_has_matching_properties(ggml_tensor * node, ggml_graph_node_properties * graph_node_properties) {
+              ^
+
+/home/ggml/work/ggml/src/ggml-cuda.cu(2403): warning #177-D: function "set_ggml_graph_node_properties" was declared but never referenced
+  static void set_ggml_graph_node_properties(ggml_tensor * node, ggml_graph_node_properties * graph_node_properties) {
+              ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/home/ggml/work/ggml/src/ggml-cuda.cu(2415): warning #177-D: function "ggml_graph_node_has_matching_properties" was declared but never referenced
+  static bool ggml_graph_node_has_matching_properties(ggml_tensor * node, ggml_graph_node_properties * graph_node_properties) {
+              ^
+
+/home/ggml/work/ggml/src/ggml-cuda.cu(2403): warning #177-D: function "set_ggml_graph_node_properties" was declared but never referenced
+  static void set_ggml_graph_node_properties(ggml_tensor * node, ggml_graph_node_properties * graph_node_properties) {
+              ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/home/ggml/work/ggml/src/ggml-cuda.cu(2415): warning #177-D: function "ggml_graph_node_has_matching_properties" was declared but never referenced
+  static bool ggml_graph_node_has_matching_properties(ggml_tensor * node, ggml_graph_node_properties * graph_node_properties) {
+              ^
+
+[ 27%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-iq1_s.cu.o
+[ 28%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-iq2_xxs.cu.o
+[ 29%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-iq2_xs.cu.o
+[ 29%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-iq3_s.cu.o
+[ 29%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-iq2_s.cu.o
+[ 30%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-iq3_xxs.cu.o
+[ 31%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q2_k.cu.o
+[ 31%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-iq4_xs.cu.o
+[ 32%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-iq4_nl.cu.o
+[ 33%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q4_0.cu.o
+[ 33%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q3_k.cu.o
+[ 34%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q5_0.cu.o
+[ 35%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q5_1.cu.o
+[ 36%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f32-instance-hs128-q4_0-q4_0.cu.o
+[ 37%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q4_1.cu.o
+[ 38%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f32-instance-hs128-f16-f16.cu.o
+[ 38%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q4_k.cu.o
+[ 38%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f32-instance-hs128-q8_0-q8_0.cu.o
+[ 39%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q6_k.cu.o
+[ 39%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q5_k.cu.o
+[ 40%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f32-instance-hs64-f16-f16.cu.o
+[ 40%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f32-instance-hs256-f16-f16.cu.o
+[ 40%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f16-instance-hs128-q4_0-q4_0.cu.o
+[ 41%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f16-instance-hs128-f16-f16.cu.o
+[ 42%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f16-instance-hs128-q8_0-q8_0.cu.o
+[ 43%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f16-instance-hs64-f16-f16.cu.o
+[ 44%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q8_0.cu.o
+[ 44%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f16-instance-hs256-f16-f16.cu.o
+[ 45%] Building C object src/CMakeFiles/ggml.dir/ggml-aarch64.c.o
+[ 45%] Linking CUDA shared library libggml.so
+[ 45%] Built target ggml
+[ 47%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+[ 47%] Building C object tests/CMakeFiles/test-vec1.dir/test-vec1.c.o
+[ 48%] Building CXX object tests/CMakeFiles/test-opt.dir/test-opt.cpp.o
+[ 48%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 49%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
+[ 50%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 50%] Building C object tests/CMakeFiles/test-mul-mat0.dir/test-mul-mat0.c.o
+[ 50%] Linking C executable ../bin/test-vec1
+[ 51%] Building C object tests/CMakeFiles/test-mul-mat2.dir/test-mul-mat2.c.o
+[ 51%] Linking C executable ../bin/test-vec0
+[ 51%] Building C object tests/CMakeFiles/test1.dir/test1.c.o
+[ 52%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
+[ 53%] Building C object tests/CMakeFiles/test2.dir/test2.c.o
+[ 53%] Built target test-vec1
+[ 54%] Building C object tests/CMakeFiles/test3.dir/test3.c.o
+[ 55%] Building C object tests/CMakeFiles/test-pool.dir/test-pool.c.o
+[ 56%] Building C object tests/CMakeFiles/test-conv-transpose.dir/test-conv-transpose.c.o
+[ 56%] Building CXX object tests/CMakeFiles/test-arange.dir/test-arange.cpp.o
+[ 56%] Built target test-vec0
+[ 56%] Building CXX object tests/CMakeFiles/test-timestep_embedding.dir/test-timestep_embedding.cpp.o
+[ 56%] Building C object tests/CMakeFiles/test-dup.dir/test-dup.c.o
+[ 56%] Building CXX object tests/CMakeFiles/test-conv-transpose-1d.dir/test-conv-transpose-1d.cpp.o
+[ 57%] Building C object tests/CMakeFiles/test-rel-pos.dir/test-rel-pos.c.o
+[ 57%] Building C object tests/CMakeFiles/test-customop.dir/test-customop.c.o
+[ 58%] Building CXX object tests/CMakeFiles/test-conv1d.dir/test-conv1d.cpp.o
+[ 59%] Building CXX object tests/CMakeFiles/test-mul-mat.dir/test-mul-mat.cpp.o
+[ 59%] Building CXX object tests/CMakeFiles/test-backend-buffer.dir/test-backend-buffer.cpp.o
+[ 60%] Linking C executable ../bin/test0
+[ 61%] Building CXX object tests/CMakeFiles/test-conv2d.dir/test-conv2d.cpp.o
+[ 62%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 62%] Building CXX object examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o
+[ 62%] Building CXX object examples/mnist/CMakeFiles/mnist.dir/main.cpp.o
+[ 62%] Linking CXX executable ../bin/test-opt
+[ 63%] Building CXX object examples/mnist/CMakeFiles/mnist-cnn.dir/main-cnn.cpp.o
+[ 64%] Building CXX object examples/mnist/CMakeFiles/mnist-cpu.dir/main-cpu.cpp.o
+[ 64%] Building CXX object examples/sam/CMakeFiles/sam.dir/main.cpp.o
+[ 65%] Linking C executable ../bin/test3
+[ 65%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolov3-tiny.cpp.o
+[ 66%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolo-image.cpp.o
+[ 67%] Building CXX object examples/simple/CMakeFiles/simple-ctx.dir/simple-ctx.cpp.o
+[ 68%] Building CXX object examples/simple/CMakeFiles/simple-backend.dir/simple-backend.cpp.o
+[ 68%] Linking C executable ../bin/test2
+[ 69%] Linking CXX executable ../bin/test-arange
+[ 70%] Linking C executable ../bin/test-mul-mat0
+[ 71%] Linking C executable ../bin/test1
+[ 72%] Linking C executable ../bin/test-dup
+[ 73%] Linking C executable ../bin/test-rel-pos
+[ 73%] Built target test0
+[ 74%] Linking CXX executable ../bin/test-backend-buffer
+[ 74%] Built target test3
+[ 74%] Built target test-opt
+[ 75%] Linking C executable ../bin/test-pool
+[ 76%] Linking C executable ../bin/test-conv-transpose
+[ 76%] Built target test2
+[ 76%] Built target test-arange
+[ 76%] Built target test-rel-pos
+[ 76%] Built target test1
+[ 76%] Built target test-mul-mat0
+[ 77%] Linking C executable ../bin/test-customop
+[ 77%] Built target test-backend-buffer
+[ 77%] Built target test-dup
+[ 77%] Built target test-conv-transpose
+[ 77%] Built target test-pool
+[ 77%] Built target test-customop
+[ 78%] Linking CXX executable ../bin/test-quantize-fns
+[ 79%] Linking CXX executable ../bin/test-timestep_embedding
+[ 79%] Built target test-quantize-fns
+[ 79%] Built target test-timestep_embedding
+[ 80%] Linking CXX executable ../../bin/mnist-cpu
+[ 80%] Linking CXX executable ../bin/test-conv1d
+[ 81%] Linking CXX executable ../../bin/simple-ctx
+[ 82%] Linking CXX executable ../bin/test-conv2d
+[ 82%] Linking CXX executable ../../bin/simple-backend
+[ 82%] Built target mnist-cpu
+[ 82%] Built target test-conv1d
+[ 82%] Built target test-conv2d
+[ 82%] Built target simple-ctx
+[ 82%] Linking CXX executable ../bin/test-grad0
+[ 82%] Built target simple-backend
+[ 83%] Linking CXX executable ../bin/test-mul-mat
+[ 83%] Built target test-grad0
+[ 83%] Built target test-mul-mat
+[ 83%] Linking C executable ../bin/test-mul-mat2
+[ 83%] Linking CXX executable ../../bin/mnist-cnn
+[ 84%] Linking CXX executable ../bin/test-conv-transpose-1d
+[ 85%] Linking CXX executable ../../bin/yolov3-tiny
+[ 86%] Linking CXX executable ../../bin/mnist
+[ 86%] Built target test-mul-mat2
+[ 86%] Built target test-conv-transpose-1d
+[ 86%] Built target yolov3-tiny
+[ 86%] Built target mnist-cnn
+[ 86%] Built target mnist
+[ 86%] Linking CXX executable ../bin/test-quantize-perf
+[ 86%] Built target test-quantize-perf
+[ 87%] Linking CXX static library libcommon-ggml.a
+[ 87%] Built target common-ggml
+[ 88%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-ctx.dir/main-ctx.cpp.o
+[ 89%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-alloc.dir/main-alloc.cpp.o
+[ 89%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-backend.dir/main-backend.cpp.o
+[ 89%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-sched.dir/main-sched.cpp.o
+[ 90%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-quantize.dir/quantize.cpp.o
+[ 91%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-batched.dir/main-batched.cpp.o
+[ 92%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j.dir/main.cpp.o
+[ 93%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j-quantize.dir/quantize.cpp.o
+[ 93%] Linking CXX executable ../bin/test-backend-ops
+[ 93%] Building CXX object examples/magika/CMakeFiles/magika.dir/main.cpp.o
+[ 93%] Built target test-backend-ops
+[ 94%] Linking CXX executable ../../bin/magika
+[ 94%] Built target magika
+[ 95%] Linking CXX executable ../../bin/gpt-j-quantize
+[ 96%] Linking CXX executable ../../bin/gpt-2-quantize
+[ 96%] Built target gpt-j-quantize
+[ 96%] Built target gpt-2-quantize
+[ 96%] Linking CXX executable ../../bin/gpt-j
+[ 97%] Linking CXX executable ../../bin/gpt-2-alloc
+[ 97%] Linking CXX executable ../../bin/gpt-2-ctx
+[ 97%] Built target gpt-j
+[ 97%] Built target gpt-2-alloc
+[ 97%] Built target gpt-2-ctx
+[ 98%] Linking CXX executable ../../bin/gpt-2-backend
+[ 98%] Built target gpt-2-backend
+[ 99%] Linking CXX executable ../../bin/gpt-2-sched
+[ 99%] Built target gpt-2-sched
+[ 99%] Linking CXX executable ../../bin/gpt-2-batched
+[ 99%] Built target gpt-2-batched
+[100%] Linking CXX executable ../../bin/sam
+[100%] Built target sam
+
+real	12m17.659s
+user	54m48.175s
+sys	0m45.578s
++ ctest --output-on-failure
+Test project /home/ggml/work/ggml/build-ci-release
+      Start  1: test-grad0
+ 1/23 Test  #1: test-grad0 .......................   Passed    0.30 sec
+      Start  2: test-opt
+ 2/23 Test  #2: test-opt .........................   Passed    3.81 sec
+      Start  3: test-quantize-fns
+ 3/23 Test  #3: test-quantize-fns ................   Passed   20.27 sec
+      Start  4: test-quantize-perf
+ 4/23 Test  #4: test-quantize-perf ...............   Passed    5.69 sec
+      Start  5: test-mul-mat0
+ 5/23 Test  #5: test-mul-mat0 ....................   Passed    0.58 sec
+      Start  6: test-mul-mat2
+ 6/23 Test  #6: test-mul-mat2 ....................   Passed    2.76 sec
+      Start  7: test0
+ 7/23 Test  #7: test0 ............................   Passed    0.04 sec
+      Start  8: test1
+ 8/23 Test  #8: test1 ............................   Passed    0.04 sec
+      Start  9: test2
+ 9/23 Test  #9: test2 ............................   Passed    0.13 sec
+      Start 10: test3
+10/23 Test #10: test3 ............................   Passed    0.07 sec
+      Start 11: test-pool
+11/23 Test #11: test-pool ........................   Passed    0.04 sec
+      Start 12: test-arange
+12/23 Test #12: test-arange ......................   Passed    0.55 sec
+      Start 13: test-timestep_embedding
+13/23 Test #13: test-timestep_embedding ..........   Passed    0.51 sec
+      Start 14: test-conv-transpose
+14/23 Test #14: test-conv-transpose ..............   Passed    0.04 sec
+      Start 15: test-conv-transpose-1d
+15/23 Test #15: test-conv-transpose-1d ...........   Passed    0.52 sec
+      Start 16: test-dup
+16/23 Test #16: test-dup .........................   Passed    0.04 sec
+      Start 17: test-rel-pos
+17/23 Test #17: test-rel-pos .....................   Passed    0.04 sec
+      Start 18: test-customop
+18/23 Test #18: test-customop ....................   Passed    0.04 sec
+      Start 19: test-conv1d
+19/23 Test #19: test-conv1d ......................   Passed    0.57 sec
+      Start 20: test-conv2d
+20/23 Test #20: test-conv2d ......................   Passed    0.57 sec
+      Start 21: test-mul-mat
+21/23 Test #21: test-mul-mat .....................   Passed    0.55 sec
+      Start 22: test-backend-buffer
+22/23 Test #22: test-backend-buffer ..............   Passed    0.52 sec
+      Start 23: test-backend-ops
+23/23 Test #23: test-backend-ops .................   Passed   46.33 sec
+
+100% tests passed, 0 tests failed out of 23
+
+Total Test time (real) =  84.02 sec
+
+real	1m24.054s
+user	1m22.728s
+sys	0m7.784s
