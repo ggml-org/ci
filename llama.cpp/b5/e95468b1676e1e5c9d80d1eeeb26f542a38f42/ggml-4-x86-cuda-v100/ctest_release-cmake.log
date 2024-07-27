@@ -1,4 +1,4 @@
-+ cmake -DCMAKE_BUILD_TYPE=Debug -DLLAMA_FATAL_WARNINGS=ON -DGGML_CUDA=1 ..
++ cmake -DCMAKE_BUILD_TYPE=Release -DLLAMA_FATAL_WARNINGS=ON -DGGML_CUDA=1 ..
 -- The C compiler identification is GNU 11.4.0
 -- The CXX compiler identification is GNU 11.4.0
 -- Detecting C compiler ABI info
@@ -36,8 +36,8 @@
 -- x86 detected
 -- Configuring done (4.8s)
 -- Generating done (0.2s)
--- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-debug
+-- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-release
 
-real	0m5.012s
-user	0m3.911s
-sys	0m1.098s
+real	0m5.073s
+user	0m3.934s
+sys	0m1.143s
