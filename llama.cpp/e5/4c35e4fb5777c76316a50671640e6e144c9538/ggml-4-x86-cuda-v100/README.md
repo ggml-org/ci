@@ -1,0 +1,121 @@
+## Summary
+
+- status:  FAILURE ❌ (124)
+- runtime: 
+- date:    Sun Jul 28 00:11:28 UTC 2024
+- repo:    https://github.com/ggerganov/llama.cpp
+- commit:  https://github.com/ggerganov/llama.cpp/commit/e54c35e4fb5777c76316a50671640e6e144c9538
+- author:  R0CKSTAR
+```
+feat: Support Moore Threads GPU  (#8383)
+
+* Update doc for MUSA
+
+Signed-off-by: Xiaodong Ye <xiaodong.ye@mthreads.com>
+
+* Add GGML_MUSA in Makefile
+
+Signed-off-by: Xiaodong Ye <xiaodong.ye@mthreads.com>
+
+* Add GGML_MUSA in CMake
+
+Signed-off-by: Xiaodong Ye <xiaodong.ye@mthreads.com>
+
+* CUDA => MUSA
+
+Signed-off-by: Xiaodong Ye <xiaodong.ye@mthreads.com>
+
+* MUSA adds support for __vsubss4
+
+Signed-off-by: Xiaodong Ye <xiaodong.ye@mthreads.com>
+
+* Fix CI build failure
+
+Signed-off-by: Xiaodong Ye <xiaodong.ye@mthreads.com>
+
+---------
+
+Signed-off-by: Xiaodong Ye <xiaodong.ye@mthreads.com>
+```
+
+## Environment
+
+```
+GG_BUILD_CLOUD=1
+GG_BUILD_CUDA=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-debug
+      Start  1: test-tokenizer-0-bert-bge
+ 1/25 Test  #1: test-tokenizer-0-bert-bge .........   Passed    0.17 sec
+      Start  2: test-tokenizer-0-command-r
+ 2/25 Test  #2: test-tokenizer-0-command-r ........   Passed    2.88 sec
+      Start  3: test-tokenizer-0-deepseek-coder
+ 3/25 Test  #3: test-tokenizer-0-deepseek-coder ...   Passed    0.41 sec
+      Start  4: test-tokenizer-0-deepseek-llm
+ 4/25 Test  #4: test-tokenizer-0-deepseek-llm .....   Passed    1.08 sec
+      Start  5: test-tokenizer-0-falcon
+ 5/25 Test  #5: test-tokenizer-0-falcon ...........   Passed    0.67 sec
+      Start  6: test-tokenizer-0-gpt-2
+ 6/25 Test  #6: test-tokenizer-0-gpt-2 ............   Passed    0.51 sec
+      Start  7: test-tokenizer-0-llama-bpe
+ 7/25 Test  #7: test-tokenizer-0-llama-bpe ........   Passed    1.99 sec
+      Start  8: test-tokenizer-0-llama-spm
+ 8/25 Test  #8: test-tokenizer-0-llama-spm ........   Passed    0.17 sec
+      Start  9: test-tokenizer-0-mpt
+ 9/25 Test  #9: test-tokenizer-0-mpt ..............   Passed    0.52 sec
+      Start 10: test-tokenizer-0-phi-3
+10/25 Test #10: test-tokenizer-0-phi-3 ............   Passed    0.17 sec
+      Start 11: test-tokenizer-0-qwen2
+11/25 Test #11: test-tokenizer-0-qwen2 ............   Passed    1.70 sec
+      Start 12: test-tokenizer-0-refact
+12/25 Test #12: test-tokenizer-0-refact ...........   Passed    0.53 sec
+      Start 13: test-tokenizer-0-starcoder
+13/25 Test #13: test-tokenizer-0-starcoder ........   Passed    0.53 sec
+      Start 14: test-tokenizer-1-llama-spm
+14/25 Test #14: test-tokenizer-1-llama-spm ........   Passed    1.79 sec
+      Start 15: test-quantize-fns
+15/25 Test #15: test-quantize-fns .................   Passed   35.59 sec
+      Start 16: test-quantize-perf
+16/25 Test #16: test-quantize-perf ................   Passed   10.59 sec
+      Start 17: test-sampling
+17/25 Test #17: test-sampling .....................   Passed    0.08 sec
+      Start 18: test-chat-template
+18/25 Test #18: test-chat-template ................   Passed    0.04 sec
+      Start 19: test-grammar-parser
+19/25 Test #19: test-grammar-parser ...............   Passed    0.04 sec
+      Start 20: test-llama-grammar
+20/25 Test #20: test-llama-grammar ................   Passed    0.04 sec
+      Start 21: test-grammar-integration
+21/25 Test #21: test-grammar-integration ..........   Passed    0.08 sec
+      Start 22: test-grad0
+22/25 Test #22: test-grad0 ........................   Passed    0.33 sec
+      Start 23: test-backend-ops
+23/25 Test #23: test-backend-ops ..................   Passed  213.72 sec
+      Start 24: test-rope
+24/25 Test #24: test-rope .........................   Passed    0.11 sec
+      Start 27: test-json-schema-to-grammar
+25/25 Test #27: test-json-schema-to-grammar .......   Passed    2.72 sec
+
+100% tests passed, 0 tests failed out of 25
+
+Label Time Summary:
+main    = 276.47 sec*proc (25 tests)
+
+Total Test time (real) = 277.44 sec
+
+real	4m37.474s
+user	10m5.479s
+sys	0m5.879s
+```
+
