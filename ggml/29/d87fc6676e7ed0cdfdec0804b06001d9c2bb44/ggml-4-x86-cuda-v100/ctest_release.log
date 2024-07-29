@@ -1,0 +1,155 @@
++ cmake -DCMAKE_BUILD_TYPE=Release -DGGML_CUDA=ON ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found OpenMP_C: -fopenmp (found version "4.5") 
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5")  
+-- OpenMP found
+-- Found CUDAToolkit: /usr/local/cuda-12.2/include (found version "12.2.140") 
+-- CUDA found
+-- Using CUDA architectures: 52;61;70;75
+-- The CUDA compiler identification is NVIDIA 12.2.140
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda-12.2/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- CUDA host compiler is GNU 11.4.0
+
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- x86 detected
+-- x86 detected
+-- Linux detected
+-- Configuring done (4.7s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/ggml/work/ggml/build-ci-release
+
+real	0m4.847s
+user	0m3.713s
+sys	0m1.136s
++ make -j
+[  0%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  1%] Building C object src/CMakeFiles/ggml.dir/ggml.c.o
+[  1%] Building C object src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  2%] Building C object src/CMakeFiles/ggml.dir/ggml-backend.c.o
+[  3%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/arange.cu.o
+[  4%] Building C object src/CMakeFiles/ggml.dir/ggml-quants.c.o
+[  4%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/acc.cu.o
+[  5%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/argsort.cu.o
+[  6%] Linking CXX static library libcommon.a
+[  7%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/clamp.cu.o
+[  7%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/binbcast.cu.o
+[  7%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/concat.cu.o
+[  8%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/conv-transpose-1d.cu.o
+[  9%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/dmmv.cu.o
+[ 10%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/convert.cu.o
+[ 10%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/cpy.cu.o
+[ 11%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/diagmask.cu.o
+[ 12%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/fattn-tile-f32.cu.o
+[ 12%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/fattn-tile-f16.cu.o
+[ 12%] Built target common
+[ 13%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/fattn.cu.o
+[ 13%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/getrows.cu.o
+[ 14%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/im2col.cu.o
+[ 15%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/mmq.cu.o
+[ 15%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/mmvq.cu.o
+[ 15%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/pad.cu.o
+[ 16%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/norm.cu.o
+[ 17%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/pool2d.cu.o
+[ 18%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/quantize.cu.o
+[ 18%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/rope.cu.o
+[ 19%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/scale.cu.o
+[ 20%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/softmax.cu.o
+[ 20%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/sumrows.cu.o
+[ 21%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/tsembd.cu.o
+[ 22%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/unary.cu.o
+[ 22%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/upscale.cu.o
+[ 23%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda.cu.o
+[ 24%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-wmma-f16-instance-kqfloat-cpb32.cu.o
+[ 24%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-wmma-f16-instance-kqfloat-cpb16.cu.o
+[ 25%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-wmma-f16-instance-kqhalf-cpb16.cu.o
+[ 25%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-wmma-f16-instance-kqhalf-cpb32.cu.o
+[ 26%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-wmma-f16-instance-kqhalf-cpb8.cu.o
+[ 27%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-iq1_s.cu.o
+[ 27%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-iq2_s.cu.o
+[ 28%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-iq2_xs.cu.o
+[ 29%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-iq2_xxs.cu.o
+[ 29%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-iq3_s.cu.o
+[ 30%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-iq3_xxs.cu.o
+[ 31%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-iq4_nl.cu.o
+[ 31%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-iq4_xs.cu.o
+[ 32%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q2_k.cu.o
+[ 32%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q3_k.cu.o
+[ 33%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q4_0.cu.o
+[ 34%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q4_k.cu.o
+[ 34%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q4_1.cu.o
+[ 35%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q5_0.cu.o
+[ 36%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q5_1.cu.o
+[ 36%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q5_k.cu.o
+[ 37%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q6_k.cu.o
+[ 38%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/mmq-instance-q8_0.cu.o
+[ 38%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f16-instance-hs128-q4_0-q4_0.cu.o
+[ 39%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f32-instance-hs128-q4_0-q4_0.cu.o
+[ 40%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f16-instance-hs128-q8_0-q8_0.cu.o
+[ 40%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f32-instance-hs128-q8_0-q8_0.cu.o
+[ 41%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f16-instance-hs128-f16-f16.cu.o
+[ 41%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f16-instance-hs256-f16-f16.cu.o
+[ 42%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f16-instance-hs64-f16-f16.cu.o
+[ 43%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f32-instance-hs128-f16-f16.cu.o
+[ 43%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f32-instance-hs256-f16-f16.cu.o
+[ 44%] Building CUDA object src/CMakeFiles/ggml.dir/ggml-cuda/template-instances/fattn-vec-f32-instance-hs64-f16-f16.cu.o
+[ 45%] Building C object src/CMakeFiles/ggml.dir/ggml-aarch64.c.o
+/home/ggml/work/ggml/src/ggml-cuda.cu(2403): warning #177-D: function "set_ggml_graph_node_properties" was declared but never referenced
+  static void set_ggml_graph_node_properties(ggml_tensor * node, ggml_graph_node_properties * graph_node_properties) {
+              ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/home/ggml/work/ggml/src/ggml-cuda.cu(2415): warning #177-D: function "ggml_graph_node_has_matching_properties" was declared but never referenced
+  static bool ggml_graph_node_has_matching_properties(ggml_tensor * node, ggml_graph_node_properties * graph_node_properties) {
+              ^
+
+/home/ggml/work/ggml/src/ggml-cuda.cu(2403): warning #177-D: function "set_ggml_graph_node_properties" was declared but never referenced
+  static void set_ggml_graph_node_properties(ggml_tensor * node, ggml_graph_node_properties * graph_node_properties) {
+              ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/home/ggml/work/ggml/src/ggml-cuda.cu(2415): warning #177-D: function "ggml_graph_node_has_matching_properties" was declared but never referenced
+  static bool ggml_graph_node_has_matching_properties(ggml_tensor * node, ggml_graph_node_properties * graph_node_properties) {
+              ^
+
+/home/ggml/work/ggml/src/ggml-cuda.cu(2403): warning #177-D: function "set_ggml_graph_node_properties" was declared but never referenced
+  static void set_ggml_graph_node_properties(ggml_tensor * node, ggml_graph_node_properties * graph_node_properties) {
+              ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/home/ggml/work/ggml/src/ggml-cuda.cu(2415): warning #177-D: function "ggml_graph_node_has_matching_properties" was declared but never referenced
+  static bool ggml_graph_node_has_matching_properties(ggml_tensor * node, ggml_graph_node_properties * graph_node_properties) {
+              ^
+
+/home/ggml/work/ggml/src/ggml-cuda.cu(2403): warning #177-D: function "set_ggml_graph_node_properties" was declared but never referenced
+  static void set_ggml_graph_node_properties(ggml_tensor * node, ggml_graph_node_properties * graph_node_properties) {
+              ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/home/ggml/work/ggml/src/ggml-cuda.cu(2415): warning #177-D: function "ggml_graph_node_has_matching_properties" was declared but never referenced
+  static bool ggml_graph_node_has_matching_properties(ggml_tensor * node, ggml_graph_node_properties * graph_node_properties) {
+              ^
+
