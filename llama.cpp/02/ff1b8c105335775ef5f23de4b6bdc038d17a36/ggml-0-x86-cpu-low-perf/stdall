@@ -1,0 +1,195 @@
++ gg_run_ctest_debug
++ cd /home/ggml/work/llama.cpp
++ rm -rf build-ci-debug
++ tee /home/ggml/results/llama.cpp/02/ff1b8c105335775ef5f23de4b6bdc038d17a36/ggml-0-x86-cpu-low-perf/ctest_debug.log
++ mkdir build-ci-debug
++ cd build-ci-debug
++ set -e
++ gg_check_build_requirements
++ command -v cmake
++ command -v make
++ command -v ctest
++ tee -a /home/ggml/results/llama.cpp/02/ff1b8c105335775ef5f23de4b6bdc038d17a36/ggml-0-x86-cpu-low-perf/ctest_debug-cmake.log
++ cmake -DCMAKE_BUILD_TYPE=Debug -DLLAMA_FATAL_WARNINGS=ON ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found OpenMP_C: -fopenmp (found version "4.5") 
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5")  
+-- OpenMP found
+-- Using llamafile
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- x86 detected
+-- Configuring done (0.6s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-debug
+
+real	0m0.720s
+user	0m0.524s
+sys	0m0.198s
++ tee -a /home/ggml/results/llama.cpp/02/ff1b8c105335775ef5f23de4b6bdc038d17a36/ggml-0-x86-cpu-low-perf/ctest_debug-make.log
++ make -j
+[  0%] Generating build details from Git
+[  0%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml.c.o
+[  0%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  1%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  2%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  3%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  4%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-backend.c.o
+[  4%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-aarch64.c.o
+[  4%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-quants.c.o
+[  4%] Built target sha1
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml.dir/llamafile/sgemm.cpp.o
+[  5%] Built target sha256
+[  5%] Built target xxhash
+[  6%] Linking CXX shared library libggml.so
+[  7%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  7%] Built target build_info
+[  7%] Built target ggml
+[  7%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[  8%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[  9%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+[ 10%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 10%] Building CXX object src/CMakeFiles/llama.dir/llama-vocab.cpp.o
+[ 10%] Building CXX object src/CMakeFiles/llama.dir/llama-sampling.cpp.o
+[ 11%] Building CXX object src/CMakeFiles/llama.dir/unicode.cpp.o
+[ 12%] Building CXX object src/CMakeFiles/llama.dir/unicode-data.cpp.o
+[ 13%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 14%] Linking CXX executable ../../bin/llama-gguf
+[ 14%] Built target llama-gguf-hash
+[ 14%] Built target llama-gguf
+In file included from /home/ggml/work/llama.cpp/src/llama-grammar.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama-sampling.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama-sampling.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-impl.h: In member function ‘T& ring_buffer<T>::front()’:
+/home/ggml/work/llama.cpp/src/llama-impl.h:57:24: error: ‘runtime_error’ is not a member of ‘std’
+   57 |             throw std::runtime_error("ring buffer is empty");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h: In member function ‘const T& ring_buffer<T>::front() const’:
+/home/ggml/work/llama.cpp/src/llama-impl.h:64:24: error: ‘runtime_error’ is not a member of ‘std’
+   64 |             throw std::runtime_error("ring buffer is empty");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h: In member function ‘T& ring_buffer<T>::back()’:
+/home/ggml/work/llama.cpp/src/llama-impl.h:71:24: error: ‘runtime_error’ is not a member of ‘std’
+   71 |             throw std::runtime_error("ring buffer is empty");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h: In member function ‘const T& ring_buffer<T>::back() const’:
+/home/ggml/work/llama.cpp/src/llama-impl.h:78:24: error: ‘runtime_error’ is not a member of ‘std’
+   78 |             throw std::runtime_error("ring buffer is empty");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h: In member function ‘T ring_buffer<T>::pop_front()’:
+/home/ggml/work/llama.cpp/src/llama-impl.h:96:24: error: ‘runtime_error’ is not a member of ‘std’
+   96 |             throw std::runtime_error("ring buffer is empty");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h: In member function ‘const T& ring_buffer<T>::rat(size_t) const’:
+/home/ggml/work/llama.cpp/src/llama-impl.h:120:24: error: ‘runtime_error’ is not a member of ‘std’
+  120 |             throw std::runtime_error("ring buffer: index out of bounds");
+      |                        ^~~~~~~~~~~~~
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:118: src/CMakeFiles/llama.dir/llama-sampling.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+In file included from /home/ggml/work/llama.cpp/src/llama-vocab.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama-vocab.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-impl.h: In member function ‘T& ring_buffer<T>::front()’:
+/home/ggml/work/llama.cpp/src/llama-impl.h:57:24: error: ‘runtime_error’ is not a member of ‘std’
+   57 |             throw std::runtime_error("ring buffer is empty");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h: In member function ‘const T& ring_buffer<T>::front() const’:
+/home/ggml/work/llama.cpp/src/llama-impl.h:64:24: error: ‘runtime_error’ is not a member of ‘std’
+   64 |             throw std::runtime_error("ring buffer is empty");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h: In member function ‘T& ring_buffer<T>::back()’:
+/home/ggml/work/llama.cpp/src/llama-impl.h:71:24: error: ‘runtime_error’ is not a member of ‘std’
+   71 |             throw std::runtime_error("ring buffer is empty");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h: In member function ‘const T& ring_buffer<T>::back() const’:
+/home/ggml/work/llama.cpp/src/llama-impl.h:78:24: error: ‘runtime_error’ is not a member of ‘std’
+   78 |             throw std::runtime_error("ring buffer is empty");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h: In member function ‘T ring_buffer<T>::pop_front()’:
+/home/ggml/work/llama.cpp/src/llama-impl.h:96:24: error: ‘runtime_error’ is not a member of ‘std’
+   96 |             throw std::runtime_error("ring buffer is empty");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h: In member function ‘const T& ring_buffer<T>::rat(size_t) const’:
+/home/ggml/work/llama.cpp/src/llama-impl.h:120:24: error: ‘runtime_error’ is not a member of ‘std’
+  120 |             throw std::runtime_error("ring buffer: index out of bounds");
+      |                        ^~~~~~~~~~~~~
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:90: src/CMakeFiles/llama.dir/llama-vocab.cpp.o] Error 1
+In file included from /home/ggml/work/llama.cpp/src/llama-grammar.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama-grammar.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-impl.h: In member function ‘T& ring_buffer<T>::front()’:
+/home/ggml/work/llama.cpp/src/llama-impl.h:57:24: error: ‘runtime_error’ is not a member of ‘std’
+   57 |             throw std::runtime_error("ring buffer is empty");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h: In member function ‘const T& ring_buffer<T>::front() const’:
+/home/ggml/work/llama.cpp/src/llama-impl.h:64:24: error: ‘runtime_error’ is not a member of ‘std’
+   64 |             throw std::runtime_error("ring buffer is empty");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h: In member function ‘T& ring_buffer<T>::back()’:
+/home/ggml/work/llama.cpp/src/llama-impl.h:71:24: error: ‘runtime_error’ is not a member of ‘std’
+   71 |             throw std::runtime_error("ring buffer is empty");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h: In member function ‘const T& ring_buffer<T>::back() const’:
+/home/ggml/work/llama.cpp/src/llama-impl.h:78:24: error: ‘runtime_error’ is not a member of ‘std’
+   78 |             throw std::runtime_error("ring buffer is empty");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h: In member function ‘T ring_buffer<T>::pop_front()’:
+/home/ggml/work/llama.cpp/src/llama-impl.h:96:24: error: ‘runtime_error’ is not a member of ‘std’
+   96 |             throw std::runtime_error("ring buffer is empty");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h: In member function ‘const T& ring_buffer<T>::rat(size_t) const’:
+/home/ggml/work/llama.cpp/src/llama-impl.h:120:24: error: ‘runtime_error’ is not a member of ‘std’
+  120 |             throw std::runtime_error("ring buffer: index out of bounds");
+      |                        ^~~~~~~~~~~~~
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:104: src/CMakeFiles/llama.dir/llama-grammar.cpp.o] Error 1
+In file included from /home/ggml/work/llama.cpp/src/llama.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-impl.h: In member function ‘T& ring_buffer<T>::front()’:
+/home/ggml/work/llama.cpp/src/llama-impl.h:57:24: error: ‘runtime_error’ is not a member of ‘std’
+   57 |             throw std::runtime_error("ring buffer is empty");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h: In member function ‘const T& ring_buffer<T>::front() const’:
+/home/ggml/work/llama.cpp/src/llama-impl.h:64:24: error: ‘runtime_error’ is not a member of ‘std’
+   64 |             throw std::runtime_error("ring buffer is empty");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h: In member function ‘T& ring_buffer<T>::back()’:
+/home/ggml/work/llama.cpp/src/llama-impl.h:71:24: error: ‘runtime_error’ is not a member of ‘std’
+   71 |             throw std::runtime_error("ring buffer is empty");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h: In member function ‘const T& ring_buffer<T>::back() const’:
+/home/ggml/work/llama.cpp/src/llama-impl.h:78:24: error: ‘runtime_error’ is not a member of ‘std’
+   78 |             throw std::runtime_error("ring buffer is empty");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h: In member function ‘T ring_buffer<T>::pop_front()’:
+/home/ggml/work/llama.cpp/src/llama-impl.h:96:24: error: ‘runtime_error’ is not a member of ‘std’
+   96 |             throw std::runtime_error("ring buffer is empty");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h: In member function ‘const T& ring_buffer<T>::rat(size_t) const’:
+/home/ggml/work/llama.cpp/src/llama-impl.h:120:24: error: ‘runtime_error’ is not a member of ‘std’
+  120 |             throw std::runtime_error("ring buffer: index out of bounds");
+      |                        ^~~~~~~~~~~~~
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:76: src/CMakeFiles/llama.dir/llama.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1629: src/CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m3.018s
+user	0m5.754s
+sys	0m0.596s
++ cur=2
++ echo 2
++ set +x
+cat: /home/ggml/results/llama.cpp/02/ff1b8c105335775ef5f23de4b6bdc038d17a36/ggml-0-x86-cpu-low-perf/ctest_debug-ctest.log: No such file or directory
