@@ -1,0 +1,359 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 4:54.25
+- date:    Sun Sep  1 14:43:24 UTC 2024
+- repo:    https://github.com/ggerganov/llama.cpp
+- commit:  https://github.com/ggerganov/llama.cpp/commit/8f1d81a0b6f50b9bad72db0b6fcd299ad9ecd48c
+- author:  Molly Sophia
+```
+llama : support RWKV v6 models (#8980)
+
+* convert_hf_to_gguf: Add support for RWKV v6
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* Add RWKV tokenization
+
+* Fix build
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* Do not use special tokens when matching in RWKV tokenizer
+
+* Fix model loading
+
+* Add (broken) placeholder graph builder for RWKV
+
+* Add workaround for kv cache
+
+* Add logits conversion to rwkv5
+
+* Add rwkv5 layer norms
+
+* Add time mix KVRG & correct merge mistake
+
+* Add remaining time mix parameters
+
+* Add time mix output loading
+
+* Add placeholder llm_build_time_mix
+
+* Fix build
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* Load more tensors for rwkv v6
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* Fix rwkv tokenizer
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* ggml: Add unary operator Exp
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* RWKV v6 graph building
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* Add ``rescale_every_n_layers`` parameter
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* Add ``wkv.head_size`` key for RWKV
+
+so it doesn't reuse Mamba ssm parameters
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* Fix offloading layers to CUDA
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* Fix parallel inferencing for RWKV
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* Remove trailing whitespaces
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* build_rwkv: Avoid using inplace operations
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* convert_hf_to_gguf: rwkv: Avoid using ``eval``
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* convert_hf_to_gguf: rwkv tokenizer: Don't escape sequences manually
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* Update convert_hf_to_gguf.py
+
+Co-authored-by: compilade <git@compilade.net>
+
+* ggml: Add backward computation for unary op ``exp``
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* Update convert_hf_to_gguf.py
+
+Co-authored-by: compilade <git@compilade.net>
+
+* Update convert_hf_to_gguf.py
+
+Co-authored-by: compilade <git@compilade.net>
+
+* Use MODEL_ARCH.RWKV6 instead of MODEL_ARCH.RWKV
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* build_rwkv6: Simplify graph
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* llama: rwkv6: Detect model.type
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* llama: rwkv6: Fix tensor loading for 7B/14B models
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* llama: rwkv6: Fix group_norm assertion failure with Metal
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* llama: rwkv6: Clean up
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* llama: rwkv6: Add quantization tensor exclusion
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* llama: rwkv6: Use the new advanced batch splits
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* Update src/llama.cpp
+
+Co-authored-by: compilade <git@compilade.net>
+
+* llama: rwkv6: Use ``ggml_norm`` instead of ``ggml_group_norm``
+
+Co-authored-by: compilade <git@compilade.net>
+
+* llama: rwkv6: Apply code style and misc changes
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* converter: Use class name ``Rwkv6Model``
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* llama: rwkv6: Make use of key ``feed_forward_length``
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* llama: rwkv6: Add kv ``time_mix_extra_dim`` and ``time_decay_extra_dim``
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* converter: Match ``new_name`` instead of ``name`` for float32 explicit tensors
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* llama: rwkv6: Keep ``time_mix_w1/w2`` as F32
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* llama: rwkv6: Remove unused nodes
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* llama: rwkv6: Apply code format changes
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* llama: rwkv6: Add lora for some supported tensors
+
+Currently att.key/receptance/value/gate/output, ffn.receptance/key/value, as well as head.weight
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+* rwkv : speed-up tokenization using trie
+
+* minor : style + indentation
+
+* llama: rwkv6: Avoid division by zero
+
+Co-authored-by: compilade <git@compilade.net>
+
+* ggml: rwkv_wkv: Avoid copying the state
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+
+---------
+
+Signed-off-by: Molly Sophia <mollysophia379@gmail.com>
+Co-authored-by: Layl Bongers <3094382+LaylBongers@users.noreply.github.com>
+Co-authored-by: compilade <git@compilade.net>
+Co-authored-by: Georgi Gerganov <ggerganov@gmail.com>
+```
+
+## Environment
+
+```
+GG_BUILD_CLOUD=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+GG_BUILD_LOW_PERF=1
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-debug
+      Start  1: test-tokenizer-0-bert-bge
+ 1/25 Test  #1: test-tokenizer-0-bert-bge .........   Passed    0.12 sec
+      Start  2: test-tokenizer-0-command-r
+ 2/25 Test  #2: test-tokenizer-0-command-r ........   Passed    2.75 sec
+      Start  3: test-tokenizer-0-deepseek-coder
+ 3/25 Test  #3: test-tokenizer-0-deepseek-coder ...   Passed    0.36 sec
+      Start  4: test-tokenizer-0-deepseek-llm
+ 4/25 Test  #4: test-tokenizer-0-deepseek-llm .....   Passed    1.02 sec
+      Start  5: test-tokenizer-0-falcon
+ 5/25 Test  #5: test-tokenizer-0-falcon ...........   Passed    0.62 sec
+      Start  6: test-tokenizer-0-gpt-2
+ 6/25 Test  #6: test-tokenizer-0-gpt-2 ............   Passed    0.47 sec
+      Start  7: test-tokenizer-0-llama-bpe
+ 7/25 Test  #7: test-tokenizer-0-llama-bpe ........   Passed    1.89 sec
+      Start  8: test-tokenizer-0-llama-spm
+ 8/25 Test  #8: test-tokenizer-0-llama-spm ........   Passed    0.12 sec
+      Start  9: test-tokenizer-0-mpt
+ 9/25 Test  #9: test-tokenizer-0-mpt ..............   Passed    0.47 sec
+      Start 10: test-tokenizer-0-phi-3
+10/25 Test #10: test-tokenizer-0-phi-3 ............   Passed    0.12 sec
+      Start 11: test-tokenizer-0-qwen2
+11/25 Test #11: test-tokenizer-0-qwen2 ............   Passed    1.57 sec
+      Start 12: test-tokenizer-0-refact
+12/25 Test #12: test-tokenizer-0-refact ...........   Passed    0.48 sec
+      Start 13: test-tokenizer-0-starcoder
+13/25 Test #13: test-tokenizer-0-starcoder ........   Passed    0.47 sec
+      Start 14: test-tokenizer-1-llama-spm
+14/25 Test #14: test-tokenizer-1-llama-spm ........   Passed    1.98 sec
+      Start 15: test-quantize-fns
+15/25 Test #15: test-quantize-fns .................   Passed   32.63 sec
+      Start 16: test-quantize-perf
+16/25 Test #16: test-quantize-perf ................   Passed    9.91 sec
+      Start 17: test-sampling
+17/25 Test #17: test-sampling .....................   Passed    0.04 sec
+      Start 18: test-chat-template
+18/25 Test #18: test-chat-template ................   Passed    0.01 sec
+      Start 19: test-grammar-parser
+19/25 Test #19: test-grammar-parser ...............   Passed    0.00 sec
+      Start 20: test-llama-grammar
+20/25 Test #20: test-llama-grammar ................   Passed    0.01 sec
+      Start 21: test-grammar-integration
+21/25 Test #21: test-grammar-integration ..........   Passed    0.04 sec
+      Start 22: test-grad0
+22/25 Test #22: test-grad0 ........................   Passed    0.60 sec
+      Start 23: test-backend-ops
+23/25 Test #23: test-backend-ops ..................   Passed    0.00 sec
+      Start 24: test-rope
+24/25 Test #24: test-rope .........................   Passed    0.07 sec
+      Start 27: test-json-schema-to-grammar
+25/25 Test #27: test-json-schema-to-grammar .......   Passed    0.05 sec
+
+100% tests passed, 0 tests failed out of 25
+
+Label Time Summary:
+main    =  55.81 sec*proc (25 tests)
+
+Total Test time (real) =  55.82 sec
+
+real	0m55.826s
+user	1m0.605s
+sys	0m0.458s
+```
+
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-release
+      Start  1: test-tokenizer-0-bert-bge
+ 1/25 Test  #1: test-tokenizer-0-bert-bge .........   Passed    0.03 sec
+      Start  2: test-tokenizer-0-command-r
+ 2/25 Test  #2: test-tokenizer-0-command-r ........   Passed    0.94 sec
+      Start  3: test-tokenizer-0-deepseek-coder
+ 3/25 Test  #3: test-tokenizer-0-deepseek-coder ...   Passed    0.09 sec
+      Start  4: test-tokenizer-0-deepseek-llm
+ 4/25 Test  #4: test-tokenizer-0-deepseek-llm .....   Passed    0.32 sec
+      Start  5: test-tokenizer-0-falcon
+ 5/25 Test  #5: test-tokenizer-0-falcon ...........   Passed    0.17 sec
+      Start  6: test-tokenizer-0-gpt-2
+ 6/25 Test  #6: test-tokenizer-0-gpt-2 ............   Passed    0.13 sec
+      Start  7: test-tokenizer-0-llama-bpe
+ 7/25 Test  #7: test-tokenizer-0-llama-bpe ........   Passed    0.64 sec
+      Start  8: test-tokenizer-0-llama-spm
+ 8/25 Test  #8: test-tokenizer-0-llama-spm ........   Passed    0.05 sec
+      Start  9: test-tokenizer-0-mpt
+ 9/25 Test  #9: test-tokenizer-0-mpt ..............   Passed    0.14 sec
+      Start 10: test-tokenizer-0-phi-3
+10/25 Test #10: test-tokenizer-0-phi-3 ............   Passed    0.05 sec
+      Start 11: test-tokenizer-0-qwen2
+11/25 Test #11: test-tokenizer-0-qwen2 ............   Passed    0.47 sec
+      Start 12: test-tokenizer-0-refact
+12/25 Test #12: test-tokenizer-0-refact ...........   Passed    0.13 sec
+      Start 13: test-tokenizer-0-starcoder
+13/25 Test #13: test-tokenizer-0-starcoder ........   Passed    0.13 sec
+      Start 14: test-tokenizer-1-llama-spm
+14/25 Test #14: test-tokenizer-1-llama-spm ........   Passed    0.33 sec
+      Start 15: test-quantize-fns
+15/25 Test #15: test-quantize-fns .................   Passed   20.57 sec
+      Start 16: test-quantize-perf
+16/25 Test #16: test-quantize-perf ................   Passed    4.92 sec
+      Start 17: test-sampling
+17/25 Test #17: test-sampling .....................   Passed    0.01 sec
+      Start 18: test-chat-template
+18/25 Test #18: test-chat-template ................   Passed    0.00 sec
+      Start 19: test-grammar-parser
+19/25 Test #19: test-grammar-parser ...............   Passed    0.00 sec
+      Start 20: test-llama-grammar
+20/25 Test #20: test-llama-grammar ................   Passed    0.00 sec
+      Start 21: test-grammar-integration
+21/25 Test #21: test-grammar-integration ..........   Passed    0.01 sec
+      Start 22: test-grad0
+22/25 Test #22: test-grad0 ........................   Passed    0.31 sec
+      Start 23: test-backend-ops
+23/25 Test #23: test-backend-ops ..................   Passed    0.00 sec
+      Start 24: test-rope
+24/25 Test #24: test-rope .........................   Passed    0.05 sec
+      Start 27: test-json-schema-to-grammar
+25/25 Test #27: test-json-schema-to-grammar .......   Passed    0.01 sec
+
+100% tests passed, 0 tests failed out of 25
+
+Label Time Summary:
+main    =  29.52 sec*proc (25 tests)
+
+Total Test time (real) =  29.53 sec
+
+real	0m29.539s
+user	0m30.432s
+sys	0m0.452s
+```
