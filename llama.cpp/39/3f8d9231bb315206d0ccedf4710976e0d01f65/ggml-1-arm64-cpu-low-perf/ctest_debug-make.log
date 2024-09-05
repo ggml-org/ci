@@ -1,0 +1,48 @@
+++ nproc
++ make -j4
+[  0%] Generating build details from Git
+[  1%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  2%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Built target sha256
+[  2%] Built target xxhash
+[  3%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  4%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-backend.c.o
+[  4%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  4%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-quants.c.o
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml.dir/llamafile/sgemm.cpp.o
+[  5%] Built target sha1
+[  6%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  6%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-aarch64.c.o
+[  7%] Linking CXX shared library libggml.so
+[  7%] Built target build_info
+[  7%] Built target ggml
+[  9%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[  9%] Building CXX object src/CMakeFiles/llama.dir/llama-vocab.cpp.o
+[  9%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[  9%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 10%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 11%] Linking CXX executable ../../bin/llama-gguf
+[ 11%] Built target llama-gguf-hash
+[ 12%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+[ 12%] Built target llama-gguf
+[ 12%] Building CXX object src/CMakeFiles/llama.dir/llama-sampling.cpp.o
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp: In function ‘void llama_grammar_apply_impl(const llama_grammar&, llama_token_data_array*)’:
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1095:41: error: ‘INFINITY’ was not declared in this scope
+ 1095 |                 cur_p->data[i].logit = -INFINITY;
+      |                                         ^~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1098:37: error: ‘INFINITY’ was not declared in this scope
+ 1098 |             cur_p->data[i].logit = -INFINITY;
+      |                                     ^~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1107:44: error: ‘INFINITY’ was not declared in this scope
+ 1107 |         cur_p->data[reject.index].logit = -INFINITY;
+      |                                            ^~~~~~~~
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:104: src/CMakeFiles/llama.dir/llama-grammar.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:1629: src/CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m11.859s
+user	0m15.103s
+sys	0m1.505s
