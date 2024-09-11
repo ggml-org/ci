@@ -1,0 +1,243 @@
++ ./bin/llama-cli --model ../models-mnt/pythia/1.4B/ggml-model-q2_k.gguf -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+main: build = 3742 (3653fede)
+main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for aarch64-linux-gnu
+[34m00000.00.000.079[0m [32mI [0mmain: llama backend init
+[34m00000.00.001.542[0m [32mI [0mmain: load the model and apply lora adapter, if any
+[34m00000.00.012.092[0m [32mI [0mllama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q2_k.gguf (version GGUF V3 (latest))
+[34m00000.00.012.110[0m [32mI [0mllama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+[34m00000.00.012.117[0m [32mI [0mllama_model_loader: - kv   0:                       general.architecture str              = gptneox
+[34m00000.00.012.124[0m [32mI [0mllama_model_loader: - kv   1:                               general.type str              = model
+[34m00000.00.012.125[0m [32mI [0mllama_model_loader: - kv   2:                               general.name str              = 1.4B
+[34m00000.00.012.126[0m [32mI [0mllama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+[34m00000.00.012.126[0m [32mI [0mllama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+[34m00000.00.012.129[0m [32mI [0mllama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+[34m00000.00.012.130[0m [32mI [0mllama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+[34m00000.00.012.131[0m [32mI [0mllama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+[34m00000.00.012.131[0m [32mI [0mllama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+[34m00000.00.012.132[0m [32mI [0mllama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+[34m00000.00.012.133[0m [32mI [0mllama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+[34m00000.00.012.134[0m [32mI [0mllama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+[34m00000.00.012.138[0m [32mI [0mllama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+[34m00000.00.012.139[0m [32mI [0mllama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+[34m00000.00.012.140[0m [32mI [0mllama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+[34m00000.00.020.112[0m [32mI [0mllama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+[34m00000.00.022.220[0m [32mI [0mllama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+[34m00000.00.029.572[0m [32mI [0mllama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+[34m00000.00.029.585[0m [32mI [0mllama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+[34m00000.00.029.586[0m [32mI [0mllama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+[34m00000.00.029.587[0m [32mI [0mllama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+[34m00000.00.029.588[0m [32mI [0mllama_model_loader: - kv  21:               general.quantization_version u32              = 2
+[34m00000.00.029.589[0m [32mI [0mllama_model_loader: - kv  22:                          general.file_type u32              = 10
+[34m00000.00.029.592[0m [32mI [0mllama_model_loader: - type  f32:  194 tensors
+[34m00000.00.029.593[0m [32mI [0mllama_model_loader: - type q2_K:   49 tensors
+[34m00000.00.029.594[0m [32mI [0mllama_model_loader: - type q3_K:   48 tensors
+[34m00000.00.029.594[0m [32mI [0mllama_model_loader: - type q6_K:    1 tensors
+[34m00000.00.080.345[0m [32mI [0mllm_load_vocab: special tokens cache size = 25
+[34m00000.00.099.625[0m [32mI [0mllm_load_vocab: token to piece cache size = 0.2984 MB
+[34m00000.00.099.644[0m [32mI [0mllm_load_print_meta: format           = GGUF V3 (latest)
+[34m00000.00.099.645[0m [32mI [0mllm_load_print_meta: arch             = gptneox
+[34m00000.00.099.647[0m [32mI [0mllm_load_print_meta: vocab type       = BPE
+[34m00000.00.099.648[0m [32mI [0mllm_load_print_meta: n_vocab          = 50304
+[34m00000.00.099.648[0m [32mI [0mllm_load_print_meta: n_merges         = 50009
+[34m00000.00.099.649[0m [32mI [0mllm_load_print_meta: vocab_only       = 0
+[34m00000.00.099.649[0m [32mI [0mllm_load_print_meta: n_ctx_train      = 2048
+[34m00000.00.099.650[0m [32mI [0mllm_load_print_meta: n_embd           = 2048
+[34m00000.00.099.650[0m [32mI [0mllm_load_print_meta: n_layer          = 24
+[34m00000.00.099.661[0m [32mI [0mllm_load_print_meta: n_head           = 16
+[34m00000.00.099.663[0m [32mI [0mllm_load_print_meta: n_head_kv        = 16
+[34m00000.00.099.663[0m [32mI [0mllm_load_print_meta: n_rot            = 32
+[34m00000.00.099.664[0m [32mI [0mllm_load_print_meta: n_swa            = 0
+[34m00000.00.099.664[0m [32mI [0mllm_load_print_meta: n_embd_head_k    = 128
+[34m00000.00.099.665[0m [32mI [0mllm_load_print_meta: n_embd_head_v    = 128
+[34m00000.00.099.666[0m [32mI [0mllm_load_print_meta: n_gqa            = 1
+[34m00000.00.099.667[0m [32mI [0mllm_load_print_meta: n_embd_k_gqa     = 2048
+[34m00000.00.099.668[0m [32mI [0mllm_load_print_meta: n_embd_v_gqa     = 2048
+[34m00000.00.099.670[0m [32mI [0mllm_load_print_meta: f_norm_eps       = 1.0e-05
+[34m00000.00.099.671[0m [32mI [0mllm_load_print_meta: f_norm_rms_eps   = 0.0e+00
+[34m00000.00.099.671[0m [32mI [0mllm_load_print_meta: f_clamp_kqv      = 0.0e+00
+[34m00000.00.099.672[0m [32mI [0mllm_load_print_meta: f_max_alibi_bias = 0.0e+00
+[34m00000.00.099.673[0m [32mI [0mllm_load_print_meta: f_logit_scale    = 0.0e+00
+[34m00000.00.099.674[0m [32mI [0mllm_load_print_meta: n_ff             = 8192
+[34m00000.00.099.675[0m [32mI [0mllm_load_print_meta: n_expert         = 0
+[34m00000.00.099.675[0m [32mI [0mllm_load_print_meta: n_expert_used    = 0
+[34m00000.00.099.676[0m [32mI [0mllm_load_print_meta: causal attn      = 1
+[34m00000.00.099.676[0m [32mI [0mllm_load_print_meta: pooling type     = 0
+[34m00000.00.099.676[0m [32mI [0mllm_load_print_meta: rope type        = 2
+[34m00000.00.099.678[0m [32mI [0mllm_load_print_meta: rope scaling     = linear
+[34m00000.00.099.680[0m [32mI [0mllm_load_print_meta: freq_base_train  = 10000.0
+[34m00000.00.099.681[0m [32mI [0mllm_load_print_meta: freq_scale_train = 1
+[34m00000.00.099.682[0m [32mI [0mllm_load_print_meta: n_ctx_orig_yarn  = 2048
+[34m00000.00.099.682[0m [32mI [0mllm_load_print_meta: rope_finetuned   = unknown
+[34m00000.00.099.683[0m [32mI [0mllm_load_print_meta: ssm_d_conv       = 0
+[34m00000.00.099.683[0m [32mI [0mllm_load_print_meta: ssm_d_inner      = 0
+[34m00000.00.099.683[0m [32mI [0mllm_load_print_meta: ssm_d_state      = 0
+[34m00000.00.099.684[0m [32mI [0mllm_load_print_meta: ssm_dt_rank      = 0
+[34m00000.00.099.684[0m [32mI [0mllm_load_print_meta: ssm_dt_b_c_rms   = 0
+[34m00000.00.099.685[0m [32mI [0mllm_load_print_meta: model type       = 1.4B
+[34m00000.00.099.686[0m [32mI [0mllm_load_print_meta: model ftype      = Q2_K - Medium
+[34m00000.00.099.687[0m [32mI [0mllm_load_print_meta: model params     = 1.41 B
+[34m00000.00.099.689[0m [32mI [0mllm_load_print_meta: model size       = 542.04 MiB (3.21 BPW) 
+[34m00000.00.099.690[0m [32mI [0mllm_load_print_meta: general.name     = 1.4B
+[34m00000.00.099.690[0m [32mI [0mllm_load_print_meta: BOS token        = 0 '<|endoftext|>'
+[34m00000.00.099.691[0m [32mI [0mllm_load_print_meta: EOS token        = 0 '<|endoftext|>'
+[34m00000.00.099.691[0m [32mI [0mllm_load_print_meta: UNK token        = 0 '<|endoftext|>'
+[34m00000.00.099.692[0m [32mI [0mllm_load_print_meta: LF token         = 128 'Ä'
+[34m00000.00.099.693[0m [32mI [0mllm_load_print_meta: EOT token        = 0 '<|endoftext|>'
+[34m00000.00.099.693[0m [32mI [0mllm_load_print_meta: max token length = 1024
+[34m00000.00.099.715[0m [32mI [0mllm_load_tensors: ggml ctx size =    0.13 MiB
+[34m00000.00.125.219[0m [32mI [0mllm_load_tensors:        CPU buffer size =   542.04 MiB
+..........................................................................
+[34m00000.00.128.472[0m [32mI [0mllama_new_context_with_model: n_ctx      = 2048
+[34m00000.00.128.484[0m [32mI [0mllama_new_context_with_model: n_batch    = 2048
+[34m00000.00.128.484[0m [32mI [0mllama_new_context_with_model: n_ubatch   = 512
+[34m00000.00.128.485[0m [32mI [0mllama_new_context_with_model: flash_attn = 0
+[34m00000.00.128.488[0m [32mI [0mllama_new_context_with_model: freq_base  = 10000.0
+[34m00000.00.128.488[0m [32mI [0mllama_new_context_with_model: freq_scale = 1
+[34m00000.00.243.853[0m [32mI [0mllama_kv_cache_init:        CPU KV buffer size =   384.00 MiB
+[34m00000.00.243.878[0m [32mI [0mllama_new_context_with_model: KV self size  =  384.00 MiB, K (f16):  192.00 MiB, V (f16):  192.00 MiB
+[34m00000.00.243.897[0m [32mI [0mllama_new_context_with_model:        CPU  output buffer size =     0.19 MiB
+[34m00000.00.245.664[0m [32mI [0mllama_new_context_with_model:        CPU compute buffer size =   102.25 MiB
+[34m00000.00.245.676[0m [32mI [0mllama_new_context_with_model: graph nodes  = 967
+[34m00000.00.245.677[0m [32mI [0mllama_new_context_with_model: graph splits = 1
+[34m00000.00.245.680[0m [35mW llama_init_from_gpt_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+[0m[34m00000.00.309.098[0m [32mI [0mmain: llama threadpool init, n_threads = 8
+[34m00000.00.309.116[0m [32mI [0m
+[34m00000.00.309.197[0m [32mI [0msystem_info: n_threads = 8 (n_threads_batch = 8) / 8 | AVX = 0 | AVX_VNNI = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | AVX512_BF16 = 0 | FMA = 0 | NEON = 1 | SVE = 0 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | SSSE3 = 0 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
+[34m00000.00.309.203[0m [32mI [0m
+[34m00000.00.309.319[0m [32mI [0msampler seed: 1234
+[34m00000.00.309.332[0m [32mI [0msampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	top_k = 40, tfs_z = 1.000, top_p = 0.950, min_p = 0.050, typical_p = 1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+[34m00000.00.309.335[0m [32mI [0msampler chain: logits -> logit-bias -> penalties -> top-k -> tail-free -> typical -> top-p -> min-p -> temp-ext -> softmax -> dist 
+[34m00000.00.309.336[0m [32mI [0mgenerate: n_ctx = 2048, n_batch = 2048, n_predict = 64, n_keep = 0
+
+I believe the meaning of life is:1. We would not have given the same amount of attention to the idea of a 's' - he or he. 2. If we had a s, - then, - and if we do not know this then, then, if you don't know this then, then, if you do not know
+
+[34m00000.02.498.742[0m [32mI [0mllama_perf_print:    sampling time =       3.38 ms /    71 runs   (    0.05 ms per token, 20981.09 tokens per second)
+[34m00000.02.498.754[0m [32mI [0mllama_perf_print:        load time =     209.40 ms
+[34m00000.02.498.762[0m [32mI [0mllama_perf_print: prompt eval time =     171.03 ms /     7 tokens (   24.43 ms per token,    40.93 tokens per second)
+[34m00000.02.498.770[0m [32mI [0mllama_perf_print:        eval time =    2008.65 ms /    63 runs   (   31.88 ms per token,    31.36 tokens per second)
+[34m00000.02.498.784[0m [32mI [0mllama_perf_print:       total time =    2188.67 ms /    70 tokens
+
+real	0m2.560s
+user	0m17.699s
+sys	0m0.212s
++ ./bin/llama-perplexity --model ../models-mnt/pythia/1.4B/ggml-model-q2_k.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 1
+main: build = 3742 (3653fede)
+main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for aarch64-linux-gnu
+[34m00000.00.000.084[0m [32mI [0mllama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q2_k.gguf (version GGUF V3 (latest))
+[34m00000.00.000.093[0m [32mI [0mllama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+[34m00000.00.000.100[0m [32mI [0mllama_model_loader: - kv   0:                       general.architecture str              = gptneox
+[34m00000.00.000.101[0m [32mI [0mllama_model_loader: - kv   1:                               general.type str              = model
+[34m00000.00.000.102[0m [32mI [0mllama_model_loader: - kv   2:                               general.name str              = 1.4B
+[34m00000.00.000.102[0m [32mI [0mllama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+[34m00000.00.000.103[0m [32mI [0mllama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+[34m00000.00.000.105[0m [32mI [0mllama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+[34m00000.00.000.106[0m [32mI [0mllama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+[34m00000.00.000.107[0m [32mI [0mllama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+[34m00000.00.000.108[0m [32mI [0mllama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+[34m00000.00.000.108[0m [32mI [0mllama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+[34m00000.00.000.109[0m [32mI [0mllama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+[34m00000.00.000.109[0m [32mI [0mllama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+[34m00000.00.000.171[0m [32mI [0mllama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+[34m00000.00.000.173[0m [32mI [0mllama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+[34m00000.00.000.173[0m [32mI [0mllama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+[34m00000.00.008.251[0m [32mI [0mllama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+[34m00000.00.010.369[0m [32mI [0mllama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+[34m00000.00.018.160[0m [32mI [0mllama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+[34m00000.00.018.171[0m [32mI [0mllama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+[34m00000.00.018.172[0m [32mI [0mllama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+[34m00000.00.018.173[0m [32mI [0mllama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+[34m00000.00.018.173[0m [32mI [0mllama_model_loader: - kv  21:               general.quantization_version u32              = 2
+[34m00000.00.018.174[0m [32mI [0mllama_model_loader: - kv  22:                          general.file_type u32              = 10
+[34m00000.00.018.177[0m [32mI [0mllama_model_loader: - type  f32:  194 tensors
+[34m00000.00.018.179[0m [32mI [0mllama_model_loader: - type q2_K:   49 tensors
+[34m00000.00.018.180[0m [32mI [0mllama_model_loader: - type q3_K:   48 tensors
+[34m00000.00.018.180[0m [32mI [0mllama_model_loader: - type q6_K:    1 tensors
+[34m00000.00.070.923[0m [32mI [0mllm_load_vocab: special tokens cache size = 25
+[34m00000.00.090.446[0m [32mI [0mllm_load_vocab: token to piece cache size = 0.2984 MB
+[34m00000.00.090.463[0m [32mI [0mllm_load_print_meta: format           = GGUF V3 (latest)
+[34m00000.00.090.464[0m [32mI [0mllm_load_print_meta: arch             = gptneox
+[34m00000.00.090.464[0m [32mI [0mllm_load_print_meta: vocab type       = BPE
+[34m00000.00.090.465[0m [32mI [0mllm_load_print_meta: n_vocab          = 50304
+[34m00000.00.090.466[0m [32mI [0mllm_load_print_meta: n_merges         = 50009
+[34m00000.00.090.466[0m [32mI [0mllm_load_print_meta: vocab_only       = 0
+[34m00000.00.090.467[0m [32mI [0mllm_load_print_meta: n_ctx_train      = 2048
+[34m00000.00.090.467[0m [32mI [0mllm_load_print_meta: n_embd           = 2048
+[34m00000.00.090.468[0m [32mI [0mllm_load_print_meta: n_layer          = 24
+[34m00000.00.090.480[0m [32mI [0mllm_load_print_meta: n_head           = 16
+[34m00000.00.090.481[0m [32mI [0mllm_load_print_meta: n_head_kv        = 16
+[34m00000.00.090.482[0m [32mI [0mllm_load_print_meta: n_rot            = 32
+[34m00000.00.090.482[0m [32mI [0mllm_load_print_meta: n_swa            = 0
+[34m00000.00.090.483[0m [32mI [0mllm_load_print_meta: n_embd_head_k    = 128
+[34m00000.00.090.483[0m [32mI [0mllm_load_print_meta: n_embd_head_v    = 128
+[34m00000.00.090.485[0m [32mI [0mllm_load_print_meta: n_gqa            = 1
+[34m00000.00.090.486[0m [32mI [0mllm_load_print_meta: n_embd_k_gqa     = 2048
+[34m00000.00.090.487[0m [32mI [0mllm_load_print_meta: n_embd_v_gqa     = 2048
+[34m00000.00.090.489[0m [32mI [0mllm_load_print_meta: f_norm_eps       = 1.0e-05
+[34m00000.00.090.489[0m [32mI [0mllm_load_print_meta: f_norm_rms_eps   = 0.0e+00
+[34m00000.00.090.490[0m [32mI [0mllm_load_print_meta: f_clamp_kqv      = 0.0e+00
+[34m00000.00.090.491[0m [32mI [0mllm_load_print_meta: f_max_alibi_bias = 0.0e+00
+[34m00000.00.090.491[0m [32mI [0mllm_load_print_meta: f_logit_scale    = 0.0e+00
+[34m00000.00.090.493[0m [32mI [0mllm_load_print_meta: n_ff             = 8192
+[34m00000.00.090.493[0m [32mI [0mllm_load_print_meta: n_expert         = 0
+[34m00000.00.090.494[0m [32mI [0mllm_load_print_meta: n_expert_used    = 0
+[34m00000.00.090.494[0m [32mI [0mllm_load_print_meta: causal attn      = 1
+[34m00000.00.090.495[0m [32mI [0mllm_load_print_meta: pooling type     = 0
+[34m00000.00.090.496[0m [32mI [0mllm_load_print_meta: rope type        = 2
+[34m00000.00.090.496[0m [32mI [0mllm_load_print_meta: rope scaling     = linear
+[34m00000.00.090.498[0m [32mI [0mllm_load_print_meta: freq_base_train  = 10000.0
+[34m00000.00.090.499[0m [32mI [0mllm_load_print_meta: freq_scale_train = 1
+[34m00000.00.090.499[0m [32mI [0mllm_load_print_meta: n_ctx_orig_yarn  = 2048
+[34m00000.00.090.500[0m [32mI [0mllm_load_print_meta: rope_finetuned   = unknown
+[34m00000.00.090.500[0m [32mI [0mllm_load_print_meta: ssm_d_conv       = 0
+[34m00000.00.090.501[0m [32mI [0mllm_load_print_meta: ssm_d_inner      = 0
+[34m00000.00.090.501[0m [32mI [0mllm_load_print_meta: ssm_d_state      = 0
+[34m00000.00.090.501[0m [32mI [0mllm_load_print_meta: ssm_dt_rank      = 0
+[34m00000.00.090.502[0m [32mI [0mllm_load_print_meta: ssm_dt_b_c_rms   = 0
+[34m00000.00.090.503[0m [32mI [0mllm_load_print_meta: model type       = 1.4B
+[34m00000.00.090.504[0m [32mI [0mllm_load_print_meta: model ftype      = Q2_K - Medium
+[34m00000.00.090.505[0m [32mI [0mllm_load_print_meta: model params     = 1.41 B
+[34m00000.00.090.506[0m [32mI [0mllm_load_print_meta: model size       = 542.04 MiB (3.21 BPW) 
+[34m00000.00.090.507[0m [32mI [0mllm_load_print_meta: general.name     = 1.4B
+[34m00000.00.090.507[0m [32mI [0mllm_load_print_meta: BOS token        = 0 '<|endoftext|>'
+[34m00000.00.090.508[0m [32mI [0mllm_load_print_meta: EOS token        = 0 '<|endoftext|>'
+[34m00000.00.090.508[0m [32mI [0mllm_load_print_meta: UNK token        = 0 '<|endoftext|>'
+[34m00000.00.090.509[0m [32mI [0mllm_load_print_meta: LF token         = 128 'Ä'
+[34m00000.00.090.510[0m [32mI [0mllm_load_print_meta: EOT token        = 0 '<|endoftext|>'
+[34m00000.00.090.510[0m [32mI [0mllm_load_print_meta: max token length = 1024
+[34m00000.00.090.538[0m [32mI [0mllm_load_tensors: ggml ctx size =    0.13 MiB
+[34m00000.00.116.313[0m [32mI [0mllm_load_tensors:        CPU buffer size =   542.04 MiB
+..........................................................................
+[34m00000.00.119.625[0m [32mI [0mllama_new_context_with_model: n_ctx      = 128
+[34m00000.00.119.633[0m [32mI [0mllama_new_context_with_model: n_batch    = 128
+[34m00000.00.119.634[0m [32mI [0mllama_new_context_with_model: n_ubatch   = 128
+[34m00000.00.119.634[0m [32mI [0mllama_new_context_with_model: flash_attn = 0
+[34m00000.00.119.636[0m [32mI [0mllama_new_context_with_model: freq_base  = 10000.0
+[34m00000.00.119.637[0m [32mI [0mllama_new_context_with_model: freq_scale = 1
+[34m00000.00.127.493[0m [32mI [0mllama_kv_cache_init:        CPU KV buffer size =    24.00 MiB
+[34m00000.00.127.512[0m [32mI [0mllama_new_context_with_model: KV self size  =   24.00 MiB, K (f16):   12.00 MiB, V (f16):   12.00 MiB
+[34m00000.00.127.530[0m [32mI [0mllama_new_context_with_model:        CPU  output buffer size =     0.19 MiB
+[34m00000.00.129.340[0m [32mI [0mllama_new_context_with_model:        CPU compute buffer size =    25.56 MiB
+[34m00000.00.129.352[0m [32mI [0mllama_new_context_with_model: graph nodes  = 967
+[34m00000.00.129.353[0m [32mI [0mllama_new_context_with_model: graph splits = 1
+[34m00000.00.129.355[0m [35mW llama_init_from_gpt_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+[0m[34m00000.00.188.409[0m [32mI [0m
+[34m00000.00.188.510[0m [32mI [0msystem_info: n_threads = 8 (n_threads_batch = 8) / 8 | AVX = 0 | AVX_VNNI = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | AVX512_BF16 = 0 | FMA = 0 | NEON = 1 | SVE = 0 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 0 | SSSE3 = 0 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
+[34m00000.00.188.521[0m [32mI [0mperplexity: tokenizing the input ..
+[34m00000.00.203.096[0m [32mI [0mperplexity: tokenization took 14.569 ms
+[34m00000.00.203.128[0m [32mI [0mperplexity: calculating perplexity over 1 chunks, n_ctx=128, batch_size=128, n_seq=1
+[34m00000.03.443.036[0m [32mI [0mperplexity: 3.24 seconds per pass - ETA 0.05 minutes
+
+[1]68.1275,
+[34m00000.03.445.997[0m [32mI [0mFinal estimate: PPL = 68.1275 +/- 26.34235
+
+[34m00000.03.446.034[0m [32mI [0mllama_perf_print:        load time =      97.89 ms
+[34m00000.03.446.036[0m [32mI [0mllama_perf_print: prompt eval time =    3239.39 ms /   128 tokens (   25.31 ms per token,    39.51 tokens per second)
+[34m00000.03.446.038[0m [32mI [0mllama_perf_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+[34m00000.03.446.039[0m [32mI [0mllama_perf_print:       total time =    3257.15 ms /   129 tokens
+
+real	0m3.497s
+user	0m26.426s
+sys	0m0.092s
