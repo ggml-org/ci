@@ -1,0 +1,8 @@
++ ./bin/llama-embedding --model ../models-mnt/bge-small/ggml-model-f16.gguf -p 'I believe the meaning of life is'
+main: build = 3735 (c984214e)
+main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+[34m00000.00.000.417[0m [32mI [0m@öÒvci/run.sh: line 709: 1375294 Segmentation fault      (core dumped) ./bin/llama-embedding --model ${model_f16} -p "I believe the meaning of life is"
+
+real	0m0.085s
+user	0m0.000s
+sys	0m0.006s
