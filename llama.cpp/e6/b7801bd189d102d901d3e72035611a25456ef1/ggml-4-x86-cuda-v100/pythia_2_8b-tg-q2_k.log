@@ -139,16 +139,16 @@ I believe the meaning of life is the following: (here, here, and here).
  d) The most important factor in the life of the individual is the most important factor in the life of the individual, the most important factor in the life of the individual.
 
  d) The life of the individual is the life of the individual, the life of the
-llama_perf_print:    sampling time =      10.98 ms /   263 runs   (    0.04 ms per token, 23952.64 tokens per second)
-llama_perf_print:        load time =     737.00 ms
-llama_perf_print: prompt eval time =      14.18 ms /     7 tokens (    2.03 ms per token,   493.51 tokens per second)
-llama_perf_print:        eval time =    1771.47 ms /   255 runs   (    6.95 ms per token,   143.95 tokens per second)
-llama_perf_print:       total time =    1824.66 ms /   262 tokens
+llama_perf_print:    sampling time =      10.90 ms /   263 runs   (    0.04 ms per token, 24128.44 tokens per second)
+llama_perf_print:        load time =     740.85 ms
+llama_perf_print: prompt eval time =      14.16 ms /     7 tokens (    2.02 ms per token,   494.46 tokens per second)
+llama_perf_print:        eval time =    1773.79 ms /   255 runs   (    6.96 ms per token,   143.76 tokens per second)
+llama_perf_print:       total time =    1827.01 ms /   262 tokens
 Log end
 
-real	0m2.848s
-user	0m2.174s
-sys	0m0.668s
+real	0m2.851s
+user	0m2.202s
+sys	0m0.639s
 + ./bin/llama-perplexity --model ../models-mnt/pythia/2.8B/ggml-model-q2_k.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 3747 (e6b7801b)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
@@ -260,17 +260,17 @@ llama_new_context_with_model: graph splits = 2
 
 system_info: n_threads = 1 (n_threads_batch = 1) / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | AVX512_BF16 = 0 | FMA = 1 | NEON = 0 | SVE = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | RISCV_VECT = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 1339.49 ms
+perplexity: tokenization took 1256.85 ms
 perplexity: calculating perplexity over 4 chunks, n_ctx=2048, batch_size=512, n_seq=1
-perplexity: 0.66 seconds per pass - ETA 0.03 minutes
+perplexity: 0.65 seconds per pass - ETA 0.03 minutes
 [1]55.7748,[2]67.1016,[3]74.2544,[4]74.3759,
-llama_perf_print:        load time =     767.42 ms
-llama_perf_print: prompt eval time =    2106.70 ms /  8192 tokens (    0.26 ms per token,  3888.54 tokens per second)
+llama_perf_print:        load time =     737.48 ms
+llama_perf_print: prompt eval time =    2087.97 ms /  8192 tokens (    0.25 ms per token,  3923.43 tokens per second)
 llama_perf_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_perf_print:       total time =    3817.94 ms /  8193 tokens
+llama_perf_print:       total time =    3700.47 ms /  8193 tokens
 
 Final estimate: PPL = 74.3759 +/- 3.84923
 
-real	0m4.900s
-user	0m4.926s
-sys	0m0.974s
+real	0m4.769s
+user	0m4.834s
+sys	0m0.912s

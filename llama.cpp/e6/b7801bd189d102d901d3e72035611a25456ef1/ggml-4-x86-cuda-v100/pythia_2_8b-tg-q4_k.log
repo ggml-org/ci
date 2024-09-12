@@ -144,16 +144,16 @@ I believe that we can choose to be happy. I believe that we can choose to be unh
 I believe that we must have the courage to be ourselves. I believe that we must have the courage to be different.
 
 I believe that we must choose to be happy. I believe that we must choose
-llama_perf_print:    sampling time =      11.32 ms /   263 runs   (    0.04 ms per token, 23229.11 tokens per second)
-llama_perf_print:        load time =     914.33 ms
-llama_perf_print: prompt eval time =      12.39 ms /     7 tokens (    1.77 ms per token,   565.02 tokens per second)
-llama_perf_print:        eval time =    1700.87 ms /   255 runs   (    6.67 ms per token,   149.92 tokens per second)
-llama_perf_print:       total time =    1751.58 ms /   262 tokens
+llama_perf_print:    sampling time =      11.53 ms /   263 runs   (    0.04 ms per token, 22806.10 tokens per second)
+llama_perf_print:        load time =     917.09 ms
+llama_perf_print: prompt eval time =      12.34 ms /     7 tokens (    1.76 ms per token,   567.44 tokens per second)
+llama_perf_print:        eval time =    1691.59 ms /   255 runs   (    6.63 ms per token,   150.75 tokens per second)
+llama_perf_print:       total time =    1742.49 ms /   262 tokens
 Log end
 
-real	0m2.953s
-user	0m2.164s
-sys	0m0.777s
+real	0m2.944s
+user	0m2.195s
+sys	0m0.746s
 + ./bin/llama-perplexity --model ../models-mnt/pythia/2.8B/ggml-model-q4_k.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 3747 (e6b7801b)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
@@ -265,17 +265,17 @@ llama_new_context_with_model: graph splits = 2
 
 system_info: n_threads = 1 (n_threads_batch = 1) / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | AVX512_BF16 = 0 | FMA = 1 | NEON = 0 | SVE = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | RISCV_VECT = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 1242.98 ms
+perplexity: tokenization took 1217.49 ms
 perplexity: calculating perplexity over 4 chunks, n_ctx=2048, batch_size=512, n_seq=1
 perplexity: 0.65 seconds per pass - ETA 0.03 minutes
 [1]9.8572,[2]11.6301,[3]11.8902,[4]10.6112,
-llama_perf_print:        load time =     871.97 ms
-llama_perf_print: prompt eval time =    2117.98 ms /  8192 tokens (    0.26 ms per token,  3867.84 tokens per second)
+llama_perf_print:        load time =     888.09 ms
+llama_perf_print: prompt eval time =    2105.04 ms /  8192 tokens (    0.26 ms per token,  3891.61 tokens per second)
 llama_perf_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_perf_print:       total time =    3716.05 ms /  8193 tokens
+llama_perf_print:       total time =    3676.48 ms /  8193 tokens
 
 Final estimate: PPL = 10.6112 +/- 0.43489
 
-real	0m4.904s
-user	0m4.845s
-sys	0m1.056s
+real	0m4.871s
+user	0m4.829s
+sys	0m1.021s

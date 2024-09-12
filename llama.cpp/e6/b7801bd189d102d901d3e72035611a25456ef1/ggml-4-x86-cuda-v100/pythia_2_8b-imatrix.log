@@ -104,21 +104,21 @@ llama_new_context_with_model: graph splits = 2
 
 system_info: n_threads = 1 (n_threads_batch = 1) / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | AVX512_BF16 = 0 | FMA = 1 | NEON = 0 | SVE = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | RISCV_VECT = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
 compute_imatrix: tokenizing the input ..
-compute_imatrix: tokenization took 1303.94 ms
+compute_imatrix: tokenization took 1228.1 ms
 compute_imatrix: computing over 4 chunks with batch_size 512
-compute_imatrix: 3.42 seconds per pass - ETA 0.22 minutes
+compute_imatrix: 3.32 seconds per pass - ETA 0.22 minutes
 [1]9.6667,[2]11.4286,
 save_imatrix: stored collected data after 10 chunks in imatrix.dat
 [3]11.6311,[4]10.3475,
 save_imatrix: stored collected data after 16 chunks in imatrix.dat
 
-llama_perf_print:        load time =    3776.24 ms
-llama_perf_print: prompt eval time =   11844.07 ms /  8192 tokens (    1.45 ms per token,   691.65 tokens per second)
+llama_perf_print:        load time =    3678.78 ms
+llama_perf_print: prompt eval time =   11697.03 ms /  8192 tokens (    1.43 ms per token,   700.35 tokens per second)
 llama_perf_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_perf_print:       total time =   16133.91 ms /  8193 tokens
+llama_perf_print:       total time =   15928.35 ms /  8193 tokens
 
 Final estimate: PPL = 10.3475 +/- 0.42292
 
-real	0m16.453s
-user	0m15.386s
-sys	0m2.052s
+real	0m16.245s
+user	0m15.296s
+sys	0m1.920s

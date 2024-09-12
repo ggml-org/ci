@@ -149,16 +149,16 @@ I believe the meaning of life is to have an unencumbered mind.
 I believe the meaning of life is to have an unencumbered mind.
 
 I believe the meaning of life is to
-llama_perf_print:    sampling time =      11.05 ms /   263 runs   (    0.04 ms per token, 23800.90 tokens per second)
-llama_perf_print:        load time =     928.06 ms
+llama_perf_print:    sampling time =      10.63 ms /   263 runs   (    0.04 ms per token, 24734.32 tokens per second)
+llama_perf_print:        load time =     953.46 ms
 llama_perf_print: prompt eval time =       9.78 ms /     7 tokens (    1.40 ms per token,   715.67 tokens per second)
-llama_perf_print:        eval time =    1716.62 ms /   255 runs   (    6.73 ms per token,   148.55 tokens per second)
-llama_perf_print:       total time =    1767.22 ms /   262 tokens
+llama_perf_print:        eval time =    1708.22 ms /   255 runs   (    6.70 ms per token,   149.28 tokens per second)
+llama_perf_print:       total time =    1755.30 ms /   262 tokens
 Log end
 
-real	0m2.997s
-user	0m2.218s
-sys	0m0.774s
+real	0m2.998s
+user	0m2.255s
+sys	0m0.740s
 + ./bin/llama-perplexity --model ../models-mnt/pythia/2.8B/ggml-model-q5_0.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 3747 (e6b7801b)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
@@ -269,17 +269,17 @@ llama_new_context_with_model: graph splits = 2
 
 system_info: n_threads = 1 (n_threads_batch = 1) / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | AVX512_BF16 = 0 | FMA = 1 | NEON = 0 | SVE = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | RISCV_VECT = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 1254.88 ms
+perplexity: tokenization took 1278.36 ms
 perplexity: calculating perplexity over 4 chunks, n_ctx=2048, batch_size=512, n_seq=1
 perplexity: 0.62 seconds per pass - ETA 0.03 minutes
 [1]9.8047,[2]11.5245,[3]11.8234,[4]10.5057,
-llama_perf_print:        load time =     902.01 ms
-llama_perf_print: prompt eval time =    1982.58 ms /  8192 tokens (    0.24 ms per token,  4131.98 tokens per second)
+llama_perf_print:        load time =     894.58 ms
+llama_perf_print: prompt eval time =    1967.87 ms /  8192 tokens (    0.24 ms per token,  4162.89 tokens per second)
 llama_perf_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_perf_print:       total time =    3595.07 ms /  8193 tokens
+llama_perf_print:       total time =    3605.67 ms /  8193 tokens
 
 Final estimate: PPL = 10.5057 +/- 0.42912
 
-real	0m4.801s
-user	0m4.763s
-sys	0m0.996s
+real	0m4.820s
+user	0m4.834s
+sys	0m0.980s

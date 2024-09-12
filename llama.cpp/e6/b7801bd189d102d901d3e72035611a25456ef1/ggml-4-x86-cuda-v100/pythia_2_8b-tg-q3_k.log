@@ -141,16 +141,16 @@ The room was a mess.
 The room was full of people.
 
 "I'll be back in a minute," I
-llama_perf_print:    sampling time =      12.89 ms /   263 runs   (    0.05 ms per token, 20408.16 tokens per second)
-llama_perf_print:        load time =     832.31 ms
-llama_perf_print: prompt eval time =      12.73 ms /     7 tokens (    1.82 ms per token,   549.75 tokens per second)
-llama_perf_print:        eval time =    1789.74 ms /   255 runs   (    7.02 ms per token,   142.48 tokens per second)
-llama_perf_print:       total time =    1844.28 ms /   262 tokens
+llama_perf_print:    sampling time =      11.52 ms /   263 runs   (    0.04 ms per token, 22823.92 tokens per second)
+llama_perf_print:        load time =     843.24 ms
+llama_perf_print: prompt eval time =      12.69 ms /     7 tokens (    1.81 ms per token,   551.62 tokens per second)
+llama_perf_print:        eval time =    1788.84 ms /   255 runs   (    7.02 ms per token,   142.55 tokens per second)
+llama_perf_print:       total time =    1840.48 ms /   262 tokens
 Log end
 
-real	0m2.968s
-user	0m2.258s
-sys	0m0.708s
+real	0m2.969s
+user	0m2.266s
+sys	0m0.701s
 + ./bin/llama-perplexity --model ../models-mnt/pythia/2.8B/ggml-model-q3_k.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 3747 (e6b7801b)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
@@ -263,17 +263,17 @@ llama_new_context_with_model: graph splits = 2
 
 system_info: n_threads = 1 (n_threads_batch = 1) / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | AVX512_BF16 = 0 | FMA = 1 | NEON = 0 | SVE = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | RISCV_VECT = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 1247.24 ms
+perplexity: tokenization took 1239.29 ms
 perplexity: calculating perplexity over 4 chunks, n_ctx=2048, batch_size=512, n_seq=1
-perplexity: 0.67 seconds per pass - ETA 0.03 minutes
+perplexity: 0.66 seconds per pass - ETA 0.03 minutes
 [1]10.3341,[2]12.1669,[3]12.5532,[4]11.2762,
-llama_perf_print:        load time =     808.89 ms
-llama_perf_print: prompt eval time =    2157.66 ms /  8192 tokens (    0.26 ms per token,  3796.70 tokens per second)
+llama_perf_print:        load time =     791.58 ms
+llama_perf_print: prompt eval time =    2141.93 ms /  8192 tokens (    0.26 ms per token,  3824.60 tokens per second)
 llama_perf_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_perf_print:       total time =    3777.53 ms /  8193 tokens
+llama_perf_print:       total time =    3738.20 ms /  8193 tokens
 
 Final estimate: PPL = 11.2762 +/- 0.46074
 
-real	0m4.894s
-user	0m4.917s
-sys	0m0.971s
+real	0m4.845s
+user	0m4.862s
+sys	0m0.968s

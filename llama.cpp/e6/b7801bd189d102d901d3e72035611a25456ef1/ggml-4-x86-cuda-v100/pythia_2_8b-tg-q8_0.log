@@ -128,16 +128,16 @@ I believe the meaning of life is to help people
 <h00k> mneptok, I know, I just figured that you'd be more likely to help me out than the people who aren't there
 <mneptok> h00k: i don't know how to help you.
 <mneptok> h00k: i don
-llama_perf_print:    sampling time =      11.02 ms /   263 runs   (    0.04 ms per token, 23857.04 tokens per second)
-llama_perf_print:        load time =    1180.89 ms
-llama_perf_print: prompt eval time =      11.10 ms /     7 tokens (    1.59 ms per token,   630.57 tokens per second)
-llama_perf_print:        eval time =    2042.00 ms /   255 runs   (    8.01 ms per token,   124.88 tokens per second)
-llama_perf_print:       total time =    2092.12 ms /   262 tokens
+llama_perf_print:    sampling time =      10.90 ms /   263 runs   (    0.04 ms per token, 24117.38 tokens per second)
+llama_perf_print:        load time =    1204.60 ms
+llama_perf_print: prompt eval time =      11.26 ms /     7 tokens (    1.61 ms per token,   621.50 tokens per second)
+llama_perf_print:        eval time =    2052.88 ms /   255 runs   (    8.05 ms per token,   124.22 tokens per second)
+llama_perf_print:       total time =    2105.48 ms /   262 tokens
 Log end
 
-real	0m3.562s
-user	0m2.696s
-sys	0m0.859s
+real	0m3.602s
+user	0m2.709s
+sys	0m0.887s
 + ./bin/llama-perplexity --model ../models-mnt/pythia/2.8B/ggml-model-q8_0.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 999 -c 2048 -b 512 --chunks 4
 main: build = 3747 (e6b7801b)
 main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
@@ -247,17 +247,17 @@ llama_new_context_with_model: graph splits = 2
 
 system_info: n_threads = 1 (n_threads_batch = 1) / 6 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | AVX512_BF16 = 0 | FMA = 1 | NEON = 0 | SVE = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | RISCV_VECT = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
 perplexity: tokenizing the input ..
-perplexity: tokenization took 1300.13 ms
+perplexity: tokenization took 1223.12 ms
 perplexity: calculating perplexity over 4 chunks, n_ctx=2048, batch_size=512, n_seq=1
-perplexity: 0.63 seconds per pass - ETA 0.03 minutes
+perplexity: 0.62 seconds per pass - ETA 0.03 minutes
 [1]9.7126,[2]11.4535,[3]11.6553,[4]10.3702,
-llama_perf_print:        load time =    1178.24 ms
-llama_perf_print: prompt eval time =    1983.05 ms /  8192 tokens (    0.24 ms per token,  4131.02 tokens per second)
+llama_perf_print:        load time =    1109.46 ms
+llama_perf_print: prompt eval time =    1966.24 ms /  8192 tokens (    0.24 ms per token,  4166.33 tokens per second)
 llama_perf_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
-llama_perf_print:       total time =    3649.07 ms /  8193 tokens
+llama_perf_print:       total time =    3544.67 ms /  8193 tokens
 
 Final estimate: PPL = 10.3702 +/- 0.42431
 
-real	0m5.141s
-user	0m4.944s
-sys	0m1.178s
+real	0m4.981s
+user	0m4.851s
+sys	0m1.085s
