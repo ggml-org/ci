@@ -1,0 +1,228 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 2:13.29
+- date:    Fri Sep 20 08:44:52 UTC 2024
+- repo:    https://github.com/ggerganov/llama.cpp
+- commit:  https://github.com/ggerganov/llama.cpp/commit/6e873e561a05bc3df7455233366ecc0b5c550267
+- author:  Georgi Gerganov
+```
+llama : make llm_tokenizer more private
+
+ggml-ci
+```
+
+## Environment
+
+```
+GG_BUILD_CLOUD=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+GG_BUILD_LOW_PERF=1
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-debug
+      Start  1: test-tokenizer-0-bert-bge
+ 1/41 Test  #1: test-tokenizer-0-bert-bge ................   Passed    0.08 sec
+      Start  2: test-tokenizer-0-command-r
+ 2/41 Test  #2: test-tokenizer-0-command-r ...............   Passed    1.79 sec
+      Start  3: test-tokenizer-0-deepseek-coder
+ 3/41 Test  #3: test-tokenizer-0-deepseek-coder ..........   Passed    0.24 sec
+      Start  4: test-tokenizer-0-deepseek-llm
+ 4/41 Test  #4: test-tokenizer-0-deepseek-llm ............   Passed    0.66 sec
+      Start  5: test-tokenizer-0-falcon
+ 5/41 Test  #5: test-tokenizer-0-falcon ..................   Passed    0.40 sec
+      Start  6: test-tokenizer-0-gpt-2
+ 6/41 Test  #6: test-tokenizer-0-gpt-2 ...................   Passed    0.31 sec
+      Start  7: test-tokenizer-0-llama-bpe
+ 7/41 Test  #7: test-tokenizer-0-llama-bpe ...............   Passed    1.20 sec
+      Start  8: test-tokenizer-0-llama-spm
+ 8/41 Test  #8: test-tokenizer-0-llama-spm ...............   Passed    0.07 sec
+      Start  9: test-tokenizer-0-mpt
+ 9/41 Test  #9: test-tokenizer-0-mpt .....................   Passed    0.30 sec
+      Start 10: test-tokenizer-0-phi-3
+10/41 Test #10: test-tokenizer-0-phi-3 ...................   Passed    0.07 sec
+      Start 11: test-tokenizer-0-qwen2
+11/41 Test #11: test-tokenizer-0-qwen2 ...................   Passed    1.04 sec
+      Start 12: test-tokenizer-0-refact
+12/41 Test #12: test-tokenizer-0-refact ..................   Passed    0.31 sec
+      Start 13: test-tokenizer-0-starcoder
+13/41 Test #13: test-tokenizer-0-starcoder ...............   Passed    0.31 sec
+      Start 14: test-tokenizer-parallel-bert-bge
+14/41 Test #14: test-tokenizer-parallel-bert-bge .........   Passed    0.08 sec
+      Start 15: test-tokenizer-parallel-command-r
+15/41 Test #15: test-tokenizer-parallel-command-r ........   Passed    1.80 sec
+      Start 16: test-tokenizer-parallel-deepseek-coder
+16/41 Test #16: test-tokenizer-parallel-deepseek-coder ...   Passed    0.26 sec
+      Start 17: test-tokenizer-parallel-deepseek-llm
+17/41 Test #17: test-tokenizer-parallel-deepseek-llm .....   Passed    0.68 sec
+      Start 18: test-tokenizer-parallel-falcon
+18/41 Test #18: test-tokenizer-parallel-falcon ...........   Passed    0.42 sec
+      Start 19: test-tokenizer-parallel-gpt-2
+19/41 Test #19: test-tokenizer-parallel-gpt-2 ............   Passed    0.31 sec
+      Start 20: test-tokenizer-parallel-llama-bpe
+20/41 Test #20: test-tokenizer-parallel-llama-bpe ........   Passed    1.22 sec
+      Start 21: test-tokenizer-parallel-llama-spm
+21/41 Test #21: test-tokenizer-parallel-llama-spm ........   Passed    0.08 sec
+      Start 22: test-tokenizer-parallel-mpt
+22/41 Test #22: test-tokenizer-parallel-mpt ..............   Passed    0.31 sec
+      Start 23: test-tokenizer-parallel-phi-3
+23/41 Test #23: test-tokenizer-parallel-phi-3 ............   Passed    0.08 sec
+      Start 24: test-tokenizer-parallel-qwen2
+24/41 Test #24: test-tokenizer-parallel-qwen2 ............   Passed    1.11 sec
+      Start 25: test-tokenizer-parallel-refact
+25/41 Test #25: test-tokenizer-parallel-refact ...........   Passed    0.31 sec
+      Start 26: test-tokenizer-parallel-starcoder
+26/41 Test #26: test-tokenizer-parallel-starcoder ........   Passed    0.31 sec
+      Start 27: test-tokenizer-1-llama-spm
+27/41 Test #27: test-tokenizer-1-llama-spm ...............   Passed    2.07 sec
+      Start 28: test-log
+28/41 Test #28: test-log .................................   Passed    0.02 sec
+      Start 29: test-arg-parser
+29/41 Test #29: test-arg-parser ..........................   Passed    0.02 sec
+      Start 30: test-quantize-fns
+30/41 Test #30: test-quantize-fns ........................   Passed   31.02 sec
+      Start 31: test-quantize-perf
+31/41 Test #31: test-quantize-perf .......................   Passed    9.16 sec
+      Start 32: test-sampling
+32/41 Test #32: test-sampling ............................   Passed    0.03 sec
+      Start 33: test-chat-template
+33/41 Test #33: test-chat-template .......................   Passed    0.00 sec
+      Start 34: test-grammar-parser
+34/41 Test #34: test-grammar-parser ......................   Passed    0.00 sec
+      Start 35: test-llama-grammar
+35/41 Test #35: test-llama-grammar .......................   Passed    0.00 sec
+      Start 36: test-grammar-integration
+36/41 Test #36: test-grammar-integration .................   Passed    0.03 sec
+      Start 37: test-grad0
+37/41 Test #37: test-grad0 ...............................   Passed    0.56 sec
+      Start 38: test-barrier
+38/41 Test #38: test-barrier .............................   Passed    2.10 sec
+      Start 39: test-backend-ops
+39/41 Test #39: test-backend-ops .........................   Passed    0.00 sec
+      Start 40: test-rope
+40/41 Test #40: test-rope ................................   Passed    0.06 sec
+      Start 43: test-json-schema-to-grammar
+41/41 Test #43: test-json-schema-to-grammar ..............   Passed    0.04 sec
+
+100% tests passed, 0 tests failed out of 41
+
+Label Time Summary:
+main    =  58.88 sec*proc (41 tests)
+
+Total Test time (real) =  58.90 sec
+
+real	0m58.921s
+user	1m11.884s
+sys	0m0.704s
+```
+
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-release
+      Start  1: test-tokenizer-0-bert-bge
+ 1/41 Test  #1: test-tokenizer-0-bert-bge ................   Passed    0.02 sec
+      Start  2: test-tokenizer-0-command-r
+ 2/41 Test  #2: test-tokenizer-0-command-r ...............   Passed    0.58 sec
+      Start  3: test-tokenizer-0-deepseek-coder
+ 3/41 Test  #3: test-tokenizer-0-deepseek-coder ..........   Passed    0.06 sec
+      Start  4: test-tokenizer-0-deepseek-llm
+ 4/41 Test  #4: test-tokenizer-0-deepseek-llm ............   Passed    0.19 sec
+      Start  5: test-tokenizer-0-falcon
+ 5/41 Test  #5: test-tokenizer-0-falcon ..................   Passed    0.11 sec
+      Start  6: test-tokenizer-0-gpt-2
+ 6/41 Test  #6: test-tokenizer-0-gpt-2 ...................   Passed    0.08 sec
+      Start  7: test-tokenizer-0-llama-bpe
+ 7/41 Test  #7: test-tokenizer-0-llama-bpe ...............   Passed    0.38 sec
+      Start  8: test-tokenizer-0-llama-spm
+ 8/41 Test  #8: test-tokenizer-0-llama-spm ...............   Passed    0.03 sec
+      Start  9: test-tokenizer-0-mpt
+ 9/41 Test  #9: test-tokenizer-0-mpt .....................   Passed    0.08 sec
+      Start 10: test-tokenizer-0-phi-3
+10/41 Test #10: test-tokenizer-0-phi-3 ...................   Passed    0.03 sec
+      Start 11: test-tokenizer-0-qwen2
+11/41 Test #11: test-tokenizer-0-qwen2 ...................   Passed    0.28 sec
+      Start 12: test-tokenizer-0-refact
+12/41 Test #12: test-tokenizer-0-refact ..................   Passed    0.09 sec
+      Start 13: test-tokenizer-0-starcoder
+13/41 Test #13: test-tokenizer-0-starcoder ...............   Passed    0.08 sec
+      Start 14: test-tokenizer-parallel-bert-bge
+14/41 Test #14: test-tokenizer-parallel-bert-bge .........   Passed    0.02 sec
+      Start 15: test-tokenizer-parallel-command-r
+15/41 Test #15: test-tokenizer-parallel-command-r ........   Passed    0.55 sec
+      Start 16: test-tokenizer-parallel-deepseek-coder
+16/41 Test #16: test-tokenizer-parallel-deepseek-coder ...   Passed    0.07 sec
+      Start 17: test-tokenizer-parallel-deepseek-llm
+17/41 Test #17: test-tokenizer-parallel-deepseek-llm .....   Passed    0.19 sec
+      Start 18: test-tokenizer-parallel-falcon
+18/41 Test #18: test-tokenizer-parallel-falcon ...........   Passed    0.11 sec
+      Start 19: test-tokenizer-parallel-gpt-2
+19/41 Test #19: test-tokenizer-parallel-gpt-2 ............   Passed    0.08 sec
+      Start 20: test-tokenizer-parallel-llama-bpe
+20/41 Test #20: test-tokenizer-parallel-llama-bpe ........   Passed    0.38 sec
+      Start 21: test-tokenizer-parallel-llama-spm
+21/41 Test #21: test-tokenizer-parallel-llama-spm ........   Passed    0.03 sec
+      Start 22: test-tokenizer-parallel-mpt
+22/41 Test #22: test-tokenizer-parallel-mpt ..............   Passed    0.08 sec
+      Start 23: test-tokenizer-parallel-phi-3
+23/41 Test #23: test-tokenizer-parallel-phi-3 ............   Passed    0.03 sec
+      Start 24: test-tokenizer-parallel-qwen2
+24/41 Test #24: test-tokenizer-parallel-qwen2 ............   Passed    0.31 sec
+      Start 25: test-tokenizer-parallel-refact
+25/41 Test #25: test-tokenizer-parallel-refact ...........   Passed    0.09 sec
+      Start 26: test-tokenizer-parallel-starcoder
+26/41 Test #26: test-tokenizer-parallel-starcoder ........   Passed    0.09 sec
+      Start 27: test-tokenizer-1-llama-spm
+27/41 Test #27: test-tokenizer-1-llama-spm ...............   Passed    0.35 sec
+      Start 28: test-log
+28/41 Test #28: test-log .................................   Passed    0.01 sec
+      Start 29: test-arg-parser
+29/41 Test #29: test-arg-parser ..........................   Passed    0.01 sec
+      Start 30: test-quantize-fns
+30/41 Test #30: test-quantize-fns ........................   Passed   15.93 sec
+      Start 31: test-quantize-perf
+31/41 Test #31: test-quantize-perf .......................   Passed    4.46 sec
+      Start 32: test-sampling
+32/41 Test #32: test-sampling ............................   Passed    0.01 sec
+      Start 33: test-chat-template
+33/41 Test #33: test-chat-template .......................   Passed    0.00 sec
+      Start 34: test-grammar-parser
+34/41 Test #34: test-grammar-parser ......................   Passed    0.00 sec
+      Start 35: test-llama-grammar
+35/41 Test #35: test-llama-grammar .......................   Passed    0.00 sec
+      Start 36: test-grammar-integration
+36/41 Test #36: test-grammar-integration .................   Passed    0.01 sec
+      Start 37: test-grad0
+37/41 Test #37: test-grad0 ...............................   Passed    0.31 sec
+      Start 38: test-barrier
+38/41 Test #38: test-barrier .............................   Passed    0.32 sec
+      Start 39: test-backend-ops
+39/41 Test #39: test-backend-ops .........................   Passed    0.00 sec
+      Start 40: test-rope
+40/41 Test #40: test-rope ................................   Passed    0.05 sec
+      Start 43: test-json-schema-to-grammar
+41/41 Test #43: test-json-schema-to-grammar ..............   Passed    0.01 sec
+
+100% tests passed, 0 tests failed out of 41
+
+Label Time Summary:
+main    =  25.53 sec*proc (41 tests)
+
+Total Test time (real) =  25.55 sec
+
+real	0m25.573s
+user	0m27.742s
+sys	0m0.595s
+```
