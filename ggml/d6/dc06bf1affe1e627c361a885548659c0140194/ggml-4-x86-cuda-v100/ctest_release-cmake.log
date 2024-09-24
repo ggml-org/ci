@@ -34,10 +34,10 @@
 -- x86 detected
 -- x86 detected
 -- Linux detected
--- Configuring done (4.8s)
+-- Configuring done (4.7s)
 -- Generating done (0.1s)
 -- Build files have been written to: /home/ggml/work/ggml/build-ci-release
 
-real	0m4.913s
-user	0m3.789s
-sys	0m1.124s
+real	0m4.880s
+user	0m3.737s
+sys	0m1.148s
