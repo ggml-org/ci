@@ -1,0 +1,71 @@
+++ nproc
++ make -j4
+[  0%] Generating build details from Git
+[  1%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  1%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  1%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  1%] Built target sha256
+[  1%] Built target xxhash
+[  2%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  2%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-backend.c.o
+[  3%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  4%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-quants.c.o
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml.dir/llamafile/sgemm.cpp.o
+[  4%] Built target sha1
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-amx/mmq.cpp.o
+[  6%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  6%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-amx.cpp.o
+[  7%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-aarch64.c.o
+[  7%] Linking CXX shared library libggml.so
+[  7%] Built target build_info
+[  7%] Built target ggml
+[  7%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[  7%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[  9%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[  9%] Building CXX object src/CMakeFiles/llama.dir/llama-vocab.cpp.o
+[ 10%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 11%] Linking CXX executable ../../bin/llama-gguf
+[ 11%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+[ 12%] Building CXX object src/CMakeFiles/llama.dir/llama-sampling.cpp.o
+[ 12%] Building CXX object src/CMakeFiles/llama.dir/unicode.cpp.o
+[ 13%] Building CXX object src/CMakeFiles/llama.dir/unicode-data.cpp.o
+[ 13%] Linking CXX shared library libllama.so
+[ 13%] Built target llama-gguf-hash
+[ 13%] Built target llama-gguf
+[ 13%] Built target llama
+[ 13%] Building CXX object common/CMakeFiles/common.dir/arg.cpp.o
+[ 13%] Building CXX object examples/benchmark/CMakeFiles/llama-bench-matmult.dir/benchmark-matmult.cpp.o
+[ 13%] Building C object tests/CMakeFiles/test-c.dir/test-c.c.o
+[ 13%] Building CXX object examples/llava/CMakeFiles/llava.dir/llava.cpp.o
+[ 14%] Linking C executable ../bin/test-c
+[ 15%] Building CXX object examples/llava/CMakeFiles/llava.dir/clip.cpp.o
+[ 16%] Linking CXX executable ../../bin/llama-bench-matmult
+[ 17%] Building CXX object common/CMakeFiles/common.dir/common.cpp.o
+[ 17%] Built target llava
+[ 18%] Building CXX object examples/quantize-stats/CMakeFiles/llama-quantize-stats.dir/quantize-stats.cpp.o
+[ 18%] Built target test-c
+[ 18%] Building CXX object common/CMakeFiles/common.dir/console.cpp.o
+[ 18%] Linking CXX static library libllava_static.a
+[ 18%] Linking CXX executable ../../bin/llama-quantize-stats
+[ 19%] Building CXX object common/CMakeFiles/common.dir/json-schema-to-grammar.cpp.o
+[ 19%] Built target llama-bench-matmult
+[ 19%] Building CXX object common/CMakeFiles/common.dir/log.cpp.o
+[ 20%] Linking CXX shared library libllava_shared.so
+[ 21%] Building CXX object common/CMakeFiles/common.dir/ngram-cache.cpp.o
+[ 21%] Building CXX object common/CMakeFiles/common.dir/sampling.cpp.o
+[ 21%] Built target llava_static
+[ 22%] Building CXX object common/CMakeFiles/common.dir/train.cpp.o
+[ 23%] Linking CXX static library libcommon.a
+/usr/bin/ld: ../../src/libllama.so: undefined reference to `ggml_backend_amx_buffer_type'
+collect2: error: ld returned 1 exit status
+make[2]: *** [examples/quantize-stats/CMakeFiles/llama-quantize-stats.dir/build.make:101: bin/llama-quantize-stats] Error 1
+make[1]: *** [CMakeFiles/Makefile2:3264: examples/quantize-stats/CMakeFiles/llama-quantize-stats.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[ 23%] Built target llava_shared
+[ 23%] Built target common
+make: *** [Makefile:146: all] Error 2
+
+real	0m0.942s
+user	0m1.296s
+sys	0m0.662s
