@@ -38,6 +38,6 @@
 -- Generating done (0.1s)
 -- Build files have been written to: /home/ggml/work/ggml/build-ci-debug
 
-real	0m4.823s
-user	0m3.672s
-sys	0m1.161s
+real	0m4.856s
+user	0m3.792s
+sys	0m1.066s
