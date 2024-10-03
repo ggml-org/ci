@@ -1,0 +1,1405 @@
++ cd ./examples/gguf-split
++ bash tests.sh /home/ggml/work/llama.cpp/build-ci-debug/bin /mnt/llama.cpp/models
++ SPLIT=/home/ggml/work/llama.cpp/build-ci-debug/bin/llama-gguf-split
++ MAIN=/home/ggml/work/llama.cpp/build-ci-debug/bin/llama-cli
++ WORK_PATH=/mnt/llama.cpp/models/gguf-split
++++ dirname tests.sh
+++ realpath ./../../
++ ROOT_DIR=/home/ggml/work/llama.cpp
++ mkdir -p /mnt/llama.cpp/models/gguf-split
++ rm -f '/mnt/llama.cpp/models/gguf-split/ggml-model-split*.gguf' '/mnt/llama.cpp/models/gguf-split/ggml-model-merge*.gguf'
++ cd /mnt/llama.cpp/models/gguf-split
++ /home/ggml/work/llama.cpp/scripts/hf.sh --repo ggml-org/gemma-1.1-2b-it-Q8_0-GGUF --file gemma-1.1-2b-it.Q8_0.gguf
+[+] attempting to download gemma-1.1-2b-it.Q8_0.gguf
+[+] wget -q --show-progress -c -O ./gemma-1.1-2b-it.Q8_0.gguf https://huggingface.co/ggml-org/gemma-1.1-2b-it-Q8_0-GGUF/resolve/main/gemma-1.1-2b-it.Q8_0.gguf
+./gemma-1.1-2b-it.Q8_0.gguf
++ echo PASS
+PASS
++ /home/ggml/work/llama.cpp/build-ci-debug/bin/llama-gguf-split --split-max-tensors 28 /mnt/llama.cpp/models/gguf-split/gemma-1.1-2b-it.Q8_0.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split
+register_backend: registered backend CPU (1 devices)
+register_device: registered device CPU (CPU)
+n_split: 6
+split 00001: n_tensors = 28, total_size = 914M
+split 00002: n_tensors = 28, total_size = 351M
+split 00003: n_tensors = 28, total_size = 422M
+split 00004: n_tensors = 28, total_size = 351M
+split 00005: n_tensors = 28, total_size = 355M
+split 00006: n_tensors = 24, total_size = 274M
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-00001-of-00006.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-00002-of-00006.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-00003-of-00006.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-00004-of-00006.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-00005-of-00006.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-00006-of-00006.gguf ... gguf_split: 6 gguf split written with a total of 164 tensors.
+done
++ echo PASS
+PASS
++ echo
+
++ /home/ggml/work/llama.cpp/build-ci-debug/bin/llama-cli --model /mnt/llama.cpp/models/gguf-split/ggml-model-split-00001-of-00006.gguf --n-predict 32
+register_backend: registered backend CPU (1 devices)
+register_device: registered device CPU (CPU)
+0.00.000.639 I build: 3870 (841713e1) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu (debug)
+0.00.000.836 I main: llama backend init
+0.00.002.788 I main: load the model and apply lora adapter, if any
+0.00.024.666 I llama_model_loader: additional 5 GGUFs metadata loaded.
+0.00.024.845 I llama_model_loader: loaded meta data with 27 key-value pairs and 164 tensors from /mnt/llama.cpp/models/gguf-split/ggml-model-split-00001-of-00006.gguf (version GGUF V3 (latest))
+0.00.024.929 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.024.939 I llama_model_loader: - kv   0:                       general.architecture str              = gemma
+0.00.024.940 I llama_model_loader: - kv   1:                               general.name str              = gemma-1.1-2b-it
+0.00.024.944 I llama_model_loader: - kv   2:                       gemma.context_length u32              = 8192
+0.00.024.945 I llama_model_loader: - kv   3:                     gemma.embedding_length u32              = 2048
+0.00.024.945 I llama_model_loader: - kv   4:                          gemma.block_count u32              = 18
+0.00.024.946 I llama_model_loader: - kv   5:                  gemma.feed_forward_length u32              = 16384
+0.00.024.947 I llama_model_loader: - kv   6:                 gemma.attention.head_count u32              = 8
+0.00.024.948 I llama_model_loader: - kv   7:              gemma.attention.head_count_kv u32              = 1
+0.00.024.954 I llama_model_loader: - kv   8:     gemma.attention.layer_norm_rms_epsilon f32              = 0.000001
+0.00.024.955 I llama_model_loader: - kv   9:                 gemma.attention.key_length u32              = 256
+0.00.024.956 I llama_model_loader: - kv  10:               gemma.attention.value_length u32              = 256
+0.00.024.957 I llama_model_loader: - kv  11:                          general.file_type u32              = 7
+0.00.024.958 I llama_model_loader: - kv  12:                       tokenizer.ggml.model str              = llama
+0.00.094.147 I llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,256000]  = ["<pad>", "<eos>", "<bos>", "<unk>", ...
+0.00.181.864 I llama_model_loader: - kv  14:                      tokenizer.ggml.scores arr[f32,256000]  = [0.000000, 0.000000, 0.000000, 0.0000...
+0.00.194.137 I llama_model_loader: - kv  15:                  tokenizer.ggml.token_type arr[i32,256000]  = [3, 3, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.194.144 I llama_model_loader: - kv  16:                tokenizer.ggml.bos_token_id u32              = 2
+0.00.194.144 I llama_model_loader: - kv  17:                tokenizer.ggml.eos_token_id u32              = 1
+0.00.194.145 I llama_model_loader: - kv  18:            tokenizer.ggml.unknown_token_id u32              = 3
+0.00.194.146 I llama_model_loader: - kv  19:            tokenizer.ggml.padding_token_id u32              = 0
+0.00.194.147 I llama_model_loader: - kv  20:               tokenizer.ggml.add_bos_token bool             = true
+0.00.194.148 I llama_model_loader: - kv  21:               tokenizer.ggml.add_eos_token bool             = false
+0.00.194.151 I llama_model_loader: - kv  22:                    tokenizer.chat_template str              = {{ bos_token }}{% if messages[0]['rol...
+0.00.194.152 I llama_model_loader: - kv  23:               general.quantization_version u32              = 2
+0.00.194.153 I llama_model_loader: - kv  24:                                   split.no u16              = 0
+0.00.194.153 I llama_model_loader: - kv  25:                                split.count u16              = 6
+0.00.194.154 I llama_model_loader: - kv  26:                        split.tensors.count i32              = 164
+0.00.194.161 I llama_model_loader: - type  f32:   37 tensors
+0.00.194.164 I llama_model_loader: - type q8_0:  127 tensors
+0.00.326.385 W llm_load_vocab: control-looking token: '<end_of_turn>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.00.348.057 W llm_load_vocab: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.349.133 I llm_load_vocab: special tokens cache size = 5
+0.00.406.385 I llm_load_vocab: token to piece cache size = 1.6014 MB
+0.00.406.447 I llm_load_print_meta: format           = GGUF V3 (latest)
+0.00.406.448 I llm_load_print_meta: arch             = gemma
+0.00.406.449 I llm_load_print_meta: vocab type       = SPM
+0.00.406.450 I llm_load_print_meta: n_vocab          = 256000
+0.00.406.452 I llm_load_print_meta: n_merges         = 0
+0.00.406.453 I llm_load_print_meta: vocab_only       = 0
+0.00.406.454 I llm_load_print_meta: n_ctx_train      = 8192
+0.00.406.454 I llm_load_print_meta: n_embd           = 2048
+0.00.406.454 I llm_load_print_meta: n_layer          = 18
+0.00.406.518 I llm_load_print_meta: n_head           = 8
+0.00.406.526 I llm_load_print_meta: n_head_kv        = 1
+0.00.406.526 I llm_load_print_meta: n_rot            = 256
+0.00.406.527 I llm_load_print_meta: n_swa            = 0
+0.00.406.527 I llm_load_print_meta: n_embd_head_k    = 256
+0.00.406.528 I llm_load_print_meta: n_embd_head_v    = 256
+0.00.406.533 I llm_load_print_meta: n_gqa            = 8
+0.00.406.537 I llm_load_print_meta: n_embd_k_gqa     = 256
+0.00.406.543 I llm_load_print_meta: n_embd_v_gqa     = 256
+0.00.406.545 I llm_load_print_meta: f_norm_eps       = 0.0e+00
+0.00.406.546 I llm_load_print_meta: f_norm_rms_eps   = 1.0e-06
+0.00.406.547 I llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+0.00.406.547 I llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+0.00.406.548 I llm_load_print_meta: f_logit_scale    = 0.0e+00
+0.00.406.557 I llm_load_print_meta: n_ff             = 16384
+0.00.406.558 I llm_load_print_meta: n_expert         = 0
+0.00.406.558 I llm_load_print_meta: n_expert_used    = 0
+0.00.406.558 I llm_load_print_meta: causal attn      = 1
+0.00.406.559 I llm_load_print_meta: pooling type     = 0
+0.00.406.559 I llm_load_print_meta: rope type        = 2
+0.00.406.559 I llm_load_print_meta: rope scaling     = linear
+0.00.406.560 I llm_load_print_meta: freq_base_train  = 10000.0
+0.00.406.561 I llm_load_print_meta: freq_scale_train = 1
+0.00.406.562 I llm_load_print_meta: n_ctx_orig_yarn  = 8192
+0.00.406.563 I llm_load_print_meta: rope_finetuned   = unknown
+0.00.406.563 I llm_load_print_meta: ssm_d_conv       = 0
+0.00.406.574 I llm_load_print_meta: ssm_d_inner      = 0
+0.00.406.588 I llm_load_print_meta: ssm_d_state      = 0
+0.00.406.597 I llm_load_print_meta: ssm_dt_rank      = 0
+0.00.406.597 I llm_load_print_meta: ssm_dt_b_c_rms   = 0
+0.00.406.605 I llm_load_print_meta: model type       = 2B
+0.00.406.607 I llm_load_print_meta: model ftype      = Q8_0
+0.00.406.607 I llm_load_print_meta: model params     = 2.51 B
+0.00.406.608 I llm_load_print_meta: model size       = 2.48 GiB (8.50 BPW) 
+0.00.406.609 I llm_load_print_meta: general.name     = gemma-1.1-2b-it
+0.00.406.610 I llm_load_print_meta: BOS token        = 2 '<bos>'
+0.00.406.610 I llm_load_print_meta: EOS token        = 1 '<eos>'
+0.00.406.611 I llm_load_print_meta: UNK token        = 3 '<unk>'
+0.00.406.612 I llm_load_print_meta: PAD token        = 0 '<pad>'
+0.00.406.612 I llm_load_print_meta: LF token         = 227 '<0x0A>'
+0.00.406.613 I llm_load_print_meta: EOT token        = 107 '<end_of_turn>'
+0.00.406.620 I llm_load_print_meta: EOG token        = 1 '<eos>'
+0.00.406.621 I llm_load_print_meta: EOG token        = 107 '<end_of_turn>'
+0.00.406.622 I llm_load_print_meta: max token length = 93
+0.00.406.785 I llm_load_tensors: ggml ctx size =    0.08 MiB
+0.00.507.888 I llm_load_tensors:        CPU buffer size =   865.98 MiB
+0.00.507.895 I llm_load_tensors:        CPU buffer size =   334.74 MiB
+0.00.507.896 I llm_load_tensors:        CPU buffer size =   402.73 MiB
+0.00.507.897 I llm_load_tensors:        CPU buffer size =   335.27 MiB
+0.00.507.897 I llm_load_tensors:        CPU buffer size =   338.98 MiB
+0.00.507.898 I llm_load_tensors:        CPU buffer size =   261.96 MiB
+.............................................................
+0.00.513.557 I llama_new_context_with_model: n_ctx      = 8192
+0.00.513.564 I llama_new_context_with_model: n_batch    = 2048
+0.00.513.564 I llama_new_context_with_model: n_ubatch   = 512
+0.00.513.565 I llama_new_context_with_model: flash_attn = 0
+0.00.513.567 I llama_new_context_with_model: freq_base  = 10000.0
+0.00.513.568 I llama_new_context_with_model: freq_scale = 1
+0.00.542.164 I llama_kv_cache_init:        CPU KV buffer size =   144.00 MiB
+0.00.542.208 I llama_new_context_with_model: KV self size  =  144.00 MiB, K (f16):   72.00 MiB, V (f16):   72.00 MiB
+0.00.542.319 I llama_new_context_with_model:        CPU  output buffer size =     0.98 MiB
+ggml_gallocr_reserve_n: reallocating CPU buffer from size 0.00 MiB to 508.00 MiB
+0.00.543.715 I llama_new_context_with_model:        CPU compute buffer size =   508.00 MiB
+0.00.543.722 I llama_new_context_with_model: graph nodes  = 601
+0.00.543.722 I llama_new_context_with_model: graph splits = 1
+0.00.543.737 W llama_init_from_gpt_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.01.158.970 I main: llama threadpool init, n_threads = 4
+0.01.158.979 I 
+0.01.159.067 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 0 | FMA = 1 | NEON = 0 | SVE = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | RISCV_VECT = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
+0.01.159.071 I 
+0.01.159.231 I sampler seed: 3483684494
+0.01.159.241 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	top_k = 40, tfs_z = 1.000, top_p = 0.950, min_p = 0.050, typical_p = 1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.01.159.246 I sampler chain: logits -> logit-bias -> penalties -> top-k -> tail-free -> typical -> top-p -> min-p -> temp-ext -> softmax -> dist 
+0.01.159.246 I generate: n_ctx = 8192, n_batch = 2048, n_predict = 32, n_keep = 1
+0.01.159.248 I 
+ seconally.
+
+I. The United States is the world's leading exporter of petroleum.
+II. The world is facing a severe energy crisis.
+
+
+0.14.787.990 I llama_perf_sampler_print:    sampling time =      49.02 ms /    33 runs   (    1.49 ms per token,   673.18 tokens per second)
+0.14.787.993 I llama_perf_context_print:        load time =    1156.09 ms
+0.14.787.994 I llama_perf_context_print: prompt eval time =       0.00 ms /     1 tokens (    0.00 ms per token,      inf tokens per second)
+0.14.788.009 I llama_perf_context_print:        eval time =   13548.10 ms /    32 runs   (  423.38 ms per token,     2.36 tokens per second)
+0.14.788.010 I llama_perf_context_print:       total time =   13629.03 ms /    33 tokens
++ echo PASS
+PASS
++ echo
+
++ /home/ggml/work/llama.cpp/build-ci-debug/bin/llama-gguf-split --merge /mnt/llama.cpp/models/gguf-split/ggml-model-split-00001-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-merge.gguf
+register_backend: registered backend CPU (1 devices)
+register_device: registered device CPU (CPU)
+gguf_merge: /mnt/llama.cpp/models/gguf-split/ggml-model-split-00001-of-00006.gguf -> /mnt/llama.cpp/models/gguf-split/ggml-model-merge.gguf
+gguf_merge: reading metadata /mnt/llama.cpp/models/gguf-split/ggml-model-split-00001-of-00006.gguf ...[3Ddone
+gguf_merge: reading metadata /mnt/llama.cpp/models/gguf-split/ggml-model-split-00002-of-00006.gguf ...[3Ddone
+gguf_merge: reading metadata /mnt/llama.cpp/models/gguf-split/ggml-model-split-00003-of-00006.gguf ...[3Ddone
+gguf_merge: reading metadata /mnt/llama.cpp/models/gguf-split/ggml-model-split-00004-of-00006.gguf ...[3Ddone
+gguf_merge: reading metadata /mnt/llama.cpp/models/gguf-split/ggml-model-split-00005-of-00006.gguf ...[3Ddone
+gguf_merge: reading metadata /mnt/llama.cpp/models/gguf-split/ggml-model-split-00006-of-00006.gguf ...[3Ddone
+gguf_merge: writing tensors /mnt/llama.cpp/models/gguf-split/ggml-model-split-00001-of-00006.gguf ...[3Ddone
+gguf_merge: writing tensors /mnt/llama.cpp/models/gguf-split/ggml-model-split-00002-of-00006.gguf ...[3Ddone
+gguf_merge: writing tensors /mnt/llama.cpp/models/gguf-split/ggml-model-split-00003-of-00006.gguf ...[3Ddone
+gguf_merge: writing tensors /mnt/llama.cpp/models/gguf-split/ggml-model-split-00004-of-00006.gguf ...[3Ddone
+gguf_merge: writing tensors /mnt/llama.cpp/models/gguf-split/ggml-model-split-00005-of-00006.gguf ...[3Ddone
+gguf_merge: writing tensors /mnt/llama.cpp/models/gguf-split/ggml-model-split-00006-of-00006.gguf ...[3Ddone
+gguf_merge: /mnt/llama.cpp/models/gguf-split/ggml-model-merge.gguf merged from 6 split with 164 tensors.
++ echo PASS
+PASS
++ echo
+
++ /home/ggml/work/llama.cpp/build-ci-debug/bin/llama-cli --model /mnt/llama.cpp/models/gguf-split/ggml-model-merge.gguf --n-predict 32
+register_backend: registered backend CPU (1 devices)
+register_device: registered device CPU (CPU)
+0.00.000.709 I build: 3870 (841713e1) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu (debug)
+0.00.000.903 I main: llama backend init
+0.00.002.855 I main: load the model and apply lora adapter, if any
+0.00.024.958 I llama_model_loader: loaded meta data with 27 key-value pairs and 164 tensors from /mnt/llama.cpp/models/gguf-split/ggml-model-merge.gguf (version GGUF V3 (latest))
+0.00.025.053 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.025.065 I llama_model_loader: - kv   0:                       general.architecture str              = gemma
+0.00.025.068 I llama_model_loader: - kv   1:                               general.name str              = gemma-1.1-2b-it
+0.00.025.072 I llama_model_loader: - kv   2:                       gemma.context_length u32              = 8192
+0.00.025.075 I llama_model_loader: - kv   3:                     gemma.embedding_length u32              = 2048
+0.00.025.076 I llama_model_loader: - kv   4:                          gemma.block_count u32              = 18
+0.00.025.077 I llama_model_loader: - kv   5:                  gemma.feed_forward_length u32              = 16384
+0.00.025.078 I llama_model_loader: - kv   6:                 gemma.attention.head_count u32              = 8
+0.00.025.078 I llama_model_loader: - kv   7:              gemma.attention.head_count_kv u32              = 1
+0.00.025.085 I llama_model_loader: - kv   8:     gemma.attention.layer_norm_rms_epsilon f32              = 0.000001
+0.00.025.086 I llama_model_loader: - kv   9:                 gemma.attention.key_length u32              = 256
+0.00.025.087 I llama_model_loader: - kv  10:               gemma.attention.value_length u32              = 256
+0.00.025.088 I llama_model_loader: - kv  11:                          general.file_type u32              = 7
+0.00.025.088 I llama_model_loader: - kv  12:                       tokenizer.ggml.model str              = llama
+0.00.094.227 I llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,256000]  = ["<pad>", "<eos>", "<bos>", "<unk>", ...
+0.00.182.484 I llama_model_loader: - kv  14:                      tokenizer.ggml.scores arr[f32,256000]  = [0.000000, 0.000000, 0.000000, 0.0000...
+0.00.194.678 I llama_model_loader: - kv  15:                  tokenizer.ggml.token_type arr[i32,256000]  = [3, 3, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.194.684 I llama_model_loader: - kv  16:                tokenizer.ggml.bos_token_id u32              = 2
+0.00.194.685 I llama_model_loader: - kv  17:                tokenizer.ggml.eos_token_id u32              = 1
+0.00.194.686 I llama_model_loader: - kv  18:            tokenizer.ggml.unknown_token_id u32              = 3
+0.00.194.687 I llama_model_loader: - kv  19:            tokenizer.ggml.padding_token_id u32              = 0
+0.00.194.688 I llama_model_loader: - kv  20:               tokenizer.ggml.add_bos_token bool             = true
+0.00.194.689 I llama_model_loader: - kv  21:               tokenizer.ggml.add_eos_token bool             = false
+0.00.194.692 I llama_model_loader: - kv  22:                    tokenizer.chat_template str              = {{ bos_token }}{% if messages[0]['rol...
+0.00.194.693 I llama_model_loader: - kv  23:               general.quantization_version u32              = 2
+0.00.194.694 I llama_model_loader: - kv  24:                                   split.no u16              = 0
+0.00.194.695 I llama_model_loader: - kv  25:                                split.count u16              = 0
+0.00.194.696 I llama_model_loader: - kv  26:                        split.tensors.count i32              = 164
+0.00.194.703 I llama_model_loader: - type  f32:   37 tensors
+0.00.194.707 I llama_model_loader: - type q8_0:  127 tensors
+0.00.332.617 W llm_load_vocab: control-looking token: '<end_of_turn>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.00.355.743 W llm_load_vocab: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.356.770 I llm_load_vocab: special tokens cache size = 5
+0.00.414.344 I llm_load_vocab: token to piece cache size = 1.6014 MB
+0.00.414.407 I llm_load_print_meta: format           = GGUF V3 (latest)
+0.00.414.408 I llm_load_print_meta: arch             = gemma
+0.00.414.409 I llm_load_print_meta: vocab type       = SPM
+0.00.414.410 I llm_load_print_meta: n_vocab          = 256000
+0.00.414.413 I llm_load_print_meta: n_merges         = 0
+0.00.414.413 I llm_load_print_meta: vocab_only       = 0
+0.00.414.413 I llm_load_print_meta: n_ctx_train      = 8192
+0.00.414.414 I llm_load_print_meta: n_embd           = 2048
+0.00.414.414 I llm_load_print_meta: n_layer          = 18
+0.00.414.478 I llm_load_print_meta: n_head           = 8
+0.00.414.505 I llm_load_print_meta: n_head_kv        = 1
+0.00.414.507 I llm_load_print_meta: n_rot            = 256
+0.00.414.507 I llm_load_print_meta: n_swa            = 0
+0.00.414.507 I llm_load_print_meta: n_embd_head_k    = 256
+0.00.414.508 I llm_load_print_meta: n_embd_head_v    = 256
+0.00.414.513 I llm_load_print_meta: n_gqa            = 8
+0.00.414.518 I llm_load_print_meta: n_embd_k_gqa     = 256
+0.00.414.522 I llm_load_print_meta: n_embd_v_gqa     = 256
+0.00.414.532 I llm_load_print_meta: f_norm_eps       = 0.0e+00
+0.00.414.534 I llm_load_print_meta: f_norm_rms_eps   = 1.0e-06
+0.00.414.535 I llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+0.00.414.535 I llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+0.00.414.544 I llm_load_print_meta: f_logit_scale    = 0.0e+00
+0.00.414.549 I llm_load_print_meta: n_ff             = 16384
+0.00.414.550 I llm_load_print_meta: n_expert         = 0
+0.00.414.550 I llm_load_print_meta: n_expert_used    = 0
+0.00.414.551 I llm_load_print_meta: causal attn      = 1
+0.00.414.551 I llm_load_print_meta: pooling type     = 0
+0.00.414.559 I llm_load_print_meta: rope type        = 2
+0.00.414.567 I llm_load_print_meta: rope scaling     = linear
+0.00.414.569 I llm_load_print_meta: freq_base_train  = 10000.0
+0.00.414.570 I llm_load_print_meta: freq_scale_train = 1
+0.00.414.570 I llm_load_print_meta: n_ctx_orig_yarn  = 8192
+0.00.414.570 I llm_load_print_meta: rope_finetuned   = unknown
+0.00.414.578 I llm_load_print_meta: ssm_d_conv       = 0
+0.00.414.579 I llm_load_print_meta: ssm_d_inner      = 0
+0.00.414.580 I llm_load_print_meta: ssm_d_state      = 0
+0.00.414.580 I llm_load_print_meta: ssm_dt_rank      = 0
+0.00.414.580 I llm_load_print_meta: ssm_dt_b_c_rms   = 0
+0.00.414.588 I llm_load_print_meta: model type       = 2B
+0.00.414.593 I llm_load_print_meta: model ftype      = Q8_0
+0.00.414.594 I llm_load_print_meta: model params     = 2.51 B
+0.00.414.595 I llm_load_print_meta: model size       = 2.48 GiB (8.50 BPW) 
+0.00.414.595 I llm_load_print_meta: general.name     = gemma-1.1-2b-it
+0.00.414.596 I llm_load_print_meta: BOS token        = 2 '<bos>'
+0.00.414.604 I llm_load_print_meta: EOS token        = 1 '<eos>'
+0.00.414.605 I llm_load_print_meta: UNK token        = 3 '<unk>'
+0.00.414.605 I llm_load_print_meta: PAD token        = 0 '<pad>'
+0.00.414.613 I llm_load_print_meta: LF token         = 227 '<0x0A>'
+0.00.414.614 I llm_load_print_meta: EOT token        = 107 '<end_of_turn>'
+0.00.414.620 I llm_load_print_meta: EOG token        = 1 '<eos>'
+0.00.414.622 I llm_load_print_meta: EOG token        = 107 '<end_of_turn>'
+0.00.414.623 I llm_load_print_meta: max token length = 93
+0.00.414.785 I llm_load_tensors: ggml ctx size =    0.08 MiB
+0.00.512.193 I llm_load_tensors:        CPU buffer size =  2539.66 MiB
+.............................................................
+0.00.517.876 I llama_new_context_with_model: n_ctx      = 8192
+0.00.517.882 I llama_new_context_with_model: n_batch    = 2048
+0.00.517.883 I llama_new_context_with_model: n_ubatch   = 512
+0.00.517.883 I llama_new_context_with_model: flash_attn = 0
+0.00.517.886 I llama_new_context_with_model: freq_base  = 10000.0
+0.00.517.887 I llama_new_context_with_model: freq_scale = 1
+0.00.547.917 I llama_kv_cache_init:        CPU KV buffer size =   144.00 MiB
+0.00.547.958 I llama_new_context_with_model: KV self size  =  144.00 MiB, K (f16):   72.00 MiB, V (f16):   72.00 MiB
+0.00.548.068 I llama_new_context_with_model:        CPU  output buffer size =     0.98 MiB
+ggml_gallocr_reserve_n: reallocating CPU buffer from size 0.00 MiB to 508.00 MiB
+0.00.549.475 I llama_new_context_with_model:        CPU compute buffer size =   508.00 MiB
+0.00.549.482 I llama_new_context_with_model: graph nodes  = 601
+0.00.549.482 I llama_new_context_with_model: graph splits = 1
+0.00.549.498 W llama_init_from_gpt_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.01.167.759 I main: llama threadpool init, n_threads = 4
+0.01.167.771 I 
+0.01.167.862 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 0 | FMA = 1 | NEON = 0 | SVE = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | RISCV_VECT = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
+0.01.167.866 I 
+0.01.168.024 I sampler seed: 2015981601
+0.01.168.035 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	top_k = 40, tfs_z = 1.000, top_p = 0.950, min_p = 0.050, typical_p = 1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.01.168.041 I sampler chain: logits -> logit-bias -> penalties -> top-k -> tail-free -> typical -> top-p -> min-p -> temp-ext -> softmax -> dist 
+0.01.168.042 I generate: n_ctx = 8192, n_batch = 2048, n_predict = 32, n_keep = 1
+0.01.168.042 I 
+ increasities, but I am not sure if this is an appropriate or safe response. I am unsure if it is appropriate to engage in this conversation.
+
+I
+
+0.14.846.970 I llama_perf_sampler_print:    sampling time =      49.72 ms /    33 runs   (    1.51 ms per token,   663.70 tokens per second)
+0.14.846.973 I llama_perf_context_print:        load time =    1164.82 ms
+0.14.846.974 I llama_perf_context_print: prompt eval time =       0.00 ms /     1 tokens (    0.00 ms per token,      inf tokens per second)
+0.14.846.976 I llama_perf_context_print:        eval time =   13595.85 ms /    32 runs   (  424.87 ms per token,     2.35 tokens per second)
+0.14.846.976 I llama_perf_context_print:       total time =   13679.22 ms /    33 tokens
++ echo PASS
+PASS
++ echo
+
++ /home/ggml/work/llama.cpp/build-ci-debug/bin/llama-gguf-split --split-max-tensors 32 --no-tensor-first-split /mnt/llama.cpp/models/gguf-split/ggml-model-merge.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors
+register_backend: registered backend CPU (1 devices)
+register_device: registered device CPU (CPU)
+n_split: 7
+split 00001: n_tensors = 0, total_size = 6M
+split 00002: n_tensors = 32, total_size = 1015M
+split 00003: n_tensors = 32, total_size = 361M
+split 00004: n_tensors = 32, total_size = 431M
+split 00005: n_tensors = 32, total_size = 458M
+split 00006: n_tensors = 32, total_size = 361M
+split 00007: n_tensors = 4, total_size = 35M
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00001-of-00007.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00002-of-00007.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00003-of-00007.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00004-of-00007.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00005-of-00007.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00006-of-00007.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00007-of-00007.gguf ... gguf_split: 7 gguf split written with a total of 164 tensors.
+done
++ echo PASS
+PASS
++ echo
+
++ /home/ggml/work/llama.cpp/build-ci-debug/bin/llama-cli --model /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00001-of-00007.gguf --n-predict 32
+register_backend: registered backend CPU (1 devices)
+register_device: registered device CPU (CPU)
+0.00.000.635 I build: 3870 (841713e1) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu (debug)
+0.00.000.837 I main: llama backend init
+0.00.002.794 I main: load the model and apply lora adapter, if any
+0.00.024.605 I llama_model_loader: additional 6 GGUFs metadata loaded.
+0.00.024.781 I llama_model_loader: loaded meta data with 27 key-value pairs and 164 tensors from /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00001-of-00007.gguf (version GGUF V3 (latest))
+0.00.024.864 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.024.876 I llama_model_loader: - kv   0:                       general.architecture str              = gemma
+0.00.024.877 I llama_model_loader: - kv   1:                               general.name str              = gemma-1.1-2b-it
+0.00.024.881 I llama_model_loader: - kv   2:                       gemma.context_length u32              = 8192
+0.00.024.881 I llama_model_loader: - kv   3:                     gemma.embedding_length u32              = 2048
+0.00.024.882 I llama_model_loader: - kv   4:                          gemma.block_count u32              = 18
+0.00.024.883 I llama_model_loader: - kv   5:                  gemma.feed_forward_length u32              = 16384
+0.00.024.884 I llama_model_loader: - kv   6:                 gemma.attention.head_count u32              = 8
+0.00.024.885 I llama_model_loader: - kv   7:              gemma.attention.head_count_kv u32              = 1
+0.00.024.905 I llama_model_loader: - kv   8:     gemma.attention.layer_norm_rms_epsilon f32              = 0.000001
+0.00.024.907 I llama_model_loader: - kv   9:                 gemma.attention.key_length u32              = 256
+0.00.024.908 I llama_model_loader: - kv  10:               gemma.attention.value_length u32              = 256
+0.00.024.908 I llama_model_loader: - kv  11:                          general.file_type u32              = 7
+0.00.024.909 I llama_model_loader: - kv  12:                       tokenizer.ggml.model str              = llama
+0.00.094.628 I llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,256000]  = ["<pad>", "<eos>", "<bos>", "<unk>", ...
+0.00.182.921 I llama_model_loader: - kv  14:                      tokenizer.ggml.scores arr[f32,256000]  = [0.000000, 0.000000, 0.000000, 0.0000...
+0.00.195.257 I llama_model_loader: - kv  15:                  tokenizer.ggml.token_type arr[i32,256000]  = [3, 3, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.195.267 I llama_model_loader: - kv  16:                tokenizer.ggml.bos_token_id u32              = 2
+0.00.195.268 I llama_model_loader: - kv  17:                tokenizer.ggml.eos_token_id u32              = 1
+0.00.195.269 I llama_model_loader: - kv  18:            tokenizer.ggml.unknown_token_id u32              = 3
+0.00.195.270 I llama_model_loader: - kv  19:            tokenizer.ggml.padding_token_id u32              = 0
+0.00.195.271 I llama_model_loader: - kv  20:               tokenizer.ggml.add_bos_token bool             = true
+0.00.195.272 I llama_model_loader: - kv  21:               tokenizer.ggml.add_eos_token bool             = false
+0.00.195.275 I llama_model_loader: - kv  22:                    tokenizer.chat_template str              = {{ bos_token }}{% if messages[0]['rol...
+0.00.195.276 I llama_model_loader: - kv  23:               general.quantization_version u32              = 2
+0.00.195.277 I llama_model_loader: - kv  24:                                   split.no u16              = 0
+0.00.195.277 I llama_model_loader: - kv  25:                                split.count u16              = 7
+0.00.195.278 I llama_model_loader: - kv  26:                        split.tensors.count i32              = 164
+0.00.195.286 I llama_model_loader: - type  f32:   37 tensors
+0.00.195.290 I llama_model_loader: - type q8_0:  127 tensors
+0.00.321.726 W llm_load_vocab: control-looking token: '<end_of_turn>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.00.344.889 W llm_load_vocab: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.345.890 I llm_load_vocab: special tokens cache size = 5
+0.00.403.086 I llm_load_vocab: token to piece cache size = 1.6014 MB
+0.00.403.145 I llm_load_print_meta: format           = GGUF V3 (latest)
+0.00.403.146 I llm_load_print_meta: arch             = gemma
+0.00.403.147 I llm_load_print_meta: vocab type       = SPM
+0.00.403.147 I llm_load_print_meta: n_vocab          = 256000
+0.00.403.150 I llm_load_print_meta: n_merges         = 0
+0.00.403.150 I llm_load_print_meta: vocab_only       = 0
+0.00.403.151 I llm_load_print_meta: n_ctx_train      = 8192
+0.00.403.151 I llm_load_print_meta: n_embd           = 2048
+0.00.403.151 I llm_load_print_meta: n_layer          = 18
+0.00.403.213 I llm_load_print_meta: n_head           = 8
+0.00.403.220 I llm_load_print_meta: n_head_kv        = 1
+0.00.403.221 I llm_load_print_meta: n_rot            = 256
+0.00.403.221 I llm_load_print_meta: n_swa            = 0
+0.00.403.222 I llm_load_print_meta: n_embd_head_k    = 256
+0.00.403.222 I llm_load_print_meta: n_embd_head_v    = 256
+0.00.403.227 I llm_load_print_meta: n_gqa            = 8
+0.00.403.231 I llm_load_print_meta: n_embd_k_gqa     = 256
+0.00.403.236 I llm_load_print_meta: n_embd_v_gqa     = 256
+0.00.403.237 I llm_load_print_meta: f_norm_eps       = 0.0e+00
+0.00.403.238 I llm_load_print_meta: f_norm_rms_eps   = 1.0e-06
+0.00.403.245 I llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+0.00.403.246 I llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+0.00.403.246 I llm_load_print_meta: f_logit_scale    = 0.0e+00
+0.00.403.251 I llm_load_print_meta: n_ff             = 16384
+0.00.403.253 I llm_load_print_meta: n_expert         = 0
+0.00.403.253 I llm_load_print_meta: n_expert_used    = 0
+0.00.403.254 I llm_load_print_meta: causal attn      = 1
+0.00.403.254 I llm_load_print_meta: pooling type     = 0
+0.00.403.254 I llm_load_print_meta: rope type        = 2
+0.00.403.255 I llm_load_print_meta: rope scaling     = linear
+0.00.403.257 I llm_load_print_meta: freq_base_train  = 10000.0
+0.00.403.267 I llm_load_print_meta: freq_scale_train = 1
+0.00.403.268 I llm_load_print_meta: n_ctx_orig_yarn  = 8192
+0.00.403.268 I llm_load_print_meta: rope_finetuned   = unknown
+0.00.403.268 I llm_load_print_meta: ssm_d_conv       = 0
+0.00.403.269 I llm_load_print_meta: ssm_d_inner      = 0
+0.00.403.269 I llm_load_print_meta: ssm_d_state      = 0
+0.00.403.270 I llm_load_print_meta: ssm_dt_rank      = 0
+0.00.403.271 I llm_load_print_meta: ssm_dt_b_c_rms   = 0
+0.00.403.280 I llm_load_print_meta: model type       = 2B
+0.00.403.282 I llm_load_print_meta: model ftype      = Q8_0
+0.00.403.282 I llm_load_print_meta: model params     = 2.51 B
+0.00.403.283 I llm_load_print_meta: model size       = 2.48 GiB (8.50 BPW) 
+0.00.403.284 I llm_load_print_meta: general.name     = gemma-1.1-2b-it
+0.00.403.284 I llm_load_print_meta: BOS token        = 2 '<bos>'
+0.00.403.285 I llm_load_print_meta: EOS token        = 1 '<eos>'
+0.00.403.286 I llm_load_print_meta: UNK token        = 3 '<unk>'
+0.00.403.286 I llm_load_print_meta: PAD token        = 0 '<pad>'
+0.00.403.287 I llm_load_print_meta: LF token         = 227 '<0x0A>'
+0.00.403.288 I llm_load_print_meta: EOT token        = 107 '<end_of_turn>'
+0.00.403.307 I llm_load_print_meta: EOG token        = 1 '<eos>'
+0.00.403.308 I llm_load_print_meta: EOG token        = 107 '<end_of_turn>'
+0.00.403.309 I llm_load_print_meta: max token length = 93
+0.00.403.475 I llm_load_tensors: ggml ctx size =    0.08 MiB
+0.00.479.732 I llm_load_tensors:        CPU buffer size =   967.99 MiB
+0.00.479.742 I llm_load_tensors:        CPU buffer size =   344.30 MiB
+0.00.479.743 I llm_load_tensors:        CPU buffer size =   411.77 MiB
+0.00.479.744 I llm_load_tensors:        CPU buffer size =   437.27 MiB
+0.00.479.745 I llm_load_tensors:        CPU buffer size =   344.30 MiB
+0.00.479.745 I llm_load_tensors:        CPU buffer size =    34.02 MiB
+.............................................................
+0.00.485.392 I llama_new_context_with_model: n_ctx      = 8192
+0.00.485.399 I llama_new_context_with_model: n_batch    = 2048
+0.00.485.399 I llama_new_context_with_model: n_ubatch   = 512
+0.00.485.400 I llama_new_context_with_model: flash_attn = 0
+0.00.485.403 I llama_new_context_with_model: freq_base  = 10000.0
+0.00.485.404 I llama_new_context_with_model: freq_scale = 1
+0.00.514.282 I llama_kv_cache_init:        CPU KV buffer size =   144.00 MiB
+0.00.514.323 I llama_new_context_with_model: KV self size  =  144.00 MiB, K (f16):   72.00 MiB, V (f16):   72.00 MiB
+0.00.514.436 I llama_new_context_with_model:        CPU  output buffer size =     0.98 MiB
+ggml_gallocr_reserve_n: reallocating CPU buffer from size 0.00 MiB to 508.00 MiB
+0.00.515.817 I llama_new_context_with_model:        CPU compute buffer size =   508.00 MiB
+0.00.515.823 I llama_new_context_with_model: graph nodes  = 601
+0.00.515.823 I llama_new_context_with_model: graph splits = 1
+0.00.515.839 W llama_init_from_gpt_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.01.129.454 I main: llama threadpool init, n_threads = 4
+0.01.129.466 I 
+0.01.129.558 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 0 | FMA = 1 | NEON = 0 | SVE = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | RISCV_VECT = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
+0.01.129.562 I 
+0.01.129.724 I sampler seed: 2168437858
+0.01.129.734 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	top_k = 40, tfs_z = 1.000, top_p = 0.950, min_p = 0.050, typical_p = 1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.01.129.741 I sampler chain: logits -> logit-bias -> penalties -> top-k -> tail-free -> typical -> top-p -> min-p -> temp-ext -> softmax -> dist 
+0.01.129.742 I generate: n_ctx = 8192, n_batch = 2048, n_predict = 32, n_keep = 1
+0.01.129.742 I 
+ increasities?
+
+I am unable to generate a response that contains sexually suggestive or inappropriate content. My purpose is to assist with tasks and questions that are within the
+
+0.14.664.156 I llama_perf_sampler_print:    sampling time =      49.03 ms /    33 runs   (    1.49 ms per token,   673.11 tokens per second)
+0.14.664.180 I llama_perf_context_print:        load time =    1126.57 ms
+0.14.664.182 I llama_perf_context_print: prompt eval time =       0.00 ms /     1 tokens (    0.00 ms per token,      inf tokens per second)
+0.14.664.183 I llama_perf_context_print:        eval time =   13453.06 ms /    32 runs   (  420.41 ms per token,     2.38 tokens per second)
+0.14.664.184 I llama_perf_context_print:       total time =   13534.71 ms /    33 tokens
++ echo PASS
+PASS
++ echo
+
++ /home/ggml/work/llama.cpp/build-ci-debug/bin/llama-gguf-split --split-max-size 2G /mnt/llama.cpp/models/gguf-split/ggml-model-merge.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-2G
+register_backend: registered backend CPU (1 devices)
+register_device: registered device CPU (CPU)
+n_split: 2
+split 00001: n_tensors = 109, total_size = 2002M
+split 00002: n_tensors = 55, total_size = 666M
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-2G-00001-of-00002.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-2G-00002-of-00002.gguf ... gguf_split: 2 gguf split written with a total of 164 tensors.
+done
++ echo PASS
+PASS
++ echo
+
++ /home/ggml/work/llama.cpp/build-ci-debug/bin/llama-cli --model /mnt/llama.cpp/models/gguf-split/ggml-model-split-2G-00001-of-00002.gguf --n-predict 32
+register_backend: registered backend CPU (1 devices)
+register_device: registered device CPU (CPU)
+0.00.000.631 I build: 3870 (841713e1) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu (debug)
+0.00.000.859 I main: llama backend init
+0.00.002.812 I main: load the model and apply lora adapter, if any
+0.00.025.027 I llama_model_loader: additional 1 GGUFs metadata loaded.
+0.00.025.223 I llama_model_loader: loaded meta data with 27 key-value pairs and 164 tensors from /mnt/llama.cpp/models/gguf-split/ggml-model-split-2G-00001-of-00002.gguf (version GGUF V3 (latest))
+0.00.025.314 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.025.326 I llama_model_loader: - kv   0:                       general.architecture str              = gemma
+0.00.025.327 I llama_model_loader: - kv   1:                               general.name str              = gemma-1.1-2b-it
+0.00.025.331 I llama_model_loader: - kv   2:                       gemma.context_length u32              = 8192
+0.00.025.332 I llama_model_loader: - kv   3:                     gemma.embedding_length u32              = 2048
+0.00.025.333 I llama_model_loader: - kv   4:                          gemma.block_count u32              = 18
+0.00.025.334 I llama_model_loader: - kv   5:                  gemma.feed_forward_length u32              = 16384
+0.00.025.335 I llama_model_loader: - kv   6:                 gemma.attention.head_count u32              = 8
+0.00.025.336 I llama_model_loader: - kv   7:              gemma.attention.head_count_kv u32              = 1
+0.00.025.344 I llama_model_loader: - kv   8:     gemma.attention.layer_norm_rms_epsilon f32              = 0.000001
+0.00.025.345 I llama_model_loader: - kv   9:                 gemma.attention.key_length u32              = 256
+0.00.025.348 I llama_model_loader: - kv  10:               gemma.attention.value_length u32              = 256
+0.00.025.349 I llama_model_loader: - kv  11:                          general.file_type u32              = 7
+0.00.025.351 I llama_model_loader: - kv  12:                       tokenizer.ggml.model str              = llama
+0.00.094.561 I llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,256000]  = ["<pad>", "<eos>", "<bos>", "<unk>", ...
+0.00.182.014 I llama_model_loader: - kv  14:                      tokenizer.ggml.scores arr[f32,256000]  = [0.000000, 0.000000, 0.000000, 0.0000...
+0.00.194.413 I llama_model_loader: - kv  15:                  tokenizer.ggml.token_type arr[i32,256000]  = [3, 3, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.194.422 I llama_model_loader: - kv  16:                tokenizer.ggml.bos_token_id u32              = 2
+0.00.194.423 I llama_model_loader: - kv  17:                tokenizer.ggml.eos_token_id u32              = 1
+0.00.194.424 I llama_model_loader: - kv  18:            tokenizer.ggml.unknown_token_id u32              = 3
+0.00.194.425 I llama_model_loader: - kv  19:            tokenizer.ggml.padding_token_id u32              = 0
+0.00.194.426 I llama_model_loader: - kv  20:               tokenizer.ggml.add_bos_token bool             = true
+0.00.194.427 I llama_model_loader: - kv  21:               tokenizer.ggml.add_eos_token bool             = false
+0.00.194.430 I llama_model_loader: - kv  22:                    tokenizer.chat_template str              = {{ bos_token }}{% if messages[0]['rol...
+0.00.194.431 I llama_model_loader: - kv  23:               general.quantization_version u32              = 2
+0.00.194.432 I llama_model_loader: - kv  24:                                   split.no u16              = 0
+0.00.194.447 I llama_model_loader: - kv  25:                                split.count u16              = 2
+0.00.194.449 I llama_model_loader: - kv  26:                        split.tensors.count i32              = 164
+0.00.194.460 I llama_model_loader: - type  f32:   37 tensors
+0.00.194.464 I llama_model_loader: - type q8_0:  127 tensors
+0.00.321.355 W llm_load_vocab: control-looking token: '<end_of_turn>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.00.343.070 W llm_load_vocab: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.344.073 I llm_load_vocab: special tokens cache size = 5
+0.00.401.221 I llm_load_vocab: token to piece cache size = 1.6014 MB
+0.00.401.282 I llm_load_print_meta: format           = GGUF V3 (latest)
+0.00.401.284 I llm_load_print_meta: arch             = gemma
+0.00.401.284 I llm_load_print_meta: vocab type       = SPM
+0.00.401.285 I llm_load_print_meta: n_vocab          = 256000
+0.00.401.288 I llm_load_print_meta: n_merges         = 0
+0.00.401.288 I llm_load_print_meta: vocab_only       = 0
+0.00.401.288 I llm_load_print_meta: n_ctx_train      = 8192
+0.00.401.289 I llm_load_print_meta: n_embd           = 2048
+0.00.401.289 I llm_load_print_meta: n_layer          = 18
+0.00.401.351 I llm_load_print_meta: n_head           = 8
+0.00.401.358 I llm_load_print_meta: n_head_kv        = 1
+0.00.401.358 I llm_load_print_meta: n_rot            = 256
+0.00.401.359 I llm_load_print_meta: n_swa            = 0
+0.00.401.359 I llm_load_print_meta: n_embd_head_k    = 256
+0.00.401.359 I llm_load_print_meta: n_embd_head_v    = 256
+0.00.401.365 I llm_load_print_meta: n_gqa            = 8
+0.00.401.369 I llm_load_print_meta: n_embd_k_gqa     = 256
+0.00.401.374 I llm_load_print_meta: n_embd_v_gqa     = 256
+0.00.401.375 I llm_load_print_meta: f_norm_eps       = 0.0e+00
+0.00.401.377 I llm_load_print_meta: f_norm_rms_eps   = 1.0e-06
+0.00.401.377 I llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+0.00.401.378 I llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+0.00.401.379 I llm_load_print_meta: f_logit_scale    = 0.0e+00
+0.00.401.384 I llm_load_print_meta: n_ff             = 16384
+0.00.401.385 I llm_load_print_meta: n_expert         = 0
+0.00.401.385 I llm_load_print_meta: n_expert_used    = 0
+0.00.401.386 I llm_load_print_meta: causal attn      = 1
+0.00.401.387 I llm_load_print_meta: pooling type     = 0
+0.00.401.387 I llm_load_print_meta: rope type        = 2
+0.00.401.387 I llm_load_print_meta: rope scaling     = linear
+0.00.401.388 I llm_load_print_meta: freq_base_train  = 10000.0
+0.00.401.389 I llm_load_print_meta: freq_scale_train = 1
+0.00.401.389 I llm_load_print_meta: n_ctx_orig_yarn  = 8192
+0.00.401.391 I llm_load_print_meta: rope_finetuned   = unknown
+0.00.401.391 I llm_load_print_meta: ssm_d_conv       = 0
+0.00.401.392 I llm_load_print_meta: ssm_d_inner      = 0
+0.00.401.393 I llm_load_print_meta: ssm_d_state      = 0
+0.00.401.398 I llm_load_print_meta: ssm_dt_rank      = 0
+0.00.401.399 I llm_load_print_meta: ssm_dt_b_c_rms   = 0
+0.00.401.409 I llm_load_print_meta: model type       = 2B
+0.00.401.410 I llm_load_print_meta: model ftype      = Q8_0
+0.00.401.411 I llm_load_print_meta: model params     = 2.51 B
+0.00.401.413 I llm_load_print_meta: model size       = 2.48 GiB (8.50 BPW) 
+0.00.401.413 I llm_load_print_meta: general.name     = gemma-1.1-2b-it
+0.00.401.414 I llm_load_print_meta: BOS token        = 2 '<bos>'
+0.00.401.415 I llm_load_print_meta: EOS token        = 1 '<eos>'
+0.00.401.419 I llm_load_print_meta: UNK token        = 3 '<unk>'
+0.00.401.419 I llm_load_print_meta: PAD token        = 0 '<pad>'
+0.00.401.420 I llm_load_print_meta: LF token         = 227 '<0x0A>'
+0.00.401.421 I llm_load_print_meta: EOT token        = 107 '<end_of_turn>'
+0.00.401.428 I llm_load_print_meta: EOG token        = 1 '<eos>'
+0.00.401.432 I llm_load_print_meta: EOG token        = 107 '<end_of_turn>'
+0.00.401.433 I llm_load_print_meta: max token length = 93
+0.00.401.614 I llm_load_tensors: ggml ctx size =    0.08 MiB
+0.00.472.659 I llm_load_tensors:        CPU buffer size =  1904.18 MiB
+0.00.472.670 I llm_load_tensors:        CPU buffer size =   635.48 MiB
+.............................................................
+0.00.478.573 I llama_new_context_with_model: n_ctx      = 8192
+0.00.478.580 I llama_new_context_with_model: n_batch    = 2048
+0.00.478.580 I llama_new_context_with_model: n_ubatch   = 512
+0.00.478.581 I llama_new_context_with_model: flash_attn = 0
+0.00.478.583 I llama_new_context_with_model: freq_base  = 10000.0
+0.00.478.584 I llama_new_context_with_model: freq_scale = 1
+0.00.509.095 I llama_kv_cache_init:        CPU KV buffer size =   144.00 MiB
+0.00.509.140 I llama_new_context_with_model: KV self size  =  144.00 MiB, K (f16):   72.00 MiB, V (f16):   72.00 MiB
+0.00.509.266 I llama_new_context_with_model:        CPU  output buffer size =     0.98 MiB
+ggml_gallocr_reserve_n: reallocating CPU buffer from size 0.00 MiB to 508.00 MiB
+0.00.510.718 I llama_new_context_with_model:        CPU compute buffer size =   508.00 MiB
+0.00.510.726 I llama_new_context_with_model: graph nodes  = 601
+0.00.510.727 I llama_new_context_with_model: graph splits = 1
+0.00.510.746 W llama_init_from_gpt_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.01.122.323 I main: llama threadpool init, n_threads = 4
+0.01.122.334 I 
+0.01.122.431 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 0 | FMA = 1 | NEON = 0 | SVE = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | RISCV_VECT = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
+0.01.122.436 I 
+0.01.122.602 I sampler seed: 405173240
+0.01.122.612 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	top_k = 40, tfs_z = 1.000, top_p = 0.950, min_p = 0.050, typical_p = 1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.01.122.618 I sampler chain: logits -> logit-bias -> penalties -> top-k -> tail-free -> typical -> top-p -> min-p -> temp-ext -> softmax -> dist 
+0.01.122.619 I generate: n_ctx = 8192, n_batch = 2048, n_predict = 32, n_keep = 1
+0.01.122.619 I 
+ increasities in a professional setting. [end of text]
+
+
+0.04.511.605 I llama_perf_sampler_print:    sampling time =      12.40 ms /     9 runs   (    1.38 ms per token,   725.81 tokens per second)
+0.04.511.608 I llama_perf_context_print:        load time =    1119.41 ms
+0.04.511.609 I llama_perf_context_print: prompt eval time =       0.00 ms /     1 tokens (    0.00 ms per token,      inf tokens per second)
+0.04.511.611 I llama_perf_context_print:        eval time =    3367.19 ms /     8 runs   (  420.90 ms per token,     2.38 tokens per second)
+0.04.511.611 I llama_perf_context_print:       total time =    3389.29 ms /     9 tokens
++ echo PASS
+PASS
++ echo
+
++ rm -f /mnt/llama.cpp/models/gguf-split/ggml-model-split-00001-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00002-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00003-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00004-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00005-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00006-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-2G-00001-of-00002.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-2G-00002-of-00002.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00001-of-00007.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00002-of-00007.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00003-of-00007.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00004-of-00007.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00005-of-00007.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00006-of-00007.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-32-tensors-00007-of-00007.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-merge.gguf
+
+real	0m58.369s
+user	3m8.733s
+sys	0m9.399s
++ cd ./examples/quantize
++ bash tests.sh /home/ggml/work/llama.cpp/build-ci-debug/bin /mnt/llama.cpp/models
++ SPLIT=/home/ggml/work/llama.cpp/build-ci-debug/bin/llama-gguf-split
++ QUANTIZE=/home/ggml/work/llama.cpp/build-ci-debug/bin/llama-quantize
++ MAIN=/home/ggml/work/llama.cpp/build-ci-debug/bin/llama-cli
++ WORK_PATH=/mnt/llama.cpp/models/quantize
++++ dirname tests.sh
+++ realpath ./../../
++ ROOT_DIR=/home/ggml/work/llama.cpp
++ mkdir -p /mnt/llama.cpp/models/quantize
++ rm -f '/mnt/llama.cpp/models/quantize/ggml-model-split*.gguf' '/mnt/llama.cpp/models/quantize/ggml-model-requant*.gguf'
++ cd /mnt/llama.cpp/models/quantize
++ /home/ggml/work/llama.cpp/scripts/hf.sh --repo ggml-org/gemma-1.1-2b-it-Q8_0-GGUF --file gemma-1.1-2b-it.Q8_0.gguf
+[+] attempting to download gemma-1.1-2b-it.Q8_0.gguf
+[+] wget -q --show-progress -c -O ./gemma-1.1-2b-it.Q8_0.gguf https://huggingface.co/ggml-org/gemma-1.1-2b-it-Q8_0-GGUF/resolve/main/gemma-1.1-2b-it.Q8_0.gguf
+./gemma-1.1-2b-it.Q8_0.gguf
++ echo PASS
+PASS
++ /home/ggml/work/llama.cpp/build-ci-debug/bin/llama-gguf-split --split-max-tensors 28 /mnt/llama.cpp/models/quantize/gemma-1.1-2b-it.Q8_0.gguf /mnt/llama.cpp/models/quantize/ggml-model-split
+register_backend: registered backend CPU (1 devices)
+register_device: registered device CPU (CPU)
+n_split: 6
+split 00001: n_tensors = 28, total_size = 914M
+split 00002: n_tensors = 28, total_size = 351M
+split 00003: n_tensors = 28, total_size = 422M
+split 00004: n_tensors = 28, total_size = 351M
+split 00005: n_tensors = 28, total_size = 355M
+split 00006: n_tensors = 24, total_size = 274M
+Writing file /mnt/llama.cpp/models/quantize/ggml-model-split-00001-of-00006.gguf ... done
+Writing file /mnt/llama.cpp/models/quantize/ggml-model-split-00002-of-00006.gguf ... done
+Writing file /mnt/llama.cpp/models/quantize/ggml-model-split-00003-of-00006.gguf ... done
+Writing file /mnt/llama.cpp/models/quantize/ggml-model-split-00004-of-00006.gguf ... done
+Writing file /mnt/llama.cpp/models/quantize/ggml-model-split-00005-of-00006.gguf ... done
+Writing file /mnt/llama.cpp/models/quantize/ggml-model-split-00006-of-00006.gguf ... gguf_split: 6 gguf split written with a total of 164 tensors.
+done
++ echo PASS
+PASS
++ echo
+
++ /home/ggml/work/llama.cpp/build-ci-debug/bin/llama-quantize --allow-requantize --keep-split /mnt/llama.cpp/models/quantize/ggml-model-split-00001-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-requant.gguf Q4_K
+register_backend: registered backend CPU (1 devices)
+register_device: registered device CPU (CPU)
+main: build = 3870 (841713e1)
+main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+main: quantizing '/mnt/llama.cpp/models/quantize/ggml-model-split-00001-of-00006.gguf' to '/mnt/llama.cpp/models/quantize/ggml-model-requant' as Q4_K
+llama_model_loader: additional 5 GGUFs metadata loaded.
+llama_model_loader: loaded meta data with 27 key-value pairs and 164 tensors from /mnt/llama.cpp/models/quantize/ggml-model-split-00001-of-00006.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = gemma
+llama_model_loader: - kv   1:                               general.name str              = gemma-1.1-2b-it
+llama_model_loader: - kv   2:                       gemma.context_length u32              = 8192
+llama_model_loader: - kv   3:                     gemma.embedding_length u32              = 2048
+llama_model_loader: - kv   4:                          gemma.block_count u32              = 18
+llama_model_loader: - kv   5:                  gemma.feed_forward_length u32              = 16384
+llama_model_loader: - kv   6:                 gemma.attention.head_count u32              = 8
+llama_model_loader: - kv   7:              gemma.attention.head_count_kv u32              = 1
+llama_model_loader: - kv   8:     gemma.attention.layer_norm_rms_epsilon f32              = 0.000001
+llama_model_loader: - kv   9:                 gemma.attention.key_length u32              = 256
+llama_model_loader: - kv  10:               gemma.attention.value_length u32              = 256
+llama_model_loader: - kv  11:                          general.file_type u32              = 7
+llama_model_loader: - kv  12:                       tokenizer.ggml.model str              = llama
+llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,256000]  = ["<pad>", "<eos>", "<bos>", "<unk>", ...
+llama_model_loader: - kv  14:                      tokenizer.ggml.scores arr[f32,256000]  = [0.000000, 0.000000, 0.000000, 0.0000...
+llama_model_loader: - kv  15:                  tokenizer.ggml.token_type arr[i32,256000]  = [3, 3, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  16:                tokenizer.ggml.bos_token_id u32              = 2
+llama_model_loader: - kv  17:                tokenizer.ggml.eos_token_id u32              = 1
+llama_model_loader: - kv  18:            tokenizer.ggml.unknown_token_id u32              = 3
+llama_model_loader: - kv  19:            tokenizer.ggml.padding_token_id u32              = 0
+llama_model_loader: - kv  20:               tokenizer.ggml.add_bos_token bool             = true
+llama_model_loader: - kv  21:               tokenizer.ggml.add_eos_token bool             = false
+llama_model_loader: - kv  22:                    tokenizer.chat_template str              = {{ bos_token }}{% if messages[0]['rol...
+llama_model_loader: - kv  23:               general.quantization_version u32              = 2
+llama_model_loader: - kv  24:                                   split.no u16              = 0
+llama_model_loader: - kv  25:                                split.count u16              = 6
+llama_model_loader: - kv  26:                        split.tensors.count i32              = 164
+llama_model_loader: - type  f32:   37 tensors
+llama_model_loader: - type q8_0:  127 tensors
+[   1/ 164]                    token_embd.weight - [ 2048, 256000,     1,     1], type =   q8_0, converting to q6_K .. size =   531.25 MiB ->   410.16 MiB
+[   2/ 164]               blk.0.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[   3/ 164]                blk.0.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q6_K .. size =    34.00 MiB ->    26.25 MiB
+[   4/ 164]                blk.0.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[   5/ 164]                  blk.0.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[   6/ 164]                blk.0.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[   7/ 164]                  blk.0.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[   8/ 164]             blk.0.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[   9/ 164]                  blk.0.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  10/ 164]                  blk.0.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q6_K .. size =     0.53 MiB ->     0.41 MiB
+[  11/ 164]               blk.1.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  12/ 164]                blk.1.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q6_K .. size =    34.00 MiB ->    26.25 MiB
+[  13/ 164]                blk.1.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  14/ 164]                  blk.1.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  15/ 164]                blk.1.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  16/ 164]                  blk.1.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  17/ 164]             blk.1.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  18/ 164]                  blk.1.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  19/ 164]                  blk.1.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q6_K .. size =     0.53 MiB ->     0.41 MiB
+[  20/ 164]              blk.10.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  21/ 164]               blk.10.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  22/ 164]               blk.10.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  23/ 164]                 blk.10.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  24/ 164]               blk.10.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  25/ 164]                 blk.10.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  26/ 164]            blk.10.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  27/ 164]                 blk.10.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  28/ 164]                 blk.10.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  29/ 164]              blk.11.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  30/ 164]               blk.11.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  31/ 164]               blk.11.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  32/ 164]                 blk.11.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  33/ 164]               blk.11.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  34/ 164]                 blk.11.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  35/ 164]            blk.11.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  36/ 164]                 blk.11.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  37/ 164]                 blk.11.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  38/ 164]              blk.12.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  39/ 164]               blk.12.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q6_K .. size =    34.00 MiB ->    26.25 MiB
+[  40/ 164]               blk.12.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  41/ 164]                 blk.12.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  42/ 164]               blk.12.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  43/ 164]                 blk.12.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  44/ 164]            blk.12.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  45/ 164]                 blk.12.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  46/ 164]                 blk.12.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q6_K .. size =     0.53 MiB ->     0.41 MiB
+[  47/ 164]              blk.13.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  48/ 164]               blk.13.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  49/ 164]               blk.13.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  50/ 164]                 blk.13.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  51/ 164]               blk.13.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  52/ 164]                 blk.13.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  53/ 164]            blk.13.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  54/ 164]                 blk.13.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  55/ 164]                 blk.13.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  56/ 164]              blk.14.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  57/ 164]               blk.14.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  58/ 164]               blk.14.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  59/ 164]                 blk.14.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  60/ 164]               blk.14.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  61/ 164]                 blk.14.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  62/ 164]            blk.14.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  63/ 164]                 blk.14.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  64/ 164]                 blk.14.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  65/ 164]              blk.15.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  66/ 164]               blk.15.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q6_K .. size =    34.00 MiB ->    26.25 MiB
+[  67/ 164]               blk.15.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  68/ 164]                 blk.15.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  69/ 164]               blk.15.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  70/ 164]                 blk.15.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  71/ 164]            blk.15.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  72/ 164]                 blk.15.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  73/ 164]                 blk.15.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q6_K .. size =     0.53 MiB ->     0.41 MiB
+[  74/ 164]              blk.16.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  75/ 164]               blk.16.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  76/ 164]               blk.16.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  77/ 164]                 blk.16.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  78/ 164]               blk.16.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  79/ 164]                 blk.16.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  80/ 164]            blk.16.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  81/ 164]                 blk.16.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  82/ 164]                 blk.16.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  83/ 164]               blk.17.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  84/ 164]                 blk.17.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  85/ 164]                 blk.17.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  86/ 164]            blk.17.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  87/ 164]                 blk.17.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  88/ 164]                 blk.17.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  89/ 164]               blk.2.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  90/ 164]                blk.2.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  91/ 164]                blk.2.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  92/ 164]                  blk.2.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  93/ 164]                blk.2.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  94/ 164]                  blk.2.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  95/ 164]             blk.2.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  96/ 164]                  blk.2.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  97/ 164]                  blk.2.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q6_K .. size =     0.53 MiB ->     0.41 MiB
+[  98/ 164]               blk.3.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  99/ 164]                blk.3.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q6_K .. size =    34.00 MiB ->    26.25 MiB
+[ 100/ 164]                blk.3.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 101/ 164]                  blk.3.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 102/ 164]                blk.3.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 103/ 164]                  blk.3.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[ 104/ 164]             blk.3.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[ 105/ 164]                  blk.3.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[ 106/ 164]                  blk.3.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[ 107/ 164]               blk.4.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 108/ 164]                blk.4.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 109/ 164]                blk.4.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 110/ 164]                  blk.4.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 111/ 164]                blk.4.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 112/ 164]                  blk.4.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[ 113/ 164]             blk.4.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[ 114/ 164]                  blk.4.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[ 115/ 164]                  blk.4.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[ 116/ 164]               blk.5.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 117/ 164]                blk.5.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 118/ 164]                blk.5.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 119/ 164]                  blk.5.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 120/ 164]                blk.5.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 121/ 164]                  blk.5.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[ 122/ 164]             blk.5.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[ 123/ 164]                  blk.5.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[ 124/ 164]                  blk.5.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q6_K .. size =     0.53 MiB ->     0.41 MiB
+[ 125/ 164]               blk.6.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 126/ 164]                blk.6.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q6_K .. size =    34.00 MiB ->    26.25 MiB
+[ 127/ 164]                blk.6.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 128/ 164]                  blk.6.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 129/ 164]                blk.6.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 130/ 164]                  blk.6.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[ 131/ 164]             blk.6.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[ 132/ 164]                  blk.6.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[ 133/ 164]                  blk.6.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[ 134/ 164]               blk.7.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 135/ 164]                blk.7.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 136/ 164]                blk.7.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 137/ 164]                  blk.7.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 138/ 164]                blk.7.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 139/ 164]                  blk.7.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[ 140/ 164]             blk.7.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[ 141/ 164]                  blk.7.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[ 142/ 164]                  blk.7.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q6_K .. size =     0.53 MiB ->     0.41 MiB
+[ 143/ 164]               blk.8.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 144/ 164]                blk.8.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q6_K .. size =    34.00 MiB ->    26.25 MiB
+[ 145/ 164]                blk.8.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 146/ 164]                  blk.8.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 147/ 164]                blk.8.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 148/ 164]                  blk.8.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[ 149/ 164]             blk.8.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[ 150/ 164]                  blk.8.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[ 151/ 164]                  blk.8.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q6_K .. size =     0.53 MiB ->     0.41 MiB
+[ 152/ 164]               blk.9.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 153/ 164]                blk.9.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q6_K .. size =    34.00 MiB ->    26.25 MiB
+[ 154/ 164]                blk.9.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 155/ 164]                  blk.9.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 156/ 164]                blk.9.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 157/ 164]                  blk.9.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[ 158/ 164]             blk.9.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[ 159/ 164]                  blk.9.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[ 160/ 164]                  blk.9.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q6_K .. size =     0.53 MiB ->     0.41 MiB
+[ 161/ 164]              blk.17.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 162/ 164]               blk.17.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q6_K .. size =    34.00 MiB ->    26.25 MiB
+[ 163/ 164]               blk.17.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 164/ 164]                   output_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+llama_model_quantize_internal: model size  =  2539.66 MB
+llama_model_quantize_internal: quant size  =  1548.98 MB
+
+main: quantize time = 199798.72 ms
+main:    total time = 199798.72 ms
++ echo PASS
+PASS
++ echo
+
++ /home/ggml/work/llama.cpp/build-ci-debug/bin/llama-cli --model /mnt/llama.cpp/models/quantize/ggml-model-requant-00001-of-00006.gguf --n-predict 32
+register_backend: registered backend CPU (1 devices)
+register_device: registered device CPU (CPU)
+0.00.000.623 I build: 3870 (841713e1) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu (debug)
+0.00.000.815 I main: llama backend init
+0.00.002.769 I main: load the model and apply lora adapter, if any
+0.00.024.797 I llama_model_loader: additional 5 GGUFs metadata loaded.
+0.00.024.983 I llama_model_loader: loaded meta data with 27 key-value pairs and 164 tensors from /mnt/llama.cpp/models/quantize/ggml-model-requant-00001-of-00006.gguf (version GGUF V3 (latest))
+0.00.025.070 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.025.081 I llama_model_loader: - kv   0:                       general.architecture str              = gemma
+0.00.025.082 I llama_model_loader: - kv   1:                               general.name str              = gemma-1.1-2b-it
+0.00.025.086 I llama_model_loader: - kv   2:                       gemma.context_length u32              = 8192
+0.00.025.087 I llama_model_loader: - kv   3:                     gemma.embedding_length u32              = 2048
+0.00.025.088 I llama_model_loader: - kv   4:                          gemma.block_count u32              = 18
+0.00.025.089 I llama_model_loader: - kv   5:                  gemma.feed_forward_length u32              = 16384
+0.00.025.090 I llama_model_loader: - kv   6:                 gemma.attention.head_count u32              = 8
+0.00.025.091 I llama_model_loader: - kv   7:              gemma.attention.head_count_kv u32              = 1
+0.00.025.097 I llama_model_loader: - kv   8:     gemma.attention.layer_norm_rms_epsilon f32              = 0.000001
+0.00.025.097 I llama_model_loader: - kv   9:                 gemma.attention.key_length u32              = 256
+0.00.025.098 I llama_model_loader: - kv  10:               gemma.attention.value_length u32              = 256
+0.00.025.099 I llama_model_loader: - kv  11:                          general.file_type u32              = 15
+0.00.025.100 I llama_model_loader: - kv  12:                       tokenizer.ggml.model str              = llama
+0.00.094.280 I llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,256000]  = ["<pad>", "<eos>", "<bos>", "<unk>", ...
+0.00.182.305 I llama_model_loader: - kv  14:                      tokenizer.ggml.scores arr[f32,256000]  = [0.000000, 0.000000, 0.000000, 0.0000...
+0.00.194.537 I llama_model_loader: - kv  15:                  tokenizer.ggml.token_type arr[i32,256000]  = [3, 3, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.194.545 I llama_model_loader: - kv  16:                tokenizer.ggml.bos_token_id u32              = 2
+0.00.194.546 I llama_model_loader: - kv  17:                tokenizer.ggml.eos_token_id u32              = 1
+0.00.194.547 I llama_model_loader: - kv  18:            tokenizer.ggml.unknown_token_id u32              = 3
+0.00.194.548 I llama_model_loader: - kv  19:            tokenizer.ggml.padding_token_id u32              = 0
+0.00.194.549 I llama_model_loader: - kv  20:               tokenizer.ggml.add_bos_token bool             = true
+0.00.194.550 I llama_model_loader: - kv  21:               tokenizer.ggml.add_eos_token bool             = false
+0.00.194.553 I llama_model_loader: - kv  22:                    tokenizer.chat_template str              = {{ bos_token }}{% if messages[0]['rol...
+0.00.194.556 I llama_model_loader: - kv  23:               general.quantization_version u32              = 2
+0.00.194.557 I llama_model_loader: - kv  24:                                   split.no u16              = 0
+0.00.194.558 I llama_model_loader: - kv  25:                                split.count u16              = 6
+0.00.194.559 I llama_model_loader: - kv  26:                        split.tensors.count i32              = 164
+0.00.194.567 I llama_model_loader: - type  f32:   37 tensors
+0.00.194.572 I llama_model_loader: - type q4_K:  108 tensors
+0.00.194.572 I llama_model_loader: - type q6_K:   19 tensors
+0.00.336.934 W llm_load_vocab: control-looking token: '<end_of_turn>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.00.361.192 W llm_load_vocab: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.362.177 I llm_load_vocab: special tokens cache size = 5
+0.00.420.930 I llm_load_vocab: token to piece cache size = 1.6014 MB
+0.00.420.985 I llm_load_print_meta: format           = GGUF V3 (latest)
+0.00.420.989 I llm_load_print_meta: arch             = gemma
+0.00.420.990 I llm_load_print_meta: vocab type       = SPM
+0.00.420.990 I llm_load_print_meta: n_vocab          = 256000
+0.00.420.993 I llm_load_print_meta: n_merges         = 0
+0.00.420.993 I llm_load_print_meta: vocab_only       = 0
+0.00.420.994 I llm_load_print_meta: n_ctx_train      = 8192
+0.00.420.994 I llm_load_print_meta: n_embd           = 2048
+0.00.420.994 I llm_load_print_meta: n_layer          = 18
+0.00.421.060 I llm_load_print_meta: n_head           = 8
+0.00.421.070 I llm_load_print_meta: n_head_kv        = 1
+0.00.421.070 I llm_load_print_meta: n_rot            = 256
+0.00.421.071 I llm_load_print_meta: n_swa            = 0
+0.00.421.072 I llm_load_print_meta: n_embd_head_k    = 256
+0.00.421.072 I llm_load_print_meta: n_embd_head_v    = 256
+0.00.421.087 I llm_load_print_meta: n_gqa            = 8
+0.00.421.094 I llm_load_print_meta: n_embd_k_gqa     = 256
+0.00.421.099 I llm_load_print_meta: n_embd_v_gqa     = 256
+0.00.421.102 I llm_load_print_meta: f_norm_eps       = 0.0e+00
+0.00.421.104 I llm_load_print_meta: f_norm_rms_eps   = 1.0e-06
+0.00.421.105 I llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+0.00.421.105 I llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+0.00.421.105 I llm_load_print_meta: f_logit_scale    = 0.0e+00
+0.00.421.110 I llm_load_print_meta: n_ff             = 16384
+0.00.421.111 I llm_load_print_meta: n_expert         = 0
+0.00.421.114 I llm_load_print_meta: n_expert_used    = 0
+0.00.421.115 I llm_load_print_meta: causal attn      = 1
+0.00.421.115 I llm_load_print_meta: pooling type     = 0
+0.00.421.127 I llm_load_print_meta: rope type        = 2
+0.00.421.128 I llm_load_print_meta: rope scaling     = linear
+0.00.421.130 I llm_load_print_meta: freq_base_train  = 10000.0
+0.00.421.131 I llm_load_print_meta: freq_scale_train = 1
+0.00.421.132 I llm_load_print_meta: n_ctx_orig_yarn  = 8192
+0.00.421.132 I llm_load_print_meta: rope_finetuned   = unknown
+0.00.421.134 I llm_load_print_meta: ssm_d_conv       = 0
+0.00.421.135 I llm_load_print_meta: ssm_d_inner      = 0
+0.00.421.135 I llm_load_print_meta: ssm_d_state      = 0
+0.00.421.135 I llm_load_print_meta: ssm_dt_rank      = 0
+0.00.421.136 I llm_load_print_meta: ssm_dt_b_c_rms   = 0
+0.00.421.145 I llm_load_print_meta: model type       = 2B
+0.00.421.146 I llm_load_print_meta: model ftype      = Q4_K - Medium
+0.00.421.149 I llm_load_print_meta: model params     = 2.51 B
+0.00.421.149 I llm_load_print_meta: model size       = 1.51 GiB (5.18 BPW) 
+0.00.421.150 I llm_load_print_meta: general.name     = gemma-1.1-2b-it
+0.00.421.150 I llm_load_print_meta: BOS token        = 2 '<bos>'
+0.00.421.150 I llm_load_print_meta: EOS token        = 1 '<eos>'
+0.00.421.151 I llm_load_print_meta: UNK token        = 3 '<unk>'
+0.00.421.151 I llm_load_print_meta: PAD token        = 0 '<pad>'
+0.00.421.152 I llm_load_print_meta: LF token         = 227 '<0x0A>'
+0.00.421.152 I llm_load_print_meta: EOT token        = 107 '<end_of_turn>'
+0.00.421.158 I llm_load_print_meta: EOG token        = 1 '<eos>'
+0.00.421.160 I llm_load_print_meta: EOG token        = 107 '<end_of_turn>'
+0.00.421.160 I llm_load_print_meta: max token length = 93
+0.00.421.323 I llm_load_tensors: ggml ctx size =    0.08 MiB
+0.00.481.662 I llm_load_tensors:        CPU buffer size =   604.15 MiB
+0.00.481.672 I llm_load_tensors:        CPU buffer size =   185.62 MiB
+0.00.481.672 I llm_load_tensors:        CPU buffer size =   221.61 MiB
+0.00.481.673 I llm_load_tensors:        CPU buffer size =   185.89 MiB
+0.00.481.674 I llm_load_tensors:        CPU buffer size =   187.86 MiB
+0.00.481.674 I llm_load_tensors:        CPU buffer size =   163.85 MiB
+........................................................
+0.00.487.276 I llama_new_context_with_model: n_ctx      = 8192
+0.00.487.283 I llama_new_context_with_model: n_batch    = 2048
+0.00.487.283 I llama_new_context_with_model: n_ubatch   = 512
+0.00.487.284 I llama_new_context_with_model: flash_attn = 0
+0.00.487.286 I llama_new_context_with_model: freq_base  = 10000.0
+0.00.487.287 I llama_new_context_with_model: freq_scale = 1
+0.00.516.564 I llama_kv_cache_init:        CPU KV buffer size =   144.00 MiB
+0.00.516.603 I llama_new_context_with_model: KV self size  =  144.00 MiB, K (f16):   72.00 MiB, V (f16):   72.00 MiB
+0.00.516.717 I llama_new_context_with_model:        CPU  output buffer size =     0.98 MiB
+ggml_gallocr_reserve_n: reallocating CPU buffer from size 0.00 MiB to 508.00 MiB
+0.00.518.114 I llama_new_context_with_model:        CPU compute buffer size =   508.00 MiB
+0.00.518.120 I llama_new_context_with_model: graph nodes  = 601
+0.00.518.121 I llama_new_context_with_model: graph splits = 1
+0.00.518.137 W llama_init_from_gpt_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.01.096.604 I main: llama threadpool init, n_threads = 4
+0.01.096.614 I 
+0.01.096.711 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 0 | FMA = 1 | NEON = 0 | SVE = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | RISCV_VECT = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
+0.01.096.715 I 
+0.01.096.874 I sampler seed: 1668837453
+0.01.096.885 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	top_k = 40, tfs_z = 1.000, top_p = 0.950, min_p = 0.050, typical_p = 1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.01.096.890 I sampler chain: logits -> logit-bias -> penalties -> top-k -> tail-free -> typical -> top-p -> min-p -> temp-ext -> softmax -> dist 
+0.01.096.891 I generate: n_ctx = 8192, n_batch = 2048, n_predict = 32, n_keep = 1
+0.01.096.891 I 
+ seconally.
+
+I cannot answer the question as I do not have access to personal or sensitive information. [end of text]
+
+
+0.08.612.240 I llama_perf_sampler_print:    sampling time =      33.65 ms /    23 runs   (    1.46 ms per token,   683.45 tokens per second)
+0.08.612.256 I llama_perf_context_print:        load time =    1093.75 ms
+0.08.612.258 I llama_perf_context_print: prompt eval time =       0.00 ms /     1 tokens (    0.00 ms per token,      inf tokens per second)
+0.08.612.259 I llama_perf_context_print:        eval time =    7459.60 ms /    22 runs   (  339.07 ms per token,     2.95 tokens per second)
+0.08.612.260 I llama_perf_context_print:       total time =    7515.64 ms /    23 tokens
++ echo PASS
+PASS
++ echo
+
++ /home/ggml/work/llama.cpp/build-ci-debug/bin/llama-quantize --allow-requantize /mnt/llama.cpp/models/quantize/ggml-model-split-00001-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-requant-merge.gguf Q4_K
+register_backend: registered backend CPU (1 devices)
+register_device: registered device CPU (CPU)
+main: build = 3870 (841713e1)
+main: built with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+main: quantizing '/mnt/llama.cpp/models/quantize/ggml-model-split-00001-of-00006.gguf' to '/mnt/llama.cpp/models/quantize/ggml-model-requant-merge.gguf' as Q4_K
+llama_model_loader: additional 5 GGUFs metadata loaded.
+llama_model_loader: loaded meta data with 27 key-value pairs and 164 tensors from /mnt/llama.cpp/models/quantize/ggml-model-split-00001-of-00006.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = gemma
+llama_model_loader: - kv   1:                               general.name str              = gemma-1.1-2b-it
+llama_model_loader: - kv   2:                       gemma.context_length u32              = 8192
+llama_model_loader: - kv   3:                     gemma.embedding_length u32              = 2048
+llama_model_loader: - kv   4:                          gemma.block_count u32              = 18
+llama_model_loader: - kv   5:                  gemma.feed_forward_length u32              = 16384
+llama_model_loader: - kv   6:                 gemma.attention.head_count u32              = 8
+llama_model_loader: - kv   7:              gemma.attention.head_count_kv u32              = 1
+llama_model_loader: - kv   8:     gemma.attention.layer_norm_rms_epsilon f32              = 0.000001
+llama_model_loader: - kv   9:                 gemma.attention.key_length u32              = 256
+llama_model_loader: - kv  10:               gemma.attention.value_length u32              = 256
+llama_model_loader: - kv  11:                          general.file_type u32              = 7
+llama_model_loader: - kv  12:                       tokenizer.ggml.model str              = llama
+llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,256000]  = ["<pad>", "<eos>", "<bos>", "<unk>", ...
+llama_model_loader: - kv  14:                      tokenizer.ggml.scores arr[f32,256000]  = [0.000000, 0.000000, 0.000000, 0.0000...
+llama_model_loader: - kv  15:                  tokenizer.ggml.token_type arr[i32,256000]  = [3, 3, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  16:                tokenizer.ggml.bos_token_id u32              = 2
+llama_model_loader: - kv  17:                tokenizer.ggml.eos_token_id u32              = 1
+llama_model_loader: - kv  18:            tokenizer.ggml.unknown_token_id u32              = 3
+llama_model_loader: - kv  19:            tokenizer.ggml.padding_token_id u32              = 0
+llama_model_loader: - kv  20:               tokenizer.ggml.add_bos_token bool             = true
+llama_model_loader: - kv  21:               tokenizer.ggml.add_eos_token bool             = false
+llama_model_loader: - kv  22:                    tokenizer.chat_template str              = {{ bos_token }}{% if messages[0]['rol...
+llama_model_loader: - kv  23:               general.quantization_version u32              = 2
+llama_model_loader: - kv  24:                                   split.no u16              = 0
+llama_model_loader: - kv  25:                                split.count u16              = 6
+llama_model_loader: - kv  26:                        split.tensors.count i32              = 164
+llama_model_loader: - type  f32:   37 tensors
+llama_model_loader: - type q8_0:  127 tensors
+[   1/ 164]                    token_embd.weight - [ 2048, 256000,     1,     1], type =   q8_0, converting to q6_K .. size =   531.25 MiB ->   410.16 MiB
+[   2/ 164]               blk.0.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[   3/ 164]                blk.0.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q6_K .. size =    34.00 MiB ->    26.25 MiB
+[   4/ 164]                blk.0.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[   5/ 164]                  blk.0.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[   6/ 164]                blk.0.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[   7/ 164]                  blk.0.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[   8/ 164]             blk.0.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[   9/ 164]                  blk.0.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  10/ 164]                  blk.0.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q6_K .. size =     0.53 MiB ->     0.41 MiB
+[  11/ 164]               blk.1.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  12/ 164]                blk.1.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q6_K .. size =    34.00 MiB ->    26.25 MiB
+[  13/ 164]                blk.1.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  14/ 164]                  blk.1.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  15/ 164]                blk.1.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  16/ 164]                  blk.1.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  17/ 164]             blk.1.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  18/ 164]                  blk.1.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  19/ 164]                  blk.1.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q6_K .. size =     0.53 MiB ->     0.41 MiB
+[  20/ 164]              blk.10.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  21/ 164]               blk.10.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  22/ 164]               blk.10.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  23/ 164]                 blk.10.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  24/ 164]               blk.10.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  25/ 164]                 blk.10.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  26/ 164]            blk.10.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  27/ 164]                 blk.10.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  28/ 164]                 blk.10.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  29/ 164]              blk.11.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  30/ 164]               blk.11.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  31/ 164]               blk.11.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  32/ 164]                 blk.11.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  33/ 164]               blk.11.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  34/ 164]                 blk.11.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  35/ 164]            blk.11.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  36/ 164]                 blk.11.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  37/ 164]                 blk.11.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  38/ 164]              blk.12.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  39/ 164]               blk.12.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q6_K .. size =    34.00 MiB ->    26.25 MiB
+[  40/ 164]               blk.12.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  41/ 164]                 blk.12.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  42/ 164]               blk.12.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  43/ 164]                 blk.12.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  44/ 164]            blk.12.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  45/ 164]                 blk.12.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  46/ 164]                 blk.12.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q6_K .. size =     0.53 MiB ->     0.41 MiB
+[  47/ 164]              blk.13.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  48/ 164]               blk.13.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  49/ 164]               blk.13.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  50/ 164]                 blk.13.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  51/ 164]               blk.13.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  52/ 164]                 blk.13.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  53/ 164]            blk.13.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  54/ 164]                 blk.13.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  55/ 164]                 blk.13.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  56/ 164]              blk.14.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  57/ 164]               blk.14.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  58/ 164]               blk.14.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  59/ 164]                 blk.14.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  60/ 164]               blk.14.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  61/ 164]                 blk.14.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  62/ 164]            blk.14.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  63/ 164]                 blk.14.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  64/ 164]                 blk.14.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  65/ 164]              blk.15.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  66/ 164]               blk.15.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q6_K .. size =    34.00 MiB ->    26.25 MiB
+[  67/ 164]               blk.15.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  68/ 164]                 blk.15.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  69/ 164]               blk.15.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  70/ 164]                 blk.15.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  71/ 164]            blk.15.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  72/ 164]                 blk.15.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  73/ 164]                 blk.15.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q6_K .. size =     0.53 MiB ->     0.41 MiB
+[  74/ 164]              blk.16.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  75/ 164]               blk.16.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  76/ 164]               blk.16.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  77/ 164]                 blk.16.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  78/ 164]               blk.16.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  79/ 164]                 blk.16.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  80/ 164]            blk.16.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  81/ 164]                 blk.16.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  82/ 164]                 blk.16.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  83/ 164]               blk.17.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  84/ 164]                 blk.17.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  85/ 164]                 blk.17.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  86/ 164]            blk.17.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  87/ 164]                 blk.17.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  88/ 164]                 blk.17.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  89/ 164]               blk.2.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  90/ 164]                blk.2.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  91/ 164]                blk.2.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  92/ 164]                  blk.2.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[  93/ 164]                blk.2.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  94/ 164]                  blk.2.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[  95/ 164]             blk.2.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  96/ 164]                  blk.2.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[  97/ 164]                  blk.2.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q6_K .. size =     0.53 MiB ->     0.41 MiB
+[  98/ 164]               blk.3.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[  99/ 164]                blk.3.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q6_K .. size =    34.00 MiB ->    26.25 MiB
+[ 100/ 164]                blk.3.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 101/ 164]                  blk.3.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 102/ 164]                blk.3.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 103/ 164]                  blk.3.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[ 104/ 164]             blk.3.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[ 105/ 164]                  blk.3.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[ 106/ 164]                  blk.3.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[ 107/ 164]               blk.4.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 108/ 164]                blk.4.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 109/ 164]                blk.4.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 110/ 164]                  blk.4.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 111/ 164]                blk.4.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 112/ 164]                  blk.4.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[ 113/ 164]             blk.4.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[ 114/ 164]                  blk.4.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[ 115/ 164]                  blk.4.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[ 116/ 164]               blk.5.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 117/ 164]                blk.5.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 118/ 164]                blk.5.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 119/ 164]                  blk.5.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 120/ 164]                blk.5.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 121/ 164]                  blk.5.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[ 122/ 164]             blk.5.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[ 123/ 164]                  blk.5.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[ 124/ 164]                  blk.5.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q6_K .. size =     0.53 MiB ->     0.41 MiB
+[ 125/ 164]               blk.6.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 126/ 164]                blk.6.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q6_K .. size =    34.00 MiB ->    26.25 MiB
+[ 127/ 164]                blk.6.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 128/ 164]                  blk.6.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 129/ 164]                blk.6.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 130/ 164]                  blk.6.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[ 131/ 164]             blk.6.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[ 132/ 164]                  blk.6.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[ 133/ 164]                  blk.6.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[ 134/ 164]               blk.7.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 135/ 164]                blk.7.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 136/ 164]                blk.7.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 137/ 164]                  blk.7.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 138/ 164]                blk.7.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 139/ 164]                  blk.7.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[ 140/ 164]             blk.7.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[ 141/ 164]                  blk.7.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[ 142/ 164]                  blk.7.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q6_K .. size =     0.53 MiB ->     0.41 MiB
+[ 143/ 164]               blk.8.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 144/ 164]                blk.8.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q6_K .. size =    34.00 MiB ->    26.25 MiB
+[ 145/ 164]                blk.8.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 146/ 164]                  blk.8.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 147/ 164]                blk.8.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 148/ 164]                  blk.8.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[ 149/ 164]             blk.8.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[ 150/ 164]                  blk.8.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[ 151/ 164]                  blk.8.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q6_K .. size =     0.53 MiB ->     0.41 MiB
+[ 152/ 164]               blk.9.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 153/ 164]                blk.9.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q6_K .. size =    34.00 MiB ->    26.25 MiB
+[ 154/ 164]                blk.9.ffn_gate.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 155/ 164]                  blk.9.ffn_up.weight - [ 2048, 16384,     1,     1], type =   q8_0, converting to q4_K .. size =    34.00 MiB ->    18.00 MiB
+[ 156/ 164]                blk.9.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 157/ 164]                  blk.9.attn_k.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q4_K .. size =     0.53 MiB ->     0.28 MiB
+[ 158/ 164]             blk.9.attn_output.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[ 159/ 164]                  blk.9.attn_q.weight - [ 2048,  2048,     1,     1], type =   q8_0, converting to q4_K .. size =     4.25 MiB ->     2.25 MiB
+[ 160/ 164]                  blk.9.attn_v.weight - [ 2048,   256,     1,     1], type =   q8_0, converting to q6_K .. size =     0.53 MiB ->     0.41 MiB
+[ 161/ 164]              blk.17.attn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 162/ 164]               blk.17.ffn_down.weight - [16384,  2048,     1,     1], type =   q8_0, converting to q6_K .. size =    34.00 MiB ->    26.25 MiB
+[ 163/ 164]               blk.17.ffn_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+[ 164/ 164]                   output_norm.weight - [ 2048,     1,     1,     1], type =    f32, size =    0.008 MB
+llama_model_quantize_internal: model size  =  2539.66 MB
+llama_model_quantize_internal: quant size  =  1548.98 MB
+
+main: quantize time = 199734.21 ms
+main:    total time = 199734.21 ms
++ echo PASS
+PASS
++ echo
+
++ /home/ggml/work/llama.cpp/build-ci-debug/bin/llama-cli --model /mnt/llama.cpp/models/quantize/ggml-model-requant-merge.gguf --n-predict 32
+register_backend: registered backend CPU (1 devices)
+register_device: registered device CPU (CPU)
+0.00.000.607 I build: 3870 (841713e1) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu (debug)
+0.00.000.800 I main: llama backend init
+0.00.002.782 I main: load the model and apply lora adapter, if any
+0.00.024.939 I llama_model_loader: loaded meta data with 24 key-value pairs and 164 tensors from /mnt/llama.cpp/models/quantize/ggml-model-requant-merge.gguf (version GGUF V3 (latest))
+0.00.025.035 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.025.049 I llama_model_loader: - kv   0:                       general.architecture str              = gemma
+0.00.025.053 I llama_model_loader: - kv   1:                               general.name str              = gemma-1.1-2b-it
+0.00.025.057 I llama_model_loader: - kv   2:                       gemma.context_length u32              = 8192
+0.00.025.059 I llama_model_loader: - kv   3:                     gemma.embedding_length u32              = 2048
+0.00.025.059 I llama_model_loader: - kv   4:                          gemma.block_count u32              = 18
+0.00.025.060 I llama_model_loader: - kv   5:                  gemma.feed_forward_length u32              = 16384
+0.00.025.061 I llama_model_loader: - kv   6:                 gemma.attention.head_count u32              = 8
+0.00.025.063 I llama_model_loader: - kv   7:              gemma.attention.head_count_kv u32              = 1
+0.00.025.069 I llama_model_loader: - kv   8:     gemma.attention.layer_norm_rms_epsilon f32              = 0.000001
+0.00.025.070 I llama_model_loader: - kv   9:                 gemma.attention.key_length u32              = 256
+0.00.025.071 I llama_model_loader: - kv  10:               gemma.attention.value_length u32              = 256
+0.00.025.071 I llama_model_loader: - kv  11:                          general.file_type u32              = 15
+0.00.025.072 I llama_model_loader: - kv  12:                       tokenizer.ggml.model str              = llama
+0.00.094.294 I llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,256000]  = ["<pad>", "<eos>", "<bos>", "<unk>", ...
+0.00.199.160 I llama_model_loader: - kv  14:                      tokenizer.ggml.scores arr[f32,256000]  = [0.000000, 0.000000, 0.000000, 0.0000...
+0.00.211.525 I llama_model_loader: - kv  15:                  tokenizer.ggml.token_type arr[i32,256000]  = [3, 3, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.211.533 I llama_model_loader: - kv  16:                tokenizer.ggml.bos_token_id u32              = 2
+0.00.211.534 I llama_model_loader: - kv  17:                tokenizer.ggml.eos_token_id u32              = 1
+0.00.211.535 I llama_model_loader: - kv  18:            tokenizer.ggml.unknown_token_id u32              = 3
+0.00.211.536 I llama_model_loader: - kv  19:            tokenizer.ggml.padding_token_id u32              = 0
+0.00.211.537 I llama_model_loader: - kv  20:               tokenizer.ggml.add_bos_token bool             = true
+0.00.211.538 I llama_model_loader: - kv  21:               tokenizer.ggml.add_eos_token bool             = false
+0.00.211.542 I llama_model_loader: - kv  22:                    tokenizer.chat_template str              = {{ bos_token }}{% if messages[0]['rol...
+0.00.211.542 I llama_model_loader: - kv  23:               general.quantization_version u32              = 2
+0.00.211.551 I llama_model_loader: - type  f32:   37 tensors
+0.00.211.555 I llama_model_loader: - type q4_K:  108 tensors
+0.00.211.556 I llama_model_loader: - type q6_K:   19 tensors
+0.00.351.939 W llm_load_vocab: control-looking token: '<end_of_turn>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.00.375.857 W llm_load_vocab: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.376.843 I llm_load_vocab: special tokens cache size = 5
+0.00.433.816 I llm_load_vocab: token to piece cache size = 1.6014 MB
+0.00.433.877 I llm_load_print_meta: format           = GGUF V3 (latest)
+0.00.433.878 I llm_load_print_meta: arch             = gemma
+0.00.433.879 I llm_load_print_meta: vocab type       = SPM
+0.00.433.879 I llm_load_print_meta: n_vocab          = 256000
+0.00.433.882 I llm_load_print_meta: n_merges         = 0
+0.00.433.882 I llm_load_print_meta: vocab_only       = 0
+0.00.433.883 I llm_load_print_meta: n_ctx_train      = 8192
+0.00.433.883 I llm_load_print_meta: n_embd           = 2048
+0.00.433.883 I llm_load_print_meta: n_layer          = 18
+0.00.433.948 I llm_load_print_meta: n_head           = 8
+0.00.433.955 I llm_load_print_meta: n_head_kv        = 1
+0.00.433.955 I llm_load_print_meta: n_rot            = 256
+0.00.433.956 I llm_load_print_meta: n_swa            = 0
+0.00.433.956 I llm_load_print_meta: n_embd_head_k    = 256
+0.00.433.956 I llm_load_print_meta: n_embd_head_v    = 256
+0.00.433.961 I llm_load_print_meta: n_gqa            = 8
+0.00.433.965 I llm_load_print_meta: n_embd_k_gqa     = 256
+0.00.433.970 I llm_load_print_meta: n_embd_v_gqa     = 256
+0.00.433.971 I llm_load_print_meta: f_norm_eps       = 0.0e+00
+0.00.433.972 I llm_load_print_meta: f_norm_rms_eps   = 1.0e-06
+0.00.433.973 I llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+0.00.433.973 I llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+0.00.433.974 I llm_load_print_meta: f_logit_scale    = 0.0e+00
+0.00.433.979 I llm_load_print_meta: n_ff             = 16384
+0.00.433.979 I llm_load_print_meta: n_expert         = 0
+0.00.433.980 I llm_load_print_meta: n_expert_used    = 0
+0.00.433.980 I llm_load_print_meta: causal attn      = 1
+0.00.433.980 I llm_load_print_meta: pooling type     = 0
+0.00.433.981 I llm_load_print_meta: rope type        = 2
+0.00.433.981 I llm_load_print_meta: rope scaling     = linear
+0.00.433.982 I llm_load_print_meta: freq_base_train  = 10000.0
+0.00.433.983 I llm_load_print_meta: freq_scale_train = 1
+0.00.433.983 I llm_load_print_meta: n_ctx_orig_yarn  = 8192
+0.00.433.984 I llm_load_print_meta: rope_finetuned   = unknown
+0.00.433.984 I llm_load_print_meta: ssm_d_conv       = 0
+0.00.433.984 I llm_load_print_meta: ssm_d_inner      = 0
+0.00.433.985 I llm_load_print_meta: ssm_d_state      = 0
+0.00.433.985 I llm_load_print_meta: ssm_dt_rank      = 0
+0.00.433.985 I llm_load_print_meta: ssm_dt_b_c_rms   = 0
+0.00.433.995 I llm_load_print_meta: model type       = 2B
+0.00.433.995 I llm_load_print_meta: model ftype      = Q4_K - Medium
+0.00.433.996 I llm_load_print_meta: model params     = 2.51 B
+0.00.433.997 I llm_load_print_meta: model size       = 1.51 GiB (5.18 BPW) 
+0.00.433.998 I llm_load_print_meta: general.name     = gemma-1.1-2b-it
+0.00.433.999 I llm_load_print_meta: BOS token        = 2 '<bos>'
+0.00.433.999 I llm_load_print_meta: EOS token        = 1 '<eos>'
+0.00.433.999 I llm_load_print_meta: UNK token        = 3 '<unk>'
+0.00.434.000 I llm_load_print_meta: PAD token        = 0 '<pad>'
+0.00.434.001 I llm_load_print_meta: LF token         = 227 '<0x0A>'
+0.00.434.001 I llm_load_print_meta: EOT token        = 107 '<end_of_turn>'
+0.00.434.007 I llm_load_print_meta: EOG token        = 1 '<eos>'
+0.00.434.009 I llm_load_print_meta: EOG token        = 107 '<end_of_turn>'
+0.00.434.010 I llm_load_print_meta: max token length = 93
+0.00.434.176 I llm_load_tensors: ggml ctx size =    0.08 MiB
+0.00.491.809 I llm_load_tensors:        CPU buffer size =  1548.98 MiB
+........................................................
+0.00.497.437 I llama_new_context_with_model: n_ctx      = 8192
+0.00.497.445 I llama_new_context_with_model: n_batch    = 2048
+0.00.497.445 I llama_new_context_with_model: n_ubatch   = 512
+0.00.497.446 I llama_new_context_with_model: flash_attn = 0
+0.00.497.448 I llama_new_context_with_model: freq_base  = 10000.0
+0.00.497.449 I llama_new_context_with_model: freq_scale = 1
+0.00.527.025 I llama_kv_cache_init:        CPU KV buffer size =   144.00 MiB
+0.00.527.071 I llama_new_context_with_model: KV self size  =  144.00 MiB, K (f16):   72.00 MiB, V (f16):   72.00 MiB
+0.00.527.185 I llama_new_context_with_model:        CPU  output buffer size =     0.98 MiB
+ggml_gallocr_reserve_n: reallocating CPU buffer from size 0.00 MiB to 508.00 MiB
+0.00.528.570 I llama_new_context_with_model:        CPU compute buffer size =   508.00 MiB
+0.00.528.576 I llama_new_context_with_model: graph nodes  = 601
+0.00.528.576 I llama_new_context_with_model: graph splits = 1
+0.00.528.592 W llama_init_from_gpt_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.01.104.050 I main: llama threadpool init, n_threads = 4
+0.01.104.062 I 
+0.01.104.152 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 0 | FMA = 1 | NEON = 0 | SVE = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | RISCV_VECT = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
+0.01.104.155 I 
+0.01.104.315 I sampler seed: 1074019219
+0.01.104.325 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	top_k = 40, tfs_z = 1.000, top_p = 0.950, min_p = 0.050, typical_p = 1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.01.104.329 I sampler chain: logits -> logit-bias -> penalties -> top-k -> tail-free -> typical -> top-p -> min-p -> temp-ext -> softmax -> dist 
+0.01.104.330 I generate: n_ctx = 8192, n_batch = 2048, n_predict = 32, n_keep = 1
+0.01.104.330 I 
+ encompates a wide range of features, including:
+
+**1. Multilingual Support:**
+- Translate conversations and responses in real-time.
+- Offer
+
+0.11.995.984 I llama_perf_sampler_print:    sampling time =      49.06 ms /    33 runs   (    1.49 ms per token,   672.65 tokens per second)
+0.11.995.988 I llama_perf_context_print:        load time =    1101.18 ms
+0.11.995.990 I llama_perf_context_print: prompt eval time =       0.00 ms /     1 tokens (    0.00 ms per token,      inf tokens per second)
+0.11.995.992 I llama_perf_context_print:        eval time =   10810.70 ms /    32 runs   (  337.83 ms per token,     2.96 tokens per second)
+0.11.995.994 I llama_perf_context_print:       total time =   10891.94 ms /    33 tokens
++ echo PASS
+PASS
++ echo
+
++ rm -f /mnt/llama.cpp/models/quantize/ggml-model-split-00001-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-split-00002-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-split-00003-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-split-00004-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-split-00005-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-split-00006-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-requant-00001-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-requant-00002-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-requant-00003-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-requant-00004-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-requant-00005-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-requant-00006-of-00006.gguf /mnt/llama.cpp/models/quantize/ggml-model-requant-merge.gguf
+
+real	7m3.009s
+user	49m55.688s
+sys	0m6.246s
