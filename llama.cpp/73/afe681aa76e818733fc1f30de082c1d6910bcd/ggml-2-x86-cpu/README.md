@@ -1,0 +1,325 @@
+## Summary
+
+- status:  FAILURE ❌ (1)
+- runtime: 1:54.39
+- date:    Wed Oct 16 22:38:48 UTC 2024
+- repo:    https://github.com/ggerganov/llama.cpp
+- commit:  https://github.com/ggerganov/llama.cpp/commit/73afe681aa76e818733fc1f30de082c1d6910bcd
+- author:  Gilad S.
+```
+fix: use `vm_allocate` to allocate CPU backend buffer on macOS (#9875)
+
+* fix: use `vm_allocate` to allocate CPU backend buffer on macOS
+
+* fix: switch to `posix_memalign` to keep existing `free()` usages work
+
+* feat: move `GGML_ALIGNED_MALLOC` to `ggml-backend-impl.h`, add support for `vm_allocate` on macOS
+
+* style: formatting
+
+* fix: move const outside of `#ifndef`
+
+* style: formatting
+
+* fix: unused var
+
+* fix: transform `GGML_ALIGNED_MALLOC` and `GGML_ALIGNED_FREE` into functions and add them to `ggml-impl.h`
+
+* fix: unused var
+
+* fix: page align to `GGUF_DEFAULT_ALIGNMENT`
+
+* fix: page align to `TENSOR_ALIGNMENT`
+
+* fix: convert `TENSOR_ALIGNMENT` to a macro
+
+* fix: increase page size to `32` on iOS
+
+* fix: iOS page size
+
+* fix: `hbw_posix_memalign` alignment
+```
+
+## Environment
+
+```
+GG_BUILD_CLOUD=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+GG_BUILD_EXTRA_TESTS_0=1
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-debug
+      Start  1: test-tokenizer-0-bert-bge
+ 1/28 Test  #1: test-tokenizer-0-bert-bge .........   Passed    0.08 sec
+      Start  2: test-tokenizer-0-command-r
+ 2/28 Test  #2: test-tokenizer-0-command-r ........   Passed    1.97 sec
+      Start  3: test-tokenizer-0-deepseek-coder
+ 3/28 Test  #3: test-tokenizer-0-deepseek-coder ...   Passed    0.29 sec
+      Start  4: test-tokenizer-0-deepseek-llm
+ 4/28 Test  #4: test-tokenizer-0-deepseek-llm .....   Passed    0.74 sec
+      Start  5: test-tokenizer-0-falcon
+ 5/28 Test  #5: test-tokenizer-0-falcon ...........   Passed    0.46 sec
+      Start  6: test-tokenizer-0-gpt-2
+ 6/28 Test  #6: test-tokenizer-0-gpt-2 ............   Passed    0.36 sec
+      Start  7: test-tokenizer-0-llama-bpe
+ 7/28 Test  #7: test-tokenizer-0-llama-bpe ........   Passed    1.39 sec
+      Start  8: test-tokenizer-0-llama-spm
+ 8/28 Test  #8: test-tokenizer-0-llama-spm ........   Passed    0.09 sec
+      Start  9: test-tokenizer-0-mpt
+ 9/28 Test  #9: test-tokenizer-0-mpt ..............   Passed    0.35 sec
+      Start 10: test-tokenizer-0-phi-3
+10/28 Test #10: test-tokenizer-0-phi-3 ............   Passed    0.08 sec
+      Start 11: test-tokenizer-0-qwen2
+11/28 Test #11: test-tokenizer-0-qwen2 ............   Passed    1.26 sec
+      Start 12: test-tokenizer-0-refact
+12/28 Test #12: test-tokenizer-0-refact ...........   Passed    0.35 sec
+      Start 13: test-tokenizer-0-starcoder
+13/28 Test #13: test-tokenizer-0-starcoder ........   Passed    0.35 sec
+      Start 14: test-tokenizer-1-llama-spm
+14/28 Test #14: test-tokenizer-1-llama-spm ........   Passed    1.45 sec
+      Start 15: test-log
+15/28 Test #15: test-log ..........................   Passed    0.02 sec
+      Start 16: test-arg-parser
+16/28 Test #16: test-arg-parser ...................   Passed    0.02 sec
+      Start 17: test-quantize-fns
+17/28 Test #17: test-quantize-fns .................   Passed   30.90 sec
+      Start 18: test-quantize-perf
+18/28 Test #18: test-quantize-perf ................   Passed    9.11 sec
+      Start 19: test-sampling
+19/28 Test #19: test-sampling .....................   Passed    8.84 sec
+      Start 20: test-chat-template
+20/28 Test #20: test-chat-template ................   Passed    0.00 sec
+      Start 21: test-grammar-parser
+21/28 Test #21: test-grammar-parser ...............   Passed    0.00 sec
+      Start 22: test-llama-grammar
+22/28 Test #22: test-llama-grammar ................   Passed    0.00 sec
+      Start 23: test-grammar-integration
+23/28 Test #23: test-grammar-integration ..........   Passed    0.03 sec
+      Start 24: test-grad0
+24/28 Test #24: test-grad0 ........................   Passed    0.52 sec
+      Start 25: test-barrier
+25/28 Test #25: test-barrier ......................   Passed    1.31 sec
+      Start 26: test-backend-ops
+26/28 Test #26: test-backend-ops ..................   Passed    0.00 sec
+      Start 27: test-rope
+27/28 Test #27: test-rope .........................   Passed    0.05 sec
+      Start 30: test-json-schema-to-grammar
+28/28 Test #30: test-json-schema-to-grammar .......   Passed    1.92 sec
+
+100% tests passed, 0 tests failed out of 28
+
+Label Time Summary:
+main    =  61.98 sec*proc (28 tests)
+
+Total Test time (real) =  61.99 sec
+
+real	1m2.052s
+user	1m15.817s
+sys	0m0.732s
+```
+
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main
+Test project /home/ggml/work/llama.cpp/build-ci-release
+      Start  1: test-tokenizer-0-bert-bge
+ 1/28 Test  #1: test-tokenizer-0-bert-bge .........   Passed    0.03 sec
+      Start  2: test-tokenizer-0-command-r
+ 2/28 Test  #2: test-tokenizer-0-command-r ........   Passed    0.58 sec
+      Start  3: test-tokenizer-0-deepseek-coder
+ 3/28 Test  #3: test-tokenizer-0-deepseek-coder ...   Passed    0.07 sec
+      Start  4: test-tokenizer-0-deepseek-llm
+ 4/28 Test  #4: test-tokenizer-0-deepseek-llm .....   Passed    0.20 sec
+      Start  5: test-tokenizer-0-falcon
+ 5/28 Test  #5: test-tokenizer-0-falcon ...........   Passed    0.12 sec
+      Start  6: test-tokenizer-0-gpt-2
+ 6/28 Test  #6: test-tokenizer-0-gpt-2 ............   Passed    0.09 sec
+      Start  7: test-tokenizer-0-llama-bpe
+ 7/28 Test  #7: test-tokenizer-0-llama-bpe ........   Passed    0.40 sec
+      Start  8: test-tokenizer-0-llama-spm
+ 8/28 Test  #8: test-tokenizer-0-llama-spm ........   Passed    0.04 sec
+      Start  9: test-tokenizer-0-mpt
+ 9/28 Test  #9: test-tokenizer-0-mpt ..............   Passed    0.09 sec
+      Start 10: test-tokenizer-0-phi-3
+10/28 Test #10: test-tokenizer-0-phi-3 ............   Passed    0.04 sec
+      Start 11: test-tokenizer-0-qwen2
+11/28 Test #11: test-tokenizer-0-qwen2 ............   Passed    0.32 sec
+      Start 12: test-tokenizer-0-refact
+12/28 Test #12: test-tokenizer-0-refact ...........   Passed    0.09 sec
+      Start 13: test-tokenizer-0-starcoder
+13/28 Test #13: test-tokenizer-0-starcoder ........   Passed    0.09 sec
+      Start 14: test-tokenizer-1-llama-spm
+14/28 Test #14: test-tokenizer-1-llama-spm ........   Passed    0.22 sec
+      Start 15: test-log
+15/28 Test #15: test-log ..........................   Passed    0.02 sec
+      Start 16: test-arg-parser
+16/28 Test #16: test-arg-parser ...................   Passed    0.01 sec
+      Start 17: test-quantize-fns
+17/28 Test #17: test-quantize-fns .................   Passed   15.99 sec
+      Start 18: test-quantize-perf
+18/28 Test #18: test-quantize-perf ................   Passed    4.47 sec
+      Start 19: test-sampling
+19/28 Test #19: test-sampling .....................   Passed    1.89 sec
+      Start 20: test-chat-template
+20/28 Test #20: test-chat-template ................   Passed    0.00 sec
+      Start 21: test-grammar-parser
+21/28 Test #21: test-grammar-parser ...............   Passed    0.00 sec
+      Start 22: test-llama-grammar
+22/28 Test #22: test-llama-grammar ................   Passed    0.00 sec
+      Start 23: test-grammar-integration
+23/28 Test #23: test-grammar-integration ..........   Passed    0.01 sec
+      Start 24: test-grad0
+24/28 Test #24: test-grad0 ........................   Passed    0.33 sec
+      Start 25: test-barrier
+25/28 Test #25: test-barrier ......................   Passed    0.31 sec
+      Start 26: test-backend-ops
+26/28 Test #26: test-backend-ops ..................   Passed    0.00 sec
+      Start 27: test-rope
+27/28 Test #27: test-rope .........................   Passed    0.04 sec
+      Start 30: test-json-schema-to-grammar
+28/28 Test #30: test-json-schema-to-grammar .......   Passed    1.86 sec
+
+100% tests passed, 0 tests failed out of 28
+
+Label Time Summary:
+main    =  27.32 sec*proc (28 tests)
+
+Total Test time (real) =  27.33 sec
+
+real	0m27.396s
+user	0m29.747s
+sys	0m0.840s
+```
+### embd_bge_small
+
+BGE Small (BERT):
+- status: 1
+- f16: 
+```
++ ./bin/llama-embedding --model ../models-mnt/bge-small/ggml-model-f16.gguf -p 'I believe the meaning of life is'
+0.00.000.590 I build: 3931 (73afe681) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.004.624 I llama_model_loader: loaded meta data with 25 key-value pairs and 197 tensors from ../models-mnt/bge-small/ggml-model-f16.gguf (version GGUF V3 (latest))
+0.00.004.635 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.004.643 I llama_model_loader: - kv   0:                       general.architecture str              = bert
+0.00.004.644 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.004.644 I llama_model_loader: - kv   2:                               general.name str              = Bge Small
+0.00.004.645 I llama_model_loader: - kv   3:                           general.basename str              = bge
+0.00.004.646 I llama_model_loader: - kv   4:                         general.size_label str              = small
+0.00.004.650 I llama_model_loader: - kv   5:                           bert.block_count u32              = 12
+0.00.004.651 I llama_model_loader: - kv   6:                        bert.context_length u32              = 512
+0.00.004.652 I llama_model_loader: - kv   7:                      bert.embedding_length u32              = 384
+0.00.004.652 I llama_model_loader: - kv   8:                   bert.feed_forward_length u32              = 1536
+0.00.004.652 I llama_model_loader: - kv   9:                  bert.attention.head_count u32              = 12
+0.00.004.656 I llama_model_loader: - kv  10:          bert.attention.layer_norm_epsilon f32              = 0.000000
+0.00.004.657 I llama_model_loader: - kv  11:                          general.file_type u32              = 1
+0.00.004.658 I llama_model_loader: - kv  12:                      bert.attention.causal bool             = false
+0.00.004.658 I llama_model_loader: - kv  13:                          bert.pooling_type u32              = 2
+0.00.004.659 I llama_model_loader: - kv  14:            tokenizer.ggml.token_type_count u32              = 2
+0.00.004.659 I llama_model_loader: - kv  15:                       tokenizer.ggml.model str              = bert
+0.00.004.660 I llama_model_loader: - kv  16:                         tokenizer.ggml.pre str              = jina-v2-en
+0.00.008.031 I llama_model_loader: - kv  17:                      tokenizer.ggml.tokens arr[str,30522]   = ["[PAD]", "[unused0]", "[unused1]", "...
+0.00.008.898 I llama_model_loader: - kv  18:                  tokenizer.ggml.token_type arr[i32,30522]   = [3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.008.903 I llama_model_loader: - kv  19:            tokenizer.ggml.unknown_token_id u32              = 100
+0.00.008.904 I llama_model_loader: - kv  20:          tokenizer.ggml.seperator_token_id u32              = 102
+0.00.008.904 I llama_model_loader: - kv  21:            tokenizer.ggml.padding_token_id u32              = 0
+0.00.008.905 I llama_model_loader: - kv  22:                tokenizer.ggml.cls_token_id u32              = 101
+0.00.008.905 I llama_model_loader: - kv  23:               tokenizer.ggml.mask_token_id u32              = 103
+0.00.008.905 I llama_model_loader: - kv  24:               general.quantization_version u32              = 2
+0.00.008.907 I llama_model_loader: - type  f32:  124 tensors
+0.00.008.910 I llama_model_loader: - type  f16:   73 tensors
+0.00.019.508 W llm_load_vocab: control token:    101 '[CLS]' is not marked as EOG
+0.00.019.615 W llm_load_vocab: control token:    103 '[MASK]' is not marked as EOG
+0.00.019.730 W llm_load_vocab: control token:      0 '[PAD]' is not marked as EOG
+0.00.019.760 W llm_load_vocab: control token:    100 '[UNK]' is not marked as EOG
+0.00.019.818 W llm_load_vocab: control token:    102 '[SEP]' is not marked as EOG
+0.00.020.790 I llm_load_vocab: special tokens cache size = 5
+0.00.023.447 I llm_load_vocab: token to piece cache size = 0.2032 MB
+0.00.023.461 I llm_load_print_meta: format           = GGUF V3 (latest)
+0.00.023.461 I llm_load_print_meta: arch             = bert
+0.00.023.462 I llm_load_print_meta: vocab type       = WPM
+0.00.023.462 I llm_load_print_meta: n_vocab          = 30522
+0.00.023.463 I llm_load_print_meta: n_merges         = 0
+0.00.023.463 I llm_load_print_meta: vocab_only       = 0
+0.00.023.463 I llm_load_print_meta: n_ctx_train      = 512
+0.00.023.464 I llm_load_print_meta: n_embd           = 384
+0.00.023.464 I llm_load_print_meta: n_layer          = 12
+0.00.023.473 I llm_load_print_meta: n_head           = 12
+0.00.023.475 I llm_load_print_meta: n_head_kv        = 12
+0.00.023.475 I llm_load_print_meta: n_rot            = 32
+0.00.023.476 I llm_load_print_meta: n_swa            = 0
+0.00.023.476 I llm_load_print_meta: n_embd_head_k    = 32
+0.00.023.476 I llm_load_print_meta: n_embd_head_v    = 32
+0.00.023.477 I llm_load_print_meta: n_gqa            = 1
+0.00.023.478 I llm_load_print_meta: n_embd_k_gqa     = 384
+0.00.023.479 I llm_load_print_meta: n_embd_v_gqa     = 384
+0.00.023.481 I llm_load_print_meta: f_norm_eps       = 1.0e-12
+0.00.023.481 I llm_load_print_meta: f_norm_rms_eps   = 0.0e+00
+0.00.023.482 I llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+0.00.023.482 I llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+0.00.023.483 I llm_load_print_meta: f_logit_scale    = 0.0e+00
+0.00.023.484 I llm_load_print_meta: n_ff             = 1536
+0.00.023.484 I llm_load_print_meta: n_expert         = 0
+0.00.023.484 I llm_load_print_meta: n_expert_used    = 0
+0.00.023.485 I llm_load_print_meta: causal attn      = 0
+0.00.023.488 I llm_load_print_meta: pooling type     = 2
+0.00.023.488 I llm_load_print_meta: rope type        = 2
+0.00.023.488 I llm_load_print_meta: rope scaling     = linear
+0.00.023.490 I llm_load_print_meta: freq_base_train  = 10000.0
+0.00.023.491 I llm_load_print_meta: freq_scale_train = 1
+0.00.023.491 I llm_load_print_meta: n_ctx_orig_yarn  = 512
+0.00.023.492 I llm_load_print_meta: rope_finetuned   = unknown
+0.00.023.492 I llm_load_print_meta: ssm_d_conv       = 0
+0.00.023.492 I llm_load_print_meta: ssm_d_inner      = 0
+0.00.023.493 I llm_load_print_meta: ssm_d_state      = 0
+0.00.023.493 I llm_load_print_meta: ssm_dt_rank      = 0
+0.00.023.494 I llm_load_print_meta: ssm_dt_b_c_rms   = 0
+0.00.023.494 I llm_load_print_meta: model type       = 33M
+0.00.023.495 I llm_load_print_meta: model ftype      = F16
+0.00.023.496 I llm_load_print_meta: model params     = 33.21 M
+0.00.023.497 I llm_load_print_meta: model size       = 63.84 MiB (16.12 BPW) 
+0.00.023.497 I llm_load_print_meta: general.name     = Bge Small
+0.00.023.498 I llm_load_print_meta: UNK token        = 100 '[UNK]'
+0.00.023.499 I llm_load_print_meta: SEP token        = 102 '[SEP]'
+0.00.023.499 I llm_load_print_meta: PAD token        = 0 '[PAD]'
+0.00.023.499 I llm_load_print_meta: CLS token        = 101 '[CLS]'
+0.00.023.500 I llm_load_print_meta: MASK token       = 103 '[MASK]'
+0.00.023.500 I llm_load_print_meta: LF token         = 0 '[PAD]'
+0.00.023.500 I llm_load_print_meta: max token length = 21
+0.00.023.515 I llm_load_tensors: ggml ctx size =    0.08 MiB
+0.00.027.497 I llm_load_tensors:        CPU buffer size =    63.84 MiB
+...............................................
+0.00.028.268 I llama_new_context_with_model: n_ctx      = 512
+0.00.028.272 I llama_new_context_with_model: n_batch    = 2048
+0.00.028.273 I llama_new_context_with_model: n_ubatch   = 2048
+0.00.028.273 I llama_new_context_with_model: flash_attn = 0
+0.00.028.275 I llama_new_context_with_model: freq_base  = 10000.0
+0.00.028.275 I llama_new_context_with_model: freq_scale = 1
+0.00.030.683 I llama_kv_cache_init:        CPU KV buffer size =     9.00 MiB
+0.00.030.694 I llama_new_context_with_model: KV self size  =    9.00 MiB, K (f16):    4.50 MiB, V (f16):    4.50 MiB
+0.00.030.699 W Behavior may be unexpected when allocating 0 bytes for ggml_aligned_malloc!
+0.00.030.700 E ggml_backend_cpu_buffer_type_alloc_buffer: failed to allocate buffer of size 0
+0.00.030.701 E llama_output_reserve: failed to allocate output buffer of size 0.00 MiB
+0.00.030.702 E llama_new_context_with_model: failed to reserve initial output buffer
+0.00.030.838 E common_init_from_params: failed to create context with model '../models-mnt/bge-small/ggml-model-f16.gguf'
+0.00.034.656 E main: unable to load model
+
+real	0m0.038s
+user	0m0.021s
+sys	0m0.017s
+```
+- q8_0:
+```
+
+```
