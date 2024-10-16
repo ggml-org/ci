@@ -1,0 +1,36 @@
+++ nproc
++ make -j4
+[  0%] Generating build details from Git
+[  1%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml.c.o
+[  1%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  2%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  2%] Built target sha256
+[  3%] Built target xxhash
+[  3%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  3%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend.cpp.o
+[  3%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  4%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-quants.c.o
+[  5%] Built target sha1
+[  5%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml.dir/llamafile/sgemm.cpp.o
+[  6%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-amx/mmq.cpp.o
+[  7%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-amx.cpp.o
+[  7%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-aarch64.c.o
+[  7%] Built target build_info
+In file included from /home/ggml/work/llama.cpp/ggml/src/../include/ggml-amx.h:3,
+                 from /home/ggml/work/llama.cpp/ggml/src/ggml-amx.cpp:1:
+/home/ggml/work/llama.cpp/ggml/src/ggml-amx.cpp: In function ‘ggml_backend* ggml_backend_amx_init()’:
+/home/ggml/work/llama.cpp/ggml/src/ggml-amx.cpp:453:15: error: ‘n_threads’ was not declared in this scope
+  453 |   GGML_UNUSED(n_threads);
+      |               ^~~~~~~~~
+/home/ggml/work/llama.cpp/ggml/src/../include/ggml.h:249:31: note: in definition of macro ‘GGML_UNUSED’
+  249 | #define GGML_UNUSED(x) (void)(x)
+      |                               ^
+make[2]: *** [ggml/src/CMakeFiles/ggml.dir/build.make:160: ggml/src/CMakeFiles/ggml.dir/ggml-amx.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1591: ggml/src/CMakeFiles/ggml.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m0.706s
+user	0m0.708s
+sys	0m0.262s
