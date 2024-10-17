@@ -1,0 +1,66 @@
+Looking in indexes: https://pypi.org/simple, https://download.pytorch.org/whl/cpu, https://download.pytorch.org/whl/cpu, https://download.pytorch.org/whl/cpu, https://download.pytorch.org/whl/cpu
+Collecting numpy~=1.26.4
+  Using cached numpy-1.26.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (18.2 MB)
+Collecting sentencepiece~=0.2.0
+  Using cached sentencepiece-0.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.3 MB)
+Collecting transformers<5.0.0,>=4.45.1
+  Using cached transformers-4.45.2-py3-none-any.whl (9.9 MB)
+Collecting gguf>=0.1.0
+  Downloading gguf-0.10.0-py3-none-any.whl (71 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 71.6/71.6 KB 3.1 MB/s eta 0:00:00
+Collecting protobuf<5.0.0,>=4.21.0
+  Downloading protobuf-4.25.5-cp37-abi3-manylinux2014_x86_64.whl (294 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 294.6/294.6 KB 7.9 MB/s eta 0:00:00
+Collecting torch~=2.2.1
+  Using cached https://download.pytorch.org/whl/cpu/torch-2.2.2%2Bcpu-cp310-cp310-linux_x86_64.whl (186.8 MB)
+Collecting huggingface-hub<1.0,>=0.23.2
+  Downloading huggingface_hub-0.25.2-py3-none-any.whl (436 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 436.6/436.6 KB 12.4 MB/s eta 0:00:00
+Collecting regex!=2019.12.17
+  Downloading regex-2024.9.11-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (782 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 782.7/782.7 KB 16.6 MB/s eta 0:00:00
+Collecting safetensors>=0.4.1
+  Downloading safetensors-0.4.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (435 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 435.0/435.0 KB 16.3 MB/s eta 0:00:00
+Collecting tokenizers<0.21,>=0.20
+  Using cached tokenizers-0.20.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+Collecting pyyaml>=5.1
+  Using cached PyYAML-6.0.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (751 kB)
+Collecting filelock
+  Downloading filelock-3.16.1-py3-none-any.whl (16 kB)
+Collecting tqdm>=4.27
+  Using cached tqdm-4.66.5-py3-none-any.whl (78 kB)
+Collecting requests
+  Using cached requests-2.32.3-py3-none-any.whl (64 kB)
+Collecting packaging>=20.0
+  Using cached packaging-24.1-py3-none-any.whl (53 kB)
+Collecting sympy
+  Downloading sympy-1.13.3-py3-none-any.whl (6.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.2/6.2 MB 41.9 MB/s eta 0:00:00
+Collecting networkx
+  Downloading networkx-3.4.1-py3-none-any.whl (1.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 58.1 MB/s eta 0:00:00
+Collecting typing-extensions>=4.8.0
+  Using cached typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+Collecting jinja2
+  Using cached jinja2-3.1.4-py3-none-any.whl (133 kB)
+Collecting fsspec
+  Downloading fsspec-2024.9.0-py3-none-any.whl (179 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 179.3/179.3 KB 21.3 MB/s eta 0:00:00
+Collecting MarkupSafe>=2.0
+  Downloading MarkupSafe-3.0.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (20 kB)
+Collecting certifi>=2017.4.17
+  Downloading certifi-2024.8.30-py3-none-any.whl (167 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 167.3/167.3 KB 23.1 MB/s eta 0:00:00
+Collecting charset-normalizer<4,>=2
+  Downloading charset_normalizer-3.4.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (144 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 144.8/144.8 KB 17.9 MB/s eta 0:00:00
+Collecting urllib3<3,>=1.21.1
+  Downloading urllib3-2.2.3-py3-none-any.whl (126 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 126.3/126.3 KB 19.3 MB/s eta 0:00:00
+Collecting idna<4,>=2.5
+  Downloading idna-3.10-py3-none-any.whl (70 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 70.4/70.4 KB 9.1 MB/s eta 0:00:00
+Collecting mpmath<1.4,>=1.1.0
+  Using cached https://download.pytorch.org/whl/mpmath-1.3.0-py3-none-any.whl (536 kB)
+Installing collected packages: sentencepiece, mpmath, urllib3, typing-extensions, tqdm, sympy, safetensors, regex, pyyaml, protobuf, packaging, numpy, networkx, MarkupSafe, idna, fsspec, filelock, charset-normalizer, certifi, requests, jinja2, gguf, torch, huggingface-hub, tokenizers, transformers
