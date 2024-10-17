@@ -22,7 +22,6 @@
 -- Found OpenMP: TRUE (found version "4.5")  
 -- OpenMP found
 -- Using llamafile
--- Using AMX
 -- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
 -- CMAKE_SYSTEM_PROCESSOR: x86_64
 -- x86 detected
@@ -30,6 +29,6 @@
 -- Generating done
 -- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-release
 
-real	0m0.756s
-user	0m0.543s
-sys	0m0.216s
+real	0m0.737s
+user	0m0.527s
+sys	0m0.212s
