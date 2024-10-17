@@ -1,0 +1,188 @@
+++ nproc
++ make -j4
+[  0%] Generating build details from Git
+[  1%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  1%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml.c.o
+[  1%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  1%] Built target sha256
+[  1%] Built target xxhash
+[  2%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  2%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend.cpp.o
+[  3%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  4%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-quants.c.o
+[  4%] Built target sha1
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml.dir/llamafile/sgemm.cpp.o
+[  5%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-aarch64.c.o
+[  6%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  7%] Linking CXX shared library libggml.so
+[  7%] Built target build_info
+[  7%] Built target ggml
+[  8%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[  8%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[  8%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[  9%] Building CXX object src/CMakeFiles/llama.dir/llama-vocab.cpp.o
+[  9%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 10%] Linking CXX executable ../../bin/llama-gguf
+[ 10%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+[ 10%] Built target llama-gguf-hash
+[ 10%] Built target llama-gguf
+[ 11%] Building CXX object src/CMakeFiles/llama.dir/llama-sampling.cpp.o
+[ 11%] Building CXX object src/CMakeFiles/llama.dir/unicode.cpp.o
+[ 12%] Building CXX object src/CMakeFiles/llama.dir/unicode-data.cpp.o
+[ 13%] Linking CXX shared library libllama.so
+[ 13%] Built target llama
+[ 13%] Building CXX object common/CMakeFiles/common.dir/arg.cpp.o
+[ 16%] Building CXX object examples/llava/CMakeFiles/llava.dir/llava.cpp.o
+[ 16%] Building C object tests/CMakeFiles/test-c.dir/test-c.c.o
+[ 16%] Building CXX object examples/quantize-stats/CMakeFiles/llama-quantize-stats.dir/quantize-stats.cpp.o
+[ 16%] Linking C executable ../bin/test-c
+[ 16%] Building CXX object examples/llava/CMakeFiles/llava.dir/clip.cpp.o
+[ 16%] Linking CXX executable ../../bin/llama-quantize-stats
+[ 17%] Building CXX object common/CMakeFiles/common.dir/common.cpp.o
+[ 17%] Built target llava
+[ 17%] Building CXX object examples/simple/CMakeFiles/llama-simple.dir/simple.cpp.o
+[ 17%] Built target test-c
+[ 18%] Linking CXX executable ../../bin/llama-simple
+[ 18%] Linking CXX static library libllava_static.a
+[ 18%] Building CXX object common/CMakeFiles/common.dir/console.cpp.o
+[ 19%] Building CXX object common/CMakeFiles/common.dir/json-schema-to-grammar.cpp.o
+[ 19%] Building CXX object common/CMakeFiles/common.dir/log.cpp.o
+[ 20%] Building CXX object common/CMakeFiles/common.dir/ngram-cache.cpp.o
+[ 21%] Building CXX object common/CMakeFiles/common.dir/sampling.cpp.o
+[ 21%] Built target llava_static
+[ 22%] Linking CXX shared library libllava_shared.so
+[ 22%] Building CXX object common/CMakeFiles/common.dir/train.cpp.o
+[ 23%] Linking CXX static library libcommon.a
+[ 23%] Built target llama-simple
+[ 23%] Built target llama-quantize-stats
+[ 23%] Built target llava_shared
+[ 23%] Built target common
+[ 23%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/test-tokenizer-0.cpp.o
+[ 23%] Building CXX object tests/CMakeFiles/test-tokenizer-1-spm.dir/test-tokenizer-1-spm.cpp.o
+[ 23%] Building CXX object tests/CMakeFiles/test-tokenizer-1-bpe.dir/test-tokenizer-1-bpe.cpp.o
+[ 24%] Building CXX object tests/CMakeFiles/test-log.dir/test-log.cpp.o
+[ 25%] Building CXX object tests/CMakeFiles/test-log.dir/get-model.cpp.o
+[ 27%] Linking CXX executable ../bin/test-tokenizer-1-spm
+[ 27%] Linking CXX executable ../bin/test-tokenizer-1-bpe
+[ 28%] Linking CXX executable ../bin/test-tokenizer-0
+[ 28%] Linking CXX executable ../bin/test-log
+[ 28%] Built target test-log
+[ 29%] Building CXX object tests/CMakeFiles/test-arg-parser.dir/test-arg-parser.cpp.o
+[ 30%] Building CXX object tests/CMakeFiles/test-arg-parser.dir/get-model.cpp.o
+[ 30%] Linking CXX executable ../bin/test-arg-parser
+[ 30%] Built target test-tokenizer-1-bpe
+[ 30%] Built target test-tokenizer-1-spm
+[ 30%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 30%] Built target test-tokenizer-0
+[ 30%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 31%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/get-model.cpp.o
+[ 32%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/get-model.cpp.o
+[ 33%] Linking CXX executable ../bin/test-quantize-fns
+[ 33%] Linking CXX executable ../bin/test-quantize-perf
+[ 33%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
+[ 34%] Building CXX object tests/CMakeFiles/test-sampling.dir/get-model.cpp.o
+[ 35%] Linking CXX executable ../bin/test-sampling
+[ 35%] Built target test-quantize-fns
+[ 35%] Built target test-quantize-perf
+[ 36%] Building CXX object tests/CMakeFiles/test-chat-template.dir/test-chat-template.cpp.o
+[ 37%] Building CXX object tests/CMakeFiles/test-grammar-parser.dir/test-grammar-parser.cpp.o
+[ 37%] Building CXX object tests/CMakeFiles/test-chat-template.dir/get-model.cpp.o
+[ 38%] Linking CXX executable ../bin/test-chat-template
+[ 38%] Built target test-sampling
+[ 38%] Building CXX object tests/CMakeFiles/test-llama-grammar.dir/test-llama-grammar.cpp.o
+[ 38%] Built target test-chat-template
+[ 38%] Building CXX object tests/CMakeFiles/test-grammar-integration.dir/test-grammar-integration.cpp.o
+[ 38%] Built target test-arg-parser
+[ 39%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+[ 39%] Building CXX object tests/CMakeFiles/test-grad0.dir/get-model.cpp.o
+[ 40%] Linking CXX executable ../bin/test-grad0
+[ 40%] Built target test-grad0
+[ 40%] Building CXX object tests/CMakeFiles/test-barrier.dir/test-barrier.cpp.o
+[ 41%] Building CXX object tests/CMakeFiles/test-barrier.dir/get-model.cpp.o
+[ 41%] Linking CXX executable ../bin/test-barrier
+[ 41%] Built target test-barrier
+[ 41%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 42%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/get-model.cpp.o
+[ 43%] Linking CXX executable ../bin/test-backend-ops
+[ 43%] Built target test-backend-ops
+[ 44%] Building CXX object tests/CMakeFiles/test-rope.dir/test-rope.cpp.o
+[ 44%] Building CXX object tests/CMakeFiles/test-rope.dir/get-model.cpp.o
+[ 45%] Linking CXX executable ../bin/test-rope
+[ 45%] Built target test-rope
+[ 46%] Building CXX object tests/CMakeFiles/test-model-load-cancel.dir/test-model-load-cancel.cpp.o
+[ 46%] Building CXX object tests/CMakeFiles/test-model-load-cancel.dir/get-model.cpp.o
+[ 47%] Linking CXX executable ../bin/test-model-load-cancel
+[ 48%] Building CXX object tests/CMakeFiles/test-grammar-parser.dir/get-model.cpp.o
+[ 48%] Linking CXX executable ../bin/test-grammar-parser
+[ 48%] Built target test-model-load-cancel
+[ 49%] Building CXX object tests/CMakeFiles/test-autorelease.dir/test-autorelease.cpp.o
+[ 49%] Building CXX object tests/CMakeFiles/test-autorelease.dir/get-model.cpp.o
+[ 50%] Linking CXX executable ../bin/test-autorelease
+[ 50%] Built target test-grammar-parser
+[ 51%] Building CXX object tests/CMakeFiles/test-json-schema-to-grammar.dir/test-json-schema-to-grammar.cpp.o
+[ 51%] Built target test-autorelease
+[ 52%] Building CXX object examples/cvector-generator/CMakeFiles/llama-cvector-generator.dir/cvector-generator.cpp.o
+[ 52%] Linking CXX executable ../../bin/llama-cvector-generator
+[ 53%] Building CXX object tests/CMakeFiles/test-llama-grammar.dir/get-model.cpp.o
+[ 53%] Linking CXX executable ../bin/test-llama-grammar
+[ 53%] Built target test-llama-grammar
+[ 53%] Building CXX object examples/baby-llama/CMakeFiles/llama-baby-llama.dir/baby-llama.cpp.o
+[ 54%] Linking CXX executable ../../bin/llama-baby-llama
+[ 54%] Built target llama-baby-llama
+[ 54%] Building CXX object examples/batched-bench/CMakeFiles/llama-batched-bench.dir/batched-bench.cpp.o
+[ 55%] Linking CXX executable ../../bin/llama-batched-bench
+[ 55%] Built target llama-cvector-generator
+[ 55%] Building CXX object examples/batched/CMakeFiles/llama-batched.dir/batched.cpp.o
+[ 56%] Linking CXX executable ../../bin/llama-batched
+[ 56%] Built target llama-batched-bench
+[ 57%] Building CXX object examples/convert-llama2c-to-ggml/CMakeFiles/llama-convert-llama2c-to-ggml.dir/convert-llama2c-to-ggml.cpp.o
+[ 57%] Linking CXX executable ../../bin/llama-convert-llama2c-to-ggml
+[ 57%] Built target llama-batched
+[ 58%] Building CXX object examples/embedding/CMakeFiles/llama-embedding.dir/embedding.cpp.o
+[ 59%] Linking CXX executable ../../bin/llama-embedding
+[ 59%] Built target llama-convert-llama2c-to-ggml
+[ 59%] Building CXX object examples/eval-callback/CMakeFiles/llama-eval-callback.dir/eval-callback.cpp.o
+[ 60%] Linking CXX executable ../../bin/llama-eval-callback
+[ 60%] Built target llama-embedding
+[ 60%] Building CXX object examples/export-lora/CMakeFiles/llama-export-lora.dir/export-lora.cpp.o
+[ 61%] Linking CXX executable ../../bin/llama-export-lora
+[ 61%] Built target llama-eval-callback
+[ 61%] Building CXX object examples/gbnf-validator/CMakeFiles/llama-gbnf-validator.dir/gbnf-validator.cpp.o
+[ 61%] Built target llama-export-lora
+[ 62%] Building CXX object examples/gguf-split/CMakeFiles/llama-gguf-split.dir/gguf-split.cpp.o
+[ 62%] Linking CXX executable ../../bin/llama-gguf-split
+/home/ggml/work/llama.cpp/examples/gbnf-validator/gbnf-validator.cpp: In function ‘bool llama_grammar_validate(llama_grammar&, const string&, size_t&, std::string&)’:
+/home/ggml/work/llama.cpp/examples/gbnf-validator/gbnf-validator.cpp:14:50: error: cannot convert ‘llama_grammar’ to ‘llama_grammar*’
+   14 |     auto & stacks_cur = llama_grammar_get_stacks(grammar);
+      |                                                  ^~~~~~~
+      |                                                  |
+      |                                                  llama_grammar
+In file included from /home/ggml/work/llama.cpp/examples/gbnf-validator/gbnf-validator.cpp:2:
+/home/ggml/work/llama.cpp/src/./llama-grammar.h:76:84: note:   initializing argument 1 of ‘llama_grammar_stacks& llama_grammar_get_stacks(llama_grammar*)’
+   76 |       llama_grammar_stacks & llama_grammar_get_stacks(      struct llama_grammar * grammar);
+      |                                                             ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+/home/ggml/work/llama.cpp/examples/gbnf-validator/gbnf-validator.cpp:18:30: error: cannot convert ‘llama_grammar’ to ‘llama_grammar*’
+   18 |         llama_grammar_accept(grammar, cpt);
+      |                              ^~~~~~~
+      |                              |
+      |                              llama_grammar
+In file included from /home/ggml/work/llama.cpp/examples/gbnf-validator/gbnf-validator.cpp:2:
+/home/ggml/work/llama.cpp/src/./llama-grammar.h:82:50: note:   initializing argument 1 of ‘void llama_grammar_accept(llama_grammar*, uint32_t)’
+   82 | void llama_grammar_accept(struct llama_grammar * grammar, uint32_t chr);
+      |                           ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+make[2]: *** [examples/gbnf-validator/CMakeFiles/llama-gbnf-validator.dir/build.make:76: examples/gbnf-validator/CMakeFiles/llama-gbnf-validator.dir/gbnf-validator.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:2510: examples/gbnf-validator/CMakeFiles/llama-gbnf-validator.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[ 62%] Building CXX object tests/CMakeFiles/test-json-schema-to-grammar.dir/get-model.cpp.o
+[ 63%] Building CXX object tests/CMakeFiles/test-grammar-integration.dir/get-model.cpp.o
+[ 63%] Built target llama-gguf-split
+[ 63%] Linking CXX executable ../bin/test-grammar-integration
+[ 63%] Built target test-grammar-integration
+[ 64%] Linking CXX executable ../bin/test-json-schema-to-grammar
+[ 64%] Built target test-json-schema-to-grammar
+make: *** [Makefile:146: all] Error 2
+
+real	0m14.824s
+user	0m29.736s
+sys	0m3.403s
