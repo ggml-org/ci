@@ -1,0 +1,784 @@
+rm: cannot remove '/home/devcloud/results/ggml/d4/06ddb970f68fec6305807f4e8e2535caed1af4/ggml-7-sycl/*.log': No such file or directory
+rm: cannot remove '/home/devcloud/results/ggml/d4/06ddb970f68fec6305807f4e8e2535caed1af4/ggml-7-sycl/*.exit': No such file or directory
+rm: cannot remove '/home/devcloud/results/ggml/d4/06ddb970f68fec6305807f4e8e2535caed1af4/ggml-7-sycl/*.md': No such file or directory
+error: externally-managed-environment
+
+× This environment is externally managed
+╰─> To install Python packages system-wide, try apt install
+    python3-xyz, where xyz is the package you are trying to
+    install.
+    
+    If you wish to install a non-Debian-packaged Python package,
+    create a virtual environment using python3 -m venv path/to/venv.
+    Then use path/to/venv/bin/python and path/to/venv/bin/pip. Make
+    sure you have python3-full installed.
+    
+    If you wish to install a non-Debian packaged Python application,
+    it may be easiest to use pipx install xyz, which will manage a
+    virtual environment for you. Make sure you have pipx installed.
+    
+    See /usr/share/doc/python3.12/README.venv for more information.
+
+note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+hint: See PEP 668 for the detailed specification.
++ gg_run_ctest_debug
++ cd /home/devcloud/work/ggml
++ rm -rf build-ci-debug
++ tee /home/devcloud/results/ggml/d4/06ddb970f68fec6305807f4e8e2535caed1af4/ggml-7-sycl/ctest_debug.log
++ mkdir build-ci-debug
++ cd build-ci-debug
++ set -e
++ tee -a /home/devcloud/results/ggml/d4/06ddb970f68fec6305807f4e8e2535caed1af4/ggml-7-sycl/ctest_debug-cmake.log
++ cmake -DCMAKE_BUILD_TYPE=Debug ..
+-- The C compiler identification is GNU 13.2.0
+-- The CXX compiler identification is GNU 13.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found OpenMP_C: -fopenmp (found version "4.5") 
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5")  
+-- OpenMP found
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- x86 detected
+-- x86 detected
+-- Linux detected
+-- Configuring done (1.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/devcloud/work/ggml/build-ci-debug
+
+real	0m1.102s
+user	0m0.633s
+sys	0m0.474s
++ tee -a /home/devcloud/results/ggml/d4/06ddb970f68fec6305807f4e8e2535caed1af4/ggml-7-sycl/ctest_debug-make.log
++ make -j
+[  2%] Building C object src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  2%] Building C object src/CMakeFiles/ggml.dir/ggml-quants.c.o
+[  3%] Building C object src/CMakeFiles/ggml.dir/ggml.c.o
+[  4%] Building CXX object src/CMakeFiles/ggml.dir/ggml-backend.cpp.o
+[  5%] Building C object src/CMakeFiles/ggml.dir/ggml-aarch64.c.o
+[  6%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  7%] Linking CXX static library libcommon.a
+[  7%] Built target common
+[  8%] Linking CXX shared library libggml.so
+[  8%] Built target ggml
+[ 10%] Building CXX object tests/CMakeFiles/test-opt.dir/test-opt.cpp.o
+[ 10%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
+[ 11%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 12%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+[ 13%] Building C object tests/CMakeFiles/test-mul-mat0.dir/test-mul-mat0.c.o
+[ 15%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 16%] Building C object tests/CMakeFiles/test1.dir/test1.c.o
+[ 17%] Building C object tests/CMakeFiles/test-vec1.dir/test-vec1.c.o
+[ 18%] Building C object tests/CMakeFiles/test-mul-mat2.dir/test-mul-mat2.c.o
+[ 19%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
+[ 20%] Building C object tests/CMakeFiles/test2.dir/test2.c.o
+[ 21%] Building C object tests/CMakeFiles/test3.dir/test3.c.o
+[ 23%] Building C object tests/CMakeFiles/test-dup.dir/test-dup.c.o
+[ 23%] Building C object tests/CMakeFiles/test-rel-pos.dir/test-rel-pos.c.o
+[ 25%] Building C object tests/CMakeFiles/test-customop.dir/test-customop.c.o
+[ 25%] Building CXX object tests/CMakeFiles/test-conv-transpose-1d.dir/test-conv-transpose-1d.cpp.o
+[ 26%] Building CXX object tests/CMakeFiles/test-conv1d.dir/test-conv1d.cpp.o
+[ 29%] Building CXX object tests/CMakeFiles/test-mul-mat.dir/test-mul-mat.cpp.o
+[ 29%] Building C object tests/CMakeFiles/test-conv-transpose.dir/test-conv-transpose.c.o
+[ 30%] Building CXX object tests/CMakeFiles/test-timestep_embedding.dir/test-timestep_embedding.cpp.o
+[ 31%] Building C object tests/CMakeFiles/test-cont.dir/test-cont.c.o
+[ 32%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 33%] Linking C executable ../bin/test-vec0
+[ 35%] Linking CXX executable ../bin/test-grad0
+[ 35%] Building C object tests/CMakeFiles/test-pool.dir/test-pool.c.o
+[ 36%] Building CXX object examples/mnist/CMakeFiles/mnist-common.dir/mnist-common.cpp.o
+[ 37%] Building CXX object tests/CMakeFiles/test-arange.dir/test-arange.cpp.o
+[ 38%] Building CXX object tests/CMakeFiles/test-conv2d.dir/test-conv2d.cpp.o
+[ 39%] Linking CXX executable ../bin/test-quantize-fns
+[ 41%] Building CXX object examples/sam/CMakeFiles/sam.dir/main.cpp.o
+[ 41%] Linking C executable ../bin/test2
+[ 43%] Linking C executable ../bin/test3
+[ 44%] Linking C executable ../bin/test-mul-mat0
+[ 45%] Linking CXX executable ../bin/test-opt
+[ 46%] Building CXX object examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o
+[ 47%] Linking CXX executable ../bin/test-conv-transpose-1d
+[ 48%] Linking C executable ../bin/test0
+[ 49%] Linking C executable ../bin/test-mul-mat2
+[ 50%] Linking C executable ../bin/test-dup
+[ 51%] Linking CXX executable ../bin/test-quantize-perf
+[ 52%] Linking C executable ../bin/test-conv-transpose
+[ 53%] Linking C executable ../bin/test1
+[ 54%] Linking C executable ../bin/test-vec1
+[ 55%] Linking C executable ../bin/test-customop
+[ 56%] Linking C executable ../bin/test-rel-pos
+[ 58%] Linking CXX executable ../bin/test-conv1d
+[ 59%] Linking CXX executable ../bin/test-mul-mat
+[ 60%] Linking CXX executable ../bin/test-arange
+[ 61%] Linking CXX executable ../bin/test-timestep_embedding
+[ 62%] Linking C executable ../bin/test-cont
+[ 63%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolo-image.cpp.o
+[ 64%] Linking CXX executable ../bin/test-conv2d
+[ 65%] Linking C executable ../bin/test-pool
+[ 66%] Linking CXX static library libmnist-common.a
+[ 67%] Building CXX object examples/simple/CMakeFiles/simple-backend.dir/simple-backend.cpp.o
+[ 68%] Building CXX object examples/simple/CMakeFiles/simple-ctx.dir/simple-ctx.cpp.o
+[ 70%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolov3-tiny.cpp.o
+[ 70%] Linking CXX executable ../../bin/sam
+[ 72%] Linking CXX static library libcommon-ggml.a
+[ 72%] Built target test-vec0
+[ 73%] Linking CXX executable ../../bin/simple-ctx
+[ 73%] Built target test-vec1
+[ 74%] Linking CXX executable ../../bin/simple-backend
+[ 74%] Built target mnist-common
+[ 75%] Linking CXX executable ../../bin/yolov3-tiny
+[ 75%] Built target test0
+[ 75%] Built target test1
+[ 75%] Built target test3
+[ 75%] Built target test2
+[ 75%] Built target test-conv-transpose
+[ 75%] Built target test-mul-mat2
+[ 75%] Built target test-dup
+[ 75%] Built target test-mul-mat0
+[ 75%] Built target common-ggml
+[ 76%] Building CXX object examples/mnist/CMakeFiles/mnist-train.dir/mnist-train.cpp.o
+[ 76%] Built target test-rel-pos
+[ 77%] Building CXX object examples/mnist/CMakeFiles/mnist-eval.dir/mnist-eval.cpp.o
+[ 77%] Built target test-grad0
+[ 77%] Built target test-customop
+[ 77%] Built target test-conv-transpose-1d
+[ 78%] Linking CXX executable ../../bin/mnist-eval
+[ 78%] Built target test-cont
+[ 78%] Built target test-quantize-fns
+[ 79%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-ctx.dir/main-ctx.cpp.o
+[ 79%] Built target test-mul-mat
+[ 79%] Built target test-timestep_embedding
+[ 80%] Linking CXX executable ../../bin/mnist-train
+[ 81%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-backend.dir/main-backend.cpp.o
+[ 82%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-alloc.dir/main-alloc.cpp.o
+[ 83%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-sched.dir/main-sched.cpp.o
+[ 84%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j-quantize.dir/quantize.cpp.o
+[ 87%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-quantize.dir/quantize.cpp.o
+[ 88%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-batched.dir/main-batched.cpp.o
+[ 88%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j.dir/main.cpp.o
+[ 89%] Building CXX object examples/magika/CMakeFiles/magika.dir/main.cpp.o
+[ 90%] Linking CXX executable ../../bin/gpt-2-ctx
+[ 91%] Linking CXX executable ../../bin/gpt-2-alloc
+[ 92%] Linking CXX executable ../../bin/gpt-2-backend
+[ 95%] Linking CXX executable ../../bin/gpt-j-quantize
+[ 95%] Linking CXX executable ../../bin/magika
+[ 95%] Linking CXX executable ../../bin/gpt-2-quantize
+[ 96%] Linking CXX executable ../../bin/gpt-2-batched
+[ 96%] Built target test-pool
+[ 96%] Built target test-conv2d
+[ 97%] Linking CXX executable ../../bin/gpt-j
+[ 98%] Linking CXX executable ../../bin/gpt-2-sched
+[ 98%] Built target test-conv1d
+[ 98%] Built target test-opt
+[ 98%] Built target simple-ctx
+[ 98%] Built target simple-backend
+[ 98%] Built target test-arange
+[ 98%] Built target test-quantize-perf
+[ 98%] Built target yolov3-tiny
+[ 98%] Built target sam
+[ 98%] Built target mnist-train
+[ 98%] Built target mnist-eval
+[ 98%] Built target magika
+[ 98%] Built target gpt-2-quantize
+[ 98%] Built target gpt-2-ctx
+[ 98%] Built target gpt-2-batched
+[ 98%] Built target gpt-j
+[ 98%] Built target gpt-2-sched
+[ 98%] Built target gpt-j-quantize
+[ 98%] Built target gpt-2-backend
+[ 98%] Built target gpt-2-alloc
+[100%] Linking CXX executable ../bin/test-backend-ops
+[100%] Built target test-backend-ops
+
+real	0m2.488s
+user	0m6.313s
+sys	0m2.891s
++ '[' '!' -z ']'
++ tee -a /home/devcloud/results/ggml/d4/06ddb970f68fec6305807f4e8e2535caed1af4/ggml-7-sycl/ctest_debug-ctest.log
++ ctest --output-on-failure -E test-opt
+Test project /home/devcloud/work/ggml/build-ci-debug
+      Start  1: test-grad0
+ 1/22 Test  #1: test-grad0 .......................   Passed    1.28 sec
+      Start  2: test-quantize-fns
+ 2/22 Test  #2: test-quantize-fns ................   Passed   18.66 sec
+      Start  3: test-quantize-perf
+ 3/22 Test  #3: test-quantize-perf ...............   Passed    5.39 sec
+      Start  4: test-mul-mat0
+ 4/22 Test  #4: test-mul-mat0 ....................   Passed    0.13 sec
+      Start  5: test-mul-mat2
+ 5/22 Test  #5: test-mul-mat2 ....................   Passed    4.30 sec
+      Start  6: test0
+ 6/22 Test  #6: test0 ............................   Passed    0.01 sec
+      Start  7: test1
+ 7/22 Test  #7: test1 ............................   Passed    0.01 sec
+      Start  8: test2
+ 8/22 Test  #8: test2 ............................   Passed    0.04 sec
+      Start  9: test3
+ 9/22 Test  #9: test3 ............................   Passed    0.04 sec
+      Start 10: test-pool
+10/22 Test #10: test-pool ........................   Passed    0.01 sec
+      Start 11: test-arange
+11/22 Test #11: test-arange ......................   Passed    0.01 sec
+      Start 12: test-timestep_embedding
+12/22 Test #12: test-timestep_embedding ..........   Passed    0.01 sec
+      Start 13: test-conv-transpose
+13/22 Test #13: test-conv-transpose ..............   Passed    0.01 sec
+      Start 14: test-conv-transpose-1d
+14/22 Test #14: test-conv-transpose-1d ...........   Passed    0.02 sec
+      Start 15: test-dup
+15/22 Test #15: test-dup .........................   Passed    0.00 sec
+      Start 16: test-rel-pos
+16/22 Test #16: test-rel-pos .....................   Passed    0.01 sec
+      Start 17: test-customop
+17/22 Test #17: test-customop ....................   Passed    0.01 sec
+      Start 18: test-conv1d
+18/22 Test #18: test-conv1d ......................   Passed    0.01 sec
+      Start 19: test-conv2d
+19/22 Test #19: test-conv2d ......................   Passed    0.02 sec
+      Start 20: test-mul-mat
+20/22 Test #20: test-mul-mat .....................   Passed    0.01 sec
+      Start 21: test-backend-ops
+21/22 Test #21: test-backend-ops .................   Passed    0.00 sec
+      Start 22: test-cont
+22/22 Test #22: test-cont ........................   Passed    0.01 sec
+
+100% tests passed, 0 tests failed out of 22
+
+Total Test time (real) =  29.99 sec
+
+real	0m30.005s
+user	0m29.389s
+sys	0m1.462s
++ set +e
++ cur=0
++ echo 0
++ set +x
++ tee /home/devcloud/results/ggml/d4/06ddb970f68fec6305807f4e8e2535caed1af4/ggml-7-sycl/ctest_release.log
++ gg_run_ctest_release
++ cd /home/devcloud/work/ggml
++ rm -rf build-ci-release
++ mkdir build-ci-release
++ cd build-ci-release
++ set -e
++ tee -a /home/devcloud/results/ggml/d4/06ddb970f68fec6305807f4e8e2535caed1af4/ggml-7-sycl/ctest_release-cmake.log
++ cmake -DCMAKE_BUILD_TYPE=Release ..
+-- The C compiler identification is GNU 13.2.0
+-- The CXX compiler identification is GNU 13.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found OpenMP_C: -fopenmp (found version "4.5") 
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5")  
+-- OpenMP found
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- x86 detected
+-- x86 detected
+-- Linux detected
+-- Configuring done (1.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/devcloud/work/ggml/build-ci-release
+
+real	0m1.105s
+user	0m0.609s
+sys	0m0.503s
++ tee -a /home/devcloud/results/ggml/d4/06ddb970f68fec6305807f4e8e2535caed1af4/ggml-7-sycl/ctest_release-make.log
++ make -j
+[  1%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  2%] Building CXX object src/CMakeFiles/ggml.dir/ggml-backend.cpp.o
+[  3%] Building C object src/CMakeFiles/ggml.dir/ggml-quants.c.o
+[  4%] Building C object src/CMakeFiles/ggml.dir/ggml-aarch64.c.o
+[  5%] Building C object src/CMakeFiles/ggml.dir/ggml.c.o
+[  6%] Building C object src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  7%] Linking CXX static library libcommon.a
+[  7%] Built target common
+[  8%] Linking CXX shared library libggml.so
+[  8%] Built target ggml
+[  9%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 10%] Building C object tests/CMakeFiles/test-vec1.dir/test-vec1.c.o
+[ 12%] Building C object tests/CMakeFiles/test-pool.dir/test-pool.c.o
+[ 12%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
+[ 13%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 15%] Building C object tests/CMakeFiles/test3.dir/test3.c.o
+[ 16%] Building C object tests/CMakeFiles/test-mul-mat0.dir/test-mul-mat0.c.o
+[ 17%] Building CXX object tests/CMakeFiles/test-timestep_embedding.dir/test-timestep_embedding.cpp.o
+[ 18%] Building C object tests/CMakeFiles/test2.dir/test2.c.o
+[ 19%] Building C object tests/CMakeFiles/test-mul-mat2.dir/test-mul-mat2.c.o
+[ 20%] Building CXX object tests/CMakeFiles/test-opt.dir/test-opt.cpp.o
+[ 21%] Building CXX object tests/CMakeFiles/test-conv2d.dir/test-conv2d.cpp.o
+[ 23%] Building CXX object tests/CMakeFiles/test-arange.dir/test-arange.cpp.o
+[ 23%] Building CXX object tests/CMakeFiles/test-grad0.dir/test-grad0.cpp.o
+[ 24%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
+[ 25%] Building C object tests/CMakeFiles/test-conv-transpose.dir/test-conv-transpose.c.o
+[ 26%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 27%] Building C object tests/CMakeFiles/test-rel-pos.dir/test-rel-pos.c.o
+[ 29%] Linking C executable ../bin/test-vec1
+[ 30%] Building CXX object tests/CMakeFiles/test-conv-transpose-1d.dir/test-conv-transpose-1d.cpp.o
+[ 31%] Building CXX object tests/CMakeFiles/test-conv1d.dir/test-conv1d.cpp.o
+[ 32%] Linking CXX executable ../bin/test-quantize-fns
+[ 33%] Linking C executable ../bin/test0
+[ 34%] Linking C executable ../bin/test-pool
+[ 35%] Building C object tests/CMakeFiles/test1.dir/test1.c.o
+[ 36%] Linking C executable ../bin/test3
+[ 38%] Building CXX object tests/CMakeFiles/test-mul-mat.dir/test-mul-mat.cpp.o
+[ 38%] Building C object tests/CMakeFiles/test-customop.dir/test-customop.c.o
+[ 40%] Building CXX object examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o
+[ 40%] Building C object tests/CMakeFiles/test-dup.dir/test-dup.c.o
+[ 41%] Linking CXX executable ../bin/test-quantize-perf
+[ 43%] Building CXX object examples/mnist/CMakeFiles/mnist-common.dir/mnist-common.cpp.o
+[ 44%] Building C object tests/CMakeFiles/test-cont.dir/test-cont.c.o
+[ 45%] Linking C executable ../bin/test-mul-mat2
+[ 46%] Linking CXX executable ../bin/test-opt
+[ 47%] Linking C executable ../bin/test2
+[ 48%] Linking CXX executable ../bin/test-arange
+[ 49%] Linking CXX executable ../bin/test-conv2d
+[ 50%] Linking CXX executable ../bin/test-timestep_embedding
+[ 51%] Linking CXX executable ../bin/test-grad0
+[ 52%] Linking CXX executable ../bin/test-conv1d
+[ 53%] Linking C executable ../bin/test-conv-transpose
+[ 54%] Linking C executable ../bin/test-mul-mat0
+[ 55%] Linking C executable ../bin/test-rel-pos
+[ 58%] Linking C executable ../bin/test-dup
+[ 59%] Linking CXX static library libcommon-ggml.a
+[ 56%] Linking C executable ../bin/test-vec0
+[ 60%] Building CXX object examples/sam/CMakeFiles/sam.dir/main.cpp.o
+[ 61%] Linking C executable ../bin/test-customop
+[ 62%] Linking CXX static library libmnist-common.a
+[ 63%] Linking C executable ../bin/test-cont
+[ 64%] Linking CXX executable ../bin/test-mul-mat
+[ 65%] Linking C executable ../bin/test1
+[ 66%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolov3-tiny.cpp.o
+[ 67%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolo-image.cpp.o
+[ 68%] Linking CXX executable ../bin/test-conv-transpose-1d
+[ 69%] Building CXX object examples/simple/CMakeFiles/simple-ctx.dir/simple-ctx.cpp.o
+[ 70%] Building CXX object examples/simple/CMakeFiles/simple-backend.dir/simple-backend.cpp.o
+[ 72%] Linking CXX executable ../../bin/sam
+[ 73%] Linking CXX executable ../../bin/simple-backend
+[ 74%] Linking CXX executable ../../bin/simple-ctx
+[ 75%] Linking CXX executable ../../bin/yolov3-tiny
+[ 75%] Built target test-vec1
+[ 75%] Built target common-ggml
+[ 75%] Built target mnist-common
+[ 75%] Built target test-vec0
+[ 75%] Built target test0
+[ 75%] Built target test-pool
+[ 75%] Built target test2
+[ 75%] Built target test-mul-mat2
+[ 75%] Built target test-quantize-fns
+[ 75%] Built target test3
+[ 75%] Built target test-opt
+[ 75%] Built target test-rel-pos
+[ 76%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-ctx.dir/main-ctx.cpp.o
+[ 76%] Built target test-quantize-perf
+[ 76%] Built target test-customop
+[ 78%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-backend.dir/main-backend.cpp.o
+[ 78%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-sched.dir/main-sched.cpp.o
+[ 79%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-alloc.dir/main-alloc.cpp.o
+[ 80%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-quantize.dir/quantize.cpp.o
+[ 81%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j.dir/main.cpp.o
+[ 81%] Built target test-grad0
+[ 81%] Built target test-conv2d
+[ 82%] Linking CXX executable ../../bin/gpt-2-sched
+[ 83%] Linking CXX executable ../../bin/gpt-2-alloc
+[ 84%] Linking CXX executable ../../bin/gpt-2-backend
+[ 87%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-batched.dir/main-batched.cpp.o
+[ 86%] Linking CXX executable ../../bin/gpt-2-ctx
+[ 87%] Built target test-conv1d
+[ 87%] Built target test-arange
+[ 88%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j-quantize.dir/quantize.cpp.o
+[ 89%] Building CXX object examples/mnist/CMakeFiles/mnist-train.dir/mnist-train.cpp.o
+[ 89%] Built target sam
+[ 90%] Building CXX object examples/mnist/CMakeFiles/mnist-eval.dir/mnist-eval.cpp.o
+[ 90%] Built target test-timestep_embedding
+[ 91%] Linking CXX executable ../../bin/gpt-j
+[ 92%] Linking CXX executable ../../bin/gpt-2-batched
+[ 92%] Built target test-conv-transpose-1d
+[ 93%] Building CXX object examples/magika/CMakeFiles/magika.dir/main.cpp.o
+[ 94%] Linking CXX executable ../../bin/gpt-2-quantize
+[ 94%] Built target test-conv-transpose
+[ 94%] Built target simple-backend
+[ 95%] Linking CXX executable ../../bin/gpt-j-quantize
+[ 97%] Linking CXX executable ../../bin/mnist-eval
+[ 97%] Linking CXX executable ../../bin/mnist-train
+[ 97%] Built target test-mul-mat
+[ 97%] Built target test-cont
+[ 98%] Linking CXX executable ../../bin/magika
+[ 98%] Built target test-mul-mat0
+[ 98%] Built target test1
+[ 98%] Built target test-dup
+[ 98%] Built target yolov3-tiny
+[ 98%] Built target simple-ctx
+[ 98%] Built target gpt-2-backend
+[ 98%] Built target gpt-2-ctx
+[ 98%] Built target magika
+[ 98%] Built target mnist-eval
+[ 98%] Built target gpt-2-quantize
+[ 98%] Built target gpt-2-batched
+[ 98%] Built target gpt-2-sched
+[ 98%] Built target gpt-2-alloc
+[ 98%] Built target gpt-j-quantize
+[ 98%] Built target gpt-j
+[ 98%] Built target mnist-train
+[100%] Linking CXX executable ../bin/test-backend-ops
+[100%] Built target test-backend-ops
+
+real	0m4.440s
+user	0m7.947s
+sys	0m2.588s
++ '[' '!' -z ']'
++ '[' -z ']'
++ tee -a /home/devcloud/results/ggml/d4/06ddb970f68fec6305807f4e8e2535caed1af4/ggml-7-sycl/ctest_release-ctest.log
++ ctest --output-on-failure
+Test project /home/devcloud/work/ggml/build-ci-release
+      Start  1: test-grad0
+ 1/23 Test  #1: test-grad0 .......................   Passed    1.10 sec
+      Start  2: test-opt
+ 2/23 Test  #2: test-opt .........................   Passed    1.01 sec
+      Start  3: test-quantize-fns
+ 3/23 Test  #3: test-quantize-fns ................   Passed   11.74 sec
+      Start  4: test-quantize-perf
+ 4/23 Test  #4: test-quantize-perf ...............   Passed    3.22 sec
+      Start  5: test-mul-mat0
+ 5/23 Test  #5: test-mul-mat0 ....................   Passed    0.12 sec
+      Start  6: test-mul-mat2
+ 6/23 Test  #6: test-mul-mat2 ....................   Passed    1.08 sec
+      Start  7: test0
+ 7/23 Test  #7: test0 ............................   Passed    0.00 sec
+      Start  8: test1
+ 8/23 Test  #8: test1 ............................   Passed    0.02 sec
+      Start  9: test2
+ 9/23 Test  #9: test2 ............................   Passed    0.03 sec
+      Start 10: test3
+10/23 Test #10: test3 ............................   Passed    0.04 sec
+      Start 11: test-pool
+11/23 Test #11: test-pool ........................   Passed    0.00 sec
+      Start 12: test-arange
+12/23 Test #12: test-arange ......................   Passed    0.01 sec
+      Start 13: test-timestep_embedding
+13/23 Test #13: test-timestep_embedding ..........   Passed    0.01 sec
+      Start 14: test-conv-transpose
+14/23 Test #14: test-conv-transpose ..............   Passed    0.00 sec
+      Start 15: test-conv-transpose-1d
+15/23 Test #15: test-conv-transpose-1d ...........   Passed    0.01 sec
+      Start 16: test-dup
+16/23 Test #16: test-dup .........................   Passed    0.01 sec
+      Start 17: test-rel-pos
+17/23 Test #17: test-rel-pos .....................   Passed    0.00 sec
+      Start 18: test-customop
+18/23 Test #18: test-customop ....................   Passed    0.00 sec
+      Start 19: test-conv1d
+19/23 Test #19: test-conv1d ......................   Passed    0.00 sec
+      Start 20: test-conv2d
+20/23 Test #20: test-conv2d ......................   Passed    0.00 sec
+      Start 21: test-mul-mat
+21/23 Test #21: test-mul-mat .....................   Passed    0.00 sec
+      Start 22: test-backend-ops
+22/23 Test #22: test-backend-ops .................   Passed    0.00 sec
+      Start 23: test-cont
+23/23 Test #23: test-cont ........................   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 23
+
+Total Test time (real) =  18.43 sec
+
+real	0m18.447s
+user	0m17.691s
+sys	0m1.471s
++ set +e
++ cur=0
++ echo 0
++ set +x
++ gg_run_gpt_2
++ cd /home/devcloud/work/ggml
++ gg_wget models-mnt/gpt-2 https://huggingface.co/ggerganov/ggml/resolve/main/ggml-model-gpt-2-117M.bin
++ local out=models-mnt/gpt-2
++ local url=https://huggingface.co/ggerganov/ggml/resolve/main/ggml-model-gpt-2-117M.bin
++ tee /home/devcloud/results/ggml/d4/06ddb970f68fec6305807f4e8e2535caed1af4/ggml-7-sycl/gpt_2.log
+++ pwd
++ local cwd=/home/devcloud/work/ggml
++ mkdir -p models-mnt/gpt-2
++ cd models-mnt/gpt-2
++ wget -nv -N https://huggingface.co/ggerganov/ggml/resolve/main/ggml-model-gpt-2-117M.bin
++ cd /home/devcloud/work/ggml
++ cd build-ci-release
++ set -e
++ model=../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin
++ prompts=../examples/prompts/gpt-2.txt
++ tee -a /home/devcloud/results/ggml/d4/06ddb970f68fec6305807f4e8e2535caed1af4/ggml-7-sycl/gpt_2-tg.log
++ ./bin/gpt-2-backend --model ../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin -s 1234 -n 64 -tt ../examples/prompts/gpt-2.txt
+gpt2_model_load: using CPU backend
+test_gpt_tokenizer : failed test: 'I l0ve t0 tr@vel @r0und the w0rld.'
+test_gpt_tokenizer : tokens in hf:   I(40),  l(300), 0(15), ve(303),  t(256), 0(15),  tr(491), @(31), vel(626),  @(2488), r(81), 0(15), und(917),  the(262),  w(266), 0(15), r(81), ld(335), .(13), 
+test_gpt_tokenizer : tokens in ggml: I(40),  l(300), 0(15), ve(303),  t(256), 0(15),  tr(491), @(31), vel(626),  @(2488), r(81), 0(15), und(917),  the(262),  w(266), 0(15), rl(45895), d(67), .(13), 
+test_gpt_tokenizer : failed test: 'She danced gracefully on the stage.'
+test_gpt_tokenizer : tokens in hf:   She(3347),  danced(39480),  grace(11542), fully(2759),  on(319),  the(262),  stage(3800), .(13), 
+test_gpt_tokenizer : tokens in ggml: She(3347),  danced(39480),  graceful(44363), ly(306),  on(319),  the(262),  stage(3800), .(13), 
+test_gpt_tokenizer : failed test: 'She dances gracefully to the music.'
+test_gpt_tokenizer : tokens in hf:   She(3347),  dances(38207),  grace(11542), fully(2759),  to(284),  the(262),  music(2647), .(13), 
+test_gpt_tokenizer : tokens in ggml: She(3347),  dances(38207),  graceful(44363), ly(306),  to(284),  the(262),  music(2647), .(13), 
+test_gpt_tokenizer : failed test: 'The birds are chirping in the trees.'
+test_gpt_tokenizer : tokens in hf:   The(464),  birds(10087),  are(389),  ch(442), ir(343), ping(13886),  in(287),  the(262),  trees(7150), .(13), 
+test_gpt_tokenizer : tokens in ggml: The(464),  birds(10087),  are(389),  chi(33166), r(81), ping(13886),  in(287),  the(262),  trees(7150), .(13), 
+test_gpt_tokenizer : failed test: 'The flowers are blooming in the garden.'
+test_gpt_tokenizer : tokens in hf:   The(464),  flowers(12734),  are(389),  blo(24924), oming(3383),  in(287),  the(262),  garden(11376), .(13), 
+test_gpt_tokenizer : tokens in ggml: The(464),  flowers(12734),  are(389),  bloom(29955), ing(278),  in(287),  the(262),  garden(11376), .(13), 
+test_gpt_tokenizer : failed test: 'The flowers in the garden are blooming.'
+test_gpt_tokenizer : tokens in hf:   The(464),  flowers(12734),  in(287),  the(262),  garden(11376),  are(389),  blo(24924), oming(3383), .(13), 
+test_gpt_tokenizer : tokens in ggml: The(464),  flowers(12734),  in(287),  the(262),  garden(11376),  are(389),  bloom(29955), ing(278), .(13), 
+test_gpt_tokenizer : failed test: 'Wh@t's y0ur f@v0rite m0vie?'
+test_gpt_tokenizer : tokens in hf:   Wh(1199), @(31), t(83), 's(338),  y(331), 0(15), ur(333),  f(277), @(31), v(85), 0(15), rite(6525),  m(285), 0(15), v(85), ie(494), ?(30), 
+test_gpt_tokenizer : tokens in ggml: Wh(1199), @(31), t(83), 's(338),  y(331), 0(15), ur(333),  f(277), @(31), v(85), 0(15), rite(6525),  m(285), 0(15), vi(8903), e(68), ?(30), 
+test_gpt_tokenizer : 7 tests failed out of 100 tests.
+main: compute buffer size: 9.47 MB
+main: seed = 1234
+gpt2_model_load: loading model from '../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin'
+gpt2_model_load: n_vocab = 50257
+gpt2_model_load: n_ctx   = 1024
+gpt2_model_load: n_embd  = 768
+gpt2_model_load: n_head  = 12
+gpt2_model_load: n_layer = 12
+gpt2_model_load: ftype   = 1
+gpt2_model_load: qntvr   = 0
+gpt2_model_load: ggml tensor size    = 336 bytes
+gpt2_model_load: backend buffer size = 312.70 MB
+gpt2_model_load: memory size =   144.00 MB, n_mem = 24576
+gpt2_model_load: model size  =   239.08 MB
+main: prompt: 'If'
+main: number of tokens in prompt = 1, first 8 tokens: 1532 
+
+If we look at what we're talking about and then look at the evidence and the evidence of the United States, what we're dealing with, we've got a huge problem in the world of terrorism."
+
+Asked about the possibility that ISIS may have used the United States as a vehicle to recruit followers and commit violence in
+
+main:     load time =   152.23 ms
+main:   sample time =    20.46 ms
+main:  predict time =   459.09 ms / 7.17 ms per token
+main:    total time =   639.47 ms
+
+real	0m0.654s
+user	0m1.427s
+sys	0m0.278s
++ tee -a /home/devcloud/results/ggml/d4/06ddb970f68fec6305807f4e8e2535caed1af4/ggml-7-sycl/gpt_2-tg.log
++ ./bin/gpt-2-backend --model ../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin -s 1234 -n 64 -p 'I believe the meaning of life is'
+gpt2_model_load: using CPU backend
+extract_tests_from_file : No test file found.
+test_gpt_tokenizer : 0 tests failed out of 0 tests.
+main: compute buffer size: 9.47 MB
+main: seed = 1234
+gpt2_model_load: loading model from '../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin'
+gpt2_model_load: n_vocab = 50257
+gpt2_model_load: n_ctx   = 1024
+gpt2_model_load: n_embd  = 768
+gpt2_model_load: n_head  = 12
+gpt2_model_load: n_layer = 12
+gpt2_model_load: ftype   = 1
+gpt2_model_load: qntvr   = 0
+gpt2_model_load: ggml tensor size    = 336 bytes
+gpt2_model_load: backend buffer size = 312.70 MB
+gpt2_model_load: memory size =   144.00 MB, n_mem = 24576
+gpt2_model_load: model size  =   239.08 MB
+main: prompt: 'I believe the meaning of life is'
+main: number of tokens in prompt = 7, first 8 tokens: 40 1975 262 3616 286 1204 318 
+
+I believe the meaning of life is not one that you must be able to answer for.
+
+If you do not believe in God, then why does his word make you feel better? Why do he make you feel better? It's because I don't think the gospel is true. It's because it's not true.
+
+The gospel tells
+
+main:     load time =   149.74 ms
+main:   sample time =    19.63 ms
+main:  predict time =   465.93 ms / 6.66 ms per token
+main:    total time =   636.70 ms
+
+real	0m0.650s
+user	0m1.453s
+sys	0m0.285s
++ tee -a /home/devcloud/results/ggml/d4/06ddb970f68fec6305807f4e8e2535caed1af4/ggml-7-sycl/gpt_2-tg.log
++ ./bin/gpt-2-sched --model ../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin -s 1234 -n 64 -p 'I believe the meaning of life is'
+extract_tests_from_file : No test file found.
+test_gpt_tokenizer : 0 tests failed out of 0 tests.
+main: seed = 1234
+gpt2_model_load: loading model from '../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin'
+gpt2_model_load: n_vocab = 50257
+gpt2_model_load: n_ctx   = 1024
+gpt2_model_load: n_embd  = 768
+gpt2_model_load: n_head  = 12
+gpt2_model_load: n_layer = 12
+gpt2_model_load: ftype   = 1
+gpt2_model_load: qntvr   = 0
+gpt2_model_load:      CPU buffer size =   312.77 MB
+gpt2_model_load: memory size =    72.00 MB, n_mem = 12288
+gpt2_model_load: backend_kv = CPU
+gpt2_model_load: model size  =   312.70 MB
+gpt2_model_load: backend_in = CPU (8192 bytes)
+main:      CPU compute buffer size =     6.32 MB
+main: total compute buffer size: 6.32 MB
+main: prompt: 'I believe the meaning of life is'
+main: number of tokens in prompt = 7, first 8 tokens: 40 1975 262 3616 286 1204 318 
+
+I believe the meaning of life is not one that you must be able to answer for.
+
+If you do not believe in God, then why does his word make you feel better? Why do he make you feel better? It's because I don't think the gospel is true. It's because it's not true.
+
+The gospel tells
+
+main:     load time =   126.86 ms
+main:   sample time =    19.84 ms
+main:  predict time =   461.41 ms / 6.59 ms per token
+main:    total time =   609.51 ms
+
+real	0m0.625s
+user	0m1.475s
+sys	0m0.251s
++ tee -a /home/devcloud/results/ggml/d4/06ddb970f68fec6305807f4e8e2535caed1af4/ggml-7-sycl/gpt_2-tg.log
++ ./bin/gpt-2-batched --model ../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin -s 1234 -n 64 -np 8 -p 'I believe the meaning of life is'
+gpt2_model_load: using CPU backend
+extract_tests_from_file : No test file found.
+test_gpt_tokenizer : 0 tests failed out of 0 tests.
+main: compute buffer size: 6.93 MB
+main: seed = 1234
+gpt2_model_load: loading model from '../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin'
+gpt2_model_load: n_vocab = 50257
+gpt2_model_load: n_ctx   = 1024
+gpt2_model_load: n_embd  = 768
+gpt2_model_load: n_head  = 12
+gpt2_model_load: n_layer = 12
+gpt2_model_load: ftype   = 1
+gpt2_model_load: qntvr   = 0
+gpt2_model_load: ggml tensor size    = 336 bytes
+gpt2_model_load: backend buffer size = 312.82 MB
+gpt2_model_load: memory size =   144.00 MB, n_mem = 24576
+gpt2_model_load: model size  =   239.08 MB
+
+
+main: generating 8 sequences ...
+main: prompt: 'I believe the meaning of life is'
+main: number of tokens in prompt = 7, first 8 tokens: 40 1975 262 3616 286 1204 318 
+
+
+main: stream 0 finished at n_cur = 70
+main: stream 1 finished at n_cur = 70
+main: stream 2 finished at n_cur = 70
+main: stream 3 finished at n_cur = 70
+main: stream 4 finished at n_cur = 70
+main: stream 5 finished at n_cur = 70
+main: stream 6 finished at n_cur = 70
+main: stream 7 finished at n_cur = 70
+sequence 0:
+
+I believe the meaning of life is not to be confused with life. It is to be understood as a system of thought. It is to be understood as the "truth." And if there is not a system of thought, then there is not a whole system of thought. There is only the totality of one consciousness, and that is the totality of
+
+sequence 1:
+
+I believe the meaning of life is a matter of personal satisfaction.
+
+A great philosopher, who was a well-known philosopher of science, has said,
+
+"It is in our nature, or our nature as the very substance of our mind, to live in a world of pleasure and pain and death. It is in our nature,
+
+sequence 2:
+
+I believe the meaning of life is that it is not a complete mystery. The key is the understanding that life is not just a "simple idea" or "futile" concept. It is not, in fact, an "unreal world" or "mystery" that does not exist.
+
+In the context of the universe,
+
+sequence 3:
+
+I believe the meaning of life is in the way we are created and that we can evolve as a species into the kind of people we are today. That's why I'm so proud of the group I have found myself in. And that's why I'm working very hard to help them realize that they are the kind of people that we are today
+
+sequence 4:
+
+I believe the meaning of life is one of love. We don't know who is happy or unhappy with what we live for. That's why we don't have a definition of happiness in our lives."
+
+He added: "I'm a good person with an honest heart. I'm a good woman. I'm a good man. I
+
+sequence 5:
+
+I believe the meaning of life is to die and die and die, and we must learn how to live. That is what we all need to do."
+
+HuffPost: Is it possible that this was a message that the world had to learn from, that we need to learn from all of these people that live for so long and can
+
+sequence 6:
+
+I believe the meaning of life is to live without fear, so that you may be free from all thoughts, fears, thoughts, and passions. This is an essential principle of the Buddhist philosophy." In the early 19th century, an English psychiatrist named Edward S. Wightman proposed that life was a necessary condition for the survival of all beings,
+
+sequence 7:
+
+I believe the meaning of life is a gift for life." In a recent interview with The New York Times, I spoke to the author of a book on the subject, Michael Fassbender, about his belief in a "transcendental life." He said he was intrigued by his sense of meaning: "It is a very, very real possibility
+
+
+
+main:     n_decoded =      504
+main:     load time =   110.00 ms
+main:   sample time =   145.17 ms
+main:  predict time =  1212.19 ms
+main:    total time =  1495.31 ms
+
+real	0m1.510s
+user	0m4.579s
+sys	0m0.251s
++ set +e
++ cur=0
++ echo 0
++ set +x
++ gg_run_sam
++ cd /home/devcloud/work/ggml
++ tee /home/devcloud/results/ggml/d4/06ddb970f68fec6305807f4e8e2535caed1af4/ggml-7-sycl/sam.log
++ gg_wget models-mnt/sam/ https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth
++ local out=models-mnt/sam/
++ local url=https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth
+++ pwd
++ local cwd=/home/devcloud/work/ggml
++ mkdir -p models-mnt/sam/
++ cd models-mnt/sam/
++ wget -nv -N https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth
++ cd /home/devcloud/work/ggml
++ gg_wget models-mnt/sam/ https://raw.githubusercontent.com/YavorGIvanov/sam.cpp/ceafb7467bff7ec98e0c4f952e58a9eb8fd0238b/img.jpg
++ local out=models-mnt/sam/
++ local url=https://raw.githubusercontent.com/YavorGIvanov/sam.cpp/ceafb7467bff7ec98e0c4f952e58a9eb8fd0238b/img.jpg
+++ pwd
++ local cwd=/home/devcloud/work/ggml
++ mkdir -p models-mnt/sam/
++ cd models-mnt/sam/
++ wget -nv -N https://raw.githubusercontent.com/YavorGIvanov/sam.cpp/ceafb7467bff7ec98e0c4f952e58a9eb8fd0238b/img.jpg
+Last-modified header missing -- time-stamps turned off.
+2024-10-24 18:19:50 URL:https://raw.githubusercontent.com/YavorGIvanov/sam.cpp/ceafb7467bff7ec98e0c4f952e58a9eb8fd0238b/img.jpg [79236/79236] -> "img.jpg" [1]
++ cd /home/devcloud/work/ggml
++ cd build-ci-release
++ set -e
++ path_models=../models-mnt/sam/
++ model_f16=../models-mnt/sam//ggml-model-f16.bin
++ img_0=../models-mnt/sam//img.jpg
++ python3 ../examples/sam/convert-pth-to-ggml.py ../models-mnt/sam//sam_vit_b_01ec64.pth ../models-mnt/sam// 1
+Traceback (most recent call last):
+  File "/home/devcloud/work/ggml/build-ci-release/../examples/sam/convert-pth-to-ggml.py", line 5, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
++ cur=1
++ echo 1
++ set +x
+cat: /home/devcloud/results/ggml/d4/06ddb970f68fec6305807f4e8e2535caed1af4/ggml-7-sycl/sam-main.log: No such file or directory
+Thu Oct 24 18:19:50 UTC 2024
