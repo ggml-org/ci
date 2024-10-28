@@ -1,0 +1,825 @@
++ ./bin/llama-cli --model ../models-mnt/pythia/1.4B/ggml-model-q2_k.gguf -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+0.00.000.719 I build: 3984 (dac2953d) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.000.945 I main: llama backend init
+0.00.001.824 I main: load the model and apply lora adapter, if any
+0.00.009.776 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q2_k.gguf (version GGUF V3 (latest))
+0.00.009.800 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.009.808 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.009.809 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.009.809 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.009.809 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.009.810 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.009.813 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.009.814 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.009.814 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.009.815 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.009.815 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.009.816 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.009.816 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.009.820 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.009.820 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.009.820 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.015.098 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.016.337 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.021.145 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.021.164 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.021.164 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.021.164 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.021.165 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.021.166 I llama_model_loader: - kv  22:                          general.file_type u32              = 10
+0.00.021.168 I llama_model_loader: - type  f32:  194 tensors
+0.00.021.170 I llama_model_loader: - type q2_K:   49 tensors
+0.00.021.170 I llama_model_loader: - type q3_K:   48 tensors
+0.00.021.171 I llama_model_loader: - type q6_K:    1 tensors
+0.00.062.932 I llm_load_vocab: special tokens cache size = 25
+0.00.074.455 I llm_load_vocab: token to piece cache size = 0.2984 MB
+0.00.074.479 I llm_load_print_meta: format           = GGUF V3 (latest)
+0.00.074.480 I llm_load_print_meta: arch             = gptneox
+0.00.074.480 I llm_load_print_meta: vocab type       = BPE
+0.00.074.481 I llm_load_print_meta: n_vocab          = 50304
+0.00.074.481 I llm_load_print_meta: n_merges         = 50009
+0.00.074.481 I llm_load_print_meta: vocab_only       = 0
+0.00.074.481 I llm_load_print_meta: n_ctx_train      = 2048
+0.00.074.482 I llm_load_print_meta: n_embd           = 2048
+0.00.074.482 I llm_load_print_meta: n_layer          = 24
+0.00.074.490 I llm_load_print_meta: n_head           = 16
+0.00.074.491 I llm_load_print_meta: n_head_kv        = 16
+0.00.074.491 I llm_load_print_meta: n_rot            = 32
+0.00.074.491 I llm_load_print_meta: n_swa            = 0
+0.00.074.492 I llm_load_print_meta: n_embd_head_k    = 128
+0.00.074.492 I llm_load_print_meta: n_embd_head_v    = 128
+0.00.074.493 I llm_load_print_meta: n_gqa            = 1
+0.00.074.494 I llm_load_print_meta: n_embd_k_gqa     = 2048
+0.00.074.495 I llm_load_print_meta: n_embd_v_gqa     = 2048
+0.00.074.496 I llm_load_print_meta: f_norm_eps       = 1.0e-05
+0.00.074.496 I llm_load_print_meta: f_norm_rms_eps   = 0.0e+00
+0.00.074.497 I llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+0.00.074.497 I llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+0.00.074.497 I llm_load_print_meta: f_logit_scale    = 0.0e+00
+0.00.074.498 I llm_load_print_meta: n_ff             = 8192
+0.00.074.498 I llm_load_print_meta: n_expert         = 0
+0.00.074.498 I llm_load_print_meta: n_expert_used    = 0
+0.00.074.499 I llm_load_print_meta: causal attn      = 1
+0.00.074.499 I llm_load_print_meta: pooling type     = 0
+0.00.074.499 I llm_load_print_meta: rope type        = 2
+0.00.074.499 I llm_load_print_meta: rope scaling     = linear
+0.00.074.501 I llm_load_print_meta: freq_base_train  = 10000.0
+0.00.074.501 I llm_load_print_meta: freq_scale_train = 1
+0.00.074.502 I llm_load_print_meta: n_ctx_orig_yarn  = 2048
+0.00.074.502 I llm_load_print_meta: rope_finetuned   = unknown
+0.00.074.502 I llm_load_print_meta: ssm_d_conv       = 0
+0.00.074.502 I llm_load_print_meta: ssm_d_inner      = 0
+0.00.074.503 I llm_load_print_meta: ssm_d_state      = 0
+0.00.074.503 I llm_load_print_meta: ssm_dt_rank      = 0
+0.00.074.503 I llm_load_print_meta: ssm_dt_b_c_rms   = 0
+0.00.074.504 I llm_load_print_meta: model type       = 1.4B
+0.00.074.504 I llm_load_print_meta: model ftype      = Q2_K - Medium
+0.00.074.505 I llm_load_print_meta: model params     = 1.41 B
+0.00.074.506 I llm_load_print_meta: model size       = 542.04 MiB (3.21 BPW) 
+0.00.074.507 I llm_load_print_meta: general.name     = 1.4B
+0.00.074.508 I llm_load_print_meta: BOS token        = 0 '<|endoftext|>'
+0.00.074.508 I llm_load_print_meta: EOS token        = 0 '<|endoftext|>'
+0.00.074.508 I llm_load_print_meta: EOT token        = 0 '<|endoftext|>'
+0.00.074.509 I llm_load_print_meta: UNK token        = 0 '<|endoftext|>'
+0.00.074.509 I llm_load_print_meta: LF token         = 128 'Ä'
+0.00.074.509 I llm_load_print_meta: EOG token        = 0 '<|endoftext|>'
+0.00.074.510 I llm_load_print_meta: max token length = 1024
+0.00.074.552 W llm_load_tensors: tensor 'token_embd.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.567 W llm_load_tensors: tensor 'output_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.573 W llm_load_tensors: tensor 'output_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.584 W llm_load_tensors: tensor 'output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.587 W llm_load_tensors: tensor 'blk.0.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.589 W llm_load_tensors: tensor 'blk.0.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.591 W llm_load_tensors: tensor 'blk.0.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.592 W llm_load_tensors: tensor 'blk.0.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.594 W llm_load_tensors: tensor 'blk.0.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.596 W llm_load_tensors: tensor 'blk.0.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.597 W llm_load_tensors: tensor 'blk.0.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.599 W llm_load_tensors: tensor 'blk.0.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.601 W llm_load_tensors: tensor 'blk.0.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.602 W llm_load_tensors: tensor 'blk.0.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.604 W llm_load_tensors: tensor 'blk.0.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.607 W llm_load_tensors: tensor 'blk.0.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.609 W llm_load_tensors: tensor 'blk.1.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.611 W llm_load_tensors: tensor 'blk.1.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.612 W llm_load_tensors: tensor 'blk.1.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.613 W llm_load_tensors: tensor 'blk.1.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.616 W llm_load_tensors: tensor 'blk.1.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.617 W llm_load_tensors: tensor 'blk.1.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.619 W llm_load_tensors: tensor 'blk.1.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.620 W llm_load_tensors: tensor 'blk.1.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.622 W llm_load_tensors: tensor 'blk.1.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.624 W llm_load_tensors: tensor 'blk.1.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.627 W llm_load_tensors: tensor 'blk.1.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.628 W llm_load_tensors: tensor 'blk.1.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.630 W llm_load_tensors: tensor 'blk.2.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.631 W llm_load_tensors: tensor 'blk.2.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.633 W llm_load_tensors: tensor 'blk.2.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.634 W llm_load_tensors: tensor 'blk.2.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.636 W llm_load_tensors: tensor 'blk.2.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.637 W llm_load_tensors: tensor 'blk.2.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.638 W llm_load_tensors: tensor 'blk.2.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.640 W llm_load_tensors: tensor 'blk.2.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.642 W llm_load_tensors: tensor 'blk.2.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.645 W llm_load_tensors: tensor 'blk.2.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.647 W llm_load_tensors: tensor 'blk.2.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.648 W llm_load_tensors: tensor 'blk.2.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.650 W llm_load_tensors: tensor 'blk.3.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.651 W llm_load_tensors: tensor 'blk.3.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.653 W llm_load_tensors: tensor 'blk.3.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.654 W llm_load_tensors: tensor 'blk.3.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.656 W llm_load_tensors: tensor 'blk.3.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.658 W llm_load_tensors: tensor 'blk.3.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.659 W llm_load_tensors: tensor 'blk.3.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.661 W llm_load_tensors: tensor 'blk.3.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.665 W llm_load_tensors: tensor 'blk.3.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.667 W llm_load_tensors: tensor 'blk.3.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.668 W llm_load_tensors: tensor 'blk.3.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.670 W llm_load_tensors: tensor 'blk.3.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.671 W llm_load_tensors: tensor 'blk.4.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.673 W llm_load_tensors: tensor 'blk.4.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.675 W llm_load_tensors: tensor 'blk.4.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.676 W llm_load_tensors: tensor 'blk.4.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.679 W llm_load_tensors: tensor 'blk.4.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.680 W llm_load_tensors: tensor 'blk.4.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.682 W llm_load_tensors: tensor 'blk.4.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.685 W llm_load_tensors: tensor 'blk.4.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.686 W llm_load_tensors: tensor 'blk.4.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.688 W llm_load_tensors: tensor 'blk.4.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.689 W llm_load_tensors: tensor 'blk.4.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.691 W llm_load_tensors: tensor 'blk.4.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.693 W llm_load_tensors: tensor 'blk.5.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.694 W llm_load_tensors: tensor 'blk.5.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.696 W llm_load_tensors: tensor 'blk.5.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.698 W llm_load_tensors: tensor 'blk.5.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.700 W llm_load_tensors: tensor 'blk.5.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.701 W llm_load_tensors: tensor 'blk.5.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.704 W llm_load_tensors: tensor 'blk.5.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.706 W llm_load_tensors: tensor 'blk.5.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.707 W llm_load_tensors: tensor 'blk.5.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.709 W llm_load_tensors: tensor 'blk.5.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.711 W llm_load_tensors: tensor 'blk.5.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.713 W llm_load_tensors: tensor 'blk.5.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.715 W llm_load_tensors: tensor 'blk.6.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.716 W llm_load_tensors: tensor 'blk.6.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.718 W llm_load_tensors: tensor 'blk.6.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.720 W llm_load_tensors: tensor 'blk.6.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.722 W llm_load_tensors: tensor 'blk.6.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.725 W llm_load_tensors: tensor 'blk.6.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.727 W llm_load_tensors: tensor 'blk.6.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.728 W llm_load_tensors: tensor 'blk.6.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.731 W llm_load_tensors: tensor 'blk.6.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.732 W llm_load_tensors: tensor 'blk.6.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.734 W llm_load_tensors: tensor 'blk.6.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.736 W llm_load_tensors: tensor 'blk.6.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.738 W llm_load_tensors: tensor 'blk.7.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.739 W llm_load_tensors: tensor 'blk.7.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.741 W llm_load_tensors: tensor 'blk.7.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.743 W llm_load_tensors: tensor 'blk.7.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.744 W llm_load_tensors: tensor 'blk.7.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.747 W llm_load_tensors: tensor 'blk.7.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.749 W llm_load_tensors: tensor 'blk.7.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.751 W llm_load_tensors: tensor 'blk.7.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.752 W llm_load_tensors: tensor 'blk.7.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.754 W llm_load_tensors: tensor 'blk.7.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.755 W llm_load_tensors: tensor 'blk.7.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.757 W llm_load_tensors: tensor 'blk.7.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.759 W llm_load_tensors: tensor 'blk.8.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.761 W llm_load_tensors: tensor 'blk.8.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.762 W llm_load_tensors: tensor 'blk.8.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.764 W llm_load_tensors: tensor 'blk.8.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.767 W llm_load_tensors: tensor 'blk.8.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.769 W llm_load_tensors: tensor 'blk.8.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.771 W llm_load_tensors: tensor 'blk.8.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.772 W llm_load_tensors: tensor 'blk.8.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.774 W llm_load_tensors: tensor 'blk.8.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.776 W llm_load_tensors: tensor 'blk.8.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.777 W llm_load_tensors: tensor 'blk.8.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.779 W llm_load_tensors: tensor 'blk.8.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.781 W llm_load_tensors: tensor 'blk.9.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.782 W llm_load_tensors: tensor 'blk.9.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.784 W llm_load_tensors: tensor 'blk.9.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.787 W llm_load_tensors: tensor 'blk.9.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.789 W llm_load_tensors: tensor 'blk.9.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.791 W llm_load_tensors: tensor 'blk.9.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.793 W llm_load_tensors: tensor 'blk.9.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.794 W llm_load_tensors: tensor 'blk.9.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.796 W llm_load_tensors: tensor 'blk.9.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.798 W llm_load_tensors: tensor 'blk.9.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.799 W llm_load_tensors: tensor 'blk.9.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.801 W llm_load_tensors: tensor 'blk.9.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.803 W llm_load_tensors: tensor 'blk.10.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.805 W llm_load_tensors: tensor 'blk.10.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.808 W llm_load_tensors: tensor 'blk.10.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.810 W llm_load_tensors: tensor 'blk.10.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.812 W llm_load_tensors: tensor 'blk.10.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.814 W llm_load_tensors: tensor 'blk.10.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.816 W llm_load_tensors: tensor 'blk.10.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.818 W llm_load_tensors: tensor 'blk.10.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.819 W llm_load_tensors: tensor 'blk.10.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.821 W llm_load_tensors: tensor 'blk.10.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.823 W llm_load_tensors: tensor 'blk.10.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.825 W llm_load_tensors: tensor 'blk.10.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.827 W llm_load_tensors: tensor 'blk.11.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.830 W llm_load_tensors: tensor 'blk.11.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.832 W llm_load_tensors: tensor 'blk.11.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.834 W llm_load_tensors: tensor 'blk.11.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.836 W llm_load_tensors: tensor 'blk.11.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.839 W llm_load_tensors: tensor 'blk.11.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.841 W llm_load_tensors: tensor 'blk.11.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.843 W llm_load_tensors: tensor 'blk.11.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.845 W llm_load_tensors: tensor 'blk.11.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.847 W llm_load_tensors: tensor 'blk.11.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.849 W llm_load_tensors: tensor 'blk.11.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.850 W llm_load_tensors: tensor 'blk.11.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.854 W llm_load_tensors: tensor 'blk.12.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.856 W llm_load_tensors: tensor 'blk.12.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.857 W llm_load_tensors: tensor 'blk.12.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.859 W llm_load_tensors: tensor 'blk.12.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.861 W llm_load_tensors: tensor 'blk.12.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.863 W llm_load_tensors: tensor 'blk.12.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.865 W llm_load_tensors: tensor 'blk.12.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.867 W llm_load_tensors: tensor 'blk.12.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.869 W llm_load_tensors: tensor 'blk.12.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.870 W llm_load_tensors: tensor 'blk.12.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.872 W llm_load_tensors: tensor 'blk.12.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.877 W llm_load_tensors: tensor 'blk.12.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.879 W llm_load_tensors: tensor 'blk.13.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.881 W llm_load_tensors: tensor 'blk.13.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.883 W llm_load_tensors: tensor 'blk.13.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.885 W llm_load_tensors: tensor 'blk.13.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.887 W llm_load_tensors: tensor 'blk.13.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.889 W llm_load_tensors: tensor 'blk.13.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.891 W llm_load_tensors: tensor 'blk.13.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.893 W llm_load_tensors: tensor 'blk.13.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.895 W llm_load_tensors: tensor 'blk.13.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.897 W llm_load_tensors: tensor 'blk.13.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.900 W llm_load_tensors: tensor 'blk.13.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.902 W llm_load_tensors: tensor 'blk.13.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.904 W llm_load_tensors: tensor 'blk.14.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.906 W llm_load_tensors: tensor 'blk.14.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.908 W llm_load_tensors: tensor 'blk.14.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.910 W llm_load_tensors: tensor 'blk.14.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.912 W llm_load_tensors: tensor 'blk.14.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.914 W llm_load_tensors: tensor 'blk.14.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.916 W llm_load_tensors: tensor 'blk.14.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.918 W llm_load_tensors: tensor 'blk.14.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.920 W llm_load_tensors: tensor 'blk.14.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.922 W llm_load_tensors: tensor 'blk.14.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.926 W llm_load_tensors: tensor 'blk.14.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.928 W llm_load_tensors: tensor 'blk.14.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.930 W llm_load_tensors: tensor 'blk.15.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.932 W llm_load_tensors: tensor 'blk.15.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.934 W llm_load_tensors: tensor 'blk.15.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.936 W llm_load_tensors: tensor 'blk.15.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.939 W llm_load_tensors: tensor 'blk.15.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.941 W llm_load_tensors: tensor 'blk.15.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.943 W llm_load_tensors: tensor 'blk.15.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.945 W llm_load_tensors: tensor 'blk.15.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.947 W llm_load_tensors: tensor 'blk.15.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.951 W llm_load_tensors: tensor 'blk.15.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.952 W llm_load_tensors: tensor 'blk.15.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.955 W llm_load_tensors: tensor 'blk.15.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.956 W llm_load_tensors: tensor 'blk.16.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.959 W llm_load_tensors: tensor 'blk.16.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.961 W llm_load_tensors: tensor 'blk.16.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.963 W llm_load_tensors: tensor 'blk.16.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.966 W llm_load_tensors: tensor 'blk.16.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.968 W llm_load_tensors: tensor 'blk.16.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.970 W llm_load_tensors: tensor 'blk.16.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.972 W llm_load_tensors: tensor 'blk.16.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.976 W llm_load_tensors: tensor 'blk.16.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.978 W llm_load_tensors: tensor 'blk.16.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.980 W llm_load_tensors: tensor 'blk.16.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.982 W llm_load_tensors: tensor 'blk.16.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.984 W llm_load_tensors: tensor 'blk.17.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.986 W llm_load_tensors: tensor 'blk.17.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.989 W llm_load_tensors: tensor 'blk.17.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.991 W llm_load_tensors: tensor 'blk.17.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.993 W llm_load_tensors: tensor 'blk.17.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.995 W llm_load_tensors: tensor 'blk.17.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.074.997 W llm_load_tensors: tensor 'blk.17.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.001 W llm_load_tensors: tensor 'blk.17.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.004 W llm_load_tensors: tensor 'blk.17.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.006 W llm_load_tensors: tensor 'blk.17.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.008 W llm_load_tensors: tensor 'blk.17.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.010 W llm_load_tensors: tensor 'blk.17.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.013 W llm_load_tensors: tensor 'blk.18.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.015 W llm_load_tensors: tensor 'blk.18.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.017 W llm_load_tensors: tensor 'blk.18.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.019 W llm_load_tensors: tensor 'blk.18.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.021 W llm_load_tensors: tensor 'blk.18.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.024 W llm_load_tensors: tensor 'blk.18.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.027 W llm_load_tensors: tensor 'blk.18.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.029 W llm_load_tensors: tensor 'blk.18.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.031 W llm_load_tensors: tensor 'blk.18.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.034 W llm_load_tensors: tensor 'blk.18.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.037 W llm_load_tensors: tensor 'blk.18.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.039 W llm_load_tensors: tensor 'blk.18.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.041 W llm_load_tensors: tensor 'blk.19.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.043 W llm_load_tensors: tensor 'blk.19.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.045 W llm_load_tensors: tensor 'blk.19.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.048 W llm_load_tensors: tensor 'blk.19.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.050 W llm_load_tensors: tensor 'blk.19.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.054 W llm_load_tensors: tensor 'blk.19.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.056 W llm_load_tensors: tensor 'blk.19.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.060 W llm_load_tensors: tensor 'blk.19.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.062 W llm_load_tensors: tensor 'blk.19.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.064 W llm_load_tensors: tensor 'blk.19.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.067 W llm_load_tensors: tensor 'blk.19.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.069 W llm_load_tensors: tensor 'blk.19.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.071 W llm_load_tensors: tensor 'blk.20.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.073 W llm_load_tensors: tensor 'blk.20.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.076 W llm_load_tensors: tensor 'blk.20.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.078 W llm_load_tensors: tensor 'blk.20.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.082 W llm_load_tensors: tensor 'blk.20.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.084 W llm_load_tensors: tensor 'blk.20.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.086 W llm_load_tensors: tensor 'blk.20.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.089 W llm_load_tensors: tensor 'blk.20.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.092 W llm_load_tensors: tensor 'blk.20.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.094 W llm_load_tensors: tensor 'blk.20.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.096 W llm_load_tensors: tensor 'blk.20.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.099 W llm_load_tensors: tensor 'blk.20.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.101 W llm_load_tensors: tensor 'blk.21.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.103 W llm_load_tensors: tensor 'blk.21.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.105 W llm_load_tensors: tensor 'blk.21.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.109 W llm_load_tensors: tensor 'blk.21.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.111 W llm_load_tensors: tensor 'blk.21.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.114 W llm_load_tensors: tensor 'blk.21.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.117 W llm_load_tensors: tensor 'blk.21.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.119 W llm_load_tensors: tensor 'blk.21.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.121 W llm_load_tensors: tensor 'blk.21.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.124 W llm_load_tensors: tensor 'blk.21.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.126 W llm_load_tensors: tensor 'blk.21.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.128 W llm_load_tensors: tensor 'blk.21.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.130 W llm_load_tensors: tensor 'blk.22.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.133 W llm_load_tensors: tensor 'blk.22.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.135 W llm_load_tensors: tensor 'blk.22.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.139 W llm_load_tensors: tensor 'blk.22.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.141 W llm_load_tensors: tensor 'blk.22.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.144 W llm_load_tensors: tensor 'blk.22.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.146 W llm_load_tensors: tensor 'blk.22.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.149 W llm_load_tensors: tensor 'blk.22.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.151 W llm_load_tensors: tensor 'blk.22.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.153 W llm_load_tensors: tensor 'blk.22.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.156 W llm_load_tensors: tensor 'blk.22.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.158 W llm_load_tensors: tensor 'blk.22.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.161 W llm_load_tensors: tensor 'blk.23.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.163 W llm_load_tensors: tensor 'blk.23.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.167 W llm_load_tensors: tensor 'blk.23.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.170 W llm_load_tensors: tensor 'blk.23.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.172 W llm_load_tensors: tensor 'blk.23.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.174 W llm_load_tensors: tensor 'blk.23.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.177 W llm_load_tensors: tensor 'blk.23.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.179 W llm_load_tensors: tensor 'blk.23.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.181 W llm_load_tensors: tensor 'blk.23.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.184 W llm_load_tensors: tensor 'blk.23.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.186 W llm_load_tensors: tensor 'blk.23.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.075.189 W llm_load_tensors: tensor 'blk.23.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.099.673 I llm_load_tensors:        CPU model buffer size =   542.04 MiB
+..........................................................................
+0.00.101.843 I llama_new_context_with_model: n_ctx      = 2048
+0.00.101.863 I llama_new_context_with_model: n_batch    = 2048
+0.00.101.863 I llama_new_context_with_model: n_ubatch   = 512
+0.00.101.864 I llama_new_context_with_model: flash_attn = 0
+0.00.101.866 I llama_new_context_with_model: freq_base  = 10000.0
+0.00.101.867 I llama_new_context_with_model: freq_scale = 1
+0.00.170.107 I llama_kv_cache_init:        CPU KV buffer size =   384.00 MiB
+0.00.170.136 I llama_new_context_with_model: KV self size  =  384.00 MiB, K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.170.153 I llama_new_context_with_model:        CPU  output buffer size =     0.19 MiB
+0.00.173.335 I llama_new_context_with_model:        CPU compute buffer size =   102.25 MiB
+0.00.173.358 I llama_new_context_with_model: graph nodes  = 967
+0.00.173.358 I llama_new_context_with_model: graph splits = 1
+0.00.173.362 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.243.305 I main: llama threadpool init, n_threads = 4
+0.00.243.331 I 
+0.00.243.404 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | FMA = 1 | NEON = 0 | SVE = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | RISCV_VECT = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
+0.00.243.404 I 
+0.00.243.527 I sampler seed: 1234
+0.00.243.538 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1
+	top_k = 40, tfs_z = 1.000, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.00.243.542 I sampler chain: logits -> logit-bias -> penalties -> dry -> top-k -> tail-free -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+0.00.243.542 I generate: n_ctx = 2048, n_batch = 2048, n_predict = 64, n_keep = 0
+0.00.243.543 I 
+I believe the meaning of life is to do. and yes, i still believe in the concept of a free and open and a random and open? huh? i don't think so. and he? not? i don't. and i'd not be any rounder. and the day i signed on? i signed on? i signed on.
+
+0.01.674.597 I llama_perf_sampler_print:    sampling time =       2.24 ms /    71 runs   (    0.03 ms per token, 31682.28 tokens per second)
+0.01.674.600 I llama_perf_context_print:        load time =     241.45 ms
+0.01.674.601 I llama_perf_context_print: prompt eval time =      79.13 ms /     7 tokens (   11.30 ms per token,    88.46 tokens per second)
+0.01.674.602 I llama_perf_context_print:        eval time =    1341.43 ms /    63 runs   (   21.29 ms per token,    46.96 tokens per second)
+0.01.674.603 I llama_perf_context_print:       total time =    1431.30 ms /    70 tokens
+
+real	0m1.707s
+user	0m5.981s
+sys	0m0.148s
++ ./bin/llama-perplexity --model ../models-mnt/pythia/1.4B/ggml-model-q2_k.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -c 128 -b 128 --chunks 1
+0.00.000.603 I build: 3984 (dac2953d) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.009.483 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q2_k.gguf (version GGUF V3 (latest))
+0.00.009.507 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.009.515 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.009.516 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.009.516 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.009.517 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.009.517 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.009.521 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.009.521 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.009.522 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.009.523 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.009.523 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.009.523 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.009.524 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.009.528 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.009.529 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.009.530 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.014.861 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.016.082 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.020.970 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.020.989 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.020.990 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.020.990 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.020.990 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.020.991 I llama_model_loader: - kv  22:                          general.file_type u32              = 10
+0.00.020.994 I llama_model_loader: - type  f32:  194 tensors
+0.00.020.996 I llama_model_loader: - type q2_K:   49 tensors
+0.00.020.996 I llama_model_loader: - type q3_K:   48 tensors
+0.00.020.997 I llama_model_loader: - type q6_K:    1 tensors
+0.00.064.664 I llm_load_vocab: special tokens cache size = 25
+0.00.076.231 I llm_load_vocab: token to piece cache size = 0.2984 MB
+0.00.076.255 I llm_load_print_meta: format           = GGUF V3 (latest)
+0.00.076.256 I llm_load_print_meta: arch             = gptneox
+0.00.076.257 I llm_load_print_meta: vocab type       = BPE
+0.00.076.257 I llm_load_print_meta: n_vocab          = 50304
+0.00.076.257 I llm_load_print_meta: n_merges         = 50009
+0.00.076.258 I llm_load_print_meta: vocab_only       = 0
+0.00.076.258 I llm_load_print_meta: n_ctx_train      = 2048
+0.00.076.258 I llm_load_print_meta: n_embd           = 2048
+0.00.076.258 I llm_load_print_meta: n_layer          = 24
+0.00.076.268 I llm_load_print_meta: n_head           = 16
+0.00.076.269 I llm_load_print_meta: n_head_kv        = 16
+0.00.076.269 I llm_load_print_meta: n_rot            = 32
+0.00.076.270 I llm_load_print_meta: n_swa            = 0
+0.00.076.270 I llm_load_print_meta: n_embd_head_k    = 128
+0.00.076.270 I llm_load_print_meta: n_embd_head_v    = 128
+0.00.076.271 I llm_load_print_meta: n_gqa            = 1
+0.00.076.272 I llm_load_print_meta: n_embd_k_gqa     = 2048
+0.00.076.273 I llm_load_print_meta: n_embd_v_gqa     = 2048
+0.00.076.275 I llm_load_print_meta: f_norm_eps       = 1.0e-05
+0.00.076.276 I llm_load_print_meta: f_norm_rms_eps   = 0.0e+00
+0.00.076.277 I llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+0.00.076.277 I llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+0.00.076.277 I llm_load_print_meta: f_logit_scale    = 0.0e+00
+0.00.076.278 I llm_load_print_meta: n_ff             = 8192
+0.00.076.279 I llm_load_print_meta: n_expert         = 0
+0.00.076.279 I llm_load_print_meta: n_expert_used    = 0
+0.00.076.279 I llm_load_print_meta: causal attn      = 1
+0.00.076.280 I llm_load_print_meta: pooling type     = 0
+0.00.076.280 I llm_load_print_meta: rope type        = 2
+0.00.076.280 I llm_load_print_meta: rope scaling     = linear
+0.00.076.282 I llm_load_print_meta: freq_base_train  = 10000.0
+0.00.076.282 I llm_load_print_meta: freq_scale_train = 1
+0.00.076.282 I llm_load_print_meta: n_ctx_orig_yarn  = 2048
+0.00.076.283 I llm_load_print_meta: rope_finetuned   = unknown
+0.00.076.283 I llm_load_print_meta: ssm_d_conv       = 0
+0.00.076.283 I llm_load_print_meta: ssm_d_inner      = 0
+0.00.076.283 I llm_load_print_meta: ssm_d_state      = 0
+0.00.076.284 I llm_load_print_meta: ssm_dt_rank      = 0
+0.00.076.284 I llm_load_print_meta: ssm_dt_b_c_rms   = 0
+0.00.076.284 I llm_load_print_meta: model type       = 1.4B
+0.00.076.285 I llm_load_print_meta: model ftype      = Q2_K - Medium
+0.00.076.286 I llm_load_print_meta: model params     = 1.41 B
+0.00.076.287 I llm_load_print_meta: model size       = 542.04 MiB (3.21 BPW) 
+0.00.076.287 I llm_load_print_meta: general.name     = 1.4B
+0.00.076.288 I llm_load_print_meta: BOS token        = 0 '<|endoftext|>'
+0.00.076.288 I llm_load_print_meta: EOS token        = 0 '<|endoftext|>'
+0.00.076.288 I llm_load_print_meta: EOT token        = 0 '<|endoftext|>'
+0.00.076.288 I llm_load_print_meta: UNK token        = 0 '<|endoftext|>'
+0.00.076.289 I llm_load_print_meta: LF token         = 128 'Ä'
+0.00.076.289 I llm_load_print_meta: EOG token        = 0 '<|endoftext|>'
+0.00.076.290 I llm_load_print_meta: max token length = 1024
+0.00.076.336 W llm_load_tensors: tensor 'token_embd.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.354 W llm_load_tensors: tensor 'output_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.361 W llm_load_tensors: tensor 'output_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.371 W llm_load_tensors: tensor 'output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.375 W llm_load_tensors: tensor 'blk.0.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.377 W llm_load_tensors: tensor 'blk.0.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.379 W llm_load_tensors: tensor 'blk.0.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.380 W llm_load_tensors: tensor 'blk.0.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.382 W llm_load_tensors: tensor 'blk.0.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.383 W llm_load_tensors: tensor 'blk.0.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.385 W llm_load_tensors: tensor 'blk.0.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.388 W llm_load_tensors: tensor 'blk.0.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.390 W llm_load_tensors: tensor 'blk.0.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.391 W llm_load_tensors: tensor 'blk.0.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.393 W llm_load_tensors: tensor 'blk.0.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.395 W llm_load_tensors: tensor 'blk.0.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.396 W llm_load_tensors: tensor 'blk.1.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.398 W llm_load_tensors: tensor 'blk.1.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.399 W llm_load_tensors: tensor 'blk.1.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.401 W llm_load_tensors: tensor 'blk.1.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.402 W llm_load_tensors: tensor 'blk.1.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.404 W llm_load_tensors: tensor 'blk.1.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.407 W llm_load_tensors: tensor 'blk.1.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.409 W llm_load_tensors: tensor 'blk.1.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.410 W llm_load_tensors: tensor 'blk.1.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.411 W llm_load_tensors: tensor 'blk.1.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.413 W llm_load_tensors: tensor 'blk.1.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.414 W llm_load_tensors: tensor 'blk.1.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.416 W llm_load_tensors: tensor 'blk.2.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.417 W llm_load_tensors: tensor 'blk.2.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.419 W llm_load_tensors: tensor 'blk.2.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.420 W llm_load_tensors: tensor 'blk.2.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.422 W llm_load_tensors: tensor 'blk.2.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.426 W llm_load_tensors: tensor 'blk.2.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.428 W llm_load_tensors: tensor 'blk.2.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.429 W llm_load_tensors: tensor 'blk.2.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.431 W llm_load_tensors: tensor 'blk.2.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.433 W llm_load_tensors: tensor 'blk.2.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.434 W llm_load_tensors: tensor 'blk.2.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.436 W llm_load_tensors: tensor 'blk.2.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.437 W llm_load_tensors: tensor 'blk.3.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.453 W llm_load_tensors: tensor 'blk.3.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.454 W llm_load_tensors: tensor 'blk.3.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.456 W llm_load_tensors: tensor 'blk.3.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.459 W llm_load_tensors: tensor 'blk.3.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.461 W llm_load_tensors: tensor 'blk.3.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.462 W llm_load_tensors: tensor 'blk.3.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.464 W llm_load_tensors: tensor 'blk.3.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.465 W llm_load_tensors: tensor 'blk.3.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.467 W llm_load_tensors: tensor 'blk.3.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.468 W llm_load_tensors: tensor 'blk.3.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.469 W llm_load_tensors: tensor 'blk.3.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.471 W llm_load_tensors: tensor 'blk.4.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.472 W llm_load_tensors: tensor 'blk.4.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.475 W llm_load_tensors: tensor 'blk.4.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.479 W llm_load_tensors: tensor 'blk.4.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.481 W llm_load_tensors: tensor 'blk.4.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.482 W llm_load_tensors: tensor 'blk.4.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.484 W llm_load_tensors: tensor 'blk.4.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.485 W llm_load_tensors: tensor 'blk.4.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.487 W llm_load_tensors: tensor 'blk.4.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.489 W llm_load_tensors: tensor 'blk.4.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.490 W llm_load_tensors: tensor 'blk.4.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.492 W llm_load_tensors: tensor 'blk.4.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.493 W llm_load_tensors: tensor 'blk.5.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.495 W llm_load_tensors: tensor 'blk.5.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.497 W llm_load_tensors: tensor 'blk.5.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.500 W llm_load_tensors: tensor 'blk.5.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.502 W llm_load_tensors: tensor 'blk.5.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.504 W llm_load_tensors: tensor 'blk.5.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.506 W llm_load_tensors: tensor 'blk.5.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.508 W llm_load_tensors: tensor 'blk.5.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.510 W llm_load_tensors: tensor 'blk.5.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.513 W llm_load_tensors: tensor 'blk.5.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.517 W llm_load_tensors: tensor 'blk.5.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.520 W llm_load_tensors: tensor 'blk.5.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.522 W llm_load_tensors: tensor 'blk.6.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.525 W llm_load_tensors: tensor 'blk.6.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.531 W llm_load_tensors: tensor 'blk.6.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.535 W llm_load_tensors: tensor 'blk.6.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.537 W llm_load_tensors: tensor 'blk.6.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.540 W llm_load_tensors: tensor 'blk.6.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.543 W llm_load_tensors: tensor 'blk.6.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.546 W llm_load_tensors: tensor 'blk.6.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.549 W llm_load_tensors: tensor 'blk.6.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.552 W llm_load_tensors: tensor 'blk.6.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.556 W llm_load_tensors: tensor 'blk.6.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.559 W llm_load_tensors: tensor 'blk.6.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.562 W llm_load_tensors: tensor 'blk.7.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.567 W llm_load_tensors: tensor 'blk.7.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.570 W llm_load_tensors: tensor 'blk.7.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.573 W llm_load_tensors: tensor 'blk.7.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.575 W llm_load_tensors: tensor 'blk.7.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.578 W llm_load_tensors: tensor 'blk.7.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.581 W llm_load_tensors: tensor 'blk.7.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.584 W llm_load_tensors: tensor 'blk.7.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.587 W llm_load_tensors: tensor 'blk.7.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.590 W llm_load_tensors: tensor 'blk.7.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.593 W llm_load_tensors: tensor 'blk.7.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.597 W llm_load_tensors: tensor 'blk.7.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.602 W llm_load_tensors: tensor 'blk.8.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.605 W llm_load_tensors: tensor 'blk.8.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.608 W llm_load_tensors: tensor 'blk.8.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.611 W llm_load_tensors: tensor 'blk.8.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.615 W llm_load_tensors: tensor 'blk.8.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.618 W llm_load_tensors: tensor 'blk.8.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.622 W llm_load_tensors: tensor 'blk.8.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.625 W llm_load_tensors: tensor 'blk.8.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.629 W llm_load_tensors: tensor 'blk.8.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.633 W llm_load_tensors: tensor 'blk.8.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.636 W llm_load_tensors: tensor 'blk.8.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.641 W llm_load_tensors: tensor 'blk.8.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.644 W llm_load_tensors: tensor 'blk.9.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.648 W llm_load_tensors: tensor 'blk.9.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.652 W llm_load_tensors: tensor 'blk.9.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.655 W llm_load_tensors: tensor 'blk.9.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.659 W llm_load_tensors: tensor 'blk.9.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.663 W llm_load_tensors: tensor 'blk.9.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.667 W llm_load_tensors: tensor 'blk.9.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.670 W llm_load_tensors: tensor 'blk.9.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.673 W llm_load_tensors: tensor 'blk.9.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.678 W llm_load_tensors: tensor 'blk.9.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.684 W llm_load_tensors: tensor 'blk.9.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.686 W llm_load_tensors: tensor 'blk.9.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.689 W llm_load_tensors: tensor 'blk.10.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.692 W llm_load_tensors: tensor 'blk.10.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.695 W llm_load_tensors: tensor 'blk.10.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.698 W llm_load_tensors: tensor 'blk.10.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.701 W llm_load_tensors: tensor 'blk.10.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.705 W llm_load_tensors: tensor 'blk.10.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.709 W llm_load_tensors: tensor 'blk.10.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.711 W llm_load_tensors: tensor 'blk.10.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.727 W llm_load_tensors: tensor 'blk.10.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.733 W llm_load_tensors: tensor 'blk.10.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.735 W llm_load_tensors: tensor 'blk.10.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.737 W llm_load_tensors: tensor 'blk.10.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.739 W llm_load_tensors: tensor 'blk.11.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.741 W llm_load_tensors: tensor 'blk.11.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.743 W llm_load_tensors: tensor 'blk.11.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.744 W llm_load_tensors: tensor 'blk.11.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.746 W llm_load_tensors: tensor 'blk.11.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.749 W llm_load_tensors: tensor 'blk.11.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.752 W llm_load_tensors: tensor 'blk.11.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.755 W llm_load_tensors: tensor 'blk.11.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.760 W llm_load_tensors: tensor 'blk.11.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.763 W llm_load_tensors: tensor 'blk.11.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.766 W llm_load_tensors: tensor 'blk.11.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.769 W llm_load_tensors: tensor 'blk.11.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.772 W llm_load_tensors: tensor 'blk.12.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.775 W llm_load_tensors: tensor 'blk.12.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.778 W llm_load_tensors: tensor 'blk.12.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.781 W llm_load_tensors: tensor 'blk.12.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.784 W llm_load_tensors: tensor 'blk.12.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.787 W llm_load_tensors: tensor 'blk.12.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.790 W llm_load_tensors: tensor 'blk.12.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.794 W llm_load_tensors: tensor 'blk.12.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.800 W llm_load_tensors: tensor 'blk.12.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.804 W llm_load_tensors: tensor 'blk.12.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.823 W llm_load_tensors: tensor 'blk.12.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.826 W llm_load_tensors: tensor 'blk.12.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.841 W llm_load_tensors: tensor 'blk.13.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.844 W llm_load_tensors: tensor 'blk.13.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.865 W llm_load_tensors: tensor 'blk.13.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.870 W llm_load_tensors: tensor 'blk.13.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.873 W llm_load_tensors: tensor 'blk.13.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.877 W llm_load_tensors: tensor 'blk.13.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.880 W llm_load_tensors: tensor 'blk.13.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.886 W llm_load_tensors: tensor 'blk.13.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.890 W llm_load_tensors: tensor 'blk.13.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.894 W llm_load_tensors: tensor 'blk.13.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.897 W llm_load_tensors: tensor 'blk.13.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.901 W llm_load_tensors: tensor 'blk.13.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.906 W llm_load_tensors: tensor 'blk.14.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.909 W llm_load_tensors: tensor 'blk.14.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.912 W llm_load_tensors: tensor 'blk.14.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.915 W llm_load_tensors: tensor 'blk.14.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.932 W llm_load_tensors: tensor 'blk.14.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.935 W llm_load_tensors: tensor 'blk.14.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.939 W llm_load_tensors: tensor 'blk.14.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.941 W llm_load_tensors: tensor 'blk.14.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.945 W llm_load_tensors: tensor 'blk.14.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.947 W llm_load_tensors: tensor 'blk.14.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.950 W llm_load_tensors: tensor 'blk.14.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.954 W llm_load_tensors: tensor 'blk.14.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.958 W llm_load_tensors: tensor 'blk.15.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.961 W llm_load_tensors: tensor 'blk.15.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.964 W llm_load_tensors: tensor 'blk.15.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.967 W llm_load_tensors: tensor 'blk.15.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.971 W llm_load_tensors: tensor 'blk.15.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.976 W llm_load_tensors: tensor 'blk.15.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.979 W llm_load_tensors: tensor 'blk.15.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.982 W llm_load_tensors: tensor 'blk.15.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.986 W llm_load_tensors: tensor 'blk.15.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.990 W llm_load_tensors: tensor 'blk.15.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.993 W llm_load_tensors: tensor 'blk.15.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.076.997 W llm_load_tensors: tensor 'blk.15.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.001 W llm_load_tensors: tensor 'blk.16.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.006 W llm_load_tensors: tensor 'blk.16.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.011 W llm_load_tensors: tensor 'blk.16.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.014 W llm_load_tensors: tensor 'blk.16.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.019 W llm_load_tensors: tensor 'blk.16.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.023 W llm_load_tensors: tensor 'blk.16.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.026 W llm_load_tensors: tensor 'blk.16.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.029 W llm_load_tensors: tensor 'blk.16.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.032 W llm_load_tensors: tensor 'blk.16.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.035 W llm_load_tensors: tensor 'blk.16.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.039 W llm_load_tensors: tensor 'blk.16.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.043 W llm_load_tensors: tensor 'blk.16.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.047 W llm_load_tensors: tensor 'blk.17.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.051 W llm_load_tensors: tensor 'blk.17.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.054 W llm_load_tensors: tensor 'blk.17.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.061 W llm_load_tensors: tensor 'blk.17.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.066 W llm_load_tensors: tensor 'blk.17.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.070 W llm_load_tensors: tensor 'blk.17.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.074 W llm_load_tensors: tensor 'blk.17.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.090 W llm_load_tensors: tensor 'blk.17.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.093 W llm_load_tensors: tensor 'blk.17.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.097 W llm_load_tensors: tensor 'blk.17.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.101 W llm_load_tensors: tensor 'blk.17.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.104 W llm_load_tensors: tensor 'blk.17.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.108 W llm_load_tensors: tensor 'blk.18.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.128 W llm_load_tensors: tensor 'blk.18.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.133 W llm_load_tensors: tensor 'blk.18.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.137 W llm_load_tensors: tensor 'blk.18.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.141 W llm_load_tensors: tensor 'blk.18.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.144 W llm_load_tensors: tensor 'blk.18.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.147 W llm_load_tensors: tensor 'blk.18.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.151 W llm_load_tensors: tensor 'blk.18.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.154 W llm_load_tensors: tensor 'blk.18.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.157 W llm_load_tensors: tensor 'blk.18.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.161 W llm_load_tensors: tensor 'blk.18.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.164 W llm_load_tensors: tensor 'blk.18.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.179 W llm_load_tensors: tensor 'blk.19.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.185 W llm_load_tensors: tensor 'blk.19.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.188 W llm_load_tensors: tensor 'blk.19.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.190 W llm_load_tensors: tensor 'blk.19.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.193 W llm_load_tensors: tensor 'blk.19.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.195 W llm_load_tensors: tensor 'blk.19.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.197 W llm_load_tensors: tensor 'blk.19.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.200 W llm_load_tensors: tensor 'blk.19.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.202 W llm_load_tensors: tensor 'blk.19.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.204 W llm_load_tensors: tensor 'blk.19.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.207 W llm_load_tensors: tensor 'blk.19.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.209 W llm_load_tensors: tensor 'blk.19.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.212 W llm_load_tensors: tensor 'blk.20.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.216 W llm_load_tensors: tensor 'blk.20.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.218 W llm_load_tensors: tensor 'blk.20.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.221 W llm_load_tensors: tensor 'blk.20.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.224 W llm_load_tensors: tensor 'blk.20.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.226 W llm_load_tensors: tensor 'blk.20.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.229 W llm_load_tensors: tensor 'blk.20.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.232 W llm_load_tensors: tensor 'blk.20.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.236 W llm_load_tensors: tensor 'blk.20.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.240 W llm_load_tensors: tensor 'blk.20.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.246 W llm_load_tensors: tensor 'blk.20.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.249 W llm_load_tensors: tensor 'blk.20.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.255 W llm_load_tensors: tensor 'blk.21.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.258 W llm_load_tensors: tensor 'blk.21.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.262 W llm_load_tensors: tensor 'blk.21.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.265 W llm_load_tensors: tensor 'blk.21.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.269 W llm_load_tensors: tensor 'blk.21.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.273 W llm_load_tensors: tensor 'blk.21.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.276 W llm_load_tensors: tensor 'blk.21.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.281 W llm_load_tensors: tensor 'blk.21.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.285 W llm_load_tensors: tensor 'blk.21.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.289 W llm_load_tensors: tensor 'blk.21.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.293 W llm_load_tensors: tensor 'blk.21.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.299 W llm_load_tensors: tensor 'blk.21.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.303 W llm_load_tensors: tensor 'blk.22.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.307 W llm_load_tensors: tensor 'blk.22.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.312 W llm_load_tensors: tensor 'blk.22.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.327 W llm_load_tensors: tensor 'blk.22.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.331 W llm_load_tensors: tensor 'blk.22.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.335 W llm_load_tensors: tensor 'blk.22.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.339 W llm_load_tensors: tensor 'blk.22.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.343 W llm_load_tensors: tensor 'blk.22.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.347 W llm_load_tensors: tensor 'blk.22.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.352 W llm_load_tensors: tensor 'blk.22.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.358 W llm_load_tensors: tensor 'blk.22.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.362 W llm_load_tensors: tensor 'blk.22.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.365 W llm_load_tensors: tensor 'blk.23.attn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.369 W llm_load_tensors: tensor 'blk.23.attn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.374 W llm_load_tensors: tensor 'blk.23.attn_qkv.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.379 W llm_load_tensors: tensor 'blk.23.attn_qkv.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.383 W llm_load_tensors: tensor 'blk.23.attn_output.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.387 W llm_load_tensors: tensor 'blk.23.attn_output.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.391 W llm_load_tensors: tensor 'blk.23.ffn_norm.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.394 W llm_load_tensors: tensor 'blk.23.ffn_norm.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.398 W llm_load_tensors: tensor 'blk.23.ffn_down.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.406 W llm_load_tensors: tensor 'blk.23.ffn_down.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.422 W llm_load_tensors: tensor 'blk.23.ffn_up.weight' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.077.442 W llm_load_tensors: tensor 'blk.23.ffn_up.bias' cannot be used with preferred buffer type AMX, using CPU instead
+0.00.103.414 I llm_load_tensors:        CPU model buffer size =   542.04 MiB
+..........................................................................
+0.00.105.463 I llama_new_context_with_model: n_ctx      = 128
+0.00.105.484 I llama_new_context_with_model: n_batch    = 128
+0.00.105.484 I llama_new_context_with_model: n_ubatch   = 128
+0.00.105.484 I llama_new_context_with_model: flash_attn = 0
+0.00.105.486 I llama_new_context_with_model: freq_base  = 10000.0
+0.00.105.487 I llama_new_context_with_model: freq_scale = 1
+0.00.110.479 I llama_kv_cache_init:        CPU KV buffer size =    24.00 MiB
+0.00.110.506 I llama_new_context_with_model: KV self size  =   24.00 MiB, K (f16):   12.00 MiB, V (f16):   12.00 MiB
+0.00.110.520 I llama_new_context_with_model:        CPU  output buffer size =     0.19 MiB
+0.00.113.855 I llama_new_context_with_model:        CPU compute buffer size =    25.56 MiB
+0.00.113.878 I llama_new_context_with_model: graph nodes  = 967
+0.00.113.878 I llama_new_context_with_model: graph splits = 1
+0.00.113.880 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.153.094 I 
+0.00.153.185 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | FMA = 1 | NEON = 0 | SVE = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | RISCV_VECT = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
+0.00.153.192 I perplexity: tokenizing the input ..
+0.00.161.698 I perplexity: tokenization took 8.502 ms
+0.00.161.729 I perplexity: calculating perplexity over 1 chunks, n_ctx=128, batch_size=128, n_seq=1
+0.01.458.382 I perplexity: 1.30 seconds per pass - ETA 0.02 minutes
+[1]70.4342,
+0.01.462.220 I Final estimate: PPL = 70.4342 +/- 27.31048
+
+0.01.462.258 I llama_perf_context_print:        load time =     151.51 ms
+0.01.462.260 I llama_perf_context_print: prompt eval time =    1294.97 ms /   128 tokens (   10.12 ms per token,    98.84 tokens per second)
+0.01.462.261 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.01.462.262 I llama_perf_context_print:       total time =    1309.16 ms /   129 tokens
+
+real	0m1.492s
+user	0m5.409s
+sys	0m0.100s
