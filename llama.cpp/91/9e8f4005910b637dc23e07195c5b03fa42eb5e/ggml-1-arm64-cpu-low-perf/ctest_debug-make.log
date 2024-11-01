@@ -1,0 +1,46 @@
+++ nproc
++ make -j4
+[  0%] Generating build details from Git
+[  1%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  1%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  2%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  2%] Built target sha256
+[  3%] Built target xxhash
+[  3%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  3%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend.cpp.o
+[  5%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  5%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-quants.c.o
+[  5%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  5%] Built target sha1
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml.dir/llamafile/sgemm.cpp.o
+[  6%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-amx/mmq.cpp.o
+[  7%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-amx.cpp.o
+[  7%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-aarch64.c.o
+[  7%] Built target build_info
+[  8%] Linking CXX shared library libggml.so
+[  8%] Built target ggml
+[  9%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[  9%] Building CXX object src/CMakeFiles/llama.dir/llama-vocab.cpp.o
+[  9%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[  9%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 10%] Linking CXX executable ../../bin/llama-gguf
+[ 11%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 11%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+[ 12%] Building CXX object src/CMakeFiles/llama.dir/llama-sampling.cpp.o
+[ 12%] Building CXX object src/CMakeFiles/llama.dir/unicode.cpp.o
+[ 12%] Built target llama-gguf
+[ 13%] Building CXX object src/CMakeFiles/llama.dir/unicode-data.cpp.o
+[ 13%] Built target llama-gguf-hash
+/home/ggml/work/llama.cpp/src/llama.cpp:10:10: fatal error: ggml-cpp.h: No such file or directory
+   10 | #include "ggml-cpp.h"
+      |          ^~~~~~~~~~~~
+compilation terminated.
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:76: src/CMakeFiles/llama.dir/llama.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:1617: src/CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m0.370s
+user	0m0.570s
+sys	0m0.420s
