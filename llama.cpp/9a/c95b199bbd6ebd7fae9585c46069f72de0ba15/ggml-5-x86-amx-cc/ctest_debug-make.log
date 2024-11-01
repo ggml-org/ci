@@ -1,0 +1,45 @@
+++ nproc
++ make -j8
+[  0%] Generating build details from Git
+[  1%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  1%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  2%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend.cpp.o
+[  3%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  4%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-quants.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  4%] Built target xxhash
+[  4%] Built target sha1
+[  4%] Built target sha256
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml.dir/llamafile/sgemm.cpp.o
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-amx/mmq.cpp.o
+[  6%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-amx.cpp.o
+[  6%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-aarch64.c.o
+[  7%] Linking CXX shared library libggml.so
+[  8%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  8%] Built target build_info
+[  8%] Built target ggml
+[  8%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[  9%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[  9%] Building CXX object src/CMakeFiles/llama.dir/llama-vocab.cpp.o
+[ 10%] Building CXX object src/CMakeFiles/llama.dir/llama-sampling.cpp.o
+[ 10%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+[ 10%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 10%] Building CXX object src/CMakeFiles/llama.dir/unicode.cpp.o
+[ 11%] Building CXX object src/CMakeFiles/llama.dir/unicode-data.cpp.o
+[ 12%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 13%] Linking CXX executable ../../bin/llama-gguf
+[ 13%] Built target llama-gguf
+[ 13%] Built target llama-gguf-hash
+/home/ggml/work/llama.cpp/src/llama.cpp: In lambda function:
+/home/ggml/work/llama.cpp/src/llama.cpp:18932:27: error: request for member ‘get’ in ‘it.std::_Rb_tree_iterator<std::pair<ggml_backend_buffer_type* const, ggml_context*> >::operator->()->std::pair<ggml_backend_buffer_type* const, ggml_context*>::second’, which is of pointer type ‘ggml_context*’ (maybe you meant to use ‘->’ ?)
+18932 |         return it->second.get();
+      |                           ^~~
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:76: src/CMakeFiles/llama.dir/llama.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1617: src/CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m3.769s
+user	0m3.879s
+sys	0m0.696s
