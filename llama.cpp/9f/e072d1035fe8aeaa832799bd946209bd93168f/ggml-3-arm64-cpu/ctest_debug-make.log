@@ -1,0 +1,35 @@
+++ nproc
++ make -j8
+[  0%] Generating build details from Git
+[  2%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml.c.o
+[  2%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-cpu.c.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  4%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend.cpp.o
+[  4%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  4%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  4%] Built target sha1
+[  4%] Built target sha256
+[  4%] Built target xxhash
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml.dir/llamafile/sgemm.cpp.o
+[  5%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-quants.c.o
+[  6%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-amx/mmq.cpp.o
+[  7%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  7%] Built target build_info
+[  8%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-amx.cpp.o
+[  8%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-aarch64.c.o
+/home/ggml/work/llama.cpp/ggml/src/ggml-aarch64.c: In function ‘ggml_gemv_q4_0_4x4_q8_0’:
+/home/ggml/work/llama.cpp/ggml/src/ggml-aarch64.c:621:9: error: implicit declaration of function ‘ggml_cpu_has_neon’; did you mean ‘ggml_cpu_has_cann’? [-Werror=implicit-function-declaration]
+  621 |     if (ggml_cpu_has_neon()) {
+      |         ^~~~~~~~~~~~~~~~~
+      |         ggml_cpu_has_cann
+cc1: all warnings being treated as errors
+make[2]: *** [ggml/src/CMakeFiles/ggml.dir/build.make:188: ggml/src/CMakeFiles/ggml.dir/ggml-aarch64.c.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:1591: ggml/src/CMakeFiles/ggml.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m1.255s
+user	0m5.637s
+sys	0m0.802s
