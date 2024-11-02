@@ -1,0 +1,51 @@
+++ nproc
++ make -j4
+[  0%] Generating build details from Git
+[  1%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  2%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml.c.o
+[  3%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  3%] Built target xxhash
+[  3%] Built target sha256
+[  3%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-cpu.c.o
+[  4%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  4%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  4%] Built target sha1
+[  5%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-alloc.c.o
+[  5%] Built target build_info
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend.cpp.o
+[  6%] Building C object ggml/src/CMakeFiles/ggml.dir/ggml-quants.c.o
+/home/ggml/work/llama.cpp/ggml/src/ggml.c: In function ‘ggml_cpu_has_neon’:
+/home/ggml/work/llama.cpp/ggml/src/ggml.c:8230:12: error: ‘ggml_arm_arch_features’ undeclared (first use in this function)
+ 8230 |     return ggml_arm_arch_features.has_neon;
+      |            ^~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml/src/ggml.c:8230:12: note: each undeclared identifier is reported only once for each function it appears in
+/home/ggml/work/llama.cpp/ggml/src/ggml.c: In function ‘ggml_cpu_has_sve’:
+/home/ggml/work/llama.cpp/ggml/src/ggml.c:8238:12: error: ‘ggml_arm_arch_features’ undeclared (first use in this function)
+ 8238 |     return ggml_arm_arch_features.has_sve;
+      |            ^~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml/src/ggml.c: In function ‘ggml_cpu_has_matmul_int8’:
+/home/ggml/work/llama.cpp/ggml/src/ggml.c:8386:12: error: ‘ggml_arm_arch_features’ undeclared (first use in this function)
+ 8386 |     return ggml_arm_arch_features.has_i8mm;
+      |            ^~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml/src/ggml.c: In function ‘ggml_cpu_has_neon’:
+/home/ggml/work/llama.cpp/ggml/src/ggml.c:8234:1: error: control reaches end of non-void function [-Werror=return-type]
+ 8234 | }
+      | ^
+/home/ggml/work/llama.cpp/ggml/src/ggml.c: In function ‘ggml_cpu_has_sve’:
+/home/ggml/work/llama.cpp/ggml/src/ggml.c:8242:1: error: control reaches end of non-void function [-Werror=return-type]
+ 8242 | }
+      | ^
+/home/ggml/work/llama.cpp/ggml/src/ggml.c: In function ‘ggml_cpu_has_matmul_int8’:
+/home/ggml/work/llama.cpp/ggml/src/ggml.c:8390:1: error: control reaches end of non-void function [-Werror=return-type]
+ 8390 | }
+      | ^
+cc1: all warnings being treated as errors
+make[2]: *** [ggml/src/CMakeFiles/ggml.dir/build.make:76: ggml/src/CMakeFiles/ggml.dir/ggml.c.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:1591: ggml/src/CMakeFiles/ggml.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m1.455s
+user	0m3.286s
+sys	0m0.397s
