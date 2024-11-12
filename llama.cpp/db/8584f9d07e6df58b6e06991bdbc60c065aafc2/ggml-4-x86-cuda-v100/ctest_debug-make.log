@@ -1,0 +1,31 @@
+++ nproc
++ make -j6
+[  0%] Generating build details from Git
+[  0%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  1%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  1%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  2%] Built target sha256
+[  2%] Built target sha1
+[  2%] Built target xxhash
+[  3%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  3%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  4%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  4%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  4%] Built target build_info
+[  4%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-aarch64.c.o
+In file included from /home/ggml/work/llama.cpp/ggml/src/ggml-quants.c:6:
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-impl.h:6:10: fatal error: ggml-impl.h: No such file or directory
+    6 | #include "ggml-impl.h"
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+make[2]: *** [ggml/src/CMakeFiles/ggml-base.dir/build.make:132: ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:1646: ggml/src/CMakeFiles/ggml-base.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m0.671s
+user	0m1.742s
+sys	0m0.268s
