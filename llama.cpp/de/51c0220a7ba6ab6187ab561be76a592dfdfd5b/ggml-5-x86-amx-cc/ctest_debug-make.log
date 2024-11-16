@@ -1,0 +1,45 @@
+++ nproc
++ make -j8
+[  0%] Generating build details from Git
+[  1%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  1%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  1%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  2%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  3%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  4%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  4%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  4%] Built target sha256
+[  4%] Built target xxhash
+[  4%] Built target sha1
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  6%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-aarch64.c.o
+[  6%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  7%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  7%] Built target build_info
+[  7%] Linking CXX shared library libggml-base.so
+[  7%] Built target ggml-base
+[  8%] Building C object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu.c.o
+[  9%] Building CXX object ggml/src/ggml-amx/CMakeFiles/ggml-amx.dir/ggml-amx.cpp.o
+[  9%] Building CXX object ggml/src/ggml-amx/CMakeFiles/ggml-amx.dir/mmq.cpp.o
+[ 10%] Building CXX object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu.cpp.o
+[ 10%] Building C object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu-aarch64.c.o
+[ 11%] Building CXX object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/llamafile/sgemm.cpp.o
+[ 11%] Building C object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu-quants.c.o
+/home/ggml/work/llama.cpp/ggml/src/ggml-amx/ggml-amx.cpp: In function ‘bool ggml_backend_amx_device_supports_op(ggml_backend_dev_t, const ggml_tensor*)’:
+/home/ggml/work/llama.cpp/ggml/src/ggml-amx/ggml-amx.cpp:320:38: error: ‘const struct ggml_tensor’ has no member named ‘grad’
+  320 |             bool is_training = src0->grad || src1->grad;
+      |                                      ^~~~
+/home/ggml/work/llama.cpp/ggml/src/ggml-amx/ggml-amx.cpp:320:52: error: ‘const struct ggml_tensor’ has no member named ‘grad’
+  320 |             bool is_training = src0->grad || src1->grad;
+      |                                                    ^~~~
+make[2]: *** [ggml/src/ggml-amx/CMakeFiles/ggml-amx.dir/build.make:76: ggml/src/ggml-amx/CMakeFiles/ggml-amx.dir/ggml-amx.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+[ 12%] Linking CXX shared library libggml-cpu.so
+[ 12%] Built target ggml-cpu
+make[1]: *** [CMakeFiles/Makefile2:1706: ggml/src/ggml-amx/CMakeFiles/ggml-amx.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m2.188s
+user	0m6.941s
+sys	0m1.087s
