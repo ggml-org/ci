@@ -1,0 +1,205 @@
++ ./bin/llama-embedding --model ../models-mnt/rerank-tiny/ggml-model-f16.gguf -p 'what is panda?</s></s>hi\nwhat is panda?</s></s>it'\''s a bear\nwhat is panda?</s></s>The giant panda (Ailuropoda melanoleuca), sometimes called a panda bear or simply panda, is a bear species endemic to China.' -ngl 99 -c 0 --pooling rank --embd-normalize -1 --verbose-prompt
+warning: not compiled with GPU offload support, --gpu-layers option will be ignored
+warning: see main README.md for information on enabling GPU BLAS support
+0.00.000.232 I build: 4132 (a112eb45) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for aarch64-linux-gnu
+0.00.010.688 I llama_model_loader: loaded meta data with 29 key-value pairs and 70 tensors from ../models-mnt/rerank-tiny/ggml-model-f16.gguf (version GGUF V3 (latest))
+0.00.010.702 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.010.711 I llama_model_loader: - kv   0:                       general.architecture str              = jina-bert-v2
+0.00.010.712 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.010.713 I llama_model_loader: - kv   2:                               general.name str              = Jina Bert Implementation
+0.00.010.714 I llama_model_loader: - kv   3:                       general.organization str              = Jinaai
+0.00.010.715 I llama_model_loader: - kv   4:                         general.size_label str              = 33M
+0.00.010.717 I llama_model_loader: - kv   5:                   jina-bert-v2.block_count u32              = 4
+0.00.010.719 I llama_model_loader: - kv   6:                jina-bert-v2.context_length u32              = 8192
+0.00.010.720 I llama_model_loader: - kv   7:              jina-bert-v2.embedding_length u32              = 384
+0.00.010.721 I llama_model_loader: - kv   8:           jina-bert-v2.feed_forward_length u32              = 1536
+0.00.010.722 I llama_model_loader: - kv   9:          jina-bert-v2.attention.head_count u32              = 12
+0.00.010.727 I llama_model_loader: - kv  10:  jina-bert-v2.attention.layer_norm_epsilon f32              = 0.000000
+0.00.010.728 I llama_model_loader: - kv  11:                          general.file_type u32              = 1
+0.00.010.729 I llama_model_loader: - kv  12:              jina-bert-v2.attention.causal bool             = false
+0.00.010.731 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.010.731 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = jina-v1-en
+0.00.020.303 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,61056]   = ["<s>", "<pad>", "</s>", "<unk>", "<m...
+0.00.022.838 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,61056]   = [3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.028.866 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,39382]   = ["t h", "i n", "a n", "e r", "th e", ...
+0.00.028.875 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.028.876 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 2
+0.00.028.877 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 3
+0.00.028.878 I llama_model_loader: - kv  21:          tokenizer.ggml.seperator_token_id u32              = 2
+0.00.028.878 I llama_model_loader: - kv  22:            tokenizer.ggml.padding_token_id u32              = 1
+0.00.028.880 I llama_model_loader: - kv  23:                tokenizer.ggml.cls_token_id u32              = 0
+0.00.028.881 I llama_model_loader: - kv  24:               tokenizer.ggml.mask_token_id u32              = 4
+0.00.028.881 I llama_model_loader: - kv  25:            tokenizer.ggml.token_type_count u32              = 2
+0.00.028.882 I llama_model_loader: - kv  26:               tokenizer.ggml.add_bos_token bool             = true
+0.00.028.883 I llama_model_loader: - kv  27:               tokenizer.ggml.add_eos_token bool             = true
+0.00.028.884 I llama_model_loader: - kv  28:               general.quantization_version u32              = 2
+0.00.028.887 I llama_model_loader: - type  f32:   41 tensors
+0.00.028.888 I llama_model_loader: - type  f16:   29 tensors
+0.00.056.139 W llm_load_vocab: empty token at index 5
+0.00.070.785 W llm_load_vocab: model vocab missing newline token, using special_pad_id instead
+0.00.095.360 W llm_load_vocab: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.095.546 I llm_load_vocab: special tokens cache size = 5
+0.00.866.715 I llm_load_vocab: token to piece cache size = 1.5060 MB
+0.00.866.736 I llm_load_print_meta: format           = GGUF V3 (latest)
+0.00.866.736 I llm_load_print_meta: arch             = jina-bert-v2
+0.00.866.737 I llm_load_print_meta: vocab type       = BPE
+0.00.866.738 I llm_load_print_meta: n_vocab          = 61056
+0.00.866.738 I llm_load_print_meta: n_merges         = 39382
+0.00.866.739 I llm_load_print_meta: vocab_only       = 0
+0.00.866.739 I llm_load_print_meta: n_ctx_train      = 8192
+0.00.866.740 I llm_load_print_meta: n_embd           = 384
+0.00.866.740 I llm_load_print_meta: n_layer          = 4
+0.00.866.751 I llm_load_print_meta: n_head           = 12
+0.00.866.753 I llm_load_print_meta: n_head_kv        = 12
+0.00.866.753 I llm_load_print_meta: n_rot            = 32
+0.00.866.754 I llm_load_print_meta: n_swa            = 0
+0.00.866.754 I llm_load_print_meta: n_embd_head_k    = 32
+0.00.866.755 I llm_load_print_meta: n_embd_head_v    = 32
+0.00.866.756 I llm_load_print_meta: n_gqa            = 1
+0.00.866.757 I llm_load_print_meta: n_embd_k_gqa     = 384
+0.00.866.759 I llm_load_print_meta: n_embd_v_gqa     = 384
+0.00.866.761 I llm_load_print_meta: f_norm_eps       = 1.0e-12
+0.00.866.762 I llm_load_print_meta: f_norm_rms_eps   = 0.0e+00
+0.00.866.762 I llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+0.00.866.763 I llm_load_print_meta: f_max_alibi_bias = 8.0e+00
+0.00.866.764 I llm_load_print_meta: f_logit_scale    = 0.0e+00
+0.00.866.765 I llm_load_print_meta: n_ff             = 1536
+0.00.866.765 I llm_load_print_meta: n_expert         = 0
+0.00.866.766 I llm_load_print_meta: n_expert_used    = 0
+0.00.866.766 I llm_load_print_meta: causal attn      = 0
+0.00.866.766 I llm_load_print_meta: pooling type     = -1
+0.00.866.767 I llm_load_print_meta: rope type        = -1
+0.00.866.767 I llm_load_print_meta: rope scaling     = linear
+0.00.866.769 I llm_load_print_meta: freq_base_train  = 10000.0
+0.00.866.770 I llm_load_print_meta: freq_scale_train = 1
+0.00.866.770 I llm_load_print_meta: n_ctx_orig_yarn  = 8192
+0.00.866.771 I llm_load_print_meta: rope_finetuned   = unknown
+0.00.866.771 I llm_load_print_meta: ssm_d_conv       = 0
+0.00.866.772 I llm_load_print_meta: ssm_d_inner      = 0
+0.00.866.773 I llm_load_print_meta: ssm_d_state      = 0
+0.00.866.773 I llm_load_print_meta: ssm_dt_rank      = 0
+0.00.866.774 I llm_load_print_meta: ssm_dt_b_c_rms   = 0
+0.00.866.775 I llm_load_print_meta: model type       = 33M
+0.00.866.776 I llm_load_print_meta: model ftype      = F16
+0.00.866.777 I llm_load_print_meta: model params     = 32.90 M
+0.00.866.778 I llm_load_print_meta: model size       = 62.78 MiB (16.01 BPW) 
+0.00.866.779 I llm_load_print_meta: general.name     = Jina Bert Implementation
+0.00.866.780 I llm_load_print_meta: BOS token        = 0 '<s>'
+0.00.866.781 I llm_load_print_meta: EOS token        = 2 '</s>'
+0.00.866.781 I llm_load_print_meta: UNK token        = 3 '<unk>'
+0.00.866.782 I llm_load_print_meta: SEP token        = 2 '</s>'
+0.00.866.782 I llm_load_print_meta: PAD token        = 1 '<pad>'
+0.00.866.783 I llm_load_print_meta: CLS token        = 0 '<s>'
+0.00.866.783 I llm_load_print_meta: MASK token       = 4 '<mask>'
+0.00.866.784 I llm_load_print_meta: EOG token        = 2 '</s>'
+0.00.866.784 I llm_load_print_meta: max token length = 45
+0.00.870.940 I llm_load_tensors:   CPU_Mapped model buffer size =    62.78 MiB
+......................
+0.00.873.986 I llama_new_context_with_model: n_seq_max     = 1
+0.00.873.996 I llama_new_context_with_model: n_ctx         = 8192
+0.00.873.997 I llama_new_context_with_model: n_ctx_per_seq = 8192
+0.00.873.997 I llama_new_context_with_model: n_batch       = 2048
+0.00.873.997 I llama_new_context_with_model: n_ubatch      = 2048
+0.00.873.998 I llama_new_context_with_model: flash_attn    = 0
+0.00.874.001 I llama_new_context_with_model: freq_base     = 10000.0
+0.00.874.001 I llama_new_context_with_model: freq_scale    = 1
+0.00.890.616 I llama_kv_cache_init: CPU_AARCH64 KV buffer size =    48.00 MiB
+0.00.890.638 I llama_new_context_with_model: KV self size  =   48.00 MiB, K (f16):   24.00 MiB, V (f16):   24.00 MiB
+0.00.890.647 I llama_new_context_with_model:        CPU  output buffer size =     0.00 MiB
+0.00.892.177 I llama_new_context_with_model:        CPU compute buffer size =   220.02 MiB
+0.00.892.187 I llama_new_context_with_model: graph nodes  = 154
+0.00.892.187 I llama_new_context_with_model: graph splits = 1
+0.00.892.190 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.894.484 I 
+0.00.894.575 I system_info: n_threads = 8 (n_threads_batch = 8) / 8 | AVX = 0 | AVX_VNNI = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | AVX512_BF16 = 0 | AMX_INT8 = 0 | FMA = 0 | NEON = 1 | SVE = 0 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 0 | RISCV_VECT = 0 | WASM_SIMD = 0 | SSE3 = 0 | SSSE3 = 0 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
+0.00.894.862 I main: prompt 0: 'what is panda?</s></s>hi'
+0.00.894.868 I main: number of tokens in prompt = 9
+     0 -> '<s>'
+ 21381 -> 'what'
+ 21152 -> 'is'
+ 49990 -> 'panda'
+    61 -> '?'
+     2 -> '</s>'
+     2 -> '</s>'
+ 23233 -> 'hi'
+     2 -> '</s>'
+
+
+0.00.894.874 I main: prompt 1: 'what is panda?</s></s>it's a bear'
+0.00.894.875 I main: number of tokens in prompt = 13
+     0 -> '<s>'
+ 21381 -> 'what'
+ 21152 -> 'is'
+ 49990 -> 'panda'
+    61 -> '?'
+     2 -> '</s>'
+     2 -> '</s>'
+ 21153 -> 'it'
+    37 -> '''
+    87 -> 's'
+    69 -> 'a'
+ 25706 -> 'bear'
+     2 -> '</s>'
+
+
+0.00.894.880 I main: prompt 2: 'what is panda?</s></s>The giant panda (Ailuropoda melanoleuca), sometimes called a panda bear or simply panda, is a bear species endemic to China.'
+0.00.894.881 I main: number of tokens in prompt = 40
+     0 -> '<s>'
+ 21381 -> 'what'
+ 21152 -> 'is'
+ 49990 -> 'panda'
+    61 -> '?'
+     2 -> '</s>'
+     2 -> '</s>'
+ 21215 -> 'he'
+ 28390 -> 'giant'
+ 49990 -> 'panda'
+    38 -> '('
+ 21163 -> 'il'
+ 26237 -> 'uro'
+ 21223 -> 'po'
+ 23179 -> 'da'
+ 36906 -> 'melan'
+ 26791 -> 'ole'
+    89 -> 'u'
+ 21402 -> 'ca'
+ 21686 -> '),'
+ 23314 -> 'sometimes'
+ 22517 -> 'called'
+    69 -> 'a'
+ 49990 -> 'panda'
+ 25706 -> 'bear'
+ 21142 -> 'or'
+ 22810 -> 'simply'
+ 49990 -> 'panda'
+    42 -> ','
+ 21152 -> 'is'
+    69 -> 'a'
+ 25706 -> 'bear'
+ 25677 -> 'species'
+ 28930 -> 'ende'
+ 22024 -> 'mic'
+ 21148 -> 'to'
+    76 -> 'h'
+ 22344 -> 'ina'
+    44 -> '.'
+     2 -> '</s>'
+
+
+0.00.895.980 I batch_decode: n_tokens = 62, n_seq = 3
+
+rerank score 0:    0.023
+rerank score 1:    0.024
+rerank score 2:    0.199
+
+0.00.914.060 I llama_perf_context_print:        load time =     894.22 ms
+0.00.914.071 I llama_perf_context_print: prompt eval time =      17.99 ms /    62 tokens (    0.29 ms per token,  3446.93 tokens per second)
+0.00.914.084 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.00.914.093 I llama_perf_context_print:       total time =      19.58 ms /    63 tokens
+
+real	0m0.943s
+user	0m1.036s
+sys	0m0.041s
+  - rerank score 0 @ 0.023 OK
+  - rerank score 1 @ 0.024 OK
+  - rerank score 2 @ 0.199 OK
