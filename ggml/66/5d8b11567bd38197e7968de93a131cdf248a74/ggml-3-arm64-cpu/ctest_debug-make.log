@@ -1,0 +1,138 @@
++ make -j
+[  5%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  1%] Building C object src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  5%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  5%] Building C object src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  5%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  6%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  7%] Building C object src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  8%] Building C object src/CMakeFiles/ggml-base.dir/ggml-aarch64.c.o
+[  9%] Linking CXX shared library libggml-base.so
+[ 10%] Linking CXX static library libcommon.a
+[ 10%] Built target common
+[ 10%] Built target ggml-base
+[ 15%] Building C object src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu.c.o
+[ 15%] Building CXX object src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu.cpp.o
+[ 15%] Building C object src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu-quants.c.o
+[ 15%] Building C object src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu-aarch64.c.o
+[ 16%] Linking CXX shared library libggml-cpu.so
+[ 16%] Built target ggml-cpu
+[ 17%] Building CXX object src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 18%] Linking CXX shared library libggml.so
+[ 18%] Built target ggml
+[ 19%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
+[ 21%] Building CXX object tests/CMakeFiles/test-opt.dir/test-opt.cpp.o
+[ 21%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 22%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 23%] Building C object tests/CMakeFiles/test-pool.dir/test-pool.c.o
+[ 25%] Building C object tests/CMakeFiles/test-mul-mat2.dir/test-mul-mat2.c.o
+[ 26%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
+[ 27%] Building C object tests/CMakeFiles/test-mul-mat0.dir/test-mul-mat0.c.o
+[ 28%] Building CXX object tests/CMakeFiles/test-arange.dir/test-arange.cpp.o
+[ 29%] Linking C executable ../bin/test-vec0
+[ 30%] Building C object tests/CMakeFiles/test-conv-transpose.dir/test-conv-transpose.c.o
+[ 31%] Linking CXX executable ../bin/test-quantize-fns
+[ 32%] Linking C executable ../bin/test-pool
+[ 33%] Linking CXX executable ../bin/test-arange
+[ 34%] Linking C executable ../bin/test-mul-mat0
+[ 35%] Building CXX object tests/CMakeFiles/test-timestep_embedding.dir/test-timestep_embedding.cpp.o
+[ 36%] Linking CXX executable ../bin/test-quantize-perf
+[ 38%] Linking CXX executable ../bin/test-opt
+[ 39%] Linking C executable ../bin/test0
+[ 40%] Building CXX object tests/CMakeFiles/test-conv-transpose-1d.dir/test-conv-transpose-1d.cpp.o
+[ 41%] Linking C executable ../bin/test-conv-transpose
+[ 42%] Building C object tests/CMakeFiles/test-rel-pos.dir/test-rel-pos.c.o
+[ 44%] Building C object tests/CMakeFiles/test-dup.dir/test-dup.c.o
+[ 44%] Building CXX object tests/CMakeFiles/test-conv1d.dir/test-conv1d.cpp.o
+[ 45%] Linking C executable ../bin/test-mul-mat2
+[ 46%] Linking C executable ../bin/test-rel-pos
+[ 47%] Building CXX object tests/CMakeFiles/test-conv2d.dir/test-conv2d.cpp.o
+[ 48%] Linking CXX executable ../bin/test-timestep_embedding
+[ 48%] Built target test-vec0
+[ 50%] Building CXX object tests/CMakeFiles/test-mul-mat.dir/test-mul-mat.cpp.o
+[ 51%] Linking CXX executable ../bin/test-conv-transpose-1d
+[ 52%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 53%] Building C object tests/CMakeFiles/test-customop.dir/test-customop.c.o
+[ 55%] Linking C executable ../bin/test-dup
+[ 56%] Building C object tests/CMakeFiles/test-cont.dir/test-cont.c.o
+[ 55%] Linking CXX executable ../bin/test-conv2d
+[ 58%] Building CXX object examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o
+[ 57%] Linking CXX executable ../bin/test-conv1d
+[ 60%] Building CXX object examples/sam/CMakeFiles/sam.dir/main.cpp.o
+[ 60%] Building CXX object examples/simple/CMakeFiles/simple-backend.dir/simple-backend.cpp.o
+[ 61%] Building CXX object examples/mnist/CMakeFiles/mnist-common.dir/mnist-common.cpp.o
+[ 61%] Built target test0
+[ 63%] Linking C executable ../bin/test-customop
+[ 64%] Linking CXX executable ../bin/test-backend-ops
+[ 66%] Linking CXX executable ../bin/test-mul-mat
+[ 67%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolov3-tiny.cpp.o
+[ 67%] Built target test-mul-mat0
+[ 68%] Linking CXX executable ../../bin/sam
+[ 69%] Building CXX object examples/simple/CMakeFiles/simple-ctx.dir/simple-ctx.cpp.o
+[ 69%] Built target test-pool
+[ 69%] Built target test-quantize-perf
+[ 66%] Linking C executable ../bin/test-cont
+[ 69%] Built target test-dup
+[ 70%] Linking CXX static library libmnist-common.a
+[ 71%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolo-image.cpp.o
+[ 71%] Built target test-conv-transpose
+[ 72%] Linking CXX executable ../../bin/simple-backend
+[ 72%] Built target test-mul-mat2
+[ 72%] Built target test-arange
+[ 73%] Linking CXX static library libcommon-ggml.a
+[ 73%] Built target test-rel-pos
+[ 73%] Built target test-quantize-fns
+[ 75%] Linking CXX executable ../../bin/simple-ctx
+[ 75%] Built target test-conv-transpose-1d
+[ 75%] Built target test-timestep_embedding
+[ 75%] Built target test-conv1d
+[ 76%] Linking CXX executable ../../bin/yolov3-tiny
+[ 76%] Built target test-conv2d
+[ 76%] Built target test-opt
+[ 76%] Built target test-customop
+[ 76%] Built target test-mul-mat
+[ 76%] Built target mnist-common
+[ 76%] Built target common-ggml
+[ 77%] Building CXX object examples/mnist/CMakeFiles/mnist-eval.dir/mnist-eval.cpp.o
+[ 77%] Built target test-cont
+[ 78%] Building CXX object examples/mnist/CMakeFiles/mnist-train.dir/mnist-train.cpp.o
+[ 79%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-ctx.dir/main-ctx.cpp.o
+[ 79%] Built target simple-backend
+[ 79%] Built target test-backend-ops
+[ 80%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-alloc.dir/main-alloc.cpp.o
+[ 80%] Built target sam
+[ 80%] Built target simple-ctx
+[ 81%] Linking CXX executable ../../bin/mnist-eval
+[ 82%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-backend.dir/main-backend.cpp.o
+[ 83%] Linking CXX executable ../../bin/gpt-2-ctx
+[ 84%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-sched.dir/main-sched.cpp.o
+[ 85%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-batched.dir/main-batched.cpp.o
+[ 86%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j.dir/main.cpp.o
+[ 88%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j-quantize.dir/quantize.cpp.o
+[ 89%] Linking CXX executable ../../bin/mnist-train
+[ 90%] Linking CXX executable ../../bin/gpt-2-alloc
+[ 90%] Built target yolov3-tiny
+[ 91%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-quantize.dir/quantize.cpp.o
+[ 92%] Linking CXX executable ../../bin/gpt-2-backend
+[ 93%] Linking CXX executable ../../bin/gpt-2-sched
+[ 94%] Linking CXX executable ../../bin/gpt-2-batched
+[ 97%] Building CXX object examples/magika/CMakeFiles/magika.dir/main.cpp.o
+[ 97%] Linking CXX executable ../../bin/gpt-j-quantize
+[ 97%] Linking CXX executable ../../bin/gpt-j
+[ 98%] Linking CXX executable ../../bin/gpt-2-quantize
+[100%] Linking CXX executable ../../bin/magika
+[100%] Built target mnist-train
+[100%] Built target mnist-eval
+[100%] Built target magika
+[100%] Built target gpt-2-alloc
+[100%] Built target gpt-j-quantize
+[100%] Built target gpt-2-sched
+[100%] Built target gpt-2-backend
+[100%] Built target gpt-2-batched
+[100%] Built target gpt-2-quantize
+[100%] Built target gpt-j
+[100%] Built target gpt-2-ctx
+
+real	0m1.158s
+user	0m4.587s
+sys	0m1.928s
