@@ -1,0 +1,282 @@
+## Summary
+
+- status:  FAILURE ❌ (8)
+- runtime: 5:47.91
+- date:    Mon Nov 18 09:02:46 UTC 2024
+- repo:    https://github.com/ggerganov/ggml
+- commit:  https://github.com/ggerganov/ggml/commit/7fe59da86a26c8c86660cfe348ef140d3ccffe5d
+- author:  Georgi Gerganov
+```
+sync : llama.cpp
+
+ggml-ci
+```
+
+## Environment
+
+```
+GG_BUILD_CLOUD=1
+GG_BUILD_CUDA=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -E test-opt
+Test project /home/ggml/work/ggml/build-ci-debug
+      Start  1: test-quantize-fns
+ 1/18 Test  #1: test-quantize-fns ................   Passed   36.39 sec
+      Start  2: test-quantize-perf
+ 2/18 Test  #2: test-quantize-perf ...............   Passed    0.35 sec
+      Start  3: test-mul-mat0
+ 3/18 Test  #3: test-mul-mat0 ....................   Passed    0.54 sec
+      Start  4: test-mul-mat2
+ 4/18 Test  #4: test-mul-mat2 ....................   Passed    7.46 sec
+      Start  5: test0
+ 5/18 Test  #5: test0 ............................   Passed    0.00 sec
+      Start  6: test-pool
+ 6/18 Test  #6: test-pool ........................   Passed    0.01 sec
+      Start  7: test-arange
+ 7/18 Test  #7: test-arange ......................   Passed    0.55 sec
+      Start  8: test-timestep_embedding
+ 8/18 Test  #8: test-timestep_embedding ..........   Passed    0.55 sec
+      Start  9: test-conv-transpose
+ 9/18 Test  #9: test-conv-transpose ..............   Passed    0.01 sec
+      Start 10: test-conv-transpose-1d
+10/18 Test #10: test-conv-transpose-1d ...........   Passed    0.56 sec
+      Start 11: test-dup
+11/18 Test #11: test-dup .........................   Passed    0.01 sec
+      Start 12: test-rel-pos
+12/18 Test #12: test-rel-pos .....................   Passed    0.01 sec
+      Start 13: test-customop
+13/18 Test #13: test-customop ....................   Passed    0.01 sec
+      Start 14: test-conv1d
+14/18 Test #14: test-conv1d ......................   Passed    0.63 sec
+      Start 15: test-conv2d
+15/18 Test #15: test-conv2d ......................   Passed    0.64 sec
+      Start 16: test-mul-mat
+16/18 Test #16: test-mul-mat .....................   Passed    0.61 sec
+      Start 17: test-backend-ops
+17/18 Test #17: test-backend-ops .................   Passed  202.67 sec
+      Start 18: test-cont
+18/18 Test #18: test-cont ........................   Passed    0.53 sec
+
+100% tests passed, 0 tests failed out of 18
+
+Total Test time (real) = 251.52 sec
+
+real	4m11.558s
+user	11m59.402s
+sys	0m10.869s
+```
+
+### ctest_release
+
+Runs ctest in release mode
+- status: 8
+```
++ ctest --output-on-failure
+Test project /home/ggml/work/ggml/build-ci-release
+      Start  1: test-opt
+ 1/19 Test  #1: test-opt .........................***Exception: SegFault  0.72 sec
+ggml_cuda_init: GGML_CUDA_FORCE_MMQ:    no
+ggml_cuda_init: GGML_CUDA_FORCE_CUBLAS: no
+ggml_cuda_init: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0, VMM: yes
+Testing 2 devices
+
+Backend 1/2: CUDA0
+  Device description: Tesla V100-PCIE-16GB
+  Device memory: 16151 MB (15841 MB free)
+
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=1): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=2, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=2, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=2, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=3, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=3, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=4, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=5, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=6, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=1): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=2, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=2, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=2, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=3, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=3, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=4, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=5, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=6, ndata_batch=6): [1;32mOK[0m
+  test_grad(): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=results_initial): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=weights_after_forward): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=results_after_forward): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=weights_after_forward_backward): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=result_after_forward_backward): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=results_initial): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=weights_after_forward): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=results_after_forward): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=weights_after_forward_backward): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=result_after_forward_backward): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=results_initial): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=weights_after_forward): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=results_after_forward): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=weights_after_forward_backward): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=result_after_forward_backward): [1;32mOK[0m
+  test_epoch_vs_fit(): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=1, subtest=weights): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=1, subtest=results_backward): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=1, subtest=results_forward): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=2, subtest=weights): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=2, subtest=results_backward): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=2, subtest=results_forward): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=3, subtest=weights): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=3, subtest=results_backward): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=3, subtest=results_forward): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=4, subtest=weights): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=4, subtest=results_backward): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=4, subtest=results_forward): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=1, subtest=weights): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=1, subtest=results_backward): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=1, subtest=results_forward): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=2, subtest=weights): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=2, subtest=results_backward): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=2, subtest=results_forward): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=3, subtest=weights): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=3, subtest=results_backward): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=3, subtest=results_forward): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=4, subtest=weights): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=4, subtest=results_backward): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=4, subtest=results_forward): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=1, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=1, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=1, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=2, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=2, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=2, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=3, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=3, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=3, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=4, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=4, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=4, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=1, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=1, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=1, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=2, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=2, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=2, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=3, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=3, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=3, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=4, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=4, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=4, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=1, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=1, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=1, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=2, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=2, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=2, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=3, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=3, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=3, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=4, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=4, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=4, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=1, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=1, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=1, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=2, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=2, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=2, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=3, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=3, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=3, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=4, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=4, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=4, subtest=results): [1;32mOK[0m
+  test_regression(subtest=weights): [1;32mOK[0m
+  118/118 tests passed
+  Backend CUDA0: [1;32mOK[0m
+
+Backend 2/2: CPU
+  Device description: Intel(R) Xeon(R) CPU E5-2690 v4 @ 2.60GHz
+  Device memory: 0 MB (0 MB free)
+
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=1): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=2, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=2, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=2, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=3, nd
+
+      Start  2: test-quantize-fns
+ 2/19 Test  #2: test-quantize-fns ................   Passed   18.76 sec
+      Start  3: test-quantize-perf
+ 3/19 Test  #3: test-quantize-perf ...............   Passed    0.10 sec
+      Start  4: test-mul-mat0
+ 4/19 Test  #4: test-mul-mat0 ....................   Passed    0.55 sec
+      Start  5: test-mul-mat2
+ 5/19 Test  #5: test-mul-mat2 ....................   Passed    2.74 sec
+      Start  6: test0
+ 6/19 Test  #6: test0 ............................   Passed    0.00 sec
+      Start  7: test-pool
+ 7/19 Test  #7: test-pool ........................   Passed    0.00 sec
+      Start  8: test-arange
+ 8/19 Test  #8: test-arange ......................   Passed    0.57 sec
+      Start  9: test-timestep_embedding
+ 9/19 Test  #9: test-timestep_embedding ..........   Passed    0.53 sec
+      Start 10: test-conv-transpose
+10/19 Test #10: test-conv-transpose ..............   Passed    0.00 sec
+      Start 11: test-conv-transpose-1d
+11/19 Test #11: test-conv-transpose-1d ...........   Passed    0.54 sec
+      Start 12: test-dup
+12/19 Test #12: test-dup .........................   Passed    0.01 sec
+      Start 13: test-rel-pos
+13/19 Test #13: test-rel-pos .....................   Passed    0.00 sec
+      Start 14: test-customop
+14/19 Test #14: test-customop ....................   Passed    0.00 sec
+      Start 15: test-conv1d
+15/19 Test #15: test-conv1d ......................   Passed    0.59 sec
+      Start 16: test-conv2d
+16/19 Test #16: test-conv2d ......................   Passed    0.57 sec
+      Start 17: test-mul-mat
+17/19 Test #17: test-mul-mat .....................   Passed    0.56 sec
+      Start 18: test-backend-ops
+18/19 Test #18: test-backend-ops .................   Passed   43.90 sec
+      Start 19: test-cont
+19/19 Test #19: test-cont ........................   Passed    0.53 sec
+
+95% tests passed, 1 tests failed out of 19
+
+Total Test time (real) =  70.69 sec
+
+The following tests FAILED:
+	  1 - test-opt (SEGFAULT)
+Errors while running CTest
+
+real	1m10.724s
+user	1m29.003s
+sys	0m9.102s
+```

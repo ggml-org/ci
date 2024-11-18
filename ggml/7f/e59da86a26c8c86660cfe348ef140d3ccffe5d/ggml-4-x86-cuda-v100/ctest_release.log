@@ -1,0 +1,458 @@
++ cmake -DCMAKE_BUILD_TYPE=Release -DGGML_CUDA=ON ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- Found OpenMP_C: -fopenmp (found version "4.5") 
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5")  
+-- OpenMP found
+-- x86 detected
+-- Using runtime weight conversion of Q4_0 to Q4_0_x_x to enable optimized GEMM/GEMV kernels
+-- Including CPU backend
+-- Found CUDAToolkit: /usr/local/cuda-12.2/include (found version "12.2.140") 
+-- CUDA Toolkit found
+-- Using CUDA architectures: native
+-- The CUDA compiler identification is NVIDIA 12.2.140
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda-12.2/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- CUDA host compiler is GNU 11.4.0
+
+-- Including CUDA backend
+-- x86 detected
+-- Linux detected
+-- Configuring done (9.1s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/ggml/work/ggml/build-ci-release
+
+real	0m9.206s
+user	0m7.411s
+sys	0m1.774s
++ make -j
+[  0%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  1%] Building C object src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  1%] Building C object src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  2%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  2%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  3%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  4%] Building C object src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  5%] Linking CXX static library libcommon.a
+[  5%] Building C object src/CMakeFiles/ggml-base.dir/ggml-aarch64.c.o
+[  6%] Linking CXX shared library libggml-base.so
+[  6%] Built target common
+[  6%] Built target ggml-base
+[  7%] Building C object src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu.c.o
+[  7%] Building CXX object src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu.cpp.o
+[  8%] Building C object src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu-aarch64.c.o
+[  8%] Building C object src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu-quants.c.o
+[  9%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/acc.cu.o
+[  9%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/arange.cu.o
+[ 10%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/argmax.cu.o
+[ 10%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/argsort.cu.o
+[ 11%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/clamp.cu.o
+[ 11%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/concat.cu.o
+[ 12%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/binbcast.cu.o
+[ 13%] Linking CXX shared library libggml-cpu.so
+[ 14%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/convert.cu.o
+[ 14%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/count-equal.cu.o
+[ 15%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/conv-transpose-1d.cu.o
+[ 15%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/cross-entropy-loss.cu.o
+[ 16%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/diagmask.cu.o
+[ 17%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/cpy.cu.o
+[ 17%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/dmmv.cu.o
+[ 18%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/fattn-tile-f32.cu.o
+[ 19%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/fattn-tile-f16.cu.o
+[ 20%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/getrows.cu.o
+[ 21%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/im2col.cu.o
+[ 22%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/mmq.cu.o
+[ 22%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/ggml-cuda.cu.o
+[ 22%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/mmv.cu.o
+[ 22%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/fattn.cu.o
+[ 23%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/mmvq.cu.o
+[ 23%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/norm.cu.o
+[ 24%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/opt-step-adamw.cu.o
+[ 24%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/pad.cu.o
+[ 25%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/out-prod.cu.o
+[ 26%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/pool2d.cu.o
+[ 27%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/rope.cu.o
+[ 27%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/softmax.cu.o
+[ 28%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/scale.cu.o
+[ 28%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/quantize.cu.o
+[ 29%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/sum.cu.o
+[ 29%] Built target ggml-cpu
+[ 30%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/unary.cu.o
+[ 31%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/wkv6.cu.o
+[ 32%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/tsembd.cu.o
+[ 32%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/upscale.cu.o
+[ 32%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqfloat-cpb16.cu.o
+[ 33%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqfloat-cpb32.cu.o
+[ 33%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/sumrows.cu.o
+[ 34%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqhalf-cpb16.cu.o
+[ 35%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqhalf-cpb8.cu.o
+[ 35%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqhalf-cpb32.cu.o
+[ 35%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq1_s.cu.o
+[ 36%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq2_xs.cu.o
+[ 37%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq2_s.cu.o
+[ 37%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq2_xxs.cu.o
+[ 38%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq3_s.cu.o
+[ 38%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq3_xxs.cu.o
+[ 39%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq4_xs.cu.o
+[ 40%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq4_nl.cu.o
+[ 41%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q3_k.cu.o
+[ 41%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q2_k.cu.o
+[ 41%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q4_0.cu.o
+[ 42%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q4_1.cu.o
+[ 42%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q5_0.cu.o
+[ 43%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q4_k.cu.o
+[ 43%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q5_k.cu.o
+[ 44%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q5_1.cu.o
+[ 45%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q6_k.cu.o
+[ 46%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q8_0.cu.o
+[ 46%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs128-q4_0-q4_0.cu.o
+[ 47%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs128-q8_0-q8_0.cu.o
+[ 48%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs128-q4_0-q4_0.cu.o
+[ 49%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs128-f16-f16.cu.o
+[ 49%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs128-q8_0-q8_0.cu.o
+[ 49%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs256-f16-f16.cu.o
+[ 50%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs128-f16-f16.cu.o
+[ 51%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs64-f16-f16.cu.o
+[ 52%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs64-f16-f16.cu.o
+[ 52%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs256-f16-f16.cu.o
+[ 52%] Linking CUDA shared library libggml-cuda.so
+[ 52%] Built target ggml-cuda
+[ 53%] Building CXX object src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 53%] Linking CXX shared library libggml.so
+[ 53%] Built target ggml
+[ 54%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
+[ 55%] Building C object tests/CMakeFiles/test-vec1.dir/test-vec1.c.o
+[ 55%] Building CXX object tests/CMakeFiles/test-opt.dir/test-opt.cpp.o
+[ 56%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 58%] Building C object tests/CMakeFiles/test-mul-mat0.dir/test-mul-mat0.c.o
+[ 58%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 58%] Building C object tests/CMakeFiles/test-mul-mat2.dir/test-mul-mat2.c.o
+[ 58%] Linking C executable ../bin/test-vec1
+[ 58%] Linking C executable ../bin/test-vec0
+[ 59%] Linking CXX executable ../bin/test-opt
+[ 60%] Linking C executable ../bin/test-mul-mat0
+[ 61%] Linking C executable ../bin/test-mul-mat2
+[ 62%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
+[ 63%] Building CXX object tests/CMakeFiles/test-arange.dir/test-arange.cpp.o
+[ 63%] Linking CXX executable ../bin/test-quantize-fns
+[ 64%] Linking CXX executable ../bin/test-quantize-perf
+[ 65%] Building C object tests/CMakeFiles/test-pool.dir/test-pool.c.o
+[ 66%] Building CXX object tests/CMakeFiles/test-conv-transpose-1d.dir/test-conv-transpose-1d.cpp.o
+[ 67%] Linking C executable ../bin/test0
+[ 67%] Building CXX object tests/CMakeFiles/test-timestep_embedding.dir/test-timestep_embedding.cpp.o
+[ 68%] Linking CXX executable ../bin/test-arange
+[ 69%] Building C object tests/CMakeFiles/test-conv-transpose.dir/test-conv-transpose.c.o
+[ 70%] Building C object tests/CMakeFiles/test-dup.dir/test-dup.c.o
+[ 70%] Building C object tests/CMakeFiles/test-rel-pos.dir/test-rel-pos.c.o
+[ 70%] Linking C executable ../bin/test-pool
+[ 70%] Building C object tests/CMakeFiles/test-customop.dir/test-customop.c.o
+[ 71%] Linking CXX executable ../bin/test-timestep_embedding
+[ 72%] Building CXX object tests/CMakeFiles/test-conv1d.dir/test-conv1d.cpp.o
+[ 72%] Linking C executable ../bin/test-conv-transpose
+[ 73%] Linking C executable ../bin/test-rel-pos
+[ 73%] Building CXX object tests/CMakeFiles/test-conv2d.dir/test-conv2d.cpp.o
+[ 73%] Linking C executable ../bin/test-dup
+[ 73%] Built target test-vec1
+[ 73%] Linking CXX executable ../bin/test-conv-transpose-1d
+[ 74%] Linking CXX executable ../bin/test-conv2d
+[ 75%] Linking C executable ../bin/test-customop
+[ 76%] Building CXX object tests/CMakeFiles/test-mul-mat.dir/test-mul-mat.cpp.o
+[ 76%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 76%] Built target test-vec0
+[ 77%] Linking CXX executable ../bin/test-conv1d
+[ 77%] Building C object tests/CMakeFiles/test-cont.dir/test-cont.c.o
+[ 78%] Linking CXX executable ../bin/test-backend-ops
+[ 78%] Building CXX object examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o
+[ 79%] Building CXX object examples/mnist/CMakeFiles/mnist-common.dir/mnist-common.cpp.o
+[ 79%] Building CXX object examples/sam/CMakeFiles/sam.dir/main.cpp.o
+[ 79%] Linking CXX executable ../bin/test-mul-mat
+[ 79%] Built target test-mul-mat2
+[ 80%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolo-image.cpp.o
+[ 80%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolov3-tiny.cpp.o
+[ 81%] Linking C executable ../bin/test-cont
+[ 81%] Built target test-mul-mat0
+[ 81%] Built target test0
+[ 82%] Linking CXX executable ../../bin/yolov3-tiny
+[ 83%] Linking CXX static library libcommon-ggml.a
+[ 81%] Built target test-pool
+[ 84%] Linking CXX executable ../../bin/sam
+[ 84%] Built target test-rel-pos
+[ 84%] Built target test-quantize-fns
+[ 84%] Linking CXX static library libmnist-common.a
+[ 84%] Built target test-conv-transpose
+[ 85%] Building CXX object examples/simple/CMakeFiles/simple-ctx.dir/simple-ctx.cpp.o
+[ 85%] Built target test-opt
+[ 85%] Built target test-customop
+[ 86%] Building CXX object examples/simple/CMakeFiles/simple-backend.dir/simple-backend.cpp.o
+[ 86%] Built target test-arange
+[ 86%] Built target test-quantize-perf
+[ 86%] Built target test-dup
+[ 86%] Linking CXX executable ../../bin/simple-ctx
+[ 86%] Built target test-timestep_embedding
+[ 86%] Linking CXX executable ../../bin/simple-backend
+[ 86%] Built target common-ggml
+[ 86%] Built target mnist-common
+[ 86%] Built target test-conv2d
+[ 86%] Built target test-conv1d
+[ 86%] Built target test-conv-transpose-1d
+[ 86%] Built target test-backend-ops
+[ 86%] Built target yolov3-tiny
+[ 87%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-ctx.dir/main-ctx.cpp.o
+[ 88%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-alloc.dir/main-alloc.cpp.o
+[ 88%] Built target test-cont
+[ 88%] Built target sam
+[ 88%] Built target test-mul-mat
+[ 89%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-sched.dir/main-sched.cpp.o
+[ 89%] Linking CXX executable ../../bin/gpt-2-ctx
+[ 89%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-backend.dir/main-backend.cpp.o
+[ 90%] Linking CXX executable ../../bin/gpt-2-alloc
+[ 91%] Linking CXX executable ../../bin/gpt-2-sched
+[ 91%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j.dir/main.cpp.o
+[ 91%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j-quantize.dir/quantize.cpp.o
+[ 92%] Building CXX object examples/mnist/CMakeFiles/mnist-eval.dir/mnist-eval.cpp.o
+[ 92%] Building CXX object examples/mnist/CMakeFiles/mnist-train.dir/mnist-train.cpp.o
+[ 93%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-quantize.dir/quantize.cpp.o
+[ 94%] Linking CXX executable ../../bin/gpt-2-backend
+[ 95%] Linking CXX executable ../../bin/gpt-j-quantize
+[ 96%] Linking CXX executable ../../bin/gpt-j
+[ 96%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-batched.dir/main-batched.cpp.o
+[ 97%] Linking CXX executable ../../bin/mnist-eval
+[ 98%] Building CXX object examples/magika/CMakeFiles/magika.dir/main.cpp.o
+[ 98%] Built target simple-ctx
+[ 99%] Linking CXX executable ../../bin/mnist-train
+[ 99%] Linking CXX executable ../../bin/gpt-2-quantize
+[100%] Linking CXX executable ../../bin/gpt-2-batched
+[100%] Linking CXX executable ../../bin/magika
+[100%] Built target simple-backend
+[100%] Built target mnist-train
+[100%] Built target gpt-2-batched
+[100%] Built target gpt-2-ctx
+[100%] Built target mnist-eval
+[100%] Built target gpt-2-sched
+[100%] Built target gpt-2-alloc
+[100%] Built target gpt-j-quantize
+[100%] Built target gpt-2-backend
+[100%] Built target gpt-2-quantize
+[100%] Built target magika
+[100%] Built target gpt-j
+
+real	0m1.621s
+user	0m4.610s
+sys	0m1.701s
++ ctest --output-on-failure
+Test project /home/ggml/work/ggml/build-ci-release
+      Start  1: test-opt
+ 1/19 Test  #1: test-opt .........................***Exception: SegFault  0.72 sec
+ggml_cuda_init: GGML_CUDA_FORCE_MMQ:    no
+ggml_cuda_init: GGML_CUDA_FORCE_CUBLAS: no
+ggml_cuda_init: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0, VMM: yes
+Testing 2 devices
+
+Backend 1/2: CUDA0
+  Device description: Tesla V100-PCIE-16GB
+  Device memory: 16151 MB (15841 MB free)
+
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=1): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=2, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=2, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=2, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=3, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=3, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=4, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=5, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=6, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=1): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=2, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=2, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=2, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=3, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=3, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=4, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=5, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=6, ndata_batch=6): [1;32mOK[0m
+  test_grad(): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=results_initial): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=weights_after_forward): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=results_after_forward): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=weights_after_forward_backward): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=result_after_forward_backward): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=results_initial): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=weights_after_forward): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=results_after_forward): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=weights_after_forward_backward): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=no, subtest=result_after_forward_backward): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=results_initial): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=weights_after_forward): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=results_after_forward): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=weights_after_forward_backward): [1;32mOK[0m
+  test_forward_backward(high_level=yes, shuffle=yes, subtest=result_after_forward_backward): [1;32mOK[0m
+  test_epoch_vs_fit(): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=1, subtest=weights): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=1, subtest=results_backward): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=1, subtest=results_forward): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=2, subtest=weights): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=2, subtest=results_backward): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=2, subtest=results_forward): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=3, subtest=weights): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=3, subtest=results_backward): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=3, subtest=results_forward): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=4, subtest=weights): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=4, subtest=results_backward): [1;32mOK[0m
+  test_idata_split(high_level=no, epoch=4, subtest=results_forward): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=1, subtest=weights): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=1, subtest=results_backward): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=1, subtest=results_forward): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=2, subtest=weights): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=2, subtest=results_backward): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=2, subtest=results_forward): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=3, subtest=weights): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=3, subtest=results_backward): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=3, subtest=results_forward): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=4, subtest=weights): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=4, subtest=results_backward): [1;32mOK[0m
+  test_idata_split(high_level=yes, epoch=4, subtest=results_forward): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=1, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=1, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=1, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=2, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=2, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=2, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=3, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=3, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=3, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=4, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=4, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=sum, epoch=4, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=1, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=1, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=1, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=2, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=2, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=2, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=3, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=3, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=3, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=4, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=4, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=2, loss_type=mean, epoch=4, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=1, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=1, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=1, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=2, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=2, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=2, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=3, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=3, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=3, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=4, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=4, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=sum, epoch=4, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=1, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=1, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=1, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=2, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=2, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=2, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=3, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=3, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=3, subtest=results): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=4, subtest=grads): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=4, subtest=weights): [1;32mOK[0m
+  test_gradient_accumulation(high_level=no, nbatch_physical=1, loss_type=mean, epoch=4, subtest=results): [1;32mOK[0m
+  test_regression(subtest=weights): [1;32mOK[0m
+  118/118 tests passed
+  Backend CUDA0: [1;32mOK[0m
+
+Backend 2/2: CPU
+  Device description: Intel(R) Xeon(R) CPU E5-2690 v4 @ 2.60GHz
+  Device memory: 0 MB (0 MB free)
+
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=1): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=2, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=2, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=2, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=3, nd
+
+      Start  2: test-quantize-fns
+ 2/19 Test  #2: test-quantize-fns ................   Passed   18.76 sec
+      Start  3: test-quantize-perf
+ 3/19 Test  #3: test-quantize-perf ...............   Passed    0.10 sec
+      Start  4: test-mul-mat0
+ 4/19 Test  #4: test-mul-mat0 ....................   Passed    0.55 sec
+      Start  5: test-mul-mat2
+ 5/19 Test  #5: test-mul-mat2 ....................   Passed    2.74 sec
+      Start  6: test0
+ 6/19 Test  #6: test0 ............................   Passed    0.00 sec
+      Start  7: test-pool
+ 7/19 Test  #7: test-pool ........................   Passed    0.00 sec
+      Start  8: test-arange
+ 8/19 Test  #8: test-arange ......................   Passed    0.57 sec
+      Start  9: test-timestep_embedding
+ 9/19 Test  #9: test-timestep_embedding ..........   Passed    0.53 sec
+      Start 10: test-conv-transpose
+10/19 Test #10: test-conv-transpose ..............   Passed    0.00 sec
+      Start 11: test-conv-transpose-1d
+11/19 Test #11: test-conv-transpose-1d ...........   Passed    0.54 sec
+      Start 12: test-dup
+12/19 Test #12: test-dup .........................   Passed    0.01 sec
+      Start 13: test-rel-pos
+13/19 Test #13: test-rel-pos .....................   Passed    0.00 sec
+      Start 14: test-customop
+14/19 Test #14: test-customop ....................   Passed    0.00 sec
+      Start 15: test-conv1d
+15/19 Test #15: test-conv1d ......................   Passed    0.59 sec
+      Start 16: test-conv2d
+16/19 Test #16: test-conv2d ......................   Passed    0.57 sec
+      Start 17: test-mul-mat
+17/19 Test #17: test-mul-mat .....................   Passed    0.56 sec
+      Start 18: test-backend-ops
+18/19 Test #18: test-backend-ops .................   Passed   43.90 sec
+      Start 19: test-cont
+19/19 Test #19: test-cont ........................   Passed    0.53 sec
+
+95% tests passed, 1 tests failed out of 19
+
+Total Test time (real) =  70.69 sec
+
+The following tests FAILED:
+	  1 - test-opt (SEGFAULT)
+Errors while running CTest
+
+real	1m10.724s
+user	1m29.003s
+sys	0m9.102s
