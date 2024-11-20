@@ -45,10 +45,10 @@ CMake Warning at ggml/src/ggml-amx/CMakeLists.txt:106 (message):
 -- The ASM compiler identification is AppleClang
 -- Found assembler: /Library/Developer/CommandLineTools/usr/bin/cc
 -- Including METAL backend
--- Configuring done (1.0s)
--- Generating done (0.2s)
+-- Configuring done (1.2s)
+-- Generating done (0.3s)
 -- Build files have been written to: /Users/ggml/work/llama.cpp/build-ci-release
 
-real	0m1.207s
-user	0m0.593s
-sys	0m0.684s
+real	0m1.439s
+user	0m0.592s
+sys	0m0.837s

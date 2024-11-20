@@ -1,8 +1,8 @@
 ## Summary
 
 - status:  FAILURE ❌ (1)
-- runtime: 742.20
-- date:    Wed Nov 20 06:49:40 PST 2024
+- runtime: 551.19
+- date:    Wed Nov 20 07:33:15 PST 2024
 - repo:    https://github.com/ggerganov/llama.cpp
 - commit:  https://github.com/ggerganov/llama.cpp/commit/fab5d30ff6729ff6ff615c41e8c0215d6bc30393
 - author:  Diego Devesa
@@ -29,70 +29,70 @@ Runs ctest in debug mode
 + ctest --output-on-failure -L main -E test-opt
 Test project /Users/ggml/work/llama.cpp/build-ci-debug
       Start  1: test-tokenizer-0-bert-bge
- 1/27 Test  #1: test-tokenizer-0-bert-bge .........   Passed    1.70 sec
+ 1/27 Test  #1: test-tokenizer-0-bert-bge .........   Passed    1.46 sec
       Start  2: test-tokenizer-0-command-r
- 2/27 Test  #2: test-tokenizer-0-command-r ........   Passed    1.83 sec
+ 2/27 Test  #2: test-tokenizer-0-command-r ........   Passed    1.78 sec
       Start  3: test-tokenizer-0-deepseek-coder
- 3/27 Test  #3: test-tokenizer-0-deepseek-coder ...   Passed    0.25 sec
+ 3/27 Test  #3: test-tokenizer-0-deepseek-coder ...   Passed    0.24 sec
       Start  4: test-tokenizer-0-deepseek-llm
- 4/27 Test  #4: test-tokenizer-0-deepseek-llm .....   Passed    0.70 sec
+ 4/27 Test  #4: test-tokenizer-0-deepseek-llm .....   Passed    0.68 sec
       Start  5: test-tokenizer-0-falcon
  5/27 Test  #5: test-tokenizer-0-falcon ...........   Passed    0.44 sec
       Start  6: test-tokenizer-0-gpt-2
- 6/27 Test  #6: test-tokenizer-0-gpt-2 ............   Passed    0.35 sec
+ 6/27 Test  #6: test-tokenizer-0-gpt-2 ............   Passed    0.34 sec
       Start  7: test-tokenizer-0-llama-bpe
- 7/27 Test  #7: test-tokenizer-0-llama-bpe ........   Passed    1.48 sec
+ 7/27 Test  #7: test-tokenizer-0-llama-bpe ........   Passed    1.45 sec
       Start  8: test-tokenizer-0-llama-spm
  8/27 Test  #8: test-tokenizer-0-llama-spm ........   Passed    0.08 sec
       Start  9: test-tokenizer-0-mpt
- 9/27 Test  #9: test-tokenizer-0-mpt ..............   Passed    0.35 sec
+ 9/27 Test  #9: test-tokenizer-0-mpt ..............   Passed    0.34 sec
       Start 10: test-tokenizer-0-phi-3
 10/27 Test #10: test-tokenizer-0-phi-3 ............   Passed    0.08 sec
       Start 11: test-tokenizer-0-qwen2
-11/27 Test #11: test-tokenizer-0-qwen2 ............   Passed    1.02 sec
+11/27 Test #11: test-tokenizer-0-qwen2 ............   Passed    1.00 sec
       Start 12: test-tokenizer-0-refact
-12/27 Test #12: test-tokenizer-0-refact ...........   Passed    0.34 sec
+12/27 Test #12: test-tokenizer-0-refact ...........   Passed    0.33 sec
       Start 13: test-tokenizer-0-starcoder
 13/27 Test #13: test-tokenizer-0-starcoder ........   Passed    0.34 sec
       Start 14: test-tokenizer-1-llama-spm
-14/27 Test #14: test-tokenizer-1-llama-spm ........   Passed    1.05 sec
+14/27 Test #14: test-tokenizer-1-llama-spm ........   Passed    1.07 sec
       Start 15: test-log
-15/27 Test #15: test-log ..........................   Passed    0.22 sec
+15/27 Test #15: test-log ..........................   Passed    0.25 sec
       Start 16: test-arg-parser
-16/27 Test #16: test-arg-parser ...................   Passed    0.25 sec
+16/27 Test #16: test-arg-parser ...................   Passed    0.32 sec
       Start 17: test-quantize-fns
-17/27 Test #17: test-quantize-fns .................   Passed   25.57 sec
+17/27 Test #17: test-quantize-fns .................   Passed   25.11 sec
       Start 18: test-quantize-perf
 18/27 Test #18: test-quantize-perf ................   Passed    0.33 sec
       Start 19: test-sampling
-19/27 Test #19: test-sampling .....................   Passed    2.22 sec
+19/27 Test #19: test-sampling .....................   Passed    2.21 sec
       Start 20: test-chat-template
 20/27 Test #20: test-chat-template ................   Passed    0.19 sec
       Start 21: test-grammar-parser
-21/27 Test #21: test-grammar-parser ...............   Passed    0.19 sec
+21/27 Test #21: test-grammar-parser ...............   Passed    0.20 sec
       Start 22: test-grammar-integration
-22/27 Test #22: test-grammar-integration ..........   Passed    0.25 sec
+22/27 Test #22: test-grammar-integration ..........   Passed    0.24 sec
       Start 23: test-llama-grammar
-23/27 Test #23: test-llama-grammar ................   Passed    0.24 sec
+23/27 Test #23: test-llama-grammar ................   Passed    0.20 sec
       Start 24: test-barrier
-24/27 Test #24: test-barrier ......................   Passed    0.82 sec
+24/27 Test #24: test-barrier ......................   Passed    0.80 sec
       Start 25: test-backend-ops
-25/27 Test #25: test-backend-ops ..................   Passed  181.26 sec
+25/27 Test #25: test-backend-ops ..................   Passed  176.80 sec
       Start 26: test-rope
-26/27 Test #26: test-rope .........................   Passed    0.34 sec
+26/27 Test #26: test-rope .........................   Passed    0.35 sec
       Start 29: test-json-schema-to-grammar
-27/27 Test #29: test-json-schema-to-grammar .......   Passed    2.22 sec
+27/27 Test #29: test-json-schema-to-grammar .......   Passed    0.30 sec
 
 100% tests passed, 0 tests failed out of 27
 
 Label Time Summary:
-main    = 224.11 sec*proc (27 tests)
+main    = 216.95 sec*proc (27 tests)
 
-Total Test time (real) = 224.13 sec
+Total Test time (real) = 216.96 sec
 
-real	3m44.388s
-user	7m23.974s
-sys	0m5.364s
+real	3m36.972s
+user	7m29.180s
+sys	0m4.855s
 ```
 
 ### ctest_release
@@ -103,13 +103,13 @@ Runs ctest in release mode
 + ctest --output-on-failure -L main
 Test project /Users/ggml/work/llama.cpp/build-ci-release
       Start  1: test-tokenizer-0-bert-bge
- 1/27 Test  #1: test-tokenizer-0-bert-bge .........   Passed    1.39 sec
+ 1/27 Test  #1: test-tokenizer-0-bert-bge .........   Passed    1.27 sec
       Start  2: test-tokenizer-0-command-r
- 2/27 Test  #2: test-tokenizer-0-command-r ........   Passed    0.32 sec
+ 2/27 Test  #2: test-tokenizer-0-command-r ........   Passed    0.31 sec
       Start  3: test-tokenizer-0-deepseek-coder
- 3/27 Test  #3: test-tokenizer-0-deepseek-coder ...   Passed    0.06 sec
+ 3/27 Test  #3: test-tokenizer-0-deepseek-coder ...   Passed    0.05 sec
       Start  4: test-tokenizer-0-deepseek-llm
- 4/27 Test  #4: test-tokenizer-0-deepseek-llm .....   Passed    0.12 sec
+ 4/27 Test  #4: test-tokenizer-0-deepseek-llm .....   Passed    0.11 sec
       Start  5: test-tokenizer-0-falcon
  5/27 Test  #5: test-tokenizer-0-falcon ...........   Passed    0.08 sec
       Start  6: test-tokenizer-0-gpt-2
@@ -129,44 +129,44 @@ Test project /Users/ggml/work/llama.cpp/build-ci-release
       Start 13: test-tokenizer-0-starcoder
 13/27 Test #13: test-tokenizer-0-starcoder ........   Passed    0.07 sec
       Start 14: test-tokenizer-1-llama-spm
-14/27 Test #14: test-tokenizer-1-llama-spm ........   Passed    0.34 sec
+14/27 Test #14: test-tokenizer-1-llama-spm ........   Passed    0.33 sec
       Start 15: test-log
 15/27 Test #15: test-log ..........................   Passed    0.19 sec
       Start 16: test-arg-parser
 16/27 Test #16: test-arg-parser ...................   Passed    0.19 sec
       Start 17: test-quantize-fns
-17/27 Test #17: test-quantize-fns .................   Passed   14.31 sec
+17/27 Test #17: test-quantize-fns .................   Passed   14.46 sec
       Start 18: test-quantize-perf
-18/27 Test #18: test-quantize-perf ................   Passed    0.24 sec
+18/27 Test #18: test-quantize-perf ................   Passed    0.21 sec
       Start 19: test-sampling
-19/27 Test #19: test-sampling .....................   Passed    0.94 sec
+19/27 Test #19: test-sampling .....................   Passed    1.01 sec
       Start 20: test-chat-template
-20/27 Test #20: test-chat-template ................   Passed    0.17 sec
+20/27 Test #20: test-chat-template ................   Passed    0.18 sec
       Start 21: test-grammar-parser
 21/27 Test #21: test-grammar-parser ...............   Passed    0.18 sec
       Start 22: test-grammar-integration
-22/27 Test #22: test-grammar-integration ..........   Passed    0.19 sec
+22/27 Test #22: test-grammar-integration ..........   Passed    0.21 sec
       Start 23: test-llama-grammar
-23/27 Test #23: test-llama-grammar ................   Passed    0.25 sec
+23/27 Test #23: test-llama-grammar ................   Passed    0.18 sec
       Start 24: test-barrier
 24/27 Test #24: test-barrier ......................   Passed    0.30 sec
       Start 25: test-backend-ops
-25/27 Test #25: test-backend-ops ..................   Passed   29.86 sec
+25/27 Test #25: test-backend-ops ..................   Passed   28.51 sec
       Start 26: test-rope
-26/27 Test #26: test-rope .........................   Passed    0.29 sec
+26/27 Test #26: test-rope .........................   Passed    0.22 sec
       Start 29: test-json-schema-to-grammar
-27/27 Test #29: test-json-schema-to-grammar .......   Passed    2.09 sec
+27/27 Test #29: test-json-schema-to-grammar .......   Passed    0.23 sec
 
 100% tests passed, 0 tests failed out of 27
 
 Label Time Summary:
-main    =  52.28 sec*proc (27 tests)
+main    =  48.97 sec*proc (27 tests)
 
-Total Test time (real) =  52.29 sec
+Total Test time (real) =  48.98 sec
 
-real	0m52.302s
-user	1m11.311s
-sys	0m4.915s
+real	0m48.995s
+user	1m10.487s
+sys	0m4.359s
 ```
 ### embd_bge_small
 
