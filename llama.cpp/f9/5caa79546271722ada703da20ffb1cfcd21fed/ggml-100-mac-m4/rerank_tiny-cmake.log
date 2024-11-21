@@ -49,6 +49,6 @@ CMake Warning at ggml/src/ggml-amx/CMakeLists.txt:106 (message):
 -- Generating done (0.2s)
 -- Build files have been written to: /Users/ggml/work/llama.cpp/build-ci-release
 
-real	0m1.335s
-user	0m0.560s
-sys	0m0.797s
+real	0m1.327s
+user	0m0.573s
+sys	0m0.804s
