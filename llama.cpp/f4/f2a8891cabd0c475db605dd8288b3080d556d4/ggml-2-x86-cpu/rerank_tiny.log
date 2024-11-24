@@ -1,0 +1,492 @@
++ cmake -DCMAKE_BUILD_TYPE=Release -DLLAMA_FATAL_WARNINGS=ON ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.34.1")
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- Found OpenMP_C: -fopenmp (found version "4.5")
+-- Found OpenMP_CXX: -fopenmp (found version "4.5")
+-- Found OpenMP: TRUE (found version "4.5")
+-- OpenMP found
+-- Using llamafile
+-- x86 detected
+-- Using runtime weight conversion of Q4_0 to Q4_0_x_x to enable optimized GEMM/GEMV kernels
+-- Including CPU backend
+-- Using AMX
+-- Including AMX backend
+-- Configuring done (0.6s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-release
+
+real	0m0.744s
+user	0m0.547s
+sys	0m0.201s
+++ nproc
++ make -j8
+[  1%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  3%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  3%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  5%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  5%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  5%] Built target build_info
+[  5%] Built target sha1
+[  5%] Built target xxhash
+[  5%] Built target sha256
+[  6%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  6%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  7%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-aarch64.c.o
+[  7%] Linking CXX shared library libggml-base.so
+[  7%] Built target ggml-base
+[  8%] Building CXX object ggml/src/ggml-amx/CMakeFiles/ggml-amx.dir/mmq.cpp.o
+[  8%] Building CXX object ggml/src/ggml-amx/CMakeFiles/ggml-amx.dir/ggml-amx.cpp.o
+[ 10%] Building CXX object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu.cpp.o
+[ 10%] Building C object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu.c.o
+[ 10%] Building C object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu-aarch64.c.o
+[ 11%] Building C object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu-quants.c.o
+[ 11%] Building CXX object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/llamafile/sgemm.cpp.o
+[ 12%] Linking CXX shared library libggml-amx.so
+[ 13%] Linking CXX shared library libggml-cpu.so
+[ 13%] Built target ggml-amx
+[ 13%] Built target ggml-cpu
+[ 14%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 14%] Linking CXX shared library libggml.so
+[ 14%] Built target ggml
+[ 14%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 15%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/llama.dir/llama-vocab.cpp.o
+[ 17%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 18%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+[ 18%] Building CXX object src/CMakeFiles/llama.dir/llama-sampling.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/unicode-data.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/unicode.cpp.o
+[ 19%] Linking CXX executable ../../bin/llama-gguf
+[ 19%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 20%] Linking CXX shared library libllama.so
+[ 20%] Built target llama-gguf
+[ 20%] Built target llama-gguf-hash
+[ 20%] Built target llama
+[ 20%] Building CXX object examples/llava/CMakeFiles/llava.dir/llava.cpp.o
+[ 21%] Building CXX object examples/llava/CMakeFiles/llava.dir/clip.cpp.o
+[ 21%] Building CXX object common/CMakeFiles/common.dir/arg.cpp.o
+[ 21%] Building C object tests/CMakeFiles/test-c.dir/test-c.c.o
+[ 22%] Building CXX object examples/simple/CMakeFiles/llama-simple.dir/simple.cpp.o
+[ 24%] Building CXX object examples/quantize-stats/CMakeFiles/llama-quantize-stats.dir/quantize-stats.cpp.o
+[ 24%] Building CXX object common/CMakeFiles/common.dir/common.cpp.o
+[ 25%] Building CXX object examples/simple-chat/CMakeFiles/llama-simple-chat.dir/simple-chat.cpp.o
+[ 26%] Linking C executable ../bin/test-c
+[ 26%] Building CXX object common/CMakeFiles/common.dir/console.cpp.o
+[ 26%] Linking CXX executable ../../bin/llama-simple
+[ 26%] Linking CXX executable ../../bin/llama-simple-chat
+[ 27%] Linking CXX executable ../../bin/llama-quantize-stats
+[ 27%] Built target llava
+[ 28%] Building CXX object common/CMakeFiles/common.dir/json-schema-to-grammar.cpp.o
+[ 28%] Building CXX object common/CMakeFiles/common.dir/log.cpp.o
+[ 29%] Building CXX object common/CMakeFiles/common.dir/ngram-cache.cpp.o
+[ 30%] Linking CXX static library libllava_static.a
+[ 31%] Building CXX object common/CMakeFiles/common.dir/sampling.cpp.o
+[ 31%] Linking CXX shared library libllava_shared.so
+[ 31%] Linking CXX static library libcommon.a
+[ 31%] Built target test-c
+[ 31%] Built target llava_static
+[ 31%] Built target common
+[ 31%] Building CXX object tests/CMakeFiles/test-tokenizer-1-bpe.dir/test-tokenizer-1-bpe.cpp.o
+[ 31%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/test-tokenizer-0.cpp.o
+[ 31%] Building CXX object tests/CMakeFiles/test-tokenizer-1-spm.dir/test-tokenizer-1-spm.cpp.o
+[ 32%] Building CXX object tests/CMakeFiles/test-log.dir/test-log.cpp.o
+[ 33%] Building CXX object tests/CMakeFiles/test-log.dir/get-model.cpp.o
+[ 33%] Built target llama-simple-chat
+[ 35%] Linking CXX executable ../bin/test-tokenizer-0
+[ 35%] Linking CXX executable ../bin/test-tokenizer-1-bpe
+[ 36%] Linking CXX executable ../bin/test-tokenizer-1-spm
+[ 36%] Linking CXX executable ../bin/test-log
+[ 37%] Building CXX object tests/CMakeFiles/test-arg-parser.dir/test-arg-parser.cpp.o
+[ 37%] Built target llama-simple
+[ 37%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 37%] Building CXX object tests/CMakeFiles/test-arg-parser.dir/get-model.cpp.o
+[ 37%] Built target llava_shared
+[ 37%] Built target llama-quantize-stats
+[ 38%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/get-model.cpp.o
+[ 39%] Linking CXX executable ../bin/test-arg-parser
+[ 40%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
+[ 40%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 40%] Linking CXX executable ../bin/test-quantize-fns
+[ 41%] Building CXX object tests/CMakeFiles/test-sampling.dir/get-model.cpp.o
+[ 42%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/get-model.cpp.o
+[ 43%] Linking CXX executable ../bin/test-sampling
+[ 43%] Linking CXX executable ../bin/test-quantize-perf
+[ 43%] Built target test-tokenizer-1-spm
+[ 43%] Built target test-log
+[ 43%] Built target test-tokenizer-1-bpe
+[ 43%] Built target test-tokenizer-0
+[ 43%] Building CXX object tests/CMakeFiles/test-chat-template.dir/test-chat-template.cpp.o
+[ 44%] Building CXX object tests/CMakeFiles/test-grammar-integration.dir/test-grammar-integration.cpp.o
+[ 44%] Building CXX object tests/CMakeFiles/test-grammar-parser.dir/test-grammar-parser.cpp.o
+[ 44%] Building CXX object tests/CMakeFiles/test-llama-grammar.dir/test-llama-grammar.cpp.o
+[ 45%] Building CXX object tests/CMakeFiles/test-chat-template.dir/get-model.cpp.o
+[ 45%] Building CXX object tests/CMakeFiles/test-grammar-parser.dir/get-model.cpp.o
+[ 46%] Building CXX object tests/CMakeFiles/test-llama-grammar.dir/get-model.cpp.o
+[ 47%] Building CXX object tests/CMakeFiles/test-grammar-integration.dir/get-model.cpp.o
+[ 48%] Linking CXX executable ../bin/test-chat-template
+[ 49%] Linking CXX executable ../bin/test-grammar-parser
+[ 49%] Linking CXX executable ../bin/test-llama-grammar
+[ 49%] Linking CXX executable ../bin/test-grammar-integration
+[ 49%] Built target test-quantize-fns
+[ 50%] Building CXX object tests/CMakeFiles/test-barrier.dir/test-barrier.cpp.o
+[ 50%] Built target test-sampling
+[ 50%] Building CXX object tests/CMakeFiles/test-barrier.dir/get-model.cpp.o
+[ 50%] Built target test-quantize-perf
+[ 51%] Linking CXX executable ../bin/test-barrier
+[ 52%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 53%] Building CXX object tests/CMakeFiles/test-rope.dir/test-rope.cpp.o
+[ 53%] Built target test-arg-parser
+[ 53%] Building CXX object tests/CMakeFiles/test-rope.dir/get-model.cpp.o
+[ 54%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/get-model.cpp.o
+[ 55%] Building CXX object tests/CMakeFiles/test-model-load-cancel.dir/test-model-load-cancel.cpp.o
+[ 56%] Linking CXX executable ../bin/test-rope
+[ 56%] Linking CXX executable ../bin/test-backend-ops
+[ 56%] Building CXX object tests/CMakeFiles/test-model-load-cancel.dir/get-model.cpp.o
+[ 57%] Linking CXX executable ../bin/test-model-load-cancel
+[ 57%] Built target test-grammar-parser
+[ 57%] Built target test-llama-grammar
+[ 57%] Built target test-chat-template
+[ 58%] Building CXX object tests/CMakeFiles/test-autorelease.dir/test-autorelease.cpp.o
+[ 58%] Building CXX object tests/CMakeFiles/test-json-schema-to-grammar.dir/test-json-schema-to-grammar.cpp.o
+[ 59%] Building CXX object examples/cvector-generator/CMakeFiles/llama-cvector-generator.dir/cvector-generator.cpp.o
+[ 60%] Building CXX object tests/CMakeFiles/test-autorelease.dir/get-model.cpp.o
+[ 60%] Building CXX object tests/CMakeFiles/test-json-schema-to-grammar.dir/get-model.cpp.o
+[ 61%] Linking CXX executable ../../bin/llama-cvector-generator
+[ 61%] Linking CXX executable ../bin/test-autorelease
+[ 61%] Built target test-grammar-integration
+[ 61%] Built target test-barrier
+[ 62%] Linking CXX executable ../bin/test-json-schema-to-grammar
+[ 62%] Built target test-rope
+[ 63%] Building CXX object examples/batched-bench/CMakeFiles/llama-batched-bench.dir/batched-bench.cpp.o
+[ 63%] Building CXX object examples/batched/CMakeFiles/llama-batched.dir/batched.cpp.o
+[ 63%] Linking CXX executable ../../bin/llama-batched-bench
+[ 64%] Linking CXX executable ../../bin/llama-batched
+[ 65%] Building CXX object examples/convert-llama2c-to-ggml/CMakeFiles/llama-convert-llama2c-to-ggml.dir/convert-llama2c-to-ggml.cpp.o
+[ 65%] Built target test-backend-ops
+[ 65%] Linking CXX executable ../../bin/llama-convert-llama2c-to-ggml
+[ 65%] Built target test-model-load-cancel
+[ 65%] Building CXX object examples/embedding/CMakeFiles/llama-embedding.dir/embedding.cpp.o
+[ 65%] Building CXX object examples/eval-callback/CMakeFiles/llama-eval-callback.dir/eval-callback.cpp.o
+[ 66%] Linking CXX executable ../../bin/llama-embedding
+[ 67%] Linking CXX executable ../../bin/llama-eval-callback
+[ 67%] Built target test-autorelease
+[ 67%] Building CXX object examples/export-lora/CMakeFiles/llama-export-lora.dir/export-lora.cpp.o
+[ 68%] Linking CXX executable ../../bin/llama-export-lora
+[ 68%] Built target test-json-schema-to-grammar
+[ 68%] Built target llama-cvector-generator
+[ 68%] Built target llama-convert-llama2c-to-ggml
+[ 69%] Building CXX object examples/gbnf-validator/CMakeFiles/llama-gbnf-validator.dir/gbnf-validator.cpp.o
+[ 70%] Building CXX object examples/gguf-split/CMakeFiles/llama-gguf-split.dir/gguf-split.cpp.o
+[ 70%] Building CXX object examples/gritlm/CMakeFiles/llama-gritlm.dir/gritlm.cpp.o
+[ 70%] Linking CXX executable ../../bin/llama-gbnf-validator
+[ 71%] Linking CXX executable ../../bin/llama-gritlm
+[ 72%] Linking CXX executable ../../bin/llama-gguf-split
+[ 72%] Built target llama-batched-bench
+[ 72%] Built target llama-batched
+[ 72%] Building CXX object examples/imatrix/CMakeFiles/llama-imatrix.dir/imatrix.cpp.o
+[ 72%] Building CXX object examples/infill/CMakeFiles/llama-infill.dir/infill.cpp.o
+[ 73%] Linking CXX executable ../../bin/llama-infill
+[ 74%] Linking CXX executable ../../bin/llama-imatrix
+[ 74%] Built target llama-embedding
+[ 74%] Built target llama-eval-callback
+[ 75%] Building CXX object examples/llama-bench/CMakeFiles/llama-bench.dir/llama-bench.cpp.o
+[ 75%] Building CXX object examples/llava/CMakeFiles/llama-llava-cli.dir/llava-cli.cpp.o
+[ 75%] Linking CXX executable ../../bin/llama-bench
+[ 76%] Linking CXX executable ../../bin/llama-llava-cli
+[ 76%] Built target llama-gbnf-validator
+[ 76%] Built target llama-export-lora
+[ 76%] Built target llama-gguf-split
+[ 76%] Building CXX object examples/llava/CMakeFiles/llama-minicpmv-cli.dir/minicpmv-cli.cpp.o
+[ 77%] Building CXX object examples/lookahead/CMakeFiles/llama-lookahead.dir/lookahead.cpp.o
+[ 78%] Building CXX object examples/lookup/CMakeFiles/llama-lookup.dir/lookup.cpp.o
+[ 78%] Linking CXX executable ../../bin/llama-lookahead
+[ 79%] Linking CXX executable ../../bin/llama-minicpmv-cli
+[ 79%] Linking CXX executable ../../bin/llama-lookup
+[ 79%] Built target llama-gritlm
+[ 80%] Building CXX object examples/lookup/CMakeFiles/llama-lookup-create.dir/lookup-create.cpp.o
+[ 80%] Linking CXX executable ../../bin/llama-lookup-create
+[ 80%] Built target llama-imatrix
+[ 80%] Built target llama-infill
+[ 80%] Built target llama-bench
+[ 81%] Building CXX object examples/lookup/CMakeFiles/llama-lookup-merge.dir/lookup-merge.cpp.o
+[ 81%] Building CXX object examples/lookup/CMakeFiles/llama-lookup-stats.dir/lookup-stats.cpp.o
+[ 82%] Linking CXX executable ../../bin/llama-lookup-merge
+[ 83%] Building CXX object examples/main/CMakeFiles/llama-cli.dir/main.cpp.o
+[ 84%] Linking CXX executable ../../bin/llama-lookup-stats
+[ 84%] Linking CXX executable ../../bin/llama-cli
+[ 84%] Built target llama-llava-cli
+[ 84%] Built target llama-lookahead
+[ 84%] Building CXX object examples/parallel/CMakeFiles/llama-parallel.dir/parallel.cpp.o
+[ 84%] Built target llama-lookup
+[ 84%] Built target llama-minicpmv-cli
+[ 85%] Building CXX object examples/passkey/CMakeFiles/llama-passkey.dir/passkey.cpp.o
+[ 86%] Linking CXX executable ../../bin/llama-parallel
+[ 87%] Building CXX object examples/perplexity/CMakeFiles/llama-perplexity.dir/perplexity.cpp.o
+[ 88%] Building CXX object examples/quantize/CMakeFiles/llama-quantize.dir/quantize.cpp.o
+[ 88%] Linking CXX executable ../../bin/llama-passkey
+[ 88%] Linking CXX executable ../../bin/llama-quantize
+[ 88%] Linking CXX executable ../../bin/llama-perplexity
+[ 88%] Built target llama-lookup-merge
+[ 88%] Building CXX object examples/retrieval/CMakeFiles/llama-retrieval.dir/retrieval.cpp.o
+[ 89%] Linking CXX executable ../../bin/llama-retrieval
+[ 89%] Built target llama-lookup-create
+[ 90%] Generating loading.html.hpp
+[ 91%] Generating completion.js.hpp
+[ 91%] Built target llama-lookup-stats
+[ 91%] Generating deps_daisyui.min.css.hpp
+[ 91%] Built target llama-cli
+[ 91%] Building CXX object examples/save-load-state/CMakeFiles/llama-save-load-state.dir/save-load-state.cpp.o
+[ 92%] Building CXX object examples/speculative/CMakeFiles/llama-speculative.dir/speculative.cpp.o
+[ 93%] Linking CXX executable ../../bin/llama-save-load-state
+[ 93%] Linking CXX executable ../../bin/llama-speculative
+[ 93%] Built target llama-quantize
+[ 93%] Built target llama-parallel
+[ 94%] Building CXX object examples/tokenize/CMakeFiles/llama-tokenize.dir/tokenize.cpp.o
+[ 94%] Built target llama-passkey
+[ 95%] Building CXX object pocs/vdot/CMakeFiles/llama-vdot.dir/vdot.cpp.o
+[ 95%] Built target llama-perplexity
+[ 95%] Linking CXX executable ../../bin/llama-tokenize
+[ 96%] Building CXX object pocs/vdot/CMakeFiles/llama-q8dot.dir/q8dot.cpp.o
+[ 97%] Generating deps_markdown-it.js.hpp
+[ 98%] Linking CXX executable ../../bin/llama-vdot
+[ 98%] Linking CXX executable ../../bin/llama-q8dot
+[ 98%] Built target llama-retrieval
+[ 98%] Generating deps_tailwindcss.js.hpp
+[ 98%] Built target llama-save-load-state
+[ 99%] Generating deps_vue.esm-browser.js.hpp
+[ 99%] Built target llama-speculative
+[ 99%] Built target llama-tokenize
+[ 99%] Built target llama-vdot
+[ 99%] Generating index.html.hpp
+[ 99%] Built target llama-q8dot
+[ 99%] Building CXX object examples/server/CMakeFiles/llama-server.dir/server.cpp.o
+[100%] Linking CXX executable ../../bin/llama-server
+[100%] Built target llama-server
+
+real	0m2.264s
+user	0m7.742s
+sys	0m1.789s
++ ./bin/llama-embedding --model ../models-mnt/rerank-tiny/ggml-model-f16.gguf -p 'what is panda?</s></s>hi\nwhat is panda?</s></s>it'\''s a bear\nwhat is panda?</s></s>The giant panda (Ailuropoda melanoleuca), sometimes called a panda bear or simply panda, is a bear species endemic to China.' -ngl 99 -c 0 --pooling rank --embd-normalize -1 --verbose-prompt
+warning: not compiled with GPU offload support, --gpu-layers option will be ignored
+warning: see main README.md for information on enabling GPU BLAS support
+0.00.000.554 I build: 4157 (f4f2a889) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.008.413 I llama_model_loader: loaded meta data with 29 key-value pairs and 70 tensors from ../models-mnt/rerank-tiny/ggml-model-f16.gguf (version GGUF V3 (latest))
+0.00.008.424 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.008.434 I llama_model_loader: - kv   0:                       general.architecture str              = jina-bert-v2
+0.00.008.435 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.008.436 I llama_model_loader: - kv   2:                               general.name str              = Jina Bert Implementation
+0.00.008.437 I llama_model_loader: - kv   3:                       general.organization str              = Jinaai
+0.00.008.438 I llama_model_loader: - kv   4:                         general.size_label str              = 33M
+0.00.008.440 I llama_model_loader: - kv   5:                   jina-bert-v2.block_count u32              = 4
+0.00.008.441 I llama_model_loader: - kv   6:                jina-bert-v2.context_length u32              = 8192
+0.00.008.442 I llama_model_loader: - kv   7:              jina-bert-v2.embedding_length u32              = 384
+0.00.008.442 I llama_model_loader: - kv   8:           jina-bert-v2.feed_forward_length u32              = 1536
+0.00.008.443 I llama_model_loader: - kv   9:          jina-bert-v2.attention.head_count u32              = 12
+0.00.008.446 I llama_model_loader: - kv  10:  jina-bert-v2.attention.layer_norm_epsilon f32              = 0.000000
+0.00.008.446 I llama_model_loader: - kv  11:                          general.file_type u32              = 1
+0.00.008.447 I llama_model_loader: - kv  12:              jina-bert-v2.attention.causal bool             = false
+0.00.008.448 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.008.449 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = jina-v1-en
+0.00.014.748 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,61056]   = ["<s>", "<pad>", "</s>", "<unk>", "<m...
+0.00.016.330 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,61056]   = [3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.020.229 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,39382]   = ["t h", "i n", "a n", "e r", "th e", ...
+0.00.020.234 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.020.235 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 2
+0.00.020.235 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 3
+0.00.020.236 I llama_model_loader: - kv  21:          tokenizer.ggml.seperator_token_id u32              = 2
+0.00.020.236 I llama_model_loader: - kv  22:            tokenizer.ggml.padding_token_id u32              = 1
+0.00.020.237 I llama_model_loader: - kv  23:                tokenizer.ggml.cls_token_id u32              = 0
+0.00.020.237 I llama_model_loader: - kv  24:               tokenizer.ggml.mask_token_id u32              = 4
+0.00.020.238 I llama_model_loader: - kv  25:            tokenizer.ggml.token_type_count u32              = 2
+0.00.020.238 I llama_model_loader: - kv  26:               tokenizer.ggml.add_bos_token bool             = true
+0.00.020.239 I llama_model_loader: - kv  27:               tokenizer.ggml.add_eos_token bool             = true
+0.00.020.240 I llama_model_loader: - kv  28:               general.quantization_version u32              = 2
+0.00.020.242 I llama_model_loader: - type  f32:   41 tensors
+0.00.020.242 I llama_model_loader: - type  f16:   29 tensors
+0.00.039.273 W llm_load_vocab: empty token at index 5
+0.00.049.243 W llm_load_vocab: model vocab missing newline token, using special_pad_id instead
+0.00.062.884 W llm_load_vocab: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.062.977 I llm_load_vocab: special tokens cache size = 5
+0.00.419.112 I llm_load_vocab: token to piece cache size = 1.5060 MB
+0.00.419.131 I llm_load_print_meta: format           = GGUF V3 (latest)
+0.00.419.132 I llm_load_print_meta: arch             = jina-bert-v2
+0.00.419.132 I llm_load_print_meta: vocab type       = BPE
+0.00.419.133 I llm_load_print_meta: n_vocab          = 61056
+0.00.419.133 I llm_load_print_meta: n_merges         = 39382
+0.00.419.134 I llm_load_print_meta: vocab_only       = 0
+0.00.419.135 I llm_load_print_meta: n_ctx_train      = 8192
+0.00.419.135 I llm_load_print_meta: n_embd           = 384
+0.00.419.135 I llm_load_print_meta: n_layer          = 4
+0.00.419.145 I llm_load_print_meta: n_head           = 12
+0.00.419.146 I llm_load_print_meta: n_head_kv        = 12
+0.00.419.147 I llm_load_print_meta: n_rot            = 32
+0.00.419.147 I llm_load_print_meta: n_swa            = 0
+0.00.419.147 I llm_load_print_meta: n_embd_head_k    = 32
+0.00.419.147 I llm_load_print_meta: n_embd_head_v    = 32
+0.00.419.148 I llm_load_print_meta: n_gqa            = 1
+0.00.419.149 I llm_load_print_meta: n_embd_k_gqa     = 384
+0.00.419.150 I llm_load_print_meta: n_embd_v_gqa     = 384
+0.00.419.151 I llm_load_print_meta: f_norm_eps       = 1.0e-12
+0.00.419.152 I llm_load_print_meta: f_norm_rms_eps   = 0.0e+00
+0.00.419.152 I llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+0.00.419.153 I llm_load_print_meta: f_max_alibi_bias = 8.0e+00
+0.00.419.153 I llm_load_print_meta: f_logit_scale    = 0.0e+00
+0.00.419.155 I llm_load_print_meta: n_ff             = 1536
+0.00.419.155 I llm_load_print_meta: n_expert         = 0
+0.00.419.155 I llm_load_print_meta: n_expert_used    = 0
+0.00.419.156 I llm_load_print_meta: causal attn      = 0
+0.00.419.156 I llm_load_print_meta: pooling type     = -1
+0.00.419.156 I llm_load_print_meta: rope type        = -1
+0.00.419.157 I llm_load_print_meta: rope scaling     = linear
+0.00.419.158 I llm_load_print_meta: freq_base_train  = 10000.0
+0.00.419.158 I llm_load_print_meta: freq_scale_train = 1
+0.00.419.159 I llm_load_print_meta: n_ctx_orig_yarn  = 8192
+0.00.419.159 I llm_load_print_meta: rope_finetuned   = unknown
+0.00.419.159 I llm_load_print_meta: ssm_d_conv       = 0
+0.00.419.159 I llm_load_print_meta: ssm_d_inner      = 0
+0.00.419.160 I llm_load_print_meta: ssm_d_state      = 0
+0.00.419.160 I llm_load_print_meta: ssm_dt_rank      = 0
+0.00.419.160 I llm_load_print_meta: ssm_dt_b_c_rms   = 0
+0.00.419.161 I llm_load_print_meta: model type       = 33M
+0.00.419.161 I llm_load_print_meta: model ftype      = F16
+0.00.419.162 I llm_load_print_meta: model params     = 32.90 M
+0.00.419.163 I llm_load_print_meta: model size       = 62.78 MiB (16.01 BPW) 
+0.00.419.163 I llm_load_print_meta: general.name     = Jina Bert Implementation
+0.00.419.164 I llm_load_print_meta: BOS token        = 0 '<s>'
+0.00.419.164 I llm_load_print_meta: EOS token        = 2 '</s>'
+0.00.419.164 I llm_load_print_meta: UNK token        = 3 '<unk>'
+0.00.419.165 I llm_load_print_meta: SEP token        = 2 '</s>'
+0.00.419.165 I llm_load_print_meta: PAD token        = 1 '<pad>'
+0.00.419.165 I llm_load_print_meta: CLS token        = 0 '<s>'
+0.00.419.166 I llm_load_print_meta: MASK token       = 4 '<mask>'
+0.00.419.166 I llm_load_print_meta: EOG token        = 2 '</s>'
+0.00.419.167 I llm_load_print_meta: max token length = 45
+0.00.423.031 I llm_load_tensors:   CPU_Mapped model buffer size =    62.78 MiB
+......................
+0.00.425.174 I llama_new_context_with_model: n_seq_max     = 1
+0.00.425.179 I llama_new_context_with_model: n_ctx         = 8192
+0.00.425.180 I llama_new_context_with_model: n_ctx_per_seq = 8192
+0.00.425.180 I llama_new_context_with_model: n_batch       = 2048
+0.00.425.180 I llama_new_context_with_model: n_ubatch      = 2048
+0.00.425.181 I llama_new_context_with_model: flash_attn    = 0
+0.00.425.183 I llama_new_context_with_model: freq_base     = 10000.0
+0.00.425.183 I llama_new_context_with_model: freq_scale    = 1
+0.00.435.571 I llama_kv_cache_init:        CPU KV buffer size =    48.00 MiB
+0.00.435.585 I llama_new_context_with_model: KV self size  =   48.00 MiB, K (f16):   24.00 MiB, V (f16):   24.00 MiB
+0.00.435.594 I llama_new_context_with_model:        CPU  output buffer size =     0.00 MiB
+0.00.436.969 I llama_new_context_with_model:        CPU compute buffer size =   220.02 MiB
+0.00.436.974 I llama_new_context_with_model: graph nodes  = 154
+0.00.436.975 I llama_new_context_with_model: graph splits = 1
+0.00.436.977 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.444.981 I 
+0.00.445.084 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 0 | AMX_INT8 = 0 | FMA = 1 | NEON = 0 | SVE = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | RISCV_VECT = 0 | WASM_SIMD = 0 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
+0.00.445.320 I main: prompt 0: 'what is panda?</s></s>hi'
+0.00.445.325 I main: number of tokens in prompt = 9
+     0 -> '<s>'
+ 21381 -> 'what'
+ 21152 -> 'is'
+ 49990 -> 'panda'
+    61 -> '?'
+     2 -> '</s>'
+     2 -> '</s>'
+ 23233 -> 'hi'
+     2 -> '</s>'
+
+
+0.00.445.330 I main: prompt 1: 'what is panda?</s></s>it's a bear'
+0.00.445.330 I main: number of tokens in prompt = 13
+     0 -> '<s>'
+ 21381 -> 'what'
+ 21152 -> 'is'
+ 49990 -> 'panda'
+    61 -> '?'
+     2 -> '</s>'
+     2 -> '</s>'
+ 21153 -> 'it'
+    37 -> '''
+    87 -> 's'
+    69 -> 'a'
+ 25706 -> 'bear'
+     2 -> '</s>'
+
+
+0.00.445.336 I main: prompt 2: 'what is panda?</s></s>The giant panda (Ailuropoda melanoleuca), sometimes called a panda bear or simply panda, is a bear species endemic to China.'
+0.00.445.336 I main: number of tokens in prompt = 40
+     0 -> '<s>'
+ 21381 -> 'what'
+ 21152 -> 'is'
+ 49990 -> 'panda'
+    61 -> '?'
+     2 -> '</s>'
+     2 -> '</s>'
+ 21215 -> 'he'
+ 28390 -> 'giant'
+ 49990 -> 'panda'
+    38 -> '('
+ 21163 -> 'il'
+ 26237 -> 'uro'
+ 21223 -> 'po'
+ 23179 -> 'da'
+ 36906 -> 'melan'
+ 26791 -> 'ole'
+    89 -> 'u'
+ 21402 -> 'ca'
+ 21686 -> '),'
+ 23314 -> 'sometimes'
+ 22517 -> 'called'
+    69 -> 'a'
+ 49990 -> 'panda'
+ 25706 -> 'bear'
+ 21142 -> 'or'
+ 22810 -> 'simply'
+ 49990 -> 'panda'
+    42 -> ','
+ 21152 -> 'is'
+    69 -> 'a'
+ 25706 -> 'bear'
+ 25677 -> 'species'
+ 28930 -> 'ende'
+ 22024 -> 'mic'
+ 21148 -> 'to'
+    76 -> 'h'
+ 22344 -> 'ina'
+    44 -> '.'
+     2 -> '</s>'
+
+
+0.00.449.338 I batch_decode: n_tokens = 62, n_seq = 3
+
+rerank score 0:    0.023
+rerank score 1:    0.024
+rerank score 2:    0.199
+
+0.00.459.650 I llama_perf_context_print:        load time =     444.40 ms
+0.00.459.653 I llama_perf_context_print: prompt eval time =      10.06 ms /    62 tokens (    0.16 ms per token,  6162.41 tokens per second)
+0.00.459.655 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.00.459.656 I llama_perf_context_print:       total time =      14.67 ms /    63 tokens
+
+real	0m0.478s
+user	0m0.499s
+sys	0m0.044s
+  - rerank score 0 @ 0.023 OK
+  - rerank score 1 @ 0.024 OK
+  - rerank score 2 @ 0.199 OK
