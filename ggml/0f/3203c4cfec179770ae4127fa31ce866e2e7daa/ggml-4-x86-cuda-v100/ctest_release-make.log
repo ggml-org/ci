@@ -1,0 +1,214 @@
++ make -j
+[  1%] Building C object src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  1%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  1%] Building C object src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  2%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  3%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  3%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  4%] Building C object src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  4%] Building C object src/CMakeFiles/ggml-base.dir/ggml-aarch64.c.o
+[  5%] Linking CXX static library libcommon.a
+[  5%] Built target common
+[  6%] Linking CXX shared library libggml-base.so
+[  6%] Built target ggml-base
+[  7%] Building C object src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu.c.o
+[  7%] Building CXX object src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu.cpp.o
+[  8%] Building C object src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu-aarch64.c.o
+[  8%] Building C object src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu-quants.c.o
+[  9%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/acc.cu.o
+[  9%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/arange.cu.o
+[  9%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/argsort.cu.o
+[ 10%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/binbcast.cu.o
+[ 11%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/argmax.cu.o
+[ 13%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/clamp.cu.o
+[ 13%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/conv-transpose-1d.cu.o
+[ 13%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/concat.cu.o
+[ 13%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/convert.cu.o
+[ 14%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/count-equal.cu.o
+[ 15%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/cpy.cu.o
+[ 15%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/cross-entropy-loss.cu.o
+[ 16%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/diagmask.cu.o
+[ 16%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/dmmv.cu.o
+[ 17%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/fattn-tile-f16.cu.o
+[ 18%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/fattn-tile-f32.cu.o
+[ 18%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/fattn.cu.o
+[ 19%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/getrows.cu.o
+[ 19%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/ggml-cuda.cu.o
+[ 20%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/im2col.cu.o
+[ 21%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/mmv.cu.o
+[ 21%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/mmq.cu.o
+[ 22%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/mmvq.cu.o
+[ 22%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/norm.cu.o
+[ 23%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/opt-step-adamw.cu.o
+[ 24%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/out-prod.cu.o
+[ 24%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/pad.cu.o
+[ 25%] Linking CXX shared library libggml-cpu.so
+[ 26%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/pool2d.cu.o
+[ 26%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/quantize.cu.o
+[ 27%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/rope.cu.o
+[ 28%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/scale.cu.o
+[ 28%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/softmax.cu.o
+[ 29%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/sum.cu.o
+[ 29%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/sumrows.cu.o
+[ 30%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/unary.cu.o
+[ 31%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqfloat-cpb32.cu.o
+[ 32%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/tsembd.cu.o
+[ 33%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/wkv6.cu.o
+[ 33%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqfloat-cpb16.cu.o
+[ 34%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqhalf-cpb16.cu.o
+[ 34%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/upscale.cu.o
+[ 34%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqhalf-cpb32.cu.o
+[ 35%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqhalf-cpb8.cu.o
+[ 35%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq1_s.cu.o
+[ 36%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq2_xs.cu.o
+[ 37%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq3_s.cu.o
+[ 37%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq2_xxs.cu.o
+[ 37%] Built target ggml-cpu
+[ 38%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq2_s.cu.o
+[ 39%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq4_nl.cu.o
+[ 39%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q2_k.cu.o
+[ 40%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq4_xs.cu.o
+[ 40%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q4_0.cu.o
+[ 40%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq3_xxs.cu.o
+[ 41%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q4_1.cu.o
+[ 42%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q3_k.cu.o
+[ 42%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q5_0.cu.o
+[ 43%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q5_1.cu.o
+[ 43%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q5_k.cu.o
+[ 44%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q4_k.cu.o
+[ 45%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q6_k.cu.o
+[ 45%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs128-q4_0-q4_0.cu.o
+[ 46%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs128-q8_0-q8_0.cu.o
+[ 47%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q8_0.cu.o
+[ 48%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs128-q4_0-q4_0.cu.o
+[ 48%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs128-q8_0-q8_0.cu.o
+[ 48%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs256-f16-f16.cu.o
+[ 49%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs128-f16-f16.cu.o
+[ 50%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs128-f16-f16.cu.o
+[ 51%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs64-f16-f16.cu.o
+[ 51%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs256-f16-f16.cu.o
+[ 52%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs64-f16-f16.cu.o
+[ 52%] Linking CUDA shared library libggml-cuda.so
+[ 52%] Built target ggml-cuda
+[ 53%] Building CXX object src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 53%] Linking CXX shared library libggml.so
+[ 53%] Built target ggml
+[ 54%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
+[ 55%] Building C object tests/CMakeFiles/test-vec1.dir/test-vec1.c.o
+[ 55%] Building CXX object tests/CMakeFiles/test-opt.dir/test-opt.cpp.o
+[ 57%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 57%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 58%] Building C object tests/CMakeFiles/test-mul-mat0.dir/test-mul-mat0.c.o
+[ 59%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
+[ 59%] Linking C executable ../bin/test-vec0
+[ 60%] Building C object tests/CMakeFiles/test-pool.dir/test-pool.c.o
+[ 60%] Building C object tests/CMakeFiles/test-mul-mat2.dir/test-mul-mat2.c.o
+[ 61%] Linking CXX executable ../bin/test-quantize-fns
+[ 61%] Linking C executable ../bin/test0
+[ 62%] Linking CXX executable ../bin/test-opt
+[ 62%] Linking C executable ../bin/test-vec1
+[ 63%] Linking C executable ../bin/test-mul-mat0
+[ 63%] Building CXX object tests/CMakeFiles/test-timestep_embedding.dir/test-timestep_embedding.cpp.o
+[ 63%] Linking C executable ../bin/test-pool
+[ 64%] Linking C executable ../bin/test-mul-mat2
+[ 65%] Building C object tests/CMakeFiles/test-conv-transpose.dir/test-conv-transpose.c.o
+[ 66%] Linking CXX executable ../bin/test-quantize-perf
+[ 67%] Building CXX object tests/CMakeFiles/test-conv-transpose-1d.dir/test-conv-transpose-1d.cpp.o
+[ 68%] Building CXX object tests/CMakeFiles/test-arange.dir/test-arange.cpp.o
+[ 68%] Building C object tests/CMakeFiles/test-customop.dir/test-customop.c.o
+[ 69%] Linking CXX executable ../bin/test-timestep_embedding
+[ 69%] Building C object tests/CMakeFiles/test-rel-pos.dir/test-rel-pos.c.o
+[ 70%] Building C object tests/CMakeFiles/test-dup.dir/test-dup.c.o
+[ 70%] Linking C executable ../bin/test-conv-transpose
+[ 71%] Linking CXX executable ../bin/test-arange
+[ 71%] Built target test-vec0
+[ 71%] Linking CXX executable ../bin/test-conv-transpose-1d
+[ 72%] Linking C executable ../bin/test-rel-pos
+[ 73%] Linking C executable ../bin/test-customop
+[ 74%] Building CXX object tests/CMakeFiles/test-conv1d.dir/test-conv1d.cpp.o
+[ 74%] Linking C executable ../bin/test-dup
+[ 74%] Built target test-vec1
+[ 74%] Building CXX object tests/CMakeFiles/test-conv2d.dir/test-conv2d.cpp.o
+[ 75%] Building CXX object tests/CMakeFiles/test-mul-mat.dir/test-mul-mat.cpp.o
+[ 75%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 75%] Building CXX object examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o
+[ 75%] Building C object tests/CMakeFiles/test-cont.dir/test-cont.c.o
+[ 77%] Building CXX object examples/mnist/CMakeFiles/mnist-common.dir/mnist-common.cpp.o
+[ 77%] Linking CXX executable ../bin/test-conv2d
+[ 78%] Linking CXX executable ../bin/test-conv1d
+[ 78%] Building CXX object examples/sam/CMakeFiles/sam.dir/main.cpp.o
+[ 78%] Linking CXX executable ../bin/test-mul-mat
+[ 78%] Built target test0
+[ 78%] Built target test-mul-mat0
+[ 78%] Built target test-mul-mat2
+[ 78%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolov3-tiny.cpp.o
+[ 78%] Linking CXX static library libmnist-common.a
+[ 79%] Linking CXX static library libcommon-ggml.a
+[ 81%] Building CXX object examples/simple/CMakeFiles/simple-ctx.dir/simple-ctx.cpp.o
+[ 81%] Linking CXX executable ../../bin/sam
+[ 82%] Linking CXX executable ../bin/test-backend-ops
+[ 82%] Built target test-pool
+[ 83%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolo-image.cpp.o
+[ 83%] Built target test-quantize-perf
+[ 84%] Building CXX object examples/simple/CMakeFiles/simple-backend.dir/simple-backend.cpp.o
+[ 84%] Linking CXX executable ../../bin/simple-ctx
+[ 85%] Linking C executable ../bin/test-cont
+[ 85%] Built target mnist-common
+[ 86%] Linking CXX executable ../../bin/yolov3-tiny
+[ 86%] Built target test-opt
+[ 86%] Linking CXX executable ../../bin/simple-backend
+[ 86%] Building CXX object examples/mnist/CMakeFiles/mnist-train.dir/mnist-train.cpp.o
+[ 86%] Built target test-quantize-fns
+[ 87%] Building CXX object examples/mnist/CMakeFiles/mnist-eval.dir/mnist-eval.cpp.o
+[ 87%] Built target common-ggml
+[ 88%] Linking CXX executable ../../bin/mnist-train
+[ 88%] Built target test-mul-mat
+[ 88%] Built target test-rel-pos
+[ 88%] Built target simple-ctx
+[ 88%] Built target test-conv-transpose
+[ 89%] Linking CXX executable ../../bin/mnist-eval
+[ 89%] Built target test-timestep_embedding
+[ 89%] Built target test-conv-transpose-1d
+[ 89%] Built target test-arange
+[ 89%] Built target test-conv2d
+[ 89%] Built target test-dup
+[ 90%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-alloc.dir/main-alloc.cpp.o
+[ 90%] Built target test-customop
+[ 91%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-ctx.dir/main-ctx.cpp.o
+[ 91%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-backend.dir/main-backend.cpp.o
+[ 91%] Built target test-conv1d
+[ 91%] Built target mnist-train
+[ 91%] Built target simple-backend
+[ 92%] Linking CXX executable ../../bin/gpt-2-backend
+[ 93%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-sched.dir/main-sched.cpp.o
+[ 93%] Linking CXX executable ../../bin/gpt-2-ctx
+[ 93%] Built target test-cont
+[ 94%] Linking CXX executable ../../bin/gpt-2-alloc
+[ 94%] Built target sam
+[ 94%] Built target test-backend-ops
+[ 95%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-quantize.dir/quantize.cpp.o
+[ 96%] Linking CXX executable ../../bin/gpt-2-sched
+[ 96%] Built target yolov3-tiny
+[ 97%] Building CXX object examples/magika/CMakeFiles/magika.dir/main.cpp.o
+[ 97%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-batched.dir/main-batched.cpp.o
+[ 97%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j-quantize.dir/quantize.cpp.o
+[ 98%] Linking CXX executable ../../bin/gpt-2-batched
+[ 98%] Linking CXX executable ../../bin/gpt-2-quantize
+[ 99%] Linking CXX executable ../../bin/gpt-j-quantize
+[ 99%] Linking CXX executable ../../bin/magika
+[ 99%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j.dir/main.cpp.o
+[ 99%] Built target mnist-eval
+[100%] Linking CXX executable ../../bin/gpt-j
+[100%] Built target gpt-2-alloc
+[100%] Built target gpt-2-ctx
+[100%] Built target gpt-2-sched
+[100%] Built target gpt-j-quantize
+[100%] Built target gpt-2-backend
+[100%] Built target gpt-2-batched
+[100%] Built target magika
+[100%] Built target gpt-2-quantize
+[100%] Built target gpt-j
+
+real	0m2.272s
+user	0m5.982s
+sys	0m2.457s
