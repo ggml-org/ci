@@ -1,0 +1,529 @@
++ cmake -DCMAKE_BUILD_TYPE=Release -DLLAMA_FATAL_WARNINGS=ON ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.34.1")
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- Found OpenMP_C: -fopenmp (found version "4.5")
+-- Found OpenMP_CXX: -fopenmp (found version "4.5")
+-- Found OpenMP: TRUE (found version "4.5")
+-- OpenMP found
+-- Using llamafile
+-- x86 detected
+-- Using runtime weight conversion of Q4_0 to Q4_0_x_x to enable optimized GEMM/GEMV kernels
+-- Including CPU backend
+-- Configuring done (0.6s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-release
+
+real	0m0.749s
+user	0m0.546s
+sys	0m0.205s
+++ nproc
++ make -j8
+[  1%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  2%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  3%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  3%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  5%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  5%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  5%] Built target build_info
+[  5%] Built target sha256
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  5%] Built target sha1
+[  5%] Built target xxhash
+[  6%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  7%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-aarch64.c.o
+[  7%] Linking CXX shared library libggml-base.so
+[  7%] Built target ggml-base
+[  8%] Building C object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu.c.o
+[  8%] Building CXX object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu.cpp.o
+[  9%] Building C object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu-aarch64.c.o
+[ 10%] Building C object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu-quants.c.o
+[ 10%] Building CXX object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/amx/amx.cpp.o
+[ 10%] Building CXX object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/amx/mmq.cpp.o
+[ 11%] Building CXX object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/llamafile/sgemm.cpp.o
+[ 12%] Linking CXX shared library libggml-cpu.so
+[ 12%] Built target ggml-cpu
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 13%] Linking CXX shared library libggml.so
+[ 13%] Built target ggml
+[ 13%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 14%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 14%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/llama.dir/llama-vocab.cpp.o
+[ 16%] Building CXX object src/CMakeFiles/llama.dir/llama-sampling.cpp.o
+[ 16%] Building CXX object src/CMakeFiles/llama.dir/unicode.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/llama.dir/unicode-data.cpp.o
+[ 18%] Linking CXX executable ../../bin/llama-gguf
+[ 19%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 19%] Linking CXX shared library libllama.so
+[ 19%] Built target llama-gguf
+[ 19%] Built target llama-gguf-hash
+[ 19%] Built target llama
+[ 19%] Building CXX object examples/simple-chat/CMakeFiles/llama-simple-chat.dir/simple-chat.cpp.o
+[ 19%] Building CXX object examples/run/CMakeFiles/llama-run.dir/run.cpp.o
+[ 20%] Building CXX object common/CMakeFiles/common.dir/common.cpp.o
+[ 21%] Building C object tests/CMakeFiles/test-c.dir/test-c.c.o
+[ 21%] Building CXX object common/CMakeFiles/common.dir/arg.cpp.o
+[ 22%] Building CXX object examples/simple/CMakeFiles/llama-simple.dir/simple.cpp.o
+[ 22%] Building CXX object examples/quantize-stats/CMakeFiles/llama-quantize-stats.dir/quantize-stats.cpp.o
+[ 23%] Building CXX object examples/llava/CMakeFiles/llava.dir/llava.cpp.o
+[ 23%] Linking C executable ../bin/test-c
+[ 25%] Linking CXX executable ../../bin/llama-simple-chat
+[ 25%] Linking CXX executable ../../bin/llama-simple
+[ 26%] Linking CXX executable ../../bin/llama-run
+[ 26%] Building CXX object examples/llava/CMakeFiles/llava.dir/clip.cpp.o
+[ 26%] Linking CXX executable ../../bin/llama-quantize-stats
+[ 26%] Building CXX object common/CMakeFiles/common.dir/console.cpp.o
+[ 27%] Building CXX object common/CMakeFiles/common.dir/json-schema-to-grammar.cpp.o
+[ 27%] Building CXX object common/CMakeFiles/common.dir/log.cpp.o
+[ 27%] Built target llava
+[ 28%] Building CXX object common/CMakeFiles/common.dir/ngram-cache.cpp.o
+[ 29%] Linking CXX static library libllava_static.a
+[ 29%] Building CXX object common/CMakeFiles/common.dir/sampling.cpp.o
+[ 29%] Built target test-c
+[ 30%] Building CXX object common/CMakeFiles/common.dir/speculative.cpp.o
+[ 31%] Linking CXX shared library libllava_shared.so
+[ 32%] Linking CXX static library libcommon.a
+[ 32%] Built target llava_static
+[ 32%] Built target llama-run
+[ 32%] Built target llama-simple
+[ 32%] Built target llama-simple-chat
+[ 32%] Built target common
+[ 32%] Building CXX object tests/CMakeFiles/test-tokenizer-1-spm.dir/test-tokenizer-1-spm.cpp.o
+[ 32%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/test-tokenizer-0.cpp.o
+[ 32%] Building CXX object tests/CMakeFiles/test-tokenizer-1-bpe.dir/test-tokenizer-1-bpe.cpp.o
+[ 32%] Building CXX object tests/CMakeFiles/test-log.dir/test-log.cpp.o
+[ 32%] Building CXX object tests/CMakeFiles/test-arg-parser.dir/test-arg-parser.cpp.o
+[ 33%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
+[ 34%] Building CXX object tests/CMakeFiles/test-log.dir/get-model.cpp.o
+[ 35%] Linking CXX executable ../bin/test-tokenizer-1-spm
+[ 38%] Building CXX object tests/CMakeFiles/test-arg-parser.dir/get-model.cpp.o
+[ 38%] Linking CXX executable ../bin/test-tokenizer-1-bpe
+[ 38%] Linking CXX executable ../bin/test-tokenizer-0
+[ 38%] Building CXX object tests/CMakeFiles/test-sampling.dir/get-model.cpp.o
+[ 38%] Built target llama-quantize-stats
+[ 38%] Linking CXX executable ../bin/test-log
+[ 38%] Linking CXX executable ../bin/test-arg-parser
+[ 39%] Linking CXX executable ../bin/test-sampling
+[ 40%] Building CXX object tests/CMakeFiles/test-chat-template.dir/test-chat-template.cpp.o
+[ 41%] Building CXX object tests/CMakeFiles/test-chat-template.dir/get-model.cpp.o
+[ 41%] Built target llava_shared
+[ 41%] Linking CXX executable ../bin/test-chat-template
+[ 41%] Building CXX object tests/CMakeFiles/test-grammar-parser.dir/test-grammar-parser.cpp.o
+[ 42%] Building CXX object tests/CMakeFiles/test-grammar-parser.dir/get-model.cpp.o
+[ 42%] Linking CXX executable ../bin/test-grammar-parser
+[ 42%] Built target test-log
+[ 42%] Built target test-tokenizer-0
+[ 42%] Built target test-tokenizer-1-spm
+[ 42%] Built target test-tokenizer-1-bpe
+[ 43%] Building CXX object tests/CMakeFiles/test-grammar-integration.dir/test-grammar-integration.cpp.o
+[ 43%] Built target test-sampling
+[ 44%] Building CXX object tests/CMakeFiles/test-llama-grammar.dir/test-llama-grammar.cpp.o
+[ 45%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 46%] Building CXX object tests/CMakeFiles/test-model-load-cancel.dir/test-model-load-cancel.cpp.o
+[ 47%] Building CXX object tests/CMakeFiles/test-autorelease.dir/test-autorelease.cpp.o
+[ 47%] Building CXX object tests/CMakeFiles/test-grammar-integration.dir/get-model.cpp.o
+[ 47%] Building CXX object tests/CMakeFiles/test-model-load-cancel.dir/get-model.cpp.o
+[ 47%] Building CXX object tests/CMakeFiles/test-llama-grammar.dir/get-model.cpp.o
+[ 47%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/get-model.cpp.o
+[ 47%] Building CXX object tests/CMakeFiles/test-autorelease.dir/get-model.cpp.o
+[ 48%] Linking CXX executable ../bin/test-grammar-integration
+[ 49%] Linking CXX executable ../bin/test-model-load-cancel
+[ 50%] Linking CXX executable ../bin/test-llama-grammar
+[ 50%] Built target test-chat-template
+[ 51%] Linking CXX executable ../bin/test-backend-ops
+[ 52%] Linking CXX executable ../bin/test-autorelease
+[ 52%] Building CXX object tests/CMakeFiles/test-barrier.dir/test-barrier.cpp.o
+[ 52%] Built target test-arg-parser
+[ 52%] Built target test-grammar-parser
+[ 53%] Building CXX object tests/CMakeFiles/test-barrier.dir/get-model.cpp.o
+[ 54%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 54%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 54%] Linking CXX executable ../bin/test-barrier
+[ 54%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/get-model.cpp.o
+[ 55%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/get-model.cpp.o
+[ 56%] Linking CXX executable ../bin/test-quantize-fns
+[ 56%] Linking CXX executable ../bin/test-quantize-perf
+[ 56%] Built target test-model-load-cancel
+[ 56%] Built target test-llama-grammar
+[ 56%] Built target test-autorelease
+[ 57%] Building CXX object tests/CMakeFiles/test-rope.dir/test-rope.cpp.o
+[ 58%] Building CXX object tests/CMakeFiles/test-json-schema-to-grammar.dir/test-json-schema-to-grammar.cpp.o
+[ 59%] Building CXX object examples/batched-bench/CMakeFiles/llama-batched-bench.dir/batched-bench.cpp.o
+[ 59%] Building CXX object tests/CMakeFiles/test-rope.dir/get-model.cpp.o
+[ 59%] Built target test-backend-ops
+[ 59%] Building CXX object tests/CMakeFiles/test-json-schema-to-grammar.dir/get-model.cpp.o
+[ 60%] Linking CXX executable ../bin/test-rope
+[ 60%] Built target test-barrier
+[ 61%] Linking CXX executable ../../bin/llama-batched-bench
+[ 61%] Built target test-grammar-integration
+[ 62%] Building CXX object examples/batched/CMakeFiles/llama-batched.dir/batched.cpp.o
+[ 62%] Built target test-quantize-fns
+[ 63%] Linking CXX executable ../bin/test-json-schema-to-grammar
+[ 64%] Building CXX object examples/embedding/CMakeFiles/llama-embedding.dir/embedding.cpp.o
+[ 65%] Building CXX object examples/eval-callback/CMakeFiles/llama-eval-callback.dir/eval-callback.cpp.o
+[ 66%] Building CXX object examples/gbnf-validator/CMakeFiles/llama-gbnf-validator.dir/gbnf-validator.cpp.o
+[ 66%] Linking CXX executable ../../bin/llama-batched
+[ 66%] Built target test-quantize-perf
+[ 66%] Linking CXX executable ../../bin/llama-embedding
+[ 66%] Linking CXX executable ../../bin/llama-eval-callback
+[ 66%] Linking CXX executable ../../bin/llama-gbnf-validator
+[ 66%] Building CXX object examples/gguf-split/CMakeFiles/llama-gguf-split.dir/gguf-split.cpp.o
+[ 67%] Linking CXX executable ../../bin/llama-gguf-split
+[ 67%] Built target test-rope
+[ 67%] Building CXX object examples/gritlm/CMakeFiles/llama-gritlm.dir/gritlm.cpp.o
+[ 68%] Linking CXX executable ../../bin/llama-gritlm
+[ 68%] Built target llama-gbnf-validator
+[ 68%] Built target test-json-schema-to-grammar
+[ 68%] Building CXX object examples/imatrix/CMakeFiles/llama-imatrix.dir/imatrix.cpp.o
+[ 68%] Built target llama-gguf-split
+[ 68%] Built target llama-batched-bench
+[ 69%] Building CXX object examples/infill/CMakeFiles/llama-infill.dir/infill.cpp.o
+[ 70%] Linking CXX executable ../../bin/llama-imatrix
+[ 70%] Building CXX object examples/llama-bench/CMakeFiles/llama-bench.dir/llama-bench.cpp.o
+[ 71%] Building CXX object examples/lookahead/CMakeFiles/llama-lookahead.dir/lookahead.cpp.o
+[ 71%] Linking CXX executable ../../bin/llama-infill
+[ 71%] Linking CXX executable ../../bin/llama-lookahead
+[ 71%] Built target llama-batched
+[ 71%] Built target llama-embedding
+[ 72%] Linking CXX executable ../../bin/llama-bench
+[ 72%] Built target llama-eval-callback
+[ 73%] Building CXX object examples/lookup/CMakeFiles/llama-lookup.dir/lookup.cpp.o
+[ 74%] Building CXX object examples/lookup/CMakeFiles/llama-lookup-create.dir/lookup-create.cpp.o
+[ 75%] Building CXX object examples/lookup/CMakeFiles/llama-lookup-merge.dir/lookup-merge.cpp.o
+[ 75%] Linking CXX executable ../../bin/llama-lookup
+[ 75%] Linking CXX executable ../../bin/llama-lookup-create
+[ 76%] Linking CXX executable ../../bin/llama-lookup-merge
+[ 76%] Built target llama-gritlm
+[ 76%] Building CXX object examples/lookup/CMakeFiles/llama-lookup-stats.dir/lookup-stats.cpp.o
+[ 77%] Linking CXX executable ../../bin/llama-lookup-stats
+[ 77%] Built target llama-bench
+[ 77%] Built target llama-lookup-merge
+[ 77%] Built target llama-imatrix
+[ 77%] Building CXX object examples/main/CMakeFiles/llama-cli.dir/main.cpp.o
+[ 77%] Built target llama-infill
+[ 77%] Building CXX object examples/parallel/CMakeFiles/llama-parallel.dir/parallel.cpp.o
+[ 78%] Linking CXX executable ../../bin/llama-cli
+[ 78%] Built target llama-lookahead
+[ 78%] Building CXX object examples/passkey/CMakeFiles/llama-passkey.dir/passkey.cpp.o
+[ 79%] Building CXX object examples/perplexity/CMakeFiles/llama-perplexity.dir/perplexity.cpp.o
+[ 80%] Linking CXX executable ../../bin/llama-parallel
+[ 81%] Building CXX object examples/quantize/CMakeFiles/llama-quantize.dir/quantize.cpp.o
+[ 81%] Linking CXX executable ../../bin/llama-perplexity
+[ 81%] Linking CXX executable ../../bin/llama-quantize
+[ 82%] Linking CXX executable ../../bin/llama-passkey
+[ 82%] Built target llama-lookup
+[ 82%] Built target llama-lookup-create
+[ 82%] Generating loading.html.hpp
+[ 83%] Generating completion.js.hpp
+[ 85%] Generating deps_daisyui.min.css.hpp
+[ 85%] Building CXX object examples/retrieval/CMakeFiles/llama-retrieval.dir/retrieval.cpp.o
+[ 86%] Linking CXX executable ../../bin/llama-retrieval
+[ 86%] Built target llama-lookup-stats
+[ 86%] Built target llama-quantize
+[ 86%] Building CXX object examples/save-load-state/CMakeFiles/llama-save-load-state.dir/save-load-state.cpp.o
+[ 86%] Building CXX object examples/speculative/CMakeFiles/llama-speculative.dir/speculative.cpp.o
+[ 87%] Linking CXX executable ../../bin/llama-save-load-state
+[ 87%] Built target llama-parallel
+[ 87%] Built target llama-cli
+[ 88%] Linking CXX executable ../../bin/llama-speculative
+[ 89%] Building CXX object examples/speculative-simple/CMakeFiles/llama-speculative-simple.dir/speculative-simple.cpp.o
+[ 90%] Building CXX object examples/tokenize/CMakeFiles/llama-tokenize.dir/tokenize.cpp.o
+[ 90%] Built target llama-perplexity
+[ 90%] Linking CXX executable ../../bin/llama-speculative-simple
+[ 90%] Linking CXX executable ../../bin/llama-tokenize
+[ 90%] Built target llama-passkey
+[ 90%] Building CXX object examples/convert-llama2c-to-ggml/CMakeFiles/llama-convert-llama2c-to-ggml.dir/convert-llama2c-to-ggml.cpp.o
+[ 90%] Building CXX object examples/cvector-generator/CMakeFiles/llama-cvector-generator.dir/cvector-generator.cpp.o
+[ 91%] Linking CXX executable ../../bin/llama-convert-llama2c-to-ggml
+[ 92%] Linking CXX executable ../../bin/llama-cvector-generator
+[ 92%] Built target llama-retrieval
+[ 93%] Building CXX object examples/export-lora/CMakeFiles/llama-export-lora.dir/export-lora.cpp.o
+[ 93%] Linking CXX executable ../../bin/llama-export-lora
+[ 93%] Built target llama-tokenize
+[ 93%] Built target llama-save-load-state
+[ 94%] Building CXX object examples/llava/CMakeFiles/llama-llava-cli.dir/llava-cli.cpp.o
+[ 94%] Building CXX object examples/llava/CMakeFiles/llama-minicpmv-cli.dir/minicpmv-cli.cpp.o
+[ 94%] Built target llama-speculative
+[ 94%] Linking CXX executable ../../bin/llama-llava-cli
+[ 94%] Built target llama-convert-llama2c-to-ggml
+[ 95%] Linking CXX executable ../../bin/llama-minicpmv-cli
+[ 96%] Building CXX object pocs/vdot/CMakeFiles/llama-q8dot.dir/q8dot.cpp.o
+[ 97%] Building CXX object pocs/vdot/CMakeFiles/llama-vdot.dir/vdot.cpp.o
+[ 97%] Built target llama-speculative-simple
+[ 98%] Generating deps_markdown-it.js.hpp
+[ 98%] Linking CXX executable ../../bin/llama-vdot
+[ 98%] Linking CXX executable ../../bin/llama-q8dot
+[ 98%] Built target llama-cvector-generator
+[ 98%] Generating deps_tailwindcss.js.hpp
+[ 98%] Built target llama-export-lora
+[ 99%] Generating deps_vue.esm-browser.js.hpp
+[ 99%] Built target llama-vdot
+[ 99%] Generating index.html.hpp
+[ 99%] Built target llama-q8dot
+[ 99%] Built target llama-llava-cli
+[ 99%] Built target llama-minicpmv-cli
+[ 99%] Building CXX object examples/server/CMakeFiles/llama-server.dir/server.cpp.o
+[100%] Linking CXX executable ../../bin/llama-server
+[100%] Built target llama-server
+
+real	0m2.275s
+user	0m8.085s
+sys	0m1.825s
+
+main: quantize time =   227.64 ms
+main:    total time =   227.64 ms
++ ./bin/llama-embedding --model ../models-mnt/bge-small/ggml-model-f16.gguf -p 'I believe the meaning of life is' -ngl 99 -c 0
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.184 I build: 4216 (1bc2a18c) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.003.380 I llama_model_loader: loaded meta data with 25 key-value pairs and 197 tensors from ../models-mnt/bge-small/ggml-model-f16.gguf (version GGUF V3 (latest))
+0.00.003.392 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.003.401 I llama_model_loader: - kv   0:                       general.architecture str              = bert
+0.00.003.402 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.003.403 I llama_model_loader: - kv   2:                               general.name str              = Bge Small
+0.00.003.404 I llama_model_loader: - kv   3:                           general.basename str              = bge
+0.00.003.405 I llama_model_loader: - kv   4:                         general.size_label str              = small
+0.00.003.408 I llama_model_loader: - kv   5:                           bert.block_count u32              = 12
+0.00.003.408 I llama_model_loader: - kv   6:                        bert.context_length u32              = 512
+0.00.003.413 I llama_model_loader: - kv   7:                      bert.embedding_length u32              = 384
+0.00.003.413 I llama_model_loader: - kv   8:                   bert.feed_forward_length u32              = 1536
+0.00.003.414 I llama_model_loader: - kv   9:                  bert.attention.head_count u32              = 12
+0.00.003.416 I llama_model_loader: - kv  10:          bert.attention.layer_norm_epsilon f32              = 0.000000
+0.00.003.417 I llama_model_loader: - kv  11:                          general.file_type u32              = 1
+0.00.003.417 I llama_model_loader: - kv  12:                      bert.attention.causal bool             = false
+0.00.003.418 I llama_model_loader: - kv  13:                          bert.pooling_type u32              = 2
+0.00.003.419 I llama_model_loader: - kv  14:            tokenizer.ggml.token_type_count u32              = 2
+0.00.003.419 I llama_model_loader: - kv  15:                       tokenizer.ggml.model str              = bert
+0.00.003.420 I llama_model_loader: - kv  16:                         tokenizer.ggml.pre str              = jina-v2-en
+0.00.006.769 I llama_model_loader: - kv  17:                      tokenizer.ggml.tokens arr[str,30522]   = ["[PAD]", "[unused0]", "[unused1]", "...
+0.00.007.576 I llama_model_loader: - kv  18:                  tokenizer.ggml.token_type arr[i32,30522]   = [3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.007.580 I llama_model_loader: - kv  19:            tokenizer.ggml.unknown_token_id u32              = 100
+0.00.007.581 I llama_model_loader: - kv  20:          tokenizer.ggml.seperator_token_id u32              = 102
+0.00.007.581 I llama_model_loader: - kv  21:            tokenizer.ggml.padding_token_id u32              = 0
+0.00.007.582 I llama_model_loader: - kv  22:                tokenizer.ggml.cls_token_id u32              = 101
+0.00.007.582 I llama_model_loader: - kv  23:               tokenizer.ggml.mask_token_id u32              = 103
+0.00.007.582 I llama_model_loader: - kv  24:               general.quantization_version u32              = 2
+0.00.007.584 I llama_model_loader: - type  f32:  124 tensors
+0.00.007.584 I llama_model_loader: - type  f16:   73 tensors
+0.00.018.885 I llm_load_vocab: special tokens cache size = 5
+0.00.021.571 I llm_load_vocab: token to piece cache size = 0.2032 MB
+0.00.021.582 I llm_load_print_meta: format           = GGUF V3 (latest)
+0.00.021.582 I llm_load_print_meta: arch             = bert
+0.00.021.584 I llm_load_print_meta: vocab type       = WPM
+0.00.021.584 I llm_load_print_meta: n_vocab          = 30522
+0.00.021.584 I llm_load_print_meta: n_merges         = 0
+0.00.021.585 I llm_load_print_meta: vocab_only       = 0
+0.00.021.585 I llm_load_print_meta: n_ctx_train      = 512
+0.00.021.585 I llm_load_print_meta: n_embd           = 384
+0.00.021.585 I llm_load_print_meta: n_layer          = 12
+0.00.021.591 I llm_load_print_meta: n_head           = 12
+0.00.021.592 I llm_load_print_meta: n_head_kv        = 12
+0.00.021.593 I llm_load_print_meta: n_rot            = 32
+0.00.021.593 I llm_load_print_meta: n_swa            = 0
+0.00.021.593 I llm_load_print_meta: n_embd_head_k    = 32
+0.00.021.593 I llm_load_print_meta: n_embd_head_v    = 32
+0.00.021.594 I llm_load_print_meta: n_gqa            = 1
+0.00.021.595 I llm_load_print_meta: n_embd_k_gqa     = 384
+0.00.021.596 I llm_load_print_meta: n_embd_v_gqa     = 384
+0.00.021.597 I llm_load_print_meta: f_norm_eps       = 1.0e-12
+0.00.021.597 I llm_load_print_meta: f_norm_rms_eps   = 0.0e+00
+0.00.021.598 I llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+0.00.021.598 I llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+0.00.021.598 I llm_load_print_meta: f_logit_scale    = 0.0e+00
+0.00.021.599 I llm_load_print_meta: n_ff             = 1536
+0.00.021.599 I llm_load_print_meta: n_expert         = 0
+0.00.021.600 I llm_load_print_meta: n_expert_used    = 0
+0.00.021.600 I llm_load_print_meta: causal attn      = 0
+0.00.021.600 I llm_load_print_meta: pooling type     = 2
+0.00.021.600 I llm_load_print_meta: rope type        = 2
+0.00.021.601 I llm_load_print_meta: rope scaling     = linear
+0.00.021.602 I llm_load_print_meta: freq_base_train  = 10000.0
+0.00.021.602 I llm_load_print_meta: freq_scale_train = 1
+0.00.021.603 I llm_load_print_meta: n_ctx_orig_yarn  = 512
+0.00.021.603 I llm_load_print_meta: rope_finetuned   = unknown
+0.00.021.603 I llm_load_print_meta: ssm_d_conv       = 0
+0.00.021.603 I llm_load_print_meta: ssm_d_inner      = 0
+0.00.021.604 I llm_load_print_meta: ssm_d_state      = 0
+0.00.021.604 I llm_load_print_meta: ssm_dt_rank      = 0
+0.00.021.604 I llm_load_print_meta: ssm_dt_b_c_rms   = 0
+0.00.021.605 I llm_load_print_meta: model type       = 33M
+0.00.021.605 I llm_load_print_meta: model ftype      = F16
+0.00.021.606 I llm_load_print_meta: model params     = 33.21 M
+0.00.021.607 I llm_load_print_meta: model size       = 63.84 MiB (16.12 BPW) 
+0.00.021.608 I llm_load_print_meta: general.name     = Bge Small
+0.00.021.611 I llm_load_print_meta: UNK token        = 100 '[UNK]'
+0.00.021.611 I llm_load_print_meta: SEP token        = 102 '[SEP]'
+0.00.021.612 I llm_load_print_meta: PAD token        = 0 '[PAD]'
+0.00.021.612 I llm_load_print_meta: CLS token        = 101 '[CLS]'
+0.00.021.612 I llm_load_print_meta: MASK token       = 103 '[MASK]'
+0.00.021.612 I llm_load_print_meta: LF token         = 0 '[PAD]'
+0.00.021.613 I llm_load_print_meta: max token length = 21
+0.00.026.050 I llm_load_tensors:   CPU_Mapped model buffer size =    63.84 MiB
+...............................................
+0.00.026.969 I llama_new_context_with_model: n_seq_max     = 1
+0.00.026.974 I llama_new_context_with_model: n_ctx         = 512
+0.00.026.974 I llama_new_context_with_model: n_ctx_per_seq = 512
+0.00.026.974 I llama_new_context_with_model: n_batch       = 2048
+0.00.026.974 I llama_new_context_with_model: n_ubatch      = 2048
+0.00.026.975 I llama_new_context_with_model: flash_attn    = 0
+0.00.026.976 I llama_new_context_with_model: freq_base     = 10000.0
+0.00.026.977 I llama_new_context_with_model: freq_scale    = 1
+0.00.029.342 I llama_kv_cache_init:        CPU KV buffer size =     9.00 MiB
+0.00.029.352 I llama_new_context_with_model: KV self size  =    9.00 MiB, K (f16):    4.50 MiB, V (f16):    4.50 MiB
+0.00.029.357 I llama_new_context_with_model:        CPU  output buffer size =     0.00 MiB
+0.00.030.821 I llama_new_context_with_model:        CPU compute buffer size =    16.01 MiB
+0.00.030.827 I llama_new_context_with_model: graph nodes  = 429
+0.00.030.828 I llama_new_context_with_model: graph splits = 1
+0.00.030.829 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.034.038 I 
+0.00.034.109 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | AARCH64_REPACK = 1 | 
+0.00.035.676 I batch_decode: n_tokens = 9, n_seq = 1
+
+embedding 0: -0.043981 -0.019912  0.007653 -0.000817  0.001368 -0.037036  0.109434  0.042551  0.092053 -0.015928  0.006786 -0.035685 -0.017891  0.015067  0.018122  0.015897 -0.011289  0.010462 -0.085223 -0.008462  0.091371 -0.017062 -0.060338 -0.024475  0.027552  0.076068  0.027959 -0.014586  0.017650 -0.033272 -0.037874 -0.018970  0.068696 -0.009850 -0.025049  0.072347 -0.046561  0.011048 -0.050250  0.047711  0.032363 -0.011729  0.022058  0.049651  0.010451  0.005790 -0.028889  0.008910 -0.018504 -0.051470 -0.046051  0.030501 -0.035401  0.054201 -0.069637  0.044231  0.029804  0.046312  0.073396 -0.042574  0.076081  0.038866 -0.181164  0.082478  0.042289 -0.064568 -0.060101 -0.017852  0.006443  0.005881  0.017190 -0.026621  0.064579  0.112592  0.035119 -0.067439  0.027085 -0.067310 -0.033500 -0.033203  0.033284  0.013506 -0.003304 -0.037496 -0.052081  0.055139 -0.002003 -0.038281  0.064455  0.028829 -0.043329 -0.029286 -0.039474  0.036341  0.008404 -0.015484 -0.036588  0.018115  0.028594  0.342771 -0.044499  0.056128  0.017652 -0.020864 -0.066821  0.000156 -0.037885 -0.030052 -0.008532 -0.021580  0.000528 -0.003207  0.004002  0.018917 -0.008578  0.025847  0.049425  0.000093  0.050960 -0.042520 -0.031882  0.023591  0.030688 -0.023180 -0.046251 -0.079296  0.115182  0.046762  0.027825 -0.040706  0.067815 -0.022944  0.010327 -0.032950 -0.018314  0.043851  0.024273  0.052408  0.007479  0.008896  0.011261 -0.074641 -0.065550 -0.026755 -0.041183 -0.023861  0.026700  0.006908  0.027733  0.052891 -0.036685  0.057699 -0.000166  0.031751 -0.019797 -0.022062  0.041041 -0.058920  0.019588  0.043124  0.043576  0.041590 -0.022536  0.027068 -0.021847  0.005468 -0.041329 -0.001252  0.024406  0.002114  0.044361 -0.022769  0.043658  0.064761  0.055420  0.037071 -0.000892  0.046132  0.045799 -0.008473  0.063054 -0.073263 -0.011963  0.032102  0.023951  0.014715 -0.033687  0.001103 -0.015832 -0.019009  0.047889  0.110844  0.028409  0.031342 -0.013292 -0.057500  0.006651  0.005130 -0.012266 -0.051441 -0.000961 -0.017656 -0.019406 -0.040925  0.009218 -0.057942  0.050951  0.052334 -0.009604 -0.040249 -0.014093 -0.024869 -0.017245  0.006308  0.006589 -0.026888  0.015623  0.030737  0.002593  0.023236 -0.022227 -0.098571 -0.051117 -0.278013 -0.014983 -0.061554 -0.027217  0.017664 -0.010937 -0.017106  0.035068  0.047014 -0.015436  0.015181 -0.025469  0.047838 -0.005962 -0.000707 -0.061015 -0.068932 -0.060372 -0.035959  0.043333 -0.055008  0.015049  0.000546 -0.058232 -0.010431  0.012631  0.151511  0.127122 -0.013588  0.042000 -0.025680  0.014036 -0.001037 -0.150464  0.044853  0.005319 -0.036292 -0.029771 -0.020195 -0.034879  0.010257  0.033528 -0.048161 -0.051813 -0.017459 -0.023496  0.047369  0.052034 -0.016808 -0.055448  0.025848 -0.005719  0.010710  0.038711  0.008214 -0.009744 -0.105767 -0.027430 -0.096152  0.025073 -0.011257  0.092356  0.056104  0.003724  0.027786  0.002081 -0.051055 -0.039905 -0.013559 -0.044960 -0.015337  0.002931 -0.043514 -0.077954  0.065211 -0.006809 -0.001642 -0.014600  0.071543  0.023728 -0.037174  0.009152  0.001557 -0.032289  0.015478  0.037923  0.000353 -0.053199  0.021299 -0.039830  0.000027  0.013394  0.019804 -0.057902  0.006492 -0.049545 -0.267872  0.039153 -0.067966  0.038268 -0.012340  0.041505 -0.016141  0.052383 -0.071362  0.011378  0.024707 -0.007224  0.082095  0.028495 -0.021513  0.040507 -0.004541 -0.074590 -0.014750  0.020038  0.002290  0.023143  0.197207 -0.043248 -0.026016 -0.004951 -0.019268  0.074266  0.001757 -0.031968 -0.036601 -0.045052  0.000560 -0.011559  0.018118 -0.029477 -0.008451  0.006411  0.050800 -0.014935  0.006192  0.026092 -0.030786  0.048049  0.114067 -0.040810 -0.011428  0.005412 -0.003587  0.025157 -0.059144  0.013758 -0.010409  0.038707  0.051460  0.035409  0.035034 -0.017059  0.026389 -0.014506 -0.050054  0.003248  0.054119  0.039741 -0.039141 
+
+0.00.041.635 I llama_perf_context_print:        load time =      33.83 ms
+0.00.041.640 I llama_perf_context_print: prompt eval time =       5.58 ms /     9 tokens (    0.62 ms per token,  1613.48 tokens per second)
+0.00.041.642 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.00.041.643 I llama_perf_context_print:       total time =       7.60 ms /    10 tokens
+
+real	0m0.052s
+user	0m0.070s
+sys	0m0.025s
++ ./bin/llama-embedding --model ../models-mnt/bge-small/ggml-model-q8_0.gguf -p 'I believe the meaning of life is' -ngl 99 -c 0
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.515 I build: 4216 (1bc2a18c) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.003.716 I llama_model_loader: loaded meta data with 25 key-value pairs and 197 tensors from ../models-mnt/bge-small/ggml-model-q8_0.gguf (version GGUF V3 (latest))
+0.00.003.726 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.003.735 I llama_model_loader: - kv   0:                       general.architecture str              = bert
+0.00.003.736 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.003.737 I llama_model_loader: - kv   2:                               general.name str              = Bge Small
+0.00.003.737 I llama_model_loader: - kv   3:                           general.basename str              = bge
+0.00.003.738 I llama_model_loader: - kv   4:                         general.size_label str              = small
+0.00.003.740 I llama_model_loader: - kv   5:                           bert.block_count u32              = 12
+0.00.003.741 I llama_model_loader: - kv   6:                        bert.context_length u32              = 512
+0.00.003.742 I llama_model_loader: - kv   7:                      bert.embedding_length u32              = 384
+0.00.003.742 I llama_model_loader: - kv   8:                   bert.feed_forward_length u32              = 1536
+0.00.003.742 I llama_model_loader: - kv   9:                  bert.attention.head_count u32              = 12
+0.00.003.745 I llama_model_loader: - kv  10:          bert.attention.layer_norm_epsilon f32              = 0.000000
+0.00.003.746 I llama_model_loader: - kv  11:                          general.file_type u32              = 7
+0.00.003.747 I llama_model_loader: - kv  12:                      bert.attention.causal bool             = false
+0.00.003.748 I llama_model_loader: - kv  13:                          bert.pooling_type u32              = 2
+0.00.003.748 I llama_model_loader: - kv  14:            tokenizer.ggml.token_type_count u32              = 2
+0.00.003.753 I llama_model_loader: - kv  15:                       tokenizer.ggml.model str              = bert
+0.00.003.753 I llama_model_loader: - kv  16:                         tokenizer.ggml.pre str              = jina-v2-en
+0.00.007.135 I llama_model_loader: - kv  17:                      tokenizer.ggml.tokens arr[str,30522]   = ["[PAD]", "[unused0]", "[unused1]", "...
+0.00.007.923 I llama_model_loader: - kv  18:                  tokenizer.ggml.token_type arr[i32,30522]   = [3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.007.927 I llama_model_loader: - kv  19:            tokenizer.ggml.unknown_token_id u32              = 100
+0.00.007.928 I llama_model_loader: - kv  20:          tokenizer.ggml.seperator_token_id u32              = 102
+0.00.007.928 I llama_model_loader: - kv  21:            tokenizer.ggml.padding_token_id u32              = 0
+0.00.007.928 I llama_model_loader: - kv  22:                tokenizer.ggml.cls_token_id u32              = 101
+0.00.007.929 I llama_model_loader: - kv  23:               tokenizer.ggml.mask_token_id u32              = 103
+0.00.007.929 I llama_model_loader: - kv  24:               general.quantization_version u32              = 2
+0.00.007.930 I llama_model_loader: - type  f32:  124 tensors
+0.00.007.931 I llama_model_loader: - type q8_0:   73 tensors
+0.00.019.492 I llm_load_vocab: special tokens cache size = 5
+0.00.022.145 I llm_load_vocab: token to piece cache size = 0.2032 MB
+0.00.022.155 I llm_load_print_meta: format           = GGUF V3 (latest)
+0.00.022.156 I llm_load_print_meta: arch             = bert
+0.00.022.156 I llm_load_print_meta: vocab type       = WPM
+0.00.022.157 I llm_load_print_meta: n_vocab          = 30522
+0.00.022.157 I llm_load_print_meta: n_merges         = 0
+0.00.022.158 I llm_load_print_meta: vocab_only       = 0
+0.00.022.159 I llm_load_print_meta: n_ctx_train      = 512
+0.00.022.159 I llm_load_print_meta: n_embd           = 384
+0.00.022.159 I llm_load_print_meta: n_layer          = 12
+0.00.022.165 I llm_load_print_meta: n_head           = 12
+0.00.022.167 I llm_load_print_meta: n_head_kv        = 12
+0.00.022.167 I llm_load_print_meta: n_rot            = 32
+0.00.022.167 I llm_load_print_meta: n_swa            = 0
+0.00.022.167 I llm_load_print_meta: n_embd_head_k    = 32
+0.00.022.168 I llm_load_print_meta: n_embd_head_v    = 32
+0.00.022.169 I llm_load_print_meta: n_gqa            = 1
+0.00.022.170 I llm_load_print_meta: n_embd_k_gqa     = 384
+0.00.022.170 I llm_load_print_meta: n_embd_v_gqa     = 384
+0.00.022.171 I llm_load_print_meta: f_norm_eps       = 1.0e-12
+0.00.022.172 I llm_load_print_meta: f_norm_rms_eps   = 0.0e+00
+0.00.022.172 I llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+0.00.022.172 I llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+0.00.022.173 I llm_load_print_meta: f_logit_scale    = 0.0e+00
+0.00.022.173 I llm_load_print_meta: n_ff             = 1536
+0.00.022.174 I llm_load_print_meta: n_expert         = 0
+0.00.022.174 I llm_load_print_meta: n_expert_used    = 0
+0.00.022.175 I llm_load_print_meta: causal attn      = 0
+0.00.022.175 I llm_load_print_meta: pooling type     = 2
+0.00.022.175 I llm_load_print_meta: rope type        = 2
+0.00.022.176 I llm_load_print_meta: rope scaling     = linear
+0.00.022.177 I llm_load_print_meta: freq_base_train  = 10000.0
+0.00.022.177 I llm_load_print_meta: freq_scale_train = 1
+0.00.022.178 I llm_load_print_meta: n_ctx_orig_yarn  = 512
+0.00.022.178 I llm_load_print_meta: rope_finetuned   = unknown
+0.00.022.179 I llm_load_print_meta: ssm_d_conv       = 0
+0.00.022.179 I llm_load_print_meta: ssm_d_inner      = 0
+0.00.022.179 I llm_load_print_meta: ssm_d_state      = 0
+0.00.022.179 I llm_load_print_meta: ssm_dt_rank      = 0
+0.00.022.179 I llm_load_print_meta: ssm_dt_b_c_rms   = 0
+0.00.022.180 I llm_load_print_meta: model type       = 33M
+0.00.022.181 I llm_load_print_meta: model ftype      = Q8_0
+0.00.022.182 I llm_load_print_meta: model params     = 33.21 M
+0.00.022.183 I llm_load_print_meta: model size       = 34.38 MiB (8.68 BPW) 
+0.00.022.183 I llm_load_print_meta: general.name     = Bge Small
+0.00.022.184 I llm_load_print_meta: UNK token        = 100 '[UNK]'
+0.00.022.184 I llm_load_print_meta: SEP token        = 102 '[SEP]'
+0.00.022.185 I llm_load_print_meta: PAD token        = 0 '[PAD]'
+0.00.022.186 I llm_load_print_meta: CLS token        = 101 '[CLS]'
+0.00.022.186 I llm_load_print_meta: MASK token       = 103 '[MASK]'
+0.00.022.186 I llm_load_print_meta: LF token         = 0 '[PAD]'
+0.00.022.187 I llm_load_print_meta: max token length = 21
+0.00.025.191 I llm_load_tensors:   CPU_Mapped model buffer size =    34.38 MiB
+.................................................
+0.00.026.104 I llama_new_context_with_model: n_seq_max     = 1
+0.00.026.109 I llama_new_context_with_model: n_ctx         = 512
+0.00.026.109 I llama_new_context_with_model: n_ctx_per_seq = 512
+0.00.026.110 I llama_new_context_with_model: n_batch       = 2048
+0.00.026.110 I llama_new_context_with_model: n_ubatch      = 2048
+0.00.026.110 I llama_new_context_with_model: flash_attn    = 0
+0.00.026.112 I llama_new_context_with_model: freq_base     = 10000.0
+0.00.026.112 I llama_new_context_with_model: freq_scale    = 1
+0.00.028.093 I llama_kv_cache_init:        CPU KV buffer size =     9.00 MiB
+0.00.028.101 I llama_new_context_with_model: KV self size  =    9.00 MiB, K (f16):    4.50 MiB, V (f16):    4.50 MiB
+0.00.028.107 I llama_new_context_with_model:        CPU  output buffer size =     0.00 MiB
+0.00.029.542 I llama_new_context_with_model:        CPU compute buffer size =    16.01 MiB
+0.00.029.547 I llama_new_context_with_model: graph nodes  = 429
+0.00.029.548 I llama_new_context_with_model: graph splits = 1
+0.00.029.549 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.032.251 I 
+0.00.032.314 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | AARCH64_REPACK = 1 | 
+0.00.033.779 I batch_decode: n_tokens = 9, n_seq = 1
+
+embedding 0: -0.044922 -0.019413  0.009515 -0.002102  0.002819 -0.037346  0.108884  0.042320  0.092050 -0.015802  0.006203 -0.037483 -0.019315  0.014838  0.017312  0.014293 -0.014406  0.012199 -0.084337 -0.007969  0.092391 -0.017228 -0.062058 -0.024418  0.027417  0.077134  0.028219 -0.014623  0.017895 -0.035334 -0.038133 -0.018044  0.068934 -0.010808 -0.024000  0.071910 -0.045750  0.011734 -0.050866  0.050023  0.032255 -0.012384  0.022736  0.051037  0.009457  0.005324 -0.028037  0.007784 -0.019140 -0.054168 -0.047119  0.029088 -0.036035  0.053016 -0.067690  0.044014  0.029616  0.047229  0.073648 -0.043168  0.075918  0.037900 -0.183180  0.081508  0.042762 -0.066165 -0.059699 -0.017308  0.007110  0.005047  0.016962 -0.027730  0.064833  0.111964  0.034996 -0.068446  0.026829 -0.066310 -0.034038 -0.035547  0.032486  0.014914 -0.004339 -0.037040 -0.051606  0.053873 -0.002577 -0.037109  0.062467  0.029008 -0.041969 -0.029640 -0.039698  0.037257  0.007866 -0.014732 -0.036933  0.018711  0.029345  0.345662 -0.043828  0.055518  0.015965 -0.021585 -0.062967  0.000030 -0.037829 -0.031117 -0.008600 -0.019632  0.000917 -0.003949  0.004752  0.017646 -0.010475  0.024866  0.048859 -0.001073  0.050841 -0.042711 -0.029936  0.023056  0.031158 -0.023216 -0.044477 -0.079865  0.114434  0.046968  0.027606 -0.040895  0.067793 -0.022368  0.009769 -0.034681 -0.016154  0.044193  0.022540  0.051639  0.007797  0.007391  0.010083 -0.074316 -0.064372 -0.025101 -0.041340 -0.024550  0.027224  0.005440  0.026617  0.051940 -0.036700  0.058742  0.001461  0.032451 -0.020921 -0.021366  0.040976 -0.059863  0.019722  0.043085  0.042850  0.040582 -0.022107  0.029685 -0.022324  0.007497 -0.040081  0.000397  0.023739  0.002122  0.044315 -0.022987  0.043469  0.064731  0.056117  0.038352  0.000367  0.048953  0.045241 -0.009339  0.060821 -0.073344 -0.011166  0.032674  0.022647  0.014999 -0.033428  0.000347 -0.015448 -0.018743  0.048620  0.110470  0.029597  0.030962 -0.011328 -0.056829  0.006497  0.004694 -0.012985 -0.051779 -0.003150 -0.017702 -0.019727 -0.040388  0.009924 -0.059078  0.050095  0.052471 -0.010575 -0.039471 -0.015563 -0.023734 -0.016019  0.005706  0.007087 -0.027253  0.016754  0.030656  0.001635  0.023381 -0.021934 -0.097271 -0.050370 -0.277306 -0.014223 -0.061428 -0.027445  0.017050 -0.009608 -0.017319  0.033824  0.048471 -0.016368  0.016177 -0.022949  0.049435 -0.005335  0.000750 -0.060800 -0.068838 -0.059804 -0.036057  0.042588 -0.054961  0.014508 -0.000423 -0.059416 -0.009816  0.010768  0.150426  0.126644 -0.011118  0.042668 -0.025554  0.015019 -0.000210 -0.150502  0.042745  0.005784 -0.036606 -0.029014 -0.019236 -0.034275  0.009913  0.034990 -0.049935 -0.053754 -0.017105 -0.024232  0.048749  0.050670 -0.016684 -0.056609  0.023764 -0.005639  0.011582  0.038581  0.006578 -0.008041 -0.106921 -0.027615 -0.097465  0.025000 -0.011210  0.092479  0.055639  0.005293  0.026939  0.001806 -0.051768 -0.038913 -0.013483 -0.046246 -0.014757  0.001830 -0.044614 -0.077737  0.066446 -0.006428 -0.000018 -0.014871  0.071112  0.024387 -0.036434  0.008250  0.001929 -0.033247  0.017147  0.038480  0.001671 -0.051957  0.021081 -0.038685  0.000496  0.012745  0.021241 -0.057647  0.004903 -0.049491 -0.267161  0.038997 -0.067915  0.037074 -0.011075  0.043293 -0.015534  0.050443 -0.070772  0.012405  0.024955 -0.006946  0.082643  0.029026 -0.022356  0.042367 -0.003229 -0.074061 -0.015830  0.020035  0.002637  0.023772  0.196120 -0.044049 -0.024944 -0.004666 -0.017908  0.073222  0.001813 -0.031931 -0.035815 -0.044377 -0.000573 -0.011445  0.018698 -0.027002 -0.010099  0.005813  0.048950 -0.014805  0.006814  0.027005 -0.030880  0.048526  0.111968 -0.039582 -0.012955  0.004347 -0.002677  0.025424 -0.060709  0.014993 -0.008847  0.037792  0.050273  0.035482  0.036962 -0.017363  0.025554 -0.016189 -0.050841  0.003358  0.054623  0.039363 -0.039516 
+
+0.00.038.017 I llama_perf_context_print:        load time =      31.71 ms
+0.00.038.019 I llama_perf_context_print: prompt eval time =       3.93 ms /     9 tokens (    0.44 ms per token,  2291.83 tokens per second)
+0.00.038.021 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.00.038.022 I llama_perf_context_print:       total time =       5.77 ms /    10 tokens
+
+real	0m0.047s
+user	0m0.062s
+sys	0m0.011s
