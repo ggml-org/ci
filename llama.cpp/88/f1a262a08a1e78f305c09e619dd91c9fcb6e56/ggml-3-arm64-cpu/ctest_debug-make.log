@@ -1,0 +1,88 @@
+++ nproc
++ make -j8
+[  0%] Generating build details from Git
+[  0%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  0%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  2%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  3%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  3%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  4%] Built target sha1
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  5%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  5%] Built target sha256
+[  5%] Built target xxhash
+[  5%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-aarch64.c.o
+[  6%] Linking CXX shared library libggml-base.so
+[  7%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  7%] Built target build_info
+[  7%] Built target ggml-base
+[ 11%] Building CXX object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu.cpp.o
+[ 11%] Building CXX object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/amx/amx.cpp.o
+[ 11%] Building CXX object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/amx/mmq.cpp.o
+[ 11%] Building C object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu-quants.c.o
+[ 11%] Building C object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu.c.o
+[ 11%] Building CXX object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/llamafile/sgemm.cpp.o
+[ 11%] Building C object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu-aarch64.c.o
+[ 11%] Building CXX object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/cpu-feats-x86.cpp.o
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/cpu-feats-x86.cpp:185:6: error: no previous declaration for ‘void test_is()’ [-Werror=missing-declarations]
+  185 | void test_is() {
+      |      ^~~~~~~
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/cpu-feats-x86.cpp:252:5: error: no previous declaration for ‘int get_score()’ [-Werror=missing-declarations]
+  252 | int get_score() {
+      |     ^~~~~~~~~
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/cpu-feats-x86.cpp: In function ‘int get_score()’:
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/cpu-feats-x86.cpp:266:5: error: ‘__builtin_cpu_init’ was not declared in this scope; did you mean ‘__builtin_vprintf’?
+  266 |     __builtin_cpu_init();
+      |     ^~~~~~~~~~~~~~~~~~
+      |     __builtin_vprintf
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/cpu-feats-x86.cpp:267:10: error: ‘__builtin_cpu_supports’ was not declared in this scope; did you mean ‘__builtin_isupper’?
+  267 |     if (!__builtin_cpu_supports("fma") && ggml_cpu_has_fma()) return 0;
+      |          ^~~~~~~~~~~~~~~~~~~~~~
+      |          __builtin_isupper
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/cpu-feats-x86.cpp:268:10: error: ‘__builtin_cpu_supports’ was not declared in this scope; did you mean ‘__builtin_isupper’?
+  268 |     if (!__builtin_cpu_supports("f16c") && ggml_cpu_has_f16c()) return 0;
+      |          ^~~~~~~~~~~~~~~~~~~~~~
+      |          __builtin_isupper
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/cpu-feats-x86.cpp:269:10: error: ‘__builtin_cpu_supports’ was not declared in this scope; did you mean ‘__builtin_isupper’?
+  269 |     if (!__builtin_cpu_supports("ssse3") && ggml_cpu_has_ssse3()) return 0;
+      |          ^~~~~~~~~~~~~~~~~~~~~~
+      |          __builtin_isupper
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/cpu-feats-x86.cpp:270:10: error: ‘__builtin_cpu_supports’ was not declared in this scope; did you mean ‘__builtin_isupper’?
+  270 |     if (!__builtin_cpu_supports("sse3") && ggml_cpu_has_sse3()) return 0;
+      |          ^~~~~~~~~~~~~~~~~~~~~~
+      |          __builtin_isupper
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/cpu-feats-x86.cpp:271:10: error: ‘__builtin_cpu_supports’ was not declared in this scope; did you mean ‘__builtin_isupper’?
+  271 |     if (!__builtin_cpu_supports("avx") && ggml_cpu_has_avx()) return 0;
+      |          ^~~~~~~~~~~~~~~~~~~~~~
+      |          __builtin_isupper
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/cpu-feats-x86.cpp:272:10: error: ‘__builtin_cpu_supports’ was not declared in this scope; did you mean ‘__builtin_isupper’?
+  272 |     if (!__builtin_cpu_supports("avx2") && ggml_cpu_has_avx2()) return 0;
+      |          ^~~~~~~~~~~~~~~~~~~~~~
+      |          __builtin_isupper
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/cpu-feats-x86.cpp:273:10: error: ‘__builtin_cpu_supports’ was not declared in this scope; did you mean ‘__builtin_isupper’?
+  273 |     if (!__builtin_cpu_supports("avx512f") && ggml_cpu_has_avx512()) return 0;
+      |          ^~~~~~~~~~~~~~~~~~~~~~
+      |          __builtin_isupper
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/cpu-feats-x86.cpp:274:10: error: ‘__builtin_cpu_supports’ was not declared in this scope; did you mean ‘__builtin_isupper’?
+  274 |     if (!__builtin_cpu_supports("avx512bf16") && ggml_cpu_has_avx512_bf16()) return 0;
+      |          ^~~~~~~~~~~~~~~~~~~~~~
+      |          __builtin_isupper
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/cpu-feats-x86.cpp:275:10: error: ‘__builtin_cpu_supports’ was not declared in this scope; did you mean ‘__builtin_isupper’?
+  275 |     if (!__builtin_cpu_supports("avx512vnni") && ggml_cpu_has_avx512_vnni()) return 0;
+      |          ^~~~~~~~~~~~~~~~~~~~~~
+      |          __builtin_isupper
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/cpu-feats-x86.cpp:279:10: error: ‘__builtin_cpu_supports’ was not declared in this scope; did you mean ‘__builtin_isupper’?
+  279 |     if (!__builtin_cpu_supports("amx-int8") && ggml_cpu_has_amx_int8()) {
+      |          ^~~~~~~~~~~~~~~~~~~~~~
+      |          __builtin_isupper
+cc1plus: all warnings being treated as errors
+make[2]: *** [ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/build.make:174: ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/cpu-feats-x86.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1697: ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m0.618s
+user	0m0.728s
+sys	0m0.327s
