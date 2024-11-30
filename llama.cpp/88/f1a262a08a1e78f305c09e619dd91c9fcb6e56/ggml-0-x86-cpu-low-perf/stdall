@@ -1,0 +1,94 @@
++ gg_run_ctest_debug
++ cd /home/ggml/work/llama.cpp
++ rm -rf build-ci-debug
++ tee /home/ggml/results/llama.cpp/88/f1a262a08a1e78f305c09e619dd91c9fcb6e56/ggml-0-x86-cpu-low-perf/ctest_debug.log
++ mkdir build-ci-debug
++ cd build-ci-debug
++ set -e
++ gg_check_build_requirements
++ command -v cmake
++ command -v make
++ command -v ctest
++ tee -a /home/ggml/results/llama.cpp/88/f1a262a08a1e78f305c09e619dd91c9fcb6e56/ggml-0-x86-cpu-low-perf/ctest_debug-cmake.log
++ cmake -DCMAKE_BUILD_TYPE=Debug -DLLAMA_FATAL_WARNINGS=ON ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- Found OpenMP_C: -fopenmp (found version "4.5") 
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5")  
+-- OpenMP found
+-- Using llamafile
+-- x86 detected
+-- Using runtime weight conversion of Q4_0 to Q4_0_x_x to enable optimized GEMM/GEMV kernels
+-- Including CPU backend
+-- Configuring done (0.6s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-debug
+
+real	0m0.724s
+user	0m0.547s
+sys	0m0.180s
++ tee -a /home/ggml/results/llama.cpp/88/f1a262a08a1e78f305c09e619dd91c9fcb6e56/ggml-0-x86-cpu-low-perf/ctest_debug-make.log
+++ nproc
++ make -j4
+[  0%] Generating build details from Git
+[  1%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  2%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  2%] Built target sha256
+[  2%] Built target xxhash
+[  3%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  3%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  3%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  4%] Built target sha1
+[  5%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  5%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-aarch64.c.o
+[  6%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  7%] Linking CXX shared library libggml-base.so
+[  7%] Built target build_info
+[  7%] Built target ggml-base
+[  7%] Building CXX object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu.cpp.o
+[  8%] Building C object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu.c.o
+[  9%] Building C object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu-aarch64.c.o
+[  9%] Building C object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu-quants.c.o
+[ 10%] Building CXX object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/amx/amx.cpp.o
+[ 10%] Building CXX object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/amx/mmq.cpp.o
+[ 11%] Building CXX object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/llamafile/sgemm.cpp.o
+[ 11%] Building CXX object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/cpu-feats-x86.cpp.o
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/cpu-feats-x86.cpp:185:6: error: no previous declaration for ‘void test_is()’ [-Werror=missing-declarations]
+  185 | void test_is() {
+      |      ^~~~~~~
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/cpu-feats-x86.cpp:252:5: error: no previous declaration for ‘int get_score()’ [-Werror=missing-declarations]
+  252 | int get_score() {
+      |     ^~~~~~~~~
+cc1plus: all warnings being treated as errors
+make[2]: *** [ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/build.make:174: ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/cpu-feats-x86.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1697: ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m0.449s
+user	0m0.477s
+sys	0m0.159s
++ cur=2
++ echo 2
++ set +x
+cat: /home/ggml/results/llama.cpp/88/f1a262a08a1e78f305c09e619dd91c9fcb6e56/ggml-0-x86-cpu-low-perf/ctest_debug-ctest.log: No such file or directory
