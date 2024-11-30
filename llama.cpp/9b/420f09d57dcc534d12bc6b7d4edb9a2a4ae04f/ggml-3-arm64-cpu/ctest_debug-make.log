@@ -1,0 +1,47 @@
+++ nproc
++ make -j8
+[  0%] Generating build details from Git
+[  0%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  1%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  2%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  2%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  4%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  4%] Built target sha1
+[  4%] Built target sha256
+[  4%] Built target xxhash
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  5%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  5%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-aarch64.c.o
+[  6%] Linking CXX shared library libggml-base.so
+[  7%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  7%] Built target build_info
+[  7%] Built target ggml-base
+[ 10%] Building CXX object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/llamafile/sgemm.cpp.o
+[ 10%] Building C object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu-quants.c.o
+[ 10%] Building CXX object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu.cpp.o
+[ 10%] Building CXX object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/amx/mmq.cpp.o
+[ 10%] Building C object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu-aarch64.c.o
+[ 10%] Building CXX object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/cpu-feats-x86.cpp.o
+[ 11%] Building C object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/ggml-cpu.c.o
+[ 11%] Building CXX object ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/amx/amx.cpp.o
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/cpu-feats-x86.cpp:187:6: error: no previous declaration for ‘void test_x86_is()’ [-Werror=missing-declarations]
+  187 | void test_x86_is() {
+      |      ^~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/cpu-feats-x86.cpp:255:5: error: no previous declaration for ‘int get_score()’ [-Werror=missing-declarations]
+  255 | int get_score() {
+      |     ^~~~~~~~~
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/cpu-feats-x86.cpp: In static member function ‘static void cpuid_x86::cpuid(int*, int)’:
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/cpu-feats-x86.cpp:92:9: error: impossible constraint in ‘asm’
+   92 |         __asm__ __volatile__(
+      |         ^~~~~~~
+cc1plus: all warnings being treated as errors
+make[2]: *** [ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/build.make:174: ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/cpu-feats-x86.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1697: ggml/src/ggml-cpu/CMakeFiles/ggml-cpu.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m0.584s
+user	0m0.685s
+sys	0m0.330s
