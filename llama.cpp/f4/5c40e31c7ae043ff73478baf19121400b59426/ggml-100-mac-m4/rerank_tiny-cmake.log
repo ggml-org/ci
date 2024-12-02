@@ -1,4 +1,4 @@
-+ cmake -DCMAKE_BUILD_TYPE=Debug -DLLAMA_FATAL_WARNINGS=ON -DGGML_METAL=ON -DGGML_METAL_USE_BF16=ON ..
++ cmake -DCMAKE_BUILD_TYPE=Release -DLLAMA_FATAL_WARNINGS=ON -DGGML_METAL=ON -DGGML_METAL_USE_BF16=ON ..
 -- The C compiler identification is AppleClang 16.0.0.16000026
 -- The CXX compiler identification is AppleClang 16.0.0.16000026
 -- Detecting C compiler ABI info
@@ -45,10 +45,10 @@ CMake Warning at ggml/src/ggml-cpu/CMakeLists.txt:44 (message):
 -- The ASM compiler identification is AppleClang
 -- Found assembler: /Library/Developer/CommandLineTools/usr/bin/cc
 -- Including METAL backend
--- Configuring done (1.8s)
--- Generating done (0.2s)
--- Build files have been written to: /Users/ggml/work/llama.cpp/build-ci-debug
+-- Configuring done (1.4s)
+-- Generating done (0.3s)
+-- Build files have been written to: /Users/ggml/work/llama.cpp/build-ci-release
 
-real	0m2.026s
-user	0m0.705s
-sys	0m1.082s
+real	0m1.667s
+user	0m0.704s
+sys	0m0.973s
