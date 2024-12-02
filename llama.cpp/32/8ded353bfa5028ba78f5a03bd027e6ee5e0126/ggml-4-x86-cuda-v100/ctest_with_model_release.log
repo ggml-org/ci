@@ -1,0 +1,16 @@
++ LLAMACPP_TEST_MODELFILE=/mnt/llama.cpp/models/pythia/2.8B/ggml-model-f16.gguf
++ time ctest --output-on-failure -L model
+Test project /home/ggml/work/llama.cpp/build-ci-release
+    Start 23: test-model-load-cancel
+1/2 Test #23: test-model-load-cancel ...........   Passed    4.18 sec
+    Start 24: test-autorelease
+2/2 Test #24: test-autorelease .................   Passed    1.29 sec
+
+100% tests passed, 0 tests failed out of 2
+
+Label Time Summary:
+model    =   5.47 sec*proc (2 tests)
+
+Total Test time (real) =   5.47 sec
+0.35user 5.13system 0:05.50elapsed 99%CPU (0avgtext+0avgdata 5866748maxresident)k
+0inputs+48outputs (0major+1473384minor)pagefaults 0swaps
