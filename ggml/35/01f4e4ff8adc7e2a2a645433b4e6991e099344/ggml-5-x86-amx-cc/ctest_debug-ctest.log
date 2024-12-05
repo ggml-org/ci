@@ -1,0 +1,48 @@
++ ctest --output-on-failure -E test-opt
+Test project /home/ggml/work/ggml/build-ci-debug
+      Start  1: test-quantize-fns
+ 1/19 Test  #1: test-quantize-fns ................   Passed   22.05 sec
+      Start  2: test-quantize-perf
+ 2/19 Test  #2: test-quantize-perf ...............   Passed    0.16 sec
+      Start  3: test-mul-mat0
+ 3/19 Test  #3: test-mul-mat0 ....................   Passed    0.54 sec
+      Start  4: test-mul-mat2
+ 4/19 Test  #4: test-mul-mat2 ....................   Passed    5.43 sec
+      Start  5: test0
+ 5/19 Test  #5: test0 ............................   Passed    0.01 sec
+      Start  6: test-pool
+ 6/19 Test  #6: test-pool ........................   Passed    0.00 sec
+      Start  7: test-arange
+ 7/19 Test  #7: test-arange ......................   Passed    0.01 sec
+      Start  8: test-timestep_embedding
+ 8/19 Test  #8: test-timestep_embedding ..........   Passed    0.01 sec
+      Start  9: test-pad-reflect-1d
+ 9/19 Test  #9: test-pad-reflect-1d ..............   Passed    0.00 sec
+      Start 10: test-conv-transpose
+10/19 Test #10: test-conv-transpose ..............   Passed    0.00 sec
+      Start 11: test-conv-transpose-1d
+11/19 Test #11: test-conv-transpose-1d ...........   Passed    0.02 sec
+      Start 12: test-dup
+12/19 Test #12: test-dup .........................   Passed    0.01 sec
+      Start 13: test-rel-pos
+13/19 Test #13: test-rel-pos .....................   Passed    0.00 sec
+      Start 14: test-customop
+14/19 Test #14: test-customop ....................   Passed    0.00 sec
+      Start 15: test-conv1d
+15/19 Test #15: test-conv1d ......................   Passed    0.00 sec
+      Start 16: test-conv2d
+16/19 Test #16: test-conv2d ......................   Passed    0.00 sec
+      Start 17: test-mul-mat
+17/19 Test #17: test-mul-mat .....................   Passed    0.00 sec
+      Start 18: test-backend-ops
+18/19 Test #18: test-backend-ops .................   Passed    0.00 sec
+      Start 19: test-cont
+19/19 Test #19: test-cont ........................   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 19
+
+Total Test time (real) =  28.27 sec
+
+real	0m28.274s
+user	0m27.866s
+sys	0m0.237s
