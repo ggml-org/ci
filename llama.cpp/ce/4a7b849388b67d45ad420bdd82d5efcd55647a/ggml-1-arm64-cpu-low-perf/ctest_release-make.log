@@ -1,0 +1,155 @@
+++ nproc
++ make -j4
+[  2%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  2%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  3%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  3%] Built target sha256
+[  3%] Built target xxhash
+[  4%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  5%] Built target build_info
+[  5%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  6%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  6%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  6%] Built target sha1
+[  7%] Linking CXX shared library libggml-base.so
+[  7%] Built target ggml-base
+[  8%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[  8%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[  8%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[ 10%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.o
+In file included from /usr/include/string.h:535,
+                 from /home/ggml/work/llama.cpp/ggml/src/./ggml-impl.h:11,
+                 from /home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:7:
+In function ‘void* memcpy(void*, const void*, size_t)’,
+    inlined from ‘block_iq4_nlx4 make_block_iq4_nlx4(block_iq4_nl*, unsigned int)’ at /home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:3758:19,
+    inlined from ‘int repack_iq4_nl_to_iq4_nl_4_bl(ggml_tensor*, int, const void*, size_t)’ at /home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:3797:41:
+/usr/include/aarch64-linux-gnu/bits/string_fortified.h:29:33: error: writing 8 bytes into a region of size 0 [-Werror=stringop-overflow=]
+   29 |   return __builtin___memcpy_chk (__dest, __src, __len,
+      |          ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+   30 |                                  __glibc_objsize0 (__dest));
+      |                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp: In function ‘int repack_iq4_nl_to_iq4_nl_4_bl(ggml_tensor*, int, const void*, size_t)’:
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:3797:20: note: at offset 72 into destination object ‘<anonymous>’ of size 72
+ 3797 |             *dst++ = make_block_iq4_nlx4(dst_tmp, interleave_block);
+      |             ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/string.h:535,
+                 from /home/ggml/work/llama.cpp/ggml/src/./ggml-impl.h:11,
+                 from /home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:7:
+In function ‘void* memcpy(void*, const void*, size_t)’,
+    inlined from ‘block_iq4_nlx4 make_block_iq4_nlx4(block_iq4_nl*, unsigned int)’ at /home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:3758:19,
+    inlined from ‘int repack_iq4_nl_to_iq4_nl_4_bl(ggml_tensor*, int, const void*, size_t)’ at /home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:3797:41:
+/usr/include/aarch64-linux-gnu/bits/string_fortified.h:29:33: error: writing 8 bytes into a region of size 0 [-Werror=stringop-overflow=]
+   29 |   return __builtin___memcpy_chk (__dest, __src, __len,
+      |          ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+   30 |                                  __glibc_objsize0 (__dest));
+      |                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp: In function ‘int repack_iq4_nl_to_iq4_nl_4_bl(ggml_tensor*, int, const void*, size_t)’:
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:3797:20: note: at offset 80 into destination object ‘<anonymous>’ of size 72
+ 3797 |             *dst++ = make_block_iq4_nlx4(dst_tmp, interleave_block);
+      |             ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/string.h:535,
+                 from /home/ggml/work/llama.cpp/ggml/src/./ggml-impl.h:11,
+                 from /home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:7:
+In function ‘void* memcpy(void*, const void*, size_t)’,
+    inlined from ‘block_iq4_nlx4 make_block_iq4_nlx4(block_iq4_nl*, unsigned int)’ at /home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:3758:19,
+    inlined from ‘int repack_iq4_nl_to_iq4_nl_4_bl(ggml_tensor*, int, const void*, size_t)’ at /home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:3797:41:
+/usr/include/aarch64-linux-gnu/bits/string_fortified.h:29:33: error: writing 8 bytes into a region of size 0 [-Werror=stringop-overflow=]
+   29 |   return __builtin___memcpy_chk (__dest, __src, __len,
+      |          ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+   30 |                                  __glibc_objsize0 (__dest));
+      |                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp: In function ‘int repack_iq4_nl_to_iq4_nl_4_bl(ggml_tensor*, int, const void*, size_t)’:
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:3797:20: note: at offset 88 into destination object ‘<anonymous>’ of size 72
+ 3797 |             *dst++ = make_block_iq4_nlx4(dst_tmp, interleave_block);
+      |             ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/string.h:535,
+                 from /home/ggml/work/llama.cpp/ggml/src/./ggml-impl.h:11,
+                 from /home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:7:
+In function ‘void* memcpy(void*, const void*, size_t)’,
+    inlined from ‘block_iq4_nlx4 make_block_iq4_nlx4(block_iq4_nl*, unsigned int)’ at /home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:3758:19,
+    inlined from ‘int repack_iq4_nl_to_iq4_nl_4_bl(ggml_tensor*, int, const void*, size_t)’ at /home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:3797:41:
+/usr/include/aarch64-linux-gnu/bits/string_fortified.h:29:33: error: writing 8 bytes into a region of size 0 [-Werror=stringop-overflow=]
+   29 |   return __builtin___memcpy_chk (__dest, __src, __len,
+      |          ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+   30 |                                  __glibc_objsize0 (__dest));
+      |                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp: In function ‘int repack_iq4_nl_to_iq4_nl_4_bl(ggml_tensor*, int, const void*, size_t)’:
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:3797:20: note: at offset 96 into destination object ‘<anonymous>’ of size 72
+ 3797 |             *dst++ = make_block_iq4_nlx4(dst_tmp, interleave_block);
+      |             ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/string.h:535,
+                 from /home/ggml/work/llama.cpp/ggml/src/./ggml-impl.h:11,
+                 from /home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:7:
+In function ‘void* memcpy(void*, const void*, size_t)’,
+    inlined from ‘block_iq4_nlx4 make_block_iq4_nlx4(block_iq4_nl*, unsigned int)’ at /home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:3758:19,
+    inlined from ‘int repack_iq4_nl_to_iq4_nl_4_bl(ggml_tensor*, int, const void*, size_t)’ at /home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:3797:41:
+/usr/include/aarch64-linux-gnu/bits/string_fortified.h:29:33: error: writing 8 bytes into a region of size 0 [-Werror=stringop-overflow=]
+   29 |   return __builtin___memcpy_chk (__dest, __src, __len,
+      |          ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+   30 |                                  __glibc_objsize0 (__dest));
+      |                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp: In function ‘int repack_iq4_nl_to_iq4_nl_4_bl(ggml_tensor*, int, const void*, size_t)’:
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:3797:20: note: at offset 104 into destination object ‘<anonymous>’ of size 72
+ 3797 |             *dst++ = make_block_iq4_nlx4(dst_tmp, interleave_block);
+      |             ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/string.h:535,
+                 from /home/ggml/work/llama.cpp/ggml/src/./ggml-impl.h:11,
+                 from /home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:7:
+In function ‘void* memcpy(void*, const void*, size_t)’,
+    inlined from ‘block_iq4_nlx4 make_block_iq4_nlx4(block_iq4_nl*, unsigned int)’ at /home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:3758:19,
+    inlined from ‘int repack_iq4_nl_to_iq4_nl_4_bl(ggml_tensor*, int, const void*, size_t)’ at /home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:3797:41:
+/usr/include/aarch64-linux-gnu/bits/string_fortified.h:29:33: error: writing 8 bytes into a region of size 0 [-Werror=stringop-overflow=]
+   29 |   return __builtin___memcpy_chk (__dest, __src, __len,
+      |          ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+   30 |                                  __glibc_objsize0 (__dest));
+      |                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp: In function ‘int repack_iq4_nl_to_iq4_nl_4_bl(ggml_tensor*, int, const void*, size_t)’:
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:3797:20: note: at offset 112 into destination object ‘<anonymous>’ of size 72
+ 3797 |             *dst++ = make_block_iq4_nlx4(dst_tmp, interleave_block);
+      |             ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/string.h:535,
+                 from /home/ggml/work/llama.cpp/ggml/src/./ggml-impl.h:11,
+                 from /home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:7:
+In function ‘void* memcpy(void*, const void*, size_t)’,
+    inlined from ‘block_iq4_nlx4 make_block_iq4_nlx4(block_iq4_nl*, unsigned int)’ at /home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:3758:19,
+    inlined from ‘int repack_iq4_nl_to_iq4_nl_4_bl(ggml_tensor*, int, const void*, size_t)’ at /home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:3797:41:
+/usr/include/aarch64-linux-gnu/bits/string_fortified.h:29:33: error: writing 8 bytes into a region of size 0 [-Werror=stringop-overflow=]
+   29 |   return __builtin___memcpy_chk (__dest, __src, __len,
+      |          ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+   30 |                                  __glibc_objsize0 (__dest));
+      |                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp: In function ‘int repack_iq4_nl_to_iq4_nl_4_bl(ggml_tensor*, int, const void*, size_t)’:
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:3797:20: note: at offset 120 into destination object ‘<anonymous>’ of size 72
+ 3797 |             *dst++ = make_block_iq4_nlx4(dst_tmp, interleave_block);
+      |             ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/string.h:535,
+                 from /home/ggml/work/llama.cpp/ggml/src/./ggml-impl.h:11,
+                 from /home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:7:
+In function ‘void* memcpy(void*, const void*, size_t)’,
+    inlined from ‘block_iq4_nlx4 make_block_iq4_nlx4(block_iq4_nl*, unsigned int)’ at /home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:3758:19,
+    inlined from ‘int repack_iq4_nl_to_iq4_nl_4_bl(ggml_tensor*, int, const void*, size_t)’ at /home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:3797:41:
+/usr/include/aarch64-linux-gnu/bits/string_fortified.h:29:33: error: writing 8 bytes into a region of size 0 [-Werror=stringop-overflow=]
+   29 |   return __builtin___memcpy_chk (__dest, __src, __len,
+      |          ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+   30 |                                  __glibc_objsize0 (__dest));
+      |                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp: In function ‘int repack_iq4_nl_to_iq4_nl_4_bl(ggml_tensor*, int, const void*, size_t)’:
+/home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ggml-cpu-aarch64.cpp:3797:20: note: at offset 128 into destination object ‘<anonymous>’ of size 72
+ 3797 |             *dst++ = make_block_iq4_nlx4(dst_tmp, interleave_block);
+      |             ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1plus: all warnings being treated as errors
+make[2]: *** [ggml/src/CMakeFiles/ggml-cpu.dir/build.make:104: ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1699: ggml/src/CMakeFiles/ggml-cpu.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m1.877s
+user	0m1.877s
+sys	0m0.338s
