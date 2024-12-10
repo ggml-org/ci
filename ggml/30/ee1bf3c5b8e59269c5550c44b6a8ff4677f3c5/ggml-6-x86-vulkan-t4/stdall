@@ -1,0 +1,410 @@
+rm: cannot remove '/home/ggml/results/ggml/30/ee1bf3c5b8e59269c5550c44b6a8ff4677f3c5/ggml-6-x86-vulkan-t4/*.log': No such file or directory
+rm: cannot remove '/home/ggml/results/ggml/30/ee1bf3c5b8e59269c5550c44b6a8ff4677f3c5/ggml-6-x86-vulkan-t4/*.exit': No such file or directory
+rm: cannot remove '/home/ggml/results/ggml/30/ee1bf3c5b8e59269c5550c44b6a8ff4677f3c5/ggml-6-x86-vulkan-t4/*.md': No such file or directory
+Looking in indexes: https://pypi.org/simple, https://download.pytorch.org/whl/cpu
+Collecting accelerate==0.19.0 (from -r /home/ggml/work/ggml/requirements.txt (line 1))
+  Downloading accelerate-0.19.0-py3-none-any.whl.metadata (16 kB)
+Collecting numpy>=2.0.2 (from -r /home/ggml/work/ggml/requirements.txt (line 2))
+  Downloading numpy-2.2.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.0/62.0 kB 2.3 MB/s eta 0:00:00
+Collecting sentencepiece~=0.1.98 (from -r /home/ggml/work/ggml/requirements.txt (line 3))
+  Downloading sentencepiece-0.1.99.tar.gz (2.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.6/2.6 MB 41.5 MB/s eta 0:00:00
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting torchvision>=0.15.2 (from -r /home/ggml/work/ggml/requirements.txt (line 4))
+  Downloading https://download.pytorch.org/whl/cpu/torchvision-0.20.1%2Bcpu-cp312-cp312-linux_x86_64.whl (1.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 76.6 MB/s eta 0:00:00
+Collecting transformers<5.0.0,>=4.35.2 (from -r /home/ggml/work/ggml/requirements.txt (line 5))
+  Using cached transformers-4.47.0-py3-none-any.whl.metadata (43 kB)
+Collecting gguf>=0.1.0 (from -r /home/ggml/work/ggml/requirements.txt (line 6))
+  Using cached gguf-0.10.0-py3-none-any.whl.metadata (3.5 kB)
+Collecting keras==3.5.0 (from -r /home/ggml/work/ggml/requirements.txt (line 7))
+  Downloading keras-3.5.0-py3-none-any.whl.metadata (5.8 kB)
+Collecting tensorflow==2.18.0 (from -r /home/ggml/work/ggml/requirements.txt (line 8))
+  Downloading tensorflow-2.18.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+Collecting torch~=2.5.1 (from -r /home/ggml/work/ggml/requirements.txt (line 11))
+  Downloading https://download.pytorch.org/whl/cpu/torch-2.5.1%2Bcpu-cp312-cp312-linux_x86_64.whl (174.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 174.6/174.6 MB 3.5 MB/s eta 0:00:00
+Collecting packaging>=20.0 (from accelerate==0.19.0->-r /home/ggml/work/ggml/requirements.txt (line 1))
+  Using cached packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+Collecting psutil (from accelerate==0.19.0->-r /home/ggml/work/ggml/requirements.txt (line 1))
+  Downloading psutil-6.1.0-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (22 kB)
+Collecting pyyaml (from accelerate==0.19.0->-r /home/ggml/work/ggml/requirements.txt (line 1))
+  Using cached PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+Collecting absl-py (from keras==3.5.0->-r /home/ggml/work/ggml/requirements.txt (line 7))
+  Downloading absl_py-2.1.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting rich (from keras==3.5.0->-r /home/ggml/work/ggml/requirements.txt (line 7))
+  Downloading rich-13.9.4-py3-none-any.whl.metadata (18 kB)
+Collecting namex (from keras==3.5.0->-r /home/ggml/work/ggml/requirements.txt (line 7))
+  Downloading namex-0.0.8-py3-none-any.whl.metadata (246 bytes)
+Collecting h5py (from keras==3.5.0->-r /home/ggml/work/ggml/requirements.txt (line 7))
+  Downloading h5py-3.12.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.5 kB)
+Collecting optree (from keras==3.5.0->-r /home/ggml/work/ggml/requirements.txt (line 7))
+  Downloading optree-0.13.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (47 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47.8/47.8 kB 3.4 MB/s eta 0:00:00
+Collecting ml-dtypes (from keras==3.5.0->-r /home/ggml/work/ggml/requirements.txt (line 7))
+  Downloading ml_dtypes-0.5.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (21 kB)
+Collecting astunparse>=1.6.0 (from tensorflow==2.18.0->-r /home/ggml/work/ggml/requirements.txt (line 8))
+  Downloading astunparse-1.6.3-py2.py3-none-any.whl.metadata (4.4 kB)
+Collecting flatbuffers>=24.3.25 (from tensorflow==2.18.0->-r /home/ggml/work/ggml/requirements.txt (line 8))
+  Downloading flatbuffers-24.3.25-py2.py3-none-any.whl.metadata (850 bytes)
+Collecting gast!=0.5.0,!=0.5.1,!=0.5.2,>=0.2.1 (from tensorflow==2.18.0->-r /home/ggml/work/ggml/requirements.txt (line 8))
+  Downloading gast-0.6.0-py3-none-any.whl.metadata (1.3 kB)
+Collecting google-pasta>=0.1.1 (from tensorflow==2.18.0->-r /home/ggml/work/ggml/requirements.txt (line 8))
+  Downloading google_pasta-0.2.0-py3-none-any.whl.metadata (814 bytes)
+Collecting libclang>=13.0.0 (from tensorflow==2.18.0->-r /home/ggml/work/ggml/requirements.txt (line 8))
+  Downloading libclang-18.1.1-py2.py3-none-manylinux2010_x86_64.whl.metadata (5.2 kB)
+Collecting opt-einsum>=2.3.2 (from tensorflow==2.18.0->-r /home/ggml/work/ggml/requirements.txt (line 8))
+  Downloading opt_einsum-3.4.0-py3-none-any.whl.metadata (6.3 kB)
+Collecting protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<6.0.0dev,>=3.20.3 (from tensorflow==2.18.0->-r /home/ggml/work/ggml/requirements.txt (line 8))
+  Downloading protobuf-5.29.1-cp38-abi3-manylinux2014_x86_64.whl.metadata (592 bytes)
+Collecting requests<3,>=2.21.0 (from tensorflow==2.18.0->-r /home/ggml/work/ggml/requirements.txt (line 8))
+  Using cached requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+Collecting setuptools (from tensorflow==2.18.0->-r /home/ggml/work/ggml/requirements.txt (line 8))
+  Using cached setuptools-75.6.0-py3-none-any.whl.metadata (6.7 kB)
+Collecting six>=1.12.0 (from tensorflow==2.18.0->-r /home/ggml/work/ggml/requirements.txt (line 8))
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting termcolor>=1.1.0 (from tensorflow==2.18.0->-r /home/ggml/work/ggml/requirements.txt (line 8))
+  Downloading termcolor-2.5.0-py3-none-any.whl.metadata (6.1 kB)
+Collecting typing-extensions>=3.6.6 (from tensorflow==2.18.0->-r /home/ggml/work/ggml/requirements.txt (line 8))
+  Using cached typing_extensions-4.12.2-py3-none-any.whl.metadata (3.0 kB)
+Collecting wrapt>=1.11.0 (from tensorflow==2.18.0->-r /home/ggml/work/ggml/requirements.txt (line 8))
+  Downloading wrapt-1.17.0-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.4 kB)
+Collecting grpcio<2.0,>=1.24.3 (from tensorflow==2.18.0->-r /home/ggml/work/ggml/requirements.txt (line 8))
+  Downloading grpcio-1.68.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.9 kB)
+Collecting tensorboard<2.19,>=2.18 (from tensorflow==2.18.0->-r /home/ggml/work/ggml/requirements.txt (line 8))
+  Downloading tensorboard-2.18.0-py3-none-any.whl.metadata (1.6 kB)
+Collecting numpy>=2.0.2 (from -r /home/ggml/work/ggml/requirements.txt (line 2))
+  Downloading numpy-2.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (60 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.9/60.9 kB 6.1 MB/s eta 0:00:00
+Collecting ml-dtypes (from keras==3.5.0->-r /home/ggml/work/ggml/requirements.txt (line 7))
+  Downloading ml_dtypes-0.4.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (20 kB)
+Collecting pillow!=8.3.*,>=5.3.0 (from torchvision>=0.15.2->-r /home/ggml/work/ggml/requirements.txt (line 4))
+  Downloading pillow-11.0.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+Collecting filelock (from torch~=2.5.1->-r /home/ggml/work/ggml/requirements.txt (line 11))
+  Using cached filelock-3.16.1-py3-none-any.whl.metadata (2.9 kB)
+Collecting networkx (from torch~=2.5.1->-r /home/ggml/work/ggml/requirements.txt (line 11))
+  Using cached networkx-3.4.2-py3-none-any.whl.metadata (6.3 kB)
+Collecting jinja2 (from torch~=2.5.1->-r /home/ggml/work/ggml/requirements.txt (line 11))
+  Using cached jinja2-3.1.4-py3-none-any.whl.metadata (2.6 kB)
+Collecting fsspec (from torch~=2.5.1->-r /home/ggml/work/ggml/requirements.txt (line 11))
+  Using cached fsspec-2024.10.0-py3-none-any.whl.metadata (11 kB)
+Collecting sympy==1.13.1 (from torch~=2.5.1->-r /home/ggml/work/ggml/requirements.txt (line 11))
+  Downloading https://download.pytorch.org/whl/sympy-1.13.1-py3-none-any.whl (6.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.2/6.2 MB 85.0 MB/s eta 0:00:00
+Collecting mpmath<1.4,>=1.1.0 (from sympy==1.13.1->torch~=2.5.1->-r /home/ggml/work/ggml/requirements.txt (line 11))
+  Using cached https://download.pytorch.org/whl/mpmath-1.3.0-py3-none-any.whl (536 kB)
+Collecting huggingface-hub<1.0,>=0.24.0 (from transformers<5.0.0,>=4.35.2->-r /home/ggml/work/ggml/requirements.txt (line 5))
+  Using cached huggingface_hub-0.26.5-py3-none-any.whl.metadata (13 kB)
+Collecting regex!=2019.12.17 (from transformers<5.0.0,>=4.35.2->-r /home/ggml/work/ggml/requirements.txt (line 5))
+  Using cached regex-2024.11.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (40 kB)
+Collecting tokenizers<0.22,>=0.21 (from transformers<5.0.0,>=4.35.2->-r /home/ggml/work/ggml/requirements.txt (line 5))
+  Using cached tokenizers-0.21.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.7 kB)
+Collecting safetensors>=0.4.1 (from transformers<5.0.0,>=4.35.2->-r /home/ggml/work/ggml/requirements.txt (line 5))
+  Using cached safetensors-0.4.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.8 kB)
+Collecting tqdm>=4.27 (from transformers<5.0.0,>=4.35.2->-r /home/ggml/work/ggml/requirements.txt (line 5))
+  Using cached tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
+Collecting wheel<1.0,>=0.23.0 (from astunparse>=1.6.0->tensorflow==2.18.0->-r /home/ggml/work/ggml/requirements.txt (line 8))
+  Downloading wheel-0.45.1-py3-none-any.whl.metadata (2.3 kB)
+Collecting charset-normalizer<4,>=2 (from requests<3,>=2.21.0->tensorflow==2.18.0->-r /home/ggml/work/ggml/requirements.txt (line 8))
+  Using cached charset_normalizer-3.4.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (34 kB)
+Collecting idna<4,>=2.5 (from requests<3,>=2.21.0->tensorflow==2.18.0->-r /home/ggml/work/ggml/requirements.txt (line 8))
+  Using cached idna-3.10-py3-none-any.whl.metadata (10 kB)
+Collecting urllib3<3,>=1.21.1 (from requests<3,>=2.21.0->tensorflow==2.18.0->-r /home/ggml/work/ggml/requirements.txt (line 8))
+  Using cached urllib3-2.2.3-py3-none-any.whl.metadata (6.5 kB)
+Collecting certifi>=2017.4.17 (from requests<3,>=2.21.0->tensorflow==2.18.0->-r /home/ggml/work/ggml/requirements.txt (line 8))
+  Using cached certifi-2024.8.30-py3-none-any.whl.metadata (2.2 kB)
+Collecting markdown>=2.6.8 (from tensorboard<2.19,>=2.18->tensorflow==2.18.0->-r /home/ggml/work/ggml/requirements.txt (line 8))
+  Downloading Markdown-3.7-py3-none-any.whl.metadata (7.0 kB)
+Collecting tensorboard-data-server<0.8.0,>=0.7.0 (from tensorboard<2.19,>=2.18->tensorflow==2.18.0->-r /home/ggml/work/ggml/requirements.txt (line 8))
+  Downloading tensorboard_data_server-0.7.2-py3-none-manylinux_2_31_x86_64.whl.metadata (1.1 kB)
+Collecting werkzeug>=1.0.1 (from tensorboard<2.19,>=2.18->tensorflow==2.18.0->-r /home/ggml/work/ggml/requirements.txt (line 8))
+  Downloading werkzeug-3.1.3-py3-none-any.whl.metadata (3.7 kB)
+Collecting MarkupSafe>=2.0 (from jinja2->torch~=2.5.1->-r /home/ggml/work/ggml/requirements.txt (line 11))
+  Using cached MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
+Collecting markdown-it-py>=2.2.0 (from rich->keras==3.5.0->-r /home/ggml/work/ggml/requirements.txt (line 7))
+  Downloading markdown_it_py-3.0.0-py3-none-any.whl.metadata (6.9 kB)
+Collecting pygments<3.0.0,>=2.13.0 (from rich->keras==3.5.0->-r /home/ggml/work/ggml/requirements.txt (line 7))
+  Downloading pygments-2.18.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich->keras==3.5.0->-r /home/ggml/work/ggml/requirements.txt (line 7))
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Downloading accelerate-0.19.0-py3-none-any.whl (219 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 219.1/219.1 kB 16.3 MB/s eta 0:00:00
+Downloading keras-3.5.0-py3-none-any.whl (1.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 40.3 MB/s eta 0:00:00
+Downloading tensorflow-2.18.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (615.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 615.5/615.5 MB 932.5 kB/s eta 0:00:00
+Downloading numpy-2.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (19.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 19.2/19.2 MB 5.4 MB/s eta 0:00:00
+Using cached transformers-4.47.0-py3-none-any.whl (10.1 MB)
+Using cached gguf-0.10.0-py3-none-any.whl (71 kB)
+Downloading absl_py-2.1.0-py3-none-any.whl (133 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.7/133.7 kB 4.4 MB/s eta 0:00:00
+Downloading astunparse-1.6.3-py2.py3-none-any.whl (12 kB)
+Downloading flatbuffers-24.3.25-py2.py3-none-any.whl (26 kB)
+Downloading gast-0.6.0-py3-none-any.whl (21 kB)
+Downloading google_pasta-0.2.0-py3-none-any.whl (57 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.5/57.5 kB 5.0 MB/s eta 0:00:00
+Downloading grpcio-1.68.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (5.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.9/5.9 MB 51.5 MB/s eta 0:00:00
+Downloading h5py-3.12.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (5.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 69.6 MB/s eta 0:00:00
+Using cached huggingface_hub-0.26.5-py3-none-any.whl (447 kB)
+Using cached fsspec-2024.10.0-py3-none-any.whl (179 kB)
+Downloading libclang-18.1.1-py2.py3-none-manylinux2010_x86_64.whl (24.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 24.5/24.5 MB 20.1 MB/s eta 0:00:00
+Downloading ml_dtypes-0.4.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 53.6 MB/s eta 0:00:00
+Downloading opt_einsum-3.4.0-py3-none-any.whl (71 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 71.9/71.9 kB 6.2 MB/s eta 0:00:00
+Using cached packaging-24.2-py3-none-any.whl (65 kB)
+Downloading pillow-11.0.0-cp312-cp312-manylinux_2_28_x86_64.whl (4.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.4/4.4 MB 48.3 MB/s eta 0:00:00
+Downloading protobuf-5.29.1-cp38-abi3-manylinux2014_x86_64.whl (319 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 319.7/319.7 kB 27.6 MB/s eta 0:00:00
+Using cached PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (767 kB)
+Using cached regex-2024.11.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (796 kB)
+Using cached requests-2.32.3-py3-none-any.whl (64 kB)
+Using cached safetensors-0.4.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (434 kB)
+Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Downloading tensorboard-2.18.0-py3-none-any.whl (5.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.5/5.5 MB 83.9 MB/s eta 0:00:00
+Using cached setuptools-75.6.0-py3-none-any.whl (1.2 MB)
+Downloading termcolor-2.5.0-py3-none-any.whl (7.8 kB)
+Using cached tokenizers-0.21.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+Using cached tqdm-4.67.1-py3-none-any.whl (78 kB)
+Using cached typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+Downloading wrapt-1.17.0-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (89 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 89.2/89.2 kB 7.8 MB/s eta 0:00:00
+Using cached filelock-3.16.1-py3-none-any.whl (16 kB)
+Using cached jinja2-3.1.4-py3-none-any.whl (133 kB)
+Downloading namex-0.0.8-py3-none-any.whl (5.8 kB)
+Using cached networkx-3.4.2-py3-none-any.whl (1.7 MB)
+Downloading optree-0.13.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (385 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 385.5/385.5 kB 25.5 MB/s eta 0:00:00
+Downloading psutil-6.1.0-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (287 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 287.3/287.3 kB 22.7 MB/s eta 0:00:00
+Downloading rich-13.9.4-py3-none-any.whl (242 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 242.4/242.4 kB 15.5 MB/s eta 0:00:00
+Using cached certifi-2024.8.30-py3-none-any.whl (167 kB)
+Using cached charset_normalizer-3.4.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (143 kB)
+Using cached idna-3.10-py3-none-any.whl (70 kB)
+Downloading Markdown-3.7-py3-none-any.whl (106 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 106.3/106.3 kB 8.8 MB/s eta 0:00:00
+Downloading markdown_it_py-3.0.0-py3-none-any.whl (87 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.5/87.5 kB 8.6 MB/s eta 0:00:00
+Using cached MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (23 kB)
+Downloading pygments-2.18.0-py3-none-any.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 61.8 MB/s eta 0:00:00
+Downloading tensorboard_data_server-0.7.2-py3-none-manylinux_2_31_x86_64.whl (6.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.6/6.6 MB 89.7 MB/s eta 0:00:00
+Using cached urllib3-2.2.3-py3-none-any.whl (126 kB)
+Downloading werkzeug-3.1.3-py3-none-any.whl (224 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 224.5/224.5 kB 6.1 MB/s eta 0:00:00
+Downloading wheel-0.45.1-py3-none-any.whl (72 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.5/72.5 kB 6.2 MB/s eta 0:00:00
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Building wheels for collected packages: sentencepiece
+  Building wheel for sentencepiece (pyproject.toml): started
+  Building wheel for sentencepiece (pyproject.toml): finished with status 'done'
+  Created wheel for sentencepiece: filename=sentencepiece-0.1.99-cp312-cp312-linux_x86_64.whl size=1308610 sha256=c8fdbfa3b986c7bd4a2a514298e322685a4ca8b9ef321b56df70d44d7ed37aa0
+  Stored in directory: /home/ggml/.cache/pip/wheels/e0/8c/e0/65e33b1f4b8462dfc537a0cac02e5c03e1207564c300e4bde5
+Successfully built sentencepiece
+Installing collected packages: sentencepiece, namex, mpmath, libclang, flatbuffers, wrapt, wheel, urllib3, typing-extensions, tqdm, termcolor, tensorboard-data-server, sympy, six, setuptools, safetensors, regex, pyyaml, pygments, psutil, protobuf, pillow, packaging, opt-einsum, numpy, networkx, mdurl, MarkupSafe, markdown, idna, grpcio, gast, fsspec, filelock, charset-normalizer, certifi, absl-py, werkzeug, requests, optree, ml-dtypes, markdown-it-py, jinja2, h5py, google-pasta, gguf, astunparse, torch, tensorboard, rich, huggingface-hub, torchvision, tokenizers, keras, accelerate, transformers, tensorflow
+Successfully installed MarkupSafe-3.0.2 absl-py-2.1.0 accelerate-0.19.0 astunparse-1.6.3 certifi-2024.8.30 charset-normalizer-3.4.0 filelock-3.16.1 flatbuffers-24.3.25 fsspec-2024.10.0 gast-0.6.0 gguf-0.10.0 google-pasta-0.2.0 grpcio-1.68.1 h5py-3.12.1 huggingface-hub-0.26.5 idna-3.10 jinja2-3.1.4 keras-3.5.0 libclang-18.1.1 markdown-3.7 markdown-it-py-3.0.0 mdurl-0.1.2 ml-dtypes-0.4.1 mpmath-1.3.0 namex-0.0.8 networkx-3.4.2 numpy-2.0.2 opt-einsum-3.4.0 optree-0.13.1 packaging-24.2 pillow-11.0.0 protobuf-5.29.1 psutil-6.1.0 pygments-2.18.0 pyyaml-6.0.2 regex-2024.11.6 requests-2.32.3 rich-13.9.4 safetensors-0.4.5 sentencepiece-0.1.99 setuptools-75.6.0 six-1.17.0 sympy-1.13.1 tensorboard-2.18.0 tensorboard-data-server-0.7.2 tensorflow-2.18.0 termcolor-2.5.0 tokenizers-0.21.0 torch-2.5.1+cpu torchvision-0.20.1+cpu tqdm-4.67.1 transformers-4.47.0 typing-extensions-4.12.2 urllib3-2.2.3 werkzeug-3.1.3 wheel-0.45.1 wrapt-1.17.0
++ gg_run_ctest_debug
++ cd /home/ggml/work/ggml
++ rm -rf build-ci-debug
++ tee /home/ggml/results/ggml/30/ee1bf3c5b8e59269c5550c44b6a8ff4677f3c5/ggml-6-x86-vulkan-t4/ctest_debug.log
++ mkdir build-ci-debug
++ cd build-ci-debug
++ set -e
++ tee -a /home/ggml/results/ggml/30/ee1bf3c5b8e59269c5550c44b6a8ff4677f3c5/ggml-6-x86-vulkan-t4/ctest_debug-cmake.log
++ cmake -DCMAKE_BUILD_TYPE=Debug ..
+-- The C compiler identification is GNU 13.2.0
+-- The CXX compiler identification is GNU 13.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- Including CPU backend
+-- Found OpenMP_C: -fopenmp (found version "4.5") 
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5")  
+-- Adding CPU backend variant ggml-cpu: -march=native 
+-- x86 detected
+-- Linux detected
+-- Configuring done (0.9s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/ggml/work/ggml/build-ci-debug
+
+real	0m0.974s
+user	0m0.535s
+sys	0m0.446s
++ tee -a /home/ggml/results/ggml/30/ee1bf3c5b8e59269c5550c44b6a8ff4677f3c5/ggml-6-x86-vulkan-t4/ctest_debug-make.log
++ make -j
+[  1%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  2%] Building C object src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  3%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  4%] Building C object src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  5%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  6%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  7%] Building C object src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  8%] Linking CXX shared library libggml-base.so
+[  8%] Built target ggml-base
+[  9%] Building C object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[ 10%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[ 11%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[ 12%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[ 13%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 14%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 15%] Building C object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 16%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 17%] Linking CXX shared library libggml-cpu.so
+[ 17%] Built target ggml-cpu
+[ 18%] Building CXX object src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 19%] Linking CXX static library libcommon.a
+[ 20%] Linking CXX shared library libggml.so
+[ 20%] Built target common
+[ 20%] Built target ggml
+[ 21%] Building CXX object tests/CMakeFiles/test-opt.dir/test-opt.cpp.o
+[ 22%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 23%] Building C object tests/CMakeFiles/test-mul-mat0.dir/test-mul-mat0.c.o
+[ 24%] Building C object tests/CMakeFiles/test-vec1.dir/test-vec1.c.o
+[ 25%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
+[ 26%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
+[ 27%] Building C object tests/CMakeFiles/test-mul-mat2.dir/test-mul-mat2.c.o
+[ 28%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 29%] Building C object tests/CMakeFiles/test-pool.dir/test-pool.c.o
+[ 30%] Building CXX object tests/CMakeFiles/test-arange.dir/test-arange.cpp.o
+[ 31%] Building CXX object tests/CMakeFiles/test-timestep_embedding.dir/test-timestep_embedding.cpp.o
+[ 32%] Building CXX object tests/CMakeFiles/test-pad-reflect-1d.dir/test-pad-reflect-1d.cpp.o
+[ 33%] Building C object tests/CMakeFiles/test-dup.dir/test-dup.c.o
+[ 34%] Building C object tests/CMakeFiles/test-conv-transpose.dir/test-conv-transpose.c.o
+[ 35%] Building C object tests/CMakeFiles/test-customop.dir/test-customop.c.o
+[ 36%] Building C object tests/CMakeFiles/test-rel-pos.dir/test-rel-pos.c.o
+[ 37%] Building CXX object tests/CMakeFiles/test-conv-transpose-1d.dir/test-conv-transpose-1d.cpp.o
+[ 38%] Building CXX object tests/CMakeFiles/test-conv2d.dir/test-conv2d.cpp.o
+[ 39%] Building CXX object tests/CMakeFiles/test-conv1d.dir/test-conv1d.cpp.o
+[ 40%] Building CXX object tests/CMakeFiles/test-mul-mat.dir/test-mul-mat.cpp.o
+[ 41%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 42%] Building C object tests/CMakeFiles/test-cont.dir/test-cont.c.o
+[ 43%] Building CXX object examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o
+[ 44%] Building CXX object examples/mnist/CMakeFiles/mnist-common.dir/mnist-common.cpp.o
+[ 45%] Building CXX object examples/sam/CMakeFiles/sam.dir/main.cpp.o
+[ 46%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolov3-tiny.cpp.o
+[ 47%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolo-image.cpp.o
+[ 48%] Building CXX object examples/simple/CMakeFiles/simple-backend.dir/simple-backend.cpp.o
+[ 49%] Building CXX object examples/simple/CMakeFiles/simple-ctx.dir/simple-ctx.cpp.o
+[ 50%] Linking C executable ../bin/test-vec0
+[ 51%] Linking C executable ../bin/test0
+[ 52%] Linking C executable ../bin/test-pool
+[ 53%] Linking C executable ../bin/test-dup
+[ 54%] Linking CXX executable ../bin/test-arange
+[ 55%] Linking C executable ../bin/test-rel-pos
+[ 56%] Linking CXX executable ../bin/test-pad-reflect-1d
+[ 57%] Linking C executable ../bin/test-customop
+[ 58%] Linking C executable ../bin/test-mul-mat0
+[ 58%] Built target test-vec0
+[ 59%] Linking C executable ../bin/test-conv-transpose
+[ 60%] Linking C executable ../bin/test-cont
+[ 60%] Built target test0
+[ 60%] Built target test-dup
+[ 60%] Built target test-pool
+[ 60%] Built target test-rel-pos
+[ 60%] Built target test-customop
+[ 60%] Built target test-mul-mat0
+[ 60%] Built target test-pad-reflect-1d
+[ 60%] Built target test-conv-transpose
+[ 60%] Built target test-cont
+[ 60%] Built target test-arange
+[ 61%] Linking CXX executable ../bin/test-timestep_embedding
+[ 62%] Linking C executable ../bin/test-vec1
+[ 62%] Built target test-vec1
+[ 63%] Linking CXX executable ../bin/test-quantize-fns
+[ 63%] Built target test-timestep_embedding
+[ 64%] Linking C executable ../bin/test-mul-mat2
+[ 64%] Built target test-mul-mat2
+[ 64%] Built target test-quantize-fns
+[ 65%] Linking CXX executable ../../bin/simple-ctx
+[ 66%] Linking CXX executable ../bin/test-mul-mat
+[ 67%] Linking CXX executable ../bin/test-conv1d
+[ 68%] Linking CXX executable ../../bin/simple-backend
+[ 68%] Built target test-mul-mat
+[ 68%] Built target simple-ctx
+[ 68%] Built target test-conv1d
+[ 69%] Linking CXX executable ../bin/test-conv2d
+[ 69%] Built target simple-backend
+[ 69%] Built target test-conv2d
+/home/ggml/work/ggml/examples/common-ggml.cpp: In function ‘bool ggml_common_quantize_0(std::ifstream&, std::ofstream&, ggml_ftype, const std::vector<std::__cxx11::basic_string<char> >&, const std::vector<std::__cxx11::basic_string<char> >&)’:
+/home/ggml/work/ggml/examples/common-ggml.cpp:75:14: error: ‘GGML_FTYPE_MOSTLY_Q4_0_4_4’ was not declared in this scope; did you mean ‘GGML_FTYPE_MOSTLY_Q4_0’?
+   75 |         case GGML_FTYPE_MOSTLY_Q4_0_4_4:
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      |              GGML_FTYPE_MOSTLY_Q4_0
+/home/ggml/work/ggml/examples/common-ggml.cpp:76:14: error: ‘GGML_FTYPE_MOSTLY_Q4_0_4_8’ was not declared in this scope; did you mean ‘GGML_FTYPE_MOSTLY_Q4_0’?
+   76 |         case GGML_FTYPE_MOSTLY_Q4_0_4_8:
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      |              GGML_FTYPE_MOSTLY_Q4_0
+/home/ggml/work/ggml/examples/common-ggml.cpp:77:14: error: ‘GGML_FTYPE_MOSTLY_Q4_0_8_8’ was not declared in this scope; did you mean ‘GGML_FTYPE_MOSTLY_Q4_0’?
+   77 |         case GGML_FTYPE_MOSTLY_Q4_0_8_8:
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      |              GGML_FTYPE_MOSTLY_Q4_0
+/home/ggml/work/ggml/examples/common-ggml.cpp:215:22: error: ‘GGML_TYPE_Q4_0_4_4’ was not declared in this scope; did you mean ‘GGML_TYPE_Q4_0’?
+  215 |                 case GGML_TYPE_Q4_0_4_4:
+      |                      ^~~~~~~~~~~~~~~~~~
+      |                      GGML_TYPE_Q4_0
+/home/ggml/work/ggml/examples/common-ggml.cpp:216:22: error: ‘GGML_TYPE_Q4_0_4_8’ was not declared in this scope; did you mean ‘GGML_TYPE_Q4_0’?
+  216 |                 case GGML_TYPE_Q4_0_4_8:
+      |                      ^~~~~~~~~~~~~~~~~~
+      |                      GGML_TYPE_Q4_0
+/home/ggml/work/ggml/examples/common-ggml.cpp:217:22: error: ‘GGML_TYPE_Q4_0_8_8’ was not declared in this scope; did you mean ‘GGML_TYPE_Q4_0’?
+  217 |                 case GGML_TYPE_Q4_0_8_8:
+      |                      ^~~~~~~~~~~~~~~~~~
+      |                      GGML_TYPE_Q4_0
+/home/ggml/work/ggml/examples/common-ggml.cpp:220:22: error: ‘GGML_TYPE_IQ4_NL_4_4’ was not declared in this scope; did you mean ‘GGML_TYPE_IQ4_NL’?
+  220 |                 case GGML_TYPE_IQ4_NL_4_4:
+      |                      ^~~~~~~~~~~~~~~~~~~~
+      |                      GGML_TYPE_IQ4_NL
+[ 70%] Linking CXX executable ../bin/test-conv-transpose-1d
+make[2]: *** [examples/CMakeFiles/common-ggml.dir/build.make:76: examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1065: examples/CMakeFiles/common-ggml.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[ 71%] Linking CXX static library libmnist-common.a
+[ 72%] Linking CXX executable ../bin/test-opt
+[ 72%] Built target test-conv-transpose-1d
+[ 72%] Built target mnist-common
+[ 72%] Built target test-opt
+[ 73%] Linking CXX executable ../../bin/yolov3-tiny
+[ 73%] Built target yolov3-tiny
+[ 74%] Linking CXX executable ../bin/test-quantize-perf
+[ 74%] Built target test-quantize-perf
+[ 75%] Linking CXX executable ../../bin/sam
+[ 75%] Built target sam
+[ 76%] Linking CXX executable ../bin/test-backend-ops
+[ 76%] Built target test-backend-ops
+make: *** [Makefile:146: all] Error 2
+
+real	0m12.945s
+user	0m38.129s
+sys	0m5.033s
++ cur=2
++ echo 2
++ set +x
+cat: /home/ggml/results/ggml/30/ee1bf3c5b8e59269c5550c44b6a8ff4677f3c5/ggml-6-x86-vulkan-t4/ctest_debug-ctest.log: No such file or directory
+Tue Dec 10 15:18:53 UTC 2024

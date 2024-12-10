@@ -1,0 +1,145 @@
++ make -j
+[  1%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  2%] Building C object src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  3%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  4%] Building C object src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  5%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  6%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  7%] Building C object src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  8%] Linking CXX shared library libggml-base.so
+[  8%] Built target ggml-base
+[  9%] Building C object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[ 10%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[ 11%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[ 12%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[ 13%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 14%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 15%] Building C object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 16%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 17%] Linking CXX shared library libggml-cpu.so
+[ 17%] Built target ggml-cpu
+[ 18%] Building CXX object src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 19%] Linking CXX static library libcommon.a
+[ 20%] Linking CXX shared library libggml.so
+[ 20%] Built target common
+[ 20%] Built target ggml
+[ 21%] Building CXX object tests/CMakeFiles/test-opt.dir/test-opt.cpp.o
+[ 22%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 23%] Building C object tests/CMakeFiles/test-mul-mat0.dir/test-mul-mat0.c.o
+[ 24%] Building C object tests/CMakeFiles/test-vec1.dir/test-vec1.c.o
+[ 25%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
+[ 26%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
+[ 27%] Building C object tests/CMakeFiles/test-mul-mat2.dir/test-mul-mat2.c.o
+[ 28%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 29%] Building C object tests/CMakeFiles/test-pool.dir/test-pool.c.o
+[ 30%] Building CXX object tests/CMakeFiles/test-arange.dir/test-arange.cpp.o
+[ 31%] Building CXX object tests/CMakeFiles/test-timestep_embedding.dir/test-timestep_embedding.cpp.o
+[ 32%] Building CXX object tests/CMakeFiles/test-pad-reflect-1d.dir/test-pad-reflect-1d.cpp.o
+[ 33%] Building C object tests/CMakeFiles/test-dup.dir/test-dup.c.o
+[ 34%] Building C object tests/CMakeFiles/test-conv-transpose.dir/test-conv-transpose.c.o
+[ 35%] Building C object tests/CMakeFiles/test-customop.dir/test-customop.c.o
+[ 36%] Building C object tests/CMakeFiles/test-rel-pos.dir/test-rel-pos.c.o
+[ 37%] Building CXX object tests/CMakeFiles/test-conv-transpose-1d.dir/test-conv-transpose-1d.cpp.o
+[ 38%] Building CXX object tests/CMakeFiles/test-conv2d.dir/test-conv2d.cpp.o
+[ 39%] Building CXX object tests/CMakeFiles/test-conv1d.dir/test-conv1d.cpp.o
+[ 40%] Building CXX object tests/CMakeFiles/test-mul-mat.dir/test-mul-mat.cpp.o
+[ 41%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 42%] Building C object tests/CMakeFiles/test-cont.dir/test-cont.c.o
+[ 43%] Building CXX object examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o
+[ 44%] Building CXX object examples/mnist/CMakeFiles/mnist-common.dir/mnist-common.cpp.o
+[ 45%] Building CXX object examples/sam/CMakeFiles/sam.dir/main.cpp.o
+[ 46%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolov3-tiny.cpp.o
+[ 47%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolo-image.cpp.o
+[ 48%] Building CXX object examples/simple/CMakeFiles/simple-backend.dir/simple-backend.cpp.o
+[ 49%] Building CXX object examples/simple/CMakeFiles/simple-ctx.dir/simple-ctx.cpp.o
+[ 50%] Linking C executable ../bin/test-vec0
+[ 51%] Linking C executable ../bin/test0
+[ 52%] Linking C executable ../bin/test-pool
+[ 53%] Linking C executable ../bin/test-dup
+[ 54%] Linking CXX executable ../bin/test-arange
+[ 55%] Linking C executable ../bin/test-rel-pos
+[ 56%] Linking CXX executable ../bin/test-pad-reflect-1d
+[ 57%] Linking C executable ../bin/test-customop
+[ 58%] Linking C executable ../bin/test-mul-mat0
+[ 58%] Built target test-vec0
+[ 59%] Linking C executable ../bin/test-conv-transpose
+[ 60%] Linking C executable ../bin/test-cont
+[ 60%] Built target test0
+[ 60%] Built target test-dup
+[ 60%] Built target test-pool
+[ 60%] Built target test-rel-pos
+[ 60%] Built target test-customop
+[ 60%] Built target test-mul-mat0
+[ 60%] Built target test-pad-reflect-1d
+[ 60%] Built target test-conv-transpose
+[ 60%] Built target test-cont
+[ 60%] Built target test-arange
+[ 61%] Linking CXX executable ../bin/test-timestep_embedding
+[ 62%] Linking C executable ../bin/test-vec1
+[ 62%] Built target test-vec1
+[ 63%] Linking CXX executable ../bin/test-quantize-fns
+[ 63%] Built target test-timestep_embedding
+[ 64%] Linking C executable ../bin/test-mul-mat2
+[ 64%] Built target test-mul-mat2
+[ 64%] Built target test-quantize-fns
+[ 65%] Linking CXX executable ../../bin/simple-ctx
+[ 66%] Linking CXX executable ../bin/test-mul-mat
+[ 67%] Linking CXX executable ../bin/test-conv1d
+[ 68%] Linking CXX executable ../../bin/simple-backend
+[ 68%] Built target test-mul-mat
+[ 68%] Built target simple-ctx
+[ 68%] Built target test-conv1d
+[ 69%] Linking CXX executable ../bin/test-conv2d
+[ 69%] Built target simple-backend
+[ 69%] Built target test-conv2d
+/home/ggml/work/ggml/examples/common-ggml.cpp: In function ‘bool ggml_common_quantize_0(std::ifstream&, std::ofstream&, ggml_ftype, const std::vector<std::__cxx11::basic_string<char> >&, const std::vector<std::__cxx11::basic_string<char> >&)’:
+/home/ggml/work/ggml/examples/common-ggml.cpp:75:14: error: ‘GGML_FTYPE_MOSTLY_Q4_0_4_4’ was not declared in this scope; did you mean ‘GGML_FTYPE_MOSTLY_Q4_0’?
+   75 |         case GGML_FTYPE_MOSTLY_Q4_0_4_4:
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      |              GGML_FTYPE_MOSTLY_Q4_0
+/home/ggml/work/ggml/examples/common-ggml.cpp:76:14: error: ‘GGML_FTYPE_MOSTLY_Q4_0_4_8’ was not declared in this scope; did you mean ‘GGML_FTYPE_MOSTLY_Q4_0’?
+   76 |         case GGML_FTYPE_MOSTLY_Q4_0_4_8:
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      |              GGML_FTYPE_MOSTLY_Q4_0
+/home/ggml/work/ggml/examples/common-ggml.cpp:77:14: error: ‘GGML_FTYPE_MOSTLY_Q4_0_8_8’ was not declared in this scope; did you mean ‘GGML_FTYPE_MOSTLY_Q4_0’?
+   77 |         case GGML_FTYPE_MOSTLY_Q4_0_8_8:
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      |              GGML_FTYPE_MOSTLY_Q4_0
+/home/ggml/work/ggml/examples/common-ggml.cpp:215:22: error: ‘GGML_TYPE_Q4_0_4_4’ was not declared in this scope; did you mean ‘GGML_TYPE_Q4_0’?
+  215 |                 case GGML_TYPE_Q4_0_4_4:
+      |                      ^~~~~~~~~~~~~~~~~~
+      |                      GGML_TYPE_Q4_0
+/home/ggml/work/ggml/examples/common-ggml.cpp:216:22: error: ‘GGML_TYPE_Q4_0_4_8’ was not declared in this scope; did you mean ‘GGML_TYPE_Q4_0’?
+  216 |                 case GGML_TYPE_Q4_0_4_8:
+      |                      ^~~~~~~~~~~~~~~~~~
+      |                      GGML_TYPE_Q4_0
+/home/ggml/work/ggml/examples/common-ggml.cpp:217:22: error: ‘GGML_TYPE_Q4_0_8_8’ was not declared in this scope; did you mean ‘GGML_TYPE_Q4_0’?
+  217 |                 case GGML_TYPE_Q4_0_8_8:
+      |                      ^~~~~~~~~~~~~~~~~~
+      |                      GGML_TYPE_Q4_0
+/home/ggml/work/ggml/examples/common-ggml.cpp:220:22: error: ‘GGML_TYPE_IQ4_NL_4_4’ was not declared in this scope; did you mean ‘GGML_TYPE_IQ4_NL’?
+  220 |                 case GGML_TYPE_IQ4_NL_4_4:
+      |                      ^~~~~~~~~~~~~~~~~~~~
+      |                      GGML_TYPE_IQ4_NL
+[ 70%] Linking CXX executable ../bin/test-conv-transpose-1d
+make[2]: *** [examples/CMakeFiles/common-ggml.dir/build.make:76: examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1065: examples/CMakeFiles/common-ggml.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[ 71%] Linking CXX static library libmnist-common.a
+[ 72%] Linking CXX executable ../bin/test-opt
+[ 72%] Built target test-conv-transpose-1d
+[ 72%] Built target mnist-common
+[ 72%] Built target test-opt
+[ 73%] Linking CXX executable ../../bin/yolov3-tiny
+[ 73%] Built target yolov3-tiny
+[ 74%] Linking CXX executable ../bin/test-quantize-perf
+[ 74%] Built target test-quantize-perf
+[ 75%] Linking CXX executable ../../bin/sam
+[ 75%] Built target sam
+[ 76%] Linking CXX executable ../bin/test-backend-ops
+[ 76%] Built target test-backend-ops
+make: *** [Makefile:146: all] Error 2
+
+real	0m12.945s
+user	0m38.129s
+sys	0m5.033s
