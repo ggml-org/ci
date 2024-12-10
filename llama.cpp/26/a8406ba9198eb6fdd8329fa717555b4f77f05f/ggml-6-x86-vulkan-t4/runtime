@@ -1,3 +1,3 @@
 Command exited with non-zero status 8
-674.59user 50.50system 5:05.31elapsed 237%CPU (0avgtext+0avgdata 954164maxresident)k
-25288inputs+5653608outputs (100major+12056346minor)pagefaults 0swaps
+321.32user 35.92system 2:42.77elapsed 219%CPU (0avgtext+0avgdata 859828maxresident)k
+0inputs+1631432outputs (52major+9851725minor)pagefaults 0swaps

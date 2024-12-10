@@ -8,7 +8,7 @@ Test project /home/ggml/work/llama.cpp/build-ci-debug
       Start  1: test-tokenizer-0-bert-bge
  1/27 Test  #1: test-tokenizer-0-bert-bge .........   Passed    0.38 sec
       Start  2: test-tokenizer-0-command-r
- 2/27 Test  #2: test-tokenizer-0-command-r ........   Passed    4.21 sec
+ 2/27 Test  #2: test-tokenizer-0-command-r ........   Passed    4.26 sec
       Start  3: test-tokenizer-0-deepseek-coder
  3/27 Test  #3: test-tokenizer-0-deepseek-coder ...   Passed    0.74 sec
       Start  4: test-tokenizer-0-deepseek-llm
@@ -22,15 +22,15 @@ Test project /home/ggml/work/llama.cpp/build-ci-debug
       Start  8: test-tokenizer-0-llama-spm
  8/27 Test  #8: test-tokenizer-0-llama-spm ........   Passed    0.35 sec
       Start  9: test-tokenizer-0-mpt
- 9/27 Test  #9: test-tokenizer-0-mpt ..............   Passed    0.89 sec
+ 9/27 Test  #9: test-tokenizer-0-mpt ..............   Passed    0.90 sec
       Start 10: test-tokenizer-0-phi-3
 10/27 Test #10: test-tokenizer-0-phi-3 ............   Passed    0.35 sec
       Start 11: test-tokenizer-0-qwen2
-11/27 Test #11: test-tokenizer-0-qwen2 ............   Passed    2.63 sec
+11/27 Test #11: test-tokenizer-0-qwen2 ............   Passed    2.62 sec
       Start 12: test-tokenizer-0-refact
-12/27 Test #12: test-tokenizer-0-refact ...........   Passed    0.88 sec
+12/27 Test #12: test-tokenizer-0-refact ...........   Passed    0.89 sec
       Start 13: test-tokenizer-0-starcoder
-13/27 Test #13: test-tokenizer-0-starcoder ........   Passed    0.89 sec
+13/27 Test #13: test-tokenizer-0-starcoder ........   Passed    0.88 sec
       Start 14: test-tokenizer-1-llama-spm
 14/27 Test #14: test-tokenizer-1-llama-spm ........   Passed    2.96 sec
       Start 15: test-log
@@ -38,7 +38,7 @@ Test project /home/ggml/work/llama.cpp/build-ci-debug
       Start 16: test-arg-parser
 16/27 Test #16: test-arg-parser ...................   Passed    0.27 sec
       Start 17: test-sampling
-17/27 Test #17: test-sampling .....................   Passed    6.99 sec
+17/27 Test #17: test-sampling .....................   Passed    6.96 sec
       Start 18: test-chat-template
 18/27 Test #18: test-chat-template ................   Passed    0.01 sec
       Start 19: test-grammar-parser
@@ -48,7 +48,7 @@ Test project /home/ggml/work/llama.cpp/build-ci-debug
       Start 21: test-llama-grammar
 21/27 Test #21: test-llama-grammar ................   Passed    0.01 sec
       Start 22: test-backend-ops
-22/27 Test #22: test-backend-ops ..................***Failed   92.10 sec
+22/27 Test #22: test-backend-ops ..................***Exception: SegFault 44.15 sec
 ggml_vulkan: Found 1 Vulkan devices:
 ggml_vulkan: 0 = Tesla T4 (NVIDIA) | uma: 0 | fp16: 1 | warp size: 32 | matrix cores: KHR_coopmat
 register_backend: registered backend Vulkan (1 devices)
@@ -352,7 +352,7 @@ ggml_vulkan: Compiling shaders................................Done!
   IM2COL(type_input=f32,type_kernel=f32,dst_type=f32,ne_input=[20,2,2,1],ne_kernel=[3,2,2,1],s0=3,s1=0,p0=3,p1=0,d0=3,d1=0,is_2D=0): [1;32mOK[0m
   IM2COL(type_input=f32,type_kernel=f32,dst_type=f32,ne_input=[10,10,3,1],ne_kernel=[3,3,3,1],s0=1,s1=1,p0=1,p1=1,d0=1,d1=1,is_2D=1): [1;32mOK[0m
   IM2COL(type_input=f32,type_kernel=f16,dst_type=f32,ne_input=[10,10,3,1],ne_kernel=[3,3,3,1],s0=1,s1=1,p0=1,p1=1,d0=1,d1=1,is_2D=1): [1;32mOK[0m
-  IM2COL(type_input=f32,type_kernel=f16,dst_type=f16,ne_input=[10,10,3,1],ne_kernel=[3,3,3,1],s0=1,s1=1,p0=1,p1=1,d0=1,d1=1,is_2D=1): [IM2COL] NMSE = 0.000000200 > 0.000000100 [1;31mFAIL[0m
+  IM2COL(type_input=f32,type_kernel=f16,dst_type=f16,ne_input=[10,10,3,1],ne_kernel=[3,3,3,1],s0=1,s1=1,p0=1,p1=1,d0=1,d1=1,is_2D=1): [IM2COL] NMSE = 0.000000203 > 0.000000100 [1;31mFAIL[0m
   IM2COL(type_input=f32,type_kernel=f32,dst_type=f32,ne_input=[20,20,2,2],ne_kernel=[3,3,2,2],s0=1,s1=1,p0=0,p1=0,d0=1,d1=1,is_2D=1): [1;32mOK[0m
   IM2COL(type_input=f32,type_kernel=f32,dst_type=f32,ne_input=[20,20,2,2],ne_kernel=[3,3,2,2],s0=1,s1=1,p0=0,p1=0,d0=1,d1=3,is_2D=1): [1;32mOK[0m
   IM2COL(type_input=f32,type_kernel=f32,dst_type=f32,ne_input=[20,20,2,2],ne_kernel=[3,3,2,2],s0=1,s1=1,p0=0,p1=0,d0=3,d1=1,is_2D=1): [1;32mOK[0m
@@ -417,14 +417,14 @@ ggml_vulkan: Compiling shaders................................Done!
   IM2COL(type_input=f32,type_kernel=f32,dst_type=f32,ne_input=[20,20,2,2],ne_kernel=[3,3,2,2],s0=3,s1=3,p0=3,p1=3,d0=1,d1=3,is_2D=1): [1;32mOK[0m
   IM2COL(type_input=f32,type_kernel=f32,dst_type=f32,ne_input=[20,20,2,2],ne_kernel=[3,3,2,2],s0=3,s1=3,p0=3,p1=3,d0=3,d1=1,is_2D=1): [1;32mOK[0m
   IM2COL(type_input=f32,type_kernel=f32,dst_type=f32,ne_input=[20,20,2,2],ne_kernel=[3,3,2,2],s0=3,s1=3,p0=3,p1=3,d0=3,d1=3,is_2D=1): [1;32mOK[0m
-  IM2COL(type_input=f32,type_kernel=f16,dst_type=f16,ne_input=[12,12,1,32],ne_kernel=[3,3,1,32],s0=1,s1=1,p0=1,p1=1,d0=1,d1=1,is_2D=1): [IM2COL] NMSE = 0.000000213 > 0.000000100 [1;31mFAIL[0m
-  IM2COL(type_input=f32,type_kernel=f16,dst_type=f16,ne_input=[12,12,2,32],ne_kernel=[3,3,2,32],s0=1,s1=1,p0=1,p1=1,d0=1,d1=1,is_2D=1): [IM2COL] NMSE = 0.000000199 > 0.000000100 [1;31mFAIL[0m
+  IM2COL(type_input=f32,type_kernel=f16,dst_type=f16,ne_input=[12,12,1,32],ne_kernel=[3,3,1,32],s0=1,s1=1,p0=1,p1=1,d0=1,d1=1,is_2D=1): [IM2COL] NMSE = 0.000000206 > 0.000000100 [1;31mFAIL[0m
+  IM2COL(type_input=f32,type_kernel=f16,dst_type=f16,ne_input=[12,12,2,32],ne_kernel=[3,3,2,32],s0=1,s1=1,p0=1,p1=1,d0=1,d1=1,is_2D=1): [IM2COL] NMSE = 0.000000202 > 0.000000100 [1;31mFAIL[0m
   IM2COL(type_input=f32,type_kernel=f16,dst_type=f16,ne_input=[12,12,1,1024],ne_kernel=[3,3,1,1024],s0=1,s1=1,p0=1,p1=1,d0=1,d1=1,is_2D=1): [IM2COL] NMSE = 0.000000205 > 0.000000100 [1;31mFAIL[0m
   IM2COL(type_input=f32,type_kernel=f16,dst_type=f16,ne_input=[12,12,2,1024],ne_kernel=[3,3,2,1024],s0=1,s1=1,p0=1,p1=1,d0=1,d1=1,is_2D=1): [IM2COL] NMSE = 0.000000204 > 0.000000100 [1;31mFAIL[0m
-  IM2COL(type_input=f32,type_kernel=f16,dst_type=f16,ne_input=[12,12,1,2048],ne_kernel=[3,3,1,2048],s0=1,s1=1,p0=1,p1=1,d0=1,d1=1,is_2D=1): [IM2COL] NMSE = 0.000000204 > 0.000000100 [1;31mFAIL[0m
+  IM2COL(type_input=f32,type_kernel=f16,dst_type=f16,ne_input=[12,12,1,2048],ne_kernel=[3,3,1,2048],s0=1,s1=1,p0=1,p1=1,d0=1,d1=1,is_2D=1): [IM2COL] NMSE = 0.000000206 > 0.000000100 [1;31mFAIL[0m
   IM2COL(type_input=f32,type_kernel=f16,dst_type=f16,ne_input=[12,12,2,2048],ne_kernel=[3,3,2,2048],s0=1,s1=1,p0=1,p1=1,d0=1,d1=1,is_2D=1): [IM2COL] NMSE = 0.000000204 > 0.000000100 [1;31mFAIL[0m
-  IM2COL(type_input=f32,type_kernel=f16,dst_type=f16,ne_input=[12,12,1,2560],ne_kernel=[3,3,1,2560],s0=1,s1=1,p0=1,p1=1,d0=1,d1=1,is_2D=1): [IM2COL] NMSE = 0.000000205 > 0.000000100 [1;31mFAIL[0m
-  IM2COL(type_input=f32,type_kernel=f16,dst_type=f16,ne_input=[12,12,2,2560],ne_kernel=[3,3,2,2560],s0=1,s1=1,p0=1,p1=1,d0=1,d1=1,is_2D=1): [IM2COL] NMSE = 0.000000204 > 0.000000100 [1;31mFAIL[0m
+  IM2COL(type_input=f32,type_kernel=f16,dst_type=f16,ne_input=[12,12,1,2560],ne_kernel=[3,3,1,2560],s0=1,s1=1,p0=1,p1=1,d0=1,d1=1,is_2D=1): [IM2COL] NMSE = 0.000000204 > 0.000000100 [1;31mFAIL[0m
+  IM2COL(type_input=f32,type_kernel=f16,dst_type=f16,ne_input=[12,12,2,2560],ne_kernel=[3,3,2,2560],s0=1,s1=1,p0=1,p1=1,d0=1,d1=1,is_2D=1): [IM2COL] NMSE = 0.000000205 > 0.000000100 [1;31mFAIL[0m
   CONV_TRANSPOSE_1D(ne_input=[197,32,1,1],ne_kernel=[16,32,32,1],s0=1,p0=0,d0=1): not supported [Vulkan0] 
   CONV_TRANSPOSE_1D(ne_input=[3,2,1,1],ne_kernel=[2,3,2,1],s0=3,p0=0,d0=1): not supported [Vulkan0] 
   CONV_TRANSPOSE_1D(ne_input=[3,2,1,1],ne_kernel=[2,3,2,1],s0=2,p0=0,d0=1): not supported [Vulkan0] 
@@ -1592,82 +1592,82 @@ ggml_vulkan: Compiling shaders................................Done!
   ROPE(type=f32,ne_a=[80,32,2,1],n_dims=20,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=1,v=0): [1;32mOK[0m
   ROPE(type=f32,ne_a=[80,32,2,1],n_dims=32,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=1,v=0): [1;32mOK[0m
   ROPE(type=f32,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=1,v=0): [1;32mOK[0m
-  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000249 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[128,40,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000257 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[128,52,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000120 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[128,64,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000245 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[64,1,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000255 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[64,71,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000241 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[64,8,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000265 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000240 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[128,40,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000246 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[128,52,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000123 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[128,64,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000248 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[64,1,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000211 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[64,71,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000251 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[64,8,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000249 > 0.000000100 [1;31mFAIL[0m
   ROPE(type=f16,ne_a=[80,32,2,1],n_dims=20,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=0,v=0): [1;32mOK[0m
-  ROPE(type=f16,ne_a=[80,32,2,1],n_dims=32,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000102 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000256 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=1,v=0): [ROPE] NMSE = 0.000000233 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[128,40,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=1,v=0): [ROPE] NMSE = 0.000000239 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[128,52,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=1,v=0): [ROPE] NMSE = 0.000000240 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[128,64,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=1,v=0): [ROPE] NMSE = 0.000000247 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[64,1,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=1,v=0): [ROPE] NMSE = 0.000000235 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[64,71,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=1,v=0): [ROPE] NMSE = 0.000000255 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[64,8,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=1,v=0): [ROPE] NMSE = 0.000000235 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[80,32,2,1],n_dims=32,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=0,v=0): [1;32mOK[0m
+  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000250 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=1,v=0): [ROPE] NMSE = 0.000000235 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[128,40,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=1,v=0): [ROPE] NMSE = 0.000000240 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[128,52,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=1,v=0): [ROPE] NMSE = 0.000000242 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[128,64,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=1,v=0): [ROPE] NMSE = 0.000000245 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[64,1,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=1,v=0): [ROPE] NMSE = 0.000000237 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[64,71,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=1,v=0): [ROPE] NMSE = 0.000000250 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[64,8,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=1,v=0): [ROPE] NMSE = 0.000000276 > 0.000000100 [1;31mFAIL[0m
   ROPE(type=f16,ne_a=[80,32,2,1],n_dims=20,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=1,v=0): [1;32mOK[0m
   ROPE(type=f16,ne_a=[80,32,2,1],n_dims=32,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=1,v=0): [1;32mOK[0m
-  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=1,v=0): [ROPE] NMSE = 0.000000252 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=1,v=0): [ROPE] NMSE = 0.000000247 > 0.000000100 [1;31mFAIL[0m
   ROPE(type=f32,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.000000,af=1.424500,ff=0,v=0): [1;32mOK[0m
   ROPE(type=f32,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.424500,ff=0,v=0): [1;32mOK[0m
   ROPE(type=f32,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.000000,af=1.424500,ff=1,v=0): [1;32mOK[0m
   ROPE(type=f32,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.424500,ff=1,v=0): [1;32mOK[0m
-  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.000000,af=1.424500,ff=0,v=0): [ROPE] NMSE = 0.000000265 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.424500,ff=0,v=0): [ROPE] NMSE = 0.000000265 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.000000,af=1.424500,ff=1,v=0): [ROPE] NMSE = 0.000000265 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.424500,ff=1,v=0): [ROPE] NMSE = 0.000000259 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.000000,af=1.424500,ff=0,v=0): [ROPE] NMSE = 0.000000267 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.424500,ff=0,v=0): [ROPE] NMSE = 0.000000263 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.000000,af=1.424500,ff=1,v=0): [ROPE] NMSE = 0.000000255 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.424500,ff=1,v=0): [ROPE] NMSE = 0.000000267 > 0.000000100 [1;31mFAIL[0m
   ROPE(type=f32,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.746500,af=1.000000,ff=0,v=0): [1;32mOK[0m
   ROPE(type=f32,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.746500,af=1.000000,ff=0,v=0): [1;32mOK[0m
   ROPE(type=f32,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.746500,af=1.000000,ff=1,v=0): [1;32mOK[0m
   ROPE(type=f32,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.746500,af=1.000000,ff=1,v=0): [1;32mOK[0m
-  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.746500,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000248 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.746500,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000255 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.746500,af=1.000000,ff=1,v=0): [ROPE] NMSE = 0.000000258 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.746500,af=1.000000,ff=1,v=0): [ROPE] NMSE = 0.000000249 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.746500,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000244 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.746500,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000248 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.746500,af=1.000000,ff=1,v=0): [ROPE] NMSE = 0.000000245 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.746500,af=1.000000,ff=1,v=0): [ROPE] NMSE = 0.000000248 > 0.000000100 [1;31mFAIL[0m
   ROPE(type=f32,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.746500,af=1.424500,ff=0,v=0): [1;32mOK[0m
   ROPE(type=f32,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.746500,af=1.424500,ff=0,v=0): [1;32mOK[0m
   ROPE(type=f32,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.746500,af=1.424500,ff=1,v=0): [1;32mOK[0m
   ROPE(type=f32,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.746500,af=1.424500,ff=1,v=0): [1;32mOK[0m
-  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.746500,af=1.424500,ff=0,v=0): [ROPE] NMSE = 0.000000249 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.746500,af=1.424500,ff=0,v=0): [ROPE] NMSE = 0.000000260 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.746500,af=1.424500,ff=1,v=0): [ROPE] NMSE = 0.000000271 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.746500,af=1.424500,ff=1,v=0): [ROPE] NMSE = 0.000000266 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.746500,af=1.424500,ff=0,v=0): [ROPE] NMSE = 0.000000264 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.746500,af=1.424500,ff=0,v=0): [ROPE] NMSE = 0.000000259 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.746500,af=1.424500,ff=1,v=0): [ROPE] NMSE = 0.000000267 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.746500,af=1.424500,ff=1,v=0): [ROPE] NMSE = 0.000000268 > 0.000000100 [1;31mFAIL[0m
   ROPE(type=f32,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.424500,ef=0.000000,af=1.000000,ff=0,v=0): [1;32mOK[0m
   ROPE(type=f32,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.424500,ef=0.000000,af=1.000000,ff=0,v=0): [1;32mOK[0m
   ROPE(type=f32,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.424500,ef=0.000000,af=1.000000,ff=1,v=0): [1;32mOK[0m
   ROPE(type=f32,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.424500,ef=0.000000,af=1.000000,ff=1,v=0): [1;32mOK[0m
-  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.424500,ef=0.000000,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000129 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.424500,ef=0.000000,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000248 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.424500,ef=0.000000,af=1.000000,ff=1,v=0): [ROPE] NMSE = 0.000000252 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.424500,ef=0.000000,af=1.000000,ff=1,v=0): [ROPE] NMSE = 0.000000245 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.424500,ef=0.000000,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000127 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.424500,ef=0.000000,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000245 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.424500,ef=0.000000,af=1.000000,ff=1,v=0): [ROPE] NMSE = 0.000000260 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.424500,ef=0.000000,af=1.000000,ff=1,v=0): [ROPE] NMSE = 0.000000241 > 0.000000100 [1;31mFAIL[0m
   ROPE(type=f32,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.424500,ef=0.000000,af=1.424500,ff=0,v=0): [1;32mOK[0m
   ROPE(type=f32,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.424500,ef=0.000000,af=1.424500,ff=0,v=0): [1;32mOK[0m
   ROPE(type=f32,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.424500,ef=0.000000,af=1.424500,ff=1,v=0): [1;32mOK[0m
   ROPE(type=f32,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.424500,ef=0.000000,af=1.424500,ff=1,v=0): [1;32mOK[0m
-  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.424500,ef=0.000000,af=1.424500,ff=0,v=0): [ROPE] NMSE = 0.000000268 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.424500,ef=0.000000,af=1.424500,ff=0,v=0): [ROPE] NMSE = 0.000000265 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.424500,ef=0.000000,af=1.424500,ff=1,v=0): [ROPE] NMSE = 0.000000260 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.424500,ef=0.000000,af=1.424500,ff=1,v=0): [ROPE] NMSE = 0.000000265 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.424500,ef=0.000000,af=1.424500,ff=0,v=0): [ROPE] NMSE = 0.000000267 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.424500,ef=0.000000,af=1.424500,ff=0,v=0): [ROPE] NMSE = 0.000000267 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.424500,ef=0.000000,af=1.424500,ff=1,v=0): [ROPE] NMSE = 0.000000265 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.424500,ef=0.000000,af=1.424500,ff=1,v=0): [ROPE] NMSE = 0.000000262 > 0.000000100 [1;31mFAIL[0m
   ROPE(type=f32,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.424500,ef=0.746500,af=1.000000,ff=0,v=0): [1;32mOK[0m
   ROPE(type=f32,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.424500,ef=0.746500,af=1.000000,ff=0,v=0): [1;32mOK[0m
   ROPE(type=f32,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.424500,ef=0.746500,af=1.000000,ff=1,v=0): [1;32mOK[0m
   ROPE(type=f32,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.424500,ef=0.746500,af=1.000000,ff=1,v=0): [1;32mOK[0m
-  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.424500,ef=0.746500,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000245 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.424500,ef=0.746500,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000247 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.424500,ef=0.746500,af=1.000000,ff=1,v=0): [ROPE] NMSE = 0.000000241 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.424500,ef=0.746500,af=1.000000,ff=1,v=0): [ROPE] NMSE = 0.000000237 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.424500,ef=0.746500,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000248 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.424500,ef=0.746500,af=1.000000,ff=0,v=0): [ROPE] NMSE = 0.000000245 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.424500,ef=0.746500,af=1.000000,ff=1,v=0): [ROPE] NMSE = 0.000000242 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.424500,ef=0.746500,af=1.000000,ff=1,v=0): [ROPE] NMSE = 0.000000247 > 0.000000100 [1;31mFAIL[0m
   ROPE(type=f32,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.424500,ef=0.746500,af=1.424500,ff=0,v=0): [1;32mOK[0m
   ROPE(type=f32,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.424500,ef=0.746500,af=1.424500,ff=0,v=0): [1;32mOK[0m
   ROPE(type=f32,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.424500,ef=0.746500,af=1.424500,ff=1,v=0): [1;32mOK[0m
   ROPE(type=f32,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.424500,ef=0.746500,af=1.424500,ff=1,v=0): [1;32mOK[0m
-  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.424500,ef=0.746500,af=1.424500,ff=0,v=0): [ROPE] NMSE = 0.000000275 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.424500,ef=0.746500,af=1.424500,ff=0,v=0): [ROPE] NMSE = 0.000000270 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.424500,ef=0.746500,af=1.424500,ff=1,v=0): [ROPE] NMSE = 0.000000260 > 0.000000100 [1;31mFAIL[0m
-  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.424500,ef=0.746500,af=1.424500,ff=1,v=0): [ROPE] NMSE = 0.000000262 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.424500,ef=0.746500,af=1.424500,ff=0,v=0): [ROPE] NMSE = 0.000000267 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.424500,ef=0.746500,af=1.424500,ff=0,v=0): [ROPE] NMSE = 0.000000266 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.424500,ef=0.746500,af=1.424500,ff=1,v=0): [ROPE] NMSE = 0.000000262 > 0.000000100 [1;31mFAIL[0m
+  ROPE(type=f16,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.424500,ef=0.746500,af=1.424500,ff=1,v=0): [ROPE] NMSE = 0.000000270 > 0.000000100 [1;31mFAIL[0m
   ROPE(type=f32,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=0,v=1): not supported [Vulkan0] 
   ROPE(type=f32,ne_a=[64,128,2,1],n_dims=64,mode=2,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=0,v=1): not supported [Vulkan0] 
   ROPE(type=f32,ne_a=[128,32,2,1],n_dims=128,mode=0,n_ctx=512,fs=1.000000,ef=0.000000,af=1.000000,ff=1,v=1): not supported [Vulkan0] 
@@ -2266,7 +2266,7 @@ ggml_vulkan: Compiling shaders................................Done!
   FLASH_ATTN_EXT(hs=256,nh=32,kv=1024,nb=35,mask=0,max_bias=0.000000,logit_softcap=0.000000,type_KV=q4_0): not supported [Vulkan0] 
   CROSS_ENTROPY_LOSS(type=f32,ne=[10,5,4,3]): not supported [Vulkan0] 
   OPT_STEP_ADAMW(type=f32,ne=[10,5,4,3]): not supported [Vulkan0] 
-  1939/2204 tests passed
+  1940/2204 tests passed
   Backend Vulkan0: [1;31mFAIL[0m
 
 Backend 2/2: CPU
@@ -2277,7 +2277,7 @@ Backend 2/2: CPU
       Start 25: test-barrier
 23/27 Test #25: test-barrier ......................   Passed    2.07 sec
       Start 26: test-quantize-fns
-24/27 Test #26: test-quantize-fns .................   Passed   29.49 sec
+24/27 Test #26: test-quantize-fns .................   Passed   29.38 sec
       Start 27: test-quantize-perf
 25/27 Test #27: test-quantize-perf ................   Passed    0.27 sec
       Start 28: test-rope
@@ -2288,16 +2288,16 @@ Backend 2/2: CPU
 96% tests passed, 1 tests failed out of 27
 
 Label Time Summary:
-main    = 154.95 sec*proc (27 tests)
+main    = 106.88 sec*proc (27 tests)
 
-Total Test time (real) = 155.00 sec
+Total Test time (real) = 106.90 sec
 
 The following tests FAILED:
-	 22 - test-backend-ops (Failed)
+	 22 - test-backend-ops (SEGFAULT)
 Errors while running CTest
 
-real	2m35.055s
-user	6m10.258s
-sys	0m7.871s
+real	1m46.907s
+user	3m3.793s
+sys	0m5.124s
 ```
 
