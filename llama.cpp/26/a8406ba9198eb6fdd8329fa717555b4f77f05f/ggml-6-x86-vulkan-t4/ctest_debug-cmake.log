@@ -26,10 +26,10 @@
 -- Vulkan found
 -- GL_NV_cooperative_matrix2 not supported by glslc
 -- Including Vulkan backend
--- Configuring done (1.2s)
+-- Configuring done (1.3s)
 -- Generating done (0.1s)
 -- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-debug
 
-real	0m1.448s
-user	0m0.867s
-sys	0m0.588s
+real	0m1.457s
+user	0m0.888s
+sys	0m0.577s
