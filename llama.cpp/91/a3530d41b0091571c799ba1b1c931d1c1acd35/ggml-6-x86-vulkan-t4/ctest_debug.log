@@ -1,0 +1,105 @@
++ cmake -DCMAKE_BUILD_TYPE=Debug -DLLAMA_FATAL_WARNINGS=ON -DGGML_VULKAN=1 ..
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.43.0") 
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- Including CPU backend
+-- Found OpenMP_C: -fopenmp (found version "4.5") 
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5")  
+-- Adding CPU backend variant ggml-cpu: -march=native 
+-- Found Vulkan: /usr/lib/x86_64-linux-gnu/libvulkan.so (found version "1.3.296") found components: glslc glslangValidator 
+-- Vulkan found
+-- GL_NV_cooperative_matrix2 not supported by glslc
+-- Including Vulkan backend
+-- Configuring done (1.2s)
+-- Generating done (0.2s)
+-- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-debug
+
+real	0m1.441s
+user	0m0.877s
+sys	0m0.572s
+++ nproc
++ make -j4
+[  0%] Generating build details from Git
+[  1%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  1%] Building CXX object ggml/src/ggml-vulkan/vulkan-shaders/CMakeFiles/vulkan-shaders-gen.dir/vulkan-shaders-gen.cpp.o
+[  2%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+-- Found Git: /usr/bin/git (found version "2.43.0") 
+[  2%] Built target sha256
+[  3%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  3%] Linking CXX executable ../../../../bin/vulkan-shaders-gen
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  5%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  5%] Built target xxhash
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  6%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  6%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  7%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  7%] Built target sha1
+[  8%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  8%] Linking CXX shared library libggml-base.so
+[  8%] Built target build_info
+[  8%] Built target vulkan-shaders-gen
+[  8%] Built target ggml-base
+[  9%] Generate vulkan shaders
+ggml_vulkan: Generating and compiling shaders to SPIR-V
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[ 11%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[ 12%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 13%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 13%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 14%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.o
+[ 14%] Linking CXX shared library libggml-cpu.so
+[ 14%] Built target ggml-cpu
+[ 15%] Building CXX object ggml/src/ggml-vulkan/CMakeFiles/ggml-vulkan.dir/ggml-vulkan-shaders.cpp.o
+[ 15%] Building CXX object ggml/src/ggml-vulkan/CMakeFiles/ggml-vulkan.dir/ggml-vulkan.cpp.o
+[ 15%] Linking CXX shared library libggml-vulkan.so
+[ 15%] Built target ggml-vulkan
+[ 16%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 16%] Linking CXX shared library libggml.so
+[ 16%] Built target ggml
+[ 17%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 17%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 18%] Building CXX object src/CMakeFiles/llama.dir/llama-vocab.cpp.o
+[ 20%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 20%] Linking CXX executable ../../bin/llama-gguf
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/llama.dir/llama-sampling.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/llama.dir/unicode.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/llama.dir/unicode-data.cpp.o
+[ 22%] Built target llama-gguf
+[ 22%] Built target llama-gguf-hash
+/home/ggml/work/llama.cpp/src/llama.cpp: In constructor ‘llama_layer::llama_layer()’:
+/home/ggml/work/llama.cpp/src/llama.cpp:2803:20: error: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘struct llama_layer’; use assignment or value-initialization instead [-Werror=class-memaccess]
+ 2803 |         std::memset(this, 0, sizeof(*this));
+      |         ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama.cpp:2800:8: note: ‘struct llama_layer’ declared here
+ 2800 | struct llama_layer {
+      |        ^~~~~~~~~~~
+cc1plus: all warnings being treated as errors
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:76: src/CMakeFiles/llama.dir/llama.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1855: src/CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m50.711s
+user	2m3.020s
+sys	0m24.384s
