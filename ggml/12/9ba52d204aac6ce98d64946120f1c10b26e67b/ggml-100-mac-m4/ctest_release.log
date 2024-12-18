@@ -1,0 +1,360 @@
++ cmake -DCMAKE_BUILD_TYPE=Release -DGGML_METAL=ON -DGGML_METAL_EMBED_LIBRARY=ON ..
+-- The C compiler identification is AppleClang 16.0.0.16000026
+-- The CXX compiler identification is AppleClang 16.0.0.16000026
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: arm64
+-- Including CPU backend
+-- Accelerate framework found
+-- Could NOT find OpenMP_C (missing: OpenMP_C_FLAGS OpenMP_C_LIB_NAMES) 
+-- Could NOT find OpenMP_CXX (missing: OpenMP_CXX_FLAGS OpenMP_CXX_LIB_NAMES) 
+-- Could NOT find OpenMP (missing: OpenMP_C_FOUND OpenMP_CXX_FOUND) 
+CMake Warning at src/ggml-cpu/CMakeLists.txt:53 (message):
+  OpenMP not found
+Call Stack (most recent call first):
+  src/CMakeLists.txt:298 (ggml_add_cpu_backend_variant_impl)
+
+
+-- ARM detected
+-- Performing Test GGML_COMPILER_SUPPORT_DOTPROD
+-- Performing Test GGML_COMPILER_SUPPORT_DOTPROD - Success
+-- ARM feature DOTPROD enabled
+-- Performing Test GGML_COMPILER_SUPPORT_MATMUL_INT8
+-- Performing Test GGML_COMPILER_SUPPORT_MATMUL_INT8 - Success
+-- ARM feature MATMUL_INT8 enabled
+-- Adding CPU backend variant ggml-cpu: -march=armv8.2a+dotprod+i8mm __ARM_FEATURE_DOTPROD;__ARM_FEATURE_MATMUL_INT8
+-- Looking for dgemm_
+-- Looking for dgemm_ - found
+-- Found BLAS: /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/System/Library/Frameworks/Accelerate.framework
+-- BLAS found, Libraries: /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/System/Library/Frameworks/Accelerate.framework
+-- BLAS found, Includes: 
+-- Including BLAS backend
+-- Metal framework found
+-- The ASM compiler identification is AppleClang
+-- Found assembler: /Library/Developer/CommandLineTools/usr/bin/cc
+-- Including METAL backend
+-- ARM detected
+-- Accelerate framework found
+-- Configuring done (1.3s)
+-- Generating done (0.1s)
+-- Build files have been written to: /Users/ggml/work/ggml/build-ci-release
+
+real	0m1.423s
+user	0m0.612s
+sys	0m0.863s
++ make -j
+[  0%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  2%] Building C object src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  2%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  3%] Building C object src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  3%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  4%] Building C object src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  5%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+/Users/ggml/work/ggml/examples/common.cpp:266:31: warning: 'codecvt_utf8<wchar_t>' is deprecated [-Wdeprecated-declarations]
+  266 |     std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+      |                               ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/codecvt:194:28: note: 'codecvt_utf8<wchar_t>' has been explicitly marked deprecated here
+  194 | class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 codecvt_utf8 : public __codecvt_utf8<_Elem> {
+      |                            ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:1022:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+ 1022 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+      |                                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:995:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  995 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+/Users/ggml/work/ggml/examples/common.cpp:266:10: warning: 'wstring_convert<std::codecvt_utf8<wchar_t>>' is deprecated [-Wdeprecated-declarations]
+  266 |     std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+      |          ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/locale:3114:28: note: 'wstring_convert<std::codecvt_utf8<wchar_t>>' has been explicitly marked deprecated here
+ 3114 | class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 wstring_convert {
+      |                            ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:1022:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+ 1022 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+      |                                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:995:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  995 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+/Users/ggml/work/ggml/examples/common.cpp:272:31: warning: 'codecvt_utf8<wchar_t>' is deprecated [-Wdeprecated-declarations]
+  272 |     std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+      |                               ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/codecvt:194:28: note: 'codecvt_utf8<wchar_t>' has been explicitly marked deprecated here
+  194 | class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 codecvt_utf8 : public __codecvt_utf8<_Elem> {
+      |                            ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:1022:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+ 1022 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+      |                                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:995:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  995 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+/Users/ggml/work/ggml/examples/common.cpp:272:10: warning: 'wstring_convert<std::codecvt_utf8<wchar_t>>' is deprecated [-Wdeprecated-declarations]
+  272 |     std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+      |          ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/locale:3114:28: note: 'wstring_convert<std::codecvt_utf8<wchar_t>>' has been explicitly marked deprecated here
+ 3114 | class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 wstring_convert {
+      |                            ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:1022:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+ 1022 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+      |                                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:995:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  995 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+4 warnings generated.
+[  7%] Linking CXX static library libcommon.a
+[  7%] Linking CXX shared library libggml-base.dylib
+[  7%] Built target common
+[  7%] Built target ggml-base
+[  8%] Generate assembly for embedded Metal library
+Embedding Metal library
+[ 10%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[ 11%] Building CXX object src/ggml-blas/CMakeFiles/ggml-blas.dir/ggml-blas.cpp.o
+[ 10%] Building C object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[ 12%] Building C object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 13%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[ 13%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 14%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 16%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 18%] Linking CXX shared library libggml-blas.dylib
+[ 18%] Linking CXX shared library libggml-cpu.dylib
+[ 20%] Building ASM object src/ggml-metal/CMakeFiles/ggml-metal.dir/__/__/autogenerated/ggml-metal-embed.s.o
+[ 20%] Building C object src/ggml-metal/CMakeFiles/ggml-metal.dir/ggml-metal.m.o
+[ 20%] Built target ggml-cpu
+[ 20%] Built target ggml-blas
+[ 21%] Linking C shared library libggml-metal.dylib
+[ 21%] Built target ggml-metal
+[ 22%] Building CXX object src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 23%] Linking CXX shared library libggml.dylib
+[ 23%] Built target ggml
+[ 24%] Building C object tests/CMakeFiles/test-pool.dir/test-pool.c.o
+[ 24%] Building CXX object tests/CMakeFiles/test-arange.dir/test-arange.cpp.o
+[ 25%] Building CXX object tests/CMakeFiles/test-conv1d.dir/test-conv1d.cpp.o
+[ 26%] Building C object tests/CMakeFiles/test-dup.dir/test-dup.c.o
+[ 27%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
+[ 28%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 30%] Building C object tests/CMakeFiles/test-rel-pos.dir/test-rel-pos.c.o
+[ 32%] Building C object tests/CMakeFiles/test-mul-mat2.dir/test-mul-mat2.c.o
+[ 29%] Building CXX object tests/CMakeFiles/test-opt.dir/test-opt.cpp.o
+[ 33%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 34%] Building CXX object tests/CMakeFiles/test-conv2d.dir/test-conv2d.cpp.o
+[ 31%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 35%] Building CXX object examples/simple/CMakeFiles/simple-backend.dir/simple-backend.cpp.o
+[ 36%] Building CXX object examples/simple/CMakeFiles/simple-ctx.dir/simple-ctx.cpp.o
+[ 36%] Building CXX object tests/CMakeFiles/test-timestep_embedding.dir/test-timestep_embedding.cpp.o
+[ 36%] Building CXX object tests/CMakeFiles/test-mul-mat.dir/test-mul-mat.cpp.o
+[ 37%] Building C object tests/CMakeFiles/test-vec2.dir/test-vec2.c.o
+[ 39%] Building C object tests/CMakeFiles/test-mul-mat1.dir/test-mul-mat1.c.o
+[ 39%] Building CXX object examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o
+[ 40%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolov3-tiny.cpp.o
+[ 41%] Building CXX object examples/perf-metal/CMakeFiles/perf-metal.dir/perf-metal.cpp.o
+[ 41%] Building CXX object tests/CMakeFiles/test-pad-reflect-1d.dir/test-pad-reflect-1d.cpp.o
+[ 42%] Linking CXX executable ../bin/test-arange
+[ 44%] Building C object tests/CMakeFiles/test-customop.dir/test-customop.c.o
+[ 45%] Building CXX object examples/mnist/CMakeFiles/mnist-common.dir/mnist-common.cpp.o
+[ 45%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolo-image.cpp.o
+[ 45%] Building CXX object tests/CMakeFiles/test-conv-transpose-1d.dir/test-conv-transpose-1d.cpp.o
+[ 46%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
+[ 47%] Building C object tests/CMakeFiles/test-conv-transpose.dir/test-conv-transpose.c.o
+[ 48%] Building C object tests/CMakeFiles/test-cont.dir/test-cont.c.o
+[ 49%] Building CXX object examples/sam/CMakeFiles/sam.dir/main.cpp.o
+/Users/ggml/work/ggml/tests/test-mul-mat1.c:287:13: warning: 'cblas_sgemm' is deprecated: first deprecated in macOS 13.3 - An updated CBLAS interface supporting ILP64 is available.  Please compile with -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support. [-Wdeprecated-declarations]
+  287 |             cblas_sgemm(CblasRowMajor, CblasNoTrans, CblasTrans, M, N, K, 1.0f, src0, K, src1, K, 0.0f, dst, N);
+      |             ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/System/Library/Frameworks/vecLib.framework/Headers/cblas.h:610:6: note: 'cblas_sgemm' has been explicitly marked deprecated here
+  610 | void cblas_sgemm(const enum CBLAS_ORDER __Order,
+      |      ^
+1 warning generated.
+[ 50%] Linking C executable ../bin/test-pool
+In file included from /Users/ggml/work/ggml/examples/yolo/yolo-image.cpp:4:
+/Users/ggml/work/ggml/examples/stb_image_write.h:776:13: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+  776 |       len = sprintf(buffer, "EXPOSURE=          1.0000000000000\n\n-Y %d +X %d\n", y, x);
+      |             ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/_stdio.h:274:1: note: 'sprintf' has been explicitly marked deprecated here
+  274 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/sys/cdefs.h:218:48: note: expanded from macro '__deprecated_msg'
+  218 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+1 warning generated.
+[ 51%] Linking C executable ../bin/test-vec2
+In file included from /Users/ggml/work/ggml/examples/sam/main.cpp:11:
+/Users/ggml/work/ggml/examples/stb_image_write.h:776:13: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+  776 |       len = sprintf(buffer, "EXPOSURE=          1.0000000000000\n\n-Y %d +X %d\n", y, x);
+      |             ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/_stdio.h:274:1: note: 'sprintf' has been explicitly marked deprecated here
+  274 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/sys/cdefs.h:218:48: note: expanded from macro '__deprecated_msg'
+  218 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+1 warning generated.
+[ 52%] Linking CXX executable ../bin/test-opt
+[ 54%] Building C object tests/CMakeFiles/test-mul-mat0.dir/test-mul-mat0.c.o
+[ 55%] Linking CXX executable ../bin/test-timestep_embedding
+[ 56%] Linking CXX executable ../bin/test-conv1d
+[ 57%] Linking CXX executable ../bin/test-conv2d
+[ 58%] Linking C executable ../bin/test-conv-transpose
+[ 59%] Linking CXX executable ../bin/test-conv-transpose-1d
+[ 60%] Linking CXX executable ../bin/test-quantize-perf
+[ 55%] Building C object tests/CMakeFiles/test-blas0.dir/test-blas0.c.o
+[ 62%] Linking C executable ../bin/test-rel-pos
+[ 65%] Linking C executable ../bin/test-mul-mat2
+[ 65%] Linking CXX executable ../../bin/yolov3-tiny
+[ 65%] Linking C executable ../bin/test-mul-mat1
+[ 66%] Linking C executable ../bin/test0
+[ 67%] Linking CXX executable ../bin/test-backend-ops
+[ 64%] Linking CXX static library libmnist-common.a
+[ 68%] Linking CXX executable ../bin/test-quantize-fns
+[ 69%] Linking C executable ../bin/test-dup
+[ 70%] Linking CXX executable ../../bin/simple-backend
+[ 71%] Linking CXX executable ../../bin/sam
+[ 72%] Linking CXX executable ../bin/test-pad-reflect-1d
+[ 73%] Linking CXX executable ../bin/test-mul-mat
+[ 74%] Linking CXX executable ../../bin/simple-ctx
+[ 75%] Linking C executable ../bin/test-customop
+[ 76%] Linking CXX executable ../../bin/perf-metal
+[ 77%] Linking C executable ../bin/test-mul-mat0
+[ 78%] Linking CXX static library libcommon-ggml.a
+[ 79%] Linking C executable ../bin/test-cont
+/Users/ggml/work/ggml/tests/test-blas0.c:128:5: warning: 'cblas_sgemm' is deprecated: first deprecated in macOS 13.3 - An updated CBLAS interface supporting ILP64 is available.  Please compile with -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support. [-Wdeprecated-declarations]
+  128 |     cblas_sgemm(CblasRowMajor, CblasNoTrans, CblasTrans, N, M, K, 1.0f, src1, K, src0, K, 0.0f, dst1, M);
+      |     ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/System/Library/Frameworks/vecLib.framework/Headers/cblas.h:610:6: note: 'cblas_sgemm' has been explicitly marked deprecated here
+  610 | void cblas_sgemm(const enum CBLAS_ORDER __Order,
+      |      ^
+1 warning generated.
+[ 80%] Linking C executable ../bin/test-vec0
+[ 81%] Linking C executable ../bin/test-blas0
+[ 81%] Built target test-pool
+[ 81%] Built target mnist-common
+[ 81%] Built target test-quantize-perf
+[ 81%] Built target test-mul-mat2
+[ 81%] Built target test-conv-transpose
+[ 81%] Built target test-dup
+[ 81%] Built target yolov3-tiny
+[ 81%] Built target test0
+[ 81%] Built target sam
+[ 81%] Built target test-customop
+[ 81%] Built target test-backend-ops
+[ 81%] Building CXX object examples/mnist/CMakeFiles/mnist-train.dir/mnist-train.cpp.o
+[ 81%] Built target test-conv1d
+[ 81%] Built target test-quantize-fns
+[ 81%] Built target simple-ctx
+[ 81%] Built target test-conv-transpose-1d
+[ 81%] Built target common-ggml
+[ 82%] Building CXX object examples/mnist/CMakeFiles/mnist-eval.dir/mnist-eval.cpp.o
+[ 82%] Built target simple-backend
+[ 82%] Built target test-conv2d
+[ 82%] Built target perf-metal
+[ 82%] Built target test-cont
+[ 82%] Built target test-opt
+[ 82%] Built target test-arange
+[ 82%] Built target test-vec2
+[ 82%] Built target test-pad-reflect-1d
+[ 82%] Built target test-mul-mat0
+[ 82%] Built target test-mul-mat
+[ 82%] Built target test-timestep_embedding
+[ 82%] Built target test-vec0
+[ 83%] Linking CXX executable ../../bin/mnist-eval
+[ 84%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-alloc.dir/main-alloc.cpp.o
+[ 85%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-backend.dir/main-backend.cpp.o
+[ 85%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-ctx.dir/main-ctx.cpp.o
+[ 86%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-sched.dir/main-sched.cpp.o
+[ 86%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j.dir/main.cpp.o
+[ 87%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-quantize.dir/quantize.cpp.o
+[ 88%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-batched.dir/main-batched.cpp.o
+[ 89%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j-quantize.dir/quantize.cpp.o
+[ 90%] Linking CXX executable ../../bin/mnist-train
+[ 91%] Building CXX object examples/magika/CMakeFiles/magika.dir/main.cpp.o
+[ 91%] Built target test-blas0
+ld: warning: ignoring duplicate libraries: '../libcommon.a'
+[ 91%] Built target test-rel-pos
+[ 92%] Linking CXX executable ../../bin/gpt-2-backend
+[ 93%] Linking CXX executable ../../bin/gpt-2-ctx
+[ 94%] Linking CXX executable ../../bin/gpt-2-alloc
+[ 95%] Linking CXX executable ../../bin/gpt-2-sched
+[ 96%] Linking CXX executable ../../bin/gpt-2-quantize
+[ 97%] Linking CXX executable ../../bin/gpt-j
+[ 97%] Built target mnist-eval
+[ 98%] Linking CXX executable ../../bin/gpt-2-batched
+[ 98%] Built target test-mul-mat1
+ld: warning: ignoring duplicate libraries: '../libcommon.a'
+[ 99%] Linking CXX executable ../../bin/magika
+[100%] Linking CXX executable ../../bin/gpt-j-quantize
+[100%] Built target gpt-2-backend
+[100%] Built target gpt-2-quantize
+[100%] Built target gpt-2-ctx
+[100%] Built target gpt-j
+[100%] Built target gpt-2-sched
+[100%] Built target gpt-2-alloc
+[100%] Built target mnist-train
+[100%] Built target gpt-2-batched
+[100%] Built target magika
+[100%] Built target gpt-j-quantize
+
+real	0m1.606s
+user	0m3.308s
+sys	0m6.215s
++ ctest --output-on-failure
+Test project /Users/ggml/work/ggml/build-ci-release
+      Start  1: test-opt
+ 1/21 Test  #1: test-opt .........................   Passed    1.34 sec
+      Start  2: test-quantize-fns
+ 2/21 Test  #2: test-quantize-fns ................   Passed   14.07 sec
+      Start  3: test-quantize-perf
+ 3/21 Test  #3: test-quantize-perf ...............   Passed    0.21 sec
+      Start  4: test-mul-mat0
+ 4/21 Test  #4: test-mul-mat0 ....................   Passed    0.40 sec
+      Start  5: test-blas0
+ 5/21 Test  #5: test-blas0 .......................   Passed    0.17 sec
+      Start  6: test-mul-mat2
+ 6/21 Test  #6: test-mul-mat2 ....................   Passed    1.30 sec
+      Start  7: test0
+ 7/21 Test  #7: test0 ............................   Passed    0.16 sec
+      Start  8: test-pool
+ 8/21 Test  #8: test-pool ........................   Passed    0.17 sec
+      Start  9: test-arange
+ 9/21 Test  #9: test-arange ......................   Passed    0.26 sec
+      Start 10: test-timestep_embedding
+10/21 Test #10: test-timestep_embedding ..........   Passed    0.22 sec
+      Start 11: test-pad-reflect-1d
+11/21 Test #11: test-pad-reflect-1d ..............   Passed    0.17 sec
+      Start 12: test-conv-transpose
+12/21 Test #12: test-conv-transpose ..............   Passed    0.17 sec
+      Start 13: test-conv-transpose-1d
+13/21 Test #13: test-conv-transpose-1d ...........   Passed    0.37 sec
+      Start 14: test-dup
+14/21 Test #14: test-dup .........................   Passed    0.18 sec
+      Start 15: test-rel-pos
+15/21 Test #15: test-rel-pos .....................   Passed    0.17 sec
+      Start 16: test-customop
+16/21 Test #16: test-customop ....................   Passed    0.17 sec
+      Start 17: test-conv1d
+17/21 Test #17: test-conv1d ......................   Passed    0.22 sec
+      Start 18: test-conv2d
+18/21 Test #18: test-conv2d ......................   Passed    0.21 sec
+      Start 19: test-mul-mat
+19/21 Test #19: test-mul-mat .....................   Passed    0.22 sec
+      Start 20: test-backend-ops
+20/21 Test #20: test-backend-ops .................   Passed   26.58 sec
+      Start 21: test-cont
+21/21 Test #21: test-cont ........................   Passed    0.17 sec
+
+100% tests passed, 0 tests failed out of 21
+
+Total Test time (real) =  46.95 sec
+
+real	0m46.963s
+user	1m1.613s
+sys	0m4.191s
