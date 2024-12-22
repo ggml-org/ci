@@ -1,0 +1,99 @@
++ cmake -DCMAKE_BUILD_TYPE=Debug -DLLAMA_FATAL_WARNINGS=ON ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- Including CPU backend
+-- Found OpenMP_C: -fopenmp (found version "4.5") 
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5")  
+-- x86 detected
+-- Adding CPU backend variant ggml-cpu: -march=native 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-debug
+
+real	0m0.701s
+user	0m0.462s
+sys	0m0.242s
+++ nproc
++ make -j8
+[  0%] Generating build details from Git
+[  1%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  3%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  3%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  4%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  4%] Built target sha256
+[  4%] Built target xxhash
+[  4%] Built target sha1
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  5%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  6%] Linking CXX shared library libggml-base.so
+[  7%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  7%] Built target build_info
+[  7%] Built target ggml-base
+[  7%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[  8%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[  8%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 10%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.o
+[ 12%] Linking CXX shared library libggml-cpu.so
+[ 12%] Built target ggml-cpu
+[ 13%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 13%] Linking CXX shared library libggml.so
+[ 13%] Built target ggml
+[ 14%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 14%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 14%] Building CXX object src/CMakeFiles/llama.dir/llama-arch.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/llama.dir/llama-batch.cpp.o
+[ 15%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/llama.dir/llama-context.cpp.o
+[ 16%] Building CXX object src/CMakeFiles/llama.dir/llama-adapter.cpp.o
+[ 16%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/llama.dir/llama-kv-cache.cpp.o
+[ 18%] Linking CXX executable ../../bin/llama-gguf
+[ 19%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-mmap.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-model.cpp.o
+[ 20%] Built target llama-gguf
+[ 20%] Built target llama-gguf-hash
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-sampling.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/llama.dir/llama-vocab.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/llama.dir/unicode.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/llama.dir/unicode-data.cpp.o
+/home/ggml/work/llama.cpp/src/llama-mmap.cpp: In function ‘size_t llama_path_max()’:
+/home/ggml/work/llama.cpp/src/llama-mmap.cpp:582:12: error: ‘PATH_MAX’ was not declared in this scope
+  582 |     return PATH_MAX;
+      |            ^~~~~~~~
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:174: src/CMakeFiles/llama.dir/llama-mmap.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:1767: src/CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m6.845s
+user	0m12.705s
+sys	0m1.590s
