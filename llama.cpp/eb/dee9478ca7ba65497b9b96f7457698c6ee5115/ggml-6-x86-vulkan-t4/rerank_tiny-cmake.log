@@ -1,4 +1,4 @@
-+ cmake -DCMAKE_BUILD_TYPE=Debug -DLLAMA_FATAL_WARNINGS=ON -DGGML_VULKAN=1 ..
++ cmake -DCMAKE_BUILD_TYPE=Release -DLLAMA_FATAL_WARNINGS=ON -DGGML_VULKAN=1 ..
 -- The C compiler identification is GNU 13.3.0
 -- The CXX compiler identification is GNU 13.3.0
 -- Detecting C compiler ABI info
@@ -27,10 +27,10 @@
 -- Vulkan found
 -- GL_NV_cooperative_matrix2 not supported by glslc
 -- Including Vulkan backend
--- Configuring done (1.8s)
+-- Configuring done (1.2s)
 -- Generating done (0.2s)
--- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-debug
+-- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-release
 
-real	0m2.142s
-user	0m0.896s
-sys	0m0.598s
+real	0m1.450s
+user	0m0.874s
+sys	0m0.584s
