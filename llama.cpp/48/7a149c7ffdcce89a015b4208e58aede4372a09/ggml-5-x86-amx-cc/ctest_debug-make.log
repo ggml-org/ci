@@ -1,0 +1,558 @@
+++ nproc
++ make -j8
+[  0%] Generating build details from Git
+[  1%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  3%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  4%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  4%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  4%] Built target xxhash
+[  4%] Built target sha256
+[  4%] Built target sha1
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  5%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  6%] Linking CXX shared library libggml-base.so
+[  7%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  7%] Built target build_info
+[  7%] Built target ggml-base
+[  7%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[  8%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[  8%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[ 10%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.o
+[ 12%] Linking CXX shared library libggml-cpu.so
+[ 12%] Built target ggml-cpu
+[ 13%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 13%] Linking CXX shared library libggml.so
+[ 13%] Built target ggml
+[ 14%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 14%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 14%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 14%] Building CXX object src/CMakeFiles/llama.dir/llama-arch.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/llama.dir/llama-context.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/llama.dir/llama-batch.cpp.o
+[ 16%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+[ 16%] Building CXX object src/CMakeFiles/llama.dir/llama-adapter.cpp.o
+[ 17%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 18%] Linking CXX executable ../../bin/llama-gguf
+[ 18%] Built target llama-gguf-hash
+[ 18%] Built target llama-gguf
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-kv-cache.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-mmap.cpp.o
+In file included from /home/ggml/work/llama.cpp/src/llama-batch.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-batch.h: In member function ‘void llama_sbatch::add_seq_to_ubatch(llama_ubatch&, llama_sbatch_seq&, size_t)’:
+/home/ggml/work/llama.cpp/src/llama-batch.h:112:21: error: ‘memcpy’ was not declared in this scope
+  112 |                     memcpy(
+      |                     ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-batch.h:6:1: note: ‘memcpy’ is defined in header ‘<cstring>’; did you forget to ‘#include <cstring>’?
+    5 | #include <vector>
+  +++ |+#include <cstring>
+    6 | 
+In file included from /home/ggml/work/llama.cpp/src/llama-batch.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-batch.h: In member function ‘void llama_sbatch::from_batch(const llama_batch&, size_t, bool, bool)’:
+/home/ggml/work/llama.cpp/src/llama-batch.h:269:14: error: ‘sort’ is not a member of ‘std’
+  269 |         std::sort(ids.begin(), ids.end(),
+      |              ^~~~
+/home/ggml/work/llama.cpp/src/llama-batch.h:320:14: error: ‘sort’ is not a member of ‘std’
+  320 |         std::sort(seq.begin(), seq.end(),
+      |              ^~~~
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:104: src/CMakeFiles/llama.dir/llama-batch.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+In file included from /home/ggml/work/llama.cpp/src/llama-arch.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-arch.h:380:10: error: ‘string’ in namespace ‘std’ does not name a type
+  380 |     std::string operator()(llm_kv kv) const;
+      |          ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:4:1: note: ‘std::string’ is defined in header ‘<string>’; did you forget to ‘#include <string>’?
+    3 | #include <map>
+  +++ |+#include <string>
+    4 | 
+/home/ggml/work/llama.cpp/src/llama-arch.h:1557:28: error: ‘string’ is not a member of ‘std’
+ 1557 | static const std::map<std::string, llm_chat_template> LLM_CHAT_TEMPLATES = {
+      |                            ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:1557:28: note: ‘std::string’ is defined in header ‘<string>’; did you forget to ‘#include <string>’?
+/home/ggml/work/llama.cpp/src/llama-arch.h:1557:53: error: template argument 1 is invalid
+ 1557 | static const std::map<std::string, llm_chat_template> LLM_CHAT_TEMPLATES = {
+      |                                                     ^
+/home/ggml/work/llama.cpp/src/llama-arch.h:1557:53: error: template argument 3 is invalid
+/home/ggml/work/llama.cpp/src/llama-arch.h:1557:53: error: template argument 4 is invalid
+/home/ggml/work/llama.cpp/src/llama-arch.h:1557:55: error: scalar object ‘LLM_CHAT_TEMPLATES’ requires one element in initializer
+ 1557 | static const std::map<std::string, llm_chat_template> LLM_CHAT_TEMPLATES = {
+      |                                                       ^~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:1604:10: error: ‘string’ in namespace ‘std’ does not name a type
+ 1604 |     std::string str() const;
+      |          ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:1604:5: note: ‘std::string’ is defined in header ‘<string>’; did you forget to ‘#include <string>’?
+ 1604 |     std::string str() const;
+      |     ^~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:1606:14: error: expected type-specifier
+ 1606 |     operator std::string() const {
+      |              ^~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:1610:39: error: ‘string’ in namespace ‘std’ does not name a type
+ 1610 |     friend bool operator==(const std::string & str, const LLM_TN_IMPL & tn) {
+      |                                       ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:1610:34: note: ‘std::string’ is defined in header ‘<string>’; did you forget to ‘#include <string>’?
+ 1610 |     friend bool operator==(const std::string & str, const LLM_TN_IMPL & tn) {
+      |                                  ^~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:1614:39: error: ‘string’ in namespace ‘std’ does not name a type
+ 1614 |     friend bool operator!=(const std::string & str, const LLM_TN_IMPL & tn) {
+      |                                       ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:1614:34: note: ‘std::string’ is defined in header ‘<string>’; did you forget to ‘#include <string>’?
+ 1614 |     friend bool operator!=(const std::string & str, const LLM_TN_IMPL & tn) {
+      |                                  ^~~
+/home/ggml/work/llama.cpp/src/llama-arch.h: In function ‘bool operator==(const int&, const LLM_TN_IMPL&)’:
+/home/ggml/work/llama.cpp/src/llama-arch.h:1611:26: error: ‘const struct LLM_TN_IMPL’ has no member named ‘str’
+ 1611 |         return str == tn.str();
+      |                          ^~~
+/home/ggml/work/llama.cpp/src/llama-arch.h: In function ‘bool operator!=(const int&, const LLM_TN_IMPL&)’:
+/home/ggml/work/llama.cpp/src/llama-arch.h:1615:26: error: ‘const struct LLM_TN_IMPL’ has no member named ‘str’
+ 1615 |         return str != tn.str();
+      |                          ^~~
+/home/ggml/work/llama.cpp/src/llama-arch.h: At global scope:
+/home/ggml/work/llama.cpp/src/llama-arch.h:1635:42: error: ‘string’ in namespace ‘std’ does not name a type
+ 1635 | llm_arch llm_arch_from_string(const std::string & name);
+      |                                          ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:1635:37: note: ‘std::string’ is defined in header ‘<string>’; did you forget to ‘#include <string>’?
+ 1635 | llm_arch llm_arch_from_string(const std::string & name);
+      |                                     ^~~
+/home/ggml/work/llama.cpp/src/llama-arch.cpp:7:13: error: no declaration matches ‘std::string LLM_KV::operator()(llm_kv) const’
+    7 | std::string LLM_KV::operator()(llm_kv kv) const {
+      |             ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-arch.cpp:7:13: note: no functions named ‘std::string LLM_KV::operator()(llm_kv) const’
+In file included from /home/ggml/work/llama.cpp/src/llama-arch.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-arch.h:375:8: note: ‘struct LLM_KV’ defined here
+  375 | struct LLM_KV {
+      |        ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-arch.cpp:11:13: error: no declaration matches ‘std::string LLM_TN_IMPL::str() const’
+   11 | std::string LLM_TN_IMPL::str() const {
+      |             ^~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-arch.cpp:11:13: note: no functions named ‘std::string LLM_TN_IMPL::str() const’
+In file included from /home/ggml/work/llama.cpp/src/llama-arch.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-arch.h:1597:8: note: ‘struct LLM_TN_IMPL’ defined here
+ 1597 | struct LLM_TN_IMPL {
+      |        ^~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-arch.cpp:34:10: error: no previous declaration for ‘llm_arch llm_arch_from_string(const string&)’ [-Werror=missing-declarations]
+   34 | llm_arch llm_arch_from_string(const std::string & name) {
+      |          ^~~~~~~~~~~~~~~~~~~~
+cc1plus: all warnings being treated as errors
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:90: src/CMakeFiles/llama.dir/llama-arch.cpp.o] Error 1
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:4,
+                 from /home/ggml/work/llama.cpp/src/llama-context.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-batch.h: In member function ‘void llama_sbatch::add_seq_to_ubatch(llama_ubatch&, llama_sbatch_seq&, size_t)’:
+/home/ggml/work/llama.cpp/src/llama-batch.h:112:21: error: ‘memcpy’ was not declared in this scope
+  112 |                     memcpy(
+      |                     ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-batch.h:1:1: note: ‘memcpy’ is defined in header ‘<cstring>’; did you forget to ‘#include <cstring>’?
+  +++ |+#include <cstring>
+    1 | #pragma once
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:4,
+                 from /home/ggml/work/llama.cpp/src/llama-context.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-batch.h: In member function ‘void llama_sbatch::from_batch(const llama_batch&, size_t, bool, bool)’:
+/home/ggml/work/llama.cpp/src/llama-batch.h:269:14: error: ‘sort’ is not a member of ‘std’; did you mean ‘qsort’?
+  269 |         std::sort(ids.begin(), ids.end(),
+      |              ^~~~
+      |              qsort
+/home/ggml/work/llama.cpp/src/llama-batch.h:320:14: error: ‘sort’ is not a member of ‘std’; did you mean ‘qsort’?
+  320 |         std::sort(seq.begin(), seq.end(),
+      |              ^~~~
+      |              qsort
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:6,
+                 from /home/ggml/work/llama.cpp/src/llama-context.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h: In function ‘llama_kv_cache_slot_info llama_kv_cache_find_slot(llama_kv_cache&, const llama_ubatch&)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:254:27: error: ‘count_if’ is not a member of ‘std’
+  254 |         cache.used = std::count_if(cache.cells.begin(), cache.cells.end(),
+      |                           ^~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h: In function ‘bool llama_kv_cache_seq_rm(llama_kv_cache&, llama_seq_id, llama_pos, llama_pos)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:348:27: error: ‘numeric_limits’ is not a member of ‘std’
+  348 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                           ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:348:51: error: expected primary-expression before ‘>’ token
+  348 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                   ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:348:54: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  348 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                      ^~~
+      |                                                      std::max
+In file included from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-context.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama-context.cpp:1:
+/usr/include/c++/11/bits/stl_algobase.h:300:5: note: ‘std::max’ declared here
+  300 |     max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+      |     ^~~
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:6,
+                 from /home/ggml/work/llama.cpp/src/llama-context.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:371:52: error: ‘numeric_limits’ is not a member of ‘std’
+  371 |             if (p0 != p1 && (p0 != 0 || p1 != std::numeric_limits<llama_pos>::max())) {
+      |                                                    ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:371:76: error: expected primary-expression before ‘>’ token
+  371 |             if (p0 != p1 && (p0 != 0 || p1 != std::numeric_limits<llama_pos>::max())) {
+      |                                                                            ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:371:79: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  371 |             if (p0 != p1 && (p0 != 0 || p1 != std::numeric_limits<llama_pos>::max())) {
+      |                                                                               ^~~
+      |                                                                               std::max
+In file included from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-context.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama-context.cpp:1:
+/usr/include/c++/11/bits/stl_algobase.h:300:5: note: ‘std::max’ declared here
+  300 |     max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+      |     ^~~
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:6,
+                 from /home/ggml/work/llama.cpp/src/llama-context.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h: In function ‘void llama_kv_cache_seq_cp(llama_kv_cache&, llama_seq_id, llama_seq_id, llama_pos, llama_pos)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:410:27: error: ‘numeric_limits’ is not a member of ‘std’
+  410 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                           ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:410:51: error: expected primary-expression before ‘>’ token
+  410 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                   ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:410:54: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  410 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                      ^~~
+      |                                                      std::max
+In file included from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-context.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama-context.cpp:1:
+/usr/include/c++/11/bits/stl_algobase.h:300:5: note: ‘std::max’ declared here
+  300 |     max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+      |     ^~~
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:6,
+                 from /home/ggml/work/llama.cpp/src/llama-context.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h: In function ‘void llama_kv_cache_seq_add(llama_kv_cache&, llama_seq_id, llama_pos, llama_pos, llama_pos)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:482:27: error: ‘numeric_limits’ is not a member of ‘std’
+  482 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                           ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:482:51: error: expected primary-expression before ‘>’ token
+  482 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                   ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:482:54: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  482 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                      ^~~
+      |                                                      std::max
+In file included from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-context.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama-context.cpp:1:
+/usr/include/c++/11/bits/stl_algobase.h:300:5: note: ‘std::max’ declared here
+  300 |     max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+      |     ^~~
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:6,
+                 from /home/ggml/work/llama.cpp/src/llama-context.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h: In function ‘void llama_kv_cache_seq_div(llama_kv_cache&, llama_seq_id, llama_pos, llama_pos, int)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:531:27: error: ‘numeric_limits’ is not a member of ‘std’
+  531 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                           ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:531:51: error: expected primary-expression before ‘>’ token
+  531 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                   ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:531:54: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  531 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                      ^~~
+      |                                                      std::max
+In file included from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-context.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama-context.cpp:1:
+/usr/include/c++/11/bits/stl_algobase.h:300:5: note: ‘std::max’ declared here
+  300 |     max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+      |     ^~~
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:7,
+                 from /home/ggml/work/llama.cpp/src/llama-context.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-adapter.h: In function ‘ggml_tensor* llama_get_model_tensor(const llama_model*, const char*)’:
+/home/ggml/work/llama.cpp/src/llama-adapter.h:180:20: error: ‘find_if’ is not a member of ‘std’
+  180 |     auto it = std::find_if(model->tensors_by_name.begin(), model->tensors_by_name.end(),
+      |                    ^~~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘virtual void llama_data_write_buffer::write(const void*, size_t)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:603:9: error: ‘memcpy’ was not declared in this scope
+  603 |         memcpy(ptr, src, size);
+      |         ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp:2:1: note: ‘memcpy’ is defined in header ‘<cstring>’; did you forget to ‘#include <cstring>’?
+    1 | #include "llama-context.h"
+  +++ |+#include <cstring>
+    2 | 
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘virtual void llama_data_read_buffer::read_to(void*, size_t)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:643:9: error: ‘memcpy’ was not declared in this scope
+  643 |         memcpy(dst, read(size), size);
+      |         ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp:643:9: note: ‘memcpy’ is defined in header ‘<cstring>’; did you forget to ‘#include <cstring>’?
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:118: src/CMakeFiles/llama.dir/llama-context.cpp.o] Error 1
+In file included from /home/ggml/work/llama.cpp/src/llama-adapter.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-adapter.h: In function ‘ggml_tensor* llama_get_model_tensor(const llama_model*, const char*)’:
+/home/ggml/work/llama.cpp/src/llama-adapter.h:180:20: error: ‘find_if’ is not a member of ‘std’
+  180 |     auto it = std::find_if(model->tensors_by_name.begin(), model->tensors_by_name.end(),
+      |                    ^~~~~~~
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:132: src/CMakeFiles/llama.dir/llama-adapter.cpp.o] Error 1
+In file included from /home/ggml/work/llama.cpp/src/llama-kv-cache.h:4,
+                 from /home/ggml/work/llama.cpp/src/llama-kv-cache.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-batch.h: In member function ‘void llama_sbatch::add_seq_to_ubatch(llama_ubatch&, llama_sbatch_seq&, size_t)’:
+/home/ggml/work/llama.cpp/src/llama-batch.h:112:21: error: ‘memcpy’ was not declared in this scope
+  112 |                     memcpy(
+      |                     ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-batch.h:1:1: note: ‘memcpy’ is defined in header ‘<cstring>’; did you forget to ‘#include <cstring>’?
+  +++ |+#include <cstring>
+    1 | #pragma once
+In file included from /home/ggml/work/llama.cpp/src/llama-kv-cache.h:4,
+                 from /home/ggml/work/llama.cpp/src/llama-kv-cache.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-batch.h: In member function ‘void llama_sbatch::from_batch(const llama_batch&, size_t, bool, bool)’:
+/home/ggml/work/llama.cpp/src/llama-batch.h:269:14: error: ‘sort’ is not a member of ‘std’; did you mean ‘qsort’?
+  269 |         std::sort(ids.begin(), ids.end(),
+      |              ^~~~
+      |              qsort
+/home/ggml/work/llama.cpp/src/llama-batch.h:320:14: error: ‘sort’ is not a member of ‘std’; did you mean ‘qsort’?
+  320 |         std::sort(seq.begin(), seq.end(),
+      |              ^~~~
+      |              qsort
+In file included from /home/ggml/work/llama.cpp/src/llama-kv-cache.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h: In function ‘llama_kv_cache_slot_info llama_kv_cache_find_slot(llama_kv_cache&, const llama_ubatch&)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:254:27: error: ‘count_if’ is not a member of ‘std’
+  254 |         cache.used = std::count_if(cache.cells.begin(), cache.cells.end(),
+      |                           ^~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h: In function ‘bool llama_kv_cache_seq_rm(llama_kv_cache&, llama_seq_id, llama_pos, llama_pos)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:348:27: error: ‘numeric_limits’ is not a member of ‘std’
+  348 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                           ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:348:51: error: expected primary-expression before ‘>’ token
+  348 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                   ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:348:54: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  348 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                      ^~~
+      |                                                      std::max
+In file included from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-kv-cache.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama-kv-cache.cpp:1:
+/usr/include/c++/11/bits/stl_algobase.h:300:5: note: ‘std::max’ declared here
+  300 |     max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+      |     ^~~
+In file included from /home/ggml/work/llama.cpp/src/llama-kv-cache.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:371:52: error: ‘numeric_limits’ is not a member of ‘std’
+  371 |             if (p0 != p1 && (p0 != 0 || p1 != std::numeric_limits<llama_pos>::max())) {
+      |                                                    ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:371:76: error: expected primary-expression before ‘>’ token
+  371 |             if (p0 != p1 && (p0 != 0 || p1 != std::numeric_limits<llama_pos>::max())) {
+      |                                                                            ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:371:79: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  371 |             if (p0 != p1 && (p0 != 0 || p1 != std::numeric_limits<llama_pos>::max())) {
+      |                                                                               ^~~
+      |                                                                               std::max
+In file included from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-kv-cache.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama-kv-cache.cpp:1:
+/usr/include/c++/11/bits/stl_algobase.h:300:5: note: ‘std::max’ declared here
+  300 |     max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+      |     ^~~
+In file included from /home/ggml/work/llama.cpp/src/llama-kv-cache.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h: In function ‘void llama_kv_cache_seq_cp(llama_kv_cache&, llama_seq_id, llama_seq_id, llama_pos, llama_pos)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:410:27: error: ‘numeric_limits’ is not a member of ‘std’
+  410 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                           ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:410:51: error: expected primary-expression before ‘>’ token
+  410 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                   ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:410:54: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  410 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                      ^~~
+      |                                                      std::max
+In file included from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-kv-cache.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama-kv-cache.cpp:1:
+/usr/include/c++/11/bits/stl_algobase.h:300:5: note: ‘std::max’ declared here
+  300 |     max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+      |     ^~~
+In file included from /home/ggml/work/llama.cpp/src/llama-kv-cache.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h: In function ‘void llama_kv_cache_seq_add(llama_kv_cache&, llama_seq_id, llama_pos, llama_pos, llama_pos)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:482:27: error: ‘numeric_limits’ is not a member of ‘std’
+  482 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                           ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:482:51: error: expected primary-expression before ‘>’ token
+  482 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                   ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:482:54: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  482 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                      ^~~
+      |                                                      std::max
+In file included from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-kv-cache.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama-kv-cache.cpp:1:
+/usr/include/c++/11/bits/stl_algobase.h:300:5: note: ‘std::max’ declared here
+  300 |     max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+      |     ^~~
+In file included from /home/ggml/work/llama.cpp/src/llama-kv-cache.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h: In function ‘void llama_kv_cache_seq_div(llama_kv_cache&, llama_seq_id, llama_pos, llama_pos, int)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:531:27: error: ‘numeric_limits’ is not a member of ‘std’
+  531 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                           ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:531:51: error: expected primary-expression before ‘>’ token
+  531 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                   ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:531:54: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  531 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                      ^~~
+      |                                                      std::max
+In file included from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-kv-cache.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama-kv-cache.cpp:1:
+/usr/include/c++/11/bits/stl_algobase.h:300:5: note: ‘std::max’ declared here
+  300 |     max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+      |     ^~~
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:160: src/CMakeFiles/llama.dir/llama-kv-cache.cpp.o] Error 1
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:4,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:4:
+/home/ggml/work/llama.cpp/src/llama-batch.h: In member function ‘void llama_sbatch::add_seq_to_ubatch(llama_ubatch&, llama_sbatch_seq&, size_t)’:
+/home/ggml/work/llama.cpp/src/llama-batch.h:112:21: error: ‘memcpy’ was not declared in this scope
+  112 |                     memcpy(
+      |                     ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-batch.h:1:1: note: ‘memcpy’ is defined in header ‘<cstring>’; did you forget to ‘#include <cstring>’?
+  +++ |+#include <cstring>
+    1 | #pragma once
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:4,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:4:
+/home/ggml/work/llama.cpp/src/llama-batch.h: In member function ‘void llama_sbatch::from_batch(const llama_batch&, size_t, bool, bool)’:
+/home/ggml/work/llama.cpp/src/llama-batch.h:269:14: error: ‘sort’ is not a member of ‘std’; did you mean ‘qsort’?
+  269 |         std::sort(ids.begin(), ids.end(),
+      |              ^~~~
+      |              qsort
+/home/ggml/work/llama.cpp/src/llama-batch.h:320:14: error: ‘sort’ is not a member of ‘std’; did you mean ‘qsort’?
+  320 |         std::sort(seq.begin(), seq.end(),
+      |              ^~~~
+      |              qsort
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:6,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:4:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h: In function ‘llama_kv_cache_slot_info llama_kv_cache_find_slot(llama_kv_cache&, const llama_ubatch&)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:254:27: error: ‘count_if’ is not a member of ‘std’
+  254 |         cache.used = std::count_if(cache.cells.begin(), cache.cells.end(),
+      |                           ^~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h: In function ‘bool llama_kv_cache_seq_rm(llama_kv_cache&, llama_seq_id, llama_pos, llama_pos)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:348:27: error: ‘numeric_limits’ is not a member of ‘std’
+  348 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                           ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:348:51: error: expected primary-expression before ‘>’ token
+  348 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                   ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:348:54: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  348 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                      ^~~
+      |                                                      std::max
+In file included from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:1:
+/usr/include/c++/11/bits/stl_algobase.h:300:5: note: ‘std::max’ declared here
+  300 |     max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+      |     ^~~
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:6,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:4:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:371:52: error: ‘numeric_limits’ is not a member of ‘std’
+  371 |             if (p0 != p1 && (p0 != 0 || p1 != std::numeric_limits<llama_pos>::max())) {
+      |                                                    ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:371:76: error: expected primary-expression before ‘>’ token
+  371 |             if (p0 != p1 && (p0 != 0 || p1 != std::numeric_limits<llama_pos>::max())) {
+      |                                                                            ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:371:79: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  371 |             if (p0 != p1 && (p0 != 0 || p1 != std::numeric_limits<llama_pos>::max())) {
+      |                                                                               ^~~
+      |                                                                               std::max
+In file included from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:1:
+/usr/include/c++/11/bits/stl_algobase.h:300:5: note: ‘std::max’ declared here
+  300 |     max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+      |     ^~~
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:6,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:4:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h: In function ‘void llama_kv_cache_seq_cp(llama_kv_cache&, llama_seq_id, llama_seq_id, llama_pos, llama_pos)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:410:27: error: ‘numeric_limits’ is not a member of ‘std’
+  410 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                           ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:410:51: error: expected primary-expression before ‘>’ token
+  410 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                   ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:410:54: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  410 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                      ^~~
+      |                                                      std::max
+In file included from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:1:
+/usr/include/c++/11/bits/stl_algobase.h:300:5: note: ‘std::max’ declared here
+  300 |     max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+      |     ^~~
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:6,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:4:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h: In function ‘void llama_kv_cache_seq_add(llama_kv_cache&, llama_seq_id, llama_pos, llama_pos, llama_pos)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:482:27: error: ‘numeric_limits’ is not a member of ‘std’
+  482 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                           ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:482:51: error: expected primary-expression before ‘>’ token
+  482 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                   ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:482:54: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  482 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                      ^~~
+      |                                                      std::max
+In file included from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:1:
+/usr/include/c++/11/bits/stl_algobase.h:300:5: note: ‘std::max’ declared here
+  300 |     max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+      |     ^~~
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:6,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:4:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h: In function ‘void llama_kv_cache_seq_div(llama_kv_cache&, llama_seq_id, llama_pos, llama_pos, int)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:531:27: error: ‘numeric_limits’ is not a member of ‘std’
+  531 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                           ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:531:51: error: expected primary-expression before ‘>’ token
+  531 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                   ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:531:54: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  531 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                      ^~~
+      |                                                      std::max
+In file included from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:1:
+/usr/include/c++/11/bits/stl_algobase.h:300:5: note: ‘std::max’ declared here
+  300 |     max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+      |     ^~~
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:7,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:4:
+/home/ggml/work/llama.cpp/src/llama-adapter.h: In function ‘ggml_tensor* llama_get_model_tensor(const llama_model*, const char*)’:
+/home/ggml/work/llama.cpp/src/llama-adapter.h:180:20: error: ‘find_if’ is not a member of ‘std’
+  180 |     auto it = std::find_if(model->tensors_by_name.begin(), model->tensors_by_name.end(),
+      |                    ^~~~~~~
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:76: src/CMakeFiles/llama.dir/llama.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1767: src/CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m2.920s
+user	0m8.068s
+sys	0m1.210s
