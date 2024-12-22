@@ -1,0 +1,630 @@
+Looking in indexes: https://pypi.org/simple, https://download.pytorch.org/whl/cpu, https://download.pytorch.org/whl/cpu, https://download.pytorch.org/whl/cpu, https://download.pytorch.org/whl/cpu
+Requirement already satisfied: numpy~=1.26.4 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 1)) (1.26.4)
+Requirement already satisfied: sentencepiece~=0.2.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 2)) (0.2.0)
+Requirement already satisfied: transformers<5.0.0,>=4.45.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (4.45.1)
+Requirement already satisfied: gguf>=0.1.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 4)) (0.13.0)
+Requirement already satisfied: protobuf<5.0.0,>=4.21.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 5)) (4.25.3)
+Requirement already satisfied: torch~=2.2.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (2.2.2)
+Requirement already satisfied: pyyaml>=5.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (6.0.1)
+Requirement already satisfied: tokenizers<0.21,>=0.20 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (0.20.0)
+Requirement already satisfied: packaging>=20.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (23.2)
+Requirement already satisfied: filelock in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (3.13.1)
+Requirement already satisfied: tqdm>=4.27 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (4.66.2)
+Requirement already satisfied: requests in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (2.31.0)
+Requirement already satisfied: huggingface-hub<1.0,>=0.23.2 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (0.25.1)
+Requirement already satisfied: regex!=2019.12.17 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (2023.12.25)
+Requirement already satisfied: safetensors>=0.4.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (0.4.2)
+Requirement already satisfied: typing-extensions>=4.8.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (4.9.0)
+Requirement already satisfied: nvidia-cusparse-cu12==12.1.0.106 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (12.1.0.106)
+Requirement already satisfied: networkx in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (3.2.1)
+Requirement already satisfied: nvidia-nvtx-cu12==12.1.105 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (12.1.105)
+Requirement already satisfied: sympy in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (1.12)
+Requirement already satisfied: nvidia-curand-cu12==10.3.2.106 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (10.3.2.106)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.1.105 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (12.1.105)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.1.105 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (12.1.105)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.1.105 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (12.1.105)
+Requirement already satisfied: jinja2 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (3.1.3)
+Requirement already satisfied: nvidia-cufft-cu12==11.0.2.54 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (11.0.2.54)
+Requirement already satisfied: nvidia-nccl-cu12==2.19.3 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (2.19.3)
+Requirement already satisfied: triton==2.2.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (2.2.0)
+Requirement already satisfied: nvidia-cusolver-cu12==11.4.5.107 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (11.4.5.107)
+Requirement already satisfied: fsspec in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (2024.2.0)
+Requirement already satisfied: nvidia-cublas-cu12==12.1.3.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (12.1.3.1)
+Requirement already satisfied: nvidia-cudnn-cu12==8.9.2.26 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (8.9.2.26)
+Requirement already satisfied: nvidia-nvjitlink-cu12 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from nvidia-cusolver-cu12==11.4.5.107->torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (12.3.101)
+Requirement already satisfied: MarkupSafe>=2.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from jinja2->torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (2.1.5)
+Requirement already satisfied: idna<4,>=2.5 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from requests->transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (3.6)
+Requirement already satisfied: charset-normalizer<4,>=2 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from requests->transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (3.3.2)
+Requirement already satisfied: certifi>=2017.4.17 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from requests->transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (2024.2.2)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from requests->transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (2.2.1)
+Requirement already satisfied: mpmath>=0.19 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from sympy->torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (1.3.0)
+Obtaining file:///home/ggml/work/llama.cpp/gguf-py
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: tqdm>=4.27 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from gguf==0.13.0) (4.66.2)
+Requirement already satisfied: sentencepiece<=0.2.0,>=0.1.98 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from gguf==0.13.0) (0.2.0)
+Requirement already satisfied: numpy>=1.17 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from gguf==0.13.0) (1.26.4)
+Requirement already satisfied: pyyaml>=5.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from gguf==0.13.0) (6.0.1)
+Building wheels for collected packages: gguf
+  Building editable for gguf (pyproject.toml): started
+  Building editable for gguf (pyproject.toml): finished with status 'done'
+  Created wheel for gguf: filename=gguf-0.13.0-py3-none-any.whl size=3396 sha256=860f734d9faba95b979f0fdf4248b4dd431b6188bebb734489ea7d6f3b88c2e9
+  Stored in directory: /tmp/pip-ephem-wheel-cache-n11n99wg/wheels/a3/4c/52/c5934ad001d1a70ca5434f11ddc622cad9c0a484e9bf6feda3
+Successfully built gguf
+Installing collected packages: gguf
+  Attempting uninstall: gguf
+    Found existing installation: gguf 0.13.0
+    Uninstalling gguf-0.13.0:
+      Successfully uninstalled gguf-0.13.0
+Successfully installed gguf-0.13.0
++ gg_run_ctest_debug
++ cd /home/ggml/work/llama.cpp
++ rm -rf build-ci-debug
++ tee /home/ggml/results/llama.cpp/48/7a149c7ffdcce89a015b4208e58aede4372a09/ggml-4-x86-cuda-v100/ctest_debug.log
++ mkdir build-ci-debug
++ cd build-ci-debug
++ set -e
++ gg_check_build_requirements
++ command -v cmake
++ command -v make
++ command -v ctest
++ tee -a /home/ggml/results/llama.cpp/48/7a149c7ffdcce89a015b4208e58aede4372a09/ggml-4-x86-cuda-v100/ctest_debug-cmake.log
++ cmake -DCMAKE_BUILD_TYPE=Debug -DLLAMA_FATAL_WARNINGS=ON -DGGML_CUDA=ON -DCMAKE_CUDA_ARCHITECTURES=native ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- Including CPU backend
+-- Found OpenMP_C: -fopenmp (found version "4.5") 
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5")  
+-- x86 detected
+-- Adding CPU backend variant ggml-cpu: -march=native 
+-- Found CUDAToolkit: /usr/local/cuda-12.2/include (found version "12.2.140") 
+-- CUDA Toolkit found
+-- Using CUDA architectures: native
+-- The CUDA compiler identification is NVIDIA 12.2.140
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda-12.2/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- CUDA host compiler is GNU 11.4.0
+
+-- Including CUDA backend
+-- Configuring done (9.1s)
+-- Generating done (0.2s)
+-- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-debug
+
+real	0m9.372s
+user	0m7.475s
+sys	0m1.891s
++ tee -a /home/ggml/results/llama.cpp/48/7a149c7ffdcce89a015b4208e58aede4372a09/ggml-4-x86-cuda-v100/ctest_debug-make.log
+++ nproc
++ make -j6
+[  0%] Generating build details from Git
+[  1%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  3%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  3%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  3%] Built target sha256
+[  3%] Built target sha1
+[  3%] Built target xxhash
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  5%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  5%] Linking CXX shared library libggml-base.so
+[  5%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  5%] Built target build_info
+[  5%] Built target ggml-base
+[  5%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[  6%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[  7%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[  7%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[  7%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[  7%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/acc.cu.o
+[  7%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[  8%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[  8%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.o
+[  9%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/arange.cu.o
+[  9%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/argmax.cu.o
+[  9%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/argsort.cu.o
+[ 10%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/binbcast.cu.o
+[ 10%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/clamp.cu.o
+[ 11%] Linking CXX shared library libggml-cpu.so
+[ 12%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/concat.cu.o
+[ 12%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/conv-transpose-1d.cu.o
+[ 12%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/convert.cu.o
+[ 13%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/count-equal.cu.o
+[ 13%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/cpy.cu.o
+[ 13%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/cross-entropy-loss.cu.o
+[ 14%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/diagmask.cu.o
+[ 14%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/fattn-tile-f16.cu.o
+[ 15%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/fattn-tile-f32.cu.o
+[ 15%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/fattn.cu.o
+[ 15%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/getrows.cu.o
+[ 16%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/ggml-cuda.cu.o
+[ 16%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/im2col.cu.o
+[ 16%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/mmq.cu.o
+[ 17%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/mmvq.cu.o
+[ 17%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/mmv.cu.o
+[ 18%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/norm.cu.o
+[ 18%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/opt-step-adamw.cu.o
+[ 18%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/out-prod.cu.o
+[ 19%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/pad.cu.o
+[ 19%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/pool2d.cu.o
+[ 19%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/quantize.cu.o
+[ 20%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/rope.cu.o
+[ 20%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/scale.cu.o
+[ 21%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/softmax.cu.o
+[ 21%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/sum.cu.o
+[ 21%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/sumrows.cu.o
+[ 22%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/tsembd.cu.o
+[ 22%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/unary.cu.o
+[ 22%] Built target ggml-cpu
+[ 23%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/upscale.cu.o
+[ 23%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/wkv6.cu.o
+[ 23%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqfloat-cpb16.cu.o
+[ 24%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqfloat-cpb32.cu.o
+[ 24%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqhalf-cpb16.cu.o
+[ 24%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqhalf-cpb32.cu.o
+[ 25%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq1_s.cu.o
+[ 25%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqhalf-cpb8.cu.o
+[ 26%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq2_s.cu.o
+[ 26%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq2_xs.cu.o
+[ 26%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq2_xxs.cu.o
+[ 27%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq3_s.cu.o
+[ 27%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq3_xxs.cu.o
+[ 27%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq4_nl.cu.o
+[ 28%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q2_k.cu.o
+[ 28%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq4_xs.cu.o
+[ 29%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q3_k.cu.o
+[ 29%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q4_0.cu.o
+[ 29%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q4_1.cu.o
+[ 30%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q4_k.cu.o
+[ 30%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q5_0.cu.o
+[ 30%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q5_1.cu.o
+[ 31%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q5_k.cu.o
+[ 31%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q6_k.cu.o
+[ 32%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q8_0.cu.o
+[ 32%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs128-q4_0-q4_0.cu.o
+[ 32%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs128-q4_0-q4_0.cu.o
+[ 33%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs128-q8_0-q8_0.cu.o
+[ 33%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs128-q8_0-q8_0.cu.o
+[ 33%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs128-f16-f16.cu.o
+[ 34%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs256-f16-f16.cu.o
+[ 34%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs64-f16-f16.cu.o
+[ 35%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs128-f16-f16.cu.o
+[ 35%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs256-f16-f16.cu.o
+[ 35%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs64-f16-f16.cu.o
+[ 36%] Linking CUDA shared library libggml-cuda.so
+[ 36%] Built target ggml-cuda
+[ 36%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 36%] Linking CXX shared library libggml.so
+[ 36%] Built target ggml
+[ 37%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 37%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 38%] Building CXX object src/CMakeFiles/llama.dir/llama-arch.cpp.o
+[ 38%] Building CXX object src/CMakeFiles/llama.dir/llama-batch.cpp.o
+[ 39%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 39%] Building CXX object src/CMakeFiles/llama.dir/llama-context.cpp.o
+[ 39%] Linking CXX executable ../../bin/llama-gguf
+[ 39%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 39%] Built target llama-gguf-hash
+[ 40%] Building CXX object src/CMakeFiles/llama.dir/llama-adapter.cpp.o
+[ 40%] Built target llama-gguf
+[ 40%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+In file included from /home/ggml/work/llama.cpp/src/llama-batch.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-batch.h: In member function ‘void llama_sbatch::add_seq_to_ubatch(llama_ubatch&, llama_sbatch_seq&, size_t)’:
+/home/ggml/work/llama.cpp/src/llama-batch.h:112:21: error: ‘memcpy’ was not declared in this scope
+  112 |                     memcpy(
+      |                     ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-batch.h:6:1: note: ‘memcpy’ is defined in header ‘<cstring>’; did you forget to ‘#include <cstring>’?
+    5 | #include <vector>
+  +++ |+#include <cstring>
+    6 | 
+In file included from /home/ggml/work/llama.cpp/src/llama-batch.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-batch.h: In member function ‘void llama_sbatch::from_batch(const llama_batch&, size_t, bool, bool)’:
+/home/ggml/work/llama.cpp/src/llama-batch.h:269:14: error: ‘sort’ is not a member of ‘std’
+  269 |         std::sort(ids.begin(), ids.end(),
+      |              ^~~~
+/home/ggml/work/llama.cpp/src/llama-batch.h:320:14: error: ‘sort’ is not a member of ‘std’
+  320 |         std::sort(seq.begin(), seq.end(),
+      |              ^~~~
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:104: src/CMakeFiles/llama.dir/llama-batch.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+In file included from /home/ggml/work/llama.cpp/src/llama-arch.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-arch.h:380:10: error: ‘string’ in namespace ‘std’ does not name a type
+  380 |     std::string operator()(llm_kv kv) const;
+      |          ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:4:1: note: ‘std::string’ is defined in header ‘<string>’; did you forget to ‘#include <string>’?
+    3 | #include <map>
+  +++ |+#include <string>
+    4 | 
+/home/ggml/work/llama.cpp/src/llama-arch.h:1557:28: error: ‘string’ is not a member of ‘std’
+ 1557 | static const std::map<std::string, llm_chat_template> LLM_CHAT_TEMPLATES = {
+      |                            ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:1557:28: note: ‘std::string’ is defined in header ‘<string>’; did you forget to ‘#include <string>’?
+/home/ggml/work/llama.cpp/src/llama-arch.h:1557:53: error: template argument 1 is invalid
+ 1557 | static const std::map<std::string, llm_chat_template> LLM_CHAT_TEMPLATES = {
+      |                                                     ^
+/home/ggml/work/llama.cpp/src/llama-arch.h:1557:53: error: template argument 3 is invalid
+/home/ggml/work/llama.cpp/src/llama-arch.h:1557:53: error: template argument 4 is invalid
+/home/ggml/work/llama.cpp/src/llama-arch.h:1557:55: error: scalar object ‘LLM_CHAT_TEMPLATES’ requires one element in initializer
+ 1557 | static const std::map<std::string, llm_chat_template> LLM_CHAT_TEMPLATES = {
+      |                                                       ^~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:1604:10: error: ‘string’ in namespace ‘std’ does not name a type
+ 1604 |     std::string str() const;
+      |          ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:1604:5: note: ‘std::string’ is defined in header ‘<string>’; did you forget to ‘#include <string>’?
+ 1604 |     std::string str() const;
+      |     ^~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:1606:14: error: expected type-specifier
+ 1606 |     operator std::string() const {
+      |              ^~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:1610:39: error: ‘string’ in namespace ‘std’ does not name a type
+ 1610 |     friend bool operator==(const std::string & str, const LLM_TN_IMPL & tn) {
+      |                                       ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:1610:34: note: ‘std::string’ is defined in header ‘<string>’; did you forget to ‘#include <string>’?
+ 1610 |     friend bool operator==(const std::string & str, const LLM_TN_IMPL & tn) {
+      |                                  ^~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:1614:39: error: ‘string’ in namespace ‘std’ does not name a type
+ 1614 |     friend bool operator!=(const std::string & str, const LLM_TN_IMPL & tn) {
+      |                                       ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:1614:34: note: ‘std::string’ is defined in header ‘<string>’; did you forget to ‘#include <string>’?
+ 1614 |     friend bool operator!=(const std::string & str, const LLM_TN_IMPL & tn) {
+      |                                  ^~~
+/home/ggml/work/llama.cpp/src/llama-arch.h: In function ‘bool operator==(const int&, const LLM_TN_IMPL&)’:
+/home/ggml/work/llama.cpp/src/llama-arch.h:1611:26: error: ‘const struct LLM_TN_IMPL’ has no member named ‘str’
+ 1611 |         return str == tn.str();
+      |                          ^~~
+/home/ggml/work/llama.cpp/src/llama-arch.h: In function ‘bool operator!=(const int&, const LLM_TN_IMPL&)’:
+/home/ggml/work/llama.cpp/src/llama-arch.h:1615:26: error: ‘const struct LLM_TN_IMPL’ has no member named ‘str’
+ 1615 |         return str != tn.str();
+      |                          ^~~
+/home/ggml/work/llama.cpp/src/llama-arch.h: At global scope:
+/home/ggml/work/llama.cpp/src/llama-arch.h:1635:42: error: ‘string’ in namespace ‘std’ does not name a type
+ 1635 | llm_arch llm_arch_from_string(const std::string & name);
+      |                                          ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:1635:37: note: ‘std::string’ is defined in header ‘<string>’; did you forget to ‘#include <string>’?
+ 1635 | llm_arch llm_arch_from_string(const std::string & name);
+      |                                     ^~~
+/home/ggml/work/llama.cpp/src/llama-arch.cpp:7:13: error: no declaration matches ‘std::string LLM_KV::operator()(llm_kv) const’
+    7 | std::string LLM_KV::operator()(llm_kv kv) const {
+      |             ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-arch.cpp:7:13: note: no functions named ‘std::string LLM_KV::operator()(llm_kv) const’
+In file included from /home/ggml/work/llama.cpp/src/llama-arch.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-arch.h:375:8: note: ‘struct LLM_KV’ defined here
+  375 | struct LLM_KV {
+      |        ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-arch.cpp:11:13: error: no declaration matches ‘std::string LLM_TN_IMPL::str() const’
+   11 | std::string LLM_TN_IMPL::str() const {
+      |             ^~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-arch.cpp:11:13: note: no functions named ‘std::string LLM_TN_IMPL::str() const’
+In file included from /home/ggml/work/llama.cpp/src/llama-arch.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-arch.h:1597:8: note: ‘struct LLM_TN_IMPL’ defined here
+ 1597 | struct LLM_TN_IMPL {
+      |        ^~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-arch.cpp:34:10: error: no previous declaration for ‘llm_arch llm_arch_from_string(const string&)’ [-Werror=missing-declarations]
+   34 | llm_arch llm_arch_from_string(const std::string & name) {
+      |          ^~~~~~~~~~~~~~~~~~~~
+cc1plus: all warnings being treated as errors
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:90: src/CMakeFiles/llama.dir/llama-arch.cpp.o] Error 1
+In file included from /home/ggml/work/llama.cpp/src/llama-adapter.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-adapter.h: In function ‘ggml_tensor* llama_get_model_tensor(const llama_model*, const char*)’:
+/home/ggml/work/llama.cpp/src/llama-adapter.h:180:20: error: ‘find_if’ is not a member of ‘std’
+  180 |     auto it = std::find_if(model->tensors_by_name.begin(), model->tensors_by_name.end(),
+      |                    ^~~~~~~
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:132: src/CMakeFiles/llama.dir/llama-adapter.cpp.o] Error 1
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:4,
+                 from /home/ggml/work/llama.cpp/src/llama-context.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-batch.h: In member function ‘void llama_sbatch::add_seq_to_ubatch(llama_ubatch&, llama_sbatch_seq&, size_t)’:
+/home/ggml/work/llama.cpp/src/llama-batch.h:112:21: error: ‘memcpy’ was not declared in this scope
+  112 |                     memcpy(
+      |                     ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-batch.h:1:1: note: ‘memcpy’ is defined in header ‘<cstring>’; did you forget to ‘#include <cstring>’?
+  +++ |+#include <cstring>
+    1 | #pragma once
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:4,
+                 from /home/ggml/work/llama.cpp/src/llama-context.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-batch.h: In member function ‘void llama_sbatch::from_batch(const llama_batch&, size_t, bool, bool)’:
+/home/ggml/work/llama.cpp/src/llama-batch.h:269:14: error: ‘sort’ is not a member of ‘std’; did you mean ‘qsort’?
+  269 |         std::sort(ids.begin(), ids.end(),
+      |              ^~~~
+      |              qsort
+/home/ggml/work/llama.cpp/src/llama-batch.h:320:14: error: ‘sort’ is not a member of ‘std’; did you mean ‘qsort’?
+  320 |         std::sort(seq.begin(), seq.end(),
+      |              ^~~~
+      |              qsort
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:6,
+                 from /home/ggml/work/llama.cpp/src/llama-context.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h: In function ‘llama_kv_cache_slot_info llama_kv_cache_find_slot(llama_kv_cache&, const llama_ubatch&)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:254:27: error: ‘count_if’ is not a member of ‘std’
+  254 |         cache.used = std::count_if(cache.cells.begin(), cache.cells.end(),
+      |                           ^~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h: In function ‘bool llama_kv_cache_seq_rm(llama_kv_cache&, llama_seq_id, llama_pos, llama_pos)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:348:27: error: ‘numeric_limits’ is not a member of ‘std’
+  348 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                           ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:348:51: error: expected primary-expression before ‘>’ token
+  348 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                   ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:348:54: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  348 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                      ^~~
+      |                                                      std::max
+In file included from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-context.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama-context.cpp:1:
+/usr/include/c++/11/bits/stl_algobase.h:300:5: note: ‘std::max’ declared here
+  300 |     max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+      |     ^~~
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:6,
+                 from /home/ggml/work/llama.cpp/src/llama-context.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:371:52: error: ‘numeric_limits’ is not a member of ‘std’
+  371 |             if (p0 != p1 && (p0 != 0 || p1 != std::numeric_limits<llama_pos>::max())) {
+      |                                                    ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:371:76: error: expected primary-expression before ‘>’ token
+  371 |             if (p0 != p1 && (p0 != 0 || p1 != std::numeric_limits<llama_pos>::max())) {
+      |                                                                            ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:371:79: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  371 |             if (p0 != p1 && (p0 != 0 || p1 != std::numeric_limits<llama_pos>::max())) {
+      |                                                                               ^~~
+      |                                                                               std::max
+In file included from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-context.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama-context.cpp:1:
+/usr/include/c++/11/bits/stl_algobase.h:300:5: note: ‘std::max’ declared here
+  300 |     max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+      |     ^~~
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:6,
+                 from /home/ggml/work/llama.cpp/src/llama-context.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h: In function ‘void llama_kv_cache_seq_cp(llama_kv_cache&, llama_seq_id, llama_seq_id, llama_pos, llama_pos)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:410:27: error: ‘numeric_limits’ is not a member of ‘std’
+  410 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                           ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:410:51: error: expected primary-expression before ‘>’ token
+  410 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                   ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:410:54: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  410 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                      ^~~
+      |                                                      std::max
+In file included from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-context.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama-context.cpp:1:
+/usr/include/c++/11/bits/stl_algobase.h:300:5: note: ‘std::max’ declared here
+  300 |     max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+      |     ^~~
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:6,
+                 from /home/ggml/work/llama.cpp/src/llama-context.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h: In function ‘void llama_kv_cache_seq_add(llama_kv_cache&, llama_seq_id, llama_pos, llama_pos, llama_pos)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:482:27: error: ‘numeric_limits’ is not a member of ‘std’
+  482 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                           ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:482:51: error: expected primary-expression before ‘>’ token
+  482 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                   ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:482:54: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  482 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                      ^~~
+      |                                                      std::max
+In file included from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-context.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama-context.cpp:1:
+/usr/include/c++/11/bits/stl_algobase.h:300:5: note: ‘std::max’ declared here
+  300 |     max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+      |     ^~~
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:6,
+                 from /home/ggml/work/llama.cpp/src/llama-context.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h: In function ‘void llama_kv_cache_seq_div(llama_kv_cache&, llama_seq_id, llama_pos, llama_pos, int)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:531:27: error: ‘numeric_limits’ is not a member of ‘std’
+  531 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                           ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:531:51: error: expected primary-expression before ‘>’ token
+  531 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                   ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:531:54: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  531 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                      ^~~
+      |                                                      std::max
+In file included from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-context.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama-context.cpp:1:
+/usr/include/c++/11/bits/stl_algobase.h:300:5: note: ‘std::max’ declared here
+  300 |     max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+      |     ^~~
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:7,
+                 from /home/ggml/work/llama.cpp/src/llama-context.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-adapter.h: In function ‘ggml_tensor* llama_get_model_tensor(const llama_model*, const char*)’:
+/home/ggml/work/llama.cpp/src/llama-adapter.h:180:20: error: ‘find_if’ is not a member of ‘std’
+  180 |     auto it = std::find_if(model->tensors_by_name.begin(), model->tensors_by_name.end(),
+      |                    ^~~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘virtual void llama_data_write_buffer::write(const void*, size_t)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:603:9: error: ‘memcpy’ was not declared in this scope
+  603 |         memcpy(ptr, src, size);
+      |         ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp:2:1: note: ‘memcpy’ is defined in header ‘<cstring>’; did you forget to ‘#include <cstring>’?
+    1 | #include "llama-context.h"
+  +++ |+#include <cstring>
+    2 | 
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘virtual void llama_data_read_buffer::read_to(void*, size_t)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:643:9: error: ‘memcpy’ was not declared in this scope
+  643 |         memcpy(dst, read(size), size);
+      |         ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp:643:9: note: ‘memcpy’ is defined in header ‘<cstring>’; did you forget to ‘#include <cstring>’?
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:118: src/CMakeFiles/llama.dir/llama-context.cpp.o] Error 1
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:4,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:4:
+/home/ggml/work/llama.cpp/src/llama-batch.h: In member function ‘void llama_sbatch::add_seq_to_ubatch(llama_ubatch&, llama_sbatch_seq&, size_t)’:
+/home/ggml/work/llama.cpp/src/llama-batch.h:112:21: error: ‘memcpy’ was not declared in this scope
+  112 |                     memcpy(
+      |                     ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-batch.h:1:1: note: ‘memcpy’ is defined in header ‘<cstring>’; did you forget to ‘#include <cstring>’?
+  +++ |+#include <cstring>
+    1 | #pragma once
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:4,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:4:
+/home/ggml/work/llama.cpp/src/llama-batch.h: In member function ‘void llama_sbatch::from_batch(const llama_batch&, size_t, bool, bool)’:
+/home/ggml/work/llama.cpp/src/llama-batch.h:269:14: error: ‘sort’ is not a member of ‘std’; did you mean ‘qsort’?
+  269 |         std::sort(ids.begin(), ids.end(),
+      |              ^~~~
+      |              qsort
+/home/ggml/work/llama.cpp/src/llama-batch.h:320:14: error: ‘sort’ is not a member of ‘std’; did you mean ‘qsort’?
+  320 |         std::sort(seq.begin(), seq.end(),
+      |              ^~~~
+      |              qsort
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:6,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:4:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h: In function ‘llama_kv_cache_slot_info llama_kv_cache_find_slot(llama_kv_cache&, const llama_ubatch&)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:254:27: error: ‘count_if’ is not a member of ‘std’
+  254 |         cache.used = std::count_if(cache.cells.begin(), cache.cells.end(),
+      |                           ^~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h: In function ‘bool llama_kv_cache_seq_rm(llama_kv_cache&, llama_seq_id, llama_pos, llama_pos)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:348:27: error: ‘numeric_limits’ is not a member of ‘std’
+  348 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                           ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:348:51: error: expected primary-expression before ‘>’ token
+  348 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                   ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:348:54: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  348 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                      ^~~
+      |                                                      std::max
+In file included from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:1:
+/usr/include/c++/11/bits/stl_algobase.h:300:5: note: ‘std::max’ declared here
+  300 |     max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+      |     ^~~
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:6,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:4:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:371:52: error: ‘numeric_limits’ is not a member of ‘std’
+  371 |             if (p0 != p1 && (p0 != 0 || p1 != std::numeric_limits<llama_pos>::max())) {
+      |                                                    ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:371:76: error: expected primary-expression before ‘>’ token
+  371 |             if (p0 != p1 && (p0 != 0 || p1 != std::numeric_limits<llama_pos>::max())) {
+      |                                                                            ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:371:79: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  371 |             if (p0 != p1 && (p0 != 0 || p1 != std::numeric_limits<llama_pos>::max())) {
+      |                                                                               ^~~
+      |                                                                               std::max
+In file included from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:1:
+/usr/include/c++/11/bits/stl_algobase.h:300:5: note: ‘std::max’ declared here
+  300 |     max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+      |     ^~~
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:6,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:4:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h: In function ‘void llama_kv_cache_seq_cp(llama_kv_cache&, llama_seq_id, llama_seq_id, llama_pos, llama_pos)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:410:27: error: ‘numeric_limits’ is not a member of ‘std’
+  410 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                           ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:410:51: error: expected primary-expression before ‘>’ token
+  410 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                   ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:410:54: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  410 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                      ^~~
+      |                                                      std::max
+In file included from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:1:
+/usr/include/c++/11/bits/stl_algobase.h:300:5: note: ‘std::max’ declared here
+  300 |     max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+      |     ^~~
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:6,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:4:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h: In function ‘void llama_kv_cache_seq_add(llama_kv_cache&, llama_seq_id, llama_pos, llama_pos, llama_pos)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:482:27: error: ‘numeric_limits’ is not a member of ‘std’
+  482 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                           ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:482:51: error: expected primary-expression before ‘>’ token
+  482 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                   ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:482:54: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  482 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                      ^~~
+      |                                                      std::max
+In file included from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:1:
+/usr/include/c++/11/bits/stl_algobase.h:300:5: note: ‘std::max’ declared here
+  300 |     max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+      |     ^~~
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:6,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:4:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h: In function ‘void llama_kv_cache_seq_div(llama_kv_cache&, llama_seq_id, llama_pos, llama_pos, int)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:531:27: error: ‘numeric_limits’ is not a member of ‘std’
+  531 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                           ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:531:51: error: expected primary-expression before ‘>’ token
+  531 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                   ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache.h:531:54: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  531 |     if (p1 < 0) p1 = std::numeric_limits<llama_pos>::max();
+      |                                                      ^~~
+      |                                                      std::max
+In file included from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:1:
+/usr/include/c++/11/bits/stl_algobase.h:300:5: note: ‘std::max’ declared here
+  300 |     max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+      |     ^~~
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:7,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:4:
+/home/ggml/work/llama.cpp/src/llama-adapter.h: In function ‘ggml_tensor* llama_get_model_tensor(const llama_model*, const char*)’:
+/home/ggml/work/llama.cpp/src/llama-adapter.h:180:20: error: ‘find_if’ is not a member of ‘std’
+  180 |     auto it = std::find_if(model->tensors_by_name.begin(), model->tensors_by_name.end(),
+      |                    ^~~~~~~
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:76: src/CMakeFiles/llama.dir/llama.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1813: src/CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m5.405s
+user	0m11.090s
+sys	0m2.035s
++ cur=2
++ echo 2
++ set +x
+cat: /home/ggml/results/llama.cpp/48/7a149c7ffdcce89a015b4208e58aede4372a09/ggml-4-x86-cuda-v100/ctest_debug-ctest.log: No such file or directory
