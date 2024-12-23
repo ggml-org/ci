@@ -1,0 +1,785 @@
++ cmake -DCMAKE_BUILD_TYPE=Debug -DLLAMA_FATAL_WARNINGS=ON ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: aarch64
+-- Including CPU backend
+-- Found OpenMP_C: -fopenmp (found version "4.5") 
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5")  
+-- ARM detected
+-- Performing Test GGML_COMPILER_SUPPORTS_FP16_FORMAT_I3E
+-- Performing Test GGML_COMPILER_SUPPORTS_FP16_FORMAT_I3E - Failed
+-- Performing Test GGML_MACHINE_SUPPORTS_dotprod
+-- Performing Test GGML_MACHINE_SUPPORTS_dotprod - Success
+-- Performing Test GGML_MACHINE_SUPPORTS_i8mm
+-- Performing Test GGML_MACHINE_SUPPORTS_i8mm - Failed
+-- Performing Test GGML_MACHINE_SUPPORTS_sve
+-- Performing Test GGML_MACHINE_SUPPORTS_sve - Failed
+-- ARM feature DOTPROD enabled
+-- ARM feature FMA enabled
+-- ARM feature FP16_VECTOR_ARITHMETIC enabled
+-- Adding CPU backend variant ggml-cpu: -mcpu=ares+crypto+noprofile+dotprod+noi8mm+nosve 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-debug
+
+real	0m1.991s
+user	0m1.287s
+sys	0m0.515s
+++ nproc
++ make -j8
+[  0%] Generating build details from Git
+[  2%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  3%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  3%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  4%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  4%] Built target sha256
+[  4%] Built target sha1
+[  4%] Built target xxhash
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  5%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  6%] Linking CXX shared library libggml-base.so
+[  7%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  7%] Built target build_info
+[  7%] Built target ggml-base
+[  7%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[  7%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.o
+[ 12%] Linking CXX shared library libggml-cpu.so
+[ 12%] Built target ggml-cpu
+[ 13%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 13%] Linking CXX shared library libggml.so
+[ 13%] Built target ggml
+[ 13%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 13%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 13%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 14%] Building CXX object src/CMakeFiles/llama.dir/llama-batch.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/llama.dir/llama-adapter.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/llama.dir/llama-chat.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/llama.dir/llama-arch.cpp.o
+[ 16%] Building CXX object src/CMakeFiles/llama.dir/llama-context.cpp.o
+[ 17%] Linking CXX executable ../../bin/llama-gguf
+[ 17%] Building CXX object src/CMakeFiles/llama.dir/llama-hparams.cpp.o
+[ 18%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-impl.cpp.o
+[ 19%] Built target llama-gguf
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+[ 19%] Built target llama-gguf-hash
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-kv-cache.cpp.o
+/home/ggml/work/llama.cpp/src/llama-impl.cpp: In function ‘void llama_log_internal_v(ggml_log_level, const char*, va_list)’:
+/home/ggml/work/llama.cpp/src/llama-impl.cpp:45:5: error: ‘va_copy’ was not declared in this scope
+   45 |     va_copy(args_copy, args);
+      |     ^~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.cpp:57:5: error: ‘va_end’ was not declared in this scope
+   57 |     va_end(args_copy);
+      |     ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.cpp: In function ‘void llama_log_internal(ggml_log_level, const char*, ...)’:
+/home/ggml/work/llama.cpp/src/llama-impl.cpp:62:5: error: ‘va_start’ was not declared in this scope
+   62 |     va_start(args, format);
+      |     ^~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.cpp:64:5: error: ‘va_end’ was not declared in this scope
+   64 |     va_end(args);
+      |     ^~~~~~
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:174: src/CMakeFiles/llama.dir/llama-impl.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+/home/ggml/work/llama.cpp/src/llama-adapter.cpp: In function ‘void llama_lora_adapter_init_impl(llama_model&, const char*, llama_lora_adapter&)’:
+/home/ggml/work/llama.cpp/src/llama-adapter.cpp:162:20: error: ‘runtime_error’ is not a member of ‘std’
+  162 |         throw std::runtime_error("failed to load lora adapter file from " + std::string(path_lora));
+      |                    ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-adapter.cpp:181:24: error: ‘runtime_error’ is not a member of ‘std’
+  181 |             throw std::runtime_error("expect general.type to be 'adapter', but got: " + general_type);
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-adapter.cpp:187:24: error: ‘runtime_error’ is not a member of ‘std’
+  187 |             throw std::runtime_error("model arch and LoRA arch mismatch");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-adapter.cpp:192:24: error: ‘runtime_error’ is not a member of ‘std’
+  192 |             throw std::runtime_error("expect adapter.type to be 'lora', but got: " + adapter_type);
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-adapter.cpp:245:24: error: ‘runtime_error’ is not a member of ‘std’
+  245 |             throw std::runtime_error("LoRA tensor '" + name + "' has unexpected suffix");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-adapter.cpp:255:24: error: ‘runtime_error’ is not a member of ‘std’
+  255 |             throw std::runtime_error("LoRA tensor pair for '" + name + "' is missing one component");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-adapter.cpp:261:24: error: ‘runtime_error’ is not a member of ‘std’
+  261 |             throw std::runtime_error("LoRA tensor '" + name + "' does not exist in base model");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-adapter.cpp:267:24: error: ‘runtime_error’ is not a member of ‘std’
+  267 |             throw std::runtime_error("tensor '" + name + "' has incorrect shape");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-adapter.cpp:270:24: error: ‘runtime_error’ is not a member of ‘std’
+  270 |             throw std::runtime_error("lora_a tensor is not transposed (hint: adapter from \"finetune\" example is no longer supported)");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-adapter.cpp:290:28: error: ‘runtime_error’ is not a member of ‘std’
+  290 |                 throw std::runtime_error("failed to allocate buffer for lora adapter\n");
+      |                            ^~~~~~~~~~~~~
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:90: src/CMakeFiles/llama.dir/llama-adapter.cpp.o] Error 1
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘void llama_data_read::read_model_info(const llama_context*)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:270:24: error: ‘runtime_error’ is not a member of ‘std’
+  270 |             throw std::runtime_error(format("wrong model arch: '%s' instead of '%s'", arch_str.c_str(), cur_arch_str.c_str()));
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘void llama_data_read::read_output_ids(llama_context*)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:294:24: error: ‘runtime_error’ is not a member of ‘std’
+  294 |             throw std::runtime_error("could not reserve outputs");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp:304:32: error: ‘runtime_error’ is not a member of ‘std’
+  304 |                     throw std::runtime_error(format("invalid output id, %d does not fit in batch size of %u", id, ctx->cparams.n_batch));
+      |                                ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘void llama_data_read::read_logits(llama_context*)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:318:24: error: ‘runtime_error’ is not a member of ‘std’
+  318 |             throw std::runtime_error("logits buffer too small");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘void llama_data_read::read_embeddings(llama_context*)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:331:24: error: ‘runtime_error’ is not a member of ‘std’
+  331 |             throw std::runtime_error("embeddings buffer too small");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘void llama_data_read::read_kv_cache(llama_context*, llama_seq_id)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:569:24: error: ‘runtime_error’ is not a member of ‘std’
+  569 |             throw std::runtime_error("failed to restore kv cache");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘virtual void llama_data_write_buffer::write(const void*, size_t)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:601:24: error: ‘runtime_error’ is not a member of ‘std’
+  601 |             throw std::runtime_error("unexpectedly reached end of buffer");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘virtual void llama_data_write_buffer::write_tensor_data(const ggml_tensor*, size_t, size_t)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:611:24: error: ‘runtime_error’ is not a member of ‘std’
+  611 |             throw std::runtime_error("unexpectedly reached end of buffer");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘virtual const uint8_t* llama_data_read_buffer::read(size_t)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:634:24: error: ‘runtime_error’ is not a member of ‘std’
+  634 |             throw std::runtime_error("unexpectedly reached end of buffer");
+      |                        ^~~~~~~~~~~~~
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:146: src/CMakeFiles/llama.dir/llama-context.cpp.o] Error 1
+In file included from /home/ggml/work/llama.cpp/src/llama-grammar.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-grammar.h:54:34: error: ‘vector’ in namespace ‘std’ does not name a template type
+   54 | using llama_grammar_rule  = std::vector<      llama_grammar_element>;
+      |                                  ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.h:6:1: note: ‘std::vector’ is defined in header ‘<vector>’; did you forget to ‘#include <vector>’?
+    5 | #include <map>
+  +++ |+#include <vector>
+    6 | 
+/home/ggml/work/llama.cpp/src/llama-grammar.h:55:34: error: ‘vector’ in namespace ‘std’ does not name a template type
+   55 | using llama_grammar_stack = std::vector<const llama_grammar_element *>;
+      |                                  ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.h:55:29: note: ‘std::vector’ is defined in header ‘<vector>’; did you forget to ‘#include <vector>’?
+   55 | using llama_grammar_stack = std::vector<const llama_grammar_element *>;
+      |                             ^~~
+/home/ggml/work/llama.cpp/src/llama-grammar.h:57:39: error: ‘vector’ in namespace ‘std’ does not name a template type
+   57 | using llama_grammar_rules      = std::vector<llama_grammar_rule>;
+      |                                       ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.h:57:34: note: ‘std::vector’ is defined in header ‘<vector>’; did you forget to ‘#include <vector>’?
+   57 | using llama_grammar_rules      = std::vector<llama_grammar_rule>;
+      |                                  ^~~
+/home/ggml/work/llama.cpp/src/llama-grammar.h:58:39: error: ‘vector’ in namespace ‘std’ does not name a template type
+   58 | using llama_grammar_stacks     = std::vector<llama_grammar_stack>;
+      |                                       ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.h:58:34: note: ‘std::vector’ is defined in header ‘<vector>’; did you forget to ‘#include <vector>’?
+   58 | using llama_grammar_stacks     = std::vector<llama_grammar_stack>;
+      |                                  ^~~
+/home/ggml/work/llama.cpp/src/llama-grammar.h:59:39: error: ‘vector’ in namespace ‘std’ does not name a template type
+   59 | using llama_grammar_candidates = std::vector<llama_grammar_candidate>;
+      |                                       ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.h:59:34: note: ‘std::vector’ is defined in header ‘<vector>’; did you forget to ‘#include <vector>’?
+   59 | using llama_grammar_candidates = std::vector<llama_grammar_candidate>;
+      |                                  ^~~
+/home/ggml/work/llama.cpp/src/llama-grammar.h:62:7: error: ‘llama_grammar_rules’ does not name a type; did you mean ‘llama_grammar_element’?
+   62 | const llama_grammar_rules  & llama_grammar_get_rules (const struct llama_grammar * grammar);
+      |       ^~~~~~~~~~~~~~~~~~~
+      |       llama_grammar_element
+/home/ggml/work/llama.cpp/src/llama-grammar.h:63:7: error: ‘llama_grammar_stacks’ does not name a type; did you mean ‘llama_grammar_element’?
+   63 |       llama_grammar_stacks & llama_grammar_get_stacks(      struct llama_grammar * grammar);
+      |       ^~~~~~~~~~~~~~~~~~~~
+      |       llama_grammar_element
+/home/ggml/work/llama.cpp/src/llama-grammar.h:71:6: error: ‘vector’ in namespace ‘std’ does not name a template type
+   71 | std::vector<llama_grammar_candidate> llama_grammar_reject_candidates_for_stack(
+      |      ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.h:71:1: note: ‘std::vector’ is defined in header ‘<vector>’; did you forget to ‘#include <vector>’?
+   71 | std::vector<llama_grammar_candidate> llama_grammar_reject_candidates_for_stack(
+      | ^~~
+/home/ggml/work/llama.cpp/src/llama-grammar.h:77:19: error: ‘string’ is not a member of ‘std’
+   77 |     std::map<std::string, uint32_t> symbol_ids;
+      |                   ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.h:6:1: note: ‘std::string’ is defined in header ‘<string>’; did you forget to ‘#include <string>’?
+    5 | #include <map>
+  +++ |+#include <string>
+    6 | 
+/home/ggml/work/llama.cpp/src/llama-grammar.h:77:35: error: template argument 1 is invalid
+   77 |     std::map<std::string, uint32_t> symbol_ids;
+      |                                   ^
+/home/ggml/work/llama.cpp/src/llama-grammar.h:77:35: error: template argument 3 is invalid
+/home/ggml/work/llama.cpp/src/llama-grammar.h:77:35: error: template argument 4 is invalid
+/home/ggml/work/llama.cpp/src/llama-grammar.h:79:5: error: ‘llama_grammar_rules’ does not name a type; did you mean ‘llama_grammar_parser’?
+   79 |     llama_grammar_rules rules;
+      |     ^~~~~~~~~~~~~~~~~~~
+      |     llama_grammar_parser
+/home/ggml/work/llama.cpp/src/llama-grammar.h:81:5: error: ‘llama_grammar_stack’ does not name a type; did you mean ‘llama_grammar_parser’?
+   81 |     llama_grammar_stack c_rules() const;
+      |     ^~~~~~~~~~~~~~~~~~~
+      |     llama_grammar_parser
+/home/ggml/work/llama.cpp/src/llama-grammar.h:84:44: error: ‘string’ in namespace ‘std’ does not name a type
+   84 |     uint32_t generate_symbol_id(const std::string & base_name);
+      |                                            ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.h:84:39: note: ‘std::string’ is defined in header ‘<string>’; did you forget to ‘#include <string>’?
+   84 |     uint32_t generate_symbol_id(const std::string & base_name);
+      |                                       ^~~
+/home/ggml/work/llama.cpp/src/llama-grammar.h:86:43: error: ‘llama_grammar_rule’ does not name a type; did you mean ‘llama_grammar_parser’?
+   86 |     void add_rule(uint32_t rule_id, const llama_grammar_rule & rule);
+      |                                           ^~~~~~~~~~~~~~~~~~
+      |                                           llama_grammar_parser
+/home/ggml/work/llama.cpp/src/llama-grammar.h:90:24: error: ‘string’ in namespace ‘std’ does not name a type
+   90 |             const std::string & rule_name,
+      |                        ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.h:90:19: note: ‘std::string’ is defined in header ‘<string>’; did you forget to ‘#include <string>’?
+   90 |             const std::string & rule_name,
+      |                   ^~~
+/home/ggml/work/llama.cpp/src/llama-grammar.h:96:24: error: ‘string’ in namespace ‘std’ does not name a type
+   96 |             const std::string  & rule_name,
+      |                        ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.h:96:19: note: ‘std::string’ is defined in header ‘<string>’; did you forget to ‘#include <string>’?
+   96 |             const std::string  & rule_name,
+      |                   ^~~
+/home/ggml/work/llama.cpp/src/llama-grammar.h:97:13: error: ‘llama_grammar_rule’ has not been declared
+   97 |             llama_grammar_rule & rule,
+      |             ^~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.h:110:11: error: ‘llama_grammar_rules’ does not name a type; did you mean ‘llama_grammar_parser’?
+  110 |     const llama_grammar_rules  rules;  // TODO: shared ptr
+      |           ^~~~~~~~~~~~~~~~~~~
+      |           llama_grammar_parser
+/home/ggml/work/llama.cpp/src/llama-grammar.h:111:11: error: ‘llama_grammar_stacks’ does not name a type; did you mean ‘llama_grammar_parser’?
+  111 |           llama_grammar_stacks stacks;
+      |           ^~~~~~~~~~~~~~~~~~~~
+      |           llama_grammar_parser
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:202:50: error: ‘llama_grammar_rule’ does not name a type; did you mean ‘llama_grammar_parser’?
+  202 | static void print_rule_binary(FILE * file, const llama_grammar_rule & rule) {
+      |                                                  ^~~~~~~~~~~~~~~~~~
+      |                                                  llama_grammar_parser
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp: In function ‘void print_rule_binary(FILE*, const int&)’:
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:203:22: error: ‘begin’ was not declared in this scope; did you mean ‘std::begin’?
+  203 |     for (auto elem : rule) {
+      |                      ^~~~
+      |                      std::begin
+In file included from /usr/include/c++/11/array:41,
+                 from /usr/include/c++/11/tuple:39,
+                 from /usr/include/c++/11/bits/stl_map.h:63,
+                 from /usr/include/c++/11/map:61,
+                 from /home/ggml/work/llama.cpp/src/llama-grammar.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-grammar.cpp:1:
+/usr/include/c++/11/bits/range_access.h:108:37: note: ‘std::begin’ declared here
+  108 |   template<typename _Tp> const _Tp* begin(const valarray<_Tp>&) noexcept;
+      |                                     ^~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:203:22: error: ‘end’ was not declared in this scope; did you mean ‘std::end’?
+  203 |     for (auto elem : rule) {
+      |                      ^~~~
+      |                      std::end
+In file included from /usr/include/c++/11/array:41,
+                 from /usr/include/c++/11/tuple:39,
+                 from /usr/include/c++/11/bits/stl_map.h:63,
+                 from /usr/include/c++/11/map:61,
+                 from /home/ggml/work/llama.cpp/src/llama-grammar.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-grammar.cpp:1:
+/usr/include/c++/11/bits/range_access.h:110:37: note: ‘std::end’ declared here
+  110 |   template<typename _Tp> const _Tp* end(const valarray<_Tp>&) noexcept;
+      |                                     ^~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp: At global scope:
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:237:15: error: ‘llama_grammar_rule’ does not name a type; did you mean ‘llama_grammar_parser’?
+  237 |         const llama_grammar_rule & rule,
+      |               ^~~~~~~~~~~~~~~~~~
+      |               llama_grammar_parser
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp: In function ‘void print_rule(FILE*, uint32_t, const int&, const std::map<unsigned int, std::__cxx11::basic_string<char> >&)’:
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:239:14: error: request for member ‘empty’ in ‘rule’, which is of non-class type ‘const int’
+  239 |     if (rule.empty() || rule.back().type != LLAMA_GRETYPE_END) {
+      |              ^~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:239:30: error: request for member ‘back’ in ‘rule’, which is of non-class type ‘const int’
+  239 |     if (rule.empty() || rule.back().type != LLAMA_GRETYPE_END) {
+      |                              ^~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:244:35: error: request for member ‘size’ in ‘rule’, which is of non-class type ‘const int’
+  244 |     for (size_t i = 0, end = rule.size() - 1; i < end; i++) {
+      |                                   ^~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:245:42: error: invalid types ‘const int[size_t {aka long unsigned int}]’ for array subscript
+  245 |         llama_grammar_element elem = rule[i];
+      |                                          ^
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:266:52: error: invalid types ‘const int[size_t {aka long unsigned int}]’ for array subscript
+  266 |                 if (i == 0 || !is_char_element(rule[i - 1])) {
+      |                                                    ^
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:275:52: error: invalid types ‘const int[size_t {aka long unsigned int}]’ for array subscript
+  275 |                 if (i == 0 || !is_char_element(rule[i - 1])) {
+      |                                                    ^
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:287:25: error: invalid types ‘const int[size_t {aka long unsigned int}]’ for array subscript
+  287 |             switch (rule[i + 1].type) {
+      |                         ^
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp: In member function ‘uint32_t llama_grammar_parser::get_symbol_id(const char*, size_t)’:
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:305:57: error: request for member ‘size’ in ‘((llama_grammar_parser*)this)->llama_grammar_parser::symbol_ids’, which is of non-class type ‘int’
+  305 |     uint32_t next_id = static_cast<uint32_t>(symbol_ids.size());
+      |                                                         ^~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:306:30: error: request for member ‘emplace’ in ‘((llama_grammar_parser*)this)->llama_grammar_parser::symbol_ids’, which is of non-class type ‘int’
+  306 |     auto result = symbol_ids.emplace(std::string(src, len), next_id);
+      |                              ^~~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp: At global scope:
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:310:10: error: no declaration matches ‘uint32_t llama_grammar_parser::generate_symbol_id(const string&)’
+  310 | uint32_t llama_grammar_parser::generate_symbol_id(const std::string & base_name) {
+      |          ^~~~~~~~~~~~~~~~~~~~
+In file included from /home/ggml/work/llama.cpp/src/llama-grammar.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-grammar.h:84:14: note: candidate is: ‘uint32_t llama_grammar_parser::generate_symbol_id(const int&)’
+   84 |     uint32_t generate_symbol_id(const std::string & base_name);
+      |              ^~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.h:76:8: note: ‘struct llama_grammar_parser’ defined here
+   76 | struct llama_grammar_parser {
+      |        ^~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:316:61: error: ‘llama_grammar_rule’ does not name a type; did you mean ‘llama_grammar_parser’?
+  316 | void llama_grammar_parser::add_rule(uint32_t rule_id, const llama_grammar_rule & rule) {
+      |                                                             ^~~~~~~~~~~~~~~~~~
+      |                                                             llama_grammar_parser
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp: In member function ‘void llama_grammar_parser::add_rule(uint32_t, const int&)’:
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:317:9: error: ‘rules’ was not declared in this scope; did you mean ‘rule’?
+  317 |     if (rules.size() <= rule_id) {
+      |         ^~~~~
+      |         rule
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:320:5: error: ‘rules’ was not declared in this scope; did you mean ‘rule’?
+  320 |     rules[rule_id] = rule;
+      |     ^~~~~
+      |     rule
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp: At global scope:
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:323:14: error: no declaration matches ‘const char* llama_grammar_parser::parse_alternates(const char*, const string&, uint32_t, bool)’
+  323 | const char * llama_grammar_parser::parse_alternates(
+      |              ^~~~~~~~~~~~~~~~~~~~
+In file included from /home/ggml/work/llama.cpp/src/llama-grammar.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-grammar.h:88:18: note: candidate is: ‘const char* llama_grammar_parser::parse_alternates(const char*, const int&, uint32_t, bool)’
+   88 |     const char * parse_alternates(
+      |                  ^~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.h:76:8: note: ‘struct llama_grammar_parser’ defined here
+   76 | struct llama_grammar_parser {
+      |        ^~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:343:9: error: ‘llama_grammar_rule’ has not been declared
+  343 |         llama_grammar_rule & rule,
+      |         ^~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:340:14: error: no declaration matches ‘const char* llama_grammar_parser::parse_sequence(const char*, const string&, int&, bool)’
+  340 | const char * llama_grammar_parser::parse_sequence(
+      |              ^~~~~~~~~~~~~~~~~~~~
+In file included from /home/ggml/work/llama.cpp/src/llama-grammar.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-grammar.h:94:18: note: candidate is: ‘const char* llama_grammar_parser::parse_sequence(const char*, const int&, int&, bool)’
+   94 |     const char * parse_sequence(
+      |                  ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.h:76:8: note: ‘struct llama_grammar_parser’ defined here
+   76 | struct llama_grammar_parser {
+      |        ^~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp: In member function ‘const char* llama_grammar_parser::parse_rule(const char*)’:
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:525:37: error: cannot convert ‘const string’ {aka ‘const std::__cxx11::basic_string<char>’} to ‘const int&’
+  525 |         pos = parse_alternates(pos, name, rule_id, false);
+      |                                     ^~~~
+      |                                     |
+      |                                     const string {aka const std::__cxx11::basic_string<char>}
+In file included from /home/ggml/work/llama.cpp/src/llama-grammar.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-grammar.h:90:33: note:   initializing argument 2 of ‘const char* llama_grammar_parser::parse_alternates(const char*, const int&, uint32_t, bool)’
+   90 |             const std::string & rule_name,
+      |             ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp: In member function ‘bool llama_grammar_parser::parse(const char*)’:
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:544:34: error: ‘rules’ was not declared in this scope; did you mean ‘rule’?
+  544 |         for (const auto & rule : rules) {
+      |                                  ^~~~~
+      |                                  rule
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:553:48: error: ‘begin’ was not declared in this scope; did you mean ‘std::begin’?
+  553 |                         for (const auto & kv : symbol_ids) {
+      |                                                ^~~~~~~~~~
+      |                                                std::begin
+In file included from /usr/include/c++/11/array:41,
+                 from /usr/include/c++/11/tuple:39,
+                 from /usr/include/c++/11/bits/stl_map.h:63,
+                 from /usr/include/c++/11/map:61,
+                 from /home/ggml/work/llama.cpp/src/llama-grammar.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-grammar.cpp:1:
+/usr/include/c++/11/bits/range_access.h:108:37: note: ‘std::begin’ declared here
+  108 |   template<typename _Tp> const _Tp* begin(const valarray<_Tp>&) noexcept;
+      |                                     ^~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:553:48: error: ‘end’ was not declared in this scope; did you mean ‘std::end’?
+  553 |                         for (const auto & kv : symbol_ids) {
+      |                                                ^~~~~~~~~~
+      |                                                std::end
+In file included from /usr/include/c++/11/array:41,
+                 from /usr/include/c++/11/tuple:39,
+                 from /usr/include/c++/11/bits/stl_map.h:63,
+                 from /usr/include/c++/11/map:61,
+                 from /home/ggml/work/llama.cpp/src/llama-grammar.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-grammar.cpp:1:
+/usr/include/c++/11/bits/range_access.h:110:37: note: ‘std::end’ declared here
+  110 |   template<typename _Tp> const _Tp* end(const valarray<_Tp>&) noexcept;
+      |                                     ^~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:564:9: error: ‘rules’ was not declared in this scope
+  564 |         rules.clear();
+      |         ^~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp: In member function ‘void llama_grammar_parser::print(FILE*)’:
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:574:32: error: ‘begin’ was not declared in this scope; did you mean ‘std::begin’?
+  574 |         for (const auto & kv : symbol_ids) {
+      |                                ^~~~~~~~~~
+      |                                std::begin
+In file included from /usr/include/c++/11/array:41,
+                 from /usr/include/c++/11/tuple:39,
+                 from /usr/include/c++/11/bits/stl_map.h:63,
+                 from /usr/include/c++/11/map:61,
+                 from /home/ggml/work/llama.cpp/src/llama-grammar.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-grammar.cpp:1:
+/usr/include/c++/11/bits/range_access.h:108:37: note: ‘std::begin’ declared here
+  108 |   template<typename _Tp> const _Tp* begin(const valarray<_Tp>&) noexcept;
+      |                                     ^~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:574:32: error: ‘end’ was not declared in this scope; did you mean ‘std::end’?
+  574 |         for (const auto & kv : symbol_ids) {
+      |                                ^~~~~~~~~~
+      |                                std::end
+In file included from /usr/include/c++/11/array:41,
+                 from /usr/include/c++/11/tuple:39,
+                 from /usr/include/c++/11/bits/stl_map.h:63,
+                 from /usr/include/c++/11/map:61,
+                 from /home/ggml/work/llama.cpp/src/llama-grammar.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-grammar.cpp:1:
+/usr/include/c++/11/bits/range_access.h:110:37: note: ‘std::end’ declared here
+  110 |   template<typename _Tp> const _Tp* end(const valarray<_Tp>&) noexcept;
+      |                                     ^~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:577:34: error: ‘rules’ was not declared in this scope
+  577 |         for (size_t i = 0, end = rules.size(); i < end; i++) {
+      |                                  ^~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp: At global scope:
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:588:1: error: ‘llama_grammar_stack’ does not name a type; did you mean ‘llama_grammar_parser’?
+  588 | llama_grammar_stack llama_grammar_parser::c_rules() const {
+      | ^~~~~~~~~~~~~~~~~~~
+      | llama_grammar_parser
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:689:15: error: ‘llama_grammar_rules’ does not name a type; did you mean ‘llama_grammar_parser’?
+  689 |         const llama_grammar_rules  & rules,
+      |               ^~~~~~~~~~~~~~~~~~~
+      |               llama_grammar_parser
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:690:15: error: ‘llama_grammar_stack’ does not name a type; did you mean ‘llama_grammar_parser’?
+  690 |         const llama_grammar_stack  & stack,
+      |               ^~~~~~~~~~~~~~~~~~~
+      |               llama_grammar_parser
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:691:15: error: ‘llama_grammar_stacks’ has not been declared
+  691 |               llama_grammar_stacks & new_stacks) {
+      |               ^~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp: In function ‘void llama_grammar_advance_stack(const int&, const int&, int&)’:
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:692:15: error: request for member ‘empty’ in ‘stack’, which is of non-class type ‘const int’
+  692 |     if (stack.empty()) {
+      |               ^~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:693:34: error: request for member ‘begin’ in ‘new_stacks’, which is of non-class type ‘int’
+  693 |         if (std::find(new_stacks.begin(), new_stacks.end(), stack) == new_stacks.end()) {
+      |                                  ^~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:693:54: error: request for member ‘end’ in ‘new_stacks’, which is of non-class type ‘int’
+  693 |         if (std::find(new_stacks.begin(), new_stacks.end(), stack) == new_stacks.end()) {
+      |                                                      ^~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:693:82: error: request for member ‘end’ in ‘new_stacks’, which is of non-class type ‘int’
+  693 |         if (std::find(new_stacks.begin(), new_stacks.end(), stack) == new_stacks.end()) {
+      |                                                                                  ^~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:694:24: error: request for member ‘emplace_back’ in ‘new_stacks’, which is of non-class type ‘int’
+  694 |             new_stacks.emplace_back(stack);
+      |                        ^~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:699:47: error: request for member ‘back’ in ‘stack’, which is of non-class type ‘const int’
+  699 |     const llama_grammar_element * pos = stack.back();
+      |                                               ^~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:704:58: error: invalid types ‘const int[const size_t {aka const long unsigned int}]’ for array subscript
+  704 |             const llama_grammar_element * subpos  = rules[rule_id].data();
+      |                                                          ^
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:707:17: error: ‘llama_grammar_stack’ was not declared in this scope; did you mean ‘llama_grammar_parser’?
+  707 |                 llama_grammar_stack new_stack(stack.begin(), stack.end() - 1);
+      |                 ^~~~~~~~~~~~~~~~~~~
+      |                 llama_grammar_parser
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:710:21: error: ‘new_stack’ was not declared in this scope; did you mean ‘new_stacks’?
+  710 |                     new_stack.push_back(pos + 1);
+      |                     ^~~~~~~~~
+      |                     new_stacks
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:714:21: error: ‘new_stack’ was not declared in this scope; did you mean ‘new_stacks’?
+  714 |                     new_stack.push_back(subpos);
+      |                     ^~~~~~~~~
+      |                     new_stacks
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:716:52: error: ‘new_stack’ was not declared in this scope; did you mean ‘new_stacks’?
+  716 |                 llama_grammar_advance_stack(rules, new_stack, new_stacks);
+      |                                                    ^~~~~~~~~
+      |                                                    new_stacks
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:733:38: error: request for member ‘begin’ in ‘new_stacks’, which is of non-class type ‘int’
+  733 |             if (std::find(new_stacks.begin(), new_stacks.end(), stack) == new_stacks.end()) {
+      |                                      ^~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:733:58: error: request for member ‘end’ in ‘new_stacks’, which is of non-class type ‘int’
+  733 |             if (std::find(new_stacks.begin(), new_stacks.end(), stack) == new_stacks.end()) {
+      |                                                          ^~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:733:86: error: request for member ‘end’ in ‘new_stacks’, which is of non-class type ‘int’
+  733 |             if (std::find(new_stacks.begin(), new_stacks.end(), stack) == new_stacks.end()) {
+      |                                                                                      ^~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:735:28: error: request for member ‘emplace_back’ in ‘new_stacks’, which is of non-class type ‘int’
+  735 |                 new_stacks.emplace_back(stack);
+      |                            ^~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp: At global scope:
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:746:8: error: ‘llama_grammar_candidates’ does not name a type; did you mean ‘llama_grammar_candidate’?
+  746 | static llama_grammar_candidates llama_grammar_reject_candidates(
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+      |        llama_grammar_candidate
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:766:15: error: ‘llama_grammar_rules’ does not name a type; did you mean ‘llama_grammar_parser’?
+  766 |         const llama_grammar_rules & rules,
+      |               ^~~~~~~~~~~~~~~~~~~
+      |               llama_grammar_parser
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp: In function ‘bool llama_grammar_detect_left_recursion(const int&, size_t, std::vector<bool>*, std::vector<bool>*, std::vector<bool>*)’:
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:777:11: error: ‘llama_grammar_rule’ does not name a type; did you mean ‘llama_grammar_parser’?
+  777 |     const llama_grammar_rule & rule = rules[rule_index];
+      |           ^~~~~~~~~~~~~~~~~~
+      |           llama_grammar_parser
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:782:28: error: ‘rule’ was not declared in this scope; did you mean ‘rules’?
+  782 |     for (size_t i = 0; i < rule.size(); i++) {
+      |                            ^~~~
+      |                            rules
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:797:28: error: ‘rule’ was not declared in this scope; did you mean ‘rules’?
+  797 |     for (size_t i = 0; i < rule.size(); i++) {
+      |                            ^~~~
+      |                            rules
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp: At global scope:
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:818:7: error: ‘llama_grammar_rules’ does not name a type; did you mean ‘llama_grammar_parser’?
+  818 | const llama_grammar_rules & llama_grammar_get_rules(const struct llama_grammar * grammar) {
+      |       ^~~~~~~~~~~~~~~~~~~
+      |       llama_grammar_parser
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:822:1: error: ‘llama_grammar_stacks’ does not name a type; did you mean ‘llama_grammar_parser’?
+  822 | llama_grammar_stacks & llama_grammar_get_stacks(struct llama_grammar * grammar) {
+      | ^~~~~~~~~~~~~~~~~~~~
+      | llama_grammar_parser
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp: In function ‘void llama_grammar_accept(llama_grammar*, uint32_t)’:
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:827:5: error: ‘llama_grammar_stacks’ was not declared in this scope; did you mean ‘llama_grammar_parser’?
+  827 |     llama_grammar_stacks stacks_new;
+      |     ^~~~~~~~~~~~~~~~~~~~
+      |     llama_grammar_parser
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:828:5: error: ‘stacks_new’ was not declared in this scope
+  828 |     stacks_new.reserve(grammar->stacks.size());
+      |     ^~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:828:33: error: ‘struct llama_grammar’ has no member named ‘stacks’
+  828 |     stacks_new.reserve(grammar->stacks.size());
+      |                                 ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:830:40: error: ‘struct llama_grammar’ has no member named ‘stacks’
+  830 |     for (const auto & stack : grammar->stacks) {
+      |                                        ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:840:13: error: ‘llama_grammar_stack’ was not declared in this scope; did you mean ‘llama_grammar_parser’?
+  840 |             llama_grammar_stack new_stack(stack.begin(), stack.end() - 1);
+      |             ^~~~~~~~~~~~~~~~~~~
+      |             llama_grammar_parser
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:842:17: error: ‘new_stack’ was not declared in this scope
+  842 |                 new_stack.push_back(pos);
+      |                 ^~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:844:50: error: ‘struct llama_grammar’ has no member named ‘rules’
+  844 |             llama_grammar_advance_stack(grammar->rules, new_stack, stacks_new);
+      |                                                  ^~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:844:57: error: ‘new_stack’ was not declared in this scope
+  844 |             llama_grammar_advance_stack(grammar->rules, new_stack, stacks_new);
+      |                                                         ^~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:848:14: error: ‘struct llama_grammar’ has no member named ‘stacks’
+  848 |     grammar->stacks = std::move(stacks_new);
+      |              ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp: At global scope:
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:851:1: error: ‘llama_grammar_candidates’ does not name a type; did you mean ‘llama_grammar_candidate’?
+  851 | llama_grammar_candidates llama_grammar_reject_candidates_for_stack(
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+      | llama_grammar_candidate
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp: In function ‘llama_grammar* llama_grammar_init_impl(const llama_vocab*, const llama_grammar_element**, size_t, size_t)’:
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:916:5: error: ‘llama_grammar_rules’ was not declared in this scope; did you mean ‘llama_grammar_parser’?
+  916 |     llama_grammar_rules vec_rules(n_rules);
+      |     ^~~~~~~~~~~~~~~~~~~
+      |     llama_grammar_parser
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:919:13: error: ‘vec_rules’ was not declared in this scope; did you mean ‘n_rules’?
+  919 |             vec_rules[i].push_back(*pos);
+      |             ^~~~~~~~~
+      |             n_rules
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:921:9: error: ‘vec_rules’ was not declared in this scope; did you mean ‘n_rules’?
+  921 |         vec_rules[i].push_back({LLAMA_GRETYPE_END, 0});
+      |         ^~~~~~~~~
+      |         n_rules
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:932:49: error: ‘vec_rules’ was not declared in this scope; did you mean ‘n_rules’?
+  932 |         if (llama_grammar_detect_left_recursion(vec_rules, i, &rules_visited, &rules_in_progress, &rules_may_be_empty)) {
+      |                                                 ^~~~~~~~~
+      |                                                 n_rules
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:939:5: error: ‘llama_grammar_stacks’ was not declared in this scope; did you mean ‘llama_grammar_parser’?
+  939 |     llama_grammar_stacks stacks;
+      |     ^~~~~~~~~~~~~~~~~~~~
+      |     llama_grammar_parser
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:940:11: error: ‘vec_rules’ was not declared in this scope; did you mean ‘n_rules’?
+  940 |     pos = vec_rules[start_rule_index].data();
+      |           ^~~~~~~~~
+      |           n_rules
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:942:9: error: ‘llama_grammar_stack’ was not declared in this scope; did you mean ‘llama_grammar_parser’?
+  942 |         llama_grammar_stack stack;
+      |         ^~~~~~~~~~~~~~~~~~~
+      |         llama_grammar_parser
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:945:13: error: ‘stack’ was not declared in this scope; did you mean ‘obstack’?
+  945 |             stack.push_back(pos);
+      |             ^~~~~
+      |             obstack
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:947:48: error: ‘stack’ was not declared in this scope; did you mean ‘obstack’?
+  947 |         llama_grammar_advance_stack(vec_rules, stack, stacks);
+      |                                                ^~~~~
+      |                                                obstack
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:947:55: error: ‘stacks’ was not declared in this scope
+  947 |         llama_grammar_advance_stack(vec_rules, stack, stacks);
+      |                                                       ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:963:71: error: ‘stacks’ was not declared in this scope
+  963 |     return new llama_grammar { vocab, std::move(vec_rules), std::move(stacks), {}, };
+      |                                                                       ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:963:84: error: could not convert ‘{vocab, <expression error>, <expression error>, <brace-enclosed initializer list>()}’ from ‘<brace-enclosed initializer list>’ to ‘llama_grammar’
+  963 |     return new llama_grammar { vocab, std::move(vec_rules), std::move(stacks), {}, };
+      |                                                                                    ^
+      |                                                                                    |
+      |                                                                                    <brace-enclosed initializer list>
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp: In function ‘llama_grammar* llama_grammar_init_impl(const llama_vocab*, const char*, const char*)’:
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:975:16: error: ‘struct llama_grammar_parser’ has no member named ‘rules’
+  975 |     if (parser.rules.empty()) {
+      |                ^~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:981:27: error: request for member ‘find’ in ‘parser.llama_grammar_parser::symbol_ids’, which is of non-class type ‘int’
+  981 |     if (parser.symbol_ids.find("root") == parser.symbol_ids.end()) {
+      |                           ^~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:981:61: error: request for member ‘end’ in ‘parser.llama_grammar_parser::symbol_ids’, which is of non-class type ‘int’
+  981 |     if (parser.symbol_ids.find("root") == parser.symbol_ids.end()) {
+      |                                                             ^~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:986:69: error: ‘struct llama_grammar_parser’ has no member named ‘c_rules’
+  986 |     std::vector<const llama_grammar_element *> grammar_rules(parser.c_rules());
+      |                                                                     ^~~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:989:55: error: request for member ‘at’ in ‘parser.llama_grammar_parser::symbol_ids’, which is of non-class type ‘int’
+  989 |     const size_t start_rule_index = parser.symbol_ids.at(grammar_root);
+      |                                                       ^~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:994:5: error: ‘llama_grammar_rules’ was not declared in this scope; did you mean ‘llama_grammar_parser’?
+  994 |     llama_grammar_rules vec_rules(n_rules);
+      |     ^~~~~~~~~~~~~~~~~~~
+      |     llama_grammar_parser
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:997:13: error: ‘vec_rules’ was not declared in this scope; did you mean ‘n_rules’?
+  997 |             vec_rules[i].push_back(*pos);
+      |             ^~~~~~~~~
+      |             n_rules
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:999:9: error: ‘vec_rules’ was not declared in this scope; did you mean ‘n_rules’?
+  999 |         vec_rules[i].push_back({LLAMA_GRETYPE_END, 0});
+      |         ^~~~~~~~~
+      |         n_rules
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1010:49: error: ‘vec_rules’ was not declared in this scope; did you mean ‘n_rules’?
+ 1010 |         if (llama_grammar_detect_left_recursion(vec_rules, i, &rules_visited, &rules_in_progress, &rules_may_be_empty)) {
+      |                                                 ^~~~~~~~~
+      |                                                 n_rules
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1017:5: error: ‘llama_grammar_stacks’ was not declared in this scope; did you mean ‘llama_grammar_parser’?
+ 1017 |     llama_grammar_stacks stacks;
+      |     ^~~~~~~~~~~~~~~~~~~~
+      |     llama_grammar_parser
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1018:11: error: ‘vec_rules’ was not declared in this scope; did you mean ‘n_rules’?
+ 1018 |     pos = vec_rules[start_rule_index].data();
+      |           ^~~~~~~~~
+      |           n_rules
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1020:9: error: ‘llama_grammar_stack’ was not declared in this scope; did you mean ‘llama_grammar_parser’?
+ 1020 |         llama_grammar_stack stack;
+      |         ^~~~~~~~~~~~~~~~~~~
+      |         llama_grammar_parser
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1023:13: error: ‘stack’ was not declared in this scope; did you mean ‘obstack’?
+ 1023 |             stack.push_back(pos);
+      |             ^~~~~
+      |             obstack
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1025:48: error: ‘stack’ was not declared in this scope; did you mean ‘obstack’?
+ 1025 |         llama_grammar_advance_stack(vec_rules, stack, stacks);
+      |                                                ^~~~~
+      |                                                obstack
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1025:55: error: ‘stacks’ was not declared in this scope
+ 1025 |         llama_grammar_advance_stack(vec_rules, stack, stacks);
+      |                                                       ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1041:71: error: ‘stacks’ was not declared in this scope
+ 1041 |     return new llama_grammar { vocab, std::move(vec_rules), std::move(stacks), {}, };
+      |                                                                       ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1041:84: error: could not convert ‘{vocab, <expression error>, <expression error>, <brace-enclosed initializer list>()}’ from ‘<brace-enclosed initializer list>’ to ‘llama_grammar’
+ 1041 |     return new llama_grammar { vocab, std::move(vec_rules), std::move(stacks), {}, };
+      |                                                                                    ^
+      |                                                                                    |
+      |                                                                                    <brace-enclosed initializer list>
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp: In function ‘llama_grammar* llama_grammar_clone_impl(const llama_grammar&)’:
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1055:17: error: ‘const struct llama_grammar’ has no member named ‘rules’
+ 1055 |         grammar.rules,
+      |                 ^~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1056:17: error: ‘const struct llama_grammar’ has no member named ‘stacks’
+ 1056 |         grammar.stacks,
+      |                 ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1058:5: error: could not convert ‘{grammar.llama_grammar::vocab, <expression error>, <expression error>, grammar.llama_grammar::partial_utf8}’ from ‘<brace-enclosed initializer list>’ to ‘llama_grammar’
+ 1058 |     };
+      |     ^
+      |     |
+      |     <brace-enclosed initializer list>
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1061:38: error: ‘struct llama_grammar’ has no member named ‘stacks’
+ 1061 |     for (size_t is = 0; is < result->stacks.size(); is++) {
+      |                                      ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1062:42: error: ‘struct llama_grammar’ has no member named ‘stacks’
+ 1062 |         for (size_t ie = 0; ie < result->stacks[is].size(); ie++) {
+      |                                          ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1063:48: error: ‘const struct llama_grammar’ has no member named ‘rules’
+ 1063 |             for (size_t ir0 = 0; ir0 < grammar.rules.size(); ir0++) {
+      |                                                ^~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1064:52: error: ‘const struct llama_grammar’ has no member named ‘rules’
+ 1064 |                 for (size_t ir1 = 0; ir1 < grammar.rules[ir0].size(); ir1++) {
+      |                                                    ^~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1065:33: error: ‘const struct llama_grammar’ has no member named ‘stacks’
+ 1065 |                     if (grammar.stacks[is][ie] == &grammar.rules[ir0][ir1]) {
+      |                                 ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1065:60: error: ‘const struct llama_grammar’ has no member named ‘rules’
+ 1065 |                     if (grammar.stacks[is][ie] == &grammar.rules[ir0][ir1]) {
+      |                                                            ^~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1066:33: error: ‘struct llama_grammar’ has no member named ‘stacks’
+ 1066 |                         result->stacks[is][ie] =  &result->rules[ir0][ir1];
+      |                                 ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1066:60: error: ‘struct llama_grammar’ has no member named ‘rules’
+ 1066 |                         result->stacks[is][ie] =  &result->rules[ir0][ir1];
+      |                                                            ^~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp: In function ‘void llama_grammar_apply_impl(const llama_grammar&, llama_token_data_array*)’:
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1080:39: error: ‘const struct llama_grammar’ has no member named ‘stacks’
+ 1080 |     for (const auto & stack : grammar.stacks) {
+      |                                       ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1090:5: error: ‘llama_grammar_candidates’ was not declared in this scope; did you mean ‘llama_grammar_candidate’?
+ 1090 |     llama_grammar_candidates candidates_grammar;
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~
+      |     llama_grammar_candidate
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1091:5: error: ‘candidates_grammar’ was not declared in this scope
+ 1091 |     candidates_grammar.reserve(cur_p->size);
+      |     ^~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1109:66: error: ‘const struct llama_grammar’ has no member named ‘rules’
+ 1109 |     const auto rejects = llama_grammar_reject_candidates(grammar.rules, grammar.stacks, candidates_grammar);
+      |                                                                  ^~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1109:81: error: ‘const struct llama_grammar’ has no member named ‘stacks’
+ 1109 |     const auto rejects = llama_grammar_reject_candidates(grammar.rules, grammar.stacks, candidates_grammar);
+      |                                                                                 ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1109:26: error: ‘llama_grammar_reject_candidates’ was not declared in this scope; did you mean ‘llama_grammar_candidate’?
+ 1109 |     const auto rejects = llama_grammar_reject_candidates(grammar.rules, grammar.stacks, candidates_grammar);
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                          llama_grammar_candidate
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp: In function ‘void llama_grammar_accept_impl(llama_grammar&, llama_token)’:
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1119:43: error: ‘struct llama_grammar’ has no member named ‘stacks’
+ 1119 |         for (const auto & stack : grammar.stacks) {
+      |                                           ^~~~~~
+In file included from /home/ggml/work/llama.cpp/src/../include/llama.h:4,
+                 from /home/ggml/work/llama.cpp/src/llama-grammar.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama-grammar.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-grammar.cpp:1138:26: error: ‘struct llama_grammar’ has no member named ‘stacks’
+ 1138 |     GGML_ASSERT(!grammar.stacks.empty());
+      |                          ^~~~~~
+/home/ggml/work/llama.cpp/ggml/src/../include/ggml.h:273:30: note: in definition of macro ‘GGML_ASSERT’
+  273 | #define GGML_ASSERT(x) if (!(x)) GGML_ABORT("GGML_ASSERT(%s) failed", #x)
+      |                              ^
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:188: src/CMakeFiles/llama.dir/llama-grammar.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1767: src/CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m9.359s
+user	0m14.032s
+sys	0m1.714s
