@@ -1,0 +1,224 @@
+Looking in indexes: https://pypi.org/simple, https://download.pytorch.org/whl/cpu, https://download.pytorch.org/whl/cpu, https://download.pytorch.org/whl/cpu, https://download.pytorch.org/whl/cpu
+Requirement already satisfied: numpy~=1.26.4 in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from -r /Users/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 1)) (1.26.4)
+Requirement already satisfied: sentencepiece~=0.2.0 in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from -r /Users/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 2)) (0.2.0)
+Requirement already satisfied: transformers<5.0.0,>=4.45.1 in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from -r /Users/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (4.46.3)
+Requirement already satisfied: gguf>=0.1.0 in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from -r /Users/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 4)) (0.13.0)
+Requirement already satisfied: protobuf<5.0.0,>=4.21.0 in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from -r /Users/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 5)) (4.25.5)
+Requirement already satisfied: torch~=2.2.1 in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from -r /Users/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (2.2.2)
+Requirement already satisfied: filelock in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from transformers<5.0.0,>=4.45.1->-r /Users/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (3.16.1)
+Requirement already satisfied: huggingface-hub<1.0,>=0.23.2 in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from transformers<5.0.0,>=4.45.1->-r /Users/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (0.26.2)
+Requirement already satisfied: packaging>=20.0 in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from transformers<5.0.0,>=4.45.1->-r /Users/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (24.2)
+Requirement already satisfied: pyyaml>=5.1 in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from transformers<5.0.0,>=4.45.1->-r /Users/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (6.0.2)
+Requirement already satisfied: regex!=2019.12.17 in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from transformers<5.0.0,>=4.45.1->-r /Users/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (2024.11.6)
+Requirement already satisfied: requests in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from transformers<5.0.0,>=4.45.1->-r /Users/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (2.32.3)
+Requirement already satisfied: tokenizers<0.21,>=0.20 in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from transformers<5.0.0,>=4.45.1->-r /Users/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (0.20.3)
+Requirement already satisfied: safetensors>=0.4.1 in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from transformers<5.0.0,>=4.45.1->-r /Users/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (0.4.5)
+Requirement already satisfied: tqdm>=4.27 in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from transformers<5.0.0,>=4.45.1->-r /Users/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (4.67.0)
+Requirement already satisfied: typing-extensions>=4.8.0 in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from torch~=2.2.1->-r /Users/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (4.12.2)
+Requirement already satisfied: sympy in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from torch~=2.2.1->-r /Users/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (1.13.3)
+Requirement already satisfied: networkx in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from torch~=2.2.1->-r /Users/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (3.4.2)
+Requirement already satisfied: jinja2 in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from torch~=2.2.1->-r /Users/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (3.1.4)
+Requirement already satisfied: fsspec in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from torch~=2.2.1->-r /Users/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (2024.10.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from jinja2->torch~=2.2.1->-r /Users/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (3.0.2)
+Requirement already satisfied: charset-normalizer<4,>=2 in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from requests->transformers<5.0.0,>=4.45.1->-r /Users/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (3.4.0)
+Requirement already satisfied: idna<4,>=2.5 in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from requests->transformers<5.0.0,>=4.45.1->-r /Users/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (3.10)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from requests->transformers<5.0.0,>=4.45.1->-r /Users/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (2.2.3)
+Requirement already satisfied: certifi>=2017.4.17 in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from requests->transformers<5.0.0,>=4.45.1->-r /Users/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (2024.8.30)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from sympy->torch~=2.2.1->-r /Users/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (1.3.0)
+Obtaining file:///Users/ggml/work/llama.cpp/gguf-py
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: numpy>=1.17 in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from gguf==0.13.0) (1.26.4)
+Requirement already satisfied: pyyaml>=5.1 in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from gguf==0.13.0) (6.0.2)
+Requirement already satisfied: sentencepiece<=0.2.0,>=0.1.98 in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from gguf==0.13.0) (0.2.0)
+Requirement already satisfied: tqdm>=4.27 in /Users/ggml/mnt/llama.cpp/venv/lib/python3.12/site-packages (from gguf==0.13.0) (4.67.0)
+Building wheels for collected packages: gguf
+  Building editable for gguf (pyproject.toml): started
+  Building editable for gguf (pyproject.toml): finished with status 'done'
+  Created wheel for gguf: filename=gguf-0.13.0-py3-none-any.whl size=3397 sha256=d56c772ff3e56e809af65837b3afbb9e8186c3d46d9f9803440b5fae6acdd9d0
+  Stored in directory: /private/var/folders/3z/y7wjb5257l1dj_dxrng2zq0h0000gn/T/pip-ephem-wheel-cache-glx6bzl1/wheels/57/e8/ad/c90c2fcd445a1780e6969131e27698e4f239a16d34ccd95852
+Successfully built gguf
+Installing collected packages: gguf
+  Attempting uninstall: gguf
+    Found existing installation: gguf 0.13.0
+    Uninstalling gguf-0.13.0:
+      Successfully uninstalled gguf-0.13.0
+Successfully installed gguf-0.13.0
++ gg_run_ctest_debug
++ cd /Users/ggml/work/llama.cpp
++ tee /Users/ggml/results/llama.cpp/a2/c12c41a9db52ee624a24ff7e66eade8322ad9a/ggml-100-mac-m4/ctest_debug.log
++ rm -rf build-ci-debug
++ mkdir build-ci-debug
++ cd build-ci-debug
++ set -e
++ gg_check_build_requirements
++ command -v cmake
++ command -v make
++ command -v ctest
++ tee -a /Users/ggml/results/llama.cpp/a2/c12c41a9db52ee624a24ff7e66eade8322ad9a/ggml-100-mac-m4/ctest_debug-cmake.log
++ cmake -DCMAKE_BUILD_TYPE=Debug -DLLAMA_FATAL_WARNINGS=ON -DGGML_METAL=ON -DGGML_METAL_USE_BF16=ON ..
+-- The C compiler identification is AppleClang 16.0.0.16000026
+-- The CXX compiler identification is AppleClang 16.0.0.16000026
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.39.5 (Apple Git-154)")
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: arm64
+-- Including CPU backend
+-- Accelerate framework found
+-- Could NOT find OpenMP_C (missing: OpenMP_C_FLAGS OpenMP_C_LIB_NAMES) 
+-- Could NOT find OpenMP_CXX (missing: OpenMP_CXX_FLAGS OpenMP_CXX_LIB_NAMES) 
+-- Could NOT find OpenMP (missing: OpenMP_C_FOUND OpenMP_CXX_FOUND) 
+CMake Warning at ggml/src/ggml-cpu/CMakeLists.txt:53 (message):
+  OpenMP not found
+Call Stack (most recent call first):
+  ggml/src/CMakeLists.txt:299 (ggml_add_cpu_backend_variant_impl)
+
+
+-- ARM detected
+-- Performing Test GGML_COMPILER_SUPPORTS_FP16_FORMAT_I3E
+-- Performing Test GGML_COMPILER_SUPPORTS_FP16_FORMAT_I3E - Failed
+-- ARM -mcpu not found, -mcpu=native will be used
+-- Performing Test GGML_MACHINE_SUPPORTS_dotprod
+-- Performing Test GGML_MACHINE_SUPPORTS_dotprod - Success
+-- Performing Test GGML_MACHINE_SUPPORTS_i8mm
+-- Performing Test GGML_MACHINE_SUPPORTS_i8mm - Success
+-- Performing Test GGML_MACHINE_SUPPORTS_sve
+-- Performing Test GGML_MACHINE_SUPPORTS_sve - Failed
+-- ARM feature DOTPROD enabled
+-- ARM feature MATMUL_INT8 enabled
+-- ARM feature FMA enabled
+-- ARM feature FP16_VECTOR_ARITHMETIC enabled
+-- Adding CPU backend variant ggml-cpu: -mcpu=native+dotprod+i8mm+nosve 
+-- Looking for dgemm_
+-- Looking for dgemm_ - found
+-- Found BLAS: /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/System/Library/Frameworks/Accelerate.framework
+-- BLAS found, Libraries: /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/System/Library/Frameworks/Accelerate.framework
+-- BLAS found, Includes: 
+-- Including BLAS backend
+-- Metal framework found
+-- The ASM compiler identification is AppleClang
+-- Found assembler: /Library/Developer/CommandLineTools/usr/bin/cc
+-- Including METAL backend
+-- Configuring done (2.8s)
+-- Generating done (0.2s)
+-- Build files have been written to: /Users/ggml/work/llama.cpp/build-ci-debug
+
+real	0m3.031s
+user	0m0.856s
+sys	0m1.358s
++ tee -a /Users/ggml/results/llama.cpp/a2/c12c41a9db52ee624a24ff7e66eade8322ad9a/ggml-100-mac-m4/ctest_debug-make.log
+++ nproc
++ make -j10
+[  0%] Generating build details from Git
+[  0%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  1%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  0%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  2%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  3%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  3%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  3%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  5%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+-- Found Git: /usr/bin/git (found version "2.39.5 (Apple Git-154)")
+[  5%] Built target xxhash
+[  5%] Built target sha1
+[  5%] Built target sha256
+[  6%] Linking CXX shared library libggml-base.dylib
+[  7%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  7%] Built target ggml-base
+[  8%] Generate assembly for embedded Metal library
+Embedding Metal library
+[  8%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[  8%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[  8%] Building CXX object ggml/src/ggml-blas/CMakeFiles/ggml-blas.dir/ggml-blas.cpp.o
+[  9%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 13%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.o
+[ 13%] Built target build_info
+[ 14%] Linking CXX shared library libggml-blas.dylib
+[ 14%] Linking CXX shared library libggml-cpu.dylib
+[ 14%] Building C object ggml/src/ggml-metal/CMakeFiles/ggml-metal.dir/ggml-metal.m.o
+[ 15%] Building ASM object ggml/src/ggml-metal/CMakeFiles/ggml-metal.dir/__/__/__/autogenerated/ggml-metal-embed.s.o
+[ 15%] Built target ggml-cpu
+[ 15%] Built target ggml-blas
+[ 15%] Linking C shared library libggml-metal.dylib
+[ 15%] Built target ggml-metal
+[ 16%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+/Users/ggml/work/llama.cpp/ggml/src/ggml-backend-reg.cpp:70:31: error: 'codecvt_utf8_utf16<wchar_t>' is deprecated [-Werror,-Wdeprecated-declarations]
+   70 |     std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
+      |                               ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/codecvt:569:28: note: 'codecvt_utf8_utf16<wchar_t>' has been explicitly marked deprecated here
+  569 | class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 codecvt_utf8_utf16 : public __codecvt_utf8_utf16<_Elem> {
+      |                            ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:1022:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+ 1022 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+      |                                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:995:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  995 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+/Users/ggml/work/llama.cpp/ggml/src/ggml-backend-reg.cpp:70:10: error: 'wstring_convert<std::codecvt_utf8_utf16<wchar_t>>' is deprecated [-Werror,-Wdeprecated-declarations]
+   70 |     std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
+      |          ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/locale:3114:28: note: 'wstring_convert<std::codecvt_utf8_utf16<wchar_t>>' has been explicitly marked deprecated here
+ 3114 | class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 wstring_convert {
+      |                            ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:1022:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+ 1022 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+      |                                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:995:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  995 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+/Users/ggml/work/llama.cpp/ggml/src/ggml-backend-reg.cpp:75:31: error: 'codecvt_utf8_utf16<wchar_t>' is deprecated [-Werror,-Wdeprecated-declarations]
+   75 |     std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
+      |                               ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/codecvt:569:28: note: 'codecvt_utf8_utf16<wchar_t>' has been explicitly marked deprecated here
+  569 | class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 codecvt_utf8_utf16 : public __codecvt_utf8_utf16<_Elem> {
+      |                            ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:1022:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+ 1022 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+      |                                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:995:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  995 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+/Users/ggml/work/llama.cpp/ggml/src/ggml-backend-reg.cpp:75:10: error: 'wstring_convert<std::codecvt_utf8_utf16<wchar_t>>' is deprecated [-Werror,-Wdeprecated-declarations]
+   75 |     std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
+      |          ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/locale:3114:28: note: 'wstring_convert<std::codecvt_utf8_utf16<wchar_t>>' has been explicitly marked deprecated here
+ 3114 | class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 wstring_convert {
+      |                            ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:1022:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+ 1022 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+      |                                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:995:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  995 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+4 errors generated.
+make[2]: *** [ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o] Error 1
+make[1]: *** [ggml/src/CMakeFiles/ggml.dir/all] Error 2
+make: *** [all] Error 2
++ cur=2
++ echo 2
++ set +x
+cat: /Users/ggml/results/llama.cpp/a2/c12c41a9db52ee624a24ff7e66eade8322ad9a/ggml-100-mac-m4/ctest_debug-ctest.log: No such file or directory
