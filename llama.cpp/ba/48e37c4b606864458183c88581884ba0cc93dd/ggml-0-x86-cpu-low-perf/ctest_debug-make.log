@@ -1,0 +1,70 @@
+++ nproc
++ make -j4
+[  0%] Generating build details from Git
+[  2%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  2%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  2%] Built target sha256
+[  2%] Built target xxhash
+[  2%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  3%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  4%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  5%] Built target sha1
+[  5%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  6%] Linking CXX shared library libggml-base.so
+[  7%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  7%] Built target build_info
+[  7%] Built target ggml-base
+[  7%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[  8%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[  9%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.o
+[ 12%] Linking CXX shared library libggml-cpu.so
+[ 12%] Built target ggml-cpu
+[ 13%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 13%] Linking CXX shared library libggml.so
+[ 13%] Built target ggml
+[ 13%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 13%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 13%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 14%] Building CXX object src/CMakeFiles/llama.dir/llama-adapter.cpp.o
+[ 15%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 16%] Linking CXX executable ../../bin/llama-gguf
+[ 16%] Built target llama-gguf-hash
+[ 16%] Built target llama-gguf
+[ 16%] Building CXX object src/CMakeFiles/llama.dir/llama-arch.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/llama.dir/llama-batch.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/llama.dir/llama-chat.cpp.o
+[ 18%] Building CXX object src/CMakeFiles/llama.dir/llama-context.cpp.o
+[ 18%] Building CXX object src/CMakeFiles/llama.dir/llama-hparams.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-impl.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+In file included from /home/ggml/work/llama.cpp/src/llama-impl.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-impl.cpp: In function ‘std::string format(const char*, ...)’:
+/home/ggml/work/llama.cpp/src/llama-impl.cpp:83:37: error: ‘INT_MAX’ was not declared in this scope
+   83 |     GGML_ASSERT(size >= 0 && size < INT_MAX); // NOLINT
+      |                                     ^~~~~~~
+/home/ggml/work/llama.cpp/ggml/src/../include/ggml.h:273:30: note: in definition of macro ‘GGML_ASSERT’
+  273 | #define GGML_ASSERT(x) if (!(x)) GGML_ABORT("GGML_ASSERT(%s) failed", #x)
+      |                              ^
+/home/ggml/work/llama.cpp/src/llama-impl.cpp:7:1: note: ‘INT_MAX’ is defined in header ‘<climits>’; did you forget to ‘#include <climits>’?
+    6 | #include <vector>
+  +++ |+#include <climits>
+    7 | 
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:174: src/CMakeFiles/llama.dir/llama-impl.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:1767: src/CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m7.128s
+user	0m13.005s
+sys	0m1.178s
