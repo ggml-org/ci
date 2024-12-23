@@ -1,0 +1,210 @@
+++ nproc
++ make -j6
+[  0%] Generating build details from Git
+[  0%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  1%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  3%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  3%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  3%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  3%] Built target xxhash
+[  3%] Built target sha256
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  5%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  5%] Built target sha1
+[  5%] Linking CXX shared library libggml-base.so
+[  5%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  5%] Built target build_info
+[  5%] Built target ggml-base
+[  5%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[  6%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[  7%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[  7%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/acc.cu.o
+[  7%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/arange.cu.o
+[  7%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[  8%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[  8%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[  8%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.o
+[  9%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/argmax.cu.o
+[  9%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/argsort.cu.o
+[ 10%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/binbcast.cu.o
+[ 10%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/clamp.cu.o
+[ 10%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/concat.cu.o
+[ 11%] Linking CXX shared library libggml-cpu.so
+[ 12%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/conv-transpose-1d.cu.o
+[ 12%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/convert.cu.o
+[ 12%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/count-equal.cu.o
+[ 13%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/cpy.cu.o
+[ 13%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/cross-entropy-loss.cu.o
+[ 14%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/diagmask.cu.o
+[ 14%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/fattn-tile-f32.cu.o
+[ 14%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/fattn-tile-f16.cu.o
+[ 15%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/fattn.cu.o
+[ 15%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/getrows.cu.o
+[ 15%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/ggml-cuda.cu.o
+[ 16%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/im2col.cu.o
+[ 16%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/mmq.cu.o
+[ 17%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/mmv.cu.o
+[ 17%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/mmvq.cu.o
+[ 17%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/norm.cu.o
+[ 18%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/opt-step-adamw.cu.o
+[ 18%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/out-prod.cu.o
+[ 18%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/pad.cu.o
+[ 19%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/pool2d.cu.o
+[ 19%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/quantize.cu.o
+[ 20%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/rope.cu.o
+[ 20%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/scale.cu.o
+[ 20%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/softmax.cu.o
+[ 21%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/sum.cu.o
+[ 21%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/sumrows.cu.o
+[ 21%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/tsembd.cu.o
+[ 22%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/unary.cu.o
+[ 22%] Built target ggml-cpu
+[ 23%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/wkv6.cu.o
+[ 23%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/upscale.cu.o
+[ 23%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqfloat-cpb16.cu.o
+[ 23%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqfloat-cpb32.cu.o
+[ 24%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqhalf-cpb16.cu.o
+[ 24%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqhalf-cpb32.cu.o
+[ 24%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqhalf-cpb8.cu.o
+[ 25%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq1_s.cu.o
+[ 25%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq2_s.cu.o
+[ 26%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq2_xs.cu.o
+[ 26%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq2_xxs.cu.o
+[ 26%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq3_s.cu.o
+[ 27%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq3_xxs.cu.o
+[ 27%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq4_nl.cu.o
+[ 27%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq4_xs.cu.o
+[ 28%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q2_k.cu.o
+[ 28%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q3_k.cu.o
+[ 29%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q4_0.cu.o
+[ 29%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q4_1.cu.o
+[ 29%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q4_k.cu.o
+[ 30%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q5_0.cu.o
+[ 30%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q5_1.cu.o
+[ 30%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q5_k.cu.o
+[ 31%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q6_k.cu.o
+[ 31%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q8_0.cu.o
+[ 32%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs128-q4_0-q4_0.cu.o
+[ 32%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs128-q4_0-q4_0.cu.o
+[ 32%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs128-q8_0-q8_0.cu.o
+[ 33%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs128-q8_0-q8_0.cu.o
+[ 33%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs128-f16-f16.cu.o
+[ 33%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs256-f16-f16.cu.o
+[ 34%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs64-f16-f16.cu.o
+[ 34%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs128-f16-f16.cu.o
+[ 35%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs256-f16-f16.cu.o
+[ 35%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs64-f16-f16.cu.o
+[ 35%] Linking CUDA shared library libggml-cuda.so
+[ 35%] Built target ggml-cuda
+[ 35%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 35%] Linking CXX shared library libggml.so
+[ 35%] Built target ggml
+[ 35%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 35%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 36%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 36%] Building CXX object src/CMakeFiles/llama.dir/llama-arch.cpp.o
+[ 37%] Building CXX object src/CMakeFiles/llama.dir/llama-batch.cpp.o
+[ 37%] Building CXX object src/CMakeFiles/llama.dir/llama-adapter.cpp.o
+[ 38%] Linking CXX executable ../../bin/llama-gguf
+[ 38%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 38%] Built target llama-gguf-hash
+[ 38%] Building CXX object src/CMakeFiles/llama.dir/llama-chat.cpp.o
+[ 39%] Building CXX object src/CMakeFiles/llama.dir/llama-context.cpp.o
+[ 39%] Built target llama-gguf
+[ 39%] Building CXX object src/CMakeFiles/llama.dir/llama-hparams.cpp.o
+[ 39%] Building CXX object src/CMakeFiles/llama.dir/llama-impl.cpp.o
+/home/ggml/work/llama.cpp/src/llama-impl.cpp: In function ‘void llama_log_internal_v(ggml_log_level, const char*, __va_list_tag*)’:
+/home/ggml/work/llama.cpp/src/llama-impl.cpp:45:5: error: ‘va_copy’ was not declared in this scope
+   45 |     va_copy(args_copy, args);
+      |     ^~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.cpp:57:5: error: ‘va_end’ was not declared in this scope
+   57 |     va_end(args_copy);
+      |     ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.cpp: In function ‘void llama_log_internal(ggml_log_level, const char*, ...)’:
+/home/ggml/work/llama.cpp/src/llama-impl.cpp:62:5: error: ‘va_start’ was not declared in this scope
+   62 |     va_start(args, format);
+      |     ^~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.cpp:64:5: error: ‘va_end’ was not declared in this scope
+   64 |     va_end(args);
+      |     ^~~~~~
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:174: src/CMakeFiles/llama.dir/llama-impl.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+/home/ggml/work/llama.cpp/src/llama-adapter.cpp: In function ‘void llama_lora_adapter_init_impl(llama_model&, const char*, llama_lora_adapter&)’:
+/home/ggml/work/llama.cpp/src/llama-adapter.cpp:162:20: error: ‘runtime_error’ is not a member of ‘std’
+  162 |         throw std::runtime_error("failed to load lora adapter file from " + std::string(path_lora));
+      |                    ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-adapter.cpp:181:24: error: ‘runtime_error’ is not a member of ‘std’
+  181 |             throw std::runtime_error("expect general.type to be 'adapter', but got: " + general_type);
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-adapter.cpp:187:24: error: ‘runtime_error’ is not a member of ‘std’
+  187 |             throw std::runtime_error("model arch and LoRA arch mismatch");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-adapter.cpp:192:24: error: ‘runtime_error’ is not a member of ‘std’
+  192 |             throw std::runtime_error("expect adapter.type to be 'lora', but got: " + adapter_type);
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-adapter.cpp:245:24: error: ‘runtime_error’ is not a member of ‘std’
+  245 |             throw std::runtime_error("LoRA tensor '" + name + "' has unexpected suffix");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-adapter.cpp:255:24: error: ‘runtime_error’ is not a member of ‘std’
+  255 |             throw std::runtime_error("LoRA tensor pair for '" + name + "' is missing one component");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-adapter.cpp:261:24: error: ‘runtime_error’ is not a member of ‘std’
+  261 |             throw std::runtime_error("LoRA tensor '" + name + "' does not exist in base model");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-adapter.cpp:267:24: error: ‘runtime_error’ is not a member of ‘std’
+  267 |             throw std::runtime_error("tensor '" + name + "' has incorrect shape");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-adapter.cpp:270:24: error: ‘runtime_error’ is not a member of ‘std’
+  270 |             throw std::runtime_error("lora_a tensor is not transposed (hint: adapter from \"finetune\" example is no longer supported)");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-adapter.cpp:290:28: error: ‘runtime_error’ is not a member of ‘std’
+  290 |                 throw std::runtime_error("failed to allocate buffer for lora adapter\n");
+      |                            ^~~~~~~~~~~~~
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:90: src/CMakeFiles/llama.dir/llama-adapter.cpp.o] Error 1
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘void llama_data_read::read_model_info(const llama_context*)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:270:24: error: ‘runtime_error’ is not a member of ‘std’
+  270 |             throw std::runtime_error(format("wrong model arch: '%s' instead of '%s'", arch_str.c_str(), cur_arch_str.c_str()));
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘void llama_data_read::read_output_ids(llama_context*)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:294:24: error: ‘runtime_error’ is not a member of ‘std’
+  294 |             throw std::runtime_error("could not reserve outputs");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp:304:32: error: ‘runtime_error’ is not a member of ‘std’
+  304 |                     throw std::runtime_error(format("invalid output id, %d does not fit in batch size of %u", id, ctx->cparams.n_batch));
+      |                                ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘void llama_data_read::read_logits(llama_context*)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:318:24: error: ‘runtime_error’ is not a member of ‘std’
+  318 |             throw std::runtime_error("logits buffer too small");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘void llama_data_read::read_embeddings(llama_context*)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:331:24: error: ‘runtime_error’ is not a member of ‘std’
+  331 |             throw std::runtime_error("embeddings buffer too small");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘void llama_data_read::read_kv_cache(llama_context*, llama_seq_id)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:569:24: error: ‘runtime_error’ is not a member of ‘std’
+  569 |             throw std::runtime_error("failed to restore kv cache");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘virtual void llama_data_write_buffer::write(const void*, size_t)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:601:24: error: ‘runtime_error’ is not a member of ‘std’
+  601 |             throw std::runtime_error("unexpectedly reached end of buffer");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘virtual void llama_data_write_buffer::write_tensor_data(const ggml_tensor*, size_t, size_t)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:611:24: error: ‘runtime_error’ is not a member of ‘std’
+  611 |             throw std::runtime_error("unexpectedly reached end of buffer");
+      |                        ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘virtual const uint8_t* llama_data_read_buffer::read(size_t)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:634:24: error: ‘runtime_error’ is not a member of ‘std’
+  634 |             throw std::runtime_error("unexpectedly reached end of buffer");
+      |                        ^~~~~~~~~~~~~
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:146: src/CMakeFiles/llama.dir/llama-context.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1813: src/CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m11.287s
+user	0m15.171s
+sys	0m2.448s
