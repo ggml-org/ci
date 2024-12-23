@@ -1,0 +1,129 @@
+++ nproc
++ make -j4
+[  0%] Generating build details from Git
+[  1%] Building CXX object ggml/src/ggml-vulkan/vulkan-shaders/CMakeFiles/vulkan-shaders-gen.dir/vulkan-shaders-gen.cpp.o
+[  1%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  1%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+-- Found Git: /usr/bin/git (found version "2.43.0") 
+[  1%] Built target sha256
+[  2%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  2%] Linking CXX executable ../../../../bin/vulkan-shaders-gen
+[  2%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  3%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  4%] Built target xxhash
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  5%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  5%] Linking CXX shared library libggml-base.so
+[  6%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  6%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  6%] Built target sha1
+[  6%] Built target vulkan-shaders-gen
+[  6%] Built target build_info
+[  6%] Built target ggml-base
+[  7%] Generate vulkan shaders
+ggml_vulkan: Generating and compiling shaders to SPIR-V
+[  8%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[  8%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[ 10%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.o
+[ 12%] Linking CXX shared library libggml-cpu.so
+[ 12%] Built target ggml-cpu
+[ 13%] Building CXX object ggml/src/ggml-vulkan/CMakeFiles/ggml-vulkan.dir/ggml-vulkan.cpp.o
+[ 13%] Building CXX object ggml/src/ggml-vulkan/CMakeFiles/ggml-vulkan.dir/ggml-vulkan-shaders.cpp.o
+[ 13%] Linking CXX shared library libggml-vulkan.so
+[ 13%] Built target ggml-vulkan
+[ 13%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 14%] Linking CXX shared library libggml.so
+[ 14%] Built target ggml
+[ 15%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 15%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/llama.dir/llama-adapter.cpp.o
+[ 16%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 17%] Linking CXX executable ../../bin/llama-gguf
+[ 18%] Building CXX object src/CMakeFiles/llama.dir/llama-arch.cpp.o
+[ 18%] Building CXX object src/CMakeFiles/llama.dir/llama-batch.cpp.o
+[ 18%] Built target llama-gguf-hash
+[ 18%] Built target llama-gguf
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-context.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-chat.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-hparams.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-impl.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/llama.dir/llama-kv-cache.cpp.o
+In file included from /home/ggml/work/llama.cpp/src/llama-batch.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-batch.h:79:33: error: field ‘seq_id_0’ has incomplete type ‘std::array<int, 1>’
+   79 |     std::array<llama_seq_id, 1> seq_id_0 = { 0 }; // default sequence id
+      |                                 ^~~~~~~~
+In file included from /usr/include/c++/13/bits/memory_resource.h:47,
+                 from /usr/include/c++/13/vector:80,
+                 from /home/ggml/work/llama.cpp/src/llama-batch.h:5:
+/usr/include/c++/13/tuple:2019:45: note: declaration of ‘struct std::array<int, 1>’
+ 2019 |   template<typename _Tp, size_t _Nm> struct array;
+      |                                             ^~~~~
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:118: src/CMakeFiles/llama.dir/llama-batch.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:4,
+                 from /home/ggml/work/llama.cpp/src/llama-context.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-batch.h:79:33: error: field ‘seq_id_0’ has incomplete type ‘std::array<int, 1>’
+   79 |     std::array<llama_seq_id, 1> seq_id_0 = { 0 }; // default sequence id
+      |                                 ^~~~~~~~
+In file included from /usr/include/c++/13/bits/memory_resource.h:47,
+                 from /usr/include/c++/13/string:58,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-context.h:3:
+/usr/include/c++/13/tuple:2019:45: note: declaration of ‘struct std::array<int, 1>’
+ 2019 |   template<typename _Tp, size_t _Nm> struct array;
+      |                                             ^~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘virtual void llama_data_write_buffer::write(const void*, size_t)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:605:9: error: ‘memcpy’ was not declared in this scope
+  605 |         memcpy(ptr, src, size);
+      |         ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp:4:1: note: ‘memcpy’ is defined in header ‘<cstring>’; did you forget to ‘#include <cstring>’?
+    3 | #include <stdexcept>
+  +++ |+#include <cstring>
+    4 | 
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘virtual void llama_data_read_buffer::read_to(void*, size_t)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:645:9: error: ‘memcpy’ was not declared in this scope
+  645 |         memcpy(dst, read(size), size);
+      |         ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp:645:9: note: ‘memcpy’ is defined in header ‘<cstring>’; did you forget to ‘#include <cstring>’?
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:146: src/CMakeFiles/llama.dir/llama-context.cpp.o] Error 1
+In file included from /home/ggml/work/llama.cpp/src/llama-kv-cache.cpp:4:
+/home/ggml/work/llama.cpp/src/llama-batch.h:79:33: error: field ‘seq_id_0’ has incomplete type ‘std::array<int, 1>’
+   79 |     std::array<llama_seq_id, 1> seq_id_0 = { 0 }; // default sequence id
+      |                                 ^~~~~~~~
+In file included from /usr/include/c++/13/bits/unique_ptr.h:36,
+                 from /usr/include/c++/13/memory:78,
+                 from /home/ggml/work/llama.cpp/ggml/src/../include/ggml-cpp.h:10,
+                 from /home/ggml/work/llama.cpp/src/llama-kv-cache.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-kv-cache.cpp:1:
+/usr/include/c++/13/tuple:2019:45: note: declaration of ‘struct std::array<int, 1>’
+ 2019 |   template<typename _Tp, size_t _Nm> struct array;
+      |                                             ^~~~~
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:202: src/CMakeFiles/llama.dir/llama-kv-cache.cpp.o] Error 1
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:4,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:5:
+/home/ggml/work/llama.cpp/src/llama-batch.h:79:33: error: field ‘seq_id_0’ has incomplete type ‘std::array<int, 1>’
+   79 |     std::array<llama_seq_id, 1> seq_id_0 = { 0 }; // default sequence id
+      |                                 ^~~~~~~~
+In file included from /usr/include/c++/13/bits/memory_resource.h:47,
+                 from /usr/include/c++/13/string:58,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:1:
+/usr/include/c++/13/tuple:2019:45: note: declaration of ‘struct std::array<int, 1>’
+ 2019 |   template<typename _Tp, size_t _Nm> struct array;
+      |                                             ^~~~~
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:76: src/CMakeFiles/llama.dir/llama.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1857: src/CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m45.476s
+user	1m59.537s
+sys	0m24.377s
