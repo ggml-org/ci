@@ -1,0 +1,71 @@
+++ nproc
++ make -j4
+[  0%] Generating build details from Git
+[  1%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  3%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  3%] Built target xxhash
+[  3%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  3%] Built target sha256
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  4%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  5%] Built target sha1
+[  6%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  6%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  7%] Linking CXX shared library libggml-base.so
+[  7%] Built target build_info
+[  7%] Built target ggml-base
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[  9%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[  9%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.o
+[ 12%] Linking CXX shared library libggml-cpu.so
+[ 12%] Built target ggml-cpu
+[ 13%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 13%] Linking CXX shared library libggml.so
+[ 13%] Built target ggml
+[ 16%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 16%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 16%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 16%] Building CXX object src/CMakeFiles/llama.dir/llama-adapter.cpp.o
+[ 16%] Linking CXX executable ../../bin/llama-gguf
+[ 16%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 16%] Building CXX object src/CMakeFiles/llama.dir/llama-arch.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/llama.dir/llama-batch.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/llama.dir/llama-chat.cpp.o
+[ 18%] Building CXX object src/CMakeFiles/llama.dir/llama-context.cpp.o
+[ 18%] Building CXX object src/CMakeFiles/llama.dir/llama-hparams.cpp.o
+[ 18%] Built target llama-gguf-hash
+[ 18%] Built target llama-gguf
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-impl.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-kv-cache.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-mmap.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/llama.dir/llama-model.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/llama.dir/llama-model-loader.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/llama.dir/llama-sampling.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/llama.dir/llama-vocab.cpp.o
+/home/ggml/work/llama.cpp/src/llama-model-loader.cpp: In member function ‘void llama_model_loader::load_data_for(ggml_tensor*) const’:
+/home/ggml/work/llama.cpp/src/llama-model-loader.cpp:762:13: error: ‘memcpy’ was not declared in this scope
+  762 |             memcpy(cur->data, (uint8_t *)mapping->addr() + w.offs, ggml_nbytes(cur));
+      |             ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-model-loader.cpp:7:1: note: ‘memcpy’ is defined in header ‘<cstring>’; did you forget to ‘#include <cstring>’?
+    6 | #include <future>
+  +++ |+#include <cstring>
+    7 | 
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:244: src/CMakeFiles/llama.dir/llama-model-loader.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:1767: src/CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m7.469s
+user	0m15.166s
+sys	0m1.861s
