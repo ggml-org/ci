@@ -1,0 +1,228 @@
+++ nproc
++ make -j4
+[  0%] Generating build details from Git
+[  1%] Building CXX object ggml/src/ggml-vulkan/vulkan-shaders/CMakeFiles/vulkan-shaders-gen.dir/vulkan-shaders-gen.cpp.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  2%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+-- Found Git: /usr/bin/git (found version "2.43.0") 
+[  2%] Built target sha256
+[  3%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  3%] Linking CXX executable ../../../../bin/vulkan-shaders-gen
+[  3%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  4%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  5%] Built target xxhash
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  6%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  6%] Linking CXX shared library libggml-base.so
+[  6%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  6%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  6%] Built target sha1
+[  6%] Built target build_info
+[  6%] Built target vulkan-shaders-gen
+[  6%] Built target ggml-base
+[  7%] Generate vulkan shaders
+ggml_vulkan: Generating and compiling shaders to SPIR-V
+[  8%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[ 10%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.o
+[ 12%] Linking CXX shared library libggml-cpu.so
+[ 12%] Built target ggml-cpu
+[ 13%] Building CXX object ggml/src/ggml-vulkan/CMakeFiles/ggml-vulkan.dir/ggml-vulkan-shaders.cpp.o
+[ 13%] Building CXX object ggml/src/ggml-vulkan/CMakeFiles/ggml-vulkan.dir/ggml-vulkan.cpp.o
+[ 13%] Linking CXX shared library libggml-vulkan.so
+[ 13%] Built target ggml-vulkan
+[ 13%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 14%] Linking CXX shared library libggml.so
+[ 14%] Built target ggml
+[ 17%] Building CXX object src/CMakeFiles/llama.dir/llama-adapter.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 17%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 17%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 17%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 17%] Linking CXX executable ../../bin/llama-gguf
+[ 18%] Building CXX object src/CMakeFiles/llama.dir/llama-arch.cpp.o
+[ 18%] Building CXX object src/CMakeFiles/llama.dir/llama-batch.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-chat.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-context.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-hparams.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/llama.dir/llama-impl.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/llama.dir/llama-kv-cache.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/llama.dir/llama-mmap.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/llama.dir/llama-model-loader.cpp.o
+[ 23%] Building CXX object src/CMakeFiles/llama.dir/llama-model.cpp.o
+[ 23%] Building CXX object src/CMakeFiles/llama.dir/llama-quant.cpp.o
+[ 23%] Built target llama-gguf-hash
+[ 23%] Built target llama-gguf
+[ 24%] Building CXX object src/CMakeFiles/llama.dir/llama-vocab.cpp.o
+[ 24%] Building CXX object src/CMakeFiles/llama.dir/llama-sampling.cpp.o
+[ 25%] Building CXX object src/CMakeFiles/llama.dir/unicode.cpp.o
+[ 25%] Building CXX object src/CMakeFiles/llama.dir/unicode-data.cpp.o
+/home/ggml/work/llama.cpp/src/llama-model.cpp: In function ‘void llm_load_print_meta(llama_model_loader&, llama_model&)’:
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1800:34: error: ‘function’ in namespace ‘std’ does not name a template type
+ 1800 |     auto print_f = [](const std::function<uint32_t(uint32_t)> & f, uint32_t n) {
+      |                                  ^~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-model.cpp:11:1: note: ‘std::function’ is defined in header ‘<functional>’; did you forget to ‘#include <functional>’?
+   10 | #include <sstream>
+  +++ |+#include <functional>
+   11 | #include <stdexcept>
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1827:6: error: expected ‘)’ before ‘;’ token
+ 1827 |     };
+      |      ^
+      |      )
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1800:22: note: to match this ‘(’
+ 1800 |     auto print_f = [](const std::function<uint32_t(uint32_t)> & f, uint32_t n) {
+      |                      ^
+/home/ggml/work/llama.cpp/src/llama-model.cpp: In lambda function:
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1827:6: error: expected ‘{’ before ‘;’ token
+ 1827 |     };
+      |      ^
+In file included from /home/ggml/work/llama.cpp/src/llama-model.cpp:3:
+/home/ggml/work/llama.cpp/src/llama-model.cpp: In function ‘void llm_load_print_meta(llama_model_loader&, llama_model&)’:
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1841:76: error: no match for call to ‘(llm_load_print_meta(llama_model_loader&, llama_model&)::<lambda(int)>) (llm_load_print_meta(llama_model_loader&, llama_model&)::<lambda(uint32_t)>, const uint32_t&)’
+ 1841 |         LLAMA_LOG_INFO("%s: n_head           = %s\n",     __func__, print_f([&](uint32_t il) { return hparams.n_head(il);    }, hparams.n_layer).c_str());
+      |                                                                     ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h:27:71: note: in definition of macro ‘LLAMA_LOG_INFO’
+   27 | #define LLAMA_LOG_INFO(...)  llama_log_internal(GGML_LOG_LEVEL_INFO , __VA_ARGS__)
+      |                                                                       ^~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1841:76: note: candidate: ‘void (*)(int)’ (conversion)
+ 1841 |         LLAMA_LOG_INFO("%s: n_head           = %s\n",     __func__, print_f([&](uint32_t il) { return hparams.n_head(il);    }, hparams.n_layer).c_str());
+      |                                                                     ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h:27:71: note: in definition of macro ‘LLAMA_LOG_INFO’
+   27 | #define LLAMA_LOG_INFO(...)  llama_log_internal(GGML_LOG_LEVEL_INFO , __VA_ARGS__)
+      |                                                                       ^~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1841:76: note:   candidate expects 2 arguments, 3 provided
+ 1841 |         LLAMA_LOG_INFO("%s: n_head           = %s\n",     __func__, print_f([&](uint32_t il) { return hparams.n_head(il);    }, hparams.n_layer).c_str());
+      |                                                                     ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h:27:71: note: in definition of macro ‘LLAMA_LOG_INFO’
+   27 | #define LLAMA_LOG_INFO(...)  llama_log_internal(GGML_LOG_LEVEL_INFO , __VA_ARGS__)
+      |                                                                       ^~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1800:20: note: candidate: ‘llm_load_print_meta(llama_model_loader&, llama_model&)::<lambda(int)>’
+ 1800 |     auto print_f = [](const std::function<uint32_t(uint32_t)> & f, uint32_t n) {
+      |                    ^
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1800:20: note:   candidate expects 1 argument, 2 provided
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1842:76: error: no match for call to ‘(llm_load_print_meta(llama_model_loader&, llama_model&)::<lambda(int)>) (llm_load_print_meta(llama_model_loader&, llama_model&)::<lambda(uint32_t)>, const uint32_t&)’
+ 1842 |         LLAMA_LOG_INFO("%s: n_head_kv        = %s\n",     __func__, print_f([&](uint32_t il) { return hparams.n_head_kv(il); }, hparams.n_layer).c_str());
+      |                                                                     ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h:27:71: note: in definition of macro ‘LLAMA_LOG_INFO’
+   27 | #define LLAMA_LOG_INFO(...)  llama_log_internal(GGML_LOG_LEVEL_INFO , __VA_ARGS__)
+      |                                                                       ^~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1842:76: note: candidate: ‘void (*)(int)’ (conversion)
+ 1842 |         LLAMA_LOG_INFO("%s: n_head_kv        = %s\n",     __func__, print_f([&](uint32_t il) { return hparams.n_head_kv(il); }, hparams.n_layer).c_str());
+      |                                                                     ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h:27:71: note: in definition of macro ‘LLAMA_LOG_INFO’
+   27 | #define LLAMA_LOG_INFO(...)  llama_log_internal(GGML_LOG_LEVEL_INFO , __VA_ARGS__)
+      |                                                                       ^~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1842:76: note:   candidate expects 2 arguments, 3 provided
+ 1842 |         LLAMA_LOG_INFO("%s: n_head_kv        = %s\n",     __func__, print_f([&](uint32_t il) { return hparams.n_head_kv(il); }, hparams.n_layer).c_str());
+      |                                                                     ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h:27:71: note: in definition of macro ‘LLAMA_LOG_INFO’
+   27 | #define LLAMA_LOG_INFO(...)  llama_log_internal(GGML_LOG_LEVEL_INFO , __VA_ARGS__)
+      |                                                                       ^~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1800:20: note: candidate: ‘llm_load_print_meta(llama_model_loader&, llama_model&)::<lambda(int)>’
+ 1800 |     auto print_f = [](const std::function<uint32_t(uint32_t)> & f, uint32_t n) {
+      |                    ^
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1800:20: note:   candidate expects 1 argument, 2 provided
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1847:76: error: no match for call to ‘(llm_load_print_meta(llama_model_loader&, llama_model&)::<lambda(int)>) (llm_load_print_meta(llama_model_loader&, llama_model&)::<lambda(uint32_t)>, const uint32_t&)’
+ 1847 |         LLAMA_LOG_INFO("%s: n_gqa            = %s\n",     __func__, print_f([&](uint32_t il) { return hparams.n_gqa(il);        }, hparams.n_layer).c_str());
+      |                                                                     ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h:27:71: note: in definition of macro ‘LLAMA_LOG_INFO’
+   27 | #define LLAMA_LOG_INFO(...)  llama_log_internal(GGML_LOG_LEVEL_INFO , __VA_ARGS__)
+      |                                                                       ^~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1847:76: note: candidate: ‘void (*)(int)’ (conversion)
+ 1847 |         LLAMA_LOG_INFO("%s: n_gqa            = %s\n",     __func__, print_f([&](uint32_t il) { return hparams.n_gqa(il);        }, hparams.n_layer).c_str());
+      |                                                                     ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h:27:71: note: in definition of macro ‘LLAMA_LOG_INFO’
+   27 | #define LLAMA_LOG_INFO(...)  llama_log_internal(GGML_LOG_LEVEL_INFO , __VA_ARGS__)
+      |                                                                       ^~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1847:76: note:   candidate expects 2 arguments, 3 provided
+ 1847 |         LLAMA_LOG_INFO("%s: n_gqa            = %s\n",     __func__, print_f([&](uint32_t il) { return hparams.n_gqa(il);        }, hparams.n_layer).c_str());
+      |                                                                     ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h:27:71: note: in definition of macro ‘LLAMA_LOG_INFO’
+   27 | #define LLAMA_LOG_INFO(...)  llama_log_internal(GGML_LOG_LEVEL_INFO , __VA_ARGS__)
+      |                                                                       ^~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1800:20: note: candidate: ‘llm_load_print_meta(llama_model_loader&, llama_model&)::<lambda(int)>’
+ 1800 |     auto print_f = [](const std::function<uint32_t(uint32_t)> & f, uint32_t n) {
+      |                    ^
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1800:20: note:   candidate expects 1 argument, 2 provided
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1848:76: error: no match for call to ‘(llm_load_print_meta(llama_model_loader&, llama_model&)::<lambda(int)>) (llm_load_print_meta(llama_model_loader&, llama_model&)::<lambda(uint32_t)>, const uint32_t&)’
+ 1848 |         LLAMA_LOG_INFO("%s: n_embd_k_gqa     = %s\n",     __func__, print_f([&](uint32_t il) { return hparams.n_embd_k_gqa(il); }, hparams.n_layer).c_str());
+      |                                                                     ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h:27:71: note: in definition of macro ‘LLAMA_LOG_INFO’
+   27 | #define LLAMA_LOG_INFO(...)  llama_log_internal(GGML_LOG_LEVEL_INFO , __VA_ARGS__)
+      |                                                                       ^~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1848:76: note: candidate: ‘void (*)(int)’ (conversion)
+ 1848 |         LLAMA_LOG_INFO("%s: n_embd_k_gqa     = %s\n",     __func__, print_f([&](uint32_t il) { return hparams.n_embd_k_gqa(il); }, hparams.n_layer).c_str());
+      |                                                                     ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h:27:71: note: in definition of macro ‘LLAMA_LOG_INFO’
+   27 | #define LLAMA_LOG_INFO(...)  llama_log_internal(GGML_LOG_LEVEL_INFO , __VA_ARGS__)
+      |                                                                       ^~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1848:76: note:   candidate expects 2 arguments, 3 provided
+ 1848 |         LLAMA_LOG_INFO("%s: n_embd_k_gqa     = %s\n",     __func__, print_f([&](uint32_t il) { return hparams.n_embd_k_gqa(il); }, hparams.n_layer).c_str());
+      |                                                                     ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h:27:71: note: in definition of macro ‘LLAMA_LOG_INFO’
+   27 | #define LLAMA_LOG_INFO(...)  llama_log_internal(GGML_LOG_LEVEL_INFO , __VA_ARGS__)
+      |                                                                       ^~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1800:20: note: candidate: ‘llm_load_print_meta(llama_model_loader&, llama_model&)::<lambda(int)>’
+ 1800 |     auto print_f = [](const std::function<uint32_t(uint32_t)> & f, uint32_t n) {
+      |                    ^
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1800:20: note:   candidate expects 1 argument, 2 provided
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1849:76: error: no match for call to ‘(llm_load_print_meta(llama_model_loader&, llama_model&)::<lambda(int)>) (llm_load_print_meta(llama_model_loader&, llama_model&)::<lambda(uint32_t)>, const uint32_t&)’
+ 1849 |         LLAMA_LOG_INFO("%s: n_embd_v_gqa     = %s\n",     __func__, print_f([&](uint32_t il) { return hparams.n_embd_v_gqa(il); }, hparams.n_layer).c_str());
+      |                                                                     ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h:27:71: note: in definition of macro ‘LLAMA_LOG_INFO’
+   27 | #define LLAMA_LOG_INFO(...)  llama_log_internal(GGML_LOG_LEVEL_INFO , __VA_ARGS__)
+      |                                                                       ^~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1849:76: note: candidate: ‘void (*)(int)’ (conversion)
+ 1849 |         LLAMA_LOG_INFO("%s: n_embd_v_gqa     = %s\n",     __func__, print_f([&](uint32_t il) { return hparams.n_embd_v_gqa(il); }, hparams.n_layer).c_str());
+      |                                                                     ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h:27:71: note: in definition of macro ‘LLAMA_LOG_INFO’
+   27 | #define LLAMA_LOG_INFO(...)  llama_log_internal(GGML_LOG_LEVEL_INFO , __VA_ARGS__)
+      |                                                                       ^~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1849:76: note:   candidate expects 2 arguments, 3 provided
+ 1849 |         LLAMA_LOG_INFO("%s: n_embd_v_gqa     = %s\n",     __func__, print_f([&](uint32_t il) { return hparams.n_embd_v_gqa(il); }, hparams.n_layer).c_str());
+      |                                                                     ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h:27:71: note: in definition of macro ‘LLAMA_LOG_INFO’
+   27 | #define LLAMA_LOG_INFO(...)  llama_log_internal(GGML_LOG_LEVEL_INFO , __VA_ARGS__)
+      |                                                                       ^~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1800:20: note: candidate: ‘llm_load_print_meta(llama_model_loader&, llama_model&)::<lambda(int)>’
+ 1800 |     auto print_f = [](const std::function<uint32_t(uint32_t)> & f, uint32_t n) {
+      |                    ^
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1800:20: note:   candidate expects 1 argument, 2 provided
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1855:76: error: no match for call to ‘(llm_load_print_meta(llama_model_loader&, llama_model&)::<lambda(int)>) (llm_load_print_meta(llama_model_loader&, llama_model&)::<lambda(uint32_t)>, const uint32_t&)’
+ 1855 |         LLAMA_LOG_INFO("%s: n_ff             = %s\n",     __func__, print_f([&](uint32_t il) { return hparams.n_ff(il); }, hparams.n_layer).c_str());
+      |                                                                     ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h:27:71: note: in definition of macro ‘LLAMA_LOG_INFO’
+   27 | #define LLAMA_LOG_INFO(...)  llama_log_internal(GGML_LOG_LEVEL_INFO , __VA_ARGS__)
+      |                                                                       ^~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1855:76: note: candidate: ‘void (*)(int)’ (conversion)
+ 1855 |         LLAMA_LOG_INFO("%s: n_ff             = %s\n",     __func__, print_f([&](uint32_t il) { return hparams.n_ff(il); }, hparams.n_layer).c_str());
+      |                                                                     ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h:27:71: note: in definition of macro ‘LLAMA_LOG_INFO’
+   27 | #define LLAMA_LOG_INFO(...)  llama_log_internal(GGML_LOG_LEVEL_INFO , __VA_ARGS__)
+      |                                                                       ^~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1855:76: note:   candidate expects 2 arguments, 3 provided
+ 1855 |         LLAMA_LOG_INFO("%s: n_ff             = %s\n",     __func__, print_f([&](uint32_t il) { return hparams.n_ff(il); }, hparams.n_layer).c_str());
+      |                                                                     ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.h:27:71: note: in definition of macro ‘LLAMA_LOG_INFO’
+   27 | #define LLAMA_LOG_INFO(...)  llama_log_internal(GGML_LOG_LEVEL_INFO , __VA_ARGS__)
+      |                                                                       ^~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1800:20: note: candidate: ‘llm_load_print_meta(llama_model_loader&, llama_model&)::<lambda(int)>’
+ 1800 |     auto print_f = [](const std::function<uint32_t(uint32_t)> & f, uint32_t n) {
+      |                    ^
+/home/ggml/work/llama.cpp/src/llama-model.cpp:1800:20: note:   candidate expects 1 argument, 2 provided
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:244: src/CMakeFiles/llama.dir/llama-model.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:1857: src/CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m46.439s
+user	2m0.298s
+sys	0m24.615s
