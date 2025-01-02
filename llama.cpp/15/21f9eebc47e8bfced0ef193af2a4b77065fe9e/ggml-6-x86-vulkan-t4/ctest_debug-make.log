@@ -1,0 +1,92 @@
+++ nproc
++ make -j4
+[  0%] Generating build details from Git
+[  1%] Building CXX object ggml/src/ggml-vulkan/vulkan-shaders/CMakeFiles/vulkan-shaders-gen.dir/vulkan-shaders-gen.cpp.o
+[  1%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  1%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+-- Found Git: /usr/bin/git (found version "2.43.0") 
+[  1%] Built target sha256
+[  2%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  2%] Linking CXX executable ../../../../bin/vulkan-shaders-gen
+[  2%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  3%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  4%] Built target xxhash
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  5%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  6%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  6%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  6%] Built target sha1
+[  6%] Linking CXX shared library libggml-base.so
+[  6%] Built target build_info
+[  6%] Built target vulkan-shaders-gen
+[  6%] Built target ggml-base
+[  7%] Generate vulkan shaders
+ggml_vulkan: Generating and compiling shaders to SPIR-V
+[  8%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[  8%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[ 10%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.o
+[ 12%] Linking CXX shared library libggml-cpu.so
+[ 12%] Built target ggml-cpu
+[ 13%] Building CXX object ggml/src/ggml-vulkan/CMakeFiles/ggml-vulkan.dir/ggml-vulkan.cpp.o
+[ 13%] Building CXX object ggml/src/ggml-vulkan/CMakeFiles/ggml-vulkan.dir/ggml-vulkan-shaders.cpp.o
+[ 13%] Linking CXX shared library libggml-vulkan.so
+[ 13%] Built target ggml-vulkan
+[ 13%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 14%] Linking CXX shared library libggml.so
+[ 14%] Built target ggml
+[ 14%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 14%] Building CXX object src/CMakeFiles/llama.dir/llama-adapter.cpp.o
+[ 15%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 17%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 17%] Linking CXX executable ../../bin/llama-gguf
+[ 17%] Built target llama-gguf
+[ 17%] Built target llama-gguf-hash
+[ 18%] Building CXX object src/CMakeFiles/llama.dir/llama-arch.cpp.o
+[ 18%] Building CXX object src/CMakeFiles/llama.dir/llama-batch.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-chat.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-context.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-hparams.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-impl.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+/home/ggml/work/llama.cpp/src/llama-impl.cpp: In function ‘std::string llama_format_tensor_shape(const std::vector<long int>&)’:
+/home/ggml/work/llama.cpp/src/llama-impl.cpp:99:24: error: ‘strlen’ was not declared in this scope
+   99 |         snprintf(buf + strlen(buf), sizeof(buf) - strlen(buf), ", %5" PRId64, ne.at(i));
+      |                        ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.cpp:10:1: note: ‘strlen’ is defined in header ‘<cstring>’; did you forget to ‘#include <cstring>’?
+    9 | #include <sstream>
+  +++ |+#include <cstring>
+   10 | 
+/home/ggml/work/llama.cpp/src/llama-impl.cpp: In function ‘std::string llama_format_tensor_shape(const ggml_tensor*)’:
+/home/ggml/work/llama.cpp/src/llama-impl.cpp:108:24: error: ‘strlen’ was not declared in this scope
+  108 |         snprintf(buf + strlen(buf), sizeof(buf) - strlen(buf), ", %5" PRId64, t->ne[i]);
+      |                        ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-impl.cpp:108:24: note: ‘strlen’ is defined in header ‘<cstring>’; did you forget to ‘#include <cstring>’?
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:174: src/CMakeFiles/llama.dir/llama-impl.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+In file included from /home/ggml/work/llama.cpp/src/llama.cpp:9:
+/home/ggml/work/llama.cpp/src/llama-model-loader.h: In constructor ‘llama_model_loader::llama_tensor_weight::llama_tensor_weight(const llama_file*, uint16_t, const gguf_context*, ggml_tensor*)’:
+/home/ggml/work/llama.cpp/src/llama-model-loader.h:36:28: error: ‘runtime_error’ is not a member of ‘std’
+   36 |                 throw std::runtime_error(format("tensor '%s' not found in the model", ggml_get_name(tensor)));
+      |                            ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-model-loader.h:1:1: note: ‘std::runtime_error’ is defined in header ‘<stdexcept>’; did you forget to ‘#include <stdexcept>’?
+  +++ |+#include <stdexcept>
+    1 | #pragma once
+/home/ggml/work/llama.cpp/src/llama-model-loader.h:41:28: error: ‘runtime_error’ is not a member of ‘std’
+   41 |                 throw std::runtime_error(format("tensor '%s' data is not within the file bounds, model is corrupted or incomplete", ggml_get_name(tensor)));
+      |                            ^~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-model-loader.h:41:28: note: ‘std::runtime_error’ is defined in header ‘<stdexcept>’; did you forget to ‘#include <stdexcept>’?
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:76: src/CMakeFiles/llama.dir/llama.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1857: src/CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m47.057s
+user	2m4.580s
+sys	0m25.030s
