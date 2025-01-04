@@ -1,0 +1,52 @@
++ ctest --output-on-failure
+Test project /Users/ggml/work/ggml/build-ci-release
+      Start  1: test-opt
+ 1/21 Test  #1: test-opt .........................   Passed    1.23 sec
+      Start  2: test-quantize-fns
+ 2/21 Test  #2: test-quantize-fns ................   Passed   14.06 sec
+      Start  3: test-quantize-perf
+ 3/21 Test  #3: test-quantize-perf ...............   Passed    0.21 sec
+      Start  4: test-mul-mat0
+ 4/21 Test  #4: test-mul-mat0 ....................   Passed    0.38 sec
+      Start  5: test-blas0
+ 5/21 Test  #5: test-blas0 .......................   Passed    0.17 sec
+      Start  6: test-mul-mat2
+ 6/21 Test  #6: test-mul-mat2 ....................   Passed    1.29 sec
+      Start  7: test0
+ 7/21 Test  #7: test0 ............................   Passed    0.16 sec
+      Start  8: test-pool
+ 8/21 Test  #8: test-pool ........................   Passed    0.17 sec
+      Start  9: test-arange
+ 9/21 Test  #9: test-arange ......................   Passed    0.22 sec
+      Start 10: test-timestep_embedding
+10/21 Test #10: test-timestep_embedding ..........   Passed    0.21 sec
+      Start 11: test-pad-reflect-1d
+11/21 Test #11: test-pad-reflect-1d ..............   Passed    0.17 sec
+      Start 12: test-conv-transpose
+12/21 Test #12: test-conv-transpose ..............   Passed    0.17 sec
+      Start 13: test-conv-transpose-1d
+13/21 Test #13: test-conv-transpose-1d ...........   Passed    0.36 sec
+      Start 14: test-dup
+14/21 Test #14: test-dup .........................   Passed    0.17 sec
+      Start 15: test-rel-pos
+15/21 Test #15: test-rel-pos .....................   Passed    0.17 sec
+      Start 16: test-customop
+16/21 Test #16: test-customop ....................   Passed    0.17 sec
+      Start 17: test-conv1d
+17/21 Test #17: test-conv1d ......................   Passed    0.22 sec
+      Start 18: test-conv2d
+18/21 Test #18: test-conv2d ......................   Passed    0.21 sec
+      Start 19: test-mul-mat
+19/21 Test #19: test-mul-mat .....................   Passed    0.21 sec
+      Start 20: test-backend-ops
+20/21 Test #20: test-backend-ops .................   Passed   26.43 sec
+      Start 21: test-cont
+21/21 Test #21: test-cont ........................   Passed    0.17 sec
+
+100% tests passed, 0 tests failed out of 21
+
+Total Test time (real) =  46.56 sec
+
+real	0m46.575s
+user	1m1.127s
+sys	0m4.234s
