@@ -1,0 +1,299 @@
+++ nproc
++ make -j8
+[  0%] Generating build details from Git
+[  1%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  2%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  3%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  4%] Built target sha1
+[  4%] Built target sha256
+[  4%] Built target xxhash
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  5%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  6%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/gguf.cpp.o
+[  7%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  7%] Linking CXX shared library libggml-base.so
+[  7%] Built target build_info
+[  7%] Built target ggml-base
+[  9%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 10%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.o
+[ 12%] Linking CXX shared library libggml-cpu.so
+[ 12%] Built target ggml-cpu
+[ 13%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 13%] Linking CXX shared library libggml.so
+[ 13%] Built target ggml
+[ 13%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 14%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 14%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/llama.dir/llama-arch.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/llama.dir/llama-adapter.cpp.o
+[ 16%] Building CXX object src/CMakeFiles/llama.dir/llama-batch.cpp.o
+[ 16%] Building CXX object src/CMakeFiles/llama.dir/llama-chat.cpp.o
+[ 16%] Building CXX object src/CMakeFiles/llama.dir/llama-context.cpp.o
+[ 17%] Linking CXX executable ../../bin/llama-gguf
+[ 18%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+[ 19%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 19%] Built target llama-gguf
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-hparams.cpp.o
+[ 19%] Built target llama-gguf-hash
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-impl.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-kv-cache.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/llama.dir/llama-mmap.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/llama.dir/llama-model-loader.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/llama.dir/llama-model.cpp.o
+In file included from /usr/include/c++/11/bits/stl_algobase.h:64,
+                 from /usr/include/c++/11/memory:63,
+                 from /home/ggml/work/llama.cpp/ggml/src/../include/ggml-cpp.h:11,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.cpp:1:
+/usr/include/c++/11/bits/stl_pair.h: In instantiation of ‘struct std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>’:
+/usr/include/c++/11/ext/aligned_buffer.h:91:28:   required from ‘struct __gnu_cxx::__aligned_buffer<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight> >’
+/usr/include/c++/11/bits/hashtable_policy.h:234:43:   required from ‘struct std::__detail::_Hash_node_value_base<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight> >’
+/usr/include/c++/11/bits/hashtable_policy.h:268:12:   required from ‘struct std::__detail::_Hash_node_value<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>, true>’
+/usr/include/c++/11/bits/hashtable_policy.h:277:12:   required from ‘struct std::__detail::_Hash_node<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>, true>’
+/usr/include/c++/11/bits/hashtable_policy.h:1812:13:   required from ‘struct std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>, true> > >’
+/usr/include/c++/11/bits/hashtable_policy.h:811:13:   required from ‘struct std::__detail::_Insert_base<std::__cxx11::basic_string<char>, std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>, std::allocator<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char> >, std::hash<std::__cxx11::basic_string<char> >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >’
+/usr/include/c++/11/bits/hashtable_policy.h:1004:12:   required from ‘struct std::__detail::_Insert<std::__cxx11::basic_string<char>, std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>, std::allocator<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char> >, std::hash<std::__cxx11::basic_string<char> >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true>, false>’
+/usr/include/c++/11/bits/hashtable.h:180:11:   required from ‘class std::_Hashtable<std::__cxx11::basic_string<char>, std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>, std::allocator<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char> >, std::hash<std::__cxx11::basic_string<char> >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >’
+/usr/include/c++/11/bits/unordered_map.h:105:18:   required from ‘class std::unordered_map<std::__cxx11::basic_string<char>, llama_adapter_lora_weight>’
+/home/ggml/work/llama.cpp/src/llama-adapter.h:62:71:   required from here
+/usr/include/c++/11/bits/stl_pair.h:217:11: error: ‘std::pair<_T1, _T2>::first’ has incomplete type
+  217 |       _T1 first;                 ///< The first member
+      |           ^~~~~
+In file included from /usr/include/c++/11/iosfwd:39,
+                 from /usr/include/c++/11/bits/shared_ptr.h:52,
+                 from /usr/include/c++/11/memory:77,
+                 from /home/ggml/work/llama.cpp/ggml/src/../include/ggml-cpp.h:11,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.cpp:1:
+/usr/include/c++/11/bits/stringfwd.h:74:11: note: declaration of ‘class std::__cxx11::basic_string<char>’
+   74 |     class basic_string;
+      |           ^~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/move.h:57,
+                 from /usr/include/c++/11/bits/stl_pair.h:59,
+                 from /usr/include/c++/11/bits/stl_algobase.h:64,
+                 from /usr/include/c++/11/memory:63,
+                 from /home/ggml/work/llama.cpp/ggml/src/../include/ggml-cpp.h:11,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.cpp:1:
+/usr/include/c++/11/type_traits: In instantiation of ‘struct std::is_copy_assignable<const std::__cxx11::basic_string<char> >’:
+/usr/include/c++/11/type_traits:152:12:   required from ‘struct std::__and_<std::is_copy_assignable<const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::is_copy_assignable<llama_adapter_lora_weight> >’
+/usr/include/c++/11/bits/stl_pair.h:390:7:   required from ‘struct std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>’
+/usr/include/c++/11/ext/aligned_buffer.h:91:28:   required from ‘struct __gnu_cxx::__aligned_buffer<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight> >’
+/usr/include/c++/11/bits/hashtable_policy.h:234:43:   required from ‘struct std::__detail::_Hash_node_value_base<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight> >’
+/usr/include/c++/11/bits/hashtable_policy.h:268:12:   [ skipping 2 instantiation contexts, use -ftemplate-backtrace-limit=0 to disable ]
+/usr/include/c++/11/bits/hashtable_policy.h:1812:13:   required from ‘struct std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>, true> > >’
+/usr/include/c++/11/bits/hashtable_policy.h:811:13:   required from ‘struct std::__detail::_Insert_base<std::__cxx11::basic_string<char>, std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>, std::allocator<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char> >, std::hash<std::__cxx11::basic_string<char> >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >’
+/usr/include/c++/11/bits/hashtable_policy.h:1004:12:   required from ‘struct std::__detail::_Insert<std::__cxx11::basic_string<char>, std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>, std::allocator<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char> >, std::hash<std::__cxx11::basic_string<char> >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true>, false>’
+/usr/include/c++/11/bits/hashtable.h:180:11:   required from ‘class std::_Hashtable<std::__cxx11::basic_string<char>, std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>, std::allocator<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char> >, std::hash<std::__cxx11::basic_string<char> >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >’
+/usr/include/c++/11/bits/unordered_map.h:105:18:   required from ‘class std::unordered_map<std::__cxx11::basic_string<char>, llama_adapter_lora_weight>’
+/home/ggml/work/llama.cpp/src/llama-adapter.h:62:71:   required from here
+/usr/include/c++/11/type_traits:1110:52: error: static assertion failed: template argument must be a complete class or an unbounded array
+ 1110 |       static_assert(std::__is_complete_or_unbounded(__type_identity<_Tp>{}),
+      |                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/11/type_traits:1110:52: note: ‘std::__is_complete_or_unbounded<std::__type_identity<const std::__cxx11::basic_string<char> > >((std::__type_identity<const std::__cxx11::basic_string<char> >{}, std::__type_identity<const std::__cxx11::basic_string<char> >()))’ evaluates to false
+/usr/include/c++/11/type_traits: In instantiation of ‘struct std::is_move_assignable<const std::__cxx11::basic_string<char> >’:
+/usr/include/c++/11/type_traits:152:12:   required from ‘struct std::__and_<std::is_move_assignable<const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::is_move_assignable<llama_adapter_lora_weight> >’
+/usr/include/c++/11/bits/stl_pair.h:401:7:   required from ‘struct std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>’
+/usr/include/c++/11/ext/aligned_buffer.h:91:28:   required from ‘struct __gnu_cxx::__aligned_buffer<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight> >’
+/usr/include/c++/11/bits/hashtable_policy.h:234:43:   required from ‘struct std::__detail::_Hash_node_value_base<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight> >’
+/usr/include/c++/11/bits/hashtable_policy.h:268:12:   [ skipping 2 instantiation contexts, use -ftemplate-backtrace-limit=0 to disable ]
+/usr/include/c++/11/bits/hashtable_policy.h:1812:13:   required from ‘struct std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>, true> > >’
+/usr/include/c++/11/bits/hashtable_policy.h:811:13:   required from ‘struct std::__detail::_Insert_base<std::__cxx11::basic_string<char>, std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>, std::allocator<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char> >, std::hash<std::__cxx11::basic_string<char> >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >’
+/usr/include/c++/11/bits/hashtable_policy.h:1004:12:   required from ‘struct std::__detail::_Insert<std::__cxx11::basic_string<char>, std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>, std::allocator<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char> >, std::hash<std::__cxx11::basic_string<char> >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true>, false>’
+/usr/include/c++/11/bits/hashtable.h:180:11:   required from ‘class std::_Hashtable<std::__cxx11::basic_string<char>, std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>, std::allocator<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char> >, std::hash<std::__cxx11::basic_string<char> >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >’
+/usr/include/c++/11/bits/unordered_map.h:105:18:   required from ‘class std::unordered_map<std::__cxx11::basic_string<char>, llama_adapter_lora_weight>’
+/home/ggml/work/llama.cpp/src/llama-adapter.h:62:71:   required from here
+/usr/include/c++/11/type_traits:1131:52: error: static assertion failed: template argument must be a complete class or an unbounded array
+ 1131 |       static_assert(std::__is_complete_or_unbounded(__type_identity<_Tp>{}),
+      |                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/11/type_traits:1131:52: note: ‘std::__is_complete_or_unbounded<std::__type_identity<const std::__cxx11::basic_string<char> > >((std::__type_identity<const std::__cxx11::basic_string<char> >{}, std::__type_identity<const std::__cxx11::basic_string<char> >()))’ evaluates to false
+In file included from /usr/include/c++/11/string:55,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.cpp:3:
+/usr/include/c++/11/bits/basic_string.h:6871:12: error: specialization of ‘std::hash<std::__cxx11::basic_string<char> >’ after instantiation
+ 6871 |     struct hash<string>
+      |            ^~~~~~~~~~~~
+/usr/include/c++/11/bits/basic_string.h:6871:12: error: redefinition of ‘struct std::hash<std::__cxx11::basic_string<char> >’
+In file included from /usr/include/c++/11/bits/unique_ptr.h:39,
+                 from /usr/include/c++/11/memory:76,
+                 from /home/ggml/work/llama.cpp/ggml/src/../include/ggml-cpp.h:11,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.cpp:1:
+/usr/include/c++/11/bits/functional_hash.h:102:12: note: previous definition of ‘struct std::hash<std::__cxx11::basic_string<char> >’
+  102 |     struct hash : __hash_enum<_Tp>
+      |            ^~~~
+In file included from /usr/include/c++/11/string:55,
+                 from /home/ggml/work/llama.cpp/src/llama-impl.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.cpp:3:
+/usr/include/c++/11/bits/basic_string.h:6880:12: error: specialization of ‘std::__is_fast_hash<std::hash<std::__cxx11::basic_string<char> > >’ after instantiation
+ 6880 |     struct __is_fast_hash<hash<string>> : std::false_type
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/11/bits/basic_string.h:6880:12: error: redefinition of ‘struct std::__is_fast_hash<std::hash<std::__cxx11::basic_string<char> > >’
+In file included from /usr/include/c++/11/bits/unique_ptr.h:39,
+                 from /usr/include/c++/11/memory:76,
+                 from /home/ggml/work/llama.cpp/ggml/src/../include/ggml-cpp.h:11,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.cpp:1:
+/usr/include/c++/11/bits/functional_hash.h:280:12: note: previous definition of ‘struct std::__is_fast_hash<std::hash<std::__cxx11::basic_string<char> > >’
+  280 |     struct __is_fast_hash : public std::true_type
+      |            ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-adapter.cpp: In function ‘llama_adapter_lora* llama_adapter_lora_init(llama_model*, const char*)’:
+/home/ggml/work/llama.cpp/src/llama-adapter.cpp:331:66: error: use of deleted function ‘llama_adapter_lora::llama_adapter_lora()’
+  331 |     struct llama_adapter_lora * adapter = new llama_adapter_lora();
+      |                                                                  ^
+In file included from /home/ggml/work/llama.cpp/src/llama-adapter.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-adapter.h:69:5: note: ‘llama_adapter_lora::llama_adapter_lora()’ is implicitly deleted because the default definition would be ill-formed:
+   69 |     llama_adapter_lora() = default;
+      |     ^~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-adapter.h:69:5: error: use of deleted function ‘std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::unordered_map() [with _Key = std::__cxx11::basic_string<char>; _Tp = llama_adapter_lora_weight; _Hash = std::hash<std::__cxx11::basic_string<char> >; _Pred = std::equal_to<std::__cxx11::basic_string<char> >; _Alloc = std::allocator<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight> >]’
+In file included from /usr/include/c++/11/unordered_map:47,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.h:7,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.cpp:1:
+/usr/include/c++/11/bits/unordered_map.h:141:7: note: ‘std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::unordered_map() [with _Key = std::__cxx11::basic_string<char>; _Tp = llama_adapter_lora_weight; _Hash = std::hash<std::__cxx11::basic_string<char> >; _Pred = std::equal_to<std::__cxx11::basic_string<char> >; _Alloc = std::allocator<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight> >]’ is implicitly deleted because the default definition would be ill-formed:
+  141 |       unordered_map() = default;
+      |       ^~~~~~~~~~~~~
+/usr/include/c++/11/bits/unordered_map.h:141:7: error: use of deleted function ‘std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::_Hashtable() [with _Key = std::__cxx11::basic_string<char>; _Value = std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>; _Alloc = std::allocator<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight> >; _ExtractKey = std::__detail::_Select1st; _Equal = std::equal_to<std::__cxx11::basic_string<char> >; _Hash = std::hash<std::__cxx11::basic_string<char> >; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, false, true>]’
+In file included from /usr/include/c++/11/unordered_map:46,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.h:7,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.cpp:1:
+/usr/include/c++/11/bits/hashtable.h:528:7: note: ‘std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::_Hashtable() [with _Key = std::__cxx11::basic_string<char>; _Value = std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>; _Alloc = std::allocator<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight> >; _ExtractKey = std::__detail::_Select1st; _Equal = std::equal_to<std::__cxx11::basic_string<char> >; _Hash = std::hash<std::__cxx11::basic_string<char> >; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, false, true>]’ is implicitly deleted because the default definition would be ill-formed:
+  528 |       _Hashtable() = default;
+      |       ^~~~~~~~~~
+/usr/include/c++/11/bits/hashtable.h:528:7: error: use of deleted function ‘std::__detail::_Hashtable_base<_Key, _Value, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _Traits>::_Hashtable_base() [with _Key = std::__cxx11::basic_string<char>; _Value = std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>; _ExtractKey = std::__detail::_Select1st; _Equal = std::equal_to<std::__cxx11::basic_string<char> >; _Hash = std::hash<std::__cxx11::basic_string<char> >; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _Traits = std::__detail::_Hashtable_traits<true, false, true>]’
+In file included from /usr/include/c++/11/bits/hashtable.h:35,
+                 from /usr/include/c++/11/unordered_map:46,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.h:7,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.cpp:1:
+/usr/include/c++/11/bits/hashtable_policy.h:1604:7: note: ‘std::__detail::_Hashtable_base<_Key, _Value, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _Traits>::_Hashtable_base() [with _Key = std::__cxx11::basic_string<char>; _Value = std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>; _ExtractKey = std::__detail::_Select1st; _Equal = std::equal_to<std::__cxx11::basic_string<char> >; _Hash = std::hash<std::__cxx11::basic_string<char> >; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _Traits = std::__detail::_Hashtable_traits<true, false, true>]’ is implicitly deleted because the default definition would be ill-formed:
+ 1604 |       _Hashtable_base() = default;
+      |       ^~~~~~~~~~~~~~~
+/usr/include/c++/11/bits/hashtable_policy.h:1604:7: error: use of deleted function ‘std::__detail::_Hash_code_base<_Key, _Value, _ExtractKey, _Hash, _RangeHash, _Unused, __cache_hash_code>::_Hash_code_base() [with _Key = std::__cxx11::basic_string<char>; _Value = std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>; _ExtractKey = std::__detail::_Select1st; _Hash = std::hash<std::__cxx11::basic_string<char> >; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; bool __cache_hash_code = true]’
+/usr/include/c++/11/bits/hashtable_policy.h: In instantiation of ‘std::__detail::_Hashtable_ebo_helper<_Nm, _Tp, true>::_Hashtable_ebo_helper() [with int _Nm = 1; _Tp = std::hash<std::__cxx11::basic_string<char> >]’:
+/usr/include/c++/11/bits/hashtable_policy.h:1210:7:   required from here
+/usr/include/c++/11/bits/hashtable_policy.h:1127:49: error: use of deleted function ‘std::hash<std::__cxx11::basic_string<char> >::hash()’
+ 1127 |       _Hashtable_ebo_helper() noexcept(noexcept(_Tp())) : _Tp() { }
+      |                                                 ^~~~~
+In file included from /usr/include/c++/11/bits/unique_ptr.h:39,
+                 from /usr/include/c++/11/memory:76,
+                 from /home/ggml/work/llama.cpp/ggml/src/../include/ggml-cpp.h:11,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.cpp:1:
+/usr/include/c++/11/bits/functional_hash.h:102:12: note: ‘std::hash<std::__cxx11::basic_string<char> >::hash()’ is implicitly deleted because the default definition would be ill-formed:
+  102 |     struct hash : __hash_enum<_Tp>
+      |            ^~~~
+/usr/include/c++/11/bits/functional_hash.h:102:12: error: no matching function for call to ‘std::__hash_enum<std::__cxx11::basic_string<char>, false>::__hash_enum()’
+/usr/include/c++/11/bits/functional_hash.h:83:7: note: candidate: ‘std::__hash_enum<_Tp, <anonymous> >::__hash_enum(std::__hash_enum<_Tp, <anonymous> >&&) [with _Tp = std::__cxx11::basic_string<char>; bool <anonymous> = false]’
+   83 |       __hash_enum(__hash_enum&&);
+      |       ^~~~~~~~~~~
+/usr/include/c++/11/bits/functional_hash.h:83:7: note:   candidate expects 1 argument, 0 provided
+/usr/include/c++/11/bits/functional_hash.h:102:12: error: ‘std::__hash_enum<_Tp, <anonymous> >::~__hash_enum() [with _Tp = std::__cxx11::basic_string<char>; bool <anonymous> = false]’ is private within this context
+  102 |     struct hash : __hash_enum<_Tp>
+      |            ^~~~
+/usr/include/c++/11/bits/functional_hash.h:84:7: note: declared private here
+   84 |       ~__hash_enum();
+      |       ^
+In file included from /usr/include/c++/11/bits/hashtable.h:35,
+                 from /usr/include/c++/11/unordered_map:46,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.h:7,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.cpp:1:
+/usr/include/c++/11/bits/hashtable_policy.h:1210:7: note: ‘std::__detail::_Hash_code_base<_Key, _Value, _ExtractKey, _Hash, _RangeHash, _Unused, __cache_hash_code>::_Hash_code_base() [with _Key = std::__cxx11::basic_string<char>; _Value = std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>; _ExtractKey = std::__detail::_Select1st; _Hash = std::hash<std::__cxx11::basic_string<char> >; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; bool __cache_hash_code = true]’ is implicitly deleted because the default definition would be ill-formed:
+ 1210 |       _Hash_code_base() = default;
+      |       ^~~~~~~~~~~~~~~
+/usr/include/c++/11/bits/hashtable_policy.h:1210:7: error: use of deleted function ‘std::__detail::_Hashtable_ebo_helper<1, std::hash<std::__cxx11::basic_string<char> >, true>::~_Hashtable_ebo_helper()’
+/usr/include/c++/11/bits/hashtable_policy.h:1124:12: note: ‘std::__detail::_Hashtable_ebo_helper<1, std::hash<std::__cxx11::basic_string<char> >, true>::~_Hashtable_ebo_helper()’ is implicitly deleted because the default definition would be ill-formed:
+ 1124 |     struct _Hashtable_ebo_helper<_Nm, _Tp, true>
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/11/bits/hashtable_policy.h:1124:12: error: use of deleted function ‘std::hash<std::__cxx11::basic_string<char> >::~hash()’
+In file included from /usr/include/c++/11/bits/unique_ptr.h:39,
+                 from /usr/include/c++/11/memory:76,
+                 from /home/ggml/work/llama.cpp/ggml/src/../include/ggml-cpp.h:11,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.cpp:1:
+/usr/include/c++/11/bits/functional_hash.h:102:12: note: ‘std::hash<std::__cxx11::basic_string<char> >::~hash()’ is implicitly deleted because the default definition would be ill-formed:
+  102 |     struct hash : __hash_enum<_Tp>
+      |            ^~~~
+/usr/include/c++/11/bits/functional_hash.h:102:12: error: ‘std::__hash_enum<_Tp, <anonymous> >::~__hash_enum() [with _Tp = std::__cxx11::basic_string<char>; bool <anonymous> = false]’ is private within this context
+/usr/include/c++/11/bits/functional_hash.h:84:7: note: declared private here
+   84 |       ~__hash_enum();
+      |       ^
+In file included from /usr/include/c++/11/bits/hashtable.h:35,
+                 from /usr/include/c++/11/unordered_map:46,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.h:7,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.cpp:1:
+/usr/include/c++/11/bits/hashtable_policy.h:1604:7: error: use of deleted function ‘std::__detail::_Hash_code_base<std::__cxx11::basic_string<char>, std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>, std::__detail::_Select1st, std::hash<std::__cxx11::basic_string<char> >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, true>::~_Hash_code_base()’
+ 1604 |       _Hashtable_base() = default;
+      |       ^~~~~~~~~~~~~~~
+/usr/include/c++/11/bits/hashtable_policy.h:1188:12: note: ‘std::__detail::_Hash_code_base<std::__cxx11::basic_string<char>, std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>, std::__detail::_Select1st, std::hash<std::__cxx11::basic_string<char> >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, true>::~_Hash_code_base()’ is implicitly deleted because the default definition would be ill-formed:
+ 1188 |     struct _Hash_code_base
+      |            ^~~~~~~~~~~~~~~
+/usr/include/c++/11/bits/hashtable_policy.h:1188:12: error: use of deleted function ‘std::__detail::_Hashtable_ebo_helper<1, std::hash<std::__cxx11::basic_string<char> >, true>::~_Hashtable_ebo_helper()’
+In file included from /usr/include/c++/11/unordered_map:46,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.h:7,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.cpp:1:
+/usr/include/c++/11/bits/hashtable.h:528:7: error: use of deleted function ‘std::__detail::_Hashtable_base<std::__cxx11::basic_string<char>, std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char> >, std::hash<std::__cxx11::basic_string<char> >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<true, false, true> >::~_Hashtable_base()’
+  528 |       _Hashtable() = default;
+      |       ^~~~~~~~~~
+In file included from /usr/include/c++/11/bits/hashtable.h:35,
+                 from /usr/include/c++/11/unordered_map:46,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.h:7,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.cpp:1:
+/usr/include/c++/11/bits/hashtable_policy.h:1561:12: note: ‘std::__detail::_Hashtable_base<std::__cxx11::basic_string<char>, std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char> >, std::hash<std::__cxx11::basic_string<char> >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<true, false, true> >::~_Hashtable_base()’ is implicitly deleted because the default definition would be ill-formed:
+ 1561 |     struct _Hashtable_base
+      |            ^~~~~~~~~~~~~~~
+/usr/include/c++/11/bits/hashtable_policy.h:1561:12: error: use of deleted function ‘std::__detail::_Hash_code_base<std::__cxx11::basic_string<char>, std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>, std::__detail::_Select1st, std::hash<std::__cxx11::basic_string<char> >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, true>::~_Hash_code_base()’
+In file included from /usr/include/c++/11/unordered_map:46,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.h:7,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.cpp:1:
+/usr/include/c++/11/bits/hashtable.h:528:7: error: use of deleted function ‘constexpr std::_Enable_default_constructor<false, _Tag>::_Enable_default_constructor() [with _Tag = std::__detail::_Hash_node_base]’
+  528 |       _Hashtable() = default;
+      |       ^~~~~~~~~~
+In file included from /usr/include/c++/11/bits/hashtable.h:36,
+                 from /usr/include/c++/11/unordered_map:46,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.h:7,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.cpp:1:
+/usr/include/c++/11/bits/enable_special_members.h:113:15: note: declared here
+  113 |     constexpr _Enable_default_constructor() noexcept = delete;
+      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/unordered_map:46,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.h:7,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.cpp:1:
+/usr/include/c++/11/bits/hashtable.h: In instantiation of ‘std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::~_Hashtable() [with _Key = std::__cxx11::basic_string<char>; _Value = std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>; _Alloc = std::allocator<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight> >; _ExtractKey = std::__detail::_Select1st; _Equal = std::equal_to<std::__cxx11::basic_string<char> >; _Hash = std::hash<std::__cxx11::basic_string<char> >; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, false, true>]’:
+/usr/include/c++/11/bits/unordered_map.h:102:11:   required from here
+/usr/include/c++/11/bits/hashtable.h:1534:5: error: use of deleted function ‘std::__detail::_Hashtable_base<std::__cxx11::basic_string<char>, std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char> >, std::hash<std::__cxx11::basic_string<char> >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<true, false, true> >::~_Hashtable_base()’
+ 1534 |     }
+      |     ^
+In file included from /usr/include/c++/11/bits/hashtable.h:35,
+                 from /usr/include/c++/11/unordered_map:46,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.h:7,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.cpp:1:
+/usr/include/c++/11/bits/hashtable_policy.h: In instantiation of ‘std::__detail::_Hash_code_base<_Key, _Value, _ExtractKey, _Hash, _RangeHash, _Unused, __cache_hash_code>::__hash_code std::__detail::_Hash_code_base<_Key, _Value, _ExtractKey, _Hash, _RangeHash, _Unused, __cache_hash_code>::_M_hash_code(const _Key&) const [with _Key = std::__cxx11::basic_string<char>; _Value = std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>; _ExtractKey = std::__detail::_Select1st; _Hash = std::hash<std::__cxx11::basic_string<char> >; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; bool __cache_hash_code = true; std::__detail::_Hash_code_base<_Key, _Value, _ExtractKey, _Hash, _RangeHash, _Unused, __cache_hash_code>::__hash_code = long unsigned int]’:
+/usr/include/c++/11/bits/hashtable.h:1593:46:   required from ‘std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::iterator std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::find(const key_type&) [with _Key = std::__cxx11::basic_string<char>; _Value = std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>; _Alloc = std::allocator<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight> >; _ExtractKey = std::__detail::_Select1st; _Equal = std::equal_to<std::__cxx11::basic_string<char> >; _Hash = std::hash<std::__cxx11::basic_string<char> >; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, false, true>; std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::iterator = std::__detail::_Insert_base<std::__cxx11::basic_string<char>, std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>, std::allocator<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char> >, std::hash<std::__cxx11::basic_string<char> >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::iterator; std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::key_type = std::__cxx11::basic_string<char>]’
+/usr/include/c++/11/bits/unordered_map.h:869:25:   required from ‘std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::iterator std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::find(const key_type&) [with _Key = std::__cxx11::basic_string<char>; _Tp = llama_adapter_lora_weight; _Hash = std::hash<std::__cxx11::basic_string<char> >; _Pred = std::equal_to<std::__cxx11::basic_string<char> >; _Alloc = std::allocator<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight> >; std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::iterator = std::__detail::_Insert_base<std::__cxx11::basic_string<char>, std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight>, std::allocator<std::pair<const std::__cxx11::basic_string<char>, llama_adapter_lora_weight> >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char> >, std::hash<std::__cxx11::basic_string<char> >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::iterator; std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::key_type = std::__cxx11::basic_string<char>]’
+/home/ggml/work/llama.cpp/src/llama-adapter.cpp:141:33:   required from here
+/usr/include/c++/11/bits/hashtable_policy.h:1217:23: error: static assertion failed: hash function must be invocable with an argument of key type
+ 1217 |         static_assert(__is_invocable<const _Hash&, const _Key&>{},
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/11/bits/hashtable_policy.h:1217:23: note: ‘std::__is_invocable<const std::hash<std::__cxx11::basic_string<char> >&, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>{}’ evaluates to false
+/usr/include/c++/11/bits/hashtable_policy.h:1219:25: error: no match for call to ‘(const std::hash<std::__cxx11::basic_string<char> >) (const std::__cxx11::basic_string<char>&)’
+ 1219 |         return _M_hash()(__k);
+      |                ~~~~~~~~~^~~~~
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:90: src/CMakeFiles/llama.dir/llama-adapter.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:1767: src/CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m4.177s
+user	0m14.990s
+sys	0m2.049s
