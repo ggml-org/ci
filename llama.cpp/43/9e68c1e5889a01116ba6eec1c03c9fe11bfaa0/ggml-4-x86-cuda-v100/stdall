@@ -1,0 +1,287 @@
+Looking in indexes: https://pypi.org/simple, https://download.pytorch.org/whl/cpu, https://download.pytorch.org/whl/cpu, https://download.pytorch.org/whl/cpu, https://download.pytorch.org/whl/cpu
+Requirement already satisfied: numpy~=1.26.4 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 1)) (1.26.4)
+Requirement already satisfied: sentencepiece~=0.2.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 2)) (0.2.0)
+Requirement already satisfied: transformers<5.0.0,>=4.45.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (4.45.1)
+Requirement already satisfied: gguf>=0.1.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 4)) (0.15.0)
+Requirement already satisfied: protobuf<5.0.0,>=4.21.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 5)) (4.25.3)
+Requirement already satisfied: torch~=2.2.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (2.2.2)
+Requirement already satisfied: tokenizers<0.21,>=0.20 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (0.20.0)
+Requirement already satisfied: filelock in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (3.13.1)
+Requirement already satisfied: huggingface-hub<1.0,>=0.23.2 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (0.25.1)
+Requirement already satisfied: packaging>=20.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (23.2)
+Requirement already satisfied: pyyaml>=5.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (6.0.1)
+Requirement already satisfied: requests in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (2.31.0)
+Requirement already satisfied: tqdm>=4.27 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (4.66.2)
+Requirement already satisfied: regex!=2019.12.17 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (2023.12.25)
+Requirement already satisfied: safetensors>=0.4.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (0.4.2)
+Requirement already satisfied: nvidia-cusparse-cu12==12.1.0.106 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (12.1.0.106)
+Requirement already satisfied: nvidia-cublas-cu12==12.1.3.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (12.1.3.1)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.1.105 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (12.1.105)
+Requirement already satisfied: nvidia-cufft-cu12==11.0.2.54 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (11.0.2.54)
+Requirement already satisfied: jinja2 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (3.1.3)
+Requirement already satisfied: typing-extensions>=4.8.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (4.9.0)
+Requirement already satisfied: nvidia-curand-cu12==10.3.2.106 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (10.3.2.106)
+Requirement already satisfied: sympy in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (1.12)
+Requirement already satisfied: nvidia-cusolver-cu12==11.4.5.107 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (11.4.5.107)
+Requirement already satisfied: triton==2.2.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (2.2.0)
+Requirement already satisfied: networkx in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (3.2.1)
+Requirement already satisfied: nvidia-cudnn-cu12==8.9.2.26 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (8.9.2.26)
+Requirement already satisfied: nvidia-nccl-cu12==2.19.3 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (2.19.3)
+Requirement already satisfied: nvidia-nvtx-cu12==12.1.105 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (12.1.105)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.1.105 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (12.1.105)
+Requirement already satisfied: fsspec in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (2024.2.0)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.1.105 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (12.1.105)
+Requirement already satisfied: nvidia-nvjitlink-cu12 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from nvidia-cusolver-cu12==11.4.5.107->torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (12.3.101)
+Requirement already satisfied: MarkupSafe>=2.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from jinja2->torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (2.1.5)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from requests->transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (2.2.1)
+Requirement already satisfied: idna<4,>=2.5 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from requests->transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (3.6)
+Requirement already satisfied: charset-normalizer<4,>=2 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from requests->transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (3.3.2)
+Requirement already satisfied: certifi>=2017.4.17 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from requests->transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (2024.2.2)
+Requirement already satisfied: mpmath>=0.19 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from sympy->torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (1.3.0)
+Obtaining file:///home/ggml/work/llama.cpp/gguf-py
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: sentencepiece<=0.2.0,>=0.1.98 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from gguf==0.15.0) (0.2.0)
+Requirement already satisfied: tqdm>=4.27 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from gguf==0.15.0) (4.66.2)
+Requirement already satisfied: pyyaml>=5.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from gguf==0.15.0) (6.0.1)
+Requirement already satisfied: numpy>=1.17 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from gguf==0.15.0) (1.26.4)
+Building wheels for collected packages: gguf
+  Building editable for gguf (pyproject.toml): started
+  Building editable for gguf (pyproject.toml): finished with status 'done'
+  Created wheel for gguf: filename=gguf-0.15.0-py3-none-any.whl size=3463 sha256=10c32970a6e7e43d1565f30e5877134e711a09a1c8a63176f923d7cc41855163
+  Stored in directory: /tmp/pip-ephem-wheel-cache-beb7a1g6/wheels/a3/4c/52/c5934ad001d1a70ca5434f11ddc622cad9c0a484e9bf6feda3
+Successfully built gguf
+Installing collected packages: gguf
+  Attempting uninstall: gguf
+    Found existing installation: gguf 0.15.0
+    Uninstalling gguf-0.15.0:
+      Successfully uninstalled gguf-0.15.0
+Successfully installed gguf-0.15.0
++ gg_run_ctest_debug
++ cd /home/ggml/work/llama.cpp
++ rm -rf build-ci-debug
++ tee /home/ggml/results/llama.cpp/43/9e68c1e5889a01116ba6eec1c03c9fe11bfaa0/ggml-4-x86-cuda-v100/ctest_debug.log
++ mkdir build-ci-debug
++ cd build-ci-debug
++ set -e
++ gg_check_build_requirements
++ command -v cmake
++ command -v make
++ command -v ctest
++ tee -a /home/ggml/results/llama.cpp/43/9e68c1e5889a01116ba6eec1c03c9fe11bfaa0/ggml-4-x86-cuda-v100/ctest_debug-cmake.log
++ cmake -DCMAKE_BUILD_TYPE=Debug -DLLAMA_FATAL_WARNINGS=ON -DGGML_CUDA=ON -DCMAKE_CUDA_ARCHITECTURES=native ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- Including CPU backend
+-- Found OpenMP_C: -fopenmp (found version "4.5") 
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5")  
+-- x86 detected
+-- Adding CPU backend variant ggml-cpu: -march=native 
+-- Found CUDAToolkit: /usr/local/cuda-12.2/include (found version "12.2.140") 
+-- CUDA Toolkit found
+-- Using CUDA architectures: native
+-- The CUDA compiler identification is NVIDIA 12.2.140
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda-12.2/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- CUDA host compiler is GNU 11.4.0
+
+-- Including CUDA backend
+-- Configuring done (9.0s)
+-- Generating done (0.2s)
+-- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-debug
+
+real	0m9.246s
+user	0m7.413s
+sys	0m1.846s
++ tee -a /home/ggml/results/llama.cpp/43/9e68c1e5889a01116ba6eec1c03c9fe11bfaa0/ggml-4-x86-cuda-v100/ctest_debug-make.log
+++ nproc
++ make -j6
+[  0%] Generating build details from Git
+[  0%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  0%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  1%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  1%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  2%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  2%] Built target sha256
+[  2%] Built target sha1
+[  2%] Built target xxhash
+[  2%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  3%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  4%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/gguf.cpp.o
+[  4%] Linking CXX shared library libggml-base.so
+[  4%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  4%] Built target build_info
+[  4%] Built target ggml-base
+[  5%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[  6%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[  6%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[  6%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/acc.cu.o
+[  6%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[  7%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[  7%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.o
+[  9%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/arange.cu.o
+[  9%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/argmax.cu.o
+[  9%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/argsort.cu.o
+[ 10%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/binbcast.cu.o
+[ 10%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/clamp.cu.o
+[ 10%] Linking CXX shared library libggml-cpu.so
+[ 11%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/concat.cu.o
+[ 11%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/conv-transpose-1d.cu.o
+[ 11%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/convert.cu.o
+[ 12%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/count-equal.cu.o
+[ 12%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/cpy.cu.o
+[ 12%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/cross-entropy-loss.cu.o
+[ 13%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/diagmask.cu.o
+[ 13%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/fattn-tile-f16.cu.o
+[ 13%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/fattn-tile-f32.cu.o
+[ 14%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/fattn.cu.o
+[ 14%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/getrows.cu.o
+[ 15%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/ggml-cuda.cu.o
+[ 15%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/gla.cu.o
+[ 16%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/im2col.cu.o
+[ 16%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/mmq.cu.o
+[ 16%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/mmv.cu.o
+[ 16%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/mmvq.cu.o
+[ 17%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/norm.cu.o
+[ 17%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/opt-step-adamw.cu.o
+[ 18%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/out-prod.cu.o
+[ 18%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/pad.cu.o
+[ 18%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/pool2d.cu.o
+[ 19%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/quantize.cu.o
+[ 19%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/scale.cu.o
+[ 20%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/softmax.cu.o
+[ 20%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/rope.cu.o
+[ 20%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/sum.cu.o
+[ 20%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/sumrows.cu.o
+[ 21%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/tsembd.cu.o
+[ 22%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/upscale.cu.o
+[ 22%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/unary.cu.o
+[ 22%] Built target ggml-cpu
+[ 22%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/wkv6.cu.o
+[ 22%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqfloat-cpb16.cu.o
+[ 23%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqfloat-cpb32.cu.o
+[ 23%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqhalf-cpb16.cu.o
+[ 23%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqhalf-cpb32.cu.o
+[ 24%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqhalf-cpb8.cu.o
+[ 24%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq1_s.cu.o
+[ 25%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq2_s.cu.o
+[ 25%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq2_xxs.cu.o
+[ 25%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq2_xs.cu.o
+[ 26%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq3_s.cu.o
+[ 26%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq3_xxs.cu.o
+[ 26%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq4_nl.cu.o
+[ 27%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q2_k.cu.o
+[ 27%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq4_xs.cu.o
+[ 27%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q3_k.cu.o
+[ 28%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q4_0.cu.o
+[ 28%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q4_1.cu.o
+[ 29%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q4_k.cu.o
+[ 29%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q5_1.cu.o
+[ 29%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q5_0.cu.o
+[ 30%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q5_k.cu.o
+[ 30%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q6_k.cu.o
+[ 30%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q8_0.cu.o
+[ 31%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs128-q4_0-q4_0.cu.o
+[ 32%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs128-q4_0-q4_0.cu.o
+[ 32%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs128-q8_0-q8_0.cu.o
+[ 32%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs128-q8_0-q8_0.cu.o
+[ 32%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs128-f16-f16.cu.o
+[ 33%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs256-f16-f16.cu.o
+[ 33%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs64-f16-f16.cu.o
+[ 33%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs128-f16-f16.cu.o
+[ 34%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs256-f16-f16.cu.o
+[ 34%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs64-f16-f16.cu.o
+[ 35%] Linking CUDA shared library libggml-cuda.so
+[ 35%] Built target ggml-cuda
+[ 35%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 35%] Linking CXX shared library libggml.so
+[ 35%] Built target ggml
+[ 36%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 36%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 36%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 36%] Building CXX object src/CMakeFiles/llama.dir/llama-adapter.cpp.o
+[ 37%] Building CXX object src/CMakeFiles/llama.dir/llama-arch.cpp.o
+[ 37%] Building CXX object src/CMakeFiles/llama.dir/llama-batch.cpp.o
+[ 37%] Linking CXX executable ../../bin/llama-gguf
+[ 37%] Built target llama-gguf
+[ 37%] Building CXX object src/CMakeFiles/llama.dir/llama-chat.cpp.o
+In file included from /home/ggml/work/llama.cpp/ggml/src/../include/ggml-cpu.h:4,
+                 from /home/ggml/work/llama.cpp/src/../include/llama.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-batch.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama-batch.cpp:1:
+/home/ggml/work/llama.cpp/ggml/src/../include/ggml-backend.h:334:119: error: ‘ggml_backend_graph_copy ggml_backend_graph_copy(ggml_backend_t, ggml_cgraph*)’ hides constructor for ‘struct ggml_backend_graph_copy’ [-Werror=shadow]
+  334 |     GGML_API struct ggml_backend_graph_copy ggml_backend_graph_copy(ggml_backend_t backend, struct ggml_cgraph * graph);
+      |                                                                                                                       ^
+cc1plus: all warnings being treated as errors
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:118: src/CMakeFiles/llama.dir/llama-batch.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+[ 37%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 37%] Built target llama-gguf-hash
+In file included from /home/ggml/work/llama.cpp/ggml/src/../include/ggml-cpu.h:4,
+                 from /home/ggml/work/llama.cpp/src/../include/llama.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.cpp:1:
+/home/ggml/work/llama.cpp/ggml/src/../include/ggml-backend.h:334:119: error: ‘ggml_backend_graph_copy ggml_backend_graph_copy(ggml_backend_t, ggml_cgraph*)’ hides constructor for ‘struct ggml_backend_graph_copy’ [-Werror=shadow]
+  334 |     GGML_API struct ggml_backend_graph_copy ggml_backend_graph_copy(ggml_backend_t backend, struct ggml_cgraph * graph);
+      |                                                                                                                       ^
+cc1plus: all warnings being treated as errors
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:90: src/CMakeFiles/llama.dir/llama-adapter.cpp.o] Error 1
+In file included from /home/ggml/work/llama.cpp/ggml/src/../include/ggml-cpu.h:4,
+                 from /home/ggml/work/llama.cpp/src/../include/llama.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-chat.cpp:3:
+/home/ggml/work/llama.cpp/ggml/src/../include/ggml-backend.h:334:119: error: ‘ggml_backend_graph_copy ggml_backend_graph_copy(ggml_backend_t, ggml_cgraph*)’ hides constructor for ‘struct ggml_backend_graph_copy’ [-Werror=shadow]
+  334 |     GGML_API struct ggml_backend_graph_copy ggml_backend_graph_copy(ggml_backend_t backend, struct ggml_cgraph * graph);
+      |                                                                                                                       ^
+cc1plus: all warnings being treated as errors
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:132: src/CMakeFiles/llama.dir/llama-chat.cpp.o] Error 1
+In file included from /home/ggml/work/llama.cpp/ggml/src/../include/ggml-cpu.h:4,
+                 from /home/ggml/work/llama.cpp/src/../include/llama.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-context.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:5:
+/home/ggml/work/llama.cpp/ggml/src/../include/ggml-backend.h:334:119: error: ‘ggml_backend_graph_copy ggml_backend_graph_copy(ggml_backend_t, ggml_cgraph*)’ hides constructor for ‘struct ggml_backend_graph_copy’ [-Werror=shadow]
+  334 |     GGML_API struct ggml_backend_graph_copy ggml_backend_graph_copy(ggml_backend_t backend, struct ggml_cgraph * graph);
+      |                                                                                                                       ^
+cc1plus: all warnings being treated as errors
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:76: src/CMakeFiles/llama.dir/llama.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1813: src/CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m4.209s
+user	0m9.355s
+sys	0m1.950s
++ cur=2
++ echo 2
++ set +x
+cat: /home/ggml/results/llama.cpp/43/9e68c1e5889a01116ba6eec1c03c9fe11bfaa0/ggml-4-x86-cuda-v100/ctest_debug-ctest.log: No such file or directory
