@@ -1,0 +1,88 @@
+++ nproc
++ make -j4
+[  0%] Generating build details from Git
+[  1%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  1%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  2%] Building CXX object ggml/src/ggml-vulkan/vulkan-shaders/CMakeFiles/vulkan-shaders-gen.dir/vulkan-shaders-gen.cpp.o
+-- Found Git: /usr/bin/git (found version "2.43.0") 
+[  2%] Built target sha256
+[  3%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  3%] Linking CXX executable ../../../../bin/vulkan-shaders-gen
+[  3%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  4%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  5%] Built target xxhash
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  6%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  6%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/gguf.cpp.o
+[  6%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  6%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  7%] Linking CXX shared library libggml-base.so
+[  7%] Built target sha1
+[  7%] Built target build_info
+[  7%] Built target vulkan-shaders-gen
+[  7%] Built target ggml-base
+[  7%] Generate vulkan shaders
+ggml_vulkan: Generating and compiling shaders to SPIR-V
+[  7%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[  7%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[  8%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 10%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.o
+[ 12%] Linking CXX shared library libggml-cpu.so
+[ 12%] Built target ggml-cpu
+[ 13%] Building CXX object ggml/src/ggml-vulkan/CMakeFiles/ggml-vulkan.dir/ggml-vulkan-shaders.cpp.o
+[ 13%] Building CXX object ggml/src/ggml-vulkan/CMakeFiles/ggml-vulkan.dir/ggml-vulkan.cpp.o
+[ 14%] Linking CXX shared library libggml-vulkan.so
+[ 14%] Built target ggml-vulkan
+[ 14%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 15%] Linking CXX shared library libggml.so
+[ 15%] Built target ggml
+[ 16%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 16%] Building CXX object src/CMakeFiles/llama.dir/llama-adapter.cpp.o
+[ 16%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 16%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 17%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 18%] Linking CXX executable ../../bin/llama-gguf
+[ 18%] Built target llama-gguf
+[ 18%] Built target llama-gguf-hash
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-arch.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-batch.cpp.o
+In file included from /home/ggml/work/llama.cpp/ggml/src/../include/ggml-cpu.h:4,
+                 from /home/ggml/work/llama.cpp/src/../include/llama.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.cpp:1:
+/home/ggml/work/llama.cpp/ggml/src/../include/ggml-backend.h:334:119: error: ‘ggml_backend_graph_copy ggml_backend_graph_copy(ggml_backend_t, ggml_cgraph*)’ hides constructor for ‘struct ggml_backend_graph_copy’ [-Werror=shadow]
+  334 |     GGML_API struct ggml_backend_graph_copy ggml_backend_graph_copy(ggml_backend_t backend, struct ggml_cgraph * graph);
+      |                                                                                                                       ^
+cc1plus: all warnings being treated as errors
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:90: src/CMakeFiles/llama.dir/llama-adapter.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+In file included from /home/ggml/work/llama.cpp/ggml/src/../include/ggml-cpu.h:4,
+                 from /home/ggml/work/llama.cpp/src/../include/llama.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-batch.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama-batch.cpp:1:
+/home/ggml/work/llama.cpp/ggml/src/../include/ggml-backend.h:334:119: error: ‘ggml_backend_graph_copy ggml_backend_graph_copy(ggml_backend_t, ggml_cgraph*)’ hides constructor for ‘struct ggml_backend_graph_copy’ [-Werror=shadow]
+  334 |     GGML_API struct ggml_backend_graph_copy ggml_backend_graph_copy(ggml_backend_t backend, struct ggml_cgraph * graph);
+      |                                                                                                                       ^
+cc1plus: all warnings being treated as errors
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:118: src/CMakeFiles/llama.dir/llama-batch.cpp.o] Error 1
+In file included from /home/ggml/work/llama.cpp/ggml/src/../include/ggml-cpu.h:4,
+                 from /home/ggml/work/llama.cpp/src/../include/llama.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-context.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:5:
+/home/ggml/work/llama.cpp/ggml/src/../include/ggml-backend.h:334:119: error: ‘ggml_backend_graph_copy ggml_backend_graph_copy(ggml_backend_t, ggml_cgraph*)’ hides constructor for ‘struct ggml_backend_graph_copy’ [-Werror=shadow]
+  334 |     GGML_API struct ggml_backend_graph_copy ggml_backend_graph_copy(ggml_backend_t backend, struct ggml_cgraph * graph);
+      |                                                                                                                       ^
+cc1plus: all warnings being treated as errors
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:76: src/CMakeFiles/llama.dir/llama.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1857: src/CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m46.539s
+user	2m3.232s
+sys	0m25.429s
