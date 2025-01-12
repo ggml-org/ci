@@ -1,0 +1,456 @@
+++ nproc
++ make -j6
+[  0%] Generating build details from Git
+[  0%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  1%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  2%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  2%] Built target sha1
+[  2%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  2%] Built target sha256
+[  2%] Built target xxhash
+[  3%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  3%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  4%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/gguf.cpp.o
+[  4%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  4%] Linking CXX shared library libggml-base.so
+[  4%] Built target build_info
+[  4%] Built target ggml-base
+[  5%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[  6%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[  6%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[  6%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/acc.cu.o
+[  6%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[  7%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[  7%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[  8%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.o
+[  9%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/arange.cu.o
+[  9%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/argmax.cu.o
+[  9%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/argsort.cu.o
+[ 10%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/binbcast.cu.o
+[ 10%] Linking CXX shared library libggml-cpu.so
+[ 10%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/clamp.cu.o
+[ 11%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/concat.cu.o
+[ 11%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/conv-transpose-1d.cu.o
+[ 11%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/convert.cu.o
+[ 12%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/count-equal.cu.o
+[ 12%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/cpy.cu.o
+[ 13%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/diagmask.cu.o
+[ 13%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/cross-entropy-loss.cu.o
+[ 13%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/fattn-tile-f16.cu.o
+[ 13%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/fattn-tile-f32.cu.o
+[ 14%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/fattn.cu.o
+[ 14%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/getrows.cu.o
+[ 15%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/ggml-cuda.cu.o
+[ 15%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/im2col.cu.o
+[ 15%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/gla.cu.o
+[ 16%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/mmq.cu.o
+[ 16%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/mmv.cu.o
+[ 16%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/mmvq.cu.o
+[ 17%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/norm.cu.o
+[ 17%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/opt-step-adamw.cu.o
+[ 18%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/out-prod.cu.o
+[ 18%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/pad.cu.o
+[ 18%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/pool2d.cu.o
+[ 19%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/quantize.cu.o
+[ 19%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/rope.cu.o
+[ 19%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/scale.cu.o
+[ 20%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/softmax.cu.o
+[ 20%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/sum.cu.o
+[ 20%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/sumrows.cu.o
+[ 21%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/tsembd.cu.o
+[ 21%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/unary.cu.o
+[ 21%] Built target ggml-cpu
+[ 22%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/upscale.cu.o
+[ 22%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/wkv6.cu.o
+[ 22%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqfloat-cpb16.cu.o
+[ 23%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqfloat-cpb32.cu.o
+[ 23%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqhalf-cpb16.cu.o
+[ 23%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqhalf-cpb32.cu.o
+[ 24%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqhalf-cpb8.cu.o
+[ 24%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq1_s.cu.o
+[ 25%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq2_s.cu.o
+[ 25%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq2_xs.cu.o
+[ 25%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq2_xxs.cu.o
+[ 26%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq3_s.cu.o
+[ 26%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq3_xxs.cu.o
+[ 26%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq4_nl.cu.o
+[ 27%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq4_xs.cu.o
+[ 27%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q2_k.cu.o
+[ 27%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q3_k.cu.o
+[ 28%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q4_0.cu.o
+[ 28%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q4_1.cu.o
+[ 29%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q4_k.cu.o
+[ 29%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q5_0.cu.o
+[ 29%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q5_1.cu.o
+[ 30%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q5_k.cu.o
+[ 30%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q6_k.cu.o
+[ 30%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q8_0.cu.o
+[ 31%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs128-q4_0-q4_0.cu.o
+[ 31%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs128-q4_0-q4_0.cu.o
+[ 32%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs128-q8_0-q8_0.cu.o
+[ 32%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs128-q8_0-q8_0.cu.o
+[ 32%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs128-f16-f16.cu.o
+[ 32%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs64-f16-f16.cu.o
+[ 33%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs256-f16-f16.cu.o
+[ 33%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs128-f16-f16.cu.o
+[ 34%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs256-f16-f16.cu.o
+[ 34%] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs64-f16-f16.cu.o
+[ 35%] Linking CUDA shared library libggml-cuda.so
+[ 35%] Built target ggml-cuda
+[ 35%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 35%] Linking CXX shared library libggml.so
+[ 35%] Built target ggml
+[ 36%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 36%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 36%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 36%] Building CXX object src/CMakeFiles/llama.dir/llama-adapter.cpp.o
+[ 37%] Building CXX object src/CMakeFiles/llama.dir/llama-arch.cpp.o
+[ 37%] Building CXX object src/CMakeFiles/llama.dir/llama-batch.cpp.o
+[ 37%] Linking CXX executable ../../bin/llama-gguf
+[ 37%] Built target llama-gguf
+[ 37%] Building CXX object src/CMakeFiles/llama.dir/llama-chat.cpp.o
+In file included from /home/ggml/work/llama.cpp/ggml/src/../include/ggml-cpu.h:4,
+                 from /home/ggml/work/llama.cpp/src/../include/llama.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-batch.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama-batch.cpp:1:
+/home/ggml/work/llama.cpp/ggml/src/../include/ggml-backend.h:334:119: error: ‘ggml_backend_graph_copy ggml_backend_graph_copy(ggml_backend_t, ggml_cgraph*)’ hides constructor for ‘struct ggml_backend_graph_copy’ [-Werror=shadow]
+  334 |     GGML_API struct ggml_backend_graph_copy ggml_backend_graph_copy(ggml_backend_t backend, struct ggml_cgraph * graph);
+      |                                                                                                                       ^
+cc1plus: all warnings being treated as errors
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:118: src/CMakeFiles/llama.dir/llama-batch.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+[ 37%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 37%] Built target llama-gguf-hash
+In file included from /home/ggml/work/llama.cpp/src/llama-arch.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-arch.h: In constructor ‘LLM_TN::LLM_TN(llm_arch)’:
+/home/ggml/work/llama.cpp/src/llama-arch.h:377:21: error: declaration of ‘arch’ shadows a member of ‘LLM_TN’ [-Werror=shadow]
+  377 |     LLM_TN(llm_arch arch) : arch(arch) {}
+      |            ~~~~~~~~~^~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:379:14: note: shadowed declaration is here
+  379 |     llm_arch arch;
+      |              ^~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h: In constructor ‘LLM_TN::LLM_TN(llm_arch)’:
+/home/ggml/work/llama.cpp/src/llama-arch.h:377:21: error: declaration of ‘arch’ shadows a member of ‘LLM_TN’ [-Werror=shadow]
+  377 |     LLM_TN(llm_arch arch) : arch(arch) {}
+      |            ~~~~~~~~~^~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:379:14: note: shadowed declaration is here
+  379 |     llm_arch arch;
+      |              ^~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h: In constructor ‘LLM_TN::LLM_TN(llm_arch)’:
+/home/ggml/work/llama.cpp/src/llama-arch.h:377:21: error: declaration of ‘arch’ shadows a member of ‘LLM_TN’ [-Werror=shadow]
+  377 |     LLM_TN(llm_arch arch) : arch(arch) {}
+      |            ~~~~~~~~~^~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:379:14: note: shadowed declaration is here
+  379 |     llm_arch arch;
+      |              ^~~~
+/home/ggml/work/llama.cpp/src/llama-arch.cpp: In constructor ‘LLM_KV::LLM_KV(llm_arch)’:
+/home/ggml/work/llama.cpp/src/llama-arch.cpp:1446:25: error: declaration of ‘arch’ shadows a member of ‘LLM_KV’ [-Werror=shadow]
+ 1446 | LLM_KV::LLM_KV(llm_arch arch) : arch(arch) {}
+      |                ~~~~~~~~~^~~~
+In file included from /home/ggml/work/llama.cpp/src/llama-arch.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-arch.h:340:14: note: shadowed declaration is here
+  340 |     llm_arch arch;
+      |              ^~~~
+/home/ggml/work/llama.cpp/src/llama-arch.cpp: In constructor ‘LLM_KV::LLM_KV(llm_arch)’:
+/home/ggml/work/llama.cpp/src/llama-arch.cpp:1446:25: error: declaration of ‘arch’ shadows a member of ‘LLM_KV’ [-Werror=shadow]
+ 1446 | LLM_KV::LLM_KV(llm_arch arch) : arch(arch) {}
+      |                ~~~~~~~~~^~~~
+In file included from /home/ggml/work/llama.cpp/src/llama-arch.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-arch.h:340:14: note: shadowed declaration is here
+  340 |     llm_arch arch;
+      |              ^~~~
+/home/ggml/work/llama.cpp/src/llama-arch.cpp: In constructor ‘LLM_KV::LLM_KV(llm_arch)’:
+/home/ggml/work/llama.cpp/src/llama-arch.cpp:1446:25: error: declaration of ‘arch’ shadows a member of ‘LLM_KV’ [-Werror=shadow]
+ 1446 | LLM_KV::LLM_KV(llm_arch arch) : arch(arch) {}
+      |                ~~~~~~~~~^~~~
+In file included from /home/ggml/work/llama.cpp/src/llama-arch.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-arch.h:340:14: note: shadowed declaration is here
+  340 |     llm_arch arch;
+      |              ^~~~
+cc1plus: all warnings being treated as errors
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:104: src/CMakeFiles/llama.dir/llama-arch.cpp.o] Error 1
+In file included from /home/ggml/work/llama.cpp/ggml/src/../include/ggml-cpu.h:4,
+                 from /home/ggml/work/llama.cpp/src/../include/llama.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.cpp:1:
+/home/ggml/work/llama.cpp/ggml/src/../include/ggml-backend.h:334:119: error: ‘ggml_backend_graph_copy ggml_backend_graph_copy(ggml_backend_t, ggml_cgraph*)’ hides constructor for ‘struct ggml_backend_graph_copy’ [-Werror=shadow]
+  334 |     GGML_API struct ggml_backend_graph_copy ggml_backend_graph_copy(ggml_backend_t backend, struct ggml_cgraph * graph);
+      |                                                                                                                       ^
+In file included from /home/ggml/work/llama.cpp/src/llama-adapter.cpp:1:
+/home/ggml/work/llama.cpp/src/llama-adapter.h: In constructor ‘llama_adapter_lora_weight::llama_adapter_lora_weight(ggml_tensor*, ggml_tensor*)’:
+/home/ggml/work/llama.cpp/src/llama-adapter.h:58:76: error: declaration of ‘b’ shadows a member of ‘llama_adapter_lora_weight’ [-Werror=shadow]
+   58 |     llama_adapter_lora_weight(struct ggml_tensor * a, struct ggml_tensor * b) : a(a), b(b) {}
+      |                                                       ~~~~~~~~~~~~~~~~~~~~~^
+/home/ggml/work/llama.cpp/src/llama-adapter.h:48:26: note: shadowed declaration is here
+   48 |     struct ggml_tensor * b = nullptr;
+      |                          ^
+/home/ggml/work/llama.cpp/src/llama-adapter.h:58:52: error: declaration of ‘a’ shadows a member of ‘llama_adapter_lora_weight’ [-Werror=shadow]
+   58 |     llama_adapter_lora_weight(struct ggml_tensor * a, struct ggml_tensor * b) : a(a), b(b) {}
+      |                               ~~~~~~~~~~~~~~~~~~~~~^
+/home/ggml/work/llama.cpp/src/llama-adapter.h:47:26: note: shadowed declaration is here
+   47 |     struct ggml_tensor * a = nullptr;
+      |                          ^
+/home/ggml/work/llama.cpp/src/llama-adapter.h: In constructor ‘llama_adapter_lora_weight::llama_adapter_lora_weight(ggml_tensor*, ggml_tensor*)’:
+/home/ggml/work/llama.cpp/src/llama-adapter.h:58:76: error: declaration of ‘b’ shadows a member of ‘llama_adapter_lora_weight’ [-Werror=shadow]
+   58 |     llama_adapter_lora_weight(struct ggml_tensor * a, struct ggml_tensor * b) : a(a), b(b) {}
+      |                                                       ~~~~~~~~~~~~~~~~~~~~~^
+/home/ggml/work/llama.cpp/src/llama-adapter.h:48:26: note: shadowed declaration is here
+   48 |     struct ggml_tensor * b = nullptr;
+      |                          ^
+/home/ggml/work/llama.cpp/src/llama-adapter.h:58:52: error: declaration of ‘a’ shadows a member of ‘llama_adapter_lora_weight’ [-Werror=shadow]
+   58 |     llama_adapter_lora_weight(struct ggml_tensor * a, struct ggml_tensor * b) : a(a), b(b) {}
+      |                               ~~~~~~~~~~~~~~~~~~~~~^
+/home/ggml/work/llama.cpp/src/llama-adapter.h:47:26: note: shadowed declaration is here
+   47 |     struct ggml_tensor * a = nullptr;
+      |                          ^
+/home/ggml/work/llama.cpp/src/llama-adapter.h: In constructor ‘llama_adapter_lora_weight::llama_adapter_lora_weight(ggml_tensor*, ggml_tensor*)’:
+/home/ggml/work/llama.cpp/src/llama-adapter.h:58:76: error: declaration of ‘b’ shadows a member of ‘llama_adapter_lora_weight’ [-Werror=shadow]
+   58 |     llama_adapter_lora_weight(struct ggml_tensor * a, struct ggml_tensor * b) : a(a), b(b) {}
+      |                                                       ~~~~~~~~~~~~~~~~~~~~~^
+/home/ggml/work/llama.cpp/src/llama-adapter.h:48:26: note: shadowed declaration is here
+   48 |     struct ggml_tensor * b = nullptr;
+      |                          ^
+/home/ggml/work/llama.cpp/src/llama-adapter.h:58:52: error: declaration of ‘a’ shadows a member of ‘llama_adapter_lora_weight’ [-Werror=shadow]
+   58 |     llama_adapter_lora_weight(struct ggml_tensor * a, struct ggml_tensor * b) : a(a), b(b) {}
+      |                               ~~~~~~~~~~~~~~~~~~~~~^
+/home/ggml/work/llama.cpp/src/llama-adapter.h:47:26: note: shadowed declaration is here
+   47 |     struct ggml_tensor * a = nullptr;
+      |                          ^
+In file included from /home/ggml/work/llama.cpp/src/llama-model.h:4,
+                 from /home/ggml/work/llama.cpp/src/llama-adapter.cpp:5:
+/home/ggml/work/llama.cpp/src/llama-arch.h: In constructor ‘LLM_TN::LLM_TN(llm_arch)’:
+/home/ggml/work/llama.cpp/src/llama-arch.h:377:21: error: declaration of ‘arch’ shadows a member of ‘LLM_TN’ [-Werror=shadow]
+  377 |     LLM_TN(llm_arch arch) : arch(arch) {}
+      |            ~~~~~~~~~^~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:379:14: note: shadowed declaration is here
+  379 |     llm_arch arch;
+      |              ^~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h: In constructor ‘LLM_TN::LLM_TN(llm_arch)’:
+/home/ggml/work/llama.cpp/src/llama-arch.h:377:21: error: declaration of ‘arch’ shadows a member of ‘LLM_TN’ [-Werror=shadow]
+  377 |     LLM_TN(llm_arch arch) : arch(arch) {}
+      |            ~~~~~~~~~^~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:379:14: note: shadowed declaration is here
+  379 |     llm_arch arch;
+      |              ^~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h: In constructor ‘LLM_TN::LLM_TN(llm_arch)’:
+/home/ggml/work/llama.cpp/src/llama-arch.h:377:21: error: declaration of ‘arch’ shadows a member of ‘LLM_TN’ [-Werror=shadow]
+  377 |     LLM_TN(llm_arch arch) : arch(arch) {}
+      |            ~~~~~~~~~^~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:379:14: note: shadowed declaration is here
+  379 |     llm_arch arch;
+      |              ^~~~
+cc1plus: all warnings being treated as errors
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:90: src/CMakeFiles/llama.dir/llama-adapter.cpp.o] Error 1
+In file included from /home/ggml/work/llama.cpp/ggml/src/../include/ggml-cpu.h:4,
+                 from /home/ggml/work/llama.cpp/src/../include/llama.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-chat.cpp:3:
+/home/ggml/work/llama.cpp/ggml/src/../include/ggml-backend.h:334:119: error: ‘ggml_backend_graph_copy ggml_backend_graph_copy(ggml_backend_t, ggml_cgraph*)’ hides constructor for ‘struct ggml_backend_graph_copy’ [-Werror=shadow]
+  334 |     GGML_API struct ggml_backend_graph_copy ggml_backend_graph_copy(ggml_backend_t backend, struct ggml_cgraph * graph);
+      |                                                                                                                       ^
+cc1plus: all warnings being treated as errors
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:132: src/CMakeFiles/llama.dir/llama-chat.cpp.o] Error 1
+In file included from /home/ggml/work/llama.cpp/ggml/src/../include/ggml-cpu.h:4,
+                 from /home/ggml/work/llama.cpp/src/../include/llama.h:5,
+                 from /home/ggml/work/llama.cpp/src/llama-context.h:3,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:5:
+/home/ggml/work/llama.cpp/ggml/src/../include/ggml-backend.h:334:119: error: ‘ggml_backend_graph_copy ggml_backend_graph_copy(ggml_backend_t, ggml_cgraph*)’ hides constructor for ‘struct ggml_backend_graph_copy’ [-Werror=shadow]
+  334 |     GGML_API struct ggml_backend_graph_copy ggml_backend_graph_copy(ggml_backend_t backend, struct ggml_cgraph * graph);
+      |                                                                                                                       ^
+In file included from /home/ggml/work/llama.cpp/src/llama-model.h:4,
+                 from /home/ggml/work/llama.cpp/src/llama-context.h:6,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:5:
+/home/ggml/work/llama.cpp/src/llama-arch.h: In constructor ‘LLM_TN::LLM_TN(llm_arch)’:
+/home/ggml/work/llama.cpp/src/llama-arch.h:377:21: error: declaration of ‘arch’ shadows a member of ‘LLM_TN’ [-Werror=shadow]
+  377 |     LLM_TN(llm_arch arch) : arch(arch) {}
+      |            ~~~~~~~~~^~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:379:14: note: shadowed declaration is here
+  379 |     llm_arch arch;
+      |              ^~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h: In constructor ‘LLM_TN::LLM_TN(llm_arch)’:
+/home/ggml/work/llama.cpp/src/llama-arch.h:377:21: error: declaration of ‘arch’ shadows a member of ‘LLM_TN’ [-Werror=shadow]
+  377 |     LLM_TN(llm_arch arch) : arch(arch) {}
+      |            ~~~~~~~~~^~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:379:14: note: shadowed declaration is here
+  379 |     llm_arch arch;
+      |              ^~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h: In constructor ‘LLM_TN::LLM_TN(llm_arch)’:
+/home/ggml/work/llama.cpp/src/llama-arch.h:377:21: error: declaration of ‘arch’ shadows a member of ‘LLM_TN’ [-Werror=shadow]
+  377 |     LLM_TN(llm_arch arch) : arch(arch) {}
+      |            ~~~~~~~~~^~~~
+/home/ggml/work/llama.cpp/src/llama-arch.h:379:14: note: shadowed declaration is here
+  379 |     llm_arch arch;
+      |              ^~~~
+In file included from /home/ggml/work/llama.cpp/src/llama-context.h:8,
+                 from /home/ggml/work/llama.cpp/src/llama.cpp:5:
+/home/ggml/work/llama.cpp/src/llama-adapter.h: In constructor ‘llama_adapter_lora_weight::llama_adapter_lora_weight(ggml_tensor*, ggml_tensor*)’:
+/home/ggml/work/llama.cpp/src/llama-adapter.h:58:76: error: declaration of ‘b’ shadows a member of ‘llama_adapter_lora_weight’ [-Werror=shadow]
+   58 |     llama_adapter_lora_weight(struct ggml_tensor * a, struct ggml_tensor * b) : a(a), b(b) {}
+      |                                                       ~~~~~~~~~~~~~~~~~~~~~^
+/home/ggml/work/llama.cpp/src/llama-adapter.h:48:26: note: shadowed declaration is here
+   48 |     struct ggml_tensor * b = nullptr;
+      |                          ^
+/home/ggml/work/llama.cpp/src/llama-adapter.h:58:52: error: declaration of ‘a’ shadows a member of ‘llama_adapter_lora_weight’ [-Werror=shadow]
+   58 |     llama_adapter_lora_weight(struct ggml_tensor * a, struct ggml_tensor * b) : a(a), b(b) {}
+      |                               ~~~~~~~~~~~~~~~~~~~~~^
+/home/ggml/work/llama.cpp/src/llama-adapter.h:47:26: note: shadowed declaration is here
+   47 |     struct ggml_tensor * a = nullptr;
+      |                          ^
+/home/ggml/work/llama.cpp/src/llama-adapter.h: In constructor ‘llama_adapter_lora_weight::llama_adapter_lora_weight(ggml_tensor*, ggml_tensor*)’:
+/home/ggml/work/llama.cpp/src/llama-adapter.h:58:76: error: declaration of ‘b’ shadows a member of ‘llama_adapter_lora_weight’ [-Werror=shadow]
+   58 |     llama_adapter_lora_weight(struct ggml_tensor * a, struct ggml_tensor * b) : a(a), b(b) {}
+      |                                                       ~~~~~~~~~~~~~~~~~~~~~^
+/home/ggml/work/llama.cpp/src/llama-adapter.h:48:26: note: shadowed declaration is here
+   48 |     struct ggml_tensor * b = nullptr;
+      |                          ^
+/home/ggml/work/llama.cpp/src/llama-adapter.h:58:52: error: declaration of ‘a’ shadows a member of ‘llama_adapter_lora_weight’ [-Werror=shadow]
+   58 |     llama_adapter_lora_weight(struct ggml_tensor * a, struct ggml_tensor * b) : a(a), b(b) {}
+      |                               ~~~~~~~~~~~~~~~~~~~~~^
+/home/ggml/work/llama.cpp/src/llama-adapter.h:47:26: note: shadowed declaration is here
+   47 |     struct ggml_tensor * a = nullptr;
+      |                          ^
+/home/ggml/work/llama.cpp/src/llama-adapter.h: In constructor ‘llama_adapter_lora_weight::llama_adapter_lora_weight(ggml_tensor*, ggml_tensor*)’:
+/home/ggml/work/llama.cpp/src/llama-adapter.h:58:76: error: declaration of ‘b’ shadows a member of ‘llama_adapter_lora_weight’ [-Werror=shadow]
+   58 |     llama_adapter_lora_weight(struct ggml_tensor * a, struct ggml_tensor * b) : a(a), b(b) {}
+      |                                                       ~~~~~~~~~~~~~~~~~~~~~^
+/home/ggml/work/llama.cpp/src/llama-adapter.h:48:26: note: shadowed declaration is here
+   48 |     struct ggml_tensor * b = nullptr;
+      |                          ^
+/home/ggml/work/llama.cpp/src/llama-adapter.h:58:52: error: declaration of ‘a’ shadows a member of ‘llama_adapter_lora_weight’ [-Werror=shadow]
+   58 |     llama_adapter_lora_weight(struct ggml_tensor * a, struct ggml_tensor * b) : a(a), b(b) {}
+      |                               ~~~~~~~~~~~~~~~~~~~~~^
+/home/ggml/work/llama.cpp/src/llama-adapter.h:47:26: note: shadowed declaration is here
+   47 |     struct ggml_tensor * a = nullptr;
+      |                          ^
+In file included from /home/ggml/work/llama.cpp/src/llama.cpp:5:
+/home/ggml/work/llama.cpp/src/llama-context.h: In constructor ‘llama_context::llama_context(const llama_model&)’:
+/home/ggml/work/llama.cpp/src/llama-context.h:18:39: error: declaration of ‘model’ shadows a member of ‘llama_context’ [-Werror=shadow]
+   18 |     llama_context(const llama_model & model)
+      |                   ~~~~~~~~~~~~~~~~~~~~^~~~~
+/home/ggml/work/llama.cpp/src/llama-context.h:23:32: note: shadowed declaration is here
+   23 |     const struct llama_model & model;
+      |                                ^~~~~
+/home/ggml/work/llama.cpp/src/llama-context.h: In constructor ‘llama_context::llama_context(const llama_model&)’:
+/home/ggml/work/llama.cpp/src/llama-context.h:18:39: error: declaration of ‘model’ shadows a member of ‘llama_context’ [-Werror=shadow]
+   18 |     llama_context(const llama_model & model)
+      |                   ~~~~~~~~~~~~~~~~~~~~^~~~~
+/home/ggml/work/llama.cpp/src/llama-context.h:23:32: note: shadowed declaration is here
+   23 |     const struct llama_model & model;
+      |                                ^~~~~
+/home/ggml/work/llama.cpp/src/llama-context.h: In constructor ‘llama_context::llama_context(const llama_model&)’:
+/home/ggml/work/llama.cpp/src/llama-context.h:18:39: error: declaration of ‘model’ shadows a member of ‘llama_context’ [-Werror=shadow]
+   18 |     llama_context(const llama_model & model)
+      |                   ~~~~~~~~~~~~~~~~~~~~^~~~~
+/home/ggml/work/llama.cpp/src/llama-context.h:23:32: note: shadowed declaration is here
+   23 |     const struct llama_model & model;
+      |                                ^~~~~
+In file included from /home/ggml/work/llama.cpp/src/llama.cpp:9:
+/home/ggml/work/llama.cpp/src/llama-model-loader.h: In constructor ‘llama_model_loader::llama_tensor_weight::llama_tensor_weight(const llama_file*, uint16_t, const gguf_context*, ggml_tensor*)’:
+/home/ggml/work/llama.cpp/src/llama-model-loader.h:34:120: error: declaration of ‘tensor’ shadows a member of ‘llama_model_loader::llama_tensor_weight’ [-Werror=shadow]
+   34 |         llama_tensor_weight(const llama_file * file, uint16_t idx, const struct gguf_context * gguf_ctx, ggml_tensor * tensor) : idx(idx), tensor(tensor) {
+      |                                                                                                          ~~~~~~~~~~~~~~^~~~~~
+/home/ggml/work/llama.cpp/src/llama-model-loader.h:32:23: note: shadowed declaration is here
+   32 |         ggml_tensor * tensor;
+      |                       ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-model-loader.h:34:63: error: declaration of ‘idx’ shadows a member of ‘llama_model_loader::llama_tensor_weight’ [-Werror=shadow]
+   34 |         llama_tensor_weight(const llama_file * file, uint16_t idx, const struct gguf_context * gguf_ctx, ggml_tensor * tensor) : idx(idx), tensor(tensor) {
+      |                                                      ~~~~~~~~~^~~
+/home/ggml/work/llama.cpp/src/llama-model-loader.h:29:19: note: shadowed declaration is here
+   29 |         uint16_t  idx; // source file index
+      |                   ^~~
+/home/ggml/work/llama.cpp/src/llama-model-loader.h: In constructor ‘llama_model_loader::llama_tensor_weight::llama_tensor_weight(const llama_file*, uint16_t, const gguf_context*, ggml_tensor*)’:
+/home/ggml/work/llama.cpp/src/llama-model-loader.h:34:120: error: declaration of ‘tensor’ shadows a member of ‘llama_model_loader::llama_tensor_weight’ [-Werror=shadow]
+   34 |         llama_tensor_weight(const llama_file * file, uint16_t idx, const struct gguf_context * gguf_ctx, ggml_tensor * tensor) : idx(idx), tensor(tensor) {
+      |                                                                                                          ~~~~~~~~~~~~~~^~~~~~
+/home/ggml/work/llama.cpp/src/llama-model-loader.h:32:23: note: shadowed declaration is here
+   32 |         ggml_tensor * tensor;
+      |                       ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-model-loader.h:34:63: error: declaration of ‘idx’ shadows a member of ‘llama_model_loader::llama_tensor_weight’ [-Werror=shadow]
+   34 |         llama_tensor_weight(const llama_file * file, uint16_t idx, const struct gguf_context * gguf_ctx, ggml_tensor * tensor) : idx(idx), tensor(tensor) {
+      |                                                      ~~~~~~~~~^~~
+/home/ggml/work/llama.cpp/src/llama-model-loader.h:29:19: note: shadowed declaration is here
+   29 |         uint16_t  idx; // source file index
+      |                   ^~~
+/home/ggml/work/llama.cpp/src/llama-model-loader.h: In constructor ‘llama_model_loader::llama_tensor_weight::llama_tensor_weight(const llama_file*, uint16_t, const gguf_context*, ggml_tensor*)’:
+/home/ggml/work/llama.cpp/src/llama-model-loader.h:34:120: error: declaration of ‘tensor’ shadows a member of ‘llama_model_loader::llama_tensor_weight’ [-Werror=shadow]
+   34 |         llama_tensor_weight(const llama_file * file, uint16_t idx, const struct gguf_context * gguf_ctx, ggml_tensor * tensor) : idx(idx), tensor(tensor) {
+      |                                                                                                          ~~~~~~~~~~~~~~^~~~~~
+/home/ggml/work/llama.cpp/src/llama-model-loader.h:32:23: note: shadowed declaration is here
+   32 |         ggml_tensor * tensor;
+      |                       ^~~~~~
+/home/ggml/work/llama.cpp/src/llama-model-loader.h:34:63: error: declaration of ‘idx’ shadows a member of ‘llama_model_loader::llama_tensor_weight’ [-Werror=shadow]
+   34 |         llama_tensor_weight(const llama_file * file, uint16_t idx, const struct gguf_context * gguf_ctx, ggml_tensor * tensor) : idx(idx), tensor(tensor) {
+      |                                                      ~~~~~~~~~^~~
+/home/ggml/work/llama.cpp/src/llama-model-loader.h:29:19: note: shadowed declaration is here
+   29 |         uint16_t  idx; // source file index
+      |                   ^~~
+/home/ggml/work/llama.cpp/src/llama.cpp: In constructor ‘llm_build_context::llm_build_context(llama_context&, const llama_ubatch&, const llm_build_cb&, bool)’:
+/home/ggml/work/llama.cpp/src/llama.cpp:1094:26: error: declaration of ‘cb’ shadows a member of ‘llm_build_context’ [-Werror=shadow]
+ 1094 |     const llm_build_cb & cb,
+      |     ~~~~~~~~~~~~~~~~~~~~~^~
+/home/ggml/work/llama.cpp/src/llama.cpp:1084:26: note: shadowed declaration is here
+ 1084 |     const llm_build_cb & cb;
+      |                          ^~
+/home/ggml/work/llama.cpp/src/llama.cpp:1093:26: error: declaration of ‘ubatch’ shadows a member of ‘llm_build_context’ [-Werror=shadow]
+ 1093 |     const llama_ubatch & ubatch,
+      |     ~~~~~~~~~~~~~~~~~~~~~^~~~~~
+/home/ggml/work/llama.cpp/src/llama.cpp:1047:28: note: shadowed declaration is here
+ 1047 |     const llama_ubatch   & ubatch;
+      |                            ^~~~~~
+/home/ggml/work/llama.cpp/src/llama.cpp:1092:26: error: declaration of ‘lctx’ shadows a member of ‘llm_build_context’ [-Werror=shadow]
+ 1092 |         llama_context  & lctx,
+      |         ~~~~~~~~~~~~~~~~~^~~~
+/home/ggml/work/llama.cpp/src/llama.cpp:1044:28: note: shadowed declaration is here
+ 1044 |           llama_context  & lctx;
+      |                            ^~~~
+/home/ggml/work/llama.cpp/src/llama.cpp: In constructor ‘llm_build_context::llm_build_context(llama_context&, const llama_ubatch&, const llm_build_cb&, bool)’:
+/home/ggml/work/llama.cpp/src/llama.cpp:1094:26: error: declaration of ‘cb’ shadows a member of ‘llm_build_context’ [-Werror=shadow]
+ 1094 |     const llm_build_cb & cb,
+      |     ~~~~~~~~~~~~~~~~~~~~~^~
+/home/ggml/work/llama.cpp/src/llama.cpp:1084:26: note: shadowed declaration is here
+ 1084 |     const llm_build_cb & cb;
+      |                          ^~
+/home/ggml/work/llama.cpp/src/llama.cpp:1093:26: error: declaration of ‘ubatch’ shadows a member of ‘llm_build_context’ [-Werror=shadow]
+ 1093 |     const llama_ubatch & ubatch,
+      |     ~~~~~~~~~~~~~~~~~~~~~^~~~~~
+/home/ggml/work/llama.cpp/src/llama.cpp:1047:28: note: shadowed declaration is here
+ 1047 |     const llama_ubatch   & ubatch;
+      |                            ^~~~~~
+/home/ggml/work/llama.cpp/src/llama.cpp:1092:26: error: declaration of ‘lctx’ shadows a member of ‘llm_build_context’ [-Werror=shadow]
+ 1092 |         llama_context  & lctx,
+      |         ~~~~~~~~~~~~~~~~~^~~~
+/home/ggml/work/llama.cpp/src/llama.cpp:1044:28: note: shadowed declaration is here
+ 1044 |           llama_context  & lctx;
+      |                            ^~~~
+/home/ggml/work/llama.cpp/src/llama.cpp: In constructor ‘llm_build_context::llm_build_context(llama_context&, const llama_ubatch&, const llm_build_cb&, bool)’:
+/home/ggml/work/llama.cpp/src/llama.cpp:1094:26: error: declaration of ‘cb’ shadows a member of ‘llm_build_context’ [-Werror=shadow]
+ 1094 |     const llm_build_cb & cb,
+      |     ~~~~~~~~~~~~~~~~~~~~~^~
+/home/ggml/work/llama.cpp/src/llama.cpp:1084:26: note: shadowed declaration is here
+ 1084 |     const llm_build_cb & cb;
+      |                          ^~
+/home/ggml/work/llama.cpp/src/llama.cpp:1093:26: error: declaration of ‘ubatch’ shadows a member of ‘llm_build_context’ [-Werror=shadow]
+ 1093 |     const llama_ubatch & ubatch,
+      |     ~~~~~~~~~~~~~~~~~~~~~^~~~~~
+/home/ggml/work/llama.cpp/src/llama.cpp:1047:28: note: shadowed declaration is here
+ 1047 |     const llama_ubatch   & ubatch;
+      |                            ^~~~~~
+/home/ggml/work/llama.cpp/src/llama.cpp:1092:26: error: declaration of ‘lctx’ shadows a member of ‘llm_build_context’ [-Werror=shadow]
+ 1092 |         llama_context  & lctx,
+      |         ~~~~~~~~~~~~~~~~~^~~~
+/home/ggml/work/llama.cpp/src/llama.cpp:1044:28: note: shadowed declaration is here
+ 1044 |           llama_context  & lctx;
+      |                            ^~~~
+cc1plus: all warnings being treated as errors
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:76: src/CMakeFiles/llama.dir/llama.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1813: src/CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m4.238s
+user	0m9.335s
+sys	0m1.932s
