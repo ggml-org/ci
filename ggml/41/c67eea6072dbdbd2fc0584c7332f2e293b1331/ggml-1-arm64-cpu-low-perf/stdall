@@ -1,0 +1,2428 @@
+rm: cannot remove '/home/ggml/results/ggml/41/c67eea6072dbdbd2fc0584c7332f2e293b1331/ggml-1-arm64-cpu-low-perf/*.log': No such file or directory
+rm: cannot remove '/home/ggml/results/ggml/41/c67eea6072dbdbd2fc0584c7332f2e293b1331/ggml-1-arm64-cpu-low-perf/*.exit': No such file or directory
+rm: cannot remove '/home/ggml/results/ggml/41/c67eea6072dbdbd2fc0584c7332f2e293b1331/ggml-1-arm64-cpu-low-perf/*.md': No such file or directory
++ gg_run_ctest_debug
++ cd /home/ggml/work/ggml
++ rm -rf build-ci-debug
++ tee /home/ggml/results/ggml/41/c67eea6072dbdbd2fc0584c7332f2e293b1331/ggml-1-arm64-cpu-low-perf/ctest_debug.log
++ mkdir build-ci-debug
++ cd build-ci-debug
++ set -e
++ tee -a /home/ggml/results/ggml/41/c67eea6072dbdbd2fc0584c7332f2e293b1331/ggml-1-arm64-cpu-low-perf/ctest_debug-cmake.log
++ cmake -DCMAKE_BUILD_TYPE=Debug ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: aarch64
+-- Including CPU backend
+-- Found OpenMP_C: -fopenmp (found version "4.5") 
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5")  
+-- ARM detected
+-- Performing Test GGML_COMPILER_SUPPORTS_FP16_FORMAT_I3E
+-- Performing Test GGML_COMPILER_SUPPORTS_FP16_FORMAT_I3E - Failed
+-- Performing Test GGML_MACHINE_SUPPORTS_dotprod
+-- Performing Test GGML_MACHINE_SUPPORTS_dotprod - Success
+-- Performing Test GGML_MACHINE_SUPPORTS_i8mm
+-- Performing Test GGML_MACHINE_SUPPORTS_i8mm - Failed
+-- Performing Test GGML_MACHINE_SUPPORTS_sve
+-- Performing Test GGML_MACHINE_SUPPORTS_sve - Failed
+-- ARM feature DOTPROD enabled
+-- ARM feature FMA enabled
+-- ARM feature FP16_VECTOR_ARITHMETIC enabled
+-- Adding CPU backend variant ggml-cpu: -mcpu=ares+crypto+noprofile+dotprod+noi8mm+nosve 
+-- ARM detected
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ggml/work/ggml/build-ci-debug
+
+real	0m1.880s
+user	0m1.192s
+sys	0m0.485s
++ tee -a /home/ggml/results/ggml/41/c67eea6072dbdbd2fc0584c7332f2e293b1331/ggml-1-arm64-cpu-low-perf/ctest_debug-make.log
++ make -j
+[  2%] Building C object src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  2%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  3%] Building C object src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  4%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  5%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  6%] Building CXX object src/CMakeFiles/ggml-base.dir/gguf.cpp.o
+[  7%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  8%] Building C object src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  9%] Linking CXX static library libcommon.a
+[ 10%] Linking CXX shared library libggml-base.so
+[ 10%] Built target common
+[ 10%] Built target ggml-base
+[ 14%] Building C object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 14%] Building C object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[ 14%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[ 14%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 16%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 18%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 19%] Linking CXX shared library libggml-cpu.so
+[ 19%] Built target ggml-cpu
+[ 20%] Building CXX object src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 21%] Linking CXX shared library libggml.so
+[ 21%] Built target ggml
+[ 22%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 24%] Building CXX object tests/CMakeFiles/test-opt.dir/test-opt.cpp.o
+[ 24%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
+[ 25%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 26%] Building C object tests/CMakeFiles/test-mul-mat2.dir/test-mul-mat2.c.o
+[ 27%] Linking C executable ../bin/test-vec0
+[ 28%] Building C object tests/CMakeFiles/test-mul-mat0.dir/test-mul-mat0.c.o
+[ 29%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
+[ 31%] Building C object tests/CMakeFiles/test-pool.dir/test-pool.c.o
+[ 31%] Linking CXX executable ../bin/test-quantize-fns
+[ 32%] Linking CXX executable ../bin/test-quantize-perf
+[ 33%] Linking CXX executable ../bin/test-opt
+[ 34%] Building CXX object tests/CMakeFiles/test-conv-transpose-1d.dir/test-conv-transpose-1d.cpp.o
+[ 36%] Linking C executable ../bin/test-mul-mat2
+[ 36%] Linking C executable ../bin/test0
+[ 37%] Building CXX object tests/CMakeFiles/test-timestep_embedding.dir/test-timestep_embedding.cpp.o
+[ 38%] Linking C executable ../bin/test-mul-mat0
+[ 39%] Building CXX object tests/CMakeFiles/test-arange.dir/test-arange.cpp.o
+[ 40%] Building C object tests/CMakeFiles/test-conv-transpose.dir/test-conv-transpose.c.o
+[ 41%] Building CXX object tests/CMakeFiles/test-pad-reflect-1d.dir/test-pad-reflect-1d.cpp.o
+[ 42%] Linking C executable ../bin/test-pool
+[ 43%] Building C object tests/CMakeFiles/test-dup.dir/test-dup.c.o
+[ 45%] Linking CXX executable ../bin/test-conv-transpose-1d
+[ 45%] Building C object tests/CMakeFiles/test-customop.dir/test-customop.c.o
+[ 46%] Building CXX object tests/CMakeFiles/test-mul-mat.dir/test-mul-mat.cpp.o
+[ 47%] Building CXX object tests/CMakeFiles/test-conv1d.dir/test-conv1d.cpp.o
+[ 48%] Linking CXX executable ../bin/test-arange
+[ 50%] Building CXX object tests/CMakeFiles/test-conv2d.dir/test-conv2d.cpp.o
+[ 51%] Building C object tests/CMakeFiles/test-rel-pos.dir/test-rel-pos.c.o
+[ 53%] Linking C executable ../bin/test-conv-transpose
+[ 54%] Linking C executable ../bin/test-dup
+[ 54%] Built target test-vec0
+[ 54%] Linking CXX executable ../bin/test-timestep_embedding
+[ 55%] Linking CXX executable ../bin/test-pad-reflect-1d
+[ 56%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 57%] Linking C executable ../bin/test-customop
+[ 58%] Building C object tests/CMakeFiles/test-cont.dir/test-cont.c.o
+[ 59%] Building CXX object examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o
+[ 60%] Linking C executable ../bin/test-rel-pos
+[ 61%] Linking CXX executable ../bin/test-mul-mat
+[ 61%] Built target test-opt
+[ 62%] Linking CXX executable ../bin/test-conv2d
+[ 63%] Linking CXX executable ../bin/test-conv1d
+[ 64%] Building CXX object examples/mnist/CMakeFiles/mnist-common.dir/mnist-common.cpp.o
+[ 65%] Building CXX object examples/simple/CMakeFiles/simple-ctx.dir/simple-ctx.cpp.o
+[ 66%] Linking C executable ../bin/test-cont
+[ 67%] Building CXX object examples/sam/CMakeFiles/sam.dir/main.cpp.o
+[ 68%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolov3-tiny.cpp.o
+[ 70%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolo-image.cpp.o
+[ 71%] Linking CXX static library libcommon-ggml.a
+[ 72%] Linking CXX static library libmnist-common.a
+[ 71%] Linking CXX executable ../bin/test-backend-ops
+[ 73%] Building CXX object examples/simple/CMakeFiles/simple-backend.dir/simple-backend.cpp.o
+[ 73%] Built target test-pad-reflect-1d
+[ 74%] Linking CXX executable ../../bin/simple-ctx
+[ 75%] Linking CXX executable ../../bin/sam
+[ 75%] Built target test-dup
+[ 76%] Linking CXX executable ../../bin/yolov3-tiny
+[ 76%] Built target test-mul-mat2
+[ 76%] Built target test-mul-mat0
+[ 77%] Linking CXX executable ../../bin/simple-backend
+[ 77%] Built target test0
+[ 77%] Built target mnist-common
+[ 77%] Built target test-pool
+[ 77%] Built target test-quantize-fns
+[ 77%] Built target test-quantize-perf
+[ 77%] Built target test-rel-pos
+[ 77%] Built target common-ggml
+[ 77%] Built target test-conv-transpose
+[ 78%] Building CXX object examples/mnist/CMakeFiles/mnist-eval.dir/mnist-eval.cpp.o
+[ 79%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-ctx.dir/main-ctx.cpp.o
+[ 79%] Built target test-arange
+[ 79%] Built target test-customop
+[ 79%] Built target test-conv1d
+[ 79%] Built target test-conv-transpose-1d
+[ 79%] Built target test-timestep_embedding
+[ 80%] Linking CXX executable ../../bin/gpt-2-ctx
+[ 81%] Linking CXX executable ../../bin/mnist-eval
+[ 81%] Built target test-mul-mat
+[ 81%] Built target test-conv2d
+[ 81%] Built target test-cont
+[ 81%] Built target simple-ctx
+[ 81%] Built target sam
+[ 81%] Built target yolov3-tiny
+[ 82%] Building CXX object examples/mnist/CMakeFiles/mnist-train.dir/mnist-train.cpp.o
+[ 82%] Built target simple-backend
+[ 83%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-backend.dir/main-backend.cpp.o
+[ 84%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-sched.dir/main-sched.cpp.o
+[ 85%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-alloc.dir/main-alloc.cpp.o
+[ 86%] Linking CXX executable ../../bin/mnist-train
+[ 86%] Built target test-backend-ops
+[ 87%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j-quantize.dir/quantize.cpp.o
+[ 89%] Linking CXX executable ../../bin/gpt-2-backend
+[ 89%] Building CXX object examples/magika/CMakeFiles/magika.dir/main.cpp.o
+[ 90%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-batched.dir/main-batched.cpp.o
+[ 91%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j.dir/main.cpp.o
+[ 92%] Linking CXX executable ../../bin/gpt-2-sched
+[ 93%] Linking CXX executable ../../bin/gpt-2-alloc
+[ 94%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-quantize.dir/quantize.cpp.o
+[ 95%] Linking CXX executable ../../bin/gpt-j-quantize
+[ 96%] Linking CXX executable ../../bin/magika
+[ 97%] Linking CXX executable ../../bin/gpt-2-batched
+[ 98%] Linking CXX executable ../../bin/gpt-2-quantize
+[100%] Linking CXX executable ../../bin/gpt-j
+[100%] Built target mnist-eval
+[100%] Built target mnist-train
+[100%] Built target magika
+[100%] Built target gpt-2-sched
+[100%] Built target gpt-2-ctx
+[100%] Built target gpt-2-quantize
+[100%] Built target gpt-2-backend
+[100%] Built target gpt-2-alloc
+[100%] Built target gpt-j-quantize
+[100%] Built target gpt-2-batched
+[100%] Built target gpt-j
+
+real	0m2.268s
+user	0m5.424s
+sys	0m2.041s
++ '[' '!' -z ']'
++ tee -a /home/ggml/results/ggml/41/c67eea6072dbdbd2fc0584c7332f2e293b1331/ggml-1-arm64-cpu-low-perf/ctest_debug-ctest.log
++ ctest --output-on-failure -E test-opt
+Test project /home/ggml/work/ggml/build-ci-debug
+      Start  1: test-quantize-fns
+ 1/19 Test  #1: test-quantize-fns ................   Passed   32.63 sec
+      Start  2: test-quantize-perf
+ 2/19 Test  #2: test-quantize-perf ...............   Passed    0.38 sec
+      Start  3: test-mul-mat0
+ 3/19 Test  #3: test-mul-mat0 ....................   Passed    0.53 sec
+      Start  4: test-mul-mat2
+ 4/19 Test  #4: test-mul-mat2 ....................   Passed    8.70 sec
+      Start  5: test0
+ 5/19 Test  #5: test0 ............................   Passed    0.00 sec
+      Start  6: test-pool
+ 6/19 Test  #6: test-pool ........................   Passed    0.01 sec
+      Start  7: test-arange
+ 7/19 Test  #7: test-arange ......................   Passed    0.01 sec
+      Start  8: test-timestep_embedding
+ 8/19 Test  #8: test-timestep_embedding ..........   Passed    0.01 sec
+      Start  9: test-pad-reflect-1d
+ 9/19 Test  #9: test-pad-reflect-1d ..............   Passed    0.01 sec
+      Start 10: test-conv-transpose
+10/19 Test #10: test-conv-transpose ..............   Passed    0.01 sec
+      Start 11: test-conv-transpose-1d
+11/19 Test #11: test-conv-transpose-1d ...........   Passed    0.02 sec
+      Start 12: test-dup
+12/19 Test #12: test-dup .........................   Passed    0.01 sec
+      Start 13: test-rel-pos
+13/19 Test #13: test-rel-pos .....................   Passed    0.01 sec
+      Start 14: test-customop
+14/19 Test #14: test-customop ....................   Passed    0.01 sec
+      Start 15: test-conv1d
+15/19 Test #15: test-conv1d ......................   Passed    0.01 sec
+      Start 16: test-conv2d
+16/19 Test #16: test-conv2d ......................   Passed    0.01 sec
+      Start 17: test-mul-mat
+17/19 Test #17: test-mul-mat .....................   Passed    0.01 sec
+      Start 18: test-backend-ops
+18/19 Test #18: test-backend-ops .................   Passed    0.01 sec
+      Start 19: test-cont
+19/19 Test #19: test-cont ........................   Passed    0.01 sec
+
+100% tests passed, 0 tests failed out of 19
+
+Total Test time (real) =  42.34 sec
+
+real	0m42.353s
+user	0m41.964s
+sys	0m0.246s
++ set +e
++ cur=0
++ echo 0
++ set +x
++ gg_run_ctest_release
++ tee /home/ggml/results/ggml/41/c67eea6072dbdbd2fc0584c7332f2e293b1331/ggml-1-arm64-cpu-low-perf/ctest_release.log
++ cd /home/ggml/work/ggml
++ rm -rf build-ci-release
++ mkdir build-ci-release
++ cd build-ci-release
++ set -e
++ tee -a /home/ggml/results/ggml/41/c67eea6072dbdbd2fc0584c7332f2e293b1331/ggml-1-arm64-cpu-low-perf/ctest_release-cmake.log
++ cmake -DCMAKE_BUILD_TYPE=Release ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: aarch64
+-- Including CPU backend
+-- Found OpenMP_C: -fopenmp (found version "4.5") 
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5")  
+-- ARM detected
+-- Performing Test GGML_COMPILER_SUPPORTS_FP16_FORMAT_I3E
+-- Performing Test GGML_COMPILER_SUPPORTS_FP16_FORMAT_I3E - Failed
+-- Performing Test GGML_MACHINE_SUPPORTS_dotprod
+-- Performing Test GGML_MACHINE_SUPPORTS_dotprod - Success
+-- Performing Test GGML_MACHINE_SUPPORTS_i8mm
+-- Performing Test GGML_MACHINE_SUPPORTS_i8mm - Failed
+-- Performing Test GGML_MACHINE_SUPPORTS_sve
+-- Performing Test GGML_MACHINE_SUPPORTS_sve - Failed
+-- ARM feature DOTPROD enabled
+-- ARM feature FMA enabled
+-- ARM feature FP16_VECTOR_ARITHMETIC enabled
+-- Adding CPU backend variant ggml-cpu: -mcpu=ares+crypto+noprofile+dotprod+noi8mm+nosve 
+-- ARM detected
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ggml/work/ggml/build-ci-release
+
+real	0m1.879s
+user	0m1.227s
+sys	0m0.447s
++ tee -a /home/ggml/results/ggml/41/c67eea6072dbdbd2fc0584c7332f2e293b1331/ggml-1-arm64-cpu-low-perf/ctest_release-make.log
++ make -j
+[  3%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  3%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  3%] Building C object src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  4%] Building C object src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  6%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  6%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  7%] Building C object src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  8%] Building CXX object src/CMakeFiles/ggml-base.dir/gguf.cpp.o
+[  9%] Linking CXX static library libcommon.a
+[ 10%] Linking CXX shared library libggml-base.so
+[ 10%] Built target common
+[ 10%] Built target ggml-base
+[ 13%] Building C object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[ 13%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[ 13%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[ 14%] Building C object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 15%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 18%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 19%] Linking CXX shared library libggml-cpu.so
+[ 19%] Built target ggml-cpu
+[ 20%] Building CXX object src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 21%] Linking CXX shared library libggml.so
+[ 21%] Built target ggml
+[ 22%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 23%] Building CXX object tests/CMakeFiles/test-opt.dir/test-opt.cpp.o
+[ 24%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
+[ 25%] Building C object tests/CMakeFiles/test-mul-mat2.dir/test-mul-mat2.c.o
+[ 26%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 27%] Linking CXX executable ../bin/test-quantize-fns
+[ 28%] Building C object tests/CMakeFiles/test-mul-mat0.dir/test-mul-mat0.c.o
+[ 29%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
+[ 30%] Building CXX object tests/CMakeFiles/test-timestep_embedding.dir/test-timestep_embedding.cpp.o
+[ 31%] Building CXX object tests/CMakeFiles/test-arange.dir/test-arange.cpp.o
+[ 32%] Linking C executable ../bin/test-vec0
+[ 33%] Building C object tests/CMakeFiles/test-pool.dir/test-pool.c.o
+[ 34%] Linking CXX executable ../bin/test-quantize-perf
+[ 35%] Linking C executable ../bin/test0
+[ 36%] Linking C executable ../bin/test-mul-mat0
+[ 37%] Building CXX object tests/CMakeFiles/test-pad-reflect-1d.dir/test-pad-reflect-1d.cpp.o
+[ 38%] Linking C executable ../bin/test-mul-mat2
+[ 39%] Linking CXX executable ../bin/test-opt
+[ 40%] Linking CXX executable ../bin/test-timestep_embedding
+[ 41%] Linking C executable ../bin/test-pool
+[ 42%] Building C object tests/CMakeFiles/test-conv-transpose.dir/test-conv-transpose.c.o
+[ 43%] Building CXX object tests/CMakeFiles/test-conv-transpose-1d.dir/test-conv-transpose-1d.cpp.o
+[ 44%] Linking CXX executable ../bin/test-arange
+[ 45%] Building C object tests/CMakeFiles/test-dup.dir/test-dup.c.o
+[ 46%] Building C object tests/CMakeFiles/test-rel-pos.dir/test-rel-pos.c.o
+[ 47%] Building C object tests/CMakeFiles/test-customop.dir/test-customop.c.o
+[ 48%] Linking CXX executable ../bin/test-pad-reflect-1d
+[ 50%] Building CXX object tests/CMakeFiles/test-conv1d.dir/test-conv1d.cpp.o
+[ 51%] Linking C executable ../bin/test-conv-transpose
+[ 52%] Linking C executable ../bin/test-dup
+[ 53%] Linking C executable ../bin/test-rel-pos
+[ 54%] Linking CXX executable ../bin/test-conv-transpose-1d
+[ 54%] Built target test-vec0
+[ 55%] Linking C executable ../bin/test-customop
+[ 56%] Building CXX object tests/CMakeFiles/test-mul-mat.dir/test-mul-mat.cpp.o
+[ 57%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 58%] Building CXX object examples/mnist/CMakeFiles/mnist-common.dir/mnist-common.cpp.o
+[ 59%] Building CXX object examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o
+[ 60%] Linking CXX executable ../bin/test-mul-mat
+[ 61%] Building CXX object tests/CMakeFiles/test-conv2d.dir/test-conv2d.cpp.o
+[ 62%] Linking CXX executable ../bin/test-conv1d
+[ 63%] Building C object tests/CMakeFiles/test-cont.dir/test-cont.c.o
+[ 64%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolov3-tiny.cpp.o
+[ 65%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolo-image.cpp.o
+[ 66%] Linking CXX executable ../bin/test-backend-ops
+[ 67%] Building CXX object examples/simple/CMakeFiles/simple-ctx.dir/simple-ctx.cpp.o
+[ 68%] Building CXX object examples/sam/CMakeFiles/sam.dir/main.cpp.o
+[ 70%] Linking C executable ../bin/test-cont
+[ 71%] Building CXX object examples/simple/CMakeFiles/simple-backend.dir/simple-backend.cpp.o
+[ 69%] Linking CXX executable ../bin/test-conv2d
+[ 72%] Linking CXX static library libmnist-common.a
+[ 73%] Linking CXX static library libcommon-ggml.a
+[ 74%] Linking CXX executable ../../bin/simple-ctx
+[ 75%] Linking CXX executable ../../bin/sam
+[ 76%] Linking CXX executable ../../bin/yolov3-tiny
+[ 76%] Built target test-rel-pos
+[ 75%] Built target test-quantize-fns
+[ 76%] Built target test-mul-mat2
+[ 76%] Built target test0
+[ 77%] Linking CXX executable ../../bin/simple-backend
+[ 77%] Built target test-timestep_embedding
+[ 77%] Built target test-pool
+[ 77%] Built target test-mul-mat0
+[ 77%] Built target test-quantize-perf
+[ 77%] Built target mnist-common
+[ 77%] Built target test-dup
+[ 77%] Built target test-opt
+[ 77%] Built target test-arange
+[ 77%] Built target common-ggml
+[ 77%] Built target test-conv-transpose
+[ 77%] Built target test-cont
+[ 77%] Built target test-pad-reflect-1d
+[ 77%] Built target test-customop
+[ 77%] Built target test-conv-transpose-1d
+[ 77%] Built target test-mul-mat
+[ 77%] Built target test-conv1d
+[ 77%] Built target simple-ctx
+[ 77%] Built target test-conv2d
+[ 78%] Building CXX object examples/mnist/CMakeFiles/mnist-train.dir/mnist-train.cpp.o
+[ 79%] Building CXX object examples/mnist/CMakeFiles/mnist-eval.dir/mnist-eval.cpp.o
+[ 80%] Building CXX object examples/magika/CMakeFiles/magika.dir/main.cpp.o
+[ 80%] Built target test-backend-ops
+[ 80%] Built target sam
+[ 80%] Built target yolov3-tiny
+[ 80%] Built target simple-backend
+[ 81%] Linking CXX executable ../../bin/mnist-eval
+[ 82%] Linking CXX executable ../../bin/mnist-train
+[ 83%] Linking CXX executable ../../bin/magika
+[ 84%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-ctx.dir/main-ctx.cpp.o
+[ 85%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-alloc.dir/main-alloc.cpp.o
+[ 86%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-quantize.dir/quantize.cpp.o
+[ 87%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-sched.dir/main-sched.cpp.o
+[ 88%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-backend.dir/main-backend.cpp.o
+[ 89%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-batched.dir/main-batched.cpp.o
+[ 90%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j.dir/main.cpp.o
+[ 91%] Linking CXX executable ../../bin/gpt-2-ctx
+[ 92%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j-quantize.dir/quantize.cpp.o
+[ 93%] Linking CXX executable ../../bin/gpt-2-sched
+[ 94%] Linking CXX executable ../../bin/gpt-2-quantize
+[ 95%] Linking CXX executable ../../bin/gpt-2-backend
+[ 96%] Linking CXX executable ../../bin/gpt-2-alloc
+[ 97%] Linking CXX executable ../../bin/gpt-2-batched
+[ 98%] Linking CXX executable ../../bin/gpt-j
+[100%] Linking CXX executable ../../bin/gpt-j-quantize
+[100%] Built target mnist-eval
+[100%] Built target mnist-train
+[100%] Built target gpt-2-ctx
+[100%] Built target magika
+[100%] Built target gpt-2-backend
+[100%] Built target gpt-2-alloc
+[100%] Built target gpt-2-quantize
+[100%] Built target gpt-2-sched
+[100%] Built target gpt-2-batched
+[100%] Built target gpt-j-quantize
+[100%] Built target gpt-j
+
+real	0m1.729s
+user	0m4.013s
+sys	0m1.703s
++ '[' '!' -z ']'
++ '[' -z 1 ']'
++ tee -a /home/ggml/results/ggml/41/c67eea6072dbdbd2fc0584c7332f2e293b1331/ggml-1-arm64-cpu-low-perf/ctest_release-ctest.log
++ ctest --output-on-failure -E test-opt
+Test project /home/ggml/work/ggml/build-ci-release
+      Start  1: test-quantize-fns
+ 1/19 Test  #1: test-quantize-fns ................   Passed   16.93 sec
+      Start  2: test-quantize-perf
+ 2/19 Test  #2: test-quantize-perf ...............   Passed    0.08 sec
+      Start  3: test-mul-mat0
+ 3/19 Test  #3: test-mul-mat0 ....................   Passed    0.56 sec
+      Start  4: test-mul-mat2
+ 4/19 Test  #4: test-mul-mat2 ....................   Passed    1.77 sec
+      Start  5: test0
+ 5/19 Test  #5: test0 ............................   Passed    0.00 sec
+      Start  6: test-pool
+ 6/19 Test  #6: test-pool ........................   Passed    0.00 sec
+      Start  7: test-arange
+ 7/19 Test  #7: test-arange ......................   Passed    0.00 sec
+      Start  8: test-timestep_embedding
+ 8/19 Test  #8: test-timestep_embedding ..........   Passed    0.00 sec
+      Start  9: test-pad-reflect-1d
+ 9/19 Test  #9: test-pad-reflect-1d ..............   Passed    0.00 sec
+      Start 10: test-conv-transpose
+10/19 Test #10: test-conv-transpose ..............   Passed    0.00 sec
+      Start 11: test-conv-transpose-1d
+11/19 Test #11: test-conv-transpose-1d ...........   Passed    0.01 sec
+      Start 12: test-dup
+12/19 Test #12: test-dup .........................   Passed    0.00 sec
+      Start 13: test-rel-pos
+13/19 Test #13: test-rel-pos .....................   Passed    0.00 sec
+      Start 14: test-customop
+14/19 Test #14: test-customop ....................   Passed    0.00 sec
+      Start 15: test-conv1d
+15/19 Test #15: test-conv1d ......................   Passed    0.00 sec
+      Start 16: test-conv2d
+16/19 Test #16: test-conv2d ......................   Passed    0.00 sec
+      Start 17: test-mul-mat
+17/19 Test #17: test-mul-mat .....................   Passed    0.00 sec
+      Start 18: test-backend-ops
+18/19 Test #18: test-backend-ops .................   Passed    0.01 sec
+      Start 19: test-cont
+19/19 Test #19: test-cont ........................   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 19
+
+Total Test time (real) =  19.41 sec
+
+real	0m19.424s
+user	0m18.897s
+sys	0m0.262s
++ set +e
++ cur=0
++ echo 0
++ set +x
++ gg_run_gpt_2
++ cd /home/ggml/work/ggml
++ tee /home/ggml/results/ggml/41/c67eea6072dbdbd2fc0584c7332f2e293b1331/ggml-1-arm64-cpu-low-perf/gpt_2.log
++ gg_wget models-mnt/gpt-2 https://huggingface.co/ggerganov/ggml/resolve/main/ggml-model-gpt-2-117M.bin
++ local out=models-mnt/gpt-2
++ local url=https://huggingface.co/ggerganov/ggml/resolve/main/ggml-model-gpt-2-117M.bin
+++ pwd
++ local cwd=/home/ggml/work/ggml
++ mkdir -p models-mnt/gpt-2
++ cd models-mnt/gpt-2
++ wget -nv -N https://huggingface.co/ggerganov/ggml/resolve/main/ggml-model-gpt-2-117M.bin
++ cd /home/ggml/work/ggml
++ cd build-ci-release
++ set -e
++ model=../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin
++ prompts=../examples/prompts/gpt-2.txt
++ tee -a /home/ggml/results/ggml/41/c67eea6072dbdbd2fc0584c7332f2e293b1331/ggml-1-arm64-cpu-low-perf/gpt_2-tg.log
++ ./bin/gpt-2-backend --model ../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin -s 1234 -n 64 -tt ../examples/prompts/gpt-2.txt
+gpt2_model_load: using CPU backend
+test_gpt_tokenizer : failed test: 'I l0ve t0 tr@vel @r0und the w0rld.'
+test_gpt_tokenizer : tokens in hf:   I(40),  l(300), 0(15), ve(303),  t(256), 0(15),  tr(491), @(31), vel(626),  @(2488), r(81), 0(15), und(917),  the(262),  w(266), 0(15), r(81), ld(335), .(13), 
+test_gpt_tokenizer : tokens in ggml: I(40),  l(300), 0(15), ve(303),  t(256), 0(15),  tr(491), @(31), vel(626),  @(2488), r(81), 0(15), und(917),  the(262),  w(266), 0(15), rl(45895), d(67), .(13), 
+test_gpt_tokenizer : failed test: 'She danced gracefully on the stage.'
+test_gpt_tokenizer : tokens in hf:   She(3347),  danced(39480),  grace(11542), fully(2759),  on(319),  the(262),  stage(3800), .(13), 
+test_gpt_tokenizer : tokens in ggml: She(3347),  danced(39480),  graceful(44363), ly(306),  on(319),  the(262),  stage(3800), .(13), 
+test_gpt_tokenizer : failed test: 'She dances gracefully to the music.'
+test_gpt_tokenizer : tokens in hf:   She(3347),  dances(38207),  grace(11542), fully(2759),  to(284),  the(262),  music(2647), .(13), 
+test_gpt_tokenizer : tokens in ggml: She(3347),  dances(38207),  graceful(44363), ly(306),  to(284),  the(262),  music(2647), .(13), 
+test_gpt_tokenizer : failed test: 'The birds are chirping in the trees.'
+test_gpt_tokenizer : tokens in hf:   The(464),  birds(10087),  are(389),  ch(442), ir(343), ping(13886),  in(287),  the(262),  trees(7150), .(13), 
+test_gpt_tokenizer : tokens in ggml: The(464),  birds(10087),  are(389),  chi(33166), r(81), ping(13886),  in(287),  the(262),  trees(7150), .(13), 
+test_gpt_tokenizer : failed test: 'The flowers are blooming in the garden.'
+test_gpt_tokenizer : tokens in hf:   The(464),  flowers(12734),  are(389),  blo(24924), oming(3383),  in(287),  the(262),  garden(11376), .(13), 
+test_gpt_tokenizer : tokens in ggml: The(464),  flowers(12734),  are(389),  bloom(29955), ing(278),  in(287),  the(262),  garden(11376), .(13), 
+test_gpt_tokenizer : failed test: 'The flowers in the garden are blooming.'
+test_gpt_tokenizer : tokens in hf:   The(464),  flowers(12734),  in(287),  the(262),  garden(11376),  are(389),  blo(24924), oming(3383), .(13), 
+test_gpt_tokenizer : tokens in ggml: The(464),  flowers(12734),  in(287),  the(262),  garden(11376),  are(389),  bloom(29955), ing(278), .(13), 
+test_gpt_tokenizer : failed test: 'Wh@t's y0ur f@v0rite m0vie?'
+test_gpt_tokenizer : tokens in hf:   Wh(1199), @(31), t(83), 's(338),  y(331), 0(15), ur(333),  f(277), @(31), v(85), 0(15), rite(6525),  m(285), 0(15), v(85), ie(494), ?(30), 
+test_gpt_tokenizer : tokens in ggml: Wh(1199), @(31), t(83), 's(338),  y(331), 0(15), ur(333),  f(277), @(31), v(85), 0(15), rite(6525),  m(285), 0(15), vi(8903), e(68), ?(30), 
+test_gpt_tokenizer : 7 tests failed out of 100 tests.
+main: compute buffer size: 9.47 MB
+main: seed = 1234
+gpt2_model_load: loading model from '../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin'
+gpt2_model_load: n_vocab = 50257
+gpt2_model_load: n_ctx   = 1024
+gpt2_model_load: n_embd  = 768
+gpt2_model_load: n_head  = 12
+gpt2_model_load: n_layer = 12
+gpt2_model_load: ftype   = 1
+gpt2_model_load: qntvr   = 0
+gpt2_model_load: ggml tensor size    = 336 bytes
+gpt2_model_load: backend buffer size = 312.70 MB
+gpt2_model_load: memory size =   144.00 MB, n_mem = 24576
+gpt2_model_load: model size  =   239.08 MB
+main: prompt: 'If'
+main: number of tokens in prompt = 1, first 8 tokens: 1532 
+
+If we look at what we've got for 2018, it's very hard to find a year in which the team has yet to break into the top three," said Lefkoe.
+
+"In the past, they've had a pretty good year, but this year, there are definitely two players who have really
+
+main:     load time =   151.90 ms
+main:   sample time =    17.93 ms
+main:  predict time =   482.95 ms / 7.55 ms per token
+main:    total time =   675.01 ms
+
+real	0m0.711s
+user	0m1.995s
+sys	0m0.156s
++ tee -a /home/ggml/results/ggml/41/c67eea6072dbdbd2fc0584c7332f2e293b1331/ggml-1-arm64-cpu-low-perf/gpt_2-tg.log
++ ./bin/gpt-2-backend --model ../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin -s 1234 -n 64 -p 'I believe the meaning of life is'
+gpt2_model_load: using CPU backend
+extract_tests_from_file : No test file found.
+test_gpt_tokenizer : 0 tests failed out of 0 tests.
+main: compute buffer size: 9.47 MB
+main: seed = 1234
+gpt2_model_load: loading model from '../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin'
+gpt2_model_load: n_vocab = 50257
+gpt2_model_load: n_ctx   = 1024
+gpt2_model_load: n_embd  = 768
+gpt2_model_load: n_head  = 12
+gpt2_model_load: n_layer = 12
+gpt2_model_load: ftype   = 1
+gpt2_model_load: qntvr   = 0
+gpt2_model_load: ggml tensor size    = 336 bytes
+gpt2_model_load: backend buffer size = 312.70 MB
+gpt2_model_load: memory size =   144.00 MB, n_mem = 24576
+gpt2_model_load: model size  =   239.08 MB
+main: prompt: 'I believe the meaning of life is'
+main: number of tokens in prompt = 7, first 8 tokens: 40 1975 262 3616 286 1204 318 
+
+I believe the meaning of life is not always what we're used to. If you're a good person and you're good at what you do, it is, but if you're a bad person and you're bad at what you do, it isn't. And so, if you're a bad person, the first time you're in your 20
+
+main:     load time =   151.32 ms
+main:   sample time =    18.03 ms
+main:  predict time =   494.61 ms / 7.07 ms per token
+main:    total time =   666.82 ms
+
+real	0m0.702s
+user	0m2.001s
+sys	0m0.178s
++ tee -a /home/ggml/results/ggml/41/c67eea6072dbdbd2fc0584c7332f2e293b1331/ggml-1-arm64-cpu-low-perf/gpt_2-tg.log
++ ./bin/gpt-2-sched --model ../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin -s 1234 -n 64 -p 'I believe the meaning of life is'
+extract_tests_from_file : No test file found.
+test_gpt_tokenizer : 0 tests failed out of 0 tests.
+main: seed = 1234
+gpt2_model_load: loading model from '../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin'
+gpt2_model_load: n_vocab = 50257
+gpt2_model_load: n_ctx   = 1024
+gpt2_model_load: n_embd  = 768
+gpt2_model_load: n_head  = 12
+gpt2_model_load: n_layer = 12
+gpt2_model_load: ftype   = 1
+gpt2_model_load: qntvr   = 0
+gpt2_model_load:      CPU buffer size =   312.77 MB
+gpt2_model_load: memory size =    72.00 MB, n_mem = 12288
+gpt2_model_load: backend_kv = CPU
+gpt2_model_load: model size  =   312.70 MB
+gpt2_model_load: backend_in = CPU (8192 bytes)
+main:      CPU compute buffer size =     6.32 MB
+main: total compute buffer size: 6.32 MB
+main: prompt: 'I believe the meaning of life is'
+main: number of tokens in prompt = 7, first 8 tokens: 40 1975 262 3616 286 1204 318 
+
+I believe the meaning of life is not always what we're used to. If you're a good person and you're good at what you do, it is, but if you're a bad person and you're bad at what you do, it isn't. And so, if you're a bad person, the first time you're in your 20
+
+main:     load time =   180.53 ms
+main:   sample time =    18.29 ms
+main:  predict time =   548.47 ms / 7.84 ms per token
+main:    total time =   750.27 ms
+
+real	0m0.792s
+user	0m2.163s
+sys	0m0.194s
++ tee -a /home/ggml/results/ggml/41/c67eea6072dbdbd2fc0584c7332f2e293b1331/ggml-1-arm64-cpu-low-perf/gpt_2-tg.log
++ ./bin/gpt-2-batched --model ../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin -s 1234 -n 64 -np 8 -p 'I believe the meaning of life is'
+gpt2_model_load: using CPU backend
+extract_tests_from_file : No test file found.
+test_gpt_tokenizer : 0 tests failed out of 0 tests.
+main: compute buffer size: 6.93 MB
+main: seed = 1234
+gpt2_model_load: loading model from '../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin'
+gpt2_model_load: n_vocab = 50257
+gpt2_model_load: n_ctx   = 1024
+gpt2_model_load: n_embd  = 768
+gpt2_model_load: n_head  = 12
+gpt2_model_load: n_layer = 12
+gpt2_model_load: ftype   = 1
+gpt2_model_load: qntvr   = 0
+gpt2_model_load: ggml tensor size    = 336 bytes
+gpt2_model_load: backend buffer size = 312.82 MB
+gpt2_model_load: memory size =   144.00 MB, n_mem = 24576
+gpt2_model_load: model size  =   239.08 MB
+
+
+main: generating 8 sequences ...
+main: prompt: 'I believe the meaning of life is'
+main: number of tokens in prompt = 7, first 8 tokens: 40 1975 262 3616 286 1204 318 
+
+
+main: stream 3 finished at n_cur = 32
+main: stream 0 finished at n_cur = 70
+main: stream 1 finished at n_cur = 70
+main: stream 2 finished at n_cur = 70
+main: stream 4 finished at n_cur = 70
+main: stream 5 finished at n_cur = 70
+main: stream 6 finished at n_cur = 70
+main: stream 7 finished at n_cur = 70
+sequence 0:
+
+I believe the meaning of life is not to be confused with its purpose. In a way, the term "living" is also used to describe a living organism. The term "living" is applied to a living organism which is in its infancy, or at least, has not yet reached maturity. The term "living organism" refers to a living
+
+sequence 1:
+
+I believe the meaning of life is a gift from God to all who are worthy. A person who is saved can have it all. He is endowed with the power of loving the world and of loving the dead. He is called to love the whole, and to love the soul, and to love the whole. He is called to be one with
+
+sequence 2:
+
+I believe the meaning of life is that it is the first step towards a better future for all of us.
+
+The word "realism" is a catchall term that we use to describe a variety of beliefs, ideas, and practices that are common to everyone.
+
+"Realism" is the attitude that one holds when trying to
+
+sequence 3:
+
+I believe the meaning of life is in the way it is not always in its proper course. The world will change, and it will be a better place.
+
+sequence 4:
+
+I believe the meaning of life is more important than any one of these things."
+
+Bennett, a professor at the University of Virginia, is a professor of religion at Temple University.
+
+"Our beliefs about God and the universe can lead to many kinds of religious practices and practices," he said.
+
+But this is not the first
+
+sequence 5:
+
+I believe the meaning of life is to seek what you have lost, and the meaning of life is to seek for what you have gained," he said. "And if you do that, you gain something."
+
+This may be the end of the line for Pope Francis, as well as his own words. While many of his many predecessors have
+
+sequence 6:
+
+I believe the meaning of life is to live to the fullest extent possible.
+
+If we have given up our own personal life and are willing to accept that we have failed in the way of love, then there will be no loss, no sorrow, no suffering.
+
+There is nothing more important to us than that which is present in the
+
+sequence 7:
+
+I believe the meaning of life is a matter of personal choice," she told the BBC's Victoria Derbyshire programme.
+
+"It's not just about life, it's about people, and we do care. I think there are different reasons people may be in a position to take their own life, but I think that in itself is a
+
+
+
+main:     n_decoded =      466
+main:     load time =   152.96 ms
+main:   sample time =   119.42 ms
+main:  predict time =  1677.45 ms
+main:    total time =  1973.73 ms
+
+real	0m2.013s
+user	0m6.851s
+sys	0m0.228s
++ set +e
++ cur=0
++ echo 0
++ set +x
++ gg_run_sam
++ cd /home/ggml/work/ggml
++ tee /home/ggml/results/ggml/41/c67eea6072dbdbd2fc0584c7332f2e293b1331/ggml-1-arm64-cpu-low-perf/sam.log
++ gg_wget models-mnt/sam/ https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth
++ local out=models-mnt/sam/
++ local url=https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth
+++ pwd
++ local cwd=/home/ggml/work/ggml
++ mkdir -p models-mnt/sam/
++ cd models-mnt/sam/
++ wget -nv -N https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth
++ cd /home/ggml/work/ggml
++ gg_wget models-mnt/sam/ https://raw.githubusercontent.com/YavorGIvanov/sam.cpp/ceafb7467bff7ec98e0c4f952e58a9eb8fd0238b/img.jpg
++ local out=models-mnt/sam/
++ local url=https://raw.githubusercontent.com/YavorGIvanov/sam.cpp/ceafb7467bff7ec98e0c4f952e58a9eb8fd0238b/img.jpg
+++ pwd
++ local cwd=/home/ggml/work/ggml
++ mkdir -p models-mnt/sam/
++ cd models-mnt/sam/
++ wget -nv -N https://raw.githubusercontent.com/YavorGIvanov/sam.cpp/ceafb7467bff7ec98e0c4f952e58a9eb8fd0238b/img.jpg
+Last-modified header missing -- time-stamps turned off.
+2025-01-14 07:38:02 URL:https://raw.githubusercontent.com/YavorGIvanov/sam.cpp/ceafb7467bff7ec98e0c4f952e58a9eb8fd0238b/img.jpg [79236/79236] -> "img.jpg" [1]
++ cd /home/ggml/work/ggml
++ cd build-ci-release
++ set -e
++ path_models=../models-mnt/sam/
++ model_f16=../models-mnt/sam//ggml-model-f16.bin
++ img_0=../models-mnt/sam//img.jpg
++ python3 ../examples/sam/convert-pth-to-ggml.py ../models-mnt/sam//sam_vit_b_01ec64.pth ../models-mnt/sam// 1
+image_encoder.neck.0.weight torch.Size([256, 768, 1, 1])
+image_encoder.neck.1.weight torch.Size([256])
+image_encoder.neck.1.bias torch.Size([256])
+image_encoder.neck.2.weight torch.Size([256, 256, 3, 3])
+image_encoder.neck.3.weight torch.Size([256])
+image_encoder.neck.3.bias torch.Size([256])
+image_encoder.patch_embed.proj.weight torch.Size([768, 3, 16, 16])
+image_encoder.patch_embed.proj.bias torch.Size([768])
+image_encoder.blocks.0.norm1.weight torch.Size([768])
+image_encoder.blocks.0.norm1.bias torch.Size([768])
+image_encoder.blocks.0.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.0.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.0.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.0.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.0.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.0.attn.proj.bias torch.Size([768])
+image_encoder.blocks.0.norm2.weight torch.Size([768])
+image_encoder.blocks.0.norm2.bias torch.Size([768])
+image_encoder.blocks.0.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.0.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.0.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.0.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.1.norm1.weight torch.Size([768])
+image_encoder.blocks.1.norm1.bias torch.Size([768])
+image_encoder.blocks.1.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.1.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.1.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.1.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.1.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.1.attn.proj.bias torch.Size([768])
+image_encoder.blocks.1.norm2.weight torch.Size([768])
+image_encoder.blocks.1.norm2.bias torch.Size([768])
+image_encoder.blocks.1.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.1.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.1.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.1.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.2.norm1.weight torch.Size([768])
+image_encoder.blocks.2.norm1.bias torch.Size([768])
+image_encoder.blocks.2.attn.rel_pos_h torch.Size([127, 64])
+image_encoder.blocks.2.attn.rel_pos_w torch.Size([127, 64])
+image_encoder.blocks.2.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.2.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.2.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.2.attn.proj.bias torch.Size([768])
+image_encoder.blocks.2.norm2.weight torch.Size([768])
+image_encoder.blocks.2.norm2.bias torch.Size([768])
+image_encoder.blocks.2.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.2.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.2.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.2.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.3.norm1.weight torch.Size([768])
+image_encoder.blocks.3.norm1.bias torch.Size([768])
+image_encoder.blocks.3.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.3.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.3.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.3.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.3.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.3.attn.proj.bias torch.Size([768])
+image_encoder.blocks.3.norm2.weight torch.Size([768])
+image_encoder.blocks.3.norm2.bias torch.Size([768])
+image_encoder.blocks.3.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.3.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.3.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.3.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.4.norm1.weight torch.Size([768])
+image_encoder.blocks.4.norm1.bias torch.Size([768])
+image_encoder.blocks.4.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.4.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.4.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.4.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.4.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.4.attn.proj.bias torch.Size([768])
+image_encoder.blocks.4.norm2.weight torch.Size([768])
+image_encoder.blocks.4.norm2.bias torch.Size([768])
+image_encoder.blocks.4.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.4.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.4.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.4.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.5.norm1.weight torch.Size([768])
+image_encoder.blocks.5.norm1.bias torch.Size([768])
+image_encoder.blocks.5.attn.rel_pos_h torch.Size([127, 64])
+image_encoder.blocks.5.attn.rel_pos_w torch.Size([127, 64])
+image_encoder.blocks.5.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.5.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.5.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.5.attn.proj.bias torch.Size([768])
+image_encoder.blocks.5.norm2.weight torch.Size([768])
+image_encoder.blocks.5.norm2.bias torch.Size([768])
+image_encoder.blocks.5.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.5.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.5.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.5.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.6.norm1.weight torch.Size([768])
+image_encoder.blocks.6.norm1.bias torch.Size([768])
+image_encoder.blocks.6.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.6.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.6.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.6.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.6.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.6.attn.proj.bias torch.Size([768])
+image_encoder.blocks.6.norm2.weight torch.Size([768])
+image_encoder.blocks.6.norm2.bias torch.Size([768])
+image_encoder.blocks.6.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.6.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.6.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.6.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.7.norm1.weight torch.Size([768])
+image_encoder.blocks.7.norm1.bias torch.Size([768])
+image_encoder.blocks.7.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.7.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.7.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.7.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.7.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.7.attn.proj.bias torch.Size([768])
+image_encoder.blocks.7.norm2.weight torch.Size([768])
+image_encoder.blocks.7.norm2.bias torch.Size([768])
+image_encoder.blocks.7.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.7.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.7.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.7.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.8.norm1.weight torch.Size([768])
+image_encoder.blocks.8.norm1.bias torch.Size([768])
+image_encoder.blocks.8.attn.rel_pos_h torch.Size([127, 64])
+image_encoder.blocks.8.attn.rel_pos_w torch.Size([127, 64])
+image_encoder.blocks.8.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.8.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.8.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.8.attn.proj.bias torch.Size([768])
+image_encoder.blocks.8.norm2.weight torch.Size([768])
+image_encoder.blocks.8.norm2.bias torch.Size([768])
+image_encoder.blocks.8.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.8.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.8.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.8.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.9.norm1.weight torch.Size([768])
+image_encoder.blocks.9.norm1.bias torch.Size([768])
+image_encoder.blocks.9.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.9.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.9.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.9.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.9.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.9.attn.proj.bias torch.Size([768])
+image_encoder.blocks.9.norm2.weight torch.Size([768])
+image_encoder.blocks.9.norm2.bias torch.Size([768])
+image_encoder.blocks.9.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.9.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.9.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.9.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.10.norm1.weight torch.Size([768])
+image_encoder.blocks.10.norm1.bias torch.Size([768])
+image_encoder.blocks.10.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.10.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.10.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.10.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.10.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.10.attn.proj.bias torch.Size([768])
+image_encoder.blocks.10.norm2.weight torch.Size([768])
+image_encoder.blocks.10.norm2.bias torch.Size([768])
+image_encoder.blocks.10.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.10.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.10.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.10.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.11.norm1.weight torch.Size([768])
+image_encoder.blocks.11.norm1.bias torch.Size([768])
+image_encoder.blocks.11.attn.rel_pos_h torch.Size([127, 64])
+image_encoder.blocks.11.attn.rel_pos_w torch.Size([127, 64])
+image_encoder.blocks.11.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.11.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.11.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.11.attn.proj.bias torch.Size([768])
+image_encoder.blocks.11.norm2.weight torch.Size([768])
+image_encoder.blocks.11.norm2.bias torch.Size([768])
+image_encoder.blocks.11.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.11.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.11.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.11.mlp.lin2.bias torch.Size([768])
+prompt_encoder.pe_layer.positional_encoding_gaussian_matrix torch.Size([2, 128])
+mask_decoder.transformer.layers.0.self_attn.q_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.0.self_attn.q_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.0.self_attn.k_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.0.self_attn.k_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.0.self_attn.v_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.0.self_attn.v_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.0.self_attn.out_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.0.self_attn.out_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.0.norm1.weight torch.Size([256])
+mask_decoder.transformer.layers.0.norm1.bias torch.Size([256])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.q_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.q_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.k_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.k_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.v_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.v_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.out_proj.weight torch.Size([256, 128])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.out_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.0.norm2.weight torch.Size([256])
+mask_decoder.transformer.layers.0.norm2.bias torch.Size([256])
+mask_decoder.transformer.layers.0.mlp.lin1.weight torch.Size([2048, 256])
+mask_decoder.transformer.layers.0.mlp.lin1.bias torch.Size([2048])
+mask_decoder.transformer.layers.0.mlp.lin2.weight torch.Size([256, 2048])
+mask_decoder.transformer.layers.0.mlp.lin2.bias torch.Size([256])
+mask_decoder.transformer.layers.0.norm3.weight torch.Size([256])
+mask_decoder.transformer.layers.0.norm3.bias torch.Size([256])
+mask_decoder.transformer.layers.0.norm4.weight torch.Size([256])
+mask_decoder.transformer.layers.0.norm4.bias torch.Size([256])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.q_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.q_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.k_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.k_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.v_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.v_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.out_proj.weight torch.Size([256, 128])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.out_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.1.self_attn.q_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.1.self_attn.q_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.1.self_attn.k_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.1.self_attn.k_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.1.self_attn.v_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.1.self_attn.v_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.1.self_attn.out_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.1.self_attn.out_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.1.norm1.weight torch.Size([256])
+mask_decoder.transformer.layers.1.norm1.bias torch.Size([256])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.q_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.q_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.k_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.k_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.v_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.v_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.out_proj.weight torch.Size([256, 128])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.out_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.1.norm2.weight torch.Size([256])
+mask_decoder.transformer.layers.1.norm2.bias torch.Size([256])
+mask_decoder.transformer.layers.1.mlp.lin1.weight torch.Size([2048, 256])
+mask_decoder.transformer.layers.1.mlp.lin1.bias torch.Size([2048])
+mask_decoder.transformer.layers.1.mlp.lin2.weight torch.Size([256, 2048])
+mask_decoder.transformer.layers.1.mlp.lin2.bias torch.Size([256])
+mask_decoder.transformer.layers.1.norm3.weight torch.Size([256])
+mask_decoder.transformer.layers.1.norm3.bias torch.Size([256])
+mask_decoder.transformer.layers.1.norm4.weight torch.Size([256])
+mask_decoder.transformer.layers.1.norm4.bias torch.Size([256])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.q_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.q_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.k_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.k_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.v_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.v_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.out_proj.weight torch.Size([256, 128])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.out_proj.bias torch.Size([256])
+mask_decoder.transformer.final_attn_token_to_image.q_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.final_attn_token_to_image.q_proj.bias torch.Size([128])
+mask_decoder.transformer.final_attn_token_to_image.k_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.final_attn_token_to_image.k_proj.bias torch.Size([128])
+mask_decoder.transformer.final_attn_token_to_image.v_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.final_attn_token_to_image.v_proj.bias torch.Size([128])
+mask_decoder.transformer.final_attn_token_to_image.out_proj.weight torch.Size([256, 128])
+mask_decoder.transformer.final_attn_token_to_image.out_proj.bias torch.Size([256])
+mask_decoder.transformer.norm_final_attn.weight torch.Size([256])
+mask_decoder.transformer.norm_final_attn.bias torch.Size([256])
+prompt_encoder.point_embeddings.0.weight torch.Size([1, 256])
+prompt_encoder.point_embeddings.1.weight torch.Size([1, 256])
+prompt_encoder.point_embeddings.2.weight torch.Size([1, 256])
+prompt_encoder.point_embeddings.3.weight torch.Size([1, 256])
+prompt_encoder.not_a_point_embed.weight torch.Size([1, 256])
+mask_decoder.output_upscaling.0.weight torch.Size([256, 64, 2, 2])
+mask_decoder.output_upscaling.0.bias torch.Size([64])
+mask_decoder.output_upscaling.1.weight torch.Size([64])
+mask_decoder.output_upscaling.1.bias torch.Size([64])
+mask_decoder.output_upscaling.3.weight torch.Size([64, 32, 2, 2])
+mask_decoder.output_upscaling.3.bias torch.Size([32])
+mask_decoder.output_hypernetworks_mlps.0.layers.0.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.0.layers.0.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.0.layers.1.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.0.layers.1.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.0.layers.2.weight torch.Size([32, 256])
+mask_decoder.output_hypernetworks_mlps.0.layers.2.bias torch.Size([32])
+mask_decoder.output_hypernetworks_mlps.1.layers.0.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.1.layers.0.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.1.layers.1.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.1.layers.1.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.1.layers.2.weight torch.Size([32, 256])
+mask_decoder.output_hypernetworks_mlps.1.layers.2.bias torch.Size([32])
+mask_decoder.output_hypernetworks_mlps.2.layers.0.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.2.layers.0.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.2.layers.1.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.2.layers.1.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.2.layers.2.weight torch.Size([32, 256])
+mask_decoder.output_hypernetworks_mlps.2.layers.2.bias torch.Size([32])
+mask_decoder.output_hypernetworks_mlps.3.layers.0.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.3.layers.0.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.3.layers.1.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.3.layers.1.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.3.layers.2.weight torch.Size([32, 256])
+mask_decoder.output_hypernetworks_mlps.3.layers.2.bias torch.Size([32])
+prompt_encoder.mask_downscaling.0.weight torch.Size([4, 1, 2, 2])
+prompt_encoder.mask_downscaling.0.bias torch.Size([4])
+prompt_encoder.mask_downscaling.1.weight torch.Size([4])
+prompt_encoder.mask_downscaling.1.bias torch.Size([4])
+prompt_encoder.mask_downscaling.3.weight torch.Size([16, 4, 2, 2])
+prompt_encoder.mask_downscaling.3.bias torch.Size([16])
+prompt_encoder.mask_downscaling.4.weight torch.Size([16])
+prompt_encoder.mask_downscaling.4.bias torch.Size([16])
+prompt_encoder.mask_downscaling.6.weight torch.Size([256, 16, 1, 1])
+prompt_encoder.mask_downscaling.6.bias torch.Size([256])
+prompt_encoder.no_mask_embed.weight torch.Size([1, 256])
+mask_decoder.iou_prediction_head.layers.0.weight torch.Size([256, 256])
+mask_decoder.iou_prediction_head.layers.0.bias torch.Size([256])
+mask_decoder.iou_prediction_head.layers.1.weight torch.Size([256, 256])
+mask_decoder.iou_prediction_head.layers.1.bias torch.Size([256])
+mask_decoder.iou_prediction_head.layers.2.weight torch.Size([4, 256])
+mask_decoder.iou_prediction_head.layers.2.bias torch.Size([4])
+mask_decoder.iou_token.weight torch.Size([1, 256])
+mask_decoder.mask_tokens.weight torch.Size([4, 256])
+image_encoder.pos_embed torch.Size([1, 64, 64, 768])
+{'n_enc_state': 768, 'n_enc_layers': 12, 'n_enc_heads': 12, 'n_enc_out_chans': 256, 'n_pt_embd': 4}
+image_encoder.neck.0.weight torch.Size([256, 768, 1, 1])
+image_encoder.neck.1.weight torch.Size([256])
+image_encoder.neck.1.bias torch.Size([256])
+image_encoder.neck.2.weight torch.Size([256, 256, 3, 3])
+image_encoder.neck.3.weight torch.Size([256])
+image_encoder.neck.3.bias torch.Size([256])
+image_encoder.patch_embed.proj.weight torch.Size([768, 3, 16, 16])
+image_encoder.patch_embed.proj.bias torch.Size([768])
+image_encoder.blocks.0.norm1.weight torch.Size([768])
+image_encoder.blocks.0.norm1.bias torch.Size([768])
+image_encoder.blocks.0.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.0.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.0.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.0.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.0.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.0.attn.proj.bias torch.Size([768])
+image_encoder.blocks.0.norm2.weight torch.Size([768])
+image_encoder.blocks.0.norm2.bias torch.Size([768])
+image_encoder.blocks.0.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.0.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.0.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.0.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.1.norm1.weight torch.Size([768])
+image_encoder.blocks.1.norm1.bias torch.Size([768])
+image_encoder.blocks.1.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.1.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.1.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.1.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.1.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.1.attn.proj.bias torch.Size([768])
+image_encoder.blocks.1.norm2.weight torch.Size([768])
+image_encoder.blocks.1.norm2.bias torch.Size([768])
+image_encoder.blocks.1.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.1.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.1.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.1.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.2.norm1.weight torch.Size([768])
+image_encoder.blocks.2.norm1.bias torch.Size([768])
+image_encoder.blocks.2.attn.rel_pos_h torch.Size([127, 64])
+image_encoder.blocks.2.attn.rel_pos_w torch.Size([127, 64])
+image_encoder.blocks.2.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.2.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.2.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.2.attn.proj.bias torch.Size([768])
+image_encoder.blocks.2.norm2.weight torch.Size([768])
+image_encoder.blocks.2.norm2.bias torch.Size([768])
+image_encoder.blocks.2.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.2.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.2.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.2.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.3.norm1.weight torch.Size([768])
+image_encoder.blocks.3.norm1.bias torch.Size([768])
+image_encoder.blocks.3.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.3.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.3.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.3.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.3.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.3.attn.proj.bias torch.Size([768])
+image_encoder.blocks.3.norm2.weight torch.Size([768])
+image_encoder.blocks.3.norm2.bias torch.Size([768])
+image_encoder.blocks.3.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.3.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.3.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.3.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.4.norm1.weight torch.Size([768])
+image_encoder.blocks.4.norm1.bias torch.Size([768])
+image_encoder.blocks.4.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.4.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.4.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.4.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.4.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.4.attn.proj.bias torch.Size([768])
+image_encoder.blocks.4.norm2.weight torch.Size([768])
+image_encoder.blocks.4.norm2.bias torch.Size([768])
+image_encoder.blocks.4.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.4.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.4.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.4.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.5.norm1.weight torch.Size([768])
+image_encoder.blocks.5.norm1.bias torch.Size([768])
+image_encoder.blocks.5.attn.rel_pos_h torch.Size([127, 64])
+image_encoder.blocks.5.attn.rel_pos_w torch.Size([127, 64])
+image_encoder.blocks.5.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.5.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.5.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.5.attn.proj.bias torch.Size([768])
+image_encoder.blocks.5.norm2.weight torch.Size([768])
+image_encoder.blocks.5.norm2.bias torch.Size([768])
+image_encoder.blocks.5.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.5.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.5.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.5.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.6.norm1.weight torch.Size([768])
+image_encoder.blocks.6.norm1.bias torch.Size([768])
+image_encoder.blocks.6.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.6.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.6.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.6.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.6.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.6.attn.proj.bias torch.Size([768])
+image_encoder.blocks.6.norm2.weight torch.Size([768])
+image_encoder.blocks.6.norm2.bias torch.Size([768])
+image_encoder.blocks.6.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.6.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.6.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.6.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.7.norm1.weight torch.Size([768])
+image_encoder.blocks.7.norm1.bias torch.Size([768])
+image_encoder.blocks.7.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.7.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.7.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.7.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.7.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.7.attn.proj.bias torch.Size([768])
+image_encoder.blocks.7.norm2.weight torch.Size([768])
+image_encoder.blocks.7.norm2.bias torch.Size([768])
+image_encoder.blocks.7.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.7.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.7.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.7.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.8.norm1.weight torch.Size([768])
+image_encoder.blocks.8.norm1.bias torch.Size([768])
+image_encoder.blocks.8.attn.rel_pos_h torch.Size([127, 64])
+image_encoder.blocks.8.attn.rel_pos_w torch.Size([127, 64])
+image_encoder.blocks.8.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.8.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.8.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.8.attn.proj.bias torch.Size([768])
+image_encoder.blocks.8.norm2.weight torch.Size([768])
+image_encoder.blocks.8.norm2.bias torch.Size([768])
+image_encoder.blocks.8.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.8.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.8.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.8.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.9.norm1.weight torch.Size([768])
+image_encoder.blocks.9.norm1.bias torch.Size([768])
+image_encoder.blocks.9.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.9.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.9.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.9.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.9.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.9.attn.proj.bias torch.Size([768])
+image_encoder.blocks.9.norm2.weight torch.Size([768])
+image_encoder.blocks.9.norm2.bias torch.Size([768])
+image_encoder.blocks.9.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.9.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.9.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.9.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.10.norm1.weight torch.Size([768])
+image_encoder.blocks.10.norm1.bias torch.Size([768])
+image_encoder.blocks.10.attn.rel_pos_h torch.Size([27, 64])
+image_encoder.blocks.10.attn.rel_pos_w torch.Size([27, 64])
+image_encoder.blocks.10.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.10.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.10.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.10.attn.proj.bias torch.Size([768])
+image_encoder.blocks.10.norm2.weight torch.Size([768])
+image_encoder.blocks.10.norm2.bias torch.Size([768])
+image_encoder.blocks.10.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.10.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.10.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.10.mlp.lin2.bias torch.Size([768])
+image_encoder.blocks.11.norm1.weight torch.Size([768])
+image_encoder.blocks.11.norm1.bias torch.Size([768])
+image_encoder.blocks.11.attn.rel_pos_h torch.Size([127, 64])
+image_encoder.blocks.11.attn.rel_pos_w torch.Size([127, 64])
+image_encoder.blocks.11.attn.qkv.weight torch.Size([2304, 768])
+image_encoder.blocks.11.attn.qkv.bias torch.Size([2304])
+image_encoder.blocks.11.attn.proj.weight torch.Size([768, 768])
+image_encoder.blocks.11.attn.proj.bias torch.Size([768])
+image_encoder.blocks.11.norm2.weight torch.Size([768])
+image_encoder.blocks.11.norm2.bias torch.Size([768])
+image_encoder.blocks.11.mlp.lin1.weight torch.Size([3072, 768])
+image_encoder.blocks.11.mlp.lin1.bias torch.Size([3072])
+image_encoder.blocks.11.mlp.lin2.weight torch.Size([768, 3072])
+image_encoder.blocks.11.mlp.lin2.bias torch.Size([768])
+prompt_encoder.pe_layer.positional_encoding_gaussian_matrix torch.Size([2, 128])
+mask_decoder.transformer.layers.0.self_attn.q_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.0.self_attn.q_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.0.self_attn.k_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.0.self_attn.k_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.0.self_attn.v_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.0.self_attn.v_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.0.self_attn.out_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.0.self_attn.out_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.0.norm1.weight torch.Size([256])
+mask_decoder.transformer.layers.0.norm1.bias torch.Size([256])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.q_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.q_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.k_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.k_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.v_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.v_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.out_proj.weight torch.Size([256, 128])
+mask_decoder.transformer.layers.0.cross_attn_token_to_image.out_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.0.norm2.weight torch.Size([256])
+mask_decoder.transformer.layers.0.norm2.bias torch.Size([256])
+mask_decoder.transformer.layers.0.mlp.lin1.weight torch.Size([2048, 256])
+mask_decoder.transformer.layers.0.mlp.lin1.bias torch.Size([2048])
+mask_decoder.transformer.layers.0.mlp.lin2.weight torch.Size([256, 2048])
+mask_decoder.transformer.layers.0.mlp.lin2.bias torch.Size([256])
+mask_decoder.transformer.layers.0.norm3.weight torch.Size([256])
+mask_decoder.transformer.layers.0.norm3.bias torch.Size([256])
+mask_decoder.transformer.layers.0.norm4.weight torch.Size([256])
+mask_decoder.transformer.layers.0.norm4.bias torch.Size([256])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.q_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.q_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.k_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.k_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.v_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.v_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.out_proj.weight torch.Size([256, 128])
+mask_decoder.transformer.layers.0.cross_attn_image_to_token.out_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.1.self_attn.q_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.1.self_attn.q_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.1.self_attn.k_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.1.self_attn.k_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.1.self_attn.v_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.1.self_attn.v_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.1.self_attn.out_proj.weight torch.Size([256, 256])
+mask_decoder.transformer.layers.1.self_attn.out_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.1.norm1.weight torch.Size([256])
+mask_decoder.transformer.layers.1.norm1.bias torch.Size([256])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.q_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.q_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.k_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.k_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.v_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.v_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.out_proj.weight torch.Size([256, 128])
+mask_decoder.transformer.layers.1.cross_attn_token_to_image.out_proj.bias torch.Size([256])
+mask_decoder.transformer.layers.1.norm2.weight torch.Size([256])
+mask_decoder.transformer.layers.1.norm2.bias torch.Size([256])
+mask_decoder.transformer.layers.1.mlp.lin1.weight torch.Size([2048, 256])
+mask_decoder.transformer.layers.1.mlp.lin1.bias torch.Size([2048])
+mask_decoder.transformer.layers.1.mlp.lin2.weight torch.Size([256, 2048])
+mask_decoder.transformer.layers.1.mlp.lin2.bias torch.Size([256])
+mask_decoder.transformer.layers.1.norm3.weight torch.Size([256])
+mask_decoder.transformer.layers.1.norm3.bias torch.Size([256])
+mask_decoder.transformer.layers.1.norm4.weight torch.Size([256])
+mask_decoder.transformer.layers.1.norm4.bias torch.Size([256])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.q_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.q_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.k_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.k_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.v_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.v_proj.bias torch.Size([128])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.out_proj.weight torch.Size([256, 128])
+mask_decoder.transformer.layers.1.cross_attn_image_to_token.out_proj.bias torch.Size([256])
+mask_decoder.transformer.final_attn_token_to_image.q_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.final_attn_token_to_image.q_proj.bias torch.Size([128])
+mask_decoder.transformer.final_attn_token_to_image.k_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.final_attn_token_to_image.k_proj.bias torch.Size([128])
+mask_decoder.transformer.final_attn_token_to_image.v_proj.weight torch.Size([128, 256])
+mask_decoder.transformer.final_attn_token_to_image.v_proj.bias torch.Size([128])
+mask_decoder.transformer.final_attn_token_to_image.out_proj.weight torch.Size([256, 128])
+mask_decoder.transformer.final_attn_token_to_image.out_proj.bias torch.Size([256])
+mask_decoder.transformer.norm_final_attn.weight torch.Size([256])
+mask_decoder.transformer.norm_final_attn.bias torch.Size([256])
+prompt_encoder.point_embeddings.0.weight torch.Size([1, 256])
+prompt_encoder.point_embeddings.1.weight torch.Size([1, 256])
+prompt_encoder.point_embeddings.2.weight torch.Size([1, 256])
+prompt_encoder.point_embeddings.3.weight torch.Size([1, 256])
+prompt_encoder.not_a_point_embed.weight torch.Size([1, 256])
+mask_decoder.output_upscaling.0.weight torch.Size([256, 64, 2, 2])
+mask_decoder.output_upscaling.0.bias torch.Size([64])
+mask_decoder.output_upscaling.1.weight torch.Size([64])
+mask_decoder.output_upscaling.1.bias torch.Size([64])
+mask_decoder.output_upscaling.3.weight torch.Size([64, 32, 2, 2])
+mask_decoder.output_upscaling.3.bias torch.Size([32])
+mask_decoder.output_hypernetworks_mlps.0.layers.0.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.0.layers.0.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.0.layers.1.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.0.layers.1.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.0.layers.2.weight torch.Size([32, 256])
+mask_decoder.output_hypernetworks_mlps.0.layers.2.bias torch.Size([32])
+mask_decoder.output_hypernetworks_mlps.1.layers.0.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.1.layers.0.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.1.layers.1.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.1.layers.1.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.1.layers.2.weight torch.Size([32, 256])
+mask_decoder.output_hypernetworks_mlps.1.layers.2.bias torch.Size([32])
+mask_decoder.output_hypernetworks_mlps.2.layers.0.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.2.layers.0.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.2.layers.1.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.2.layers.1.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.2.layers.2.weight torch.Size([32, 256])
+mask_decoder.output_hypernetworks_mlps.2.layers.2.bias torch.Size([32])
+mask_decoder.output_hypernetworks_mlps.3.layers.0.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.3.layers.0.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.3.layers.1.weight torch.Size([256, 256])
+mask_decoder.output_hypernetworks_mlps.3.layers.1.bias torch.Size([256])
+mask_decoder.output_hypernetworks_mlps.3.layers.2.weight torch.Size([32, 256])
+mask_decoder.output_hypernetworks_mlps.3.layers.2.bias torch.Size([32])
+prompt_encoder.mask_downscaling.0.weight torch.Size([4, 1, 2, 2])
+prompt_encoder.mask_downscaling.0.bias torch.Size([4])
+prompt_encoder.mask_downscaling.1.weight torch.Size([4])
+prompt_encoder.mask_downscaling.1.bias torch.Size([4])
+prompt_encoder.mask_downscaling.3.weight torch.Size([16, 4, 2, 2])
+prompt_encoder.mask_downscaling.3.bias torch.Size([16])
+prompt_encoder.mask_downscaling.4.weight torch.Size([16])
+prompt_encoder.mask_downscaling.4.bias torch.Size([16])
+prompt_encoder.mask_downscaling.6.weight torch.Size([256, 16, 1, 1])
+prompt_encoder.mask_downscaling.6.bias torch.Size([256])
+prompt_encoder.no_mask_embed.weight torch.Size([1, 256])
+mask_decoder.iou_prediction_head.layers.0.weight torch.Size([256, 256])
+mask_decoder.iou_prediction_head.layers.0.bias torch.Size([256])
+mask_decoder.iou_prediction_head.layers.1.weight torch.Size([256, 256])
+mask_decoder.iou_prediction_head.layers.1.bias torch.Size([256])
+mask_decoder.iou_prediction_head.layers.2.weight torch.Size([4, 256])
+mask_decoder.iou_prediction_head.layers.2.bias torch.Size([4])
+mask_decoder.iou_token.weight torch.Size([1, 256])
+mask_decoder.mask_tokens.weight torch.Size([4, 256])
+image_encoder.pos_embed torch.Size([1, 64, 64, 768])
+Processing variable: image_encoder.neck.0.weight with shape:  torch.Size([256, 768, 1, 1])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 768, 1, 1)
+Processing variable: image_encoder.neck.1.weight with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: image_encoder.neck.1.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: image_encoder.neck.2.weight with shape:  torch.Size([256, 256, 3, 3])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256, 3, 3)
+Processing variable: image_encoder.neck.3.weight with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: image_encoder.neck.3.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: image_encoder.patch_embed.proj.weight with shape:  torch.Size([768, 3, 16, 16])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 3, 16, 16)
+Processing variable: image_encoder.patch_embed.proj.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (1, 768, 1, 1)
+Processing variable: image_encoder.blocks.0.norm1.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.0.norm1.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.0.attn.rel_pos_h with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.0.attn.rel_pos_w with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.0.attn.qkv.weight with shape:  torch.Size([2304, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (2304, 768)
+Processing variable: image_encoder.blocks.0.attn.qkv.bias with shape:  torch.Size([2304])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2304,)
+Processing variable: image_encoder.blocks.0.attn.proj.weight with shape:  torch.Size([768, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 768)
+Processing variable: image_encoder.blocks.0.attn.proj.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.0.norm2.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.0.norm2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.0.mlp.lin1.weight with shape:  torch.Size([3072, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (3072, 768)
+Processing variable: image_encoder.blocks.0.mlp.lin1.bias with shape:  torch.Size([3072])  and type:  torch.float32
+  Converting to float32
+  New shape:  (3072,)
+Processing variable: image_encoder.blocks.0.mlp.lin2.weight with shape:  torch.Size([768, 3072])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 3072)
+Processing variable: image_encoder.blocks.0.mlp.lin2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.1.norm1.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.1.norm1.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.1.attn.rel_pos_h with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.1.attn.rel_pos_w with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.1.attn.qkv.weight with shape:  torch.Size([2304, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (2304, 768)
+Processing variable: image_encoder.blocks.1.attn.qkv.bias with shape:  torch.Size([2304])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2304,)
+Processing variable: image_encoder.blocks.1.attn.proj.weight with shape:  torch.Size([768, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 768)
+Processing variable: image_encoder.blocks.1.attn.proj.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.1.norm2.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.1.norm2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.1.mlp.lin1.weight with shape:  torch.Size([3072, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (3072, 768)
+Processing variable: image_encoder.blocks.1.mlp.lin1.bias with shape:  torch.Size([3072])  and type:  torch.float32
+  Converting to float32
+  New shape:  (3072,)
+Processing variable: image_encoder.blocks.1.mlp.lin2.weight with shape:  torch.Size([768, 3072])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 3072)
+Processing variable: image_encoder.blocks.1.mlp.lin2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.2.norm1.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.2.norm1.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.2.attn.rel_pos_h with shape:  torch.Size([127, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (127, 64)
+Processing variable: image_encoder.blocks.2.attn.rel_pos_w with shape:  torch.Size([127, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (127, 64)
+Processing variable: image_encoder.blocks.2.attn.qkv.weight with shape:  torch.Size([2304, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (2304, 768)
+Processing variable: image_encoder.blocks.2.attn.qkv.bias with shape:  torch.Size([2304])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2304,)
+Processing variable: image_encoder.blocks.2.attn.proj.weight with shape:  torch.Size([768, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 768)
+Processing variable: image_encoder.blocks.2.attn.proj.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.2.norm2.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.2.norm2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.2.mlp.lin1.weight with shape:  torch.Size([3072, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (3072, 768)
+Processing variable: image_encoder.blocks.2.mlp.lin1.bias with shape:  torch.Size([3072])  and type:  torch.float32
+  Converting to float32
+  New shape:  (3072,)
+Processing variable: image_encoder.blocks.2.mlp.lin2.weight with shape:  torch.Size([768, 3072])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 3072)
+Processing variable: image_encoder.blocks.2.mlp.lin2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.3.norm1.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.3.norm1.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.3.attn.rel_pos_h with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.3.attn.rel_pos_w with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.3.attn.qkv.weight with shape:  torch.Size([2304, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (2304, 768)
+Processing variable: image_encoder.blocks.3.attn.qkv.bias with shape:  torch.Size([2304])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2304,)
+Processing variable: image_encoder.blocks.3.attn.proj.weight with shape:  torch.Size([768, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 768)
+Processing variable: image_encoder.blocks.3.attn.proj.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.3.norm2.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.3.norm2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.3.mlp.lin1.weight with shape:  torch.Size([3072, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (3072, 768)
+Processing variable: image_encoder.blocks.3.mlp.lin1.bias with shape:  torch.Size([3072])  and type:  torch.float32
+  Converting to float32
+  New shape:  (3072,)
+Processing variable: image_encoder.blocks.3.mlp.lin2.weight with shape:  torch.Size([768, 3072])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 3072)
+Processing variable: image_encoder.blocks.3.mlp.lin2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.4.norm1.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.4.norm1.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.4.attn.rel_pos_h with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.4.attn.rel_pos_w with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.4.attn.qkv.weight with shape:  torch.Size([2304, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (2304, 768)
+Processing variable: image_encoder.blocks.4.attn.qkv.bias with shape:  torch.Size([2304])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2304,)
+Processing variable: image_encoder.blocks.4.attn.proj.weight with shape:  torch.Size([768, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 768)
+Processing variable: image_encoder.blocks.4.attn.proj.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.4.norm2.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.4.norm2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.4.mlp.lin1.weight with shape:  torch.Size([3072, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (3072, 768)
+Processing variable: image_encoder.blocks.4.mlp.lin1.bias with shape:  torch.Size([3072])  and type:  torch.float32
+  Converting to float32
+  New shape:  (3072,)
+Processing variable: image_encoder.blocks.4.mlp.lin2.weight with shape:  torch.Size([768, 3072])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 3072)
+Processing variable: image_encoder.blocks.4.mlp.lin2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.5.norm1.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.5.norm1.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.5.attn.rel_pos_h with shape:  torch.Size([127, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (127, 64)
+Processing variable: image_encoder.blocks.5.attn.rel_pos_w with shape:  torch.Size([127, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (127, 64)
+Processing variable: image_encoder.blocks.5.attn.qkv.weight with shape:  torch.Size([2304, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (2304, 768)
+Processing variable: image_encoder.blocks.5.attn.qkv.bias with shape:  torch.Size([2304])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2304,)
+Processing variable: image_encoder.blocks.5.attn.proj.weight with shape:  torch.Size([768, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 768)
+Processing variable: image_encoder.blocks.5.attn.proj.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.5.norm2.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.5.norm2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.5.mlp.lin1.weight with shape:  torch.Size([3072, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (3072, 768)
+Processing variable: image_encoder.blocks.5.mlp.lin1.bias with shape:  torch.Size([3072])  and type:  torch.float32
+  Converting to float32
+  New shape:  (3072,)
+Processing variable: image_encoder.blocks.5.mlp.lin2.weight with shape:  torch.Size([768, 3072])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 3072)
+Processing variable: image_encoder.blocks.5.mlp.lin2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.6.norm1.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.6.norm1.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.6.attn.rel_pos_h with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.6.attn.rel_pos_w with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.6.attn.qkv.weight with shape:  torch.Size([2304, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (2304, 768)
+Processing variable: image_encoder.blocks.6.attn.qkv.bias with shape:  torch.Size([2304])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2304,)
+Processing variable: image_encoder.blocks.6.attn.proj.weight with shape:  torch.Size([768, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 768)
+Processing variable: image_encoder.blocks.6.attn.proj.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.6.norm2.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.6.norm2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.6.mlp.lin1.weight with shape:  torch.Size([3072, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (3072, 768)
+Processing variable: image_encoder.blocks.6.mlp.lin1.bias with shape:  torch.Size([3072])  and type:  torch.float32
+  Converting to float32
+  New shape:  (3072,)
+Processing variable: image_encoder.blocks.6.mlp.lin2.weight with shape:  torch.Size([768, 3072])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 3072)
+Processing variable: image_encoder.blocks.6.mlp.lin2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.7.norm1.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.7.norm1.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.7.attn.rel_pos_h with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.7.attn.rel_pos_w with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.7.attn.qkv.weight with shape:  torch.Size([2304, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (2304, 768)
+Processing variable: image_encoder.blocks.7.attn.qkv.bias with shape:  torch.Size([2304])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2304,)
+Processing variable: image_encoder.blocks.7.attn.proj.weight with shape:  torch.Size([768, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 768)
+Processing variable: image_encoder.blocks.7.attn.proj.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.7.norm2.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.7.norm2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.7.mlp.lin1.weight with shape:  torch.Size([3072, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (3072, 768)
+Processing variable: image_encoder.blocks.7.mlp.lin1.bias with shape:  torch.Size([3072])  and type:  torch.float32
+  Converting to float32
+  New shape:  (3072,)
+Processing variable: image_encoder.blocks.7.mlp.lin2.weight with shape:  torch.Size([768, 3072])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 3072)
+Processing variable: image_encoder.blocks.7.mlp.lin2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.8.norm1.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.8.norm1.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.8.attn.rel_pos_h with shape:  torch.Size([127, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (127, 64)
+Processing variable: image_encoder.blocks.8.attn.rel_pos_w with shape:  torch.Size([127, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (127, 64)
+Processing variable: image_encoder.blocks.8.attn.qkv.weight with shape:  torch.Size([2304, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (2304, 768)
+Processing variable: image_encoder.blocks.8.attn.qkv.bias with shape:  torch.Size([2304])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2304,)
+Processing variable: image_encoder.blocks.8.attn.proj.weight with shape:  torch.Size([768, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 768)
+Processing variable: image_encoder.blocks.8.attn.proj.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.8.norm2.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.8.norm2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.8.mlp.lin1.weight with shape:  torch.Size([3072, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (3072, 768)
+Processing variable: image_encoder.blocks.8.mlp.lin1.bias with shape:  torch.Size([3072])  and type:  torch.float32
+  Converting to float32
+  New shape:  (3072,)
+Processing variable: image_encoder.blocks.8.mlp.lin2.weight with shape:  torch.Size([768, 3072])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 3072)
+Processing variable: image_encoder.blocks.8.mlp.lin2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.9.norm1.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.9.norm1.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.9.attn.rel_pos_h with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.9.attn.rel_pos_w with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.9.attn.qkv.weight with shape:  torch.Size([2304, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (2304, 768)
+Processing variable: image_encoder.blocks.9.attn.qkv.bias with shape:  torch.Size([2304])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2304,)
+Processing variable: image_encoder.blocks.9.attn.proj.weight with shape:  torch.Size([768, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 768)
+Processing variable: image_encoder.blocks.9.attn.proj.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.9.norm2.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.9.norm2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.9.mlp.lin1.weight with shape:  torch.Size([3072, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (3072, 768)
+Processing variable: image_encoder.blocks.9.mlp.lin1.bias with shape:  torch.Size([3072])  and type:  torch.float32
+  Converting to float32
+  New shape:  (3072,)
+Processing variable: image_encoder.blocks.9.mlp.lin2.weight with shape:  torch.Size([768, 3072])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 3072)
+Processing variable: image_encoder.blocks.9.mlp.lin2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.10.norm1.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.10.norm1.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.10.attn.rel_pos_h with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.10.attn.rel_pos_w with shape:  torch.Size([27, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (27, 64)
+Processing variable: image_encoder.blocks.10.attn.qkv.weight with shape:  torch.Size([2304, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (2304, 768)
+Processing variable: image_encoder.blocks.10.attn.qkv.bias with shape:  torch.Size([2304])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2304,)
+Processing variable: image_encoder.blocks.10.attn.proj.weight with shape:  torch.Size([768, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 768)
+Processing variable: image_encoder.blocks.10.attn.proj.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.10.norm2.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.10.norm2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.10.mlp.lin1.weight with shape:  torch.Size([3072, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (3072, 768)
+Processing variable: image_encoder.blocks.10.mlp.lin1.bias with shape:  torch.Size([3072])  and type:  torch.float32
+  Converting to float32
+  New shape:  (3072,)
+Processing variable: image_encoder.blocks.10.mlp.lin2.weight with shape:  torch.Size([768, 3072])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 3072)
+Processing variable: image_encoder.blocks.10.mlp.lin2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.11.norm1.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.11.norm1.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.11.attn.rel_pos_h with shape:  torch.Size([127, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (127, 64)
+Processing variable: image_encoder.blocks.11.attn.rel_pos_w with shape:  torch.Size([127, 64])  and type:  torch.float32
+  Converting to float16
+  New shape:  (127, 64)
+Processing variable: image_encoder.blocks.11.attn.qkv.weight with shape:  torch.Size([2304, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (2304, 768)
+Processing variable: image_encoder.blocks.11.attn.qkv.bias with shape:  torch.Size([2304])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2304,)
+Processing variable: image_encoder.blocks.11.attn.proj.weight with shape:  torch.Size([768, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 768)
+Processing variable: image_encoder.blocks.11.attn.proj.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.11.norm2.weight with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.11.norm2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: image_encoder.blocks.11.mlp.lin1.weight with shape:  torch.Size([3072, 768])  and type:  torch.float32
+  Converting to float16
+  New shape:  (3072, 768)
+Processing variable: image_encoder.blocks.11.mlp.lin1.bias with shape:  torch.Size([3072])  and type:  torch.float32
+  Converting to float32
+  New shape:  (3072,)
+Processing variable: image_encoder.blocks.11.mlp.lin2.weight with shape:  torch.Size([768, 3072])  and type:  torch.float32
+  Converting to float16
+  New shape:  (768, 3072)
+Processing variable: image_encoder.blocks.11.mlp.lin2.bias with shape:  torch.Size([768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (768,)
+Processing variable: prompt_encoder.pe_layer.positional_encoding_gaussian_matrix with shape:  torch.Size([2, 128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2, 128)
+Processing variable: mask_decoder.transformer.layers.0.self_attn.q_proj.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.transformer.layers.0.self_attn.q_proj.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.0.self_attn.k_proj.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.transformer.layers.0.self_attn.k_proj.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.0.self_attn.v_proj.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.transformer.layers.0.self_attn.v_proj.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.0.self_attn.out_proj.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.transformer.layers.0.self_attn.out_proj.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.0.norm1.weight with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.0.norm1.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_token_to_image.q_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_token_to_image.q_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_token_to_image.k_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_token_to_image.k_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_token_to_image.v_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_token_to_image.v_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_token_to_image.out_proj.weight with shape:  torch.Size([256, 128])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 128)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_token_to_image.out_proj.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.0.norm2.weight with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.0.norm2.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.0.mlp.lin1.weight with shape:  torch.Size([2048, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (2048, 256)
+Processing variable: mask_decoder.transformer.layers.0.mlp.lin1.bias with shape:  torch.Size([2048])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2048,)
+Processing variable: mask_decoder.transformer.layers.0.mlp.lin2.weight with shape:  torch.Size([256, 2048])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 2048)
+Processing variable: mask_decoder.transformer.layers.0.mlp.lin2.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.0.norm3.weight with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.0.norm3.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.0.norm4.weight with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.0.norm4.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_image_to_token.q_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_image_to_token.q_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_image_to_token.k_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_image_to_token.k_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_image_to_token.v_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_image_to_token.v_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_image_to_token.out_proj.weight with shape:  torch.Size([256, 128])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 128)
+Processing variable: mask_decoder.transformer.layers.0.cross_attn_image_to_token.out_proj.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.self_attn.q_proj.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.transformer.layers.1.self_attn.q_proj.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.self_attn.k_proj.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.transformer.layers.1.self_attn.k_proj.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.self_attn.v_proj.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.transformer.layers.1.self_attn.v_proj.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.self_attn.out_proj.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.transformer.layers.1.self_attn.out_proj.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.norm1.weight with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.norm1.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_token_to_image.q_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_token_to_image.q_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_token_to_image.k_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_token_to_image.k_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_token_to_image.v_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_token_to_image.v_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_token_to_image.out_proj.weight with shape:  torch.Size([256, 128])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 128)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_token_to_image.out_proj.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.norm2.weight with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.norm2.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.mlp.lin1.weight with shape:  torch.Size([2048, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (2048, 256)
+Processing variable: mask_decoder.transformer.layers.1.mlp.lin1.bias with shape:  torch.Size([2048])  and type:  torch.float32
+  Converting to float32
+  New shape:  (2048,)
+Processing variable: mask_decoder.transformer.layers.1.mlp.lin2.weight with shape:  torch.Size([256, 2048])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 2048)
+Processing variable: mask_decoder.transformer.layers.1.mlp.lin2.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.norm3.weight with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.norm3.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.norm4.weight with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.norm4.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_image_to_token.q_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_image_to_token.q_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_image_to_token.k_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_image_to_token.k_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_image_to_token.v_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_image_to_token.v_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_image_to_token.out_proj.weight with shape:  torch.Size([256, 128])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 128)
+Processing variable: mask_decoder.transformer.layers.1.cross_attn_image_to_token.out_proj.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.final_attn_token_to_image.q_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.final_attn_token_to_image.q_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.final_attn_token_to_image.k_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.final_attn_token_to_image.k_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.final_attn_token_to_image.v_proj.weight with shape:  torch.Size([128, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (128, 256)
+Processing variable: mask_decoder.transformer.final_attn_token_to_image.v_proj.bias with shape:  torch.Size([128])  and type:  torch.float32
+  Converting to float32
+  New shape:  (128,)
+Processing variable: mask_decoder.transformer.final_attn_token_to_image.out_proj.weight with shape:  torch.Size([256, 128])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 128)
+Processing variable: mask_decoder.transformer.final_attn_token_to_image.out_proj.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.norm_final_attn.weight with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.transformer.norm_final_attn.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: prompt_encoder.point_embeddings.0.weight with shape:  torch.Size([1, 256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (1, 256)
+Processing variable: prompt_encoder.point_embeddings.1.weight with shape:  torch.Size([1, 256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (1, 256)
+Processing variable: prompt_encoder.point_embeddings.2.weight with shape:  torch.Size([1, 256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (1, 256)
+Processing variable: prompt_encoder.point_embeddings.3.weight with shape:  torch.Size([1, 256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (1, 256)
+Processing variable: prompt_encoder.not_a_point_embed.weight with shape:  torch.Size([1, 256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (1, 256)
+Processing variable: mask_decoder.output_upscaling.0.weight with shape:  torch.Size([256, 64, 2, 2])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 64, 2, 2)
+Processing variable: mask_decoder.output_upscaling.0.bias with shape:  torch.Size([64])  and type:  torch.float32
+  Converting to float32
+  New shape:  (64,)
+Processing variable: mask_decoder.output_upscaling.1.weight with shape:  torch.Size([64])  and type:  torch.float32
+  Converting to float32
+  New shape:  (64,)
+Processing variable: mask_decoder.output_upscaling.1.bias with shape:  torch.Size([64])  and type:  torch.float32
+  Converting to float32
+  New shape:  (64,)
+Processing variable: mask_decoder.output_upscaling.3.weight with shape:  torch.Size([64, 32, 2, 2])  and type:  torch.float32
+  Converting to float16
+  New shape:  (64, 32, 2, 2)
+Processing variable: mask_decoder.output_upscaling.3.bias with shape:  torch.Size([32])  and type:  torch.float32
+  Converting to float32
+  New shape:  (32,)
+Processing variable: mask_decoder.output_hypernetworks_mlps.0.layers.0.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.output_hypernetworks_mlps.0.layers.0.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.output_hypernetworks_mlps.0.layers.1.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.output_hypernetworks_mlps.0.layers.1.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.output_hypernetworks_mlps.0.layers.2.weight with shape:  torch.Size([32, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (32, 256)
+Processing variable: mask_decoder.output_hypernetworks_mlps.0.layers.2.bias with shape:  torch.Size([32])  and type:  torch.float32
+  Converting to float32
+  New shape:  (32,)
+Processing variable: mask_decoder.output_hypernetworks_mlps.1.layers.0.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.output_hypernetworks_mlps.1.layers.0.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.output_hypernetworks_mlps.1.layers.1.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.output_hypernetworks_mlps.1.layers.1.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.output_hypernetworks_mlps.1.layers.2.weight with shape:  torch.Size([32, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (32, 256)
+Processing variable: mask_decoder.output_hypernetworks_mlps.1.layers.2.bias with shape:  torch.Size([32])  and type:  torch.float32
+  Converting to float32
+  New shape:  (32,)
+Processing variable: mask_decoder.output_hypernetworks_mlps.2.layers.0.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.output_hypernetworks_mlps.2.layers.0.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.output_hypernetworks_mlps.2.layers.1.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.output_hypernetworks_mlps.2.layers.1.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.output_hypernetworks_mlps.2.layers.2.weight with shape:  torch.Size([32, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (32, 256)
+Processing variable: mask_decoder.output_hypernetworks_mlps.2.layers.2.bias with shape:  torch.Size([32])  and type:  torch.float32
+  Converting to float32
+  New shape:  (32,)
+Processing variable: mask_decoder.output_hypernetworks_mlps.3.layers.0.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.output_hypernetworks_mlps.3.layers.0.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.output_hypernetworks_mlps.3.layers.1.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.output_hypernetworks_mlps.3.layers.1.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.output_hypernetworks_mlps.3.layers.2.weight with shape:  torch.Size([32, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (32, 256)
+Processing variable: mask_decoder.output_hypernetworks_mlps.3.layers.2.bias with shape:  torch.Size([32])  and type:  torch.float32
+  Converting to float32
+  New shape:  (32,)
+Processing variable: prompt_encoder.no_mask_embed.weight with shape:  torch.Size([1, 256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (1, 256)
+Processing variable: mask_decoder.iou_prediction_head.layers.0.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.iou_prediction_head.layers.0.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.iou_prediction_head.layers.1.weight with shape:  torch.Size([256, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (256, 256)
+Processing variable: mask_decoder.iou_prediction_head.layers.1.bias with shape:  torch.Size([256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (256,)
+Processing variable: mask_decoder.iou_prediction_head.layers.2.weight with shape:  torch.Size([4, 256])  and type:  torch.float32
+  Converting to float16
+  New shape:  (4, 256)
+Processing variable: mask_decoder.iou_prediction_head.layers.2.bias with shape:  torch.Size([4])  and type:  torch.float32
+  Converting to float32
+  New shape:  (4,)
+Processing variable: mask_decoder.iou_token.weight with shape:  torch.Size([1, 256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (1, 256)
+Processing variable: mask_decoder.mask_tokens.weight with shape:  torch.Size([4, 256])  and type:  torch.float32
+  Converting to float32
+  New shape:  (4, 256)
+Processing variable: image_encoder.pos_embed with shape:  torch.Size([1, 64, 64, 768])  and type:  torch.float32
+  Converting to float32
+  New shape:  (1, 64, 64, 768)
+Done. Output file: ../models-mnt/sam///ggml-model-f16.bin
+
++ tee -a /home/ggml/results/ggml/41/c67eea6072dbdbd2fc0584c7332f2e293b1331/ggml-1-arm64-cpu-low-perf/sam-main.log
++ ./bin/sam -m ../models-mnt/sam//ggml-model-f16.bin -i ../models-mnt/sam//img.jpg
+main: seed = 1736840285
+main: loaded image '../models-mnt/sam//img.jpg' (680 x 453)
+sam_image_preprocess: scale = 0.664062
+main: preprocessed image (1024 x 1024)
+sam_model_load: loading model from '../models-mnt/sam//ggml-model-f16.bin' - please wait ...
+operator(): ggml ctx size = 202.33 MB
+sam_model_load: .sam_model_load: n_enc_state      = 768
+sam_model_load: n_enc_layer      = 12
+sam_model_load: n_enc_head       = 12
+sam_model_load: n_enc_out_chans  = 256
+sam_model_load: n_pt_embd        = 4
+sam_model_load: ftype            = 1
+sam_model_load: qntvr            = 0
+..................................... done
+sam_model_load: model size =   185.05 MB / num tensors = 304
+prompt: (414.375000, 162.796875)
+
+
+main:     load time =    93.18 ms
+main:    total time = 13412.85 ms
+embd_img
+dims:  64  64  256  1 f32
+First & Last 10 elements:
+-0.05107 -0.06379 -0.07143 -0.06872 -0.06833 -0.06961 -0.07133 -0.07074 -0.06746 -0.05413 
+0.01569 0.01766 0.02237 0.01661 0.01756 0.01668 0.01791 0.02040 0.02089 0.03384 
+sum:  12757.910431
+
+Skipping mask 0 with iou 0.705503 below threshold 0.880000
+Skipping mask 1 with iou 0.763158 below threshold 0.880000
+Mask 2: iou = 0.947646, stability_score = 0.955357, bbox (371, 436), (144, 168)
+
+real	0m13.438s
+user	0m51.559s
+sys	0m1.264s
++ grep -q 'bbox (371, 436), (144, 168)' /home/ggml/results/ggml/41/c67eea6072dbdbd2fc0584c7332f2e293b1331/ggml-1-arm64-cpu-low-perf/sam-main.log
++ set +e
++ cur=0
++ echo 0
++ set +x
++ gg_run_yolo
++ cd /home/ggml/work/ggml
++ gg_wget models-mnt/yolo/ https://huggingface.co/ggml-org/models/resolve/main/yolo/yolov3-tiny.weights
++ tee /home/ggml/results/ggml/41/c67eea6072dbdbd2fc0584c7332f2e293b1331/ggml-1-arm64-cpu-low-perf/yolo.log
++ local out=models-mnt/yolo/
++ local url=https://huggingface.co/ggml-org/models/resolve/main/yolo/yolov3-tiny.weights
+++ pwd
++ local cwd=/home/ggml/work/ggml
++ mkdir -p models-mnt/yolo/
++ cd models-mnt/yolo/
++ wget -nv -N https://huggingface.co/ggml-org/models/resolve/main/yolo/yolov3-tiny.weights
++ cd /home/ggml/work/ggml
++ gg_wget models-mnt/yolo/ https://huggingface.co/ggml-org/models/resolve/main/yolo/dog.jpg
++ local out=models-mnt/yolo/
++ local url=https://huggingface.co/ggml-org/models/resolve/main/yolo/dog.jpg
+++ pwd
++ local cwd=/home/ggml/work/ggml
++ mkdir -p models-mnt/yolo/
++ cd models-mnt/yolo/
++ wget -nv -N https://huggingface.co/ggml-org/models/resolve/main/yolo/dog.jpg
+Last-modified header missing -- time-stamps turned off.
+2025-01-14 07:38:18 URL:https://huggingface.co/ggml-org/models/resolve/main/yolo/dog.jpg [163759/163759] -> "dog.jpg" [1]
++ cd /home/ggml/work/ggml
++ cd build-ci-release
++ cp -r ../examples/yolo/data .
++ set -e
++ path_models=../models-mnt/yolo/
++ python3 ../examples/yolo/convert-yolov3-tiny.py ../models-mnt/yolo//yolov3-tiny.weights
+This gguf file is for Little Endian only
+../models-mnt/yolo//yolov3-tiny.weights converted to yolov3-tiny.gguf
++ tee -a /home/ggml/results/ggml/41/c67eea6072dbdbd2fc0584c7332f2e293b1331/ggml-1-arm64-cpu-low-perf/yolo-main.log
++ ./bin/yolov3-tiny -m yolov3-tiny.gguf -i ../models-mnt/yolo//dog.jpg
+Layer  0 output shape:  416 x 416 x   16 x   1
+Layer  1 output shape:  208 x 208 x   16 x   1
+Layer  2 output shape:  208 x 208 x   32 x   1
+Layer  3 output shape:  104 x 104 x   32 x   1
+Layer  4 output shape:  104 x 104 x   64 x   1
+Layer  5 output shape:   52 x  52 x   64 x   1
+Layer  6 output shape:   52 x  52 x  128 x   1
+Layer  7 output shape:   26 x  26 x  128 x   1
+Layer  8 output shape:   26 x  26 x  256 x   1
+Layer  9 output shape:   13 x  13 x  256 x   1
+Layer 10 output shape:   13 x  13 x  512 x   1
+Layer 11 output shape:   13 x  13 x  512 x   1
+Layer 12 output shape:   13 x  13 x 1024 x   1
+Layer 13 output shape:   13 x  13 x  256 x   1
+Layer 14 output shape:   13 x  13 x  512 x   1
+Layer 15 output shape:   13 x  13 x  255 x   1
+Layer 18 output shape:   13 x  13 x  128 x   1
+Layer 19 output shape:   26 x  26 x  128 x   1
+Layer 20 output shape:   26 x  26 x  384 x   1
+Layer 21 output shape:   26 x  26 x  256 x   1
+Layer 22 output shape:   26 x  26 x  255 x   1
+dog: 57%
+car: 52%
+truck: 56%
+car: 62%
+bicycle: 58%
+Detected objects saved in 'predictions.jpg' (time: 0.207000 sec.)
+
+real	0m0.279s
+user	0m0.560s
+sys	0m0.070s
++ grep -qE 'dog: (55|56|57|58|59)%' /home/ggml/results/ggml/41/c67eea6072dbdbd2fc0584c7332f2e293b1331/ggml-1-arm64-cpu-low-perf/yolo-main.log
++ grep -qE 'car: (50|51|52|53|54)%' /home/ggml/results/ggml/41/c67eea6072dbdbd2fc0584c7332f2e293b1331/ggml-1-arm64-cpu-low-perf/yolo-main.log
++ grep -qE 'truck: (54|55|56|57|58)%' /home/ggml/results/ggml/41/c67eea6072dbdbd2fc0584c7332f2e293b1331/ggml-1-arm64-cpu-low-perf/yolo-main.log
++ grep -qE 'bicycle: (57|58|59|60|61)%' /home/ggml/results/ggml/41/c67eea6072dbdbd2fc0584c7332f2e293b1331/ggml-1-arm64-cpu-low-perf/yolo-main.log
++ set +e
++ cur=0
++ echo 0
++ set +x
