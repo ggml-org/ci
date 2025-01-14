@@ -1,0 +1,309 @@
++ cmake -DCMAKE_BUILD_TYPE=Debug -DGGML_CUDA=ON ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- Including CPU backend
+-- Found OpenMP_C: -fopenmp (found version "4.5") 
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5")  
+-- x86 detected
+-- Adding CPU backend variant ggml-cpu: -march=native 
+-- Found CUDAToolkit: /usr/local/cuda-12.2/include (found version "12.2.140") 
+-- CUDA Toolkit found
+-- Using CUDA architectures: native
+-- The CUDA compiler identification is NVIDIA 12.2.140
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda-12.2/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- CUDA host compiler is GNU 11.4.0
+
+-- Including CUDA backend
+-- x86 detected
+-- Linux detected
+-- Configuring done (9.1s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/ggml/work/ggml/build-ci-debug
+
+real	0m9.219s
+user	0m7.332s
+sys	0m1.892s
++ make -j
+[  1%] Building C object src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  1%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  1%] Building C object src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  2%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  2%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  3%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  3%] Building C object src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  4%] Building CXX object src/CMakeFiles/ggml-base.dir/gguf.cpp.o
+[  5%] Linking CXX static library libcommon.a
+[  5%] Built target common
+[  6%] Linking CXX shared library libggml-base.so
+[  6%] Built target ggml-base
+[  6%] Building C object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[  7%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[  7%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[  8%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[  9%] Building C object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[  9%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 10%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 10%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/acc.cu.o
+[ 11%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/argmax.cu.o
+[ 12%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/arange.cu.o
+[ 12%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/argsort.cu.o
+[ 12%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 13%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/binbcast.cu.o
+[ 13%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/clamp.cu.o
+[ 14%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/concat.cu.o
+[ 15%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/conv-transpose-1d.cu.o
+[ 15%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/cpy.cu.o
+[ 15%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/convert.cu.o
+[ 16%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/cross-entropy-loss.cu.o
+[ 17%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/count-equal.cu.o
+[ 17%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/diagmask.cu.o
+[ 18%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/fattn-tile-f16.cu.o
+[ 19%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/fattn-tile-f32.cu.o
+[ 19%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/fattn.cu.o
+[ 20%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/getrows.cu.o
+[ 20%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/ggml-cuda.cu.o
+[ 21%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/im2col.cu.o
+[ 21%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/mmq.cu.o
+[ 22%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/gla.cu.o
+[ 23%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/mmv.cu.o
+[ 23%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/mmvq.cu.o
+[ 24%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/norm.cu.o
+[ 24%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/pool2d.cu.o
+[ 25%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/out-prod.cu.o
+[ 25%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/opt-step-adamw.cu.o
+[ 26%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/quantize.cu.o
+[ 27%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/pad.cu.o
+[ 27%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/softmax.cu.o
+[ 29%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/sum.cu.o
+[ 29%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/tsembd.cu.o
+[ 28%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/scale.cu.o
+[ 30%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/unary.cu.o
+[ 30%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/rope.cu.o
+[ 31%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/sumrows.cu.o
+[ 32%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq2_s.cu.o
+[ 33%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq3_s.cu.o
+[ 34%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/wkv6.cu.o
+[ 34%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/upscale.cu.o
+[ 34%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqfloat-cpb32.cu.o
+[ 34%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq2_xxs.cu.o
+[ 34%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqhalf-cpb32.cu.o
+[ 35%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqhalf-cpb8.cu.o
+[ 37%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq2_xs.cu.o
+[ 37%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq3_xxs.cu.o
+[ 37%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq1_s.cu.o
+[ 36%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqhalf-cpb16.cu.o
+[ 38%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-wmma-f16-instance-kqfloat-cpb16.cu.o
+[ 39%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq4_xs.cu.o
+[ 40%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-iq4_nl.cu.o
+[ 41%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q3_k.cu.o
+[ 41%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q2_k.cu.o
+[ 41%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q4_0.cu.o
+[ 42%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q4_1.cu.o
+[ 43%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q5_0.cu.o
+[ 43%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q4_k.cu.o
+[ 44%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q5_1.cu.o
+[ 44%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q5_k.cu.o
+[ 45%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q6_k.cu.o
+[ 45%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/mmq-instance-q8_0.cu.o
+[ 46%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs128-q4_0-q4_0.cu.o
+[ 46%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs128-q8_0-q8_0.cu.o
+[ 47%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs128-q4_0-q4_0.cu.o
+[ 48%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs128-q8_0-q8_0.cu.o
+[ 48%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs128-f16-f16.cu.o
+[ 49%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs256-f16-f16.cu.o
+[ 49%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f16-instance-hs64-f16-f16.cu.o
+[ 50%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs128-f16-f16.cu.o
+[ 51%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs256-f16-f16.cu.o
+[ 51%] Building CUDA object src/ggml-cuda/CMakeFiles/ggml-cuda.dir/template-instances/fattn-vec-f32-instance-hs64-f16-f16.cu.o
+[ 52%] Linking CXX shared library libggml-cpu.so
+[ 52%] Built target ggml-cpu
+[ 53%] Linking CUDA shared library libggml-cuda.so
+[ 53%] Built target ggml-cuda
+[ 53%] Building CXX object src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 54%] Linking CXX shared library libggml.so
+[ 54%] Built target ggml
+[ 55%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
+[ 56%] Building C object tests/CMakeFiles/test-vec1.dir/test-vec1.c.o
+[ 56%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 57%] Building C object tests/CMakeFiles/test-mul-mat2.dir/test-mul-mat2.c.o
+[ 58%] Building CXX object tests/CMakeFiles/test-opt.dir/test-opt.cpp.o
+[ 58%] Building C object tests/CMakeFiles/test-mul-mat0.dir/test-mul-mat0.c.o
+[ 58%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 58%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
+[ 58%] Linking C executable ../bin/test-vec0
+[ 59%] Building C object tests/CMakeFiles/test-pool.dir/test-pool.c.o
+[ 60%] Linking C executable ../bin/test-vec1
+[ 61%] Building CXX object tests/CMakeFiles/test-pad-reflect-1d.dir/test-pad-reflect-1d.cpp.o
+[ 62%] Building CXX object tests/CMakeFiles/test-arange.dir/test-arange.cpp.o
+[ 62%] Building C object tests/CMakeFiles/test-conv-transpose.dir/test-conv-transpose.c.o
+[ 63%] Building CXX object tests/CMakeFiles/test-timestep_embedding.dir/test-timestep_embedding.cpp.o
+[ 63%] Building CXX object tests/CMakeFiles/test-conv-transpose-1d.dir/test-conv-transpose-1d.cpp.o
+[ 64%] Building C object tests/CMakeFiles/test-dup.dir/test-dup.c.o
+[ 65%] Building C object tests/CMakeFiles/test-rel-pos.dir/test-rel-pos.c.o
+[ 66%] Building C object tests/CMakeFiles/test-customop.dir/test-customop.c.o
+[ 66%] Built target test-vec0
+[ 67%] Building CXX object tests/CMakeFiles/test-conv1d.dir/test-conv1d.cpp.o
+[ 68%] Building CXX object tests/CMakeFiles/test-conv2d.dir/test-conv2d.cpp.o
+[ 68%] Built target test-vec1
+[ 69%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 68%] Building CXX object tests/CMakeFiles/test-mul-mat.dir/test-mul-mat.cpp.o
+[ 70%] Linking C executable ../bin/test0
+[ 70%] Building CXX object examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o
+[ 71%] Building CXX object examples/mnist/CMakeFiles/mnist-common.dir/mnist-common.cpp.o
+[ 71%] Building C object tests/CMakeFiles/test-cont.dir/test-cont.c.o
+[ 71%] Building CXX object examples/sam/CMakeFiles/sam.dir/main.cpp.o
+[ 72%] Building CXX object examples/simple/CMakeFiles/simple-ctx.dir/simple-ctx.cpp.o
+[ 72%] Linking CXX executable ../bin/test-arange
+[ 72%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolov3-tiny.cpp.o
+[ 73%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolo-image.cpp.o
+[ 73%] Building CXX object examples/simple/CMakeFiles/simple-backend.dir/simple-backend.cpp.o
+[ 73%] Linking C executable ../bin/test-rel-pos
+[ 74%] Linking C executable ../bin/test-pool
+[ 75%] Linking C executable ../bin/test-dup
+[ 75%] Linking C executable ../bin/test-customop
+[ 76%] Linking C executable ../bin/test-mul-mat0
+[ 77%] Linking C executable ../bin/test-conv-transpose
+[ 77%] Linking CXX executable ../bin/test-pad-reflect-1d
+[ 77%] Built target test0
+[ 78%] Linking C executable ../bin/test-cont
+[ 78%] Built target test-rel-pos
+[ 78%] Built target test-dup
+[ 78%] Built target test-pad-reflect-1d
+[ 78%] Built target test-mul-mat0
+[ 78%] Built target test-customop
+[ 78%] Built target test-conv-transpose
+[ 78%] Built target test-pool
+[ 78%] Built target test-arange
+[ 78%] Built target test-cont
+[ 78%] Linking CXX executable ../bin/test-timestep_embedding
+[ 78%] Built target test-timestep_embedding
+[ 79%] Linking CXX executable ../bin/test-quantize-fns
+[ 79%] Linking C executable ../bin/test-mul-mat2
+[ 80%] Linking CXX executable ../../bin/simple-backend
+[ 80%] Built target test-mul-mat2
+[ 80%] Built target test-quantize-fns
+[ 80%] Built target simple-backend
+[ 80%] Linking CXX executable ../bin/test-conv1d
+[ 80%] Linking CXX executable ../../bin/simple-ctx
+[ 81%] Linking CXX executable ../bin/test-mul-mat
+[ 81%] Built target test-conv1d
+/home/ggml/work/ggml/examples/yolo/yolov3-tiny.cpp: In function ‘bool load_model(const string&, yolo_model&)’:
+/home/ggml/work/ggml/examples/yolo/yolov3-tiny.cpp:106:29: error: variable ‘load_model(const string&, yolo_model&)::gguf_init_params gguf_params’ has initializer but incomplete type
+  106 |     struct gguf_init_params gguf_params = {
+      |                             ^~~~~~~~~~~
+/home/ggml/work/ggml/examples/yolo/yolov3-tiny.cpp:110:5: error: ‘gguf_context’ was not declared in this scope; did you mean ‘ggml_context’?
+  110 |     gguf_context * gguf_ctx = gguf_init_from_file(fname.c_str(), gguf_params);
+      |     ^~~~~~~~~~~~
+      |     ggml_context
+/home/ggml/work/ggml/examples/yolo/yolov3-tiny.cpp:110:20: error: ‘gguf_ctx’ was not declared in this scope
+  110 |     gguf_context * gguf_ctx = gguf_init_from_file(fname.c_str(), gguf_params);
+      |                    ^~~~~~~~
+/home/ggml/work/ggml/examples/yolo/yolov3-tiny.cpp:110:31: error: ‘gguf_init_from_file’ was not declared in this scope
+  110 |     gguf_context * gguf_ctx = gguf_init_from_file(fname.c_str(), gguf_params);
+      |                               ^~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/examples/yolo/yolov3-tiny.cpp:116:23: error: ‘gguf_get_n_tensors’ was not declared in this scope; did you mean ‘ggml_get_tensor’?
+  116 |     int num_tensors = gguf_get_n_tensors(gguf_ctx);
+      |                       ^~~~~~~~~~~~~~~~~~
+      |                       ggml_get_tensor
+/home/ggml/work/ggml/examples/yolo/yolov3-tiny.cpp:124:29: error: ‘gguf_get_tensor_name’ was not declared in this scope; did you mean ‘ggml_get_tensor’?
+  124 |         const char * name = gguf_get_tensor_name(gguf_ctx, i);
+      |                             ^~~~~~~~~~~~~~~~~~~~
+      |                             ggml_get_tensor
+/home/ggml/work/ggml/examples/yolo/yolov3-tiny.cpp:136:5: error: ‘gguf_free’ was not declared in this scope; did you mean ‘ggml_free’?
+  136 |     gguf_free(gguf_ctx);
+      |     ^~~~~~~~~
+      |     ggml_free
+make[2]: *** [examples/yolo/CMakeFiles/yolov3-tiny.dir/build.make:76: examples/yolo/CMakeFiles/yolov3-tiny.dir/yolov3-tiny.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1533: examples/yolo/CMakeFiles/yolov3-tiny.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[ 81%] Built target test-mul-mat
+[ 81%] Built target simple-ctx
+[ 81%] Linking CXX executable ../bin/test-conv2d
+[ 82%] Linking CXX executable ../bin/test-conv-transpose-1d
+[ 82%] Built target test-conv2d
+/home/ggml/work/ggml/examples/mnist/mnist-common.cpp: In function ‘bool load_from_gguf(const char*, ggml_context*, gguf_context*)’:
+/home/ggml/work/ggml/examples/mnist/mnist-common.cpp:95:27: error: ‘gguf_get_n_tensors’ was not declared in this scope; did you mean ‘ggml_get_tensor’?
+   95 |     const int n_tensors = gguf_get_n_tensors(ctx_gguf);
+      |                           ^~~~~~~~~~~~~~~~~~
+      |                           ggml_get_tensor
+/home/ggml/work/ggml/examples/mnist/mnist-common.cpp:97:29: error: ‘gguf_get_tensor_name’ was not declared in this scope; did you mean ‘ggml_get_tensor’?
+   97 |         const char * name = gguf_get_tensor_name(ctx_gguf, i);
+      |                             ^~~~~~~~~~~~~~~~~~~~
+      |                             ggml_get_tensor
+/home/ggml/work/ggml/examples/mnist/mnist-common.cpp:104:29: error: ‘gguf_get_data_offset’ was not declared in this scope; did you mean ‘ggml_get_data_f32’?
+  104 |         const size_t offs = gguf_get_data_offset(ctx_gguf) + gguf_get_tensor_offset(ctx_gguf, i);
+      |                             ^~~~~~~~~~~~~~~~~~~~
+      |                             ggml_get_data_f32
+/home/ggml/work/ggml/examples/mnist/mnist-common.cpp:104:62: error: ‘gguf_get_tensor_offset’ was not declared in this scope
+  104 |         const size_t offs = gguf_get_data_offset(ctx_gguf) + gguf_get_tensor_offset(ctx_gguf, i);
+      |                                                              ^~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/examples/mnist/mnist-common.cpp: In function ‘mnist_model mnist_model_init_from_file(const string&, const string&, int, int)’:
+/home/ggml/work/ggml/examples/mnist/mnist-common.cpp:137:33: error: variable ‘mnist_model_init_from_file(const string&, const string&, int, int)::gguf_init_params params’ has initializer but incomplete type
+  137 |         struct gguf_init_params params = {
+      |                                 ^~~~~~
+/home/ggml/work/ggml/examples/mnist/mnist-common.cpp:141:15: error: ‘gguf_init_from_file’ was not declared in this scope
+  141 |         ctx = gguf_init_from_file(fname.c_str(), params);
+      |               ^~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/examples/mnist/mnist-common.cpp:147:40: error: ‘gguf_find_key’ was not declared in this scope
+  147 |     model.arch = gguf_get_val_str(ctx, gguf_find_key(ctx, "general.architecture"));
+      |                                        ^~~~~~~~~~~~~
+/home/ggml/work/ggml/examples/mnist/mnist-common.cpp:147:18: error: ‘gguf_get_val_str’ was not declared in this scope
+  147 |     model.arch = gguf_get_val_str(ctx, gguf_find_key(ctx, "general.architecture"));
+      |                  ^~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/examples/mnist/mnist-common.cpp: In function ‘void mnist_model_save(mnist_model&, const string&)’:
+/home/ggml/work/ggml/examples/mnist/mnist-common.cpp:426:31: error: ‘gguf_init_empty’ was not declared in this scope; did you mean ‘ggml_is_empty’?
+  426 |     gguf_context * gguf_ctx = gguf_init_empty();
+      |                               ^~~~~~~~~~~~~~~
+      |                               ggml_is_empty
+/home/ggml/work/ggml/examples/mnist/mnist-common.cpp:427:5: error: ‘gguf_set_val_str’ was not declared in this scope
+  427 |     gguf_set_val_str(gguf_ctx, "general.architecture", model.arch.c_str());
+      |     ^~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/examples/mnist/mnist-common.cpp:441:9: error: ‘gguf_add_tensor’ was not declared in this scope; did you mean ‘ggml_new_tensor’?
+  441 |         gguf_add_tensor(gguf_ctx, copy);
+      |         ^~~~~~~~~~~~~~~
+      |         ggml_new_tensor
+/home/ggml/work/ggml/examples/mnist/mnist-common.cpp:443:5: error: ‘gguf_write_to_file’ was not declared in this scope
+  443 |     gguf_write_to_file(gguf_ctx, fname.c_str(), false);
+      |     ^~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/examples/mnist/mnist-common.cpp:446:5: error: ‘gguf_free’ was not declared in this scope; did you mean ‘ggml_free’?
+  446 |     gguf_free(gguf_ctx);
+      |     ^~~~~~~~~
+      |     ggml_free
+make[2]: *** [examples/mnist/CMakeFiles/mnist-common.dir/build.make:76: examples/mnist/CMakeFiles/mnist-common.dir/mnist-common.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1411: examples/mnist/CMakeFiles/mnist-common.dir/all] Error 2
+[ 82%] Built target test-conv-transpose-1d
+[ 82%] Linking CXX executable ../bin/test-opt
+[ 82%] Built target test-opt
+[ 83%] Linking CXX executable ../bin/test-quantize-perf
+[ 83%] Built target test-quantize-perf
+[ 84%] Linking CXX executable ../../bin/sam
+[ 84%] Built target sam
+[ 85%] Linking CXX static library libcommon-ggml.a
+[ 85%] Built target common-ggml
+[ 86%] Linking CXX executable ../bin/test-backend-ops
+[ 86%] Built target test-backend-ops
+make: *** [Makefile:146: all] Error 2
+
+real	9m11.461s
+user	39m6.508s
+sys	0m57.886s
