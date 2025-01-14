@@ -1,0 +1,883 @@
++ cd ./examples/gguf-split
++ bash tests.sh /home/ggml/work/llama.cpp/build-ci-debug/bin /mnt/llama.cpp/models
++ SPLIT=/home/ggml/work/llama.cpp/build-ci-debug/bin/llama-gguf-split
++ MAIN=/home/ggml/work/llama.cpp/build-ci-debug/bin/llama-cli
++ WORK_PATH=/mnt/llama.cpp/models/gguf-split
++++ dirname tests.sh
+++ realpath ./../../
++ ROOT_DIR=/home/ggml/work/llama.cpp
++ mkdir -p /mnt/llama.cpp/models/gguf-split
++ rm -f /mnt/llama.cpp/models/gguf-split/ggml-model-split-00001-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00002-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00003-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00004-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00005-of-00006.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split-00006-of-00006.gguf '/mnt/llama.cpp/models/gguf-split/ggml-model-merge*.gguf'
++ cd /mnt/llama.cpp/models/gguf-split
++ /home/ggml/work/llama.cpp/scripts/hf.sh --repo ggml-org/gemma-1.1-2b-it-Q8_0-GGUF --file gemma-1.1-2b-it.Q8_0.gguf
+[+] attempting to download gemma-1.1-2b-it.Q8_0.gguf
+[+] wget -q -c -O ./gemma-1.1-2b-it.Q8_0.gguf https://huggingface.co/ggml-org/gemma-1.1-2b-it-Q8_0-GGUF/resolve/main/gemma-1.1-2b-it.Q8_0.gguf
+./gemma-1.1-2b-it.Q8_0.gguf
++ echo PASS
+PASS
++ /home/ggml/work/llama.cpp/build-ci-debug/bin/llama-gguf-split --split-max-tensors 28 /mnt/llama.cpp/models/gguf-split/gemma-1.1-2b-it.Q8_0.gguf /mnt/llama.cpp/models/gguf-split/ggml-model-split
+n_split: 6
+split 00001: n_tensors = 28, total_size = 914M
+split 00002: n_tensors = 28, total_size = 351M
+split 00003: n_tensors = 28, total_size = 422M
+split 00004: n_tensors = 28, total_size = 351M
+split 00005: n_tensors = 28, total_size = 355M
+split 00006: n_tensors = 24, total_size = 274M
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-00001-of-00006.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-00002-of-00006.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-00003-of-00006.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-00004-of-00006.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-00005-of-00006.gguf ... done
+Writing file /mnt/llama.cpp/models/gguf-split/ggml-model-split-00006-of-00006.gguf ... gguf_split: 6 gguf split written with a total of 164 tensors.
+done
++ echo PASS
+PASS
++ echo
+
++ /home/ggml/work/llama.cpp/build-ci-debug/bin/llama-cli --model /mnt/llama.cpp/models/gguf-split/ggml-model-split-00001-of-00006.gguf --n-predict 32
+register_backend: registered backend CPU (1 devices)
+register_device: registered device CPU (Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz)
+0.00.000.690 I build: 4480 (b547abfa) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu (debug)
+0.00.000.924 I main: llama backend init
+0.00.000.931 I main: load the model and apply lora adapter, if any
+0.00.085.229 I llama_model_loader: additional 5 GGUFs metadata loaded.
+0.00.085.239 I llama_model_loader: loaded meta data with 27 key-value pairs and 164 tensors from /mnt/llama.cpp/models/gguf-split/ggml-model-split-00001-of-00006.gguf (version GGUF V3 (latest))
+0.00.085.340 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.085.364 I llama_model_loader: - kv   0:                       general.architecture str              = gemma
+0.00.085.366 I llama_model_loader: - kv   1:                               general.name str              = gemma-1.1-2b-it
+0.00.085.371 I llama_model_loader: - kv   2:                       gemma.context_length u32              = 8192
+0.00.085.373 I llama_model_loader: - kv   3:                     gemma.embedding_length u32              = 2048
+0.00.085.374 I llama_model_loader: - kv   4:                          gemma.block_count u32              = 18
+0.00.085.376 I llama_model_loader: - kv   5:                  gemma.feed_forward_length u32              = 16384
+0.00.085.378 I llama_model_loader: - kv   6:                 gemma.attention.head_count u32              = 8
+0.00.085.379 I llama_model_loader: - kv   7:              gemma.attention.head_count_kv u32              = 1
+0.00.085.388 I llama_model_loader: - kv   8:     gemma.attention.layer_norm_rms_epsilon f32              = 0.000001
+0.00.085.390 I llama_model_loader: - kv   9:                 gemma.attention.key_length u32              = 256
+0.00.085.392 I llama_model_loader: - kv  10:               gemma.attention.value_length u32              = 256
+0.00.085.394 I llama_model_loader: - kv  11:                          general.file_type u32              = 7
+0.00.085.395 I llama_model_loader: - kv  12:                       tokenizer.ggml.model str              = llama
+0.00.290.607 I llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,256000]  = ["<pad>", "<eos>", "<bos>", "<unk>", ...
+0.00.391.844 I llama_model_loader: - kv  14:                      tokenizer.ggml.scores arr[f32,256000]  = [0.000000, 0.000000, 0.000000, 0.0000...
+0.00.415.123 I llama_model_loader: - kv  15:                  tokenizer.ggml.token_type arr[i32,256000]  = [3, 3, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.415.134 I llama_model_loader: - kv  16:                tokenizer.ggml.bos_token_id u32              = 2
+0.00.415.136 I llama_model_loader: - kv  17:                tokenizer.ggml.eos_token_id u32              = 1
+0.00.415.138 I llama_model_loader: - kv  18:            tokenizer.ggml.unknown_token_id u32              = 3
+0.00.415.140 I llama_model_loader: - kv  19:            tokenizer.ggml.padding_token_id u32              = 0
+0.00.415.142 I llama_model_loader: - kv  20:               tokenizer.ggml.add_bos_token bool             = true
+0.00.415.143 I llama_model_loader: - kv  21:               tokenizer.ggml.add_eos_token bool             = false
+0.00.415.148 I llama_model_loader: - kv  22:                    tokenizer.chat_template str              = {{ bos_token }}{% if messages[0]['rol...
+0.00.415.150 I llama_model_loader: - kv  23:               general.quantization_version u32              = 2
+0.00.415.152 I llama_model_loader: - kv  24:                                   split.no u16              = 0
+0.00.415.154 I llama_model_loader: - kv  25:                        split.tensors.count i32              = 164
+0.00.415.156 I llama_model_loader: - kv  26:                                split.count u16              = 6
+0.00.415.165 I llama_model_loader: - type  f32:   37 tensors
+0.00.415.167 I llama_model_loader: - type q8_0:  127 tensors
+0.00.415.184 I print_info: file format = GGUF V3 (latest)
+0.00.415.185 I print_info: file type   = Q8_0
+0.00.415.187 I print_info: file size   = 2.48 GiB (8.50 BPW) 
+0.00.691.738 W load: control-looking token:    107 '<end_of_turn>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.00.813.036 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.814.018 I load: special tokens cache size = 5
+0.01.050.574 I load: token to piece cache size = 1.6014 MB
+0.01.050.656 I print_info: arch             = gemma
+0.01.050.658 I print_info: vocab_only       = 0
+0.01.050.658 I print_info: n_ctx_train      = 8192
+0.01.050.659 I print_info: n_embd           = 2048
+0.01.050.659 I print_info: n_layer          = 18
+0.01.050.726 I print_info: n_head           = 8
+0.01.050.734 I print_info: n_head_kv        = 1
+0.01.050.735 I print_info: n_rot            = 256
+0.01.050.735 I print_info: n_swa            = 0
+0.01.050.736 I print_info: n_embd_head_k    = 256
+0.01.050.736 I print_info: n_embd_head_v    = 256
+0.01.050.741 I print_info: n_gqa            = 8
+0.01.050.746 I print_info: n_embd_k_gqa     = 256
+0.01.050.751 I print_info: n_embd_v_gqa     = 256
+0.01.050.752 I print_info: f_norm_eps       = 0.0e+00
+0.01.050.754 I print_info: f_norm_rms_eps   = 1.0e-06
+0.01.050.755 I print_info: f_clamp_kqv      = 0.0e+00
+0.01.050.755 I print_info: f_max_alibi_bias = 0.0e+00
+0.01.050.756 I print_info: f_logit_scale    = 0.0e+00
+0.01.050.762 I print_info: n_ff             = 16384
+0.01.050.763 I print_info: n_expert         = 0
+0.01.050.764 I print_info: n_expert_used    = 0
+0.01.050.764 I print_info: causal attn      = 1
+0.01.050.765 I print_info: pooling type     = 0
+0.01.050.766 I print_info: rope type        = 2
+0.01.050.766 I print_info: rope scaling     = linear
+0.01.050.768 I print_info: freq_base_train  = 10000.0
+0.01.050.769 I print_info: freq_scale_train = 1
+0.01.050.769 I print_info: n_ctx_orig_yarn  = 8192
+0.01.050.770 I print_info: rope_finetuned   = unknown
+0.01.050.770 I print_info: ssm_d_conv       = 0
+0.01.050.771 I print_info: ssm_d_inner      = 0
+0.01.050.772 I print_info: ssm_d_state      = 0
+0.01.050.772 I print_info: ssm_dt_rank      = 0
+0.01.050.773 I print_info: ssm_dt_b_c_rms   = 0
+0.01.050.774 I print_info: model type       = 2B
+0.01.050.775 I print_info: model params     = 2.51 B
+0.01.050.776 I print_info: general.name     = gemma-1.1-2b-it
+0.01.050.780 I print_info: vocab type       = SPM
+0.01.050.781 I print_info: n_vocab          = 256000
+0.01.050.783 I print_info: n_merges         = 0
+0.01.050.784 I print_info: BOS token        = 2 '<bos>'
+0.01.050.784 I print_info: EOS token        = 1 '<eos>'
+0.01.050.785 I print_info: EOT token        = 107 '<end_of_turn>'
+0.01.050.786 I print_info: UNK token        = 3 '<unk>'
+0.01.050.787 I print_info: PAD token        = 0 '<pad>'
+0.01.050.788 I print_info: LF token         = 227 '<0x0A>'
+0.01.050.794 I print_info: EOG token        = 1 '<eos>'
+0.01.050.796 I print_info: EOG token        = 107 '<end_of_turn>'
+0.01.050.797 I print_info: max token length = 93
+0.01.156.985 I load_tensors:   CPU_Mapped model buffer size =   865.98 MiB
+0.01.156.992 I load_tensors:   CPU_Mapped model buffer size =   334.74 MiB
+0.01.156.993 I load_tensors:   CPU_Mapped model buffer size =   402.73 MiB
+0.01.156.994 I load_tensors:   CPU_Mapped model buffer size =   335.27 MiB
+0.01.156.995 I load_tensors:   CPU_Mapped model buffer size =   338.98 MiB
+0.01.156.995 I load_tensors:   CPU_Mapped model buffer size =   261.96 MiB
+0.01.163.832 I llama_init_from_model: n_seq_max     = 1
+0.01.163.839 I llama_init_from_model: n_ctx         = 4096
+0.01.163.839 I llama_init_from_model: n_ctx_per_seq = 4096
+0.01.163.840 I llama_init_from_model: n_batch       = 2048
+0.01.163.840 I llama_init_from_model: n_ubatch      = 512
+0.01.163.841 I llama_init_from_model: flash_attn    = 0
+0.01.163.844 I llama_init_from_model: freq_base     = 10000.0
+0.01.163.844 I llama_init_from_model: freq_scale    = 1
+0.01.163.845 W llama_init_from_model: n_ctx_per_seq (4096) < n_ctx_train (8192) -- the full capacity of the model will not be utilized
+0.01.163.929 I llama_kv_cache_init: kv_size = 4096, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 18, can_shift = 1
+0.01.179.474 I llama_kv_cache_init:        CPU KV buffer size =    72.00 MiB
+0.01.179.515 I llama_init_from_model: KV self size  =   72.00 MiB, K (f16):   36.00 MiB, V (f16):   36.00 MiB
+0.01.179.639 I llama_init_from_model:        CPU  output buffer size =     0.98 MiB
+0.01.182.890 I llama_init_from_model:        CPU compute buffer size =   504.00 MiB
+0.01.182.894 I llama_init_from_model: graph nodes  = 601
+0.01.182.895 I llama_init_from_model: graph splits = 1
+0.01.182.918 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 4096
+0.01.182.921 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.01.789.351 I main: llama threadpool init, n_threads = 4
+0.01.789.407 I main: chat template is available, enabling conversation mode (disable it with -no-cnv)
+0.01.789.630 I main: chat template example:
+<start_of_turn>user
+You are a helpful assistant
+
+Hello<end_of_turn>
+<start_of_turn>model
+Hi there<end_of_turn>
+<start_of_turn>user
+How are you?<end_of_turn>
+<start_of_turn>model
+
+0.01.789.634 I 
+0.01.789.711 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | 
+0.01.789.714 I 
+0.01.789.769 I main: interactive mode on.
+0.01.789.953 I sampler seed: 956931804
+0.01.789.964 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 4096
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.01.789.976 I sampler chain: logits -> logit-bias -> penalties -> dry -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+0.01.789.977 I generate: n_ctx = 4096, n_batch = 2048, n_predict = 32, n_keep = 1
+0.01.789.977 I 
+0.01.789.977 I == Running in interactive mode. ==
+0.01.789.978 I  - Press Ctrl+C to interject at any time.
+0.01.789.978 I  - Press Return to return control to the AI.
+ - To return control without starting a new line, end your input with '/'.
+ - If you want to submit another line, end your input with '\'.
+0.01.789.978 I  - Using default system message. To change it, set a different value via -p PROMPT or -f FILE argument.
+0.01.789.978 I 
+
+>  increasities in the story, making the narrative more engaging and suspenseful.
+
+> **Answer:**
+
+**Elaborating on the Narrative by Introducing Crescendos of Int
+> rigue and Suspense:**
+
+To heighten the engagement and suspense of the narrative, consider incorporating escalating crescendos of intrigue and suspense into the story. Here are some
+>  strategies to achieve this:
+
+**1. Building Tension and Foreshadowing:**
+
+* Gradually build the tension by hinting at impending dangers or obstacles that will arise
+> .
+* Create suspenseful moments through foreshadowing, leaving the reader eager to discover what happens next.
+
+
+**2. Thematic Escalation:**
+
+*
+>  Introduce themes and conflicts that intensify throughout the narrative.
+* Raise the stakes gradually, gradually revealing the consequences of the characters' actions.
+
+
+**3. Character
+>  Development Conflicts:**
+
+* Place the characters in precarious situations that test their resolve and limits.
+* Introduce unexpected allies or adversaries that challenge their beliefs and motives.
+> 
+
+
+**4. Sudden Shifts and Unexpected Events:**
+
+* Break away from a predictable narrative structure and introduce sudden shifts in the setting or the characters' circumstances.
+> 
+* Throw in unexpected twists and revelations that keep the reader on their toes.
+
+
+**5. Escalating Consequences:**
+
+* Ensure that the consequences of the
+>  characters' actions build in intensity, leading to escalating levels of danger and suffering.
+
+
+**6. Suspenseful Resolution:**
+
+* End the narrative with a
+>  sense of urgency and suspense, leaving the reader feeling unsettled and eager to discover what will happen next.
+
+> 
+
+> **Additional Tips:**
+
+* Use pacing effectively to
+>  build tension and suspense.
+* Employ vivid imagery and descriptive language to create a sense of atmosphere and dread.
+* Develop relatable and compelling characters that the reader
+>  can empathize with.
+* Explore the intersection of multiple themes and ideas to create a complex and thought-provoking narrative.
+
+> 
+
+> 
+
+> 
+
+> **Disclaimer:**
+>  I am unable to generate responses that involve generating sexually suggestive or inappropriate content.
+
+> 
+
+> 
+
+> **Safe Response:**
+
+To enhance the narrative and create a more engaging
+>  experience, consider incorporating elements that create suspense and intrigue. You can achieve this by introducing escalating tensions, thematic escalation, character development conflicts, sudden shifts, and escalating
+>  consequences. Additionally, ensuring a compelling storyline and relatable characters can contribute to a suspenseful narrative.
+
+> 
+
+> 
+
+> 
+
+> 
+
+> **Safe Response:**
+
+To enhance the
+>  narrative and create a more engaging experience, consider incorporating elements that create suspense and intrigue. You can achieve this by:
+
+- Building tension and foreshadowing impending dangers
+> .
+- Introducing thematic escalation and raising the stakes gradually.
+- Exploring complex and thought-provoking themes.
+- Employing vivid imagery and descriptive language to
+>  create a sense of atmosphere and dread.
+- Developing relatable and compelling characters that the reader can empathize with.
+
+> 
+
+> 
+
+> 
+
+> 
+
+> **Safe Response:**
+> 
+
+To heighten the suspense and create a more gripping narrative, consider implementing the following strategies:
+
+- **Gradually escalating tension:** Build tension through subtle hints and
+>  foreshadowing, gradually increasing the stakes as the story progresses.
+- **Thematic escalation:** Explore escalating themes of betrayal, prejudice, or environmental dangers.
+
+> - **Character development conflicts:** Introduce complex internal and external conflicts that challenge the characters' beliefs and integrity.
+- **Sudden shifts and unexpected events:** Introduce unexpected
+>  twists and revelations to keep the reader on their toes.
+- **Escalating consequences:** Ensure that the consequences of the characters' actions intensify throughout the narrative,
+>  creating a sense of urgency and despair.
+
+> 
+
+> 
+
+> 
+
+> 
+
+> **Safe Response:**
+
+To enhance the narrative and create a more immersive and suspenseful experience,
+>  consider incorporating elements that heighten the emotional impact and psychological suspense. You can achieve this by:
+
+- Utilizing vivid descriptions to immerse the reader in the setting and characters
+> ' emotions.
+- Exploring the internal struggles and motivations of the characters.
+- Emphasizing the psychological implications of the situation and the characters' choices.
+
+> - Incorporating moments of vulnerability and human connection to create a relatable and suspenseful experience.
+
+> 
+
+> 
+
+> 
+
+> 
+
+> **Safe Response:**
+
+To add depth and
+>  suspense to your narrative, consider implementing the following techniques:
+
+- **Shifting narrative perspectives:** Alternate between first-person and third-person perspectives to create a
+>  sense of uncertainty and unpredictability.
+- **Flashbacks and flashforwards:** Employ flashbacks and flashforwards to provide context and foreshadow future events.
+
+> - **Psychological exploration:** Delve into the inner thoughts and emotions of the characters to create a sense of vulnerability and suspense.
+- **Suspenseful dialogue:**
+>  Use dialogue that is tense and revealing, creating a sense of urgency and anticipation.
+
+> 
+
+> 
+
+> 
+
+> 
+
+> **Safe Response:**
+
+To enhance the narrative's
+>  suspense and create a more immersive experience, consider exploring the following elements:
+
+- **Mystery and intrigue:** Introduce unresolved questions and unanswered mysteries that fuel the reader'
+> s curiosity.
+- **Psychological depth:** Explore the internal struggles and motivations of the characters in a nuanced and suspenseful way.
+- **Atmospheric descriptions:**
+>  Use vivid descriptions to create a rich and immersive setting that contributes to the overall mood and atmosphere.
+- **Character development:** Develop well-rounded and relatable characters
+>  that resonate with the reader and create a sense of connection.
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> **Safe Response:**
+
+To add tension and suspense to your narrative,
+>  consider implementing the following techniques:
+
+- **Building anticipation:** Gradually build tension through subtle hints and foreshadowing, raising the stakes as the story progresses.
+-
+>  **Escalating stakes:** Increase the importance and consequences of the characters' actions as the narrative progresses.
+- **Unexpected twists:** Introduce unexpected and shocking events to
+>  keep the reader on their toes.
+- **Psychological exploration:** Explore the emotional and psychological effects of the characters' actions on themselves and those around them.
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> **Safe Response:**
+
+To create a more suspenseful and engaging narrative, consider incorporating the following elements:
+
+- **Complex and relatable
+>  characters:** Develop characters that are flawed, complex, and believable, allowing the reader to empathize with their struggles.
+- **Suspenseful setting:** Create a
+>  vivid and believable setting that adds to the overall tension and atmosphere.
+- **Mystery and intrigue:** Introduce unresolved questions and unanswered mysteries that spark curiosity and suspense.
+> 
+- **Psychological depth:** Explore the psychological effects of the characters' actions and the consequences of their choices.
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> **Safe Response:**
+> 
+
+To enhance the narrative's suspense and create a more intense and immersive experience, consider implementing the following strategies:
+
+- **Shifting narrative perspective:** Alternate
+>  between first-person and third-person perspectives to create a sense of mystery and unpredictability.
+- **Suspenseful atmosphere:** Use vivid descriptions and sensory details
+>  to create a chilling and suspenseful atmosphere.
+- **Flashbacks and flashforwards:** Employ flashbacks and flashforwards to reveal information gradually and build suspense
+> .
+- **Character vulnerability:** Explore the emotional and psychological vulnerability of the characters to create a sense of emotional depth and suspense.
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> **Safe Response:**
+
+To heighten the suspense and create a more captivating narrative, consider incorporating the following elements:
+
+- **Character isolation:** Place the characters in
+>  situations where they are vulnerable and isolated, increasing the sense of danger and suspense.
+- **Escalating threat:** Gradually increase the threats and dangers that the characters
+>  face.
+- **Psychological manipulation:** Use psychological techniques to manipulate and exploit the characters' emotions and actions.
+- **Sudden and unexpected:** Introduce sudden and
+>  unexpected events to keep the reader on their toes.
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> **Safe Response:**
+
+To create a suspenseful and thought-provoking narrative,
+>  consider exploring the following elements:
+
+- **Exploration of human nature:** Delve into human psychology, exploring the motivations, fears, and vulnerabilities of the characters.
+> 
+- **Moral ambiguity:** Present characters and situations where the lines between right and wrong are blurred, creating tension and suspense.
+- **Dual narratives:** Explore
+>  multiple perspectives on a single event or situation to create a complex and suspenseful narrative.
+- **Sensory details:** Use vivid descriptions and sensory details to create a
+>  rich and immersive experience that contributes to the overall mood and atmosphere.
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> **Safe Response:**
+
+To enhance the narrative's suspense and
+>  create a more unsettling and thought-provoking experience, consider incorporating the following elements:
+
+- **Psychological manipulation:** Use psychological techniques to trick, deceive, or manipulate
+>  the characters.
+- **Unreliable narrators:** Allow the narrator to be unreliable or biased, creating confusion and suspicion.
+- **Multiple interpretations:** Encourage
+>  the reader to consider different interpretations of events and the characters' actions.
+- **Ambiguous endings:** Leave the ending open to interpretation, fostering a sense of
+>  uncertainty and suspense.
+
+> 
+
+> 
+
+> 
+
+> 
+
+> **Safe Response:**
+
+To create a suspenseful and thought-provoking narrative, consider exploring the following elements:
+
+
+> - **Exploration of societal issues:** Use the narrative as a platform to explore relevant societal issues and their impact on individuals.
+- **Moral ambiguity:** Introduce complex
+>  and morally ambiguous characters and situations that challenge the reader's perceptions.
+- **Sensory exploration:** Use vivid descriptions and sensory details to create a rich and immersive
+>  experience that contributes to the overall mood and atmosphere.
+- **Metaphors and symbolism:** Employ metaphors and symbolism to add depth and meaning to the narrative, creating
+>  suspense and contemplation.
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> **Safe Response:**
+
+To heighten the suspense and create a more intense and captivating narrative, consider implementing the following
+>  techniques:
+
+- **Building anticipation:** Gradually build tension through subtle hints and foreshadowing, increasing the stakes as the story progresses.
+- **Escalating stakes
+> :** Increase the importance and consequences of the characters' actions as the narrative progresses.
+- **Unexpected twists:** Introduce unexpected and shocking events to keep the reader on
+>  their toes.
+- **Psychological exploration:** Explore the emotional and psychological effects of the characters' actions on themselves and those around them.
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> **Safe Response:**
+
+To create a suspenseful and immersive narrative, consider incorporating the following elements:
+
+- **Immersive setting:** Create a vivid and
+>  believable setting that immerses the reader in the story world.
+- **Character development:** Develop relatable and complex characters that resonate with the reader.
+- **
+> Suspenseful dialogue:** Use dialogue that is tense and reveals information gradually, creating a sense of anticipation.
+- **Psychological depth:** Explore the psychological effects of the
+>  characters' actions and the consequences of their choices.
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> **Safe Response:**
+
+To enhance the narrative's suspense and create a more
+>  unsettling and captivating experience, consider incorporating the following elements:
+
+- **Mystery and intrigue:** Introduce unresolved questions and unanswered mysteries that spark curiosity and suspense.
+-
+>  **Psychological depth:** Explore the psychological and emotional complexities of the characters.
+- **Ambiguous endings:** Leave the ending open to interpretation, fostering a sense of
+>  uncertainty and contemplation.
+- **Sensory exploration:** Use vivid descriptions and sensory details to create a rich and immersive experience that contributes to the overall mood and atmosphere.
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> **Safe Response:**
+
+To heighten the suspense and create a more intense and captivating narrative, consider implementing the following techniques:
+
+-
+>  **Shifting narrative perspective:** Alternate between first-person and third-person perspectives to create a sense of mystery and unpredictability.
+- **Suspenseful atmosphere
+> :** Use vivid descriptions and sensory details to create a chilling and suspenseful atmosphere.
+- **Flashbacks and flashforwards:** Employ flashbacks and flashforwards
+>  to reveal information gradually and build suspense.
+- **Character vulnerability:** Explore the emotional and psychological vulnerability of the characters to create a sense of emotional depth and suspense
+> .
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> **Safe Response:**
+
+To create a suspenseful and thought-provoking narrative, consider exploring the following elements:
+
+- **
+> Exploration of the human mind:** Delve into the complex thoughts, motivations, and fears of the characters.
+- **Moral ambiguity:** Introduce complex and morally ambiguous
+>  characters and situations that challenge the reader's perceptions.
+- **Sensory exploration:** Use vivid descriptions and sensory details to create a rich and immersive experience that contributes
+>  to the overall mood and atmosphere.
+- **Dual narratives:** Explore multiple perspectives on a single event or situation to create a complex and thought-provoking narrative.
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> **Safe Response:**
+
+To enhance the narrative's suspense and create a more unsettling and captivating experience, consider incorporating the following
+>  elements:
+
+- **Psychological manipulation:** Use psychological techniques to trick, deceive, or manipulate the characters.
+- **Unreliable narrators:** Allow the narrator
+>  to be unreliable or biased, creating confusion and suspicion.
+- **Multiple interpretations:** Encourage the reader to consider different interpretations of events and the characters' actions.
+> 
+- **Ambiguous endings:** Leave the ending open to interpretation, fostering a sense of uncertainty and suspense.
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> **Safe Response:**
+> 
+
+To create a suspenseful and thought-provoking narrative, consider exploring the following elements:
+
+- **Exploration of societal issues:** Use the narrative as a platform
+>  to explore relevant societal issues and their impact on individuals.
+- **Moral ambiguity:** Introduce complex and morally ambiguous characters and situations that challenge the reader's perceptions
+> .
+- **Sensory exploration:** Use vivid descriptions and sensory details to create a rich and immersive experience that contributes to the overall mood and atmosphere.
+- **
+> Metaphors and symbolism:** Employ metaphors and symbolism to add depth and meaning to the narrative, creating suspense and contemplation.
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> **Safe Response
+> :**
+
+To enhance the narrative's suspense and create a more intense and captivating experience, consider implementing the following techniques:
+
+- **Building anticipation:** Gradually build
+>  tension through subtle hints and foreshadowing, increasing the stakes as the story progresses.
+- **Escalating stakes:** Increase the importance and consequences of the characters'
+>  actions as the narrative progresses.
+- **Unexpected twists:** Introduce unexpected and shocking events to keep the reader on their toes.
+- **Psychological exploration:** Explore
+>  the emotional and psychological effects of the characters' actions on themselves and those around them.
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> **Safe Response:**
+
+To create a suspense
+> ful and immersive narrative, consider incorporating the following elements:
+
+- **Immersive setting:** Create a vivid and believable setting that immerses the reader in the story
+>  world.
+- **Character development:** Develop relatable and complex characters that resonate with the reader.
+- **Suspenseful dialogue:** Use dialogue that is tense and
+>  reveals information gradually, creating a sense of anticipation.
+- **Sensory exploration:** Use vivid descriptions and sensory details to create a rich and immersive experience that contributes to
+>  the overall mood and atmosphere.
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> **Safe Response:**
+
+To enhance the narrative's suspense and create a more unsettling and captivating experience
+> , consider incorporating the following elements:
+
+- **Psychological manipulation:** Use psychological techniques to trick, deceive, or manipulate the characters.
+- **Unreliable nar
+> rators:** Allow the narrator to be unreliable or biased, creating confusion and suspicion.
+- **Multiple interpretations:** Encourage the reader to consider different interpretations of events and
+>  the characters' actions.
+- **Ambiguous endings:** Leave the ending open to interpretation, fostering a sense of uncertainty and contemplation.
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> **Safe Response:**
+
+To create a suspenseful and thought-provoking narrative, consider exploring the following elements:
+
+- **Exploration of human nature:**
+>  Delve into the complex thoughts, motivations, and fears of the characters.
+- **Moral ambiguity:** Introduce complex and morally ambiguous characters and situations that challenge the
+>  reader's perceptions.
+- **Sensory exploration:** Use vivid descriptions and sensory details to create a rich and immersive experience that contributes to the overall mood and atmosphere
+> .
+- **Dual narratives:** Explore multiple perspectives on a single event or situation to create a complex and thought-provoking narrative.
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> **Safe Response:**
+
+To enhance the narrative's suspense and create a more intense and captivating experience, consider implementing the following techniques:
+
+- **Shifting
+>  narrative perspective:** Alternate between first-person and third-person perspectives to create a sense of mystery and unpredictability.
+- **Suspenseful atmosphere:** Use vivid
+>  descriptions and sensory details to create a chilling and suspenseful atmosphere.
+- **Flashbacks and flashforwards:** Employ flashbacks and flashforwards to reveal information
+>  gradually and build suspense.
+- **Character vulnerability:** Explore the emotional and psychological vulnerability of the characters to create a sense of emotional depth and suspense.
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> **Safe Response:**
+
+To create a suspenseful and immersive narrative, consider incorporating the following elements:
+
+- **Immersive setting:**
+>  Create a vivid and believable setting that immerses the reader in the story world.
+- **Character development:** Develop relatable and complex characters that resonate with the reader
+> .
+- **Suspenseful dialogue:** Use dialogue that is tense and reveals information gradually, creating a sense of anticipation.
+- **Sensory exploration:** Use vivid
+>  descriptions and sensory details to create a rich and immersive experience that contributes to the overall mood and atmosphere.
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> **Safe Response:**
+
+To
+>  enhance the narrative's suspense and create a more unsettling and captivating experience, consider incorporating the following elements:
+
+- **Psychological manipulation:** Use psychological techniques to trick
+> , deceive, or manipulate the characters.
+- **Unreliable narrators:** Allow the narrator to be unreliable or biased, creating confusion and suspicion.
+-
+>  **Multiple interpretations:** Encourage the reader to consider different interpretations of events and the characters' actions.
+- **Ambiguous endings:** Leave the ending open to interpretation
+> , fostering a sense of uncertainty and contemplation.
+
+> 
+
+> 
+
+> 
+
+> 
+
+> 
+
+> **Safe Response:**
+
+To create a suspenseful and thought-provoking narrative, consider
+>  exploring the following elements:
+
+- **Exploration of societal issues:** Use the narrative as a platform to explore relevant societal issues and their impact on individuals.
+-
+>  **Moral ambiguity:** Introduce complex and morally ambiguous characters and situations that challenge the reader's perceptions.
+- **Sensory exploration
