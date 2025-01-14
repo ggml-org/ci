@@ -1,0 +1,253 @@
++ make -j
+[  0%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  0%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  2%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  2%] Building C object src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  3%] Building CXX object src/CMakeFiles/ggml-base.dir/gguf.cpp.o
+[  4%] Building C object src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  6%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  6%] Building C object src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+/Users/ggml/work/ggml/examples/common.cpp:266:31: warning: 'codecvt_utf8<wchar_t>' is deprecated [-Wdeprecated-declarations]
+  266 |     std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+      |                               ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/codecvt:194:28: note: 'codecvt_utf8<wchar_t>' has been explicitly marked deprecated here
+  194 | class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 codecvt_utf8 : public __codecvt_utf8<_Elem> {
+      |                            ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:1022:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+ 1022 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+      |                                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:995:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  995 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+/Users/ggml/work/ggml/examples/common.cpp:266:10: warning: 'wstring_convert<std::codecvt_utf8<wchar_t>>' is deprecated [-Wdeprecated-declarations]
+  266 |     std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+      |          ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/locale:3114:28: note: 'wstring_convert<std::codecvt_utf8<wchar_t>>' has been explicitly marked deprecated here
+ 3114 | class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 wstring_convert {
+      |                            ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:1022:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+ 1022 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+      |                                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:995:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  995 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+/Users/ggml/work/ggml/examples/common.cpp:272:31: warning: 'codecvt_utf8<wchar_t>' is deprecated [-Wdeprecated-declarations]
+  272 |     std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+      |                               ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/codecvt:194:28: note: 'codecvt_utf8<wchar_t>' has been explicitly marked deprecated here
+  194 | class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 codecvt_utf8 : public __codecvt_utf8<_Elem> {
+      |                            ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:1022:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+ 1022 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+      |                                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:995:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  995 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+/Users/ggml/work/ggml/examples/common.cpp:272:10: warning: 'wstring_convert<std::codecvt_utf8<wchar_t>>' is deprecated [-Wdeprecated-declarations]
+  272 |     std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+      |          ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/locale:3114:28: note: 'wstring_convert<std::codecvt_utf8<wchar_t>>' has been explicitly marked deprecated here
+ 3114 | class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 wstring_convert {
+      |                            ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:1022:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+ 1022 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+      |                                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:995:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  995 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+4 warnings generated.
+[  8%] Linking CXX shared library libggml-base.dylib
+[  8%] Linking CXX static library libcommon.a
+[  8%] Built target ggml-base
+[  8%] Built target common
+[  9%] Generate assembly for embedded Metal library
+Embedding Metal library
+[ 10%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[ 10%] Building CXX object src/ggml-blas/CMakeFiles/ggml-blas.dir/ggml-blas.cpp.o
+[ 11%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[ 12%] Building C object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[ 13%] Building C object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 14%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 16%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 16%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 18%] Linking CXX shared library libggml-cpu.dylib
+[ 19%] Linking CXX shared library libggml-blas.dylib
+[ 20%] Building C object src/ggml-metal/CMakeFiles/ggml-metal.dir/ggml-metal.m.o
+[ 21%] Building ASM object src/ggml-metal/CMakeFiles/ggml-metal.dir/__/__/autogenerated/ggml-metal-embed.s.o
+[ 21%] Built target ggml-blas
+[ 21%] Built target ggml-cpu
+[ 21%] Linking C shared library libggml-metal.dylib
+[ 21%] Built target ggml-metal
+[ 22%] Building CXX object src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 23%] Linking CXX shared library libggml.dylib
+[ 23%] Built target ggml
+[ 24%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
+[ 24%] Building C object tests/CMakeFiles/test-blas0.dir/test-blas0.c.o
+[ 25%] Building C object tests/CMakeFiles/test-vec2.dir/test-vec2.c.o
+[ 26%] Building C object tests/CMakeFiles/test-mul-mat1.dir/test-mul-mat1.c.o
+[ 26%] Building C object tests/CMakeFiles/test-pool.dir/test-pool.c.o
+[ 27%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 28%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
+[ 29%] Building CXX object tests/CMakeFiles/test-opt.dir/test-opt.cpp.o
+[ 30%] Building CXX object tests/CMakeFiles/test-timestep_embedding.dir/test-timestep_embedding.cpp.o
+[ 31%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 32%] Building C object tests/CMakeFiles/test-mul-mat0.dir/test-mul-mat0.c.o
+[ 33%] Building C object tests/CMakeFiles/test-rel-pos.dir/test-rel-pos.c.o
+[ 34%] Building CXX object tests/CMakeFiles/test-conv2d.dir/test-conv2d.cpp.o
+[ 35%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 36%] Building CXX object tests/CMakeFiles/test-arange.dir/test-arange.cpp.o
+[ 38%] Building C object tests/CMakeFiles/test-dup.dir/test-dup.c.o
+[ 40%] Building CXX object examples/simple/CMakeFiles/simple-ctx.dir/simple-ctx.cpp.o
+[ 40%] Building CXX object tests/CMakeFiles/test-conv1d.dir/test-conv1d.cpp.o
+[ 41%] Building CXX object tests/CMakeFiles/test-conv-transpose-1d.dir/test-conv-transpose-1d.cpp.o
+/Users/ggml/work/ggml/tests/test-mul-mat1.c:287:13: warning: 'cblas_sgemm' is deprecated: first deprecated in macOS 13.3 - An updated CBLAS interface supporting ILP64 is available.  Please compile with -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support. [-Wdeprecated-declarations]
+  287 |             cblas_sgemm(CblasRowMajor, CblasNoTrans, CblasTrans, M, N, K, 1.0f, src0, K, src1, K, 0.0f, dst, N);
+      |             ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/System/Library/Frameworks/vecLib.framework/Headers/cblas.h:610:6: note: 'cblas_sgemm' has been explicitly marked deprecated here
+  610 | void cblas_sgemm(const enum CBLAS_ORDER __Order,
+      |      ^
+1 warning generated.
+[ 42%] Building CXX object examples/mnist/CMakeFiles/mnist-common.dir/mnist-common.cpp.o
+[ 43%] Building C object tests/CMakeFiles/test-customop.dir/test-customop.c.o
+[ 42%] Building CXX object examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o
+[ 45%] Building CXX object examples/sam/CMakeFiles/sam.dir/main.cpp.o
+[ 46%] Linking C executable ../bin/test-pool
+/Users/ggml/work/ggml/tests/test-blas0.c:128:5: warning: 'cblas_sgemm' is deprecated: first deprecated in macOS 13.3 - An updated CBLAS interface supporting ILP64 is available.  Please compile with -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support. [-Wdeprecated-declarations]
+  128 |     cblas_sgemm(CblasRowMajor, CblasNoTrans, CblasTrans, N, M, K, 1.0f, src1, K, src0, K, 0.0f, dst1, M);
+      |     ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/System/Library/Frameworks/vecLib.framework/Headers/cblas.h:610:6: note: 'cblas_sgemm' has been explicitly marked deprecated here
+  610 | void cblas_sgemm(const enum CBLAS_ORDER __Order,
+      |      ^
+1 warning generated.
+[ 47%] Linking C executable ../bin/test-vec0
+[ 44%] Building CXX object tests/CMakeFiles/test-mul-mat.dir/test-mul-mat.cpp.o
+[ 49%] Building C object tests/CMakeFiles/test-mul-mat2.dir/test-mul-mat2.c.o
+[ 50%] Building CXX object tests/CMakeFiles/test-pad-reflect-1d.dir/test-pad-reflect-1d.cpp.o
+[ 51%] Building C object tests/CMakeFiles/test-cont.dir/test-cont.c.o
+[ 52%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolov3-tiny.cpp.o
+[ 53%] Linking C executable ../bin/test-vec2
+[ 53%] Building CXX object examples/simple/CMakeFiles/simple-backend.dir/simple-backend.cpp.o
+[ 54%] Linking C executable ../bin/test-mul-mat1
+[ 55%] Building CXX object examples/perf-metal/CMakeFiles/perf-metal.dir/perf-metal.cpp.o
+[ 56%] Building C object tests/CMakeFiles/test-conv-transpose.dir/test-conv-transpose.c.o
+[ 57%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolo-image.cpp.o
+In file included from /Users/ggml/work/ggml/examples/sam/main.cpp:11:
+/Users/ggml/work/ggml/examples/stb_image_write.h:776:13: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+  776 |       len = sprintf(buffer, "EXPOSURE=          1.0000000000000\n\n-Y %d +X %d\n", y, x);
+      |             ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/_stdio.h:274:1: note: 'sprintf' has been explicitly marked deprecated here
+  274 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/sys/cdefs.h:218:48: note: expanded from macro '__deprecated_msg'
+  218 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+1 warning generated.
+[ 58%] Linking CXX executable ../bin/test-opt
+[ 58%] Linking CXX executable ../bin/test-timestep_embedding
+[ 58%] Linking C executable ../bin/test-mul-mat0
+[ 59%] Linking CXX static library libcommon-ggml.a
+In file included from /Users/ggml/work/ggml/examples/yolo/yolo-image.cpp:4:
+/Users/ggml/work/ggml/examples/stb_image_write.h:776:13: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+  776 |       len = sprintf(buffer, "EXPOSURE=          1.0000000000000\n\n-Y %d +X %d\n", y, x);
+      |             ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/_stdio.h:274:1: note: 'sprintf' has been explicitly marked deprecated here
+  274 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/sys/cdefs.h:218:48: note: expanded from macro '__deprecated_msg'
+  218 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+1 warning generated.
+[ 60%] Linking C executable ../bin/test-mul-mat2
+[ 61%] Linking CXX static library libmnist-common.a
+[ 62%] Linking C executable ../bin/test-blas0
+[ 62%] Linking CXX executable ../../bin/sam
+[ 63%] Linking CXX executable ../bin/test-quantize-fns
+[ 64%] Linking CXX executable ../bin/test-quantize-perf
+[ 65%] Linking CXX executable ../bin/test-conv2d
+[ 66%] Linking C executable ../bin/test0
+[ 67%] Linking CXX executable ../bin/test-backend-ops
+[ 67%] Linking CXX executable ../bin/test-conv1d
+[ 68%] Linking CXX executable ../bin/test-arange
+[ 69%] Linking C executable ../bin/test-dup
+[ 70%] Linking CXX executable ../bin/test-pad-reflect-1d
+[ 71%] Linking CXX executable ../../bin/simple-backend
+[ 72%] Linking C executable ../bin/test-rel-pos
+[ 73%] Linking C executable ../bin/test-customop
+[ 74%] Linking CXX executable ../../bin/simple-ctx
+[ 75%] Linking CXX executable ../../bin/yolov3-tiny
+[ 76%] Linking CXX executable ../bin/test-mul-mat
+[ 77%] Linking C executable ../bin/test-cont
+[ 78%] Linking C executable ../bin/test-conv-transpose
+[ 79%] Linking CXX executable ../bin/test-conv-transpose-1d
+[ 80%] Linking CXX executable ../../bin/perf-metal
+[ 80%] Built target test-vec0
+[ 80%] Built target test-mul-mat2
+[ 80%] Built target test-conv1d
+[ 80%] Built target test-opt
+[ 80%] Built target test0
+[ 80%] Built target test-cont
+[ 80%] Built target test-arange
+[ 80%] Built target mnist-common
+[ 80%] Built target common-ggml
+[ 80%] Built target test-conv2d
+[ 80%] Built target test-vec2
+[ 80%] Built target test-pad-reflect-1d
+[ 80%] Built target test-dup
+[ 80%] Built target test-backend-ops
+[ 80%] Built target test-timestep_embedding
+[ 80%] Built target yolov3-tiny
+[ 80%] Built target test-mul-mat
+[ 80%] Built target simple-backend
+[ 80%] Built target test-quantize-fns
+[ 80%] Built target perf-metal
+[ 80%] Built target simple-ctx
+[ 81%] Built target test-conv-transpose-1d
+[ 81%] Building CXX object examples/magika/CMakeFiles/magika.dir/main.cpp.o
+[ 82%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-backend.dir/main-backend.cpp.o
+[ 82%] Built target test-pool
+[ 83%] Building CXX object examples/mnist/CMakeFiles/mnist-train.dir/mnist-train.cpp.o
+[ 84%] Building CXX object examples/mnist/CMakeFiles/mnist-eval.dir/mnist-eval.cpp.o
+[ 84%] Built target test-conv-transpose
+[ 84%] Built target test-rel-pos
+[ 85%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-alloc.dir/main-alloc.cpp.o
+[ 86%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-ctx.dir/main-ctx.cpp.o
+[ 86%] Built target test-mul-mat0
+[ 86%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-quantize.dir/quantize.cpp.o
+[ 87%] Built target test-quantize-perf
+[ 88%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j.dir/main.cpp.o
+[ 88%] Built target test-mul-mat1
+[ 89%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-sched.dir/main-sched.cpp.o
+[ 89%] Built target sam
+[ 90%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j-quantize.dir/quantize.cpp.o
+[ 90%] Built target test-customop
+[ 89%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-batched.dir/main-batched.cpp.o
+[ 91%] Linking CXX executable ../../bin/mnist-train
+[ 92%] Linking CXX executable ../../bin/gpt-2-alloc
+[ 92%] Linking CXX executable ../../bin/magika
+[ 93%] Linking CXX executable ../../bin/gpt-2-backend
+[ 94%] Linking CXX executable ../../bin/gpt-2-ctx
+[ 95%] Linking CXX executable ../../bin/gpt-2-quantize
+[ 96%] Linking CXX executable ../../bin/mnist-eval
+[ 96%] Built target test-blas0
+[ 97%] Linking CXX executable ../../bin/gpt-j
+[ 98%] Linking CXX executable ../../bin/gpt-2-sched
+[ 99%] Linking CXX executable ../../bin/gpt-j-quantize
+[100%] Linking CXX executable ../../bin/gpt-2-batched
+ld: warning: ignoring duplicate libraries: '../libcommon.a'
+ld: warning: ignoring duplicate libraries: '../libcommon.a'
+[100%] Built target mnist-train
+[100%] Built target magika
+[100%] Built target gpt-2-ctx
+[100%] Built target gpt-2-alloc
+[100%] Built target gpt-2-backend
+[100%] Built target mnist-eval
+[100%] Built target gpt-2-quantize
+[100%] Built target gpt-2-sched
+[100%] Built target gpt-j-quantize
+[100%] Built target gpt-j
+[100%] Built target gpt-2-batched
+
+real	0m1.712s
+user	0m3.365s
+sys	0m6.197s
