@@ -1,0 +1,53 @@
+rm: cannot remove '/home/ggml/results/ggml/5b/cbe65a87459bb43047b02f427b1e6a96e99ed3/ggml-0-x86-cpu-low-perf/*.log': No such file or directory
+rm: cannot remove '/home/ggml/results/ggml/5b/cbe65a87459bb43047b02f427b1e6a96e99ed3/ggml-0-x86-cpu-low-perf/*.exit': No such file or directory
+rm: cannot remove '/home/ggml/results/ggml/5b/cbe65a87459bb43047b02f427b1e6a96e99ed3/ggml-0-x86-cpu-low-perf/*.md': No such file or directory
++ gg_run_ctest_debug
++ cd /home/ggml/work/ggml
++ rm -rf build-ci-debug
++ tee /home/ggml/results/ggml/5b/cbe65a87459bb43047b02f427b1e6a96e99ed3/ggml-0-x86-cpu-low-perf/ctest_debug.log
++ mkdir build-ci-debug
++ cd build-ci-debug
++ set -e
++ tee -a /home/ggml/results/ggml/5b/cbe65a87459bb43047b02f427b1e6a96e99ed3/ggml-0-x86-cpu-low-perf/ctest_debug-cmake.log
++ cmake -DCMAKE_BUILD_TYPE=Debug ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- Including CPU backend
+-- Found OpenMP_C: -fopenmp (found version "4.5") 
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5")  
+-- x86 detected
+-- Adding CPU backend variant ggml-cpu: -march=native 
+-- x86 detected
+-- Linux detected
+CMake Error: File /home/ggml/work/ggml/cmake/ggml-config.cmake.in does not exist.
+CMake Error at /home/ggml/.local/lib/python3.10/site-packages/cmake/data/share/cmake-3.27/Modules/CMakePackageConfigHelpers.cmake:344 (configure_file):
+  configure_file Problem configuring file
+Call Stack (most recent call first):
+  CMakeLists.txt:325 (configure_package_config_file)
+
+
+-- Configuring incomplete, errors occurred!
+
+real	0m0.588s
+user	0m0.417s
+sys	0m0.173s
++ cur=1
++ echo 1
++ set +x
+cat: /home/ggml/results/ggml/5b/cbe65a87459bb43047b02f427b1e6a96e99ed3/ggml-0-x86-cpu-low-perf/ctest_debug-ctest.log: No such file or directory
