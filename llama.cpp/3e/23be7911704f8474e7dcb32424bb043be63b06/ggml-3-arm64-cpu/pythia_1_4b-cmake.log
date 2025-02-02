@@ -1,4 +1,4 @@
-+ cmake -DCMAKE_BUILD_TYPE=Debug -DLLAMA_FATAL_WARNINGS=ON ..
++ cmake -DCMAKE_BUILD_TYPE=Release -DLLAMA_FATAL_WARNINGS=ON ..
 -- The C compiler identification is GNU 11.4.0
 -- The CXX compiler identification is GNU 11.4.0
 -- Detecting C compiler ABI info
@@ -38,8 +38,8 @@
 -- Adding CPU backend variant ggml-cpu: -mcpu=ares+crypto+noprofile+dotprod+noi8mm+nosve 
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-debug
+-- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-release
 
-real	0m2.001s
-user	0m1.259s
-sys	0m0.549s
+real	0m2.041s
+user	0m1.286s
+sys	0m0.550s
