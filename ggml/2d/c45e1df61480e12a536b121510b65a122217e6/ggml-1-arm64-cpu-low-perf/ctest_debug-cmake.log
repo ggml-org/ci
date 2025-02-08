@@ -1,4 +1,4 @@
-+ cmake -DCMAKE_BUILD_TYPE=Release -DLLAMA_FATAL_WARNINGS=ON ..
++ cmake -DCMAKE_BUILD_TYPE=Debug ..
 -- The C compiler identification is GNU 11.4.0
 -- The CXX compiler identification is GNU 11.4.0
 -- Detecting C compiler ABI info
@@ -11,7 +11,6 @@
 -- Check for working CXX compiler: /usr/bin/c++ - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Found Git: /usr/bin/git (found version "2.34.1") 
 -- Looking for pthread.h
 -- Looking for pthread.h - found
 -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
@@ -36,10 +35,11 @@
 -- ARM feature FMA enabled
 -- ARM feature FP16_VECTOR_ARITHMETIC enabled
 -- Adding CPU backend variant ggml-cpu: -mcpu=ares+crypto+noprofile+dotprod+noi8mm+nosve 
+-- ARM detected
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-release
+-- Build files have been written to: /home/ggml/work/ggml/build-ci-debug
 
-real	0m2.059s
-user	0m1.363s
-sys	0m0.497s
+real	0m1.912s
+user	0m1.179s
+sys	0m0.534s
