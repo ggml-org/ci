@@ -1,0 +1,71 @@
+++ nproc
++ make -j4
+[  0%] Generating build details from Git
+[  0%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  1%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  2%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  2%] Built target sha256
+[  3%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  3%] Built target xxhash
+[  3%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  4%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  4%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  4%] Built target sha1
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  5%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/gguf.cpp.o
+[  5%] Built target build_info
+[  6%] Linking CXX shared library ../../bin/libggml-base.so
+[  6%] Built target ggml-base
+[  8%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[  8%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[  8%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[  8%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[  8%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.o
+[ 10%] Linking CXX shared library ../../bin/libggml-cpu.so
+[ 10%] Built target ggml-cpu
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 11%] Linking CXX shared library ../../bin/libggml.so
+[ 11%] Built target ggml
+[ 14%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 14%] Building CXX object src/CMakeFiles/llama.dir/llama-adapter.cpp.o
+[ 14%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 14%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 14%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 14%] Linking CXX executable ../../bin/llama-gguf
+[ 15%] Building CXX object src/CMakeFiles/llama.dir/llama-arch.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/llama.dir/llama-batch.cpp.o
+[ 16%] Building CXX object src/CMakeFiles/llama.dir/llama-chat.cpp.o
+[ 16%] Building CXX object src/CMakeFiles/llama.dir/llama-context.cpp.o
+[ 16%] Built target llama-gguf-hash
+[ 16%] Built target llama-gguf
+[ 17%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/llama.dir/llama-hparams.cpp.o
+[ 18%] Building CXX object src/CMakeFiles/llama.dir/llama-impl.cpp.o
+[ 18%] Building CXX object src/CMakeFiles/llama.dir/llama-kv-cache.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-mmap.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-model-loader.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-model.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-quant.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/llama.dir/llama-sampling.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/llama.dir/llama-vocab.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/llama.dir/unicode.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/llama.dir/unicode-data.cpp.o
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In function ‘void llama_free(llama_context*)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:2719:5: error: deleting object of polymorphic class type ‘llama_context’ which has non-virtual destructor might cause undefined behavior [-Werror=delete-non-virtual-dtor]
+ 2719 |     delete ctx;
+      |     ^~~~~~~~~~
+cc1plus: all warnings being treated as errors
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:146: src/CMakeFiles/llama.dir/llama-context.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1771: src/CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m2.862s
+user	0m4.815s
+sys	0m1.075s
