@@ -35,10 +35,18 @@
 -- CUDA host compiler is GNU 11.4.0
 
 -- Including CUDA backend
--- Configuring done (9.1s)
--- Generating done (0.2s)
--- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-debug
+-- Configuring done (8.8s)
+CMake Error in ggml/src/ggml-cuda/CMakeLists.txt:
+  CUDA_ARCHITECTURES is set to "native", but no GPU was detected.
 
-real	0m9.429s
-user	0m7.503s
-sys	0m1.936s
+
+CMake Error in ggml/src/ggml-cuda/CMakeLists.txt:
+  CUDA_ARCHITECTURES is set to "native", but no GPU was detected.
+
+
+-- Generating done (0.2s)
+CMake Generate step failed.  Build files cannot be regenerated correctly.
+
+real	0m9.111s
+user	0m7.276s
+sys	0m1.709s
