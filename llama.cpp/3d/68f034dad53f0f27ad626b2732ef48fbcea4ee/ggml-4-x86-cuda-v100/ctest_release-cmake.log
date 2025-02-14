@@ -1,4 +1,4 @@
-+ cmake -DCMAKE_BUILD_TYPE=Debug -DLLAMA_FATAL_WARNINGS=ON -DGGML_CUDA=ON -DCMAKE_CUDA_ARCHITECTURES=native ..
++ cmake -DCMAKE_BUILD_TYPE=Release -DLLAMA_FATAL_WARNINGS=ON -DGGML_CUDA=ON -DCMAKE_CUDA_ARCHITECTURES=native ..
 -- The C compiler identification is GNU 11.4.0
 -- The CXX compiler identification is GNU 11.4.0
 -- Detecting C compiler ABI info
@@ -35,10 +35,10 @@
 -- CUDA host compiler is GNU 11.4.0
 
 -- Including CUDA backend
--- Configuring done (9.0s)
+-- Configuring done (8.7s)
 -- Generating done (0.2s)
--- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-debug
+-- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-release
 
-real	0m9.327s
-user	0m7.138s
-sys	0m1.856s
+real	0m9.017s
+user	0m7.283s
+sys	0m1.707s
