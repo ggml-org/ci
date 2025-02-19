@@ -1,0 +1,6463 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 995.85
+- date:    Wed Feb 19 03:38:00 PST 2025
+- repo:    https://github.com/ggerganov/llama.cpp
+- commit:  https://github.com/ggerganov/llama.cpp/commit/d07c621393fab6cf32f3add2aa65e4d5331d4a67
+- author:  Daniel Bevenius
+```
+common : add llama.vim preset for Qwen2.5 Coder (#11945)
+
+This commit adds a preset for llama.vim to use the default Qwen 2.5
+Coder models.
+
+The motivation for this change is to make it easier to start a server
+suitable to be used with the llama.vim plugin. For example, the server
+can be started with a command like the following:
+```console
+$ llama.vim --fim-qwen-1.5b-default
+```
+
+Refs: https://github.com/ggml-org/llama.cpp/issues/10932
+```
+
+## Environment
+
+```
+GG_BUILD_CLOUD=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+GG_BUILD_METAL=1
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /Users/ggml/work/llama.cpp/build-ci-debug
+      Start  1: test-tokenizer-0-bert-bge
+ 1/29 Test  #1: test-tokenizer-0-bert-bge .........   Passed    1.25 sec
+      Start  2: test-tokenizer-0-command-r
+ 2/29 Test  #2: test-tokenizer-0-command-r ........   Passed    1.09 sec
+      Start  3: test-tokenizer-0-deepseek-coder
+ 3/29 Test  #3: test-tokenizer-0-deepseek-coder ...   Passed    0.16 sec
+      Start  4: test-tokenizer-0-deepseek-llm
+ 4/29 Test  #4: test-tokenizer-0-deepseek-llm .....   Passed    0.43 sec
+      Start  5: test-tokenizer-0-falcon
+ 5/29 Test  #5: test-tokenizer-0-falcon ...........   Passed    0.27 sec
+      Start  6: test-tokenizer-0-gpt-2
+ 6/29 Test  #6: test-tokenizer-0-gpt-2 ............   Passed    0.21 sec
+      Start  7: test-tokenizer-0-llama-bpe
+ 7/29 Test  #7: test-tokenizer-0-llama-bpe ........   Passed    0.66 sec
+      Start  8: test-tokenizer-0-llama-spm
+ 8/29 Test  #8: test-tokenizer-0-llama-spm ........   Passed    0.08 sec
+      Start  9: test-tokenizer-0-mpt
+ 9/29 Test  #9: test-tokenizer-0-mpt ..............   Passed    0.22 sec
+      Start 10: test-tokenizer-0-phi-3
+10/29 Test #10: test-tokenizer-0-phi-3 ............   Passed    0.08 sec
+      Start 11: test-tokenizer-0-qwen2
+11/29 Test #11: test-tokenizer-0-qwen2 ............   Passed    0.60 sec
+      Start 12: test-tokenizer-0-refact
+12/29 Test #12: test-tokenizer-0-refact ...........   Passed    0.22 sec
+      Start 13: test-tokenizer-0-starcoder
+13/29 Test #13: test-tokenizer-0-starcoder ........   Passed    0.22 sec
+      Start 14: test-sampling
+14/29 Test #14: test-sampling .....................   Passed    2.17 sec
+      Start 15: test-grammar-parser
+15/29 Test #15: test-grammar-parser ...............   Passed    0.19 sec
+      Start 16: test-grammar-integration
+16/29 Test #16: test-grammar-integration ..........   Passed    0.24 sec
+      Start 17: test-llama-grammar
+17/29 Test #17: test-llama-grammar ................   Passed    0.19 sec
+      Start 18: test-chat
+18/29 Test #18: test-chat .........................   Passed   17.77 sec
+      Start 19: test-json-schema-to-grammar
+19/29 Test #19: test-json-schema-to-grammar .......   Passed    2.25 sec
+      Start 20: test-tokenizer-1-llama-spm
+20/29 Test #20: test-tokenizer-1-llama-spm ........   Passed    1.04 sec
+      Start 21: test-log
+21/29 Test #21: test-log ..........................   Passed    0.22 sec
+      Start 22: test-arg-parser
+22/29 Test #22: test-arg-parser ...................   Passed    0.27 sec
+      Start 23: test-chat-template
+23/29 Test #23: test-chat-template ................   Passed    2.92 sec
+      Start 24: test-gguf
+24/29 Test #24: test-gguf .........................   Passed    1.16 sec
+      Start 25: test-backend-ops
+25/29 Test #25: test-backend-ops ..................   Passed  193.06 sec
+      Start 28: test-barrier
+26/29 Test #28: test-barrier ......................   Passed    0.90 sec
+      Start 29: test-quantize-fns
+27/29 Test #29: test-quantize-fns .................   Passed   25.93 sec
+      Start 30: test-quantize-perf
+28/29 Test #30: test-quantize-perf ................   Passed    0.33 sec
+      Start 31: test-rope
+29/29 Test #31: test-rope .........................   Passed    0.22 sec
+
+100% tests passed, 0 tests failed out of 29
+
+Label Time Summary:
+main    = 254.35 sec*proc (29 tests)
+
+Total Test time (real) = 254.36 sec
+
+real	4m14.395s
+user	8m33.165s
+sys	0m6.915s
+```
+
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main
+Test project /Users/ggml/work/llama.cpp/build-ci-release
+      Start  1: test-tokenizer-0-bert-bge
+ 1/29 Test  #1: test-tokenizer-0-bert-bge .........   Passed    1.25 sec
+      Start  2: test-tokenizer-0-command-r
+ 2/29 Test  #2: test-tokenizer-0-command-r ........   Passed    0.22 sec
+      Start  3: test-tokenizer-0-deepseek-coder
+ 3/29 Test  #3: test-tokenizer-0-deepseek-coder ...   Passed    0.04 sec
+      Start  4: test-tokenizer-0-deepseek-llm
+ 4/29 Test  #4: test-tokenizer-0-deepseek-llm .....   Passed    0.08 sec
+      Start  5: test-tokenizer-0-falcon
+ 5/29 Test  #5: test-tokenizer-0-falcon ...........   Passed    0.06 sec
+      Start  6: test-tokenizer-0-gpt-2
+ 6/29 Test  #6: test-tokenizer-0-gpt-2 ............   Passed    0.05 sec
+      Start  7: test-tokenizer-0-llama-bpe
+ 7/29 Test  #7: test-tokenizer-0-llama-bpe ........   Passed    0.14 sec
+      Start  8: test-tokenizer-0-llama-spm
+ 8/29 Test  #8: test-tokenizer-0-llama-spm ........   Passed    0.03 sec
+      Start  9: test-tokenizer-0-mpt
+ 9/29 Test  #9: test-tokenizer-0-mpt ..............   Passed    0.05 sec
+      Start 10: test-tokenizer-0-phi-3
+10/29 Test #10: test-tokenizer-0-phi-3 ............   Passed    0.03 sec
+      Start 11: test-tokenizer-0-qwen2
+11/29 Test #11: test-tokenizer-0-qwen2 ............   Passed    0.11 sec
+      Start 12: test-tokenizer-0-refact
+12/29 Test #12: test-tokenizer-0-refact ...........   Passed    0.05 sec
+      Start 13: test-tokenizer-0-starcoder
+13/29 Test #13: test-tokenizer-0-starcoder ........   Passed    0.05 sec
+      Start 14: test-sampling
+14/29 Test #14: test-sampling .....................   Passed    0.90 sec
+      Start 15: test-grammar-parser
+15/29 Test #15: test-grammar-parser ...............   Passed    0.18 sec
+      Start 16: test-grammar-integration
+16/29 Test #16: test-grammar-integration ..........   Passed    0.21 sec
+      Start 17: test-llama-grammar
+17/29 Test #17: test-llama-grammar ................   Passed    0.17 sec
+      Start 18: test-chat
+18/29 Test #18: test-chat .........................   Passed    1.86 sec
+      Start 19: test-json-schema-to-grammar
+19/29 Test #19: test-json-schema-to-grammar .......   Passed    2.09 sec
+      Start 20: test-tokenizer-1-llama-spm
+20/29 Test #20: test-tokenizer-1-llama-spm ........   Passed    0.34 sec
+      Start 21: test-log
+21/29 Test #21: test-log ..........................   Passed    0.18 sec
+      Start 22: test-arg-parser
+22/29 Test #22: test-arg-parser ...................   Passed    0.23 sec
+      Start 23: test-chat-template
+23/29 Test #23: test-chat-template ................   Passed    0.45 sec
+      Start 24: test-gguf
+24/29 Test #24: test-gguf .........................   Passed    0.79 sec
+      Start 25: test-backend-ops
+25/29 Test #25: test-backend-ops ..................   Passed   30.42 sec
+      Start 28: test-barrier
+26/29 Test #28: test-barrier ......................   Passed    0.38 sec
+      Start 29: test-quantize-fns
+27/29 Test #29: test-quantize-fns .................   Passed   14.10 sec
+      Start 30: test-quantize-perf
+28/29 Test #30: test-quantize-perf ................   Passed    0.44 sec
+      Start 31: test-rope
+29/29 Test #31: test-rope .........................   Passed    0.22 sec
+
+100% tests passed, 0 tests failed out of 29
+
+Label Time Summary:
+main    =  55.11 sec*proc (29 tests)
+
+Total Test time (real) =  55.12 sec
+
+real	0m55.134s
+user	1m17.278s
+sys	0m5.904s
+```
+### embd_bge_small
+
+BGE Small (BERT):
+- status: 0
+- f16: 
+```
++ ./bin/llama-embedding --model ../models-mnt/bge-small/ggml-model-f16.gguf -p 'I believe the meaning of life is' -ngl 99 -c 0
+0.00.000.108 I build: 4743 (d07c6213) with Apple clang version 16.0.0 (clang-1600.0.26.4) for arm64-apple-darwin24.1.0
+0.00.017.291 I llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+0.00.019.771 I llama_model_loader: loaded meta data with 24 key-value pairs and 197 tensors from ../models-mnt/bge-small/ggml-model-f16.gguf (version GGUF V3 (latest))
+0.00.019.775 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.019.777 I llama_model_loader: - kv   0:                       general.architecture str              = bert
+0.00.019.779 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.019.779 I llama_model_loader: - kv   2:                               general.name str              = Bge Small
+0.00.019.780 I llama_model_loader: - kv   3:                           general.basename str              = bge
+0.00.019.780 I llama_model_loader: - kv   4:                         general.size_label str              = small
+0.00.019.781 I llama_model_loader: - kv   5:                           bert.block_count u32              = 12
+0.00.019.781 I llama_model_loader: - kv   6:                        bert.context_length u32              = 512
+0.00.019.782 I llama_model_loader: - kv   7:                      bert.embedding_length u32              = 384
+0.00.019.782 I llama_model_loader: - kv   8:                   bert.feed_forward_length u32              = 1536
+0.00.019.782 I llama_model_loader: - kv   9:                  bert.attention.head_count u32              = 12
+0.00.019.785 I llama_model_loader: - kv  10:          bert.attention.layer_norm_epsilon f32              = 0.000000
+0.00.019.785 I llama_model_loader: - kv  11:                          general.file_type u32              = 1
+0.00.019.786 I llama_model_loader: - kv  12:                      bert.attention.causal bool             = false
+0.00.019.786 I llama_model_loader: - kv  13:                          bert.pooling_type u32              = 2
+0.00.019.786 I llama_model_loader: - kv  14:            tokenizer.ggml.token_type_count u32              = 2
+0.00.019.787 I llama_model_loader: - kv  15:                       tokenizer.ggml.model str              = bert
+0.00.019.787 I llama_model_loader: - kv  16:                         tokenizer.ggml.pre str              = jina-v2-en
+0.00.022.107 I llama_model_loader: - kv  17:                      tokenizer.ggml.tokens arr[str,30522]   = ["[PAD]", "[unused0]", "[unused1]", "...
+0.00.022.765 I llama_model_loader: - kv  18:                  tokenizer.ggml.token_type arr[i32,30522]   = [3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.022.766 I llama_model_loader: - kv  19:            tokenizer.ggml.unknown_token_id u32              = 100
+0.00.022.767 I llama_model_loader: - kv  20:          tokenizer.ggml.seperator_token_id u32              = 102
+0.00.022.767 I llama_model_loader: - kv  21:            tokenizer.ggml.padding_token_id u32              = 0
+0.00.022.767 I llama_model_loader: - kv  22:               tokenizer.ggml.mask_token_id u32              = 103
+0.00.022.768 I llama_model_loader: - kv  23:               general.quantization_version u32              = 2
+0.00.022.768 I llama_model_loader: - type  f32:  124 tensors
+0.00.022.768 I llama_model_loader: - type  f16:   73 tensors
+0.00.022.769 I print_info: file format = GGUF V3 (latest)
+0.00.022.769 I print_info: file type   = F16
+0.00.022.774 I print_info: file size   = 63.84 MiB (16.12 BPW) 
+0.00.025.082 I load: special tokens cache size = 5
+0.00.026.289 I load: token to piece cache size = 0.2032 MB
+0.00.026.293 I print_info: arch             = bert
+0.00.026.294 I print_info: vocab_only       = 0
+0.00.026.294 I print_info: n_ctx_train      = 512
+0.00.026.294 I print_info: n_embd           = 384
+0.00.026.294 I print_info: n_layer          = 12
+0.00.026.297 I print_info: n_head           = 12
+0.00.026.298 I print_info: n_head_kv        = 12
+0.00.026.298 I print_info: n_rot            = 32
+0.00.026.298 I print_info: n_swa            = 0
+0.00.026.301 I print_info: n_embd_head_k    = 32
+0.00.026.301 I print_info: n_embd_head_v    = 32
+0.00.026.301 I print_info: n_gqa            = 1
+0.00.026.302 I print_info: n_embd_k_gqa     = 384
+0.00.026.303 I print_info: n_embd_v_gqa     = 384
+0.00.026.303 I print_info: f_norm_eps       = 1.0e-12
+0.00.026.304 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.026.304 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.026.304 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.026.305 I print_info: f_logit_scale    = 0.0e+00
+0.00.026.305 I print_info: n_ff             = 1536
+0.00.026.307 I print_info: n_expert         = 0
+0.00.026.307 I print_info: n_expert_used    = 0
+0.00.026.307 I print_info: causal attn      = 0
+0.00.026.307 I print_info: pooling type     = 2
+0.00.026.308 I print_info: rope type        = 2
+0.00.026.308 I print_info: rope scaling     = linear
+0.00.026.308 I print_info: freq_base_train  = 10000.0
+0.00.026.308 I print_info: freq_scale_train = 1
+0.00.026.309 I print_info: n_ctx_orig_yarn  = 512
+0.00.026.309 I print_info: rope_finetuned   = unknown
+0.00.026.309 I print_info: ssm_d_conv       = 0
+0.00.026.309 I print_info: ssm_d_inner      = 0
+0.00.026.309 I print_info: ssm_d_state      = 0
+0.00.026.309 I print_info: ssm_dt_rank      = 0
+0.00.026.309 I print_info: ssm_dt_b_c_rms   = 0
+0.00.026.310 I print_info: model type       = 33M
+0.00.026.310 I print_info: model params     = 33.21 M
+0.00.026.310 I print_info: general.name     = Bge Small
+0.00.026.311 I print_info: vocab type       = WPM
+0.00.026.311 I print_info: n_vocab          = 30522
+0.00.026.311 I print_info: n_merges         = 0
+0.00.026.311 I print_info: BOS token        = 101 '[CLS]'
+0.00.026.312 I print_info: UNK token        = 100 '[UNK]'
+0.00.026.312 I print_info: SEP token        = 102 '[SEP]'
+0.00.026.312 I print_info: PAD token        = 0 '[PAD]'
+0.00.026.312 I print_info: MASK token       = 103 '[MASK]'
+0.00.026.312 I print_info: LF token         = 0 '[PAD]'
+0.00.026.313 I print_info: max token length = 21
+0.00.026.313 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.028.302 I load_tensors: offloading 12 repeating layers to GPU
+0.00.028.302 I load_tensors: offloading output layer to GPU
+0.00.028.303 I load_tensors: offloaded 13/13 layers to GPU
+0.00.028.323 I load_tensors: Metal_Mapped model buffer size =    40.73 MiB
+0.00.028.324 I load_tensors:   CPU_Mapped model buffer size =    23.11 MiB
+................................................
+0.00.028.507 I llama_init_from_model: n_seq_max     = 1
+0.00.028.507 I llama_init_from_model: n_ctx         = 512
+0.00.028.508 I llama_init_from_model: n_ctx_per_seq = 512
+0.00.028.508 I llama_init_from_model: n_batch       = 2048
+0.00.028.508 I llama_init_from_model: n_ubatch      = 2048
+0.00.028.508 I llama_init_from_model: flash_attn    = 0
+0.00.028.508 I llama_init_from_model: freq_base     = 10000.0
+0.00.028.509 I llama_init_from_model: freq_scale    = 1
+0.00.028.510 I ggml_metal_init: allocating
+0.00.028.514 I ggml_metal_init: found device: Apple M4
+0.00.028.517 I ggml_metal_init: picking default device: Apple M4
+0.00.029.118 I ggml_metal_init: using embedded metal library
+0.00.031.657 I ggml_metal_init: GPU name:   Apple M4
+0.00.031.659 I ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+0.00.031.659 I ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+0.00.031.660 I ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+0.00.031.660 I ggml_metal_init: simdgroup reduction   = true
+0.00.031.660 I ggml_metal_init: simdgroup matrix mul. = true
+0.00.031.660 I ggml_metal_init: has residency sets    = true
+0.00.031.661 I ggml_metal_init: has bfloat            = true
+0.00.031.661 I ggml_metal_init: use bfloat            = true
+0.00.031.661 I ggml_metal_init: hasUnifiedMemory      = true
+0.00.031.662 I ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+0.00.041.674 I llama_kv_cache_init: kv_size = 512, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 12, can_shift = 1
+0.00.042.246 I llama_kv_cache_init:      Metal KV buffer size =     9.00 MiB
+0.00.042.248 I llama_init_from_model: KV self size  =    9.00 MiB, K (f16):    4.50 MiB, V (f16):    4.50 MiB
+0.00.042.270 I llama_init_from_model:        CPU  output buffer size =     0.00 MiB
+0.00.043.283 I llama_init_from_model:      Metal compute buffer size =    16.00 MiB
+0.00.043.285 I llama_init_from_model:        CPU compute buffer size =     2.51 MiB
+0.00.043.285 I llama_init_from_model: graph nodes  = 429
+0.00.043.285 I llama_init_from_model: graph splits = 2
+0.00.043.286 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 512
+0.00.043.286 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.047.743 I 
+0.00.047.762 I system_info: n_threads = 4 (n_threads_batch = 4) / 10 | Metal : EMBED_LIBRARY = 1 | BF16 = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | AARCH64_REPACK = 1 | 
+0.00.048.294 I batch_decode: n_tokens = 9, n_seq = 1
+
+embedding 0: -0.043984 -0.019895  0.007670 -0.000838  0.001372 -0.037036  0.109436  0.042589  0.092046 -0.015918  0.006773 -0.035692 -0.017889  0.015040  0.018126  0.015860 -0.011308  0.010431 -0.085223 -0.008454  0.091368 -0.017067 -0.060328 -0.024484  0.027524  0.076059  0.027984 -0.014564  0.017645 -0.033268 -0.037874 -0.019012  0.068670 -0.009845 -0.025030  0.072346 -0.046570  0.011026 -0.050252  0.047693  0.032387 -0.011761  0.022055  0.049645  0.010465  0.005795 -0.028860  0.008933 -0.018507 -0.051466 -0.046036  0.030497 -0.035418  0.054204 -0.069650  0.044238  0.029786  0.046305  0.073410 -0.042580  0.076109  0.038851 -0.181182  0.082503  0.042250 -0.064549 -0.060097 -0.017853  0.006472  0.005873  0.017196 -0.026615  0.064578  0.112612  0.035159 -0.067416  0.027073 -0.067295 -0.033493 -0.033219  0.033252  0.013523 -0.003346 -0.037473 -0.052055  0.055155 -0.001982 -0.038276  0.064447  0.028824 -0.043334 -0.029236 -0.039462  0.036315  0.008379 -0.015481 -0.036573  0.018130  0.028600  0.342831 -0.044484  0.056114  0.017624 -0.020867 -0.066808  0.000146 -0.037885 -0.030063 -0.008541 -0.021595  0.000548 -0.003219  0.004020  0.018908 -0.008548  0.025835  0.049433  0.000091  0.050920 -0.042479 -0.031884  0.023606  0.030691 -0.023148 -0.046271 -0.079278  0.115198  0.046757  0.027829 -0.040710  0.067777 -0.022955  0.010332 -0.032937 -0.018305  0.043844  0.024268  0.052413  0.007469  0.008905  0.011244 -0.074655 -0.065561 -0.026750 -0.041192 -0.023884  0.026710  0.006912  0.027741  0.052873 -0.036673  0.057707 -0.000170  0.031764 -0.019760 -0.022083  0.041053 -0.058903  0.019619  0.043144  0.043582  0.041593 -0.022527  0.027037 -0.021833  0.005430 -0.041317 -0.001239  0.024452  0.002088  0.044333 -0.022745  0.043662  0.064763  0.055430  0.037060 -0.000919  0.046111  0.045790 -0.008487  0.063057 -0.073235 -0.011935  0.032107  0.023957  0.014725 -0.033688  0.001083 -0.015827 -0.019002  0.047872  0.110842  0.028428  0.031366 -0.013288 -0.057499  0.006644  0.005140 -0.012262 -0.051443 -0.000965 -0.017642 -0.019440 -0.040937  0.009209 -0.057957  0.050961  0.052340 -0.009617 -0.040259 -0.014075 -0.024877 -0.017251  0.006302  0.006588 -0.026919  0.015600  0.030760  0.002578  0.023206 -0.022199 -0.098557 -0.051105 -0.278031 -0.014994 -0.061553 -0.027218  0.017666 -0.010939 -0.017077  0.035055  0.046994 -0.015432  0.015232 -0.025477  0.047844 -0.005949 -0.000749 -0.061008 -0.068946 -0.060377 -0.035942  0.043319 -0.055047  0.015075  0.000537 -0.058175 -0.010439  0.012643  0.151495  0.127111 -0.013622  0.041993 -0.025672  0.014026 -0.001037 -0.150469  0.044857  0.005320 -0.036274 -0.029801 -0.020192 -0.034891  0.010235  0.033548 -0.048178 -0.051795 -0.017463 -0.023492  0.047349  0.052076 -0.016783 -0.055452  0.025836 -0.005707  0.010710  0.038705  0.008191 -0.009764 -0.105779 -0.027430 -0.096101  0.025068 -0.011260  0.092355  0.056101  0.003758  0.027791  0.002092 -0.051085 -0.039890 -0.013542 -0.044956 -0.015335  0.002910 -0.043498 -0.077951  0.065217 -0.006840 -0.001630 -0.014642  0.071560  0.023714 -0.037180  0.009175  0.001562 -0.032268  0.015468  0.037880  0.000337 -0.053207  0.021321 -0.039829  0.000031  0.013400  0.019798 -0.057879  0.006473 -0.049531 -0.267858  0.039156 -0.067972  0.038248 -0.012333  0.041485 -0.016117  0.052383 -0.071363  0.011369  0.024719 -0.007232  0.082087  0.028535 -0.021504  0.040494 -0.004570 -0.074594 -0.014749  0.020037  0.002304  0.023148  0.197212 -0.043222 -0.025983 -0.004959 -0.019278  0.074258  0.001716 -0.031979 -0.036599 -0.045082  0.000547 -0.011560  0.018126 -0.029461 -0.008463  0.006419  0.050799 -0.014959  0.006176  0.026096 -0.030809  0.048055  0.114093 -0.040826 -0.011457  0.005419 -0.003599  0.025154 -0.059142  0.013753 -0.010399  0.038709  0.051449  0.035413  0.035031 -0.017027  0.026360 -0.014490 -0.050032  0.003219  0.054121  0.039723 -0.039127 
+
+0.00.052.621 I llama_perf_context_print:        load time =      30.43 ms
+0.00.052.622 I llama_perf_context_print: prompt eval time =       4.21 ms /     9 tokens (    0.47 ms per token,  2138.28 tokens per second)
+0.00.052.623 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.00.052.623 I llama_perf_context_print:       total time =       4.88 ms /    10 tokens
+0.00.052.839 I ggml_metal_free: deallocating
+
+real	0m0.224s
+user	0m0.035s
+sys	0m0.025s
+```
+- q8_0:
+```
++ ./bin/llama-embedding --model ../models-mnt/bge-small/ggml-model-q8_0.gguf -p 'I believe the meaning of life is' -ngl 99 -c 0
+0.00.000.042 I build: 4743 (d07c6213) with Apple clang version 16.0.0 (clang-1600.0.26.4) for arm64-apple-darwin24.1.0
+0.00.008.778 I llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+0.00.011.185 I llama_model_loader: loaded meta data with 24 key-value pairs and 197 tensors from ../models-mnt/bge-small/ggml-model-q8_0.gguf (version GGUF V3 (latest))
+0.00.011.189 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.011.190 I llama_model_loader: - kv   0:                       general.architecture str              = bert
+0.00.011.193 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.011.193 I llama_model_loader: - kv   2:                               general.name str              = Bge Small
+0.00.011.193 I llama_model_loader: - kv   3:                           general.basename str              = bge
+0.00.011.194 I llama_model_loader: - kv   4:                         general.size_label str              = small
+0.00.011.195 I llama_model_loader: - kv   5:                           bert.block_count u32              = 12
+0.00.011.197 I llama_model_loader: - kv   6:                        bert.context_length u32              = 512
+0.00.011.197 I llama_model_loader: - kv   7:                      bert.embedding_length u32              = 384
+0.00.011.198 I llama_model_loader: - kv   8:                   bert.feed_forward_length u32              = 1536
+0.00.011.198 I llama_model_loader: - kv   9:                  bert.attention.head_count u32              = 12
+0.00.011.200 I llama_model_loader: - kv  10:          bert.attention.layer_norm_epsilon f32              = 0.000000
+0.00.011.206 I llama_model_loader: - kv  11:                      bert.attention.causal bool             = false
+0.00.011.207 I llama_model_loader: - kv  12:                          bert.pooling_type u32              = 2
+0.00.011.207 I llama_model_loader: - kv  13:            tokenizer.ggml.token_type_count u32              = 2
+0.00.011.207 I llama_model_loader: - kv  14:                       tokenizer.ggml.model str              = bert
+0.00.011.208 I llama_model_loader: - kv  15:                         tokenizer.ggml.pre str              = jina-v2-en
+0.00.013.351 I llama_model_loader: - kv  16:                      tokenizer.ggml.tokens arr[str,30522]   = ["[PAD]", "[unused0]", "[unused1]", "...
+0.00.013.980 I llama_model_loader: - kv  17:                  tokenizer.ggml.token_type arr[i32,30522]   = [3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.013.982 I llama_model_loader: - kv  18:            tokenizer.ggml.unknown_token_id u32              = 100
+0.00.013.982 I llama_model_loader: - kv  19:          tokenizer.ggml.seperator_token_id u32              = 102
+0.00.013.982 I llama_model_loader: - kv  20:            tokenizer.ggml.padding_token_id u32              = 0
+0.00.013.983 I llama_model_loader: - kv  21:               tokenizer.ggml.mask_token_id u32              = 103
+0.00.013.983 I llama_model_loader: - kv  22:               general.quantization_version u32              = 2
+0.00.013.983 I llama_model_loader: - kv  23:                          general.file_type u32              = 7
+0.00.013.984 I llama_model_loader: - type  f32:  124 tensors
+0.00.013.984 I llama_model_loader: - type q8_0:   73 tensors
+0.00.013.985 I print_info: file format = GGUF V3 (latest)
+0.00.013.985 I print_info: file type   = Q8_0
+0.00.013.986 I print_info: file size   = 34.38 MiB (8.68 BPW) 
+0.00.016.308 I load: special tokens cache size = 5
+0.00.017.517 I load: token to piece cache size = 0.2032 MB
+0.00.017.520 I print_info: arch             = bert
+0.00.017.520 I print_info: vocab_only       = 0
+0.00.017.520 I print_info: n_ctx_train      = 512
+0.00.017.521 I print_info: n_embd           = 384
+0.00.017.521 I print_info: n_layer          = 12
+0.00.017.524 I print_info: n_head           = 12
+0.00.017.524 I print_info: n_head_kv        = 12
+0.00.017.525 I print_info: n_rot            = 32
+0.00.017.525 I print_info: n_swa            = 0
+0.00.017.525 I print_info: n_embd_head_k    = 32
+0.00.017.525 I print_info: n_embd_head_v    = 32
+0.00.017.526 I print_info: n_gqa            = 1
+0.00.017.526 I print_info: n_embd_k_gqa     = 384
+0.00.017.527 I print_info: n_embd_v_gqa     = 384
+0.00.017.528 I print_info: f_norm_eps       = 1.0e-12
+0.00.017.528 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.017.528 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.017.528 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.017.529 I print_info: f_logit_scale    = 0.0e+00
+0.00.017.529 I print_info: n_ff             = 1536
+0.00.017.530 I print_info: n_expert         = 0
+0.00.017.530 I print_info: n_expert_used    = 0
+0.00.017.530 I print_info: causal attn      = 0
+0.00.017.530 I print_info: pooling type     = 2
+0.00.017.530 I print_info: rope type        = 2
+0.00.017.530 I print_info: rope scaling     = linear
+0.00.017.531 I print_info: freq_base_train  = 10000.0
+0.00.017.531 I print_info: freq_scale_train = 1
+0.00.017.533 I print_info: n_ctx_orig_yarn  = 512
+0.00.017.534 I print_info: rope_finetuned   = unknown
+0.00.017.534 I print_info: ssm_d_conv       = 0
+0.00.017.534 I print_info: ssm_d_inner      = 0
+0.00.017.534 I print_info: ssm_d_state      = 0
+0.00.017.534 I print_info: ssm_dt_rank      = 0
+0.00.017.534 I print_info: ssm_dt_b_c_rms   = 0
+0.00.017.535 I print_info: model type       = 33M
+0.00.017.535 I print_info: model params     = 33.21 M
+0.00.017.536 I print_info: general.name     = Bge Small
+0.00.017.537 I print_info: vocab type       = WPM
+0.00.017.538 I print_info: n_vocab          = 30522
+0.00.017.538 I print_info: n_merges         = 0
+0.00.017.538 I print_info: BOS token        = 101 '[CLS]'
+0.00.017.538 I print_info: UNK token        = 100 '[UNK]'
+0.00.017.538 I print_info: SEP token        = 102 '[SEP]'
+0.00.017.539 I print_info: PAD token        = 0 '[PAD]'
+0.00.017.539 I print_info: MASK token       = 103 '[MASK]'
+0.00.017.539 I print_info: LF token         = 0 '[PAD]'
+0.00.017.539 I print_info: max token length = 21
+0.00.017.540 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.019.268 I load_tensors: offloading 12 repeating layers to GPU
+0.00.019.269 I load_tensors: offloading output layer to GPU
+0.00.019.269 I load_tensors: offloaded 13/13 layers to GPU
+0.00.019.275 I load_tensors: Metal_Mapped model buffer size =    21.75 MiB
+0.00.019.276 I load_tensors:   CPU_Mapped model buffer size =    12.63 MiB
+................................................
+0.00.019.446 I llama_init_from_model: n_seq_max     = 1
+0.00.019.446 I llama_init_from_model: n_ctx         = 512
+0.00.019.447 I llama_init_from_model: n_ctx_per_seq = 512
+0.00.019.447 I llama_init_from_model: n_batch       = 2048
+0.00.019.447 I llama_init_from_model: n_ubatch      = 2048
+0.00.019.447 I llama_init_from_model: flash_attn    = 0
+0.00.019.448 I llama_init_from_model: freq_base     = 10000.0
+0.00.019.448 I llama_init_from_model: freq_scale    = 1
+0.00.019.448 I ggml_metal_init: allocating
+0.00.019.452 I ggml_metal_init: found device: Apple M4
+0.00.019.456 I ggml_metal_init: picking default device: Apple M4
+0.00.019.974 I ggml_metal_init: using embedded metal library
+0.00.022.341 I ggml_metal_init: GPU name:   Apple M4
+0.00.022.343 I ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+0.00.022.343 I ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+0.00.022.344 I ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+0.00.022.344 I ggml_metal_init: simdgroup reduction   = true
+0.00.022.344 I ggml_metal_init: simdgroup matrix mul. = true
+0.00.022.344 I ggml_metal_init: has residency sets    = true
+0.00.022.344 I ggml_metal_init: has bfloat            = true
+0.00.022.345 I ggml_metal_init: use bfloat            = true
+0.00.022.345 I ggml_metal_init: hasUnifiedMemory      = true
+0.00.022.346 I ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+0.00.032.627 I llama_kv_cache_init: kv_size = 512, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 12, can_shift = 1
+0.00.033.233 I llama_kv_cache_init:      Metal KV buffer size =     9.00 MiB
+0.00.033.235 I llama_init_from_model: KV self size  =    9.00 MiB, K (f16):    4.50 MiB, V (f16):    4.50 MiB
+0.00.033.248 I llama_init_from_model:        CPU  output buffer size =     0.00 MiB
+0.00.034.191 I llama_init_from_model:      Metal compute buffer size =    16.00 MiB
+0.00.034.192 I llama_init_from_model:        CPU compute buffer size =     2.51 MiB
+0.00.034.192 I llama_init_from_model: graph nodes  = 429
+0.00.034.192 I llama_init_from_model: graph splits = 2
+0.00.034.194 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 512
+0.00.034.194 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.038.271 I 
+0.00.038.289 I system_info: n_threads = 4 (n_threads_batch = 4) / 10 | Metal : EMBED_LIBRARY = 1 | BF16 = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | AARCH64_REPACK = 1 | 
+0.00.038.822 I batch_decode: n_tokens = 9, n_seq = 1
+
+embedding 0: -0.044994 -0.019858  0.007986 -0.001410  0.001531 -0.036276  0.109404  0.043235  0.092836 -0.015201  0.005971 -0.036330 -0.018159  0.015015  0.017667  0.014510 -0.011792  0.011812 -0.084764 -0.008081  0.091650 -0.017638 -0.061084 -0.025066  0.026879  0.076180  0.028256 -0.014273  0.017420 -0.033553 -0.037520 -0.018280  0.068843 -0.010129 -0.024896  0.071968 -0.046406  0.011471 -0.050333  0.048931  0.032317 -0.012107  0.021812  0.049796  0.010366  0.005264 -0.028665  0.008581 -0.018508 -0.052358 -0.046410  0.029426 -0.034989  0.053289 -0.069849  0.043767  0.029291  0.046759  0.073664 -0.043090  0.075213  0.038641 -0.180496  0.081648  0.043389 -0.065615 -0.059878 -0.017387  0.006913  0.005155  0.017165 -0.026679  0.064347  0.112564  0.034871 -0.067783  0.027124 -0.066989 -0.034296 -0.033344  0.033189  0.014325 -0.004253 -0.036945 -0.052008  0.054151 -0.001715 -0.038112  0.063016  0.028668 -0.041665 -0.028879 -0.039263  0.036879  0.007718 -0.015657 -0.036270  0.018699  0.029792  0.344948 -0.043880  0.056487  0.018022 -0.021448 -0.065281  0.000253 -0.037910 -0.029663 -0.008828 -0.020643  0.001162 -0.003510  0.003091  0.018576 -0.009637  0.025316  0.049298 -0.000937  0.051568 -0.042363 -0.031550  0.023315  0.030044 -0.023267 -0.045483 -0.079644  0.114489  0.047503  0.027208 -0.041477  0.067717 -0.022845  0.010232 -0.033486 -0.017199  0.044319  0.022956  0.052194  0.008122  0.008112  0.009951 -0.074643 -0.065035 -0.025938 -0.040806 -0.024533  0.027409  0.006078  0.027693  0.052243 -0.036587  0.058682  0.001467  0.032191 -0.019964 -0.021840  0.041805 -0.058801  0.019348  0.042626  0.043999  0.040911 -0.021909  0.028025 -0.022801  0.005520 -0.041266 -0.000085  0.024325  0.001532  0.044802 -0.022888  0.043056  0.065030  0.056292  0.037666 -0.001004  0.047521  0.045624 -0.008614  0.062270 -0.073313 -0.011718  0.032708  0.023348  0.014650 -0.033924  0.001158 -0.015872 -0.018974  0.047982  0.110740  0.029177  0.030881 -0.012325 -0.057836  0.006939  0.004378 -0.011864 -0.051754 -0.003018 -0.017766 -0.020051 -0.041018  0.009118 -0.058568  0.050632  0.051795 -0.008968 -0.040668 -0.014765 -0.024320 -0.015980  0.005823  0.007147 -0.027335  0.016275  0.030734  0.002342  0.023167 -0.022169 -0.098059 -0.050901 -0.277240 -0.015100 -0.061566 -0.026219  0.017141 -0.010285 -0.017522  0.034725  0.047897 -0.016594  0.015489 -0.024132  0.048613 -0.004993 -0.000001 -0.060860 -0.068346 -0.059622 -0.036157  0.043605 -0.056353  0.014713  0.000292 -0.058627 -0.010995  0.012274  0.151597  0.127025 -0.012582  0.042765 -0.025227  0.013629 -0.000381 -0.150686  0.043974  0.004714 -0.036955 -0.029586 -0.019853 -0.034063  0.009522  0.034004 -0.048909 -0.051765 -0.017243 -0.025080  0.047588  0.050981 -0.017553 -0.056746  0.024054 -0.006285  0.011003  0.038719  0.008083 -0.008595 -0.106361 -0.027365 -0.096966  0.025294 -0.011096  0.091579  0.056180  0.004494  0.028066  0.001727 -0.051388 -0.039497 -0.013817 -0.045907 -0.015238  0.002920 -0.043938 -0.077716  0.066102 -0.006195 -0.000885 -0.013768  0.071562  0.023826 -0.036363  0.007848  0.001487 -0.032916  0.016336  0.037378  0.000625 -0.052389  0.021549 -0.039695 -0.000026  0.013496  0.020436 -0.057513  0.005900 -0.049906 -0.267546  0.038686 -0.067509  0.037450 -0.011471  0.041547 -0.015904  0.051347 -0.072313  0.012571  0.024808 -0.007420  0.082069  0.028175 -0.021956  0.040736 -0.003945 -0.074192 -0.014923  0.020417  0.002644  0.023207  0.197144 -0.043068 -0.025876 -0.004886 -0.018582  0.073936  0.001341 -0.031663 -0.037140 -0.044262  0.000049 -0.010741  0.018225 -0.028045 -0.008828  0.006047  0.050183 -0.015017  0.007037  0.025894 -0.030628  0.048075  0.112795 -0.039982 -0.011695  0.005039 -0.002800  0.025072 -0.059720  0.014182 -0.010019  0.038100  0.051088  0.034726  0.035947 -0.017035  0.027243 -0.015391 -0.051195  0.003744  0.053928  0.040014 -0.039140 
+
+0.00.043.229 I llama_perf_context_print:        load time =      29.48 ms
+0.00.043.230 I llama_perf_context_print: prompt eval time =       4.28 ms /     9 tokens (    0.48 ms per token,  2103.30 tokens per second)
+0.00.043.231 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.00.043.231 I llama_perf_context_print:       total time =       4.96 ms /    10 tokens
+0.00.043.432 I ggml_metal_free: deallocating
+
+real	0m0.054s
+user	0m0.029s
+sys	0m0.015s
+```
+### rerank_tiny
+
+Rerank Tiny (Jina):
+- status: 0
+- f16: 
+```
++ ./bin/llama-embedding --model ../models-mnt/rerank-tiny/ggml-model-f16.gguf -p 'what is panda?</s></s>hi\nwhat is panda?</s></s>it'\''s a bear\nwhat is panda?</s></s>The giant panda (Ailuropoda melanoleuca), sometimes called a panda bear or simply panda, is a bear species endemic to China.' -ngl 99 -c 0 --pooling rank --embd-normalize -1 --verbose-prompt
+0.00.000.222 I build: 4743 (d07c6213) with Apple clang version 16.0.0 (clang-1600.0.26.4) for arm64-apple-darwin24.1.0
+0.00.027.568 I llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+0.00.040.982 I llama_model_loader: loaded meta data with 28 key-value pairs and 70 tensors from ../models-mnt/rerank-tiny/ggml-model-f16.gguf (version GGUF V3 (latest))
+0.00.040.988 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.040.990 I llama_model_loader: - kv   0:                       general.architecture str              = jina-bert-v2
+0.00.040.991 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.040.992 I llama_model_loader: - kv   2:                               general.name str              = Jina Bert Implementation
+0.00.040.992 I llama_model_loader: - kv   3:                       general.organization str              = Jinaai
+0.00.040.993 I llama_model_loader: - kv   4:                         general.size_label str              = 33M
+0.00.040.994 I llama_model_loader: - kv   5:                   jina-bert-v2.block_count u32              = 4
+0.00.040.995 I llama_model_loader: - kv   6:                jina-bert-v2.context_length u32              = 8192
+0.00.040.996 I llama_model_loader: - kv   7:              jina-bert-v2.embedding_length u32              = 384
+0.00.040.996 I llama_model_loader: - kv   8:           jina-bert-v2.feed_forward_length u32              = 1536
+0.00.040.997 I llama_model_loader: - kv   9:          jina-bert-v2.attention.head_count u32              = 12
+0.00.041.001 I llama_model_loader: - kv  10:  jina-bert-v2.attention.layer_norm_epsilon f32              = 0.000000
+0.00.041.001 I llama_model_loader: - kv  11:                          general.file_type u32              = 1
+0.00.041.002 I llama_model_loader: - kv  12:              jina-bert-v2.attention.causal bool             = false
+0.00.041.002 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.041.003 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = jina-v1-en
+0.00.048.301 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,61056]   = ["<s>", "<pad>", "</s>", "<unk>", "<m...
+0.00.050.454 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,61056]   = [3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.055.114 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,39382]   = ["t h", "i n", "a n", "e r", "th e", ...
+0.00.055.116 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.055.116 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 2
+0.00.055.117 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 3
+0.00.055.117 I llama_model_loader: - kv  21:          tokenizer.ggml.seperator_token_id u32              = 2
+0.00.055.117 I llama_model_loader: - kv  22:            tokenizer.ggml.padding_token_id u32              = 1
+0.00.055.118 I llama_model_loader: - kv  23:               tokenizer.ggml.mask_token_id u32              = 4
+0.00.055.118 I llama_model_loader: - kv  24:            tokenizer.ggml.token_type_count u32              = 2
+0.00.055.118 I llama_model_loader: - kv  25:               tokenizer.ggml.add_bos_token bool             = true
+0.00.055.119 I llama_model_loader: - kv  26:               tokenizer.ggml.add_eos_token bool             = true
+0.00.055.119 I llama_model_loader: - kv  27:               general.quantization_version u32              = 2
+0.00.055.120 I llama_model_loader: - type  f32:   40 tensors
+0.00.055.120 I llama_model_loader: - type  f16:   30 tensors
+0.00.055.121 I print_info: file format = GGUF V3 (latest)
+0.00.055.121 I print_info: file type   = F16
+0.00.055.123 I print_info: file size   = 62.78 MiB (16.01 BPW) 
+0.00.059.403 W load: empty token at index 5
+0.00.064.447 W load: model vocab missing newline token, using special_pad_id instead
+0.00.065.855 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.065.889 I load: special tokens cache size = 5
+0.00.329.292 I load: token to piece cache size = 1.5060 MB
+0.00.329.299 I print_info: arch             = jina-bert-v2
+0.00.329.299 I print_info: vocab_only       = 0
+0.00.329.300 I print_info: n_ctx_train      = 8192
+0.00.329.300 I print_info: n_embd           = 384
+0.00.329.300 I print_info: n_layer          = 4
+0.00.329.308 I print_info: n_head           = 12
+0.00.329.309 I print_info: n_head_kv        = 12
+0.00.329.314 I print_info: n_rot            = 32
+0.00.329.316 I print_info: n_swa            = 0
+0.00.329.316 I print_info: n_embd_head_k    = 32
+0.00.329.317 I print_info: n_embd_head_v    = 32
+0.00.329.317 I print_info: n_gqa            = 1
+0.00.329.318 I print_info: n_embd_k_gqa     = 384
+0.00.329.318 I print_info: n_embd_v_gqa     = 384
+0.00.329.319 I print_info: f_norm_eps       = 1.0e-12
+0.00.329.320 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.329.321 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.329.321 I print_info: f_max_alibi_bias = 8.0e+00
+0.00.329.321 I print_info: f_logit_scale    = 0.0e+00
+0.00.329.322 I print_info: n_ff             = 1536
+0.00.329.322 I print_info: n_expert         = 0
+0.00.329.322 I print_info: n_expert_used    = 0
+0.00.329.322 I print_info: causal attn      = 0
+0.00.329.322 I print_info: pooling type     = -1
+0.00.329.323 I print_info: rope type        = -1
+0.00.329.323 I print_info: rope scaling     = linear
+0.00.329.323 I print_info: freq_base_train  = 10000.0
+0.00.329.323 I print_info: freq_scale_train = 1
+0.00.329.323 I print_info: n_ctx_orig_yarn  = 8192
+0.00.329.324 I print_info: rope_finetuned   = unknown
+0.00.329.324 I print_info: ssm_d_conv       = 0
+0.00.329.326 I print_info: ssm_d_inner      = 0
+0.00.329.326 I print_info: ssm_d_state      = 0
+0.00.329.326 I print_info: ssm_dt_rank      = 0
+0.00.329.326 I print_info: ssm_dt_b_c_rms   = 0
+0.00.329.326 I print_info: model type       = 33M
+0.00.329.327 I print_info: model params     = 32.90 M
+0.00.329.327 I print_info: general.name     = Jina Bert Implementation
+0.00.329.328 I print_info: vocab type       = BPE
+0.00.329.328 I print_info: n_vocab          = 61056
+0.00.329.329 I print_info: n_merges         = 39382
+0.00.329.330 I print_info: BOS token        = 0 '<s>'
+0.00.329.330 I print_info: EOS token        = 2 '</s>'
+0.00.329.330 I print_info: UNK token        = 3 '<unk>'
+0.00.329.330 I print_info: SEP token        = 2 '</s>'
+0.00.329.330 I print_info: PAD token        = 1 '<pad>'
+0.00.329.330 I print_info: MASK token       = 4 '<mask>'
+0.00.329.331 I print_info: EOG token        = 2 '</s>'
+0.00.329.331 I print_info: max token length = 45
+0.00.329.332 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.331.192 I load_tensors: offloading 4 repeating layers to GPU
+0.00.331.193 I load_tensors: offloading output layer to GPU
+0.00.331.194 I load_tensors: offloaded 5/5 layers to GPU
+0.00.331.217 I load_tensors: Metal_Mapped model buffer size =    18.06 MiB
+0.00.331.218 I load_tensors:   CPU_Mapped model buffer size =    44.72 MiB
+....................
+0.00.331.504 I llama_init_from_model: n_seq_max     = 1
+0.00.331.505 I llama_init_from_model: n_ctx         = 8192
+0.00.331.505 I llama_init_from_model: n_ctx_per_seq = 8192
+0.00.331.506 I llama_init_from_model: n_batch       = 2048
+0.00.331.506 I llama_init_from_model: n_ubatch      = 2048
+0.00.331.506 I llama_init_from_model: flash_attn    = 0
+0.00.331.506 I llama_init_from_model: freq_base     = 10000.0
+0.00.331.506 I llama_init_from_model: freq_scale    = 1
+0.00.331.507 I ggml_metal_init: allocating
+0.00.331.511 I ggml_metal_init: found device: Apple M4
+0.00.331.514 I ggml_metal_init: picking default device: Apple M4
+0.00.332.153 I ggml_metal_init: using embedded metal library
+0.00.334.604 I ggml_metal_init: GPU name:   Apple M4
+0.00.334.605 I ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+0.00.334.606 I ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+0.00.334.606 I ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+0.00.334.606 I ggml_metal_init: simdgroup reduction   = true
+0.00.334.606 I ggml_metal_init: simdgroup matrix mul. = true
+0.00.334.606 I ggml_metal_init: has residency sets    = true
+0.00.334.607 I ggml_metal_init: has bfloat            = true
+0.00.334.607 I ggml_metal_init: use bfloat            = true
+0.00.334.607 I ggml_metal_init: hasUnifiedMemory      = true
+0.00.334.608 I ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+0.00.343.975 I llama_kv_cache_init: kv_size = 8192, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 4, can_shift = 1
+0.00.347.001 I llama_kv_cache_init:      Metal KV buffer size =    48.00 MiB
+0.00.347.003 I llama_init_from_model: KV self size  =   48.00 MiB, K (f16):   24.00 MiB, V (f16):   24.00 MiB
+0.00.347.023 I llama_init_from_model:        CPU  output buffer size =     0.00 MiB
+0.00.354.216 I llama_init_from_model:      Metal compute buffer size =   220.01 MiB
+0.00.354.218 I llama_init_from_model:        CPU compute buffer size =    22.02 MiB
+0.00.354.218 I llama_init_from_model: graph nodes  = 154
+0.00.354.219 I llama_init_from_model: graph splits = 2
+0.00.354.220 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 8192
+0.00.354.220 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.361.622 I 
+0.00.361.640 I system_info: n_threads = 4 (n_threads_batch = 4) / 10 | Metal : EMBED_LIBRARY = 1 | BF16 = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | AARCH64_REPACK = 1 | 
+0.00.361.735 I main: prompt 0: 'what is panda?</s></s>hi'
+0.00.361.736 I main: number of tokens in prompt = 9
+     0 -> '<s>'
+ 21381 -> 'what'
+ 21152 -> 'is'
+ 49990 -> 'panda'
+    61 -> '?'
+     2 -> '</s>'
+     2 -> '</s>'
+ 23233 -> 'hi'
+     2 -> '</s>'
+
+
+0.00.361.739 I main: prompt 1: 'what is panda?</s></s>it's a bear'
+0.00.361.739 I main: number of tokens in prompt = 13
+     0 -> '<s>'
+ 21381 -> 'what'
+ 21152 -> 'is'
+ 49990 -> 'panda'
+    61 -> '?'
+     2 -> '</s>'
+     2 -> '</s>'
+ 21153 -> 'it'
+    37 -> '''
+    87 -> 's'
+    69 -> 'a'
+ 25706 -> 'bear'
+     2 -> '</s>'
+
+
+0.00.361.744 I main: prompt 2: 'what is panda?</s></s>The giant panda (Ailuropoda melanoleuca), sometimes called a panda bear or simply panda, is a bear species endemic to China.'
+0.00.361.744 I main: number of tokens in prompt = 40
+     0 -> '<s>'
+ 21381 -> 'what'
+ 21152 -> 'is'
+ 49990 -> 'panda'
+    61 -> '?'
+     2 -> '</s>'
+     2 -> '</s>'
+ 21215 -> 'he'
+ 28390 -> 'giant'
+ 49990 -> 'panda'
+    38 -> '('
+ 21163 -> 'il'
+ 26237 -> 'uro'
+ 21223 -> 'po'
+ 23179 -> 'da'
+ 36906 -> 'melan'
+ 26791 -> 'ole'
+    89 -> 'u'
+ 21402 -> 'ca'
+ 21686 -> '),'
+ 23314 -> 'sometimes'
+ 22517 -> 'called'
+    69 -> 'a'
+ 49990 -> 'panda'
+ 25706 -> 'bear'
+ 21142 -> 'or'
+ 22810 -> 'simply'
+ 49990 -> 'panda'
+    42 -> ','
+ 21152 -> 'is'
+    69 -> 'a'
+ 25706 -> 'bear'
+ 25677 -> 'species'
+ 28930 -> 'ende'
+ 22024 -> 'mic'
+ 21148 -> 'to'
+    76 -> 'h'
+ 22344 -> 'ina'
+    44 -> '.'
+     2 -> '</s>'
+
+
+0.00.362.253 I batch_decode: n_tokens = 62, n_seq = 3
+
+rerank score 0:    0.023
+rerank score 1:    0.024
+rerank score 2:    0.199
+
+0.00.365.737 I llama_perf_context_print:        load time =     334.01 ms
+0.00.365.739 I llama_perf_context_print: prompt eval time =       3.48 ms /    62 tokens (    0.06 ms per token, 17841.73 tokens per second)
+0.00.365.740 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.00.365.740 I llama_perf_context_print:       total time =       4.12 ms /    63 tokens
+0.00.365.973 I ggml_metal_free: deallocating
+
+real	0m1.078s
+user	0m0.332s
+sys	0m0.048s
+  - rerank score 0 @ 0.023 OK
+  - rerank score 1 @ 0.024 OK
+  - rerank score 2 @ 0.199 OK
+```
+### pythia_1_4b
+
+Pythia 1.4B:
+- status: 0
+- perplexity:
+  - f16 @ 10.1498 OK
+  - q8_0 @ 10.1362 OK
+  - q4_0 @ 11.1740 OK
+  - q4_1 @ 10.5507 OK
+  - q5_0 @ 10.0972 OK
+  - q5_1 @ 10.1971 OK
+  - q3_k @ 12.0517 OK
+  - q4_k @ 10.1031 OK
+  - q5_k @ 10.2433 OK
+  - q6_k @ 10.3179 OK
+- imatrix:
+```
+Final estimate: PPL = 10.1498 +/- 3.22650
+```
+- f16: 
+```
++ ./bin/llama-cli -no-cnv --model ../models-mnt/pythia/1.4B/ggml-model-f16.gguf -ngl 99 -c 0 -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+0.00.000.164 I build: 4743 (d07c6213) with Apple clang version 16.0.0 (clang-1600.0.26.4) for arm64-apple-darwin24.1.0
+0.00.000.354 I main: llama backend init
+0.00.000.360 I main: load the model and apply lora adapter, if any
+0.00.079.219 I llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+0.00.092.179 I llama_model_loader: loaded meta data with 22 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-f16.gguf (version GGUF V3 (latest))
+0.00.092.197 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.092.201 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.092.202 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.092.202 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.092.202 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.092.203 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.092.207 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.092.207 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.092.208 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.092.209 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.092.210 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.092.210 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.092.211 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.092.225 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.092.225 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.092.226 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.099.312 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.101.497 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.108.525 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.108.533 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.108.534 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.108.534 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.108.535 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.108.537 I llama_model_loader: - type  f32:  194 tensors
+0.00.108.538 I llama_model_loader: - type  f16:   98 tensors
+0.00.108.540 I print_info: file format = GGUF V3 (latest)
+0.00.108.542 I print_info: file type   = all F32 (guessed)
+0.00.108.547 I print_info: file size   = 2.64 GiB (16.01 BPW) 
+0.00.126.152 I load: special tokens cache size = 25
+0.00.136.083 I load: token to piece cache size = 0.2984 MB
+0.00.136.088 I print_info: arch             = gptneox
+0.00.136.088 I print_info: vocab_only       = 0
+0.00.136.088 I print_info: n_ctx_train      = 2048
+0.00.136.089 I print_info: n_embd           = 2048
+0.00.136.089 I print_info: n_layer          = 24
+0.00.136.094 I print_info: n_head           = 16
+0.00.136.095 I print_info: n_head_kv        = 16
+0.00.136.096 I print_info: n_rot            = 32
+0.00.136.096 I print_info: n_swa            = 0
+0.00.136.096 I print_info: n_embd_head_k    = 128
+0.00.136.098 I print_info: n_embd_head_v    = 128
+0.00.136.099 I print_info: n_gqa            = 1
+0.00.136.100 I print_info: n_embd_k_gqa     = 2048
+0.00.136.103 I print_info: n_embd_v_gqa     = 2048
+0.00.136.104 I print_info: f_norm_eps       = 1.0e-05
+0.00.136.112 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.136.113 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.136.113 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.136.113 I print_info: f_logit_scale    = 0.0e+00
+0.00.136.122 I print_info: n_ff             = 8192
+0.00.136.123 I print_info: n_expert         = 0
+0.00.136.123 I print_info: n_expert_used    = 0
+0.00.136.123 I print_info: causal attn      = 1
+0.00.136.123 I print_info: pooling type     = 0
+0.00.136.123 I print_info: rope type        = 2
+0.00.136.124 I print_info: rope scaling     = linear
+0.00.136.128 I print_info: freq_base_train  = 10000.0
+0.00.136.128 I print_info: freq_scale_train = 1
+0.00.136.128 I print_info: n_ctx_orig_yarn  = 2048
+0.00.136.129 I print_info: rope_finetuned   = unknown
+0.00.136.129 I print_info: ssm_d_conv       = 0
+0.00.136.129 I print_info: ssm_d_inner      = 0
+0.00.136.129 I print_info: ssm_d_state      = 0
+0.00.136.130 I print_info: ssm_dt_rank      = 0
+0.00.136.130 I print_info: ssm_dt_b_c_rms   = 0
+0.00.136.130 I print_info: model type       = 1.4B
+0.00.136.131 I print_info: model params     = 1.41 B
+0.00.136.131 I print_info: general.name     = 1.4B
+0.00.136.132 I print_info: vocab type       = BPE
+0.00.136.132 I print_info: n_vocab          = 50304
+0.00.136.132 I print_info: n_merges         = 50009
+0.00.136.133 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.136.133 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.136.133 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.136.134 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.136.134 I print_info: LF token         = 187 'Ċ'
+0.00.136.134 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.136.135 I print_info: max token length = 1024
+0.00.136.135 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.205.785 I load_tensors: offloading 24 repeating layers to GPU
+0.00.205.790 I load_tensors: offloading output layer to GPU
+0.00.205.790 I load_tensors: offloaded 25/25 layers to GPU
+0.00.205.817 I load_tensors: Metal_Mapped model buffer size =  2502.97 MiB
+0.00.205.819 I load_tensors:   CPU_Mapped model buffer size =   196.50 MiB
+...............................................................................
+0.00.206.491 I llama_init_from_model: n_seq_max     = 1
+0.00.206.492 I llama_init_from_model: n_ctx         = 2048
+0.00.206.492 I llama_init_from_model: n_ctx_per_seq = 2048
+0.00.206.492 I llama_init_from_model: n_batch       = 2048
+0.00.206.492 I llama_init_from_model: n_ubatch      = 512
+0.00.206.493 I llama_init_from_model: flash_attn    = 0
+0.00.206.493 I llama_init_from_model: freq_base     = 10000.0
+0.00.206.493 I llama_init_from_model: freq_scale    = 1
+0.00.206.495 I ggml_metal_init: allocating
+0.00.206.535 I ggml_metal_init: found device: Apple M4
+0.00.206.540 I ggml_metal_init: picking default device: Apple M4
+0.00.207.255 I ggml_metal_init: using embedded metal library
+0.00.219.205 I ggml_metal_init: GPU name:   Apple M4
+0.00.219.207 I ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+0.00.219.208 I ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+0.00.219.208 I ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+0.00.219.208 I ggml_metal_init: simdgroup reduction   = true
+0.00.219.209 I ggml_metal_init: simdgroup matrix mul. = true
+0.00.219.209 I ggml_metal_init: has residency sets    = true
+0.00.219.209 I ggml_metal_init: has bfloat            = true
+0.00.219.209 I ggml_metal_init: use bfloat            = true
+0.00.219.209 I ggml_metal_init: hasUnifiedMemory      = true
+0.00.219.210 I ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+0.00.251.407 I llama_kv_cache_init: kv_size = 2048, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 24, can_shift = 1
+0.00.282.033 I llama_kv_cache_init:      Metal KV buffer size =   384.00 MiB
+0.00.282.039 I llama_init_from_model: KV self size  =  384.00 MiB, K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.282.086 I llama_init_from_model:        CPU  output buffer size =     0.19 MiB
+0.00.285.636 I llama_init_from_model:      Metal compute buffer size =   102.25 MiB
+0.00.285.638 I llama_init_from_model:        CPU compute buffer size =     8.01 MiB
+0.00.285.638 I llama_init_from_model: graph nodes  = 967
+0.00.285.638 I llama_init_from_model: graph splits = 2
+0.00.285.645 I common_init_from_params: added <|endoftext|> logit bias = -inf
+0.00.285.761 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.285.762 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.351.838 I main: llama threadpool init, n_threads = 4
+0.00.351.885 I 
+0.00.351.901 I system_info: n_threads = 4 (n_threads_batch = 4) / 10 | Metal : EMBED_LIBRARY = 1 | BF16 = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | AARCH64_REPACK = 1 | 
+0.00.351.901 I 
+0.00.352.076 I sampler seed: 1234
+0.00.352.081 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 2048
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.00.352.106 I sampler chain: logits -> logit-bias -> penalties -> dry -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+0.00.352.107 I generate: n_ctx = 2048, n_batch = 2048, n_predict = 64, n_keep = 0
+0.00.352.108 I 
+I believe the meaning of life is to do the things we love, with the people we love, in the way we love, and in the time we love.
+
+The last few months have been very hard for me. I don't like feeling guilty. I don't like feeling bad. I don't like feeling like I am a failure,
+
+0.02.179.762 I llama_perf_sampler_print:    sampling time =       1.20 ms /    71 runs   (    0.02 ms per token, 59216.01 tokens per second)
+0.02.179.763 I llama_perf_context_print:        load time =     271.69 ms
+0.02.179.765 I llama_perf_context_print: prompt eval time =      43.57 ms /     7 tokens (    6.22 ms per token,   160.68 tokens per second)
+0.02.179.766 I llama_perf_context_print:        eval time =    1781.23 ms /    63 runs   (   28.27 ms per token,    35.37 tokens per second)
+0.02.179.766 I llama_perf_context_print:       total time =    1828.81 ms /    70 tokens
+0.02.179.999 I ggml_metal_free: deallocating
+
+real	0m2.529s
+user	0m0.134s
+sys	0m0.163s
++ ./bin/llama-perplexity --model ../models-mnt/pythia/1.4B/ggml-model-f16.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -ngl 99 -c 128 -b 128 --chunks 1
+0.00.000.532 I build: 4743 (d07c6213) with Apple clang version 16.0.0 (clang-1600.0.26.4) for arm64-apple-darwin24.1.0
+0.00.018.784 I llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+0.00.031.185 I llama_model_loader: loaded meta data with 22 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-f16.gguf (version GGUF V3 (latest))
+0.00.031.201 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.031.204 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.031.205 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.031.206 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.031.206 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.031.207 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.031.208 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.031.209 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.031.210 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.031.210 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.031.211 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.031.212 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.031.213 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.031.216 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.031.216 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.031.217 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.036.528 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.037.630 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.041.610 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.041.612 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.041.612 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.041.613 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.041.613 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.041.614 I llama_model_loader: - type  f32:  194 tensors
+0.00.041.614 I llama_model_loader: - type  f16:   98 tensors
+0.00.041.615 I print_info: file format = GGUF V3 (latest)
+0.00.041.616 I print_info: file type   = all F32 (guessed)
+0.00.041.617 I print_info: file size   = 2.64 GiB (16.01 BPW) 
+0.00.049.956 I load: special tokens cache size = 25
+0.00.056.061 I load: token to piece cache size = 0.2984 MB
+0.00.056.066 I print_info: arch             = gptneox
+0.00.056.066 I print_info: vocab_only       = 0
+0.00.056.067 I print_info: n_ctx_train      = 2048
+0.00.056.067 I print_info: n_embd           = 2048
+0.00.056.067 I print_info: n_layer          = 24
+0.00.056.071 I print_info: n_head           = 16
+0.00.056.072 I print_info: n_head_kv        = 16
+0.00.056.075 I print_info: n_rot            = 32
+0.00.056.075 I print_info: n_swa            = 0
+0.00.056.075 I print_info: n_embd_head_k    = 128
+0.00.056.075 I print_info: n_embd_head_v    = 128
+0.00.056.076 I print_info: n_gqa            = 1
+0.00.056.078 I print_info: n_embd_k_gqa     = 2048
+0.00.056.078 I print_info: n_embd_v_gqa     = 2048
+0.00.056.079 I print_info: f_norm_eps       = 1.0e-05
+0.00.056.079 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.056.079 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.056.079 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.056.080 I print_info: f_logit_scale    = 0.0e+00
+0.00.056.080 I print_info: n_ff             = 8192
+0.00.056.080 I print_info: n_expert         = 0
+0.00.056.081 I print_info: n_expert_used    = 0
+0.00.056.082 I print_info: causal attn      = 1
+0.00.056.083 I print_info: pooling type     = 0
+0.00.056.084 I print_info: rope type        = 2
+0.00.056.084 I print_info: rope scaling     = linear
+0.00.056.084 I print_info: freq_base_train  = 10000.0
+0.00.056.084 I print_info: freq_scale_train = 1
+0.00.056.085 I print_info: n_ctx_orig_yarn  = 2048
+0.00.056.085 I print_info: rope_finetuned   = unknown
+0.00.056.085 I print_info: ssm_d_conv       = 0
+0.00.056.085 I print_info: ssm_d_inner      = 0
+0.00.056.085 I print_info: ssm_d_state      = 0
+0.00.056.085 I print_info: ssm_dt_rank      = 0
+0.00.056.090 I print_info: ssm_dt_b_c_rms   = 0
+0.00.056.090 I print_info: model type       = 1.4B
+0.00.056.094 I print_info: model params     = 1.41 B
+0.00.056.096 I print_info: general.name     = 1.4B
+0.00.056.097 I print_info: vocab type       = BPE
+0.00.056.097 I print_info: n_vocab          = 50304
+0.00.056.097 I print_info: n_merges         = 50009
+0.00.056.097 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.056.097 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.056.101 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.056.101 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.056.101 I print_info: LF token         = 187 'Ċ'
+0.00.056.102 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.056.102 I print_info: max token length = 1024
+0.00.056.102 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.01.392.157 I load_tensors: offloading 24 repeating layers to GPU
+0.01.392.161 I load_tensors: offloading output layer to GPU
+0.01.392.161 I load_tensors: offloaded 25/25 layers to GPU
+0.01.392.178 I load_tensors: Metal_Mapped model buffer size =  2502.97 MiB
+0.01.392.180 I load_tensors:   CPU_Mapped model buffer size =   196.50 MiB
+...............................................................................
+0.01.392.740 I llama_init_from_model: n_seq_max     = 1
+0.01.392.740 I llama_init_from_model: n_ctx         = 128
+0.01.392.741 I llama_init_from_model: n_ctx_per_seq = 128
+0.01.392.741 I llama_init_from_model: n_batch       = 128
+0.01.392.741 I llama_init_from_model: n_ubatch      = 128
+0.01.392.741 I llama_init_from_model: flash_attn    = 0
+0.01.392.742 I llama_init_from_model: freq_base     = 10000.0
+0.01.392.742 I llama_init_from_model: freq_scale    = 1
+0.01.392.742 W llama_init_from_model: n_ctx_per_seq (128) < n_ctx_train (2048) -- the full capacity of the model will not be utilized
+0.01.392.743 I ggml_metal_init: allocating
+0.01.392.780 I ggml_metal_init: found device: Apple M4
+0.01.392.786 I ggml_metal_init: picking default device: Apple M4
+0.01.393.414 I ggml_metal_init: using embedded metal library
+0.01.396.024 I ggml_metal_init: GPU name:   Apple M4
+0.01.396.026 I ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+0.01.396.026 I ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+0.01.396.026 I ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+0.01.396.027 I ggml_metal_init: simdgroup reduction   = true
+0.01.396.027 I ggml_metal_init: simdgroup matrix mul. = true
+0.01.396.027 I ggml_metal_init: has residency sets    = true
+0.01.396.027 I ggml_metal_init: has bfloat            = true
+0.01.396.027 I ggml_metal_init: use bfloat            = true
+0.01.396.028 I ggml_metal_init: hasUnifiedMemory      = true
+0.01.396.029 I ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+0.01.405.771 I llama_kv_cache_init: kv_size = 128, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 24, can_shift = 1
+0.01.407.396 I llama_kv_cache_init:      Metal KV buffer size =    24.00 MiB
+0.01.407.398 I llama_init_from_model: KV self size  =   24.00 MiB, K (f16):   12.00 MiB, V (f16):   12.00 MiB
+0.01.407.423 I llama_init_from_model:        CPU  output buffer size =     0.19 MiB
+0.01.408.961 I llama_init_from_model:      Metal compute buffer size =    25.56 MiB
+0.01.408.962 I llama_init_from_model:        CPU compute buffer size =     1.06 MiB
+0.01.408.962 I llama_init_from_model: graph nodes  = 967
+0.01.408.963 I llama_init_from_model: graph splits = 2
+0.01.408.964 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 128
+0.01.408.964 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.01.443.492 I 
+0.01.443.522 I system_info: n_threads = 4 (n_threads_batch = 4) / 10 | Metal : EMBED_LIBRARY = 1 | BF16 = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | AARCH64_REPACK = 1 | 
+0.01.443.526 I perplexity: tokenizing the input ..
+0.01.447.714 I perplexity: tokenization took 4.187 ms
+0.01.447.718 I perplexity: calculating perplexity over 1 chunks, n_ctx=128, batch_size=128, n_seq=1
+0.01.566.784 I perplexity: 0.12 seconds per pass - ETA 0.00 minutes
+[1]10.1498,
+0.01.573.367 I Final estimate: PPL = 10.1498 +/- 3.22650
+
+0.01.573.419 I llama_perf_context_print:        load time =    1424.69 ms
+0.01.573.420 I llama_perf_context_print: prompt eval time =     118.81 ms /   128 tokens (    0.93 ms per token,  1077.31 tokens per second)
+0.01.573.423 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.01.573.424 I llama_perf_context_print:       total time =     129.93 ms /   129 tokens
+0.01.574.190 I ggml_metal_free: deallocating
+
+real	0m1.764s
+user	0m0.101s
+sys	0m0.232s
+```
+- q8_0:
+```
++ ./bin/llama-cli -no-cnv --model ../models-mnt/pythia/1.4B/ggml-model-q8_0.gguf -ngl 99 -c 0 -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+0.00.000.050 I build: 4743 (d07c6213) with Apple clang version 16.0.0 (clang-1600.0.26.4) for arm64-apple-darwin24.1.0
+0.00.000.088 I main: llama backend init
+0.00.000.090 I main: load the model and apply lora adapter, if any
+0.00.009.996 I llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+0.00.018.262 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q8_0.gguf (version GGUF V3 (latest))
+0.00.018.268 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.018.270 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.018.270 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.018.270 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.018.271 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.018.271 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.018.272 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.018.273 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.018.273 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.018.274 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.018.276 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.018.276 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.018.277 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.018.278 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.018.279 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.018.279 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.022.201 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.023.209 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.026.987 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.026.989 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.026.989 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.026.990 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.026.990 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.026.990 I llama_model_loader: - kv  22:                          general.file_type u32              = 7
+0.00.026.991 I llama_model_loader: - type  f32:  194 tensors
+0.00.026.991 I llama_model_loader: - type q8_0:   98 tensors
+0.00.026.992 I print_info: file format = GGUF V3 (latest)
+0.00.026.993 I print_info: file type   = Q8_0
+0.00.026.994 I print_info: file size   = 1.40 GiB (8.51 BPW) 
+0.00.035.034 I load: special tokens cache size = 25
+0.00.041.278 I load: token to piece cache size = 0.2984 MB
+0.00.041.285 I print_info: arch             = gptneox
+0.00.041.285 I print_info: vocab_only       = 0
+0.00.041.285 I print_info: n_ctx_train      = 2048
+0.00.041.286 I print_info: n_embd           = 2048
+0.00.041.286 I print_info: n_layer          = 24
+0.00.041.292 I print_info: n_head           = 16
+0.00.041.293 I print_info: n_head_kv        = 16
+0.00.041.293 I print_info: n_rot            = 32
+0.00.041.293 I print_info: n_swa            = 0
+0.00.041.294 I print_info: n_embd_head_k    = 128
+0.00.041.294 I print_info: n_embd_head_v    = 128
+0.00.041.294 I print_info: n_gqa            = 1
+0.00.041.295 I print_info: n_embd_k_gqa     = 2048
+0.00.041.295 I print_info: n_embd_v_gqa     = 2048
+0.00.041.296 I print_info: f_norm_eps       = 1.0e-05
+0.00.041.297 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.041.297 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.041.297 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.041.297 I print_info: f_logit_scale    = 0.0e+00
+0.00.041.298 I print_info: n_ff             = 8192
+0.00.041.298 I print_info: n_expert         = 0
+0.00.041.298 I print_info: n_expert_used    = 0
+0.00.041.298 I print_info: causal attn      = 1
+0.00.041.299 I print_info: pooling type     = 0
+0.00.041.299 I print_info: rope type        = 2
+0.00.041.299 I print_info: rope scaling     = linear
+0.00.041.299 I print_info: freq_base_train  = 10000.0
+0.00.041.300 I print_info: freq_scale_train = 1
+0.00.041.300 I print_info: n_ctx_orig_yarn  = 2048
+0.00.041.300 I print_info: rope_finetuned   = unknown
+0.00.041.300 I print_info: ssm_d_conv       = 0
+0.00.041.302 I print_info: ssm_d_inner      = 0
+0.00.041.302 I print_info: ssm_d_state      = 0
+0.00.041.302 I print_info: ssm_dt_rank      = 0
+0.00.041.302 I print_info: ssm_dt_b_c_rms   = 0
+0.00.041.302 I print_info: model type       = 1.4B
+0.00.041.303 I print_info: model params     = 1.41 B
+0.00.041.303 I print_info: general.name     = 1.4B
+0.00.041.304 I print_info: vocab type       = BPE
+0.00.041.304 I print_info: n_vocab          = 50304
+0.00.041.304 I print_info: n_merges         = 50009
+0.00.041.304 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.041.304 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.041.304 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.041.305 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.041.305 I print_info: LF token         = 187 'Ċ'
+0.00.041.308 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.041.308 I print_info: max token length = 1024
+0.00.041.308 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.01.000.048 I load_tensors: offloading 24 repeating layers to GPU
+0.01.000.053 I load_tensors: offloading output layer to GPU
+0.01.000.055 I load_tensors: offloaded 25/25 layers to GPU
+0.01.000.075 I load_tensors: Metal_Mapped model buffer size =  1435.25 MiB
+0.01.000.077 I load_tensors:   CPU_Mapped model buffer size =   104.39 MiB
+...............................................................................
+0.01.000.979 I llama_init_from_model: n_seq_max     = 1
+0.01.000.981 I llama_init_from_model: n_ctx         = 2048
+0.01.000.981 I llama_init_from_model: n_ctx_per_seq = 2048
+0.01.000.981 I llama_init_from_model: n_batch       = 2048
+0.01.000.982 I llama_init_from_model: n_ubatch      = 512
+0.01.000.983 I llama_init_from_model: flash_attn    = 0
+0.01.000.983 I llama_init_from_model: freq_base     = 10000.0
+0.01.000.984 I llama_init_from_model: freq_scale    = 1
+0.01.000.985 I ggml_metal_init: allocating
+0.01.000.998 I ggml_metal_init: found device: Apple M4
+0.01.001.006 I ggml_metal_init: picking default device: Apple M4
+0.01.002.259 I ggml_metal_init: using embedded metal library
+0.01.007.385 I ggml_metal_init: GPU name:   Apple M4
+0.01.007.388 I ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+0.01.007.389 I ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+0.01.007.390 I ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+0.01.007.391 I ggml_metal_init: simdgroup reduction   = true
+0.01.007.391 I ggml_metal_init: simdgroup matrix mul. = true
+0.01.007.391 I ggml_metal_init: has residency sets    = true
+0.01.007.392 I ggml_metal_init: has bfloat            = true
+0.01.007.392 I ggml_metal_init: use bfloat            = true
+0.01.007.393 I ggml_metal_init: hasUnifiedMemory      = true
+0.01.007.394 I ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+0.01.023.867 I llama_kv_cache_init: kv_size = 2048, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 24, can_shift = 1
+0.01.079.077 I llama_kv_cache_init:      Metal KV buffer size =   384.00 MiB
+0.01.079.083 I llama_init_from_model: KV self size  =  384.00 MiB, K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.01.079.160 I llama_init_from_model:        CPU  output buffer size =     0.19 MiB
+0.01.083.487 I llama_init_from_model:      Metal compute buffer size =   102.25 MiB
+0.01.083.490 I llama_init_from_model:        CPU compute buffer size =     8.01 MiB
+0.01.083.490 I llama_init_from_model: graph nodes  = 967
+0.01.083.490 I llama_init_from_model: graph splits = 2
+0.01.083.495 I common_init_from_params: added <|endoftext|> logit bias = -inf
+0.01.083.616 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.01.083.617 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.01.142.796 I main: llama threadpool init, n_threads = 4
+0.01.142.836 I 
+0.01.142.852 I system_info: n_threads = 4 (n_threads_batch = 4) / 10 | Metal : EMBED_LIBRARY = 1 | BF16 = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | AARCH64_REPACK = 1 | 
+0.01.142.852 I 
+0.01.143.004 I sampler seed: 1234
+0.01.143.009 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 2048
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.01.143.051 I sampler chain: logits -> logit-bias -> penalties -> dry -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+0.01.143.055 I generate: n_ctx = 2048, n_batch = 2048, n_predict = 64, n_keep = 0
+0.01.143.055 I 
+I believe the meaning of life is to do the best one can with the tools one has, and not to seek to change the tools or to put them in a new configuration.
+
+That is, the best tool in the box will not help the one who is not the best tool in the box.
+
+The best tool in the box,
+
+0.02.228.444 I llama_perf_sampler_print:    sampling time =       1.32 ms /    71 runs   (    0.02 ms per token, 53951.37 tokens per second)
+0.02.228.445 I llama_perf_context_print:        load time =    1132.09 ms
+0.02.228.446 I llama_perf_context_print: prompt eval time =      45.14 ms /     7 tokens (    6.45 ms per token,   155.06 tokens per second)
+0.02.228.447 I llama_perf_context_print:        eval time =    1037.37 ms /    63 runs   (   16.47 ms per token,    60.73 tokens per second)
+0.02.228.447 I llama_perf_context_print:       total time =    1086.35 ms /    70 tokens
+0.02.228.701 I ggml_metal_free: deallocating
+
+real	0m2.248s
+user	0m0.107s
+sys	0m0.265s
++ ./bin/llama-perplexity --model ../models-mnt/pythia/1.4B/ggml-model-q8_0.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -ngl 99 -c 128 -b 128 --chunks 1
+0.00.000.379 I build: 4743 (d07c6213) with Apple clang version 16.0.0 (clang-1600.0.26.4) for arm64-apple-darwin24.1.0
+0.00.011.640 I llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+0.00.018.502 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q8_0.gguf (version GGUF V3 (latest))
+0.00.018.507 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.018.509 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.018.510 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.018.510 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.018.510 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.018.511 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.018.512 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.018.512 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.018.514 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.018.515 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.018.515 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.018.515 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.018.516 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.018.519 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.018.519 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.018.519 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.022.385 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.023.473 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.027.207 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.027.209 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.027.209 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.027.209 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.027.210 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.027.210 I llama_model_loader: - kv  22:                          general.file_type u32              = 7
+0.00.027.211 I llama_model_loader: - type  f32:  194 tensors
+0.00.027.211 I llama_model_loader: - type q8_0:   98 tensors
+0.00.027.211 I print_info: file format = GGUF V3 (latest)
+0.00.027.212 I print_info: file type   = Q8_0
+0.00.027.213 I print_info: file size   = 1.40 GiB (8.51 BPW) 
+0.00.035.493 I load: special tokens cache size = 25
+0.00.041.450 I load: token to piece cache size = 0.2984 MB
+0.00.041.454 I print_info: arch             = gptneox
+0.00.041.454 I print_info: vocab_only       = 0
+0.00.041.455 I print_info: n_ctx_train      = 2048
+0.00.041.455 I print_info: n_embd           = 2048
+0.00.041.455 I print_info: n_layer          = 24
+0.00.041.459 I print_info: n_head           = 16
+0.00.041.462 I print_info: n_head_kv        = 16
+0.00.041.462 I print_info: n_rot            = 32
+0.00.041.462 I print_info: n_swa            = 0
+0.00.041.463 I print_info: n_embd_head_k    = 128
+0.00.041.463 I print_info: n_embd_head_v    = 128
+0.00.041.463 I print_info: n_gqa            = 1
+0.00.041.467 I print_info: n_embd_k_gqa     = 2048
+0.00.041.468 I print_info: n_embd_v_gqa     = 2048
+0.00.041.469 I print_info: f_norm_eps       = 1.0e-05
+0.00.041.469 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.041.469 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.041.469 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.041.469 I print_info: f_logit_scale    = 0.0e+00
+0.00.041.470 I print_info: n_ff             = 8192
+0.00.041.470 I print_info: n_expert         = 0
+0.00.041.470 I print_info: n_expert_used    = 0
+0.00.041.470 I print_info: causal attn      = 1
+0.00.041.471 I print_info: pooling type     = 0
+0.00.041.471 I print_info: rope type        = 2
+0.00.041.471 I print_info: rope scaling     = linear
+0.00.041.471 I print_info: freq_base_train  = 10000.0
+0.00.041.471 I print_info: freq_scale_train = 1
+0.00.041.472 I print_info: n_ctx_orig_yarn  = 2048
+0.00.041.472 I print_info: rope_finetuned   = unknown
+0.00.041.472 I print_info: ssm_d_conv       = 0
+0.00.041.472 I print_info: ssm_d_inner      = 0
+0.00.041.472 I print_info: ssm_d_state      = 0
+0.00.041.472 I print_info: ssm_dt_rank      = 0
+0.00.041.472 I print_info: ssm_dt_b_c_rms   = 0
+0.00.041.473 I print_info: model type       = 1.4B
+0.00.041.473 I print_info: model params     = 1.41 B
+0.00.041.474 I print_info: general.name     = 1.4B
+0.00.041.476 I print_info: vocab type       = BPE
+0.00.041.476 I print_info: n_vocab          = 50304
+0.00.041.476 I print_info: n_merges         = 50009
+0.00.041.476 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.041.477 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.041.477 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.041.477 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.041.477 I print_info: LF token         = 187 'Ċ'
+0.00.041.477 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.041.477 I print_info: max token length = 1024
+0.00.041.478 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.977.302 I load_tensors: offloading 24 repeating layers to GPU
+0.00.977.310 I load_tensors: offloading output layer to GPU
+0.00.977.311 I load_tensors: offloaded 25/25 layers to GPU
+0.00.977.345 I load_tensors: Metal_Mapped model buffer size =  1435.25 MiB
+0.00.977.349 I load_tensors:   CPU_Mapped model buffer size =   104.39 MiB
+...............................................................................
+0.00.978.810 I llama_init_from_model: n_seq_max     = 1
+0.00.978.813 I llama_init_from_model: n_ctx         = 128
+0.00.978.813 I llama_init_from_model: n_ctx_per_seq = 128
+0.00.978.813 I llama_init_from_model: n_batch       = 128
+0.00.978.814 I llama_init_from_model: n_ubatch      = 128
+0.00.978.814 I llama_init_from_model: flash_attn    = 0
+0.00.978.815 I llama_init_from_model: freq_base     = 10000.0
+0.00.978.816 I llama_init_from_model: freq_scale    = 1
+0.00.978.816 W llama_init_from_model: n_ctx_per_seq (128) < n_ctx_train (2048) -- the full capacity of the model will not be utilized
+0.00.978.821 I ggml_metal_init: allocating
+0.00.978.911 I ggml_metal_init: found device: Apple M4
+0.00.978.922 I ggml_metal_init: picking default device: Apple M4
+0.00.980.361 I ggml_metal_init: using embedded metal library
+0.00.985.493 I ggml_metal_init: GPU name:   Apple M4
+0.00.985.495 I ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+0.00.985.496 I ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+0.00.985.497 I ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+0.00.985.497 I ggml_metal_init: simdgroup reduction   = true
+0.00.985.498 I ggml_metal_init: simdgroup matrix mul. = true
+0.00.985.498 I ggml_metal_init: has residency sets    = true
+0.00.985.498 I ggml_metal_init: has bfloat            = true
+0.00.985.498 I ggml_metal_init: use bfloat            = true
+0.00.985.499 I ggml_metal_init: hasUnifiedMemory      = true
+0.00.985.501 I ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+0.01.001.252 I llama_kv_cache_init: kv_size = 128, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 24, can_shift = 1
+0.01.004.497 I llama_kv_cache_init:      Metal KV buffer size =    24.00 MiB
+0.01.004.500 I llama_init_from_model: KV self size  =   24.00 MiB, K (f16):   12.00 MiB, V (f16):   12.00 MiB
+0.01.004.536 I llama_init_from_model:        CPU  output buffer size =     0.19 MiB
+0.01.007.470 I llama_init_from_model:      Metal compute buffer size =    25.56 MiB
+0.01.007.472 I llama_init_from_model:        CPU compute buffer size =     1.06 MiB
+0.01.007.472 I llama_init_from_model: graph nodes  = 967
+0.01.007.473 I llama_init_from_model: graph splits = 2
+0.01.007.477 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 128
+0.01.007.477 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.01.037.942 I 
+0.01.038.001 I system_info: n_threads = 4 (n_threads_batch = 4) / 10 | Metal : EMBED_LIBRARY = 1 | BF16 = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | AARCH64_REPACK = 1 | 
+0.01.038.010 I perplexity: tokenizing the input ..
+0.01.045.518 I perplexity: tokenization took 7.505 ms
+0.01.045.526 I perplexity: calculating perplexity over 1 chunks, n_ctx=128, batch_size=128, n_seq=1
+0.01.185.465 I perplexity: 0.14 seconds per pass - ETA 0.00 minutes
+[1]10.1362,
+0.01.186.866 I Final estimate: PPL = 10.1362 +/- 3.22437
+
+0.01.186.890 I llama_perf_context_print:        load time =    1026.29 ms
+0.01.186.891 I llama_perf_context_print: prompt eval time =     138.94 ms /   128 tokens (    1.09 ms per token,   921.24 tokens per second)
+0.01.186.891 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.01.186.892 I llama_perf_context_print:       total time =     148.95 ms /   129 tokens
+0.01.187.276 I ggml_metal_free: deallocating
+
+real	0m1.212s
+user	0m0.081s
+sys	0m0.166s
+```
+- q4_0:
+```
++ ./bin/llama-cli -no-cnv --model ../models-mnt/pythia/1.4B/ggml-model-q4_0.gguf -ngl 99 -c 0 -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+0.00.000.053 I build: 4743 (d07c6213) with Apple clang version 16.0.0 (clang-1600.0.26.4) for arm64-apple-darwin24.1.0
+0.00.000.093 I main: llama backend init
+0.00.000.095 I main: load the model and apply lora adapter, if any
+0.00.010.914 I llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+0.00.018.682 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q4_0.gguf (version GGUF V3 (latest))
+0.00.018.688 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.018.690 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.018.690 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.018.690 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.018.691 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.018.691 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.018.692 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.018.693 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.018.693 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.018.693 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.018.694 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.018.694 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.018.695 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.018.697 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.018.697 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.018.697 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.022.522 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.023.545 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.027.314 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.027.316 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.027.316 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.027.316 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.027.317 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.027.317 I llama_model_loader: - kv  22:                          general.file_type u32              = 2
+0.00.027.318 I llama_model_loader: - type  f32:  194 tensors
+0.00.027.318 I llama_model_loader: - type q4_0:   97 tensors
+0.00.027.318 I llama_model_loader: - type q6_K:    1 tensors
+0.00.027.319 I print_info: file format = GGUF V3 (latest)
+0.00.027.320 I print_info: file type   = Q4_0
+0.00.027.324 I print_info: file size   = 786.31 MiB (4.66 BPW) 
+0.00.035.405 I load: special tokens cache size = 25
+0.00.041.539 I load: token to piece cache size = 0.2984 MB
+0.00.041.542 I print_info: arch             = gptneox
+0.00.041.543 I print_info: vocab_only       = 0
+0.00.041.543 I print_info: n_ctx_train      = 2048
+0.00.041.543 I print_info: n_embd           = 2048
+0.00.041.543 I print_info: n_layer          = 24
+0.00.041.548 I print_info: n_head           = 16
+0.00.041.551 I print_info: n_head_kv        = 16
+0.00.041.551 I print_info: n_rot            = 32
+0.00.041.551 I print_info: n_swa            = 0
+0.00.041.552 I print_info: n_embd_head_k    = 128
+0.00.041.552 I print_info: n_embd_head_v    = 128
+0.00.041.552 I print_info: n_gqa            = 1
+0.00.041.553 I print_info: n_embd_k_gqa     = 2048
+0.00.041.555 I print_info: n_embd_v_gqa     = 2048
+0.00.041.556 I print_info: f_norm_eps       = 1.0e-05
+0.00.041.556 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.041.557 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.041.557 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.041.557 I print_info: f_logit_scale    = 0.0e+00
+0.00.041.558 I print_info: n_ff             = 8192
+0.00.041.558 I print_info: n_expert         = 0
+0.00.041.558 I print_info: n_expert_used    = 0
+0.00.041.558 I print_info: causal attn      = 1
+0.00.041.558 I print_info: pooling type     = 0
+0.00.041.558 I print_info: rope type        = 2
+0.00.041.559 I print_info: rope scaling     = linear
+0.00.041.559 I print_info: freq_base_train  = 10000.0
+0.00.041.559 I print_info: freq_scale_train = 1
+0.00.041.560 I print_info: n_ctx_orig_yarn  = 2048
+0.00.041.560 I print_info: rope_finetuned   = unknown
+0.00.041.560 I print_info: ssm_d_conv       = 0
+0.00.041.560 I print_info: ssm_d_inner      = 0
+0.00.041.560 I print_info: ssm_d_state      = 0
+0.00.041.560 I print_info: ssm_dt_rank      = 0
+0.00.041.560 I print_info: ssm_dt_b_c_rms   = 0
+0.00.041.561 I print_info: model type       = 1.4B
+0.00.041.561 I print_info: model params     = 1.41 B
+0.00.041.561 I print_info: general.name     = 1.4B
+0.00.041.562 I print_info: vocab type       = BPE
+0.00.041.562 I print_info: n_vocab          = 50304
+0.00.041.562 I print_info: n_merges         = 50009
+0.00.041.563 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.041.563 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.041.564 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.041.564 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.041.565 I print_info: LF token         = 187 'Ċ'
+0.00.041.565 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.041.565 I print_info: max token length = 1024
+0.00.041.565 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.589.909 I load_tensors: offloading 24 repeating layers to GPU
+0.00.589.925 I load_tensors: offloading output layer to GPU
+0.00.589.926 I load_tensors: offloaded 25/25 layers to GPU
+0.00.589.960 I load_tensors: Metal_Mapped model buffer size =   786.33 MiB
+0.00.589.968 I load_tensors:   CPU_Mapped model buffer size =    55.27 MiB
+............................................................................
+0.00.591.585 I llama_init_from_model: n_seq_max     = 1
+0.00.591.587 I llama_init_from_model: n_ctx         = 2048
+0.00.591.588 I llama_init_from_model: n_ctx_per_seq = 2048
+0.00.591.589 I llama_init_from_model: n_batch       = 2048
+0.00.591.589 I llama_init_from_model: n_ubatch      = 512
+0.00.591.589 I llama_init_from_model: flash_attn    = 0
+0.00.591.592 I llama_init_from_model: freq_base     = 10000.0
+0.00.591.593 I llama_init_from_model: freq_scale    = 1
+0.00.591.596 I ggml_metal_init: allocating
+0.00.591.672 I ggml_metal_init: found device: Apple M4
+0.00.591.686 I ggml_metal_init: picking default device: Apple M4
+0.00.593.658 I ggml_metal_init: using embedded metal library
+0.00.600.346 I ggml_metal_init: GPU name:   Apple M4
+0.00.600.351 I ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+0.00.600.352 I ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+0.00.600.353 I ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+0.00.600.354 I ggml_metal_init: simdgroup reduction   = true
+0.00.600.354 I ggml_metal_init: simdgroup matrix mul. = true
+0.00.600.354 I ggml_metal_init: has residency sets    = true
+0.00.600.354 I ggml_metal_init: has bfloat            = true
+0.00.600.355 I ggml_metal_init: use bfloat            = true
+0.00.600.355 I ggml_metal_init: hasUnifiedMemory      = true
+0.00.600.357 I ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+0.00.619.052 I llama_kv_cache_init: kv_size = 2048, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 24, can_shift = 1
+0.00.674.111 I llama_kv_cache_init:      Metal KV buffer size =   384.00 MiB
+0.00.674.117 I llama_init_from_model: KV self size  =  384.00 MiB, K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.674.150 I llama_init_from_model:        CPU  output buffer size =     0.19 MiB
+0.00.678.549 I llama_init_from_model:      Metal compute buffer size =   102.25 MiB
+0.00.678.552 I llama_init_from_model:        CPU compute buffer size =     8.01 MiB
+0.00.678.552 I llama_init_from_model: graph nodes  = 967
+0.00.678.552 I llama_init_from_model: graph splits = 2
+0.00.678.557 I common_init_from_params: added <|endoftext|> logit bias = -inf
+0.00.678.683 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.678.683 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.732.242 I main: llama threadpool init, n_threads = 4
+0.00.732.285 I 
+0.00.732.300 I system_info: n_threads = 4 (n_threads_batch = 4) / 10 | Metal : EMBED_LIBRARY = 1 | BF16 = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | AARCH64_REPACK = 1 | 
+0.00.732.300 I 
+0.00.732.472 I sampler seed: 1234
+0.00.732.477 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 2048
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.00.732.497 I sampler chain: logits -> logit-bias -> penalties -> dry -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+0.00.732.497 I generate: n_ctx = 2048, n_batch = 2048, n_predict = 64, n_keep = 0
+0.00.732.497 I 
+I believe the meaning of life is to love. If that is not what you are looking for, I will be happy to explain it to you and you can go back to your life." - Unknown
+
+"I think I am on the way to true happiness. I believe in the importance of family and friends. I believe that when you are truly
+
+0.01.416.727 I llama_perf_sampler_print:    sampling time =       1.55 ms /    71 runs   (    0.02 ms per token, 45717.97 tokens per second)
+0.01.416.728 I llama_perf_context_print:        load time =     720.59 ms
+0.01.416.729 I llama_perf_context_print: prompt eval time =      46.89 ms /     7 tokens (    6.70 ms per token,   149.30 tokens per second)
+0.01.416.730 I llama_perf_context_print:        eval time =     634.69 ms /    63 runs   (   10.07 ms per token,    99.26 tokens per second)
+0.01.416.730 I llama_perf_context_print:       total time =     685.21 ms /    70 tokens
+0.01.416.975 I ggml_metal_free: deallocating
+
+real	0m1.435s
+user	0m0.109s
+sys	0m0.197s
++ ./bin/llama-perplexity --model ../models-mnt/pythia/1.4B/ggml-model-q4_0.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -ngl 99 -c 128 -b 128 --chunks 1
+0.00.000.301 I build: 4743 (d07c6213) with Apple clang version 16.0.0 (clang-1600.0.26.4) for arm64-apple-darwin24.1.0
+0.00.010.219 I llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+0.00.017.224 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q4_0.gguf (version GGUF V3 (latest))
+0.00.017.230 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.017.233 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.017.234 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.017.234 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.017.235 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.017.235 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.017.236 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.017.236 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.017.236 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.017.237 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.017.237 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.017.238 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.017.238 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.017.240 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.017.240 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.017.240 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.021.038 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.022.098 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.025.941 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.025.943 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.025.943 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.025.944 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.025.944 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.025.944 I llama_model_loader: - kv  22:                          general.file_type u32              = 2
+0.00.025.945 I llama_model_loader: - type  f32:  194 tensors
+0.00.025.945 I llama_model_loader: - type q4_0:   97 tensors
+0.00.025.945 I llama_model_loader: - type q6_K:    1 tensors
+0.00.025.947 I print_info: file format = GGUF V3 (latest)
+0.00.025.947 I print_info: file type   = Q4_0
+0.00.025.948 I print_info: file size   = 786.31 MiB (4.66 BPW) 
+0.00.034.057 I load: special tokens cache size = 25
+0.00.040.179 I load: token to piece cache size = 0.2984 MB
+0.00.040.183 I print_info: arch             = gptneox
+0.00.040.183 I print_info: vocab_only       = 0
+0.00.040.184 I print_info: n_ctx_train      = 2048
+0.00.040.184 I print_info: n_embd           = 2048
+0.00.040.184 I print_info: n_layer          = 24
+0.00.040.187 I print_info: n_head           = 16
+0.00.040.188 I print_info: n_head_kv        = 16
+0.00.040.188 I print_info: n_rot            = 32
+0.00.040.188 I print_info: n_swa            = 0
+0.00.040.189 I print_info: n_embd_head_k    = 128
+0.00.040.191 I print_info: n_embd_head_v    = 128
+0.00.040.192 I print_info: n_gqa            = 1
+0.00.040.193 I print_info: n_embd_k_gqa     = 2048
+0.00.040.193 I print_info: n_embd_v_gqa     = 2048
+0.00.040.194 I print_info: f_norm_eps       = 1.0e-05
+0.00.040.194 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.040.194 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.040.194 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.040.195 I print_info: f_logit_scale    = 0.0e+00
+0.00.040.196 I print_info: n_ff             = 8192
+0.00.040.196 I print_info: n_expert         = 0
+0.00.040.196 I print_info: n_expert_used    = 0
+0.00.040.196 I print_info: causal attn      = 1
+0.00.040.196 I print_info: pooling type     = 0
+0.00.040.197 I print_info: rope type        = 2
+0.00.040.197 I print_info: rope scaling     = linear
+0.00.040.197 I print_info: freq_base_train  = 10000.0
+0.00.040.197 I print_info: freq_scale_train = 1
+0.00.040.197 I print_info: n_ctx_orig_yarn  = 2048
+0.00.040.198 I print_info: rope_finetuned   = unknown
+0.00.040.198 I print_info: ssm_d_conv       = 0
+0.00.040.199 I print_info: ssm_d_inner      = 0
+0.00.040.199 I print_info: ssm_d_state      = 0
+0.00.040.199 I print_info: ssm_dt_rank      = 0
+0.00.040.199 I print_info: ssm_dt_b_c_rms   = 0
+0.00.040.199 I print_info: model type       = 1.4B
+0.00.040.200 I print_info: model params     = 1.41 B
+0.00.040.200 I print_info: general.name     = 1.4B
+0.00.040.200 I print_info: vocab type       = BPE
+0.00.040.201 I print_info: n_vocab          = 50304
+0.00.040.201 I print_info: n_merges         = 50009
+0.00.040.206 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.040.207 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.040.207 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.040.207 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.040.207 I print_info: LF token         = 187 'Ċ'
+0.00.040.207 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.040.208 I print_info: max token length = 1024
+0.00.040.210 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.582.448 I load_tensors: offloading 24 repeating layers to GPU
+0.00.582.464 I load_tensors: offloading output layer to GPU
+0.00.582.465 I load_tensors: offloaded 25/25 layers to GPU
+0.00.582.499 I load_tensors: Metal_Mapped model buffer size =   786.33 MiB
+0.00.582.501 I load_tensors:   CPU_Mapped model buffer size =    55.27 MiB
+............................................................................
+0.00.584.322 I llama_init_from_model: n_seq_max     = 1
+0.00.584.325 I llama_init_from_model: n_ctx         = 128
+0.00.584.326 I llama_init_from_model: n_ctx_per_seq = 128
+0.00.584.326 I llama_init_from_model: n_batch       = 128
+0.00.584.326 I llama_init_from_model: n_ubatch      = 128
+0.00.584.327 I llama_init_from_model: flash_attn    = 0
+0.00.584.329 I llama_init_from_model: freq_base     = 10000.0
+0.00.584.330 I llama_init_from_model: freq_scale    = 1
+0.00.584.330 W llama_init_from_model: n_ctx_per_seq (128) < n_ctx_train (2048) -- the full capacity of the model will not be utilized
+0.00.584.333 I ggml_metal_init: allocating
+0.00.584.414 I ggml_metal_init: found device: Apple M4
+0.00.584.428 I ggml_metal_init: picking default device: Apple M4
+0.00.586.290 I ggml_metal_init: using embedded metal library
+0.00.593.017 I ggml_metal_init: GPU name:   Apple M4
+0.00.593.025 I ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+0.00.593.026 I ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+0.00.593.027 I ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+0.00.593.027 I ggml_metal_init: simdgroup reduction   = true
+0.00.593.028 I ggml_metal_init: simdgroup matrix mul. = true
+0.00.593.028 I ggml_metal_init: has residency sets    = true
+0.00.593.029 I ggml_metal_init: has bfloat            = true
+0.00.593.029 I ggml_metal_init: use bfloat            = true
+0.00.593.030 I ggml_metal_init: hasUnifiedMemory      = true
+0.00.593.033 I ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+0.00.611.120 I llama_kv_cache_init: kv_size = 128, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 24, can_shift = 1
+0.00.614.807 I llama_kv_cache_init:      Metal KV buffer size =    24.00 MiB
+0.00.614.813 I llama_init_from_model: KV self size  =   24.00 MiB, K (f16):   12.00 MiB, V (f16):   12.00 MiB
+0.00.614.857 I llama_init_from_model:        CPU  output buffer size =     0.19 MiB
+0.00.618.193 I llama_init_from_model:      Metal compute buffer size =    25.56 MiB
+0.00.618.195 I llama_init_from_model:        CPU compute buffer size =     1.06 MiB
+0.00.618.196 I llama_init_from_model: graph nodes  = 967
+0.00.618.196 I llama_init_from_model: graph splits = 2
+0.00.618.200 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 128
+0.00.618.202 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.642.603 I 
+0.00.642.669 I system_info: n_threads = 4 (n_threads_batch = 4) / 10 | Metal : EMBED_LIBRARY = 1 | BF16 = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | AARCH64_REPACK = 1 | 
+0.00.642.675 I perplexity: tokenizing the input ..
+0.00.650.171 I perplexity: tokenization took 7.493 ms
+0.00.650.178 I perplexity: calculating perplexity over 1 chunks, n_ctx=128, batch_size=128, n_seq=1
+0.00.785.068 I perplexity: 0.13 seconds per pass - ETA 0.00 minutes
+[1]11.1740,
+0.00.786.404 I Final estimate: PPL = 11.1740 +/- 3.48446
+
+0.00.786.428 I llama_perf_context_print:        load time =     632.37 ms
+0.00.786.428 I llama_perf_context_print: prompt eval time =     133.98 ms /   128 tokens (    1.05 ms per token,   955.39 tokens per second)
+0.00.786.429 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.00.786.429 I llama_perf_context_print:       total time =     143.83 ms /   129 tokens
+0.00.786.801 I ggml_metal_free: deallocating
+
+real	0m0.802s
+user	0m0.081s
+sys	0m0.120s
+```
+- q4_1:
+```
++ ./bin/llama-cli -no-cnv --model ../models-mnt/pythia/1.4B/ggml-model-q4_1.gguf -ngl 99 -c 0 -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+0.00.000.050 I build: 4743 (d07c6213) with Apple clang version 16.0.0 (clang-1600.0.26.4) for arm64-apple-darwin24.1.0
+0.00.000.086 I main: llama backend init
+0.00.000.088 I main: load the model and apply lora adapter, if any
+0.00.008.995 I llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+0.00.017.266 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q4_1.gguf (version GGUF V3 (latest))
+0.00.017.273 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.017.280 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.017.280 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.017.281 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.017.281 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.017.281 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.017.284 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.017.285 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.017.286 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.017.286 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.017.287 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.017.287 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.017.287 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.017.289 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.017.290 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.017.290 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.021.277 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.022.349 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.026.198 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.026.200 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.026.200 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.026.200 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.026.200 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.026.201 I llama_model_loader: - kv  22:                          general.file_type u32              = 3
+0.00.026.201 I llama_model_loader: - type  f32:  194 tensors
+0.00.026.202 I llama_model_loader: - type q4_1:   97 tensors
+0.00.026.202 I llama_model_loader: - type q6_K:    1 tensors
+0.00.026.203 I print_info: file format = GGUF V3 (latest)
+0.00.026.203 I print_info: file type   = Q4_1
+0.00.026.204 I print_info: file size   = 864.46 MiB (5.13 BPW) 
+0.00.034.879 I load: special tokens cache size = 25
+0.00.041.167 I load: token to piece cache size = 0.2984 MB
+0.00.041.172 I print_info: arch             = gptneox
+0.00.041.172 I print_info: vocab_only       = 0
+0.00.041.172 I print_info: n_ctx_train      = 2048
+0.00.041.173 I print_info: n_embd           = 2048
+0.00.041.173 I print_info: n_layer          = 24
+0.00.041.177 I print_info: n_head           = 16
+0.00.041.177 I print_info: n_head_kv        = 16
+0.00.041.177 I print_info: n_rot            = 32
+0.00.041.178 I print_info: n_swa            = 0
+0.00.041.178 I print_info: n_embd_head_k    = 128
+0.00.041.178 I print_info: n_embd_head_v    = 128
+0.00.041.178 I print_info: n_gqa            = 1
+0.00.041.179 I print_info: n_embd_k_gqa     = 2048
+0.00.041.180 I print_info: n_embd_v_gqa     = 2048
+0.00.041.180 I print_info: f_norm_eps       = 1.0e-05
+0.00.041.180 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.041.181 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.041.182 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.041.183 I print_info: f_logit_scale    = 0.0e+00
+0.00.041.183 I print_info: n_ff             = 8192
+0.00.041.183 I print_info: n_expert         = 0
+0.00.041.183 I print_info: n_expert_used    = 0
+0.00.041.183 I print_info: causal attn      = 1
+0.00.041.184 I print_info: pooling type     = 0
+0.00.041.184 I print_info: rope type        = 2
+0.00.041.184 I print_info: rope scaling     = linear
+0.00.041.184 I print_info: freq_base_train  = 10000.0
+0.00.041.185 I print_info: freq_scale_train = 1
+0.00.041.185 I print_info: n_ctx_orig_yarn  = 2048
+0.00.041.185 I print_info: rope_finetuned   = unknown
+0.00.041.185 I print_info: ssm_d_conv       = 0
+0.00.041.185 I print_info: ssm_d_inner      = 0
+0.00.041.185 I print_info: ssm_d_state      = 0
+0.00.041.185 I print_info: ssm_dt_rank      = 0
+0.00.041.185 I print_info: ssm_dt_b_c_rms   = 0
+0.00.041.186 I print_info: model type       = 1.4B
+0.00.041.186 I print_info: model params     = 1.41 B
+0.00.041.186 I print_info: general.name     = 1.4B
+0.00.041.187 I print_info: vocab type       = BPE
+0.00.041.187 I print_info: n_vocab          = 50304
+0.00.041.187 I print_info: n_merges         = 50009
+0.00.041.187 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.041.187 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.041.187 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.041.188 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.041.188 I print_info: LF token         = 187 'Ċ'
+0.00.041.188 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.041.188 I print_info: max token length = 1024
+0.00.041.189 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.625.090 I load_tensors: offloading 24 repeating layers to GPU
+0.00.625.104 I load_tensors: offloading output layer to GPU
+0.00.625.105 I load_tensors: offloaded 25/25 layers to GPU
+0.00.625.146 I load_tensors: Metal_Mapped model buffer size =   864.47 MiB
+0.00.625.148 I load_tensors:   CPU_Mapped model buffer size =    61.41 MiB
+............................................................................
+0.00.626.399 I llama_init_from_model: n_seq_max     = 1
+0.00.626.402 I llama_init_from_model: n_ctx         = 2048
+0.00.626.403 I llama_init_from_model: n_ctx_per_seq = 2048
+0.00.626.404 I llama_init_from_model: n_batch       = 2048
+0.00.626.404 I llama_init_from_model: n_ubatch      = 512
+0.00.626.405 I llama_init_from_model: flash_attn    = 0
+0.00.626.407 I llama_init_from_model: freq_base     = 10000.0
+0.00.626.407 I llama_init_from_model: freq_scale    = 1
+0.00.626.414 I ggml_metal_init: allocating
+0.00.626.519 I ggml_metal_init: found device: Apple M4
+0.00.626.534 I ggml_metal_init: picking default device: Apple M4
+0.00.628.480 I ggml_metal_init: using embedded metal library
+0.00.634.768 I ggml_metal_init: GPU name:   Apple M4
+0.00.634.778 I ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+0.00.634.779 I ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+0.00.634.780 I ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+0.00.634.780 I ggml_metal_init: simdgroup reduction   = true
+0.00.634.781 I ggml_metal_init: simdgroup matrix mul. = true
+0.00.634.781 I ggml_metal_init: has residency sets    = true
+0.00.634.781 I ggml_metal_init: has bfloat            = true
+0.00.634.782 I ggml_metal_init: use bfloat            = true
+0.00.634.782 I ggml_metal_init: hasUnifiedMemory      = true
+0.00.634.797 I ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+0.00.653.148 I llama_kv_cache_init: kv_size = 2048, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 24, can_shift = 1
+0.00.712.903 I llama_kv_cache_init:      Metal KV buffer size =   384.00 MiB
+0.00.712.909 I llama_init_from_model: KV self size  =  384.00 MiB, K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.712.953 I llama_init_from_model:        CPU  output buffer size =     0.19 MiB
+0.00.717.088 I llama_init_from_model:      Metal compute buffer size =   102.25 MiB
+0.00.717.090 I llama_init_from_model:        CPU compute buffer size =     8.01 MiB
+0.00.717.091 I llama_init_from_model: graph nodes  = 967
+0.00.717.091 I llama_init_from_model: graph splits = 2
+0.00.717.096 I common_init_from_params: added <|endoftext|> logit bias = -inf
+0.00.717.219 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.717.219 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.773.804 I main: llama threadpool init, n_threads = 4
+0.00.773.847 I 
+0.00.773.862 I system_info: n_threads = 4 (n_threads_batch = 4) / 10 | Metal : EMBED_LIBRARY = 1 | BF16 = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | AARCH64_REPACK = 1 | 
+0.00.773.862 I 
+0.00.774.041 I sampler seed: 1234
+0.00.774.045 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 2048
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.00.774.066 I sampler chain: logits -> logit-bias -> penalties -> dry -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+0.00.774.066 I generate: n_ctx = 2048, n_batch = 2048, n_predict = 64, n_keep = 0
+0.00.774.066 I 
+I believe the meaning of life is to give
+<em>a<br>
+<em>s<br>
+<em>n<br>
+<em>a<br>
+<em>c<br>
+<em>i<br>
+<em>s<br>
+<em>e<
+
+0.01.507.892 I llama_perf_sampler_print:    sampling time =       1.28 ms /    71 runs   (    0.02 ms per token, 55425.45 tokens per second)
+0.01.507.892 I llama_perf_context_print:        load time =     764.07 ms
+0.01.507.893 I llama_perf_context_print: prompt eval time =      46.51 ms /     7 tokens (    6.64 ms per token,   150.49 tokens per second)
+0.01.507.894 I llama_perf_context_print:        eval time =     684.43 ms /    63 runs   (   10.86 ms per token,    92.05 tokens per second)
+0.01.507.894 I llama_perf_context_print:       total time =     734.82 ms /    70 tokens
+0.01.508.154 I ggml_metal_free: deallocating
+
+real	0m1.526s
+user	0m0.111s
+sys	0m0.193s
++ ./bin/llama-perplexity --model ../models-mnt/pythia/1.4B/ggml-model-q4_1.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -ngl 99 -c 128 -b 128 --chunks 1
+0.00.000.094 I build: 4743 (d07c6213) with Apple clang version 16.0.0 (clang-1600.0.26.4) for arm64-apple-darwin24.1.0
+0.00.008.883 I llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+0.00.016.299 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q4_1.gguf (version GGUF V3 (latest))
+0.00.016.305 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.016.306 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.016.307 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.016.308 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.016.312 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.016.313 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.016.314 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.016.315 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.016.316 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.016.316 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.016.316 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.016.316 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.016.317 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.016.319 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.016.319 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.016.319 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.020.126 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.021.163 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.024.974 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.024.976 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.024.976 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.024.976 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.024.977 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.024.977 I llama_model_loader: - kv  22:                          general.file_type u32              = 3
+0.00.024.978 I llama_model_loader: - type  f32:  194 tensors
+0.00.024.978 I llama_model_loader: - type q4_1:   97 tensors
+0.00.024.978 I llama_model_loader: - type q6_K:    1 tensors
+0.00.024.979 I print_info: file format = GGUF V3 (latest)
+0.00.024.980 I print_info: file type   = Q4_1
+0.00.024.981 I print_info: file size   = 864.46 MiB (5.13 BPW) 
+0.00.032.963 I load: special tokens cache size = 25
+0.00.038.995 I load: token to piece cache size = 0.2984 MB
+0.00.038.998 I print_info: arch             = gptneox
+0.00.038.999 I print_info: vocab_only       = 0
+0.00.038.999 I print_info: n_ctx_train      = 2048
+0.00.038.999 I print_info: n_embd           = 2048
+0.00.038.999 I print_info: n_layer          = 24
+0.00.039.003 I print_info: n_head           = 16
+0.00.039.004 I print_info: n_head_kv        = 16
+0.00.039.004 I print_info: n_rot            = 32
+0.00.039.005 I print_info: n_swa            = 0
+0.00.039.005 I print_info: n_embd_head_k    = 128
+0.00.039.005 I print_info: n_embd_head_v    = 128
+0.00.039.005 I print_info: n_gqa            = 1
+0.00.039.006 I print_info: n_embd_k_gqa     = 2048
+0.00.039.006 I print_info: n_embd_v_gqa     = 2048
+0.00.039.007 I print_info: f_norm_eps       = 1.0e-05
+0.00.039.007 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.039.007 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.039.008 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.039.011 I print_info: f_logit_scale    = 0.0e+00
+0.00.039.011 I print_info: n_ff             = 8192
+0.00.039.011 I print_info: n_expert         = 0
+0.00.039.011 I print_info: n_expert_used    = 0
+0.00.039.012 I print_info: causal attn      = 1
+0.00.039.012 I print_info: pooling type     = 0
+0.00.039.012 I print_info: rope type        = 2
+0.00.039.012 I print_info: rope scaling     = linear
+0.00.039.012 I print_info: freq_base_train  = 10000.0
+0.00.039.013 I print_info: freq_scale_train = 1
+0.00.039.013 I print_info: n_ctx_orig_yarn  = 2048
+0.00.039.013 I print_info: rope_finetuned   = unknown
+0.00.039.014 I print_info: ssm_d_conv       = 0
+0.00.039.014 I print_info: ssm_d_inner      = 0
+0.00.039.014 I print_info: ssm_d_state      = 0
+0.00.039.014 I print_info: ssm_dt_rank      = 0
+0.00.039.015 I print_info: ssm_dt_b_c_rms   = 0
+0.00.039.015 I print_info: model type       = 1.4B
+0.00.039.015 I print_info: model params     = 1.41 B
+0.00.039.015 I print_info: general.name     = 1.4B
+0.00.039.016 I print_info: vocab type       = BPE
+0.00.039.016 I print_info: n_vocab          = 50304
+0.00.039.016 I print_info: n_merges         = 50009
+0.00.039.016 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.039.016 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.039.016 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.039.017 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.039.017 I print_info: LF token         = 187 'Ċ'
+0.00.039.017 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.039.017 I print_info: max token length = 1024
+0.00.039.018 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.633.798 I load_tensors: offloading 24 repeating layers to GPU
+0.00.633.816 I load_tensors: offloading output layer to GPU
+0.00.633.817 I load_tensors: offloaded 25/25 layers to GPU
+0.00.633.859 I load_tensors: Metal_Mapped model buffer size =   864.47 MiB
+0.00.633.860 I load_tensors:   CPU_Mapped model buffer size =    61.41 MiB
+............................................................................
+0.00.635.449 I llama_init_from_model: n_seq_max     = 1
+0.00.635.452 I llama_init_from_model: n_ctx         = 128
+0.00.635.453 I llama_init_from_model: n_ctx_per_seq = 128
+0.00.635.454 I llama_init_from_model: n_batch       = 128
+0.00.635.454 I llama_init_from_model: n_ubatch      = 128
+0.00.635.455 I llama_init_from_model: flash_attn    = 0
+0.00.635.473 I llama_init_from_model: freq_base     = 10000.0
+0.00.635.478 I llama_init_from_model: freq_scale    = 1
+0.00.635.479 W llama_init_from_model: n_ctx_per_seq (128) < n_ctx_train (2048) -- the full capacity of the model will not be utilized
+0.00.635.481 I ggml_metal_init: allocating
+0.00.635.572 I ggml_metal_init: found device: Apple M4
+0.00.635.587 I ggml_metal_init: picking default device: Apple M4
+0.00.637.487 I ggml_metal_init: using embedded metal library
+0.00.644.232 I ggml_metal_init: GPU name:   Apple M4
+0.00.644.240 I ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+0.00.644.241 I ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+0.00.644.242 I ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+0.00.644.242 I ggml_metal_init: simdgroup reduction   = true
+0.00.644.243 I ggml_metal_init: simdgroup matrix mul. = true
+0.00.644.243 I ggml_metal_init: has residency sets    = true
+0.00.644.243 I ggml_metal_init: has bfloat            = true
+0.00.644.243 I ggml_metal_init: use bfloat            = true
+0.00.644.244 I ggml_metal_init: hasUnifiedMemory      = true
+0.00.644.248 I ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+0.00.661.726 I llama_kv_cache_init: kv_size = 128, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 24, can_shift = 1
+0.00.665.212 I llama_kv_cache_init:      Metal KV buffer size =    24.00 MiB
+0.00.665.215 I llama_init_from_model: KV self size  =   24.00 MiB, K (f16):   12.00 MiB, V (f16):   12.00 MiB
+0.00.665.257 I llama_init_from_model:        CPU  output buffer size =     0.19 MiB
+0.00.668.537 I llama_init_from_model:      Metal compute buffer size =    25.56 MiB
+0.00.668.540 I llama_init_from_model:        CPU compute buffer size =     1.06 MiB
+0.00.668.540 I llama_init_from_model: graph nodes  = 967
+0.00.668.540 I llama_init_from_model: graph splits = 2
+0.00.668.543 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 128
+0.00.668.543 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.692.024 I 
+0.00.692.081 I system_info: n_threads = 4 (n_threads_batch = 4) / 10 | Metal : EMBED_LIBRARY = 1 | BF16 = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | AARCH64_REPACK = 1 | 
+0.00.692.090 I perplexity: tokenizing the input ..
+0.00.698.178 I perplexity: tokenization took 6.085 ms
+0.00.698.186 I perplexity: calculating perplexity over 1 chunks, n_ctx=128, batch_size=128, n_seq=1
+0.00.819.832 I perplexity: 0.12 seconds per pass - ETA 0.00 minutes
+[1]10.5507,
+0.00.821.174 I Final estimate: PPL = 10.5507 +/- 3.34263
+
+0.00.821.197 I llama_perf_context_print:        load time =     683.13 ms
+0.00.821.198 I llama_perf_context_print: prompt eval time =     121.18 ms /   128 tokens (    0.95 ms per token,  1056.25 tokens per second)
+0.00.821.198 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.00.821.199 I llama_perf_context_print:       total time =     129.18 ms /   129 tokens
+0.00.821.579 I ggml_metal_free: deallocating
+
+real	0m0.835s
+user	0m0.078s
+sys	0m0.124s
+```
+- q5_0:
+```
++ ./bin/llama-cli -no-cnv --model ../models-mnt/pythia/1.4B/ggml-model-q5_0.gguf -ngl 99 -c 0 -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+0.00.000.046 I build: 4743 (d07c6213) with Apple clang version 16.0.0 (clang-1600.0.26.4) for arm64-apple-darwin24.1.0
+0.00.000.084 I main: llama backend init
+0.00.000.086 I main: load the model and apply lora adapter, if any
+0.00.010.197 I llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+0.00.018.461 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q5_0.gguf (version GGUF V3 (latest))
+0.00.018.466 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.018.467 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.018.468 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.018.468 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.018.473 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.018.473 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.018.474 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.018.474 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.018.475 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.018.476 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.018.476 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.018.477 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.018.477 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.018.481 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.018.481 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.018.481 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.022.356 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.023.394 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.027.216 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.027.217 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.027.218 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.027.218 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.027.218 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.027.219 I llama_model_loader: - kv  22:                          general.file_type u32              = 8
+0.00.027.219 I llama_model_loader: - type  f32:  194 tensors
+0.00.027.219 I llama_model_loader: - type q5_0:   97 tensors
+0.00.027.220 I llama_model_loader: - type q6_K:    1 tensors
+0.00.027.220 I print_info: file format = GGUF V3 (latest)
+0.00.027.221 I print_info: file type   = Q5_0
+0.00.027.222 I print_info: file size   = 942.60 MiB (5.59 BPW) 
+0.00.035.066 I load: special tokens cache size = 25
+0.00.041.051 I load: token to piece cache size = 0.2984 MB
+0.00.041.054 I print_info: arch             = gptneox
+0.00.041.054 I print_info: vocab_only       = 0
+0.00.041.055 I print_info: n_ctx_train      = 2048
+0.00.041.055 I print_info: n_embd           = 2048
+0.00.041.055 I print_info: n_layer          = 24
+0.00.041.058 I print_info: n_head           = 16
+0.00.041.059 I print_info: n_head_kv        = 16
+0.00.041.059 I print_info: n_rot            = 32
+0.00.041.059 I print_info: n_swa            = 0
+0.00.041.059 I print_info: n_embd_head_k    = 128
+0.00.041.059 I print_info: n_embd_head_v    = 128
+0.00.041.060 I print_info: n_gqa            = 1
+0.00.041.061 I print_info: n_embd_k_gqa     = 2048
+0.00.041.061 I print_info: n_embd_v_gqa     = 2048
+0.00.041.062 I print_info: f_norm_eps       = 1.0e-05
+0.00.041.062 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.041.062 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.041.063 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.041.063 I print_info: f_logit_scale    = 0.0e+00
+0.00.041.063 I print_info: n_ff             = 8192
+0.00.041.064 I print_info: n_expert         = 0
+0.00.041.064 I print_info: n_expert_used    = 0
+0.00.041.064 I print_info: causal attn      = 1
+0.00.041.064 I print_info: pooling type     = 0
+0.00.041.065 I print_info: rope type        = 2
+0.00.041.067 I print_info: rope scaling     = linear
+0.00.041.068 I print_info: freq_base_train  = 10000.0
+0.00.041.068 I print_info: freq_scale_train = 1
+0.00.041.068 I print_info: n_ctx_orig_yarn  = 2048
+0.00.041.069 I print_info: rope_finetuned   = unknown
+0.00.041.069 I print_info: ssm_d_conv       = 0
+0.00.041.069 I print_info: ssm_d_inner      = 0
+0.00.041.069 I print_info: ssm_d_state      = 0
+0.00.041.069 I print_info: ssm_dt_rank      = 0
+0.00.041.069 I print_info: ssm_dt_b_c_rms   = 0
+0.00.041.070 I print_info: model type       = 1.4B
+0.00.041.070 I print_info: model params     = 1.41 B
+0.00.041.070 I print_info: general.name     = 1.4B
+0.00.041.071 I print_info: vocab type       = BPE
+0.00.041.071 I print_info: n_vocab          = 50304
+0.00.041.071 I print_info: n_merges         = 50009
+0.00.041.071 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.041.072 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.041.072 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.041.072 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.041.072 I print_info: LF token         = 187 'Ċ'
+0.00.041.073 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.041.073 I print_info: max token length = 1024
+0.00.041.073 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.664.266 I load_tensors: offloading 24 repeating layers to GPU
+0.00.664.283 I load_tensors: offloading output layer to GPU
+0.00.664.284 I load_tensors: offloaded 25/25 layers to GPU
+0.00.664.325 I load_tensors: Metal_Mapped model buffer size =   942.61 MiB
+0.00.664.326 I load_tensors:   CPU_Mapped model buffer size =    67.55 MiB
+..........................................................................
+0.00.665.845 I llama_init_from_model: n_seq_max     = 1
+0.00.665.848 I llama_init_from_model: n_ctx         = 2048
+0.00.665.849 I llama_init_from_model: n_ctx_per_seq = 2048
+0.00.665.850 I llama_init_from_model: n_batch       = 2048
+0.00.665.850 I llama_init_from_model: n_ubatch      = 512
+0.00.665.850 I llama_init_from_model: flash_attn    = 0
+0.00.665.853 I llama_init_from_model: freq_base     = 10000.0
+0.00.665.853 I llama_init_from_model: freq_scale    = 1
+0.00.665.861 I ggml_metal_init: allocating
+0.00.665.939 I ggml_metal_init: found device: Apple M4
+0.00.665.952 I ggml_metal_init: picking default device: Apple M4
+0.00.667.950 I ggml_metal_init: using embedded metal library
+0.00.674.550 I ggml_metal_init: GPU name:   Apple M4
+0.00.674.554 I ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+0.00.674.555 I ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+0.00.674.556 I ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+0.00.674.556 I ggml_metal_init: simdgroup reduction   = true
+0.00.674.556 I ggml_metal_init: simdgroup matrix mul. = true
+0.00.674.557 I ggml_metal_init: has residency sets    = true
+0.00.674.557 I ggml_metal_init: has bfloat            = true
+0.00.674.557 I ggml_metal_init: use bfloat            = true
+0.00.674.558 I ggml_metal_init: hasUnifiedMemory      = true
+0.00.674.559 I ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+0.00.692.150 I llama_kv_cache_init: kv_size = 2048, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 24, can_shift = 1
+0.00.746.820 I llama_kv_cache_init:      Metal KV buffer size =   384.00 MiB
+0.00.746.827 I llama_init_from_model: KV self size  =  384.00 MiB, K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.746.865 I llama_init_from_model:        CPU  output buffer size =     0.19 MiB
+0.00.750.869 I llama_init_from_model:      Metal compute buffer size =   102.25 MiB
+0.00.750.870 I llama_init_from_model:        CPU compute buffer size =     8.01 MiB
+0.00.750.871 I llama_init_from_model: graph nodes  = 967
+0.00.750.871 I llama_init_from_model: graph splits = 2
+0.00.750.877 I common_init_from_params: added <|endoftext|> logit bias = -inf
+0.00.751.001 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.751.001 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.806.091 I main: llama threadpool init, n_threads = 4
+0.00.806.134 I 
+0.00.806.149 I system_info: n_threads = 4 (n_threads_batch = 4) / 10 | Metal : EMBED_LIBRARY = 1 | BF16 = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | AARCH64_REPACK = 1 | 
+0.00.806.150 I 
+0.00.806.296 I sampler seed: 1234
+0.00.806.300 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 2048
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.00.806.350 I sampler chain: logits -> logit-bias -> penalties -> dry -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+0.00.806.353 I generate: n_ctx = 2048, n_batch = 2048, n_predict = 64, n_keep = 0
+0.00.806.353 I 
+I believe the meaning of life is to do what is best for your self, and to be happy, and to enjoy the present moment, and the future is a gift that you will never regret.
+
+I believe the meaning of life is to enjoy every moment of your life, and to be happy, and to enjoy the present moment, and the
+
+0.01.594.672 I llama_perf_sampler_print:    sampling time =       1.42 ms /    71 runs   (    0.02 ms per token, 50070.52 tokens per second)
+0.01.594.673 I llama_perf_context_print:        load time =     795.15 ms
+0.01.594.673 I llama_perf_context_print: prompt eval time =      43.11 ms /     7 tokens (    6.16 ms per token,   162.37 tokens per second)
+0.01.594.674 I llama_perf_context_print:        eval time =     742.21 ms /    63 runs   (   11.78 ms per token,    84.88 tokens per second)
+0.01.594.674 I llama_perf_context_print:       total time =     789.31 ms /    70 tokens
+0.01.594.877 I ggml_metal_free: deallocating
+
+real	0m1.613s
+user	0m0.109s
+sys	0m0.201s
++ ./bin/llama-perplexity --model ../models-mnt/pythia/1.4B/ggml-model-q5_0.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -ngl 99 -c 128 -b 128 --chunks 1
+0.00.000.110 I build: 4743 (d07c6213) with Apple clang version 16.0.0 (clang-1600.0.26.4) for arm64-apple-darwin24.1.0
+0.00.009.868 I llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+0.00.016.983 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q5_0.gguf (version GGUF V3 (latest))
+0.00.016.989 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.016.993 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.016.994 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.016.994 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.016.995 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.016.995 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.016.996 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.016.996 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.016.997 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.016.997 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.016.997 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.016.998 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.016.998 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.017.000 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.017.001 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.017.001 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.020.758 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.021.841 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.025.720 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.025.722 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.025.722 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.025.722 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.025.723 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.025.723 I llama_model_loader: - kv  22:                          general.file_type u32              = 8
+0.00.025.724 I llama_model_loader: - type  f32:  194 tensors
+0.00.025.724 I llama_model_loader: - type q5_0:   97 tensors
+0.00.025.724 I llama_model_loader: - type q6_K:    1 tensors
+0.00.025.725 I print_info: file format = GGUF V3 (latest)
+0.00.025.727 I print_info: file type   = Q5_0
+0.00.025.729 I print_info: file size   = 942.60 MiB (5.59 BPW) 
+0.00.033.974 I load: special tokens cache size = 25
+0.00.040.125 I load: token to piece cache size = 0.2984 MB
+0.00.040.129 I print_info: arch             = gptneox
+0.00.040.129 I print_info: vocab_only       = 0
+0.00.040.129 I print_info: n_ctx_train      = 2048
+0.00.040.130 I print_info: n_embd           = 2048
+0.00.040.130 I print_info: n_layer          = 24
+0.00.040.134 I print_info: n_head           = 16
+0.00.040.135 I print_info: n_head_kv        = 16
+0.00.040.135 I print_info: n_rot            = 32
+0.00.040.135 I print_info: n_swa            = 0
+0.00.040.136 I print_info: n_embd_head_k    = 128
+0.00.040.136 I print_info: n_embd_head_v    = 128
+0.00.040.136 I print_info: n_gqa            = 1
+0.00.040.137 I print_info: n_embd_k_gqa     = 2048
+0.00.040.141 I print_info: n_embd_v_gqa     = 2048
+0.00.040.142 I print_info: f_norm_eps       = 1.0e-05
+0.00.040.142 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.040.143 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.040.143 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.040.143 I print_info: f_logit_scale    = 0.0e+00
+0.00.040.143 I print_info: n_ff             = 8192
+0.00.040.144 I print_info: n_expert         = 0
+0.00.040.144 I print_info: n_expert_used    = 0
+0.00.040.144 I print_info: causal attn      = 1
+0.00.040.144 I print_info: pooling type     = 0
+0.00.040.146 I print_info: rope type        = 2
+0.00.040.146 I print_info: rope scaling     = linear
+0.00.040.146 I print_info: freq_base_train  = 10000.0
+0.00.040.147 I print_info: freq_scale_train = 1
+0.00.040.147 I print_info: n_ctx_orig_yarn  = 2048
+0.00.040.147 I print_info: rope_finetuned   = unknown
+0.00.040.148 I print_info: ssm_d_conv       = 0
+0.00.040.148 I print_info: ssm_d_inner      = 0
+0.00.040.148 I print_info: ssm_d_state      = 0
+0.00.040.148 I print_info: ssm_dt_rank      = 0
+0.00.040.148 I print_info: ssm_dt_b_c_rms   = 0
+0.00.040.148 I print_info: model type       = 1.4B
+0.00.040.149 I print_info: model params     = 1.41 B
+0.00.040.149 I print_info: general.name     = 1.4B
+0.00.040.149 I print_info: vocab type       = BPE
+0.00.040.149 I print_info: n_vocab          = 50304
+0.00.040.150 I print_info: n_merges         = 50009
+0.00.040.150 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.040.150 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.040.150 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.040.150 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.040.151 I print_info: LF token         = 187 'Ċ'
+0.00.040.151 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.040.151 I print_info: max token length = 1024
+0.00.040.151 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.678.368 I load_tensors: offloading 24 repeating layers to GPU
+0.00.678.390 I load_tensors: offloading output layer to GPU
+0.00.678.391 I load_tensors: offloaded 25/25 layers to GPU
+0.00.678.429 I load_tensors: Metal_Mapped model buffer size =   942.61 MiB
+0.00.678.438 I load_tensors:   CPU_Mapped model buffer size =    67.55 MiB
+..........................................................................
+0.00.679.652 I llama_init_from_model: n_seq_max     = 1
+0.00.679.654 I llama_init_from_model: n_ctx         = 128
+0.00.679.654 I llama_init_from_model: n_ctx_per_seq = 128
+0.00.679.655 I llama_init_from_model: n_batch       = 128
+0.00.679.655 I llama_init_from_model: n_ubatch      = 128
+0.00.679.656 I llama_init_from_model: flash_attn    = 0
+0.00.679.658 I llama_init_from_model: freq_base     = 10000.0
+0.00.679.659 I llama_init_from_model: freq_scale    = 1
+0.00.679.659 W llama_init_from_model: n_ctx_per_seq (128) < n_ctx_train (2048) -- the full capacity of the model will not be utilized
+0.00.679.662 I ggml_metal_init: allocating
+0.00.679.777 I ggml_metal_init: found device: Apple M4
+0.00.679.794 I ggml_metal_init: picking default device: Apple M4
+0.00.681.763 I ggml_metal_init: using embedded metal library
+0.00.688.616 I ggml_metal_init: GPU name:   Apple M4
+0.00.688.624 I ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+0.00.688.625 I ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+0.00.688.626 I ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+0.00.688.627 I ggml_metal_init: simdgroup reduction   = true
+0.00.688.628 I ggml_metal_init: simdgroup matrix mul. = true
+0.00.688.628 I ggml_metal_init: has residency sets    = true
+0.00.688.628 I ggml_metal_init: has bfloat            = true
+0.00.688.628 I ggml_metal_init: use bfloat            = true
+0.00.688.630 I ggml_metal_init: hasUnifiedMemory      = true
+0.00.688.635 I ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+0.00.706.845 I llama_kv_cache_init: kv_size = 128, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 24, can_shift = 1
+0.00.710.271 I llama_kv_cache_init:      Metal KV buffer size =    24.00 MiB
+0.00.710.276 I llama_init_from_model: KV self size  =   24.00 MiB, K (f16):   12.00 MiB, V (f16):   12.00 MiB
+0.00.710.318 I llama_init_from_model:        CPU  output buffer size =     0.19 MiB
+0.00.713.381 I llama_init_from_model:      Metal compute buffer size =    25.56 MiB
+0.00.713.382 I llama_init_from_model:        CPU compute buffer size =     1.06 MiB
+0.00.713.383 I llama_init_from_model: graph nodes  = 967
+0.00.713.383 I llama_init_from_model: graph splits = 2
+0.00.713.386 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 128
+0.00.713.386 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.745.073 I 
+0.00.745.115 I system_info: n_threads = 4 (n_threads_batch = 4) / 10 | Metal : EMBED_LIBRARY = 1 | BF16 = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | AARCH64_REPACK = 1 | 
+0.00.745.123 I perplexity: tokenizing the input ..
+0.00.751.050 I perplexity: tokenization took 5.927 ms
+0.00.751.054 I perplexity: calculating perplexity over 1 chunks, n_ctx=128, batch_size=128, n_seq=1
+0.00.898.185 I perplexity: 0.15 seconds per pass - ETA 0.00 minutes
+[1]10.0972,
+0.00.899.512 I Final estimate: PPL = 10.0972 +/- 3.20136
+
+0.00.899.536 I llama_perf_context_print:        load time =     735.19 ms
+0.00.899.537 I llama_perf_context_print: prompt eval time =     146.87 ms /   128 tokens (    1.15 ms per token,   871.50 tokens per second)
+0.00.899.538 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.00.899.538 I llama_perf_context_print:       total time =     154.47 ms /   129 tokens
+0.00.899.953 I ggml_metal_free: deallocating
+
+real	0m0.916s
+user	0m0.079s
+sys	0m0.131s
+```
+- q5_1:
+```
++ ./bin/llama-cli -no-cnv --model ../models-mnt/pythia/1.4B/ggml-model-q5_1.gguf -ngl 99 -c 0 -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+0.00.000.046 I build: 4743 (d07c6213) with Apple clang version 16.0.0 (clang-1600.0.26.4) for arm64-apple-darwin24.1.0
+0.00.000.082 I main: llama backend init
+0.00.000.084 I main: load the model and apply lora adapter, if any
+0.00.009.394 I llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+0.00.019.175 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q5_1.gguf (version GGUF V3 (latest))
+0.00.019.180 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.019.186 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.019.186 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.019.187 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.019.187 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.019.187 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.019.188 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.019.189 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.019.189 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.019.190 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.019.190 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.019.190 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.019.191 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.019.192 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.019.193 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.019.193 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.023.091 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.024.126 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.028.035 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.028.036 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.028.036 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.028.036 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.028.037 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.028.037 I llama_model_loader: - kv  22:                          general.file_type u32              = 9
+0.00.028.038 I llama_model_loader: - type  f32:  194 tensors
+0.00.028.038 I llama_model_loader: - type q5_1:   97 tensors
+0.00.028.038 I llama_model_loader: - type q6_K:    1 tensors
+0.00.028.039 I print_info: file format = GGUF V3 (latest)
+0.00.028.039 I print_info: file type   = Q5_1
+0.00.028.040 I print_info: file size   = 1020.74 MiB (6.05 BPW) 
+0.00.036.113 I load: special tokens cache size = 25
+0.00.042.221 I load: token to piece cache size = 0.2984 MB
+0.00.042.224 I print_info: arch             = gptneox
+0.00.042.224 I print_info: vocab_only       = 0
+0.00.042.225 I print_info: n_ctx_train      = 2048
+0.00.042.225 I print_info: n_embd           = 2048
+0.00.042.225 I print_info: n_layer          = 24
+0.00.042.228 I print_info: n_head           = 16
+0.00.042.228 I print_info: n_head_kv        = 16
+0.00.042.228 I print_info: n_rot            = 32
+0.00.042.229 I print_info: n_swa            = 0
+0.00.042.229 I print_info: n_embd_head_k    = 128
+0.00.042.229 I print_info: n_embd_head_v    = 128
+0.00.042.230 I print_info: n_gqa            = 1
+0.00.042.231 I print_info: n_embd_k_gqa     = 2048
+0.00.042.231 I print_info: n_embd_v_gqa     = 2048
+0.00.042.232 I print_info: f_norm_eps       = 1.0e-05
+0.00.042.232 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.042.232 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.042.232 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.042.233 I print_info: f_logit_scale    = 0.0e+00
+0.00.042.233 I print_info: n_ff             = 8192
+0.00.042.233 I print_info: n_expert         = 0
+0.00.042.234 I print_info: n_expert_used    = 0
+0.00.042.234 I print_info: causal attn      = 1
+0.00.042.234 I print_info: pooling type     = 0
+0.00.042.234 I print_info: rope type        = 2
+0.00.042.234 I print_info: rope scaling     = linear
+0.00.042.235 I print_info: freq_base_train  = 10000.0
+0.00.042.235 I print_info: freq_scale_train = 1
+0.00.042.235 I print_info: n_ctx_orig_yarn  = 2048
+0.00.042.235 I print_info: rope_finetuned   = unknown
+0.00.042.235 I print_info: ssm_d_conv       = 0
+0.00.042.236 I print_info: ssm_d_inner      = 0
+0.00.042.236 I print_info: ssm_d_state      = 0
+0.00.042.236 I print_info: ssm_dt_rank      = 0
+0.00.042.236 I print_info: ssm_dt_b_c_rms   = 0
+0.00.042.236 I print_info: model type       = 1.4B
+0.00.042.237 I print_info: model params     = 1.41 B
+0.00.042.238 I print_info: general.name     = 1.4B
+0.00.042.239 I print_info: vocab type       = BPE
+0.00.042.239 I print_info: n_vocab          = 50304
+0.00.042.239 I print_info: n_merges         = 50009
+0.00.042.239 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.042.241 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.042.241 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.042.242 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.042.242 I print_info: LF token         = 187 'Ċ'
+0.00.042.242 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.042.242 I print_info: max token length = 1024
+0.00.042.243 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.670.090 I load_tensors: offloading 24 repeating layers to GPU
+0.00.670.105 I load_tensors: offloading output layer to GPU
+0.00.670.106 I load_tensors: offloaded 25/25 layers to GPU
+0.00.670.141 I load_tensors: Metal_Mapped model buffer size =  1020.75 MiB
+0.00.670.142 I load_tensors:   CPU_Mapped model buffer size =    73.69 MiB
+..............................................................................
+0.00.671.670 I llama_init_from_model: n_seq_max     = 1
+0.00.671.673 I llama_init_from_model: n_ctx         = 2048
+0.00.671.673 I llama_init_from_model: n_ctx_per_seq = 2048
+0.00.671.674 I llama_init_from_model: n_batch       = 2048
+0.00.671.674 I llama_init_from_model: n_ubatch      = 512
+0.00.671.674 I llama_init_from_model: flash_attn    = 0
+0.00.671.684 I llama_init_from_model: freq_base     = 10000.0
+0.00.671.684 I llama_init_from_model: freq_scale    = 1
+0.00.671.687 I ggml_metal_init: allocating
+0.00.671.772 I ggml_metal_init: found device: Apple M4
+0.00.671.797 I ggml_metal_init: picking default device: Apple M4
+0.00.673.304 I ggml_metal_init: using embedded metal library
+0.00.679.724 I ggml_metal_init: GPU name:   Apple M4
+0.00.679.727 I ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+0.00.679.728 I ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+0.00.679.729 I ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+0.00.679.729 I ggml_metal_init: simdgroup reduction   = true
+0.00.679.730 I ggml_metal_init: simdgroup matrix mul. = true
+0.00.679.730 I ggml_metal_init: has residency sets    = true
+0.00.679.730 I ggml_metal_init: has bfloat            = true
+0.00.679.731 I ggml_metal_init: use bfloat            = true
+0.00.679.731 I ggml_metal_init: hasUnifiedMemory      = true
+0.00.679.736 I ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+0.00.696.650 I llama_kv_cache_init: kv_size = 2048, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 24, can_shift = 1
+0.00.749.246 I llama_kv_cache_init:      Metal KV buffer size =   384.00 MiB
+0.00.749.252 I llama_init_from_model: KV self size  =  384.00 MiB, K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.749.287 I llama_init_from_model:        CPU  output buffer size =     0.19 MiB
+0.00.753.788 I llama_init_from_model:      Metal compute buffer size =   102.25 MiB
+0.00.753.790 I llama_init_from_model:        CPU compute buffer size =     8.01 MiB
+0.00.753.790 I llama_init_from_model: graph nodes  = 967
+0.00.753.790 I llama_init_from_model: graph splits = 2
+0.00.753.796 I common_init_from_params: added <|endoftext|> logit bias = -inf
+0.00.753.918 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.753.919 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.809.894 I main: llama threadpool init, n_threads = 4
+0.00.809.939 I 
+0.00.809.954 I system_info: n_threads = 4 (n_threads_batch = 4) / 10 | Metal : EMBED_LIBRARY = 1 | BF16 = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | AARCH64_REPACK = 1 | 
+0.00.809.954 I 
+0.00.810.105 I sampler seed: 1234
+0.00.810.110 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 2048
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.00.810.132 I sampler chain: logits -> logit-bias -> penalties -> dry -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+0.00.810.132 I generate: n_ctx = 2048, n_batch = 2048, n_predict = 64, n_keep = 0
+0.00.810.132 I 
+I believe the meaning of life is to give all things an equal chance, and to be content with one's lot in life.
+
+When one is in a good situation, one can think of no better way to express it than through music, art or literature.
+
+If one's life is not good, one can be sure that one is
+
+0.01.642.666 I llama_perf_sampler_print:    sampling time =       1.36 ms /    71 runs   (    0.02 ms per token, 52205.88 tokens per second)
+0.01.642.666 I llama_perf_context_print:        load time =     799.76 ms
+0.01.642.667 I llama_perf_context_print: prompt eval time =      41.91 ms /     7 tokens (    5.99 ms per token,   167.04 tokens per second)
+0.01.642.669 I llama_perf_context_print:        eval time =     787.71 ms /    63 runs   (   12.50 ms per token,    79.98 tokens per second)
+0.01.642.670 I llama_perf_context_print:       total time =     833.51 ms /    70 tokens
+0.01.642.952 I ggml_metal_free: deallocating
+
+real	0m1.661s
+user	0m0.109s
+sys	0m0.214s
++ ./bin/llama-perplexity --model ../models-mnt/pythia/1.4B/ggml-model-q5_1.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -ngl 99 -c 128 -b 128 --chunks 1
+0.00.000.112 I build: 4743 (d07c6213) with Apple clang version 16.0.0 (clang-1600.0.26.4) for arm64-apple-darwin24.1.0
+0.00.009.366 I llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+0.00.016.888 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q5_1.gguf (version GGUF V3 (latest))
+0.00.016.894 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.016.896 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.016.897 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.016.897 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.016.897 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.016.898 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.016.899 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.016.899 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.016.899 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.016.900 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.016.902 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.016.904 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.016.904 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.016.906 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.016.907 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.016.908 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.020.679 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.021.734 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.025.596 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.025.598 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.025.598 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.025.598 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.025.599 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.025.599 I llama_model_loader: - kv  22:                          general.file_type u32              = 9
+0.00.025.600 I llama_model_loader: - type  f32:  194 tensors
+0.00.025.600 I llama_model_loader: - type q5_1:   97 tensors
+0.00.025.600 I llama_model_loader: - type q6_K:    1 tensors
+0.00.025.601 I print_info: file format = GGUF V3 (latest)
+0.00.025.602 I print_info: file type   = Q5_1
+0.00.025.603 I print_info: file size   = 1020.74 MiB (6.05 BPW) 
+0.00.033.985 I load: special tokens cache size = 25
+0.00.040.282 I load: token to piece cache size = 0.2984 MB
+0.00.040.286 I print_info: arch             = gptneox
+0.00.040.286 I print_info: vocab_only       = 0
+0.00.040.286 I print_info: n_ctx_train      = 2048
+0.00.040.286 I print_info: n_embd           = 2048
+0.00.040.287 I print_info: n_layer          = 24
+0.00.040.291 I print_info: n_head           = 16
+0.00.040.292 I print_info: n_head_kv        = 16
+0.00.040.292 I print_info: n_rot            = 32
+0.00.040.292 I print_info: n_swa            = 0
+0.00.040.292 I print_info: n_embd_head_k    = 128
+0.00.040.292 I print_info: n_embd_head_v    = 128
+0.00.040.293 I print_info: n_gqa            = 1
+0.00.040.295 I print_info: n_embd_k_gqa     = 2048
+0.00.040.296 I print_info: n_embd_v_gqa     = 2048
+0.00.040.297 I print_info: f_norm_eps       = 1.0e-05
+0.00.040.297 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.040.297 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.040.297 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.040.297 I print_info: f_logit_scale    = 0.0e+00
+0.00.040.298 I print_info: n_ff             = 8192
+0.00.040.298 I print_info: n_expert         = 0
+0.00.040.299 I print_info: n_expert_used    = 0
+0.00.040.299 I print_info: causal attn      = 1
+0.00.040.299 I print_info: pooling type     = 0
+0.00.040.301 I print_info: rope type        = 2
+0.00.040.301 I print_info: rope scaling     = linear
+0.00.040.302 I print_info: freq_base_train  = 10000.0
+0.00.040.302 I print_info: freq_scale_train = 1
+0.00.040.302 I print_info: n_ctx_orig_yarn  = 2048
+0.00.040.304 I print_info: rope_finetuned   = unknown
+0.00.040.304 I print_info: ssm_d_conv       = 0
+0.00.040.304 I print_info: ssm_d_inner      = 0
+0.00.040.304 I print_info: ssm_d_state      = 0
+0.00.040.305 I print_info: ssm_dt_rank      = 0
+0.00.040.305 I print_info: ssm_dt_b_c_rms   = 0
+0.00.040.305 I print_info: model type       = 1.4B
+0.00.040.305 I print_info: model params     = 1.41 B
+0.00.040.305 I print_info: general.name     = 1.4B
+0.00.040.306 I print_info: vocab type       = BPE
+0.00.040.306 I print_info: n_vocab          = 50304
+0.00.040.306 I print_info: n_merges         = 50009
+0.00.040.307 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.040.307 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.040.307 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.040.307 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.040.308 I print_info: LF token         = 187 'Ċ'
+0.00.040.308 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.040.308 I print_info: max token length = 1024
+0.00.040.308 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.693.234 I load_tensors: offloading 24 repeating layers to GPU
+0.00.693.257 I load_tensors: offloading output layer to GPU
+0.00.693.257 I load_tensors: offloaded 25/25 layers to GPU
+0.00.693.290 I load_tensors: Metal_Mapped model buffer size =  1020.75 MiB
+0.00.693.291 I load_tensors:   CPU_Mapped model buffer size =    73.69 MiB
+..............................................................................
+0.00.694.711 I llama_init_from_model: n_seq_max     = 1
+0.00.694.717 I llama_init_from_model: n_ctx         = 128
+0.00.694.718 I llama_init_from_model: n_ctx_per_seq = 128
+0.00.694.719 I llama_init_from_model: n_batch       = 128
+0.00.694.719 I llama_init_from_model: n_ubatch      = 128
+0.00.694.720 I llama_init_from_model: flash_attn    = 0
+0.00.694.722 I llama_init_from_model: freq_base     = 10000.0
+0.00.694.723 I llama_init_from_model: freq_scale    = 1
+0.00.694.723 W llama_init_from_model: n_ctx_per_seq (128) < n_ctx_train (2048) -- the full capacity of the model will not be utilized
+0.00.694.728 I ggml_metal_init: allocating
+0.00.694.815 I ggml_metal_init: found device: Apple M4
+0.00.694.830 I ggml_metal_init: picking default device: Apple M4
+0.00.696.742 I ggml_metal_init: using embedded metal library
+0.00.703.693 I ggml_metal_init: GPU name:   Apple M4
+0.00.703.699 I ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+0.00.703.699 I ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+0.00.703.700 I ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+0.00.703.701 I ggml_metal_init: simdgroup reduction   = true
+0.00.703.702 I ggml_metal_init: simdgroup matrix mul. = true
+0.00.703.702 I ggml_metal_init: has residency sets    = true
+0.00.703.702 I ggml_metal_init: has bfloat            = true
+0.00.703.702 I ggml_metal_init: use bfloat            = true
+0.00.703.703 I ggml_metal_init: hasUnifiedMemory      = true
+0.00.703.715 I ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+0.00.722.189 I llama_kv_cache_init: kv_size = 128, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 24, can_shift = 1
+0.00.725.734 I llama_kv_cache_init:      Metal KV buffer size =    24.00 MiB
+0.00.725.743 I llama_init_from_model: KV self size  =   24.00 MiB, K (f16):   12.00 MiB, V (f16):   12.00 MiB
+0.00.725.783 I llama_init_from_model:        CPU  output buffer size =     0.19 MiB
+0.00.728.987 I llama_init_from_model:      Metal compute buffer size =    25.56 MiB
+0.00.728.988 I llama_init_from_model:        CPU compute buffer size =     1.06 MiB
+0.00.728.989 I llama_init_from_model: graph nodes  = 967
+0.00.728.990 I llama_init_from_model: graph splits = 2
+0.00.728.993 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 128
+0.00.728.996 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.755.740 I 
+0.00.755.782 I system_info: n_threads = 4 (n_threads_batch = 4) / 10 | Metal : EMBED_LIBRARY = 1 | BF16 = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | AARCH64_REPACK = 1 | 
+0.00.755.789 I perplexity: tokenizing the input ..
+0.00.761.623 I perplexity: tokenization took 5.833 ms
+0.00.761.628 I perplexity: calculating perplexity over 1 chunks, n_ctx=128, batch_size=128, n_seq=1
+0.00.895.607 I perplexity: 0.13 seconds per pass - ETA 0.00 minutes
+[1]10.1971,
+0.00.896.910 I Final estimate: PPL = 10.1971 +/- 3.18866
+
+0.00.896.936 I llama_perf_context_print:        load time =     746.36 ms
+0.00.896.937 I llama_perf_context_print: prompt eval time =     133.72 ms /   128 tokens (    1.04 ms per token,   957.22 tokens per second)
+0.00.896.938 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.00.896.938 I llama_perf_context_print:       total time =     141.20 ms /   129 tokens
+0.00.897.421 I ggml_metal_free: deallocating
+
+real	0m0.912s
+user	0m0.080s
+sys	0m0.160s
+```
+- q2_k:
+```
++ ./bin/llama-cli -no-cnv --model ../models-mnt/pythia/1.4B/ggml-model-q2_k.gguf -ngl 99 -c 0 -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+0.00.000.048 I build: 4743 (d07c6213) with Apple clang version 16.0.0 (clang-1600.0.26.4) for arm64-apple-darwin24.1.0
+0.00.000.085 I main: llama backend init
+0.00.000.087 I main: load the model and apply lora adapter, if any
+0.00.009.876 I llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+0.00.016.745 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q2_k.gguf (version GGUF V3 (latest))
+0.00.016.750 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.016.756 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.016.757 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.016.757 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.016.759 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.016.759 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.016.760 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.016.761 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.016.761 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.016.761 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.016.765 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.016.765 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.016.765 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.016.767 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.016.767 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.016.767 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.020.413 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.021.410 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.025.040 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.025.041 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.025.042 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.025.042 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.025.042 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.025.043 I llama_model_loader: - kv  22:                          general.file_type u32              = 10
+0.00.025.043 I llama_model_loader: - type  f32:  194 tensors
+0.00.025.043 I llama_model_loader: - type q2_K:   49 tensors
+0.00.025.044 I llama_model_loader: - type q3_K:   48 tensors
+0.00.025.044 I llama_model_loader: - type q6_K:    1 tensors
+0.00.025.045 I print_info: file format = GGUF V3 (latest)
+0.00.025.045 I print_info: file type   = Q2_K - Medium
+0.00.025.046 I print_info: file size   = 542.04 MiB (3.21 BPW) 
+0.00.032.894 I load: special tokens cache size = 25
+0.00.038.852 I load: token to piece cache size = 0.2984 MB
+0.00.038.855 I print_info: arch             = gptneox
+0.00.038.855 I print_info: vocab_only       = 0
+0.00.038.856 I print_info: n_ctx_train      = 2048
+0.00.038.856 I print_info: n_embd           = 2048
+0.00.038.856 I print_info: n_layer          = 24
+0.00.038.859 I print_info: n_head           = 16
+0.00.038.860 I print_info: n_head_kv        = 16
+0.00.038.860 I print_info: n_rot            = 32
+0.00.038.860 I print_info: n_swa            = 0
+0.00.038.860 I print_info: n_embd_head_k    = 128
+0.00.038.860 I print_info: n_embd_head_v    = 128
+0.00.038.861 I print_info: n_gqa            = 1
+0.00.038.862 I print_info: n_embd_k_gqa     = 2048
+0.00.038.864 I print_info: n_embd_v_gqa     = 2048
+0.00.038.865 I print_info: f_norm_eps       = 1.0e-05
+0.00.038.867 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.038.867 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.038.867 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.038.867 I print_info: f_logit_scale    = 0.0e+00
+0.00.038.868 I print_info: n_ff             = 8192
+0.00.038.868 I print_info: n_expert         = 0
+0.00.038.868 I print_info: n_expert_used    = 0
+0.00.038.869 I print_info: causal attn      = 1
+0.00.038.869 I print_info: pooling type     = 0
+0.00.038.869 I print_info: rope type        = 2
+0.00.038.875 I print_info: rope scaling     = linear
+0.00.038.877 I print_info: freq_base_train  = 10000.0
+0.00.038.877 I print_info: freq_scale_train = 1
+0.00.038.877 I print_info: n_ctx_orig_yarn  = 2048
+0.00.038.878 I print_info: rope_finetuned   = unknown
+0.00.038.878 I print_info: ssm_d_conv       = 0
+0.00.038.878 I print_info: ssm_d_inner      = 0
+0.00.038.878 I print_info: ssm_d_state      = 0
+0.00.038.878 I print_info: ssm_dt_rank      = 0
+0.00.038.878 I print_info: ssm_dt_b_c_rms   = 0
+0.00.038.879 I print_info: model type       = 1.4B
+0.00.038.879 I print_info: model params     = 1.41 B
+0.00.038.879 I print_info: general.name     = 1.4B
+0.00.038.880 I print_info: vocab type       = BPE
+0.00.038.880 I print_info: n_vocab          = 50304
+0.00.038.880 I print_info: n_merges         = 50009
+0.00.038.880 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.038.880 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.038.881 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.038.881 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.038.881 I print_info: LF token         = 187 'Ċ'
+0.00.038.881 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.038.881 I print_info: max token length = 1024
+0.00.038.882 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.384.965 I load_tensors: offloading 24 repeating layers to GPU
+0.00.384.980 I load_tensors: offloading output layer to GPU
+0.00.384.981 I load_tensors: offloaded 25/25 layers to GPU
+0.00.385.016 I load_tensors: Metal_Mapped model buffer size =   542.05 MiB
+0.00.385.018 I load_tensors:   CPU_Mapped model buffer size =    32.24 MiB
+............................................................................
+0.00.386.594 I llama_init_from_model: n_seq_max     = 1
+0.00.386.596 I llama_init_from_model: n_ctx         = 2048
+0.00.386.597 I llama_init_from_model: n_ctx_per_seq = 2048
+0.00.386.597 I llama_init_from_model: n_batch       = 2048
+0.00.386.598 I llama_init_from_model: n_ubatch      = 512
+0.00.386.598 I llama_init_from_model: flash_attn    = 0
+0.00.386.601 I llama_init_from_model: freq_base     = 10000.0
+0.00.386.601 I llama_init_from_model: freq_scale    = 1
+0.00.386.604 I ggml_metal_init: allocating
+0.00.386.680 I ggml_metal_init: found device: Apple M4
+0.00.386.694 I ggml_metal_init: picking default device: Apple M4
+0.00.388.584 I ggml_metal_init: using embedded metal library
+0.00.394.134 I ggml_metal_init: GPU name:   Apple M4
+0.00.394.151 I ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+0.00.394.151 I ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+0.00.394.152 I ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+0.00.394.153 I ggml_metal_init: simdgroup reduction   = true
+0.00.394.153 I ggml_metal_init: simdgroup matrix mul. = true
+0.00.394.153 I ggml_metal_init: has residency sets    = true
+0.00.394.154 I ggml_metal_init: has bfloat            = true
+0.00.394.154 I ggml_metal_init: use bfloat            = true
+0.00.394.158 I ggml_metal_init: hasUnifiedMemory      = true
+0.00.394.162 I ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+0.00.415.972 I llama_kv_cache_init: kv_size = 2048, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 24, can_shift = 1
+0.00.475.852 I llama_kv_cache_init:      Metal KV buffer size =   384.00 MiB
+0.00.475.870 I llama_init_from_model: KV self size  =  384.00 MiB, K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.475.905 I llama_init_from_model:        CPU  output buffer size =     0.19 MiB
+0.00.480.122 I llama_init_from_model:      Metal compute buffer size =   102.25 MiB
+0.00.480.124 I llama_init_from_model:        CPU compute buffer size =     8.01 MiB
+0.00.480.125 I llama_init_from_model: graph nodes  = 967
+0.00.480.125 I llama_init_from_model: graph splits = 2
+0.00.480.131 I common_init_from_params: added <|endoftext|> logit bias = -inf
+0.00.480.255 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.480.255 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.541.072 I main: llama threadpool init, n_threads = 4
+0.00.541.119 I 
+0.00.541.134 I system_info: n_threads = 4 (n_threads_batch = 4) / 10 | Metal : EMBED_LIBRARY = 1 | BF16 = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | AARCH64_REPACK = 1 | 
+0.00.541.134 I 
+0.00.541.313 I sampler seed: 1234
+0.00.541.317 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 2048
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.00.541.329 I sampler chain: logits -> logit-bias -> penalties -> dry -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+0.00.541.329 I generate: n_ctx = 2048, n_batch = 2048, n_predict = 64, n_keep = 0
+0.00.541.329 I 
+I believe the meaning of life is the meaning of choice and the meaning of choice is the meaning of the chosen. I believe in the meaning of a chosen. I believe in the meaning of an under-under-under-under-under-under-under-under-under-under-under-under-under-under-under-under-
+
+0.01.220.249 I llama_perf_sampler_print:    sampling time =       1.33 ms /    71 runs   (    0.02 ms per token, 53263.32 tokens per second)
+0.01.220.249 I llama_perf_context_print:        load time =     530.44 ms
+0.01.220.250 I llama_perf_context_print: prompt eval time =      43.53 ms /     7 tokens (    6.22 ms per token,   160.81 tokens per second)
+0.01.220.250 I llama_perf_context_print:        eval time =     632.59 ms /    63 runs   (   10.04 ms per token,    99.59 tokens per second)
+0.01.220.251 I llama_perf_context_print:       total time =     679.92 ms /    70 tokens
+0.01.220.481 I ggml_metal_free: deallocating
+
+real	0m1.239s
+user	0m0.111s
+sys	0m0.182s
++ ./bin/llama-perplexity --model ../models-mnt/pythia/1.4B/ggml-model-q2_k.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -ngl 99 -c 128 -b 128 --chunks 1
+0.00.000.110 I build: 4743 (d07c6213) with Apple clang version 16.0.0 (clang-1600.0.26.4) for arm64-apple-darwin24.1.0
+0.00.010.385 I llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+0.00.017.417 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q2_k.gguf (version GGUF V3 (latest))
+0.00.017.424 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.017.427 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.017.428 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.017.428 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.017.428 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.017.429 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.017.430 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.017.430 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.017.430 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.017.431 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.017.431 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.017.431 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.017.434 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.017.436 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.017.436 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.017.437 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.021.274 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.022.388 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.026.246 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.026.248 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.026.248 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.026.249 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.026.249 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.026.250 I llama_model_loader: - kv  22:                          general.file_type u32              = 10
+0.00.026.250 I llama_model_loader: - type  f32:  194 tensors
+0.00.026.251 I llama_model_loader: - type q2_K:   49 tensors
+0.00.026.251 I llama_model_loader: - type q3_K:   48 tensors
+0.00.026.251 I llama_model_loader: - type q6_K:    1 tensors
+0.00.026.252 I print_info: file format = GGUF V3 (latest)
+0.00.026.253 I print_info: file type   = Q2_K - Medium
+0.00.026.254 I print_info: file size   = 542.04 MiB (3.21 BPW) 
+0.00.034.703 I load: special tokens cache size = 25
+0.00.040.793 I load: token to piece cache size = 0.2984 MB
+0.00.040.798 I print_info: arch             = gptneox
+0.00.040.798 I print_info: vocab_only       = 0
+0.00.040.798 I print_info: n_ctx_train      = 2048
+0.00.040.799 I print_info: n_embd           = 2048
+0.00.040.799 I print_info: n_layer          = 24
+0.00.040.803 I print_info: n_head           = 16
+0.00.040.804 I print_info: n_head_kv        = 16
+0.00.040.804 I print_info: n_rot            = 32
+0.00.040.804 I print_info: n_swa            = 0
+0.00.040.804 I print_info: n_embd_head_k    = 128
+0.00.040.805 I print_info: n_embd_head_v    = 128
+0.00.040.805 I print_info: n_gqa            = 1
+0.00.040.806 I print_info: n_embd_k_gqa     = 2048
+0.00.040.807 I print_info: n_embd_v_gqa     = 2048
+0.00.040.809 I print_info: f_norm_eps       = 1.0e-05
+0.00.040.809 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.040.809 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.040.809 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.040.810 I print_info: f_logit_scale    = 0.0e+00
+0.00.040.810 I print_info: n_ff             = 8192
+0.00.040.810 I print_info: n_expert         = 0
+0.00.040.810 I print_info: n_expert_used    = 0
+0.00.040.811 I print_info: causal attn      = 1
+0.00.040.811 I print_info: pooling type     = 0
+0.00.040.811 I print_info: rope type        = 2
+0.00.040.811 I print_info: rope scaling     = linear
+0.00.040.811 I print_info: freq_base_train  = 10000.0
+0.00.040.812 I print_info: freq_scale_train = 1
+0.00.040.812 I print_info: n_ctx_orig_yarn  = 2048
+0.00.040.812 I print_info: rope_finetuned   = unknown
+0.00.040.812 I print_info: ssm_d_conv       = 0
+0.00.040.812 I print_info: ssm_d_inner      = 0
+0.00.040.812 I print_info: ssm_d_state      = 0
+0.00.040.812 I print_info: ssm_dt_rank      = 0
+0.00.040.812 I print_info: ssm_dt_b_c_rms   = 0
+0.00.040.813 I print_info: model type       = 1.4B
+0.00.040.813 I print_info: model params     = 1.41 B
+0.00.040.813 I print_info: general.name     = 1.4B
+0.00.040.814 I print_info: vocab type       = BPE
+0.00.040.814 I print_info: n_vocab          = 50304
+0.00.040.814 I print_info: n_merges         = 50009
+0.00.040.814 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.040.815 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.040.816 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.040.816 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.040.816 I print_info: LF token         = 187 'Ċ'
+0.00.040.826 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.040.827 I print_info: max token length = 1024
+0.00.040.828 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.382.898 I load_tensors: offloading 24 repeating layers to GPU
+0.00.382.916 I load_tensors: offloading output layer to GPU
+0.00.382.917 I load_tensors: offloaded 25/25 layers to GPU
+0.00.382.955 I load_tensors: Metal_Mapped model buffer size =   542.05 MiB
+0.00.382.956 I load_tensors:   CPU_Mapped model buffer size =    32.24 MiB
+............................................................................
+0.00.384.434 I llama_init_from_model: n_seq_max     = 1
+0.00.384.438 I llama_init_from_model: n_ctx         = 128
+0.00.384.439 I llama_init_from_model: n_ctx_per_seq = 128
+0.00.384.440 I llama_init_from_model: n_batch       = 128
+0.00.384.440 I llama_init_from_model: n_ubatch      = 128
+0.00.384.441 I llama_init_from_model: flash_attn    = 0
+0.00.384.443 I llama_init_from_model: freq_base     = 10000.0
+0.00.384.444 I llama_init_from_model: freq_scale    = 1
+0.00.384.445 W llama_init_from_model: n_ctx_per_seq (128) < n_ctx_train (2048) -- the full capacity of the model will not be utilized
+0.00.384.454 I ggml_metal_init: allocating
+0.00.384.544 I ggml_metal_init: found device: Apple M4
+0.00.384.559 I ggml_metal_init: picking default device: Apple M4
+0.00.386.454 I ggml_metal_init: using embedded metal library
+0.00.392.461 I ggml_metal_init: GPU name:   Apple M4
+0.00.392.477 I ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+0.00.392.478 I ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+0.00.392.479 I ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+0.00.392.480 I ggml_metal_init: simdgroup reduction   = true
+0.00.392.480 I ggml_metal_init: simdgroup matrix mul. = true
+0.00.392.481 I ggml_metal_init: has residency sets    = true
+0.00.392.481 I ggml_metal_init: has bfloat            = true
+0.00.392.481 I ggml_metal_init: use bfloat            = true
+0.00.392.484 I ggml_metal_init: hasUnifiedMemory      = true
+0.00.392.490 I ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+0.00.414.386 I llama_kv_cache_init: kv_size = 128, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 24, can_shift = 1
+0.00.417.971 I llama_kv_cache_init:      Metal KV buffer size =    24.00 MiB
+0.00.417.978 I llama_init_from_model: KV self size  =   24.00 MiB, K (f16):   12.00 MiB, V (f16):   12.00 MiB
+0.00.418.027 I llama_init_from_model:        CPU  output buffer size =     0.19 MiB
+0.00.421.240 I llama_init_from_model:      Metal compute buffer size =    25.56 MiB
+0.00.421.242 I llama_init_from_model:        CPU compute buffer size =     1.06 MiB
+0.00.421.243 I llama_init_from_model: graph nodes  = 967
+0.00.421.243 I llama_init_from_model: graph splits = 2
+0.00.421.247 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 128
+0.00.421.247 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.452.908 I 
+0.00.452.948 I system_info: n_threads = 4 (n_threads_batch = 4) / 10 | Metal : EMBED_LIBRARY = 1 | BF16 = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | AARCH64_REPACK = 1 | 
+0.00.452.954 I perplexity: tokenizing the input ..
+0.00.458.777 I perplexity: tokenization took 5.821 ms
+0.00.458.781 I perplexity: calculating perplexity over 1 chunks, n_ctx=128, batch_size=128, n_seq=1
+0.00.604.147 I perplexity: 0.15 seconds per pass - ETA 0.00 minutes
+[1]70.7978,
+0.00.605.484 I Final estimate: PPL = 70.7978 +/- 27.57202
+
+0.00.605.511 I llama_perf_context_print:        load time =     442.51 ms
+0.00.605.512 I llama_perf_context_print: prompt eval time =     145.11 ms /   128 tokens (    1.13 ms per token,   882.11 tokens per second)
+0.00.605.513 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.00.605.513 I llama_perf_context_print:       total time =     152.61 ms /   129 tokens
+0.00.605.923 I ggml_metal_free: deallocating
+
+real	0m0.621s
+user	0m0.081s
+sys	0m0.102s
+```
+- q3_k:
+```
++ ./bin/llama-cli -no-cnv --model ../models-mnt/pythia/1.4B/ggml-model-q3_k.gguf -ngl 99 -c 0 -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+0.00.000.044 I build: 4743 (d07c6213) with Apple clang version 16.0.0 (clang-1600.0.26.4) for arm64-apple-darwin24.1.0
+0.00.000.080 I main: llama backend init
+0.00.000.083 I main: load the model and apply lora adapter, if any
+0.00.008.868 I llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+0.00.016.758 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q3_k.gguf (version GGUF V3 (latest))
+0.00.016.763 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.016.769 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.016.769 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.016.770 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.016.770 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.016.771 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.016.772 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.016.772 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.016.772 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.016.773 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.016.773 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.016.773 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.016.774 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.016.775 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.016.776 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.016.776 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.020.658 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.021.655 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.025.454 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.025.455 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.025.455 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.025.455 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.025.456 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.025.456 I llama_model_loader: - kv  22:                          general.file_type u32              = 12
+0.00.025.457 I llama_model_loader: - type  f32:  194 tensors
+0.00.025.457 I llama_model_loader: - type q3_K:   25 tensors
+0.00.025.457 I llama_model_loader: - type q4_K:   71 tensors
+0.00.025.458 I llama_model_loader: - type q5_K:    1 tensors
+0.00.025.458 I llama_model_loader: - type q6_K:    1 tensors
+0.00.025.458 I print_info: file format = GGUF V3 (latest)
+0.00.025.462 I print_info: file type   = Q3_K - Medium
+0.00.025.463 I print_info: file size   = 724.27 MiB (4.29 BPW) 
+0.00.033.622 I load: special tokens cache size = 25
+0.00.039.505 I load: token to piece cache size = 0.2984 MB
+0.00.039.508 I print_info: arch             = gptneox
+0.00.039.508 I print_info: vocab_only       = 0
+0.00.039.508 I print_info: n_ctx_train      = 2048
+0.00.039.509 I print_info: n_embd           = 2048
+0.00.039.509 I print_info: n_layer          = 24
+0.00.039.512 I print_info: n_head           = 16
+0.00.039.513 I print_info: n_head_kv        = 16
+0.00.039.513 I print_info: n_rot            = 32
+0.00.039.513 I print_info: n_swa            = 0
+0.00.039.513 I print_info: n_embd_head_k    = 128
+0.00.039.513 I print_info: n_embd_head_v    = 128
+0.00.039.514 I print_info: n_gqa            = 1
+0.00.039.515 I print_info: n_embd_k_gqa     = 2048
+0.00.039.516 I print_info: n_embd_v_gqa     = 2048
+0.00.039.516 I print_info: f_norm_eps       = 1.0e-05
+0.00.039.517 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.039.517 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.039.517 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.039.517 I print_info: f_logit_scale    = 0.0e+00
+0.00.039.518 I print_info: n_ff             = 8192
+0.00.039.518 I print_info: n_expert         = 0
+0.00.039.518 I print_info: n_expert_used    = 0
+0.00.039.518 I print_info: causal attn      = 1
+0.00.039.518 I print_info: pooling type     = 0
+0.00.039.518 I print_info: rope type        = 2
+0.00.039.519 I print_info: rope scaling     = linear
+0.00.039.519 I print_info: freq_base_train  = 10000.0
+0.00.039.520 I print_info: freq_scale_train = 1
+0.00.039.520 I print_info: n_ctx_orig_yarn  = 2048
+0.00.039.520 I print_info: rope_finetuned   = unknown
+0.00.039.520 I print_info: ssm_d_conv       = 0
+0.00.039.520 I print_info: ssm_d_inner      = 0
+0.00.039.521 I print_info: ssm_d_state      = 0
+0.00.039.521 I print_info: ssm_dt_rank      = 0
+0.00.039.521 I print_info: ssm_dt_b_c_rms   = 0
+0.00.039.521 I print_info: model type       = 1.4B
+0.00.039.521 I print_info: model params     = 1.41 B
+0.00.039.522 I print_info: general.name     = 1.4B
+0.00.039.522 I print_info: vocab type       = BPE
+0.00.039.522 I print_info: n_vocab          = 50304
+0.00.039.525 I print_info: n_merges         = 50009
+0.00.039.525 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.039.525 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.039.525 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.039.526 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.039.526 I print_info: LF token         = 187 'Ċ'
+0.00.039.526 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.039.526 I print_info: max token length = 1024
+0.00.039.527 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.452.175 I load_tensors: offloading 24 repeating layers to GPU
+0.00.452.186 I load_tensors: offloading output layer to GPU
+0.00.452.187 I load_tensors: offloaded 25/25 layers to GPU
+0.00.452.217 I load_tensors: Metal_Mapped model buffer size =   724.28 MiB
+0.00.452.218 I load_tensors:   CPU_Mapped model buffer size =    42.22 MiB
+................................................................................
+0.00.453.621 I llama_init_from_model: n_seq_max     = 1
+0.00.453.626 I llama_init_from_model: n_ctx         = 2048
+0.00.453.627 I llama_init_from_model: n_ctx_per_seq = 2048
+0.00.453.627 I llama_init_from_model: n_batch       = 2048
+0.00.453.628 I llama_init_from_model: n_ubatch      = 512
+0.00.453.628 I llama_init_from_model: flash_attn    = 0
+0.00.453.629 I llama_init_from_model: freq_base     = 10000.0
+0.00.453.630 I llama_init_from_model: freq_scale    = 1
+0.00.453.634 I ggml_metal_init: allocating
+0.00.453.687 I ggml_metal_init: found device: Apple M4
+0.00.453.699 I ggml_metal_init: picking default device: Apple M4
+0.00.455.542 I ggml_metal_init: using embedded metal library
+0.00.461.204 I ggml_metal_init: GPU name:   Apple M4
+0.00.461.218 I ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+0.00.461.218 I ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+0.00.461.219 I ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+0.00.461.220 I ggml_metal_init: simdgroup reduction   = true
+0.00.461.220 I ggml_metal_init: simdgroup matrix mul. = true
+0.00.461.220 I ggml_metal_init: has residency sets    = true
+0.00.461.221 I ggml_metal_init: has bfloat            = true
+0.00.461.221 I ggml_metal_init: use bfloat            = true
+0.00.461.223 I ggml_metal_init: hasUnifiedMemory      = true
+0.00.461.226 I ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+0.00.482.282 I llama_kv_cache_init: kv_size = 2048, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 24, can_shift = 1
+0.00.539.997 I llama_kv_cache_init:      Metal KV buffer size =   384.00 MiB
+0.00.540.003 I llama_init_from_model: KV self size  =  384.00 MiB, K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.540.038 I llama_init_from_model:        CPU  output buffer size =     0.19 MiB
+0.00.545.376 I llama_init_from_model:      Metal compute buffer size =   102.25 MiB
+0.00.545.378 I llama_init_from_model:        CPU compute buffer size =     8.01 MiB
+0.00.545.378 I llama_init_from_model: graph nodes  = 967
+0.00.545.378 I llama_init_from_model: graph splits = 2
+0.00.545.385 I common_init_from_params: added <|endoftext|> logit bias = -inf
+0.00.545.511 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.545.512 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.603.626 I main: llama threadpool init, n_threads = 4
+0.00.603.677 I 
+0.00.603.716 I system_info: n_threads = 4 (n_threads_batch = 4) / 10 | Metal : EMBED_LIBRARY = 1 | BF16 = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | AARCH64_REPACK = 1 | 
+0.00.603.737 I 
+0.00.603.992 I sampler seed: 1234
+0.00.603.999 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 2048
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.00.604.013 I sampler chain: logits -> logit-bias -> penalties -> dry -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+0.00.604.014 I generate: n_ctx = 2048, n_batch = 2048, n_predict = 64, n_keep = 0
+0.00.604.014 I 
+I believe the meaning of life is that one should always seek to be understood.
+
+"The question is not, 'What is the best and most beautiful thing that I can do?'
+
+"The question is, 'What can I do,
+
+"To be better and wiser and happier and more
+
+"Loved than anyone
+
+0.01.342.607 I llama_perf_sampler_print:    sampling time =       1.38 ms /    71 runs   (    0.02 ms per token, 51561.37 tokens per second)
+0.01.342.608 I llama_perf_context_print:        load time =     594.01 ms
+0.01.342.608 I llama_perf_context_print: prompt eval time =      45.09 ms /     7 tokens (    6.44 ms per token,   155.26 tokens per second)
+0.01.342.609 I llama_perf_context_print:        eval time =     690.61 ms /    63 runs   (   10.96 ms per token,    91.22 tokens per second)
+0.01.342.609 I llama_perf_context_print:       total time =     739.72 ms /    70 tokens
+0.01.342.808 I ggml_metal_free: deallocating
+
+real	0m1.360s
+user	0m0.112s
+sys	0m0.195s
++ ./bin/llama-perplexity --model ../models-mnt/pythia/1.4B/ggml-model-q3_k.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -ngl 99 -c 128 -b 128 --chunks 1
+0.00.000.105 I build: 4743 (d07c6213) with Apple clang version 16.0.0 (clang-1600.0.26.4) for arm64-apple-darwin24.1.0
+0.00.009.303 I llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+0.00.016.471 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q3_k.gguf (version GGUF V3 (latest))
+0.00.016.478 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.016.480 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.016.481 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.016.481 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.016.482 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.016.482 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.016.483 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.016.483 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.016.484 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.016.484 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.016.484 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.016.485 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.016.485 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.016.487 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.016.487 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.016.488 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.020.248 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.021.317 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.025.155 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.025.157 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.025.157 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.025.158 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.025.158 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.025.158 I llama_model_loader: - kv  22:                          general.file_type u32              = 12
+0.00.025.159 I llama_model_loader: - type  f32:  194 tensors
+0.00.025.159 I llama_model_loader: - type q3_K:   25 tensors
+0.00.025.160 I llama_model_loader: - type q4_K:   71 tensors
+0.00.025.160 I llama_model_loader: - type q5_K:    1 tensors
+0.00.025.160 I llama_model_loader: - type q6_K:    1 tensors
+0.00.025.161 I print_info: file format = GGUF V3 (latest)
+0.00.025.162 I print_info: file type   = Q3_K - Medium
+0.00.025.163 I print_info: file size   = 724.27 MiB (4.29 BPW) 
+0.00.033.147 I load: special tokens cache size = 25
+0.00.039.234 I load: token to piece cache size = 0.2984 MB
+0.00.039.238 I print_info: arch             = gptneox
+0.00.039.239 I print_info: vocab_only       = 0
+0.00.039.239 I print_info: n_ctx_train      = 2048
+0.00.039.239 I print_info: n_embd           = 2048
+0.00.039.239 I print_info: n_layer          = 24
+0.00.039.244 I print_info: n_head           = 16
+0.00.039.245 I print_info: n_head_kv        = 16
+0.00.039.245 I print_info: n_rot            = 32
+0.00.039.245 I print_info: n_swa            = 0
+0.00.039.245 I print_info: n_embd_head_k    = 128
+0.00.039.247 I print_info: n_embd_head_v    = 128
+0.00.039.248 I print_info: n_gqa            = 1
+0.00.039.249 I print_info: n_embd_k_gqa     = 2048
+0.00.039.249 I print_info: n_embd_v_gqa     = 2048
+0.00.039.250 I print_info: f_norm_eps       = 1.0e-05
+0.00.039.250 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.039.250 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.039.250 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.039.251 I print_info: f_logit_scale    = 0.0e+00
+0.00.039.251 I print_info: n_ff             = 8192
+0.00.039.252 I print_info: n_expert         = 0
+0.00.039.252 I print_info: n_expert_used    = 0
+0.00.039.252 I print_info: causal attn      = 1
+0.00.039.252 I print_info: pooling type     = 0
+0.00.039.252 I print_info: rope type        = 2
+0.00.039.252 I print_info: rope scaling     = linear
+0.00.039.255 I print_info: freq_base_train  = 10000.0
+0.00.039.255 I print_info: freq_scale_train = 1
+0.00.039.255 I print_info: n_ctx_orig_yarn  = 2048
+0.00.039.255 I print_info: rope_finetuned   = unknown
+0.00.039.256 I print_info: ssm_d_conv       = 0
+0.00.039.256 I print_info: ssm_d_inner      = 0
+0.00.039.256 I print_info: ssm_d_state      = 0
+0.00.039.256 I print_info: ssm_dt_rank      = 0
+0.00.039.256 I print_info: ssm_dt_b_c_rms   = 0
+0.00.039.256 I print_info: model type       = 1.4B
+0.00.039.257 I print_info: model params     = 1.41 B
+0.00.039.257 I print_info: general.name     = 1.4B
+0.00.039.257 I print_info: vocab type       = BPE
+0.00.039.257 I print_info: n_vocab          = 50304
+0.00.039.258 I print_info: n_merges         = 50009
+0.00.039.258 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.039.258 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.039.258 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.039.263 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.039.264 I print_info: LF token         = 187 'Ċ'
+0.00.039.265 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.039.265 I print_info: max token length = 1024
+0.00.039.265 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.444.963 I load_tensors: offloading 24 repeating layers to GPU
+0.00.444.978 I load_tensors: offloading output layer to GPU
+0.00.444.979 I load_tensors: offloaded 25/25 layers to GPU
+0.00.445.011 I load_tensors: Metal_Mapped model buffer size =   724.28 MiB
+0.00.445.012 I load_tensors:   CPU_Mapped model buffer size =    42.22 MiB
+................................................................................
+0.00.446.335 I llama_init_from_model: n_seq_max     = 1
+0.00.446.342 I llama_init_from_model: n_ctx         = 128
+0.00.446.343 I llama_init_from_model: n_ctx_per_seq = 128
+0.00.446.343 I llama_init_from_model: n_batch       = 128
+0.00.446.344 I llama_init_from_model: n_ubatch      = 128
+0.00.446.344 I llama_init_from_model: flash_attn    = 0
+0.00.446.347 I llama_init_from_model: freq_base     = 10000.0
+0.00.446.348 I llama_init_from_model: freq_scale    = 1
+0.00.446.348 W llama_init_from_model: n_ctx_per_seq (128) < n_ctx_train (2048) -- the full capacity of the model will not be utilized
+0.00.446.351 I ggml_metal_init: allocating
+0.00.446.434 I ggml_metal_init: found device: Apple M4
+0.00.446.451 I ggml_metal_init: picking default device: Apple M4
+0.00.448.372 I ggml_metal_init: using embedded metal library
+0.00.454.204 I ggml_metal_init: GPU name:   Apple M4
+0.00.454.218 I ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+0.00.454.219 I ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+0.00.454.220 I ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+0.00.454.221 I ggml_metal_init: simdgroup reduction   = true
+0.00.454.222 I ggml_metal_init: simdgroup matrix mul. = true
+0.00.454.222 I ggml_metal_init: has residency sets    = true
+0.00.454.222 I ggml_metal_init: has bfloat            = true
+0.00.454.222 I ggml_metal_init: use bfloat            = true
+0.00.454.225 I ggml_metal_init: hasUnifiedMemory      = true
+0.00.454.230 I ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+0.00.475.342 I llama_kv_cache_init: kv_size = 128, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 24, can_shift = 1
+0.00.478.819 I llama_kv_cache_init:      Metal KV buffer size =    24.00 MiB
+0.00.478.823 I llama_init_from_model: KV self size  =   24.00 MiB, K (f16):   12.00 MiB, V (f16):   12.00 MiB
+0.00.478.868 I llama_init_from_model:        CPU  output buffer size =     0.19 MiB
+0.00.482.203 I llama_init_from_model:      Metal compute buffer size =    25.56 MiB
+0.00.482.205 I llama_init_from_model:        CPU compute buffer size =     1.06 MiB
+0.00.482.205 I llama_init_from_model: graph nodes  = 967
+0.00.482.206 I llama_init_from_model: graph splits = 2
+0.00.482.209 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 128
+0.00.482.209 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.512.348 I 
+0.00.512.393 I system_info: n_threads = 4 (n_threads_batch = 4) / 10 | Metal : EMBED_LIBRARY = 1 | BF16 = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | AARCH64_REPACK = 1 | 
+0.00.512.398 I perplexity: tokenizing the input ..
+0.00.518.998 I perplexity: tokenization took 6.597 ms
+0.00.519.003 I perplexity: calculating perplexity over 1 chunks, n_ctx=128, batch_size=128, n_seq=1
+0.00.661.696 I perplexity: 0.14 seconds per pass - ETA 0.00 minutes
+[1]12.0517,
+0.00.663.036 I Final estimate: PPL = 12.0517 +/- 3.93502
+
+0.00.663.061 I llama_perf_context_print:        load time =     503.03 ms
+0.00.663.062 I llama_perf_context_print: prompt eval time =     142.06 ms /   128 tokens (    1.11 ms per token,   901.05 tokens per second)
+0.00.663.062 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.00.663.063 I llama_perf_context_print:       total time =     150.72 ms /   129 tokens
+0.00.663.440 I ggml_metal_free: deallocating
+
+real	0m0.677s
+user	0m0.081s
+sys	0m0.114s
+```
+- q4_k:
+```
++ ./bin/llama-cli -no-cnv --model ../models-mnt/pythia/1.4B/ggml-model-q4_k.gguf -ngl 99 -c 0 -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+0.00.000.044 I build: 4743 (d07c6213) with Apple clang version 16.0.0 (clang-1600.0.26.4) for arm64-apple-darwin24.1.0
+0.00.000.081 I main: llama backend init
+0.00.000.083 I main: load the model and apply lora adapter, if any
+0.00.008.899 I llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+0.00.016.441 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q4_k.gguf (version GGUF V3 (latest))
+0.00.016.447 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.016.448 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.016.449 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.016.450 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.016.451 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.016.451 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.016.452 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.016.454 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.016.455 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.016.455 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.016.455 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.016.456 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.016.456 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.016.460 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.016.460 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.016.460 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.020.282 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.021.350 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.025.134 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.025.135 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.025.136 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.025.136 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.025.136 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.025.137 I llama_model_loader: - kv  22:                          general.file_type u32              = 15
+0.00.025.137 I llama_model_loader: - type  f32:  194 tensors
+0.00.025.137 I llama_model_loader: - type q4_K:   61 tensors
+0.00.025.138 I llama_model_loader: - type q5_K:   24 tensors
+0.00.025.138 I llama_model_loader: - type q6_K:   13 tensors
+0.00.025.138 I print_info: file format = GGUF V3 (latest)
+0.00.025.139 I print_info: file type   = Q4_K - Medium
+0.00.025.140 I print_info: file size   = 871.81 MiB (5.17 BPW) 
+0.00.032.927 I load: special tokens cache size = 25
+0.00.038.991 I load: token to piece cache size = 0.2984 MB
+0.00.038.994 I print_info: arch             = gptneox
+0.00.038.994 I print_info: vocab_only       = 0
+0.00.038.994 I print_info: n_ctx_train      = 2048
+0.00.038.994 I print_info: n_embd           = 2048
+0.00.038.994 I print_info: n_layer          = 24
+0.00.038.997 I print_info: n_head           = 16
+0.00.038.998 I print_info: n_head_kv        = 16
+0.00.038.998 I print_info: n_rot            = 32
+0.00.038.999 I print_info: n_swa            = 0
+0.00.038.999 I print_info: n_embd_head_k    = 128
+0.00.038.999 I print_info: n_embd_head_v    = 128
+0.00.039.000 I print_info: n_gqa            = 1
+0.00.039.000 I print_info: n_embd_k_gqa     = 2048
+0.00.039.001 I print_info: n_embd_v_gqa     = 2048
+0.00.039.002 I print_info: f_norm_eps       = 1.0e-05
+0.00.039.002 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.039.002 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.039.002 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.039.003 I print_info: f_logit_scale    = 0.0e+00
+0.00.039.003 I print_info: n_ff             = 8192
+0.00.039.003 I print_info: n_expert         = 0
+0.00.039.004 I print_info: n_expert_used    = 0
+0.00.039.004 I print_info: causal attn      = 1
+0.00.039.005 I print_info: pooling type     = 0
+0.00.039.007 I print_info: rope type        = 2
+0.00.039.007 I print_info: rope scaling     = linear
+0.00.039.008 I print_info: freq_base_train  = 10000.0
+0.00.039.008 I print_info: freq_scale_train = 1
+0.00.039.008 I print_info: n_ctx_orig_yarn  = 2048
+0.00.039.009 I print_info: rope_finetuned   = unknown
+0.00.039.009 I print_info: ssm_d_conv       = 0
+0.00.039.009 I print_info: ssm_d_inner      = 0
+0.00.039.009 I print_info: ssm_d_state      = 0
+0.00.039.009 I print_info: ssm_dt_rank      = 0
+0.00.039.009 I print_info: ssm_dt_b_c_rms   = 0
+0.00.039.009 I print_info: model type       = 1.4B
+0.00.039.010 I print_info: model params     = 1.41 B
+0.00.039.010 I print_info: general.name     = 1.4B
+0.00.039.011 I print_info: vocab type       = BPE
+0.00.039.011 I print_info: n_vocab          = 50304
+0.00.039.011 I print_info: n_merges         = 50009
+0.00.039.011 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.039.011 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.039.012 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.039.012 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.039.012 I print_info: LF token         = 187 'Ċ'
+0.00.039.012 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.039.013 I print_info: max token length = 1024
+0.00.039.013 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.514.299 I load_tensors: offloading 24 repeating layers to GPU
+0.00.514.311 I load_tensors: offloading output layer to GPU
+0.00.514.312 I load_tensors: offloaded 25/25 layers to GPU
+0.00.514.344 I load_tensors: Metal_Mapped model buffer size =   871.83 MiB
+0.00.514.345 I load_tensors:   CPU_Mapped model buffer size =    55.27 MiB
+..............................................................................
+0.00.515.890 I llama_init_from_model: n_seq_max     = 1
+0.00.515.893 I llama_init_from_model: n_ctx         = 2048
+0.00.515.894 I llama_init_from_model: n_ctx_per_seq = 2048
+0.00.515.894 I llama_init_from_model: n_batch       = 2048
+0.00.515.895 I llama_init_from_model: n_ubatch      = 512
+0.00.515.895 I llama_init_from_model: flash_attn    = 0
+0.00.515.898 I llama_init_from_model: freq_base     = 10000.0
+0.00.515.898 I llama_init_from_model: freq_scale    = 1
+0.00.515.901 I ggml_metal_init: allocating
+0.00.515.964 I ggml_metal_init: found device: Apple M4
+0.00.515.978 I ggml_metal_init: picking default device: Apple M4
+0.00.517.915 I ggml_metal_init: using embedded metal library
+0.00.524.578 I ggml_metal_init: GPU name:   Apple M4
+0.00.524.582 I ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+0.00.524.582 I ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+0.00.524.583 I ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+0.00.524.584 I ggml_metal_init: simdgroup reduction   = true
+0.00.524.584 I ggml_metal_init: simdgroup matrix mul. = true
+0.00.524.584 I ggml_metal_init: has residency sets    = true
+0.00.524.584 I ggml_metal_init: has bfloat            = true
+0.00.524.585 I ggml_metal_init: use bfloat            = true
+0.00.524.586 I ggml_metal_init: hasUnifiedMemory      = true
+0.00.524.587 I ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+0.00.542.186 I llama_kv_cache_init: kv_size = 2048, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 24, can_shift = 1
+0.00.598.584 I llama_kv_cache_init:      Metal KV buffer size =   384.00 MiB
+0.00.598.590 I llama_init_from_model: KV self size  =  384.00 MiB, K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.598.627 I llama_init_from_model:        CPU  output buffer size =     0.19 MiB
+0.00.602.825 I llama_init_from_model:      Metal compute buffer size =   102.25 MiB
+0.00.602.827 I llama_init_from_model:        CPU compute buffer size =     8.01 MiB
+0.00.602.827 I llama_init_from_model: graph nodes  = 967
+0.00.602.828 I llama_init_from_model: graph splits = 2
+0.00.602.834 I common_init_from_params: added <|endoftext|> logit bias = -inf
+0.00.602.962 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.602.962 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.660.369 I main: llama threadpool init, n_threads = 4
+0.00.660.413 I 
+0.00.660.430 I system_info: n_threads = 4 (n_threads_batch = 4) / 10 | Metal : EMBED_LIBRARY = 1 | BF16 = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | AARCH64_REPACK = 1 | 
+0.00.660.431 I 
+0.00.660.576 I sampler seed: 1234
+0.00.660.581 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 2048
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.00.660.591 I sampler chain: logits -> logit-bias -> penalties -> dry -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+0.00.660.592 I generate: n_ctx = 2048, n_batch = 2048, n_predict = 64, n_keep = 0
+0.00.660.592 I 
+I believe the meaning of life is that there is a lot of suffering and pain in the world. That is why I believe that we have the capability to help each other out of the suffering in the world. I believe that if we just believe and feel like we are part of a bigger, more loving, more compassionate world, that we can help each
+
+0.01.432.809 I llama_perf_sampler_print:    sampling time =       1.40 ms /    71 runs   (    0.02 ms per token, 50569.80 tokens per second)
+0.01.432.809 I llama_perf_context_print:        load time =     650.73 ms
+0.01.432.811 I llama_perf_context_print: prompt eval time =      58.08 ms /     7 tokens (    8.30 ms per token,   120.53 tokens per second)
+0.01.432.812 I llama_perf_context_print:        eval time =     711.18 ms /    63 runs   (   11.29 ms per token,    88.59 tokens per second)
+0.01.432.813 I llama_perf_context_print:       total time =     773.17 ms /    70 tokens
+0.01.433.052 I ggml_metal_free: deallocating
+
+real	0m1.450s
+user	0m0.109s
+sys	0m0.190s
++ ./bin/llama-perplexity --model ../models-mnt/pythia/1.4B/ggml-model-q4_k.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -ngl 99 -c 128 -b 128 --chunks 1
+0.00.000.104 I build: 4743 (d07c6213) with Apple clang version 16.0.0 (clang-1600.0.26.4) for arm64-apple-darwin24.1.0
+0.00.009.352 I llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+0.00.016.508 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q4_k.gguf (version GGUF V3 (latest))
+0.00.016.515 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.016.516 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.016.517 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.016.517 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.016.517 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.016.518 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.016.519 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.016.519 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.016.519 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.016.520 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.016.520 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.016.521 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.016.521 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.016.523 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.016.523 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.016.523 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.020.476 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.021.480 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.025.355 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.025.357 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.025.357 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.025.358 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.025.358 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.025.359 I llama_model_loader: - kv  22:                          general.file_type u32              = 15
+0.00.025.359 I llama_model_loader: - type  f32:  194 tensors
+0.00.025.360 I llama_model_loader: - type q4_K:   61 tensors
+0.00.025.360 I llama_model_loader: - type q5_K:   24 tensors
+0.00.025.360 I llama_model_loader: - type q6_K:   13 tensors
+0.00.025.361 I print_info: file format = GGUF V3 (latest)
+0.00.025.363 I print_info: file type   = Q4_K - Medium
+0.00.025.365 I print_info: file size   = 871.81 MiB (5.17 BPW) 
+0.00.033.369 I load: special tokens cache size = 25
+0.00.039.571 I load: token to piece cache size = 0.2984 MB
+0.00.039.577 I print_info: arch             = gptneox
+0.00.039.577 I print_info: vocab_only       = 0
+0.00.039.577 I print_info: n_ctx_train      = 2048
+0.00.039.577 I print_info: n_embd           = 2048
+0.00.039.578 I print_info: n_layer          = 24
+0.00.039.582 I print_info: n_head           = 16
+0.00.039.583 I print_info: n_head_kv        = 16
+0.00.039.583 I print_info: n_rot            = 32
+0.00.039.583 I print_info: n_swa            = 0
+0.00.039.583 I print_info: n_embd_head_k    = 128
+0.00.039.583 I print_info: n_embd_head_v    = 128
+0.00.039.584 I print_info: n_gqa            = 1
+0.00.039.585 I print_info: n_embd_k_gqa     = 2048
+0.00.039.586 I print_info: n_embd_v_gqa     = 2048
+0.00.039.586 I print_info: f_norm_eps       = 1.0e-05
+0.00.039.586 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.039.587 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.039.587 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.039.587 I print_info: f_logit_scale    = 0.0e+00
+0.00.039.587 I print_info: n_ff             = 8192
+0.00.039.588 I print_info: n_expert         = 0
+0.00.039.588 I print_info: n_expert_used    = 0
+0.00.039.588 I print_info: causal attn      = 1
+0.00.039.588 I print_info: pooling type     = 0
+0.00.039.588 I print_info: rope type        = 2
+0.00.039.588 I print_info: rope scaling     = linear
+0.00.039.589 I print_info: freq_base_train  = 10000.0
+0.00.039.589 I print_info: freq_scale_train = 1
+0.00.039.589 I print_info: n_ctx_orig_yarn  = 2048
+0.00.039.589 I print_info: rope_finetuned   = unknown
+0.00.039.589 I print_info: ssm_d_conv       = 0
+0.00.039.590 I print_info: ssm_d_inner      = 0
+0.00.039.590 I print_info: ssm_d_state      = 0
+0.00.039.590 I print_info: ssm_dt_rank      = 0
+0.00.039.590 I print_info: ssm_dt_b_c_rms   = 0
+0.00.039.590 I print_info: model type       = 1.4B
+0.00.039.590 I print_info: model params     = 1.41 B
+0.00.039.590 I print_info: general.name     = 1.4B
+0.00.039.591 I print_info: vocab type       = BPE
+0.00.039.591 I print_info: n_vocab          = 50304
+0.00.039.591 I print_info: n_merges         = 50009
+0.00.039.591 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.039.591 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.039.592 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.039.592 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.039.592 I print_info: LF token         = 187 'Ċ'
+0.00.039.592 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.039.592 I print_info: max token length = 1024
+0.00.039.593 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.528.690 I load_tensors: offloading 24 repeating layers to GPU
+0.00.528.706 I load_tensors: offloading output layer to GPU
+0.00.528.707 I load_tensors: offloaded 25/25 layers to GPU
+0.00.528.742 I load_tensors: Metal_Mapped model buffer size =   871.83 MiB
+0.00.528.743 I load_tensors:   CPU_Mapped model buffer size =    55.27 MiB
+..............................................................................
+0.00.530.116 I llama_init_from_model: n_seq_max     = 1
+0.00.530.120 I llama_init_from_model: n_ctx         = 128
+0.00.530.121 I llama_init_from_model: n_ctx_per_seq = 128
+0.00.530.121 I llama_init_from_model: n_batch       = 128
+0.00.530.122 I llama_init_from_model: n_ubatch      = 128
+0.00.530.122 I llama_init_from_model: flash_attn    = 0
+0.00.530.125 I llama_init_from_model: freq_base     = 10000.0
+0.00.530.125 I llama_init_from_model: freq_scale    = 1
+0.00.530.126 W llama_init_from_model: n_ctx_per_seq (128) < n_ctx_train (2048) -- the full capacity of the model will not be utilized
+0.00.530.128 I ggml_metal_init: allocating
+0.00.530.212 I ggml_metal_init: found device: Apple M4
+0.00.530.232 I ggml_metal_init: picking default device: Apple M4
+0.00.532.168 I ggml_metal_init: using embedded metal library
+0.00.537.857 I ggml_metal_init: GPU name:   Apple M4
+0.00.537.882 I ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+0.00.537.883 I ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+0.00.537.884 I ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+0.00.537.884 I ggml_metal_init: simdgroup reduction   = true
+0.00.537.885 I ggml_metal_init: simdgroup matrix mul. = true
+0.00.537.885 I ggml_metal_init: has residency sets    = true
+0.00.537.886 I ggml_metal_init: has bfloat            = true
+0.00.537.886 I ggml_metal_init: use bfloat            = true
+0.00.537.891 I ggml_metal_init: hasUnifiedMemory      = true
+0.00.537.896 I ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+0.00.557.932 I llama_kv_cache_init: kv_size = 128, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 24, can_shift = 1
+0.00.561.430 I llama_kv_cache_init:      Metal KV buffer size =    24.00 MiB
+0.00.561.437 I llama_init_from_model: KV self size  =   24.00 MiB, K (f16):   12.00 MiB, V (f16):   12.00 MiB
+0.00.561.496 I llama_init_from_model:        CPU  output buffer size =     0.19 MiB
+0.00.564.722 I llama_init_from_model:      Metal compute buffer size =    25.56 MiB
+0.00.564.724 I llama_init_from_model:        CPU compute buffer size =     1.06 MiB
+0.00.564.725 I llama_init_from_model: graph nodes  = 967
+0.00.564.725 I llama_init_from_model: graph splits = 2
+0.00.564.729 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 128
+0.00.564.729 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.591.664 I 
+0.00.591.710 I system_info: n_threads = 4 (n_threads_batch = 4) / 10 | Metal : EMBED_LIBRARY = 1 | BF16 = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | AARCH64_REPACK = 1 | 
+0.00.591.715 I perplexity: tokenizing the input ..
+0.00.598.830 I perplexity: tokenization took 7.111 ms
+0.00.598.836 I perplexity: calculating perplexity over 1 chunks, n_ctx=128, batch_size=128, n_seq=1
+0.00.740.946 I perplexity: 0.14 seconds per pass - ETA 0.00 minutes
+[1]10.1031,
+0.00.742.311 I Final estimate: PPL = 10.1031 +/- 3.22057
+
+0.00.742.342 I llama_perf_context_print:        load time =     582.30 ms
+0.00.742.344 I llama_perf_context_print: prompt eval time =     141.15 ms /   128 tokens (    1.10 ms per token,   906.84 tokens per second)
+0.00.742.344 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.00.742.345 I llama_perf_context_print:       total time =     150.68 ms /   129 tokens
+0.00.742.727 I ggml_metal_free: deallocating
+
+real	0m0.757s
+user	0m0.081s
+sys	0m0.127s
+```
+- q5_k:
+```
++ ./bin/llama-cli -no-cnv --model ../models-mnt/pythia/1.4B/ggml-model-q5_k.gguf -ngl 99 -c 0 -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+0.00.000.045 I build: 4743 (d07c6213) with Apple clang version 16.0.0 (clang-1600.0.26.4) for arm64-apple-darwin24.1.0
+0.00.000.081 I main: llama backend init
+0.00.000.083 I main: load the model and apply lora adapter, if any
+0.00.011.231 I llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+0.00.019.029 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q5_k.gguf (version GGUF V3 (latest))
+0.00.019.040 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.019.041 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.019.042 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.019.042 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.019.043 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.019.043 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.019.044 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.019.044 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.019.045 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.019.045 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.019.045 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.019.046 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.019.046 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.019.047 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.019.048 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.019.048 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.022.899 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.023.896 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.027.686 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.027.687 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.027.688 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.027.688 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.027.688 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.027.689 I llama_model_loader: - kv  22:                          general.file_type u32              = 17
+0.00.027.689 I llama_model_loader: - type  f32:  194 tensors
+0.00.027.689 I llama_model_loader: - type q5_K:   61 tensors
+0.00.027.690 I llama_model_loader: - type q6_K:   37 tensors
+0.00.027.690 I print_info: file format = GGUF V3 (latest)
+0.00.027.691 I print_info: file type   = Q5_K - Medium
+0.00.027.692 I print_info: file size   = 1006.35 MiB (5.97 BPW) 
+0.00.035.888 I load: special tokens cache size = 25
+0.00.041.958 I load: token to piece cache size = 0.2984 MB
+0.00.041.960 I print_info: arch             = gptneox
+0.00.041.961 I print_info: vocab_only       = 0
+0.00.041.961 I print_info: n_ctx_train      = 2048
+0.00.041.961 I print_info: n_embd           = 2048
+0.00.041.961 I print_info: n_layer          = 24
+0.00.041.963 I print_info: n_head           = 16
+0.00.041.964 I print_info: n_head_kv        = 16
+0.00.041.964 I print_info: n_rot            = 32
+0.00.041.964 I print_info: n_swa            = 0
+0.00.041.964 I print_info: n_embd_head_k    = 128
+0.00.041.965 I print_info: n_embd_head_v    = 128
+0.00.041.965 I print_info: n_gqa            = 1
+0.00.041.966 I print_info: n_embd_k_gqa     = 2048
+0.00.041.967 I print_info: n_embd_v_gqa     = 2048
+0.00.041.967 I print_info: f_norm_eps       = 1.0e-05
+0.00.041.968 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.041.970 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.041.970 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.041.970 I print_info: f_logit_scale    = 0.0e+00
+0.00.041.971 I print_info: n_ff             = 8192
+0.00.041.971 I print_info: n_expert         = 0
+0.00.041.971 I print_info: n_expert_used    = 0
+0.00.041.971 I print_info: causal attn      = 1
+0.00.041.972 I print_info: pooling type     = 0
+0.00.041.972 I print_info: rope type        = 2
+0.00.041.972 I print_info: rope scaling     = linear
+0.00.041.972 I print_info: freq_base_train  = 10000.0
+0.00.041.973 I print_info: freq_scale_train = 1
+0.00.041.975 I print_info: n_ctx_orig_yarn  = 2048
+0.00.041.975 I print_info: rope_finetuned   = unknown
+0.00.041.975 I print_info: ssm_d_conv       = 0
+0.00.041.975 I print_info: ssm_d_inner      = 0
+0.00.041.975 I print_info: ssm_d_state      = 0
+0.00.041.975 I print_info: ssm_dt_rank      = 0
+0.00.041.976 I print_info: ssm_dt_b_c_rms   = 0
+0.00.041.976 I print_info: model type       = 1.4B
+0.00.041.976 I print_info: model params     = 1.41 B
+0.00.041.976 I print_info: general.name     = 1.4B
+0.00.041.977 I print_info: vocab type       = BPE
+0.00.041.977 I print_info: n_vocab          = 50304
+0.00.041.977 I print_info: n_merges         = 50009
+0.00.041.977 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.041.978 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.041.978 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.041.978 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.041.978 I print_info: LF token         = 187 'Ċ'
+0.00.041.979 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.041.979 I print_info: max token length = 1024
+0.00.041.982 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.604.503 I load_tensors: offloading 24 repeating layers to GPU
+0.00.604.520 I load_tensors: offloading output layer to GPU
+0.00.604.521 I load_tensors: offloaded 25/25 layers to GPU
+0.00.604.557 I load_tensors: Metal_Mapped model buffer size =  1006.36 MiB
+0.00.604.558 I load_tensors:   CPU_Mapped model buffer size =    67.55 MiB
+.................................................................................
+0.00.606.133 I llama_init_from_model: n_seq_max     = 1
+0.00.606.136 I llama_init_from_model: n_ctx         = 2048
+0.00.606.137 I llama_init_from_model: n_ctx_per_seq = 2048
+0.00.606.137 I llama_init_from_model: n_batch       = 2048
+0.00.606.138 I llama_init_from_model: n_ubatch      = 512
+0.00.606.138 I llama_init_from_model: flash_attn    = 0
+0.00.606.140 I llama_init_from_model: freq_base     = 10000.0
+0.00.606.141 I llama_init_from_model: freq_scale    = 1
+0.00.606.143 I ggml_metal_init: allocating
+0.00.606.216 I ggml_metal_init: found device: Apple M4
+0.00.606.230 I ggml_metal_init: picking default device: Apple M4
+0.00.608.156 I ggml_metal_init: using embedded metal library
+0.00.615.345 I ggml_metal_init: GPU name:   Apple M4
+0.00.615.349 I ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+0.00.615.350 I ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+0.00.615.351 I ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+0.00.615.351 I ggml_metal_init: simdgroup reduction   = true
+0.00.615.352 I ggml_metal_init: simdgroup matrix mul. = true
+0.00.615.352 I ggml_metal_init: has residency sets    = true
+0.00.615.352 I ggml_metal_init: has bfloat            = true
+0.00.615.353 I ggml_metal_init: use bfloat            = true
+0.00.615.354 I ggml_metal_init: hasUnifiedMemory      = true
+0.00.615.365 I ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+0.00.633.656 I llama_kv_cache_init: kv_size = 2048, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 24, can_shift = 1
+0.00.689.159 I llama_kv_cache_init:      Metal KV buffer size =   384.00 MiB
+0.00.689.166 I llama_init_from_model: KV self size  =  384.00 MiB, K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.689.202 I llama_init_from_model:        CPU  output buffer size =     0.19 MiB
+0.00.693.476 I llama_init_from_model:      Metal compute buffer size =   102.25 MiB
+0.00.693.478 I llama_init_from_model:        CPU compute buffer size =     8.01 MiB
+0.00.693.478 I llama_init_from_model: graph nodes  = 967
+0.00.693.478 I llama_init_from_model: graph splits = 2
+0.00.693.484 I common_init_from_params: added <|endoftext|> logit bias = -inf
+0.00.693.601 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.693.602 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.759.988 I main: llama threadpool init, n_threads = 4
+0.00.760.042 I 
+0.00.760.062 I system_info: n_threads = 4 (n_threads_batch = 4) / 10 | Metal : EMBED_LIBRARY = 1 | BF16 = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | AARCH64_REPACK = 1 | 
+0.00.760.062 I 
+0.00.760.219 I sampler seed: 1234
+0.00.760.224 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 2048
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.00.760.271 I sampler chain: logits -> logit-bias -> penalties -> dry -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+0.00.760.272 I generate: n_ctx = 2048, n_batch = 2048, n_predict = 64, n_keep = 0
+0.00.760.273 I 
+I believe the meaning of life is to find love."
+
+"Then why did you say you don't have any?"
+
+"Because you're a girl. It's not the same thing."
+
+"So what is love?"
+
+"I don't know."
+
+"You don't know?"
+
+"I don't
+
+0.01.619.772 I llama_perf_sampler_print:    sampling time =       1.32 ms /    71 runs   (    0.02 ms per token, 53584.91 tokens per second)
+0.01.619.773 I llama_perf_context_print:        load time =     748.00 ms
+0.01.619.774 I llama_perf_context_print: prompt eval time =      61.13 ms /     7 tokens (    8.73 ms per token,   114.51 tokens per second)
+0.01.619.775 I llama_perf_context_print:        eval time =     795.43 ms /    63 runs   (   12.63 ms per token,    79.20 tokens per second)
+0.01.619.776 I llama_perf_context_print:       total time =     860.53 ms /    70 tokens
+0.01.620.065 I ggml_metal_free: deallocating
+
+real	0m1.638s
+user	0m0.111s
+sys	0m0.220s
++ ./bin/llama-perplexity --model ../models-mnt/pythia/1.4B/ggml-model-q5_k.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -ngl 99 -c 128 -b 128 --chunks 1
+0.00.000.104 I build: 4743 (d07c6213) with Apple clang version 16.0.0 (clang-1600.0.26.4) for arm64-apple-darwin24.1.0
+0.00.010.343 I llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+0.00.017.508 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q5_k.gguf (version GGUF V3 (latest))
+0.00.017.515 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.017.522 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.017.523 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.017.523 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.017.524 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.017.524 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.017.525 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.017.525 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.017.525 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.017.526 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.017.526 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.017.526 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.017.526 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.017.528 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.017.529 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.017.529 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.021.350 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.022.351 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.026.174 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.026.176 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.026.176 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.026.177 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.026.177 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.026.177 I llama_model_loader: - kv  22:                          general.file_type u32              = 17
+0.00.026.178 I llama_model_loader: - type  f32:  194 tensors
+0.00.026.178 I llama_model_loader: - type q5_K:   61 tensors
+0.00.026.179 I llama_model_loader: - type q6_K:   37 tensors
+0.00.026.179 I print_info: file format = GGUF V3 (latest)
+0.00.026.180 I print_info: file type   = Q5_K - Medium
+0.00.026.181 I print_info: file size   = 1006.35 MiB (5.97 BPW) 
+0.00.034.223 I load: special tokens cache size = 25
+0.00.040.362 I load: token to piece cache size = 0.2984 MB
+0.00.040.367 I print_info: arch             = gptneox
+0.00.040.367 I print_info: vocab_only       = 0
+0.00.040.367 I print_info: n_ctx_train      = 2048
+0.00.040.367 I print_info: n_embd           = 2048
+0.00.040.367 I print_info: n_layer          = 24
+0.00.040.372 I print_info: n_head           = 16
+0.00.040.373 I print_info: n_head_kv        = 16
+0.00.040.373 I print_info: n_rot            = 32
+0.00.040.373 I print_info: n_swa            = 0
+0.00.040.373 I print_info: n_embd_head_k    = 128
+0.00.040.374 I print_info: n_embd_head_v    = 128
+0.00.040.374 I print_info: n_gqa            = 1
+0.00.040.375 I print_info: n_embd_k_gqa     = 2048
+0.00.040.376 I print_info: n_embd_v_gqa     = 2048
+0.00.040.376 I print_info: f_norm_eps       = 1.0e-05
+0.00.040.377 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.040.377 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.040.377 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.040.377 I print_info: f_logit_scale    = 0.0e+00
+0.00.040.378 I print_info: n_ff             = 8192
+0.00.040.378 I print_info: n_expert         = 0
+0.00.040.378 I print_info: n_expert_used    = 0
+0.00.040.378 I print_info: causal attn      = 1
+0.00.040.378 I print_info: pooling type     = 0
+0.00.040.378 I print_info: rope type        = 2
+0.00.040.378 I print_info: rope scaling     = linear
+0.00.040.379 I print_info: freq_base_train  = 10000.0
+0.00.040.379 I print_info: freq_scale_train = 1
+0.00.040.379 I print_info: n_ctx_orig_yarn  = 2048
+0.00.040.379 I print_info: rope_finetuned   = unknown
+0.00.040.379 I print_info: ssm_d_conv       = 0
+0.00.040.380 I print_info: ssm_d_inner      = 0
+0.00.040.383 I print_info: ssm_d_state      = 0
+0.00.040.383 I print_info: ssm_dt_rank      = 0
+0.00.040.383 I print_info: ssm_dt_b_c_rms   = 0
+0.00.040.383 I print_info: model type       = 1.4B
+0.00.040.384 I print_info: model params     = 1.41 B
+0.00.040.384 I print_info: general.name     = 1.4B
+0.00.040.384 I print_info: vocab type       = BPE
+0.00.040.384 I print_info: n_vocab          = 50304
+0.00.040.385 I print_info: n_merges         = 50009
+0.00.040.385 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.040.385 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.040.385 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.040.385 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.040.386 I print_info: LF token         = 187 'Ċ'
+0.00.040.386 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.040.386 I print_info: max token length = 1024
+0.00.040.387 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.619.225 I load_tensors: offloading 24 repeating layers to GPU
+0.00.619.246 I load_tensors: offloading output layer to GPU
+0.00.619.246 I load_tensors: offloaded 25/25 layers to GPU
+0.00.619.282 I load_tensors: Metal_Mapped model buffer size =  1006.36 MiB
+0.00.619.283 I load_tensors:   CPU_Mapped model buffer size =    67.55 MiB
+.................................................................................
+0.00.620.712 I llama_init_from_model: n_seq_max     = 1
+0.00.620.717 I llama_init_from_model: n_ctx         = 128
+0.00.620.718 I llama_init_from_model: n_ctx_per_seq = 128
+0.00.620.719 I llama_init_from_model: n_batch       = 128
+0.00.620.719 I llama_init_from_model: n_ubatch      = 128
+0.00.620.720 I llama_init_from_model: flash_attn    = 0
+0.00.620.722 I llama_init_from_model: freq_base     = 10000.0
+0.00.620.722 I llama_init_from_model: freq_scale    = 1
+0.00.620.723 W llama_init_from_model: n_ctx_per_seq (128) < n_ctx_train (2048) -- the full capacity of the model will not be utilized
+0.00.620.726 I ggml_metal_init: allocating
+0.00.620.808 I ggml_metal_init: found device: Apple M4
+0.00.620.823 I ggml_metal_init: picking default device: Apple M4
+0.00.622.847 I ggml_metal_init: using embedded metal library
+0.00.629.484 I ggml_metal_init: GPU name:   Apple M4
+0.00.629.490 I ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+0.00.629.490 I ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+0.00.629.491 I ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+0.00.629.492 I ggml_metal_init: simdgroup reduction   = true
+0.00.629.492 I ggml_metal_init: simdgroup matrix mul. = true
+0.00.629.492 I ggml_metal_init: has residency sets    = true
+0.00.629.493 I ggml_metal_init: has bfloat            = true
+0.00.629.493 I ggml_metal_init: use bfloat            = true
+0.00.629.494 I ggml_metal_init: hasUnifiedMemory      = true
+0.00.629.498 I ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+0.00.646.690 I llama_kv_cache_init: kv_size = 128, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 24, can_shift = 1
+0.00.650.093 I llama_kv_cache_init:      Metal KV buffer size =    24.00 MiB
+0.00.650.097 I llama_init_from_model: KV self size  =   24.00 MiB, K (f16):   12.00 MiB, V (f16):   12.00 MiB
+0.00.650.137 I llama_init_from_model:        CPU  output buffer size =     0.19 MiB
+0.00.653.269 I llama_init_from_model:      Metal compute buffer size =    25.56 MiB
+0.00.653.271 I llama_init_from_model:        CPU compute buffer size =     1.06 MiB
+0.00.653.272 I llama_init_from_model: graph nodes  = 967
+0.00.653.272 I llama_init_from_model: graph splits = 2
+0.00.653.276 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 128
+0.00.653.278 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.685.451 I 
+0.00.685.493 I system_info: n_threads = 4 (n_threads_batch = 4) / 10 | Metal : EMBED_LIBRARY = 1 | BF16 = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | AARCH64_REPACK = 1 | 
+0.00.685.498 I perplexity: tokenizing the input ..
+0.00.692.355 I perplexity: tokenization took 6.852 ms
+0.00.692.363 I perplexity: calculating perplexity over 1 chunks, n_ctx=128, batch_size=128, n_seq=1
+0.00.830.192 I perplexity: 0.14 seconds per pass - ETA 0.00 minutes
+[1]10.2433,
+0.00.831.529 I Final estimate: PPL = 10.2433 +/- 3.24778
+
+0.00.831.553 I llama_perf_context_print:        load time =     675.10 ms
+0.00.831.554 I llama_perf_context_print: prompt eval time =     136.83 ms /   128 tokens (    1.07 ms per token,   935.49 tokens per second)
+0.00.831.555 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.00.831.555 I llama_perf_context_print:       total time =     146.10 ms /   129 tokens
+0.00.831.974 I ggml_metal_free: deallocating
+
+real	0m0.847s
+user	0m0.080s
+sys	0m0.158s
+```
+- q6_k:
+```
++ ./bin/llama-cli -no-cnv --model ../models-mnt/pythia/1.4B/ggml-model-q6_k.gguf -ngl 99 -c 0 -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+0.00.000.047 I build: 4743 (d07c6213) with Apple clang version 16.0.0 (clang-1600.0.26.4) for arm64-apple-darwin24.1.0
+0.00.000.083 I main: llama backend init
+0.00.000.085 I main: load the model and apply lora adapter, if any
+0.00.008.831 I llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+0.00.017.450 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q6_k.gguf (version GGUF V3 (latest))
+0.00.017.454 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.017.456 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.017.456 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.017.457 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.017.457 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.017.457 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.017.458 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.017.458 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.017.459 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.017.459 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.017.462 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.017.462 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.017.463 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.017.464 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.017.465 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.017.465 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.021.344 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.022.341 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.026.181 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.026.182 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.026.182 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.026.182 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.026.183 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.026.183 I llama_model_loader: - kv  22:                          general.file_type u32              = 18
+0.00.026.183 I llama_model_loader: - type  f32:  194 tensors
+0.00.026.184 I llama_model_loader: - type q6_K:   98 tensors
+0.00.026.184 I print_info: file format = GGUF V3 (latest)
+0.00.026.185 I print_info: file type   = Q6_K
+0.00.026.185 I print_info: file size   = 1.08 GiB (6.57 BPW) 
+0.00.034.403 I load: special tokens cache size = 25
+0.00.040.170 I load: token to piece cache size = 0.2984 MB
+0.00.040.172 I print_info: arch             = gptneox
+0.00.040.173 I print_info: vocab_only       = 0
+0.00.040.173 I print_info: n_ctx_train      = 2048
+0.00.040.173 I print_info: n_embd           = 2048
+0.00.040.173 I print_info: n_layer          = 24
+0.00.040.176 I print_info: n_head           = 16
+0.00.040.177 I print_info: n_head_kv        = 16
+0.00.040.177 I print_info: n_rot            = 32
+0.00.040.177 I print_info: n_swa            = 0
+0.00.040.178 I print_info: n_embd_head_k    = 128
+0.00.040.178 I print_info: n_embd_head_v    = 128
+0.00.040.179 I print_info: n_gqa            = 1
+0.00.040.179 I print_info: n_embd_k_gqa     = 2048
+0.00.040.180 I print_info: n_embd_v_gqa     = 2048
+0.00.040.181 I print_info: f_norm_eps       = 1.0e-05
+0.00.040.181 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.040.181 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.040.181 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.040.181 I print_info: f_logit_scale    = 0.0e+00
+0.00.040.184 I print_info: n_ff             = 8192
+0.00.040.184 I print_info: n_expert         = 0
+0.00.040.184 I print_info: n_expert_used    = 0
+0.00.040.184 I print_info: causal attn      = 1
+0.00.040.185 I print_info: pooling type     = 0
+0.00.040.186 I print_info: rope type        = 2
+0.00.040.186 I print_info: rope scaling     = linear
+0.00.040.187 I print_info: freq_base_train  = 10000.0
+0.00.040.187 I print_info: freq_scale_train = 1
+0.00.040.188 I print_info: n_ctx_orig_yarn  = 2048
+0.00.040.189 I print_info: rope_finetuned   = unknown
+0.00.040.189 I print_info: ssm_d_conv       = 0
+0.00.040.189 I print_info: ssm_d_inner      = 0
+0.00.040.189 I print_info: ssm_d_state      = 0
+0.00.040.189 I print_info: ssm_dt_rank      = 0
+0.00.040.189 I print_info: ssm_dt_b_c_rms   = 0
+0.00.040.190 I print_info: model type       = 1.4B
+0.00.040.190 I print_info: model params     = 1.41 B
+0.00.040.190 I print_info: general.name     = 1.4B
+0.00.040.191 I print_info: vocab type       = BPE
+0.00.040.191 I print_info: n_vocab          = 50304
+0.00.040.191 I print_info: n_merges         = 50009
+0.00.040.191 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.040.191 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.040.192 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.040.192 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.040.193 I print_info: LF token         = 187 'Ċ'
+0.00.040.194 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.040.194 I print_info: max token length = 1024
+0.00.040.194 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.648.031 I load_tensors: offloading 24 repeating layers to GPU
+0.00.648.034 I load_tensors: offloading output layer to GPU
+0.00.648.035 I load_tensors: offloaded 25/25 layers to GPU
+0.00.648.059 I load_tensors: Metal_Mapped model buffer size =  1108.66 MiB
+0.00.648.061 I load_tensors:   CPU_Mapped model buffer size =    80.60 MiB
+...............................................................................
+0.00.649.558 I llama_init_from_model: n_seq_max     = 1
+0.00.649.560 I llama_init_from_model: n_ctx         = 2048
+0.00.649.561 I llama_init_from_model: n_ctx_per_seq = 2048
+0.00.649.561 I llama_init_from_model: n_batch       = 2048
+0.00.649.562 I llama_init_from_model: n_ubatch      = 512
+0.00.649.562 I llama_init_from_model: flash_attn    = 0
+0.00.649.563 I llama_init_from_model: freq_base     = 10000.0
+0.00.649.564 I llama_init_from_model: freq_scale    = 1
+0.00.649.565 I ggml_metal_init: allocating
+0.00.649.595 I ggml_metal_init: found device: Apple M4
+0.00.649.606 I ggml_metal_init: picking default device: Apple M4
+0.00.651.194 I ggml_metal_init: using embedded metal library
+0.00.657.223 I ggml_metal_init: GPU name:   Apple M4
+0.00.657.226 I ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+0.00.657.227 I ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+0.00.657.227 I ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+0.00.657.228 I ggml_metal_init: simdgroup reduction   = true
+0.00.657.228 I ggml_metal_init: simdgroup matrix mul. = true
+0.00.657.228 I ggml_metal_init: has residency sets    = true
+0.00.657.229 I ggml_metal_init: has bfloat            = true
+0.00.657.229 I ggml_metal_init: use bfloat            = true
+0.00.657.229 I ggml_metal_init: hasUnifiedMemory      = true
+0.00.657.231 I ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+0.00.673.726 I llama_kv_cache_init: kv_size = 2048, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 24, can_shift = 1
+0.00.726.305 I llama_kv_cache_init:      Metal KV buffer size =   384.00 MiB
+0.00.726.312 I llama_init_from_model: KV self size  =  384.00 MiB, K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.726.345 I llama_init_from_model:        CPU  output buffer size =     0.19 MiB
+0.00.730.732 I llama_init_from_model:      Metal compute buffer size =   102.25 MiB
+0.00.730.734 I llama_init_from_model:        CPU compute buffer size =     8.01 MiB
+0.00.730.734 I llama_init_from_model: graph nodes  = 967
+0.00.730.734 I llama_init_from_model: graph splits = 2
+0.00.730.739 I common_init_from_params: added <|endoftext|> logit bias = -inf
+0.00.730.873 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.730.874 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.796.961 I main: llama threadpool init, n_threads = 4
+0.00.797.008 I 
+0.00.797.022 I system_info: n_threads = 4 (n_threads_batch = 4) / 10 | Metal : EMBED_LIBRARY = 1 | BF16 = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | AARCH64_REPACK = 1 | 
+0.00.797.024 I 
+0.00.797.196 I sampler seed: 1234
+0.00.797.200 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 2048
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.00.797.243 I sampler chain: logits -> logit-bias -> penalties -> dry -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+0.00.797.247 I generate: n_ctx = 2048, n_batch = 2048, n_predict = 64, n_keep = 0
+0.00.797.247 I 
+I believe the meaning of life is to become as big as possible, but I also believe that life is short and we should enjoy it as we have it.
+
+“I believe in life and death, and I think we should use every minute that we have to live our lives to the fullest.”
+
+He added: “I’ve
+
+0.01.686.498 I llama_perf_sampler_print:    sampling time =       1.37 ms /    71 runs   (    0.02 ms per token, 51824.82 tokens per second)
+0.01.686.499 I llama_perf_context_print:        load time =     787.39 ms
+0.01.686.500 I llama_perf_context_print: prompt eval time =      57.87 ms /     7 tokens (    8.27 ms per token,   120.97 tokens per second)
+0.01.686.500 I llama_perf_context_print:        eval time =     828.46 ms /    63 runs   (   13.15 ms per token,    76.04 tokens per second)
+0.01.686.500 I llama_perf_context_print:       total time =     890.27 ms /    70 tokens
+0.01.686.799 I ggml_metal_free: deallocating
+
+real	0m1.703s
+user	0m0.108s
+sys	0m0.221s
++ ./bin/llama-perplexity --model ../models-mnt/pythia/1.4B/ggml-model-q6_k.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -ngl 99 -c 128 -b 128 --chunks 1
+0.00.000.105 I build: 4743 (d07c6213) with Apple clang version 16.0.0 (clang-1600.0.26.4) for arm64-apple-darwin24.1.0
+0.00.009.463 I llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+0.00.016.516 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q6_k.gguf (version GGUF V3 (latest))
+0.00.016.522 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.016.524 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.016.525 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.016.525 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.016.525 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.016.526 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.016.527 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.016.527 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.016.527 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.016.529 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.016.530 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.016.530 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.016.531 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.016.533 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.016.533 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.016.533 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.020.402 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.021.475 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.025.298 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.025.299 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.025.299 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.025.300 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.025.300 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.025.300 I llama_model_loader: - kv  22:                          general.file_type u32              = 18
+0.00.025.301 I llama_model_loader: - type  f32:  194 tensors
+0.00.025.302 I llama_model_loader: - type q6_K:   98 tensors
+0.00.025.302 I print_info: file format = GGUF V3 (latest)
+0.00.025.303 I print_info: file type   = Q6_K
+0.00.025.304 I print_info: file size   = 1.08 GiB (6.57 BPW) 
+0.00.033.400 I load: special tokens cache size = 25
+0.00.039.353 I load: token to piece cache size = 0.2984 MB
+0.00.039.357 I print_info: arch             = gptneox
+0.00.039.358 I print_info: vocab_only       = 0
+0.00.039.358 I print_info: n_ctx_train      = 2048
+0.00.039.358 I print_info: n_embd           = 2048
+0.00.039.358 I print_info: n_layer          = 24
+0.00.039.363 I print_info: n_head           = 16
+0.00.039.364 I print_info: n_head_kv        = 16
+0.00.039.366 I print_info: n_rot            = 32
+0.00.039.366 I print_info: n_swa            = 0
+0.00.039.366 I print_info: n_embd_head_k    = 128
+0.00.039.368 I print_info: n_embd_head_v    = 128
+0.00.039.369 I print_info: n_gqa            = 1
+0.00.039.370 I print_info: n_embd_k_gqa     = 2048
+0.00.039.370 I print_info: n_embd_v_gqa     = 2048
+0.00.039.371 I print_info: f_norm_eps       = 1.0e-05
+0.00.039.371 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.039.371 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.039.371 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.039.372 I print_info: f_logit_scale    = 0.0e+00
+0.00.039.373 I print_info: n_ff             = 8192
+0.00.039.373 I print_info: n_expert         = 0
+0.00.039.373 I print_info: n_expert_used    = 0
+0.00.039.374 I print_info: causal attn      = 1
+0.00.039.374 I print_info: pooling type     = 0
+0.00.039.374 I print_info: rope type        = 2
+0.00.039.374 I print_info: rope scaling     = linear
+0.00.039.374 I print_info: freq_base_train  = 10000.0
+0.00.039.381 I print_info: freq_scale_train = 1
+0.00.039.383 I print_info: n_ctx_orig_yarn  = 2048
+0.00.039.384 I print_info: rope_finetuned   = unknown
+0.00.039.384 I print_info: ssm_d_conv       = 0
+0.00.039.384 I print_info: ssm_d_inner      = 0
+0.00.039.384 I print_info: ssm_d_state      = 0
+0.00.039.384 I print_info: ssm_dt_rank      = 0
+0.00.039.384 I print_info: ssm_dt_b_c_rms   = 0
+0.00.039.385 I print_info: model type       = 1.4B
+0.00.039.385 I print_info: model params     = 1.41 B
+0.00.039.386 I print_info: general.name     = 1.4B
+0.00.039.386 I print_info: vocab type       = BPE
+0.00.039.386 I print_info: n_vocab          = 50304
+0.00.039.387 I print_info: n_merges         = 50009
+0.00.039.387 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.039.387 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.039.387 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.039.387 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.039.388 I print_info: LF token         = 187 'Ċ'
+0.00.039.388 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.039.388 I print_info: max token length = 1024
+0.00.039.388 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.625.361 I load_tensors: offloading 24 repeating layers to GPU
+0.00.625.378 I load_tensors: offloading output layer to GPU
+0.00.625.379 I load_tensors: offloaded 25/25 layers to GPU
+0.00.625.414 I load_tensors: Metal_Mapped model buffer size =  1108.66 MiB
+0.00.625.415 I load_tensors:   CPU_Mapped model buffer size =    80.60 MiB
+...............................................................................
+0.00.626.904 I llama_init_from_model: n_seq_max     = 1
+0.00.626.908 I llama_init_from_model: n_ctx         = 128
+0.00.626.909 I llama_init_from_model: n_ctx_per_seq = 128
+0.00.626.909 I llama_init_from_model: n_batch       = 128
+0.00.626.910 I llama_init_from_model: n_ubatch      = 128
+0.00.626.910 I llama_init_from_model: flash_attn    = 0
+0.00.626.912 I llama_init_from_model: freq_base     = 10000.0
+0.00.626.913 I llama_init_from_model: freq_scale    = 1
+0.00.626.913 W llama_init_from_model: n_ctx_per_seq (128) < n_ctx_train (2048) -- the full capacity of the model will not be utilized
+0.00.626.916 I ggml_metal_init: allocating
+0.00.627.001 I ggml_metal_init: found device: Apple M4
+0.00.627.017 I ggml_metal_init: picking default device: Apple M4
+0.00.628.937 I ggml_metal_init: using embedded metal library
+0.00.636.003 I ggml_metal_init: GPU name:   Apple M4
+0.00.636.014 I ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+0.00.636.015 I ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+0.00.636.016 I ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+0.00.636.017 I ggml_metal_init: simdgroup reduction   = true
+0.00.636.017 I ggml_metal_init: simdgroup matrix mul. = true
+0.00.636.017 I ggml_metal_init: has residency sets    = true
+0.00.636.018 I ggml_metal_init: has bfloat            = true
+0.00.636.018 I ggml_metal_init: use bfloat            = true
+0.00.636.019 I ggml_metal_init: hasUnifiedMemory      = true
+0.00.636.027 I ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+0.00.654.036 I llama_kv_cache_init: kv_size = 128, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 24, can_shift = 1
+0.00.657.819 I llama_kv_cache_init:      Metal KV buffer size =    24.00 MiB
+0.00.657.823 I llama_init_from_model: KV self size  =   24.00 MiB, K (f16):   12.00 MiB, V (f16):   12.00 MiB
+0.00.657.869 I llama_init_from_model:        CPU  output buffer size =     0.19 MiB
+0.00.661.141 I llama_init_from_model:      Metal compute buffer size =    25.56 MiB
+0.00.661.143 I llama_init_from_model:        CPU compute buffer size =     1.06 MiB
+0.00.661.143 I llama_init_from_model: graph nodes  = 967
+0.00.661.144 I llama_init_from_model: graph splits = 2
+0.00.661.147 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 128
+0.00.661.147 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.692.508 I 
+0.00.692.552 I system_info: n_threads = 4 (n_threads_batch = 4) / 10 | Metal : EMBED_LIBRARY = 1 | BF16 = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | AARCH64_REPACK = 1 | 
+0.00.692.559 I perplexity: tokenizing the input ..
+0.00.698.896 I perplexity: tokenization took 6.333 ms
+0.00.698.905 I perplexity: calculating perplexity over 1 chunks, n_ctx=128, batch_size=128, n_seq=1
+0.00.830.567 I perplexity: 0.13 seconds per pass - ETA 0.00 minutes
+[1]10.3179,
+0.00.831.891 I Final estimate: PPL = 10.3179 +/- 3.28637
+
+0.00.831.912 I llama_perf_context_print:        load time =     683.03 ms
+0.00.831.913 I llama_perf_context_print: prompt eval time =     130.66 ms /   128 tokens (    1.02 ms per token,   979.63 tokens per second)
+0.00.831.913 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.00.831.914 I llama_perf_context_print:       total time =     139.41 ms /   129 tokens
+0.00.832.308 I ggml_metal_free: deallocating
+
+real	0m0.847s
+user	0m0.080s
+sys	0m0.159s
+```
+- save-load-state: 
+```
++ ./bin/llama-save-load-state --model ../models-mnt/pythia/1.4B/ggml-model-q4_0.gguf -ngl 99 -c 0
+main: build = 4743 (d07c6213)
+main: built with Apple clang version 16.0.0 (clang-1600.0.26.4) for arm64-apple-darwin24.1.0
+llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q4_0.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = 1.4B
+llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+llama_model_loader: - kv  22:                          general.file_type u32              = 2
+llama_model_loader: - type  f32:  194 tensors
+llama_model_loader: - type q4_0:   97 tensors
+llama_model_loader: - type q6_K:    1 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q4_0
+print_info: file size   = 786.31 MiB (4.66 BPW) 
+init_tokenizer: initializing tokenizer for type 2
+load: control token:      1 '<|padding|>' is not marked as EOG
+load: special tokens cache size = 25
+load: token to piece cache size = 0.2984 MB
+print_info: arch             = gptneox
+print_info: vocab_only       = 0
+print_info: n_ctx_train      = 2048
+print_info: n_embd           = 2048
+print_info: n_layer          = 24
+print_info: n_head           = 16
+print_info: n_head_kv        = 16
+print_info: n_rot            = 32
+print_info: n_swa            = 0
+print_info: n_embd_head_k    = 128
+print_info: n_embd_head_v    = 128
+print_info: n_gqa            = 1
+print_info: n_embd_k_gqa     = 2048
+print_info: n_embd_v_gqa     = 2048
+print_info: f_norm_eps       = 1.0e-05
+print_info: f_norm_rms_eps   = 0.0e+00
+print_info: f_clamp_kqv      = 0.0e+00
+print_info: f_max_alibi_bias = 0.0e+00
+print_info: f_logit_scale    = 0.0e+00
+print_info: n_ff             = 8192
+print_info: n_expert         = 0
+print_info: n_expert_used    = 0
+print_info: causal attn      = 1
+print_info: pooling type     = 0
+print_info: rope type        = 2
+print_info: rope scaling     = linear
+print_info: freq_base_train  = 10000.0
+print_info: freq_scale_train = 1
+print_info: n_ctx_orig_yarn  = 2048
+print_info: rope_finetuned   = unknown
+print_info: ssm_d_conv       = 0
+print_info: ssm_d_inner      = 0
+print_info: ssm_d_state      = 0
+print_info: ssm_dt_rank      = 0
+print_info: ssm_dt_b_c_rms   = 0
+print_info: model type       = 1.4B
+print_info: model params     = 1.41 B
+print_info: general.name     = 1.4B
+print_info: vocab type       = BPE
+print_info: n_vocab          = 50304
+print_info: n_merges         = 50009
+print_info: BOS token        = 0 '<|endoftext|>'
+print_info: EOS token        = 0 '<|endoftext|>'
+print_info: EOT token        = 0 '<|endoftext|>'
+print_info: UNK token        = 0 '<|endoftext|>'
+print_info: LF token         = 187 'Ċ'
+print_info: EOG token        = 0 '<|endoftext|>'
+print_info: max token length = 1024
+load_tensors: loading model tensors, this can take a while... (mmap = true)
+load_tensors: layer   0 assigned to device Metal
+load_tensors: layer   1 assigned to device Metal
+load_tensors: layer   2 assigned to device Metal
+load_tensors: layer   3 assigned to device Metal
+load_tensors: layer   4 assigned to device Metal
+load_tensors: layer   5 assigned to device Metal
+load_tensors: layer   6 assigned to device Metal
+load_tensors: layer   7 assigned to device Metal
+load_tensors: layer   8 assigned to device Metal
+load_tensors: layer   9 assigned to device Metal
+load_tensors: layer  10 assigned to device Metal
+load_tensors: layer  11 assigned to device Metal
+load_tensors: layer  12 assigned to device Metal
+load_tensors: layer  13 assigned to device Metal
+load_tensors: layer  14 assigned to device Metal
+load_tensors: layer  15 assigned to device Metal
+load_tensors: layer  16 assigned to device Metal
+load_tensors: layer  17 assigned to device Metal
+load_tensors: layer  18 assigned to device Metal
+load_tensors: layer  19 assigned to device Metal
+load_tensors: layer  20 assigned to device Metal
+load_tensors: layer  21 assigned to device Metal
+load_tensors: layer  22 assigned to device Metal
+load_tensors: layer  23 assigned to device Metal
+load_tensors: layer  24 assigned to device Metal
+load_tensors: tensor 'token_embd.weight' (q4_0) (and 0 others) cannot be used with preferred buffer type CPU_AARCH64, using CPU instead
+ggml_backend_metal_log_allocated_size: allocated buffer, size =   786.34 MiB, (  786.42 / 10922.67)
+load_tensors: offloading 24 repeating layers to GPU
+load_tensors: offloading output layer to GPU
+load_tensors: offloaded 25/25 layers to GPU
+load_tensors: Metal_Mapped model buffer size =   786.33 MiB
+load_tensors:   CPU_Mapped model buffer size =    55.27 MiB
+............................................................................
+llama_init_from_model: n_seq_max     = 1
+llama_init_from_model: n_ctx         = 2048
+llama_init_from_model: n_ctx_per_seq = 2048
+llama_init_from_model: n_batch       = 2048
+llama_init_from_model: n_ubatch      = 512
+llama_init_from_model: flash_attn    = 0
+llama_init_from_model: freq_base     = 10000.0
+llama_init_from_model: freq_scale    = 1
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M4
+ggml_metal_init: picking default device: Apple M4
+ggml_metal_init: using embedded metal library
+ggml_metal_init: GPU name:   Apple M4
+ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+ggml_metal_init: simdgroup reduction   = true
+ggml_metal_init: simdgroup matrix mul. = true
+ggml_metal_init: has residency sets    = true
+ggml_metal_init: has bfloat            = true
+ggml_metal_init: use bfloat            = true
+ggml_metal_init: hasUnifiedMemory      = true
+ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+ggml_metal_init: loaded kernel_add                                    0x132a083c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_add_row                                0x132a08880 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sub                                    0x132a08cf0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sub_row                                0x132a09160 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul                                    0x132a095d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_row                                0x132a09a40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_div                                    0x132a09eb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_div_row                                0x132a0a320 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_repeat_f32                             0x132a0a790 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_repeat_f16                             0x132a0ac00 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_repeat_i32                             0x132a0b070 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_repeat_i16                             0x132a0b710 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_scale                                  0x132a0c230 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_scale_4                                0x132a0c9e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_clamp                                  0x132a0d1f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_tanh                                   0x132a0d910 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_relu                                   0x132a0e030 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sigmoid                                0x132a0e750 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_gelu                                   0x132a0ee70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_gelu_4                                 0x132a0f640 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_gelu_quick                             0x132a0fd60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_gelu_quick_4                           0x132a10480 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_silu                                   0x132a10ba0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_silu_4                                 0x132a11440 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_elu                                    0x132a11b60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_soft_max_f16                           0x132a11e20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_soft_max_f16_4                         0x132a120e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_soft_max_f32                           0x132a12550 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_soft_max_f32_4                         0x132a12c70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_diag_mask_inf                          0x132a130e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_diag_mask_inf_8                        0x132a136a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_f32                           0x132a13bb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_f16                           0x132a14020 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_bf16                          0x132a142e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q4_0                          0x132a14750 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q4_1                          0x132a14bc0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q5_0                          0x132a15030 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q5_1                          0x132a154a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q8_0                          0x132a15910 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q2_K                          0x132a15d80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q3_K                          0x132a161f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q4_K                          0x132a16660 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q5_K                          0x132a16ad0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q6_K                          0x132a16f40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq2_xxs                       0x132a173b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq2_xs                        0x132a17820 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq3_xxs                       0x132a17c90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq3_s                         0x132a18100 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq2_s                         0x132a18890 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq1_s                         0x132a18d00 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq1_m                         0x132a19170 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq4_nl                        0x132a195e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq4_xs                        0x132a19a50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_i32                           0x132a19ec0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rms_norm                               0x132a1a330 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_group_norm                             0x132a1aa50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_norm                                   0x132a1aef0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_ssm_conv_f32                           0x132a1b1b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_ssm_scan_f32                           0x132a1b620 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f32_f32                         0x132a1bcf0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_bf16_f32                        0x132a1c0f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_bf16_f32_1row                   0x132a1c3b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_bf16_f32_l4                     0x132a1c8b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_bf16_bf16                       0x132a1cdb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f16_f32                         0x132a1d2b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f16_f32_1row                    0x132a1d7b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f16_f32_l4                      0x132a1dcb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f16_f16                         0x132a1e1b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q4_0_f32                        0x132a1e6b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q4_1_f32                        0x132a1ebb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q5_0_f32                        0x132a1f0b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q5_1_f32                        0x132a1f5b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q8_0_f32                        0x132a1fab0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_f16_f32_r1_2                0x132a1ffb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_f16_f32_r1_3                0x132a20560 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_f16_f32_r1_4                0x132a20b10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_f16_f32_r1_5                0x132a210c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_0_f32_r1_2               0x132a21670 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_0_f32_r1_3               0x132a21c20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_0_f32_r1_4               0x132a221d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_0_f32_r1_5               0x132a22780 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_1_f32_r1_2               0x132a22d30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_1_f32_r1_3               0x132a232e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_1_f32_r1_4               0x132a23890 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_1_f32_r1_5               0x132a23e40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_0_f32_r1_2               0x132a243f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_0_f32_r1_3               0x132a249a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_0_f32_r1_4               0x132a24f50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_0_f32_r1_5               0x132a25500 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_1_f32_r1_2               0x132a25ab0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_1_f32_r1_3               0x132a26060 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_1_f32_r1_4               0x132a26610 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_1_f32_r1_5               0x132a26bc0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q8_0_f32_r1_2               0x132a27170 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q8_0_f32_r1_3               0x132a27720 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q8_0_f32_r1_4               0x132a27cd0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q8_0_f32_r1_5               0x132a28280 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_K_f32_r1_2               0x132a183c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_K_f32_r1_3               0x132a289e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_K_f32_r1_4               0x132a28e50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_K_f32_r1_5               0x132a292c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_K_f32_r1_2               0x132a29870 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_K_f32_r1_3               0x132a29e20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_K_f32_r1_4               0x132a2a3d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_K_f32_r1_5               0x132a2a980 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q6_K_f32_r1_2               0x132a2af30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q6_K_f32_r1_3               0x132a2b4e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q6_K_f32_r1_4               0x132a2ba90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q6_K_f32_r1_5               0x132a2c040 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_iq4_nl_f32_r1_2             0x132a2c5f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_iq4_nl_f32_r1_3             0x132a2cba0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_iq4_nl_f32_r1_4             0x132a2d150 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_iq4_nl_f32_r1_5             0x132a2d700 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q2_K_f32                        0x132a2dcb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q3_K_f32                        0x132a2e1b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q4_K_f32                        0x132a2e6b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q5_K_f32                        0x132a2ebb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q6_K_f32                        0x132a2f0b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq2_xxs_f32                     0x132a2f5b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq2_xs_f32                      0x132a2fab0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq3_xxs_f32                     0x132a2ffb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq3_s_f32                       0x132a304b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq2_s_f32                       0x132a309b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq1_s_f32                       0x132a30eb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq1_m_f32                       0x132a313b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq4_nl_f32                      0x132a318b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq4_xs_f32                      0x132a31db0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_f32_f32                      0x132a322b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_f16_f32                      0x132a327b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_bf16_f32                     0x132a32cb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q4_0_f32                     0x132a331b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q4_1_f32                     0x132a336b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q5_0_f32                     0x132a33bb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q5_1_f32                     0x132a340b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q8_0_f32                     0x132a345b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q2_K_f32                     0x132a34ab0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q3_K_f32                     0x132a34fb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q4_K_f32                     0x132a354b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q5_K_f32                     0x132a359b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q6_K_f32                     0x132a35eb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq2_xxs_f32                  0x132a363b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq2_xs_f32                   0x132a368b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq3_xxs_f32                  0x132a36db0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq3_s_f32                    0x132a372b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq2_s_f32                    0x132a377b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq1_s_f32                    0x132a37cb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq1_m_f32                    0x132a381b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq4_nl_f32                   0x132a386b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq4_xs_f32                   0x132a38bb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_f32_f32                         0x132a390b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_f16_f32                         0x132a395b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_bf16_f32                        0x132a39ab0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q4_0_f32                        0x132a39fb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q4_1_f32                        0x132a3a4b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q5_0_f32                        0x132a3a9b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q5_1_f32                        0x132a3aeb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q8_0_f32                        0x132a3b3b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q2_K_f32                        0x132a3b8b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q3_K_f32                        0x132a3bdb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q4_K_f32                        0x132a3c2b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q5_K_f32                        0x132a3c7b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q6_K_f32                        0x132a3ccb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq2_xxs_f32                     0x132a3d1b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq2_xs_f32                      0x132a3d6b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq3_xxs_f32                     0x132a3dbb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq3_s_f32                       0x132a3e0b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq2_s_f32                       0x132a3e5b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq1_s_f32                       0x132a3eab0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq1_m_f32                       0x132a3efb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq4_nl_f32                      0x132a3f4b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq4_xs_f32                      0x132a3f9b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_f32_f32                      0x132a3feb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_f16_f32                      0x132a403b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_bf16_f32                     0x132a408b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q4_0_f32                     0x132a40db0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q4_1_f32                     0x132a412b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q5_0_f32                     0x132a417b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q5_1_f32                     0x132a41cb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q8_0_f32                     0x132a421b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q2_K_f32                     0x132a426b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q3_K_f32                     0x132a42bb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q4_K_f32                     0x132a430b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q5_K_f32                     0x132a435b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q6_K_f32                     0x132a43ab0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq2_xxs_f32                  0x132a43fb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq2_xs_f32                   0x132a444b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq3_xxs_f32                  0x132a449b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq3_s_f32                    0x132a44eb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq2_s_f32                    0x132a453b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq1_s_f32                    0x132a458b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq1_m_f32                    0x132a45db0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq4_nl_f32                   0x132a462b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq4_xs_f32                   0x132a467b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rope_norm_f32                          0x132a46cb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rope_norm_f16                          0x132a47260 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rope_neox_f32                          0x132a47810 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rope_neox_f16                          0x132a47dc0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_im2col_f16                             0x132a48370 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_im2col_f32                             0x132a48980 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_im2col_ext_f16                         0x132a48f90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_im2col_ext_f32                         0x132a495a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_conv_transpose_1d_f32_f32              0x132a49d90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_conv_transpose_1d_f16_f32              0x132a4a230 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_upscale_f32                            0x132a4a4f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_pad_f32                                0x132a4ab00 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_pad_reflect_1d_f32                     0x132a4b110 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_timestep_embedding_f32                 0x132a4b900 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_arange_f32                             0x132a4bda0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_argsort_f32_i32_asc                    0x132a4c240 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_argsort_f32_i32_desc                   0x132a4c6e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_leaky_relu_f32                         0x132a4ce90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h64                 0x132a4d3e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h80                 0x132a4d930 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h96                 0x132a4de80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h112                0x132a4e3d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h128                0x132a4e920 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h256                0x132a4ee70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h64                0x132a4f3c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h80                0x132a4f910 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h96                0x132a4fe60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h112               0x132a503b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h128               0x132a50900 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h256               0x132a50e50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h64                0x132a513a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h80                0x132a518f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h96                0x132a51e40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h112               0x132a52390 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h128               0x132a528e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h256               0x132a52e30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h64                0x132a53380 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h80                0x132a538d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h96                0x132a53e20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h112               0x132a54370 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h128               0x132a548c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h256               0x132a54e10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h64                0x132a55360 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h80                0x132a558b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h96                0x132a55e00 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h112               0x132a56350 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h128               0x132a568a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h256               0x132a56df0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h64                0x132a57340 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h80                0x132a57890 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h96                0x132a57de0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h112               0x132a58330 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h128               0x132a58880 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h256               0x132a58dd0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h64                0x132a59320 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h80                0x132a59870 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h96                0x132a59dc0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h112               0x132a5a310 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h128               0x132a5a860 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h256               0x132a5adb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_f16_h128            0x132a5b300 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_bf16_h128           0x132a5b850 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q4_0_h128           0x132a5bda0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q4_1_h128           0x132a5c2f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q5_0_h128           0x132a5c840 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q5_1_h128           0x132a5cd90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q8_0_h128           0x132a5d2e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_f16_h256            0x132a5d830 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_bf16_h256           0x132a5dd80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q4_0_h256           0x132a5e2d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q4_1_h256           0x132a5e820 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q5_0_h256           0x132a5ed70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q5_1_h256           0x132a5f2c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q8_0_h256           0x132a5f810 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_set_f32                                0x132a5fcb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_set_i32                                0x132a60150 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_f32                            0x132a605f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_f16                            0x132a60a90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_bf16                           0x132a60f30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f16_f32                            0x132a613d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f16_f16                            0x132a61870 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_bf16_f32                           0x132a61d10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_bf16_bf16                          0x132a621b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q8_0                           0x132a62650 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q4_0                           0x132a62af0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q4_1                           0x132a62f90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q5_0                           0x132a63430 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q5_1                           0x132a638d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_iq4_nl                         0x132a63d70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_concat                                 0x132a642c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sqr                                    0x132a649e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sqrt                                   0x132a65100 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sin                                    0x132a65820 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cos                                    0x132a65f40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sum_rows                               0x132a66200 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_argmax                                 0x132a669f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_pool_2d_avg_f32                        0x132a66cb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_pool_2d_max_f32                        0x132a672c0 | th_max = 1024 | th_width =   32
+llama_kv_cache_init: kv_size = 2048, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 24, can_shift = 1
+llama_kv_cache_init: layer 0: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 1: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 2: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 3: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 4: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 5: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 6: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 7: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 8: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 9: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 10: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 11: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 12: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 13: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 14: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 15: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 16: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 17: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 18: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 19: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 20: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 21: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 22: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 23: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init:      Metal KV buffer size =   384.00 MiB
+llama_init_from_model: KV self size  =  384.00 MiB, K (f16):  192.00 MiB, V (f16):  192.00 MiB
+llama_init_from_model:        CPU  output buffer size =     0.19 MiB
+llama_init_from_model:      Metal compute buffer size =   102.25 MiB
+llama_init_from_model:        CPU compute buffer size =     8.01 MiB
+llama_init_from_model: graph nodes  = 967
+llama_init_from_model: graph splits = 2
+0.00.732.011 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.732.015 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+main : serialized state into 988319 out of a maximum of 988319 bytes
+llama_init_from_model: n_seq_max     = 1
+llama_init_from_model: n_ctx         = 2048
+llama_init_from_model: n_ctx_per_seq = 2048
+llama_init_from_model: n_batch       = 2048
+llama_init_from_model: n_ubatch      = 512
+llama_init_from_model: flash_attn    = 0
+llama_init_from_model: freq_base     = 10000.0
+llama_init_from_model: freq_scale    = 1
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M4
+ggml_metal_init: picking default device: Apple M4
+ggml_metal_init: using embedded metal library
+ggml_metal_init: GPU name:   Apple M4
+ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+ggml_metal_init: simdgroup reduction   = true
+ggml_metal_init: simdgroup matrix mul. = true
+ggml_metal_init: has residency sets    = true
+ggml_metal_init: has bfloat            = true
+ggml_metal_init: use bfloat            = true
+ggml_metal_init: hasUnifiedMemory      = true
+ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+ggml_metal_init: loaded kernel_add                                    0x132a20820 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_add_row                                0x132a25d70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sub                                    0x132a20270 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sub_row                                0x132a27f90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul                                    0x132a257c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_row                                0x132a2ce60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_div                                    0x132a2c8b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_div_row                                0x132a2c300 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_repeat_f32                             0x132a279e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_repeat_f16                             0x132a22490 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_repeat_i32                             0x132a2a690 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_repeat_i16                             0x132a47520 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_scale                                  0x132a27430 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_scale_4                                0x132a21ee0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_clamp                                  0x132a25210 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_tanh                                   0x132a23b50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_relu                                   0x132a2a0e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sigmoid                                0x132a46f70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_gelu                                   0x132a2bd50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_gelu_4                                 0x132a26e80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_gelu_quick                             0x132a21930 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_gelu_quick_4                           0x132a24c60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_silu                                   0x132a235a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_silu_4                                 0x132a29b30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_elu                                    0x132a2b7a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_soft_max_f16                           0x132a268d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_soft_max_f16_4                         0x132a21380 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_soft_max_f32                           0x132a246b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_soft_max_f32_4                         0x132a29580 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_diag_mask_inf                          0x132a2b1f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_diag_mask_inf_8                        0x132a26320 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_f32                           0x132a24100 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_f16                           0x132a2ac40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_bf16                          0x132a66f70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q4_0                          0x132a48630 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q4_1                          0x132a49250 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q5_0                          0x132a4adc0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q5_1                          0x132a110e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q8_0                          0x132a664c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q2_K                          0x132a1a5f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q3_K                          0x132a28540 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q4_K                          0x132a4b3d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q5_K                          0x132a49860 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q6_K                          0x132a12810 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq2_xxs                       0x132a67720 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq2_xs                        0x132a679e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq3_xxs                       0x132a67ca0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq3_s                         0x132a67f60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq2_s                         0x132a68220 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq1_s                         0x132a684e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq1_m                         0x132a687a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq4_nl                        0x132a68a60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq4_xs                        0x132a68d20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_i32                           0x132a68fe0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rms_norm                               0x132a692a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_group_norm                             0x132a69560 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_norm                                   0x132a69820 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_ssm_conv_f32                           0x132a69ae0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_ssm_scan_f32                           0x132a69da0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f32_f32                         0x132a6a060 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_bf16_f32                        0x132a6a320 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_bf16_f32_1row                   0x132a6a5e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_bf16_f32_l4                     0x132a6a8a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_bf16_bf16                       0x132a6ab60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f16_f32                         0x132a6ae20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f16_f32_1row                    0x132a6b0e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f16_f32_l4                      0x132a6b3a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f16_f16                         0x132a6b660 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q4_0_f32                        0x132a6b920 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q4_1_f32                        0x132a6bbe0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q5_0_f32                        0x132a6bea0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q5_1_f32                        0x132a6c160 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q8_0_f32                        0x132a6c420 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_f16_f32_r1_2                0x132a6c6e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_f16_f32_r1_3                0x132a6c9a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_f16_f32_r1_4                0x132a6cc60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_f16_f32_r1_5                0x132a6cf20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_0_f32_r1_2               0x132a6d1e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_0_f32_r1_3               0x132a6d4a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_0_f32_r1_4               0x132a6d760 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_0_f32_r1_5               0x132a6da20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_1_f32_r1_2               0x132a6dce0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_1_f32_r1_3               0x132a6dfa0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_1_f32_r1_4               0x132a6e260 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_1_f32_r1_5               0x132a6e520 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_0_f32_r1_2               0x132a6e7e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_0_f32_r1_3               0x132a6eaa0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_0_f32_r1_4               0x132a6ed60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_0_f32_r1_5               0x132a6f020 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_1_f32_r1_2               0x132a6f2e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_1_f32_r1_3               0x132a6f5a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_1_f32_r1_4               0x132a6f860 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_1_f32_r1_5               0x132a6fb20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q8_0_f32_r1_2               0x132a6fde0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q8_0_f32_r1_3               0x132a700a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q8_0_f32_r1_4               0x132a70360 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q8_0_f32_r1_5               0x132a70620 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_K_f32_r1_2               0x132a708e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_K_f32_r1_3               0x132a70ba0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_K_f32_r1_4               0x132a70e60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_K_f32_r1_5               0x132a71120 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_K_f32_r1_2               0x132a713e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_K_f32_r1_3               0x132a716a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_K_f32_r1_4               0x132a71960 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_K_f32_r1_5               0x132a71c20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q6_K_f32_r1_2               0x132a71ee0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q6_K_f32_r1_3               0x132a721a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q6_K_f32_r1_4               0x132a72460 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q6_K_f32_r1_5               0x132a72720 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_iq4_nl_f32_r1_2             0x132a729e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_iq4_nl_f32_r1_3             0x132a72ca0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_iq4_nl_f32_r1_4             0x132a72f60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_iq4_nl_f32_r1_5             0x132a73220 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q2_K_f32                        0x132a734e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q3_K_f32                        0x132a737a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q4_K_f32                        0x132a73a60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q5_K_f32                        0x132a73d20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q6_K_f32                        0x132a73fe0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq2_xxs_f32                     0x132a742a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq2_xs_f32                      0x132a74560 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq3_xxs_f32                     0x132a74820 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq3_s_f32                       0x132a74ae0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq2_s_f32                       0x132a74da0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq1_s_f32                       0x132a75060 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq1_m_f32                       0x132a75320 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq4_nl_f32                      0x132a755e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq4_xs_f32                      0x132a758a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_f32_f32                      0x132a75b60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_f16_f32                      0x132a75e20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_bf16_f32                     0x132a760e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q4_0_f32                     0x132a763a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q4_1_f32                     0x132a76660 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q5_0_f32                     0x132a76920 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q5_1_f32                     0x132a76be0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q8_0_f32                     0x132a76ea0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q2_K_f32                     0x132a77160 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q3_K_f32                     0x132a77420 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q4_K_f32                     0x132a776e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q5_K_f32                     0x132a779a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q6_K_f32                     0x132a77c60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq2_xxs_f32                  0x132a77f20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq2_xs_f32                   0x132a781e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq3_xxs_f32                  0x132a784a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq3_s_f32                    0x132a78760 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq2_s_f32                    0x132a78a20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq1_s_f32                    0x132a78ce0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq1_m_f32                    0x132a78fa0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq4_nl_f32                   0x132a79260 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq4_xs_f32                   0x132a79520 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_f32_f32                         0x132a797e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_f16_f32                         0x132a79aa0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_bf16_f32                        0x132a79d60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q4_0_f32                        0x132a7a020 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q4_1_f32                        0x132a7a2e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q5_0_f32                        0x132a7a5a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q5_1_f32                        0x132a7a860 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q8_0_f32                        0x132a7ab20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q2_K_f32                        0x132a7ade0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q3_K_f32                        0x132a7b0a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q4_K_f32                        0x132a7b360 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q5_K_f32                        0x132a7b620 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q6_K_f32                        0x132a7b8e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq2_xxs_f32                     0x132a7bba0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq2_xs_f32                      0x132a7be60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq3_xxs_f32                     0x132a7c120 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq3_s_f32                       0x132a7c3e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq2_s_f32                       0x132a7c6a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq1_s_f32                       0x132a7c960 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq1_m_f32                       0x132a7cc20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq4_nl_f32                      0x132a7cee0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq4_xs_f32                      0x132a7d1a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_f32_f32                      0x132a7d460 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_f16_f32                      0x132a7d720 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_bf16_f32                     0x132a7d9e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q4_0_f32                     0x132a7dca0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q4_1_f32                     0x132a7df60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q5_0_f32                     0x132a7e220 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q5_1_f32                     0x132a7e4e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q8_0_f32                     0x132a7e7a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q2_K_f32                     0x132a7ea60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q3_K_f32                     0x132a7ed20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q4_K_f32                     0x132a7efe0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q5_K_f32                     0x132a7f2a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q6_K_f32                     0x132a7f560 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq2_xxs_f32                  0x132a7f820 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq2_xs_f32                   0x132a7fd20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq3_xxs_f32                  0x132a80220 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq3_s_f32                    0x132a80720 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq2_s_f32                    0x132a80c20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq1_s_f32                    0x132a81120 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq1_m_f32                    0x132a81620 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq4_nl_f32                   0x132a81b20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq4_xs_f32                   0x132a82020 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rope_norm_f32                          0x132a82520 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rope_norm_f16                          0x132a82ad0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rope_neox_f32                          0x132a83080 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rope_neox_f16                          0x132a83630 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_im2col_f16                             0x132a83be0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_im2col_f32                             0x132a841f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_im2col_ext_f16                         0x132a84800 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_im2col_ext_f32                         0x132a84e10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_conv_transpose_1d_f32_f32              0x132a85600 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_conv_transpose_1d_f16_f32              0x132a85aa0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_upscale_f32                            0x132a85d60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_pad_f32                                0x132a86370 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_pad_reflect_1d_f32                     0x132a86980 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_timestep_embedding_f32                 0x132a87170 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_arange_f32                             0x132a87610 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_argsort_f32_i32_asc                    0x132a87ab0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_argsort_f32_i32_desc                   0x132a87f50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_leaky_relu_f32                         0x132a88700 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h64                 0x132a88c50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h80                 0x132a891a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h96                 0x132a896f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h112                0x132a89c40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h128                0x132a8a190 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h256                0x132a8a6e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h64                0x132a8ac30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h80                0x132a8b180 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h96                0x132a8b6d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h112               0x132a8bc20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h128               0x132a8c170 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h256               0x132a8c6c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h64                0x132a8cc10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h80                0x132a8d160 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h96                0x132a8d6b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h112               0x132a8dc00 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h128               0x132a8e150 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h256               0x132a8e6a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h64                0x132a8ebf0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h80                0x132a8f140 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h96                0x132a8f690 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h112               0x132a8fbe0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h128               0x132a90130 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h256               0x132a90680 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h64                0x132a90bd0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h80                0x132a91120 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h96                0x132a91670 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h112               0x132a91bc0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h128               0x132a92110 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h256               0x132a92660 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h64                0x132a92bb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h80                0x132a93100 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h96                0x132a93650 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h112               0x132a93ba0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h128               0x132a940f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h256               0x132a94640 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h64                0x132a94b90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h80                0x132a950e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h96                0x132a95630 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h112               0x132a95b80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h128               0x132a960d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h256               0x132a96620 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_f16_h128            0x132a96b70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_bf16_h128           0x132a970c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q4_0_h128           0x132a97610 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q4_1_h128           0x132a97b60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q5_0_h128           0x132a980b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q5_1_h128           0x132a98600 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q8_0_h128           0x132a98b50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_f16_h256            0x132a990a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_bf16_h256           0x132a995f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q4_0_h256           0x132a99b40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q4_1_h256           0x132a9a090 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q5_0_h256           0x132a9a5e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q5_1_h256           0x132a9ab30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q8_0_h256           0x132a9b080 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_set_f32                                0x132a9b520 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_set_i32                                0x132a9b9c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_f32                            0x132a9be60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_f16                            0x132a9c300 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_bf16                           0x132a9c7a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f16_f32                            0x132a9cc40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f16_f16                            0x132a9d0e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_bf16_f32                           0x132a9d580 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_bf16_bf16                          0x132a9da20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q8_0                           0x132a9dec0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q4_0                           0x132a9e360 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q4_1                           0x132a9e800 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q5_0                           0x132a9eca0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q5_1                           0x132a9f140 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_iq4_nl                         0x132a9f5e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_concat                                 0x132a9fb30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sqr                                    0x132aa0250 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sqrt                                   0x132aa0970 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sin                                    0x132aa1090 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cos                                    0x132aa17b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sum_rows                               0x132aa1a70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_argmax                                 0x132aa2260 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_pool_2d_avg_f32                        0x132aa2520 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_pool_2d_max_f32                        0x132aa2b30 | th_max = 1024 | th_width =   32
+llama_kv_cache_init: kv_size = 2048, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 24, can_shift = 1
+llama_kv_cache_init: layer 0: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 1: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 2: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 3: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 4: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 5: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 6: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 7: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 8: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 9: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 10: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 11: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 12: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 13: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 14: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 15: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 16: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 17: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 18: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 19: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 20: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 21: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 22: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 23: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init:      Metal KV buffer size =   384.00 MiB
+llama_init_from_model: KV self size  =  384.00 MiB, K (f16):  192.00 MiB, V (f16):  192.00 MiB
+llama_init_from_model:        CPU  output buffer size =     0.19 MiB
+llama_init_from_model:      Metal compute buffer size =   102.25 MiB
+llama_init_from_model:        CPU compute buffer size =     8.01 MiB
+llama_init_from_model: graph nodes  = 967
+llama_init_from_model: graph splits = 2
+main : deserialized state from 988319 out of a maximum of 988319 bytes
+llama_init_from_model: n_seq_max     = 1
+llama_init_from_model: n_ctx         = 2048
+llama_init_from_model: n_ctx_per_seq = 2048
+llama_init_from_model: n_batch       = 2048
+llama_init_from_model: n_ubatch      = 512
+llama_init_from_model: flash_attn    = 0
+llama_init_from_model: freq_base     = 10000.0
+llama_init_from_model: freq_scale    = 1
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M4
+ggml_metal_init: picking default device: Apple M4
+ggml_metal_init: using embedded metal library
+ggml_metal_init: GPU name:   Apple M4
+ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+ggml_metal_init: simdgroup reduction   = true
+ggml_metal_init: simdgroup matrix mul. = true
+ggml_metal_init: has residency sets    = true
+ggml_metal_init: has bfloat            = true
+ggml_metal_init: use bfloat            = true
+ggml_metal_init: hasUnifiedMemory      = true
+ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+ggml_metal_init: loaded kernel_add                                    0x115d046e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_add_row                                0x115d04b50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sub                                    0x115d04fc0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sub_row                                0x115d05430 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul                                    0x115d058a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_row                                0x115d05d10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_div                                    0x115d06180 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_div_row                                0x115d065f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_repeat_f32                             0x115d06a60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_repeat_f16                             0x115d06ed0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_repeat_i32                             0x115d07340 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_repeat_i16                             0x115d07a60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_scale                                  0x115d08580 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_scale_4                                0x115d08d30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_clamp                                  0x115d09540 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_tanh                                   0x115d09c60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_relu                                   0x115d0a380 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sigmoid                                0x115d0aaa0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_gelu                                   0x115d0b1c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_gelu_4                                 0x115d0b8f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_gelu_quick                             0x115d0c010 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_gelu_quick_4                           0x115d0c730 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_silu                                   0x115d0ce50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_silu_4                                 0x115d0d570 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_elu                                    0x115d0dc90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_soft_max_f16                           0x115d0df50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_soft_max_f16_4                         0x115d0e210 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_soft_max_f32                           0x115d0e680 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_soft_max_f32_4                         0x115d0eaf0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_diag_mask_inf                          0x115d0ef60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_diag_mask_inf_8                        0x115d0f3d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_f32                           0x115d0f900 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_f16                           0x115d0fd70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_bf16                          0x115d10030 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q4_0                          0x115d104a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q4_1                          0x115d10910 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q5_0                          0x115d10d80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q5_1                          0x115d111f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q8_0                          0x115d11660 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q2_K                          0x115d11ad0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q3_K                          0x115d11f40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q4_K                          0x115d123b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q5_K                          0x115d12820 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q6_K                          0x115d12c90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq2_xxs                       0x115d13100 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq2_xs                        0x115d13570 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq3_xxs                       0x115d139e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq3_s                         0x115d13e50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq2_s                         0x115d142c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq1_s                         0x115d14730 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq1_m                         0x115d14ba0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq4_nl                        0x115d15010 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq4_xs                        0x115d15480 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_i32                           0x115d158f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rms_norm                               0x115d15d60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_group_norm                             0x115d161d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_norm                                   0x115d16740 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_ssm_conv_f32                           0x115d16c40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_ssm_scan_f32                           0x115d170b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f32_f32                         0x115d17520 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_bf16_f32                        0x115d17990 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_bf16_f32_1row                   0x115d17e00 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_bf16_f32_l4                     0x115d18270 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_bf16_bf16                       0x115d186e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f16_f32                         0x115d18b50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f16_f32_1row                    0x115d18fc0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f16_f32_l4                      0x115d19430 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f16_f16                         0x115d198a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q4_0_f32                        0x115d19d10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q4_1_f32                        0x115d1a180 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q5_0_f32                        0x115d1a5f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q5_1_f32                        0x115d1aa60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q8_0_f32                        0x115d1aed0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_f16_f32_r1_2                0x115d1b340 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_f16_f32_r1_3                0x115d1b7b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_f16_f32_r1_4                0x115d1bc20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_f16_f32_r1_5                0x115d1c090 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_0_f32_r1_2               0x115d1c500 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_0_f32_r1_3               0x115d1c970 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_0_f32_r1_4               0x115d1cde0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_0_f32_r1_5               0x115d1d250 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_1_f32_r1_2               0x115d1d6c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_1_f32_r1_3               0x115d1db30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_1_f32_r1_4               0x115d1dfa0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_1_f32_r1_5               0x115d1e410 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_0_f32_r1_2               0x115d1e880 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_0_f32_r1_3               0x115d1ecf0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_0_f32_r1_4               0x115d1f160 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_0_f32_r1_5               0x115d1f5d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_1_f32_r1_2               0x115d1fa40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_1_f32_r1_3               0x115d1feb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_1_f32_r1_4               0x115d20320 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_1_f32_r1_5               0x115d20790 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q8_0_f32_r1_2               0x115d20c00 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q8_0_f32_r1_3               0x115d21070 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q8_0_f32_r1_4               0x115d214e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q8_0_f32_r1_5               0x115d21950 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_K_f32_r1_2               0x115d21dc0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_K_f32_r1_3               0x115d22230 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_K_f32_r1_4               0x115d226a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_K_f32_r1_5               0x115d22b10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_K_f32_r1_2               0x115d22f80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_K_f32_r1_3               0x115d233f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_K_f32_r1_4               0x115d23860 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_K_f32_r1_5               0x115d241d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q6_K_f32_r1_2               0x115d24490 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q6_K_f32_r1_3               0x115d24900 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q6_K_f32_r1_4               0x115d24d70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q6_K_f32_r1_5               0x115d251e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_iq4_nl_f32_r1_2             0x115d25650 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_iq4_nl_f32_r1_3             0x115d25ac0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_iq4_nl_f32_r1_4             0x115d25f30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_iq4_nl_f32_r1_5             0x115d263a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q2_K_f32                        0x115d26810 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q3_K_f32                        0x115d26c80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q4_K_f32                        0x115d270f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q5_K_f32                        0x115d27560 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q6_K_f32                        0x115d279d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq2_xxs_f32                     0x115d27e40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq2_xs_f32                      0x115d282b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq3_xxs_f32                     0x115d28720 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq3_s_f32                       0x115d28b90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq2_s_f32                       0x115d29000 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq1_s_f32                       0x115d29470 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq1_m_f32                       0x115d298e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq4_nl_f32                      0x115d29d50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq4_xs_f32                      0x115d2a1c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_f32_f32                      0x115d2a630 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_f16_f32                      0x115d2aaa0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_bf16_f32                     0x115d2af10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q4_0_f32                     0x115d2b380 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q4_1_f32                     0x115d2b7f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q5_0_f32                     0x115d2bc60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q5_1_f32                     0x115d2c0d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q8_0_f32                     0x115d2c540 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q2_K_f32                     0x115d2c9b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q3_K_f32                     0x115d2ce20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q4_K_f32                     0x115d2d290 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q5_K_f32                     0x115d2d700 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q6_K_f32                     0x115d2db70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq2_xxs_f32                  0x115d2dfe0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq2_xs_f32                   0x115d2e450 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq3_xxs_f32                  0x115d2e8c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq3_s_f32                    0x115d2ed30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq2_s_f32                    0x115d2f1a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq1_s_f32                    0x115d2f610 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq1_m_f32                    0x115d2fa80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq4_nl_f32                   0x115d2fef0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq4_xs_f32                   0x115d30360 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_f32_f32                         0x115d307d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_f16_f32                         0x115d30c40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_bf16_f32                        0x115d310b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q4_0_f32                        0x115d31520 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q4_1_f32                        0x115d31990 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q5_0_f32                        0x115d31e00 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q5_1_f32                        0x115d32270 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q8_0_f32                        0x115d326e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q2_K_f32                        0x115d32b50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q3_K_f32                        0x115d32fc0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q4_K_f32                        0x115d33430 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q5_K_f32                        0x115d338a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q6_K_f32                        0x115d33d10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq2_xxs_f32                     0x115d34180 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq2_xs_f32                      0x115d345f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq3_xxs_f32                     0x115d34a60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq3_s_f32                       0x115d34ed0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq2_s_f32                       0x115d35340 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq1_s_f32                       0x115d357b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq1_m_f32                       0x115d35c20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq4_nl_f32                      0x115d36090 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq4_xs_f32                      0x115d36500 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_f32_f32                      0x115d36970 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_f16_f32                      0x115d36de0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_bf16_f32                     0x115d37250 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q4_0_f32                     0x115d376c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q4_1_f32                     0x115d37b30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q5_0_f32                     0x115d37fa0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q5_1_f32                     0x115d38410 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q8_0_f32                     0x115d38880 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q2_K_f32                     0x115d38cf0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q3_K_f32                     0x115d39160 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q4_K_f32                     0x115d395d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q5_K_f32                     0x115d39a40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q6_K_f32                     0x115d39eb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq2_xxs_f32                  0x115d3a320 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq2_xs_f32                   0x115d3a790 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq3_xxs_f32                  0x115d3ac00 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq3_s_f32                    0x115d3b070 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq2_s_f32                    0x115d3b4e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq1_s_f32                    0x115d3b950 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq1_m_f32                    0x115d3bdc0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq4_nl_f32                   0x115d3c230 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq4_xs_f32                   0x115d3c6a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rope_norm_f32                          0x115d3cb10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rope_norm_f16                          0x115d3cf80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rope_neox_f32                          0x115d3d3f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rope_neox_f16                          0x115d3d860 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_im2col_f16                             0x115d3dcd0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_im2col_f32                             0x115d3e140 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_im2col_ext_f16                         0x115d3e5b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_im2col_ext_f32                         0x115d3ea20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_conv_transpose_1d_f32_f32              0x115d3ee90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_conv_transpose_1d_f16_f32              0x115d3f300 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_upscale_f32                            0x115d3f770 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_pad_f32                                0x115d3fbe0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_pad_reflect_1d_f32                     0x115d40050 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_timestep_embedding_f32                 0x115d404c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_arange_f32                             0x115d40a50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_argsort_f32_i32_asc                    0x115d40ec0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_argsort_f32_i32_desc                   0x115d41330 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_leaky_relu_f32                         0x115d41e80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h64                 0x115d42140 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h80                 0x115d42400 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h96                 0x115d42870 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h112                0x115d42ce0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h128                0x115d43150 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h256                0x115d435c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h64                0x115d43a30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h80                0x115d43ea0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h96                0x115d44310 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h112               0x115d44780 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h128               0x115d44bf0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h256               0x115d45060 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h64                0x115d454d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h80                0x115d45940 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h96                0x115d45db0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h112               0x115d46220 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h128               0x115d46690 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h256               0x115d46b00 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h64                0x115d46f70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h80                0x115d473e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h96                0x115d47850 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h112               0x115d47cc0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h128               0x115d48130 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h256               0x115d485a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h64                0x115d48a10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h80                0x115d48e80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h96                0x115d492f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h112               0x115d49760 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h128               0x115d49bd0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h256               0x115d4a040 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h64                0x115d4a4b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h80                0x115d4a920 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h96                0x115d4ad90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h112               0x115d4b200 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h128               0x115d4b670 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h256               0x115d4bae0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h64                0x115d4bf50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h80                0x115d4c3c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h96                0x115d4c830 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h112               0x115d4cca0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h128               0x115d4d110 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h256               0x115d4d580 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_f16_h128            0x115d4d9f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_bf16_h128           0x115d4de60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q4_0_h128           0x115d4e2d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q4_1_h128           0x115d4e740 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q5_0_h128           0x115d4ebb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q5_1_h128           0x115d4f020 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q8_0_h128           0x115d4f490 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_f16_h256            0x115d4f900 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_bf16_h256           0x115d4fd70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q4_0_h256           0x115d501e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q4_1_h256           0x115d50650 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q5_0_h256           0x115d50ac0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q5_1_h256           0x115d50f30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q8_0_h256           0x115d513a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_set_f32                                0x115d51810 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_set_i32                                0x115d51c80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_f32                            0x115d520f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_f16                            0x115d52560 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_bf16                           0x115d529d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f16_f32                            0x115d52e40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f16_f16                            0x115d532b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_bf16_f32                           0x115d53720 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_bf16_bf16                          0x115d53b90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q8_0                           0x115d54000 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q4_0                           0x115d54470 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q4_1                           0x115d548e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q5_0                           0x115d54d50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q5_1                           0x115d551c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_iq4_nl                         0x115d55630 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_concat                                 0x115d55aa0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sqr                                    0x115d56510 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sqrt                                   0x115d56c30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sin                                    0x115d57350 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cos                                    0x115d57a70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sum_rows                               0x115d57d30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_argmax                                 0x115d581a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_pool_2d_avg_f32                        0x115d587a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_pool_2d_max_f32                        0x115d58db0 | th_max = 1024 | th_width =   32
+llama_kv_cache_init: kv_size = 2048, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 24, can_shift = 1
+llama_kv_cache_init: layer 0: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 1: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 2: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 3: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 4: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 5: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 6: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 7: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 8: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 9: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 10: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 11: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 12: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 13: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 14: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 15: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 16: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 17: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 18: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 19: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 20: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 21: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 22: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 23: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init:      Metal KV buffer size =   384.00 MiB
+llama_init_from_model: KV self size  =  384.00 MiB, K (f16):  192.00 MiB, V (f16):  192.00 MiB
+llama_init_from_model:        CPU  output buffer size =     0.19 MiB
+llama_init_from_model:      Metal compute buffer size =   102.25 MiB
+llama_init_from_model:        CPU compute buffer size =     8.01 MiB
+llama_init_from_model: graph nodes  = 967
+llama_init_from_model: graph splits = 2
+main : deserialized state from 988319 out of a maximum of 988319 bytes
+main : seq 0 copied, 787052 bytes
+main : kv cache cleared
+main : seq 1 restored, 787052 bytes
+
+main : success
+ggml_metal_free: deallocating
+
+first run: The quick brown fox jumps over the lazy Dog." "Maybe you should have said something about the lazy
+
+
+second run: The quick brown fox jumps over the lazy Dog." "Maybe you should have said something about the lazy
+
+
+single seq run: The quick brown fox jumps over the lazy Dog." "Maybe you should have said something about the lazy
+
+real	0m1.790s
+user	0m0.284s
+sys	0m0.291s
++ ./bin/llama-save-load-state --model ../models-mnt/pythia/1.4B/ggml-model-q4_0.gguf -ngl 99 -c 0 -fa
+main: build = 4743 (d07c6213)
+main: built with Apple clang version 16.0.0 (clang-1600.0.26.4) for arm64-apple-darwin24.1.0
+llama_model_load_from_file_impl: using device Metal (Apple M4) - 10922 MiB free
+llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q4_0.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = 1.4B
+llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+llama_model_loader: - kv  22:                          general.file_type u32              = 2
+llama_model_loader: - type  f32:  194 tensors
+llama_model_loader: - type q4_0:   97 tensors
+llama_model_loader: - type q6_K:    1 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q4_0
+print_info: file size   = 786.31 MiB (4.66 BPW) 
+init_tokenizer: initializing tokenizer for type 2
+load: control token:      1 '<|padding|>' is not marked as EOG
+load: special tokens cache size = 25
+load: token to piece cache size = 0.2984 MB
+print_info: arch             = gptneox
+print_info: vocab_only       = 0
+print_info: n_ctx_train      = 2048
+print_info: n_embd           = 2048
+print_info: n_layer          = 24
+print_info: n_head           = 16
+print_info: n_head_kv        = 16
+print_info: n_rot            = 32
+print_info: n_swa            = 0
+print_info: n_embd_head_k    = 128
+print_info: n_embd_head_v    = 128
+print_info: n_gqa            = 1
+print_info: n_embd_k_gqa     = 2048
+print_info: n_embd_v_gqa     = 2048
+print_info: f_norm_eps       = 1.0e-05
+print_info: f_norm_rms_eps   = 0.0e+00
+print_info: f_clamp_kqv      = 0.0e+00
+print_info: f_max_alibi_bias = 0.0e+00
+print_info: f_logit_scale    = 0.0e+00
+print_info: n_ff             = 8192
+print_info: n_expert         = 0
+print_info: n_expert_used    = 0
+print_info: causal attn      = 1
+print_info: pooling type     = 0
+print_info: rope type        = 2
+print_info: rope scaling     = linear
+print_info: freq_base_train  = 10000.0
+print_info: freq_scale_train = 1
+print_info: n_ctx_orig_yarn  = 2048
+print_info: rope_finetuned   = unknown
+print_info: ssm_d_conv       = 0
+print_info: ssm_d_inner      = 0
+print_info: ssm_d_state      = 0
+print_info: ssm_dt_rank      = 0
+print_info: ssm_dt_b_c_rms   = 0
+print_info: model type       = 1.4B
+print_info: model params     = 1.41 B
+print_info: general.name     = 1.4B
+print_info: vocab type       = BPE
+print_info: n_vocab          = 50304
+print_info: n_merges         = 50009
+print_info: BOS token        = 0 '<|endoftext|>'
+print_info: EOS token        = 0 '<|endoftext|>'
+print_info: EOT token        = 0 '<|endoftext|>'
+print_info: UNK token        = 0 '<|endoftext|>'
+print_info: LF token         = 187 'Ċ'
+print_info: EOG token        = 0 '<|endoftext|>'
+print_info: max token length = 1024
+load_tensors: loading model tensors, this can take a while... (mmap = true)
+load_tensors: layer   0 assigned to device Metal
+load_tensors: layer   1 assigned to device Metal
+load_tensors: layer   2 assigned to device Metal
+load_tensors: layer   3 assigned to device Metal
+load_tensors: layer   4 assigned to device Metal
+load_tensors: layer   5 assigned to device Metal
+load_tensors: layer   6 assigned to device Metal
+load_tensors: layer   7 assigned to device Metal
+load_tensors: layer   8 assigned to device Metal
+load_tensors: layer   9 assigned to device Metal
+load_tensors: layer  10 assigned to device Metal
+load_tensors: layer  11 assigned to device Metal
+load_tensors: layer  12 assigned to device Metal
+load_tensors: layer  13 assigned to device Metal
+load_tensors: layer  14 assigned to device Metal
+load_tensors: layer  15 assigned to device Metal
+load_tensors: layer  16 assigned to device Metal
+load_tensors: layer  17 assigned to device Metal
+load_tensors: layer  18 assigned to device Metal
+load_tensors: layer  19 assigned to device Metal
+load_tensors: layer  20 assigned to device Metal
+load_tensors: layer  21 assigned to device Metal
+load_tensors: layer  22 assigned to device Metal
+load_tensors: layer  23 assigned to device Metal
+load_tensors: layer  24 assigned to device Metal
+load_tensors: tensor 'token_embd.weight' (q4_0) (and 0 others) cannot be used with preferred buffer type CPU_AARCH64, using CPU instead
+ggml_backend_metal_log_allocated_size: allocated buffer, size =   786.34 MiB, (  786.42 / 10922.67)
+load_tensors: offloading 24 repeating layers to GPU
+load_tensors: offloading output layer to GPU
+load_tensors: offloaded 25/25 layers to GPU
+load_tensors: Metal_Mapped model buffer size =   786.33 MiB
+load_tensors:   CPU_Mapped model buffer size =    55.27 MiB
+............................................................................
+llama_init_from_model: n_seq_max     = 1
+llama_init_from_model: n_ctx         = 2048
+llama_init_from_model: n_ctx_per_seq = 2048
+llama_init_from_model: n_batch       = 2048
+llama_init_from_model: n_ubatch      = 512
+llama_init_from_model: flash_attn    = 1
+llama_init_from_model: freq_base     = 10000.0
+llama_init_from_model: freq_scale    = 1
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M4
+ggml_metal_init: picking default device: Apple M4
+ggml_metal_init: using embedded metal library
+ggml_metal_init: GPU name:   Apple M4
+ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+ggml_metal_init: simdgroup reduction   = true
+ggml_metal_init: simdgroup matrix mul. = true
+ggml_metal_init: has residency sets    = true
+ggml_metal_init: has bfloat            = true
+ggml_metal_init: use bfloat            = true
+ggml_metal_init: hasUnifiedMemory      = true
+ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+ggml_metal_init: loaded kernel_add                                    0x13ae08590 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_add_row                                0x13ae08c00 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sub                                    0x13ae09070 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sub_row                                0x13ae094e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul                                    0x13ae09950 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_row                                0x13ae09dc0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_div                                    0x13ae0a230 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_div_row                                0x13ae0a6a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_repeat_f32                             0x13ae0ab10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_repeat_f16                             0x13ae0af80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_repeat_i32                             0x13ae0b3f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_repeat_i16                             0x13ae0bb10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_scale                                  0x13ae0c630 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_scale_4                                0x13ae0cde0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_clamp                                  0x13ae0d5f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_tanh                                   0x13ae0dd10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_relu                                   0x13ae0e430 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sigmoid                                0x13ae0eb50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_gelu                                   0x13ae0f270 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_gelu_4                                 0x13ae0f9a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_gelu_quick                             0x13ae100c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_gelu_quick_4                           0x13ae107e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_silu                                   0x13ae10f00 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_silu_4                                 0x13ae117a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_elu                                    0x13ae11ec0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_soft_max_f16                           0x13ae12180 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_soft_max_f16_4                         0x13ae12440 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_soft_max_f32                           0x13ae128b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_soft_max_f32_4                         0x13ae12fd0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_diag_mask_inf                          0x13ae13440 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_diag_mask_inf_8                        0x13ae13a00 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_f32                           0x13ae13f10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_f16                           0x13ae14380 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_bf16                          0x13ae14640 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q4_0                          0x13ae14ab0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q4_1                          0x13ae14f20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q5_0                          0x13ae15390 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q5_1                          0x13ae15800 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q8_0                          0x13ae15c70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q2_K                          0x13ae160e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q3_K                          0x13ae16550 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q4_K                          0x13ae169c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q5_K                          0x13ae16e30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q6_K                          0x13ae172a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq2_xxs                       0x13ae17710 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq2_xs                        0x13ae17b80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq3_xxs                       0x13ae17ff0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq3_s                         0x13ae18460 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq2_s                         0x13ae18bf0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq1_s                         0x13ae19060 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq1_m                         0x13ae194d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq4_nl                        0x13ae19940 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq4_xs                        0x13ae19db0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_i32                           0x13ae1a220 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rms_norm                               0x13ae1a690 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_group_norm                             0x13ae1adb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_norm                                   0x13ae1b250 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_ssm_conv_f32                           0x13ae1b510 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_ssm_scan_f32                           0x13ae1b980 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f32_f32                         0x13ae1c050 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_bf16_f32                        0x13ae1c450 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_bf16_f32_1row                   0x13ae1c710 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_bf16_f32_l4                     0x13ae1cc10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_bf16_bf16                       0x13ae1d110 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f16_f32                         0x13ae1d610 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f16_f32_1row                    0x13ae1db10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f16_f32_l4                      0x13ae1e010 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f16_f16                         0x13ae1e510 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q4_0_f32                        0x13ae1ea10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q4_1_f32                        0x13ae1ef10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q5_0_f32                        0x13ae1f410 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q5_1_f32                        0x13ae1f910 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q8_0_f32                        0x13ae1fe10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_f16_f32_r1_2                0x13ae20310 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_f16_f32_r1_3                0x13ae208c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_f16_f32_r1_4                0x13ae20e70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_f16_f32_r1_5                0x13ae21420 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_0_f32_r1_2               0x13ae219d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_0_f32_r1_3               0x13ae21f80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_0_f32_r1_4               0x13ae22530 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_0_f32_r1_5               0x13ae22ae0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_1_f32_r1_2               0x13ae23090 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_1_f32_r1_3               0x13ae23640 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_1_f32_r1_4               0x13ae23bf0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_1_f32_r1_5               0x13ae241a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_0_f32_r1_2               0x13ae24750 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_0_f32_r1_3               0x13ae24d00 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_0_f32_r1_4               0x13ae252b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_0_f32_r1_5               0x13ae25860 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_1_f32_r1_2               0x13ae25e10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_1_f32_r1_3               0x13ae263c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_1_f32_r1_4               0x13ae26970 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_1_f32_r1_5               0x13ae26f20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q8_0_f32_r1_2               0x13ae274d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q8_0_f32_r1_3               0x13ae27a80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q8_0_f32_r1_4               0x13ae28030 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q8_0_f32_r1_5               0x13ae285e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_K_f32_r1_2               0x13ae18720 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_K_f32_r1_3               0x13ae28d40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_K_f32_r1_4               0x13ae291b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_K_f32_r1_5               0x13ae29620 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_K_f32_r1_2               0x13ae29bd0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_K_f32_r1_3               0x13ae2a180 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_K_f32_r1_4               0x13ae2a730 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_K_f32_r1_5               0x13ae2ace0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q6_K_f32_r1_2               0x13ae2b290 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q6_K_f32_r1_3               0x13ae2b840 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q6_K_f32_r1_4               0x13ae2bdf0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q6_K_f32_r1_5               0x13ae2c3a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_iq4_nl_f32_r1_2             0x13ae2c950 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_iq4_nl_f32_r1_3             0x13ae2cf00 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_iq4_nl_f32_r1_4             0x13ae2d4b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_iq4_nl_f32_r1_5             0x13ae2da60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q2_K_f32                        0x13ae2e010 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q3_K_f32                        0x13ae2e510 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q4_K_f32                        0x13ae2ea10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q5_K_f32                        0x13ae2ef10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q6_K_f32                        0x13ae2f410 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq2_xxs_f32                     0x13ae2f910 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq2_xs_f32                      0x13ae2fe10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq3_xxs_f32                     0x13ae30310 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq3_s_f32                       0x13ae30810 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq2_s_f32                       0x13ae30d10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq1_s_f32                       0x13ae31210 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq1_m_f32                       0x13ae31710 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq4_nl_f32                      0x13ae31c10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq4_xs_f32                      0x13ae32110 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_f32_f32                      0x13ae32610 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_f16_f32                      0x13ae32b10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_bf16_f32                     0x13ae33010 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q4_0_f32                     0x13ae33510 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q4_1_f32                     0x13ae33a10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q5_0_f32                     0x13ae33f10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q5_1_f32                     0x13ae34410 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q8_0_f32                     0x13ae34910 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q2_K_f32                     0x13ae34e10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q3_K_f32                     0x13ae35310 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q4_K_f32                     0x13ae35810 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q5_K_f32                     0x13ae35d10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q6_K_f32                     0x13ae36210 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq2_xxs_f32                  0x13ae36710 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq2_xs_f32                   0x13ae36c10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq3_xxs_f32                  0x13ae37110 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq3_s_f32                    0x13ae37610 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq2_s_f32                    0x13ae37b10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq1_s_f32                    0x13ae38010 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq1_m_f32                    0x13ae38510 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq4_nl_f32                   0x13ae38a10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq4_xs_f32                   0x13ae38f10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_f32_f32                         0x13ae39410 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_f16_f32                         0x13ae39910 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_bf16_f32                        0x13ae39e10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q4_0_f32                        0x13ae3a310 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q4_1_f32                        0x13ae3a810 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q5_0_f32                        0x13ae3ad10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q5_1_f32                        0x13ae3b210 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q8_0_f32                        0x13ae3b710 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q2_K_f32                        0x13ae3bc10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q3_K_f32                        0x13ae3c110 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q4_K_f32                        0x13ae3c610 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q5_K_f32                        0x13ae3cb10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q6_K_f32                        0x13ae3d010 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq2_xxs_f32                     0x13ae3d510 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq2_xs_f32                      0x13ae3da10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq3_xxs_f32                     0x13ae3df10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq3_s_f32                       0x13ae3e410 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq2_s_f32                       0x13ae3e910 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq1_s_f32                       0x13ae3ee10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq1_m_f32                       0x13ae3f310 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq4_nl_f32                      0x13ae3f810 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq4_xs_f32                      0x13ae3fd10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_f32_f32                      0x13ae40210 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_f16_f32                      0x13ae40710 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_bf16_f32                     0x13ae40c10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q4_0_f32                     0x13ae41110 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q4_1_f32                     0x13ae41610 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q5_0_f32                     0x13ae41b10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q5_1_f32                     0x13ae42010 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q8_0_f32                     0x13ae42510 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q2_K_f32                     0x13ae42a10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q3_K_f32                     0x13ae42f10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q4_K_f32                     0x13ae43410 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q5_K_f32                     0x13ae43910 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q6_K_f32                     0x13ae43e10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq2_xxs_f32                  0x13ae44310 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq2_xs_f32                   0x13ae44810 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq3_xxs_f32                  0x13ae44d10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq3_s_f32                    0x13ae45210 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq2_s_f32                    0x13ae45710 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq1_s_f32                    0x13ae45c10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq1_m_f32                    0x13ae46110 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq4_nl_f32                   0x13ae46610 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq4_xs_f32                   0x13ae46b10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rope_norm_f32                          0x13ae47010 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rope_norm_f16                          0x13ae475c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rope_neox_f32                          0x13ae47b70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rope_neox_f16                          0x13ae48120 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_im2col_f16                             0x13ae486d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_im2col_f32                             0x13ae48ce0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_im2col_ext_f16                         0x13ae492f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_im2col_ext_f32                         0x13ae49900 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_conv_transpose_1d_f32_f32              0x13ae4a0f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_conv_transpose_1d_f16_f32              0x13ae4a590 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_upscale_f32                            0x13ae4a850 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_pad_f32                                0x13ae4ae60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_pad_reflect_1d_f32                     0x13ae4b470 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_timestep_embedding_f32                 0x13ae4bc60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_arange_f32                             0x13ae4c100 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_argsort_f32_i32_asc                    0x13ae4c5a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_argsort_f32_i32_desc                   0x13ae4ca40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_leaky_relu_f32                         0x13ae4d1f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h64                 0x13ae4d740 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h80                 0x13ae4dc90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h96                 0x13ae4e1e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h112                0x13ae4e730 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h128                0x13ae4ec80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h256                0x13ae4f1d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h64                0x13ae4f720 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h80                0x13ae4fc70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h96                0x13ae501c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h112               0x13ae50710 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h128               0x13ae50c60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h256               0x13ae511b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h64                0x13ae51700 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h80                0x13ae51c50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h96                0x13ae521a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h112               0x13ae526f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h128               0x13ae52c40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h256               0x13ae53190 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h64                0x13ae536e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h80                0x13ae53c30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h96                0x13ae54180 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h112               0x13ae546d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h128               0x13ae54c20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h256               0x13ae55170 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h64                0x13ae556c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h80                0x13ae55c10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h96                0x13ae56160 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h112               0x13ae566b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h128               0x13ae56c00 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h256               0x13ae57150 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h64                0x13ae576a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h80                0x13ae57bf0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h96                0x13ae58140 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h112               0x13ae58690 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h128               0x13ae58be0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h256               0x13ae59130 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h64                0x13ae59680 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h80                0x13ae59bd0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h96                0x13ae5a120 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h112               0x13ae5a670 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h128               0x13ae5abc0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h256               0x13ae5b110 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_f16_h128            0x13ae5b660 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_bf16_h128           0x13ae5bbb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q4_0_h128           0x13ae5c100 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q4_1_h128           0x13ae5c650 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q5_0_h128           0x13ae5cba0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q5_1_h128           0x13ae5d0f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q8_0_h128           0x13ae5d640 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_f16_h256            0x13ae5db90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_bf16_h256           0x13ae5e0e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q4_0_h256           0x13ae5e630 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q4_1_h256           0x13ae5eb80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q5_0_h256           0x13ae5f0d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q5_1_h256           0x13ae5f620 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q8_0_h256           0x13ae5fb70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_set_f32                                0x13ae60010 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_set_i32                                0x13ae604b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_f32                            0x13ae60950 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_f16                            0x13ae60df0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_bf16                           0x13ae61290 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f16_f32                            0x13ae61730 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f16_f16                            0x13ae61bd0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_bf16_f32                           0x13ae62070 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_bf16_bf16                          0x13ae62510 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q8_0                           0x13ae629b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q4_0                           0x13ae62e50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q4_1                           0x13ae632f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q5_0                           0x13ae63790 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q5_1                           0x13ae63c30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_iq4_nl                         0x13ae640d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_concat                                 0x13ae64620 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sqr                                    0x13ae64d40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sqrt                                   0x13ae65460 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sin                                    0x13ae65b80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cos                                    0x13ae662a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sum_rows                               0x13ae66560 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_argmax                                 0x13ae66d50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_pool_2d_avg_f32                        0x13ae67010 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_pool_2d_max_f32                        0x13ae67620 | th_max = 1024 | th_width =   32
+llama_kv_cache_init: kv_size = 2048, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 24, can_shift = 1
+llama_kv_cache_init: layer 0: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 1: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 2: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 3: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 4: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 5: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 6: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 7: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 8: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 9: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 10: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 11: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 12: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 13: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 14: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 15: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 16: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 17: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 18: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 19: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 20: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 21: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 22: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 23: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init:      Metal KV buffer size =   384.00 MiB
+llama_init_from_model: KV self size  =  384.00 MiB, K (f16):  192.00 MiB, V (f16):  192.00 MiB
+llama_init_from_model:        CPU  output buffer size =     0.19 MiB
+llama_init_from_model:      Metal compute buffer size =   102.25 MiB
+llama_init_from_model:        CPU compute buffer size =     8.01 MiB
+llama_init_from_model: graph nodes  = 872
+llama_init_from_model: graph splits = 2
+0.00.105.542 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.105.546 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+main : serialized state into 988319 out of a maximum of 988319 bytes
+llama_init_from_model: n_seq_max     = 1
+llama_init_from_model: n_ctx         = 2048
+llama_init_from_model: n_ctx_per_seq = 2048
+llama_init_from_model: n_batch       = 2048
+llama_init_from_model: n_ubatch      = 512
+llama_init_from_model: flash_attn    = 1
+llama_init_from_model: freq_base     = 10000.0
+llama_init_from_model: freq_scale    = 1
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M4
+ggml_metal_init: picking default device: Apple M4
+ggml_metal_init: using embedded metal library
+ggml_metal_init: GPU name:   Apple M4
+ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+ggml_metal_init: simdgroup reduction   = true
+ggml_metal_init: simdgroup matrix mul. = true
+ggml_metal_init: has residency sets    = true
+ggml_metal_init: has bfloat            = true
+ggml_metal_init: use bfloat            = true
+ggml_metal_init: hasUnifiedMemory      = true
+ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+ggml_metal_init: loaded kernel_add                                    0x12ae04ae0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_add_row                                0x12ae04f50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sub                                    0x12ae053c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sub_row                                0x12ae05830 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul                                    0x12ae05ca0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_row                                0x12ae06110 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_div                                    0x12ae06580 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_div_row                                0x12ae069f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_repeat_f32                             0x12ae06e60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_repeat_f16                             0x12ae07380 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_repeat_i32                             0x12ae077f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_repeat_i16                             0x12ae07e70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_scale                                  0x12ae08990 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_scale_4                                0x12ae09140 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_clamp                                  0x12ae09950 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_tanh                                   0x12ae0a070 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_relu                                   0x12ae0a790 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sigmoid                                0x12ae0aeb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_gelu                                   0x12ae0b5d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_gelu_4                                 0x12ae0bda0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_gelu_quick                             0x12ae0c4c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_gelu_quick_4                           0x12ae0cbe0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_silu                                   0x12ae0d300 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_silu_4                                 0x12ae0da20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_elu                                    0x12ae0e140 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_soft_max_f16                           0x12ae0e400 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_soft_max_f16_4                         0x12ae0e6c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_soft_max_f32                           0x12ae0eb30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_soft_max_f32_4                         0x12ae0efa0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_diag_mask_inf                          0x12ae0f410 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_diag_mask_inf_8                        0x12ae0f880 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_f32                           0x12ae0fdb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_f16                           0x12ae10220 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_bf16                          0x12ae104e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q4_0                          0x12ae10950 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q4_1                          0x12ae10dc0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q5_0                          0x12ae11230 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q5_1                          0x12ae116a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q8_0                          0x12ae11b10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q2_K                          0x12ae11f80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q3_K                          0x12ae123f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q4_K                          0x12ae12860 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q5_K                          0x12ae12cd0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q6_K                          0x12ae13140 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq2_xxs                       0x12ae135b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq2_xs                        0x12ae13a20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq3_xxs                       0x12ae13e90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq3_s                         0x12ae14300 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq2_s                         0x12ae14770 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq1_s                         0x12ae14be0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq1_m                         0x12ae15050 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq4_nl                        0x12ae154c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq4_xs                        0x12ae15930 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_i32                           0x12ae15da0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rms_norm                               0x12ae16210 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_group_norm                             0x12ae16680 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_norm                                   0x12ae16bf0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_ssm_conv_f32                           0x12ae170f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_ssm_scan_f32                           0x12ae17560 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f32_f32                         0x12ae179d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_bf16_f32                        0x12ae17e40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_bf16_f32_1row                   0x12ae182b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_bf16_f32_l4                     0x12ae18720 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_bf16_bf16                       0x12ae18b90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f16_f32                         0x12ae19000 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f16_f32_1row                    0x12ae19470 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f16_f32_l4                      0x12ae198e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f16_f16                         0x12ae19d50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q4_0_f32                        0x12ae1a1c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q4_1_f32                        0x12ae1a630 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q5_0_f32                        0x12ae1aaa0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q5_1_f32                        0x12ae1af10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q8_0_f32                        0x12ae1b380 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_f16_f32_r1_2                0x12ae1b7f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_f16_f32_r1_3                0x12ae1bc60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_f16_f32_r1_4                0x12ae1c0d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_f16_f32_r1_5                0x12ae1c540 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_0_f32_r1_2               0x12ae1c9b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_0_f32_r1_3               0x12ae1ce20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_0_f32_r1_4               0x12ae1d290 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_0_f32_r1_5               0x12ae1d700 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_1_f32_r1_2               0x12ae1db70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_1_f32_r1_3               0x12ae1dfe0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_1_f32_r1_4               0x12ae1e450 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_1_f32_r1_5               0x12ae1e8c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_0_f32_r1_2               0x12ae1ed30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_0_f32_r1_3               0x12ae1f1a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_0_f32_r1_4               0x12ae1f610 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_0_f32_r1_5               0x12ae1fa80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_1_f32_r1_2               0x12ae1fef0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_1_f32_r1_3               0x12ae20360 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_1_f32_r1_4               0x12ae207d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_1_f32_r1_5               0x12ae20c40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q8_0_f32_r1_2               0x12ae210b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q8_0_f32_r1_3               0x12ae21520 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q8_0_f32_r1_4               0x12ae21990 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q8_0_f32_r1_5               0x12ae21e00 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_K_f32_r1_2               0x12ae22270 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_K_f32_r1_3               0x12ae226e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_K_f32_r1_4               0x12ae22b50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_K_f32_r1_5               0x12ae22fc0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_K_f32_r1_2               0x12ae23430 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_K_f32_r1_3               0x12ae238a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_K_f32_r1_4               0x12ae23d10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_K_f32_r1_5               0x12ae24180 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q6_K_f32_r1_2               0x12ae245f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q6_K_f32_r1_3               0x12ae24a60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q6_K_f32_r1_4               0x12ae24ed0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q6_K_f32_r1_5               0x12ae25340 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_iq4_nl_f32_r1_2             0x12ae257b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_iq4_nl_f32_r1_3             0x12ae25c20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_iq4_nl_f32_r1_4             0x12ae26090 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_iq4_nl_f32_r1_5             0x12ae26500 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q2_K_f32                        0x12ae26970 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q3_K_f32                        0x12ae26de0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q4_K_f32                        0x12ae27250 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q5_K_f32                        0x12ae276c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q6_K_f32                        0x12ae27b30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq2_xxs_f32                     0x12ae27fa0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq2_xs_f32                      0x12ae28410 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq3_xxs_f32                     0x12ae28880 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq3_s_f32                       0x12ae28cf0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq2_s_f32                       0x12ae29160 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq1_s_f32                       0x12ae295d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq1_m_f32                       0x12ae29a40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq4_nl_f32                      0x12ae29eb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq4_xs_f32                      0x12ae2a320 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_f32_f32                      0x12ae2a790 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_f16_f32                      0x12ae2ac00 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_bf16_f32                     0x12ae2b070 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q4_0_f32                     0x12ae2b4e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q4_1_f32                     0x12ae2b950 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q5_0_f32                     0x12ae2bdc0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q5_1_f32                     0x12ae2c230 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q8_0_f32                     0x12ae2c6a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q2_K_f32                     0x12ae2cb10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q3_K_f32                     0x12ae2cf80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q4_K_f32                     0x12ae2d3f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q5_K_f32                     0x12ae2d860 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q6_K_f32                     0x12ae2dcd0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq2_xxs_f32                  0x12ae2e140 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq2_xs_f32                   0x12ae2e5b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq3_xxs_f32                  0x12ae2ea20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq3_s_f32                    0x12ae2ee90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq2_s_f32                    0x12ae2f300 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq1_s_f32                    0x12ae2f770 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq1_m_f32                    0x12ae2fbe0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq4_nl_f32                   0x12ae30050 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq4_xs_f32                   0x12ae304c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_f32_f32                         0x12ae30930 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_f16_f32                         0x12ae30da0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_bf16_f32                        0x12ae31210 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q4_0_f32                        0x12ae31680 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q4_1_f32                        0x12ae31af0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q5_0_f32                        0x12ae31f60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q5_1_f32                        0x12ae323d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q8_0_f32                        0x12ae32840 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q2_K_f32                        0x12ae32cb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q3_K_f32                        0x12ae33120 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q4_K_f32                        0x12ae33590 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q5_K_f32                        0x12ae33a00 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q6_K_f32                        0x12ae33e70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq2_xxs_f32                     0x12ae342e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq2_xs_f32                      0x12ae34750 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq3_xxs_f32                     0x12ae34bc0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq3_s_f32                       0x12ae35030 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq2_s_f32                       0x12ae35c60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq1_s_f32                       0x12ae35f20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq1_m_f32                       0x12ae361e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq4_nl_f32                      0x12ae36650 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq4_xs_f32                      0x12ae36ac0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_f32_f32                      0x12ae36f30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_f16_f32                      0x12ae373a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_bf16_f32                     0x12ae37810 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q4_0_f32                     0x12ae37c80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q4_1_f32                     0x12ae380f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q5_0_f32                     0x12ae38560 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q5_1_f32                     0x12ae389d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q8_0_f32                     0x12ae38e40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q2_K_f32                     0x12ae392b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q3_K_f32                     0x12ae39720 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q4_K_f32                     0x12ae39b90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q5_K_f32                     0x12ae3a000 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q6_K_f32                     0x12ae3a470 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq2_xxs_f32                  0x12ae3a8e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq2_xs_f32                   0x12ae3ad50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq3_xxs_f32                  0x12ae3b1c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq3_s_f32                    0x12ae3b630 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq2_s_f32                    0x12ae3baa0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq1_s_f32                    0x12ae3bf10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq1_m_f32                    0x12ae3c380 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq4_nl_f32                   0x12ae3c7f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq4_xs_f32                   0x12ae3cc60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rope_norm_f32                          0x12ae3d0d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rope_norm_f16                          0x12ae3d540 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rope_neox_f32                          0x12ae3d9b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rope_neox_f16                          0x12ae3de20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_im2col_f16                             0x12ae3e290 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_im2col_f32                             0x12ae3e700 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_im2col_ext_f16                         0x12ae3eb70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_im2col_ext_f32                         0x12ae3efe0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_conv_transpose_1d_f32_f32              0x12ae3f450 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_conv_transpose_1d_f16_f32              0x12ae3f9b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_upscale_f32                            0x12ae3fec0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_pad_f32                                0x12ae40330 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_pad_reflect_1d_f32                     0x12ae407a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_timestep_embedding_f32                 0x12ae40c10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_arange_f32                             0x12ae41080 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_argsort_f32_i32_asc                    0x12ae415a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_argsort_f32_i32_desc                   0x12ae41ab0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_leaky_relu_f32                         0x12ae42620 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h64                 0x12ae428e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h80                 0x12ae42ea0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h96                 0x12ae43460 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h112                0x12ae43a20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h128                0x12ae43fe0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h256                0x12ae445a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h64                0x12ae44b60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h80                0x12ae45120 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h96                0x12ae456e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h112               0x12ae45ca0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h128               0x12ae46260 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h256               0x12ae46820 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h64                0x12ae46de0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h80                0x12ae473a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h96                0x12ae47960 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h112               0x12ae47f20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h128               0x12ae484e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h256               0x12ae48aa0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h64                0x12ae49060 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h80                0x12ae49620 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h96                0x12ae49be0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h112               0x12ae4a1a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h128               0x12ae4a760 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h256               0x12ae4ad20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h64                0x12ae4b2e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h80                0x12ae4b8a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h96                0x12ae4be60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h112               0x12ae4c420 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h128               0x12ae4c9e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h256               0x12ae4cfa0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h64                0x12ae4d560 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h80                0x12ae4db20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h96                0x12ae4e0e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h112               0x12ae4e6a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h128               0x12ae4ec60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h256               0x12ae4f220 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h64                0x12ae4f7e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h80                0x12ae4fda0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h96                0x12ae50360 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h112               0x12ae50920 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h128               0x12ae50ee0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h256               0x12ae514a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_f16_h128            0x12ae51a60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_bf16_h128           0x12ae52020 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q4_0_h128           0x12ae525e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q4_1_h128           0x12ae52ba0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q5_0_h128           0x12ae53160 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q5_1_h128           0x12ae53720 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q8_0_h128           0x12ae53ce0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_f16_h256            0x12ae542a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_bf16_h256           0x12ae54860 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q4_0_h256           0x12ae54e20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q4_1_h256           0x12ae553e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q5_0_h256           0x12ae559a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q5_1_h256           0x12ae55f60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q8_0_h256           0x12ae56520 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_set_f32                                0x12ae56ae0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_set_i32                                0x12ae56fe0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_f32                            0x12ae574e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_f16                            0x12ae579e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_bf16                           0x12ae57ee0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f16_f32                            0x12ae583e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f16_f16                            0x12ae588e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_bf16_f32                           0x12ae58de0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_bf16_bf16                          0x12ae592e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q8_0                           0x12ae597e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q4_0                           0x12ae59ce0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q4_1                           0x12ae5a1e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q5_0                           0x12ae5a6e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q5_1                           0x12ae5abe0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_iq4_nl                         0x12ae5b0e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_concat                                 0x12ae5b5e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sqr                                    0x12ae5bff0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sqrt                                   0x12ae5c710 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sin                                    0x12ae5ce30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cos                                    0x12ae5d550 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sum_rows                               0x12ae5d810 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_argmax                                 0x12ae5e000 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_pool_2d_avg_f32                        0x12ae5e2c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_pool_2d_max_f32                        0x12ae5e8d0 | th_max = 1024 | th_width =   32
+llama_kv_cache_init: kv_size = 2048, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 24, can_shift = 1
+llama_kv_cache_init: layer 0: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 1: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 2: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 3: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 4: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 5: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 6: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 7: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 8: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 9: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 10: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 11: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 12: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 13: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 14: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 15: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 16: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 17: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 18: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 19: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 20: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 21: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 22: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 23: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init:      Metal KV buffer size =   384.00 MiB
+llama_init_from_model: KV self size  =  384.00 MiB, K (f16):  192.00 MiB, V (f16):  192.00 MiB
+llama_init_from_model:        CPU  output buffer size =     0.19 MiB
+llama_init_from_model:      Metal compute buffer size =   102.25 MiB
+llama_init_from_model:        CPU compute buffer size =     8.01 MiB
+llama_init_from_model: graph nodes  = 872
+llama_init_from_model: graph splits = 2
+main : deserialized state from 988319 out of a maximum of 988319 bytes
+llama_init_from_model: n_seq_max     = 1
+llama_init_from_model: n_ctx         = 2048
+llama_init_from_model: n_ctx_per_seq = 2048
+llama_init_from_model: n_batch       = 2048
+llama_init_from_model: n_ubatch      = 512
+llama_init_from_model: flash_attn    = 1
+llama_init_from_model: freq_base     = 10000.0
+llama_init_from_model: freq_scale    = 1
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M4
+ggml_metal_init: picking default device: Apple M4
+ggml_metal_init: using embedded metal library
+ggml_metal_init: GPU name:   Apple M4
+ggml_metal_init: GPU family: MTLGPUFamilyApple9  (1009)
+ggml_metal_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_init: GPU family: MTLGPUFamilyMetal3  (5001)
+ggml_metal_init: simdgroup reduction   = true
+ggml_metal_init: simdgroup matrix mul. = true
+ggml_metal_init: has residency sets    = true
+ggml_metal_init: has bfloat            = true
+ggml_metal_init: use bfloat            = true
+ggml_metal_init: hasUnifiedMemory      = true
+ggml_metal_init: recommendedMaxWorkingSetSize  = 11453.25 MB
+ggml_metal_init: loaded kernel_add                                    0x13af0d2e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_add_row                                0x13af0d750 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sub                                    0x13af0dbc0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sub_row                                0x13af0e030 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul                                    0x13af0e4a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_row                                0x13af0e910 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_div                                    0x13af0ed80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_div_row                                0x13af0f1f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_repeat_f32                             0x13af0f660 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_repeat_f16                             0x13af0fad0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_repeat_i32                             0x13af0ff40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_repeat_i16                             0x13af10610 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_scale                                  0x13af11130 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_scale_4                                0x13af118e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_clamp                                  0x13af120f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_tanh                                   0x13af12810 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_relu                                   0x13af12f30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sigmoid                                0x13af13650 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_gelu                                   0x13af13d70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_gelu_4                                 0x13af14540 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_gelu_quick                             0x13af14c60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_gelu_quick_4                           0x13af15380 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_silu                                   0x13af15aa0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_silu_4                                 0x13af161c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_elu                                    0x13af168e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_soft_max_f16                           0x13af16ba0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_soft_max_f16_4                         0x13af16e60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_soft_max_f32                           0x13af172d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_soft_max_f32_4                         0x13af17740 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_diag_mask_inf                          0x13af17bb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_diag_mask_inf_8                        0x13af18020 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_f32                           0x13af18550 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_f16                           0x13af189c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_bf16                          0x13af18c80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q4_0                          0x13af190f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q4_1                          0x13af19560 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q5_0                          0x13af199d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q5_1                          0x13af19e40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q8_0                          0x13af1a2b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q2_K                          0x13af1a720 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q3_K                          0x13af1ab90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q4_K                          0x13af1b000 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q5_K                          0x13af1b470 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_q6_K                          0x13af1b8e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq2_xxs                       0x13af1bd50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq2_xs                        0x13af1c1c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq3_xxs                       0x13af1c630 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq3_s                         0x13af1caa0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq2_s                         0x13af1cf10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq1_s                         0x13af1d380 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq1_m                         0x13af1d7f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq4_nl                        0x13af1dc60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_iq4_xs                        0x13af1e0d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_get_rows_i32                           0x13af1e540 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rms_norm                               0x13af1e9b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_group_norm                             0x13af1ee20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_norm                                   0x13af1f390 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_ssm_conv_f32                           0x13af1f890 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_ssm_scan_f32                           0x13af1fd00 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f32_f32                         0x13af20170 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_bf16_f32                        0x13af205e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_bf16_f32_1row                   0x13af20a50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_bf16_f32_l4                     0x13af20ec0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_bf16_bf16                       0x13af21330 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f16_f32                         0x13af217a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f16_f32_1row                    0x13af21c10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f16_f32_l4                      0x13af22080 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_f16_f16                         0x13af224f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q4_0_f32                        0x13af22960 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q4_1_f32                        0x13af22dd0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q5_0_f32                        0x13af23240 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q5_1_f32                        0x13af236b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q8_0_f32                        0x13af23b20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_f16_f32_r1_2                0x13af23f90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_f16_f32_r1_3                0x13af24400 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_f16_f32_r1_4                0x13af24870 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_f16_f32_r1_5                0x13af24ce0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_0_f32_r1_2               0x13af25150 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_0_f32_r1_3               0x13af255c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_0_f32_r1_4               0x13af25a30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_0_f32_r1_5               0x13af25ea0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_1_f32_r1_2               0x13af26310 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_1_f32_r1_3               0x13af26780 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_1_f32_r1_4               0x13af26bf0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_1_f32_r1_5               0x13af27060 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_0_f32_r1_2               0x13af274d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_0_f32_r1_3               0x13af27940 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_0_f32_r1_4               0x13af27db0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_0_f32_r1_5               0x13af28220 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_1_f32_r1_2               0x13af28690 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_1_f32_r1_3               0x13af28b00 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_1_f32_r1_4               0x13af28f70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_1_f32_r1_5               0x13af293e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q8_0_f32_r1_2               0x13af29850 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q8_0_f32_r1_3               0x13af29cc0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q8_0_f32_r1_4               0x13af2a130 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q8_0_f32_r1_5               0x13af2a5a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_K_f32_r1_2               0x13af2aa10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_K_f32_r1_3               0x13af2ae80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_K_f32_r1_4               0x13af2b2f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q4_K_f32_r1_5               0x13af2b760 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_K_f32_r1_2               0x13af2bbd0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_K_f32_r1_3               0x13af2c040 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_K_f32_r1_4               0x13af2c4b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q5_K_f32_r1_5               0x13af2ce20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q6_K_f32_r1_2               0x13af2d0e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q6_K_f32_r1_3               0x13af2d550 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q6_K_f32_r1_4               0x13af2d9c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_q6_K_f32_r1_5               0x13af2de30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_iq4_nl_f32_r1_2             0x13af2e2a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_iq4_nl_f32_r1_3             0x13af2e710 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_iq4_nl_f32_r1_4             0x13af2eb80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_ext_iq4_nl_f32_r1_5             0x13af2eff0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q2_K_f32                        0x13af2f460 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q3_K_f32                        0x13af2f8d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q4_K_f32                        0x13af2fd40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q5_K_f32                        0x13af301b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_q6_K_f32                        0x13af30620 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq2_xxs_f32                     0x13af30a90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq2_xs_f32                      0x13af30f00 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq3_xxs_f32                     0x13af31370 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq3_s_f32                       0x13af317e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq2_s_f32                       0x13af31c50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq1_s_f32                       0x13af320c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq1_m_f32                       0x13af32530 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq4_nl_f32                      0x13af329a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_iq4_xs_f32                      0x13af32e10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_f32_f32                      0x13af33280 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_f16_f32                      0x13af336f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_bf16_f32                     0x13af33b60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q4_0_f32                     0x13af33fd0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q4_1_f32                     0x13af34440 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q5_0_f32                     0x13af348b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q5_1_f32                     0x13af34d20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q8_0_f32                     0x13af35190 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q2_K_f32                     0x13af35600 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q3_K_f32                     0x13af35a70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q4_K_f32                     0x13af35ee0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q5_K_f32                     0x13af36350 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_q6_K_f32                     0x13af367c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq2_xxs_f32                  0x13af36c30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq2_xs_f32                   0x13af370a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq3_xxs_f32                  0x13af37510 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq3_s_f32                    0x13af37980 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq2_s_f32                    0x13af37df0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq1_s_f32                    0x13af38260 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq1_m_f32                    0x13af386d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq4_nl_f32                   0x13af38b40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mv_id_iq4_xs_f32                   0x13af38fb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_f32_f32                         0x13af39420 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_f16_f32                         0x13af39890 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_bf16_f32                        0x13af39d00 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q4_0_f32                        0x13af3a170 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q4_1_f32                        0x13af3a5e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q5_0_f32                        0x13af3aa50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q5_1_f32                        0x13af3aec0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q8_0_f32                        0x13af3b330 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q2_K_f32                        0x13af3b7a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q3_K_f32                        0x13af3bc10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q4_K_f32                        0x13af3c080 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q5_K_f32                        0x13af3c4f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_q6_K_f32                        0x13af3c960 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq2_xxs_f32                     0x13af3cdd0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq2_xs_f32                      0x13af3d240 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq3_xxs_f32                     0x13af3d6b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq3_s_f32                       0x13af3db20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq2_s_f32                       0x13af3df90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq1_s_f32                       0x13af3e400 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq1_m_f32                       0x13af3e870 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq4_nl_f32                      0x13af3ece0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_iq4_xs_f32                      0x13af3f150 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_f32_f32                      0x13af3f5c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_f16_f32                      0x13af3fa30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_bf16_f32                     0x13af3fea0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q4_0_f32                     0x13af40310 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q4_1_f32                     0x13af40780 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q5_0_f32                     0x13af40bf0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q5_1_f32                     0x13af41060 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q8_0_f32                     0x13af414d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q2_K_f32                     0x13af41940 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q3_K_f32                     0x13af41db0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q4_K_f32                     0x13af42220 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q5_K_f32                     0x13af42690 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_q6_K_f32                     0x13af42b00 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq2_xxs_f32                  0x13af42f70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq2_xs_f32                   0x13af433e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq3_xxs_f32                  0x13af43850 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq3_s_f32                    0x13af43cc0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq2_s_f32                    0x13af44130 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq1_s_f32                    0x13af445a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq1_m_f32                    0x13af44a10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq4_nl_f32                   0x13af44e80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_mul_mm_id_iq4_xs_f32                   0x13af452f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rope_norm_f32                          0x13af45760 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rope_norm_f16                          0x13af45bd0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rope_neox_f32                          0x13af46040 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_rope_neox_f16                          0x13af464b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_im2col_f16                             0x13af46920 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_im2col_f32                             0x13af46d90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_im2col_ext_f16                         0x13af47200 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_im2col_ext_f32                         0x13af47670 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_conv_transpose_1d_f32_f32              0x13af47ae0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_conv_transpose_1d_f16_f32              0x13af47f50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_upscale_f32                            0x13af483c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_pad_f32                                0x13af48830 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_pad_reflect_1d_f32                     0x13af48ca0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_timestep_embedding_f32                 0x13af49110 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_arange_f32                             0x13af496a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_argsort_f32_i32_asc                    0x13af49b10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_argsort_f32_i32_desc                   0x13af49f80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_leaky_relu_f32                         0x13af4aad0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h64                 0x13af4ad90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h80                 0x13af4b050 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h96                 0x13af4b4c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h112                0x13af4b930 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h128                0x13af4bda0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_f16_h256                0x13af4c210 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h64                0x13af4c680 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h80                0x13af4caf0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h96                0x13af4cf60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h112               0x13af4d3d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h128               0x13af4d840 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_bf16_h256               0x13af4dcb0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h64                0x13af4e120 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h80                0x13af4e590 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h96                0x13af4ea00 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h112               0x13af4ee70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h128               0x13af4f2e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_0_h256               0x13af4f750 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h64                0x13af4fbc0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h80                0x13af50030 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h96                0x13af504a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h112               0x13af50910 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h128               0x13af50d80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q4_1_h256               0x13af511f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h64                0x13af51660 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h80                0x13af51ad0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h96                0x13af51f40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h112               0x13af523b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h128               0x13af52820 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_0_h256               0x13af52c90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h64                0x13af53100 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h80                0x13af53570 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h96                0x13af539e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h112               0x13af53e50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h128               0x13af542c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q5_1_h256               0x13af54730 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h64                0x13af54ba0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h80                0x13af55010 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h96                0x13af55480 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h112               0x13af558f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h128               0x13af55d60 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_q8_0_h256               0x13af561d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_f16_h128            0x13af56640 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_bf16_h128           0x13af56ab0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q4_0_h128           0x13af56f20 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q4_1_h128           0x13af57390 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q5_0_h128           0x13af57800 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q5_1_h128           0x13af57c70 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q8_0_h128           0x13af580e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_f16_h256            0x13af58550 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_bf16_h256           0x13af589c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q4_0_h256           0x13af58e30 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q4_1_h256           0x13af592a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q5_0_h256           0x13af59710 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q5_1_h256           0x13af59b80 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_flash_attn_ext_vec_q8_0_h256           0x13af59ff0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_set_f32                                0x13af5a460 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_set_i32                                0x13af5a8d0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_f32                            0x13af5ad40 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_f16                            0x13af5b1b0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_bf16                           0x13af5b620 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f16_f32                            0x13af5ba90 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f16_f16                            0x13af5bf00 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_bf16_f32                           0x13af5c370 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_bf16_bf16                          0x13af5c7e0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q8_0                           0x13af5cc50 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q4_0                           0x13af5d0c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q4_1                           0x13af5d530 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q5_0                           0x13af5d9a0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_q5_1                           0x13af5de10 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cpy_f32_iq4_nl                         0x13af5e280 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_concat                                 0x13af5e6f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sqr                                    0x13af5f160 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sqrt                                   0x13af5f880 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sin                                    0x13af5ffa0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_cos                                    0x13af606c0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_sum_rows                               0x13af60980 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_argmax                                 0x13af60df0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_pool_2d_avg_f32                        0x13af613f0 | th_max = 1024 | th_width =   32
+ggml_metal_init: loaded kernel_pool_2d_max_f32                        0x13af61a00 | th_max = 1024 | th_width =   32
+llama_kv_cache_init: kv_size = 2048, offload = 1, type_k = 'f16', type_v = 'f16', n_layer = 24, can_shift = 1
+llama_kv_cache_init: layer 0: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 1: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 2: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 3: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 4: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 5: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 6: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 7: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 8: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 9: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 10: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 11: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 12: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 13: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 14: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 15: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 16: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 17: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 18: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 19: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 20: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 21: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 22: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init: layer 23: n_embd_k_gqa = 2048, n_embd_v_gqa = 2048
+llama_kv_cache_init:      Metal KV buffer size =   384.00 MiB
+llama_init_from_model: KV self size  =  384.00 MiB, K (f16):  192.00 MiB, V (f16):  192.00 MiB
+llama_init_from_model:        CPU  output buffer size =     0.19 MiB
+llama_init_from_model:      Metal compute buffer size =   102.25 MiB
+llama_init_from_model:        CPU compute buffer size =     8.01 MiB
+llama_init_from_model: graph nodes  = 872
+llama_init_from_model: graph splits = 2
+main : deserialized state from 988319 out of a maximum of 988319 bytes
+main : seq 0 copied, 787052 bytes
+main : kv cache cleared
+main : seq 1 restored, 787052 bytes
+
+main : success
+ggml_metal_free: deallocating
+
+first run: The quick brown fox jumps over the lazy Dog." "Maybe you should have done that little trick."
+
+
+second run: The quick brown fox jumps over the lazy Dog." "Maybe you should have done that little trick."
+
+
+single seq run: The quick brown fox jumps over the lazy Dog." "Maybe you should have done that little trick."
+
+real	0m0.969s
+user	0m0.231s
+sys	0m0.161s
+```
+### ctest_with_model_debug
+
+Runs ctest with model files in debug mode
+- status: 0
+```
++ LLAMACPP_TEST_MODELFILE=/Users/ggml/mnt/llama.cpp/models/pythia/1.4B/ggml-model-f16.gguf
++ time ctest --output-on-failure -L model
+Test project /Users/ggml/work/llama.cpp/build-ci-debug
+    Start 26: test-model-load-cancel
+1/2 Test #26: test-model-load-cancel ...........   Passed    0.43 sec
+    Start 27: test-autorelease
+2/2 Test #27: test-autorelease .................   Passed    1.68 sec
+
+100% tests passed, 0 tests failed out of 2
+
+Label Time Summary:
+model    =   2.12 sec*proc (2 tests)
+
+Total Test time (real) =   2.13 sec
+        2.15 real         0.51 user         0.26 sys
+```
+### ctest_with_model_release
+
+Runs ctest with model files in release mode
+- status: 0
+```
++ LLAMACPP_TEST_MODELFILE=/Users/ggml/mnt/llama.cpp/models/pythia/1.4B/ggml-model-f16.gguf
++ time ctest --output-on-failure -L model
+Test project /Users/ggml/work/llama.cpp/build-ci-release
+    Start 26: test-model-load-cancel
+1/2 Test #26: test-model-load-cancel ...........   Passed    0.25 sec
+    Start 27: test-autorelease
+2/2 Test #27: test-autorelease .................   Passed    0.31 sec
+
+100% tests passed, 0 tests failed out of 2
+
+Label Time Summary:
+model    =   0.56 sec*proc (2 tests)
+
+Total Test time (real) =   0.61 sec
+        0.62 real         0.14 user         0.09 sys
+```
