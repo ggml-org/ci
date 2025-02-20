@@ -53,10 +53,10 @@ Call Stack (most recent call first):
 -- The ASM compiler identification is AppleClang
 -- Found assembler: /Library/Developer/CommandLineTools/usr/bin/cc
 -- Including METAL backend
--- Configuring done (2.8s)
--- Generating done (0.3s)
+-- Configuring done (2.9s)
+-- Generating done (0.2s)
 -- Build files have been written to: /Users/ggml/work/llama.cpp/build-ci-debug
 
-real	0m3.120s
-user	0m0.841s
-sys	0m1.330s
+real	0m3.170s
+user	0m0.827s
+sys	0m1.382s

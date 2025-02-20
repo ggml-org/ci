@@ -57,6 +57,6 @@ Call Stack (most recent call first):
 -- Generating done (0.3s)
 -- Build files have been written to: /Users/ggml/work/llama.cpp/build-ci-release
 
-real	0m2.590s
-user	0m0.856s
-sys	0m1.274s
+real	0m2.532s
+user	0m0.875s
+sys	0m1.244s

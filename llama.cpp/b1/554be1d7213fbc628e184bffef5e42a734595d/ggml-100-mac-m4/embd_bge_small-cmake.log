@@ -54,9 +54,9 @@ Call Stack (most recent call first):
 -- Found assembler: /Library/Developer/CommandLineTools/usr/bin/cc
 -- Including METAL backend
 -- Configuring done (2.3s)
--- Generating done (0.3s)
+-- Generating done (0.2s)
 -- Build files have been written to: /Users/ggml/work/llama.cpp/build-ci-release
 
-real	0m2.590s
-user	0m0.856s
-sys	0m1.274s
+real	0m2.602s
+user	0m0.844s
+sys	0m1.279s
