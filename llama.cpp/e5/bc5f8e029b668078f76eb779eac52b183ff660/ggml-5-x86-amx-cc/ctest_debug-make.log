@@ -1,0 +1,110 @@
+++ nproc
++ make -j8
+[  0%] Generating build details from Git
+[  0%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  1%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  1%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  3%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  3%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  4%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  4%] Built target sha256
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  4%] Built target xxhash
+[  4%] Built target sha1
+[  5%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/gguf.cpp.o
+[  6%] Linking CXX shared library ../../bin/libggml-base.so
+[  6%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  6%] Built target build_info
+[  6%] Built target ggml-base
+[  6%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[  6%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[  7%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[  7%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[  8%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[  8%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.o
+[ 10%] Linking CXX shared library ../../bin/libggml-cpu.so
+[ 10%] Built target ggml-cpu
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 11%] Linking CXX shared library ../../bin/libggml.so
+[ 11%] Built target ggml
+[ 11%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 11%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 12%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 12%] Building CXX object src/CMakeFiles/llama.dir/llama-adapter.cpp.o
+[ 13%] Building CXX object src/CMakeFiles/llama.dir/llama-arch.cpp.o
+[ 14%] Building CXX object src/CMakeFiles/llama.dir/llama-batch.cpp.o
+[ 14%] Building CXX object src/CMakeFiles/llama.dir/llama-chat.cpp.o
+[ 14%] Building CXX object src/CMakeFiles/llama.dir/llama-context.cpp.o
+[ 15%] Linking CXX executable ../../bin/llama-gguf
+[ 16%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 17%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/llama.dir/llama-graph.cpp.o
+[ 18%] Building CXX object src/CMakeFiles/llama.dir/llama-hparams.cpp.o
+[ 18%] Building CXX object src/CMakeFiles/llama.dir/llama-impl.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-io.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-kv-cache.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-mmap.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-model-loader.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-model.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/llama.dir/llama-quant.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/llama.dir/llama-sampling.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/llama.dir/llama-vocab.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/llama.dir/unicode.cpp.o
+[ 23%] Building CXX object src/CMakeFiles/llama.dir/unicode-data.cpp.o
+[ 23%] Built target llama-gguf-hash
+[ 23%] Built target llama-gguf
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘virtual size_t llama_context_enc_dec::state_get_size()’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:4986:8: error: function might be candidate for attribute ‘noreturn’ [-Werror=suggest-attribute=noreturn]
+ 4986 | size_t llama_context_enc_dec::state_get_size() {
+      |        ^~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘virtual size_t llama_context_enc_dec::state_get_data(uint8_t*, size_t)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:4990:8: error: function might be candidate for attribute ‘noreturn’ [-Werror=suggest-attribute=noreturn]
+ 4990 | size_t llama_context_enc_dec::state_get_data(      uint8_t * dst, size_t size) {
+      |        ^~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘virtual size_t llama_context_enc_dec::state_set_data(const uint8_t*, size_t)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:4996:8: error: function might be candidate for attribute ‘noreturn’ [-Werror=suggest-attribute=noreturn]
+ 4996 | size_t llama_context_enc_dec::state_set_data(const uint8_t * src, size_t size) {
+      |        ^~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘virtual size_t llama_context_enc_dec::state_seq_get_size(llama_seq_id)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:5002:8: error: function might be candidate for attribute ‘noreturn’ [-Werror=suggest-attribute=noreturn]
+ 5002 | size_t llama_context_enc_dec::state_seq_get_size(llama_seq_id seq_id) {
+      |        ^~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘virtual size_t llama_context_enc_dec::state_seq_get_data(llama_seq_id, uint8_t*, size_t)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:5007:8: error: function might be candidate for attribute ‘noreturn’ [-Werror=suggest-attribute=noreturn]
+ 5007 | size_t llama_context_enc_dec::state_seq_get_data(llama_seq_id seq_id,       uint8_t * dst, size_t size) {
+      |        ^~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘virtual size_t llama_context_enc_dec::state_seq_set_data(llama_seq_id, const uint8_t*, size_t)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:5014:8: error: function might be candidate for attribute ‘noreturn’ [-Werror=suggest-attribute=noreturn]
+ 5014 | size_t llama_context_enc_dec::state_seq_set_data(llama_seq_id seq_id, const uint8_t * src, size_t size) {
+      |        ^~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘virtual bool llama_context_enc_dec::state_load_file(const char*, llama_token*, size_t, size_t*)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:5021:6: error: function might be candidate for attribute ‘noreturn’ [-Werror=suggest-attribute=noreturn]
+ 5021 | bool llama_context_enc_dec::state_load_file(
+      |      ^~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘virtual bool llama_context_enc_dec::state_save_file(const char*, const llama_token*, size_t)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:5033:6: error: function might be candidate for attribute ‘noreturn’ [-Werror=suggest-attribute=noreturn]
+ 5033 | bool llama_context_enc_dec::state_save_file(
+      |      ^~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘virtual size_t llama_context_enc_dec::state_seq_load_file(llama_seq_id, const char*, llama_token*, size_t, size_t*)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:5043:8: error: function might be candidate for attribute ‘noreturn’ [-Werror=suggest-attribute=noreturn]
+ 5043 | size_t llama_context_enc_dec::state_seq_load_file(
+      |        ^~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In member function ‘virtual size_t llama_context_enc_dec::state_seq_save_file(llama_seq_id, const char*, const llama_token*, size_t)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:5057:8: error: function might be candidate for attribute ‘noreturn’ [-Werror=suggest-attribute=noreturn]
+ 5057 | size_t llama_context_enc_dec::state_seq_save_file(
+      |        ^~~~~~~~~~~~~~~~~~~~~
+cc1plus: all warnings being treated as errors
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:146: src/CMakeFiles/llama.dir/llama-context.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:1771: src/CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m2.637s
+user	0m4.022s
+sys	0m0.774s
