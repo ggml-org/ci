@@ -1,6 +1,0 @@
-+ ./bin/gpt-2-backend2 --model ../models-mnt/gpt-2/ggml-model-gpt-2-117M.bin -s 1234 -n 64 -tt ../examples/prompts/gpt-2.txt
-ci/run.sh: line 166: ./bin/gpt-2-backend2: No such file or directory
-
-real	0m0.002s
-user	0m0.002s
-sys	0m0.000s

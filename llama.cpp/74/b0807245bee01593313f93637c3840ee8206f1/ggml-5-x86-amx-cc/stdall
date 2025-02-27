@@ -1,4 +1,0 @@
-mkdir: cannot create directory ‘/mnt/llama.cpp’: Permission denied
-mkdir: cannot create directory ‘/mnt/llama.cpp’: Permission denied
-Error: [Errno 13] Permission denied: '/mnt/llama.cpp'
-Error: Failed to create Python virtual environment at /mnt/llama.cpp/venv.

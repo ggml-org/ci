@@ -1,7 +1,0 @@
-mkdir: cannot create directory ‘/mnt/ggml’: Permission denied
-rm: cannot remove '/home/ggml/results/ggml/49/8e0ecd2c4f9379439fd413805af10e8e9ff349/ggml-5-x86-amx-cc/*.log': No such file or directory
-rm: cannot remove '/home/ggml/results/ggml/49/8e0ecd2c4f9379439fd413805af10e8e9ff349/ggml-5-x86-amx-cc/*.exit': No such file or directory
-rm: cannot remove '/home/ggml/results/ggml/49/8e0ecd2c4f9379439fd413805af10e8e9ff349/ggml-5-x86-amx-cc/*.md': No such file or directory
-mkdir: cannot create directory ‘/mnt/ggml’: Permission denied
-Error: [Errno 13] Permission denied: '/mnt/ggml'
-Error: Failed to create Python virtual environment at /mnt/ggml/venv.

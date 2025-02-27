@@ -1,2 +1,0 @@
-ci/run.sh: line 818: python: command not found
-Error: Failed to create Python virtual environment at /mnt/llama.cpp/venv.
