@@ -1,0 +1,35 @@
++ ./bin/sam -m ../models-mnt/sam//ggml-model-f16.bin -i ../models-mnt/sam//img.jpg
+main: seed = 1741677601
+main: loaded image '../models-mnt/sam//img.jpg' (680 x 453)
+sam_image_preprocess: scale = 0.664062
+main: preprocessed image (1024 x 1024)
+sam_model_load: loading model from '../models-mnt/sam//ggml-model-f16.bin' - please wait ...
+operator(): ggml ctx size = 202.33 MB
+sam_model_load: .sam_model_load: n_enc_state      = 768
+sam_model_load: n_enc_layer      = 12
+sam_model_load: n_enc_head       = 12
+sam_model_load: n_enc_out_chans  = 256
+sam_model_load: n_pt_embd        = 4
+sam_model_load: ftype            = 1
+sam_model_load: qntvr            = 0
+..................................... done
+sam_model_load: model size =   185.05 MB / num tensors = 304
+prompt: (414.375000, 162.796875)
+
+
+main:     load time =    87.31 ms
+main:    total time = 13338.44 ms
+embd_img
+dims:  64  64  256  1 f32
+First & Last 10 elements:
+-0.05291 -0.07703 -0.07429 -0.07277 -0.05432 -0.05839 -0.05806 -0.04259 -0.04633 -0.05337 
+-0.00438 0.00320 0.00214 0.00510 -0.00372 0.00074 0.03523 0.03979 -0.00920 -0.02105 
+sum:  12418.160560
+
+Skipping mask 0 with stability score 0.900972 below threshold 0.950000
+Skipping mask 1 with stability score 0.901187 below threshold 0.950000
+Skipping mask 2 with iou 0.596518 below threshold 0.880000
+
+real	0m13.359s
+user	0m51.240s
+sys	0m1.331s
