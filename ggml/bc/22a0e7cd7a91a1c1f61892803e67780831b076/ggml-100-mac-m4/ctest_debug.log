@@ -1,0 +1,377 @@
++ cmake -DCMAKE_BUILD_TYPE=Debug -DGGML_METAL=ON -DGGML_METAL_EMBED_LIBRARY=ON ..
+-- The C compiler identification is AppleClang 16.0.0.16000026
+-- The CXX compiler identification is AppleClang 16.0.0.16000026
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: arm64
+-- Including CPU backend
+-- Accelerate framework found
+-- Could NOT find OpenMP_C (missing: OpenMP_C_FLAGS OpenMP_C_LIB_NAMES) 
+-- Could NOT find OpenMP_CXX (missing: OpenMP_CXX_FLAGS OpenMP_CXX_LIB_NAMES) 
+-- Could NOT find OpenMP (missing: OpenMP_C_FOUND OpenMP_CXX_FOUND) 
+CMake Warning at src/ggml-cpu/CMakeLists.txt:58 (message):
+  OpenMP not found
+Call Stack (most recent call first):
+  src/CMakeLists.txt:321 (ggml_add_cpu_backend_variant_impl)
+
+
+-- ARM detected
+-- Performing Test GGML_COMPILER_SUPPORTS_FP16_FORMAT_I3E
+-- Performing Test GGML_COMPILER_SUPPORTS_FP16_FORMAT_I3E - Failed
+-- ARM -mcpu not found, -mcpu=native will be used
+-- Performing Test GGML_MACHINE_SUPPORTS_dotprod
+-- Performing Test GGML_MACHINE_SUPPORTS_dotprod - Success
+-- Performing Test GGML_MACHINE_SUPPORTS_i8mm
+-- Performing Test GGML_MACHINE_SUPPORTS_i8mm - Success
+-- Performing Test GGML_MACHINE_SUPPORTS_sve
+-- Performing Test GGML_MACHINE_SUPPORTS_sve - Failed
+-- Performing Test GGML_MACHINE_SUPPORTS_nosve
+-- Performing Test GGML_MACHINE_SUPPORTS_nosve - Success
+-- Performing Test GGML_MACHINE_SUPPORTS_sme
+-- Performing Test GGML_MACHINE_SUPPORTS_sme - Success
+-- ARM feature DOTPROD enabled
+-- ARM feature MATMUL_INT8 enabled
+-- ARM feature FMA enabled
+-- ARM feature FP16_VECTOR_ARITHMETIC enabled
+-- ARM feature SME enabled
+-- Adding CPU backend variant ggml-cpu: -mcpu=native+dotprod+i8mm+nosve+sme 
+-- Looking for dgemm_
+-- Looking for dgemm_ - found
+-- Found BLAS: /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/System/Library/Frameworks/Accelerate.framework
+-- BLAS found, Libraries: /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/System/Library/Frameworks/Accelerate.framework
+-- BLAS found, Includes: 
+-- Including BLAS backend
+-- Metal framework found
+-- The ASM compiler identification is AppleClang
+-- Found assembler: /Library/Developer/CommandLineTools/usr/bin/cc
+-- Including METAL backend
+-- ARM detected
+-- Accelerate framework found
+-- Configuring done (3.4s)
+-- Generating done (0.1s)
+-- Build files have been written to: /Users/ggml/work/ggml/build-ci-debug
+
+real	0m3.494s
+user	0m0.978s
+sys	0m1.345s
++ make -j
+[  0%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  1%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  3%] Building C object src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  3%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  4%] Building C object src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  5%] Building C object src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  5%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  6%] Building CXX object src/CMakeFiles/ggml-base.dir/gguf.cpp.o
+/Users/ggml/work/ggml/examples/common.cpp:251:31: warning: 'codecvt_utf8<wchar_t>' is deprecated [-Wdeprecated-declarations]
+  251 |     std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+      |                               ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/codecvt:194:28: note: 'codecvt_utf8<wchar_t>' has been explicitly marked deprecated here
+  194 | class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 codecvt_utf8 : public __codecvt_utf8<_Elem> {
+      |                            ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:1022:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+ 1022 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+      |                                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:995:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  995 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+/Users/ggml/work/ggml/examples/common.cpp:251:10: warning: 'wstring_convert<std::codecvt_utf8<wchar_t>>' is deprecated [-Wdeprecated-declarations]
+  251 |     std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+      |          ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/locale:3114:28: note: 'wstring_convert<std::codecvt_utf8<wchar_t>>' has been explicitly marked deprecated here
+ 3114 | class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 wstring_convert {
+      |                            ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:1022:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+ 1022 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+      |                                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:995:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  995 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+/Users/ggml/work/ggml/examples/common.cpp:257:31: warning: 'codecvt_utf8<wchar_t>' is deprecated [-Wdeprecated-declarations]
+  257 |     std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+      |                               ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/codecvt:194:28: note: 'codecvt_utf8<wchar_t>' has been explicitly marked deprecated here
+  194 | class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 codecvt_utf8 : public __codecvt_utf8<_Elem> {
+      |                            ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:1022:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+ 1022 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+      |                                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:995:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  995 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+/Users/ggml/work/ggml/examples/common.cpp:257:10: warning: 'wstring_convert<std::codecvt_utf8<wchar_t>>' is deprecated [-Wdeprecated-declarations]
+  257 |     std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+      |          ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/locale:3114:28: note: 'wstring_convert<std::codecvt_utf8<wchar_t>>' has been explicitly marked deprecated here
+ 3114 | class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 wstring_convert {
+      |                            ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:1022:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+ 1022 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+      |                                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:995:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  995 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+4 warnings generated.
+[  8%] Linking CXX static library libcommon.a
+[  8%] Linking CXX shared library libggml-base.dylib
+[  8%] Built target common
+[  8%] Built target ggml-base
+[  9%] Generate assembly for embedded Metal library
+Embedding Metal library
+[ 10%] Building CXX object src/ggml-blas/CMakeFiles/ggml-blas.dir/ggml-blas.cpp.o
+[ 11%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[ 11%] Building C object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[ 12%] Building C object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 14%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/unary_ops.cpp.o
+[ 14%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/binary_ops.cpp.o
+[ 14%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 16%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[ 18%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[ 19%] Linking CXX shared library libggml-blas.dylib
+[ 20%] Building C object src/ggml-metal/CMakeFiles/ggml-metal.dir/ggml-metal.m.o
+[ 21%] Building ASM object src/ggml-metal/CMakeFiles/ggml-metal.dir/__/__/autogenerated/ggml-metal-embed.s.o
+[ 21%] Built target ggml-blas
+[ 22%] Linking C shared library libggml-metal.dylib
+[ 22%] Built target ggml-metal
+/Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:4373:32: warning: unused variable 'src1' [-Wunused-variable]
+ 4373 |     const struct ggml_tensor * src1 = dst->src[1];
+      |                                ^~~~
+1 warning generated.
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:37:36: warning: cast from 'const float *' to 'float *' drops const qualifier [-Wcast-qual]
+   37 |         src1_t * y_ptr = (src1_t *)(y + i10*nb10);
+      |                                    ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:100:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_add, float, &f32_to_f32, float, &f32_to_f32, float, &f32_to_f32>' requested here
+  100 |             vec_binary_op_non_contiguous<op, src0_t, src0_to_f32, src1_t, src1_to_f32, dst_t, f32_to_dst>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:112:9: note: in instantiation of function template specialization 'apply_binary_op<&op_add, float, &f32_to_f32, float, &f32_to_f32, float, &f32_to_f32>' requested here
+  112 |         apply_binary_op<op, F32_SRC, F32_SRC, F32_DST>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:133:5: note: in instantiation of function template specialization 'binary_op<&op_add>' requested here
+  133 |     binary_op<op_add>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:93:29: error: cannot initialize a parameter of type 'const float *' with an rvalue of type 'unsigned short *'
+   93 |                     vDSP_op(src0_ptr + r*ne10, 1, src1_ptr, 1, dst_ptr + r*ne10, 1, ne10);
+      |                             ^~~~~~~~~~~~~~~~~
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:114:9: note: in instantiation of function template specialization 'apply_binary_op<&op_add, unsigned short, &f16_to_f32, unsigned short, &f16_to_f32, unsigned short, &f32_to_f16>' requested here
+  114 |         apply_binary_op<op, F16_SRC, F16_SRC, F16_DST>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:133:5: note: in instantiation of function template specialization 'binary_op<&op_add>' requested here
+  133 |     binary_op<op_add>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:93:29: error: cannot initialize a parameter of type 'const float *' with an rvalue of type 'ggml_bf16_t *'
+   93 |                     vDSP_op(src0_ptr + r*ne10, 1, src1_ptr, 1, dst_ptr + r*ne10, 1, ne10);
+      |                             ^~~~~~~~~~~~~~~~~
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:116:9: note: in instantiation of function template specialization 'apply_binary_op<&op_add, ggml_bf16_t, &bf16_to_f32, ggml_bf16_t, &bf16_to_f32, ggml_bf16_t, &f32_to_bf16>' requested here
+  116 |         apply_binary_op<op, BF16_SRC, BF16_SRC, BF16_DST>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:133:5: note: in instantiation of function template specialization 'binary_op<&op_add>' requested here
+  133 |     binary_op<op_add>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:93:29: error: cannot initialize a parameter of type 'const float *' with an rvalue of type 'ggml_bf16_t *'
+   93 |                     vDSP_op(src0_ptr + r*ne10, 1, src1_ptr, 1, dst_ptr + r*ne10, 1, ne10);
+      |                             ^~~~~~~~~~~~~~~~~
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:118:9: note: in instantiation of function template specialization 'apply_binary_op<&op_add, ggml_bf16_t, &bf16_to_f32, float, &f32_to_f32, ggml_bf16_t, &f32_to_bf16>' requested here
+  118 |         apply_binary_op<op, BF16_SRC, F32_SRC, BF16_DST>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:133:5: note: in instantiation of function template specialization 'binary_op<&op_add>' requested here
+  133 |     binary_op<op_add>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:93:29: error: cannot initialize a parameter of type 'const float *' with an rvalue of type 'ggml_bf16_t *'
+   93 |                     vDSP_op(src0_ptr + r*ne10, 1, src1_ptr, 1, dst_ptr + r*ne10, 1, ne10);
+      |                             ^~~~~~~~~~~~~~~~~
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:120:9: note: in instantiation of function template specialization 'apply_binary_op<&op_add, ggml_bf16_t, &bf16_to_f32, float, &f32_to_f32, float, &f32_to_f32>' requested here
+  120 |         apply_binary_op<op, BF16_SRC, F32_SRC, F32_DST>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:133:5: note: in instantiation of function template specialization 'binary_op<&op_add>' requested here
+  133 |     binary_op<op_add>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:93:29: error: cannot initialize a parameter of type 'const float *' with an rvalue of type 'unsigned short *'
+   93 |                     vDSP_op(src0_ptr + r*ne10, 1, src1_ptr, 1, dst_ptr + r*ne10, 1, ne10);
+      |                             ^~~~~~~~~~~~~~~~~
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:122:9: note: in instantiation of function template specialization 'apply_binary_op<&op_add, unsigned short, &f16_to_f32, float, &f32_to_f32, unsigned short, &f32_to_f16>' requested here
+  122 |         apply_binary_op<op, F16_SRC, F32_SRC, F16_DST>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:133:5: note: in instantiation of function template specialization 'binary_op<&op_add>' requested here
+  133 |     binary_op<op_add>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:93:29: error: cannot initialize a parameter of type 'const float *' with an rvalue of type 'unsigned short *'
+   93 |                     vDSP_op(src0_ptr + r*ne10, 1, src1_ptr, 1, dst_ptr + r*ne10, 1, ne10);
+      |                             ^~~~~~~~~~~~~~~~~
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:124:9: note: in instantiation of function template specialization 'apply_binary_op<&op_add, unsigned short, &f16_to_f32, float, &f32_to_f32, float, &f32_to_f32>' requested here
+  124 |         apply_binary_op<op, F16_SRC, F32_SRC, F32_DST>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:133:5: note: in instantiation of function template specialization 'binary_op<&op_add>' requested here
+  133 |     binary_op<op_add>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:37:36: warning: cast from 'const float *' to 'float *' drops const qualifier [-Wcast-qual]
+   37 |         src1_t * y_ptr = (src1_t *)(y + i10*nb10);
+      |                                    ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:100:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_sub, float, &f32_to_f32, float, &f32_to_f32, float, &f32_to_f32>' requested here
+  100 |             vec_binary_op_non_contiguous<op, src0_t, src0_to_f32, src1_t, src1_to_f32, dst_t, f32_to_dst>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:112:9: note: in instantiation of function template specialization 'apply_binary_op<&op_sub, float, &f32_to_f32, float, &f32_to_f32, float, &f32_to_f32>' requested here
+  112 |         apply_binary_op<op, F32_SRC, F32_SRC, F32_DST>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:137:5: note: in instantiation of function template specialization 'binary_op<&op_sub>' requested here
+  137 |     binary_op<op_sub>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:93:29: error: cannot initialize a parameter of type 'const float *' with an rvalue of type 'unsigned short *'
+   93 |                     vDSP_op(src0_ptr + r*ne10, 1, src1_ptr, 1, dst_ptr + r*ne10, 1, ne10);
+      |                             ^~~~~~~~~~~~~~~~~
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:114:9: note: in instantiation of function template specialization 'apply_binary_op<&op_sub, unsigned short, &f16_to_f32, unsigned short, &f16_to_f32, unsigned short, &f32_to_f16>' requested here
+  114 |         apply_binary_op<op, F16_SRC, F16_SRC, F16_DST>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:137:5: note: in instantiation of function template specialization 'binary_op<&op_sub>' requested here
+  137 |     binary_op<op_sub>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:93:29: error: cannot initialize a parameter of type 'const float *' with an rvalue of type 'ggml_bf16_t *'
+   93 |                     vDSP_op(src0_ptr + r*ne10, 1, src1_ptr, 1, dst_ptr + r*ne10, 1, ne10);
+      |                             ^~~~~~~~~~~~~~~~~
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:116:9: note: in instantiation of function template specialization 'apply_binary_op<&op_sub, ggml_bf16_t, &bf16_to_f32, ggml_bf16_t, &bf16_to_f32, ggml_bf16_t, &f32_to_bf16>' requested here
+  116 |         apply_binary_op<op, BF16_SRC, BF16_SRC, BF16_DST>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:137:5: note: in instantiation of function template specialization 'binary_op<&op_sub>' requested here
+  137 |     binary_op<op_sub>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:93:29: error: cannot initialize a parameter of type 'const float *' with an rvalue of type 'ggml_bf16_t *'
+   93 |                     vDSP_op(src0_ptr + r*ne10, 1, src1_ptr, 1, dst_ptr + r*ne10, 1, ne10);
+      |                             ^~~~~~~~~~~~~~~~~
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:118:9: note: in instantiation of function template specialization 'apply_binary_op<&op_sub, ggml_bf16_t, &bf16_to_f32, float, &f32_to_f32, ggml_bf16_t, &f32_to_bf16>' requested here
+  118 |         apply_binary_op<op, BF16_SRC, F32_SRC, BF16_DST>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:137:5: note: in instantiation of function template specialization 'binary_op<&op_sub>' requested here
+  137 |     binary_op<op_sub>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:93:29: error: cannot initialize a parameter of type 'const float *' with an rvalue of type 'ggml_bf16_t *'
+   93 |                     vDSP_op(src0_ptr + r*ne10, 1, src1_ptr, 1, dst_ptr + r*ne10, 1, ne10);
+      |                             ^~~~~~~~~~~~~~~~~
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:120:9: note: in instantiation of function template specialization 'apply_binary_op<&op_sub, ggml_bf16_t, &bf16_to_f32, float, &f32_to_f32, float, &f32_to_f32>' requested here
+  120 |         apply_binary_op<op, BF16_SRC, F32_SRC, F32_DST>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:137:5: note: in instantiation of function template specialization 'binary_op<&op_sub>' requested here
+  137 |     binary_op<op_sub>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:93:29: error: cannot initialize a parameter of type 'const float *' with an rvalue of type 'unsigned short *'
+   93 |                     vDSP_op(src0_ptr + r*ne10, 1, src1_ptr, 1, dst_ptr + r*ne10, 1, ne10);
+      |                             ^~~~~~~~~~~~~~~~~
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:122:9: note: in instantiation of function template specialization 'apply_binary_op<&op_sub, unsigned short, &f16_to_f32, float, &f32_to_f32, unsigned short, &f32_to_f16>' requested here
+  122 |         apply_binary_op<op, F16_SRC, F32_SRC, F16_DST>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:137:5: note: in instantiation of function template specialization 'binary_op<&op_sub>' requested here
+  137 |     binary_op<op_sub>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:93:29: error: cannot initialize a parameter of type 'const float *' with an rvalue of type 'unsigned short *'
+   93 |                     vDSP_op(src0_ptr + r*ne10, 1, src1_ptr, 1, dst_ptr + r*ne10, 1, ne10);
+      |                             ^~~~~~~~~~~~~~~~~
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:124:9: note: in instantiation of function template specialization 'apply_binary_op<&op_sub, unsigned short, &f16_to_f32, float, &f32_to_f32, float, &f32_to_f32>' requested here
+  124 |         apply_binary_op<op, F16_SRC, F32_SRC, F32_DST>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:137:5: note: in instantiation of function template specialization 'binary_op<&op_sub>' requested here
+  137 |     binary_op<op_sub>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:37:36: warning: cast from 'const float *' to 'float *' drops const qualifier [-Wcast-qual]
+   37 |         src1_t * y_ptr = (src1_t *)(y + i10*nb10);
+      |                                    ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:100:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_mul, float, &f32_to_f32, float, &f32_to_f32, float, &f32_to_f32>' requested here
+  100 |             vec_binary_op_non_contiguous<op, src0_t, src0_to_f32, src1_t, src1_to_f32, dst_t, f32_to_dst>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:112:9: note: in instantiation of function template specialization 'apply_binary_op<&op_mul, float, &f32_to_f32, float, &f32_to_f32, float, &f32_to_f32>' requested here
+  112 |         apply_binary_op<op, F32_SRC, F32_SRC, F32_DST>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:141:5: note: in instantiation of function template specialization 'binary_op<&op_mul>' requested here
+  141 |     binary_op<op_mul>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:93:29: error: cannot initialize a parameter of type 'const float *' with an rvalue of type 'unsigned short *'
+   93 |                     vDSP_op(src0_ptr + r*ne10, 1, src1_ptr, 1, dst_ptr + r*ne10, 1, ne10);
+      |                             ^~~~~~~~~~~~~~~~~
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:114:9: note: in instantiation of function template specialization 'apply_binary_op<&op_mul, unsigned short, &f16_to_f32, unsigned short, &f16_to_f32, unsigned short, &f32_to_f16>' requested here
+  114 |         apply_binary_op<op, F16_SRC, F16_SRC, F16_DST>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:141:5: note: in instantiation of function template specialization 'binary_op<&op_mul>' requested here
+  141 |     binary_op<op_mul>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:93:29: error: cannot initialize a parameter of type 'const float *' with an rvalue of type 'ggml_bf16_t *'
+   93 |                     vDSP_op(src0_ptr + r*ne10, 1, src1_ptr, 1, dst_ptr + r*ne10, 1, ne10);
+      |                             ^~~~~~~~~~~~~~~~~
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:116:9: note: in instantiation of function template specialization 'apply_binary_op<&op_mul, ggml_bf16_t, &bf16_to_f32, ggml_bf16_t, &bf16_to_f32, ggml_bf16_t, &f32_to_bf16>' requested here
+  116 |         apply_binary_op<op, BF16_SRC, BF16_SRC, BF16_DST>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:141:5: note: in instantiation of function template specialization 'binary_op<&op_mul>' requested here
+  141 |     binary_op<op_mul>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:93:29: error: cannot initialize a parameter of type 'const float *' with an rvalue of type 'ggml_bf16_t *'
+   93 |                     vDSP_op(src0_ptr + r*ne10, 1, src1_ptr, 1, dst_ptr + r*ne10, 1, ne10);
+      |                             ^~~~~~~~~~~~~~~~~
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:118:9: note: in instantiation of function template specialization 'apply_binary_op<&op_mul, ggml_bf16_t, &bf16_to_f32, float, &f32_to_f32, ggml_bf16_t, &f32_to_bf16>' requested here
+  118 |         apply_binary_op<op, BF16_SRC, F32_SRC, BF16_DST>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:141:5: note: in instantiation of function template specialization 'binary_op<&op_mul>' requested here
+  141 |     binary_op<op_mul>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:93:29: error: cannot initialize a parameter of type 'const float *' with an rvalue of type 'ggml_bf16_t *'
+   93 |                     vDSP_op(src0_ptr + r*ne10, 1, src1_ptr, 1, dst_ptr + r*ne10, 1, ne10);
+      |                             ^~~~~~~~~~~~~~~~~
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:120:9: note: in instantiation of function template specialization 'apply_binary_op<&op_mul, ggml_bf16_t, &bf16_to_f32, float, &f32_to_f32, float, &f32_to_f32>' requested here
+  120 |         apply_binary_op<op, BF16_SRC, F32_SRC, F32_DST>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:141:5: note: in instantiation of function template specialization 'binary_op<&op_mul>' requested here
+  141 |     binary_op<op_mul>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:93:29: error: cannot initialize a parameter of type 'const float *' with an rvalue of type 'unsigned short *'
+   93 |                     vDSP_op(src0_ptr + r*ne10, 1, src1_ptr, 1, dst_ptr + r*ne10, 1, ne10);
+      |                             ^~~~~~~~~~~~~~~~~
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:122:9: note: in instantiation of function template specialization 'apply_binary_op<&op_mul, unsigned short, &f16_to_f32, float, &f32_to_f32, unsigned short, &f32_to_f16>' requested here
+  122 |         apply_binary_op<op, F16_SRC, F32_SRC, F16_DST>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:141:5: note: in instantiation of function template specialization 'binary_op<&op_mul>' requested here
+  141 |     binary_op<op_mul>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:93:29: error: cannot initialize a parameter of type 'const float *' with an rvalue of type 'unsigned short *'
+   93 |                     vDSP_op(src0_ptr + r*ne10, 1, src1_ptr, 1, dst_ptr + r*ne10, 1, ne10);
+      |                             ^~~~~~~~~~~~~~~~~
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:124:9: note: in instantiation of function template specialization 'apply_binary_op<&op_mul, unsigned short, &f16_to_f32, float, &f32_to_f32, float, &f32_to_f32>' requested here
+  124 |         apply_binary_op<op, F16_SRC, F32_SRC, F32_DST>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:141:5: note: in instantiation of function template specialization 'binary_op<&op_mul>' requested here
+  141 |     binary_op<op_mul>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:37:36: warning: cast from 'const float *' to 'float *' drops const qualifier [-Wcast-qual]
+   37 |         src1_t * y_ptr = (src1_t *)(y + i10*nb10);
+      |                                    ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:100:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_div, float, &f32_to_f32, float, &f32_to_f32, float, &f32_to_f32>' requested here
+  100 |             vec_binary_op_non_contiguous<op, src0_t, src0_to_f32, src1_t, src1_to_f32, dst_t, f32_to_dst>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:112:9: note: in instantiation of function template specialization 'apply_binary_op<&op_div, float, &f32_to_f32, float, &f32_to_f32, float, &f32_to_f32>' requested here
+  112 |         apply_binary_op<op, F32_SRC, F32_SRC, F32_DST>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:145:5: note: in instantiation of function template specialization 'binary_op<&op_div>' requested here
+  145 |     binary_op<op_div>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:93:29: error: cannot initialize a parameter of type 'const float *' with an rvalue of type 'unsigned short *'
+   93 |                     vDSP_op(src0_ptr + r*ne10, 1, src1_ptr, 1, dst_ptr + r*ne10, 1, ne10);
+      |                             ^~~~~~~~~~~~~~~~~
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:114:9: note: in instantiation of function template specialization 'apply_binary_op<&op_div, unsigned short, &f16_to_f32, unsigned short, &f16_to_f32, unsigned short, &f32_to_f16>' requested here
+  114 |         apply_binary_op<op, F16_SRC, F16_SRC, F16_DST>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:145:5: note: in instantiation of function template specialization 'binary_op<&op_div>' requested here
+  145 |     binary_op<op_div>(params, dst);
+      |     ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+4 warnings and 20 errors generated.
+make[2]: *** [src/CMakeFiles/ggml-cpu.dir/ggml-cpu/binary_ops.cpp.o] Error 1
+make[1]: *** [src/CMakeFiles/ggml-cpu.dir/all] Error 2
+make: *** [all] Error 2
