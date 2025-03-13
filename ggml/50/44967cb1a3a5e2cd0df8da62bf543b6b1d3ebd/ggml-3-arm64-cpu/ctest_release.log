@@ -1,0 +1,423 @@
++ cmake -DCMAKE_BUILD_TYPE=Release ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: aarch64
+-- Including CPU backend
+-- Found OpenMP_C: -fopenmp (found version "4.5") 
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5")  
+-- ARM detected
+-- Performing Test GGML_COMPILER_SUPPORTS_FP16_FORMAT_I3E
+-- Performing Test GGML_COMPILER_SUPPORTS_FP16_FORMAT_I3E - Failed
+-- Performing Test GGML_MACHINE_SUPPORTS_dotprod
+-- Performing Test GGML_MACHINE_SUPPORTS_dotprod - Success
+-- Performing Test GGML_MACHINE_SUPPORTS_i8mm
+-- Performing Test GGML_MACHINE_SUPPORTS_i8mm - Failed
+-- Performing Test GGML_MACHINE_SUPPORTS_noi8mm
+-- Performing Test GGML_MACHINE_SUPPORTS_noi8mm - Success
+-- Performing Test GGML_MACHINE_SUPPORTS_sve
+-- Performing Test GGML_MACHINE_SUPPORTS_sve - Failed
+-- Performing Test GGML_MACHINE_SUPPORTS_nosve
+-- Performing Test GGML_MACHINE_SUPPORTS_nosve - Success
+-- Performing Test GGML_MACHINE_SUPPORTS_sme
+-- Performing Test GGML_MACHINE_SUPPORTS_sme - Failed
+-- Performing Test GGML_MACHINE_SUPPORTS_nosme
+-- Performing Test GGML_MACHINE_SUPPORTS_nosme - Failed
+-- ARM feature DOTPROD enabled
+-- ARM feature FMA enabled
+-- ARM feature FP16_VECTOR_ARITHMETIC enabled
+-- Adding CPU backend variant ggml-cpu: -mcpu=ares+crypto+noprofile+dotprod+noi8mm+nosve 
+-- ARM detected
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ggml/work/ggml/build-ci-release
+
+real	0m2.037s
+user	0m1.230s
+sys	0m0.613s
++ make -j
+[  0%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  3%] Building C object src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  3%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  3%] Building C object src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  4%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  5%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  6%] Building C object src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  7%] Building CXX object src/CMakeFiles/ggml-base.dir/gguf.cpp.o
+[  8%] Linking CXX static library libcommon.a
+[  9%] Linking CXX shared library libggml-base.so
+[  9%] Built target common
+[  9%] Built target ggml-base
+[ 12%] Building C object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 12%] Building C object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[ 13%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[ 14%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 14%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[ 16%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/binary_ops.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/unary_ops.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/vec_ops.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/more_ops.cpp.o
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_add; src0_t = float; src1_t = float; dst_t = float; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_add; src0_t = float; src1_t = float; dst_t = float]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:123:49:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_add]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:144:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                     ^~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_add; src0_t = short unsigned int; src1_t = short unsigned int; dst_t = short unsigned int; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_add; src0_t = short unsigned int; src1_t = short unsigned int; dst_t = short unsigned int]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:125:67:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_add]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:144:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const short unsigned int*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_add; src0_t = ggml_bf16_t; src1_t = ggml_bf16_t; dst_t = ggml_bf16_t; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_add; src0_t = ggml_bf16_t; src1_t = ggml_bf16_t; dst_t = ggml_bf16_t]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:127:67:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_add]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:144:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const ggml_bf16_t*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_add; src0_t = ggml_bf16_t; src1_t = float; dst_t = ggml_bf16_t; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_add; src0_t = ggml_bf16_t; src1_t = float; dst_t = ggml_bf16_t]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:129:61:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_add]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:144:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_add; src0_t = ggml_bf16_t; src1_t = float; dst_t = float; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_add; src0_t = ggml_bf16_t; src1_t = float; dst_t = float]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:131:55:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_add]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:144:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_add; src0_t = short unsigned int; src1_t = float; dst_t = short unsigned int; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_add; src0_t = short unsigned int; src1_t = float; dst_t = short unsigned int]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:133:61:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_add]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:144:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_add; src0_t = short unsigned int; src1_t = float; dst_t = float; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_add; src0_t = short unsigned int; src1_t = float; dst_t = float]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:135:55:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_add]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:144:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_sub; src0_t = float; src1_t = float; dst_t = float; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_sub; src0_t = float; src1_t = float; dst_t = float]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:123:49:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_sub]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:148:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_sub; src0_t = short unsigned int; src1_t = short unsigned int; dst_t = short unsigned int; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_sub; src0_t = short unsigned int; src1_t = short unsigned int; dst_t = short unsigned int]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:125:67:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_sub]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:148:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const short unsigned int*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_sub; src0_t = ggml_bf16_t; src1_t = ggml_bf16_t; dst_t = ggml_bf16_t; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_sub; src0_t = ggml_bf16_t; src1_t = ggml_bf16_t; dst_t = ggml_bf16_t]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:127:67:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_sub]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:148:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const ggml_bf16_t*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_sub; src0_t = ggml_bf16_t; src1_t = float; dst_t = ggml_bf16_t; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_sub; src0_t = ggml_bf16_t; src1_t = float; dst_t = ggml_bf16_t]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:129:61:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_sub]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:148:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_sub; src0_t = ggml_bf16_t; src1_t = float; dst_t = float; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_sub; src0_t = ggml_bf16_t; src1_t = float; dst_t = float]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:131:55:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_sub]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:148:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_sub; src0_t = short unsigned int; src1_t = float; dst_t = short unsigned int; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_sub; src0_t = short unsigned int; src1_t = float; dst_t = short unsigned int]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:133:61:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_sub]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:148:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_sub; src0_t = short unsigned int; src1_t = float; dst_t = float; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_sub; src0_t = short unsigned int; src1_t = float; dst_t = float]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:135:55:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_sub]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:148:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_mul; src0_t = float; src1_t = float; dst_t = float; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_mul; src0_t = float; src1_t = float; dst_t = float]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:123:49:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_mul]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:152:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_mul; src0_t = short unsigned int; src1_t = short unsigned int; dst_t = short unsigned int; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_mul; src0_t = short unsigned int; src1_t = short unsigned int; dst_t = short unsigned int]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:125:67:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_mul]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:152:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const short unsigned int*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_mul; src0_t = ggml_bf16_t; src1_t = ggml_bf16_t; dst_t = ggml_bf16_t; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_mul; src0_t = ggml_bf16_t; src1_t = ggml_bf16_t; dst_t = ggml_bf16_t]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:127:67:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_mul]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:152:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const ggml_bf16_t*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_mul; src0_t = ggml_bf16_t; src1_t = float; dst_t = ggml_bf16_t; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_mul; src0_t = ggml_bf16_t; src1_t = float; dst_t = ggml_bf16_t]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:129:61:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_mul]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:152:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_mul; src0_t = ggml_bf16_t; src1_t = float; dst_t = float; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_mul; src0_t = ggml_bf16_t; src1_t = float; dst_t = float]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:131:55:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_mul]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:152:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_mul; src0_t = short unsigned int; src1_t = float; dst_t = short unsigned int; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_mul; src0_t = short unsigned int; src1_t = float; dst_t = short unsigned int]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:133:61:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_mul]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:152:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_mul; src0_t = short unsigned int; src1_t = float; dst_t = float; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_mul; src0_t = short unsigned int; src1_t = float; dst_t = float]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:135:55:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_mul]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:152:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_div; src0_t = float; src1_t = float; dst_t = float; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_div; src0_t = float; src1_t = float; dst_t = float]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:123:49:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_div]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:156:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_div; src0_t = short unsigned int; src1_t = short unsigned int; dst_t = short unsigned int; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_div; src0_t = short unsigned int; src1_t = short unsigned int; dst_t = short unsigned int]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:125:67:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_div]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:156:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const short unsigned int*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_div; src0_t = ggml_bf16_t; src1_t = ggml_bf16_t; dst_t = ggml_bf16_t; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_div; src0_t = ggml_bf16_t; src1_t = ggml_bf16_t; dst_t = ggml_bf16_t]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:127:67:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_div]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:156:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const ggml_bf16_t*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_div; src0_t = ggml_bf16_t; src1_t = float; dst_t = ggml_bf16_t; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_div; src0_t = ggml_bf16_t; src1_t = float; dst_t = ggml_bf16_t]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:129:61:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_div]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:156:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_div; src0_t = ggml_bf16_t; src1_t = float; dst_t = float; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_div; src0_t = ggml_bf16_t; src1_t = float; dst_t = float]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:131:55:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_div]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:156:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_div; src0_t = short unsigned int; src1_t = float; dst_t = short unsigned int; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_div; src0_t = short unsigned int; src1_t = float; dst_t = short unsigned int]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:133:61:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_div]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:156:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_div; src0_t = short unsigned int; src1_t = float; dst_t = float; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_div; src0_t = short unsigned int; src1_t = float; dst_t = float]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:135:55:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_div]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:156:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:227:21: warning: ‘CACHE_LINE_SIZE_F32’ defined but not used [-Wunused-const-variable=]
+  227 | static const size_t CACHE_LINE_SIZE_F32 = CACHE_LINE_SIZE/sizeof(float);
+      |                     ^~~~~~~~~~~~~~~~~~~
+In file included from /home/ggml/work/ggml/src/ggml-cpu/ggml-cpu-quants.h:4,
+                 from /home/ggml/work/ggml/src/ggml-cpu/more_ops.cpp:6:
+/home/ggml/work/ggml/src/./ggml-common.h:171:16: warning: ISO C++ prohibits anonymous structs [-Wpedantic]
+  171 |         struct {
+      |                ^
+/home/ggml/work/ggml/src/./ggml-common.h:192:16: warning: ISO C++ prohibits anonymous structs [-Wpedantic]
+  192 |         struct {
+      |                ^
+/home/ggml/work/ggml/src/./ggml-common.h:213:16: warning: ISO C++ prohibits anonymous structs [-Wpedantic]
+  213 |         struct {
+      |                ^
+In file included from /home/ggml/work/ggml/src/ggml-cpu/ggml-cpu-quants.h:4,
+                 from /home/ggml/work/ggml/src/ggml-cpu/more_ops.cpp:6:
+/home/ggml/work/ggml/src/./ggml-common.h:254:16: warning: ISO C++ prohibits anonymous structs [-Wpedantic]
+  254 |         struct {
+      |                ^
+/home/ggml/work/ggml/src/./ggml-common.h:281:16: warning: ISO C++ prohibits anonymous structs [-Wpedantic]
+  281 |         struct {
+      |                ^
+/home/ggml/work/ggml/src/./ggml-common.h:298:16: warning: ISO C++ prohibits anonymous structs [-Wpedantic]
+  298 |         struct {
+      |                ^
+/home/ggml/work/ggml/src/ggml-cpu/more_ops.cpp: In function ‘void ggml_compute_forward_add(const ggml_compute_params*, ggml_tensor*)’:
+/home/ggml/work/ggml/src/ggml-cpu/more_ops.cpp:1322:32: warning: unused variable ‘src1’ [-Wunused-variable]
+ 1322 |     const struct ggml_tensor * src1 = dst->src[1];
+      |                                ^~~~
+[ 22%] Linking CXX shared library libggml-cpu.so
+[ 22%] Built target ggml-cpu
+[ 23%] Building CXX object src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 24%] Linking CXX shared library libggml.so
+[ 24%] Built target ggml
+[ 26%] Building CXX object tests/CMakeFiles/test-opt.dir/test-opt.cpp.o
+[ 26%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 27%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 28%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
+[ 29%] Building C object tests/CMakeFiles/test-mul-mat0.dir/test-mul-mat0.c.o
+[ 30%] Building C object tests/CMakeFiles/test-mul-mat2.dir/test-mul-mat2.c.o
+[ 31%] Building CXX object tests/CMakeFiles/test-arange.dir/test-arange.cpp.o
+[ 32%] Building CXX object tests/CMakeFiles/test-timestep_embedding.dir/test-timestep_embedding.cpp.o
+[ 33%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
+[ 34%] Linking C executable ../bin/test-vec0
+[ 35%] Building C object tests/CMakeFiles/test-pool.dir/test-pool.c.o
+[ 36%] Linking CXX executable ../bin/test-quantize-fns
+[ 37%] Linking C executable ../bin/test-mul-mat0
+[ 38%] Linking CXX executable ../bin/test-opt
+[ 39%] Linking CXX executable ../bin/test-quantize-perf
+[ 40%] Building CXX object tests/CMakeFiles/test-pad-reflect-1d.dir/test-pad-reflect-1d.cpp.o
+[ 41%] Linking CXX executable ../bin/test-timestep_embedding
+[ 42%] Linking C executable ../bin/test-pool
+[ 43%] Linking C executable ../bin/test-mul-mat2
+[ 44%] Linking C executable ../bin/test0
+[ 45%] Linking CXX executable ../bin/test-arange
+[ 46%] Linking CXX executable ../bin/test-pad-reflect-1d
+[ 47%] Building CXX object tests/CMakeFiles/test-conv-transpose-1d.dir/test-conv-transpose-1d.cpp.o
+[ 47%] Built target test-vec0
+[ 48%] Building C object tests/CMakeFiles/test-dup.dir/test-dup.c.o
+[ 49%] Building C object tests/CMakeFiles/test-conv-transpose.dir/test-conv-transpose.c.o
+[ 50%] Building C object tests/CMakeFiles/test-customop.dir/test-customop.c.o
+[ 51%] Building C object tests/CMakeFiles/test-rel-pos.dir/test-rel-pos.c.o
+[ 53%] Linking C executable ../bin/test-dup
+[ 53%] Building CXX object tests/CMakeFiles/test-conv1d.dir/test-conv1d.cpp.o
+[ 54%] Building CXX object tests/CMakeFiles/test-conv2d.dir/test-conv2d.cpp.o
+[ 55%] Linking C executable ../bin/test-conv-transpose
+[ 56%] Linking C executable ../bin/test-customop
+[ 57%] Linking CXX executable ../bin/test-conv-transpose-1d
+[ 57%] Built target test-pool
+[ 57%] Built target test-quantize-perf
+[ 57%] Built target test0
+[ 57%] Built target test-mul-mat0
+[ 58%] Linking C executable ../bin/test-rel-pos
+[ 59%] Linking CXX executable ../bin/test-conv2d
+[ 60%] Linking CXX executable ../bin/test-conv1d
+[ 61%] Building CXX object tests/CMakeFiles/test-mul-mat.dir/test-mul-mat.cpp.o
+[ 61%] Built target test-quantize-fns
+[ 61%] Built target test-opt
+[ 62%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 62%] Built target test-timestep_embedding
+[ 63%] Linking CXX executable ../bin/test-mul-mat
+[ 63%] Built target test-arange
+[ 63%] Built target test-mul-mat2
+[ 64%] Building C object tests/CMakeFiles/test-cont.dir/test-cont.c.o
+[ 65%] Linking CXX executable ../bin/test-backend-ops
+[ 65%] Built target test-dup
+[ 66%] Linking C executable ../bin/test-cont
+[ 66%] Built target test-conv-transpose
+[ 66%] Building CXX object examples/sam/CMakeFiles/sam.dir/main.cpp.o
+[ 66%] Built target test-pad-reflect-1d
+[ 66%] Built target test-customop
+[ 67%] Building CXX object examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o
+[ 69%] Building CXX object examples/mnist/CMakeFiles/mnist-common.dir/mnist-common.cpp.o
+[ 68%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolov3-tiny.cpp.o
+[ 70%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolo-image.cpp.o
+[ 71%] Building CXX object examples/simple/CMakeFiles/simple-ctx.dir/simple-ctx.cpp.o
+[ 72%] Linking CXX executable ../../bin/sam
+[ 72%] Built target test-rel-pos
+[ 73%] Linking CXX static library libcommon-ggml.a
+[ 73%] Built target test-conv1d
+[ 74%] Building CXX object examples/simple/CMakeFiles/simple-backend.dir/simple-backend.cpp.o
+[ 75%] Linking CXX static library libmnist-common.a
+[ 75%] Built target test-conv-transpose-1d
+[ 75%] Built target test-conv2d
+[ 75%] Built target test-mul-mat
+[ 76%] Linking CXX executable ../../bin/yolov3-tiny
+[ 77%] Linking CXX executable ../../bin/simple-ctx
+[ 78%] Linking CXX executable ../../bin/simple-backend
+[ 78%] Built target common-ggml
+[ 78%] Built target test-cont
+[ 78%] Built target mnist-common
+[ 78%] Built target test-backend-ops
+[ 79%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-alloc.dir/main-alloc.cpp.o
+[ 80%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-backend.dir/main-backend.cpp.o
+[ 81%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-ctx.dir/main-ctx.cpp.o
+[ 82%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-sched.dir/main-sched.cpp.o
+[ 83%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-quantize.dir/quantize.cpp.o
+[ 84%] Linking CXX executable ../../bin/gpt-2-alloc
+[ 85%] Linking CXX executable ../../bin/gpt-2-backend
+[ 86%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j.dir/main.cpp.o
+[ 86%] Built target sam
+[ 86%] Built target simple-ctx
+[ 87%] Linking CXX executable ../../bin/gpt-2-ctx
+[ 87%] Built target simple-backend
+[ 88%] Building CXX object examples/gpt-j/CMakeFiles/gpt-j-quantize.dir/quantize.cpp.o
+[ 89%] Linking CXX executable ../../bin/gpt-2-sched
+[ 90%] Building CXX object examples/gpt-2/CMakeFiles/gpt-2-batched.dir/main-batched.cpp.o
+[ 91%] Building CXX object examples/mnist/CMakeFiles/mnist-eval.dir/mnist-eval.cpp.o
+[ 92%] Linking CXX executable ../../bin/gpt-2-quantize
+[ 92%] Built target yolov3-tiny
+[ 93%] Building CXX object examples/mnist/CMakeFiles/mnist-train.dir/mnist-train.cpp.o
+[ 94%] Linking CXX executable ../../bin/gpt-2-batched
+[ 95%] Linking CXX executable ../../bin/gpt-j-quantize
+[ 96%] Linking CXX executable ../../bin/gpt-j
+[ 97%] Linking CXX executable ../../bin/mnist-eval
+[ 98%] Linking CXX executable ../../bin/mnist-train
+[ 99%] Building CXX object examples/magika/CMakeFiles/magika.dir/main.cpp.o
+[100%] Linking CXX executable ../../bin/magika
+[100%] Built target gpt-2-alloc
+[100%] Built target gpt-2-backend
+[100%] Built target gpt-j-quantize
+[100%] Built target gpt-2-sched
+[100%] Built target gpt-2-ctx
+[100%] Built target gpt-2-quantize
+[100%] Built target mnist-eval
+[100%] Built target mnist-train
+[100%] Built target gpt-2-batched
+[100%] Built target gpt-j
+[100%] Built target magika
+
+real	0m5.460s
+user	0m9.286s
+sys	0m2.011s
++ ctest --output-on-failure
+Test project /home/ggml/work/ggml/build-ci-release
+      Start  1: test-opt
+ 1/20 Test  #1: test-opt .........................   Passed    0.01 sec
+      Start  2: test-quantize-fns
+ 2/20 Test  #2: test-quantize-fns ................   Passed   17.35 sec
+      Start  3: test-quantize-perf
+ 3/20 Test  #3: test-quantize-perf ...............   Passed    0.08 sec
+      Start  4: test-mul-mat0
+ 4/20 Test  #4: test-mul-mat0 ....................   Passed    0.52 sec
+      Start  5: test-mul-mat2
+ 5/20 Test  #5: test-mul-mat2 ....................   Passed    1.76 sec
+      Start  6: test0
+ 6/20 Test  #6: test0 ............................   Passed    0.00 sec
+      Start  7: test-pool
+ 7/20 Test  #7: test-pool ........................   Passed    0.00 sec
+      Start  8: test-arange
+ 8/20 Test  #8: test-arange ......................   Passed    0.00 sec
+      Start  9: test-timestep_embedding
+ 9/20 Test  #9: test-timestep_embedding ..........   Passed    0.00 sec
+      Start 10: test-pad-reflect-1d
+10/20 Test #10: test-pad-reflect-1d ..............   Passed    0.00 sec
+      Start 11: test-conv-transpose
+11/20 Test #11: test-conv-transpose ..............   Passed    0.00 sec
+      Start 12: test-conv-transpose-1d
+12/20 Test #12: test-conv-transpose-1d ...........   Passed    0.01 sec
+      Start 13: test-dup
+13/20 Test #13: test-dup .........................   Passed    0.00 sec
+      Start 14: test-rel-pos
+14/20 Test #14: test-rel-pos .....................   Passed    0.00 sec
+      Start 15: test-customop
+15/20 Test #15: test-customop ....................   Passed    0.00 sec
+      Start 16: test-conv1d
+16/20 Test #16: test-conv1d ......................   Passed    0.00 sec
+      Start 17: test-conv2d
+17/20 Test #17: test-conv2d ......................   Passed    0.00 sec
+      Start 18: test-mul-mat
+18/20 Test #18: test-mul-mat .....................   Passed    0.00 sec
+      Start 19: test-backend-ops
+19/20 Test #19: test-backend-ops .................   Passed    0.00 sec
+      Start 20: test-cont
+20/20 Test #20: test-cont ........................   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 20
+
+Total Test time (real) =  19.79 sec
+
+real	0m19.796s
+user	0m19.330s
+sys	0m0.223s
