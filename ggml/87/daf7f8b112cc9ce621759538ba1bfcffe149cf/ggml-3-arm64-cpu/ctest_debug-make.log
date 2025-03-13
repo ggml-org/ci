@@ -1,0 +1,1105 @@
++ make -j
+[  3%] Building C object src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  3%] Building C object src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  3%] Building C object src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  3%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  5%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  6%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  6%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  7%] Building CXX object src/CMakeFiles/ggml-base.dir/gguf.cpp.o
+[  8%] Linking CXX static library libcommon.a
+[  9%] Linking CXX shared library libggml-base.so
+[  9%] Built target common
+[  9%] Built target ggml-base
+[ 13%] Building C object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[ 13%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[ 13%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[ 13%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[ 14%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 15%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 16%] Building C object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 17%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 18%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/binary_ops.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/unary_ops.cpp.o
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_add; src0_t = float; src1_t = float; dst_t = float; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_add; src0_t = float; src1_t = float; dst_t = float]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:123:49:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_add]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:144:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                     ^~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_add; src0_t = short unsigned int; src1_t = short unsigned int; dst_t = short unsigned int; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_add; src0_t = short unsigned int; src1_t = short unsigned int; dst_t = short unsigned int]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:125:67:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_add]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:144:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const short unsigned int*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_add; src0_t = ggml_bf16_t; src1_t = ggml_bf16_t; dst_t = ggml_bf16_t; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_add; src0_t = ggml_bf16_t; src1_t = ggml_bf16_t; dst_t = ggml_bf16_t]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:127:67:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_add]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:144:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const ggml_bf16_t*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_add; src0_t = ggml_bf16_t; src1_t = float; dst_t = ggml_bf16_t; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_add; src0_t = ggml_bf16_t; src1_t = float; dst_t = ggml_bf16_t]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:129:61:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_add]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:144:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_add; src0_t = ggml_bf16_t; src1_t = float; dst_t = float; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_add; src0_t = ggml_bf16_t; src1_t = float; dst_t = float]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:131:55:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_add]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:144:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_add; src0_t = short unsigned int; src1_t = float; dst_t = short unsigned int; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_add; src0_t = short unsigned int; src1_t = float; dst_t = short unsigned int]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:133:61:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_add]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:144:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_add; src0_t = short unsigned int; src1_t = float; dst_t = float; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_add; src0_t = short unsigned int; src1_t = float; dst_t = float]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:135:55:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_add]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:144:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_sub; src0_t = float; src1_t = float; dst_t = float; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_sub; src0_t = float; src1_t = float; dst_t = float]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:123:49:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_sub]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:148:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_sub; src0_t = short unsigned int; src1_t = short unsigned int; dst_t = short unsigned int; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_sub; src0_t = short unsigned int; src1_t = short unsigned int; dst_t = short unsigned int]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:125:67:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_sub]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:148:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const short unsigned int*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_sub; src0_t = ggml_bf16_t; src1_t = ggml_bf16_t; dst_t = ggml_bf16_t; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_sub; src0_t = ggml_bf16_t; src1_t = ggml_bf16_t; dst_t = ggml_bf16_t]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:127:67:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_sub]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:148:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const ggml_bf16_t*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_sub; src0_t = ggml_bf16_t; src1_t = float; dst_t = ggml_bf16_t; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_sub; src0_t = ggml_bf16_t; src1_t = float; dst_t = ggml_bf16_t]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:129:61:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_sub]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:148:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_sub; src0_t = ggml_bf16_t; src1_t = float; dst_t = float; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_sub; src0_t = ggml_bf16_t; src1_t = float; dst_t = float]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:131:55:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_sub]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:148:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_sub; src0_t = short unsigned int; src1_t = float; dst_t = short unsigned int; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_sub; src0_t = short unsigned int; src1_t = float; dst_t = short unsigned int]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:133:61:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_sub]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:148:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_sub; src0_t = short unsigned int; src1_t = float; dst_t = float; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_sub; src0_t = short unsigned int; src1_t = float; dst_t = float]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:135:55:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_sub]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:148:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_mul; src0_t = float; src1_t = float; dst_t = float; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_mul; src0_t = float; src1_t = float; dst_t = float]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:123:49:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_mul]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:152:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_mul; src0_t = short unsigned int; src1_t = short unsigned int; dst_t = short unsigned int; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_mul; src0_t = short unsigned int; src1_t = short unsigned int; dst_t = short unsigned int]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:125:67:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_mul]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:152:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const short unsigned int*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_mul; src0_t = ggml_bf16_t; src1_t = ggml_bf16_t; dst_t = ggml_bf16_t; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_mul; src0_t = ggml_bf16_t; src1_t = ggml_bf16_t; dst_t = ggml_bf16_t]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:127:67:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_mul]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:152:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const ggml_bf16_t*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_mul; src0_t = ggml_bf16_t; src1_t = float; dst_t = ggml_bf16_t; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_mul; src0_t = ggml_bf16_t; src1_t = float; dst_t = ggml_bf16_t]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:129:61:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_mul]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:152:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_mul; src0_t = ggml_bf16_t; src1_t = float; dst_t = float; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_mul; src0_t = ggml_bf16_t; src1_t = float; dst_t = float]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:131:55:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_mul]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:152:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_mul; src0_t = short unsigned int; src1_t = float; dst_t = short unsigned int; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_mul; src0_t = short unsigned int; src1_t = float; dst_t = short unsigned int]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:133:61:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_mul]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:152:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_mul; src0_t = short unsigned int; src1_t = float; dst_t = float; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_mul; src0_t = short unsigned int; src1_t = float; dst_t = float]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:135:55:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_mul]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:152:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_div; src0_t = float; src1_t = float; dst_t = float; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_div; src0_t = float; src1_t = float; dst_t = float]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:123:49:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_div]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:156:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_div; src0_t = short unsigned int; src1_t = short unsigned int; dst_t = short unsigned int; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_div; src0_t = short unsigned int; src1_t = short unsigned int; dst_t = short unsigned int]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:125:67:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_div]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:156:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const short unsigned int*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_div; src0_t = ggml_bf16_t; src1_t = ggml_bf16_t; dst_t = ggml_bf16_t; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_div; src0_t = ggml_bf16_t; src1_t = ggml_bf16_t; dst_t = ggml_bf16_t]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:127:67:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_div]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:156:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const ggml_bf16_t*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_div; src0_t = ggml_bf16_t; src1_t = float; dst_t = ggml_bf16_t; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_div; src0_t = ggml_bf16_t; src1_t = float; dst_t = ggml_bf16_t]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:129:61:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_div]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:156:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_div; src0_t = ggml_bf16_t; src1_t = float; dst_t = float; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_div; src0_t = ggml_bf16_t; src1_t = float; dst_t = float]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:131:55:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_div]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:156:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_div; src0_t = short unsigned int; src1_t = float; dst_t = short unsigned int; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_div; src0_t = short unsigned int; src1_t = float; dst_t = short unsigned int]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:133:61:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_div]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:156:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp: In instantiation of ‘void vec_binary_op_non_contiguous(int64_t, int64_t, int64_t, dst_t*, const src0_t*, const src1_t*) [with float (* op)(float, float) = op_div; src0_t = short unsigned int; src1_t = float; dst_t = float; int64_t = long int]’:
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:45:   required from ‘void apply_binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_div; src0_t = short unsigned int; src1_t = float; dst_t = float]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:135:55:   required from ‘void binary_op(const ggml_compute_params*, ggml_tensor*) [with float (* op)(float, float) = op_div]’
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:156:22:   required from here
+/home/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:37: warning: cast from type ‘const float*’ to type ‘char*’ casts away qualifiers [-Wcast-qual]
+[ 21%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/more_ops.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/vec_ops.cpp.o
+In file included from /home/ggml/work/ggml/src/ggml-cpu/ggml-cpu-impl.h:6,
+                 from /home/ggml/work/ggml/src/ggml-cpu/ggml-cpu-traits.h:3,
+                 from /home/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:6:
+/home/ggml/work/ggml/src/./ggml-impl.h:554:30: warning: ‘ggml_compute_bf16_to_fp32’ is static but used in inline function ‘ggml_vec_sum_bf16_ggf’ which is not static
+  554 | #define GGML_BF16_TO_FP32(x) ggml_compute_bf16_to_fp32(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:787:16: note: in expansion of macro ‘GGML_BF16_TO_FP32’
+  787 |         sum += GGML_BF16_TO_FP32(x[i]);
+      |                ^~~~~~~~~~~~~~~~~
+In file included from /home/ggml/work/ggml/src/ggml-cpu/ggml-cpu-impl.h:6,
+                 from /home/ggml/work/ggml/src/ggml-cpu/ggml-cpu-traits.h:3,
+                 from /home/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:6:
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_sum_f16_ggf’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:779:16: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  779 |         sum += GGML_FP16_TO_FP32(x[i]);
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_silu_backward_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:68: note: in definition of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                                                    ^
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:741:12: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  741 |     return GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(dy)*s*(1.0f + v*(1.0f - s)));
+      |            ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:741:30: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  741 |     return GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(dy)*s*(1.0f + v*(1.0f - s)));
+      |                              ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:42: warning: ‘ggml_compute_fp32_to_fp16’ is static but used in inline function ‘ggml_silu_backward_f16’ which is not static
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:479:30: note: in expansion of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:741:12: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  741 |     return GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(dy)*s*(1.0f + v*(1.0f - s)));
+      |            ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_silu_backward_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:739:21: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  739 |     const float v = GGML_FP16_TO_FP32(x);
+      |                     ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:42: warning: ‘ggml_compute_fp32_to_fp16’ is static but used in inline function ‘ggml_silu_f16’ which is not static
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:479:30: note: in expansion of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:526:12: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  526 |     return GGML_FP32_TO_FP16(v/(1.0f + expf(-v)));
+      |            ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_silu_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:525:15: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  525 |     float v = GGML_FP16_TO_FP32(x);
+      |               ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:42: warning: ‘ggml_compute_fp32_to_fp16’ is static but used in inline function ‘ggml_vec_gelu_quick_f16’ which is not static
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:479:30: note: in expansion of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:516:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  516 |         y[i] = GGML_FP32_TO_FP16(v*(1.0f/(1.0f+expf(GELU_QUICK_COEF*v))));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_gelu_quick_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:515:19: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  515 |         float v = GGML_FP16_TO_FP32(x[i]);
+      |                   ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_gelu_quick_f32’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:502:16: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  502 |         y[i] = GGML_FP16_TO_FP32(ggml_table_gelu_quick_f16[t]);
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:42: warning: ‘ggml_compute_fp32_to_fp16’ is static but used in inline function ‘ggml_vec_gelu_quick_f32’ which is not static
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:479:30: note: in expansion of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:500:28: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  500 |         ggml_fp16_t fp16 = GGML_FP32_TO_FP16(x[i]);
+      |                            ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_gelu_f32’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:473:20: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  473 |             y[i] = GGML_FP16_TO_FP32(ggml_table_gelu_f16[t]);
+      |                    ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:42: warning: ‘ggml_compute_fp32_to_fp16’ is static but used in inline function ‘ggml_vec_gelu_f32’ which is not static
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:479:30: note: in expansion of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:471:32: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  471 |             ggml_fp16_t fp16 = GGML_FP32_TO_FP16(x[i]);
+      |                                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_exp_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:68: note: in definition of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                                                    ^
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:443:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  443 |         y[i] = GGML_FP32_TO_FP16(expf(GGML_FP16_TO_FP32(x[i])));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:443:39: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  443 |         y[i] = GGML_FP32_TO_FP16(expf(GGML_FP16_TO_FP32(x[i])));
+      |                                       ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:42: warning: ‘ggml_compute_fp32_to_fp16’ is static but used in inline function ‘ggml_vec_exp_f16’ which is not static
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:479:30: note: in expansion of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:443:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  443 |         y[i] = GGML_FP32_TO_FP16(expf(GGML_FP16_TO_FP32(x[i])));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_hardsigmoid_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:68: note: in definition of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                                                    ^
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:437:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  437 |         y[i] = GGML_FP32_TO_FP16(fminf(1.0f, fmaxf(0.0f, (GGML_FP16_TO_FP32(x[i]) + 3.0f) / 6.0f)));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:437:59: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  437 |         y[i] = GGML_FP32_TO_FP16(fminf(1.0f, fmaxf(0.0f, (GGML_FP16_TO_FP32(x[i]) + 3.0f) / 6.0f)));
+      |                                                           ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:42: warning: ‘ggml_compute_fp32_to_fp16’ is static but used in inline function ‘ggml_vec_hardsigmoid_f16’ which is not static
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:479:30: note: in expansion of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:437:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  437 |         y[i] = GGML_FP32_TO_FP16(fminf(1.0f, fmaxf(0.0f, (GGML_FP16_TO_FP32(x[i]) + 3.0f) / 6.0f)));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:42: warning: ‘ggml_compute_fp32_to_fp16’ is static but used in inline function ‘ggml_vec_hardswish_f16’ which is not static
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:479:30: note: in expansion of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:431:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  431 |         y[i] = GGML_FP32_TO_FP16(v * fminf(1.0f, fmaxf(0.0f, (v + 3.0f) / 6.0f)));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_hardswish_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:430:19: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  430 |         float v = GGML_FP16_TO_FP32(x[i]);
+      |                   ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_sigmoid_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:68: note: in definition of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                                                    ^
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:423:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  423 |         y[i] = GGML_FP32_TO_FP16(1.f / (1.f + expf(-GGML_FP16_TO_FP32(x[i]))));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:423:53: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  423 |         y[i] = GGML_FP32_TO_FP16(1.f / (1.f + expf(-GGML_FP16_TO_FP32(x[i]))));
+      |                                                     ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:42: warning: ‘ggml_compute_fp32_to_fp16’ is static but used in inline function ‘ggml_vec_sigmoid_f16’ which is not static
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:479:30: note: in expansion of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:423:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  423 |         y[i] = GGML_FP32_TO_FP16(1.f / (1.f + expf(-GGML_FP16_TO_FP32(x[i]))));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:42: warning: ‘ggml_compute_fp32_to_fp16’ is static but used in inline function ‘ggml_vec_leaky_relu_f16’ which is not static
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:479:30: note: in expansion of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:417:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  417 |         y[i] = GGML_FP32_TO_FP16(((v > 0.f) ? v : 0.f) + ns * ((v < 0.0f) ? v : 0.f));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_leaky_relu_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:416:19: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  416 |         float v = GGML_FP16_TO_FP32(x[i]);
+      |                   ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:42: warning: ‘ggml_compute_fp32_to_fp16’ is static but used in inline function ‘ggml_vec_relu_f16’ which is not static
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:479:30: note: in expansion of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:410:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  410 |         y[i] = GGML_FP32_TO_FP16((v > 0.f) ? v : 0.f);
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_relu_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:409:19: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  409 |         float v = GGML_FP16_TO_FP32(x[i]);
+      |                   ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_elu_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:68: note: in definition of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                                                    ^
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:403:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  403 |         y[i] = GGML_FP32_TO_FP16(expm1f(GGML_FP16_TO_FP32(x[i])));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:403:41: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  403 |         y[i] = GGML_FP32_TO_FP16(expm1f(GGML_FP16_TO_FP32(x[i])));
+      |                                         ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:42: warning: ‘ggml_compute_fp32_to_fp16’ is static but used in inline function ‘ggml_vec_elu_f16’ which is not static
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:479:30: note: in expansion of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:403:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  403 |         y[i] = GGML_FP32_TO_FP16(expm1f(GGML_FP16_TO_FP32(x[i])));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_tanh_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:68: note: in definition of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                                                    ^
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:397:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  397 |         y[i] = GGML_FP32_TO_FP16(tanhf(GGML_FP16_TO_FP32(x[i])));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:397:40: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  397 |         y[i] = GGML_FP32_TO_FP16(tanhf(GGML_FP16_TO_FP32(x[i])));
+      |                                        ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:42: warning: ‘ggml_compute_fp32_to_fp16’ is static but used in inline function ‘ggml_vec_tanh_f16’ which is not static
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:479:30: note: in expansion of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:397:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  397 |         y[i] = GGML_FP32_TO_FP16(tanhf(GGML_FP16_TO_FP32(x[i])));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_step_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:68: note: in definition of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                                                    ^
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:391:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  391 |         y[i] = GGML_FP32_TO_FP16((GGML_FP16_TO_FP32(x[i]) > 0.f) ? 1.f : 0.f);
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:391:35: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  391 |         y[i] = GGML_FP32_TO_FP16((GGML_FP16_TO_FP32(x[i]) > 0.f) ? 1.f : 0.f);
+      |                                   ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:42: warning: ‘ggml_compute_fp32_to_fp16’ is static but used in inline function ‘ggml_vec_step_f16’ which is not static
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:479:30: note: in expansion of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:391:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  391 |         y[i] = GGML_FP32_TO_FP16((GGML_FP16_TO_FP32(x[i]) > 0.f) ? 1.f : 0.f);
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:42: warning: ‘ggml_compute_fp32_to_fp16’ is static but used in inline function ‘ggml_vec_sgn_f16’ which is not static
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:479:30: note: in expansion of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:385:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  385 |         y[i] = GGML_FP32_TO_FP16((v > 0.f) ? 1.f : ((v < 0.f) ? -1.f : 0.f));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_sgn_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:384:19: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  384 |         float v = GGML_FP16_TO_FP32(x[i]);
+      |                   ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_abs_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:68: note: in definition of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                                                    ^
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:378:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  378 |         y[i] = GGML_FP32_TO_FP16(fabsf(GGML_FP16_TO_FP32(x[i])));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:378:40: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  378 |         y[i] = GGML_FP32_TO_FP16(fabsf(GGML_FP16_TO_FP32(x[i])));
+      |                                        ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:42: warning: ‘ggml_compute_fp32_to_fp16’ is static but used in inline function ‘ggml_vec_abs_f16’ which is not static
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:479:30: note: in expansion of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:378:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  378 |         y[i] = GGML_FP32_TO_FP16(fabsf(GGML_FP16_TO_FP32(x[i])));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_cos_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:68: note: in definition of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                                                    ^
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:372:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  372 |         y[i] = GGML_FP32_TO_FP16(cosf(GGML_FP16_TO_FP32(x[i])));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:372:39: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  372 |         y[i] = GGML_FP32_TO_FP16(cosf(GGML_FP16_TO_FP32(x[i])));
+      |                                       ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:42: warning: ‘ggml_compute_fp32_to_fp16’ is static but used in inline function ‘ggml_vec_cos_f16’ which is not static
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:479:30: note: in expansion of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:372:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  372 |         y[i] = GGML_FP32_TO_FP16(cosf(GGML_FP16_TO_FP32(x[i])));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_sin_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:68: note: in definition of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                                                    ^
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:366:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  366 |         y[i] = GGML_FP32_TO_FP16(sinf(GGML_FP16_TO_FP32(x[i])));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:366:39: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  366 |         y[i] = GGML_FP32_TO_FP16(sinf(GGML_FP16_TO_FP32(x[i])));
+      |                                       ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:42: warning: ‘ggml_compute_fp32_to_fp16’ is static but used in inline function ‘ggml_vec_sin_f16’ which is not static
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:479:30: note: in expansion of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:366:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  366 |         y[i] = GGML_FP32_TO_FP16(sinf(GGML_FP16_TO_FP32(x[i])));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_log_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:68: note: in definition of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                                                    ^
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:360:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  360 |         y[i] = GGML_FP32_TO_FP16(logf(GGML_FP16_TO_FP32(x[i])));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:360:39: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  360 |         y[i] = GGML_FP32_TO_FP16(logf(GGML_FP16_TO_FP32(x[i])));
+      |                                       ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:42: warning: ‘ggml_compute_fp32_to_fp16’ is static but used in inline function ‘ggml_vec_log_f16’ which is not static
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:479:30: note: in expansion of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:360:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  360 |         y[i] = GGML_FP32_TO_FP16(logf(GGML_FP16_TO_FP32(x[i])));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_sqrt_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:68: note: in definition of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                                                    ^
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:354:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  354 |         y[i] = GGML_FP32_TO_FP16(sqrtf(GGML_FP16_TO_FP32(x[i])));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:354:40: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  354 |         y[i] = GGML_FP32_TO_FP16(sqrtf(GGML_FP16_TO_FP32(x[i])));
+      |                                        ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:42: warning: ‘ggml_compute_fp32_to_fp16’ is static but used in inline function ‘ggml_vec_sqrt_f16’ which is not static
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:479:30: note: in expansion of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:354:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  354 |         y[i] = GGML_FP32_TO_FP16(sqrtf(GGML_FP16_TO_FP32(x[i])));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:42: warning: ‘ggml_compute_fp32_to_fp16’ is static but used in inline function ‘ggml_vec_sqr_f16’ which is not static
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:479:30: note: in expansion of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:348:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  348 |         y[i] = GGML_FP32_TO_FP16(v*v);
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_sqr_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:347:19: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  347 |         float v = GGML_FP16_TO_FP32(x[i]);
+      |                   ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_scale_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:68: note: in definition of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                                                    ^
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:333:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  333 |         y[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(y[i])*v);
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:333:34: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  333 |         y[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(y[i])*v);
+      |                                  ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:42: warning: ‘ggml_compute_fp32_to_fp16’ is static but used in inline function ‘ggml_vec_scale_f16’ which is not static
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:479:30: note: in expansion of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:333:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  333 |         y[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(y[i])*v);
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_mad_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:68: note: in definition of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                                                    ^
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:220:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  220 |         y[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(y[i]) + GGML_FP16_TO_FP32(x[i])*v);
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:220:60: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  220 |         y[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(y[i]) + GGML_FP16_TO_FP32(x[i])*v);
+      |                                                            ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_mad_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:68: note: in definition of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                                                    ^
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:220:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  220 |         y[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(y[i]) + GGML_FP16_TO_FP32(x[i])*v);
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:220:34: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  220 |         y[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(y[i]) + GGML_FP16_TO_FP32(x[i])*v);
+      |                                  ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:42: warning: ‘ggml_compute_fp32_to_fp16’ is static but used in inline function ‘ggml_vec_mad_f16’ which is not static
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:479:30: note: in expansion of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:220:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  220 |         y[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(y[i]) + GGML_FP16_TO_FP32(x[i])*v);
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_dot_f16_unroll’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:152:64: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  152 |             sumf[j] += (ggml_float)(GGML_FP16_TO_FP32(x[j][i])*GGML_FP16_TO_FP32(y[i]));
+      |                                                                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_dot_f16_unroll’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:152:37: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  152 |             sumf[j] += (ggml_float)(GGML_FP16_TO_FP32(x[j][i])*GGML_FP16_TO_FP32(y[i]));
+      |                                     ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_div_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:68: note: in definition of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                                                    ^
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:108:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  108 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) / GGML_FP16_TO_FP32(y[i]));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:108:60: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  108 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) / GGML_FP16_TO_FP32(y[i]));
+      |                                                            ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_div_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:68: note: in definition of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                                                    ^
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:108:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  108 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) / GGML_FP16_TO_FP32(y[i]));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:108:34: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  108 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) / GGML_FP16_TO_FP32(y[i]));
+      |                                  ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:42: warning: ‘ggml_compute_fp32_to_fp16’ is static but used in inline function ‘ggml_vec_div_f16’ which is not static
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:479:30: note: in expansion of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:108:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  108 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) / GGML_FP16_TO_FP32(y[i]));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_mul_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:68: note: in definition of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                                                    ^
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:102:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  102 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) * GGML_FP16_TO_FP32(y[i]));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:102:60: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  102 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) * GGML_FP16_TO_FP32(y[i]));
+      |                                                            ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_mul_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:68: note: in definition of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                                                    ^
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:102:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  102 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) * GGML_FP16_TO_FP32(y[i]));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:102:34: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+  102 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) * GGML_FP16_TO_FP32(y[i]));
+      |                                  ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:42: warning: ‘ggml_compute_fp32_to_fp16’ is static but used in inline function ‘ggml_vec_mul_f16’ which is not static
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:479:30: note: in expansion of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:102:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+  102 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) * GGML_FP16_TO_FP32(y[i]));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_neg_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:68: note: in definition of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                                                    ^
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:95:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+   95 |         y[i] = GGML_FP32_TO_FP16(-GGML_FP16_TO_FP32(x[i]));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:95:35: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+   95 |         y[i] = GGML_FP32_TO_FP16(-GGML_FP16_TO_FP32(x[i]));
+      |                                   ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:42: warning: ‘ggml_compute_fp32_to_fp16’ is static but used in inline function ‘ggml_vec_neg_f16’ which is not static
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:479:30: note: in expansion of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:95:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+   95 |         y[i] = GGML_FP32_TO_FP16(-GGML_FP16_TO_FP32(x[i]));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_sub_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:68: note: in definition of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                                                    ^
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:87:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+   87 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) - GGML_FP16_TO_FP32(y[i]));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:87:60: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+   87 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) - GGML_FP16_TO_FP32(y[i]));
+      |                                                            ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_sub_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:68: note: in definition of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                                                    ^
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:87:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+   87 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) - GGML_FP16_TO_FP32(y[i]));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:87:34: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+   87 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) - GGML_FP16_TO_FP32(y[i]));
+      |                                  ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:42: warning: ‘ggml_compute_fp32_to_fp16’ is static but used in inline function ‘ggml_vec_sub_f16’ which is not static
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:479:30: note: in expansion of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:87:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+   87 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) - GGML_FP16_TO_FP32(y[i]));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_add_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:68: note: in definition of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                                                    ^
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:78:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+   78 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) + GGML_FP16_TO_FP32(y[i]));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:78:60: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+   78 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) + GGML_FP16_TO_FP32(y[i]));
+      |                                                            ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:326:34: warning: ‘ggml_compute_fp16_to_fp32’ is static but used in inline function ‘ggml_vec_add_f16’ which is not static
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:68: note: in definition of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                                                    ^
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:78:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+   78 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) + GGML_FP16_TO_FP32(y[i]));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:78:34: note: in expansion of macro ‘GGML_FP16_TO_FP32’
+   78 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) + GGML_FP16_TO_FP32(y[i]));
+      |                                  ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:324:42: warning: ‘ggml_compute_fp32_to_fp16’ is static but used in inline function ‘ggml_vec_add_f16’ which is not static
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-impl.h:479:30: note: in expansion of macro ‘GGML_COMPUTE_FP32_TO_FP16’
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:78:16: note: in expansion of macro ‘GGML_FP32_TO_FP16’
+   78 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) + GGML_FP16_TO_FP32(y[i]));
+      |                ^~~~~~~~~~~~~~~~~
+/home/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:227:21: warning: ‘CACHE_LINE_SIZE_F32’ defined but not used [-Wunused-const-variable=]
+  227 | static const size_t CACHE_LINE_SIZE_F32 = CACHE_LINE_SIZE/sizeof(float);
+      |                     ^~~~~~~~~~~~~~~~~~~
+In file included from /home/ggml/work/ggml/src/ggml-cpu/ggml-cpu-quants.h:4,
+                 from /home/ggml/work/ggml/src/ggml-cpu/more_ops.cpp:6:
+/home/ggml/work/ggml/src/./ggml-common.h:171:16: warning: ISO C++ prohibits anonymous structs [-Wpedantic]
+  171 |         struct {
+      |                ^
+/home/ggml/work/ggml/src/./ggml-common.h:192:16: warning: ISO C++ prohibits anonymous structs [-Wpedantic]
+  192 |         struct {
+      |                ^
+/home/ggml/work/ggml/src/./ggml-common.h:213:16: warning: ISO C++ prohibits anonymous structs [-Wpedantic]
+  213 |         struct {
+      |                ^
+In file included from /home/ggml/work/ggml/src/ggml-cpu/ggml-cpu-quants.h:4,
+                 from /home/ggml/work/ggml/src/ggml-cpu/more_ops.cpp:6:
+/home/ggml/work/ggml/src/./ggml-common.h:254:16: warning: ISO C++ prohibits anonymous structs [-Wpedantic]
+  254 |         struct {
+      |                ^
+/home/ggml/work/ggml/src/./ggml-common.h:281:16: warning: ISO C++ prohibits anonymous structs [-Wpedantic]
+  281 |         struct {
+      |                ^
+/home/ggml/work/ggml/src/./ggml-common.h:298:16: warning: ISO C++ prohibits anonymous structs [-Wpedantic]
+  298 |         struct {
+      |                ^
+/home/ggml/work/ggml/src/ggml-cpu/more_ops.cpp: In function ‘void ggml_compute_forward_add(const ggml_compute_params*, ggml_tensor*)’:
+/home/ggml/work/ggml/src/ggml-cpu/more_ops.cpp:1322:32: warning: unused variable ‘src1’ [-Wunused-variable]
+ 1322 |     const struct ggml_tensor * src1 = dst->src[1];
+      |                                ^~~~
+[ 22%] Linking CXX shared library libggml-cpu.so
+[ 22%] Built target ggml-cpu
+[ 23%] Building CXX object src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 24%] Linking CXX shared library libggml.so
+[ 24%] Built target ggml
+[ 25%] Building C object tests/CMakeFiles/test-vec0.dir/test-vec0.c.o
+[ 26%] Building CXX object tests/CMakeFiles/test-opt.dir/test-opt.cpp.o
+[ 27%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 28%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 29%] Building C object tests/CMakeFiles/test-mul-mat0.dir/test-mul-mat0.c.o
+[ 31%] Building C object tests/CMakeFiles/test0.dir/test0.c.o
+[ 31%] Building C object tests/CMakeFiles/test-mul-mat2.dir/test-mul-mat2.c.o
+[ 32%] Building C object tests/CMakeFiles/test-pool.dir/test-pool.c.o
+[ 33%] Linking C executable ../bin/test-vec0
+[ 34%] Building CXX object tests/CMakeFiles/test-arange.dir/test-arange.cpp.o
+[ 36%] Linking C executable ../bin/test-mul-mat0
+[ 35%] Building CXX object tests/CMakeFiles/test-timestep_embedding.dir/test-timestep_embedding.cpp.o
+[ 37%] Linking CXX executable ../bin/test-quantize-fns
+[ 38%] Linking C executable ../bin/test0
+[ 39%] Building CXX object tests/CMakeFiles/test-pad-reflect-1d.dir/test-pad-reflect-1d.cpp.o
+[ 40%] Linking CXX executable ../bin/test-opt
+[ 41%] Linking C executable ../bin/test-pool
+[ 42%] Linking CXX executable ../bin/test-arange
+[ 43%] Linking C executable ../bin/test-mul-mat2
+[ 44%] Linking CXX executable ../bin/test-quantize-perf
+[ 45%] Linking CXX executable ../bin/test-timestep_embedding
+[ 46%] Linking CXX executable ../bin/test-pad-reflect-1d
+[ 47%] Building CXX object tests/CMakeFiles/test-conv-transpose-1d.dir/test-conv-transpose-1d.cpp.o
+[ 48%] Building C object tests/CMakeFiles/test-customop.dir/test-customop.c.o
+[ 49%] Building C object tests/CMakeFiles/test-conv-transpose.dir/test-conv-transpose.c.o
+[ 50%] Building C object tests/CMakeFiles/test-dup.dir/test-dup.c.o
+[ 51%] Building C object tests/CMakeFiles/test-rel-pos.dir/test-rel-pos.c.o
+[ 52%] Building CXX object tests/CMakeFiles/test-conv1d.dir/test-conv1d.cpp.o
+[ 52%] Built target test-vec0
+[ 53%] Linking CXX executable ../bin/test-conv-transpose-1d
+[ 54%] Linking C executable ../bin/test-dup
+[ 55%] Linking C executable ../bin/test-customop
+[ 56%] Linking C executable ../bin/test-conv-transpose
+[ 57%] Building CXX object tests/CMakeFiles/test-conv2d.dir/test-conv2d.cpp.o
+[ 58%] Linking C executable ../bin/test-rel-pos
+[ 59%] Building CXX object tests/CMakeFiles/test-mul-mat.dir/test-mul-mat.cpp.o
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_f32'
+[ 60%] Building C object tests/CMakeFiles/test-cont.dir/test-cont.c.o
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i8'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_quick_f32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_bf16'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i16'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_f16'
+collect2: error: ld returned 1 exit status
+[ 61%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+make[2]: *** [tests/CMakeFiles/test-mul-mat0.dir/build.make:100: bin/test-mul-mat0] Error 1
+[ 62%] Linking CXX executable ../bin/test-conv1d
+[ 63%] Building CXX object examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o
+make[1]: *** [CMakeFiles/Makefile2:533: tests/CMakeFiles/test-mul-mat0.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_f32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i8'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_quick_f32'
+[ 63%] Built target test-mul-mat2
+[ 64%] Building CXX object examples/mnist/CMakeFiles/mnist-common.dir/mnist-common.cpp.o
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_bf16'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i16'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_f16'
+collect2: error: ld returned 1 exit status
+make[2]: *** [tests/CMakeFiles/test-quantize-fns.dir/build.make:100: bin/test-quantize-fns] Error 1
+make[1]: *** [CMakeFiles/Makefile2:477: tests/CMakeFiles/test-quantize-fns.dir/all] Error 2
+/usr/bin/ld[ 65%] Building CXX object examples/simple/CMakeFiles/simple-ctx.dir/simple-ctx.cpp.o
+[ 66%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolov3-tiny.cpp.o
+: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_f32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i8'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_quick_f32'
+[ 66%] Building CXX object examples/sam/CMakeFiles/sam.dir/main.cpp.o
+[ 67%] Linking C executable ../bin/test-cont
+[ 68%] Building CXX object examples/yolo/CMakeFiles/yolov3-tiny.dir/yolo-image.cpp.o
+/usr/bin/ld/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_bf16'
+: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_f32'
+/usr/bin/ld/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i8'
+[ 68%] Built target test0
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_quick_f32'
+/usr/bin/ld/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_f32'
+[ 69%] Linking CXX executable ../bin/test-conv2d
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i8ggml_vec_set_i16'
+'
+/usr/bin/ld/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_f16'
+: collect2: error: ld returned 1 exit status
+../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_quick_f32'
+make[2]: *** [tests/CMakeFiles/test-pool.dir/build.make:100: bin/test-pool] Error 1
+: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_bf16'
+make[1]: *** [CMakeFiles/Makefile2:617: tests/CMakeFiles/test-pool.dir/all] Error 2
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i16'
+[ 70%] Linking CXX static library libcommon-ggml.a
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_f16'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_bf16'
+/usr/bin/ldcollect2: error: ld returned 1 exit status
+: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i16'
+/usr/bin/ldmake[2]: *** [tests/CMakeFiles/test-quantize-perf.dir/build.make:100: bin/test-quantize-perf] Error 1
+: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_f16'
+make[1]: *** [CMakeFiles/Makefile2:505: tests/CMakeFiles/test-quantize-perf.dir/all] Error 2
+collect2: error: ld returned 1 exit status
+make[2]: *** [tests/CMakeFiles/test-opt.dir/build.make:100: bin/test-opt] Error 1
+make[1]: *** [CMakeFiles/Makefile2:449: tests/CMakeFiles/test-opt.dir/all] Error 2
+/usr/bin/ld[ 71%] Linking CXX static library libmnist-common.a
+: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_f32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i8'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_quick_f32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_bf16'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i16'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_f16'
+collect2: error: ld returned 1 exit status
+make[2]: *** [tests/CMakeFiles/test-arange.dir/build.make:100: bin/test-arange] Error 1
+make[1]: *** [CMakeFiles/Makefile2:645: tests/CMakeFiles/test-arange.dir/all] Error 2
+[ 72%] Linking CXX executable ../bin/test-backend-ops
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_f32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i8'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_quick_f32'
+[ 73%] Linking CXX executable ../../bin/sam
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_bf16'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i16'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_f16'
+collect2: error: ld returned 1 exit status
+make[2]: *** [tests/CMakeFiles/test-pad-reflect-1d.dir/build.make:100: bin/test-pad-reflect-1d] Error 1
+make[1]: *** [CMakeFiles/Makefile2:701: tests/CMakeFiles/test-pad-reflect-1d.dir/all] Error 2
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_f32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i8'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_quick_f32'
+/usr/bin/ld/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_bf16'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i16'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_f16'
+: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_f32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i8'
+/usr/bin/ld[ 74%] Linking CXX executable ../../bin/simple-ctx
+[ 75%] Linking CXX executable ../bin/test-mul-mat
+: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i32'
+collect2: error: ld returned 1 exit status
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_quick_f32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_bf16'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i16'
+make[2]: *** [tests/CMakeFiles/test-conv-transpose.dir/build.make:100: bin/test-conv-transpose] Error 1
+make[1]: *** [CMakeFiles/Makefile2:729: tests/CMakeFiles/test-conv-transpose.dir/all] Error 2
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_f16'
+collect2: error: ld returned 1 exit status
+make[2]: *** [tests/CMakeFiles/test-dup.dir/build.make:100: bin/test-dup] Error 1
+make[1]: *** [CMakeFiles/Makefile2:785: tests/CMakeFiles/test-dup.dir/all] Error 2
+[ 76%] Linking CXX executable ../../bin/yolov3-tiny
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_f32'
+/usr/bin/ld/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_f32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i8'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i32'
+/usr/bin/ld: ../src/libggml-cpu.so/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_quick_f32'
+: undefined reference to `ggml_vec_set_i8'
+/usr/bin/ld/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_bf16: '
+../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i32'
+/usr/bin/ld: ../src/libggml-cpu.so/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i16'
+: undefined reference to `ggml_gelu_quick_f32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_f32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i8'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_quick_f32/usr/bin/ld: '
+../src/libggml-cpu.so: undefined reference to `ggml_vec_set_bf16'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i16'
+/usr/bin/ld: /usr/bin/ld../src/libggml-cpu.so: undefined reference to `ggml_vec_set_f16'
+: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_bf16'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i16'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_f16'
+: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_f16'
+collect2: error: ld returned 1 exit status
+collect2: error: ld returned 1 exit status
+make[2]: *** [tests/CMakeFiles/test-customop.dir/build.make:100: bin/test-customop] Error 1
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/Makefile2:841: tests/CMakeFiles/test-customop.dir/all] Error 2
+make[2]: *** [tests/CMakeFiles/test-rel-pos.dir/build.make:100: bin/test-rel-pos] Error 1
+make[1]: *** [CMakeFiles/Makefile2:813: tests/CMakeFiles/test-rel-pos.dir/all] Error 2
+make[2]: *** [tests/CMakeFiles/test-timestep_embedding.dir/build.make:100: bin/test-timestep_embedding] Error 1
+make[1]: *** [CMakeFiles/Makefile2:673: tests/CMakeFiles/test-timestep_embedding.dir/all] Error 2
+/usr/bin/ld[ 76%] Built target common-ggml
+: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_f32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_f32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i8'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i8'
+/usr/bin/ld: ../src/libggml-cpu.so/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i32'
+: undefined reference to `ggml_vec_set_i32/usr/bin/ld'
+: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_quick_f32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_quick_f32'
+/usr/bin/ld/usr/bin/ld: : ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_bf16../src/libggml-cpu.so: undefined reference to `ggml_vec_set_bf16'
+'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i16'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i16'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_f16'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_f16'
+collect2: error: ld returned 1 exit status
+collect2: error: ld returned 1 exit status
+make[2]: *** [tests/CMakeFiles/test-conv1d.dir/build.make:100: bin/test-conv1d] Error 1
+make[2]: *** [tests/CMakeFiles/test-conv-transpose-1d.dir/build.make:100: bin/test-conv-transpose-1d] Error 1
+make[1]: *** [CMakeFiles/Makefile2:757: tests/CMakeFiles/test-conv-transpose-1d.dir/all] Error 2
+make[1]: *** [CMakeFiles/Makefile2:869: tests/CMakeFiles/test-conv1d.dir/all] Error 2
+[ 76%] Built target mnist-common
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_f32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i8'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_quick_f32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_bf16'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i16'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_f16'
+collect2: error: ld returned 1 exit status
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_f32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i8'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_quick_f32'
+make[2]: *** [tests/CMakeFiles/test-cont.dir/build.make:100: bin/test-cont] Error 1
+make[1]: *** [CMakeFiles/Makefile2:981: tests/CMakeFiles/test-cont.dir/all] Error 2
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_bf16'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i16'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_f16'
+collect2: error: ld returned 1 exit status
+make[2]: *** [tests/CMakeFiles/test-conv2d.dir/build.make:100: bin/test-conv2d] Error 1
+make[1]: *** [CMakeFiles/Makefile2:897: tests/CMakeFiles/test-conv2d.dir/all] Error 2
+/usr/bin/ld: ../../src/libggml-cpu.so: undefined reference to `ggml_gelu_f32'
+/usr/bin/ld: ../../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i8'
+/usr/bin/ld: ../../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i32'
+/usr/bin/ld: ../../src/libggml-cpu.so: undefined reference to `ggml_gelu_quick_f32'
+/usr/bin/ld: ../../src/libggml-cpu.so: undefined reference to `ggml_vec_set_bf16'
+/usr/bin/ld: ../../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i16'
+/usr/bin/ld/usr/bin/ld: ../../src/libggml-cpu.so: undefined reference to `ggml_vec_set_f16'
+: ../../src/libggml-cpu.so: undefined reference to `ggml_gelu_f32'
+/usr/bin/ld: ../../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i8'
+/usr/bin/ld: ../../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i32'
+/usr/bin/ld: ../../src/libggml-cpu.so: undefined reference to `ggml_gelu_quick_f32'
+/usr/bin/ld: ../../src/libggml-cpu.so: undefined reference to `ggml_vec_set_bf16'
+collect2: error: ld returned 1 exit status
+/usr/bin/ld: ../../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i16'
+/usr/bin/ld: ../../src/libggml-cpu.so: undefined reference to `ggml_vec_set_f16'
+make[2]: *** [examples/simple/CMakeFiles/simple-ctx.dir/build.make:100: bin/simple-ctx] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1450: examples/simple/CMakeFiles/simple-ctx.dir/all] Error 2
+collect2: error: ld returned 1 exit status
+make[2]: *** [examples/sam/CMakeFiles/sam.dir/build.make:101: bin/sam] Error 1
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_f32'
+make[1]: *** [CMakeFiles/Makefile2:1393: examples/sam/CMakeFiles/sam.dir/all] Error 2
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i8'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_quick_f32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_bf16'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i16'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_f16'
+collect2: error: ld returned 1 exit status
+make[2]: *** [tests/CMakeFiles/test-mul-mat.dir/build.make:100: bin/test-mul-mat] Error 1
+make[1]: *** [CMakeFiles/Makefile2:925: tests/CMakeFiles/test-mul-mat.dir/all] Error 2
+/usr/bin/ld: ../../src/libggml-cpu.so: undefined reference to `ggml_gelu_f32'
+/usr/bin/ld: ../../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i8'
+/usr/bin/ld: ../../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i32'
+/usr/bin/ld: ../../src/libggml-cpu.so: undefined reference to `ggml_gelu_quick_f32'
+/usr/bin/ld: ../../src/libggml-cpu.so: undefined reference to `ggml_vec_set_bf16'
+/usr/bin/ld: ../../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i16'
+/usr/bin/ld: ../../src/libggml-cpu.so: undefined reference to `ggml_vec_set_f16'
+collect2: error: ld returned 1 exit status
+make[2]: *** [examples/yolo/CMakeFiles/yolov3-tiny.dir/build.make:117: bin/yolov3-tiny] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1422: examples/yolo/CMakeFiles/yolov3-tiny.dir/all] Error 2
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_f32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i8'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_gelu_quick_f32'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_bf16'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_i16'
+/usr/bin/ld: ../src/libggml-cpu.so: undefined reference to `ggml_vec_set_f16'
+collect2: error: ld returned 1 exit status
+make[2]: *** [tests/CMakeFiles/test-backend-ops.dir/build.make:100: bin/test-backend-ops] Error 1
+make[1]: *** [CMakeFiles/Makefile2:953: tests/CMakeFiles/test-backend-ops.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m2.404s
+user	0m5.006s
+sys	0m1.606s
