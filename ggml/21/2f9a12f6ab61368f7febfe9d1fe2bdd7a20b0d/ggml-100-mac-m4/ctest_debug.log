@@ -1,0 +1,2461 @@
++ cmake -DCMAKE_BUILD_TYPE=Debug -DGGML_METAL=ON -DGGML_METAL_EMBED_LIBRARY=ON ..
+-- The C compiler identification is AppleClang 16.0.0.16000026
+-- The CXX compiler identification is AppleClang 16.0.0.16000026
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: arm64
+-- Including CPU backend
+-- Accelerate framework found
+-- Could NOT find OpenMP_C (missing: OpenMP_C_FLAGS OpenMP_C_LIB_NAMES) 
+-- Could NOT find OpenMP_CXX (missing: OpenMP_CXX_FLAGS OpenMP_CXX_LIB_NAMES) 
+-- Could NOT find OpenMP (missing: OpenMP_C_FOUND OpenMP_CXX_FOUND) 
+CMake Warning at src/ggml-cpu/CMakeLists.txt:62 (message):
+  OpenMP not found
+Call Stack (most recent call first):
+  src/CMakeLists.txt:321 (ggml_add_cpu_backend_variant_impl)
+
+
+-- ARM detected
+-- Performing Test GGML_COMPILER_SUPPORTS_FP16_FORMAT_I3E
+-- Performing Test GGML_COMPILER_SUPPORTS_FP16_FORMAT_I3E - Failed
+-- ARM -mcpu not found, -mcpu=native will be used
+-- Performing Test GGML_MACHINE_SUPPORTS_dotprod
+-- Performing Test GGML_MACHINE_SUPPORTS_dotprod - Success
+-- Performing Test GGML_MACHINE_SUPPORTS_i8mm
+-- Performing Test GGML_MACHINE_SUPPORTS_i8mm - Success
+-- Performing Test GGML_MACHINE_SUPPORTS_sve
+-- Performing Test GGML_MACHINE_SUPPORTS_sve - Failed
+-- Performing Test GGML_MACHINE_SUPPORTS_nosve
+-- Performing Test GGML_MACHINE_SUPPORTS_nosve - Success
+-- Performing Test GGML_MACHINE_SUPPORTS_sme
+-- Performing Test GGML_MACHINE_SUPPORTS_sme - Success
+-- ARM feature DOTPROD enabled
+-- ARM feature MATMUL_INT8 enabled
+-- ARM feature FMA enabled
+-- ARM feature FP16_VECTOR_ARITHMETIC enabled
+-- ARM feature SME enabled
+-- Adding CPU backend variant ggml-cpu: -mcpu=native+dotprod+i8mm+nosve+sme 
+-- Looking for dgemm_
+-- Looking for dgemm_ - found
+-- Found BLAS: /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/System/Library/Frameworks/Accelerate.framework
+-- BLAS found, Libraries: /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/System/Library/Frameworks/Accelerate.framework
+-- BLAS found, Includes: 
+-- Including BLAS backend
+-- Metal framework found
+-- The ASM compiler identification is AppleClang
+-- Found assembler: /Library/Developer/CommandLineTools/usr/bin/cc
+-- Including METAL backend
+-- ARM detected
+-- Accelerate framework found
+-- Configuring done (3.1s)
+-- Generating done (0.1s)
+-- Build files have been written to: /Users/ggml/work/ggml/build-ci-debug
+
+real	0m3.280s
+user	0m0.965s
+sys	0m1.355s
++ make -j
+[  0%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[  1%] Building C object src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  0%] Building C object src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  3%] Building CXX object src/CMakeFiles/ggml-base.dir/gguf.cpp.o
+[  4%] Building C object src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  4%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  6%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  6%] Building CXX object src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+/Users/ggml/work/ggml/examples/common.cpp:251:31: warning: 'codecvt_utf8<wchar_t>' is deprecated [-Wdeprecated-declarations]
+  251 |     std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+      |                               ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/codecvt:194:28: note: 'codecvt_utf8<wchar_t>' has been explicitly marked deprecated here
+  194 | class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 codecvt_utf8 : public __codecvt_utf8<_Elem> {
+      |                            ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:1022:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+ 1022 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+      |                                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:995:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  995 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+/Users/ggml/work/ggml/examples/common.cpp:251:10: warning: 'wstring_convert<std::codecvt_utf8<wchar_t>>' is deprecated [-Wdeprecated-declarations]
+  251 |     std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+      |          ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/locale:3114:28: note: 'wstring_convert<std::codecvt_utf8<wchar_t>>' has been explicitly marked deprecated here
+ 3114 | class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 wstring_convert {
+      |                            ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:1022:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+ 1022 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+      |                                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:995:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  995 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+/Users/ggml/work/ggml/examples/common.cpp:257:31: warning: 'codecvt_utf8<wchar_t>' is deprecated [-Wdeprecated-declarations]
+  257 |     std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+      |                               ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/codecvt:194:28: note: 'codecvt_utf8<wchar_t>' has been explicitly marked deprecated here
+  194 | class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 codecvt_utf8 : public __codecvt_utf8<_Elem> {
+      |                            ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:1022:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+ 1022 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+      |                                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:995:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  995 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+/Users/ggml/work/ggml/examples/common.cpp:257:10: warning: 'wstring_convert<std::codecvt_utf8<wchar_t>>' is deprecated [-Wdeprecated-declarations]
+  257 |     std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+      |          ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/locale:3114:28: note: 'wstring_convert<std::codecvt_utf8<wchar_t>>' has been explicitly marked deprecated here
+ 3114 | class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 wstring_convert {
+      |                            ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:1022:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+ 1022 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+      |                                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/__config:995:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  995 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+4 warnings generated.
+[  8%] Linking CXX shared library libggml-base.dylib
+[  8%] Linking CXX static library libcommon.a
+[  8%] Built target ggml-base
+[  8%] Built target common
+[  9%] Generate assembly for embedded Metal library
+Embedding Metal library
+[ 10%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[ 11%] Building CXX object src/ggml-blas/CMakeFiles/ggml-blas.dir/ggml-blas.cpp.o
+[ 12%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[ 13%] Building C object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[ 13%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 14%] Building C object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 15%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/binary_ops.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/unary_ops.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/ggml-cpu.dir/ggml-cpu/more_ops.cpp.o
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const type-parameter-0-2 *' to 'char *' drops const qualifier [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const float *' to 'char *' drops const qualifier [-Wcast-qual]
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_add, float, float, float>' requested here
+  111 |             vec_binary_op_non_contiguous<op>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:123:9: note: in instantiation of function template specialization 'apply_binary_op<&op_add, float, float, float>' requested here
+  123 |         apply_binary_op<op, float, float, float>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:144:5: note: in instantiation of function template specialization 'binary_op<&op_add>' requested here
+  144 |     binary_op<op_add>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const unsigned short *' to 'char *' drops const qualifier [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_add, unsigned short, unsigned short, unsigned short>' requested here
+  111 |             vec_binary_op_non_contiguous<op>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:125:9: note: in instantiation of function template specialization 'apply_binary_op<&op_add, unsigned short, unsigned short, unsigned short>' requested here
+  125 |         apply_binary_op<op, ggml_fp16_t, ggml_fp16_t, ggml_fp16_t>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:144:5: note: in instantiation of function template specialization 'binary_op<&op_add>' requested here
+  144 |     binary_op<op_add>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const ggml_bf16_t *' to 'char *' drops const qualifier [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_add, ggml_bf16_t, ggml_bf16_t, ggml_bf16_t>' requested here
+  111 |             vec_binary_op_non_contiguous<op>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:127:9: note: in instantiation of function template specialization 'apply_binary_op<&op_add, ggml_bf16_t, ggml_bf16_t, ggml_bf16_t>' requested here
+  127 |         apply_binary_op<op, ggml_bf16_t, ggml_bf16_t, ggml_bf16_t>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:144:5: note: in instantiation of function template specialization 'binary_op<&op_add>' requested here
+  144 |     binary_op<op_add>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const float *' to 'char *' drops const qualifier [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_add, ggml_bf16_t, float, ggml_bf16_t>' requested here
+  111 |             vec_binary_op_non_contiguous<op>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:129:9: note: in instantiation of function template specialization 'apply_binary_op<&op_add, ggml_bf16_t, float, ggml_bf16_t>' requested here
+  129 |         apply_binary_op<op, ggml_bf16_t, float, ggml_bf16_t>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:144:5: note: in instantiation of function template specialization 'binary_op<&op_add>' requested here
+  144 |     binary_op<op_add>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const float *' to 'char *' drops const qualifier [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_add, ggml_bf16_t, float, float>' requested here
+  111 |             vec_binary_op_non_contiguous<op>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:131:9: note: in instantiation of function template specialization 'apply_binary_op<&op_add, ggml_bf16_t, float, float>' requested here
+  131 |         apply_binary_op<op, ggml_bf16_t, float, float>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:144:5: note: in instantiation of function template specialization 'binary_op<&op_add>' requested here
+  144 |     binary_op<op_add>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const float *' to 'char *' drops const qualifier [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_add, unsigned short, float, unsigned short>' requested here
+  111 |             vec_binary_op_non_contiguous<op>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:133:9: note: in instantiation of function template specialization 'apply_binary_op<&op_add, unsigned short, float, unsigned short>' requested here
+  133 |         apply_binary_op<op, ggml_fp16_t, float, ggml_fp16_t>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:144:5: note: in instantiation of function template specialization 'binary_op<&op_add>' requested here
+  144 |     binary_op<op_add>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const float *' to 'char *' drops const qualifier [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_add, unsigned short, float, float>' requested here
+  111 |             vec_binary_op_non_contiguous<op>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:135:9: note: in instantiation of function template specialization 'apply_binary_op<&op_add, unsigned short, float, float>' requested here
+  135 |         apply_binary_op<op, ggml_fp16_t, float, float>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:144:5: note: in instantiation of function template specialization 'binary_op<&op_add>' requested here
+  144 |     binary_op<op_add>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const float *' to 'char *' drops const qualifier [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_sub, float, float, float>' requested here
+  111 |             vec_binary_op_non_contiguous<op>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:123:9: note: in instantiation of function template specialization 'apply_binary_op<&op_sub, float, float, float>' requested here
+  123 |         apply_binary_op<op, float, float, float>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:148:5: note: in instantiation of function template specialization 'binary_op<&op_sub>' requested here
+  148 |     binary_op<op_sub>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const unsigned short *' to 'char *' drops const qualifier [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_sub, unsigned short, unsigned short, unsigned short>' requested here
+  111 |             vec_binary_op_non_contiguous<op>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:125:9: note: in instantiation of function template specialization 'apply_binary_op<&op_sub, unsigned short, unsigned short, unsigned short>' requested here
+  125 |         apply_binary_op<op, ggml_fp16_t, ggml_fp16_t, ggml_fp16_t>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:148:5: note: in instantiation of function template specialization 'binary_op<&op_sub>' requested here
+  148 |     binary_op<op_sub>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const ggml_bf16_t *' to 'char *' drops const qualifier [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_sub, ggml_bf16_t, ggml_bf16_t, ggml_bf16_t>' requested here
+  111 |             vec_binary_op_non_contiguous<op>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:127:9: note: in instantiation of function template specialization 'apply_binary_op<&op_sub, ggml_bf16_t, ggml_bf16_t, ggml_bf16_t>' requested here
+  127 |         apply_binary_op<op, ggml_bf16_t, ggml_bf16_t, ggml_bf16_t>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:148:5: note: in instantiation of function template specialization 'binary_op<&op_sub>' requested here
+  148 |     binary_op<op_sub>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const float *' to 'char *' drops const qualifier [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_sub, ggml_bf16_t, float, ggml_bf16_t>' requested here
+  111 |             vec_binary_op_non_contiguous<op>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:129:9: note: in instantiation of function template specialization 'apply_binary_op<&op_sub, ggml_bf16_t, float, ggml_bf16_t>' requested here
+  129 |         apply_binary_op<op, ggml_bf16_t, float, ggml_bf16_t>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:148:5: note: in instantiation of function template specialization 'binary_op<&op_sub>' requested here
+  148 |     binary_op<op_sub>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const float *' to 'char *' drops const qualifier [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_sub, ggml_bf16_t, float, float>' requested here
+  111 |             vec_binary_op_non_contiguous<op>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:131:9: note: in instantiation of function template specialization 'apply_binary_op<&op_sub, ggml_bf16_t, float, float>' requested here
+  131 |         apply_binary_op<op, ggml_bf16_t, float, float>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:148:5: note: in instantiation of function template specialization 'binary_op<&op_sub>' requested here
+  148 |     binary_op<op_sub>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const float *' to 'char *' drops const qualifier [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_sub, unsigned short, float, unsigned short>' requested here
+  111 |             vec_binary_op_non_contiguous<op>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:133:9: note: in instantiation of function template specialization 'apply_binary_op<&op_sub, unsigned short, float, unsigned short>' requested here
+  133 |         apply_binary_op<op, ggml_fp16_t, float, ggml_fp16_t>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:148:5: note: in instantiation of function template specialization 'binary_op<&op_sub>' requested here
+  148 |     binary_op<op_sub>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const float *' to 'char *' drops const qualifier [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_sub, unsigned short, float, float>' requested here
+  111 |             vec_binary_op_non_contiguous<op>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:135:9: note: in instantiation of function template specialization 'apply_binary_op<&op_sub, unsigned short, float, float>' requested here
+  135 |         apply_binary_op<op, ggml_fp16_t, float, float>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:148:5: note: in instantiation of function template specialization 'binary_op<&op_sub>' requested here
+  148 |     binary_op<op_sub>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const float *' to 'char *' drops const qualifier [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_mul, float, float, float>' requested here
+  111 |             vec_binary_op_non_contiguous<op>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:123:9: note: in instantiation of function template specialization 'apply_binary_op<&op_mul, float, float, float>' requested here
+  123 |         apply_binary_op<op, float, float, float>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:152:5: note: in instantiation of function template specialization 'binary_op<&op_mul>' requested here
+  152 |     binary_op<op_mul>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const unsigned short *' to 'char *' drops const qualifier [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_mul, unsigned short, unsigned short, unsigned short>' requested here
+  111 |             vec_binary_op_non_contiguous<op>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:125:9: note: in instantiation of function template specialization 'apply_binary_op<&op_mul, unsigned short, unsigned short, unsigned short>' requested here
+  125 |         apply_binary_op<op, ggml_fp16_t, ggml_fp16_t, ggml_fp16_t>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:152:5: note: in instantiation of function template specialization 'binary_op<&op_mul>' requested here
+  152 |     binary_op<op_mul>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const ggml_bf16_t *' to 'char *' drops const qualifier [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_mul, ggml_bf16_t, ggml_bf16_t, ggml_bf16_t>' requested here
+  111 |             vec_binary_op_non_contiguous<op>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:127:9: note: in instantiation of function template specialization 'apply_binary_op<&op_mul, ggml_bf16_t, ggml_bf16_t, ggml_bf16_t>' requested here
+  127 |         apply_binary_op<op, ggml_bf16_t, ggml_bf16_t, ggml_bf16_t>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:152:5: note: in instantiation of function template specialization 'binary_op<&op_mul>' requested here
+  152 |     binary_op<op_mul>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const float *' to 'char *' drops const qualifier [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_mul, ggml_bf16_t, float, ggml_bf16_t>' requested here
+  111 |             vec_binary_op_non_contiguous<op>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:129:9: note: in instantiation of function template specialization 'apply_binary_op<&op_mul, ggml_bf16_t, float, ggml_bf16_t>' requested here
+  129 |         apply_binary_op<op, ggml_bf16_t, float, ggml_bf16_t>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:152:5: note: in instantiation of function template specialization 'binary_op<&op_mul>' requested here
+  152 |     binary_op<op_mul>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const float *' to 'char *' drops const qualifier [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_mul, ggml_bf16_t, float, float>' requested here
+  111 |             vec_binary_op_non_contiguous<op>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:131:9: note: in instantiation of function template specialization 'apply_binary_op<&op_mul, ggml_bf16_t, float, float>' requested here
+  131 |         apply_binary_op<op, ggml_bf16_t, float, float>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:152:5: note: in instantiation of function template specialization 'binary_op<&op_mul>' requested here
+  152 |     binary_op<op_mul>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const float *' to 'char *' drops const qualifier [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_mul, unsigned short, float, unsigned short>' requested here
+  111 |             vec_binary_op_non_contiguous<op>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:133:9: note: in instantiation of function template specialization 'apply_binary_op<&op_mul, unsigned short, float, unsigned short>' requested here
+  133 |         apply_binary_op<op, ggml_fp16_t, float, ggml_fp16_t>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:152:5: note: in instantiation of function template specialization 'binary_op<&op_mul>' requested here
+  152 |     binary_op<op_mul>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const float *' to 'char *' drops const qualifier [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_mul, unsigned short, float, float>' requested here
+  111 |             vec_binary_op_non_contiguous<op>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:135:9: note: in instantiation of function template specialization 'apply_binary_op<&op_mul, unsigned short, float, float>' requested here
+  135 |         apply_binary_op<op, ggml_fp16_t, float, float>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:152:5: note: in instantiation of function template specialization 'binary_op<&op_mul>' requested here
+  152 |     binary_op<op_mul>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const float *' to 'char *' drops const qualifier [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_div, float, float, float>' requested here
+  111 |             vec_binary_op_non_contiguous<op>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:123:9: note: in instantiation of function template specialization 'apply_binary_op<&op_div, float, float, float>' requested here
+  123 |         apply_binary_op<op, float, float, float>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:156:5: note: in instantiation of function template specialization 'binary_op<&op_div>' requested here
+  156 |     binary_op<op_div>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const unsigned short *' to 'char *' drops const qualifier [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_div, unsigned short, unsigned short, unsigned short>' requested here
+  111 |             vec_binary_op_non_contiguous<op>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:125:9: note: in instantiation of function template specialization 'apply_binary_op<&op_div, unsigned short, unsigned short, unsigned short>' requested here
+  125 |         apply_binary_op<op, ggml_fp16_t, ggml_fp16_t, ggml_fp16_t>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:156:5: note: in instantiation of function template specialization 'binary_op<&op_div>' requested here
+  156 |     binary_op<op_div>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const ggml_bf16_t *' to 'char *' drops const qualifier [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_div, ggml_bf16_t, ggml_bf16_t, ggml_bf16_t>' requested here
+  111 |             vec_binary_op_non_contiguous<op>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:127:9: note: in instantiation of function template specialization 'apply_binary_op<&op_div, ggml_bf16_t, ggml_bf16_t, ggml_bf16_t>' requested here
+  127 |         apply_binary_op<op, ggml_bf16_t, ggml_bf16_t, ggml_bf16_t>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:156:5: note: in instantiation of function template specialization 'binary_op<&op_div>' requested here
+  156 |     binary_op<op_div>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const float *' to 'char *' drops const qualifier [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_div, ggml_bf16_t, float, ggml_bf16_t>' requested here
+  111 |             vec_binary_op_non_contiguous<op>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:129:9: note: in instantiation of function template specialization 'apply_binary_op<&op_div, ggml_bf16_t, float, ggml_bf16_t>' requested here
+  129 |         apply_binary_op<op, ggml_bf16_t, float, ggml_bf16_t>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:156:5: note: in instantiation of function template specialization 'binary_op<&op_div>' requested here
+  156 |     binary_op<op_div>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const float *' to 'char *' drops const qualifier [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_div, ggml_bf16_t, float, float>' requested here
+  111 |             vec_binary_op_non_contiguous<op>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:131:9: note: in instantiation of function template specialization 'apply_binary_op<&op_div, ggml_bf16_t, float, float>' requested here
+  131 |         apply_binary_op<op, ggml_bf16_t, float, float>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:156:5: note: in instantiation of function template specialization 'binary_op<&op_div>' requested here
+  156 |     binary_op<op_div>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const float *' to 'char *' drops const qualifier [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_div, unsigned short, float, unsigned short>' requested here
+  111 |             vec_binary_op_non_contiguous<op>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:133:9: note: in instantiation of function template specialization 'apply_binary_op<&op_div, unsigned short, float, unsigned short>' requested here
+  133 |         apply_binary_op<op, ggml_fp16_t, float, ggml_fp16_t>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:156:5: note: in instantiation of function template specialization 'binary_op<&op_div>' requested here
+  156 |     binary_op<op_div>(params, dst);
+      |     ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:44:45: warning: cast from 'const float *' to 'char *' drops const qualifier [-Wcast-qual]
+   44 |         src1_t * y_ptr = (src1_t *)((char *)y + i10*nb10);
+      |                                             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:111:13: note: in instantiation of function template specialization 'vec_binary_op_non_contiguous<&op_div, unsigned short, float, float>' requested here
+  111 |             vec_binary_op_non_contiguous<op>(ne0, ne10, nb10, dst_ptr, src0_ptr, src1_ptr);
+      |             ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:135:9: note: in instantiation of function template specialization 'apply_binary_op<&op_div, unsigned short, float, float>' requested here
+  135 |         apply_binary_op<op, ggml_fp16_t, float, float>(params, dst);
+      |         ^
+/Users/ggml/work/ggml/src/ggml-cpu/binary_ops.cpp:156:5: note: in instantiation of function template specialization 'binary_op<&op_div>' requested here
+  156 |     binary_op<op_div>(params, dst);
+      |     ^
+29 warnings generated.
+[ 20%] Linking CXX shared library libggml-blas.dylib
+[ 20%] Building ASM object src/ggml-metal/CMakeFiles/ggml-metal.dir/__/__/autogenerated/ggml-metal-embed.s.o
+[ 21%] Building C object src/ggml-metal/CMakeFiles/ggml-metal.dir/ggml-metal.m.o
+[ 22%] Linking C shared library libggml-metal.dylib
+[ 22%] Built target ggml-blas
+[ 22%] Built target ggml-metal
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:61:16: warning: static function 'ggml_compute_fp32_to_fp16' is used in an inline function with external linkage [-Wstatic-in-inline]
+   61 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) + GGML_FP16_TO_FP32(y[i]));
+      |                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:479:30: note: expanded from macro 'GGML_FP32_TO_FP16'
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:324:42: note: expanded from macro 'GGML_COMPUTE_FP32_TO_FP16'
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:59:1: note: use 'static' to give inline function 'ggml_vec_add_f16' internal linkage
+   59 | inline void ggml_vec_add_f16 (const int n, ggml_fp16_t * z, const ggml_fp16_t * x, const ggml_fp16_t * y) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:334:31: note: 'ggml_compute_fp32_to_fp16' declared here
+  334 |     static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
+      |                               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:61:34: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+   61 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) + GGML_FP16_TO_FP32(y[i]));
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:59:1: note: use 'static' to give inline function 'ggml_vec_add_f16' internal linkage
+   59 | inline void ggml_vec_add_f16 (const int n, ggml_fp16_t * z, const ggml_fp16_t * x, const ggml_fp16_t * y) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:61:60: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+   61 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) + GGML_FP16_TO_FP32(y[i]));
+      |                                                            ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:59:1: note: use 'static' to give inline function 'ggml_vec_add_f16' internal linkage
+   59 | inline void ggml_vec_add_f16 (const int n, ggml_fp16_t * z, const ggml_fp16_t * x, const ggml_fp16_t * y) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:70:16: warning: static function 'ggml_compute_fp32_to_fp16' is used in an inline function with external linkage [-Wstatic-in-inline]
+   70 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) - GGML_FP16_TO_FP32(y[i]));
+      |                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:479:30: note: expanded from macro 'GGML_FP32_TO_FP16'
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:324:42: note: expanded from macro 'GGML_COMPUTE_FP32_TO_FP16'
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:68:1: note: use 'static' to give inline function 'ggml_vec_sub_f16' internal linkage
+   68 | inline void ggml_vec_sub_f16 (const int n, ggml_fp16_t * z, const ggml_fp16_t * x, const ggml_fp16_t * y) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:334:31: note: 'ggml_compute_fp32_to_fp16' declared here
+  334 |     static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
+      |                               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:70:34: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+   70 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) - GGML_FP16_TO_FP32(y[i]));
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:68:1: note: use 'static' to give inline function 'ggml_vec_sub_f16' internal linkage
+   68 | inline void ggml_vec_sub_f16 (const int n, ggml_fp16_t * z, const ggml_fp16_t * x, const ggml_fp16_t * y) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:70:60: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+   70 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) - GGML_FP16_TO_FP32(y[i]));
+      |                                                            ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:68:1: note: use 'static' to give inline function 'ggml_vec_sub_f16' internal linkage
+   68 | inline void ggml_vec_sub_f16 (const int n, ggml_fp16_t * z, const ggml_fp16_t * x, const ggml_fp16_t * y) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:78:16: warning: static function 'ggml_compute_fp32_to_fp16' is used in an inline function with external linkage [-Wstatic-in-inline]
+   78 |         y[i] = GGML_FP32_TO_FP16(-GGML_FP16_TO_FP32(x[i]));
+      |                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:479:30: note: expanded from macro 'GGML_FP32_TO_FP16'
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:324:42: note: expanded from macro 'GGML_COMPUTE_FP32_TO_FP16'
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:76:1: note: use 'static' to give inline function 'ggml_vec_neg_f16' internal linkage
+   76 | inline void ggml_vec_neg_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:334:31: note: 'ggml_compute_fp32_to_fp16' declared here
+  334 |     static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
+      |                               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:78:35: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+   78 |         y[i] = GGML_FP32_TO_FP16(-GGML_FP16_TO_FP32(x[i]));
+      |                                   ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:76:1: note: use 'static' to give inline function 'ggml_vec_neg_f16' internal linkage
+   76 | inline void ggml_vec_neg_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:85:16: warning: static function 'ggml_compute_fp32_to_fp16' is used in an inline function with external linkage [-Wstatic-in-inline]
+   85 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) * GGML_FP16_TO_FP32(y[i]));
+      |                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:479:30: note: expanded from macro 'GGML_FP32_TO_FP16'
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:324:42: note: expanded from macro 'GGML_COMPUTE_FP32_TO_FP16'
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:83:1: note: use 'static' to give inline function 'ggml_vec_mul_f16' internal linkage
+   83 | inline void ggml_vec_mul_f16 (const int n, ggml_fp16_t * z, const ggml_fp16_t * x, const ggml_fp16_t * y) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:334:31: note: 'ggml_compute_fp32_to_fp16' declared here
+  334 |     static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
+      |                               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:85:34: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+   85 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) * GGML_FP16_TO_FP32(y[i]));
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:83:1: note: use 'static' to give inline function 'ggml_vec_mul_f16' internal linkage
+   83 | inline void ggml_vec_mul_f16 (const int n, ggml_fp16_t * z, const ggml_fp16_t * x, const ggml_fp16_t * y) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:85:60: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+   85 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) * GGML_FP16_TO_FP32(y[i]));
+      |                                                            ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:83:1: note: use 'static' to give inline function 'ggml_vec_mul_f16' internal linkage
+   83 | inline void ggml_vec_mul_f16 (const int n, ggml_fp16_t * z, const ggml_fp16_t * x, const ggml_fp16_t * y) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:91:16: warning: static function 'ggml_compute_fp32_to_fp16' is used in an inline function with external linkage [-Wstatic-in-inline]
+   91 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) / GGML_FP16_TO_FP32(y[i]));
+      |                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:479:30: note: expanded from macro 'GGML_FP32_TO_FP16'
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:324:42: note: expanded from macro 'GGML_COMPUTE_FP32_TO_FP16'
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:89:1: note: use 'static' to give inline function 'ggml_vec_div_f16' internal linkage
+   89 | inline void ggml_vec_div_f16 (const int n, ggml_fp16_t * z, const ggml_fp16_t * x, const ggml_fp16_t * y) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:334:31: note: 'ggml_compute_fp32_to_fp16' declared here
+  334 |     static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
+      |                               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:91:34: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+   91 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) / GGML_FP16_TO_FP32(y[i]));
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:89:1: note: use 'static' to give inline function 'ggml_vec_div_f16' internal linkage
+   89 | inline void ggml_vec_div_f16 (const int n, ggml_fp16_t * z, const ggml_fp16_t * x, const ggml_fp16_t * y) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:91:60: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+   91 |         z[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(x[i]) / GGML_FP16_TO_FP32(y[i]));
+      |                                                            ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:89:1: note: use 'static' to give inline function 'ggml_vec_div_f16' internal linkage
+   89 | inline void ggml_vec_div_f16 (const int n, ggml_fp16_t * z, const ggml_fp16_t * x, const ggml_fp16_t * y) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:95:6: warning: no previous prototype for function 'ggml_vec_dot_f32' [-Wmissing-prototypes]
+   95 | void ggml_vec_dot_f32(int n, float * GGML_RESTRICT s, size_t bs, const float * GGML_RESTRICT x, size_t bx, const float * GGML_RESTRICT y, size_t by, int nrc) {
+      |      ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:95:1: note: declare 'static' if the function is not intended to be used outside of this translation unit
+   95 | void ggml_vec_dot_f32(int n, float * GGML_RESTRICT s, size_t bs, const float * GGML_RESTRICT x, size_t bx, const float * GGML_RESTRICT y, size_t by, int nrc) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:138:6: warning: no previous prototype for function 'ggml_vec_dot_bf16' [-Wmissing-prototypes]
+  138 | void ggml_vec_dot_bf16(int n, float * GGML_RESTRICT s, size_t bs, ggml_bf16_t * GGML_RESTRICT x, size_t bx, ggml_bf16_t * GGML_RESTRICT y, size_t by, int nrc) {
+      |      ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:138:1: note: declare 'static' if the function is not intended to be used outside of this translation unit
+  138 | void ggml_vec_dot_bf16(int n, float * GGML_RESTRICT s, size_t bs, ggml_bf16_t * GGML_RESTRICT x, size_t bx, ggml_bf16_t * GGML_RESTRICT y, size_t by, int nrc) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:206:6: warning: no previous prototype for function 'ggml_vec_dot_f16' [-Wmissing-prototypes]
+  206 | void ggml_vec_dot_f16(int n, float * GGML_RESTRICT s, size_t bs, ggml_fp16_t * GGML_RESTRICT x, size_t bx, ggml_fp16_t * GGML_RESTRICT y, size_t by, int nrc) {
+      |      ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:206:1: note: declare 'static' if the function is not intended to be used outside of this translation unit
+  206 | void ggml_vec_dot_f16(int n, float * GGML_RESTRICT s, size_t bs, ggml_fp16_t * GGML_RESTRICT x, size_t bx, ggml_fp16_t * GGML_RESTRICT y, size_t by, int nrc) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:274:29: warning: static function 'vfmaq_f16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  274 |                 sum[k][j] = GGML_F16_VEC_FMA(sum[k][j], ax[j], ay[j]);
+      |                             ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:101:41: note: expanded from macro 'GGML_F16_VEC_FMA'
+  101 |     #define GGML_F16_VEC_FMA            GGML_F16x8_FMA
+      |                                         ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:74:37: note: expanded from macro 'GGML_F16x8_FMA'
+   74 |     #define GGML_F16x8_FMA(a, b, c) vfmaq_f16(a, b, c)
+      |                                     ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:250:1: note: use 'static' to give inline function 'ggml_vec_dot_f16_unroll' internal linkage
+  250 | inline void ggml_vec_dot_f16_unroll(const int n, const int xs, float * GGML_RESTRICT s, void * GGML_RESTRICT xv, ggml_fp16_t * GGML_RESTRICT y) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:35211:54: note: 'vfmaq_f16' declared here
+ 35211 | __ai __attribute__((target("fullfp16"))) float16x8_t vfmaq_f16(float16x8_t __p0, float16x8_t __p1, float16x8_t __p2) {
+       |                                                      ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:281:9: warning: static function 'vaddq_f16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  281 |         GGML_F16_VEC_REDUCE(sumf[k], sum[k]);
+      |         ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:104:41: note: expanded from macro 'GGML_F16_VEC_REDUCE'
+  104 |     #define GGML_F16_VEC_REDUCE         GGML_F16x8_REDUCE
+      |                                         ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:81:22: note: expanded from macro 'GGML_F16x8_REDUCE'
+   81 |             (x)[i] = vaddq_f16((x)[i], (x)[offset+i]);              \
+      |                      ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:250:1: note: use 'static' to give inline function 'ggml_vec_dot_f16_unroll' internal linkage
+  250 | inline void ggml_vec_dot_f16_unroll(const int n, const int xs, float * GGML_RESTRICT s, void * GGML_RESTRICT xv, ggml_fp16_t * GGML_RESTRICT y) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:34105:54: note: 'vaddq_f16' declared here
+ 34105 | __ai __attribute__((target("fullfp16"))) float16x8_t vaddq_f16(float16x8_t __p0, float16x8_t __p1) {
+       |                                                      ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:281:9: warning: static function 'vaddq_f16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  281 |         GGML_F16_VEC_REDUCE(sumf[k], sum[k]);
+      |         ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:104:41: note: expanded from macro 'GGML_F16_VEC_REDUCE'
+  104 |     #define GGML_F16_VEC_REDUCE         GGML_F16x8_REDUCE
+      |                                         ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:85:22: note: expanded from macro 'GGML_F16x8_REDUCE'
+   85 |             (x)[i] = vaddq_f16((x)[i], (x)[offset+i]);              \
+      |                      ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:250:1: note: use 'static' to give inline function 'ggml_vec_dot_f16_unroll' internal linkage
+  250 | inline void ggml_vec_dot_f16_unroll(const int n, const int xs, float * GGML_RESTRICT s, void * GGML_RESTRICT xv, ggml_fp16_t * GGML_RESTRICT y) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:34105:54: note: 'vaddq_f16' declared here
+ 34105 | __ai __attribute__((target("fullfp16"))) float16x8_t vaddq_f16(float16x8_t __p0, float16x8_t __p1) {
+       |                                                      ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:281:9: warning: static function 'vaddq_f16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  281 |         GGML_F16_VEC_REDUCE(sumf[k], sum[k]);
+      |         ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:104:41: note: expanded from macro 'GGML_F16_VEC_REDUCE'
+  104 |     #define GGML_F16_VEC_REDUCE         GGML_F16x8_REDUCE
+      |                                         ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:89:22: note: expanded from macro 'GGML_F16x8_REDUCE'
+   89 |             (x)[i] = vaddq_f16((x)[i], (x)[offset+i]);              \
+      |                      ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:250:1: note: use 'static' to give inline function 'ggml_vec_dot_f16_unroll' internal linkage
+  250 | inline void ggml_vec_dot_f16_unroll(const int n, const int xs, float * GGML_RESTRICT s, void * GGML_RESTRICT xv, ggml_fp16_t * GGML_RESTRICT y) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:34105:54: note: 'vaddq_f16' declared here
+ 34105 | __ai __attribute__((target("fullfp16"))) float16x8_t vaddq_f16(float16x8_t __p0, float16x8_t __p1) {
+       |                                                      ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:281:9: warning: static function 'vcvt_f32_f16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  281 |         GGML_F16_VEC_REDUCE(sumf[k], sum[k]);
+      |         ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:104:41: note: expanded from macro 'GGML_F16_VEC_REDUCE'
+  104 |     #define GGML_F16_VEC_REDUCE         GGML_F16x8_REDUCE
+      |                                         ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:91:32: note: expanded from macro 'GGML_F16x8_REDUCE'
+   91 |         const float32x4_t t0 = vcvt_f32_f16(vget_low_f16 ((x)[0])); \
+      |                                ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:250:1: note: use 'static' to give inline function 'ggml_vec_dot_f16_unroll' internal linkage
+  250 | inline void ggml_vec_dot_f16_unroll(const int n, const int xs, float * GGML_RESTRICT s, void * GGML_RESTRICT xv, ggml_fp16_t * GGML_RESTRICT y) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:39642:18: note: 'vcvt_f32_f16' declared here
+ 39642 | __ai float32x4_t vcvt_f32_f16(float16x4_t __p0) {
+       |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:281:9: warning: static function 'vget_low_f16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  281 |         GGML_F16_VEC_REDUCE(sumf[k], sum[k]);
+      |         ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:104:41: note: expanded from macro 'GGML_F16_VEC_REDUCE'
+  104 |     #define GGML_F16_VEC_REDUCE         GGML_F16x8_REDUCE
+      |                                         ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:91:45: note: expanded from macro 'GGML_F16x8_REDUCE'
+   91 |         const float32x4_t t0 = vcvt_f32_f16(vget_low_f16 ((x)[0])); \
+      |                                             ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:250:1: note: use 'static' to give inline function 'ggml_vec_dot_f16_unroll' internal linkage
+  250 | inline void ggml_vec_dot_f16_unroll(const int n, const int xs, float * GGML_RESTRICT s, void * GGML_RESTRICT xv, ggml_fp16_t * GGML_RESTRICT y) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:8207:18: note: 'vget_low_f16' declared here
+ 8207 | __ai float16x4_t vget_low_f16(float16x8_t __p0) {
+      |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:281:9: warning: static function 'vcvt_f32_f16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  281 |         GGML_F16_VEC_REDUCE(sumf[k], sum[k]);
+      |         ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:104:41: note: expanded from macro 'GGML_F16_VEC_REDUCE'
+  104 |     #define GGML_F16_VEC_REDUCE         GGML_F16x8_REDUCE
+      |                                         ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:92:32: note: expanded from macro 'GGML_F16x8_REDUCE'
+   92 |         const float32x4_t t1 = vcvt_f32_f16(vget_high_f16((x)[0])); \
+      |                                ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:250:1: note: use 'static' to give inline function 'ggml_vec_dot_f16_unroll' internal linkage
+  250 | inline void ggml_vec_dot_f16_unroll(const int n, const int xs, float * GGML_RESTRICT s, void * GGML_RESTRICT xv, ggml_fp16_t * GGML_RESTRICT y) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:39642:18: note: 'vcvt_f32_f16' declared here
+ 39642 | __ai float32x4_t vcvt_f32_f16(float16x4_t __p0) {
+       |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:281:9: warning: static function 'vget_high_f16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  281 |         GGML_F16_VEC_REDUCE(sumf[k], sum[k]);
+      |         ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:104:41: note: expanded from macro 'GGML_F16_VEC_REDUCE'
+  104 |     #define GGML_F16_VEC_REDUCE         GGML_F16x8_REDUCE
+      |                                         ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:92:45: note: expanded from macro 'GGML_F16x8_REDUCE'
+   92 |         const float32x4_t t1 = vcvt_f32_f16(vget_high_f16((x)[0])); \
+      |                                             ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:250:1: note: use 'static' to give inline function 'ggml_vec_dot_f16_unroll' internal linkage
+  250 | inline void ggml_vec_dot_f16_unroll(const int n, const int xs, float * GGML_RESTRICT s, void * GGML_RESTRICT xv, ggml_fp16_t * GGML_RESTRICT y) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:7530:18: note: 'vget_high_f16' declared here
+ 7530 | __ai float16x4_t vget_high_f16(float16x8_t __p0) {
+      |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:281:9: warning: static function 'vaddvq_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  281 |         GGML_F16_VEC_REDUCE(sumf[k], sum[k]);
+      |         ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:104:41: note: expanded from macro 'GGML_F16_VEC_REDUCE'
+  104 |     #define GGML_F16_VEC_REDUCE         GGML_F16x8_REDUCE
+      |                                         ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:93:30: note: expanded from macro 'GGML_F16x8_REDUCE'
+   93 |         (res) = (ggml_float) vaddvq_f32(vaddq_f32(t0, t1));         \
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:250:1: note: use 'static' to give inline function 'ggml_vec_dot_f16_unroll' internal linkage
+  250 | inline void ggml_vec_dot_f16_unroll(const int n, const int xs, float * GGML_RESTRICT s, void * GGML_RESTRICT xv, ggml_fp16_t * GGML_RESTRICT y) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:42228:16: note: 'vaddvq_f32' declared here
+ 42228 | __ai float32_t vaddvq_f32(float32x4_t __p0) {
+       |                ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:281:9: warning: static function 'vaddq_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  281 |         GGML_F16_VEC_REDUCE(sumf[k], sum[k]);
+      |         ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:104:41: note: expanded from macro 'GGML_F16_VEC_REDUCE'
+  104 |     #define GGML_F16_VEC_REDUCE         GGML_F16x8_REDUCE
+      |                                         ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:93:41: note: expanded from macro 'GGML_F16x8_REDUCE'
+   93 |         (res) = (ggml_float) vaddvq_f32(vaddq_f32(t0, t1));         \
+      |                                         ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:250:1: note: use 'static' to give inline function 'ggml_vec_dot_f16_unroll' internal linkage
+  250 | inline void ggml_vec_dot_f16_unroll(const int n, const int xs, float * GGML_RESTRICT s, void * GGML_RESTRICT xv, ggml_fp16_t * GGML_RESTRICT y) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:2232:18: note: 'vaddq_f32' declared here
+ 2232 | __ai float32x4_t vaddq_f32(float32x4_t __p0, float32x4_t __p1) {
+      |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:287:37: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  287 |             sumf[j] += (ggml_float)(GGML_FP16_TO_FP32(x[j][i])*GGML_FP16_TO_FP32(y[i]));
+      |                                     ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:250:1: note: use 'static' to give inline function 'ggml_vec_dot_f16_unroll' internal linkage
+  250 | inline void ggml_vec_dot_f16_unroll(const int n, const int xs, float * GGML_RESTRICT s, void * GGML_RESTRICT xv, ggml_fp16_t * GGML_RESTRICT y) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:287:64: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  287 |             sumf[j] += (ggml_float)(GGML_FP16_TO_FP32(x[j][i])*GGML_FP16_TO_FP32(y[i]));
+      |                                                                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:250:1: note: use 'static' to give inline function 'ggml_vec_dot_f16_unroll' internal linkage
+  250 | inline void ggml_vec_dot_f16_unroll(const int n, const int xs, float * GGML_RESTRICT s, void * GGML_RESTRICT xv, ggml_fp16_t * GGML_RESTRICT y) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:307:23: warning: static function 'vdupq_n_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  307 |     GGML_F32_VEC vx = GGML_F32_VEC_SET1(v);
+      |                       ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:55:29: note: expanded from macro 'GGML_F32_VEC_SET1'
+   55 | #define GGML_F32_VEC_SET1   GGML_F32x4_SET1
+      |                             ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:29:33: note: expanded from macro 'GGML_F32x4_SET1'
+   29 | #define GGML_F32x4_SET1(x)      vdupq_n_f32(x)
+      |                                 ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:303:1: note: use 'static' to give inline function 'ggml_vec_mad_f32' internal linkage
+  303 | inline void ggml_vec_mad_f32(const int n, float * GGML_RESTRICT y, const float * GGML_RESTRICT x, const float v) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:6482:18: note: 'vdupq_n_f32' declared here
+ 6482 | __ai float32x4_t vdupq_n_f32(float32_t __p0) {
+      |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:316:21: warning: static function 'vfmaq_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  316 |             ay[j] = GGML_F32_VEC_FMA(ay[j], ax[j], vx);
+      |                     ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:58:29: note: expanded from macro 'GGML_F32_VEC_FMA'
+   58 | #define GGML_F32_VEC_FMA    GGML_F32x4_FMA
+      |                             ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:32:33: note: expanded from macro 'GGML_F32x4_FMA'
+   32 | #define GGML_F32x4_FMA(a, b, c) vfmaq_f32(a, b, c)
+      |                                 ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:303:1: note: use 'static' to give inline function 'ggml_vec_mad_f32' internal linkage
+  303 | inline void ggml_vec_mad_f32(const int n, float * GGML_RESTRICT y, const float * GGML_RESTRICT x, const float v) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:41616:18: note: 'vfmaq_f32' declared here
+ 41616 | __ai float32x4_t vfmaq_f32(float32x4_t __p0, float32x4_t __p1, float32x4_t __p2) {
+       |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:347:21: warning: static function 'vfmaq_f16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  347 |             ay[j] = GGML_F16_VEC_FMA(ay[j], ax[j], vx);
+      |                     ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:101:41: note: expanded from macro 'GGML_F16_VEC_FMA'
+  101 |     #define GGML_F16_VEC_FMA            GGML_F16x8_FMA
+      |                                         ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:74:37: note: expanded from macro 'GGML_F16x8_FMA'
+   74 |     #define GGML_F16x8_FMA(a, b, c) vfmaq_f16(a, b, c)
+      |                                     ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:334:1: note: use 'static' to give inline function 'ggml_vec_mad_f16' internal linkage
+  334 | inline void ggml_vec_mad_f16(const int n, ggml_fp16_t * GGML_RESTRICT y, const ggml_fp16_t * GGML_RESTRICT x, const float v) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:35211:54: note: 'vfmaq_f16' declared here
+ 35211 | __ai __attribute__((target("fullfp16"))) float16x8_t vfmaq_f16(float16x8_t __p0, float16x8_t __p1, float16x8_t __p2) {
+       |                                                      ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:355:16: warning: static function 'ggml_compute_fp32_to_fp16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  355 |         y[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(y[i]) + GGML_FP16_TO_FP32(x[i])*v);
+      |                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:479:30: note: expanded from macro 'GGML_FP32_TO_FP16'
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:324:42: note: expanded from macro 'GGML_COMPUTE_FP32_TO_FP16'
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:334:1: note: use 'static' to give inline function 'ggml_vec_mad_f16' internal linkage
+  334 | inline void ggml_vec_mad_f16(const int n, ggml_fp16_t * GGML_RESTRICT y, const ggml_fp16_t * GGML_RESTRICT x, const float v) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:334:31: note: 'ggml_compute_fp32_to_fp16' declared here
+  334 |     static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
+      |                               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:355:34: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  355 |         y[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(y[i]) + GGML_FP16_TO_FP32(x[i])*v);
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:334:1: note: use 'static' to give inline function 'ggml_vec_mad_f16' internal linkage
+  334 | inline void ggml_vec_mad_f16(const int n, ggml_fp16_t * GGML_RESTRICT y, const ggml_fp16_t * GGML_RESTRICT x, const float v) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:355:60: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  355 |         y[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(y[i]) + GGML_FP16_TO_FP32(x[i])*v);
+      |                                                            ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:334:1: note: use 'static' to give inline function 'ggml_vec_mad_f16' internal linkage
+  334 | inline void ggml_vec_mad_f16(const int n, ggml_fp16_t * GGML_RESTRICT y, const ggml_fp16_t * GGML_RESTRICT x, const float v) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:382:17: warning: static function 'vdupq_n_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  382 |         vx[k] = GGML_F32_VEC_SET1(v[k][0]);
+      |                 ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:55:29: note: expanded from macro 'GGML_F32_VEC_SET1'
+   55 | #define GGML_F32_VEC_SET1   GGML_F32x4_SET1
+      |                             ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:29:33: note: expanded from macro 'GGML_F32x4_SET1'
+   29 | #define GGML_F32x4_SET1(x)      vdupq_n_f32(x)
+      |                                 ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:366:1: note: use 'static' to give inline function 'ggml_vec_mad_f32_unroll' internal linkage
+  366 | inline void ggml_vec_mad_f32_unroll(const int n, const int xs, const int vs, float * GGML_RESTRICT y, const float * GGML_RESTRICT xv, const float * GGML_RESTRICT vv) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:6482:18: note: 'vdupq_n_f32' declared here
+ 6482 | __ai float32x4_t vdupq_n_f32(float32_t __p0) {
+      |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:394:25: warning: static function 'vfmaq_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  394 |                 ay[j] = GGML_F32_VEC_FMA(ay[j], ax[k][j], vx[k]);
+      |                         ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:58:29: note: expanded from macro 'GGML_F32_VEC_FMA'
+   58 | #define GGML_F32_VEC_FMA    GGML_F32x4_FMA
+      |                             ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:32:33: note: expanded from macro 'GGML_F32x4_FMA'
+   32 | #define GGML_F32x4_FMA(a, b, c) vfmaq_f32(a, b, c)
+      |                                 ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:366:1: note: use 'static' to give inline function 'ggml_vec_mad_f32_unroll' internal linkage
+  366 | inline void ggml_vec_mad_f32_unroll(const int n, const int xs, const int vs, float * GGML_RESTRICT y, const float * GGML_RESTRICT xv, const float * GGML_RESTRICT vv) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:41616:18: note: 'vfmaq_f32' declared here
+ 41616 | __ai float32x4_t vfmaq_f32(float32x4_t __p0, float32x4_t __p1, float32x4_t __p2) {
+       |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:460:21: warning: static function 'vmulq_f16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  460 |             ay[j] = GGML_F16_VEC_MUL(ay[j], vx);
+      |                     ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:103:41: note: expanded from macro 'GGML_F16_VEC_MUL'
+  103 |     #define GGML_F16_VEC_MUL            GGML_F16x8_MUL
+      |                                         ^
+/Users/ggml/work/ggml/src/./ggml-cpu/simd_mappings.h:76:37: note: expanded from macro 'GGML_F16x8_MUL'
+   76 |     #define GGML_F16x8_MUL          vmulq_f16
+      |                                     ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:449:1: note: use 'static' to give inline function 'ggml_vec_scale_f16' internal linkage
+  449 | inline void ggml_vec_scale_f16(const int n, ggml_fp16_t * y, const float v) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:35361:54: note: 'vmulq_f16' declared here
+ 35361 | __ai __attribute__((target("fullfp16"))) float16x8_t vmulq_f16(float16x8_t __p0, float16x8_t __p1) {
+       |                                                      ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:468:16: warning: static function 'ggml_compute_fp32_to_fp16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  468 |         y[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(y[i])*v);
+      |                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:479:30: note: expanded from macro 'GGML_FP32_TO_FP16'
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:324:42: note: expanded from macro 'GGML_COMPUTE_FP32_TO_FP16'
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:449:1: note: use 'static' to give inline function 'ggml_vec_scale_f16' internal linkage
+  449 | inline void ggml_vec_scale_f16(const int n, ggml_fp16_t * y, const float v) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:334:31: note: 'ggml_compute_fp32_to_fp16' declared here
+  334 |     static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
+      |                               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:468:34: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  468 |         y[i] = GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(y[i])*v);
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:449:1: note: use 'static' to give inline function 'ggml_vec_scale_f16' internal linkage
+  449 | inline void ggml_vec_scale_f16(const int n, ggml_fp16_t * y, const float v) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:482:19: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  482 |         float v = GGML_FP16_TO_FP32(x[i]);
+      |                   ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:480:1: note: use 'static' to give inline function 'ggml_vec_sqr_f16' internal linkage
+  480 | inline void ggml_vec_sqr_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:483:16: warning: static function 'ggml_compute_fp32_to_fp16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  483 |         y[i] = GGML_FP32_TO_FP16(v*v);
+      |                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:479:30: note: expanded from macro 'GGML_FP32_TO_FP16'
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:324:42: note: expanded from macro 'GGML_COMPUTE_FP32_TO_FP16'
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:480:1: note: use 'static' to give inline function 'ggml_vec_sqr_f16' internal linkage
+  480 | inline void ggml_vec_sqr_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:334:31: note: 'ggml_compute_fp32_to_fp16' declared here
+  334 |     static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
+      |                               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:489:16: warning: static function 'ggml_compute_fp32_to_fp16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  489 |         y[i] = GGML_FP32_TO_FP16(sqrtf(GGML_FP16_TO_FP32(x[i])));
+      |                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:479:30: note: expanded from macro 'GGML_FP32_TO_FP16'
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:324:42: note: expanded from macro 'GGML_COMPUTE_FP32_TO_FP16'
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:487:1: note: use 'static' to give inline function 'ggml_vec_sqrt_f16' internal linkage
+  487 | inline void ggml_vec_sqrt_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:334:31: note: 'ggml_compute_fp32_to_fp16' declared here
+  334 |     static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
+      |                               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:489:40: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  489 |         y[i] = GGML_FP32_TO_FP16(sqrtf(GGML_FP16_TO_FP32(x[i])));
+      |                                        ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:487:1: note: use 'static' to give inline function 'ggml_vec_sqrt_f16' internal linkage
+  487 | inline void ggml_vec_sqrt_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:495:16: warning: static function 'ggml_compute_fp32_to_fp16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  495 |         y[i] = GGML_FP32_TO_FP16(logf(GGML_FP16_TO_FP32(x[i])));
+      |                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:479:30: note: expanded from macro 'GGML_FP32_TO_FP16'
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:324:42: note: expanded from macro 'GGML_COMPUTE_FP32_TO_FP16'
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:493:1: note: use 'static' to give inline function 'ggml_vec_log_f16' internal linkage
+  493 | inline void ggml_vec_log_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:334:31: note: 'ggml_compute_fp32_to_fp16' declared here
+  334 |     static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
+      |                               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:495:39: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  495 |         y[i] = GGML_FP32_TO_FP16(logf(GGML_FP16_TO_FP32(x[i])));
+      |                                       ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:493:1: note: use 'static' to give inline function 'ggml_vec_log_f16' internal linkage
+  493 | inline void ggml_vec_log_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:501:16: warning: static function 'ggml_compute_fp32_to_fp16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  501 |         y[i] = GGML_FP32_TO_FP16(sinf(GGML_FP16_TO_FP32(x[i])));
+      |                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:479:30: note: expanded from macro 'GGML_FP32_TO_FP16'
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:324:42: note: expanded from macro 'GGML_COMPUTE_FP32_TO_FP16'
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:499:1: note: use 'static' to give inline function 'ggml_vec_sin_f16' internal linkage
+  499 | inline void ggml_vec_sin_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:334:31: note: 'ggml_compute_fp32_to_fp16' declared here
+  334 |     static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
+      |                               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:501:39: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  501 |         y[i] = GGML_FP32_TO_FP16(sinf(GGML_FP16_TO_FP32(x[i])));
+      |                                       ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:499:1: note: use 'static' to give inline function 'ggml_vec_sin_f16' internal linkage
+  499 | inline void ggml_vec_sin_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:507:16: warning: static function 'ggml_compute_fp32_to_fp16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  507 |         y[i] = GGML_FP32_TO_FP16(cosf(GGML_FP16_TO_FP32(x[i])));
+      |                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:479:30: note: expanded from macro 'GGML_FP32_TO_FP16'
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:324:42: note: expanded from macro 'GGML_COMPUTE_FP32_TO_FP16'
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:505:1: note: use 'static' to give inline function 'ggml_vec_cos_f16' internal linkage
+  505 | inline void ggml_vec_cos_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:334:31: note: 'ggml_compute_fp32_to_fp16' declared here
+  334 |     static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
+      |                               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:507:39: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  507 |         y[i] = GGML_FP32_TO_FP16(cosf(GGML_FP16_TO_FP32(x[i])));
+      |                                       ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:505:1: note: use 'static' to give inline function 'ggml_vec_cos_f16' internal linkage
+  505 | inline void ggml_vec_cos_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:513:16: warning: static function 'ggml_compute_fp32_to_fp16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  513 |         y[i] = GGML_FP32_TO_FP16(fabsf(GGML_FP16_TO_FP32(x[i])));
+      |                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:479:30: note: expanded from macro 'GGML_FP32_TO_FP16'
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:324:42: note: expanded from macro 'GGML_COMPUTE_FP32_TO_FP16'
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:511:1: note: use 'static' to give inline function 'ggml_vec_abs_f16' internal linkage
+  511 | inline void ggml_vec_abs_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:334:31: note: 'ggml_compute_fp32_to_fp16' declared here
+  334 |     static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
+      |                               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:513:40: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  513 |         y[i] = GGML_FP32_TO_FP16(fabsf(GGML_FP16_TO_FP32(x[i])));
+      |                                        ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:511:1: note: use 'static' to give inline function 'ggml_vec_abs_f16' internal linkage
+  511 | inline void ggml_vec_abs_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:519:19: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  519 |         float v = GGML_FP16_TO_FP32(x[i]);
+      |                   ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:517:1: note: use 'static' to give inline function 'ggml_vec_sgn_f16' internal linkage
+  517 | inline void ggml_vec_sgn_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:520:16: warning: static function 'ggml_compute_fp32_to_fp16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  520 |         y[i] = GGML_FP32_TO_FP16((v > 0.f) ? 1.f : ((v < 0.f) ? -1.f : 0.f));
+      |                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:479:30: note: expanded from macro 'GGML_FP32_TO_FP16'
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:324:42: note: expanded from macro 'GGML_COMPUTE_FP32_TO_FP16'
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:517:1: note: use 'static' to give inline function 'ggml_vec_sgn_f16' internal linkage
+  517 | inline void ggml_vec_sgn_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:334:31: note: 'ggml_compute_fp32_to_fp16' declared here
+  334 |     static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
+      |                               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:526:16: warning: static function 'ggml_compute_fp32_to_fp16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  526 |         y[i] = GGML_FP32_TO_FP16((GGML_FP16_TO_FP32(x[i]) > 0.f) ? 1.f : 0.f);
+      |                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:479:30: note: expanded from macro 'GGML_FP32_TO_FP16'
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:324:42: note: expanded from macro 'GGML_COMPUTE_FP32_TO_FP16'
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:524:1: note: use 'static' to give inline function 'ggml_vec_step_f16' internal linkage
+  524 | inline void ggml_vec_step_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:334:31: note: 'ggml_compute_fp32_to_fp16' declared here
+  334 |     static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
+      |                               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:526:35: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  526 |         y[i] = GGML_FP32_TO_FP16((GGML_FP16_TO_FP32(x[i]) > 0.f) ? 1.f : 0.f);
+      |                                   ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:524:1: note: use 'static' to give inline function 'ggml_vec_step_f16' internal linkage
+  524 | inline void ggml_vec_step_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:532:16: warning: static function 'ggml_compute_fp32_to_fp16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  532 |         y[i] = GGML_FP32_TO_FP16(tanhf(GGML_FP16_TO_FP32(x[i])));
+      |                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:479:30: note: expanded from macro 'GGML_FP32_TO_FP16'
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:324:42: note: expanded from macro 'GGML_COMPUTE_FP32_TO_FP16'
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:530:1: note: use 'static' to give inline function 'ggml_vec_tanh_f16' internal linkage
+  530 | inline void ggml_vec_tanh_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:334:31: note: 'ggml_compute_fp32_to_fp16' declared here
+  334 |     static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
+      |                               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:532:40: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  532 |         y[i] = GGML_FP32_TO_FP16(tanhf(GGML_FP16_TO_FP32(x[i])));
+      |                                        ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:530:1: note: use 'static' to give inline function 'ggml_vec_tanh_f16' internal linkage
+  530 | inline void ggml_vec_tanh_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:538:16: warning: static function 'ggml_compute_fp32_to_fp16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  538 |         y[i] = GGML_FP32_TO_FP16(expm1f(GGML_FP16_TO_FP32(x[i])));
+      |                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:479:30: note: expanded from macro 'GGML_FP32_TO_FP16'
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:324:42: note: expanded from macro 'GGML_COMPUTE_FP32_TO_FP16'
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:536:1: note: use 'static' to give inline function 'ggml_vec_elu_f16' internal linkage
+  536 | inline void ggml_vec_elu_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:334:31: note: 'ggml_compute_fp32_to_fp16' declared here
+  334 |     static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
+      |                               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:538:41: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  538 |         y[i] = GGML_FP32_TO_FP16(expm1f(GGML_FP16_TO_FP32(x[i])));
+      |                                         ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:536:1: note: use 'static' to give inline function 'ggml_vec_elu_f16' internal linkage
+  536 | inline void ggml_vec_elu_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:544:19: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  544 |         float v = GGML_FP16_TO_FP32(x[i]);
+      |                   ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:542:1: note: use 'static' to give inline function 'ggml_vec_relu_f16' internal linkage
+  542 | inline void ggml_vec_relu_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:545:16: warning: static function 'ggml_compute_fp32_to_fp16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  545 |         y[i] = GGML_FP32_TO_FP16((v > 0.f) ? v : 0.f);
+      |                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:479:30: note: expanded from macro 'GGML_FP32_TO_FP16'
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:324:42: note: expanded from macro 'GGML_COMPUTE_FP32_TO_FP16'
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:542:1: note: use 'static' to give inline function 'ggml_vec_relu_f16' internal linkage
+  542 | inline void ggml_vec_relu_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:334:31: note: 'ggml_compute_fp32_to_fp16' declared here
+  334 |     static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
+      |                               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:551:19: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  551 |         float v = GGML_FP16_TO_FP32(x[i]);
+      |                   ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:549:1: note: use 'static' to give inline function 'ggml_vec_leaky_relu_f16' internal linkage
+  549 | inline void ggml_vec_leaky_relu_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x, const float ns) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:552:16: warning: static function 'ggml_compute_fp32_to_fp16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  552 |         y[i] = GGML_FP32_TO_FP16(((v > 0.f) ? v : 0.f) + ns * ((v < 0.0f) ? v : 0.f));
+      |                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:479:30: note: expanded from macro 'GGML_FP32_TO_FP16'
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:324:42: note: expanded from macro 'GGML_COMPUTE_FP32_TO_FP16'
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:549:1: note: use 'static' to give inline function 'ggml_vec_leaky_relu_f16' internal linkage
+  549 | inline void ggml_vec_leaky_relu_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x, const float ns) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:334:31: note: 'ggml_compute_fp32_to_fp16' declared here
+  334 |     static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
+      |                               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:558:16: warning: static function 'ggml_compute_fp32_to_fp16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  558 |         y[i] = GGML_FP32_TO_FP16(1.f / (1.f + expf(-GGML_FP16_TO_FP32(x[i]))));
+      |                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:479:30: note: expanded from macro 'GGML_FP32_TO_FP16'
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:324:42: note: expanded from macro 'GGML_COMPUTE_FP32_TO_FP16'
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:556:1: note: use 'static' to give inline function 'ggml_vec_sigmoid_f16' internal linkage
+  556 | inline void ggml_vec_sigmoid_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:334:31: note: 'ggml_compute_fp32_to_fp16' declared here
+  334 |     static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
+      |                               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:558:53: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  558 |         y[i] = GGML_FP32_TO_FP16(1.f / (1.f + expf(-GGML_FP16_TO_FP32(x[i]))));
+      |                                                     ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:556:1: note: use 'static' to give inline function 'ggml_vec_sigmoid_f16' internal linkage
+  556 | inline void ggml_vec_sigmoid_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:565:19: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  565 |         float v = GGML_FP16_TO_FP32(x[i]);
+      |                   ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:563:1: note: use 'static' to give inline function 'ggml_vec_hardswish_f16' internal linkage
+  563 | inline void ggml_vec_hardswish_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:566:16: warning: static function 'ggml_compute_fp32_to_fp16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  566 |         y[i] = GGML_FP32_TO_FP16(v * fminf(1.0f, fmaxf(0.0f, (v + 3.0f) / 6.0f)));
+      |                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:479:30: note: expanded from macro 'GGML_FP32_TO_FP16'
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:324:42: note: expanded from macro 'GGML_COMPUTE_FP32_TO_FP16'
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:563:1: note: use 'static' to give inline function 'ggml_vec_hardswish_f16' internal linkage
+  563 | inline void ggml_vec_hardswish_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:334:31: note: 'ggml_compute_fp32_to_fp16' declared here
+  334 |     static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
+      |                               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:572:16: warning: static function 'ggml_compute_fp32_to_fp16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  572 |         y[i] = GGML_FP32_TO_FP16(fminf(1.0f, fmaxf(0.0f, (GGML_FP16_TO_FP32(x[i]) + 3.0f) / 6.0f)));
+      |                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:479:30: note: expanded from macro 'GGML_FP32_TO_FP16'
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:324:42: note: expanded from macro 'GGML_COMPUTE_FP32_TO_FP16'
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:570:1: note: use 'static' to give inline function 'ggml_vec_hardsigmoid_f16' internal linkage
+  570 | inline void ggml_vec_hardsigmoid_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:334:31: note: 'ggml_compute_fp32_to_fp16' declared here
+  334 |     static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
+      |                               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:572:59: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  572 |         y[i] = GGML_FP32_TO_FP16(fminf(1.0f, fmaxf(0.0f, (GGML_FP16_TO_FP32(x[i]) + 3.0f) / 6.0f)));
+      |                                                           ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:570:1: note: use 'static' to give inline function 'ggml_vec_hardsigmoid_f16' internal linkage
+  570 | inline void ggml_vec_hardsigmoid_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:578:16: warning: static function 'ggml_compute_fp32_to_fp16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  578 |         y[i] = GGML_FP32_TO_FP16(expf(GGML_FP16_TO_FP32(x[i])));
+      |                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:479:30: note: expanded from macro 'GGML_FP32_TO_FP16'
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:324:42: note: expanded from macro 'GGML_COMPUTE_FP32_TO_FP16'
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:576:1: note: use 'static' to give inline function 'ggml_vec_exp_f16' internal linkage
+  576 | inline void ggml_vec_exp_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:334:31: note: 'ggml_compute_fp32_to_fp16' declared here
+  334 |     static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
+      |                               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:578:39: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  578 |         y[i] = GGML_FP32_TO_FP16(expf(GGML_FP16_TO_FP32(x[i])));
+      |                                       ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:576:1: note: use 'static' to give inline function 'ggml_vec_exp_f16' internal linkage
+  576 | inline void ggml_vec_exp_f16 (const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:606:32: warning: static function 'ggml_compute_fp32_to_fp16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  606 |             ggml_fp16_t fp16 = GGML_FP32_TO_FP16(x[i]);
+      |                                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:479:30: note: expanded from macro 'GGML_FP32_TO_FP16'
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:324:42: note: expanded from macro 'GGML_COMPUTE_FP32_TO_FP16'
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:598:1: note: use 'static' to give inline function 'ggml_vec_gelu_f32' internal linkage
+  598 | inline void ggml_vec_gelu_f32(const int n, float * y, const float * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:334:31: note: 'ggml_compute_fp32_to_fp16' declared here
+  334 |     static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
+      |                               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:608:20: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  608 |             y[i] = GGML_FP16_TO_FP32(ggml_table_gelu_f16[t]);
+      |                    ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:598:1: note: use 'static' to give inline function 'ggml_vec_gelu_f32' internal linkage
+  598 | inline void ggml_vec_gelu_f32(const int n, float * y, const float * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:635:28: warning: static function 'ggml_compute_fp32_to_fp16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  635 |         ggml_fp16_t fp16 = GGML_FP32_TO_FP16(x[i]);
+      |                            ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:479:30: note: expanded from macro 'GGML_FP32_TO_FP16'
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:324:42: note: expanded from macro 'GGML_COMPUTE_FP32_TO_FP16'
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:632:1: note: use 'static' to give inline function 'ggml_vec_gelu_quick_f32' internal linkage
+  632 | inline void ggml_vec_gelu_quick_f32(const int n, float * y, const float * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:334:31: note: 'ggml_compute_fp32_to_fp16' declared here
+  334 |     static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
+      |                               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:637:16: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  637 |         y[i] = GGML_FP16_TO_FP32(ggml_table_gelu_quick_f16[t]);
+      |                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:632:1: note: use 'static' to give inline function 'ggml_vec_gelu_quick_f32' internal linkage
+  632 | inline void ggml_vec_gelu_quick_f32(const int n, float * y, const float * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:650:19: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  650 |         float v = GGML_FP16_TO_FP32(x[i]);
+      |                   ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:648:1: note: use 'static' to give inline function 'ggml_vec_gelu_quick_f16' internal linkage
+  648 | inline void ggml_vec_gelu_quick_f16(const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:651:16: warning: static function 'ggml_compute_fp32_to_fp16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  651 |         y[i] = GGML_FP32_TO_FP16(v*(1.0f/(1.0f+expf(GELU_QUICK_COEF*v))));
+      |                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:479:30: note: expanded from macro 'GGML_FP32_TO_FP16'
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:324:42: note: expanded from macro 'GGML_COMPUTE_FP32_TO_FP16'
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:648:1: note: use 'static' to give inline function 'ggml_vec_gelu_quick_f16' internal linkage
+  648 | inline void ggml_vec_gelu_quick_f16(const int n, ggml_fp16_t * y, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:334:31: note: 'ggml_compute_fp32_to_fp16' declared here
+  334 |     static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
+      |                               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:660:15: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  660 |     float v = GGML_FP16_TO_FP32(x);
+      |               ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:659:1: note: use 'static' to give inline function 'ggml_silu_f16' internal linkage
+  659 | inline ggml_fp16_t ggml_silu_f16(ggml_fp16_t x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:661:12: warning: static function 'ggml_compute_fp32_to_fp16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  661 |     return GGML_FP32_TO_FP16(v/(1.0f + expf(-v)));
+      |            ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:479:30: note: expanded from macro 'GGML_FP32_TO_FP16'
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:324:42: note: expanded from macro 'GGML_COMPUTE_FP32_TO_FP16'
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:659:1: note: use 'static' to give inline function 'ggml_silu_f16' internal linkage
+  659 | inline ggml_fp16_t ggml_silu_f16(ggml_fp16_t x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:334:31: note: 'ggml_compute_fp32_to_fp16' declared here
+  334 |     static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
+      |                               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:676:27: warning: static function 'vdupq_n_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  676 |     const float32x4_t r = vdupq_n_f32(0x1.8p23f);
+      |                           ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:6482:18: note: 'vdupq_n_f32' declared here
+ 6482 | __ai float32x4_t vdupq_n_f32(float32_t __p0) {
+      |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:677:27: warning: static function 'vfmaq_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  677 |     const float32x4_t z = vfmaq_f32(r, x, vdupq_n_f32(0x1.715476p+0f));
+      |                           ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:41616:18: note: 'vfmaq_f32' declared here
+ 41616 | __ai float32x4_t vfmaq_f32(float32x4_t __p0, float32x4_t __p1, float32x4_t __p2) {
+       |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:677:43: warning: static function 'vdupq_n_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  677 |     const float32x4_t z = vfmaq_f32(r, x, vdupq_n_f32(0x1.715476p+0f));
+      |                                           ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:6482:18: note: 'vdupq_n_f32' declared here
+ 6482 | __ai float32x4_t vdupq_n_f32(float32_t __p0) {
+      |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:678:27: warning: static function 'vsubq_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  678 |     const float32x4_t n = vsubq_f32(z, r);
+      |                           ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:29963:18: note: 'vsubq_f32' declared here
+ 29963 | __ai float32x4_t vsubq_f32(float32x4_t __p0, float32x4_t __p1) {
+       |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:679:27: warning: static function 'vfmsq_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  679 |     const float32x4_t b = vfmsq_f32(vfmsq_f32(x, n, vdupq_n_f32(0x1.62e4p-1f)), n,
+      |                           ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:41696:18: note: 'vfmsq_f32' declared here
+ 41696 | __ai float32x4_t vfmsq_f32(float32x4_t __p0, float32x4_t __p1, float32x4_t __p2) {
+       |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:679:37: warning: static function 'vfmsq_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  679 |     const float32x4_t b = vfmsq_f32(vfmsq_f32(x, n, vdupq_n_f32(0x1.62e4p-1f)), n,
+      |                                     ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:41696:18: note: 'vfmsq_f32' declared here
+ 41696 | __ai float32x4_t vfmsq_f32(float32x4_t __p0, float32x4_t __p1, float32x4_t __p2) {
+       |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:679:53: warning: static function 'vdupq_n_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  679 |     const float32x4_t b = vfmsq_f32(vfmsq_f32(x, n, vdupq_n_f32(0x1.62e4p-1f)), n,
+      |                                                     ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:6482:18: note: 'vdupq_n_f32' declared here
+ 6482 | __ai float32x4_t vdupq_n_f32(float32_t __p0) {
+      |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:680:37: warning: static function 'vdupq_n_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  680 |                                     vdupq_n_f32(0x1.7f7d1cp-20f));
+      |                                     ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:6482:18: note: 'vdupq_n_f32' declared here
+ 6482 | __ai float32x4_t vdupq_n_f32(float32_t __p0) {
+      |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:682:27: warning: static function 'vreinterpretq_f32_u32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  682 |     const float32x4_t k = vreinterpretq_f32_u32(vaddq_u32(e, vreinterpretq_u32_f32(vdupq_n_f32(1))));
+      |                           ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:57216:18: note: 'vreinterpretq_f32_u32' declared here
+ 57216 | __ai float32x4_t vreinterpretq_f32_u32(uint32x4_t __p0) {
+       |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:682:49: warning: static function 'vaddq_u32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  682 |     const float32x4_t k = vreinterpretq_f32_u32(vaddq_u32(e, vreinterpretq_u32_f32(vdupq_n_f32(1))));
+      |                                                 ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:2164:17: note: 'vaddq_u32' declared here
+ 2164 | __ai uint32x4_t vaddq_u32(uint32x4_t __p0, uint32x4_t __p1) {
+      |                 ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:682:62: warning: static function 'vreinterpretq_u32_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  682 |     const float32x4_t k = vreinterpretq_f32_u32(vaddq_u32(e, vreinterpretq_u32_f32(vdupq_n_f32(1))));
+      |                                                              ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:56886:17: note: 'vreinterpretq_u32_f32' declared here
+ 56886 | __ai uint32x4_t vreinterpretq_u32_f32(float32x4_t __p0) {
+       |                 ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:682:84: warning: static function 'vdupq_n_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  682 |     const float32x4_t k = vreinterpretq_f32_u32(vaddq_u32(e, vreinterpretq_u32_f32(vdupq_n_f32(1))));
+      |                                                                                    ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:6482:18: note: 'vdupq_n_f32' declared here
+ 6482 | __ai float32x4_t vdupq_n_f32(float32_t __p0) {
+      |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:683:26: warning: static function 'vcagtq_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  683 |     const uint32x4_t c = vcagtq_f32(n, vdupq_n_f32(126));
+      |                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:3551:17: note: 'vcagtq_f32' declared here
+ 3551 | __ai uint32x4_t vcagtq_f32(float32x4_t __p0, float32x4_t __p1) {
+      |                 ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:683:40: warning: static function 'vdupq_n_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  683 |     const uint32x4_t c = vcagtq_f32(n, vdupq_n_f32(126));
+      |                                        ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:6482:18: note: 'vdupq_n_f32' declared here
+ 6482 | __ai float32x4_t vdupq_n_f32(float32_t __p0) {
+      |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:684:27: warning: static function 'vmulq_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  684 |     const float32x4_t u = vmulq_f32(b, b);
+      |                           ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:16436:18: note: 'vmulq_f32' declared here
+ 16436 | __ai float32x4_t vmulq_f32(float32x4_t __p0, float32x4_t __p1) {
+       |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:685:27: warning: static function 'vfmaq_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  685 |     const float32x4_t j = vfmaq_f32(
+      |                           ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:41616:18: note: 'vfmaq_f32' declared here
+ 41616 | __ai float32x4_t vfmaq_f32(float32x4_t __p0, float32x4_t __p1, float32x4_t __p2) {
+       |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:686:9: warning: static function 'vmulq_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  686 |         vmulq_f32(vdupq_n_f32(0x1.ffffecp-1f), b),
+      |         ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:16436:18: note: 'vmulq_f32' declared here
+ 16436 | __ai float32x4_t vmulq_f32(float32x4_t __p0, float32x4_t __p1) {
+       |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:686:19: warning: static function 'vdupq_n_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  686 |         vmulq_f32(vdupq_n_f32(0x1.ffffecp-1f), b),
+      |                   ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:6482:18: note: 'vdupq_n_f32' declared here
+ 6482 | __ai float32x4_t vdupq_n_f32(float32_t __p0) {
+      |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:687:9: warning: static function 'vfmaq_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  687 |         vfmaq_f32(vfmaq_f32(vdupq_n_f32(0x1.fffdb6p-2f), vdupq_n_f32(0x1.555e66p-3f), b),
+      |         ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:41616:18: note: 'vfmaq_f32' declared here
+ 41616 | __ai float32x4_t vfmaq_f32(float32x4_t __p0, float32x4_t __p1, float32x4_t __p2) {
+       |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:687:19: warning: static function 'vfmaq_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  687 |         vfmaq_f32(vfmaq_f32(vdupq_n_f32(0x1.fffdb6p-2f), vdupq_n_f32(0x1.555e66p-3f), b),
+      |                   ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:41616:18: note: 'vfmaq_f32' declared here
+ 41616 | __ai float32x4_t vfmaq_f32(float32x4_t __p0, float32x4_t __p1, float32x4_t __p2) {
+       |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:687:29: warning: static function 'vdupq_n_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  687 |         vfmaq_f32(vfmaq_f32(vdupq_n_f32(0x1.fffdb6p-2f), vdupq_n_f32(0x1.555e66p-3f), b),
+      |                             ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:6482:18: note: 'vdupq_n_f32' declared here
+ 6482 | __ai float32x4_t vdupq_n_f32(float32_t __p0) {
+      |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:687:58: warning: static function 'vdupq_n_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  687 |         vfmaq_f32(vfmaq_f32(vdupq_n_f32(0x1.fffdb6p-2f), vdupq_n_f32(0x1.555e66p-3f), b),
+      |                                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:6482:18: note: 'vdupq_n_f32' declared here
+ 6482 | __ai float32x4_t vdupq_n_f32(float32_t __p0) {
+      |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:688:19: warning: static function 'vfmaq_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  688 |                   vfmaq_f32(vdupq_n_f32(0x1.573e2ep-5f), vdupq_n_f32(0x1.0e4020p-7f), b), u), u);
+      |                   ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:41616:18: note: 'vfmaq_f32' declared here
+ 41616 | __ai float32x4_t vfmaq_f32(float32x4_t __p0, float32x4_t __p1, float32x4_t __p2) {
+       |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:688:29: warning: static function 'vdupq_n_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  688 |                   vfmaq_f32(vdupq_n_f32(0x1.573e2ep-5f), vdupq_n_f32(0x1.0e4020p-7f), b), u), u);
+      |                             ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:6482:18: note: 'vdupq_n_f32' declared here
+ 6482 | __ai float32x4_t vdupq_n_f32(float32_t __p0) {
+      |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:688:58: warning: static function 'vdupq_n_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  688 |                   vfmaq_f32(vdupq_n_f32(0x1.573e2ep-5f), vdupq_n_f32(0x1.0e4020p-7f), b), u), u);
+      |                                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:6482:18: note: 'vdupq_n_f32' declared here
+ 6482 | __ai float32x4_t vdupq_n_f32(float32_t __p0) {
+      |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:689:10: warning: static function 'vpaddd_u64' is used in an inline function with external linkage [-Wstatic-in-inline]
+  689 |     if (!vpaddd_u64(vreinterpretq_u64_u32(c)))
+      |          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:52118:15: note: 'vpaddd_u64' declared here
+ 52118 | __ai uint64_t vpaddd_u64(uint64x2_t __p0) {
+       |               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:689:21: warning: static function 'vreinterpretq_u64_u32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  689 |     if (!vpaddd_u64(vreinterpretq_u64_u32(c)))
+      |                     ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:56936:17: note: 'vreinterpretq_u64_u32' declared here
+ 56936 | __ai uint64x2_t vreinterpretq_u64_u32(uint32x4_t __p0) {
+       |                 ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:690:16: warning: static function 'vfmaq_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  690 |         return vfmaq_f32(k, j, k);
+      |                ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:41616:18: note: 'vfmaq_f32' declared here
+ 41616 | __ai float32x4_t vfmaq_f32(float32x4_t __p0, float32x4_t __p1, float32x4_t __p2) {
+       |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:691:26: warning: static function 'vandq_u32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  691 |     const uint32x4_t d = vandq_u32(vclezq_f32(n), vdupq_n_u32(0x82000000));
+      |                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:2668:17: note: 'vandq_u32' declared here
+ 2668 | __ai uint32x4_t vandq_u32(uint32x4_t __p0, uint32x4_t __p1) {
+      |                 ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:691:36: warning: static function 'vclezq_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  691 |     const uint32x4_t d = vandq_u32(vclezq_f32(n), vdupq_n_u32(0x82000000));
+      |                                    ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:43695:17: note: 'vclezq_f32' declared here
+ 43695 | __ai uint32x4_t vclezq_f32(float32x4_t __p0) {
+       |                 ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:691:51: warning: static function 'vdupq_n_u32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  691 |     const uint32x4_t d = vandq_u32(vclezq_f32(n), vdupq_n_u32(0x82000000));
+      |                                                   ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:6422:17: note: 'vdupq_n_u32' declared here
+ 6422 | __ai uint32x4_t vdupq_n_u32(uint32_t __p0) {
+      |                 ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:692:28: warning: static function 'vreinterpretq_f32_u32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  692 |     const float32x4_t s1 = vreinterpretq_f32_u32(vaddq_u32(d, vdupq_n_u32(0x7f000000)));
+      |                            ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:57216:18: note: 'vreinterpretq_f32_u32' declared here
+ 57216 | __ai float32x4_t vreinterpretq_f32_u32(uint32x4_t __p0) {
+       |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:692:50: warning: static function 'vaddq_u32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  692 |     const float32x4_t s1 = vreinterpretq_f32_u32(vaddq_u32(d, vdupq_n_u32(0x7f000000)));
+      |                                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:2164:17: note: 'vaddq_u32' declared here
+ 2164 | __ai uint32x4_t vaddq_u32(uint32x4_t __p0, uint32x4_t __p1) {
+      |                 ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:692:63: warning: static function 'vdupq_n_u32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  692 |     const float32x4_t s1 = vreinterpretq_f32_u32(vaddq_u32(d, vdupq_n_u32(0x7f000000)));
+      |                                                               ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:6422:17: note: 'vdupq_n_u32' declared here
+ 6422 | __ai uint32x4_t vdupq_n_u32(uint32_t __p0) {
+      |                 ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:693:28: warning: static function 'vreinterpretq_f32_u32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  693 |     const float32x4_t s2 = vreinterpretq_f32_u32(vsubq_u32(e, d));
+      |                            ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:57216:18: note: 'vreinterpretq_f32_u32' declared here
+ 57216 | __ai float32x4_t vreinterpretq_f32_u32(uint32x4_t __p0) {
+       |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:693:50: warning: static function 'vsubq_u32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  693 |     const float32x4_t s2 = vreinterpretq_f32_u32(vsubq_u32(e, d));
+      |                                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:29895:17: note: 'vsubq_u32' declared here
+ 29895 | __ai uint32x4_t vsubq_u32(uint32x4_t __p0, uint32x4_t __p1) {
+       |                 ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:694:12: warning: static function 'vbslq_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  694 |     return vbslq_f32(vcagtq_f32(n, vdupq_n_f32(192)), vmulq_f32(s1, s1),
+      |            ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:3309:18: note: 'vbslq_f32' declared here
+ 3309 | __ai float32x4_t vbslq_f32(uint32x4_t __p0, float32x4_t __p1, float32x4_t __p2) {
+      |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:694:22: warning: static function 'vcagtq_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  694 |     return vbslq_f32(vcagtq_f32(n, vdupq_n_f32(192)), vmulq_f32(s1, s1),
+      |                      ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:3551:17: note: 'vcagtq_f32' declared here
+ 3551 | __ai uint32x4_t vcagtq_f32(float32x4_t __p0, float32x4_t __p1) {
+      |                 ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:694:36: warning: static function 'vdupq_n_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  694 |     return vbslq_f32(vcagtq_f32(n, vdupq_n_f32(192)), vmulq_f32(s1, s1),
+      |                                    ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:6482:18: note: 'vdupq_n_f32' declared here
+ 6482 | __ai float32x4_t vdupq_n_f32(float32_t __p0) {
+      |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:694:55: warning: static function 'vmulq_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  694 |     return vbslq_f32(vcagtq_f32(n, vdupq_n_f32(192)), vmulq_f32(s1, s1),
+      |                                                       ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:16436:18: note: 'vmulq_f32' declared here
+ 16436 | __ai float32x4_t vmulq_f32(float32x4_t __p0, float32x4_t __p1) {
+       |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:695:22: warning: static function 'vbslq_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  695 |                      vbslq_f32(c, vmulq_f32(vfmaq_f32(s2, s2, j), s1), vfmaq_f32(k, k, j)));
+      |                      ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:3309:18: note: 'vbslq_f32' declared here
+ 3309 | __ai float32x4_t vbslq_f32(uint32x4_t __p0, float32x4_t __p1, float32x4_t __p2) {
+      |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:695:35: warning: static function 'vmulq_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  695 |                      vbslq_f32(c, vmulq_f32(vfmaq_f32(s2, s2, j), s1), vfmaq_f32(k, k, j)));
+      |                                   ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:16436:18: note: 'vmulq_f32' declared here
+ 16436 | __ai float32x4_t vmulq_f32(float32x4_t __p0, float32x4_t __p1) {
+       |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:695:45: warning: static function 'vfmaq_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  695 |                      vbslq_f32(c, vmulq_f32(vfmaq_f32(s2, s2, j), s1), vfmaq_f32(k, k, j)));
+      |                                             ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:41616:18: note: 'vfmaq_f32' declared here
+ 41616 | __ai float32x4_t vfmaq_f32(float32x4_t __p0, float32x4_t __p1, float32x4_t __p2) {
+       |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:695:72: warning: static function 'vfmaq_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  695 |                      vbslq_f32(c, vmulq_f32(vfmaq_f32(s2, s2, j), s1), vfmaq_f32(k, k, j)));
+      |                                                                        ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:675:1: note: use 'static' to give inline function 'ggml_v_expf' internal linkage
+  675 | inline float32x4_t ggml_v_expf(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:41616:18: note: 'vfmaq_f32' declared here
+ 41616 | __ai float32x4_t vfmaq_f32(float32x4_t __p0, float32x4_t __p1, float32x4_t __p2) {
+       |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:700:29: warning: static function 'vdupq_n_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  700 |     const float32x4_t one = vdupq_n_f32(1.0f);
+      |                             ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:699:1: note: use 'static' to give inline function 'ggml_v_silu' internal linkage
+  699 | inline float32x4_t ggml_v_silu(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:6482:18: note: 'vdupq_n_f32' declared here
+ 6482 | __ai float32x4_t vdupq_n_f32(float32_t __p0) {
+      |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:701:30: warning: static function 'vdupq_n_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  701 |     const float32x4_t zero = vdupq_n_f32(0.0f);
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:699:1: note: use 'static' to give inline function 'ggml_v_silu' internal linkage
+  699 | inline float32x4_t ggml_v_silu(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:6482:18: note: 'vdupq_n_f32' declared here
+ 6482 | __ai float32x4_t vdupq_n_f32(float32_t __p0) {
+      |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:702:31: warning: static function 'vsubq_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  702 |     const float32x4_t neg_x = vsubq_f32(zero, x);
+      |                               ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:699:1: note: use 'static' to give inline function 'ggml_v_silu' internal linkage
+  699 | inline float32x4_t ggml_v_silu(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:29963:18: note: 'vsubq_f32' declared here
+ 29963 | __ai float32x4_t vsubq_f32(float32x4_t __p0, float32x4_t __p1) {
+       |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:704:44: warning: static function 'vaddq_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  704 |     const float32x4_t one_plus_exp_neg_x = vaddq_f32(one, exp_neg_x);
+      |                                            ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:699:1: note: use 'static' to give inline function 'ggml_v_silu' internal linkage
+  699 | inline float32x4_t ggml_v_silu(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:2232:18: note: 'vaddq_f32' declared here
+ 2232 | __ai float32x4_t vaddq_f32(float32x4_t __p0, float32x4_t __p1) {
+      |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:705:12: warning: static function 'vdivq_f32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  705 |     return vdivq_f32(x, one_plus_exp_neg_x);
+      |            ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:699:1: note: use 'static' to give inline function 'ggml_v_silu' internal linkage
+  699 | inline float32x4_t ggml_v_silu(float32x4_t x) {
+      | ^
+      | static 
+/Library/Developer/CommandLineTools/usr/lib/clang/16/include/arm_neon.h:45735:18: note: 'vdivq_f32' declared here
+ 45735 | __ai float32x4_t vdivq_f32(float32x4_t __p0, float32x4_t __p1) {
+       |                  ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:862:6: warning: no previous prototype for function 'ggml_vec_silu_f32' [-Wmissing-prototypes]
+  862 | void ggml_vec_silu_f32(const int n, float * y, const float * x) {
+      |      ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:862:1: note: declare 'static' if the function is not intended to be used outside of this translation unit
+  862 | void ggml_vec_silu_f32(const int n, float * y, const float * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:892:12: warning: no previous prototype for function 'ggml_vec_soft_max_f32' [-Wmissing-prototypes]
+  892 | ggml_float ggml_vec_soft_max_f32(const int n, float * y, const float * x, float max) {
+      |            ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:892:1: note: declare 'static' if the function is not intended to be used outside of this translation unit
+  892 | ggml_float ggml_vec_soft_max_f32(const int n, float * y, const float * x, float max) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:945:12: warning: no previous prototype for function 'ggml_vec_log_soft_max_f32' [-Wmissing-prototypes]
+  945 | ggml_float ggml_vec_log_soft_max_f32(const int n, float * y, const float * x, float max) {
+      |            ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:945:1: note: declare 'static' if the function is not intended to be used outside of this translation unit
+  945 | ggml_float ggml_vec_log_soft_max_f32(const int n, float * y, const float * x, float max) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:964:21: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  964 |     const float v = GGML_FP16_TO_FP32(x);
+      |                     ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:963:1: note: use 'static' to give inline function 'ggml_silu_backward_f16' internal linkage
+  963 | inline ggml_fp16_t ggml_silu_backward_f16(ggml_fp16_t x, ggml_fp16_t dy) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:966:12: warning: static function 'ggml_compute_fp32_to_fp16' is used in an inline function with external linkage [-Wstatic-in-inline]
+  966 |     return GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(dy)*s*(1.0f + v*(1.0f - s)));
+      |            ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:479:30: note: expanded from macro 'GGML_FP32_TO_FP16'
+  479 | #define GGML_FP32_TO_FP16(x) GGML_COMPUTE_FP32_TO_FP16(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:324:42: note: expanded from macro 'GGML_COMPUTE_FP32_TO_FP16'
+  324 |     #define GGML_COMPUTE_FP32_TO_FP16(x) ggml_compute_fp32_to_fp16(x)
+      |                                          ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:963:1: note: use 'static' to give inline function 'ggml_silu_backward_f16' internal linkage
+  963 | inline ggml_fp16_t ggml_silu_backward_f16(ggml_fp16_t x, ggml_fp16_t dy) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:334:31: note: 'ggml_compute_fp32_to_fp16' declared here
+  334 |     static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
+      |                               ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:966:30: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+  966 |     return GGML_FP32_TO_FP16(GGML_FP16_TO_FP32(dy)*s*(1.0f + v*(1.0f - s)));
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:963:1: note: use 'static' to give inline function 'ggml_silu_backward_f16' internal linkage
+  963 | inline ggml_fp16_t ggml_silu_backward_f16(ggml_fp16_t x, ggml_fp16_t dy) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:1004:16: warning: static function 'ggml_compute_fp16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+ 1004 |         sum += GGML_FP16_TO_FP32(x[i]);
+      |                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:326:34: note: expanded from macro 'GGML_FP16_TO_FP32'
+  326 |     #define GGML_FP16_TO_FP32(x) ggml_compute_fp16_to_fp32(x)
+      |                                  ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:1001:1: note: use 'static' to give inline function 'ggml_vec_sum_f16_ggf' internal linkage
+ 1001 | inline void ggml_vec_sum_f16_ggf(const int n, float * s, const ggml_fp16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:328:25: note: 'ggml_compute_fp16_to_fp32' declared here
+  328 |     static inline float ggml_compute_fp16_to_fp32(ggml_fp16_t h) {
+      |                         ^
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:13:
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:1012:16: warning: static function 'ggml_compute_bf16_to_fp32' is used in an inline function with external linkage [-Wstatic-in-inline]
+ 1012 |         sum += GGML_BF16_TO_FP32(x[i]);
+      |                ^
+/Users/ggml/work/ggml/src/./ggml-impl.h:554:30: note: expanded from macro 'GGML_BF16_TO_FP32'
+  554 | #define GGML_BF16_TO_FP32(x) ggml_compute_bf16_to_fp32(x)
+      |                              ^
+/Users/ggml/work/ggml/src/./ggml-cpu/vec_ops.h:1009:1: note: use 'static' to give inline function 'ggml_vec_sum_bf16_ggf' internal linkage
+ 1009 | inline void ggml_vec_sum_bf16_ggf(const int n, float * s, const ggml_bf16_t * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/./ggml-impl.h:521:21: note: 'ggml_compute_bf16_to_fp32' declared here
+  521 | static inline float ggml_compute_bf16_to_fp32(ggml_bf16_t h) {
+      |                     ^
+/Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu.c:227:21: warning: unused variable 'CACHE_LINE_SIZE_F32' [-Wunused-const-variable]
+  227 | static const size_t CACHE_LINE_SIZE_F32 = CACHE_LINE_SIZE/sizeof(float);
+      |                     ^~~~~~~~~~~~~~~~~~~
+138 warnings generated.
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/more_ops.cpp:6:
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/ggml-cpu-quants.h:4:
+/Users/ggml/work/ggml/src/./ggml-common.h:171:9: warning: anonymous structs are a GNU extension [-Wgnu-anonymous-struct]
+  171 |         struct {
+      |         ^
+/Users/ggml/work/ggml/src/./ggml-common.h:171:9: warning: anonymous types declared in an anonymous union are an extension [-Wnested-anon-types]
+/Users/ggml/work/ggml/src/./ggml-common.h:192:9: warning: anonymous structs are a GNU extension [-Wgnu-anonymous-struct]
+  192 |         struct {
+      |         ^
+/Users/ggml/work/ggml/src/./ggml-common.h:192:9: warning: anonymous types declared in an anonymous union are an extension [-Wnested-anon-types]
+/Users/ggml/work/ggml/src/./ggml-common.h:213:9: warning: anonymous structs are a GNU extension [-Wgnu-anonymous-struct]
+  213 |         struct {
+      |         ^
+/Users/ggml/work/ggml/src/./ggml-common.h:213:9: warning: anonymous types declared in an anonymous union are an extension [-Wnested-anon-types]
+/Users/ggml/work/ggml/src/./ggml-common.h:254:9: warning: anonymous structs are a GNU extension [-Wgnu-anonymous-struct]
+  254 |         struct {
+      |         ^
+/Users/ggml/work/ggml/src/./ggml-common.h:254:9: warning: anonymous types declared in an anonymous union are an extension [-Wnested-anon-types]
+/Users/ggml/work/ggml/src/./ggml-common.h:281:9: warning: anonymous structs are a GNU extension [-Wgnu-anonymous-struct]
+  281 |         struct {
+      |         ^
+/Users/ggml/work/ggml/src/./ggml-common.h:281:9: warning: anonymous types declared in an anonymous union are an extension [-Wnested-anon-types]
+/Users/ggml/work/ggml/src/./ggml-common.h:298:9: warning: anonymous structs are a GNU extension [-Wgnu-anonymous-struct]
+  298 |         struct {
+      |         ^
+/Users/ggml/work/ggml/src/./ggml-common.h:298:9: warning: anonymous types declared in an anonymous union are an extension [-Wnested-anon-types]
+In file included from /Users/ggml/work/ggml/src/ggml-cpu/more_ops.cpp:10:
+/Users/ggml/work/ggml/src/ggml-cpu/vec_ops.h:95:6: warning: no previous prototype for function 'ggml_vec_dot_f32' [-Wmissing-prototypes]
+   95 | void ggml_vec_dot_f32(int n, float * GGML_RESTRICT s, size_t bs, const float * GGML_RESTRICT x, size_t bx, const float * GGML_RESTRICT y, size_t by, int nrc) {
+      |      ^
+/Users/ggml/work/ggml/src/ggml-cpu/vec_ops.h:95:1: note: declare 'static' if the function is not intended to be used outside of this translation unit
+   95 | void ggml_vec_dot_f32(int n, float * GGML_RESTRICT s, size_t bs, const float * GGML_RESTRICT x, size_t bx, const float * GGML_RESTRICT y, size_t by, int nrc) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/ggml-cpu/vec_ops.h:138:6: warning: no previous prototype for function 'ggml_vec_dot_bf16' [-Wmissing-prototypes]
+  138 | void ggml_vec_dot_bf16(int n, float * GGML_RESTRICT s, size_t bs, ggml_bf16_t * GGML_RESTRICT x, size_t bx, ggml_bf16_t * GGML_RESTRICT y, size_t by, int nrc) {
+      |      ^
+/Users/ggml/work/ggml/src/ggml-cpu/vec_ops.h:138:1: note: declare 'static' if the function is not intended to be used outside of this translation unit
+  138 | void ggml_vec_dot_bf16(int n, float * GGML_RESTRICT s, size_t bs, ggml_bf16_t * GGML_RESTRICT x, size_t bx, ggml_bf16_t * GGML_RESTRICT y, size_t by, int nrc) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/ggml-cpu/vec_ops.h:206:6: warning: no previous prototype for function 'ggml_vec_dot_f16' [-Wmissing-prototypes]
+  206 | void ggml_vec_dot_f16(int n, float * GGML_RESTRICT s, size_t bs, ggml_fp16_t * GGML_RESTRICT x, size_t bx, ggml_fp16_t * GGML_RESTRICT y, size_t by, int nrc) {
+      |      ^
+/Users/ggml/work/ggml/src/ggml-cpu/vec_ops.h:206:1: note: declare 'static' if the function is not intended to be used outside of this translation unit
+  206 | void ggml_vec_dot_f16(int n, float * GGML_RESTRICT s, size_t bs, ggml_fp16_t * GGML_RESTRICT x, size_t bx, ggml_fp16_t * GGML_RESTRICT y, size_t by, int nrc) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/ggml-cpu/vec_ops.h:862:6: warning: no previous prototype for function 'ggml_vec_silu_f32' [-Wmissing-prototypes]
+  862 | void ggml_vec_silu_f32(const int n, float * y, const float * x) {
+      |      ^
+/Users/ggml/work/ggml/src/ggml-cpu/vec_ops.h:862:1: note: declare 'static' if the function is not intended to be used outside of this translation unit
+  862 | void ggml_vec_silu_f32(const int n, float * y, const float * x) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/ggml-cpu/vec_ops.h:892:12: warning: no previous prototype for function 'ggml_vec_soft_max_f32' [-Wmissing-prototypes]
+  892 | ggml_float ggml_vec_soft_max_f32(const int n, float * y, const float * x, float max) {
+      |            ^
+/Users/ggml/work/ggml/src/ggml-cpu/vec_ops.h:892:1: note: declare 'static' if the function is not intended to be used outside of this translation unit
+  892 | ggml_float ggml_vec_soft_max_f32(const int n, float * y, const float * x, float max) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/ggml-cpu/vec_ops.h:945:12: warning: no previous prototype for function 'ggml_vec_log_soft_max_f32' [-Wmissing-prototypes]
+  945 | ggml_float ggml_vec_log_soft_max_f32(const int n, float * y, const float * x, float max) {
+      |            ^
+/Users/ggml/work/ggml/src/ggml-cpu/vec_ops.h:945:1: note: declare 'static' if the function is not intended to be used outside of this translation unit
+  945 | ggml_float ggml_vec_log_soft_max_f32(const int n, float * y, const float * x, float max) {
+      | ^
+      | static 
+/Users/ggml/work/ggml/src/ggml-cpu/more_ops.cpp:1321:32: warning: unused variable 'src1' [-Wunused-variable]
+ 1321 |     const struct ggml_tensor * src1 = dst->src[1];
+      |                                ^~~~
+19 warnings generated.
+[ 23%] Linking CXX shared library libggml-cpu.dylib
+Undefined symbols for architecture arm64:
+  "_ggml_gelu_f32", referenced from:
+      _ggml_cpu_init in ggml-cpu.c.o
+  "_ggml_gelu_quick_f32", referenced from:
+      _ggml_cpu_init in ggml-cpu.c.o
+  "_ggml_silu_f32", referenced from:
+      _ggml_vec_silu_f32 in ggml-cpu.c.o
+  "_ggml_v_expf", referenced from:
+      _ggml_vec_soft_max_f32 in ggml-cpu.c.o
+  "_ggml_v_silu", referenced from:
+      _ggml_vec_silu_f32 in ggml-cpu.c.o
+  "_ggml_vec_set_bf16", referenced from:
+      _ggml_set_i32 in ggml-cpu.c.o
+      _ggml_set_f32 in ggml-cpu.c.o
+  "_ggml_vec_set_f16", referenced from:
+      _ggml_set_i32 in ggml-cpu.c.o
+      _ggml_set_f32 in ggml-cpu.c.o
+  "_ggml_vec_set_f32", referenced from:
+      _ggml_set_i32 in ggml-cpu.c.o
+      _ggml_set_f32 in ggml-cpu.c.o
+  "_ggml_vec_set_i16", referenced from:
+      _ggml_set_i32 in ggml-cpu.c.o
+      _ggml_set_f32 in ggml-cpu.c.o
+  "_ggml_vec_set_i32", referenced from:
+      _ggml_set_i32 in ggml-cpu.c.o
+      _ggml_set_f32 in ggml-cpu.c.o
+  "_ggml_vec_set_i8", referenced from:
+      _ggml_set_i32 in ggml-cpu.c.o
+      _ggml_set_f32 in ggml-cpu.c.o
+ld: symbol(s) not found for architecture arm64
+c++: error: linker command failed with exit code 1 (use -v to see invocation)
+make[2]: *** [src/libggml-cpu.dylib] Error 1
+make[1]: *** [src/CMakeFiles/ggml-cpu.dir/all] Error 2
+make: *** [all] Error 2
