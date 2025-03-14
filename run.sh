@@ -218,7 +218,8 @@ function gg_run {
 
 # main
 
-gg_run "ggerganov" "ggml"      "${GG_GGML_MNT}"
-gg_run "ggerganov" "llama.cpp" "${GG_LLAMA_CPP_MNT}"
+gg_run "ggerganov" "ggml"        "${GG_GGML_MNT}"
+gg_run "ggerganov" "llama.cpp"   "${GG_LLAMA_CPP_MNT}"
+gg_run "ggerganov" "whisper.cpp" "${GG_WHISPER_CPP_MNT}"
 
 sleep ${GG_RUN_SLEEP}
