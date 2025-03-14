@@ -1,0 +1,55 @@
+whisper_init_from_file_with_params_no_state: loading model from '/mnt/whisper.cpp/models/ggml-small.bin'
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 0
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+whisper_init_with_params_no_state: devices    = 1
+whisper_init_with_params_no_state: backends   = 1
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 768
+whisper_model_load: n_audio_head  = 12
+whisper_model_load: n_audio_layer = 12
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 768
+whisper_model_load: n_text_head   = 12
+whisper_model_load: n_text_layer  = 12
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 3 (small)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:      CPU total size =   487.01 MB
+whisper_model_load: model size    =  487.01 MB
+whisper_backend_init_gpu: no GPU found
+whisper_init_state: kv self size  =   18.87 MB
+whisper_init_state: kv cross size =   56.62 MB
+whisper_init_state: kv pad  size  =    4.72 MB
+whisper_init_state: compute buffer (conv)   =   22.41 MB
+whisper_init_state: compute buffer (encode) =  128.01 MB
+whisper_init_state: compute buffer (cross)  =    6.18 MB
+whisper_init_state: compute buffer (decode) =   97.27 MB
+
+system_info: n_threads = 4 / 8 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | 
+
+whisper_print_timings:     load time =   236.29 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =     0.00 ms
+whisper_print_timings:   sample time =     0.00 ms /     1 runs (    0.00 ms per run)
+whisper_print_timings:   encode time =  4373.47 ms /     1 runs ( 4373.47 ms per run)
+whisper_print_timings:   decode time =  3099.90 ms /   256 runs (   12.11 ms per run)
+whisper_print_timings:   batchd time =  1743.22 ms /   320 runs (    5.45 ms per run)
+whisper_print_timings:   prompt time = 15489.62 ms /  4096 runs (    3.78 ms per run)
+whisper_print_timings:    total time = 24707.81 ms
+
+If you wish, you can submit these results here:
+
+  https://github.com/ggerganov/whisper.cpp/issues/89
+
+Please include the following information:
+
+  - CPU model
+  - Operating system
+  - Compiler
