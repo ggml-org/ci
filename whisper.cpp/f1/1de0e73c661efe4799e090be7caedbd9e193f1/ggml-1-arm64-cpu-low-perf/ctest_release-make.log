@@ -1,0 +1,61 @@
+++ nproc
++ make -j4
+[  7%] Building CXX object examples/deprecation-warning/CMakeFiles/stream.dir/deprecation-warning.cpp.o
+[  7%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  7%] Building CXX object examples/deprecation-warning/CMakeFiles/main.dir/deprecation-warning.cpp.o
+[  9%] Building CXX object examples/deprecation-warning/CMakeFiles/bench.dir/deprecation-warning.cpp.o
+[ 14%] Linking CXX executable ../../bin/stream
+[ 14%] Linking CXX executable ../../bin/main
+[ 16%] Linking CXX executable ../../bin/bench
+[ 16%] Built target stream
+[ 16%] Built target main
+[ 16%] Built target bench
+[ 21%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[ 21%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[ 23%] Building CXX object examples/deprecation-warning/CMakeFiles/command.dir/deprecation-warning.cpp.o
+[ 26%] Linking CXX executable ../../bin/command
+[ 26%] Built target command
+[ 28%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[ 30%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[ 33%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[ 35%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/gguf.cpp.o
+[ 38%] Linking CXX shared library libggml-base.so
+[ 38%] Built target ggml-base
+[ 47%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[ 47%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[ 47%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[ 47%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[ 50%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 52%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 54%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 57%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 59%] Linking CXX shared library libggml-cpu.so
+[ 59%] Built target ggml-cpu
+[ 61%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 64%] Linking CXX shared library libggml.so
+[ 64%] Built target ggml
+[ 66%] Building CXX object src/CMakeFiles/whisper.dir/whisper.cpp.o
+[ 69%] Linking CXX shared library libwhisper.so
+[ 69%] Built target whisper
+[ 78%] Building CXX object examples/CMakeFiles/common.dir/common-ggml.cpp.o
+[ 78%] Building CXX object examples/bench/CMakeFiles/whisper-bench.dir/bench.cpp.o
+[ 78%] Building CXX object examples/CMakeFiles/common.dir/common-whisper.cpp.o
+[ 78%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[ 80%] Linking CXX executable ../../bin/whisper-bench
+[ 80%] Built target whisper-bench
+[ 83%] Building CXX object examples/CMakeFiles/common.dir/grammar-parser.cpp.o
+[ 85%] Linking CXX static library libcommon.a
+[ 85%] Built target common
+[ 92%] Building CXX object examples/cli/CMakeFiles/whisper-cli.dir/cli.cpp.o
+[ 92%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+[ 92%] Building CXX object examples/server/CMakeFiles/whisper-server.dir/server.cpp.o
+[ 95%] Linking CXX executable ../../bin/quantize
+[ 95%] Built target quantize
+[ 97%] Linking CXX executable ../../bin/whisper-cli
+[ 97%] Built target whisper-cli
+[100%] Linking CXX executable ../../bin/whisper-server
+[100%] Built target whisper-server
+
+real	1m2.214s
+user	1m31.575s
+sys	0m4.262s
