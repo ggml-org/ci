@@ -1,0 +1,110 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 3:08.47
+- date:    Tue Mar 18 04:21:32 UTC 2025
+- repo:    https://github.com/ggerganov/whisper.cpp
+- commit:  https://github.com/ggerganov/whisper.cpp/commit/c8e12f59dd94b8b3f0b03b37c035996cdf72120a
+- author:  Daniel Bevenius
+```
+ci : add release job and include xcframework (#2889)
+
+* ci : add release job and include xcframework
+
+This commit adds a release job that uploads the xcframework as an
+artifact and creates a release with the xcframework as an asset.
+
+This job can be triggered manually and enables a pre-release tag name to
+be specified to that these releases can be distinguished from the
+regular releases more easily.
+
+Resolves: https://github.com/ggerganov/whisper.cpp/issues/2886
+```
+
+## Environment
+
+```
+GG_BUILD_CLOUD=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+GG_BUILD_LOW_PERF=1
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-debug
+No tests were found!!!
+
+real	0m0.023s
+user	0m0.017s
+sys	0m0.007s
+```
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-release
+No tests were found!!!
+
+real	0m0.023s
+user	0m0.023s
+sys	0m0.000s
+```
+### bench
+
+Whisper Benchmark Results
+- status: 0
+#### memcpy Benchmark
+
+```
+memcpy:   13.72 GB/s (heat-up)
+memcpy:   13.31 GB/s ( 1 thread)
+memcpy:   13.35 GB/s ( 1 thread)
+memcpy:   25.88 GB/s ( 2 thread)
+memcpy:   25.28 GB/s ( 3 thread)
+memcpy:   28.59 GB/s ( 4 thread)
+sum:    -3071998896.000000
+```
+
+#### ggml_mul_mat Benchmark
+
+```
+  64 x   64: Q4_0    19.5 GFLOPS (128 runs) | Q4_1    20.7 GFLOPS (128 runs)
+  64 x   64: Q5_0    19.4 GFLOPS (128 runs) | Q5_1    18.4 GFLOPS (128 runs) | Q8_0    22.0 GFLOPS (128 runs)
+  64 x   64: F16     17.7 GFLOPS (128 runs) | F32     11.9 GFLOPS (128 runs)
+ 128 x  128: Q4_0    39.3 GFLOPS (128 runs) | Q4_1    39.5 GFLOPS (128 runs)
+ 128 x  128: Q5_0    35.0 GFLOPS (128 runs) | Q5_1    32.4 GFLOPS (128 runs) | Q8_0    44.3 GFLOPS (128 runs)
+ 128 x  128: F16     34.4 GFLOPS (128 runs) | F32     27.2 GFLOPS (128 runs)
+ 256 x  256: Q4_0    52.4 GFLOPS (128 runs) | Q4_1    51.4 GFLOPS (128 runs)
+ 256 x  256: Q5_0    44.7 GFLOPS (128 runs) | Q5_1    40.4 GFLOPS (128 runs) | Q8_0    60.0 GFLOPS (128 runs)
+ 256 x  256: F16     50.1 GFLOPS (128 runs) | F32     37.3 GFLOPS (128 runs)
+ 512 x  512: Q4_0    60.9 GFLOPS (128 runs) | Q4_1    60.4 GFLOPS (128 runs)
+ 512 x  512: Q5_0    51.9 GFLOPS (128 runs) | Q5_1    46.8 GFLOPS (128 runs) | Q8_0    72.1 GFLOPS (128 runs)
+ 512 x  512: F16     60.1 GFLOPS (128 runs) | F32     41.3 GFLOPS (128 runs)
+1024 x 1024: Q4_0    66.9 GFLOPS ( 32 runs) | Q4_1    66.0 GFLOPS ( 31 runs)
+1024 x 1024: Q5_0    57.0 GFLOPS ( 27 runs) | Q5_1    50.8 GFLOPS ( 24 runs) | Q8_0    79.4 GFLOPS ( 37 runs)
+1024 x 1024: F16     65.5 GFLOPS ( 31 runs) | F32     41.5 GFLOPS ( 20 runs)
+2048 x 2048: Q4_0    70.4 GFLOPS (  5 runs) | Q4_1    69.1 GFLOPS (  5 runs)
+2048 x 2048: Q5_0    59.9 GFLOPS (  4 runs) | Q5_1    53.1 GFLOPS (  4 runs) | Q8_0    84.0 GFLOPS (  5 runs)
+2048 x 2048: F16     69.1 GFLOPS (  5 runs) | F32     41.2 GFLOPS (  3 runs)
+4096 x 4096: Q4_0    72.0 GFLOPS (  3 runs) | Q4_1    70.3 GFLOPS (  3 runs)
+4096 x 4096: Q5_0    61.3 GFLOPS (  3 runs) | Q5_1    54.1 GFLOPS (  3 runs) | Q8_0    85.7 GFLOPS (  3 runs)
+4096 x 4096: F16     66.2 GFLOPS (  3 runs) | F32     36.1 GFLOPS (  3 runs)
+```
+
+#### Model Benchmarks
+
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             AVX2 |          tiny |   4 |   0 | 1092.75 |    2.68 |    1.56 |    1.36 | c8e12f5 |
+|             AVX2 |          base |   4 |   0 | 2175.81 |    5.05 |    2.72 |    2.39 | c8e12f5 |
+|             AVX2 |         small |   4 |   0 | 7759.32 |   14.65 |    7.72 |    6.70 | c8e12f5 |
+
