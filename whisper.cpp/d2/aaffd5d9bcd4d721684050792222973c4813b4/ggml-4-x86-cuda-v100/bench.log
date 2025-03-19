@@ -1,0 +1,61 @@
+Running memcpy benchmark
+memcpy:   10.40 GB/s (heat-up)
+memcpy:   10.60 GB/s ( 1 thread)
+memcpy:   10.66 GB/s ( 1 thread)
+memcpy:   20.05 GB/s ( 2 thread)
+memcpy:   24.05 GB/s ( 3 thread)
+memcpy:   26.71 GB/s ( 4 thread)
+sum:    -3071998818.000000
+Running ggml_mul_mat benchmark with 4 threads
+ggml_cuda_init: GGML_CUDA_FORCE_MMQ:    no
+ggml_cuda_init: GGML_CUDA_FORCE_CUBLAS: no
+ggml_cuda_init: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0, VMM: yes
+  64 x   64: Q4_0    19.5 GFLOPS (128 runs) | Q4_1    18.7 GFLOPS (128 runs)
+  64 x   64: Q5_0    18.5 GFLOPS (128 runs) | Q5_1    17.7 GFLOPS (128 runs) | Q8_0    18.1 GFLOPS (128 runs)
+  64 x   64: F16     17.4 GFLOPS (128 runs) | F32      8.8 GFLOPS (128 runs)
+ 128 x  128: Q4_0    42.8 GFLOPS (128 runs) | Q4_1    40.9 GFLOPS (128 runs)
+ 128 x  128: Q5_0    38.2 GFLOPS (128 runs) | Q5_1    36.6 GFLOPS (128 runs) | Q8_0    47.1 GFLOPS (128 runs)
+ 128 x  128: F16     35.0 GFLOPS (128 runs) | F32     22.4 GFLOPS (128 runs)
+ 256 x  256: Q4_0    11.8 GFLOPS (128 runs) | Q4_1    51.4 GFLOPS (128 runs)
+ 256 x  256: Q5_0    52.4 GFLOPS (128 runs) | Q5_1    50.3 GFLOPS (128 runs) | Q8_0    69.2 GFLOPS (128 runs)
+ 256 x  256: F16     56.2 GFLOPS (128 runs) | F32     33.6 GFLOPS (128 runs)
+ 512 x  512: Q4_0    76.0 GFLOPS (128 runs) | Q4_1    74.5 GFLOPS (128 runs)
+ 512 x  512: Q5_0    63.8 GFLOPS (128 runs) | Q5_1    62.3 GFLOPS (128 runs) | Q8_0    88.7 GFLOPS (128 runs)
+ 512 x  512: F16     71.9 GFLOPS (128 runs) | F32     39.2 GFLOPS (128 runs)
+1024 x 1024: Q4_0    86.7 GFLOPS ( 41 runs) | Q4_1    87.1 GFLOPS ( 41 runs)
+1024 x 1024: Q5_0    71.5 GFLOPS ( 34 runs) | Q5_1    69.9 GFLOPS ( 33 runs) | Q8_0    71.9 GFLOPS ( 34 runs)
+1024 x 1024: F16     75.1 GFLOPS ( 35 runs) | F32     42.0 GFLOPS ( 20 runs)
+2048 x 2048: Q4_0    91.6 GFLOPS (  6 runs) | Q4_1    93.4 GFLOPS (  6 runs)
+2048 x 2048: Q5_0    75.0 GFLOPS (  5 runs) | Q5_1    74.5 GFLOPS (  5 runs) | Q8_0   109.0 GFLOPS (  7 runs)
+2048 x 2048: F16     79.8 GFLOPS (  5 runs) | F32     42.6 GFLOPS (  3 runs)
+4096 x 4096: Q4_0    95.5 GFLOPS (  3 runs) | Q4_1    96.9 GFLOPS (  3 runs)
+4096 x 4096: Q5_0    77.0 GFLOPS (  3 runs) | Q5_1    77.6 GFLOPS (  3 runs) | Q8_0   115.5 GFLOPS (  3 runs)
+4096 x 4096: F16     80.3 GFLOPS (  3 runs) | F32     36.5 GFLOPS (  3 runs)
+Running benchmark for all models
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+Benchmarking model: tiny.en
+|             AVX2 |       tiny.en |   4 |   0 |    6.11 |    1.04 |    0.29 |    0.01 | d2aaffd5 |
+Benchmarking model: tiny
+|             AVX2 |          tiny |   4 |   0 |    5.83 |    0.98 |    0.30 |    0.01 | d2aaffd5 |
+Benchmarking model: base.en
+|             AVX2 |       base.en |   4 |   0 |   10.60 |    1.43 |    0.44 |    0.02 | d2aaffd5 |
+Benchmarking model: base
+|             AVX2 |          base |   4 |   0 |   10.59 |    1.46 |    0.43 |    0.02 | d2aaffd5 |
+Benchmarking model: small.en
+|             AVX2 |      small.en |   4 |   0 |   30.05 |    2.79 |    0.84 |    0.04 | d2aaffd5 |
+Benchmarking model: small
+|             AVX2 |         small |   4 |   0 |   30.52 |    2.77 |    0.84 |    0.04 | d2aaffd5 |
+Benchmarking model: medium.en
+|             AVX2 |     medium.en |   4 |   0 |   81.42 |    5.92 |    1.78 |    0.09 | d2aaffd5 |
+Benchmarking model: medium
+|             AVX2 |        medium |   4 |   0 |   81.44 |    6.07 |    1.85 |    0.09 | d2aaffd5 |
+Benchmarking model: large-v1
+|             AVX2 |      large-v1 |   4 |   0 |  134.72 |    8.62 |    2.73 |    0.14 | d2aaffd5 |
+Benchmarking model: large-v2
+|             AVX2 |      large-v2 |   4 |   0 |  134.93 |    8.65 |    2.71 |    0.14 | d2aaffd5 |
+Benchmarking model: large-v3
+|             AVX2 |      large-v3 |   4 |   0 |  135.35 |    8.66 |    2.66 |    0.14 | d2aaffd5 |
+Benchmarking model: large-v3-turbo
+|             AVX2 | large-v3-turbo |   4 |   0 |  124.44 |    1.37 |    0.44 |    0.02 | d2aaffd5 |
