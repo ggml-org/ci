@@ -1,0 +1,14 @@
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             NEON |       tiny.en |   4 |   0 |  548.68 |    2.09 |    1.04 |    0.80 | 96db0c5a |
+|             NEON |          tiny |   4 |   0 |  546.36 |    2.07 |    1.04 |    0.79 | 96db0c5a |
+|             NEON |       base.en |   4 |   0 | 1233.48 |    4.27 |    1.94 |    1.38 | 96db0c5a |
+|             NEON |          base |   4 |   0 | 1232.11 |    4.25 |    1.91 |    1.38 | 96db0c5a |
+|             NEON |      small.en |   4 |   0 | 4363.80 |   12.00 |    5.41 |    3.78 | 96db0c5a |
+|             NEON |         small |   4 |   0 | 4368.49 |   12.09 |    5.45 |    3.79 | 96db0c5a |
+|             NEON |     medium.en |   4 |   0 |      ms |   33.25 |   14.47 |   10.62 | 96db0c5a |
+|             NEON |        medium |   4 |   0 |      ms |   33.57 |   14.70 |   10.64 | 96db0c5a |
+|             NEON |      large-v1 |   4 |   0 |      ms |   61.18 |   26.58 |   19.54 | 96db0c5a |
+|             NEON |      large-v2 |   4 |   0 |      ms |   59.97 |   26.17 |   19.46 | 96db0c5a |
+|             NEON |      large-v3 |   4 |   0 |      ms |   60.03 |   26.16 |   19.49 | 96db0c5a |
+|             NEON | large-v3-turbo |   4 |   0 |      ms |   10.21 |    4.53 |    3.42 | 96db0c5a |
