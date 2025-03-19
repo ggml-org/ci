@@ -1,0 +1,14 @@
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             AVX2 |       tiny.en |   4 |   0 |  564.73 |    1.85 |    0.96 |    0.77 | d2aaffd |
+|             AVX2 |          tiny |   4 |   0 |  558.90 |    1.82 |    0.98 |    0.76 | d2aaffd |
+|             AVX2 |       base.en |   4 |   0 | 1240.89 |    3.56 |    1.73 |    1.35 | d2aaffd |
+|             AVX2 |          base |   4 |   0 | 1252.10 |    3.64 |    1.75 |    1.35 | d2aaffd |
+|             AVX2 |      small.en |   4 |   0 | 4336.05 |   10.28 |    4.89 |    3.82 | d2aaffd |
+|             AVX2 |         small |   4 |   0 | 4331.35 |   10.31 |    4.84 |    3.79 | d2aaffd |
+|             AVX2 |     medium.en |   4 |   0 |      ms |   29.42 |   13.68 |   10.58 | d2aaffd |
+|             AVX2 |        medium |   4 |   0 |      ms |   29.38 |   13.88 |   10.64 | d2aaffd |
+|             AVX2 |      large-v1 |   4 |   0 |      ms |   53.51 |   25.14 |   19.42 | d2aaffd |
+|             AVX2 |      large-v2 |   4 |   0 |      ms |   53.62 |   25.40 |   19.55 | d2aaffd |
+|             AVX2 |      large-v3 |   4 |   0 |      ms |   53.70 |   25.37 |   19.57 | d2aaffd |
+|             AVX2 | large-v3-turbo |   4 |   0 |      ms |    9.52 |    4.39 |    3.47 | d2aaffd |
