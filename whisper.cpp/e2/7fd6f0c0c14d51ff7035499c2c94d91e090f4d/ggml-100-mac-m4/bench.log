@@ -1,0 +1,57 @@
+Running memcpy benchmark
+memcpy:   31.43 GB/s (heat-up)
+memcpy:   39.21 GB/s ( 1 thread)
+memcpy:   41.54 GB/s ( 1 thread)
+memcpy:   50.04 GB/s ( 2 thread)
+memcpy:   50.44 GB/s ( 3 thread)
+memcpy:   50.59 GB/s ( 4 thread)
+sum:    -3072000479.000000
+Running ggml_mul_mat benchmark with 4 threads
+  64 x   64: Q4_0    12.3 GFLOPS (128 runs) | Q4_1    12.6 GFLOPS (128 runs)
+  64 x   64: Q5_0    10.8 GFLOPS (128 runs) | Q5_1    11.7 GFLOPS (128 runs) | Q8_0    13.4 GFLOPS (128 runs)
+  64 x   64: F16     13.4 GFLOPS (128 runs) | F32     13.2 GFLOPS (128 runs)
+ 128 x  128: Q4_0    88.4 GFLOPS (128 runs) | Q4_1    85.1 GFLOPS (128 runs)
+ 128 x  128: Q5_0    61.9 GFLOPS (128 runs) | Q5_1    59.2 GFLOPS (128 runs) | Q8_0    92.1 GFLOPS (128 runs)
+ 128 x  128: F16     78.6 GFLOPS (128 runs) | F32     61.9 GFLOPS (128 runs)
+ 256 x  256: Q4_0   267.4 GFLOPS (128 runs) | Q4_1   245.7 GFLOPS (128 runs)
+ 256 x  256: Q5_0   156.7 GFLOPS (128 runs) | Q5_1   145.3 GFLOPS (128 runs) | Q8_0   290.7 GFLOPS (128 runs)
+ 256 x  256: F16    189.6 GFLOPS (128 runs) | F32    123.5 GFLOPS (128 runs)
+ 512 x  512: Q4_0   367.4 GFLOPS (128 runs) | Q4_1   348.9 GFLOPS (128 runs)
+ 512 x  512: Q5_0   200.0 GFLOPS (128 runs) | Q5_1   179.3 GFLOPS (128 runs) | Q8_0   436.9 GFLOPS (128 runs)
+ 512 x  512: F16    280.0 GFLOPS (128 runs) | F32    158.6 GFLOPS (128 runs)
+1024 x 1024: Q4_0   425.5 GFLOPS (128 runs) | Q4_1   380.7 GFLOPS (128 runs)
+1024 x 1024: Q5_0   213.0 GFLOPS (100 runs) | Q5_1   190.7 GFLOPS ( 89 runs) | Q8_0   507.4 GFLOPS (128 runs)
+1024 x 1024: F16    318.8 GFLOPS (128 runs) | F32    160.7 GFLOPS ( 75 runs)
+2048 x 2048: Q4_0   427.5 GFLOPS ( 25 runs) | Q4_1   384.5 GFLOPS ( 23 runs)
+2048 x 2048: Q5_0   217.6 GFLOPS ( 13 runs) | Q5_1   193.6 GFLOPS ( 12 runs) | Q8_0   515.0 GFLOPS ( 30 runs)
+2048 x 2048: F16    318.6 GFLOPS ( 19 runs) | F32    131.7 GFLOPS (  8 runs)
+4096 x 4096: Q4_0   436.3 GFLOPS (  4 runs) | Q4_1   389.5 GFLOPS (  3 runs)
+4096 x 4096: Q5_0   228.0 GFLOPS (  3 runs) | Q5_1   195.6 GFLOPS (  3 runs) | Q8_0   519.0 GFLOPS (  4 runs)
+4096 x 4096: F16    242.8 GFLOPS (  3 runs) | F32    119.8 GFLOPS (  3 runs)
+Running benchmark for all models
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+Benchmarking model: tiny.en
+|             NEON |       tiny.en |   4 |   0 |   33.94 |    1.31 |    0.38 |    0.03 | e27fd6f |
+Benchmarking model: tiny
+|             NEON |          tiny |   4 |   0 |   34.07 |    1.34 |    0.38 |    0.03 | e27fd6f |
+Benchmarking model: base.en
+|             NEON |       base.en |   4 |   0 |   69.36 |    2.12 |    0.48 |    0.06 | e27fd6f |
+Benchmarking model: base
+|             NEON |          base |   4 |   0 |   69.42 |    2.11 |    0.46 |    0.06 | e27fd6f |
+Benchmarking model: small.en
+|             NEON |      small.en |   4 |   0 |  227.04 |    5.49 |    1.19 |    0.18 | e27fd6f |
+Benchmarking model: small
+|             NEON |         small |   4 |   0 |  226.80 |    5.50 |    1.19 |    0.18 | e27fd6f |
+Benchmarking model: medium.en
+|             NEON |     medium.en |   4 |   0 |  676.10 |   14.29 |    3.06 |    0.49 | e27fd6f |
+Benchmarking model: medium
+|             NEON |        medium |   4 |   0 |  674.11 |   14.30 |    3.05 |    0.49 | e27fd6f |
+Benchmarking model: large-v1
+|             NEON |      large-v1 |   4 |   0 | 1266.60 |   24.72 |    5.24 |    0.89 | e27fd6f |
+Benchmarking model: large-v2
+|             NEON |      large-v2 |   4 |   0 | 1287.29 |   25.17 |    5.26 |    0.89 | e27fd6f |
+Benchmarking model: large-v3
+|             NEON |      large-v3 |   4 |   0 | 1269.72 |   24.79 |    5.25 |    0.89 | e27fd6f |
+Benchmarking model: large-v3-turbo
+|             NEON | large-v3-turbo |   4 |   0 | 1160.32 |    4.53 |    0.95 |    0.15 | e27fd6f |
