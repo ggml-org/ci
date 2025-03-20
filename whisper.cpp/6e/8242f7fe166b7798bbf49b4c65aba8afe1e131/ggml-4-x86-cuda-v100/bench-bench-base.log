@@ -1,0 +1,59 @@
+whisper_init_from_file_with_params_no_state: loading model from '/mnt/whisper.cpp/models/ggml-base.bin'
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 0
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+ggml_cuda_init: GGML_CUDA_FORCE_MMQ:    no
+ggml_cuda_init: GGML_CUDA_FORCE_CUBLAS: no
+ggml_cuda_init: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0, VMM: yes
+whisper_init_with_params_no_state: devices    = 2
+whisper_init_with_params_no_state: backends   = 2
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 512
+whisper_model_load: n_audio_head  = 8
+whisper_model_load: n_audio_layer = 6
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 512
+whisper_model_load: n_text_head   = 8
+whisper_model_load: n_text_layer  = 6
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 2 (base)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:    CUDA0 total size =   147.37 MB
+whisper_model_load: model size    =  147.37 MB
+whisper_backend_init_gpu: using CUDA0 backend
+whisper_init_state: kv self size  =    6.29 MB
+whisper_init_state: kv cross size =   18.87 MB
+whisper_init_state: kv pad  size  =    3.15 MB
+whisper_init_state: compute buffer (conv)   =   17.22 MB
+whisper_init_state: compute buffer (encode) =   85.86 MB
+whisper_init_state: compute buffer (cross)  =    4.65 MB
+whisper_init_state: compute buffer (decode) =   97.27 MB
+
+system_info: n_threads = 4 / 6 | WHISPER : COREML = 0 | OPENVINO = 0 | CUDA : ARCHS = 700 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | 
+
+whisper_print_timings:     load time =   379.70 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =     0.00 ms
+whisper_print_timings:   sample time =     0.00 ms /     1 runs (    0.00 ms per run)
+whisper_print_timings:   encode time =    10.71 ms /     1 runs (   10.71 ms per run)
+whisper_print_timings:   decode time =   372.47 ms /   256 runs (    1.45 ms per run)
+whisper_print_timings:   batchd time =   137.75 ms /   320 runs (    0.43 ms per run)
+whisper_print_timings:   prompt time =    76.93 ms /  4096 runs (    0.02 ms per run)
+whisper_print_timings:    total time =   598.52 ms
+
+If you wish, you can submit these results here:
+
+  https://github.com/ggerganov/whisper.cpp/issues/89
+
+Please include the following information:
+
+  - CPU model
+  - Operating system
+  - Compiler
