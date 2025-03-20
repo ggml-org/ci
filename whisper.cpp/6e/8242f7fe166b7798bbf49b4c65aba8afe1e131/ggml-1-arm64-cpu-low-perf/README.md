@@ -1,0 +1,306 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 2:39.01
+- date:    Thu Mar 20 06:04:58 UTC 2025
+- repo:    https://github.com/ggerganov/whisper.cpp
+- commit:  https://github.com/ggerganov/whisper.cpp/commit/6e8242f7fe166b7798bbf49b4c65aba8afe1e131
+- author:  Daniel Bevenius
+```
+examples : command.wasm updates (#2904)
+
+This commit updates the command.wasm example by adding a server.py script to make it easy to start a local http server to try out the example, updates the build instructions, and also addresses some of the compiler warnings that were being generated.
+
+* emscripten : fix TOTAL_STACK for wasm
+
+This commit moves the TOTAL_STACK setting from the compile flags to the
+linker flags. This is because the TOTAL_STACK setting is a linker
+setting.
+
+The motivation for this change is that currently the following warnings
+are generated when building:
+```console
+em++: warning: linker setting ignored during compilation: 'TOTAL_STACK' [-Wunused-command-line-argument]
+em++: warning: linker setting ignored during compilation: 'TOTAL_STACK' [-Wunused-command-line-argument]
+em++: warning: linker setting ignored during compilation: 'TOTAL_STACK' [-Wunused-command-line-argument]
+em++: warning: linker setting ignored during compilation: 'TOTAL_STACK' [-Wunused-command-line-argument]
+em++: warning: linker setting ignored during compilation: 'TOTAL_STACK' [-Wunused-command-line-argument]
+em++: warning: linker setting ignored during compilation: 'TOTAL_STACK' [-Wunused-command-line-argument]
+```
+
+* examples : suppress C++17 deprecation warning for std::codecvt_utf8
+
+This commit suppresses the C++17 deprecation warning for
+std::codecvt_utf8 similar to what is done in
+examples/talk-llama/unicode.cpp.
+
+The motivation for this change is to suppress these warnings:
+```console
+/Users/danbev/work/ai/whisper-work/examples/common.cpp:251:31: warning: 'codecvt_utf8<wchar_t>' is deprecated [-Wdeprecated-declarations]
+  251 |     std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+      |                               ^
+/Users/danbev/work/wasm/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/codecvt:193:28: note: 'codecvt_utf8<wchar_t>' has been explicitly marked deprecated here
+  193 | class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 codecvt_utf8 : public __codecvt_utf8<_Elem> {
+      |                            ^
+/Users/danbev/work/wasm/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__config:723:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+  723 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+      |                                         ^
+/Users/danbev/work/wasm/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__config:688:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  688 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+/Users/danbev/work/ai/whisper-work/examples/common.cpp:251:10: warning: 'wstring_convert<std::codecvt_utf8<wchar_t>>' is deprecated [-Wdeprecated-declarations]
+  251 |     std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+      |          ^
+/Users/danbev/work/wasm/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/locale:3145:28: note: 'wstring_convert<std::codecvt_utf8<wchar_t>>' has been explicitly marked deprecated here
+ 3145 | class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 wstring_convert {
+      |                            ^
+/Users/danbev/work/wasm/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__config:723:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+  723 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+      |                                         ^
+/Users/danbev/work/wasm/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__config:688:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  688 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+/Users/danbev/work/ai/whisper-work/examples/common.cpp:257:31: warning: 'codecvt_utf8<wchar_t>' is deprecated [-Wdeprecated-declarations]
+  257 |     std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+      |                               ^
+/Users/danbev/work/wasm/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/codecvt:193:28: note: 'codecvt_utf8<wchar_t>' has been explicitly marked deprecated here
+  193 | class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 codecvt_utf8 : public __codecvt_utf8<_Elem> {
+      |                            ^
+/Users/danbev/work/wasm/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__config:723:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+  723 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+      |                                         ^
+/Users/danbev/work/wasm/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__config:688:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  688 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+/Users/danbev/work/ai/whisper-work/examples/common.cpp:257:10: warning: 'wstring_convert<std::codecvt_utf8<wchar_t>>' is deprecated [-Wdeprecated-declarations]
+  257 |     std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+      |          ^
+/Users/danbev/work/wasm/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/locale:3145:28: note: 'wstring_convert<std::codecvt_utf8<wchar_t>>' has been explicitly marked deprecated here
+ 3145 | class _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 wstring_convert {
+      |                            ^
+/Users/danbev/work/wasm/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__config:723:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+  723 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+      |                                         ^
+/Users/danbev/work/wasm/emsdk/upstream/emscripten/cache/sysroot/include/c++/v1/__config:688:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+  688 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+      |                                                 ^
+4 warnings generated.
+```
+
+* ggml : suppress double-promotion warning in GGML_F16x4_REDUCE
+
+This commit adds a cast to `ggml_float` in the `GGML_F16x4_REDUCE` macro
+to suppress a double-promotion warning.
+
+Currently the following warning is generated when compiling the
+command.wasm example:
+```console
+/whisper-work/ggml/src/ggml-cpu/ggml-cpu.c:1592:5: warning: implicit conversion increases floating-point precision: 'float' to 'ggml_float' (aka 'double') [-Wdouble-promotion]
+ 1592 |     GGML_F16_VEC_REDUCE(sumf, sum);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/danbev/work/ai/whisper-work/ggml/src/ggml-cpu/ggml-cpu.c:932:37: note: expanded from macro 'GGML_F16_VEC_REDUCE'
+  932 | #define GGML_F16_VEC_REDUCE         GGML_F16x4_REDUCE
+      |                                     ^
+/Users/danbev/work/ai/whisper-work/ggml/src/ggml-cpu/ggml-cpu.c:920:44: note: expanded from macro 'GGML_F16x4_REDUCE'
+  918 |     res = wasm_f32x4_extract_lane(x[0], 0) +       \
+      |         ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  919 |           wasm_f32x4_extract_lane(x[0], 1) +       \
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  920 |           wasm_f32x4_extract_lane(x[0], 2) +       \
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+  921 |           wasm_f32x4_extract_lane(x[0], 3);        \
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/whisper-work/ggml/src/ggml-cpu/ggml-cpu.c:1640:9: warning: implicit conversion increases floating-point precision: 'float' to 'ggml_float' (aka 'double') [-Wdouble-promotion]
+ 1640 |         GGML_F16_VEC_REDUCE(sumf[k], sum[k]);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/danbev/work/ai/whisper-work/ggml/src/ggml-cpu/ggml-cpu.c:932:37: note: expanded from macro 'GGML_F16_VEC_REDUCE'
+  932 | #define GGML_F16_VEC_REDUCE         GGML_F16x4_REDUCE
+      |                                     ^
+/Users/danbev/work/ai/whisper-work/ggml/src/ggml-cpu/ggml-cpu.c:920:44: note: expanded from macro 'GGML_F16x4_REDUCE'
+  918 |     res = wasm_f32x4_extract_lane(x[0], 0) +       \
+      |         ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  919 |           wasm_f32x4_extract_lane(x[0], 1) +       \
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  920 |           wasm_f32x4_extract_lane(x[0], 2) +       \
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+  921 |           wasm_f32x4_extract_lane(x[0], 3);        \
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2 warnings generated.
+```
+wasm_f32x4_extract_lane returns a 32-bit float and this is what the
+addition is performed on. But there is an implicit conversion from
+32-bit float to 64-bit double when the result is assigned to `res`,
+which is of type `ggml_float`. My understanding here is that this is
+intentional and adding a cast to `ggml_float` should suppress the
+warning.
+
+* emscripten : add -Wno-deprecated to for emscripten
+
+This commit adds -Wno-deprecated to the CMAKE_CXX_FLAGS for emscripten
+builds.
+
+The motivation for this is that currently there a number of warnings
+generated like the following:
+```console
+warning: JS library symbol '$print' is deprecated. Please open a bug if you have a continuing need for this symbol [-Wdeprecated]
+warning: JS library symbol '$printErr' is deprecated. Please open a bug if you have a continuing need for this symbol [-Wdeprecated]
+em++: warning: warnings in JS library compilation [-Wjs-compiler]
+em++: warning: linker setting ignored during compilation: 'ENVIRONMENT' [-Wunused-command-line-argument]
+warning: JS library symbol '$print' is deprecated. Please open a bug if you have a continuing need for this symbol [-Wdeprecated]
+warning: JS library symbol '$printErr' is deprecated. Please open a bug if you have a continuing need for this symbol [-Wdeprecated]
+em++: warning: warnings in JS library compilation [-Wjs-compiler]
+warning: JS library symbol '$print' is deprecated. Please open a bug if you have a continuing need for this symbol [-Wdeprecated]
+warning: JS library symbol '$printErr' is deprecated. Please open a bug if you have a continuing need for this symbol [-Wdeprecated]
+em++: warning: warnings in JS library compilation [-Wjs-compiler]
+em++: warning: linker setting ignored during compilation: 'ENVIRONMENT' [-Wunused-command-line-argument]
+em++: warning: linker setting ignored during compilation: 'ENVIRONMENT' [-Wunused-command-line-argument]
+```
+
+The downside of this is that we might miss other deprecation warnings
+in the future so I'm not sure if this is acceptable. But it make the
+wasm examples cleaner without the warnings.
+
+* examples : fix tautological-compare warning in stb_vorbis.c [no ci]
+
+This commit applies a fix to address a tautological-compare warning
+in stb_vorbis.c.
+
+The motivation for this is that currently the following warning is
+generated when compiling the commmand-wasm example:
+```console
+/Users/danbev/work/ai/whisper-work/examples/stb_vorbis.c:1404:75: warning: pointer comparison always evaluates to false [-Wtautological-compare]
+ 1404 |       if (f->stream_start + loc >= f->stream_end || f->stream_start + loc < f->stream_start) {
+      |                                                                           ^
+1 warning generated.
+```
+
+This fix was taken from an open pull request on the stb repository
+that addreses this issue:
+https://github.com/nothings/stb/pull/1746
+
+* squash! examples : update command.wasm instructions [no ci]
+
+This commit adds a Python script to serve the the wasm examples build
+in the `build-em` directory. Initially I thought that it would be enough
+to start a simple python server but I did not notice that there was an
+error in the browser console when I did that:
+```console
+command.js:1 Uncaught (in promise) DataCloneError: Failed to execute 'postMessage' on 'Worker': SharedArrayBuffer transfer requires self.crossOriginIsolated.
+    at command.js:1:1206224
+    at new Promise (<anonymous>)
+    at loadWasmModuleToWorker (command.js:1:1204981)
+    at Array.map (<anonymous>)
+    at Object.loadWasmModuleToAllWorkers (command.js:1:1206428)
+    at command.js:1:1204318
+    at callRuntimeCallbacks (command.js:1:1202062)
+    at preRun (command.js:1:6136)
+    at run (command.js:1:1294094)
+    at removeRunDependency (command.js:1:7046)
+```
+We need a few CORS headers to be set and in order hopefully make this
+easy for users a Python script is added to the examples directory.
+This should be able to server all the wasm examples provided they have
+been built. command.wasm's README.md is updated to reflect this change.
+
+* examples : remove unused functions
+
+This commit removed the unused functions convert_to_utf8 and
+convert_to_wstring from examples/common.cpp.
+
+* Revert "examples : fix tautological-compare warning in stb_vorbis.c [no ci]"
+
+This reverts commit 8e3c47d96141c7675c985562ebdc705e839e338a.
+
+We should not make this change here and instead when the upstream PR is
+merged we can sync with it.
+
+Refs: https://github.com/ggerganov/whisper.cpp/issues/2784
+```
+
+## Environment
+
+```
+GG_BUILD_CLOUD=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+GG_BUILD_LOW_PERF=1
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-debug
+No tests were found!!!
+
+real	0m0.008s
+user	0m0.009s
+sys	0m0.000s
+```
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-release
+No tests were found!!!
+
+real	0m0.009s
+user	0m0.003s
+sys	0m0.006s
+```
+### bench
+
+Whisper Benchmark Results
+- status: 0
+#### memcpy Benchmark
+
+```
+memcpy:   11.75 GB/s (heat-up)
+memcpy:   11.73 GB/s ( 1 thread)
+memcpy:   11.69 GB/s ( 1 thread)
+memcpy:   21.69 GB/s ( 2 thread)
+memcpy:   28.24 GB/s ( 3 thread)
+memcpy:   35.40 GB/s ( 4 thread)
+sum:    783359998353.000000
+```
+
+#### ggml_mul_mat Benchmark
+
+```
+  64 x   64: Q4_0    28.7 GFLOPS (128 runs) | Q4_1    27.5 GFLOPS (128 runs)
+  64 x   64: Q5_0    21.2 GFLOPS (128 runs) | Q5_1    20.3 GFLOPS (128 runs) | Q8_0    29.6 GFLOPS (128 runs)
+  64 x   64: F16     32.7 GFLOPS (128 runs) | F32     34.1 GFLOPS (128 runs)
+ 128 x  128: Q4_0    56.2 GFLOPS (128 runs) | Q4_1    52.0 GFLOPS (128 runs)
+ 128 x  128: Q5_0    37.7 GFLOPS (128 runs) | Q5_1    34.1 GFLOPS (128 runs) | Q8_0    59.6 GFLOPS (128 runs)
+ 128 x  128: F16     66.0 GFLOPS (128 runs) | F32     55.3 GFLOPS (128 runs)
+ 256 x  256: Q4_0    54.9 GFLOPS (128 runs) | Q4_1    65.4 GFLOPS (128 runs)
+ 256 x  256: Q5_0    48.3 GFLOPS (128 runs) | Q5_1    40.7 GFLOPS (128 runs) | Q8_0    79.5 GFLOPS (128 runs)
+ 256 x  256: F16     96.5 GFLOPS (128 runs) | F32     65.4 GFLOPS (128 runs)
+ 512 x  512: Q4_0    80.5 GFLOPS (128 runs) | Q4_1    72.5 GFLOPS (128 runs)
+ 512 x  512: Q5_0    54.6 GFLOPS (128 runs) | Q5_1    48.7 GFLOPS (128 runs) | Q8_0    90.9 GFLOPS (128 runs)
+ 512 x  512: F16    110.2 GFLOPS (128 runs) | F32     65.8 GFLOPS (128 runs)
+1024 x 1024: Q4_0    86.1 GFLOPS ( 41 runs) | Q4_1    77.7 GFLOPS ( 37 runs)
+1024 x 1024: Q5_0    58.6 GFLOPS ( 28 runs) | Q5_1    52.0 GFLOPS ( 25 runs) | Q8_0    97.2 GFLOPS ( 46 runs)
+1024 x 1024: F16    122.2 GFLOPS ( 57 runs) | F32     62.9 GFLOPS ( 30 runs)
+2048 x 2048: Q4_0    89.1 GFLOPS (  6 runs) | Q4_1    80.5 GFLOPS (  5 runs)
+2048 x 2048: Q5_0    60.6 GFLOPS (  4 runs) | Q5_1    53.5 GFLOPS (  4 runs) | Q8_0   101.7 GFLOPS (  6 runs)
+2048 x 2048: F16    119.2 GFLOPS (  7 runs) | F32     54.4 GFLOPS (  4 runs)
+4096 x 4096: Q4_0    90.5 GFLOPS (  3 runs) | Q4_1    81.4 GFLOPS (  3 runs)
+4096 x 4096: Q5_0    61.0 GFLOPS (  3 runs) | Q5_1    53.7 GFLOPS (  3 runs) | Q8_0    99.9 GFLOPS (  3 runs)
+4096 x 4096: F16    105.4 GFLOPS (  3 runs) | F32     49.6 GFLOPS (  3 runs)
+```
+
+#### Model Benchmarks
+
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             NEON |          tiny |   4 |   0 |  553.53 |    2.39 |    1.09 |    0.81 | 6e8242f |
+|             NEON |          base |   4 |   0 | 1258.32 |    4.51 |    1.97 |    1.41 | 6e8242f |
+|             NEON |         small |   4 |   0 | 4428.76 |   12.53 |    5.55 |    3.83 | 6e8242f |
+
