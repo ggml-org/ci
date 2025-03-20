@@ -1,0 +1,14 @@
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             NEON |       tiny.en |   4 |   0 |  547.08 |    2.05 |    1.04 |    0.79 | 80dad86b |
+|             NEON |          tiny |   4 |   0 |  547.76 |    2.05 |    1.05 |    0.80 | 80dad86b |
+|             NEON |       base.en |   4 |   0 | 1239.54 |    4.32 |    1.92 |    1.39 | 80dad86b |
+|             NEON |          base |   4 |   0 | 1239.53 |    4.34 |    1.95 |    1.38 | 80dad86b |
+|             NEON |      small.en |   4 |   0 | 4382.60 |   12.16 |    5.46 |    3.79 | 80dad86b |
+|             NEON |         small |   4 |   0 | 4387.78 |   12.51 |    5.51 |    3.79 | 80dad86b |
+|             NEON |     medium.en |   4 |   0 |      ms |   33.79 |   14.48 |   10.68 | 80dad86b |
+|             NEON |        medium |   4 |   0 |      ms |   33.42 |   14.63 |   10.66 | 80dad86b |
+|             NEON |      large-v1 |   4 |   0 |      ms |   61.77 |   26.56 |   19.58 | 80dad86b |
+|             NEON |      large-v2 |   4 |   0 |      ms |   61.82 |   26.65 |   19.58 | 80dad86b |
+|             NEON |      large-v3 |   4 |   0 |      ms |   61.22 |   26.41 |   19.58 | 80dad86b |
+|             NEON | large-v3-turbo |   4 |   0 |      ms |   10.16 |    4.54 |    3.43 | 80dad86b |
