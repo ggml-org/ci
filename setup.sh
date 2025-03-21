@@ -7,8 +7,8 @@ fi
 
 sd=`dirname $0`
 
-source $sd/env.sh
 source ~/.env.sh
+source $sd/env.sh
 
 env | grep GG_ | sort
 
@@ -92,7 +92,7 @@ fi
 # main
 
 mkdir -p $GG_WORK_PATH
-sudo chown ggml:ggml /mnt
+#sudo chown ggml:ggml /mnt
 
 gg_setup_ggml
 gg_setup_whisper_cpp

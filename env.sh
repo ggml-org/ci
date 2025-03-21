@@ -77,6 +77,11 @@ function gg_set_commit_status {
 
 ## general env
 
+# if GG_RESULTS_MNT is not set, default to /mnt
+if [ -z "${GG_RESULTS_MNT}" ]; then
+    gg_export GG_RESULTS_MNT "/mnt"
+fi
+
 # here we will clone and build the projects
 gg_export GG_WORK_PATH     $(realpath ~)/work
 gg_export GG_WORK_BRANCHES ${GG_WORK_PATH}/branches
@@ -90,19 +95,19 @@ gg_export GG_RESULTS_REPO_SSH "git@github.com:ggml-org/ci.git"
 gg_export GG_RESULTS_BRANCH   "results"
 
 gg_export GG_GGML_DIR  "ggml"
-gg_export GG_GGML_OWN  "ggerganov"
-gg_export GG_GGML_REPO "https://github.com/ggerganov/ggml"
-gg_export GG_GGML_MNT  "/mnt/ggml"
+gg_export GG_GGML_OWN  "ggml-org"
+gg_export GG_GGML_REPO "https://github.com/ggml-org/ggml"
+gg_export GG_GGML_MNT  "${GG_RESULTS_MNT}/ggml"
 
 gg_export GG_WHISPER_CPP_DIR  "whisper.cpp"
 gg_export GG_WHISPER_CPP_OWN  "ggerganov"
 gg_export GG_WHISPER_CPP_REPO "https://github.com/ggerganov/whisper.cpp"
-gg_export GG_WHISPER_CPP_MNT  "/mnt/whisper.cpp"
+gg_export GG_WHISPER_CPP_MNT  "${GG_RESULTS_MNT}/whisper.cpp"
 
 gg_export GG_LLAMA_CPP_DIR  "llama.cpp"
-gg_export GG_LLAMA_CPP_OWN  "ggerganov"
-gg_export GG_LLAMA_CPP_REPO "https://github.com/ggerganov/llama.cpp"
-gg_export GG_LLAMA_CPP_MNT  "/mnt/llama.cpp"
+gg_export GG_LLAMA_CPP_OWN  "ggml-org"
+gg_export GG_LLAMA_CPP_REPO "https://github.com/ggml-org/llama.cpp"
+gg_export GG_LLAMA_CPP_MNT  "${GG_RESULTS_MNT}/llama.cpp"
 
 ## run env
 
