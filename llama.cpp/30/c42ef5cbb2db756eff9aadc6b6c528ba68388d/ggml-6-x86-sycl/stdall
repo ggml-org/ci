@@ -1,0 +1,2 @@
+Not detected ONEAPI_ROOT, please install oneAPI base toolkit and enable it by:
+source /opt/intel/oneapi/setvars.sh
