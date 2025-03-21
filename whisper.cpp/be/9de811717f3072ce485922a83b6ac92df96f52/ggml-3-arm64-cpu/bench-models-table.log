@@ -1,0 +1,14 @@
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             NEON |       tiny.en |   4 |   0 |  550.59 |    2.07 |    1.04 |    0.79 | be9de811 |
+|             NEON |          tiny |   4 |   0 |  545.76 |    2.03 |    1.04 |    0.79 | be9de811 |
+|             NEON |       base.en |   4 |   0 | 1233.28 |    4.29 |    1.92 |    1.39 | be9de811 |
+|             NEON |          base |   4 |   0 | 1237.67 |    4.30 |    1.93 |    1.39 | be9de811 |
+|             NEON |      small.en |   4 |   0 | 4379.04 |   12.15 |    5.42 |    3.79 | be9de811 |
+|             NEON |         small |   4 |   0 | 4385.34 |   12.23 |    5.46 |    3.81 | be9de811 |
+|             NEON |     medium.en |   4 |   0 |      ms |   33.67 |   14.41 |   10.66 | be9de811 |
+|             NEON |        medium |   4 |   0 |      ms |   33.38 |   14.57 |   10.68 | be9de811 |
+|             NEON |      large-v1 |   4 |   0 |      ms |   60.53 |   26.35 |   19.53 | be9de811 |
+|             NEON |      large-v2 |   4 |   0 |      ms |   60.43 |   26.34 |   19.54 | be9de811 |
+|             NEON |      large-v3 |   4 |   0 |      ms |   59.84 |   26.00 |   19.47 | be9de811 |
+|             NEON | large-v3-turbo |   4 |   0 |      ms |    9.99 |    4.51 |    3.43 | be9de811 |
