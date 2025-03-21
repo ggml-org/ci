@@ -7,7 +7,6 @@ fi
 
 sd=`dirname $0`
 
-source ~/.env.sh
 source $sd/env.sh
 
 env | grep GG_ | sort

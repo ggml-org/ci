@@ -77,6 +77,8 @@ function gg_set_commit_status {
 
 ## general env
 
+source ~/.env.sh
+
 # if GG_RESULTS_MNT is not set, default to /mnt
 if [ -z "${GG_RESULTS_MNT}" ]; then
     gg_export GG_RESULTS_MNT "/mnt"
