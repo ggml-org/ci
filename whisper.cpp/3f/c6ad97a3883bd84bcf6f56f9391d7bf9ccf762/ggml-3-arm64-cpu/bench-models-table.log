@@ -1,0 +1,14 @@
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             NEON |       tiny.en |   4 |   0 |  547.26 |    2.06 |    1.03 |    0.79 | 3fc6ad97 |
+|             NEON |          tiny |   4 |   0 |  547.26 |    2.06 |    1.05 |    0.79 | 3fc6ad97 |
+|             NEON |       base.en |   4 |   0 | 1234.83 |    4.31 |    1.92 |    1.39 | 3fc6ad97 |
+|             NEON |          base |   4 |   0 | 1235.31 |    4.27 |    1.92 |    1.39 | 3fc6ad97 |
+|             NEON |      small.en |   4 |   0 | 4393.38 |   12.26 |    5.47 |    3.80 | 3fc6ad97 |
+|             NEON |         small |   4 |   0 | 4377.23 |   12.17 |    5.45 |    3.79 | 3fc6ad97 |
+|             NEON |     medium.en |   4 |   0 |      ms |   33.46 |   14.49 |   10.64 | 3fc6ad97 |
+|             NEON |        medium |   4 |   0 |      ms |   33.65 |   14.53 |   10.63 | 3fc6ad97 |
+|             NEON |      large-v1 |   4 |   0 |      ms |   60.85 |   26.41 |   19.53 | 3fc6ad97 |
+|             NEON |      large-v2 |   4 |   0 |      ms |   61.02 |   26.41 |   19.59 | 3fc6ad97 |
+|             NEON |      large-v3 |   4 |   0 |      ms |   60.90 |   26.36 |   19.59 | 3fc6ad97 |
+|             NEON | large-v3-turbo |   4 |   0 |      ms |   10.07 |    4.53 |    3.43 | 3fc6ad97 |
