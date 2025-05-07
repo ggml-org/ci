@@ -1,0 +1,25 @@
+ggml_cuda_init: GGML_CUDA_FORCE_MMQ:    no
+ggml_cuda_init: GGML_CUDA_FORCE_CUBLAS: no
+ggml_cuda_init: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0, VMM: yes
+  64 x   64: Q4_0    19.0 GFLOPS (128 runs) | Q4_1    14.3 GFLOPS (128 runs)
+  64 x   64: Q5_0    18.0 GFLOPS (128 runs) | Q5_1    17.7 GFLOPS (128 runs) | Q8_0    19.4 GFLOPS (128 runs)
+  64 x   64: F16     20.6 GFLOPS (128 runs) | F32      8.7 GFLOPS (128 runs)
+ 128 x  128: Q4_0    35.1 GFLOPS (128 runs) | Q4_1    39.9 GFLOPS (128 runs)
+ 128 x  128: Q5_0    28.0 GFLOPS (128 runs) | Q5_1    30.1 GFLOPS (128 runs) | Q8_0    25.2 GFLOPS (128 runs)
+ 128 x  128: F16     38.4 GFLOPS (128 runs) | F32     20.0 GFLOPS (128 runs)
+ 256 x  256: Q4_0    48.7 GFLOPS (128 runs) | Q4_1    51.5 GFLOPS (128 runs)
+ 256 x  256: Q5_0    46.4 GFLOPS (128 runs) | Q5_1    44.4 GFLOPS (128 runs) | Q8_0    61.4 GFLOPS (128 runs)
+ 256 x  256: F16     55.4 GFLOPS (128 runs) | F32     30.9 GFLOPS (128 runs)
+ 512 x  512: Q4_0    69.9 GFLOPS (128 runs) | Q4_1    65.9 GFLOPS (128 runs)
+ 512 x  512: Q5_0    59.3 GFLOPS (128 runs) | Q5_1    56.6 GFLOPS (128 runs) | Q8_0    76.1 GFLOPS (128 runs)
+ 512 x  512: F16     43.5 GFLOPS (128 runs) | F32     37.0 GFLOPS (128 runs)
+1024 x 1024: Q4_0    79.8 GFLOPS ( 38 runs) | Q4_1    81.8 GFLOPS ( 39 runs)
+1024 x 1024: Q5_0    40.9 GFLOPS ( 28 runs) | Q5_1    46.3 GFLOPS ( 22 runs) | Q8_0    96.5 GFLOPS ( 45 runs)
+1024 x 1024: F16     75.3 GFLOPS ( 36 runs) | F32     40.6 GFLOPS ( 19 runs)
+2048 x 2048: Q4_0    89.1 GFLOPS (  6 runs) | Q4_1    90.9 GFLOPS (  6 runs)
+2048 x 2048: Q5_0    73.6 GFLOPS (  5 runs) | Q5_1    55.5 GFLOPS (  4 runs) | Q8_0   104.9 GFLOPS (  7 runs)
+2048 x 2048: F16     79.0 GFLOPS (  5 runs) | F32     41.5 GFLOPS (  3 runs)
+4096 x 4096: Q4_0    91.3 GFLOPS (  3 runs) | Q4_1    93.6 GFLOPS (  3 runs)
+4096 x 4096: Q5_0    74.0 GFLOPS (  3 runs) | Q5_1    73.6 GFLOPS (  3 runs) | Q8_0   110.9 GFLOPS (  3 runs)
+4096 x 4096: F16     78.1 GFLOPS (  3 runs) | F32     35.4 GFLOPS (  3 runs)
