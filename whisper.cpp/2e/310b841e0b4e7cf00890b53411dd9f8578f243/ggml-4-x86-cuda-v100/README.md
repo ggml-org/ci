@@ -1,0 +1,138 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 2:36.09
+- date:    Sat May 10 06:26:52 UTC 2025
+- repo:    https://github.com/ggerganov/whisper.cpp
+- commit:  https://github.com/ggerganov/whisper.cpp/commit/2e310b841e0b4e7cf00890b53411dd9f8578f243
+- author:  Daniel Bevenius
+```
+ruby : omit test_build_options locally (#3132)
+
+This commit omits the test for `test_build_options` when run locally as
+it currently fails on Linux and MacOS platforms.
+`
+The motivation for this change is that currently when running the tests
+locally on a non-macOS platform the test fails with the following error:
+```console
+.F
+========================================================================
+Failure: test_build_options(TestPackage):
+  <["ACCELERATE_FRAMEWORK",
+   "CMAKE_OSX_ARCHITECTURES",
+   "CMAKE_OSX_SYSROOT",
+   "FOUNDATION_LIBRARY",
+   "METALKIT_FRAMEWORK",
+   "METAL_FRAMEWORK"]> was expected to be empty.
+/home/danbev/work/ai/whisper.cpp/bindings/ruby/tests/test_package.rb:43:in `test_build_options'
+     40:     options = BuildOptions::Options.new
+     41:     assert_empty options.missing_options
+     42:     unless ENV["CI"]
+  => 43:       assert_empty options.extra_options
+     44:     end
+     45:   end
+     46: end
+========================================================================
+```
+```
+
+## Environment
+
+```
+GG_BUILD_CLOUD=1
+GG_BUILD_CUDA=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-debug
+No tests were found!!!
+
+real	0m0.034s
+user	0m0.022s
+sys	0m0.011s
+```
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-release
+No tests were found!!!
+
+real	0m0.034s
+user	0m0.025s
+sys	0m0.008s
+```
+### bench
+
+Whisper Benchmark Results
+- status: 0
+#### memcpy Benchmark
+
+```
+memcpy:   10.51 GB/s (heat-up)
+memcpy:   10.18 GB/s ( 1 thread)
+memcpy:   10.25 GB/s ( 1 thread)
+memcpy:   19.36 GB/s ( 2 thread)
+memcpy:   23.70 GB/s ( 3 thread)
+memcpy:   27.41 GB/s ( 4 thread)
+sum:    -3071998882.000000
+```
+
+#### ggml_mul_mat Benchmark
+
+```
+ggml_cuda_init: GGML_CUDA_FORCE_MMQ:    no
+ggml_cuda_init: GGML_CUDA_FORCE_CUBLAS: no
+ggml_cuda_init: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0, VMM: yes
+  64 x   64: Q4_0    19.0 GFLOPS (128 runs) | Q4_1    17.0 GFLOPS (128 runs)
+  64 x   64: Q5_0    15.3 GFLOPS (128 runs) | Q5_1    17.6 GFLOPS (128 runs) | Q8_0    11.8 GFLOPS (128 runs)
+  64 x   64: F16     21.0 GFLOPS (128 runs) | F32      7.2 GFLOPS (128 runs)
+ 128 x  128: Q4_0    41.5 GFLOPS (128 runs) | Q4_1    36.2 GFLOPS (128 runs)
+ 128 x  128: Q5_0    34.2 GFLOPS (128 runs) | Q5_1    31.4 GFLOPS (128 runs) | Q8_0    40.8 GFLOPS (128 runs)
+ 128 x  128: F16     41.4 GFLOPS (128 runs) | F32     18.9 GFLOPS (128 runs)
+ 256 x  256: Q4_0    54.8 GFLOPS (128 runs) | Q4_1    52.3 GFLOPS (128 runs)
+ 256 x  256: Q5_0    47.8 GFLOPS (128 runs) | Q5_1    44.5 GFLOPS (128 runs) | Q8_0    51.8 GFLOPS (128 runs)
+ 256 x  256: F16     52.7 GFLOPS (128 runs) | F32     33.7 GFLOPS (128 runs)
+ 512 x  512: Q4_0    70.7 GFLOPS (128 runs) | Q4_1    68.7 GFLOPS (128 runs)
+ 512 x  512: Q5_0    61.0 GFLOPS (128 runs) | Q5_1    39.4 GFLOPS (128 runs) | Q8_0    79.9 GFLOPS (128 runs)
+ 512 x  512: F16     71.8 GFLOPS (128 runs) | F32     27.5 GFLOPS (104 runs)
+1024 x 1024: Q4_0    82.5 GFLOPS ( 39 runs) | Q4_1    83.3 GFLOPS ( 39 runs)
+1024 x 1024: Q5_0    69.8 GFLOPS ( 33 runs) | Q5_1    67.9 GFLOPS ( 32 runs) | Q8_0    97.4 GFLOPS ( 46 runs)
+1024 x 1024: F16     75.4 GFLOPS ( 36 runs) | F32     41.6 GFLOPS ( 20 runs)
+2048 x 2048: Q4_0    89.0 GFLOPS (  6 runs) | Q4_1    66.3 GFLOPS (  4 runs)
+2048 x 2048: Q5_0    73.7 GFLOPS (  5 runs) | Q5_1    73.5 GFLOPS (  5 runs) | Q8_0   107.0 GFLOPS (  7 runs)
+2048 x 2048: F16     80.3 GFLOPS (  5 runs) | F32     42.7 GFLOPS (  3 runs)
+4096 x 4096: Q4_0    93.7 GFLOPS (  3 runs) | Q4_1    95.9 GFLOPS (  3 runs)
+4096 x 4096: Q5_0    71.9 GFLOPS (  3 runs) | Q5_1    72.5 GFLOPS (  3 runs) | Q8_0   114.4 GFLOPS (  3 runs)
+4096 x 4096: F16     79.5 GFLOPS (  3 runs) | F32     36.1 GFLOPS (  3 runs)
+```
+
+#### Model Benchmarks
+
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             AVX2 |       tiny.en |   4 |   0 |    6.43 |    1.17 |    0.29 |    0.01 | 2e310b84 |
+|             AVX2 |          tiny |   4 |   0 |    6.08 |    1.00 |    0.30 |    0.01 | 2e310b84 |
+|             AVX2 |       base.en |   4 |   0 |   10.95 |    1.48 |    0.43 |    0.02 | 2e310b84 |
+|             AVX2 |          base |   4 |   0 |   10.97 |    1.47 |    0.43 |    0.02 | 2e310b84 |
+|             AVX2 |      small.en |   4 |   0 |   31.03 |    2.80 |    0.85 |    0.04 | 2e310b84 |
+|             AVX2 |         small |   4 |   0 |   31.31 |    2.78 |    0.85 |    0.04 | 2e310b84 |
+|             AVX2 |     medium.en |   4 |   0 |   84.24 |    7.16 |    1.80 |    0.09 | 2e310b84 |
+|             AVX2 |        medium |   4 |   0 |   84.11 |    6.05 |    1.84 |    0.09 | 2e310b84 |
+|             AVX2 |      large-v1 |   4 |   0 |  138.61 |    8.61 |    2.71 |    0.15 | 2e310b84 |
+|             AVX2 |      large-v2 |   4 |   0 |  138.69 |    8.70 |    2.80 |    0.15 | 2e310b84 |
+|             AVX2 |      large-v3 |   4 |   0 |  138.98 |    8.66 |    2.70 |    0.14 | 2e310b84 |
+|             AVX2 | large-v3-turbo |   4 |   0 |  128.20 |    1.38 |    0.45 |    0.02 | 2e310b84 |
+
