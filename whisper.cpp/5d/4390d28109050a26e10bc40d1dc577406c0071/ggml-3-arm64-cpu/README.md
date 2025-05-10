@@ -1,0 +1,121 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 15:42.88
+- date:    Sat May 10 04:59:58 UTC 2025
+- repo:    https://github.com/ggerganov/whisper.cpp
+- commit:  https://github.com/ggerganov/whisper.cpp/commit/5d4390d28109050a26e10bc40d1dc577406c0071
+- author:  Enes Grahovac
+```
+examples : add HEAPU8 to all of the exported runtime methods (#3134)
+
+This commit adds HEAPU8 to the list of exported methods.
+
+The motivation for this commit is that currently this is causing an error on Window systems where HEAPU8 in undefined, which results in the following error message in the web console:
+
+main.js:1 Uncaught TypeError:
+Cannot read properties of undefined (reading 'buffer') at __emval_get_property
+(main.js:1:1363125) at 003a453a:0xc4a47 at 003a453a:0xc51cd at
+Object.full_default (eval at craftInvokerFunction (main.js:1:1347011),
+<anonymous>:9:10) at whisper.cpp/:647:42
+
+danbev originally fixed this for whisper.wasm, stream.wasm, and command.stream, but the issue still exists on the other examples which I patch in this code.
+
+Resolves: #3059
+```
+
+## Environment
+
+```
+GG_BUILD_CLOUD=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-debug
+No tests were found!!!
+
+real	0m0.009s
+user	0m0.009s
+sys	0m0.000s
+```
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-release
+No tests were found!!!
+
+real	0m0.009s
+user	0m0.000s
+sys	0m0.009s
+```
+### bench
+
+Whisper Benchmark Results
+- status: 0
+#### memcpy Benchmark
+
+```
+memcpy:   11.05 GB/s (heat-up)
+memcpy:   11.03 GB/s ( 1 thread)
+memcpy:   11.01 GB/s ( 1 thread)
+memcpy:   20.64 GB/s ( 2 thread)
+memcpy:   27.12 GB/s ( 3 thread)
+memcpy:   33.95 GB/s ( 4 thread)
+sum:    783359997697.000000
+```
+
+#### ggml_mul_mat Benchmark
+
+```
+  64 x   64: Q4_0    27.9 GFLOPS (128 runs) | Q4_1    27.6 GFLOPS (128 runs)
+  64 x   64: Q5_0    21.0 GFLOPS (128 runs) | Q5_1    20.3 GFLOPS (128 runs) | Q8_0    29.3 GFLOPS (128 runs)
+  64 x   64: F16     31.9 GFLOPS (128 runs) | F32     34.0 GFLOPS (128 runs)
+ 128 x  128: Q4_0    55.4 GFLOPS (128 runs) | Q4_1    51.2 GFLOPS (128 runs)
+ 128 x  128: Q5_0    37.8 GFLOPS (128 runs) | Q5_1    34.9 GFLOPS (128 runs) | Q8_0    59.0 GFLOPS (128 runs)
+ 128 x  128: F16     65.3 GFLOPS (128 runs) | F32     55.3 GFLOPS (128 runs)
+ 256 x  256: Q4_0    72.7 GFLOPS (128 runs) | Q4_1    66.0 GFLOPS (128 runs)
+ 256 x  256: Q5_0    49.2 GFLOPS (128 runs) | Q5_1    44.6 GFLOPS (128 runs) | Q8_0    80.0 GFLOPS (128 runs)
+ 256 x  256: F16     94.7 GFLOPS (128 runs) | F32     65.9 GFLOPS (128 runs)
+ 512 x  512: Q4_0    80.9 GFLOPS (128 runs) | Q4_1    73.4 GFLOPS (128 runs)
+ 512 x  512: Q5_0    55.9 GFLOPS (128 runs) | Q5_1    49.8 GFLOPS (128 runs) | Q8_0    91.4 GFLOPS (128 runs)
+ 512 x  512: F16    111.8 GFLOPS (128 runs) | F32     64.9 GFLOPS (128 runs)
+1024 x 1024: Q4_0    86.4 GFLOPS ( 41 runs) | Q4_1    78.0 GFLOPS ( 37 runs)
+1024 x 1024: Q5_0    59.9 GFLOPS ( 28 runs) | Q5_1    52.7 GFLOPS ( 25 runs) | Q8_0    98.3 GFLOPS ( 46 runs)
+1024 x 1024: F16    121.7 GFLOPS ( 57 runs) | F32     63.2 GFLOPS ( 30 runs)
+2048 x 2048: Q4_0    89.7 GFLOPS (  6 runs) | Q4_1    80.7 GFLOPS (  5 runs)
+2048 x 2048: Q5_0    62.2 GFLOPS (  4 runs) | Q5_1    55.1 GFLOPS (  4 runs) | Q8_0   102.5 GFLOPS (  6 runs)
+2048 x 2048: F16    121.7 GFLOPS (  8 runs) | F32     55.8 GFLOPS (  4 runs)
+4096 x 4096: Q4_0    91.0 GFLOPS (  3 runs) | Q4_1    81.7 GFLOPS (  3 runs)
+4096 x 4096: Q5_0    62.4 GFLOPS (  3 runs) | Q5_1    55.5 GFLOPS (  3 runs) | Q8_0   100.9 GFLOPS (  3 runs)
+4096 x 4096: F16    105.9 GFLOPS (  3 runs) | F32     49.0 GFLOPS (  3 runs)
+```
+
+#### Model Benchmarks
+
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             NEON |       tiny.en |   4 |   0 |  546.96 |    2.19 |    1.06 |    0.80 | 5d4390d2 |
+|             NEON |          tiny |   4 |   0 |  545.22 |    2.20 |    1.06 |    0.80 | 5d4390d2 |
+|             NEON |       base.en |   4 |   0 | 1241.95 |    4.60 |    2.02 |    1.39 | 5d4390d2 |
+|             NEON |          base |   4 |   0 | 1242.63 |    4.57 |    2.03 |    1.39 | 5d4390d2 |
+|             NEON |      small.en |   4 |   0 | 4399.34 |   12.94 |    5.57 |    3.81 | 5d4390d2 |
+|             NEON |         small |   4 |   0 | 4473.06 |   12.97 |    5.56 |    3.80 | 5d4390d2 |
+|             NEON |     medium.en |   4 |   0 | 14109.47 |   36.10 |   14.94 |   10.73 | 5d4390d2 |
+|             NEON |        medium |   4 |   0 | 14068.06 |   35.57 |   15.03 |   10.73 | 5d4390d2 |
+|             NEON |      large-v1 |   4 |   0 | 26595.53 |   64.90 |   27.18 |   19.69 | 5d4390d2 |
+|             NEON |      large-v2 |   4 |   0 | 26581.49 |   65.13 |   27.14 |   19.64 | 5d4390d2 |
+|             NEON |      large-v3 |   4 |   0 | 26541.25 |   64.24 |   27.06 |   19.63 | 5d4390d2 |
+|             NEON | large-v3-turbo |   4 |   0 | 24342.89 |   10.82 |    4.70 |    3.45 | 5d4390d2 |
+
