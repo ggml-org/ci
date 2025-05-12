@@ -1,0 +1,100 @@
+++ nproc
++ make -j32
+[  3%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/gguf.cpp.o
+[  3%] Building CXX object examples/deprecation-warning/CMakeFiles/bench.dir/deprecation-warning.cpp.o
+[  4%] Building CXX object examples/deprecation-warning/CMakeFiles/main.dir/deprecation-warning.cpp.o
+[  6%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  7%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[ 10%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[ 14%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[ 15%] Linking CXX executable ../../bin/bench
+[ 17%] Linking CXX executable ../../bin/main
+[ 18%] Linking CXX shared library libggml-base.so
+[ 18%] Built target bench
+[ 18%] Built target main
+[ 18%] Built target ggml-base
+[ 20%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/cpy.cpp.o
+[ 21%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/conv.cpp.o
+[ 23%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[ 26%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/concat.cpp.o
+[ 26%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/element_wise.cpp.o
+[ 28%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[ 29%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 31%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/ggml-sycl.cpp.o
+[ 32%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[ 34%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/binbcast.cpp.o
+[ 35%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/dmmv.cpp.o
+[ 39%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 39%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[ 43%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/getrows.cpp.o
+[ 43%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 43%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/common.cpp.o
+[ 46%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/gla.cpp.o
+[ 46%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/convert.cpp.o
+[ 48%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/im2col.cpp.o
+[ 50%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ops.cpp.o
+[ 51%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/mmq.cpp.o
+[ 53%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 54%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/binary-ops.cpp.o
+[ 56%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/softmax.cpp.o
+[ 57%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/unary-ops.cpp.o
+[ 59%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/vec.cpp.o
+[ 60%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/mmvq.cpp.o
+[ 64%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/rope.cpp.o
+[ 64%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/norm.cpp.o
+[ 65%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/outprod.cpp.o
+[ 67%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/tsembd.cpp.o
+[ 68%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/sycl_hw.cpp.o
+[ 70%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/wkv.cpp.o
+[ 71%] Linking CXX shared library libggml-cpu.so
+[ 73%] Linking CXX shared library libggml-sycl.so
+[ 73%] Built target ggml-cpu
+[ 73%] Built target ggml-sycl
+[ 75%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 76%] Linking CXX shared library libggml.so
+[ 76%] Built target ggml
+[ 78%] Building CXX object src/CMakeFiles/whisper.dir/whisper.cpp.o
+[ 79%] Linking CXX shared library libwhisper.so
+[ 79%] Built target whisper
+[ 81%] Building CXX object examples/bench/CMakeFiles/whisper-bench.dir/bench.cpp.o
+[ 82%] Building CXX object examples/CMakeFiles/common.dir/grammar-parser.cpp.o
+[ 84%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[ 85%] Building CXX object examples/CMakeFiles/common.dir/common-ggml.cpp.o
+[ 87%] Building CXX object examples/CMakeFiles/common.dir/common-whisper.cpp.o
+[ 89%] Linking CXX executable ../../bin/whisper-bench
+[ 90%] Linking CXX static library libcommon.a
+[ 90%] Built target common
+[ 93%] Building CXX object examples/server/CMakeFiles/whisper-server.dir/server.cpp.o
+[ 93%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+[ 95%] Building CXX object examples/cli/CMakeFiles/whisper-cli.dir/cli.cpp.o
+In file included from /home/ggml/work/whisper.cpp/examples/server/server.cpp:6:
+/home/ggml/work/whisper.cpp/examples/json.hpp:24314:35: warning: identifier '_json' preceded by whitespace in a literal operator declaration is deprecated [-Wdeprecated-literal-operator]
+ 24314 | inline nlohmann::json operator "" _json(const char* s, std::size_t n)
+       |                       ~~~~~~~~~~~~^~~~~
+       |                       operator""_json
+/home/ggml/work/whisper.cpp/examples/json.hpp:24322:49: warning: identifier '_json_pointer' preceded by whitespace in a literal operator declaration is deprecated [-Wdeprecated-literal-operator]
+ 24322 | inline nlohmann::json::json_pointer operator "" _json_pointer(const char* s, std::size_t n)
+       |                                     ~~~~~~~~~~~~^~~~~~~~~~~~~
+       |                                     operator""_json_pointer
+/home/ggml/work/whisper.cpp/examples/json.hpp:24386:58: warning: identifier '_json' preceded by whitespace in a literal operator declaration is deprecated [-Wdeprecated-literal-operator]
+ 24386 |     using nlohmann::literals::json_literals::operator "" _json; // NOLINT(misc-unused-using-decls,google-global-names-in-headers)
+       |                                              ~~~~~~~~~~~~^~~~~
+       |                                              operator""_json
+/home/ggml/work/whisper.cpp/examples/json.hpp:24387:58: warning: identifier '_json_pointer' preceded by whitespace in a literal operator declaration is deprecated [-Wdeprecated-literal-operator]
+ 24387 |     using nlohmann::literals::json_literals::operator "" _json_pointer; //NOLINT(misc-unused-using-decls,google-global-names-in-headers)
+       |                                              ~~~~~~~~~~~~^~~~~~~~~~~~~
+       |                                              operator""_json_pointer
+4 warnings generated.
+[ 96%] Linking CXX executable ../../bin/whisper-cli
+[ 98%] Linking CXX executable ../../bin/quantize
+[100%] Linking CXX executable ../../bin/whisper-server
+[100%] Built target whisper-bench
+[100%] Built target quantize
+[100%] Built target whisper-cli
+[100%] Built target whisper-server
+
+real	0m6,817s
+user	0m6,761s
+sys	0m1,883s
