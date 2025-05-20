@@ -1,0 +1,92 @@
+++ nproc
++ make -j8
+[  0%] Generating build details from Git
+[  0%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  1%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  1%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  1%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  1%] Building CXX object tools/mtmd/CMakeFiles/llama-llava-cli.dir/deprecation-warning.cpp.o
+[  1%] Building CXX object tools/mtmd/CMakeFiles/llama-gemma3-cli.dir/deprecation-warning.cpp.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  2%] Building CXX object tools/mtmd/CMakeFiles/llama-minicpmv-cli.dir/deprecation-warning.cpp.o
+[  2%] Built target sha256
+[  2%] Built target xxhash
+[  2%] Built target sha1
+[  4%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  4%] Linking CXX executable ../../bin/llama-gemma3-cli
+[  4%] Linking CXX executable ../../bin/llama-llava-cli
+[  4%] Linking CXX executable ../../bin/llama-minicpmv-cli
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  5%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  6%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/gguf.cpp.o
+[  6%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  7%] Building CXX object tools/mtmd/CMakeFiles/llama-qwen2vl-cli.dir/deprecation-warning.cpp.o
+[  7%] Linking CXX executable ../../bin/llama-qwen2vl-cli
+[  7%] Linking CXX shared library ../../bin/libggml-base.so
+[  7%] Built target build_info
+[  7%] Built target llama-gemma3-cli
+[  7%] Built target llama-minicpmv-cli
+[  7%] Built target llama-llava-cli
+[  7%] Built target llama-qwen2vl-cli
+[  7%] Built target ggml-base
+[  8%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[  9%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/binary-ops.cpp.o
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/unary-ops.cpp.o
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/vec.cpp.o
+[ 13%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.o
+[ 13%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ops.cpp.o
+[ 13%] Linking CXX shared library ../../bin/libggml-cpu.so
+[ 13%] Built target ggml-cpu
+[ 13%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 14%] Linking CXX shared library ../../bin/libggml.so
+[ 14%] Built target ggml
+[ 15%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 16%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/llama.dir/llama-adapter.cpp.o
+[ 18%] Building CXX object src/CMakeFiles/llama.dir/llama-arch.cpp.o
+[ 18%] Building CXX object src/CMakeFiles/llama.dir/llama-batch.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-context.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-chat.cpp.o
+[ 19%] Linking CXX executable ../../bin/llama-gguf
+[ 19%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+[ 20%] Built target llama-gguf-hash
+[ 20%] Built target llama-gguf
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-graph.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-hparams.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/llama.dir/llama-impl.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/llama.dir/llama-io.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/llama.dir/llama-kv-cache.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/llama.dir/llama-memory.cpp.o
+[ 23%] Building CXX object src/CMakeFiles/llama.dir/llama-mmap.cpp.o
+[ 23%] Building CXX object src/CMakeFiles/llama.dir/llama-model-loader.cpp.o
+[ 24%] Building CXX object src/CMakeFiles/llama.dir/llama-model-saver.cpp.o
+[ 24%] Building CXX object src/CMakeFiles/llama.dir/llama-model.cpp.o
+[ 24%] Building CXX object src/CMakeFiles/llama.dir/llama-quant.cpp.o
+[ 25%] Building CXX object src/CMakeFiles/llama.dir/llama-sampling.cpp.o
+/home/ggml/work/llama.cpp/src/llama-context.cpp: In function ‘int32_t llama_kv_self_used_cells(const llama_context*)’:
+/home/ggml/work/llama.cpp/src/llama-context.cpp:2324:34: error: ‘int32_t llama_kv_self_n_tokens(const llama_context*)’ is deprecated: Use llama_kv_self_seq_pos_max() instead [-Werror=deprecated-declarations]
+ 2324 |     return llama_kv_self_n_tokens(ctx);
+      |            ~~~~~~~~~~~~~~~~~~~~~~^~~~~
+/home/ggml/work/llama.cpp/src/llama-context.cpp:2302:9: note: declared here
+ 2302 | int32_t llama_kv_self_n_tokens(const llama_context * ctx) {
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+cc1plus: all warnings being treated as errors
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:146: src/CMakeFiles/llama.dir/llama-context.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:1760: src/CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m7.702s
+user	0m28.112s
+sys	0m2.542s
