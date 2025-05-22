@@ -1,0 +1,7 @@
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-release
+No tests were found!!!
+
+real	0m0.066s
+user	0m0.055s
+sys	0m0.011s
