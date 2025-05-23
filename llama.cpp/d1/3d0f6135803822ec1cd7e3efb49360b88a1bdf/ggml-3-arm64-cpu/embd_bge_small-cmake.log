@@ -49,5 +49,5 @@
 -- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-release
 
 real	0m2.222s
-user	0m1.420s
-sys	0m0.600s
+user	0m1.392s
+sys	0m0.635s
