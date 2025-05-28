@@ -1,0 +1,170 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 2:40.39
+- date:    Rab 28 Mei 2025 09:40:24  WIB
+- repo:    https://github.com/ggerganov/whisper.cpp
+- commit:  https://github.com/ggerganov/whisper.cpp/commit/1f5fdbecb411a61b8576242e5170c5ecef24b05a
+- author:  KITAITI Makoto
+```
+ruby : add VAD support, migration to Ruby's newer API (#3197)
+
+* Add VAD models
+
+* Extract function to normalize model path from ruby_whisper_initialize()
+
+* Define ruby_whisper_vad_params struct
+
+* Add VAD-related features to Whisper::Params
+
+* Add tests for VAD-related features
+
+* Define Whisper::VADParams
+
+* Add Whisper::VAD::Params attributes
+
+* Add test suite for VAD::Params
+
+* Make older test to follow namespace change
+
+* Add test for transcription with VAD
+
+* Add assertion for test_vad_params
+
+* Add signatures for VAD-related methods
+
+* Define VAD::Params#==
+
+* Add test for VAD::Params#==
+
+* Fix Params#vad_params
+
+* Add test for Params#vad_params
+
+* Fix signature of Params#vad_params
+
+* Use macro to define VAD::Params params
+
+* Define VAD::Params#initialize
+
+* Add tests for VAD::Params#initialize
+
+* Add signature for VAD::Params.new
+
+* Add documentation on VAD in README
+
+* Wrap register_callbask in prepare_transcription for clear meanings
+
+* Set whisper_params.vad_params just before transcription
+
+* Don't touch NULL
+
+* Define ruby_whisper_params_type
+
+* Use TypedData_XXX for ruby_whisper_params instead of Data_XXX
+
+* Remove unused functions
+
+* Define rb_whisper_model_data_type
+
+* Use TypedData_XXX for ruby_whisper_model instead of Data_XXX
+
+* Define ruby_whisper_segment_type
+
+* Use TypedData_XXX for ruby_whisper_segment instead of Data_XXX
+
+* Define ruby_whisper_type
+
+* Use TypedData_XXX for ruby_whisper instead of Data_XXX
+
+* Qualify with const
+```
+
+## Environment
+
+```
+GG_BUILD_C_COMPILER=gcc
+GG_BUILD_CLOUD=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_SYCL=1
+```
+
+## Output
+
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-release
+No tests were found!!!
+
+real	0m0,007s
+user	0m0,004s
+sys	0m0,003s
+```
+### bench
+
+Whisper Benchmark Results
+- status: 0
+#### memcpy Benchmark
+
+```
+memcpy:   18.72 GB/s (heat-up)
+memcpy:   22.71 GB/s ( 1 thread)
+memcpy:   22.73 GB/s ( 1 thread)
+memcpy:   32.45 GB/s ( 2 thread)
+memcpy:   34.81 GB/s ( 3 thread)
+memcpy:   35.70 GB/s ( 4 thread)
+sum:    -3071998224.000000
+```
+
+#### ggml_mul_mat Benchmark
+
+```
+  64 x   64: Q4_0    44.0 GFLOPS (128 runs) | Q4_1    53.5 GFLOPS (128 runs)
+  64 x   64: Q5_0    49.6 GFLOPS (128 runs) | Q5_1    49.1 GFLOPS (128 runs) | Q8_0    60.8 GFLOPS (128 runs)
+  64 x   64: F16     43.6 GFLOPS (128 runs) | F32     72.2 GFLOPS (128 runs)
+ 128 x  128: Q4_0   136.2 GFLOPS (128 runs) | Q4_1   131.8 GFLOPS (128 runs)
+ 128 x  128: Q5_0   123.6 GFLOPS (128 runs) | Q5_1   118.7 GFLOPS (128 runs) | Q8_0   147.5 GFLOPS (128 runs)
+ 128 x  128: F16    133.1 GFLOPS (128 runs) | F32    176.0 GFLOPS (128 runs)
+ 256 x  256: Q4_0   235.6 GFLOPS (128 runs) | Q4_1   224.2 GFLOPS (128 runs)
+ 256 x  256: Q5_0   196.1 GFLOPS (128 runs) | Q5_1   186.6 GFLOPS (128 runs) | Q8_0   263.5 GFLOPS (128 runs)
+ 256 x  256: F16    193.4 GFLOPS (128 runs) | F32    224.2 GFLOPS (128 runs)
+ 512 x  512: Q4_0   290.1 GFLOPS (128 runs) | Q4_1   281.7 GFLOPS (128 runs)
+ 512 x  512: Q5_0   223.3 GFLOPS (128 runs) | Q5_1   215.3 GFLOPS (128 runs) | Q8_0   325.9 GFLOPS (128 runs)
+ 512 x  512: F16    218.3 GFLOPS (128 runs) | F32    252.7 GFLOPS (128 runs)
+1024 x 1024: Q4_0   311.2 GFLOPS (128 runs) | Q4_1   302.5 GFLOPS (128 runs)
+1024 x 1024: Q5_0   243.7 GFLOPS (114 runs) | Q5_1   190.5 GFLOPS ( 90 runs) | Q8_0    78.7 GFLOPS ( 37 runs)
+1024 x 1024: F16    160.3 GFLOPS ( 75 runs) | F32    235.2 GFLOPS (110 runs)
+2048 x 2048: Q4_0   320.0 GFLOPS ( 19 runs) | Q4_1   187.1 GFLOPS ( 14 runs)
+2048 x 2048: Q5_0   150.2 GFLOPS (  9 runs) | Q5_1   233.6 GFLOPS ( 14 runs) | Q8_0   349.8 GFLOPS ( 21 runs)
+2048 x 2048: F16    157.4 GFLOPS ( 11 runs) | F32    131.5 GFLOPS (  8 runs)
+4096 x 4096: Q4_0   331.9 GFLOPS (  3 runs) | Q4_1   181.5 GFLOPS (  3 runs)
+4096 x 4096: Q5_0   255.0 GFLOPS (  3 runs) | Q5_1   137.0 GFLOPS (  3 runs) | Q8_0   347.2 GFLOPS (  3 runs)
+4096 x 4096: F16    133.4 GFLOPS (  3 runs) | F32    139.0 GFLOPS (  3 runs)
+```
+
+#### Model Benchmarks
+
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             AVX2 |       tiny.en |   4 |   0 |   16.30 |    5.42 |    1.91 |    0.05 | 1f5fdbec |
+|             AVX2 |          tiny |   4 |   0 |   16.17 |    5.42 |    1.91 |    0.05 | 1f5fdbec |
+|             AVX2 |       base.en |   4 |   0 |   26.96 |    7.97 |    2.77 |    0.07 | 1f5fdbec |
+|             AVX2 |          base |   4 |   0 |   26.87 |    7.96 |    2.77 |    0.07 | 1f5fdbec |
+|             AVX2 |      small.en |   4 |   0 |   66.31 |   16.05 |    5.46 |    0.15 | 1f5fdbec |
+|             AVX2 |         small |   4 |   0 |   65.89 |   16.08 |    5.48 |    0.15 | 1f5fdbec |
+|             AVX2 |     medium.en |   4 |   0 |  160.22 |   31.36 |   10.97 |    0.33 | 1f5fdbec |
+|             AVX2 |        medium |   4 |   0 |  160.01 |   31.19 |   10.93 |    0.33 | 1f5fdbec |
+|             AVX2 |      large-v1 |   4 |   0 |  253.43 |   42.15 |   14.95 |    0.48 | 1f5fdbec |
+|             AVX2 |      large-v3 |   4 |   0 |  253.38 |   42.27 |   15.01 |    0.48 | 1f5fdbec |
+|             AVX2 | large-v3-turbo |   4 |   0 |  229.19 |    6.01 |    2.19 |    0.07 | 1f5fdbec |
+
+#### Benchmark Errors
+
+```
+Benchmark failed for model: large-v2
+```
+

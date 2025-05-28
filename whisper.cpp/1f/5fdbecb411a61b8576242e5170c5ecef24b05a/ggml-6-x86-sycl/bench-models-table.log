@@ -1,0 +1,13 @@
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             AVX2 |       tiny.en |   4 |   0 |   16.30 |    5.42 |    1.91 |    0.05 | 1f5fdbec |
+|             AVX2 |          tiny |   4 |   0 |   16.17 |    5.42 |    1.91 |    0.05 | 1f5fdbec |
+|             AVX2 |       base.en |   4 |   0 |   26.96 |    7.97 |    2.77 |    0.07 | 1f5fdbec |
+|             AVX2 |          base |   4 |   0 |   26.87 |    7.96 |    2.77 |    0.07 | 1f5fdbec |
+|             AVX2 |      small.en |   4 |   0 |   66.31 |   16.05 |    5.46 |    0.15 | 1f5fdbec |
+|             AVX2 |         small |   4 |   0 |   65.89 |   16.08 |    5.48 |    0.15 | 1f5fdbec |
+|             AVX2 |     medium.en |   4 |   0 |  160.22 |   31.36 |   10.97 |    0.33 | 1f5fdbec |
+|             AVX2 |        medium |   4 |   0 |  160.01 |   31.19 |   10.93 |    0.33 | 1f5fdbec |
+|             AVX2 |      large-v1 |   4 |   0 |  253.43 |   42.15 |   14.95 |    0.48 | 1f5fdbec |
+|             AVX2 |      large-v3 |   4 |   0 |  253.38 |   42.27 |   15.01 |    0.48 | 1f5fdbec |
+|             AVX2 | large-v3-turbo |   4 |   0 |  229.19 |    6.01 |    2.19 |    0.07 | 1f5fdbec |
