@@ -1,0 +1,73 @@
++ cmake -DCMAKE_BUILD_TYPE=Release -DLLAMA_FATAL_WARNINGS=ON -DLLAMA_CURL=OFF -DGGML_SYCL=1 -DCMAKE_C_COMPILER=icx -DCMAKE_CXX_COMPILER=icpx -DGGML_SYCL_F16=ON ..
+-- The C compiler identification is IntelLLVM 2025.1.0
+-- The CXX compiler identification is IntelLLVM 2025.1.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /opt/intel/oneapi/compiler/2025.1/bin/icx - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /opt/intel/oneapi/compiler/2025.1/bin/icpx - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- GGML_SYSTEM_ARCH: x86
+-- Including CPU backend
+-- Found OpenMP_C: -fiopenmp  
+-- Found OpenMP_CXX: -fiopenmp  
+-- Found OpenMP: TRUE   
+-- x86 detected
+-- Adding CPU backend variant ggml-cpu: -march=native 
+-- GGML_SYCL_TARGET=INTEL
+-- Performing Test SUPPORTS_SYCL
+-- Performing Test SUPPORTS_SYCL - Success
+-- Using oneAPI Release SYCL compiler (icpx).
+-- SYCL found
+-- SYCL Compiler version: 20250100
+-- SYCL_INCLUDE_DIR: /opt/intel/oneapi/compiler/2025.1/include
+-- SYCL_LIBRARY=/opt/intel/oneapi/compiler/2025.1/lib/libsycl.so
+-- Found IntelSYCL: /opt/intel/oneapi/compiler/2025.1/include (found version "202001") 
+-- Found oneDNN: /opt/intel/oneapi/dnnl/2025.1/lib/libdnnl.so.3.7
+-- Upgrade to CMake version 3.25.2 or later for native support of Intel compiler(s) icx, icpx. You are running version 3.22.1.
+-- MKL_VERSION: 2025.1.0
+-- MKL_ROOT: /opt/intel/oneapi/mkl/2025.1
+-- MKL_ARCH: intel64
+-- MKL_SYCL_LINK: None, set to ` dynamic` by default
+-- MKL_LINK: None, set to ` dynamic` by default
+-- MKL_SYCL_INTERFACE_FULL: None, set to ` intel_ilp64` by default
+-- MKL_INTERFACE_FULL: None, set to ` intel_ilp64` by default
+-- MKL_SYCL_THREADING: None, set to ` tbb_thread` by default
+-- MKL_THREADING: None, set to ` intel_thread` by default
+-- MKL_MPI: None, set to ` intelmpi` by default
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_scalapack_ilp64.so
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_cdft_core.so
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_intel_ilp64.so
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_intel_thread.so
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_core.so
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_blacs_intelmpi_ilp64.so
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_sycl_blas.so
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_sycl_lapack.so
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_sycl_dft.so
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_sycl_sparse.so
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_sycl_data_fitting.so
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_sycl_rng.so
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_sycl_stats.so
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_sycl_vm.so
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_tbb_thread.so
+-- Found /opt/intel/oneapi/compiler/2025.1/lib/libiomp5.so
+-- Including SYCL backend
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-release
+
+real	0m1,752s
+user	0m1,119s
+sys	0m0,634s
