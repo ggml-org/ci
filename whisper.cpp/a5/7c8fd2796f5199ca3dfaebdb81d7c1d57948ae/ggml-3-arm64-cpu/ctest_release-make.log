@@ -1,0 +1,69 @@
+++ nproc
++ make -j8
+[  8%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  8%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  8%] Building CXX object examples/deprecation-warning/CMakeFiles/bench.dir/deprecation-warning.cpp.o
+[ 10%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[ 10%] Building CXX object examples/deprecation-warning/CMakeFiles/main.dir/deprecation-warning.cpp.o
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[ 14%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml.cpp.o
+[ 16%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[ 18%] Linking CXX executable ../../bin/bench
+[ 20%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[ 22%] Linking CXX executable ../../bin/main
+[ 22%] Built target bench
+[ 24%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/gguf.cpp.o
+[ 24%] Built target main
+[ 26%] Linking CXX shared library libggml-base.so
+[ 26%] Built target ggml-base
+[ 32%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[ 32%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[ 32%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[ 34%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[ 36%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 38%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 40%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 42%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 44%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/binary-ops.cpp.o
+[ 46%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/unary-ops.cpp.o
+[ 48%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/vec.cpp.o
+[ 51%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ops.cpp.o
+[ 53%] Linking CXX shared library libggml-cpu.so
+[ 53%] Built target ggml-cpu
+[ 55%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 57%] Linking CXX shared library libggml.so
+[ 57%] Built target ggml
+[ 59%] Building CXX object src/CMakeFiles/whisper.dir/whisper.cpp.o
+[ 61%] Linking CXX shared library libwhisper.so
+[ 61%] Built target whisper
+[ 71%] Building CXX object examples/CMakeFiles/common.dir/common-whisper.cpp.o
+[ 71%] Building CXX object examples/CMakeFiles/common.dir/grammar-parser.cpp.o
+[ 71%] Building CXX object examples/CMakeFiles/common.dir/common-ggml.cpp.o
+[ 71%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[ 71%] Building CXX object examples/bench/CMakeFiles/whisper-bench.dir/bench.cpp.o
+[ 73%] Linking CXX executable ../../bin/whisper-bench
+[ 75%] Linking CXX static library libcommon.a
+[ 75%] Built target common
+[ 75%] Built target whisper-bench
+[ 85%] Building CXX object tests/CMakeFiles/test-vad.dir/test-vad.cpp.o
+[ 85%] Building CXX object examples/vad-speech-segments/CMakeFiles/vad-speech-segments.dir/speech.cpp.o
+[ 85%] Building CXX object examples/cli/CMakeFiles/whisper-cli.dir/cli.cpp.o
+[ 85%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+[ 85%] Building CXX object examples/server/CMakeFiles/whisper-server.dir/server.cpp.o
+[ 87%] Building CXX object tests/CMakeFiles/test-vad-full.dir/test-vad-full.cpp.o
+[ 89%] Linking CXX executable ../bin/test-vad
+[ 91%] Linking CXX executable ../bin/test-vad-full
+[ 93%] Linking CXX executable ../../bin/vad-speech-segments
+[ 95%] Linking CXX executable ../../bin/whisper-cli
+[ 97%] Linking CXX executable ../../bin/quantize
+[100%] Linking CXX executable ../../bin/whisper-server
+[100%] Built target test-vad
+[100%] Built target test-vad-full
+[100%] Built target vad-speech-segments
+[100%] Built target quantize
+[100%] Built target whisper-cli
+[100%] Built target whisper-server
+
+real	0m13.676s
+user	0m34.351s
+sys	0m2.786s
