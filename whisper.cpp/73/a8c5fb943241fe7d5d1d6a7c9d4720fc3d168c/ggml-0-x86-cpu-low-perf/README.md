@@ -1,0 +1,122 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 3:45.26
+- date:    Thu May 29 06:07:29 UTC 2025
+- repo:    https://github.com/ggerganov/whisper.cpp
+- commit:  https://github.com/ggerganov/whisper.cpp/commit/73a8c5fb943241fe7d5d1d6a7c9d4720fc3d168c
+- author:  Daniel Bevenius
+```
+whisper : remove whisper_load_backends function (#3196)
+
+* whisper : remove whisper_load_backends function
+
+This commit removes the `whisper_load_backends` function, which was used
+to load all GGML backends.
+
+The motivation for this change push the responsibility of loading
+backends to user applications to give them more control over which
+backends to load and when. See the references below for more context.
+
+Resolves: https://github.com/ggml-org/whisper.cpp/issues/3182
+Refs: https://github.com/ggml-org/whisper.cpp/pull/3042#issuecomment-2801778733
+Refs: https://github.com/ggml-org/whisper.cpp/pull/3042#issuecomment-2801928990
+
+* ruby : add check for rwc is NULL
+
+This commit adds a check to ensure that the `rwc` pointer is not NULL
+before attempting to mark its members in the garbage collector.
+
+The motivation for this is an attempt to see if this fixed the CI build
+as I'm not able to reproduce the issue locally.
+
+Refs: https://github.com/ggml-org/whisper.cpp/actions/runs/15299612277/job/43036694928?pr=3196
+```
+
+## Environment
+
+```
+GG_BUILD_CLOUD=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+GG_BUILD_LOW_PERF=1
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-debug
+No tests were found!!!
+
+real	0m0.024s
+user	0m0.024s
+sys	0m0.000s
+```
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-release
+No tests were found!!!
+
+real	0m0.025s
+user	0m0.022s
+sys	0m0.004s
+```
+### bench
+
+Whisper Benchmark Results
+- status: 0
+#### memcpy Benchmark
+
+```
+memcpy:   11.70 GB/s (heat-up)
+memcpy:   11.68 GB/s ( 1 thread)
+memcpy:   11.65 GB/s ( 1 thread)
+memcpy:   23.21 GB/s ( 2 thread)
+memcpy:   22.99 GB/s ( 3 thread)
+memcpy:   28.70 GB/s ( 4 thread)
+sum:    -3071998444.000000
+```
+
+#### ggml_mul_mat Benchmark
+
+```
+  64 x   64: Q4_0    18.5 GFLOPS (128 runs) | Q4_1    20.5 GFLOPS (128 runs)
+  64 x   64: Q5_0    19.1 GFLOPS (128 runs) | Q5_1    18.2 GFLOPS (128 runs) | Q8_0    21.6 GFLOPS (128 runs)
+  64 x   64: F16     19.7 GFLOPS (128 runs) | F32     11.7 GFLOPS (128 runs)
+ 128 x  128: Q4_0    39.0 GFLOPS (128 runs) | Q4_1    39.4 GFLOPS (128 runs)
+ 128 x  128: Q5_0    35.3 GFLOPS (128 runs) | Q5_1    32.6 GFLOPS (128 runs) | Q8_0    43.9 GFLOPS (128 runs)
+ 128 x  128: F16     38.4 GFLOPS (128 runs) | F32     25.6 GFLOPS (128 runs)
+ 256 x  256: Q4_0    51.6 GFLOPS (128 runs) | Q4_1    51.6 GFLOPS (128 runs)
+ 256 x  256: Q5_0    44.6 GFLOPS (128 runs) | Q5_1    40.6 GFLOPS (128 runs) | Q8_0    60.5 GFLOPS (128 runs)
+ 256 x  256: F16     50.8 GFLOPS (128 runs) | F32     37.3 GFLOPS (128 runs)
+ 512 x  512: Q4_0    61.1 GFLOPS (128 runs) | Q4_1    60.1 GFLOPS (128 runs)
+ 512 x  512: Q5_0    52.1 GFLOPS (128 runs) | Q5_1    46.8 GFLOPS (128 runs) | Q8_0    72.0 GFLOPS (128 runs)
+ 512 x  512: F16     58.8 GFLOPS (128 runs) | F32     41.3 GFLOPS (128 runs)
+1024 x 1024: Q4_0    66.9 GFLOPS ( 32 runs) | Q4_1    66.1 GFLOPS ( 31 runs)
+1024 x 1024: Q5_0    56.9 GFLOPS ( 27 runs) | Q5_1    50.7 GFLOPS ( 24 runs) | Q8_0    79.2 GFLOPS ( 37 runs)
+1024 x 1024: F16     62.8 GFLOPS ( 30 runs) | F32     40.7 GFLOPS ( 19 runs)
+2048 x 2048: Q4_0    70.3 GFLOPS (  5 runs) | Q4_1    69.0 GFLOPS (  5 runs)
+2048 x 2048: Q5_0    60.0 GFLOPS (  4 runs) | Q5_1    53.0 GFLOPS (  4 runs) | Q8_0    83.9 GFLOPS (  5 runs)
+2048 x 2048: F16     65.2 GFLOPS (  4 runs) | F32     40.3 GFLOPS (  3 runs)
+4096 x 4096: Q4_0    71.9 GFLOPS (  3 runs) | Q4_1    70.3 GFLOPS (  3 runs)
+4096 x 4096: Q5_0    61.4 GFLOPS (  3 runs) | Q5_1    54.2 GFLOPS (  3 runs) | Q8_0    85.8 GFLOPS (  3 runs)
+4096 x 4096: F16     63.0 GFLOPS (  3 runs) | F32     35.9 GFLOPS (  3 runs)
+```
+
+#### Model Benchmarks
+
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             AVX2 |          tiny |   4 |   0 |  932.89 |    2.69 |    1.60 |    1.37 | 73a8c5fb |
+|             AVX2 |          base |   4 |   0 | 2113.12 |    5.23 |    2.72 |    2.37 | 73a8c5fb |
+|             AVX2 |         small |   4 |   0 | 7663.94 |   14.81 |    7.75 |    6.67 | 73a8c5fb |
+
