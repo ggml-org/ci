@@ -1,0 +1,180 @@
+++ nproc
++ make -j4
+[  0%] Generating build details from Git
+[  1%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  2%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  2%] Built target sha256
+[  2%] Built target xxhash
+[  2%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  3%] Building CXX object tools/mtmd/CMakeFiles/llama-llava-cli.dir/deprecation-warning.cpp.o
+[  4%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  4%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  4%] Built target sha1
+[  4%] Linking CXX executable ../../bin/llama-llava-cli
+[  4%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  6%] Building CXX object tools/mtmd/CMakeFiles/llama-gemma3-cli.dir/deprecation-warning.cpp.o
+[  6%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  6%] Linking CXX executable ../../bin/llama-gemma3-cli
+[  6%] Built target build_info
+[  7%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  8%] Building CXX object tools/mtmd/CMakeFiles/llama-minicpmv-cli.dir/deprecation-warning.cpp.o
+[  8%] Linking CXX executable ../../bin/llama-minicpmv-cli
+[  8%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/gguf.cpp.o
+[  9%] Linking CXX shared library ../../bin/libggml-base.so
+[  9%] Built target llama-llava-cli
+[ 10%] Building CXX object tools/mtmd/CMakeFiles/llama-qwen2vl-cli.dir/deprecation-warning.cpp.o
+[ 10%] Linking CXX executable ../../bin/llama-qwen2vl-cli
+[ 10%] Built target llama-gemma3-cli
+[ 10%] Built target llama-minicpmv-cli
+[ 10%] Built target llama-qwen2vl-cli
+[ 10%] Built target ggml-base
+[ 10%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[ 12%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 13%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 13%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 13%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/binary-ops.cpp.o
+[ 14%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/unary-ops.cpp.o
+[ 14%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/vec.cpp.o
+[ 15%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ops.cpp.o
+[ 15%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.o
+[ 16%] Linking CXX shared library ../../bin/libggml-cpu.so
+[ 16%] Built target ggml-cpu
+[ 17%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 17%] Linking CXX shared library ../../bin/libggml.so
+[ 17%] Built target ggml
+[ 17%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 17%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/llama.dir/llama-adapter.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 18%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 19%] Linking CXX executable ../../bin/llama-gguf
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-arch.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-batch.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/llama.dir/llama-chat.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/llama.dir/llama-context.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/llama.dir/llama-cparams.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/llama.dir/llama-graph.cpp.o
+[ 23%] Building CXX object src/CMakeFiles/llama.dir/llama-hparams.cpp.o
+[ 23%] Building CXX object src/CMakeFiles/llama.dir/llama-impl.cpp.o
+[ 24%] Building CXX object src/CMakeFiles/llama.dir/llama-io.cpp.o
+[ 24%] Building CXX object src/CMakeFiles/llama.dir/llama-kv-cache.cpp.o
+[ 24%] Building CXX object src/CMakeFiles/llama.dir/llama-memory.cpp.o
+[ 25%] Building CXX object src/CMakeFiles/llama.dir/llama-mmap.cpp.o
+[ 25%] Built target llama-gguf-hash
+[ 25%] Built target llama-gguf
+[ 25%] Building CXX object src/CMakeFiles/llama.dir/llama-model-loader.cpp.o
+[ 26%] Building CXX object src/CMakeFiles/llama.dir/llama-model-saver.cpp.o
+[ 26%] Building CXX object src/CMakeFiles/llama.dir/llama-model.cpp.o
+[ 27%] Building CXX object src/CMakeFiles/llama.dir/llama-quant.cpp.o
+[ 27%] Building CXX object src/CMakeFiles/llama.dir/llama-sampling.cpp.o
+[ 27%] Building CXX object src/CMakeFiles/llama.dir/llama-vocab.cpp.o
+[ 28%] Building CXX object src/CMakeFiles/llama.dir/unicode-data.cpp.o
+[ 28%] Building CXX object src/CMakeFiles/llama.dir/unicode.cpp.o
+[ 29%] Linking CXX shared library ../bin/libllama.so
+[ 29%] Built target llama
+[ 29%] Building CXX object tools/mtmd/CMakeFiles/mtmd.dir/mtmd.cpp.o
+[ 29%] Building CXX object examples/simple/CMakeFiles/llama-simple.dir/simple.cpp.o
+[ 31%] Building CXX object common/CMakeFiles/common.dir/arg.cpp.o
+[ 31%] Building C object tests/CMakeFiles/test-c.dir/test-c.c.o
+[ 31%] Linking C executable ../bin/test-c
+[ 32%] Linking CXX executable ../../bin/llama-simple
+[ 33%] Building CXX object tools/mtmd/CMakeFiles/mtmd.dir/mtmd-audio.cpp.o
+[ 33%] Building CXX object tools/mtmd/CMakeFiles/mtmd.dir/clip.cpp.o
+[ 33%] Built target mtmd
+[ 33%] Building CXX object examples/simple-chat/CMakeFiles/llama-simple-chat.dir/simple-chat.cpp.o
+[ 33%] Built target test-c
+[ 33%] Building CXX object tools/mtmd/CMakeFiles/mtmd_helper.dir/mtmd-helper.cpp.o
+[ 34%] Linking CXX executable ../../bin/llama-simple-chat
+[ 34%] Built target mtmd_helper
+[ 34%] Linking CXX shared library ../../bin/libmtmd_shared.so
+[ 34%] Built target llama-simple
+[ 35%] Linking CXX shared library ../../bin/libmtmd_helper_shared.so
+[ 35%] Built target llama-simple-chat
+[ 35%] Building CXX object common/CMakeFiles/common.dir/chat-parser.cpp.o
+[ 35%] Built target mtmd_shared
+[ 36%] Building CXX object common/CMakeFiles/common.dir/chat.cpp.o
+[ 36%] Built target mtmd_helper_shared
+[ 36%] Building CXX object common/CMakeFiles/common.dir/common.cpp.o
+[ 36%] Building CXX object common/CMakeFiles/common.dir/console.cpp.o
+[ 37%] Building CXX object common/CMakeFiles/common.dir/json-partial.cpp.o
+[ 37%] Building CXX object common/CMakeFiles/common.dir/json-schema-to-grammar.cpp.o
+[ 38%] Building CXX object common/CMakeFiles/common.dir/llguidance.cpp.o
+[ 38%] Building CXX object common/CMakeFiles/common.dir/log.cpp.o
+[ 39%] Building CXX object common/CMakeFiles/common.dir/ngram-cache.cpp.o
+[ 39%] Building CXX object common/CMakeFiles/common.dir/regex-partial.cpp.o
+[ 39%] Building CXX object common/CMakeFiles/common.dir/sampling.cpp.o
+[ 40%] Building CXX object common/CMakeFiles/common.dir/speculative.cpp.o
+In file included from /home/ggml/work/llama.cpp/common/json-schema-to-grammar.cpp:1:
+/home/ggml/work/llama.cpp/common/json-schema-to-grammar.h:13:10: error: ‘function’ in namespace ‘std’ does not name a template type
+   13 |     std::function<std::string(const std::string &, const std::string &)> add_rule;
+      |          ^~~~~~~~
+/home/ggml/work/llama.cpp/common/json-schema-to-grammar.h:8:1: note: ‘std::function’ is defined in header ‘<functional>’; did you forget to ‘#include <functional>’?
+    7 | #include <nlohmann/json_fwd.hpp>
+  +++ |+#include <functional>
+    8 | 
+/home/ggml/work/llama.cpp/common/json-schema-to-grammar.h:14:10: error: ‘function’ in namespace ‘std’ does not name a template type
+   14 |     std::function<std::string(const std::string &, const nlohmann::ordered_json &)> add_schema;
+      |          ^~~~~~~~
+/home/ggml/work/llama.cpp/common/json-schema-to-grammar.h:14:5: note: ‘std::function’ is defined in header ‘<functional>’; did you forget to ‘#include <functional>’?
+   14 |     std::function<std::string(const std::string &, const nlohmann::ordered_json &)> add_schema;
+      |     ^~~
+/home/ggml/work/llama.cpp/common/json-schema-to-grammar.h:15:10: error: ‘function’ in namespace ‘std’ does not name a template type
+   15 |     std::function<void(nlohmann::ordered_json &)> resolve_refs;
+      |          ^~~~~~~~
+/home/ggml/work/llama.cpp/common/json-schema-to-grammar.h:15:5: note: ‘std::function’ is defined in header ‘<functional>’; did you forget to ‘#include <functional>’?
+   15 |     std::function<void(nlohmann::ordered_json &)> resolve_refs;
+      |     ^~~
+/home/ggml/work/llama.cpp/common/json-schema-to-grammar.h:22:38: error: ‘function’ in namespace ‘std’ does not name a template type
+   22 | std::string build_grammar(const std::function<void(const common_grammar_builder &)> & cb, const common_grammar_options & options = {});
+      |                                      ^~~~~~~~
+/home/ggml/work/llama.cpp/common/json-schema-to-grammar.h:22:33: note: ‘std::function’ is defined in header ‘<functional>’; did you forget to ‘#include <functional>’?
+   22 | std::string build_grammar(const std::function<void(const common_grammar_builder &)> & cb, const common_grammar_options & options = {});
+      |                                 ^~~
+/home/ggml/work/llama.cpp/common/json-schema-to-grammar.h:22:46: error: expected ‘,’ or ‘...’ before ‘<’ token
+   22 | std::string build_grammar(const std::function<void(const common_grammar_builder &)> & cb, const common_grammar_options & options = {});
+      |                                              ^
+/home/ggml/work/llama.cpp/common/json-schema-to-grammar.cpp: In lambda function:
+/home/ggml/work/llama.cpp/common/json-schema-to-grammar.cpp:1008:19: error: ‘const struct common_grammar_builder’ has no member named ‘resolve_refs’
+ 1008 |         callbacks.resolve_refs(copy);
+      |                   ^~~~~~~~~~~~
+/home/ggml/work/llama.cpp/common/json-schema-to-grammar.cpp:1009:19: error: ‘const struct common_grammar_builder’ has no member named ‘add_schema’
+ 1009 |         callbacks.add_schema("", copy);
+      |                   ^~~~~~~~~~
+/home/ggml/work/llama.cpp/common/json-schema-to-grammar.cpp: In function ‘std::string json_schema_to_grammar(const json&, bool)’:
+/home/ggml/work/llama.cpp/common/json-schema-to-grammar.cpp:1006:25: error: cannot convert ‘json_schema_to_grammar(const json&, bool)::<lambda(const common_grammar_builder&)>’ to ‘int’
+ 1006 |     return build_grammar([&](const common_grammar_builder & callbacks) {
+      |            ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                         |
+      |                         json_schema_to_grammar(const json&, bool)::<lambda(const common_grammar_builder&)>
+ 1007 |         auto copy = schema;
+      |         ~~~~~~~~~~~~~~~~~~~
+ 1008 |         callbacks.resolve_refs(copy);
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1009 |         callbacks.add_schema("", copy);
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1010 |     });
+      |     ~~                   
+In file included from /home/ggml/work/llama.cpp/common/json-schema-to-grammar.cpp:1:
+/home/ggml/work/llama.cpp/common/json-schema-to-grammar.h:22:27: note:   initializing argument 1 of ‘std::string build_grammar(int)’
+   22 | std::string build_grammar(const std::function<void(const common_grammar_builder &)> & cb, const common_grammar_options & options = {});
+      |                           ^~~~~~~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/common/json-schema-to-grammar.cpp: In function ‘std::string build_grammar(const std::function<void(const common_grammar_builder&)>&, const common_grammar_options&)’:
+/home/ggml/work/llama.cpp/common/json-schema-to-grammar.cpp:1025:5: error: too many initializers for ‘common_grammar_builder’
+ 1025 |     };
+      |     ^
+make[2]: *** [common/CMakeFiles/common.dir/build.make:160: common/CMakeFiles/common.dir/json-schema-to-grammar.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:1822: common/CMakeFiles/common.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m14.393s
+user	0m23.875s
+sys	0m2.204s
