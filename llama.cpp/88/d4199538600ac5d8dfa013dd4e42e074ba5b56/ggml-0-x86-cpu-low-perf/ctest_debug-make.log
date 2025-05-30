@@ -1,0 +1,214 @@
+++ nproc
++ make -j4
+[  0%] Generating build details from Git
+[  1%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  1%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  2%] Built target sha256
+[  2%] Built target xxhash
+[  3%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  3%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  3%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  3%] Building CXX object tools/mtmd/CMakeFiles/llama-llava-cli.dir/deprecation-warning.cpp.o
+[  3%] Built target sha1
+[  4%] Linking CXX executable ../../bin/llama-llava-cli
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  5%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  5%] Building CXX object tools/mtmd/CMakeFiles/llama-gemma3-cli.dir/deprecation-warning.cpp.o
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  6%] Linking CXX executable ../../bin/llama-gemma3-cli
+[  7%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  7%] Built target build_info
+[  7%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/gguf.cpp.o
+[  7%] Building CXX object tools/mtmd/CMakeFiles/llama-minicpmv-cli.dir/deprecation-warning.cpp.o
+[  8%] Linking CXX shared library ../../bin/libggml-base.so
+[  8%] Linking CXX executable ../../bin/llama-minicpmv-cli
+[  8%] Built target llama-llava-cli
+[  8%] Building CXX object tools/mtmd/CMakeFiles/llama-qwen2vl-cli.dir/deprecation-warning.cpp.o
+[  8%] Built target llama-gemma3-cli
+[  9%] Linking CXX executable ../../bin/llama-qwen2vl-cli
+[  9%] Built target llama-minicpmv-cli
+[  9%] Built target llama-qwen2vl-cli
+[  9%] Built target ggml-base
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[ 10%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[ 12%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 13%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 13%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/binary-ops.cpp.o
+[ 14%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/unary-ops.cpp.o
+[ 14%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/vec.cpp.o
+[ 14%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ops.cpp.o
+[ 15%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.o
+[ 15%] Linking CXX shared library ../../bin/libggml-cpu.so
+[ 15%] Built target ggml-cpu
+[ 16%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 16%] Linking CXX shared library ../../bin/libggml.so
+[ 16%] Built target ggml
+[ 16%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 16%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/llama.dir/llama-adapter.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 18%] Linking CXX executable ../../bin/llama-gguf
+[ 18%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-arch.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-batch.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-chat.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-context.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-cparams.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/llama.dir/llama-graph.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/llama.dir/llama-hparams.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/llama.dir/llama-impl.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/llama.dir/llama-io.cpp.o
+[ 23%] Building CXX object src/CMakeFiles/llama.dir/llama-kv-cache.cpp.o
+[ 23%] Building CXX object src/CMakeFiles/llama.dir/llama-kv-cache-unified.cpp.o
+[ 24%] Building CXX object src/CMakeFiles/llama.dir/llama-kv-cache-unified-iswa.cpp.o
+[ 24%] Building CXX object src/CMakeFiles/llama.dir/llama-kv-cache-recurrent.cpp.o
+[ 24%] Building CXX object src/CMakeFiles/llama.dir/llama-memory.cpp.o
+[ 24%] Built target llama-gguf-hash
+[ 24%] Built target llama-gguf
+[ 25%] Building CXX object src/CMakeFiles/llama.dir/llama-mmap.cpp.o
+[ 25%] Building CXX object src/CMakeFiles/llama.dir/llama-model-loader.cpp.o
+[ 26%] Building CXX object src/CMakeFiles/llama.dir/llama-model-saver.cpp.o
+[ 26%] Building CXX object src/CMakeFiles/llama.dir/llama-model.cpp.o
+[ 27%] Building CXX object src/CMakeFiles/llama.dir/llama-quant.cpp.o
+[ 27%] Building CXX object src/CMakeFiles/llama.dir/llama-sampling.cpp.o
+[ 27%] Building CXX object src/CMakeFiles/llama.dir/llama-vocab.cpp.o
+[ 28%] Building CXX object src/CMakeFiles/llama.dir/unicode-data.cpp.o
+[ 28%] Building CXX object src/CMakeFiles/llama.dir/unicode.cpp.o
+/home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp: In member function ‘virtual bool llama_kv_cache_recurrent::seq_rm(llama_seq_id, llama_pos, llama_pos)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp:141:19: error: ‘numeric_limits’ is not a member of ‘std’
+  141 |         p1 = std::numeric_limits<llama_pos>::max();
+      |                   ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp:141:43: error: expected primary-expression before ‘>’ token
+  141 |         p1 = std::numeric_limits<llama_pos>::max();
+      |                                           ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp:141:46: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  141 |         p1 = std::numeric_limits<llama_pos>::max();
+      |                                              ^~~
+      |                                              std::max
+In file included from /usr/include/c++/11/functional:65,
+                 from /home/ggml/work/llama.cpp/src/llama-graph.h:11,
+                 from /home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.h:4,
+                 from /home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp:1:
+/usr/include/c++/11/bits/stl_algo.h:3467:5: note: ‘std::max’ declared here
+ 3467 |     max(initializer_list<_Tp> __l, _Compare __comp)
+      |     ^~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp:164:48: error: ‘numeric_limits’ is not a member of ‘std’
+  164 |         if (p0 != p1 && (p0 != 0 || p1 != std::numeric_limits<llama_pos>::max())) {
+      |                                                ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp:164:72: error: expected primary-expression before ‘>’ token
+  164 |         if (p0 != p1 && (p0 != 0 || p1 != std::numeric_limits<llama_pos>::max())) {
+      |                                                                        ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp:164:75: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  164 |         if (p0 != p1 && (p0 != 0 || p1 != std::numeric_limits<llama_pos>::max())) {
+      |                                                                           ^~~
+      |                                                                           std::max
+In file included from /usr/include/c++/11/functional:65,
+                 from /home/ggml/work/llama.cpp/src/llama-graph.h:11,
+                 from /home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.h:4,
+                 from /home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp:1:
+/usr/include/c++/11/bits/stl_algo.h:3467:5: note: ‘std::max’ declared here
+ 3467 |     max(initializer_list<_Tp> __l, _Compare __comp)
+      |     ^~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp: In member function ‘virtual void llama_kv_cache_recurrent::seq_cp(llama_seq_id, llama_seq_id, llama_pos, llama_pos)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp:210:19: error: ‘numeric_limits’ is not a member of ‘std’
+  210 |         p1 = std::numeric_limits<llama_pos>::max();
+      |                   ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp:210:43: error: expected primary-expression before ‘>’ token
+  210 |         p1 = std::numeric_limits<llama_pos>::max();
+      |                                           ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp:210:46: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  210 |         p1 = std::numeric_limits<llama_pos>::max();
+      |                                              ^~~
+      |                                              std::max
+In file included from /usr/include/c++/11/functional:65,
+                 from /home/ggml/work/llama.cpp/src/llama-graph.h:11,
+                 from /home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.h:4,
+                 from /home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp:1:
+/usr/include/c++/11/bits/stl_algo.h:3467:5: note: ‘std::max’ declared here
+ 3467 |     max(initializer_list<_Tp> __l, _Compare __comp)
+      |     ^~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp: In member function ‘virtual void llama_kv_cache_recurrent::seq_add(llama_seq_id, llama_pos, llama_pos, llama_pos)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp:279:19: error: ‘numeric_limits’ is not a member of ‘std’
+  279 |         p1 = std::numeric_limits<llama_pos>::max();
+      |                   ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp:279:43: error: expected primary-expression before ‘>’ token
+  279 |         p1 = std::numeric_limits<llama_pos>::max();
+      |                                           ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp:279:46: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  279 |         p1 = std::numeric_limits<llama_pos>::max();
+      |                                              ^~~
+      |                                              std::max
+In file included from /usr/include/c++/11/functional:65,
+                 from /home/ggml/work/llama.cpp/src/llama-graph.h:11,
+                 from /home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.h:4,
+                 from /home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp:1:
+/usr/include/c++/11/bits/stl_algo.h:3467:5: note: ‘std::max’ declared here
+ 3467 |     max(initializer_list<_Tp> __l, _Compare __comp)
+      |     ^~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp: In member function ‘virtual void llama_kv_cache_recurrent::seq_div(llama_seq_id, llama_pos, llama_pos, int)’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp:309:19: error: ‘numeric_limits’ is not a member of ‘std’
+  309 |         p1 = std::numeric_limits<llama_pos>::max();
+      |                   ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp:309:43: error: expected primary-expression before ‘>’ token
+  309 |         p1 = std::numeric_limits<llama_pos>::max();
+      |                                           ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp:309:46: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  309 |         p1 = std::numeric_limits<llama_pos>::max();
+      |                                              ^~~
+      |                                              std::max
+In file included from /usr/include/c++/11/functional:65,
+                 from /home/ggml/work/llama.cpp/src/llama-graph.h:11,
+                 from /home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.h:4,
+                 from /home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp:1:
+/usr/include/c++/11/bits/stl_algo.h:3467:5: note: ‘std::max’ declared here
+ 3467 |     max(initializer_list<_Tp> __l, _Compare __comp)
+      |     ^~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp: In member function ‘virtual llama_pos llama_kv_cache_recurrent::seq_pos_min(llama_seq_id) const’:
+/home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp:330:29: error: ‘numeric_limits’ is not a member of ‘std’
+  330 |     llama_pos result = std::numeric_limits<llama_pos>::max();
+      |                             ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp:330:53: error: expected primary-expression before ‘>’ token
+  330 |     llama_pos result = std::numeric_limits<llama_pos>::max();
+      |                                                     ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp:330:56: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  330 |     llama_pos result = std::numeric_limits<llama_pos>::max();
+      |                                                        ^~~
+      |                                                        std::max
+In file included from /usr/include/c++/11/functional:65,
+                 from /home/ggml/work/llama.cpp/src/llama-graph.h:11,
+                 from /home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.h:4,
+                 from /home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp:1:
+/usr/include/c++/11/bits/stl_algo.h:3467:5: note: ‘std::max’ declared here
+ 3467 |     max(initializer_list<_Tp> __l, _Compare __comp)
+      |     ^~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp:338:24: error: ‘numeric_limits’ is not a member of ‘std’
+  338 |     if (result == std::numeric_limits<llama_pos>::max()) {
+      |                        ^~~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp:338:48: error: expected primary-expression before ‘>’ token
+  338 |     if (result == std::numeric_limits<llama_pos>::max()) {
+      |                                                ^
+/home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp:338:51: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+  338 |     if (result == std::numeric_limits<llama_pos>::max()) {
+      |                                                   ^~~
+      |                                                   std::max
+In file included from /usr/include/c++/11/functional:65,
+                 from /home/ggml/work/llama.cpp/src/llama-graph.h:11,
+                 from /home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.h:4,
+                 from /home/ggml/work/llama.cpp/src/llama-kv-cache-recurrent.cpp:1:
+/usr/include/c++/11/bits/stl_algo.h:3467:5: note: ‘std::max’ declared here
+ 3467 |     max(initializer_list<_Tp> __l, _Compare __comp)
+      |     ^~~
+make[2]: *** [src/CMakeFiles/llama.dir/build.make:286: src/CMakeFiles/llama.dir/llama-kv-cache-recurrent.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1766: src/CMakeFiles/llama.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m1.178s
+user	0m1.648s
+sys	0m0.532s
