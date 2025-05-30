@@ -1,0 +1,169 @@
+++ nproc
++ make -j32
+[  0%] Generating build details from Git
+[  0%] Building CXX object tools/mtmd/CMakeFiles/llama-qwen2vl-cli.dir/deprecation-warning.cpp.o
+[  0%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  1%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  3%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  3%] Building CXX object tools/mtmd/CMakeFiles/llama-llava-cli.dir/deprecation-warning.cpp.o
+[  4%] Building CXX object tools/mtmd/CMakeFiles/llama-gemma3-cli.dir/deprecation-warning.cpp.o
+[  5%] Building CXX object tools/mtmd/CMakeFiles/llama-minicpmv-cli.dir/deprecation-warning.cpp.o
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/gguf.cpp.o
+[  5%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  6%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  6%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  7%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  7%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  7%] Linking CXX executable ../../bin/llama-gemma3-cli
+[  8%] Linking CXX executable ../../bin/llama-llava-cli
+[  8%] Built target sha1
+[  8%] Built target xxhash
+[  8%] Linking CXX executable ../../bin/llama-qwen2vl-cli
+[  8%] Linking CXX executable ../../bin/llama-minicpmv-cli
+[  8%] Built target sha256
+[  9%] Linking CXX shared library ../../bin/libggml-base.so
+[  9%] Built target llama-qwen2vl-cli
+[  9%] Built target llama-gemma3-cli
+[  9%] Built target llama-llava-cli
+[  9%] Built target llama-minicpmv-cli
+[  9%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  9%] Built target ggml-base
+[ 10%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/binbcast.cpp.o
+[ 10%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 12%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/conv.cpp.o
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[ 13%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 14%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/convert.cpp.o
+[ 14%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/cpy.cpp.o
+[ 14%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/ggml-sycl.cpp.o
+[ 14%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[ 14%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ops.cpp.o
+[ 14%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/element_wise.cpp.o
+[ 14%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/gla.cpp.o
+[ 14%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/common.cpp.o
+[ 15%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[ 15%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[ 16%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/im2col.cpp.o
+[ 16%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/concat.cpp.o
+[ 16%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/mmvq.cpp.o
+[ 16%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/outprod.cpp.o
+[ 16%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/binary-ops.cpp.o
+[ 17%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/rope.cpp.o
+[ 19%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/unary-ops.cpp.o
+[ 19%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/vec.cpp.o
+[ 19%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/mmq.cpp.o
+[ 19%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/dmmv.cpp.o
+[ 21%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.o
+[ 21%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/norm.cpp.o
+[ 21%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/softmax.cpp.o
+[ 19%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/getrows.cpp.o
+[ 21%] Built target build_info
+[ 21%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/sycl_hw.cpp.o
+[ 21%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/wkv.cpp.o
+[ 22%] Building CXX object ggml/src/ggml-sycl/CMakeFiles/ggml-sycl.dir/tsembd.cpp.o
+[ 22%] Linking CXX shared library ../../bin/libggml-cpu.so
+[ 22%] Linking CXX shared library ../../../bin/libggml-sycl.so
+[ 22%] Built target ggml-cpu
+[ 22%] Built target ggml-sycl
+[ 22%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 22%] Linking CXX shared library ../../bin/libggml.so
+[ 22%] Built target ggml
+[ 22%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 23%] Building CXX object src/CMakeFiles/llama.dir/llama-context.cpp.o
+[ 23%] Building CXX object src/CMakeFiles/llama.dir/llama-graph.cpp.o
+[ 24%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+[ 24%] Building CXX object src/CMakeFiles/llama.dir/llama-cparams.cpp.o
+[ 25%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 26%] Building CXX object src/CMakeFiles/llama.dir/llama-model-loader.cpp.o
+[ 26%] Building CXX object src/CMakeFiles/llama.dir/llama-mmap.cpp.o
+[ 26%] Building CXX object src/CMakeFiles/llama.dir/llama-adapter.cpp.o
+[ 26%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 26%] Building CXX object src/CMakeFiles/llama.dir/llama-hparams.cpp.o
+[ 27%] Building CXX object src/CMakeFiles/llama.dir/llama-arch.cpp.o
+[ 27%] Building CXX object src/CMakeFiles/llama.dir/llama-batch.cpp.o
+[ 27%] Building CXX object src/CMakeFiles/llama.dir/llama-model-saver.cpp.o
+[ 27%] Building CXX object src/CMakeFiles/llama.dir/llama-chat.cpp.o
+[ 29%] Building CXX object src/CMakeFiles/llama.dir/llama-vocab.cpp.o
+[ 28%] Building CXX object src/CMakeFiles/llama.dir/llama-impl.cpp.o
+[ 29%] Building CXX object src/CMakeFiles/llama.dir/llama-sampling.cpp.o
+[ 29%] Building CXX object src/CMakeFiles/llama.dir/unicode-data.cpp.o
+[ 29%] Building CXX object src/CMakeFiles/llama.dir/llama-io.cpp.o
+[ 29%] Building CXX object src/CMakeFiles/llama.dir/llama-kv-cache.cpp.o
+[ 29%] Building CXX object src/CMakeFiles/llama.dir/unicode.cpp.o
+[ 30%] Building CXX object src/CMakeFiles/llama.dir/llama-quant.cpp.o
+[ 30%] Building CXX object src/CMakeFiles/llama.dir/llama-model.cpp.o
+[ 31%] Building CXX object src/CMakeFiles/llama.dir/llama-memory.cpp.o
+[ 32%] Linking CXX executable ../../bin/llama-gguf
+[ 33%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 34%] Linking CXX shared library ../bin/libllama.so
+[ 34%] Built target llama
+[ 34%] Building CXX object tools/mtmd/CMakeFiles/mtmd.dir/clip.cpp.o
+[ 34%] Building CXX object examples/simple/CMakeFiles/llama-simple.dir/simple.cpp.o
+[ 34%] Building CXX object common/CMakeFiles/common.dir/chat.cpp.o
+[ 34%] Building CXX object tools/mtmd/CMakeFiles/mtmd.dir/mtmd.cpp.o
+[ 34%] Building CXX object common/CMakeFiles/common.dir/ngram-cache.cpp.o
+[ 35%] Building CXX object common/CMakeFiles/common.dir/regex-partial.cpp.o
+[ 35%] Building C object tests/CMakeFiles/test-c.dir/test-c.c.o
+[ 36%] Building CXX object common/CMakeFiles/common.dir/arg.cpp.o
+[ 37%] Building CXX object examples/simple-chat/CMakeFiles/llama-simple-chat.dir/simple-chat.cpp.o
+[ 37%] Building CXX object common/CMakeFiles/common.dir/chat-parser.cpp.o
+[ 38%] Building CXX object tools/mtmd/CMakeFiles/mtmd.dir/mtmd-audio.cpp.o
+[ 39%] Building CXX object common/CMakeFiles/common.dir/common.cpp.o
+[ 39%] Building CXX object common/CMakeFiles/common.dir/speculative.cpp.o
+[ 40%] Building CXX object common/CMakeFiles/common.dir/json-partial.cpp.o
+[ 40%] Building CXX object common/CMakeFiles/common.dir/console.cpp.o
+[ 40%] Building CXX object common/CMakeFiles/common.dir/llguidance.cpp.o
+[ 40%] Building CXX object common/CMakeFiles/common.dir/json-schema-to-grammar.cpp.o
+[ 41%] Building CXX object common/CMakeFiles/common.dir/log.cpp.o
+[ 41%] Building CXX object common/CMakeFiles/common.dir/sampling.cpp.o
+[ 41%] Linking CXX executable ../../bin/llama-simple
+[ 41%] Linking CXX executable ../../bin/llama-simple-chat
+[ 42%] Linking C executable ../bin/test-c
+[ 42%] Built target mtmd
+[ 43%] Building CXX object tools/mtmd/CMakeFiles/mtmd_helper.dir/mtmd-helper.cpp.o
+[ 43%] Linking CXX shared library ../../bin/libmtmd_shared.so
+[ 43%] Linking CXX shared library ../../bin/libmtmd_helper_shared.so
+[ 43%] Built target llama-gguf
+[ 43%] Built target mtmd_helper
+[ 43%] Built target llama-gguf-hash
+[ 43%] Built target mtmd_helper_shared
+[ 43%] Built target mtmd_shared
+[ 43%] Built target test-c
+[ 43%] Built target llama-simple-chat
+[ 43%] Built target llama-simple
+In file included from /home/ggml/work/llama.cpp/common/json-schema-to-grammar.cpp:1:
+/home/ggml/work/llama.cpp/common/json-schema-to-grammar.h:13:10: error: no template named 'function' in namespace 'std'
+   13 |     std::function<std::string(const std::string &, const std::string &)> add_rule;
+      |     ~~~~~^
+/home/ggml/work/llama.cpp/common/json-schema-to-grammar.h:14:10: error: no template named 'function' in namespace 'std'
+   14 |     std::function<std::string(const std::string &, const nlohmann::ordered_json &)> add_schema;
+      |     ~~~~~^
+/home/ggml/work/llama.cpp/common/json-schema-to-grammar.h:15:10: error: no template named 'function' in namespace 'std'
+   15 |     std::function<void(nlohmann::ordered_json &)> resolve_refs;
+      |     ~~~~~^
+/home/ggml/work/llama.cpp/common/json-schema-to-grammar.h:22:38: error: no template named 'function' in namespace 'std'
+   22 | std::string build_grammar(const std::function<void(const common_grammar_builder &)> & cb, const common_grammar_options & options = {});
+      |                                 ~~~~~^
+In file included from /home/ggml/work/llama.cpp/common/json-schema-to-grammar.cpp:4:
+/home/ggml/work/llama.cpp/common/../vendor/nlohmann/json.hpp:19643:26: warning: result of comparison of constant 400 with expression of type 'const std::uint8_t' (aka 'const unsigned char') is always true [-Wtautological-constant-out-of-range-compare]
+ 19643 |         JSON_ASSERT(byte < utf8d.size());
+       |                     ~~~~ ^ ~~~~~~~~~~~~
+/home/ggml/work/llama.cpp/common/json-schema-to-grammar.h:6:21: note: expanded from macro 'JSON_ASSERT'
+    6 | #define JSON_ASSERT GGML_ASSERT
+      |                     ^
+/home/ggml/work/llama.cpp/ggml/src/../include/ggml.h:267:30: note: expanded from macro 'GGML_ASSERT'
+  267 | #define GGML_ASSERT(x) if (!(x)) GGML_ABORT("GGML_ASSERT(%s) failed", #x)
+      |                              ^
+1 warning and 4 errors generated.
+make[2]: *** [common/CMakeFiles/common.dir/build.make:160: common/CMakeFiles/common.dir/json-schema-to-grammar.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:1887: common/CMakeFiles/common.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
+
+real	0m11,990s
+user	0m19,385s
+sys	0m2,605s
