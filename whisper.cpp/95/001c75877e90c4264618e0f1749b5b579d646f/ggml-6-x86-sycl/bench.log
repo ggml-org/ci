@@ -1,0 +1,57 @@
+Running memcpy benchmark
+memcpy:   18.78 GB/s (heat-up)
+memcpy:   22.80 GB/s ( 1 thread)
+memcpy:   22.78 GB/s ( 1 thread)
+memcpy:   32.45 GB/s ( 2 thread)
+memcpy:   34.91 GB/s ( 3 thread)
+memcpy:   35.79 GB/s ( 4 thread)
+sum:    -3071997587.000000
+Running ggml_mul_mat benchmark with 4 threads
+  64 x   64: Q4_0    40.5 GFLOPS (128 runs) | Q4_1    40.9 GFLOPS (128 runs)
+  64 x   64: Q5_0    36.8 GFLOPS (128 runs) | Q5_1    37.2 GFLOPS (128 runs) | Q8_0    44.0 GFLOPS (128 runs)
+  64 x   64: F16     35.7 GFLOPS (128 runs) | F32     82.0 GFLOPS (128 runs)
+ 128 x  128: Q4_0   133.1 GFLOPS (128 runs) | Q4_1   128.8 GFLOPS (128 runs)
+ 128 x  128: Q5_0   123.5 GFLOPS (128 runs) | Q5_1   119.1 GFLOPS (128 runs) | Q8_0   152.0 GFLOPS (128 runs)
+ 128 x  128: F16    136.3 GFLOPS (128 runs) | F32    174.8 GFLOPS (128 runs)
+ 256 x  256: Q4_0   236.3 GFLOPS (128 runs) | Q4_1   225.2 GFLOPS (128 runs)
+ 256 x  256: Q5_0   197.0 GFLOPS (128 runs) | Q5_1   187.7 GFLOPS (128 runs) | Q8_0   264.1 GFLOPS (128 runs)
+ 256 x  256: F16    194.1 GFLOPS (128 runs) | F32    225.2 GFLOPS (128 runs)
+ 512 x  512: Q4_0   290.0 GFLOPS (128 runs) | Q4_1   277.4 GFLOPS (128 runs)
+ 512 x  512: Q5_0   221.2 GFLOPS (128 runs) | Q5_1   211.4 GFLOPS (128 runs) | Q8_0   322.0 GFLOPS (128 runs)
+ 512 x  512: F16    218.4 GFLOPS (128 runs) | F32    253.0 GFLOPS (128 runs)
+1024 x 1024: Q4_0   304.6 GFLOPS (128 runs) | Q4_1   296.9 GFLOPS (128 runs)
+1024 x 1024: Q5_0    72.0 GFLOPS ( 34 runs) | Q5_1   140.5 GFLOPS ( 66 runs) | Q8_0   335.3 GFLOPS (128 runs)
+1024 x 1024: F16    226.1 GFLOPS (106 runs) | F32    235.8 GFLOPS (110 runs)
+2048 x 2048: Q4_0    83.8 GFLOPS (  5 runs) | Q4_1   185.6 GFLOPS ( 11 runs)
+2048 x 2048: Q5_0   227.3 GFLOPS ( 14 runs) | Q5_1   209.7 GFLOPS ( 13 runs) | Q8_0   222.2 GFLOPS ( 13 runs)
+2048 x 2048: F16    135.6 GFLOPS (  8 runs) | F32    231.1 GFLOPS ( 14 runs)
+4096 x 4096: Q4_0   325.9 GFLOPS (  3 runs) | Q4_1   241.9 GFLOPS (  3 runs)
+4096 x 4096: Q5_0   250.7 GFLOPS (  3 runs) | Q5_1   208.3 GFLOPS (  3 runs) | Q8_0   340.6 GFLOPS (  3 runs)
+4096 x 4096: F16    222.4 GFLOPS (  3 runs) | F32    130.0 GFLOPS (  3 runs)
+Running benchmark for all models
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+Benchmarking model: tiny.en
+|             AVX2 |       tiny.en |   4 |   0 |   16.29 |    5.38 |    1.90 |    0.05 | 95001c75 |
+Benchmarking model: tiny
+|             AVX2 |          tiny |   4 |   0 |   16.20 |    5.43 |    1.91 |    0.05 | 95001c75 |
+Benchmarking model: base.en
+|             AVX2 |       base.en |   4 |   0 |   27.03 |    7.95 |    2.77 |    0.07 | 95001c75 |
+Benchmarking model: base
+|             AVX2 |          base |   4 |   0 |   27.02 |    7.95 |    2.76 |    0.07 | 95001c75 |
+Benchmarking model: small.en
+|             AVX2 |      small.en |   4 |   0 |   66.27 |   16.17 |    5.48 |    0.15 | 95001c75 |
+Benchmarking model: small
+|             AVX2 |         small |   4 |   0 |   65.88 |   16.17 |    5.48 |    0.15 | 95001c75 |
+Benchmarking model: medium.en
+|             AVX2 |     medium.en |   4 |   0 |  160.29 |   31.33 |   10.99 |    0.33 | 95001c75 |
+Benchmarking model: medium
+|             AVX2 |        medium |   4 |   0 |  160.16 |   31.36 |   11.01 |    0.33 | 95001c75 |
+Benchmarking model: large-v1
+|             AVX2 |      large-v1 |   4 |   0 |  252.92 |   42.13 |   14.98 |    0.48 | 95001c75 |
+Benchmarking model: large-v2
+Benchmark failed for model: large-v2
+Benchmarking model: large-v3
+|             AVX2 |      large-v3 |   4 |   0 |  253.53 |   42.22 |   14.97 |    0.48 | 95001c75 |
+Benchmarking model: large-v3-turbo
+|             AVX2 | large-v3-turbo |   4 |   0 |  229.37 |    6.01 |    2.17 |    0.07 | 95001c75 |
