@@ -1,0 +1,146 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 2:34.19
+- date:    Sun Jun  1 09:20:38 UTC 2025
+- repo:    https://github.com/ggerganov/whisper.cpp
+- commit:  https://github.com/ggerganov/whisper.cpp/commit/0251445005a3ea9db60bd5f47a3470f08a2414ca
+- author:  KITAITI Makoto
+```
+ruby : add Core ML support (#3214)
+
+* Prevent overflow
+
+* Fix memsize of Whisper::Context
+
+* Rename xxx_initialize to more Ruby-esque name: xxx_s_new
+
+* Define Whisper::Model::ZipURI
+
+* Define Whisper::Model.coreml_compiled_models
+
+* Make Options' @cmake_options Hash
+
+* Use --{enable,disable}-whisper-coreml option for -I/opt/homebrew/opt/llvm/include
+
+* Prepare Core ML model if enabled
+
+* Add test for ZipURI
+
+* Add signatures for ZipURI
+
+* Add Whisper.system_info_str
+
+* Add test for Whisper.system_info_str
+
+* Add signagure for Model.coreml_compiled_models
+
+* Add signature for Whisper.system_info_str
+
+* Add test for Core ML
+
+* Update date
+
+* Maintain .gitignore
+```
+
+## Environment
+
+```
+GG_BUILD_CLOUD=1
+GG_BUILD_CUDA=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-debug
+No tests were found!!!
+
+real	0m0.034s
+user	0m0.025s
+sys	0m0.009s
+```
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-release
+No tests were found!!!
+
+real	0m0.038s
+user	0m0.025s
+sys	0m0.013s
+```
+### bench
+
+Whisper Benchmark Results
+- status: 0
+#### memcpy Benchmark
+
+```
+memcpy:   10.56 GB/s (heat-up)
+memcpy:   10.54 GB/s ( 1 thread)
+memcpy:   10.62 GB/s ( 1 thread)
+memcpy:   20.03 GB/s ( 2 thread)
+memcpy:   24.66 GB/s ( 3 thread)
+memcpy:   26.89 GB/s ( 4 thread)
+sum:    -3071998724.000000
+```
+
+#### ggml_mul_mat Benchmark
+
+```
+ggml_cuda_init: GGML_CUDA_FORCE_MMQ:    no
+ggml_cuda_init: GGML_CUDA_FORCE_CUBLAS: no
+ggml_cuda_init: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0, VMM: yes
+  64 x   64: Q4_0    18.8 GFLOPS (128 runs) | Q4_1    19.0 GFLOPS (128 runs)
+  64 x   64: Q5_0    17.2 GFLOPS (128 runs) | Q5_1    18.0 GFLOPS (128 runs) | Q8_0    19.8 GFLOPS (128 runs)
+  64 x   64: F16     20.6 GFLOPS (128 runs) | F32      9.4 GFLOPS (128 runs)
+ 128 x  128: Q4_0    39.7 GFLOPS (128 runs) | Q4_1    40.9 GFLOPS (128 runs)
+ 128 x  128: Q5_0    32.3 GFLOPS (128 runs) | Q5_1    32.5 GFLOPS (128 runs) | Q8_0    46.3 GFLOPS (128 runs)
+ 128 x  128: F16     34.5 GFLOPS (128 runs) | F32     21.8 GFLOPS (128 runs)
+ 256 x  256: Q4_0    54.9 GFLOPS (128 runs) | Q4_1    51.5 GFLOPS (128 runs)
+ 256 x  256: Q5_0    40.2 GFLOPS (128 runs) | Q5_1    45.7 GFLOPS (128 runs) | Q8_0    50.0 GFLOPS (128 runs)
+ 256 x  256: F16     47.5 GFLOPS (128 runs) | F32     32.6 GFLOPS (128 runs)
+ 512 x  512: Q4_0    67.7 GFLOPS (128 runs) | Q4_1    67.0 GFLOPS (128 runs)
+ 512 x  512: Q5_0    61.1 GFLOPS (128 runs) | Q5_1    57.7 GFLOPS (128 runs) | Q8_0    85.2 GFLOPS (128 runs)
+ 512 x  512: F16     73.3 GFLOPS (128 runs) | F32     39.2 GFLOPS (128 runs)
+1024 x 1024: Q4_0    81.3 GFLOPS ( 38 runs) | Q4_1    83.0 GFLOPS ( 39 runs)
+1024 x 1024: Q5_0    70.3 GFLOPS ( 33 runs) | Q5_1    66.0 GFLOPS ( 31 runs) | Q8_0   100.1 GFLOPS ( 47 runs)
+1024 x 1024: F16     77.3 GFLOPS ( 37 runs) | F32     41.6 GFLOPS ( 20 runs)
+2048 x 2048: Q4_0    88.9 GFLOPS (  6 runs) | Q4_1    90.2 GFLOPS (  6 runs)
+2048 x 2048: Q5_0    73.6 GFLOPS (  5 runs) | Q5_1    73.0 GFLOPS (  5 runs) | Q8_0   107.9 GFLOPS (  7 runs)
+2048 x 2048: F16     80.3 GFLOPS (  5 runs) | F32     42.6 GFLOPS (  3 runs)
+4096 x 4096: Q4_0    94.6 GFLOPS (  3 runs) | Q4_1    96.0 GFLOPS (  3 runs)
+4096 x 4096: Q5_0    76.8 GFLOPS (  3 runs) | Q5_1    76.4 GFLOPS (  3 runs) | Q8_0   115.7 GFLOPS (  3 runs)
+4096 x 4096: F16     80.8 GFLOPS (  3 runs) | F32     36.3 GFLOPS (  3 runs)
+```
+
+#### Model Benchmarks
+
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             AVX2 |       tiny.en |   4 |   0 |    6.38 |    1.05 |    0.29 |    0.01 | 02514450 |
+|             AVX2 |          tiny |   4 |   0 |    6.09 |    1.02 |    0.30 |    0.01 | 02514450 |
+|             AVX2 |       base.en |   4 |   0 |   10.95 |    1.48 |    0.42 |    0.02 | 02514450 |
+|             AVX2 |          base |   4 |   0 |   10.96 |    1.45 |    0.43 |    0.02 | 02514450 |
+|             AVX2 |      small.en |   4 |   0 |   31.05 |    2.78 |    0.85 |    0.04 | 02514450 |
+|             AVX2 |         small |   4 |   0 |   31.08 |    2.82 |    0.89 |    0.04 | 02514450 |
+|             AVX2 |     medium.en |   4 |   0 |   83.98 |    6.08 |    1.84 |    0.09 | 02514450 |
+|             AVX2 |        medium |   4 |   0 |   84.01 |    6.03 |    1.84 |    0.09 | 02514450 |
+|             AVX2 |      large-v1 |   4 |   0 |  138.54 |    8.82 |    2.74 |    0.15 | 02514450 |
+|             AVX2 |      large-v2 |   4 |   0 |  138.71 |    8.85 |    2.74 |    0.15 | 02514450 |
+|             AVX2 |      large-v3 |   4 |   0 |  138.98 |    8.67 |    2.69 |    0.15 | 02514450 |
+|             AVX2 | large-v3-turbo |   4 |   0 |  128.30 |    1.41 |    0.44 |    0.02 | 02514450 |
+
