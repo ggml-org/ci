@@ -1,0 +1,1798 @@
++ gg_run_ctest ctest debug
++ mode=debug
++ cd /home/ggml/work/whisper.cpp
++ tee /home/ggml/results/whisper.cpp/b5/055396706a0a597b6de6d8d9e15be6da5f75a6/ggml-1-arm64-cpu-low-perf/ctest_debug.log
++ rm -rf build-ci-debug
++ mkdir build-ci-debug
++ cd build-ci-debug
++ set -e
++ gg_check_build_requirements
++ command -v cmake
++ command -v make
++ tee -a /home/ggml/results/whisper.cpp/b5/055396706a0a597b6de6d8d9e15be6da5f75a6/ggml-1-arm64-cpu-low-perf/ctest_debug-cmake.log
++ cmake -DCMAKE_BUILD_TYPE=debug -DWHISPER_FATAL_WARNINGS=ON ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: aarch64
+-- GGML_SYSTEM_ARCH: ARM
+-- Including CPU backend
+-- Found OpenMP_C: -fopenmp (found version "4.5") 
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5")  
+-- ARM detected
+-- Performing Test GGML_COMPILER_SUPPORTS_FP16_FORMAT_I3E
+-- Performing Test GGML_COMPILER_SUPPORTS_FP16_FORMAT_I3E - Failed
+-- Performing Test GGML_MACHINE_SUPPORTS_dotprod
+-- Performing Test GGML_MACHINE_SUPPORTS_dotprod - Success
+-- Performing Test GGML_MACHINE_SUPPORTS_i8mm
+-- Performing Test GGML_MACHINE_SUPPORTS_i8mm - Failed
+-- Performing Test GGML_MACHINE_SUPPORTS_noi8mm
+-- Performing Test GGML_MACHINE_SUPPORTS_noi8mm - Success
+-- Performing Test GGML_MACHINE_SUPPORTS_sve
+-- Performing Test GGML_MACHINE_SUPPORTS_sve - Failed
+-- Performing Test GGML_MACHINE_SUPPORTS_nosve
+-- Performing Test GGML_MACHINE_SUPPORTS_nosve - Success
+-- Performing Test GGML_MACHINE_SUPPORTS_sme
+-- Performing Test GGML_MACHINE_SUPPORTS_sme - Failed
+-- Performing Test GGML_MACHINE_SUPPORTS_nosme
+-- Performing Test GGML_MACHINE_SUPPORTS_nosme - Failed
+-- ARM feature DOTPROD enabled
+-- ARM feature FMA enabled
+-- ARM feature FP16_VECTOR_ARITHMETIC enabled
+-- Adding CPU backend variant ggml-cpu: -mcpu=ares+crypto+noprofile+dotprod+noi8mm+nosve 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ggml/work/whisper.cpp/build-ci-debug
+
+real	0m2.123s
+user	0m1.402s
+sys	0m0.527s
++ tee -a /home/ggml/results/whisper.cpp/b5/055396706a0a597b6de6d8d9e15be6da5f75a6/ggml-1-arm64-cpu-low-perf/ctest_debug-make.log
+++ nproc
++ make -j4
+[  6%] Building CXX object examples/deprecation-warning/CMakeFiles/bench.dir/deprecation-warning.cpp.o
+[  6%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml.cpp.o
+[  6%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  8%] Building CXX object examples/deprecation-warning/CMakeFiles/main.dir/deprecation-warning.cpp.o
+[ 10%] Linking CXX executable ../../bin/bench
+[ 12%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[ 14%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[ 16%] Linking CXX executable ../../bin/main
+[ 18%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[ 20%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[ 22%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[ 24%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/gguf.cpp.o
+[ 26%] Linking CXX shared library libggml-base.so
+[ 26%] Built target bench
+[ 26%] Built target main
+[ 26%] Built target ggml-base
+[ 32%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[ 32%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[ 32%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[ 34%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[ 36%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 38%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 40%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 42%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 44%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/binary-ops.cpp.o
+[ 46%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/unary-ops.cpp.o
+[ 48%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/vec.cpp.o
+[ 51%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ops.cpp.o
+[ 53%] Linking CXX shared library libggml-cpu.so
+[ 53%] Built target ggml-cpu
+[ 55%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 57%] Linking CXX shared library libggml.so
+[ 57%] Built target ggml
+[ 59%] Building CXX object src/CMakeFiles/whisper.dir/whisper.cpp.o
+[ 61%] Linking CXX shared library libwhisper.so
+[ 61%] Built target whisper
+[ 69%] Building CXX object examples/bench/CMakeFiles/whisper-bench.dir/bench.cpp.o
+[ 69%] Building CXX object examples/CMakeFiles/common.dir/common-ggml.cpp.o
+[ 69%] Building CXX object examples/CMakeFiles/common.dir/common-whisper.cpp.o
+[ 69%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[ 71%] Linking CXX executable ../../bin/whisper-bench
+[ 73%] Building CXX object examples/CMakeFiles/common.dir/grammar-parser.cpp.o
+[ 75%] Linking CXX static library libcommon.a
+[ 75%] Built target whisper-bench
+[ 75%] Built target common
+[ 81%] Building CXX object examples/cli/CMakeFiles/whisper-cli.dir/cli.cpp.o
+[ 81%] Building CXX object tests/CMakeFiles/test-vad.dir/test-vad.cpp.o
+[ 83%] Building CXX object examples/server/CMakeFiles/whisper-server.dir/server.cpp.o
+[ 83%] Building CXX object tests/CMakeFiles/test-vad-full.dir/test-vad-full.cpp.o
+[ 87%] Linking CXX executable ../bin/test-vad
+[ 87%] Linking CXX executable ../bin/test-vad-full
+[ 89%] Linking CXX executable ../../bin/whisper-cli
+[ 91%] Linking CXX executable ../../bin/whisper-server
+[ 91%] Built target test-vad-full
+[ 91%] Built target test-vad
+[ 95%] Building CXX object examples/vad-speech-segments/CMakeFiles/vad-speech-segments.dir/speech.cpp.o
+[ 95%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+[ 97%] Linking CXX executable ../../bin/vad-speech-segments
+[100%] Linking CXX executable ../../bin/quantize
+[100%] Built target whisper-cli
+[100%] Built target vad-speech-segments
+[100%] Built target quantize
+[100%] Built target whisper-server
+
+real	0m1.764s
+user	0m2.447s
+sys	0m1.066s
++ tee -a /home/ggml/results/whisper.cpp/b5/055396706a0a597b6de6d8d9e15be6da5f75a6/ggml-1-arm64-cpu-low-perf/ctest_debug-ctest.log
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-debug
+No tests were found!!!
+
+real	0m0.009s
+user	0m0.003s
+sys	0m0.006s
++ set +e
++ cur=0
++ echo 0
++ set +x
++ gg_run_ctest ctest release
++ mode=release
++ cd /home/ggml/work/whisper.cpp
++ tee /home/ggml/results/whisper.cpp/b5/055396706a0a597b6de6d8d9e15be6da5f75a6/ggml-1-arm64-cpu-low-perf/ctest_release.log
++ rm -rf build-ci-release
++ mkdir build-ci-release
++ cd build-ci-release
++ set -e
++ gg_check_build_requirements
++ command -v cmake
++ command -v make
++ tee -a /home/ggml/results/whisper.cpp/b5/055396706a0a597b6de6d8d9e15be6da5f75a6/ggml-1-arm64-cpu-low-perf/ctest_release-cmake.log
++ cmake -DCMAKE_BUILD_TYPE=release -DWHISPER_FATAL_WARNINGS=ON ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: aarch64
+-- GGML_SYSTEM_ARCH: ARM
+-- Including CPU backend
+-- Found OpenMP_C: -fopenmp (found version "4.5") 
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5")  
+-- ARM detected
+-- Performing Test GGML_COMPILER_SUPPORTS_FP16_FORMAT_I3E
+-- Performing Test GGML_COMPILER_SUPPORTS_FP16_FORMAT_I3E - Failed
+-- Performing Test GGML_MACHINE_SUPPORTS_dotprod
+-- Performing Test GGML_MACHINE_SUPPORTS_dotprod - Success
+-- Performing Test GGML_MACHINE_SUPPORTS_i8mm
+-- Performing Test GGML_MACHINE_SUPPORTS_i8mm - Failed
+-- Performing Test GGML_MACHINE_SUPPORTS_noi8mm
+-- Performing Test GGML_MACHINE_SUPPORTS_noi8mm - Success
+-- Performing Test GGML_MACHINE_SUPPORTS_sve
+-- Performing Test GGML_MACHINE_SUPPORTS_sve - Failed
+-- Performing Test GGML_MACHINE_SUPPORTS_nosve
+-- Performing Test GGML_MACHINE_SUPPORTS_nosve - Success
+-- Performing Test GGML_MACHINE_SUPPORTS_sme
+-- Performing Test GGML_MACHINE_SUPPORTS_sme - Failed
+-- Performing Test GGML_MACHINE_SUPPORTS_nosme
+-- Performing Test GGML_MACHINE_SUPPORTS_nosme - Failed
+-- ARM feature DOTPROD enabled
+-- ARM feature FMA enabled
+-- ARM feature FP16_VECTOR_ARITHMETIC enabled
+-- Adding CPU backend variant ggml-cpu: -mcpu=ares+crypto+noprofile+dotprod+noi8mm+nosve 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ggml/work/whisper.cpp/build-ci-release
+
+real	0m2.173s
+user	0m1.359s
+sys	0m0.573s
++ tee -a /home/ggml/results/whisper.cpp/b5/055396706a0a597b6de6d8d9e15be6da5f75a6/ggml-1-arm64-cpu-low-perf/ctest_release-make.log
+++ nproc
++ make -j4
+[  4%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  4%] Building CXX object examples/deprecation-warning/CMakeFiles/main.dir/deprecation-warning.cpp.o
+[  6%] Building CXX object examples/deprecation-warning/CMakeFiles/bench.dir/deprecation-warning.cpp.o
+[  8%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml.cpp.o
+[ 10%] Linking CXX executable ../../bin/main
+[ 12%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[ 14%] Linking CXX executable ../../bin/bench
+[ 16%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[ 18%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[ 20%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[ 22%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[ 24%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/gguf.cpp.o
+[ 26%] Linking CXX shared library libggml-base.so
+[ 26%] Built target main
+[ 26%] Built target bench
+[ 26%] Built target ggml-base
+[ 34%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[ 34%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[ 34%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[ 34%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[ 36%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 38%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 42%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 42%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 44%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/binary-ops.cpp.o
+[ 46%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/unary-ops.cpp.o
+[ 48%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ops.cpp.o
+[ 51%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/vec.cpp.o
+[ 53%] Linking CXX shared library libggml-cpu.so
+[ 53%] Built target ggml-cpu
+[ 55%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 57%] Linking CXX shared library libggml.so
+[ 57%] Built target ggml
+[ 59%] Building CXX object src/CMakeFiles/whisper.dir/whisper.cpp.o
+[ 61%] Linking CXX shared library libwhisper.so
+[ 61%] Built target whisper
+[ 65%] Building CXX object examples/CMakeFiles/common.dir/common.cpp.o
+[ 65%] Building CXX object examples/bench/CMakeFiles/whisper-bench.dir/bench.cpp.o
+[ 67%] Building CXX object examples/CMakeFiles/common.dir/common-whisper.cpp.o
+[ 69%] Building CXX object examples/CMakeFiles/common.dir/common-ggml.cpp.o
+[ 71%] Linking CXX executable ../../bin/whisper-bench
+[ 73%] Building CXX object examples/CMakeFiles/common.dir/grammar-parser.cpp.o
+[ 75%] Linking CXX static library libcommon.a
+[ 75%] Built target common
+[ 75%] Built target whisper-bench
+[ 81%] Building CXX object examples/cli/CMakeFiles/whisper-cli.dir/cli.cpp.o
+[ 81%] Building CXX object tests/CMakeFiles/test-vad-full.dir/test-vad-full.cpp.o
+[ 81%] Building CXX object tests/CMakeFiles/test-vad.dir/test-vad.cpp.o
+[ 83%] Building CXX object examples/server/CMakeFiles/whisper-server.dir/server.cpp.o
+[ 87%] Linking CXX executable ../bin/test-vad-full
+[ 87%] Linking CXX executable ../bin/test-vad
+[ 89%] Linking CXX executable ../../bin/whisper-cli
+[ 91%] Linking CXX executable ../../bin/whisper-server
+[ 91%] Built target test-vad-full
+[ 91%] Built target test-vad
+[ 91%] Built target whisper-cli
+[ 95%] Building CXX object examples/quantize/CMakeFiles/quantize.dir/quantize.cpp.o
+[ 95%] Building CXX object examples/vad-speech-segments/CMakeFiles/vad-speech-segments.dir/speech.cpp.o
+[ 97%] Linking CXX executable ../../bin/vad-speech-segments
+[100%] Linking CXX executable ../../bin/quantize
+[100%] Built target whisper-server
+[100%] Built target quantize
+[100%] Built target vad-speech-segments
+
+real	0m0.983s
+user	0m1.317s
+sys	0m0.818s
++ tee -a /home/ggml/results/whisper.cpp/b5/055396706a0a597b6de6d8d9e15be6da5f75a6/ggml-1-arm64-cpu-low-perf/ctest_release-ctest.log
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-release
+No tests were found!!!
+
+real	0m0.010s
+user	0m0.003s
+sys	0m0.006s
++ set +e
++ cur=0
++ echo 0
++ set +x
++ gg_run_bench bench
++ cd /home/ggml/work/whisper.cpp
++ fattn=
++ tee /home/ggml/results/whisper.cpp/b5/055396706a0a597b6de6d8d9e15be6da5f75a6/ggml-1-arm64-cpu-low-perf/bench.log
++ '[' 0 -eq 1 ']'
++ '[' 0 -eq 0 ']'
++ echo 'Running memcpy benchmark'
++ ./build-ci-release/bin/whisper-bench -w 1 -t 4
++ tee -a /home/ggml/results/whisper.cpp/b5/055396706a0a597b6de6d8d9e15be6da5f75a6/ggml-1-arm64-cpu-low-perf/bench-memcpy.log
+Running memcpy benchmark
+memcpy:   11.25 GB/s (heat-up)
+memcpy:   11.33 GB/s ( 1 thread)
+memcpy:   11.37 GB/s ( 1 thread)
+memcpy:   21.36 GB/s ( 2 thread)
+memcpy:   29.55 GB/s ( 3 thread)
+memcpy:   34.14 GB/s ( 4 thread)
+sum:    783359998869.000000
+
+real	0m20.498s
+user	0m20.326s
+sys	0m4.185s
++ gg_check_last_command_status /home/ggml/results/whisper.cpp/b5/055396706a0a597b6de6d8d9e15be6da5f75a6/ggml-1-arm64-cpu-low-perf/bench-memcpy.exit 'memcpy benchmark'
++ local exit_file=/home/ggml/results/whisper.cpp/b5/055396706a0a597b6de6d8d9e15be6da5f75a6/ggml-1-arm64-cpu-low-perf/bench-memcpy.exit
++ local 'command_name=memcpy benchmark'
++ local exit_status=0
++ echo 0
++ '[' 0 -ne 0 ']'
++ return 0
++ echo 'Running ggml_mul_mat benchmark with 4 threads'
+Running ggml_mul_mat benchmark with 4 threads
++ ./build-ci-release/bin/whisper-bench -w 2 -t 4
++ tee -a /home/ggml/results/whisper.cpp/b5/055396706a0a597b6de6d8d9e15be6da5f75a6/ggml-1-arm64-cpu-low-perf/bench-mul_mat.log
+  64 x   64: Q4_0    28.5 GFLOPS (128 runs) | Q4_1    28.1 GFLOPS (128 runs)
+  64 x   64: Q5_0    21.3 GFLOPS (128 runs) | Q5_1    20.6 GFLOPS (128 runs) | Q8_0    30.1 GFLOPS (128 runs)
+  64 x   64: F16     33.2 GFLOPS (128 runs) | F32     34.9 GFLOPS (128 runs)
+ 128 x  128: Q4_0    56.1 GFLOPS (128 runs) | Q4_1    51.9 GFLOPS (128 runs)
+ 128 x  128: Q5_0    38.2 GFLOPS (128 runs) | Q5_1    34.4 GFLOPS (128 runs) | Q8_0    59.6 GFLOPS (128 runs)
+ 128 x  128: F16     67.8 GFLOPS (128 runs) | F32     55.7 GFLOPS (128 runs)
+ 256 x  256: Q4_0    72.5 GFLOPS (128 runs) | Q4_1    66.1 GFLOPS (128 runs)
+ 256 x  256: Q5_0    49.1 GFLOPS (128 runs) | Q5_1    43.7 GFLOPS (128 runs) | Q8_0    79.9 GFLOPS (128 runs)
+ 256 x  256: F16     95.1 GFLOPS (128 runs) | F32     66.0 GFLOPS (128 runs)
+ 512 x  512: Q4_0    80.9 GFLOPS (128 runs) | Q4_1    73.4 GFLOPS (128 runs)
+ 512 x  512: Q5_0    55.6 GFLOPS (128 runs) | Q5_1    49.2 GFLOPS (128 runs) | Q8_0    91.5 GFLOPS (128 runs)
+ 512 x  512: F16    112.2 GFLOPS (128 runs) | F32     66.9 GFLOPS (128 runs)
+1024 x 1024: Q4_0    86.4 GFLOPS ( 41 runs) | Q4_1    78.0 GFLOPS ( 37 runs)
+1024 x 1024: Q5_0    59.3 GFLOPS ( 28 runs) | Q5_1    52.1 GFLOPS ( 25 runs) | Q8_0    98.4 GFLOPS ( 46 runs)
+1024 x 1024: F16    122.9 GFLOPS ( 58 runs) | F32     63.0 GFLOPS ( 30 runs)
+2048 x 2048: Q4_0    89.4 GFLOPS (  6 runs) | Q4_1    80.6 GFLOPS (  5 runs)
+2048 x 2048: Q5_0    61.9 GFLOPS (  4 runs) | Q5_1    54.2 GFLOPS (  4 runs) | Q8_0   102.3 GFLOPS (  6 runs)
+2048 x 2048: F16    121.6 GFLOPS (  8 runs) | F32     55.3 GFLOPS (  4 runs)
+4096 x 4096: Q4_0    90.7 GFLOPS (  3 runs) | Q4_1    81.2 GFLOPS (  3 runs)
+4096 x 4096: Q5_0    61.9 GFLOPS (  3 runs) | Q5_1    54.3 GFLOPS (  3 runs) | Q8_0   100.7 GFLOPS (  3 runs)
+4096 x 4096: F16    105.5 GFLOPS (  3 runs) | F32     49.4 GFLOPS (  3 runs)
+
+real	1m14.727s
+user	4m57.939s
+sys	0m0.268s
++ gg_check_last_command_status /home/ggml/results/whisper.cpp/b5/055396706a0a597b6de6d8d9e15be6da5f75a6/ggml-1-arm64-cpu-low-perf/bench-mul_mat.exit 'ggml_mul_mat benchmark'
++ local exit_file=/home/ggml/results/whisper.cpp/b5/055396706a0a597b6de6d8d9e15be6da5f75a6/ggml-1-arm64-cpu-low-perf/bench-mul_mat.exit
++ local 'command_name=ggml_mul_mat benchmark'
++ local exit_status=0
++ echo 0
++ '[' 0 -ne 0 ']'
++ return 0
++ echo 'Running benchmark for all models'
+Running benchmark for all models
++ printf '| %16s | %13s | %3s | %3s | %7s | %7s | %7s | %7s | %7s |\n' Config Model Th FA Enc. Dec. Bch5 PP Commit
++ printf '| %16s | %13s | %3s | %3s | %7s | %7s | %7s | %7s | %7s |\n' --- --- --- --- --- --- --- --- ---
++ tee -a /home/ggml/results/whisper.cpp/b5/055396706a0a597b6de6d8d9e15be6da5f75a6/ggml-1-arm64-cpu-low-perf/bench-models-table.log
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
++ for model in "${MODELS[@]}"
++ echo 'Benchmarking model: tiny'
+Benchmarking model: tiny
+++ ./build-ci-release/bin/whisper-bench -m /mnt/whisper.cpp/models/ggml-tiny.bin -t 4
++ output='whisper_init_from_file_with_params_no_state: loading model from '\''/mnt/whisper.cpp/models/ggml-tiny.bin'\''
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 0
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+whisper_init_with_params_no_state: devices    = 1
+whisper_init_with_params_no_state: backends   = 1
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 384
+whisper_model_load: n_audio_head  = 6
+whisper_model_load: n_audio_layer = 4
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 384
+whisper_model_load: n_text_head   = 6
+whisper_model_load: n_text_layer  = 4
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 1 (tiny)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:          CPU total size =    77.11 MB
+whisper_model_load: model size    =   77.11 MB
+whisper_backend_init_gpu: no GPU found
+whisper_init_state: kv self size  =    3.15 MB
+whisper_init_state: kv cross size =    9.44 MB
+whisper_init_state: kv pad  size  =    2.36 MB
+whisper_init_state: compute buffer (conv)   =   13.19 MB
+whisper_init_state: compute buffer (encode) =   64.79 MB
+whisper_init_state: compute buffer (cross)  =    3.88 MB
+whisper_init_state: compute buffer (decode) =   95.89 MB
+
+system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | 
+
+whisper_print_timings:     load time =    71.31 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =     0.00 ms
+whisper_print_timings:   sample time =     0.00 ms /     1 runs (     0.00 ms per run)
+whisper_print_timings:   encode time =   548.17 ms /     1 runs (   548.17 ms per run)
+whisper_print_timings:   decode time =   557.07 ms /   256 runs (     2.18 ms per run)
+whisper_print_timings:   batchd time =   338.71 ms /   320 runs (     1.06 ms per run)
+whisper_print_timings:   prompt time =  3270.45 ms /  4096 runs (     0.80 ms per run)
+whisper_print_timings:    total time =  4715.70 ms
+
+If you wish, you can submit these results here:
+
+  https://github.com/ggerganov/whisper.cpp/issues/89
+
+Please include the following information:
+
+  - CPU model
+  - Operating system
+  - Compiler'
++ ret=0
++ echo 'whisper_init_from_file_with_params_no_state: loading model from '\''/mnt/whisper.cpp/models/ggml-tiny.bin'\''
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 0
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+whisper_init_with_params_no_state: devices    = 1
+whisper_init_with_params_no_state: backends   = 1
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 384
+whisper_model_load: n_audio_head  = 6
+whisper_model_load: n_audio_layer = 4
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 384
+whisper_model_load: n_text_head   = 6
+whisper_model_load: n_text_layer  = 4
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 1 (tiny)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:          CPU total size =    77.11 MB
+whisper_model_load: model size    =   77.11 MB
+whisper_backend_init_gpu: no GPU found
+whisper_init_state: kv self size  =    3.15 MB
+whisper_init_state: kv cross size =    9.44 MB
+whisper_init_state: kv pad  size  =    2.36 MB
+whisper_init_state: compute buffer (conv)   =   13.19 MB
+whisper_init_state: compute buffer (encode) =   64.79 MB
+whisper_init_state: compute buffer (cross)  =    3.88 MB
+whisper_init_state: compute buffer (decode) =   95.89 MB
+
+system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | 
+
+whisper_print_timings:     load time =    71.31 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =     0.00 ms
+whisper_print_timings:   sample time =     0.00 ms /     1 runs (     0.00 ms per run)
+whisper_print_timings:   encode time =   548.17 ms /     1 runs (   548.17 ms per run)
+whisper_print_timings:   decode time =   557.07 ms /   256 runs (     2.18 ms per run)
+whisper_print_timings:   batchd time =   338.71 ms /   320 runs (     1.06 ms per run)
+whisper_print_timings:   prompt time =  3270.45 ms /  4096 runs (     0.80 ms per run)
+whisper_print_timings:    total time =  4715.70 ms
+
+If you wish, you can submit these results here:
+
+  https://github.com/ggerganov/whisper.cpp/issues/89
+
+Please include the following information:
+
+  - CPU model
+  - Operating system
+  - Compiler'
++ '[' 0 -eq 0 ']'
+++ echo 'whisper_init_from_file_with_params_no_state: loading model from '\''/mnt/whisper.cpp/models/ggml-tiny.bin'\''
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 0
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+whisper_init_with_params_no_state: devices    = 1
+whisper_init_with_params_no_state: backends   = 1
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 384
+whisper_model_load: n_audio_head  = 6
+whisper_model_load: n_audio_layer = 4
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 384
+whisper_model_load: n_text_head   = 6
+whisper_model_load: n_text_layer  = 4
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 1 (tiny)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:          CPU total size =    77.11 MB
+whisper_model_load: model size    =   77.11 MB
+whisper_backend_init_gpu: no GPU found
+whisper_init_state: kv self size  =    3.15 MB
+whisper_init_state: kv cross size =    9.44 MB
+whisper_init_state: kv pad  size  =    2.36 MB
+whisper_init_state: compute buffer (conv)   =   13.19 MB
+whisper_init_state: compute buffer (encode) =   64.79 MB
+whisper_init_state: compute buffer (cross)  =    3.88 MB
+whisper_init_state: compute buffer (decode) =   95.89 MB
+
+system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | 
+
+whisper_print_timings:     load time =    71.31 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =     0.00 ms
+whisper_print_timings:   sample time =     0.00 ms /     1 runs (     0.00 ms per run)
+whisper_print_timings:   encode time =   548.17 ms /     1 runs (   548.17 ms per run)
+whisper_print_timings:   decode time =   557.07 ms /   256 runs (     2.18 ms per run)
+whisper_print_timings:   batchd time =   338.71 ms /   320 runs (     1.06 ms per run)
+whisper_print_timings:   prompt time =  3270.45 ms /  4096 runs (     0.80 ms per run)
+whisper_print_timings:    total time =  4715.70 ms
+
+If you wish, you can submit these results here:
+
+  https://github.com/ggerganov/whisper.cpp/issues/89
+
+Please include the following information:
+
+  - CPU model
+  - Operating system
+  - Compiler'
+++ grep 'encode time'
+++ awk '{print $11}'
++ encode_time=548.17
+++ echo 'whisper_init_from_file_with_params_no_state: loading model from '\''/mnt/whisper.cpp/models/ggml-tiny.bin'\''
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 0
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+whisper_init_with_params_no_state: devices    = 1
+whisper_init_with_params_no_state: backends   = 1
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 384
+whisper_model_load: n_audio_head  = 6
+whisper_model_load: n_audio_layer = 4
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 384
+whisper_model_load: n_text_head   = 6
+whisper_model_load: n_text_layer  = 4
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 1 (tiny)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:          CPU total size =    77.11 MB
+whisper_model_load: model size    =   77.11 MB
+whisper_backend_init_gpu: no GPU found
+whisper_init_state: kv self size  =    3.15 MB
+whisper_init_state: kv cross size =    9.44 MB
+whisper_init_state: kv pad  size  =    2.36 MB
+whisper_init_state: compute buffer (conv)   =   13.19 MB
+whisper_init_state: compute buffer (encode) =   64.79 MB
+whisper_init_state: compute buffer (cross)  =    3.88 MB
+whisper_init_state: compute buffer (decode) =   95.89 MB
+
+system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | 
+
+whisper_print_timings:     load time =    71.31 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =     0.00 ms
+whisper_print_timings:   sample time =     0.00 ms /     1 runs (     0.00 ms per run)
+whisper_print_timings:   encode time =   548.17 ms /     1 runs (   548.17 ms per run)
+whisper_print_timings:   decode time =   557.07 ms /   256 runs (     2.18 ms per run)
+whisper_print_timings:   batchd time =   338.71 ms /   320 runs (     1.06 ms per run)
+whisper_print_timings:   prompt time =  3270.45 ms /  4096 runs (     0.80 ms per run)
+whisper_print_timings:    total time =  4715.70 ms
+
+If you wish, you can submit these results here:
+
+  https://github.com/ggerganov/whisper.cpp/issues/89
+
+Please include the following information:
+
+  - CPU model
+  - Operating system
+  - Compiler'
+++ grep 'decode time'
+++ awk '{print $11}'
++ decode_time=2.18
+++ echo 'whisper_init_from_file_with_params_no_state: loading model from '\''/mnt/whisper.cpp/models/ggml-tiny.bin'\''
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 0
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+whisper_init_with_params_no_state: devices    = 1
+whisper_init_with_params_no_state: backends   = 1
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 384
+whisper_model_load: n_audio_head  = 6
+whisper_model_load: n_audio_layer = 4
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 384
+whisper_model_load: n_text_head   = 6
+whisper_model_load: n_text_layer  = 4
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 1 (tiny)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:          CPU total size =    77.11 MB
+whisper_model_load: model size    =   77.11 MB
+whisper_backend_init_gpu: no GPU found
+whisper_init_state: kv self size  =    3.15 MB
+whisper_init_state: kv cross size =    9.44 MB
+whisper_init_state: kv pad  size  =    2.36 MB
+whisper_init_state: compute buffer (conv)   =   13.19 MB
+whisper_init_state: compute buffer (encode) =   64.79 MB
+whisper_init_state: compute buffer (cross)  =    3.88 MB
+whisper_init_state: compute buffer (decode) =   95.89 MB
+
+system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | 
+
+whisper_print_timings:     load time =    71.31 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =     0.00 ms
+whisper_print_timings:   sample time =     0.00 ms /     1 runs (     0.00 ms per run)
+whisper_print_timings:   encode time =   548.17 ms /     1 runs (   548.17 ms per run)
+whisper_print_timings:   decode time =   557.07 ms /   256 runs (     2.18 ms per run)
+whisper_print_timings:   batchd time =   338.71 ms /   320 runs (     1.06 ms per run)
+whisper_print_timings:   prompt time =  3270.45 ms /  4096 runs (     0.80 ms per run)
+whisper_print_timings:    total time =  4715.70 ms
+
+If you wish, you can submit these results here:
+
+  https://github.com/ggerganov/whisper.cpp/issues/89
+
+Please include the following information:
+
+  - CPU model
+  - Operating system
+  - Compiler'
+++ grep 'batchd time'
+++ awk '{print $11}'
++ batchd_time=1.06
+++ echo 'whisper_init_from_file_with_params_no_state: loading model from '\''/mnt/whisper.cpp/models/ggml-tiny.bin'\''
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 0
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+whisper_init_with_params_no_state: devices    = 1
+whisper_init_with_params_no_state: backends   = 1
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 384
+whisper_model_load: n_audio_head  = 6
+whisper_model_load: n_audio_layer = 4
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 384
+whisper_model_load: n_text_head   = 6
+whisper_model_load: n_text_layer  = 4
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 1 (tiny)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:          CPU total size =    77.11 MB
+whisper_model_load: model size    =   77.11 MB
+whisper_backend_init_gpu: no GPU found
+whisper_init_state: kv self size  =    3.15 MB
+whisper_init_state: kv cross size =    9.44 MB
+whisper_init_state: kv pad  size  =    2.36 MB
+whisper_init_state: compute buffer (conv)   =   13.19 MB
+whisper_init_state: compute buffer (encode) =   64.79 MB
+whisper_init_state: compute buffer (cross)  =    3.88 MB
+whisper_init_state: compute buffer (decode) =   95.89 MB
+
+system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | 
+
+whisper_print_timings:     load time =    71.31 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =     0.00 ms
+whisper_print_timings:   sample time =     0.00 ms /     1 runs (     0.00 ms per run)
+whisper_print_timings:   encode time =   548.17 ms /     1 runs (   548.17 ms per run)
+whisper_print_timings:   decode time =   557.07 ms /   256 runs (     2.18 ms per run)
+whisper_print_timings:   batchd time =   338.71 ms /   320 runs (     1.06 ms per run)
+whisper_print_timings:   prompt time =  3270.45 ms /  4096 runs (     0.80 ms per run)
+whisper_print_timings:    total time =  4715.70 ms
+
+If you wish, you can submit these results here:
+
+  https://github.com/ggerganov/whisper.cpp/issues/89
+
+Please include the following information:
+
+  - CPU model
+  - Operating system
+  - Compiler'
+++ grep 'prompt time'
+++ awk '{print $11}'
++ prompt_time=0.80
+++ echo 'whisper_init_from_file_with_params_no_state: loading model from '\''/mnt/whisper.cpp/models/ggml-tiny.bin'\''
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 0
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+whisper_init_with_params_no_state: devices    = 1
+whisper_init_with_params_no_state: backends   = 1
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 384
+whisper_model_load: n_audio_head  = 6
+whisper_model_load: n_audio_layer = 4
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 384
+whisper_model_load: n_text_head   = 6
+whisper_model_load: n_text_layer  = 4
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 1 (tiny)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:          CPU total size =    77.11 MB
+whisper_model_load: model size    =   77.11 MB
+whisper_backend_init_gpu: no GPU found
+whisper_init_state: kv self size  =    3.15 MB
+whisper_init_state: kv cross size =    9.44 MB
+whisper_init_state: kv pad  size  =    2.36 MB
+whisper_init_state: compute buffer (conv)   =   13.19 MB
+whisper_init_state: compute buffer (encode) =   64.79 MB
+whisper_init_state: compute buffer (cross)  =    3.88 MB
+whisper_init_state: compute buffer (decode) =   95.89 MB
+
+system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | 
+
+whisper_print_timings:     load time =    71.31 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =     0.00 ms
+whisper_print_timings:   sample time =     0.00 ms /     1 runs (     0.00 ms per run)
+whisper_print_timings:   encode time =   548.17 ms /     1 runs (   548.17 ms per run)
+whisper_print_timings:   decode time =   557.07 ms /   256 runs (     2.18 ms per run)
+whisper_print_timings:   batchd time =   338.71 ms /   320 runs (     1.06 ms per run)
+whisper_print_timings:   prompt time =  3270.45 ms /  4096 runs (     0.80 ms per run)
+whisper_print_timings:    total time =  4715.70 ms
+
+If you wish, you can submit these results here:
+
+  https://github.com/ggerganov/whisper.cpp/issues/89
+
+Please include the following information:
+
+  - CPU model
+  - Operating system
+  - Compiler'
+++ grep system_info
++ system_info='system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | '
+++ echo 'whisper_init_from_file_with_params_no_state: loading model from '\''/mnt/whisper.cpp/models/ggml-tiny.bin'\''
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 0
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+whisper_init_with_params_no_state: devices    = 1
+whisper_init_with_params_no_state: backends   = 1
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 384
+whisper_model_load: n_audio_head  = 6
+whisper_model_load: n_audio_layer = 4
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 384
+whisper_model_load: n_text_head   = 6
+whisper_model_load: n_text_layer  = 4
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 1 (tiny)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:          CPU total size =    77.11 MB
+whisper_model_load: model size    =   77.11 MB
+whisper_backend_init_gpu: no GPU found
+whisper_init_state: kv self size  =    3.15 MB
+whisper_init_state: kv cross size =    9.44 MB
+whisper_init_state: kv pad  size  =    2.36 MB
+whisper_init_state: compute buffer (conv)   =   13.19 MB
+whisper_init_state: compute buffer (encode) =   64.79 MB
+whisper_init_state: compute buffer (cross)  =    3.88 MB
+whisper_init_state: compute buffer (decode) =   95.89 MB
+
+system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | 
+
+whisper_print_timings:     load time =    71.31 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =     0.00 ms
+whisper_print_timings:   sample time =     0.00 ms /     1 runs (     0.00 ms per run)
+whisper_print_timings:   encode time =   548.17 ms /     1 runs (   548.17 ms per run)
+whisper_print_timings:   decode time =   557.07 ms /   256 runs (     2.18 ms per run)
+whisper_print_timings:   batchd time =   338.71 ms /   320 runs (     1.06 ms per run)
+whisper_print_timings:   prompt time =  3270.45 ms /  4096 runs (     0.80 ms per run)
+whisper_print_timings:    total time =  4715.70 ms
+
+If you wish, you can submit these results here:
+
+  https://github.com/ggerganov/whisper.cpp/issues/89
+
+Please include the following information:
+
+  - CPU model
+  - Operating system
+  - Compiler'
+++ grep system_info
+++ awk '{print $4}'
++ actual_threads=4
++ config=
++ [[ system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 |  == *\A\V\X\2\ \=\ \1* ]]
++ [[ system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 |  == *\N\E\O\N\ \=\ \1* ]]
++ config=' NEON'
++ [[ system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 |  == *\B\L\A\S\ \=\ \1* ]]
++ [[ system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 |  == *\C\O\R\E\M\L\ \=\ \1* ]]
++ [[ system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 |  == *\C\U\D\A\ \=\ \1* ]]
++ [[ system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 |  == *\M\E\T\A\L\ \=\ \1* ]]
+++ git rev-parse --short HEAD
++ commit=b5055396
++ printf '| %16s | %13s | %3s | %3s | %7s | %7s | %7s | %7s | %7s |\n' ' NEON' tiny 4 0 548.17 2.18 1.06 0.80 b5055396
++ tee -a /home/ggml/results/whisper.cpp/b5/055396706a0a597b6de6d8d9e15be6da5f75a6/ggml-1-arm64-cpu-low-perf/bench-models-table.log
+|             NEON |          tiny |   4 |   0 |  548.17 |    2.18 |    1.06 |    0.80 | b5055396 |
++ for model in "${MODELS[@]}"
++ echo 'Benchmarking model: base'
+Benchmarking model: base
+++ ./build-ci-release/bin/whisper-bench -m /mnt/whisper.cpp/models/ggml-base.bin -t 4
++ output='whisper_init_from_file_with_params_no_state: loading model from '\''/mnt/whisper.cpp/models/ggml-base.bin'\''
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 0
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+whisper_init_with_params_no_state: devices    = 1
+whisper_init_with_params_no_state: backends   = 1
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 512
+whisper_model_load: n_audio_head  = 8
+whisper_model_load: n_audio_layer = 6
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 512
+whisper_model_load: n_text_head   = 8
+whisper_model_load: n_text_layer  = 6
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 2 (base)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:          CPU total size =   147.37 MB
+whisper_model_load: model size    =  147.37 MB
+whisper_backend_init_gpu: no GPU found
+whisper_init_state: kv self size  =    6.29 MB
+whisper_init_state: kv cross size =   18.87 MB
+whisper_init_state: kv pad  size  =    3.15 MB
+whisper_init_state: compute buffer (conv)   =   16.26 MB
+whisper_init_state: compute buffer (encode) =   85.86 MB
+whisper_init_state: compute buffer (cross)  =    4.65 MB
+whisper_init_state: compute buffer (decode) =   96.35 MB
+
+system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | 
+
+whisper_print_timings:     load time =   103.76 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =     0.00 ms
+whisper_print_timings:   sample time =     0.00 ms /     1 runs (     0.00 ms per run)
+whisper_print_timings:   encode time =  1235.46 ms /     1 runs (  1235.46 ms per run)
+whisper_print_timings:   decode time =  1183.15 ms /   256 runs (     4.62 ms per run)
+whisper_print_timings:   batchd time =   634.85 ms /   320 runs (     1.98 ms per run)
+whisper_print_timings:   prompt time =  5697.84 ms /  4096 runs (     1.39 ms per run)
+whisper_print_timings:    total time =  8752.88 ms
+
+If you wish, you can submit these results here:
+
+  https://github.com/ggerganov/whisper.cpp/issues/89
+
+Please include the following information:
+
+  - CPU model
+  - Operating system
+  - Compiler'
++ ret=0
++ echo 'whisper_init_from_file_with_params_no_state: loading model from '\''/mnt/whisper.cpp/models/ggml-base.bin'\''
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 0
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+whisper_init_with_params_no_state: devices    = 1
+whisper_init_with_params_no_state: backends   = 1
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 512
+whisper_model_load: n_audio_head  = 8
+whisper_model_load: n_audio_layer = 6
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 512
+whisper_model_load: n_text_head   = 8
+whisper_model_load: n_text_layer  = 6
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 2 (base)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:          CPU total size =   147.37 MB
+whisper_model_load: model size    =  147.37 MB
+whisper_backend_init_gpu: no GPU found
+whisper_init_state: kv self size  =    6.29 MB
+whisper_init_state: kv cross size =   18.87 MB
+whisper_init_state: kv pad  size  =    3.15 MB
+whisper_init_state: compute buffer (conv)   =   16.26 MB
+whisper_init_state: compute buffer (encode) =   85.86 MB
+whisper_init_state: compute buffer (cross)  =    4.65 MB
+whisper_init_state: compute buffer (decode) =   96.35 MB
+
+system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | 
+
+whisper_print_timings:     load time =   103.76 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =     0.00 ms
+whisper_print_timings:   sample time =     0.00 ms /     1 runs (     0.00 ms per run)
+whisper_print_timings:   encode time =  1235.46 ms /     1 runs (  1235.46 ms per run)
+whisper_print_timings:   decode time =  1183.15 ms /   256 runs (     4.62 ms per run)
+whisper_print_timings:   batchd time =   634.85 ms /   320 runs (     1.98 ms per run)
+whisper_print_timings:   prompt time =  5697.84 ms /  4096 runs (     1.39 ms per run)
+whisper_print_timings:    total time =  8752.88 ms
+
+If you wish, you can submit these results here:
+
+  https://github.com/ggerganov/whisper.cpp/issues/89
+
+Please include the following information:
+
+  - CPU model
+  - Operating system
+  - Compiler'
++ '[' 0 -eq 0 ']'
+++ echo 'whisper_init_from_file_with_params_no_state: loading model from '\''/mnt/whisper.cpp/models/ggml-base.bin'\''
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 0
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+whisper_init_with_params_no_state: devices    = 1
+whisper_init_with_params_no_state: backends   = 1
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 512
+whisper_model_load: n_audio_head  = 8
+whisper_model_load: n_audio_layer = 6
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 512
+whisper_model_load: n_text_head   = 8
+whisper_model_load: n_text_layer  = 6
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 2 (base)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:          CPU total size =   147.37 MB
+whisper_model_load: model size    =  147.37 MB
+whisper_backend_init_gpu: no GPU found
+whisper_init_state: kv self size  =    6.29 MB
+whisper_init_state: kv cross size =   18.87 MB
+whisper_init_state: kv pad  size  =    3.15 MB
+whisper_init_state: compute buffer (conv)   =   16.26 MB
+whisper_init_state: compute buffer (encode) =   85.86 MB
+whisper_init_state: compute buffer (cross)  =    4.65 MB
+whisper_init_state: compute buffer (decode) =   96.35 MB
+
+system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | 
+
+whisper_print_timings:     load time =   103.76 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =     0.00 ms
+whisper_print_timings:   sample time =     0.00 ms /     1 runs (     0.00 ms per run)
+whisper_print_timings:   encode time =  1235.46 ms /     1 runs (  1235.46 ms per run)
+whisper_print_timings:   decode time =  1183.15 ms /   256 runs (     4.62 ms per run)
+whisper_print_timings:   batchd time =   634.85 ms /   320 runs (     1.98 ms per run)
+whisper_print_timings:   prompt time =  5697.84 ms /  4096 runs (     1.39 ms per run)
+whisper_print_timings:    total time =  8752.88 ms
+
+If you wish, you can submit these results here:
+
+  https://github.com/ggerganov/whisper.cpp/issues/89
+
+Please include the following information:
+
+  - CPU model
+  - Operating system
+  - Compiler'
+++ grep 'encode time'
+++ awk '{print $11}'
++ encode_time=1235.46
+++ echo 'whisper_init_from_file_with_params_no_state: loading model from '\''/mnt/whisper.cpp/models/ggml-base.bin'\''
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 0
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+whisper_init_with_params_no_state: devices    = 1
+whisper_init_with_params_no_state: backends   = 1
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 512
+whisper_model_load: n_audio_head  = 8
+whisper_model_load: n_audio_layer = 6
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 512
+whisper_model_load: n_text_head   = 8
+whisper_model_load: n_text_layer  = 6
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 2 (base)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:          CPU total size =   147.37 MB
+whisper_model_load: model size    =  147.37 MB
+whisper_backend_init_gpu: no GPU found
+whisper_init_state: kv self size  =    6.29 MB
+whisper_init_state: kv cross size =   18.87 MB
+whisper_init_state: kv pad  size  =    3.15 MB
+whisper_init_state: compute buffer (conv)   =   16.26 MB
+whisper_init_state: compute buffer (encode) =   85.86 MB
+whisper_init_state: compute buffer (cross)  =    4.65 MB
+whisper_init_state: compute buffer (decode) =   96.35 MB
+
+system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | 
+
+whisper_print_timings:     load time =   103.76 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =     0.00 ms
+whisper_print_timings:   sample time =     0.00 ms /     1 runs (     0.00 ms per run)
+whisper_print_timings:   encode time =  1235.46 ms /     1 runs (  1235.46 ms per run)
+whisper_print_timings:   decode time =  1183.15 ms /   256 runs (     4.62 ms per run)
+whisper_print_timings:   batchd time =   634.85 ms /   320 runs (     1.98 ms per run)
+whisper_print_timings:   prompt time =  5697.84 ms /  4096 runs (     1.39 ms per run)
+whisper_print_timings:    total time =  8752.88 ms
+
+If you wish, you can submit these results here:
+
+  https://github.com/ggerganov/whisper.cpp/issues/89
+
+Please include the following information:
+
+  - CPU model
+  - Operating system
+  - Compiler'
+++ grep 'decode time'
+++ awk '{print $11}'
++ decode_time=4.62
+++ echo 'whisper_init_from_file_with_params_no_state: loading model from '\''/mnt/whisper.cpp/models/ggml-base.bin'\''
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 0
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+whisper_init_with_params_no_state: devices    = 1
+whisper_init_with_params_no_state: backends   = 1
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 512
+whisper_model_load: n_audio_head  = 8
+whisper_model_load: n_audio_layer = 6
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 512
+whisper_model_load: n_text_head   = 8
+whisper_model_load: n_text_layer  = 6
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 2 (base)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:          CPU total size =   147.37 MB
+whisper_model_load: model size    =  147.37 MB
+whisper_backend_init_gpu: no GPU found
+whisper_init_state: kv self size  =    6.29 MB
+whisper_init_state: kv cross size =   18.87 MB
+whisper_init_state: kv pad  size  =    3.15 MB
+whisper_init_state: compute buffer (conv)   =   16.26 MB
+whisper_init_state: compute buffer (encode) =   85.86 MB
+whisper_init_state: compute buffer (cross)  =    4.65 MB
+whisper_init_state: compute buffer (decode) =   96.35 MB
+
+system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | 
+
+whisper_print_timings:     load time =   103.76 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =     0.00 ms
+whisper_print_timings:   sample time =     0.00 ms /     1 runs (     0.00 ms per run)
+whisper_print_timings:   encode time =  1235.46 ms /     1 runs (  1235.46 ms per run)
+whisper_print_timings:   decode time =  1183.15 ms /   256 runs (     4.62 ms per run)
+whisper_print_timings:   batchd time =   634.85 ms /   320 runs (     1.98 ms per run)
+whisper_print_timings:   prompt time =  5697.84 ms /  4096 runs (     1.39 ms per run)
+whisper_print_timings:    total time =  8752.88 ms
+
+If you wish, you can submit these results here:
+
+  https://github.com/ggerganov/whisper.cpp/issues/89
+
+Please include the following information:
+
+  - CPU model
+  - Operating system
+  - Compiler'
+++ grep 'batchd time'
+++ awk '{print $11}'
++ batchd_time=1.98
+++ echo 'whisper_init_from_file_with_params_no_state: loading model from '\''/mnt/whisper.cpp/models/ggml-base.bin'\''
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 0
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+whisper_init_with_params_no_state: devices    = 1
+whisper_init_with_params_no_state: backends   = 1
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 512
+whisper_model_load: n_audio_head  = 8
+whisper_model_load: n_audio_layer = 6
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 512
+whisper_model_load: n_text_head   = 8
+whisper_model_load: n_text_layer  = 6
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 2 (base)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:          CPU total size =   147.37 MB
+whisper_model_load: model size    =  147.37 MB
+whisper_backend_init_gpu: no GPU found
+whisper_init_state: kv self size  =    6.29 MB
+whisper_init_state: kv cross size =   18.87 MB
+whisper_init_state: kv pad  size  =    3.15 MB
+whisper_init_state: compute buffer (conv)   =   16.26 MB
+whisper_init_state: compute buffer (encode) =   85.86 MB
+whisper_init_state: compute buffer (cross)  =    4.65 MB
+whisper_init_state: compute buffer (decode) =   96.35 MB
+
+system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | 
+
+whisper_print_timings:     load time =   103.76 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =     0.00 ms
+whisper_print_timings:   sample time =     0.00 ms /     1 runs (     0.00 ms per run)
+whisper_print_timings:   encode time =  1235.46 ms /     1 runs (  1235.46 ms per run)
+whisper_print_timings:   decode time =  1183.15 ms /   256 runs (     4.62 ms per run)
+whisper_print_timings:   batchd time =   634.85 ms /   320 runs (     1.98 ms per run)
+whisper_print_timings:   prompt time =  5697.84 ms /  4096 runs (     1.39 ms per run)
+whisper_print_timings:    total time =  8752.88 ms
+
+If you wish, you can submit these results here:
+
+  https://github.com/ggerganov/whisper.cpp/issues/89
+
+Please include the following information:
+
+  - CPU model
+  - Operating system
+  - Compiler'
+++ grep 'prompt time'
+++ awk '{print $11}'
++ prompt_time=1.39
+++ echo 'whisper_init_from_file_with_params_no_state: loading model from '\''/mnt/whisper.cpp/models/ggml-base.bin'\''
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 0
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+whisper_init_with_params_no_state: devices    = 1
+whisper_init_with_params_no_state: backends   = 1
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 512
+whisper_model_load: n_audio_head  = 8
+whisper_model_load: n_audio_layer = 6
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 512
+whisper_model_load: n_text_head   = 8
+whisper_model_load: n_text_layer  = 6
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 2 (base)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:          CPU total size =   147.37 MB
+whisper_model_load: model size    =  147.37 MB
+whisper_backend_init_gpu: no GPU found
+whisper_init_state: kv self size  =    6.29 MB
+whisper_init_state: kv cross size =   18.87 MB
+whisper_init_state: kv pad  size  =    3.15 MB
+whisper_init_state: compute buffer (conv)   =   16.26 MB
+whisper_init_state: compute buffer (encode) =   85.86 MB
+whisper_init_state: compute buffer (cross)  =    4.65 MB
+whisper_init_state: compute buffer (decode) =   96.35 MB
+
+system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | 
+
+whisper_print_timings:     load time =   103.76 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =     0.00 ms
+whisper_print_timings:   sample time =     0.00 ms /     1 runs (     0.00 ms per run)
+whisper_print_timings:   encode time =  1235.46 ms /     1 runs (  1235.46 ms per run)
+whisper_print_timings:   decode time =  1183.15 ms /   256 runs (     4.62 ms per run)
+whisper_print_timings:   batchd time =   634.85 ms /   320 runs (     1.98 ms per run)
+whisper_print_timings:   prompt time =  5697.84 ms /  4096 runs (     1.39 ms per run)
+whisper_print_timings:    total time =  8752.88 ms
+
+If you wish, you can submit these results here:
+
+  https://github.com/ggerganov/whisper.cpp/issues/89
+
+Please include the following information:
+
+  - CPU model
+  - Operating system
+  - Compiler'
+++ grep system_info
++ system_info='system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | '
+++ echo 'whisper_init_from_file_with_params_no_state: loading model from '\''/mnt/whisper.cpp/models/ggml-base.bin'\''
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 0
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+whisper_init_with_params_no_state: devices    = 1
+whisper_init_with_params_no_state: backends   = 1
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 512
+whisper_model_load: n_audio_head  = 8
+whisper_model_load: n_audio_layer = 6
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 512
+whisper_model_load: n_text_head   = 8
+whisper_model_load: n_text_layer  = 6
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 2 (base)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:          CPU total size =   147.37 MB
+whisper_model_load: model size    =  147.37 MB
+whisper_backend_init_gpu: no GPU found
+whisper_init_state: kv self size  =    6.29 MB
+whisper_init_state: kv cross size =   18.87 MB
+whisper_init_state: kv pad  size  =    3.15 MB
+whisper_init_state: compute buffer (conv)   =   16.26 MB
+whisper_init_state: compute buffer (encode) =   85.86 MB
+whisper_init_state: compute buffer (cross)  =    4.65 MB
+whisper_init_state: compute buffer (decode) =   96.35 MB
+
+system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | 
+
+whisper_print_timings:     load time =   103.76 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =     0.00 ms
+whisper_print_timings:   sample time =     0.00 ms /     1 runs (     0.00 ms per run)
+whisper_print_timings:   encode time =  1235.46 ms /     1 runs (  1235.46 ms per run)
+whisper_print_timings:   decode time =  1183.15 ms /   256 runs (     4.62 ms per run)
+whisper_print_timings:   batchd time =   634.85 ms /   320 runs (     1.98 ms per run)
+whisper_print_timings:   prompt time =  5697.84 ms /  4096 runs (     1.39 ms per run)
+whisper_print_timings:    total time =  8752.88 ms
+
+If you wish, you can submit these results here:
+
+  https://github.com/ggerganov/whisper.cpp/issues/89
+
+Please include the following information:
+
+  - CPU model
+  - Operating system
+  - Compiler'
+++ grep system_info
+++ awk '{print $4}'
++ actual_threads=4
++ config=
++ [[ system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 |  == *\A\V\X\2\ \=\ \1* ]]
++ [[ system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 |  == *\N\E\O\N\ \=\ \1* ]]
++ config=' NEON'
++ [[ system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 |  == *\B\L\A\S\ \=\ \1* ]]
++ [[ system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 |  == *\C\O\R\E\M\L\ \=\ \1* ]]
++ [[ system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 |  == *\C\U\D\A\ \=\ \1* ]]
++ [[ system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 |  == *\M\E\T\A\L\ \=\ \1* ]]
+++ git rev-parse --short HEAD
++ commit=b5055396
++ printf '| %16s | %13s | %3s | %3s | %7s | %7s | %7s | %7s | %7s |\n' ' NEON' base 4 0 1235.46 4.62 1.98 1.39 b5055396
++ tee -a /home/ggml/results/whisper.cpp/b5/055396706a0a597b6de6d8d9e15be6da5f75a6/ggml-1-arm64-cpu-low-perf/bench-models-table.log
+|             NEON |          base |   4 |   0 | 1235.46 |    4.62 |    1.98 |    1.39 | b5055396 |
++ for model in "${MODELS[@]}"
++ echo 'Benchmarking model: small'
+Benchmarking model: small
+++ ./build-ci-release/bin/whisper-bench -m /mnt/whisper.cpp/models/ggml-small.bin -t 4
++ output='whisper_init_from_file_with_params_no_state: loading model from '\''/mnt/whisper.cpp/models/ggml-small.bin'\''
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 0
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+whisper_init_with_params_no_state: devices    = 1
+whisper_init_with_params_no_state: backends   = 1
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 768
+whisper_model_load: n_audio_head  = 12
+whisper_model_load: n_audio_layer = 12
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 768
+whisper_model_load: n_text_head   = 12
+whisper_model_load: n_text_layer  = 12
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 3 (small)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:          CPU total size =   487.01 MB
+whisper_model_load: model size    =  487.01 MB
+whisper_backend_init_gpu: no GPU found
+whisper_init_state: kv self size  =   18.87 MB
+whisper_init_state: kv cross size =   56.62 MB
+whisper_init_state: kv pad  size  =    4.72 MB
+whisper_init_state: compute buffer (conv)   =   22.41 MB
+whisper_init_state: compute buffer (encode) =  128.01 MB
+whisper_init_state: compute buffer (cross)  =    6.18 MB
+whisper_init_state: compute buffer (decode) =   97.27 MB
+
+system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | 
+
+whisper_print_timings:     load time =   265.60 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =     0.00 ms
+whisper_print_timings:   sample time =     0.00 ms /     1 runs (     0.00 ms per run)
+whisper_print_timings:   encode time =  4413.94 ms /     1 runs (  4413.94 ms per run)
+whisper_print_timings:   decode time =  3280.24 ms /   256 runs (    12.81 ms per run)
+whisper_print_timings:   batchd time =  1785.83 ms /   320 runs (     5.58 ms per run)
+whisper_print_timings:   prompt time = 15643.45 ms /  4096 runs (     3.82 ms per run)
+whisper_print_timings:    total time = 25125.19 ms
+
+If you wish, you can submit these results here:
+
+  https://github.com/ggerganov/whisper.cpp/issues/89
+
+Please include the following information:
+
+  - CPU model
+  - Operating system
+  - Compiler'
++ ret=0
++ echo 'whisper_init_from_file_with_params_no_state: loading model from '\''/mnt/whisper.cpp/models/ggml-small.bin'\''
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 0
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+whisper_init_with_params_no_state: devices    = 1
+whisper_init_with_params_no_state: backends   = 1
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 768
+whisper_model_load: n_audio_head  = 12
+whisper_model_load: n_audio_layer = 12
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 768
+whisper_model_load: n_text_head   = 12
+whisper_model_load: n_text_layer  = 12
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 3 (small)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:          CPU total size =   487.01 MB
+whisper_model_load: model size    =  487.01 MB
+whisper_backend_init_gpu: no GPU found
+whisper_init_state: kv self size  =   18.87 MB
+whisper_init_state: kv cross size =   56.62 MB
+whisper_init_state: kv pad  size  =    4.72 MB
+whisper_init_state: compute buffer (conv)   =   22.41 MB
+whisper_init_state: compute buffer (encode) =  128.01 MB
+whisper_init_state: compute buffer (cross)  =    6.18 MB
+whisper_init_state: compute buffer (decode) =   97.27 MB
+
+system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | 
+
+whisper_print_timings:     load time =   265.60 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =     0.00 ms
+whisper_print_timings:   sample time =     0.00 ms /     1 runs (     0.00 ms per run)
+whisper_print_timings:   encode time =  4413.94 ms /     1 runs (  4413.94 ms per run)
+whisper_print_timings:   decode time =  3280.24 ms /   256 runs (    12.81 ms per run)
+whisper_print_timings:   batchd time =  1785.83 ms /   320 runs (     5.58 ms per run)
+whisper_print_timings:   prompt time = 15643.45 ms /  4096 runs (     3.82 ms per run)
+whisper_print_timings:    total time = 25125.19 ms
+
+If you wish, you can submit these results here:
+
+  https://github.com/ggerganov/whisper.cpp/issues/89
+
+Please include the following information:
+
+  - CPU model
+  - Operating system
+  - Compiler'
++ '[' 0 -eq 0 ']'
+++ echo 'whisper_init_from_file_with_params_no_state: loading model from '\''/mnt/whisper.cpp/models/ggml-small.bin'\''
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 0
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+whisper_init_with_params_no_state: devices    = 1
+whisper_init_with_params_no_state: backends   = 1
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 768
+whisper_model_load: n_audio_head  = 12
+whisper_model_load: n_audio_layer = 12
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 768
+whisper_model_load: n_text_head   = 12
+whisper_model_load: n_text_layer  = 12
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 3 (small)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:          CPU total size =   487.01 MB
+whisper_model_load: model size    =  487.01 MB
+whisper_backend_init_gpu: no GPU found
+whisper_init_state: kv self size  =   18.87 MB
+whisper_init_state: kv cross size =   56.62 MB
+whisper_init_state: kv pad  size  =    4.72 MB
+whisper_init_state: compute buffer (conv)   =   22.41 MB
+whisper_init_state: compute buffer (encode) =  128.01 MB
+whisper_init_state: compute buffer (cross)  =    6.18 MB
+whisper_init_state: compute buffer (decode) =   97.27 MB
+
+system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | 
+
+whisper_print_timings:     load time =   265.60 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =     0.00 ms
+whisper_print_timings:   sample time =     0.00 ms /     1 runs (     0.00 ms per run)
+whisper_print_timings:   encode time =  4413.94 ms /     1 runs (  4413.94 ms per run)
+whisper_print_timings:   decode time =  3280.24 ms /   256 runs (    12.81 ms per run)
+whisper_print_timings:   batchd time =  1785.83 ms /   320 runs (     5.58 ms per run)
+whisper_print_timings:   prompt time = 15643.45 ms /  4096 runs (     3.82 ms per run)
+whisper_print_timings:    total time = 25125.19 ms
+
+If you wish, you can submit these results here:
+
+  https://github.com/ggerganov/whisper.cpp/issues/89
+
+Please include the following information:
+
+  - CPU model
+  - Operating system
+  - Compiler'
+++ grep 'encode time'
+++ awk '{print $11}'
++ encode_time=4413.94
+++ echo 'whisper_init_from_file_with_params_no_state: loading model from '\''/mnt/whisper.cpp/models/ggml-small.bin'\''
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 0
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+whisper_init_with_params_no_state: devices    = 1
+whisper_init_with_params_no_state: backends   = 1
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 768
+whisper_model_load: n_audio_head  = 12
+whisper_model_load: n_audio_layer = 12
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 768
+whisper_model_load: n_text_head   = 12
+whisper_model_load: n_text_layer  = 12
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 3 (small)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:          CPU total size =   487.01 MB
+whisper_model_load: model size    =  487.01 MB
+whisper_backend_init_gpu: no GPU found
+whisper_init_state: kv self size  =   18.87 MB
+whisper_init_state: kv cross size =   56.62 MB
+whisper_init_state: kv pad  size  =    4.72 MB
+whisper_init_state: compute buffer (conv)   =   22.41 MB
+whisper_init_state: compute buffer (encode) =  128.01 MB
+whisper_init_state: compute buffer (cross)  =    6.18 MB
+whisper_init_state: compute buffer (decode) =   97.27 MB
+
+system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | 
+
+whisper_print_timings:     load time =   265.60 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =     0.00 ms
+whisper_print_timings:   sample time =     0.00 ms /     1 runs (     0.00 ms per run)
+whisper_print_timings:   encode time =  4413.94 ms /     1 runs (  4413.94 ms per run)
+whisper_print_timings:   decode time =  3280.24 ms /   256 runs (    12.81 ms per run)
+whisper_print_timings:   batchd time =  1785.83 ms /   320 runs (     5.58 ms per run)
+whisper_print_timings:   prompt time = 15643.45 ms /  4096 runs (     3.82 ms per run)
+whisper_print_timings:    total time = 25125.19 ms
+
+If you wish, you can submit these results here:
+
+  https://github.com/ggerganov/whisper.cpp/issues/89
+
+Please include the following information:
+
+  - CPU model
+  - Operating system
+  - Compiler'
+++ grep 'decode time'
+++ awk '{print $11}'
++ decode_time=12.81
+++ echo 'whisper_init_from_file_with_params_no_state: loading model from '\''/mnt/whisper.cpp/models/ggml-small.bin'\''
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 0
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+whisper_init_with_params_no_state: devices    = 1
+whisper_init_with_params_no_state: backends   = 1
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 768
+whisper_model_load: n_audio_head  = 12
+whisper_model_load: n_audio_layer = 12
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 768
+whisper_model_load: n_text_head   = 12
+whisper_model_load: n_text_layer  = 12
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 3 (small)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:          CPU total size =   487.01 MB
+whisper_model_load: model size    =  487.01 MB
+whisper_backend_init_gpu: no GPU found
+whisper_init_state: kv self size  =   18.87 MB
+whisper_init_state: kv cross size =   56.62 MB
+whisper_init_state: kv pad  size  =    4.72 MB
+whisper_init_state: compute buffer (conv)   =   22.41 MB
+whisper_init_state: compute buffer (encode) =  128.01 MB
+whisper_init_state: compute buffer (cross)  =    6.18 MB
+whisper_init_state: compute buffer (decode) =   97.27 MB
+
+system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | 
+
+whisper_print_timings:     load time =   265.60 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =     0.00 ms
+whisper_print_timings:   sample time =     0.00 ms /     1 runs (     0.00 ms per run)
+whisper_print_timings:   encode time =  4413.94 ms /     1 runs (  4413.94 ms per run)
+whisper_print_timings:   decode time =  3280.24 ms /   256 runs (    12.81 ms per run)
+whisper_print_timings:   batchd time =  1785.83 ms /   320 runs (     5.58 ms per run)
+whisper_print_timings:   prompt time = 15643.45 ms /  4096 runs (     3.82 ms per run)
+whisper_print_timings:    total time = 25125.19 ms
+
+If you wish, you can submit these results here:
+
+  https://github.com/ggerganov/whisper.cpp/issues/89
+
+Please include the following information:
+
+  - CPU model
+  - Operating system
+  - Compiler'
+++ grep 'batchd time'
+++ awk '{print $11}'
++ batchd_time=5.58
+++ echo 'whisper_init_from_file_with_params_no_state: loading model from '\''/mnt/whisper.cpp/models/ggml-small.bin'\''
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 0
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+whisper_init_with_params_no_state: devices    = 1
+whisper_init_with_params_no_state: backends   = 1
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 768
+whisper_model_load: n_audio_head  = 12
+whisper_model_load: n_audio_layer = 12
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 768
+whisper_model_load: n_text_head   = 12
+whisper_model_load: n_text_layer  = 12
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 3 (small)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:          CPU total size =   487.01 MB
+whisper_model_load: model size    =  487.01 MB
+whisper_backend_init_gpu: no GPU found
+whisper_init_state: kv self size  =   18.87 MB
+whisper_init_state: kv cross size =   56.62 MB
+whisper_init_state: kv pad  size  =    4.72 MB
+whisper_init_state: compute buffer (conv)   =   22.41 MB
+whisper_init_state: compute buffer (encode) =  128.01 MB
+whisper_init_state: compute buffer (cross)  =    6.18 MB
+whisper_init_state: compute buffer (decode) =   97.27 MB
+
+system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | 
+
+whisper_print_timings:     load time =   265.60 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =     0.00 ms
+whisper_print_timings:   sample time =     0.00 ms /     1 runs (     0.00 ms per run)
+whisper_print_timings:   encode time =  4413.94 ms /     1 runs (  4413.94 ms per run)
+whisper_print_timings:   decode time =  3280.24 ms /   256 runs (    12.81 ms per run)
+whisper_print_timings:   batchd time =  1785.83 ms /   320 runs (     5.58 ms per run)
+whisper_print_timings:   prompt time = 15643.45 ms /  4096 runs (     3.82 ms per run)
+whisper_print_timings:    total time = 25125.19 ms
+
+If you wish, you can submit these results here:
+
+  https://github.com/ggerganov/whisper.cpp/issues/89
+
+Please include the following information:
+
+  - CPU model
+  - Operating system
+  - Compiler'
+++ grep 'prompt time'
+++ awk '{print $11}'
++ prompt_time=3.82
+++ echo 'whisper_init_from_file_with_params_no_state: loading model from '\''/mnt/whisper.cpp/models/ggml-small.bin'\''
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 0
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+whisper_init_with_params_no_state: devices    = 1
+whisper_init_with_params_no_state: backends   = 1
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 768
+whisper_model_load: n_audio_head  = 12
+whisper_model_load: n_audio_layer = 12
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 768
+whisper_model_load: n_text_head   = 12
+whisper_model_load: n_text_layer  = 12
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 3 (small)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:          CPU total size =   487.01 MB
+whisper_model_load: model size    =  487.01 MB
+whisper_backend_init_gpu: no GPU found
+whisper_init_state: kv self size  =   18.87 MB
+whisper_init_state: kv cross size =   56.62 MB
+whisper_init_state: kv pad  size  =    4.72 MB
+whisper_init_state: compute buffer (conv)   =   22.41 MB
+whisper_init_state: compute buffer (encode) =  128.01 MB
+whisper_init_state: compute buffer (cross)  =    6.18 MB
+whisper_init_state: compute buffer (decode) =   97.27 MB
+
+system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | 
+
+whisper_print_timings:     load time =   265.60 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =     0.00 ms
+whisper_print_timings:   sample time =     0.00 ms /     1 runs (     0.00 ms per run)
+whisper_print_timings:   encode time =  4413.94 ms /     1 runs (  4413.94 ms per run)
+whisper_print_timings:   decode time =  3280.24 ms /   256 runs (    12.81 ms per run)
+whisper_print_timings:   batchd time =  1785.83 ms /   320 runs (     5.58 ms per run)
+whisper_print_timings:   prompt time = 15643.45 ms /  4096 runs (     3.82 ms per run)
+whisper_print_timings:    total time = 25125.19 ms
+
+If you wish, you can submit these results here:
+
+  https://github.com/ggerganov/whisper.cpp/issues/89
+
+Please include the following information:
+
+  - CPU model
+  - Operating system
+  - Compiler'
+++ grep system_info
++ system_info='system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | '
+++ echo 'whisper_init_from_file_with_params_no_state: loading model from '\''/mnt/whisper.cpp/models/ggml-small.bin'\''
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 0
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+whisper_init_with_params_no_state: devices    = 1
+whisper_init_with_params_no_state: backends   = 1
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 768
+whisper_model_load: n_audio_head  = 12
+whisper_model_load: n_audio_layer = 12
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 768
+whisper_model_load: n_text_head   = 12
+whisper_model_load: n_text_layer  = 12
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 3 (small)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:          CPU total size =   487.01 MB
+whisper_model_load: model size    =  487.01 MB
+whisper_backend_init_gpu: no GPU found
+whisper_init_state: kv self size  =   18.87 MB
+whisper_init_state: kv cross size =   56.62 MB
+whisper_init_state: kv pad  size  =    4.72 MB
+whisper_init_state: compute buffer (conv)   =   22.41 MB
+whisper_init_state: compute buffer (encode) =  128.01 MB
+whisper_init_state: compute buffer (cross)  =    6.18 MB
+whisper_init_state: compute buffer (decode) =   97.27 MB
+
+system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 | 
+
+whisper_print_timings:     load time =   265.60 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =     0.00 ms
+whisper_print_timings:   sample time =     0.00 ms /     1 runs (     0.00 ms per run)
+whisper_print_timings:   encode time =  4413.94 ms /     1 runs (  4413.94 ms per run)
+whisper_print_timings:   decode time =  3280.24 ms /   256 runs (    12.81 ms per run)
+whisper_print_timings:   batchd time =  1785.83 ms /   320 runs (     5.58 ms per run)
+whisper_print_timings:   prompt time = 15643.45 ms /  4096 runs (     3.82 ms per run)
+whisper_print_timings:    total time = 25125.19 ms
+
+If you wish, you can submit these results here:
+
+  https://github.com/ggerganov/whisper.cpp/issues/89
+
+Please include the following information:
+
+  - CPU model
+  - Operating system
+  - Compiler'
+++ grep system_info
+++ awk '{print $4}'
++ actual_threads=4
++ config=
++ [[ system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 |  == *\A\V\X\2\ \=\ \1* ]]
++ [[ system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 |  == *\N\E\O\N\ \=\ \1* ]]
++ config=' NEON'
++ [[ system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 |  == *\B\L\A\S\ \=\ \1* ]]
++ [[ system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 |  == *\C\O\R\E\M\L\ \=\ \1* ]]
++ [[ system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 |  == *\C\U\D\A\ \=\ \1* ]]
++ [[ system_info: n_threads = 4 / 4 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | OPENMP = 1 | AARCH64_REPACK = 1 |  == *\M\E\T\A\L\ \=\ \1* ]]
+++ git rev-parse --short HEAD
++ commit=b5055396
++ printf '| %16s | %13s | %3s | %3s | %7s | %7s | %7s | %7s | %7s |\n' ' NEON' small 4 0 4413.94 12.81 5.58 3.82 b5055396
++ tee -a /home/ggml/results/whisper.cpp/b5/055396706a0a597b6de6d8d9e15be6da5f75a6/ggml-1-arm64-cpu-low-perf/bench-models-table.log
+|             NEON |         small |   4 |   0 | 4413.94 |   12.81 |    5.58 |    3.82 | b5055396 |
++ cur=0
++ echo 0
++ set +x
