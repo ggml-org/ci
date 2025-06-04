@@ -1,0 +1,129 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 2:29.66
+- date:    Wed Jun  4 05:52:52 UTC 2025
+- repo:    https://github.com/ggerganov/whisper.cpp
+- commit:  https://github.com/ggerganov/whisper.cpp/commit/799eacdde40b3c562cfce1508da1354b90567f8f
+- author:  KITAITI Makoto
+```
+ruby : Add parallel transcription support (#3222)
+
+* Fix indentation of code sample in document comment
+
+* Make Whisper::Context#transcribe able to run non-parallel
+
+* Add test for Whisper::Context#transcribe with parallel option
+
+* Follow signature API change of Context#transcribe
+
+* Remove useless variable assignment
+
+* Move simple usage up in README
+
+* Add need help section in README
+
+* Add document on Context#transcribe's parallel option in README
+
+* Update date
+
+* Fix signature of Context.new
+
+* Make Context#subscribe accept n_processors option
+
+* Make test follow #transcribe's change
+
+* Make RBS follow #transcribe's change
+
+* Add document for #transcribe's n_processors option
+
+* Rename test directory so that Rake tasks' default setting is used
+```
+
+## Environment
+
+```
+GG_BUILD_CLOUD=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+GG_BUILD_LOW_PERF=1
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-debug
+No tests were found!!!
+
+real	0m0.009s
+user	0m0.004s
+sys	0m0.004s
+```
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-release
+No tests were found!!!
+
+real	0m0.009s
+user	0m0.009s
+sys	0m0.000s
+```
+### bench
+
+Whisper Benchmark Results
+- status: 0
+#### memcpy Benchmark
+
+```
+memcpy:   11.78 GB/s (heat-up)
+memcpy:   11.88 GB/s ( 1 thread)
+memcpy:   11.87 GB/s ( 1 thread)
+memcpy:   22.28 GB/s ( 2 thread)
+memcpy:   30.53 GB/s ( 3 thread)
+memcpy:   33.27 GB/s ( 4 thread)
+sum:    783359998884.000000
+```
+
+#### ggml_mul_mat Benchmark
+
+```
+  64 x   64: Q4_0    27.5 GFLOPS (128 runs) | Q4_1    27.3 GFLOPS (128 runs)
+  64 x   64: Q5_0    20.4 GFLOPS (128 runs) | Q5_1    19.9 GFLOPS (128 runs) | Q8_0    28.7 GFLOPS (128 runs)
+  64 x   64: F16     31.9 GFLOPS (128 runs) | F32     33.6 GFLOPS (128 runs)
+ 128 x  128: Q4_0    55.5 GFLOPS (128 runs) | Q4_1    51.4 GFLOPS (128 runs)
+ 128 x  128: Q5_0    37.1 GFLOPS (128 runs) | Q5_1    34.5 GFLOPS (128 runs) | Q8_0    58.9 GFLOPS (128 runs)
+ 128 x  128: F16     67.3 GFLOPS (128 runs) | F32     55.3 GFLOPS (128 runs)
+ 256 x  256: Q4_0    72.6 GFLOPS (128 runs) | Q4_1    66.1 GFLOPS (128 runs)
+ 256 x  256: Q5_0    48.0 GFLOPS (128 runs) | Q5_1    43.8 GFLOPS (128 runs) | Q8_0    79.9 GFLOPS (128 runs)
+ 256 x  256: F16     94.3 GFLOPS (128 runs) | F32     64.0 GFLOPS (128 runs)
+ 512 x  512: Q4_0    80.4 GFLOPS (128 runs) | Q4_1    73.0 GFLOPS (128 runs)
+ 512 x  512: Q5_0    55.1 GFLOPS (128 runs) | Q5_1    49.2 GFLOPS (128 runs) | Q8_0    91.0 GFLOPS (128 runs)
+ 512 x  512: F16    109.1 GFLOPS (128 runs) | F32     64.5 GFLOPS (128 runs)
+1024 x 1024: Q4_0    86.2 GFLOPS ( 41 runs) | Q4_1    77.5 GFLOPS ( 37 runs)
+1024 x 1024: Q5_0    59.0 GFLOPS ( 28 runs) | Q5_1    51.6 GFLOPS ( 25 runs) | Q8_0    97.5 GFLOPS ( 46 runs)
+1024 x 1024: F16    120.7 GFLOPS ( 57 runs) | F32     62.9 GFLOPS ( 30 runs)
+2048 x 2048: Q4_0    89.0 GFLOPS (  6 runs) | Q4_1    80.4 GFLOPS (  5 runs)
+2048 x 2048: Q5_0    61.2 GFLOPS (  4 runs) | Q5_1    54.6 GFLOPS (  4 runs) | Q8_0   101.7 GFLOPS (  6 runs)
+2048 x 2048: F16    120.7 GFLOPS (  8 runs) | F32     54.5 GFLOPS (  4 runs)
+4096 x 4096: Q4_0    90.5 GFLOPS (  3 runs) | Q4_1    81.0 GFLOPS (  3 runs)
+4096 x 4096: Q5_0    61.5 GFLOPS (  3 runs) | Q5_1    54.7 GFLOPS (  3 runs) | Q8_0   100.7 GFLOPS (  3 runs)
+4096 x 4096: F16    105.5 GFLOPS (  3 runs) | F32     49.5 GFLOPS (  3 runs)
+```
+
+#### Model Benchmarks
+
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             NEON |          tiny |   4 |   0 |  550.63 |    2.47 |    1.06 |    0.81 | 799eacdd |
+|             NEON |          base |   4 |   0 | 1238.33 |    4.79 |    1.95 |    1.39 | 799eacdd |
+|             NEON |         small |   4 |   0 | 4410.91 |   13.22 |    5.71 |    3.82 | 799eacdd |
+
