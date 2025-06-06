@@ -1,4 +1,4 @@
-+ cmake -DCMAKE_BUILD_TYPE=Debug -DLLAMA_FATAL_WARNINGS=ON -DLLAMA_CURL=ON ..
++ cmake -DCMAKE_BUILD_TYPE=Release -DLLAMA_FATAL_WARNINGS=ON -DLLAMA_CURL=ON ..
 -- The C compiler identification is GNU 11.4.0
 -- The CXX compiler identification is GNU 11.4.0
 -- Detecting C compiler ABI info
@@ -45,15 +45,11 @@
 -- ARM feature FMA enabled
 -- ARM feature FP16_VECTOR_ARITHMETIC enabled
 -- Adding CPU backend variant ggml-cpu: -mcpu=ares+crypto+noprofile+dotprod+noi8mm+nosve 
--- Could NOT find CURL (missing: CURL_LIBRARY CURL_INCLUDE_DIR) 
-CMake Error at common/CMakeLists.txt:95 (message):
-  Could NOT find CURL.  Hint: to disable this feature, set -DLLAMA_CURL=OFF
+-- Found CURL: /usr/lib/aarch64-linux-gnu/libcurl.so (found version "7.81.0")  
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-release
 
-
--- Configuring incomplete, errors occurred!
-See also "/home/ggml/work/llama.cpp/build-ci-debug/CMakeFiles/CMakeOutput.log".
-See also "/home/ggml/work/llama.cpp/build-ci-debug/CMakeFiles/CMakeError.log".
-
-real	0m2.003s
-user	0m1.265s
-sys	0m0.545s
+real	0m2.204s
+user	0m1.367s
+sys	0m0.644s
