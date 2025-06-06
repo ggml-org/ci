@@ -25,10 +25,10 @@
 -- x86 detected
 -- Adding CPU backend variant ggml-cpu: -march=native 
 -- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "7.81.0")
--- Configuring done (0.6s)
+-- Configuring done (0.7s)
 -- Generating done (0.1s)
 -- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-debug
 
-real	0m0.833s
-user	0m0.585s
-sys	0m0.252s
+real	0m0.883s
+user	0m0.622s
+sys	0m0.265s
