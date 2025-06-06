@@ -1,0 +1,195 @@
+Looking in indexes: https://pypi.org/simple, https://download.pytorch.org/whl/cpu, https://download.pytorch.org/whl/nightly, https://download.pytorch.org/whl/cpu, https://download.pytorch.org/whl/nightly, https://download.pytorch.org/whl/cpu, https://download.pytorch.org/whl/nightly, https://download.pytorch.org/whl/cpu, https://download.pytorch.org/whl/nightly
+Ignoring torch: markers 'platform_machine == "s390x"' don't match your environment
+Ignoring torch: markers 'platform_machine == "s390x"' don't match your environment
+Ignoring torch: markers 'platform_machine == "s390x"' don't match your environment
+Requirement already satisfied: numpy~=1.26.4 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 1)) (1.26.4)
+Requirement already satisfied: sentencepiece~=0.2.0 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 2)) (0.2.0)
+Requirement already satisfied: transformers<5.0.0,>=4.45.1 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (4.46.3)
+Requirement already satisfied: gguf>=0.1.0 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 4)) (0.17.0)
+Requirement already satisfied: protobuf<5.0.0,>=4.21.0 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 5)) (4.25.8)
+Requirement already satisfied: torch~=2.2.1 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (2.2.2+cpu)
+Requirement already satisfied: aiohttp~=3.9.3 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 1)) (3.9.5)
+Requirement already satisfied: pytest~=8.3.3 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 2)) (8.3.5)
+Requirement already satisfied: huggingface_hub~=0.23.2 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 3)) (0.23.5)
+Requirement already satisfied: matplotlib~=3.10.0 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 4)) (3.10.3)
+Requirement already satisfied: openai~=1.55.3 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 6)) (1.55.3)
+Requirement already satisfied: pandas~=2.2.3 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 7)) (2.2.3)
+Requirement already satisfied: prometheus-client~=0.20.0 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 8)) (0.20.0)
+Requirement already satisfied: requests~=2.32.3 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 9)) (2.32.3)
+Requirement already satisfied: wget~=3.2 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 10)) (3.2)
+Requirement already satisfied: typer~=0.15.1 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 11)) (0.15.4)
+Requirement already satisfied: seaborn~=0.13.2 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 12)) (0.13.2)
+Requirement already satisfied: filelock in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (3.18.0)
+Requirement already satisfied: pyyaml>=5.1 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (6.0.2)
+Requirement already satisfied: regex!=2019.12.17 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (2024.11.6)
+Requirement already satisfied: packaging>=20.0 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (25.0)
+Requirement already satisfied: tokenizers<0.21,>=0.20 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (0.20.3)
+Requirement already satisfied: safetensors>=0.4.1 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (0.5.3)
+Requirement already satisfied: tqdm>=4.27 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (4.67.1)
+Requirement already satisfied: sympy in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (1.14.0)
+Requirement already satisfied: fsspec in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (2025.5.1)
+Requirement already satisfied: networkx in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (3.4.2)
+Requirement already satisfied: jinja2 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (3.1.6)
+Requirement already satisfied: typing-extensions>=4.8.0 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (4.14.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from aiohttp~=3.9.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 1)) (6.4.4)
+Requirement already satisfied: aiosignal>=1.1.2 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from aiohttp~=3.9.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 1)) (1.3.2)
+Requirement already satisfied: frozenlist>=1.1.1 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from aiohttp~=3.9.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 1)) (1.6.0)
+Requirement already satisfied: attrs>=17.3.0 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from aiohttp~=3.9.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 1)) (25.3.0)
+Requirement already satisfied: yarl<2.0,>=1.0 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from aiohttp~=3.9.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 1)) (1.20.0)
+Requirement already satisfied: async-timeout<5.0,>=4.0 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from aiohttp~=3.9.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 1)) (4.0.3)
+Requirement already satisfied: tomli>=1 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from pytest~=8.3.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 2)) (2.2.1)
+Requirement already satisfied: exceptiongroup>=1.0.0rc8 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from pytest~=8.3.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 2)) (1.3.0)
+Requirement already satisfied: pluggy<2,>=1.5 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from pytest~=8.3.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 2)) (1.6.0)
+Requirement already satisfied: iniconfig in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from pytest~=8.3.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 2)) (2.1.0)
+Requirement already satisfied: contourpy>=1.0.1 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from matplotlib~=3.10.0->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 4)) (1.3.2)
+Requirement already satisfied: pyparsing>=2.3.1 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from matplotlib~=3.10.0->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 4)) (3.2.3)
+Requirement already satisfied: cycler>=0.10 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from matplotlib~=3.10.0->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 4)) (0.12.1)
+Requirement already satisfied: python-dateutil>=2.7 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from matplotlib~=3.10.0->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 4)) (2.9.0.post0)
+Requirement already satisfied: pillow>=8 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from matplotlib~=3.10.0->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 4)) (11.2.1)
+Requirement already satisfied: kiwisolver>=1.3.1 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from matplotlib~=3.10.0->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 4)) (1.4.8)
+Requirement already satisfied: fonttools>=4.22.0 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from matplotlib~=3.10.0->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 4)) (4.58.1)
+Requirement already satisfied: sniffio in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from openai~=1.55.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 6)) (1.3.1)
+Requirement already satisfied: pydantic<3,>=1.9.0 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from openai~=1.55.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 6)) (2.11.5)
+Requirement already satisfied: distro<2,>=1.7.0 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from openai~=1.55.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 6)) (1.9.0)
+Requirement already satisfied: anyio<5,>=3.5.0 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from openai~=1.55.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 6)) (4.9.0)
+Requirement already satisfied: jiter<1,>=0.4.0 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from openai~=1.55.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 6)) (0.10.0)
+Requirement already satisfied: httpx<1,>=0.23.0 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from openai~=1.55.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 6)) (0.28.1)
+Requirement already satisfied: tzdata>=2022.7 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from pandas~=2.2.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 7)) (2025.2)
+Requirement already satisfied: pytz>=2020.1 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from pandas~=2.2.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 7)) (2025.2)
+Requirement already satisfied: idna<4,>=2.5 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from requests~=2.32.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 9)) (3.10)
+Requirement already satisfied: charset-normalizer<4,>=2 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from requests~=2.32.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 9)) (3.4.2)
+Requirement already satisfied: urllib3<3,>=1.21.1 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from requests~=2.32.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 9)) (2.4.0)
+Requirement already satisfied: certifi>=2017.4.17 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from requests~=2.32.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 9)) (2025.4.26)
+Requirement already satisfied: rich>=10.11.0 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from typer~=0.15.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 11)) (14.0.0)
+Requirement already satisfied: shellingham>=1.3.0 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from typer~=0.15.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 11)) (1.5.4)
+Requirement already satisfied: click<8.2,>=8.0.0 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from typer~=0.15.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 11)) (8.1.8)
+Requirement already satisfied: httpcore==1.* in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from httpx<1,>=0.23.0->openai~=1.55.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 6)) (1.0.9)
+Requirement already satisfied: h11>=0.16 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from httpcore==1.*->httpx<1,>=0.23.0->openai~=1.55.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 6)) (0.16.0)
+Requirement already satisfied: typing-inspection>=0.4.0 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from pydantic<3,>=1.9.0->openai~=1.55.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 6)) (0.4.1)
+Requirement already satisfied: pydantic-core==2.33.2 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from pydantic<3,>=1.9.0->openai~=1.55.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 6)) (2.33.2)
+Requirement already satisfied: annotated-types>=0.6.0 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from pydantic<3,>=1.9.0->openai~=1.55.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 6)) (0.7.0)
+Requirement already satisfied: six>=1.5 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from python-dateutil>=2.7->matplotlib~=3.10.0->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 4)) (1.17.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from rich>=10.11.0->typer~=0.15.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 11)) (2.19.1)
+Requirement already satisfied: markdown-it-py>=2.2.0 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from rich>=10.11.0->typer~=0.15.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 11)) (3.0.0)
+Requirement already satisfied: propcache>=0.2.1 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from yarl<2.0,>=1.0->aiohttp~=3.9.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 1)) (0.3.1)
+Requirement already satisfied: MarkupSafe>=2.0 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from jinja2->torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (3.0.2)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from sympy->torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (1.3.0)
+Requirement already satisfied: mdurl~=0.1 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from markdown-it-py>=2.2.0->rich>=10.11.0->typer~=0.15.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 11)) (0.1.2)
+Obtaining file:///home/ggml/work/llama.cpp/gguf-py
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: pyyaml>=5.1 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from gguf==0.17.0) (6.0.2)
+Requirement already satisfied: tqdm>=4.27 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from gguf==0.17.0) (4.67.1)
+Requirement already satisfied: numpy>=1.17 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from gguf==0.17.0) (1.26.4)
+Requirement already satisfied: sentencepiece<=0.2.0,>=0.1.98 in ./~/.cache/results/llama.cpp/venv/lib/python3.10/site-packages (from gguf==0.17.0) (0.2.0)
+Building wheels for collected packages: gguf
+  Building editable for gguf (pyproject.toml): started
+  Building editable for gguf (pyproject.toml): finished with status 'done'
+  Created wheel for gguf: filename=gguf-0.17.0-py3-none-any.whl size=3646 sha256=05ac66cde0ba65029ecceab8f6d437c74c69ebd43bf9bc650dca58a76ed72093
+  Stored in directory: /tmp/pip-ephem-wheel-cache-39dqv40n/wheels/a3/4c/52/c5934ad001d1a70ca5434f11ddc622cad9c0a484e9bf6feda3
+Successfully built gguf
+Installing collected packages: gguf
+  Attempting uninstall: gguf
+    Found existing installation: gguf 0.17.0
+    Uninstalling gguf-0.17.0:
+      Successfully uninstalled gguf-0.17.0
+Successfully installed gguf-0.17.0
++ gg_run_ctest_release
++ cd /home/ggml/work/llama.cpp
++ tee /home/ggml/results/llama.cpp/bf/4530006335c5a1349391cecbe0212cf168bfb4/ggml-6-x86-sycl/ctest_release.log
++ rm -rf build-ci-release
++ mkdir build-ci-release
++ cd build-ci-release
++ set -e
++ gg_check_build_requirements
++ command -v cmake
++ command -v make
++ command -v ctest
++ tee -a /home/ggml/results/llama.cpp/bf/4530006335c5a1349391cecbe0212cf168bfb4/ggml-6-x86-sycl/ctest_release-cmake.log
++ cmake -DCMAKE_BUILD_TYPE=Release -DLLAMA_FATAL_WARNINGS=ON -DLLAMA_CURL=ON -DGGML_SYCL=1 -DCMAKE_C_COMPILER=icx -DCMAKE_CXX_COMPILER=icpx -DGGML_SYCL_F16=ON ..
+-- The C compiler identification is IntelLLVM 2025.1.1
+-- The CXX compiler identification is IntelLLVM 2025.1.1
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /opt/intel/oneapi/compiler/2025.1/bin/icx - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /opt/intel/oneapi/compiler/2025.1/bin/icpx - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- GGML_SYSTEM_ARCH: x86
+-- Including CPU backend
+-- Found OpenMP_C: -fiopenmp  
+-- Found OpenMP_CXX: -fiopenmp  
+-- Found OpenMP: TRUE   
+-- x86 detected
+-- Adding CPU backend variant ggml-cpu: -march=native 
+-- GGML_SYCL_TARGET=INTEL
+-- Performing Test SUPPORTS_SYCL
+-- Performing Test SUPPORTS_SYCL - Success
+-- Using oneAPI Release SYCL compiler (icpx).
+-- SYCL found
+-- SYCL Compiler version: 20250101
+-- SYCL_INCLUDE_DIR: /opt/intel/oneapi/compiler/2025.1/include
+-- SYCL_LIBRARY=/opt/intel/oneapi/compiler/2025.1/lib/libsycl.so
+-- Found IntelSYCL: /opt/intel/oneapi/compiler/2025.1/include (found version "202001") 
+-- Found oneDNN: /opt/intel/oneapi/dnnl/2025.1/lib/libdnnl.so.3.7
+-- Upgrade to CMake version 3.25.2 or later for native support of Intel compiler(s) icx, icpx. You are running version 3.22.1.
+-- MKL_VERSION: 2025.1.0
+-- MKL_ROOT: /opt/intel/oneapi/mkl/2025.1
+-- MKL_ARCH: intel64
+-- MKL_SYCL_LINK: None, set to ` dynamic` by default
+-- MKL_LINK: None, set to ` dynamic` by default
+-- MKL_SYCL_INTERFACE_FULL: None, set to ` intel_ilp64` by default
+-- MKL_INTERFACE_FULL: None, set to ` intel_ilp64` by default
+-- MKL_SYCL_THREADING: None, set to ` tbb_thread` by default
+-- MKL_THREADING: None, set to ` intel_thread` by default
+-- MKL_MPI: None, set to ` intelmpi` by default
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_scalapack_ilp64.so
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_cdft_core.so
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_intel_ilp64.so
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_intel_thread.so
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_core.so
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_blacs_intelmpi_ilp64.so
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_sycl_blas.so
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_sycl_lapack.so
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_sycl_dft.so
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_sycl_sparse.so
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_sycl_data_fitting.so
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_sycl_rng.so
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_sycl_stats.so
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_sycl_vm.so
+-- Found /opt/intel/oneapi/mkl/2025.1/lib/libmkl_tbb_thread.so
+-- Found /opt/intel/oneapi/compiler/2025.1/lib/libiomp5.so
+-- Including SYCL backend
+-- Could NOT find CURL (missing: CURL_LIBRARY CURL_INCLUDE_DIR) 
+CMake Error at common/CMakeLists.txt:95 (message):
+  Could NOT find CURL.  Hint: to disable this feature, set -DLLAMA_CURL=OFF
+
+
+-- Configuring incomplete, errors occurred!
+See also "/home/ggml/work/llama.cpp/build-ci-release/CMakeFiles/CMakeOutput.log".
+
+real	0m5,074s
+user	0m3,023s
+sys	0m2,050s
++ cur=1
++ echo 1
++ set +x
+cat: /home/ggml/results/llama.cpp/bf/4530006335c5a1349391cecbe0212cf168bfb4/ggml-6-x86-sycl/ctest_release-ctest.log: No such file or directory
