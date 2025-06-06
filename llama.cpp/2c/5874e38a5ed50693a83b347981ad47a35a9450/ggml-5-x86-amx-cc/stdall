@@ -1,0 +1,739 @@
+Looking in indexes: https://pypi.org/simple, https://download.pytorch.org/whl/cpu, https://download.pytorch.org/whl/nightly, https://download.pytorch.org/whl/cpu, https://download.pytorch.org/whl/nightly, https://download.pytorch.org/whl/cpu, https://download.pytorch.org/whl/nightly, https://download.pytorch.org/whl/cpu, https://download.pytorch.org/whl/nightly
+Ignoring torch: markers 'platform_machine == "s390x"' don't match your environment
+Ignoring torch: markers 'platform_machine == "s390x"' don't match your environment
+Ignoring torch: markers 'platform_machine == "s390x"' don't match your environment
+Requirement already satisfied: numpy~=1.26.4 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 1)) (1.26.4)
+Requirement already satisfied: sentencepiece~=0.2.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 2)) (0.2.0)
+Requirement already satisfied: transformers<5.0.0,>=4.45.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (4.46.3)
+Requirement already satisfied: gguf>=0.1.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 4)) (0.17.0)
+Requirement already satisfied: protobuf<5.0.0,>=4.21.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 5)) (4.25.6)
+Requirement already satisfied: torch~=2.2.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (2.2.2+cpu)
+Requirement already satisfied: aiohttp~=3.9.3 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 1)) (3.9.5)
+Requirement already satisfied: pytest~=8.3.3 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 2)) (8.3.5)
+Requirement already satisfied: huggingface_hub~=0.23.2 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 3)) (0.23.5)
+Requirement already satisfied: matplotlib~=3.10.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 4)) (3.10.1)
+Requirement already satisfied: openai~=1.55.3 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 6)) (1.55.3)
+Requirement already satisfied: pandas~=2.2.3 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 7)) (2.2.3)
+Requirement already satisfied: prometheus-client~=0.20.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 8)) (0.20.0)
+Requirement already satisfied: requests~=2.32.3 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 9)) (2.32.3)
+Requirement already satisfied: wget~=3.2 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 10)) (3.2)
+Requirement already satisfied: typer~=0.15.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 11)) (0.15.2)
+Requirement already satisfied: seaborn~=0.13.2 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from -r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 12)) (0.13.2)
+Requirement already satisfied: safetensors>=0.4.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (0.5.2)
+Requirement already satisfied: tqdm>=4.27 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (4.67.1)
+Requirement already satisfied: filelock in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (3.17.0)
+Requirement already satisfied: regex!=2019.12.17 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (2024.11.6)
+Requirement already satisfied: tokenizers<0.21,>=0.20 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (0.20.3)
+Requirement already satisfied: pyyaml>=5.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (6.0.2)
+Requirement already satisfied: packaging>=20.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from transformers<5.0.0,>=4.45.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_legacy_llama.txt (line 3)) (24.2)
+Requirement already satisfied: typing-extensions>=4.8.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (4.12.2)
+Requirement already satisfied: fsspec in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (2025.2.0)
+Requirement already satisfied: networkx in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (3.4.2)
+Requirement already satisfied: jinja2 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (3.1.5)
+Requirement already satisfied: sympy in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (1.13.3)
+Requirement already satisfied: frozenlist>=1.1.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from aiohttp~=3.9.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 1)) (1.5.0)
+Requirement already satisfied: attrs>=17.3.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from aiohttp~=3.9.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 1)) (25.1.0)
+Requirement already satisfied: yarl<2.0,>=1.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from aiohttp~=3.9.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 1)) (1.18.3)
+Requirement already satisfied: async-timeout<5.0,>=4.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from aiohttp~=3.9.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 1)) (4.0.3)
+Requirement already satisfied: aiosignal>=1.1.2 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from aiohttp~=3.9.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 1)) (1.3.2)
+Requirement already satisfied: multidict<7.0,>=4.5 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from aiohttp~=3.9.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 1)) (6.1.0)
+Requirement already satisfied: pluggy<2,>=1.5 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from pytest~=8.3.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 2)) (1.5.0)
+Requirement already satisfied: iniconfig in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from pytest~=8.3.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 2)) (2.0.0)
+Requirement already satisfied: exceptiongroup>=1.0.0rc8 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from pytest~=8.3.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 2)) (1.2.2)
+Requirement already satisfied: tomli>=1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from pytest~=8.3.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 2)) (2.2.1)
+Requirement already satisfied: contourpy>=1.0.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from matplotlib~=3.10.0->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 4)) (1.3.1)
+Requirement already satisfied: pyparsing>=2.3.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from matplotlib~=3.10.0->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 4)) (3.2.1)
+Requirement already satisfied: fonttools>=4.22.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from matplotlib~=3.10.0->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 4)) (4.56.0)
+Requirement already satisfied: pillow>=8 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from matplotlib~=3.10.0->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 4)) (11.1.0)
+Requirement already satisfied: python-dateutil>=2.7 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from matplotlib~=3.10.0->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 4)) (2.9.0.post0)
+Requirement already satisfied: cycler>=0.10 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from matplotlib~=3.10.0->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 4)) (0.12.1)
+Requirement already satisfied: kiwisolver>=1.3.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from matplotlib~=3.10.0->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 4)) (1.4.8)
+Requirement already satisfied: httpx<1,>=0.23.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from openai~=1.55.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 6)) (0.28.1)
+Requirement already satisfied: anyio<5,>=3.5.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from openai~=1.55.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 6)) (4.8.0)
+Requirement already satisfied: sniffio in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from openai~=1.55.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 6)) (1.3.1)
+Requirement already satisfied: jiter<1,>=0.4.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from openai~=1.55.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 6)) (0.8.2)
+Requirement already satisfied: distro<2,>=1.7.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from openai~=1.55.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 6)) (1.9.0)
+Requirement already satisfied: pydantic<3,>=1.9.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from openai~=1.55.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 6)) (2.10.6)
+Requirement already satisfied: tzdata>=2022.7 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from pandas~=2.2.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 7)) (2025.1)
+Requirement already satisfied: pytz>=2020.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from pandas~=2.2.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 7)) (2025.1)
+Requirement already satisfied: charset-normalizer<4,>=2 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from requests~=2.32.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 9)) (3.4.1)
+Requirement already satisfied: idna<4,>=2.5 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from requests~=2.32.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 9)) (3.10)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from requests~=2.32.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 9)) (2.3.0)
+Requirement already satisfied: certifi>=2017.4.17 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from requests~=2.32.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 9)) (2025.1.31)
+Requirement already satisfied: shellingham>=1.3.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from typer~=0.15.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 11)) (1.5.4)
+Requirement already satisfied: rich>=10.11.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from typer~=0.15.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 11)) (13.9.4)
+Requirement already satisfied: click>=8.0.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from typer~=0.15.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 11)) (8.1.8)
+Requirement already satisfied: httpcore==1.* in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from httpx<1,>=0.23.0->openai~=1.55.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 6)) (1.0.7)
+Requirement already satisfied: h11<0.15,>=0.13 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from httpcore==1.*->httpx<1,>=0.23.0->openai~=1.55.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 6)) (0.14.0)
+Requirement already satisfied: pydantic-core==2.27.2 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from pydantic<3,>=1.9.0->openai~=1.55.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 6)) (2.27.2)
+Requirement already satisfied: annotated-types>=0.6.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from pydantic<3,>=1.9.0->openai~=1.55.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 6)) (0.7.0)
+Requirement already satisfied: six>=1.5 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from python-dateutil>=2.7->matplotlib~=3.10.0->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 4)) (1.17.0)
+Requirement already satisfied: markdown-it-py>=2.2.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from rich>=10.11.0->typer~=0.15.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 11)) (3.0.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from rich>=10.11.0->typer~=0.15.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 11)) (2.19.1)
+Requirement already satisfied: propcache>=0.2.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from yarl<2.0,>=1.0->aiohttp~=3.9.3->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 1)) (0.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from jinja2->torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (3.0.2)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from sympy->torch~=2.2.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-convert_hf_to_gguf.txt (line 3)) (1.3.0)
+Requirement already satisfied: mdurl~=0.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from markdown-it-py>=2.2.0->rich>=10.11.0->typer~=0.15.1->-r /home/ggml/work/llama.cpp/./requirements/requirements-tool_bench.txt (line 11)) (0.1.2)
+Obtaining file:///home/ggml/work/llama.cpp/gguf-py
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: tqdm>=4.27 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from gguf==0.17.0) (4.67.1)
+Requirement already satisfied: pyyaml>=5.1 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from gguf==0.17.0) (6.0.2)
+Requirement already satisfied: sentencepiece<=0.2.0,>=0.1.98 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from gguf==0.17.0) (0.2.0)
+Requirement already satisfied: numpy>=1.17 in /mnt/llama.cpp/venv/lib/python3.10/site-packages (from gguf==0.17.0) (1.26.4)
+Building wheels for collected packages: gguf
+  Building editable for gguf (pyproject.toml): started
+  Building editable for gguf (pyproject.toml): finished with status 'done'
+  Created wheel for gguf: filename=gguf-0.17.0-py3-none-any.whl size=3646 sha256=05ac66cde0ba65029ecceab8f6d437c74c69ebd43bf9bc650dca58a76ed72093
+  Stored in directory: /tmp/pip-ephem-wheel-cache-nu6s4q_k/wheels/a3/4c/52/c5934ad001d1a70ca5434f11ddc622cad9c0a484e9bf6feda3
+Successfully built gguf
+Installing collected packages: gguf
+  Attempting uninstall: gguf
+    Found existing installation: gguf 0.17.0
+    Uninstalling gguf-0.17.0:
+      Successfully uninstalled gguf-0.17.0
+Successfully installed gguf-0.17.0
++ gg_run_ctest_debug
++ cd /home/ggml/work/llama.cpp
++ tee /home/ggml/results/llama.cpp/2c/5874e38a5ed50693a83b347981ad47a35a9450/ggml-5-x86-amx-cc/ctest_debug.log
++ rm -rf build-ci-debug
++ mkdir build-ci-debug
++ cd build-ci-debug
++ set -e
++ gg_check_build_requirements
++ command -v cmake
++ command -v make
++ command -v ctest
++ tee -a /home/ggml/results/llama.cpp/2c/5874e38a5ed50693a83b347981ad47a35a9450/ggml-5-x86-amx-cc/ctest_debug-cmake.log
++ cmake -DCMAKE_BUILD_TYPE=Debug -DLLAMA_FATAL_WARNINGS=ON -DLLAMA_CURL=ON ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- GGML_SYSTEM_ARCH: x86
+-- Including CPU backend
+-- Found OpenMP_C: -fopenmp (found version "4.5") 
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5")  
+-- x86 detected
+-- Adding CPU backend variant ggml-cpu: -march=native 
+-- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "7.81.0")  
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-debug
+
+real	0m0.776s
+user	0m0.492s
+sys	0m0.289s
++ tee -a /home/ggml/results/llama.cpp/2c/5874e38a5ed50693a83b347981ad47a35a9450/ggml-5-x86-amx-cc/ctest_debug-make.log
+++ nproc
++ make -j8
+[  0%] Generating build details from Git
+[  1%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  1%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+[  2%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  2%] Building CXX object tools/mtmd/CMakeFiles/llama-llava-cli.dir/deprecation-warning.cpp.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  2%] Building CXX object tools/mtmd/CMakeFiles/llama-gemma3-cli.dir/deprecation-warning.cpp.o
+[  2%] Building CXX object tools/mtmd/CMakeFiles/llama-minicpmv-cli.dir/deprecation-warning.cpp.o
+[  2%] Built target xxhash
+[  2%] Built target sha1
+[  2%] Built target sha256
+[  2%] Linking CXX executable ../../bin/llama-llava-cli
+[  3%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml.cpp.o
+[  4%] Linking CXX executable ../../bin/llama-gemma3-cli
+[  4%] Linking CXX executable ../../bin/llama-minicpmv-cli
+[  4%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  5%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  6%] Building CXX object tools/mtmd/CMakeFiles/llama-qwen2vl-cli.dir/deprecation-warning.cpp.o
+[  7%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  7%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  7%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  7%] Linking CXX executable ../../bin/llama-qwen2vl-cli
+[  7%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/gguf.cpp.o
+[  8%] Linking CXX shared library ../../bin/libggml-base.so
+[  8%] Built target build_info
+[  8%] Built target llama-gemma3-cli
+[  8%] Built target llama-llava-cli
+[  8%] Built target llama-minicpmv-cli
+[  8%] Built target llama-qwen2vl-cli
+[  8%] Built target ggml-base
+[  8%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[  8%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-aarch64.cpp.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-hbm.cpp.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-traits.cpp.o
+[ 10%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu-quants.c.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/binary-ops.cpp.o
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/unary-ops.cpp.o
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/vec.cpp.o
+[ 13%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ops.cpp.o
+[ 13%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.o
+[ 14%] Linking CXX shared library ../../bin/libggml-cpu.so
+[ 14%] Built target ggml-cpu
+[ 15%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 15%] Linking CXX shared library ../../bin/libggml.so
+[ 15%] Built target ggml
+[ 15%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 16%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 17%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 17%] Building CXX object src/CMakeFiles/llama.dir/llama-adapter.cpp.o
+[ 18%] Building CXX object src/CMakeFiles/llama.dir/llama-arch.cpp.o
+[ 18%] Building CXX object src/CMakeFiles/llama.dir/llama-batch.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-chat.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-context.cpp.o
+[ 19%] Linking CXX executable ../../bin/llama-gguf
+[ 19%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-cparams.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-graph.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/llama.dir/llama-hparams.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/llama.dir/llama-impl.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/llama.dir/llama-io.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/llama.dir/llama-kv-cache-unified.cpp.o
+[ 22%] Building CXX object src/CMakeFiles/llama.dir/llama-kv-cache-unified-iswa.cpp.o
+[ 23%] Building CXX object src/CMakeFiles/llama.dir/llama-kv-cache-recurrent.cpp.o
+[ 23%] Building CXX object src/CMakeFiles/llama.dir/llama-memory.cpp.o
+[ 23%] Building CXX object src/CMakeFiles/llama.dir/llama-model-loader.cpp.o
+[ 24%] Building CXX object src/CMakeFiles/llama.dir/llama-mmap.cpp.o
+[ 25%] Building CXX object src/CMakeFiles/llama.dir/llama-model-saver.cpp.o
+[ 25%] Building CXX object src/CMakeFiles/llama.dir/llama-model.cpp.o
+[ 25%] Building CXX object src/CMakeFiles/llama.dir/llama-quant.cpp.o
+[ 26%] Building CXX object src/CMakeFiles/llama.dir/llama-sampling.cpp.o
+[ 26%] Building CXX object src/CMakeFiles/llama.dir/llama-vocab.cpp.o
+[ 27%] Building CXX object src/CMakeFiles/llama.dir/unicode-data.cpp.o
+[ 27%] Building CXX object src/CMakeFiles/llama.dir/unicode.cpp.o
+[ 27%] Linking CXX shared library ../bin/libllama.so
+[ 27%] Built target llama-gguf
+[ 27%] Built target llama-gguf-hash
+[ 27%] Built target llama
+[ 28%] Building CXX object common/CMakeFiles/common.dir/arg.cpp.o
+[ 28%] Building CXX object common/CMakeFiles/common.dir/chat-parser.cpp.o
+[ 28%] Building CXX object common/CMakeFiles/common.dir/common.cpp.o
+[ 28%] Building CXX object tools/mtmd/CMakeFiles/mtmd.dir/mtmd.cpp.o
+[ 29%] Building C object tests/CMakeFiles/test-c.dir/test-c.c.o
+[ 29%] Building CXX object common/CMakeFiles/common.dir/chat.cpp.o
+[ 29%] Building CXX object examples/simple/CMakeFiles/llama-simple.dir/simple.cpp.o
+[ 29%] Building CXX object examples/simple-chat/CMakeFiles/llama-simple-chat.dir/simple-chat.cpp.o
+[ 29%] Linking C executable ../bin/test-c
+[ 30%] Linking CXX executable ../../bin/llama-simple
+[ 31%] Linking CXX executable ../../bin/llama-simple-chat
+[ 32%] Building CXX object tools/mtmd/CMakeFiles/mtmd.dir/mtmd-audio.cpp.o
+[ 32%] Building CXX object tools/mtmd/CMakeFiles/mtmd.dir/clip.cpp.o
+[ 32%] Building CXX object common/CMakeFiles/common.dir/console.cpp.o
+[ 32%] Building CXX object tools/mtmd/CMakeFiles/mtmd.dir/mtmd-helper.cpp.o
+[ 33%] Building CXX object common/CMakeFiles/common.dir/json-partial.cpp.o
+[ 33%] Building CXX object common/CMakeFiles/common.dir/json-schema-to-grammar.cpp.o
+[ 34%] Building CXX object common/CMakeFiles/common.dir/llguidance.cpp.o
+[ 34%] Building CXX object common/CMakeFiles/common.dir/log.cpp.o
+[ 35%] Linking CXX shared library ../../bin/libmtmd.so
+[ 36%] Building CXX object common/CMakeFiles/common.dir/ngram-cache.cpp.o
+[ 36%] Building CXX object common/CMakeFiles/common.dir/sampling.cpp.o
+[ 36%] Building CXX object common/CMakeFiles/common.dir/regex-partial.cpp.o
+[ 36%] Built target test-c
+[ 37%] Building CXX object common/CMakeFiles/common.dir/speculative.cpp.o
+[ 37%] Linking CXX static library libcommon.a
+[ 37%] Built target llama-simple
+[ 37%] Built target llama-simple-chat
+[ 37%] Built target mtmd
+[ 37%] Built target common
+[ 38%] Building CXX object tests/CMakeFiles/test-grammar-integration.dir/test-grammar-integration.cpp.o
+[ 40%] Building CXX object tests/CMakeFiles/test-sampling.dir/test-sampling.cpp.o
+[ 38%] Building CXX object tests/CMakeFiles/test-grammar-parser.dir/test-grammar-parser.cpp.o
+[ 38%] Building CXX object tests/CMakeFiles/test-tokenizer-0.dir/test-tokenizer-0.cpp.o
+[ 38%] Building CXX object tests/CMakeFiles/test-json-schema-to-grammar.dir/test-json-schema-to-grammar.cpp.o
+[ 38%] Building CXX object tests/CMakeFiles/test-quantize-stats.dir/test-quantize-stats.cpp.o
+[ 41%] Building CXX object tests/CMakeFiles/test-chat.dir/test-chat.cpp.o
+[ 40%] Building CXX object tests/CMakeFiles/test-llama-grammar.dir/test-llama-grammar.cpp.o
+[ 41%] Building CXX object tests/CMakeFiles/test-sampling.dir/get-model.cpp.o
+[ 41%] Building CXX object tests/CMakeFiles/test-grammar-parser.dir/get-model.cpp.o
+[ 41%] Linking CXX executable ../bin/test-tokenizer-0
+[ 41%] Building CXX object tests/CMakeFiles/test-llama-grammar.dir/get-model.cpp.o
+[ 42%] Linking CXX executable ../bin/test-quantize-stats
+[ 42%] Building CXX object tests/CMakeFiles/test-grammar-integration.dir/get-model.cpp.o
+[ 43%] Building CXX object tests/CMakeFiles/test-json-schema-to-grammar.dir/get-model.cpp.o
+[ 44%] Linking CXX executable ../bin/test-grammar-parser
+[ 44%] Linking CXX executable ../bin/test-sampling
+[ 44%] Building CXX object tests/CMakeFiles/test-chat.dir/get-model.cpp.o
+[ 45%] Linking CXX executable ../bin/test-llama-grammar
+[ 46%] Linking CXX executable ../bin/test-grammar-integration
+[ 46%] Linking CXX executable ../bin/test-json-schema-to-grammar
+[ 47%] Linking CXX executable ../bin/test-chat
+[ 47%] Built target test-grammar-parser
+[ 47%] Built target test-llama-grammar
+[ 47%] Built target test-sampling
+[ 48%] Building CXX object tests/CMakeFiles/test-gbnf-validator.dir/test-gbnf-validator.cpp.o
+[ 49%] Building CXX object tests/CMakeFiles/test-tokenizer-1-bpe.dir/test-tokenizer-1-bpe.cpp.o
+[ 50%] Building CXX object tests/CMakeFiles/test-tokenizer-1-spm.dir/test-tokenizer-1-spm.cpp.o
+[ 50%] Linking CXX executable ../bin/test-gbnf-validator
+[ 50%] Linking CXX executable ../bin/test-tokenizer-1-bpe
+[ 50%] Linking CXX executable ../bin/test-tokenizer-1-spm
+[ 50%] Built target test-quantize-stats
+[ 50%] Building CXX object tests/CMakeFiles/test-chat-parser.dir/test-chat-parser.cpp.o
+[ 50%] Built target test-tokenizer-0
+[ 51%] Building CXX object tests/CMakeFiles/test-chat-parser.dir/get-model.cpp.o
+[ 51%] Linking CXX executable ../bin/test-chat-parser
+[ 51%] Building CXX object tests/CMakeFiles/test-chat-template.dir/test-chat-template.cpp.o
+[ 52%] Building CXX object tests/CMakeFiles/test-chat-template.dir/get-model.cpp.o
+[ 52%] Linking CXX executable ../bin/test-chat-template
+[ 52%] Built target test-gbnf-validator
+[ 52%] Building CXX object tests/CMakeFiles/test-json-partial.dir/test-json-partial.cpp.o
+[ 53%] Building CXX object tests/CMakeFiles/test-json-partial.dir/get-model.cpp.o
+[ 53%] Linking CXX executable ../bin/test-json-partial
+[ 53%] Built target test-tokenizer-1-spm
+[ 53%] Built target test-tokenizer-1-bpe
+[ 53%] Building CXX object tests/CMakeFiles/test-log.dir/test-log.cpp.o
+[ 53%] Building CXX object tests/CMakeFiles/test-regex-partial.dir/test-regex-partial.cpp.o
+[ 53%] Built target test-grammar-integration
+[ 53%] Building CXX object tests/CMakeFiles/test-log.dir/get-model.cpp.o
+[ 53%] Building CXX object tests/CMakeFiles/test-regex-partial.dir/get-model.cpp.o
+[ 54%] Building CXX object tests/CMakeFiles/test-thread-safety.dir/test-thread-safety.cpp.o
+[ 55%] Linking CXX executable ../bin/test-log
+[ 56%] Linking CXX executable ../bin/test-regex-partial
+[ 56%] Built target test-json-schema-to-grammar
+[ 56%] Building CXX object tests/CMakeFiles/test-thread-safety.dir/get-model.cpp.o
+[ 56%] Building CXX object tests/CMakeFiles/test-arg-parser.dir/test-arg-parser.cpp.o
+[ 56%] Building CXX object tests/CMakeFiles/test-arg-parser.dir/get-model.cpp.o
+[ 57%] Linking CXX executable ../bin/test-arg-parser
+[ 57%] Built target test-json-partial
+[ 57%] Building CXX object tests/CMakeFiles/test-gguf.dir/test-gguf.cpp.o
+[ 58%] Building CXX object tests/CMakeFiles/test-gguf.dir/get-model.cpp.o
+[ 58%] Built target test-log
+[ 58%] Linking CXX executable ../bin/test-gguf
+[ 59%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o
+[ 59%] Building CXX object tests/CMakeFiles/test-backend-ops.dir/get-model.cpp.o
+[ 59%] Linking CXX executable ../bin/test-backend-ops
+[ 59%] Built target test-gguf
+[ 59%] Building CXX object tests/CMakeFiles/test-model-load-cancel.dir/test-model-load-cancel.cpp.o
+[ 59%] Built target test-chat-parser
+[ 60%] Building CXX object tests/CMakeFiles/test-model-load-cancel.dir/get-model.cpp.o
+[ 60%] Linking CXX executable ../bin/test-model-load-cancel
+[ 60%] Building CXX object tests/CMakeFiles/test-autorelease.dir/test-autorelease.cpp.o
+[ 61%] Building CXX object tests/CMakeFiles/test-autorelease.dir/get-model.cpp.o
+[ 61%] Linking CXX executable ../bin/test-autorelease
+[ 61%] Built target test-regex-partial
+[ 62%] Building CXX object tests/CMakeFiles/test-barrier.dir/test-barrier.cpp.o
+[ 62%] Building CXX object tests/CMakeFiles/test-barrier.dir/get-model.cpp.o
+[ 63%] Linking CXX executable ../bin/test-barrier
+[ 63%] Built target test-backend-ops
+[ 64%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o
+[ 64%] Building CXX object tests/CMakeFiles/test-quantize-fns.dir/get-model.cpp.o
+[ 64%] Built target test-model-load-cancel
+[ 65%] Linking CXX executable ../bin/test-quantize-fns
+[ 65%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o
+[ 65%] Built target test-autorelease
+[ 65%] Building CXX object tests/CMakeFiles/test-quantize-perf.dir/get-model.cpp.o
+[ 65%] Building CXX object tests/CMakeFiles/test-rope.dir/test-rope.cpp.o
+[ 66%] Linking CXX executable ../bin/test-quantize-perf
+[ 66%] Built target test-barrier
+[ 67%] Building CXX object tests/CMakeFiles/test-rope.dir/get-model.cpp.o
+[ 67%] Linking CXX executable ../bin/test-rope
+[ 67%] Building C object tests/CMakeFiles/test-mtmd-c-api.dir/test-mtmd-c-api.c.o
+[ 68%] Building CXX object tests/CMakeFiles/test-mtmd-c-api.dir/get-model.cpp.o
+[ 68%] Linking CXX executable ../bin/test-mtmd-c-api
+[ 68%] Built target test-quantize-fns
+[ 69%] Building CXX object examples/batched/CMakeFiles/llama-batched.dir/batched.cpp.o
+[ 69%] Linking CXX executable ../../bin/llama-batched
+[ 69%] Built target test-quantize-perf
+[ 70%] Building CXX object examples/embedding/CMakeFiles/llama-embedding.dir/embedding.cpp.o
+[ 70%] Built target test-rope
+[ 70%] Built target test-chat
+[ 70%] Linking CXX executable ../../bin/llama-embedding
+[ 71%] Building CXX object examples/eval-callback/CMakeFiles/llama-eval-callback.dir/eval-callback.cpp.o
+[ 71%] Building CXX object examples/gritlm/CMakeFiles/llama-gritlm.dir/gritlm.cpp.o
+[ 71%] Linking CXX executable ../../bin/llama-eval-callback
+[ 72%] Linking CXX executable ../../bin/llama-gritlm
+[ 72%] Built target test-mtmd-c-api
+[ 73%] Building CXX object examples/lookahead/CMakeFiles/llama-lookahead.dir/lookahead.cpp.o
+[ 73%] Linking CXX executable ../../bin/llama-lookahead
+[ 73%] Built target test-chat-template
+[ 74%] Building CXX object examples/lookup/CMakeFiles/llama-lookup.dir/lookup.cpp.o
+[ 74%] Linking CXX executable ../../bin/llama-lookup
+[ 75%] Linking CXX executable ../bin/test-thread-safety
+[ 75%] Built target test-arg-parser
+[ 76%] Building CXX object examples/lookup/CMakeFiles/llama-lookup-create.dir/lookup-create.cpp.o
+[ 76%] Linking CXX executable ../../bin/llama-lookup-create
+[ 76%] Built target llama-batched
+[ 76%] Building CXX object examples/lookup/CMakeFiles/llama-lookup-merge.dir/lookup-merge.cpp.o
+[ 77%] Linking CXX executable ../../bin/llama-lookup-merge
+[ 77%] Built target llama-eval-callback
+[ 77%] Built target llama-embedding
+[ 77%] Building CXX object examples/lookup/CMakeFiles/llama-lookup-stats.dir/lookup-stats.cpp.o
+[ 77%] Built target llama-gritlm
+[ 78%] Linking CXX executable ../../bin/llama-lookup-stats
+[ 79%] Building CXX object examples/parallel/CMakeFiles/llama-parallel.dir/parallel.cpp.o
+[ 80%] Building CXX object examples/passkey/CMakeFiles/llama-passkey.dir/passkey.cpp.o
+[ 80%] Linking CXX executable ../../bin/llama-parallel
+[ 80%] Linking CXX executable ../../bin/llama-passkey
+[ 80%] Built target llama-lookahead
+[ 80%] Built target llama-lookup-merge
+[ 81%] Building CXX object examples/retrieval/CMakeFiles/llama-retrieval.dir/retrieval.cpp.o
+[ 82%] Building CXX object examples/save-load-state/CMakeFiles/llama-save-load-state.dir/save-load-state.cpp.o
+[ 82%] Linking CXX executable ../../bin/llama-retrieval
+[ 82%] Linking CXX executable ../../bin/llama-save-load-state
+[ 82%] Built target llama-lookup
+[ 82%] Building CXX object examples/speculative/CMakeFiles/llama-speculative.dir/speculative.cpp.o
+[ 82%] Linking CXX executable ../../bin/llama-speculative
+[ 82%] Built target test-thread-safety
+[ 83%] Building CXX object examples/speculative-simple/CMakeFiles/llama-speculative-simple.dir/speculative-simple.cpp.o
+[ 83%] Linking CXX executable ../../bin/llama-speculative-simple
+[ 83%] Built target llama-lookup-create
+[ 83%] Building CXX object examples/gen-docs/CMakeFiles/llama-gen-docs.dir/gen-docs.cpp.o
+[ 83%] Linking CXX executable ../../bin/llama-gen-docs
+[ 83%] Built target llama-passkey
+[ 83%] Built target llama-lookup-stats
+[ 83%] Building CXX object examples/training/CMakeFiles/llama-finetune.dir/finetune.cpp.o
+[ 83%] Building CXX object examples/convert-llama2c-to-ggml/CMakeFiles/llama-convert-llama2c-to-ggml.dir/convert-llama2c-to-ggml.cpp.o
+[ 83%] Built target llama-parallel
+[ 84%] Linking CXX executable ../../bin/llama-finetune
+[ 85%] Linking CXX executable ../../bin/llama-convert-llama2c-to-ggml
+[ 85%] Building CXX object pocs/vdot/CMakeFiles/llama-vdot.dir/vdot.cpp.o
+[ 85%] Built target llama-retrieval
+[ 86%] Linking CXX executable ../../bin/llama-vdot
+[ 86%] Building CXX object pocs/vdot/CMakeFiles/llama-q8dot.dir/q8dot.cpp.o
+[ 87%] Linking CXX executable ../../bin/llama-q8dot
+[ 87%] Built target llama-save-load-state
+[ 88%] Building CXX object tools/batched-bench/CMakeFiles/llama-batched-bench.dir/batched-bench.cpp.o
+[ 88%] Linking CXX executable ../../bin/llama-batched-bench
+[ 88%] Built target llama-vdot
+[ 88%] Built target llama-speculative
+[ 89%] Building CXX object tools/gguf-split/CMakeFiles/llama-gguf-split.dir/gguf-split.cpp.o
+[ 89%] Built target llama-q8dot
+[ 89%] Building CXX object tools/imatrix/CMakeFiles/llama-imatrix.dir/imatrix.cpp.o
+[ 89%] Linking CXX executable ../../bin/llama-gguf-split
+[ 90%] Building CXX object tools/llama-bench/CMakeFiles/llama-bench.dir/llama-bench.cpp.o
+[ 91%] Linking CXX executable ../../bin/llama-imatrix
+[ 91%] Linking CXX executable ../../bin/llama-bench
+[ 91%] Built target llama-convert-llama2c-to-ggml
+[ 91%] Building CXX object tools/main/CMakeFiles/llama-cli.dir/main.cpp.o
+[ 92%] Linking CXX executable ../../bin/llama-cli
+[ 92%] Built target llama-gguf-split
+[ 92%] Building CXX object tools/perplexity/CMakeFiles/llama-perplexity.dir/perplexity.cpp.o
+[ 92%] Built target llama-speculative-simple
+[ 93%] Linking CXX executable ../../bin/llama-perplexity
+[ 93%] Building CXX object tools/quantize/CMakeFiles/llama-quantize.dir/quantize.cpp.o
+[ 93%] Linking CXX executable ../../bin/llama-quantize
+[ 93%] Built target llama-bench
+[ 93%] Generating loading.html.hpp
+[ 94%] Generating index.html.gz.hpp
+[ 94%] Built target llama-quantize
+[ 95%] Building CXX object tools/run/CMakeFiles/llama-run.dir/run.cpp.o
+[ 95%] Building CXX object tools/run/CMakeFiles/llama-run.dir/linenoise.cpp/linenoise.cpp.o
+[ 95%] Built target llama-gen-docs
+[ 95%] Linking CXX executable ../../bin/llama-run
+[ 96%] Building CXX object tools/tokenize/CMakeFiles/llama-tokenize.dir/tokenize.cpp.o
+[ 96%] Linking CXX executable ../../bin/llama-tokenize
+[ 96%] Built target llama-tokenize
+[ 96%] Building CXX object tools/tts/CMakeFiles/llama-tts.dir/tts.cpp.o
+[ 97%] Linking CXX executable ../../bin/llama-tts
+[ 97%] Built target llama-finetune
+[ 98%] Building CXX object tools/mtmd/CMakeFiles/llama-mtmd-cli.dir/mtmd-cli.cpp.o
+[ 98%] Linking CXX executable ../../bin/llama-mtmd-cli
+[ 98%] Built target llama-batched-bench
+[ 98%] Building CXX object tools/cvector-generator/CMakeFiles/llama-cvector-generator.dir/cvector-generator.cpp.o
+[ 98%] Linking CXX executable ../../bin/llama-cvector-generator
+[ 98%] Built target llama-imatrix
+[ 99%] Building CXX object tools/export-lora/CMakeFiles/llama-export-lora.dir/export-lora.cpp.o
+[ 99%] Linking CXX executable ../../bin/llama-export-lora
+[ 99%] Built target llama-cli
+[ 99%] Built target llama-perplexity
+[ 99%] Built target llama-run
+[ 99%] Built target llama-tts
+[ 99%] Built target llama-mtmd-cli
+[ 99%] Built target llama-cvector-generator
+[ 99%] Building CXX object tools/server/CMakeFiles/llama-server.dir/server.cpp.o
+[ 99%] Built target llama-export-lora
+[100%] Linking CXX executable ../../bin/llama-server
+[100%] Built target llama-server
+
+real	0m11.330s
+user	0m48.547s
+sys	0m10.058s
++ tee -a /home/ggml/results/llama.cpp/2c/5874e38a5ed50693a83b347981ad47a35a9450/ggml-5-x86-amx-cc/ctest_debug-ctest.log
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-debug
+      Start  1: test-tokenizer-0-bert-bge
+ 1/34 Test  #1: test-tokenizer-0-bert-bge .........   Passed    0.12 sec
+      Start  2: test-tokenizer-0-command-r
+ 2/34 Test  #2: test-tokenizer-0-command-r ........   Passed    1.88 sec
+      Start  3: test-tokenizer-0-deepseek-coder
+ 3/34 Test  #3: test-tokenizer-0-deepseek-coder ...   Passed    0.27 sec
+      Start  4: test-tokenizer-0-deepseek-llm
+ 4/34 Test  #4: test-tokenizer-0-deepseek-llm .....   Passed    0.72 sec
+      Start  5: test-tokenizer-0-falcon
+ 5/34 Test  #5: test-tokenizer-0-falcon ...........   Passed    0.46 sec
+      Start  6: test-tokenizer-0-gpt-2
+ 6/34 Test  #6: test-tokenizer-0-gpt-2 ............   Passed    0.34 sec
+      Start  7: test-tokenizer-0-llama-bpe
+ 7/34 Test  #7: test-tokenizer-0-llama-bpe ........   Passed    1.20 sec
+      Start  8: test-tokenizer-0-llama-spm
+ 8/34 Test  #8: test-tokenizer-0-llama-spm ........   Passed    0.13 sec
+      Start  9: test-tokenizer-0-mpt
+ 9/34 Test  #9: test-tokenizer-0-mpt ..............   Passed    0.35 sec
+      Start 10: test-tokenizer-0-phi-3
+10/34 Test #10: test-tokenizer-0-phi-3 ............   Passed    0.12 sec
+      Start 11: test-tokenizer-0-qwen2
+11/34 Test #11: test-tokenizer-0-qwen2 ............   Passed    1.19 sec
+      Start 12: test-tokenizer-0-refact
+12/34 Test #12: test-tokenizer-0-refact ...........   Passed    0.33 sec
+      Start 13: test-tokenizer-0-starcoder
+13/34 Test #13: test-tokenizer-0-starcoder ........   Passed    0.34 sec
+      Start 14: test-sampling
+14/34 Test #14: test-sampling .....................   Passed    4.64 sec
+      Start 15: test-grammar-parser
+15/34 Test #15: test-grammar-parser ...............   Passed    0.01 sec
+      Start 16: test-grammar-integration
+16/34 Test #16: test-grammar-integration ..........   Passed    0.03 sec
+      Start 17: test-llama-grammar
+17/34 Test #17: test-llama-grammar ................   Passed    0.01 sec
+      Start 18: test-chat
+18/34 Test #18: test-chat .........................   Passed    4.49 sec
+      Start 19: test-json-schema-to-grammar
+19/34 Test #19: test-json-schema-to-grammar .......   Passed    1.86 sec
+      Start 20: test-tokenizer-1-llama-spm
+20/34 Test #20: test-tokenizer-1-llama-spm ........   Passed    1.45 sec
+      Start 21: test-chat-parser
+21/34 Test #21: test-chat-parser ..................   Passed    0.01 sec
+      Start 22: test-chat-template
+22/34 Test #22: test-chat-template ................   Passed    0.88 sec
+      Start 23: test-json-partial
+23/34 Test #23: test-json-partial .................   Passed    0.01 sec
+      Start 24: test-log
+24/34 Test #24: test-log ..........................   Passed    0.02 sec
+      Start 25: test-regex-partial
+25/34 Test #25: test-regex-partial ................   Passed    0.01 sec
+      Start 26: test-thread-safety
+26/34 Test #26: test-thread-safety ................Subprocess aborted***Exception:   0.55 sec
+register_backend: registered backend CPU (1 devices)
+register_device: registered device CPU (Intel(R) Xeon(R) Platinum 8473C)
+load_backend: failed to find ggml_backend_init in /home/ggml/work/llama.cpp/build-ci-debug/bin/libggml-cpu.so
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.962 I curl_perform_with_retry: HEAD https://huggingface.co/ggml-org/models/resolve/main/tinyllamas/stories15M-q4_0.gguf (attempt 1 of 1)...
+0.00.277.916 I common_download_file_single: using cached file: /home/ggml/.cache/llama.cpp/ggml-org_models_tinyllamas_stories15M-q4_0.gguf
+0.00.288.993 I build: 5601 (2c5874e3) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu (debug)
+0.00.298.046 I llama_model_loader: loaded meta data with 20 key-value pairs and 57 tensors from /home/ggml/.cache/llama.cpp/ggml-org_models_tinyllamas_stories15M-q4_0.gguf (version GGUF V3 (latest))
+0.00.298.150 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.319.029 I llama_model_loader: - kv   0:                      tokenizer.ggml.tokens arr[str,32000]   = ["<unk>", "<s>", "</s>", "<0x00>", "<...
+0.00.328.385 I llama_model_loader: - kv   1:                      tokenizer.ggml.scores arr[f32,32000]   = [0.000000, 0.000000, 0.000000, 0.0000...
+0.00.330.898 I llama_model_loader: - kv   2:                  tokenizer.ggml.token_type arr[i32,32000]   = [2, 3, 3, 6, 6, 6, 6, 6, 6, 6, 6, 6, ...
+0.00.330.915 I llama_model_loader: - kv   3:                       tokenizer.ggml.model str              = llama
+0.00.330.916 I llama_model_loader: - kv   4:                       general.architecture str              = llama
+0.00.330.917 I llama_model_loader: - kv   5:                               general.name str              = llama
+0.00.330.922 I llama_model_loader: - kv   6:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.330.923 I llama_model_loader: - kv   7:                tokenizer.ggml.bos_token_id u32              = 1
+0.00.330.924 I llama_model_loader: - kv   8:                tokenizer.ggml.eos_token_id u32              = 2
+0.00.330.926 I llama_model_loader: - kv   9:          tokenizer.ggml.seperator_token_id u32              = 4294967295
+0.00.330.927 I llama_model_loader: - kv  10:            tokenizer.ggml.padding_token_id u32              = 4294967295
+0.00.330.928 I llama_model_loader: - kv  11:                       llama.context_length u32              = 128
+0.00.330.930 I llama_model_loader: - kv  12:                     llama.embedding_length u32              = 288
+0.00.330.931 I llama_model_loader: - kv  13:                  llama.feed_forward_length u32              = 768
+0.00.330.932 I llama_model_loader: - kv  14:                 llama.attention.head_count u32              = 6
+0.00.330.933 I llama_model_loader: - kv  15:                          llama.block_count u32              = 6
+0.00.330.934 I llama_model_loader: - kv  16:                 llama.rope.dimension_count u32              = 48
+0.00.330.937 I llama_model_loader: - kv  17:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+0.00.330.939 I llama_model_loader: - kv  18:               general.quantization_version u32              = 2
+0.00.330.940 I llama_model_loader: - kv  19:                          general.file_type u32              = 2
+0.00.330.945 I llama_model_loader: - type  f32:   13 tensors
+0.00.330.946 I llama_model_loader: - type q4_0:   43 tensors
+0.00.330.946 I llama_model_loader: - type q8_0:    1 tensors
+0.00.330.962 I print_info: file format = GGUF V3 (latest)
+0.00.330.963 I print_info: file type   = Q4_0
+0.00.330.964 I print_info: file size   = 17.50 MiB (6.01 BPW) 
+0.00.346.322 W load: bad special token: 'tokenizer.ggml.seperator_token_id' = 4294967295, using default id -1
+0.00.346.325 W load: bad special token: 'tokenizer.ggml.padding_token_id' = 4294967295, using default id -1
+0.00.373.193 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.373.299 I load: special tokens cache size = 3
+0.00.394.993 I load: token to piece cache size = 0.1684 MB
+0.00.395.061 I print_info: arch             = llama
+0.00.395.061 I print_info: vocab_only       = 0
+0.00.395.062 I print_info: n_ctx_train      = 128
+0.00.395.062 I print_info: n_embd           = 288
+0.00.395.063 I print_info: n_layer          = 6
+0.00.395.119 I print_info: n_head           = 6
+0.00.395.124 I print_info: n_head_kv        = 6
+0.00.395.124 I print_info: n_rot            = 48
+0.00.395.124 I print_info: n_swa            = 0
+0.00.395.127 I print_info: is_swa_any       = 0
+0.00.395.128 I print_info: n_embd_head_k    = 48
+0.00.395.128 I print_info: n_embd_head_v    = 48
+0.00.395.130 I print_info: n_gqa            = 1
+0.00.395.133 I print_info: n_embd_k_gqa     = 288
+0.00.395.135 I print_info: n_embd_v_gqa     = 288
+0.00.395.136 I print_info: f_norm_eps       = 0.0e+00
+0.00.395.137 I print_info: f_norm_rms_eps   = 1.0e-05
+0.00.395.137 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.395.138 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.395.138 I print_info: f_logit_scale    = 0.0e+00
+0.00.395.138 I print_info: f_attn_scale     = 0.0e+00
+0.00.395.140 I print_info: n_ff             = 768
+0.00.395.141 I print_info: n_expert         = 0
+0.00.395.141 I print_info: n_expert_used    = 0
+0.00.395.141 I print_info: causal attn      = 1
+0.00.395.141 I print_info: pooling type     = 0
+0.00.395.142 I print_info: rope type        = 0
+0.00.395.142 I print_info: rope scaling     = linear
+0.00.395.143 I print_info: freq_base_train  = 10000.0
+0.00.395.144 I print_info: freq_scale_train = 1
+0.00.395.144 I print_info: n_ctx_orig_yarn  = 128
+0.00.395.144 I print_info: rope_finetuned   = unknown
+0.00.395.144 I print_info: ssm_d_conv       = 0
+0.00.395.145 I print_info: ssm_d_inner      = 0
+0.00.395.145 I print_info: ssm_d_state      = 0
+0.00.395.145 I print_info: ssm_dt_rank      = 0
+0.00.395.145 I print_info: ssm_dt_b_c_rms   = 0
+0.00.395.146 I print_info: model type       = ?B
+0.00.395.147 I print_info: model params     = 24.41 M
+0.00.395.147 I print_info: general.name     = llama
+0.00.395.150 I print_info: vocab type       = SPM
+0.00.395.151 I print_info: n_vocab          = 32000
+0.00.395.154 I print_info: n_merges         = 0
+0.00.395.154 I print_info: BOS token        = 1 '<s>'
+0.00.395.154 I print_info: EOS token        = 2 '</s>'
+0.00.395.154 I print_info: UNK token        = 0 '<unk>'
+0.00.395.155 I print_info: LF token         = 13 '<0x0A>'
+0.00.395.163 I print_info: EOG token        = 2 '</s>'
+0.00.395.170 I print_info: max token length = 48
+0.00.395.171 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.397.971 I load_tensors:          AMX model buffer size =    13.64 MiB
+0.00.397.994 I load_tensors:   CPU_Mapped model buffer size =    17.50 MiB
+.....................
+0.00.405.417 I Creating context 1/4 for model 1/1
+0.00.405.496 I llama_context: constructing llama_context
+0.00.405.508 I llama_context: n_seq_max     = 4
+0.00.405.516 I llama_context: n_ctx         = 256
+0.00.405.525 I llama_context: n_ctx_per_seq = 64
+0.00.405.533 I llama_context: n_batch       = 256
+0.00.405.542 I llama_context: n_ubatch      = 32
+0.00.405.550 I llama_context: causal_attn   = 1
+0.00.405.559 I llama_context: flash_attn    = 0
+0.00.405.570 I llama_context: freq_base     = 10000.0
+0.00.405.578 I llama_context: freq_scale    = 1
+0.00.405.587 W llama_context: n_ctx_per_seq (64) < n_ctx_train (128) -- the full capacity of the model will not be utilized
+0.00.405.597 W llama_context: requested n_seq_max (4) > 1, but swa_full is not enabled -- performance may be degraded: https://github.com/ggml-org/llama.cpp/pull/13845#issuecomment-2924800573
+0.00.405.779 I llama_context:        CPU  output buffer size =     0.49 MiB
+0.00.406.044 I llama_kv_cache_unified:        CPU KV buffer size =     1.69 MiB
+0.00.406.959 I llama_kv_cache_unified: size =    1.69 MiB (   256 cells,   6 layers,  4 seqs), K (f16):    0.84 MiB, V (f16):    0.84 MiB
+0.00.416.603 I llama_context:        CPU compute buffer size =     3.94 MiB
+0.00.416.617 I llama_context: graph nodes  = 222
+0.00.416.618 I llama_context: graph splits = 1
+0.00.416.993 I Creating context 2/4 for model 1/1
+0.00.417.018 I llama_context: constructing llama_context
+0.00.417.018 I llama_context: n_seq_max     = 4
+0.00.417.019 I llama_context: n_ctx         = 256
+0.00.417.019 I llama_context: n_ctx_per_seq = 64
+0.00.417.020 I llama_context: n_batch       = 256
+0.00.417.020 I llama_context: n_ubatch      = 32
+0.00.417.020 I llama_context: causal_attn   = 1
+0.00.417.021 I llama_context: flash_attn    = 0
+0.00.417.023 I llama_context: freq_base     = 10000.0
+0.00.417.024 I llama_context: freq_scale    = 1
+0.00.417.024 W llama_context: n_ctx_per_seq (64) < n_ctx_train (128) -- the full capacity of the model will not be utilized
+0.00.417.026 W llama_context: requested n_seq_max (4) > 1, but swa_full is not enabled -- performance may be degraded: https://github.com/ggml-org/llama.cpp/pull/13845#issuecomment-2924800573
+0.00.417.055 I llama_context:        CPU  output buffer size =     0.49 MiB
+0.00.417.148 I llama_kv_cache_unified:        CPU KV buffer size =     1.69 MiB
+0.00.417.943 I llama_kv_cache_unified: size =    1.69 MiB (   256 cells,   6 layers,  4 seqs), K (f16):    0.84 MiB, V (f16):    0.84 MiB
+0.00.427.234 I llama_context:        CPU compute buffer size =     3.94 MiB
+0.00.427.255 I llama_context: graph nodes  = 222
+0.00.427.255 I llama_context: graph splits = 1
+0.00.427.459 I Creating context 3/4 for model 1/1
+0.00.427.499 I llama_context: constructing llama_context
+0.00.427.500 I llama_context: n_seq_max     = 4
+0.00.427.500 I llama_context: n_ctx         = 256
+0.00.427.501 I llama_context: n_ctx_per_seq = 64
+0.00.427.501 I llama_context: n_batch       = 256
+0.00.427.502 I llama_context: n_ubatch      = 32
+0.00.427.502 I llama_context: causal_attn   = 1
+0.00.427.503 I llama_context: flash_attn    = 0
+0.00.427.507 I llama_context: freq_base     = 10000.0
+0.00.427.509 I llama_context: freq_scale    = 1
+0.00.427.510 W llama_context: n_ctx_per_seq (64) < n_ctx_train (128) -- the full capacity of the model will not be utilized
+0.00.427.512 W llama_context: requested n_seq_max (4) > 1, but swa_full is not enabled -- performance may be degraded: https://github.com/ggml-org/llama.cpp/pull/13845#issuecomment-2924800573
+0.00.427.545 I llama_context:        CPU  output buffer size =     0.49 MiB
+0.00.427.635 I llama_kv_cache_unified:        CPU KV buffer size =     1.69 MiB
+0.00.428.565 I llama_kv_cache_unified: size =    1.69 MiB (   256 cells,   6 layers,  4 seqs), K (f16):    0.84 MiB, V (f16):    0.84 MiB
+0.00.440.888 I llama_context:        CPU compute buffer size =     3.94 MiB
+0.00.440.892 I llama_context: graph nodes  = 222
+0.00.440.892 I llama_context: graph splits = 1
+0.00.441.113 I Creating context 4/4 for model 1/1
+0.00.441.129 I llama_context: constructing llama_context
+0.00.441.130 I llama_context: n_seq_max     = 4
+0.00.441.131 I llama_context: n_ctx         = 256
+0.00.441.131 I llama_context: n_ctx_per_seq = 64
+0.00.441.132 I llama_context: n_batch       = 256
+0.00.441.132 I llama_context: n_ubatch      = 32
+0.00.441.133 I llama_context: causal_attn   = 1
+0.00.441.133 I llama_context: flash_attn    = 0
+0.00.441.136 I llama_context: freq_base     = 10000.0
+0.00.441.137 I llama_context: freq_scale    = 1
+0.00.441.138 W llama_context: n_ctx_per_seq (64) < n_ctx_train (128) -- the full capacity of the model will not be utilized
+0.00.441.140 W llama_context: requested n_seq_max (4) > 1, but swa_full is not enabled -- performance may be degraded: https://github.com/ggml-org/llama.cpp/pull/13845#issuecomment-2924800573
+0.00.441.176 I llama_context:        CPU  output buffer size =     0.49 MiB
+0.00.441.284 I llama_kv_cache_unified:        CPU KV buffer size =     1.69 MiB
+0.00.442.240 I llama_kv_cache_unified: size =    1.69 MiB (   256 cells,   6 layers,  4 seqs), K (f16):    0.84 MiB, V (f16):    0.84 MiB
+0.00.454.257 I llama_context:        CPU compute buffer size =     3.94 MiB
+0.00.454.260 I llama_context: graph nodes  = 222
+0.00.454.261 I llama_context: graph splits = 1
+test-thread-safety: /home/ggml/work/llama.cpp/ggml/src/ggml-cpu/ops.cpp:2934: void ggml_compute_forward_silu_f32(const ggml_compute_params*, ggml_tensor*): Assertion `!isnan(x)' failed.
+
+      Start 27: test-arg-parser
+27/34 Test #27: test-arg-parser ...................   Passed    1.56 sec
+      Start 28: test-gguf
+28/34 Test #28: test-gguf .........................   Passed    0.22 sec
+      Start 29: test-backend-ops
+29/34 Test #29: test-backend-ops ..................   Passed    0.01 sec
+      Start 32: test-barrier
+30/34 Test #32: test-barrier ......................   Passed    1.21 sec
+      Start 33: test-quantize-fns
+31/34 Test #33: test-quantize-fns .................   Passed   22.26 sec
+      Start 34: test-quantize-perf
+32/34 Test #34: test-quantize-perf ................   Passed    0.17 sec
+      Start 35: test-rope
+33/34 Test #35: test-rope .........................   Passed    0.08 sec
+      Start 36: test-mtmd-c-api
+34/34 Test #36: test-mtmd-c-api ...................   Passed    0.01 sec
+
+97% tests passed, 1 tests failed out of 34
+
+Label Time Summary:
+main    =  46.91 sec*proc (34 tests)
+
+Total Test time (real) =  46.93 sec
+
+The following tests FAILED:
+	 26 - test-thread-safety (Subprocess aborted)
+Errors while running CTest
+
+real	0m46.934s
+user	0m57.445s
+sys	0m1.032s
++ cur=8
++ echo 8
++ set +x
