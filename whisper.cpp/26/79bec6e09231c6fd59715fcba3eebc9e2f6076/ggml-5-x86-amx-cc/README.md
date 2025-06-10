@@ -1,0 +1,131 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 8:51.10
+- date:    Tue Jun 10 13:15:41 UTC 2025
+- repo:    https://github.com/ggerganov/whisper.cpp
+- commit:  https://github.com/ggerganov/whisper.cpp/commit/2679bec6e09231c6fd59715fcba3eebc9e2f6076
+- author:  Daniel Bevenius
+```
+ruby : add cleaning of library names in dependencies (#3241)
+
+* ruby : add cleaning of library names in dependencies
+
+This commit adds a cleaning step to the library names in the
+`Dependencies` class of the Ruby bindings.
+
+The motivation for this is that with the introduction of a library name
+alias for ggml in Commit (b933d17c306e800b6d919e3ee895219c3f64d5cd
+"Add in-build ggml::ggml ALIAS library (ggml/1260)) causes the Makefile
+generation to break:
+```console
+$ sed -n '165,170p' ext/Makefile
+CLEANOBJS     = $(OBJS) *.bak
+TARGET_SO_DIR_TIMESTAMP = $(TIMESTAMP_DIR)/.sitearchdir.time
+$(TARGET_SO): libcommon.a libwhisper.a libggml\n(ggml::ggml).a libggml-cpu.a libggml-base.a
+libcommon.a libwhisper.a libggml\n(ggml::ggml).a libggml-cpu.a libggml-base.a: cmake-targets
+cmake-targets:
+	/usr/bin/cmake -S sources -B build -D BUILD_SHARED_LIBS=OFF -D CMAKE_ARCHIVE_OUTPUT_DIRECTORY=/home/danbev/work/ai/whisper.cpp/bindings/ruby/ext -D CMAKE_POSITION_INDEPENDENT_CODE=ON
+```
+
+* squash! ruby : add cleaning of library names in dependencies
+
+Apply PR review feedback.
+```
+
+## Environment
+
+```
+GG_BUILD_AMX=1
+GG_BUILD_CLOUD=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-debug
+No tests were found!!!
+
+real	0m0.007s
+user	0m0.004s
+sys	0m0.003s
+```
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-release
+No tests were found!!!
+
+real	0m0.007s
+user	0m0.004s
+sys	0m0.003s
+```
+### bench
+
+Whisper Benchmark Results
+- status: 0
+#### memcpy Benchmark
+
+```
+memcpy:    9.80 GB/s (heat-up)
+memcpy:    9.86 GB/s ( 1 thread)
+memcpy:    9.74 GB/s ( 1 thread)
+memcpy:   19.53 GB/s ( 2 thread)
+memcpy:   27.43 GB/s ( 3 thread)
+memcpy:   37.53 GB/s ( 4 thread)
+sum:    -3071998199.000000
+```
+
+#### ggml_mul_mat Benchmark
+
+```
+  64 x   64: Q4_0    19.1 GFLOPS (128 runs) | Q4_1    25.7 GFLOPS (128 runs)
+  64 x   64: Q5_0    29.1 GFLOPS (128 runs) | Q5_1    28.5 GFLOPS (128 runs) | Q8_0    30.4 GFLOPS (128 runs)
+  64 x   64: F16     26.8 GFLOPS (128 runs) | F32     15.6 GFLOPS (128 runs)
+ 128 x  128: Q4_0    73.2 GFLOPS (128 runs) | Q4_1    73.1 GFLOPS (128 runs)
+ 128 x  128: Q5_0    65.5 GFLOPS (128 runs) | Q5_1    66.6 GFLOPS (128 runs) | Q8_0    76.2 GFLOPS (128 runs)
+ 128 x  128: F16     72.3 GFLOPS (128 runs) | F32     41.6 GFLOPS (128 runs)
+ 256 x  256: Q4_0   133.3 GFLOPS (128 runs) | Q4_1   126.5 GFLOPS (128 runs)
+ 256 x  256: Q5_0   109.4 GFLOPS (128 runs) | Q5_1   109.2 GFLOPS (128 runs) | Q8_0   149.6 GFLOPS (128 runs)
+ 256 x  256: F16    108.8 GFLOPS (128 runs) | F32     65.8 GFLOPS (128 runs)
+ 512 x  512: Q4_0   164.7 GFLOPS (128 runs) | Q4_1   165.5 GFLOPS (128 runs)
+ 512 x  512: Q5_0   134.6 GFLOPS (128 runs) | Q5_1   137.3 GFLOPS (128 runs) | Q8_0   195.5 GFLOPS (128 runs)
+ 512 x  512: F16    143.7 GFLOPS (128 runs) | F32     75.6 GFLOPS (128 runs)
+1024 x 1024: Q4_0   185.3 GFLOPS ( 87 runs) | Q4_1   188.6 GFLOPS ( 88 runs)
+1024 x 1024: Q5_0   149.2 GFLOPS ( 70 runs) | Q5_1   156.2 GFLOPS ( 73 runs) | Q8_0   211.9 GFLOPS ( 99 runs)
+1024 x 1024: F16    155.7 GFLOPS ( 73 runs) | F32     73.1 GFLOPS ( 35 runs)
+2048 x 2048: Q4_0   200.4 GFLOPS ( 12 runs) | Q4_1   205.3 GFLOPS ( 12 runs)
+2048 x 2048: Q5_0   162.4 GFLOPS ( 10 runs) | Q5_1   167.6 GFLOPS ( 10 runs) | Q8_0   229.3 GFLOPS ( 14 runs)
+2048 x 2048: F16    160.0 GFLOPS ( 10 runs) | F32     73.8 GFLOPS (  5 runs)
+4096 x 4096: Q4_0   210.5 GFLOPS (  3 runs) | Q4_1   209.3 GFLOPS (  3 runs)
+4096 x 4096: Q5_0   168.0 GFLOPS (  3 runs) | Q5_1   172.4 GFLOPS (  3 runs) | Q8_0   222.1 GFLOPS (  3 runs)
+4096 x 4096: F16    162.6 GFLOPS (  3 runs) | F32     73.7 GFLOPS (  3 runs)
+```
+
+#### Model Benchmarks
+
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             AVX2 |       tiny.en |   4 |   0 |  297.98 |    1.23 |    0.67 |    0.50 | 2679bec6 |
+|             AVX2 |          tiny |   4 |   0 |  291.37 |    1.23 |    0.67 |    0.50 | 2679bec6 |
+|             AVX2 |       base.en |   4 |   0 |  623.19 |    2.95 |    1.27 |    0.82 | 2679bec6 |
+|             AVX2 |          base |   4 |   0 |  627.75 |    2.95 |    1.27 |    0.83 | 2679bec6 |
+|             AVX2 |      small.en |   4 |   0 | 2112.58 |   11.11 |    4.41 |    2.14 | 2679bec6 |
+|             AVX2 |         small |   4 |   0 | 2121.20 |   11.06 |    4.38 |    2.14 | 2679bec6 |
+|             AVX2 |     medium.en |   4 |   0 | 6535.86 |   32.09 |   11.66 |    5.44 | 2679bec6 |
+|             AVX2 |        medium |   4 |   0 | 6543.53 |   32.18 |   11.68 |    5.43 | 2679bec6 |
+|             AVX2 |      large-v1 |   4 |   0 | 12449.47 |   59.84 |   21.91 |   10.04 | 2679bec6 |
+|             AVX2 |      large-v2 |   4 |   0 | 12426.95 |   59.84 |   21.78 |   10.04 | 2679bec6 |
+|             AVX2 |      large-v3 |   4 |   0 | 12441.85 |   59.81 |   21.76 |   10.05 | 2679bec6 |
+|             AVX2 | large-v3-turbo |   4 |   0 | 11484.21 |    9.99 |    3.97 |    2.08 | 2679bec6 |
+
