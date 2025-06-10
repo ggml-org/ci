@@ -1,0 +1,54 @@
++ ./bin/sam -m ../models-mnt/sam//ggml-model-f16.bin -i ../models-mnt/sam//img.jpg
+main: seed = 1749541622
+main: loaded image '../models-mnt/sam//img.jpg' (680 x 453)
+sam_image_preprocess: scale = 0.664062
+main: preprocessed image (1024 x 1024)
+sam_model_load: loading model from '../models-mnt/sam//ggml-model-f16.bin' - please wait ...
+operator(): ggml ctx size = 202.33 MB
+sam_model_load: .sam_model_load: n_enc_state      = 768
+sam_model_load: n_enc_layer      = 12
+sam_model_load: n_enc_head       = 12
+sam_model_load: n_enc_out_chans  = 256
+sam_model_load: n_pt_embd        = 4
+sam_model_load: ftype            = 1
+sam_model_load: qntvr            = 0
+..................................... done
+sam_model_load: model size =   185.05 MB / num tensors = 304
+Using point prompt: (414.375000, 162.796875)
+
+
+main:     load time =   107.79 ms
+main:    total time = 16543.58 ms
+Skipping mask 0 with iou 0.706146 below threshold 0.880000
+Skipping mask 1 with iou 0.763424 below threshold 0.880000
+Mask 2: iou = 0.947264, stability_score = 0.956250, bbox (371, 436), (144, 168)
+
+real	0m16.548s
+user	1m4.385s
+sys	0m0.741s
++ ./bin/sam -m ../models-mnt/sam//ggml-model-f16.bin -i ../models-mnt/sam//img.jpg -b 368,144,441,173 -sm
+main: seed = 1749541638
+main: loaded image '../models-mnt/sam//img.jpg' (680 x 453)
+sam_image_preprocess: scale = 0.664062
+main: preprocessed image (1024 x 1024)
+sam_model_load: loading model from '../models-mnt/sam//ggml-model-f16.bin' - please wait ...
+operator(): ggml ctx size = 202.33 MB
+sam_model_load: .sam_model_load: n_enc_state      = 768
+sam_model_load: n_enc_layer      = 12
+sam_model_load: n_enc_head       = 12
+sam_model_load: n_enc_out_chans  = 256
+sam_model_load: n_pt_embd        = 4
+sam_model_load: ftype            = 1
+sam_model_load: qntvr            = 0
+..................................... done
+sam_model_load: model size =   185.05 MB / num tensors = 304
+Using box prompt: (368.000000, 144.000000, 441.000000, 173.000000)
+
+
+main:     load time =   112.50 ms
+main:    total time = 16425.02 ms
+Mask 0: iou = 0.942563, stability_score = 0.967071, bbox (370, 439), (144, 169)
+
+real	0m16.429s
+user	1m4.170s
+sys	0m0.537s
