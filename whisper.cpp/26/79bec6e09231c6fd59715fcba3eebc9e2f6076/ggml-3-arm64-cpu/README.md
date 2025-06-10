@@ -1,0 +1,130 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 15:36.42
+- date:    Tue Jun 10 13:22:17 UTC 2025
+- repo:    https://github.com/ggerganov/whisper.cpp
+- commit:  https://github.com/ggerganov/whisper.cpp/commit/2679bec6e09231c6fd59715fcba3eebc9e2f6076
+- author:  Daniel Bevenius
+```
+ruby : add cleaning of library names in dependencies (#3241)
+
+* ruby : add cleaning of library names in dependencies
+
+This commit adds a cleaning step to the library names in the
+`Dependencies` class of the Ruby bindings.
+
+The motivation for this is that with the introduction of a library name
+alias for ggml in Commit (b933d17c306e800b6d919e3ee895219c3f64d5cd
+"Add in-build ggml::ggml ALIAS library (ggml/1260)) causes the Makefile
+generation to break:
+```console
+$ sed -n '165,170p' ext/Makefile
+CLEANOBJS     = $(OBJS) *.bak
+TARGET_SO_DIR_TIMESTAMP = $(TIMESTAMP_DIR)/.sitearchdir.time
+$(TARGET_SO): libcommon.a libwhisper.a libggml\n(ggml::ggml).a libggml-cpu.a libggml-base.a
+libcommon.a libwhisper.a libggml\n(ggml::ggml).a libggml-cpu.a libggml-base.a: cmake-targets
+cmake-targets:
+	/usr/bin/cmake -S sources -B build -D BUILD_SHARED_LIBS=OFF -D CMAKE_ARCHIVE_OUTPUT_DIRECTORY=/home/danbev/work/ai/whisper.cpp/bindings/ruby/ext -D CMAKE_POSITION_INDEPENDENT_CODE=ON
+```
+
+* squash! ruby : add cleaning of library names in dependencies
+
+Apply PR review feedback.
+```
+
+## Environment
+
+```
+GG_BUILD_CLOUD=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-debug
+No tests were found!!!
+
+real	0m0.009s
+user	0m0.000s
+sys	0m0.009s
+```
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-release
+No tests were found!!!
+
+real	0m0.009s
+user	0m0.009s
+sys	0m0.000s
+```
+### bench
+
+Whisper Benchmark Results
+- status: 0
+#### memcpy Benchmark
+
+```
+memcpy:   10.69 GB/s (heat-up)
+memcpy:   10.67 GB/s ( 1 thread)
+memcpy:   10.66 GB/s ( 1 thread)
+memcpy:   19.78 GB/s ( 2 thread)
+memcpy:   27.53 GB/s ( 3 thread)
+memcpy:   33.42 GB/s ( 4 thread)
+sum:    783359998365.000000
+```
+
+#### ggml_mul_mat Benchmark
+
+```
+  64 x   64: Q4_0    28.1 GFLOPS (128 runs) | Q4_1    27.1 GFLOPS (128 runs)
+  64 x   64: Q5_0    21.0 GFLOPS (128 runs) | Q5_1    20.3 GFLOPS (128 runs) | Q8_0    29.3 GFLOPS (128 runs)
+  64 x   64: F16     32.4 GFLOPS (128 runs) | F32     34.0 GFLOPS (128 runs)
+ 128 x  128: Q4_0    55.5 GFLOPS (128 runs) | Q4_1    51.7 GFLOPS (128 runs)
+ 128 x  128: Q5_0    37.8 GFLOPS (128 runs) | Q5_1    34.9 GFLOPS (128 runs) | Q8_0    59.3 GFLOPS (128 runs)
+ 128 x  128: F16     68.0 GFLOPS (128 runs) | F32     55.5 GFLOPS (128 runs)
+ 256 x  256: Q4_0    72.4 GFLOPS (128 runs) | Q4_1    65.9 GFLOPS (128 runs)
+ 256 x  256: Q5_0    48.9 GFLOPS (128 runs) | Q5_1    43.9 GFLOPS (128 runs) | Q8_0    79.7 GFLOPS (128 runs)
+ 256 x  256: F16     94.5 GFLOPS (128 runs) | F32     65.8 GFLOPS (128 runs)
+ 512 x  512: Q4_0    81.0 GFLOPS (128 runs) | Q4_1    73.5 GFLOPS (128 runs)
+ 512 x  512: Q5_0    55.7 GFLOPS (128 runs) | Q5_1    49.6 GFLOPS (128 runs) | Q8_0    91.4 GFLOPS (128 runs)
+ 512 x  512: F16    112.3 GFLOPS (128 runs) | F32     66.4 GFLOPS (128 runs)
+1024 x 1024: Q4_0    86.4 GFLOPS ( 41 runs) | Q4_1    78.2 GFLOPS ( 37 runs)
+1024 x 1024: Q5_0    59.8 GFLOPS ( 28 runs) | Q5_1    52.1 GFLOPS ( 25 runs) | Q8_0    98.1 GFLOPS ( 46 runs)
+1024 x 1024: F16    123.2 GFLOPS ( 58 runs) | F32     63.3 GFLOPS ( 30 runs)
+2048 x 2048: Q4_0    89.5 GFLOPS (  6 runs) | Q4_1    80.2 GFLOPS (  5 runs)
+2048 x 2048: Q5_0    62.0 GFLOPS (  4 runs) | Q5_1    54.5 GFLOPS (  4 runs) | Q8_0   102.4 GFLOPS (  6 runs)
+2048 x 2048: F16    121.8 GFLOPS (  8 runs) | F32     55.8 GFLOPS (  4 runs)
+4096 x 4096: Q4_0    90.9 GFLOPS (  3 runs) | Q4_1    81.3 GFLOPS (  3 runs)
+4096 x 4096: Q5_0    62.2 GFLOPS (  3 runs) | Q5_1    54.6 GFLOPS (  3 runs) | Q8_0   101.0 GFLOPS (  3 runs)
+4096 x 4096: F16    105.9 GFLOPS (  3 runs) | F32     49.2 GFLOPS (  3 runs)
+```
+
+#### Model Benchmarks
+
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             NEON |       tiny.en |   4 |   0 |  547.30 |    2.16 |    1.06 |    0.80 | 2679bec6 |
+|             NEON |          tiny |   4 |   0 |  544.33 |    2.15 |    1.05 |    0.80 | 2679bec6 |
+|             NEON |       base.en |   4 |   0 | 1232.58 |    4.46 |    1.99 |    1.38 | 2679bec6 |
+|             NEON |          base |   4 |   0 | 1228.30 |    4.54 |    1.99 |    1.38 | 2679bec6 |
+|             NEON |      small.en |   4 |   0 | 4383.68 |   12.87 |    5.59 |    3.79 | 2679bec6 |
+|             NEON |         small |   4 |   0 | 4386.13 |   12.84 |    5.60 |    3.79 | 2679bec6 |
+|             NEON |     medium.en |   4 |   0 | 13929.27 |   35.54 |   14.76 |   10.63 | 2679bec6 |
+|             NEON |        medium |   4 |   0 | 13929.97 |   35.50 |   14.90 |   10.64 | 2679bec6 |
+|             NEON |      large-v1 |   4 |   0 | 26370.30 |   64.60 |   27.07 |   19.51 | 2679bec6 |
+|             NEON |      large-v2 |   4 |   0 | 26368.80 |   64.97 |   27.27 |   19.49 | 2679bec6 |
+|             NEON |      large-v3 |   4 |   0 | 26323.22 |   64.30 |   26.99 |   19.47 | 2679bec6 |
+|             NEON | large-v3-turbo |   4 |   0 | 24121.82 |   10.87 |    4.71 |    3.44 | 2679bec6 |
+
