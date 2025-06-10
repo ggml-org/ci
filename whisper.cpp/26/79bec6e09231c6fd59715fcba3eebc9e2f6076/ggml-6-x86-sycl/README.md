@@ -1,0 +1,118 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 4:36.31
+- date:    Sel 10 Jun 2025 08:11:35  WIB
+- repo:    https://github.com/ggerganov/whisper.cpp
+- commit:  https://github.com/ggerganov/whisper.cpp/commit/2679bec6e09231c6fd59715fcba3eebc9e2f6076
+- author:  Daniel Bevenius
+```
+ruby : add cleaning of library names in dependencies (#3241)
+
+* ruby : add cleaning of library names in dependencies
+
+This commit adds a cleaning step to the library names in the
+`Dependencies` class of the Ruby bindings.
+
+The motivation for this is that with the introduction of a library name
+alias for ggml in Commit (b933d17c306e800b6d919e3ee895219c3f64d5cd
+"Add in-build ggml::ggml ALIAS library (ggml/1260)) causes the Makefile
+generation to break:
+```console
+$ sed -n '165,170p' ext/Makefile
+CLEANOBJS     = $(OBJS) *.bak
+TARGET_SO_DIR_TIMESTAMP = $(TIMESTAMP_DIR)/.sitearchdir.time
+$(TARGET_SO): libcommon.a libwhisper.a libggml\n(ggml::ggml).a libggml-cpu.a libggml-base.a
+libcommon.a libwhisper.a libggml\n(ggml::ggml).a libggml-cpu.a libggml-base.a: cmake-targets
+cmake-targets:
+	/usr/bin/cmake -S sources -B build -D BUILD_SHARED_LIBS=OFF -D CMAKE_ARCHIVE_OUTPUT_DIRECTORY=/home/danbev/work/ai/whisper.cpp/bindings/ruby/ext -D CMAKE_POSITION_INDEPENDENT_CODE=ON
+```
+
+* squash! ruby : add cleaning of library names in dependencies
+
+Apply PR review feedback.
+```
+
+## Environment
+
+```
+GG_BUILD_C_COMPILER=gcc
+GG_BUILD_CLOUD=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_SYCL=1
+```
+
+## Output
+
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-release
+No tests were found!!!
+
+real	0m0,033s
+user	0m0,016s
+sys	0m0,017s
+```
+### bench
+
+Whisper Benchmark Results
+- status: 0
+#### memcpy Benchmark
+
+```
+memcpy:    4.48 GB/s (heat-up)
+memcpy:    8.79 GB/s ( 1 thread)
+memcpy:    9.12 GB/s ( 1 thread)
+memcpy:   18.90 GB/s ( 2 thread)
+memcpy:   22.98 GB/s ( 3 thread)
+memcpy:   29.01 GB/s ( 4 thread)
+sum:    -3071998548.000000
+```
+
+#### ggml_mul_mat Benchmark
+
+```
+  64 x   64: Q4_0    13.6 GFLOPS (128 runs) | Q4_1    13.1 GFLOPS (128 runs)
+  64 x   64: Q5_0    12.7 GFLOPS (128 runs) | Q5_1    11.9 GFLOPS (128 runs) | Q8_0    14.1 GFLOPS (128 runs)
+  64 x   64: F16     12.1 GFLOPS (128 runs) | F32     18.0 GFLOPS (128 runs)
+ 128 x  128: Q4_0    32.1 GFLOPS (128 runs) | Q4_1    36.6 GFLOPS (128 runs)
+ 128 x  128: Q5_0    40.9 GFLOPS (128 runs) | Q5_1    43.9 GFLOPS (128 runs) | Q8_0    56.0 GFLOPS (128 runs)
+ 128 x  128: F16     49.1 GFLOPS (128 runs) | F32     61.8 GFLOPS (128 runs)
+ 256 x  256: Q4_0    82.7 GFLOPS (128 runs) | Q4_1    76.9 GFLOPS (128 runs)
+ 256 x  256: Q5_0    74.5 GFLOPS (128 runs) | Q5_1    71.7 GFLOPS (128 runs) | Q8_0    98.1 GFLOPS (128 runs)
+ 256 x  256: F16     80.8 GFLOPS (128 runs) | F32     84.4 GFLOPS (128 runs)
+ 512 x  512: Q4_0    98.8 GFLOPS (128 runs) | Q4_1    93.6 GFLOPS (128 runs)
+ 512 x  512: Q5_0    86.6 GFLOPS (128 runs) | Q5_1    82.1 GFLOPS (128 runs) | Q8_0   127.0 GFLOPS (128 runs)
+ 512 x  512: F16     95.5 GFLOPS (128 runs) | F32     98.1 GFLOPS (128 runs)
+1024 x 1024: Q4_0   135.6 GFLOPS ( 64 runs) | Q4_1   128.3 GFLOPS ( 60 runs)
+1024 x 1024: Q5_0   120.5 GFLOPS ( 57 runs) | Q5_1   114.6 GFLOPS ( 54 runs) | Q8_0   172.9 GFLOPS ( 81 runs)
+1024 x 1024: F16    126.9 GFLOPS ( 60 runs) | F32    117.6 GFLOPS ( 55 runs)
+2048 x 2048: Q4_0   152.8 GFLOPS (  9 runs) | Q4_1   136.8 GFLOPS (  9 runs)
+2048 x 2048: Q5_0   119.7 GFLOPS (  7 runs) | Q5_1   116.4 GFLOPS (  7 runs) | Q8_0   169.6 GFLOPS ( 10 runs)
+2048 x 2048: F16    131.6 GFLOPS (  8 runs) | F32    119.6 GFLOPS (  7 runs)
+4096 x 4096: Q4_0   163.0 GFLOPS (  3 runs) | Q4_1   140.7 GFLOPS (  3 runs)
+4096 x 4096: Q5_0   131.7 GFLOPS (  3 runs) | Q5_1   127.6 GFLOPS (  3 runs) | Q8_0   173.6 GFLOPS (  3 runs)
+4096 x 4096: F16    117.3 GFLOPS (  3 runs) | F32     95.8 GFLOPS (  3 runs)
+```
+
+#### Model Benchmarks
+
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             AVX2 |       tiny.en |   4 |   0 |   20.79 |    5.71 |    2.09 |    0.05 | 2679bec6 |
+|             AVX2 |          tiny |   4 |   0 |   20.79 |    5.67 |    2.09 |    0.05 | 2679bec6 |
+|             AVX2 |       base.en |   4 |   0 |   35.66 |    8.26 |    2.83 |    0.07 | 2679bec6 |
+|             AVX2 |          base |   4 |   0 |   35.62 |    8.19 |    2.82 |    0.07 | 2679bec6 |
+|             AVX2 |      small.en |   4 |   0 |   94.65 |   16.38 |    5.45 |    0.17 | 2679bec6 |
+|             AVX2 |         small |   4 |   0 |   94.97 |   16.33 |    5.43 |    0.17 | 2679bec6 |
+|             AVX2 |     medium.en |   4 |   0 |  235.96 |   31.77 |   10.51 |    0.37 | 2679bec6 |
+|             AVX2 |        medium |   4 |   0 |  235.91 |   45.80 |   11.02 |    0.37 | 2679bec6 |
+|             AVX2 |      large-v1 |   4 |   0 |  385.21 |   48.57 |   14.56 |    0.56 | 2679bec6 |
+|             AVX2 |      large-v2 |   4 |   0 |  385.48 |   48.39 |   16.16 |    0.57 | 2679bec6 |
+|             AVX2 |      large-v3 |   4 |   0 |  385.39 |   47.46 |   14.69 |    0.56 | 2679bec6 |
+|             AVX2 | large-v3-turbo |   4 |   0 |  353.48 |    8.14 |    2.51 |    0.08 | 2679bec6 |
+
