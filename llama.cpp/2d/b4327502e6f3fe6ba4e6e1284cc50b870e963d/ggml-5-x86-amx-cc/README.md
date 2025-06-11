@@ -1,0 +1,13411 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 4:53.67
+- date:    Wed Jun 11 17:01:11 UTC 2025
+- repo:    https://github.com/ggerganov/llama.cpp
+- commit:  https://github.com/ggerganov/llama.cpp/commit/2db4327502e6f3fe6ba4e6e1284cc50b870e963d
+- author:  Georgi Gerganov
+```
+kv-cache : fix split_equal handling in unified implementation
+
+ggml-ci
+```
+
+## Environment
+
+```
+GG_BUILD_AMX=1
+GG_BUILD_CLOUD=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/llama.cpp/build-ci-debug
+      Start  1: test-tokenizer-0-bert-bge
+ 1/33 Test  #1: test-tokenizer-0-bert-bge .........   Passed    0.12 sec
+      Start  2: test-tokenizer-0-command-r
+ 2/33 Test  #2: test-tokenizer-0-command-r ........   Passed    1.85 sec
+      Start  3: test-tokenizer-0-deepseek-coder
+ 3/33 Test  #3: test-tokenizer-0-deepseek-coder ...   Passed    0.27 sec
+      Start  4: test-tokenizer-0-deepseek-llm
+ 4/33 Test  #4: test-tokenizer-0-deepseek-llm .....   Passed    0.72 sec
+      Start  5: test-tokenizer-0-falcon
+ 5/33 Test  #5: test-tokenizer-0-falcon ...........   Passed    0.44 sec
+      Start  6: test-tokenizer-0-gpt-2
+ 6/33 Test  #6: test-tokenizer-0-gpt-2 ............   Passed    0.33 sec
+      Start  7: test-tokenizer-0-llama-bpe
+ 7/33 Test  #7: test-tokenizer-0-llama-bpe ........   Passed    1.17 sec
+      Start  8: test-tokenizer-0-llama-spm
+ 8/33 Test  #8: test-tokenizer-0-llama-spm ........   Passed    0.13 sec
+      Start  9: test-tokenizer-0-mpt
+ 9/33 Test  #9: test-tokenizer-0-mpt ..............   Passed    0.34 sec
+      Start 10: test-tokenizer-0-phi-3
+10/33 Test #10: test-tokenizer-0-phi-3 ............   Passed    0.12 sec
+      Start 11: test-tokenizer-0-qwen2
+11/33 Test #11: test-tokenizer-0-qwen2 ............   Passed    1.18 sec
+      Start 12: test-tokenizer-0-refact
+12/33 Test #12: test-tokenizer-0-refact ...........   Passed    0.33 sec
+      Start 13: test-tokenizer-0-starcoder
+13/33 Test #13: test-tokenizer-0-starcoder ........   Passed    0.33 sec
+      Start 14: test-sampling
+14/33 Test #14: test-sampling .....................   Passed    4.69 sec
+      Start 15: test-grammar-parser
+15/33 Test #15: test-grammar-parser ...............   Passed    0.01 sec
+      Start 16: test-grammar-integration
+16/33 Test #16: test-grammar-integration ..........   Passed    0.03 sec
+      Start 17: test-llama-grammar
+17/33 Test #17: test-llama-grammar ................   Passed    0.00 sec
+      Start 18: test-chat
+18/33 Test #18: test-chat .........................   Passed    4.59 sec
+      Start 19: test-json-schema-to-grammar
+19/33 Test #19: test-json-schema-to-grammar .......   Passed    1.87 sec
+      Start 20: test-tokenizer-1-llama-spm
+20/33 Test #20: test-tokenizer-1-llama-spm ........   Passed    1.44 sec
+      Start 21: test-chat-parser
+21/33 Test #21: test-chat-parser ..................   Passed    0.01 sec
+      Start 22: test-chat-template
+22/33 Test #22: test-chat-template ................   Passed    0.88 sec
+      Start 23: test-json-partial
+23/33 Test #23: test-json-partial .................   Passed    0.01 sec
+      Start 24: test-log
+24/33 Test #24: test-log ..........................   Passed    0.02 sec
+      Start 25: test-regex-partial
+25/33 Test #25: test-regex-partial ................   Passed    0.01 sec
+      Start 26: test-arg-parser
+26/33 Test #26: test-arg-parser ...................   Passed    0.07 sec
+      Start 27: test-gguf
+27/33 Test #27: test-gguf .........................   Passed    0.31 sec
+      Start 28: test-backend-ops
+28/33 Test #28: test-backend-ops ..................   Passed    0.01 sec
+      Start 31: test-barrier
+29/33 Test #31: test-barrier ......................   Passed    1.23 sec
+      Start 32: test-quantize-fns
+30/33 Test #32: test-quantize-fns .................   Passed   22.26 sec
+      Start 33: test-quantize-perf
+31/33 Test #33: test-quantize-perf ................   Passed    0.16 sec
+      Start 34: test-rope
+32/33 Test #34: test-rope .........................   Passed    0.08 sec
+      Start 35: test-mtmd-c-api
+33/33 Test #35: test-mtmd-c-api ...................   Passed    0.01 sec
+
+100% tests passed, 0 tests failed out of 33
+
+Label Time Summary:
+main    =  45.02 sec*proc (33 tests)
+
+Total Test time (real) =  45.04 sec
+
+real	0m45.044s
+user	0m57.032s
+sys	0m0.819s
+```
+
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main
+Test project /home/ggml/work/llama.cpp/build-ci-release
+      Start  1: test-tokenizer-0-bert-bge
+ 1/33 Test  #1: test-tokenizer-0-bert-bge .........   Passed    0.03 sec
+      Start  2: test-tokenizer-0-command-r
+ 2/33 Test  #2: test-tokenizer-0-command-r ........   Passed    0.45 sec
+      Start  3: test-tokenizer-0-deepseek-coder
+ 3/33 Test  #3: test-tokenizer-0-deepseek-coder ...   Passed    0.05 sec
+      Start  4: test-tokenizer-0-deepseek-llm
+ 4/33 Test  #4: test-tokenizer-0-deepseek-llm .....   Passed    0.17 sec
+      Start  5: test-tokenizer-0-falcon
+ 5/33 Test  #5: test-tokenizer-0-falcon ...........   Passed    0.10 sec
+      Start  6: test-tokenizer-0-gpt-2
+ 6/33 Test  #6: test-tokenizer-0-gpt-2 ............   Passed    0.07 sec
+      Start  7: test-tokenizer-0-llama-bpe
+ 7/33 Test  #7: test-tokenizer-0-llama-bpe ........   Passed    0.28 sec
+      Start  8: test-tokenizer-0-llama-spm
+ 8/33 Test  #8: test-tokenizer-0-llama-spm ........   Passed    0.04 sec
+      Start  9: test-tokenizer-0-mpt
+ 9/33 Test  #9: test-tokenizer-0-mpt ..............   Passed    0.08 sec
+      Start 10: test-tokenizer-0-phi-3
+10/33 Test #10: test-tokenizer-0-phi-3 ............   Passed    0.04 sec
+      Start 11: test-tokenizer-0-qwen2
+11/33 Test #11: test-tokenizer-0-qwen2 ............   Passed    0.26 sec
+      Start 12: test-tokenizer-0-refact
+12/33 Test #12: test-tokenizer-0-refact ...........   Passed    0.08 sec
+      Start 13: test-tokenizer-0-starcoder
+13/33 Test #13: test-tokenizer-0-starcoder ........   Passed    0.07 sec
+      Start 14: test-sampling
+14/33 Test #14: test-sampling .....................   Passed    1.15 sec
+      Start 15: test-grammar-parser
+15/33 Test #15: test-grammar-parser ...............   Passed    0.01 sec
+      Start 16: test-grammar-integration
+16/33 Test #16: test-grammar-integration ..........   Passed    0.01 sec
+      Start 17: test-llama-grammar
+17/33 Test #17: test-llama-grammar ................   Passed    0.00 sec
+      Start 18: test-chat
+18/33 Test #18: test-chat .........................   Passed    0.46 sec
+      Start 19: test-json-schema-to-grammar
+19/33 Test #19: test-json-schema-to-grammar .......   Passed    1.83 sec
+      Start 20: test-tokenizer-1-llama-spm
+20/33 Test #20: test-tokenizer-1-llama-spm ........   Passed    0.20 sec
+      Start 21: test-chat-parser
+21/33 Test #21: test-chat-parser ..................   Passed    0.00 sec
+      Start 22: test-chat-template
+22/33 Test #22: test-chat-template ................   Passed    0.09 sec
+      Start 23: test-json-partial
+23/33 Test #23: test-json-partial .................   Passed    0.00 sec
+      Start 24: test-log
+24/33 Test #24: test-log ..........................   Passed    0.02 sec
+      Start 25: test-regex-partial
+25/33 Test #25: test-regex-partial ................   Passed    0.00 sec
+      Start 26: test-arg-parser
+26/33 Test #26: test-arg-parser ...................   Passed    0.03 sec
+      Start 27: test-gguf
+27/33 Test #27: test-gguf .........................   Passed    0.08 sec
+      Start 28: test-backend-ops
+28/33 Test #28: test-backend-ops ..................   Passed    0.01 sec
+      Start 31: test-barrier
+29/33 Test #31: test-barrier ......................   Passed    0.40 sec
+      Start 32: test-quantize-fns
+30/33 Test #32: test-quantize-fns .................   Passed   15.01 sec
+      Start 33: test-quantize-perf
+31/33 Test #33: test-quantize-perf ................   Passed    0.06 sec
+      Start 34: test-rope
+32/33 Test #34: test-rope .........................   Passed    0.07 sec
+      Start 35: test-mtmd-c-api
+33/33 Test #35: test-mtmd-c-api ...................   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 33
+
+Label Time Summary:
+main    =  21.16 sec*proc (33 tests)
+
+Total Test time (real) =  21.17 sec
+
+real	0m21.183s
+user	0m22.788s
+sys	0m0.738s
+```
+### embd_bge_small
+
+BGE Small (BERT):
+- status: 0
+- f16: 
+```
++ ./bin/llama-embedding --model ../models-mnt/bge-small/ggml-model-f16.gguf -p 'I believe the meaning of life is' -ngl 99 -c 0
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.263 I build: 5635 (2db43275) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.004.311 I llama_model_loader: loaded meta data with 25 key-value pairs and 197 tensors from ../models-mnt/bge-small/ggml-model-f16.gguf (version GGUF V3 (latest))
+0.00.004.339 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.004.348 I llama_model_loader: - kv   0:                       general.architecture str              = bert
+0.00.004.349 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.004.350 I llama_model_loader: - kv   2:                               general.name str              = Bge Small
+0.00.004.351 I llama_model_loader: - kv   3:                           general.basename str              = bge
+0.00.004.352 I llama_model_loader: - kv   4:                         general.size_label str              = small
+0.00.004.356 I llama_model_loader: - kv   5:                           bert.block_count u32              = 12
+0.00.004.357 I llama_model_loader: - kv   6:                        bert.context_length u32              = 512
+0.00.004.357 I llama_model_loader: - kv   7:                      bert.embedding_length u32              = 384
+0.00.004.358 I llama_model_loader: - kv   8:                   bert.feed_forward_length u32              = 1536
+0.00.004.359 I llama_model_loader: - kv   9:                  bert.attention.head_count u32              = 12
+0.00.004.364 I llama_model_loader: - kv  10:          bert.attention.layer_norm_epsilon f32              = 0.000000
+0.00.004.365 I llama_model_loader: - kv  11:                          general.file_type u32              = 1
+0.00.004.366 I llama_model_loader: - kv  12:                      bert.attention.causal bool             = false
+0.00.004.367 I llama_model_loader: - kv  13:                          bert.pooling_type u32              = 2
+0.00.004.382 I llama_model_loader: - kv  14:              bert.classifier.output_labels arr[str,1]       = ["LABEL_0"]
+0.00.004.490 I llama_model_loader: - kv  15:               general.quantization_version u32              = 2
+0.00.004.490 I llama_model_loader: - kv  16:            tokenizer.ggml.token_type_count u32              = 2
+0.00.004.491 I llama_model_loader: - kv  17:                       tokenizer.ggml.model str              = bert
+0.00.004.491 I llama_model_loader: - kv  18:                         tokenizer.ggml.pre str              = jina-v2-en
+0.00.007.490 I llama_model_loader: - kv  19:                      tokenizer.ggml.tokens arr[str,30522]   = ["[PAD]", "[unused0]", "[unused1]", "...
+0.00.008.139 I llama_model_loader: - kv  20:                  tokenizer.ggml.token_type arr[i32,30522]   = [3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.008.153 I llama_model_loader: - kv  21:            tokenizer.ggml.unknown_token_id u32              = 100
+0.00.008.154 I llama_model_loader: - kv  22:          tokenizer.ggml.seperator_token_id u32              = 102
+0.00.008.155 I llama_model_loader: - kv  23:            tokenizer.ggml.padding_token_id u32              = 0
+0.00.008.155 I llama_model_loader: - kv  24:               tokenizer.ggml.mask_token_id u32              = 103
+0.00.008.157 I llama_model_loader: - type  f32:  124 tensors
+0.00.008.158 I llama_model_loader: - type  f16:   73 tensors
+0.00.008.160 I print_info: file format = GGUF V3 (latest)
+0.00.008.160 I print_info: file type   = F16
+0.00.008.163 I print_info: file size   = 63.84 MiB (16.12 BPW) 
+0.00.021.209 I load: special tokens cache size = 5
+0.00.023.883 I load: token to piece cache size = 0.2032 MB
+0.00.023.914 I print_info: arch             = bert
+0.00.023.914 I print_info: vocab_only       = 0
+0.00.023.915 I print_info: n_ctx_train      = 512
+0.00.023.915 I print_info: n_embd           = 384
+0.00.023.916 I print_info: n_layer          = 12
+0.00.023.932 I print_info: n_head           = 12
+0.00.023.934 I print_info: n_head_kv        = 12
+0.00.023.934 I print_info: n_rot            = 32
+0.00.023.935 I print_info: n_swa            = 0
+0.00.023.936 I print_info: is_swa_any       = 0
+0.00.023.937 I print_info: n_embd_head_k    = 32
+0.00.023.937 I print_info: n_embd_head_v    = 32
+0.00.023.939 I print_info: n_gqa            = 1
+0.00.023.941 I print_info: n_embd_k_gqa     = 384
+0.00.023.942 I print_info: n_embd_v_gqa     = 384
+0.00.023.944 I print_info: f_norm_eps       = 1.0e-12
+0.00.023.945 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.023.946 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.023.947 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.023.947 I print_info: f_logit_scale    = 0.0e+00
+0.00.023.948 I print_info: f_attn_scale     = 0.0e+00
+0.00.023.950 I print_info: n_ff             = 1536
+0.00.023.950 I print_info: n_expert         = 0
+0.00.023.952 I print_info: n_expert_used    = 0
+0.00.023.952 I print_info: causal attn      = 0
+0.00.023.953 I print_info: pooling type     = 2
+0.00.023.953 I print_info: rope type        = 2
+0.00.023.954 I print_info: rope scaling     = linear
+0.00.023.955 I print_info: freq_base_train  = 10000.0
+0.00.023.956 I print_info: freq_scale_train = 1
+0.00.023.956 I print_info: n_ctx_orig_yarn  = 512
+0.00.023.956 I print_info: rope_finetuned   = unknown
+0.00.023.957 I print_info: ssm_d_conv       = 0
+0.00.023.957 I print_info: ssm_d_inner      = 0
+0.00.023.957 I print_info: ssm_d_state      = 0
+0.00.023.958 I print_info: ssm_dt_rank      = 0
+0.00.023.958 I print_info: ssm_dt_b_c_rms   = 0
+0.00.023.958 I print_info: n_cls_out        = 1
+0.00.023.959 I print_info: cls_label[ 0]    = LABEL_0
+0.00.023.959 I print_info: model type       = 33M
+0.00.023.960 I print_info: model params     = 33.21 M
+0.00.023.960 I print_info: general.name     = Bge Small
+0.00.023.963 I print_info: vocab type       = WPM
+0.00.023.964 I print_info: n_vocab          = 30522
+0.00.023.964 I print_info: n_merges         = 0
+0.00.023.965 I print_info: BOS token        = 101 '[CLS]'
+0.00.023.965 I print_info: UNK token        = 100 '[UNK]'
+0.00.023.966 I print_info: SEP token        = 102 '[SEP]'
+0.00.023.966 I print_info: PAD token        = 0 '[PAD]'
+0.00.023.966 I print_info: MASK token       = 103 '[MASK]'
+0.00.023.967 I print_info: LF token         = 0 '[PAD]'
+0.00.023.967 I print_info: max token length = 21
+0.00.023.969 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.029.270 I load_tensors:          AMX model buffer size =    40.50 MiB
+0.00.029.292 I load_tensors:   CPU_Mapped model buffer size =    63.84 MiB
+...............................................
+0.00.043.305 I llama_context: constructing llama_context
+0.00.043.319 I llama_context: n_seq_max     = 1
+0.00.043.319 I llama_context: n_ctx         = 512
+0.00.043.319 I llama_context: n_ctx_per_seq = 512
+0.00.043.320 I llama_context: n_batch       = 2048
+0.00.043.320 I llama_context: n_ubatch      = 2048
+0.00.043.321 I llama_context: causal_attn   = 0
+0.00.043.321 I llama_context: flash_attn    = 0
+0.00.043.323 I llama_context: freq_base     = 10000.0
+0.00.043.324 I llama_context: freq_scale    = 1
+0.00.043.353 I llama_context:        CPU  output buffer size =     0.00 MiB
+0.00.051.499 W common_init_from_params: KV cache shifting is not supported for this context, disabling KV cache shifting
+0.00.051.518 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 512
+0.00.051.518 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.053.847 I 
+0.00.053.912 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.054.761 I batch_decode: n_tokens = 9, n_seq = 1
+
+embedding 0: -0.043973 -0.019884  0.007663 -0.000832  0.001384 -0.037043  0.109429  0.042574  0.092058 -0.015914  0.006789 -0.035678 -0.017887  0.015052  0.018120  0.015864 -0.011303  0.010416 -0.085217 -0.008459  0.091368 -0.017066 -0.060342 -0.024485  0.027517  0.076064  0.027980 -0.014553  0.017654 -0.033284 -0.037870 -0.019001  0.068665 -0.009841 -0.025040  0.072343 -0.046558  0.011024 -0.050261  0.047714  0.032397 -0.011754  0.022052  0.049640  0.010463  0.005795 -0.028866  0.008928 -0.018515 -0.051481 -0.046042  0.030482 -0.035420  0.054201 -0.069654  0.044251  0.029795  0.046303  0.073405 -0.042586  0.076105  0.038853 -0.181174  0.082502  0.042270 -0.064541 -0.060107 -0.017848  0.006475  0.005892  0.017173 -0.026633  0.064562  0.112599  0.035151 -0.067415  0.027091 -0.067278 -0.033467 -0.033234  0.033242  0.013524 -0.003332 -0.037479 -0.052062  0.055152 -0.001983 -0.038292  0.064450  0.028822 -0.043335 -0.029236 -0.039466  0.036323  0.008385 -0.015454 -0.036588  0.018146  0.028599  0.342831 -0.044468  0.056102  0.017633 -0.020863 -0.066805  0.000153 -0.037913 -0.030070 -0.008535 -0.021581  0.000536 -0.003216  0.004011  0.018916 -0.008553  0.025823  0.049441  0.000086  0.050940 -0.042480 -0.031904  0.023602  0.030694 -0.023159 -0.046273 -0.079267  0.115187  0.046755  0.027834 -0.040731  0.067789 -0.022965  0.010318 -0.032958 -0.018309  0.043840  0.024264  0.052404  0.007477  0.008893  0.011243 -0.074647 -0.065566 -0.026746 -0.041198 -0.023884  0.026735  0.006897  0.027740  0.052873 -0.036658  0.057698 -0.000190  0.031754 -0.019768 -0.022072  0.041040 -0.058903  0.019613  0.043147  0.043596  0.041578 -0.022522  0.027046 -0.021826  0.005442 -0.041315 -0.001239  0.024448  0.002091  0.044333 -0.022737  0.043669  0.064759  0.055422  0.037072 -0.000922  0.046112  0.045813 -0.008493  0.063045 -0.073248 -0.011937  0.032114  0.023951  0.014719 -0.033687  0.001091 -0.015830 -0.019010  0.047874  0.110820  0.028442  0.031366 -0.013284 -0.057521  0.006649  0.005148 -0.012254 -0.051442 -0.000977 -0.017648 -0.019446 -0.040925  0.009197 -0.057945  0.050966  0.052339 -0.009609 -0.040256 -0.014084 -0.024882 -0.017266  0.006298  0.006585 -0.026933  0.015609  0.030761  0.002575  0.023214 -0.022196 -0.098554 -0.051096 -0.278019 -0.014999 -0.061565 -0.027230  0.017666 -0.010951 -0.017081  0.035055  0.046988 -0.015427  0.015238 -0.025470  0.047851 -0.005957 -0.000740 -0.061026 -0.068936 -0.060387 -0.035954  0.043319 -0.055047  0.015081  0.000537 -0.058199 -0.010453  0.012636  0.151510  0.127100 -0.013604  0.042001 -0.025672  0.014032 -0.001047 -0.150463  0.044849  0.005319 -0.036276 -0.029802 -0.020196 -0.034877  0.010222  0.033545 -0.048174 -0.051790 -0.017458 -0.023487  0.047366  0.052076 -0.016779 -0.055451  0.025834 -0.005708  0.010712  0.038702  0.008203 -0.009765 -0.105785 -0.027435 -0.096103  0.025061 -0.011241  0.092367  0.056101  0.003778  0.027793  0.002078 -0.051088 -0.039881 -0.013534 -0.044976 -0.015329  0.002925 -0.043513 -0.077945  0.065223 -0.006822 -0.001606 -0.014654  0.071549  0.023720 -0.037171  0.009171  0.001546 -0.032265  0.015457  0.037872  0.000355 -0.053208  0.021320 -0.039827  0.000033  0.013409  0.019808 -0.057879  0.006475 -0.049533 -0.267845  0.039154 -0.067969  0.038242 -0.012330  0.041493 -0.016116  0.052391 -0.071351  0.011368  0.024714 -0.007231  0.082101  0.028538 -0.021506  0.040491 -0.004553 -0.074596 -0.014756  0.020032  0.002299  0.023152  0.197216 -0.043224 -0.025986 -0.004957 -0.019280  0.074267  0.001719 -0.031988 -0.036599 -0.045077  0.000546 -0.011566  0.018121 -0.029470 -0.008458  0.006416  0.050807 -0.014958  0.006174  0.026088 -0.030801  0.048051  0.114089 -0.040818 -0.011478  0.005393 -0.003589  0.025162 -0.059140  0.013761 -0.010407  0.038699  0.051454  0.035408  0.035042 -0.017040  0.026373 -0.014498 -0.050023  0.003218  0.054131  0.039731 -0.039132 
+
+0.00.059.923 I llama_perf_context_print:        load time =      53.51 ms
+0.00.059.925 I llama_perf_context_print: prompt eval time =       4.69 ms /     9 tokens (    0.52 ms per token,  1917.75 tokens per second)
+0.00.059.926 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.00.059.927 I llama_perf_context_print:       total time =       6.10 ms /    10 tokens
+
+real	0m0.071s
+user	0m0.078s
+sys	0m0.030s
+```
+- q8_0:
+```
++ ./bin/llama-embedding --model ../models-mnt/bge-small/ggml-model-q8_0.gguf -p 'I believe the meaning of life is' -ngl 99 -c 0
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.265 I build: 5635 (2db43275) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.004.099 I llama_model_loader: loaded meta data with 25 key-value pairs and 197 tensors from ../models-mnt/bge-small/ggml-model-q8_0.gguf (version GGUF V3 (latest))
+0.00.004.123 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.004.129 I llama_model_loader: - kv   0:                       general.architecture str              = bert
+0.00.004.130 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.004.130 I llama_model_loader: - kv   2:                               general.name str              = Bge Small
+0.00.004.131 I llama_model_loader: - kv   3:                           general.basename str              = bge
+0.00.004.131 I llama_model_loader: - kv   4:                         general.size_label str              = small
+0.00.004.133 I llama_model_loader: - kv   5:                           bert.block_count u32              = 12
+0.00.004.134 I llama_model_loader: - kv   6:                        bert.context_length u32              = 512
+0.00.004.134 I llama_model_loader: - kv   7:                      bert.embedding_length u32              = 384
+0.00.004.135 I llama_model_loader: - kv   8:                   bert.feed_forward_length u32              = 1536
+0.00.004.135 I llama_model_loader: - kv   9:                  bert.attention.head_count u32              = 12
+0.00.004.143 I llama_model_loader: - kv  10:          bert.attention.layer_norm_epsilon f32              = 0.000000
+0.00.004.144 I llama_model_loader: - kv  11:                      bert.attention.causal bool             = false
+0.00.004.145 I llama_model_loader: - kv  12:                          bert.pooling_type u32              = 2
+0.00.004.155 I llama_model_loader: - kv  13:              bert.classifier.output_labels arr[str,1]       = ["LABEL_0"]
+0.00.004.156 I llama_model_loader: - kv  14:            tokenizer.ggml.token_type_count u32              = 2
+0.00.004.156 I llama_model_loader: - kv  15:                       tokenizer.ggml.model str              = bert
+0.00.004.157 I llama_model_loader: - kv  16:                         tokenizer.ggml.pre str              = jina-v2-en
+0.00.007.207 I llama_model_loader: - kv  17:                      tokenizer.ggml.tokens arr[str,30522]   = ["[PAD]", "[unused0]", "[unused1]", "...
+0.00.007.919 I llama_model_loader: - kv  18:                  tokenizer.ggml.token_type arr[i32,30522]   = [3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.007.934 I llama_model_loader: - kv  19:            tokenizer.ggml.unknown_token_id u32              = 100
+0.00.007.934 I llama_model_loader: - kv  20:          tokenizer.ggml.seperator_token_id u32              = 102
+0.00.007.935 I llama_model_loader: - kv  21:            tokenizer.ggml.padding_token_id u32              = 0
+0.00.007.935 I llama_model_loader: - kv  22:               tokenizer.ggml.mask_token_id u32              = 103
+0.00.007.935 I llama_model_loader: - kv  23:               general.quantization_version u32              = 2
+0.00.007.936 I llama_model_loader: - kv  24:                          general.file_type u32              = 7
+0.00.007.938 I llama_model_loader: - type  f32:  124 tensors
+0.00.007.938 I llama_model_loader: - type q8_0:   73 tensors
+0.00.007.940 I print_info: file format = GGUF V3 (latest)
+0.00.007.940 I print_info: file type   = Q8_0
+0.00.007.943 I print_info: file size   = 34.38 MiB (8.68 BPW) 
+0.00.020.528 I load: special tokens cache size = 5
+0.00.023.136 I load: token to piece cache size = 0.2032 MB
+0.00.023.163 I print_info: arch             = bert
+0.00.023.164 I print_info: vocab_only       = 0
+0.00.023.164 I print_info: n_ctx_train      = 512
+0.00.023.164 I print_info: n_embd           = 384
+0.00.023.165 I print_info: n_layer          = 12
+0.00.023.178 I print_info: n_head           = 12
+0.00.023.180 I print_info: n_head_kv        = 12
+0.00.023.180 I print_info: n_rot            = 32
+0.00.023.181 I print_info: n_swa            = 0
+0.00.023.181 I print_info: is_swa_any       = 0
+0.00.023.181 I print_info: n_embd_head_k    = 32
+0.00.023.182 I print_info: n_embd_head_v    = 32
+0.00.023.183 I print_info: n_gqa            = 1
+0.00.023.184 I print_info: n_embd_k_gqa     = 384
+0.00.023.185 I print_info: n_embd_v_gqa     = 384
+0.00.023.186 I print_info: f_norm_eps       = 1.0e-12
+0.00.023.187 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.023.187 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.023.187 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.023.187 I print_info: f_logit_scale    = 0.0e+00
+0.00.023.188 I print_info: f_attn_scale     = 0.0e+00
+0.00.023.189 I print_info: n_ff             = 1536
+0.00.023.189 I print_info: n_expert         = 0
+0.00.023.189 I print_info: n_expert_used    = 0
+0.00.023.189 I print_info: causal attn      = 0
+0.00.023.190 I print_info: pooling type     = 2
+0.00.023.190 I print_info: rope type        = 2
+0.00.023.190 I print_info: rope scaling     = linear
+0.00.023.191 I print_info: freq_base_train  = 10000.0
+0.00.023.191 I print_info: freq_scale_train = 1
+0.00.023.192 I print_info: n_ctx_orig_yarn  = 512
+0.00.023.192 I print_info: rope_finetuned   = unknown
+0.00.023.192 I print_info: ssm_d_conv       = 0
+0.00.023.192 I print_info: ssm_d_inner      = 0
+0.00.023.192 I print_info: ssm_d_state      = 0
+0.00.023.192 I print_info: ssm_dt_rank      = 0
+0.00.023.193 I print_info: ssm_dt_b_c_rms   = 0
+0.00.023.193 I print_info: n_cls_out        = 1
+0.00.023.194 I print_info: cls_label[ 0]    = LABEL_0
+0.00.023.194 I print_info: model type       = 33M
+0.00.023.195 I print_info: model params     = 33.21 M
+0.00.023.196 I print_info: general.name     = Bge Small
+0.00.023.199 I print_info: vocab type       = WPM
+0.00.023.199 I print_info: n_vocab          = 30522
+0.00.023.200 I print_info: n_merges         = 0
+0.00.023.200 I print_info: BOS token        = 101 '[CLS]'
+0.00.023.200 I print_info: UNK token        = 100 '[UNK]'
+0.00.023.201 I print_info: SEP token        = 102 '[SEP]'
+0.00.023.201 I print_info: PAD token        = 0 '[PAD]'
+0.00.023.201 I print_info: MASK token       = 103 '[MASK]'
+0.00.023.201 I print_info: LF token         = 0 '[PAD]'
+0.00.023.202 I print_info: max token length = 21
+0.00.023.203 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.026.364 I load_tensors:          AMX model buffer size =    24.05 MiB
+0.00.026.386 I load_tensors:   CPU_Mapped model buffer size =    34.38 MiB
+...............................................
+0.00.032.763 I llama_context: constructing llama_context
+0.00.032.778 I llama_context: n_seq_max     = 1
+0.00.032.779 I llama_context: n_ctx         = 512
+0.00.032.779 I llama_context: n_ctx_per_seq = 512
+0.00.032.780 I llama_context: n_batch       = 2048
+0.00.032.780 I llama_context: n_ubatch      = 2048
+0.00.032.780 I llama_context: causal_attn   = 0
+0.00.032.781 I llama_context: flash_attn    = 0
+0.00.032.783 I llama_context: freq_base     = 10000.0
+0.00.032.784 I llama_context: freq_scale    = 1
+0.00.032.809 I llama_context:        CPU  output buffer size =     0.00 MiB
+0.00.039.239 W common_init_from_params: KV cache shifting is not supported for this context, disabling KV cache shifting
+0.00.039.262 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 512
+0.00.039.263 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.040.949 I 
+0.00.041.001 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.041.786 I batch_decode: n_tokens = 9, n_seq = 1
+
+embedding 0: -0.044309 -0.019813  0.008987 -0.002318  0.002744 -0.037663  0.109016  0.042487  0.092250 -0.015800  0.006074 -0.036222 -0.018614  0.014119  0.016507  0.014268 -0.013903  0.012143 -0.084251 -0.007450  0.092151 -0.017193 -0.061986 -0.024795  0.027753  0.076802  0.027215 -0.014948  0.017357 -0.034472 -0.037432 -0.017833  0.069079 -0.010325 -0.023972  0.072211 -0.045754  0.010995 -0.051178  0.050941  0.032903 -0.013014  0.022063  0.050761  0.009339  0.005511 -0.027706  0.008560 -0.018463 -0.053808 -0.046956  0.028264 -0.035932  0.053317 -0.067952  0.044532  0.029434  0.046684  0.073729 -0.042843  0.075785  0.037704 -0.182889  0.082176  0.043374 -0.066207 -0.060013 -0.016450  0.006101  0.005384  0.017625 -0.027043  0.065870  0.111931  0.034651 -0.067272  0.026672 -0.067012 -0.034935 -0.034175  0.032976  0.014839 -0.003955 -0.037311 -0.051911  0.053574 -0.002806 -0.037171  0.063191  0.028089 -0.040931 -0.028218 -0.040149  0.037414  0.007350 -0.015244 -0.035830  0.018382  0.030854  0.346060 -0.044347  0.056610  0.016046 -0.021402 -0.063163 -0.000238 -0.038651 -0.029531 -0.009044 -0.018888  0.001442 -0.003933  0.004089  0.017774 -0.009813  0.024759  0.048706 -0.000926  0.051444 -0.042137 -0.031371  0.023445  0.030490 -0.023213 -0.044751 -0.078849  0.113149  0.046419  0.027211 -0.041235  0.068011 -0.022332  0.010285 -0.034104 -0.016392  0.044717  0.022267  0.051580  0.007875  0.007137  0.010340 -0.075651 -0.064666 -0.025816 -0.040592 -0.023430  0.027537  0.005944  0.026114  0.052511 -0.037576  0.058334  0.002275  0.032697 -0.020834 -0.020148  0.040773 -0.059564  0.019621  0.042367  0.042937  0.040416 -0.021675  0.028270 -0.022553  0.007295 -0.040706  0.001114  0.023696  0.002872  0.043937 -0.023263  0.042295  0.065726  0.056357  0.039440  0.000719  0.047757  0.045261 -0.009076  0.059687 -0.072864 -0.011329  0.033325  0.023119  0.015303 -0.034315  0.000838 -0.015481 -0.018257  0.048319  0.109876  0.029452  0.031529 -0.011428 -0.057388  0.005715  0.005023 -0.012576 -0.052464 -0.002372 -0.017542 -0.020560 -0.041087  0.010048 -0.058480  0.050125  0.051521 -0.011563 -0.040135 -0.015976 -0.025924 -0.015565  0.005270  0.007640 -0.026903  0.017275  0.030122  0.001335  0.023933 -0.021360 -0.096725 -0.050567 -0.277131 -0.013794 -0.062016 -0.027825  0.016459 -0.009972 -0.017447  0.034492  0.049046 -0.016776  0.015157 -0.024093  0.050116 -0.005866  0.000129 -0.060594 -0.068300 -0.059891 -0.036374  0.043206 -0.055854  0.014791 -0.000393 -0.059429 -0.010993  0.010663  0.151079  0.125948 -0.012241  0.042606 -0.025239  0.014574 -0.001044 -0.149364  0.042782  0.005868 -0.037142 -0.028414 -0.018658 -0.034381  0.010279  0.034891 -0.049881 -0.052409 -0.016558 -0.024857  0.048542  0.050580 -0.017946 -0.056830  0.023791 -0.005051  0.012162  0.038486  0.007439 -0.008891 -0.105778 -0.027701 -0.097364  0.024572 -0.010452  0.092140  0.056021  0.004855  0.027633  0.000979 -0.051141 -0.039169 -0.013367 -0.046267 -0.014997  0.002815 -0.043686 -0.077609  0.065870 -0.006576 -0.000944 -0.015243  0.070498  0.024867 -0.036006  0.007649  0.001430 -0.032574  0.016920  0.037860  0.001200 -0.051893  0.020924 -0.038208  0.000215  0.012031  0.020516 -0.057629  0.005329 -0.049618 -0.268377  0.038973 -0.066689  0.036817 -0.010660  0.043404 -0.016255  0.050213 -0.071589  0.012991  0.024491 -0.007311  0.083345  0.029311 -0.021896  0.042092 -0.003317 -0.074649 -0.015555  0.020095  0.002169  0.023819  0.196763 -0.044113 -0.024984 -0.005259 -0.018664  0.073677  0.001786 -0.031344 -0.036107 -0.044601  0.000309 -0.011383  0.019455 -0.026524 -0.009676  0.005173  0.049320 -0.014603  0.006682  0.027257 -0.031550  0.048110  0.112226 -0.040986 -0.012854  0.003856 -0.003465  0.026360 -0.060848  0.015305 -0.010313  0.038271  0.049728  0.034553  0.036575 -0.017438  0.026131 -0.015650 -0.050367  0.004205  0.054641  0.040015 -0.039113 
+
+0.00.044.330 I llama_perf_context_print:        load time =      40.62 ms
+0.00.044.331 I llama_perf_context_print: prompt eval time =       2.20 ms /     9 tokens (    0.24 ms per token,  4094.63 tokens per second)
+0.00.044.333 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.00.044.333 I llama_perf_context_print:       total time =       3.40 ms /    10 tokens
+
+real	0m0.053s
+user	0m0.119s
+sys	0m0.027s
+```
+### rerank_tiny
+
+Rerank Tiny (Jina):
+- status: 0
+- f16: 
+```
++ ./bin/llama-embedding --model ../models-mnt/rerank-tiny/ggml-model-f16.gguf -p 'what is panda?</s></s>hi\nwhat is panda?</s></s>it'\''s a bear\nwhat is panda?</s></s>The giant panda (Ailuropoda melanoleuca), sometimes called a panda bear or simply panda, is a bear species endemic to China.' -ngl 99 -c 0 --pooling rank --embd-normalize -1 --verbose-prompt
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.279 I build: 5635 (2db43275) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.009.528 I llama_model_loader: loaded meta data with 28 key-value pairs and 66 tensors from ../models-mnt/rerank-tiny/ggml-model-f16.gguf (version GGUF V3 (latest))
+0.00.009.556 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.009.564 I llama_model_loader: - kv   0:                       general.architecture str              = jina-bert-v2
+0.00.009.565 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.009.566 I llama_model_loader: - kv   2:                               general.name str              = Jina Bert Implementation
+0.00.009.567 I llama_model_loader: - kv   3:                       general.organization str              = Jinaai
+0.00.009.567 I llama_model_loader: - kv   4:                         general.size_label str              = 33M
+0.00.009.570 I llama_model_loader: - kv   5:                   jina-bert-v2.block_count u32              = 4
+0.00.009.571 I llama_model_loader: - kv   6:                jina-bert-v2.context_length u32              = 8192
+0.00.009.572 I llama_model_loader: - kv   7:              jina-bert-v2.embedding_length u32              = 384
+0.00.009.572 I llama_model_loader: - kv   8:           jina-bert-v2.feed_forward_length u32              = 1536
+0.00.009.573 I llama_model_loader: - kv   9:          jina-bert-v2.attention.head_count u32              = 12
+0.00.009.588 I llama_model_loader: - kv  10:  jina-bert-v2.attention.layer_norm_epsilon f32              = 0.000000
+0.00.009.589 I llama_model_loader: - kv  11:                          general.file_type u32              = 1
+0.00.009.589 I llama_model_loader: - kv  12:              jina-bert-v2.attention.causal bool             = false
+0.00.009.590 I llama_model_loader: - kv  13:               general.quantization_version u32              = 2
+0.00.009.591 I llama_model_loader: - kv  14:                       tokenizer.ggml.model str              = gpt2
+0.00.009.591 I llama_model_loader: - kv  15:                         tokenizer.ggml.pre str              = jina-v1-en
+0.00.014.956 I llama_model_loader: - kv  16:                      tokenizer.ggml.tokens arr[str,61056]   = ["<s>", "<pad>", "</s>", "<unk>", "<m...
+0.00.016.279 I llama_model_loader: - kv  17:                  tokenizer.ggml.token_type arr[i32,61056]   = [3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.019.750 I llama_model_loader: - kv  18:                      tokenizer.ggml.merges arr[str,39382]   = ["t h", "i n", "a n", "e r", "th e", ...
+0.00.019.768 I llama_model_loader: - kv  19:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.019.768 I llama_model_loader: - kv  20:                tokenizer.ggml.eos_token_id u32              = 2
+0.00.019.769 I llama_model_loader: - kv  21:            tokenizer.ggml.unknown_token_id u32              = 3
+0.00.019.769 I llama_model_loader: - kv  22:          tokenizer.ggml.seperator_token_id u32              = 2
+0.00.019.770 I llama_model_loader: - kv  23:            tokenizer.ggml.padding_token_id u32              = 1
+0.00.019.770 I llama_model_loader: - kv  24:               tokenizer.ggml.mask_token_id u32              = 4
+0.00.019.770 I llama_model_loader: - kv  25:            tokenizer.ggml.token_type_count u32              = 2
+0.00.019.771 I llama_model_loader: - kv  26:               tokenizer.ggml.add_bos_token bool             = true
+0.00.019.772 I llama_model_loader: - kv  27:               tokenizer.ggml.add_eos_token bool             = true
+0.00.019.775 I llama_model_loader: - type  f32:   40 tensors
+0.00.019.776 I llama_model_loader: - type  f16:   26 tensors
+0.00.019.778 I print_info: file format = GGUF V3 (latest)
+0.00.019.779 I print_info: file type   = F16
+0.00.019.781 I print_info: file size   = 62.78 MiB (16.01 BPW) 
+0.00.026.943 W load: empty token at index 5
+0.00.037.018 W load: model vocab missing newline token, using special_pad_id instead
+0.00.054.488 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.054.602 I load: special tokens cache size = 5
+0.00.343.309 I load: token to piece cache size = 1.5060 MB
+0.00.343.365 I print_info: arch             = jina-bert-v2
+0.00.343.366 I print_info: vocab_only       = 0
+0.00.343.366 I print_info: n_ctx_train      = 8192
+0.00.343.366 I print_info: n_embd           = 384
+0.00.343.367 I print_info: n_layer          = 4
+0.00.343.382 I print_info: n_head           = 12
+0.00.343.383 I print_info: n_head_kv        = 12
+0.00.343.383 I print_info: n_rot            = 32
+0.00.343.384 I print_info: n_swa            = 0
+0.00.343.385 I print_info: is_swa_any       = 0
+0.00.343.385 I print_info: n_embd_head_k    = 32
+0.00.343.386 I print_info: n_embd_head_v    = 32
+0.00.343.388 I print_info: n_gqa            = 1
+0.00.343.389 I print_info: n_embd_k_gqa     = 384
+0.00.343.390 I print_info: n_embd_v_gqa     = 384
+0.00.343.391 I print_info: f_norm_eps       = 1.0e-12
+0.00.343.392 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.343.392 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.343.393 I print_info: f_max_alibi_bias = 8.0e+00
+0.00.343.393 I print_info: f_logit_scale    = 0.0e+00
+0.00.343.393 I print_info: f_attn_scale     = 0.0e+00
+0.00.343.394 I print_info: n_ff             = 1536
+0.00.343.395 I print_info: n_expert         = 0
+0.00.343.395 I print_info: n_expert_used    = 0
+0.00.343.395 I print_info: causal attn      = 0
+0.00.343.396 I print_info: pooling type     = -1
+0.00.343.396 I print_info: rope type        = -1
+0.00.343.396 I print_info: rope scaling     = linear
+0.00.343.397 I print_info: freq_base_train  = 10000.0
+0.00.343.398 I print_info: freq_scale_train = 1
+0.00.343.398 I print_info: n_ctx_orig_yarn  = 8192
+0.00.343.399 I print_info: rope_finetuned   = unknown
+0.00.343.399 I print_info: ssm_d_conv       = 0
+0.00.343.399 I print_info: ssm_d_inner      = 0
+0.00.343.400 I print_info: ssm_d_state      = 0
+0.00.343.400 I print_info: ssm_dt_rank      = 0
+0.00.343.400 I print_info: ssm_dt_b_c_rms   = 0
+0.00.343.401 I print_info: model type       = 33M
+0.00.343.402 I print_info: model params     = 32.90 M
+0.00.343.402 I print_info: general.name     = Jina Bert Implementation
+0.00.343.405 I print_info: vocab type       = BPE
+0.00.343.405 I print_info: n_vocab          = 61056
+0.00.343.406 I print_info: n_merges         = 39382
+0.00.343.406 I print_info: BOS token        = 0 '<s>'
+0.00.343.406 I print_info: EOS token        = 2 '</s>'
+0.00.343.407 I print_info: UNK token        = 3 '<unk>'
+0.00.343.407 I print_info: SEP token        = 2 '</s>'
+0.00.343.407 I print_info: PAD token        = 1 '<pad>'
+0.00.343.408 I print_info: MASK token       = 4 '<mask>'
+0.00.343.408 I print_info: EOG token        = 2 '</s>'
+0.00.343.408 I print_info: max token length = 45
+0.00.343.410 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.348.386 I load_tensors:          AMX model buffer size =    18.00 MiB
+0.00.348.403 I load_tensors:   CPU_Mapped model buffer size =    62.78 MiB
+................
+0.00.354.659 I llama_context: constructing llama_context
+0.00.354.676 I llama_context: n_seq_max     = 1
+0.00.354.676 I llama_context: n_ctx         = 8192
+0.00.354.677 I llama_context: n_ctx_per_seq = 8192
+0.00.354.677 I llama_context: n_batch       = 2048
+0.00.354.677 I llama_context: n_ubatch      = 2048
+0.00.354.678 I llama_context: causal_attn   = 0
+0.00.354.678 I llama_context: flash_attn    = 0
+0.00.354.680 I llama_context: freq_base     = 10000.0
+0.00.354.681 I llama_context: freq_scale    = 1
+0.00.354.707 I llama_context:        CPU  output buffer size =     0.00 MiB
+0.00.361.702 W common_init_from_params: KV cache shifting is not supported for this context, disabling KV cache shifting
+0.00.361.727 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 8192
+0.00.361.727 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.363.437 I 
+0.00.363.497 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.363.673 I main: prompt 0: 'what is panda?</s></s>hi'
+0.00.363.686 I main: number of tokens in prompt = 9
+     0 -> '<s>'
+ 21381 -> 'what'
+ 21152 -> 'is'
+ 49990 -> 'panda'
+    61 -> '?'
+     2 -> '</s>'
+     2 -> '</s>'
+ 23233 -> 'hi'
+     2 -> '</s>'
+
+
+0.00.363.692 I main: prompt 1: 'what is panda?</s></s>it's a bear'
+0.00.363.692 I main: number of tokens in prompt = 13
+     0 -> '<s>'
+ 21381 -> 'what'
+ 21152 -> 'is'
+ 49990 -> 'panda'
+    61 -> '?'
+     2 -> '</s>'
+     2 -> '</s>'
+ 21153 -> 'it'
+    37 -> '''
+    87 -> 's'
+    69 -> 'a'
+ 25706 -> 'bear'
+     2 -> '</s>'
+
+
+0.00.363.696 I main: prompt 2: 'what is panda?</s></s>The giant panda (Ailuropoda melanoleuca), sometimes called a panda bear or simply panda, is a bear species endemic to China.'
+0.00.363.696 I main: number of tokens in prompt = 40
+     0 -> '<s>'
+ 21381 -> 'what'
+ 21152 -> 'is'
+ 49990 -> 'panda'
+    61 -> '?'
+     2 -> '</s>'
+     2 -> '</s>'
+ 21215 -> 'he'
+ 28390 -> 'giant'
+ 49990 -> 'panda'
+    38 -> '('
+ 21163 -> 'il'
+ 26237 -> 'uro'
+ 21223 -> 'po'
+ 23179 -> 'da'
+ 36906 -> 'melan'
+ 26791 -> 'ole'
+    89 -> 'u'
+ 21402 -> 'ca'
+ 21686 -> '),'
+ 23314 -> 'sometimes'
+ 22517 -> 'called'
+    69 -> 'a'
+ 49990 -> 'panda'
+ 25706 -> 'bear'
+ 21142 -> 'or'
+ 22810 -> 'simply'
+ 49990 -> 'panda'
+    42 -> ','
+ 21152 -> 'is'
+    69 -> 'a'
+ 25706 -> 'bear'
+ 25677 -> 'species'
+ 28930 -> 'ende'
+ 22024 -> 'mic'
+ 21148 -> 'to'
+    76 -> 'h'
+ 22344 -> 'ina'
+    44 -> '.'
+     2 -> '</s>'
+
+
+0.00.363.753 I batch_decode: n_tokens = 62, n_seq = 3
+
+rerank score 0:    0.023
+rerank score 1:    0.024
+rerank score 2:    0.199
+
+0.00.373.000 I llama_perf_context_print:        load time =     363.09 ms
+0.00.373.002 I llama_perf_context_print: prompt eval time =       9.11 ms /    62 tokens (    0.15 ms per token,  6804.21 tokens per second)
+0.00.373.003 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.00.373.003 I llama_perf_context_print:       total time =       9.58 ms /    63 tokens
+
+real	0m0.392s
+user	0m0.407s
+sys	0m0.031s
+  - rerank score 0 @ 0.023 OK
+  - rerank score 1 @ 0.024 OK
+  - rerank score 2 @ 0.199 OK
+```
+### pythia_1_4b
+
+Pythia 1.4B:
+- status: 0
+- perplexity:
+  - f16 @ 10.1485 OK
+  - q8_0 @ 10.1611 OK
+  - q4_0 @ 14.1117 OK
+  - q4_1 @ 12.6944 OK
+  - q5_0 @ 10.0822 OK
+  - q5_1 @ 10.1864 OK
+  - q3_k @ 12.3725 OK
+  - q4_k @ 10.3355 OK
+  - q5_k @ 11.0242 OK
+  - q6_k @ 10.3482 OK
+- imatrix:
+```
+Final estimate: PPL = 10.1485 +/- 3.22644
+```
+- f16: 
+```
++ ./bin/llama-cli -no-cnv --model ../models-mnt/pythia/1.4B/ggml-model-f16.gguf -ngl 99 -c 0 -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.339 I build: 5635 (2db43275) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.000.567 I main: llama backend init
+0.00.000.584 I main: load the model and apply lora adapter, if any
+0.00.011.158 I llama_model_loader: loaded meta data with 22 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-f16.gguf (version GGUF V3 (latest))
+0.00.011.183 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.011.192 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.011.193 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.011.193 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.011.193 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.011.194 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.011.198 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.011.198 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.011.199 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.011.199 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.011.200 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.011.200 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.011.201 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.011.205 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.011.205 I llama_model_loader: - kv  13:               general.quantization_version u32              = 2
+0.00.011.206 I llama_model_loader: - kv  14:                       tokenizer.ggml.model str              = gpt2
+0.00.011.207 I llama_model_loader: - kv  15:                         tokenizer.ggml.pre str              = olmo
+0.00.016.066 I llama_model_loader: - kv  16:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.017.126 I llama_model_loader: - kv  17:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.021.711 I llama_model_loader: - kv  18:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.021.731 I llama_model_loader: - kv  19:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.021.732 I llama_model_loader: - kv  20:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.021.732 I llama_model_loader: - kv  21:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.021.735 I llama_model_loader: - type  f32:  194 tensors
+0.00.021.736 I llama_model_loader: - type  f16:   98 tensors
+0.00.021.738 I print_info: file format = GGUF V3 (latest)
+0.00.021.739 I print_info: file type   = all F32 (guessed)
+0.00.021.742 I print_info: file size   = 2.64 GiB (16.01 BPW) 
+0.00.056.648 I load: special tokens cache size = 25
+0.00.068.689 I load: token to piece cache size = 0.2984 MB
+0.00.068.719 I print_info: arch             = gptneox
+0.00.068.719 I print_info: vocab_only       = 0
+0.00.068.719 I print_info: n_ctx_train      = 2048
+0.00.068.720 I print_info: n_embd           = 2048
+0.00.068.720 I print_info: n_layer          = 24
+0.00.068.737 I print_info: n_head           = 16
+0.00.068.739 I print_info: n_head_kv        = 16
+0.00.068.739 I print_info: n_rot            = 32
+0.00.068.739 I print_info: n_swa            = 0
+0.00.068.740 I print_info: is_swa_any       = 0
+0.00.068.741 I print_info: n_embd_head_k    = 128
+0.00.068.741 I print_info: n_embd_head_v    = 128
+0.00.068.743 I print_info: n_gqa            = 1
+0.00.068.744 I print_info: n_embd_k_gqa     = 2048
+0.00.068.745 I print_info: n_embd_v_gqa     = 2048
+0.00.068.746 I print_info: f_norm_eps       = 1.0e-05
+0.00.068.747 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.068.747 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.068.747 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.068.747 I print_info: f_logit_scale    = 0.0e+00
+0.00.068.748 I print_info: f_attn_scale     = 0.0e+00
+0.00.068.749 I print_info: n_ff             = 8192
+0.00.068.749 I print_info: n_expert         = 0
+0.00.068.749 I print_info: n_expert_used    = 0
+0.00.068.749 I print_info: causal attn      = 1
+0.00.068.749 I print_info: pooling type     = 0
+0.00.068.750 I print_info: rope type        = 2
+0.00.068.750 I print_info: rope scaling     = linear
+0.00.068.751 I print_info: freq_base_train  = 10000.0
+0.00.068.751 I print_info: freq_scale_train = 1
+0.00.068.751 I print_info: n_ctx_orig_yarn  = 2048
+0.00.068.752 I print_info: rope_finetuned   = unknown
+0.00.068.752 I print_info: ssm_d_conv       = 0
+0.00.068.752 I print_info: ssm_d_inner      = 0
+0.00.068.753 I print_info: ssm_d_state      = 0
+0.00.068.753 I print_info: ssm_dt_rank      = 0
+0.00.068.753 I print_info: ssm_dt_b_c_rms   = 0
+0.00.068.754 I print_info: model type       = 1.4B
+0.00.068.754 I print_info: model params     = 1.41 B
+0.00.068.755 I print_info: general.name     = 1.4B
+0.00.068.757 I print_info: vocab type       = BPE
+0.00.068.758 I print_info: n_vocab          = 50304
+0.00.068.759 I print_info: n_merges         = 50009
+0.00.068.759 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.068.759 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.068.760 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.068.760 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.068.760 I print_info: LF token         = 187 'Ċ'
+0.00.068.761 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.068.761 I print_info: max token length = 1024
+0.00.068.762 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.210.103 I load_tensors:          AMX model buffer size =  2500.50 MiB
+0.00.210.126 I load_tensors:   CPU_Mapped model buffer size =  2502.95 MiB
+.................................................................................
+0.01.051.407 I llama_context: constructing llama_context
+0.01.051.424 I llama_context: n_seq_max     = 1
+0.01.051.424 I llama_context: n_ctx         = 2048
+0.01.051.424 I llama_context: n_ctx_per_seq = 2048
+0.01.051.425 I llama_context: n_batch       = 2048
+0.01.051.425 I llama_context: n_ubatch      = 512
+0.01.051.425 I llama_context: causal_attn   = 1
+0.01.051.426 I llama_context: flash_attn    = 0
+0.01.051.431 I llama_context: freq_base     = 10000.0
+0.01.051.432 I llama_context: freq_scale    = 1
+0.01.051.480 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.01.051.896 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.01.124.208 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.01.133.148 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.01.133.169 I llama_context: graph nodes  = 1063
+0.01.133.169 I llama_context: graph splits = 1
+0.01.133.186 I common_init_from_params: added <|endoftext|> logit bias = -inf
+0.01.133.639 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.01.133.653 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.01.241.056 I main: llama threadpool init, n_threads = 4
+0.01.241.078 I 
+0.01.241.152 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.01.241.164 I 
+0.01.241.304 I sampler seed: 1234
+0.01.241.324 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 2048
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.01.241.328 I sampler chain: logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+0.01.241.329 I generate: n_ctx = 2048, n_batch = 2048, n_predict = 64, n_keep = 0
+0.01.241.329 I 
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 7, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 7, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 7, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 7, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 7, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 7, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 7, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 7, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 7, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 7, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 7, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 7, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 7, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 7, n_seq_tokens = 1
+    seq_id[6][0] = 0
+I believe the meaning of life iss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ tos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ dos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thingss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ wes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ loves = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+,s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ withs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ peoples = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ wes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ loves = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+,s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ands = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ world wes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ loves = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+.s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Is = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ believes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thats = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ours = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ onlys = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ fears = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ iss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ nots = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ knowings = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+.s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ Ands = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ Is = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ believes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thats = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+’s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ fears = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thats = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ keepss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ uss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ froms = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ doings = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thingss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thats = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ wes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ knows = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ares = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ goods = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ fors = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ uss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+.s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Is = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ believes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thats = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ wes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ haves = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ as = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ choice.
+
+0.05.359.095 I llama_perf_sampler_print:    sampling time =       2.73 ms /    71 runs   (    0.04 ms per token, 25959.78 tokens per second)
+0.05.359.100 I llama_perf_context_print:        load time =    1239.38 ms
+0.05.359.102 I llama_perf_context_print: prompt eval time =     130.80 ms /     7 tokens (   18.69 ms per token,    53.52 tokens per second)
+0.05.359.103 I llama_perf_context_print:        eval time =    3974.92 ms /    63 runs   (   63.09 ms per token,    15.85 tokens per second)
+0.05.359.103 I llama_perf_context_print:       total time =    4119.11 ms /    70 tokens
+
+real	0m5.467s
+user	0m17.274s
+sys	0m0.784s
++ ./bin/llama-perplexity --model ../models-mnt/pythia/1.4B/ggml-model-f16.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -ngl 99 -c 128 -b 128 --chunks 1
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.370 I build: 5635 (2db43275) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.010.700 I llama_model_loader: loaded meta data with 22 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-f16.gguf (version GGUF V3 (latest))
+0.00.010.727 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.010.734 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.010.735 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.010.736 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.010.736 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.010.736 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.010.741 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.010.742 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.010.743 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.010.743 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.010.744 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.010.744 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.010.745 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.010.756 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.010.757 I llama_model_loader: - kv  13:               general.quantization_version u32              = 2
+0.00.010.758 I llama_model_loader: - kv  14:                       tokenizer.ggml.model str              = gpt2
+0.00.010.759 I llama_model_loader: - kv  15:                         tokenizer.ggml.pre str              = olmo
+0.00.015.493 I llama_model_loader: - kv  16:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.016.551 I llama_model_loader: - kv  17:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.021.017 I llama_model_loader: - kv  18:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.021.040 I llama_model_loader: - kv  19:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.021.041 I llama_model_loader: - kv  20:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.021.041 I llama_model_loader: - kv  21:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.021.044 I llama_model_loader: - type  f32:  194 tensors
+0.00.021.044 I llama_model_loader: - type  f16:   98 tensors
+0.00.021.046 I print_info: file format = GGUF V3 (latest)
+0.00.021.047 I print_info: file type   = all F32 (guessed)
+0.00.021.049 I print_info: file size   = 2.64 GiB (16.01 BPW) 
+0.00.054.407 I load: special tokens cache size = 25
+0.00.066.493 I load: token to piece cache size = 0.2984 MB
+0.00.066.522 I print_info: arch             = gptneox
+0.00.066.522 I print_info: vocab_only       = 0
+0.00.066.522 I print_info: n_ctx_train      = 2048
+0.00.066.522 I print_info: n_embd           = 2048
+0.00.066.523 I print_info: n_layer          = 24
+0.00.066.536 I print_info: n_head           = 16
+0.00.066.538 I print_info: n_head_kv        = 16
+0.00.066.538 I print_info: n_rot            = 32
+0.00.066.538 I print_info: n_swa            = 0
+0.00.066.539 I print_info: is_swa_any       = 0
+0.00.066.540 I print_info: n_embd_head_k    = 128
+0.00.066.540 I print_info: n_embd_head_v    = 128
+0.00.066.542 I print_info: n_gqa            = 1
+0.00.066.543 I print_info: n_embd_k_gqa     = 2048
+0.00.066.544 I print_info: n_embd_v_gqa     = 2048
+0.00.066.546 I print_info: f_norm_eps       = 1.0e-05
+0.00.066.546 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.066.546 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.066.547 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.066.547 I print_info: f_logit_scale    = 0.0e+00
+0.00.066.547 I print_info: f_attn_scale     = 0.0e+00
+0.00.066.548 I print_info: n_ff             = 8192
+0.00.066.548 I print_info: n_expert         = 0
+0.00.066.548 I print_info: n_expert_used    = 0
+0.00.066.548 I print_info: causal attn      = 1
+0.00.066.548 I print_info: pooling type     = 0
+0.00.066.549 I print_info: rope type        = 2
+0.00.066.549 I print_info: rope scaling     = linear
+0.00.066.550 I print_info: freq_base_train  = 10000.0
+0.00.066.550 I print_info: freq_scale_train = 1
+0.00.066.550 I print_info: n_ctx_orig_yarn  = 2048
+0.00.066.550 I print_info: rope_finetuned   = unknown
+0.00.066.551 I print_info: ssm_d_conv       = 0
+0.00.066.551 I print_info: ssm_d_inner      = 0
+0.00.066.551 I print_info: ssm_d_state      = 0
+0.00.066.551 I print_info: ssm_dt_rank      = 0
+0.00.066.551 I print_info: ssm_dt_b_c_rms   = 0
+0.00.066.552 I print_info: model type       = 1.4B
+0.00.066.553 I print_info: model params     = 1.41 B
+0.00.066.553 I print_info: general.name     = 1.4B
+0.00.066.555 I print_info: vocab type       = BPE
+0.00.066.556 I print_info: n_vocab          = 50304
+0.00.066.556 I print_info: n_merges         = 50009
+0.00.066.557 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.066.557 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.066.558 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.066.558 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.066.558 I print_info: LF token         = 187 'Ċ'
+0.00.066.559 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.066.559 I print_info: max token length = 1024
+0.00.066.561 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.213.680 I load_tensors:          AMX model buffer size =  2500.50 MiB
+0.00.213.701 I load_tensors:   CPU_Mapped model buffer size =  2502.95 MiB
+.................................................................................
+0.01.049.719 I llama_context: constructing llama_context
+0.01.049.739 I llama_context: n_seq_max     = 1
+0.01.049.740 I llama_context: n_ctx         = 128
+0.01.049.740 I llama_context: n_ctx_per_seq = 128
+0.01.049.740 I llama_context: n_batch       = 128
+0.01.049.741 I llama_context: n_ubatch      = 128
+0.01.049.741 I llama_context: causal_attn   = 1
+0.01.049.742 I llama_context: flash_attn    = 0
+0.01.049.746 I llama_context: freq_base     = 10000.0
+0.01.049.747 I llama_context: freq_scale    = 1
+0.01.049.748 W llama_context: n_ctx_per_seq (128) < n_ctx_train (2048) -- the full capacity of the model will not be utilized
+0.01.049.795 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.01.050.322 I llama_kv_cache_unified:        CPU KV buffer size =    24.00 MiB
+0.01.054.876 I llama_kv_cache_unified: size =   24.00 MiB (   128 cells,  24 layers,  1 seqs), K (f16):   12.00 MiB, V (f16):   12.00 MiB
+0.01.063.896 I llama_context:        CPU compute buffer size =    25.56 MiB
+0.01.063.915 I llama_context: graph nodes  = 1063
+0.01.063.915 I llama_context: graph splits = 1
+0.01.063.923 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 128
+0.01.063.923 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.01.135.361 I 
+0.01.135.450 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.01.135.459 I perplexity: tokenizing the input ..
+0.01.142.146 I perplexity: tokenization took 6.682 ms
+0.01.142.174 I perplexity: calculating perplexity over 1 chunks, n_ctx=128, batch_size=128, n_seq=1
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 128, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 128, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 128, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 128, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 128, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 128, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 128, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 7, j = 0, idx = 7, n_seqs = 128, n_seq_tokens = 1
+    seq_id[7][0] = 0
+s = 8, j = 0, idx = 8, n_seqs = 128, n_seq_tokens = 1
+    seq_id[8][0] = 0
+s = 9, j = 0, idx = 9, n_seqs = 128, n_seq_tokens = 1
+    seq_id[9][0] = 0
+s = 10, j = 0, idx = 10, n_seqs = 128, n_seq_tokens = 1
+    seq_id[10][0] = 0
+s = 11, j = 0, idx = 11, n_seqs = 128, n_seq_tokens = 1
+    seq_id[11][0] = 0
+s = 12, j = 0, idx = 12, n_seqs = 128, n_seq_tokens = 1
+    seq_id[12][0] = 0
+s = 13, j = 0, idx = 13, n_seqs = 128, n_seq_tokens = 1
+    seq_id[13][0] = 0
+s = 14, j = 0, idx = 14, n_seqs = 128, n_seq_tokens = 1
+    seq_id[14][0] = 0
+s = 15, j = 0, idx = 15, n_seqs = 128, n_seq_tokens = 1
+    seq_id[15][0] = 0
+s = 16, j = 0, idx = 16, n_seqs = 128, n_seq_tokens = 1
+    seq_id[16][0] = 0
+s = 17, j = 0, idx = 17, n_seqs = 128, n_seq_tokens = 1
+    seq_id[17][0] = 0
+s = 18, j = 0, idx = 18, n_seqs = 128, n_seq_tokens = 1
+    seq_id[18][0] = 0
+s = 19, j = 0, idx = 19, n_seqs = 128, n_seq_tokens = 1
+    seq_id[19][0] = 0
+s = 20, j = 0, idx = 20, n_seqs = 128, n_seq_tokens = 1
+    seq_id[20][0] = 0
+s = 21, j = 0, idx = 21, n_seqs = 128, n_seq_tokens = 1
+    seq_id[21][0] = 0
+s = 22, j = 0, idx = 22, n_seqs = 128, n_seq_tokens = 1
+    seq_id[22][0] = 0
+s = 23, j = 0, idx = 23, n_seqs = 128, n_seq_tokens = 1
+    seq_id[23][0] = 0
+s = 24, j = 0, idx = 24, n_seqs = 128, n_seq_tokens = 1
+    seq_id[24][0] = 0
+s = 25, j = 0, idx = 25, n_seqs = 128, n_seq_tokens = 1
+    seq_id[25][0] = 0
+s = 26, j = 0, idx = 26, n_seqs = 128, n_seq_tokens = 1
+    seq_id[26][0] = 0
+s = 27, j = 0, idx = 27, n_seqs = 128, n_seq_tokens = 1
+    seq_id[27][0] = 0
+s = 28, j = 0, idx = 28, n_seqs = 128, n_seq_tokens = 1
+    seq_id[28][0] = 0
+s = 29, j = 0, idx = 29, n_seqs = 128, n_seq_tokens = 1
+    seq_id[29][0] = 0
+s = 30, j = 0, idx = 30, n_seqs = 128, n_seq_tokens = 1
+    seq_id[30][0] = 0
+s = 31, j = 0, idx = 31, n_seqs = 128, n_seq_tokens = 1
+    seq_id[31][0] = 0
+s = 32, j = 0, idx = 32, n_seqs = 128, n_seq_tokens = 1
+    seq_id[32][0] = 0
+s = 33, j = 0, idx = 33, n_seqs = 128, n_seq_tokens = 1
+    seq_id[33][0] = 0
+s = 34, j = 0, idx = 34, n_seqs = 128, n_seq_tokens = 1
+    seq_id[34][0] = 0
+s = 35, j = 0, idx = 35, n_seqs = 128, n_seq_tokens = 1
+    seq_id[35][0] = 0
+s = 36, j = 0, idx = 36, n_seqs = 128, n_seq_tokens = 1
+    seq_id[36][0] = 0
+s = 37, j = 0, idx = 37, n_seqs = 128, n_seq_tokens = 1
+    seq_id[37][0] = 0
+s = 38, j = 0, idx = 38, n_seqs = 128, n_seq_tokens = 1
+    seq_id[38][0] = 0
+s = 39, j = 0, idx = 39, n_seqs = 128, n_seq_tokens = 1
+    seq_id[39][0] = 0
+s = 40, j = 0, idx = 40, n_seqs = 128, n_seq_tokens = 1
+    seq_id[40][0] = 0
+s = 41, j = 0, idx = 41, n_seqs = 128, n_seq_tokens = 1
+    seq_id[41][0] = 0
+s = 42, j = 0, idx = 42, n_seqs = 128, n_seq_tokens = 1
+    seq_id[42][0] = 0
+s = 43, j = 0, idx = 43, n_seqs = 128, n_seq_tokens = 1
+    seq_id[43][0] = 0
+s = 44, j = 0, idx = 44, n_seqs = 128, n_seq_tokens = 1
+    seq_id[44][0] = 0
+s = 45, j = 0, idx = 45, n_seqs = 128, n_seq_tokens = 1
+    seq_id[45][0] = 0
+s = 46, j = 0, idx = 46, n_seqs = 128, n_seq_tokens = 1
+    seq_id[46][0] = 0
+s = 47, j = 0, idx = 47, n_seqs = 128, n_seq_tokens = 1
+    seq_id[47][0] = 0
+s = 48, j = 0, idx = 48, n_seqs = 128, n_seq_tokens = 1
+    seq_id[48][0] = 0
+s = 49, j = 0, idx = 49, n_seqs = 128, n_seq_tokens = 1
+    seq_id[49][0] = 0
+s = 50, j = 0, idx = 50, n_seqs = 128, n_seq_tokens = 1
+    seq_id[50][0] = 0
+s = 51, j = 0, idx = 51, n_seqs = 128, n_seq_tokens = 1
+    seq_id[51][0] = 0
+s = 52, j = 0, idx = 52, n_seqs = 128, n_seq_tokens = 1
+    seq_id[52][0] = 0
+s = 53, j = 0, idx = 53, n_seqs = 128, n_seq_tokens = 1
+    seq_id[53][0] = 0
+s = 54, j = 0, idx = 54, n_seqs = 128, n_seq_tokens = 1
+    seq_id[54][0] = 0
+s = 55, j = 0, idx = 55, n_seqs = 128, n_seq_tokens = 1
+    seq_id[55][0] = 0
+s = 56, j = 0, idx = 56, n_seqs = 128, n_seq_tokens = 1
+    seq_id[56][0] = 0
+s = 57, j = 0, idx = 57, n_seqs = 128, n_seq_tokens = 1
+    seq_id[57][0] = 0
+s = 58, j = 0, idx = 58, n_seqs = 128, n_seq_tokens = 1
+    seq_id[58][0] = 0
+s = 59, j = 0, idx = 59, n_seqs = 128, n_seq_tokens = 1
+    seq_id[59][0] = 0
+s = 60, j = 0, idx = 60, n_seqs = 128, n_seq_tokens = 1
+    seq_id[60][0] = 0
+s = 61, j = 0, idx = 61, n_seqs = 128, n_seq_tokens = 1
+    seq_id[61][0] = 0
+s = 62, j = 0, idx = 62, n_seqs = 128, n_seq_tokens = 1
+    seq_id[62][0] = 0
+s = 63, j = 0, idx = 63, n_seqs = 128, n_seq_tokens = 1
+    seq_id[63][0] = 0
+s = 64, j = 0, idx = 64, n_seqs = 128, n_seq_tokens = 1
+    seq_id[64][0] = 0
+s = 65, j = 0, idx = 65, n_seqs = 128, n_seq_tokens = 1
+    seq_id[65][0] = 0
+s = 66, j = 0, idx = 66, n_seqs = 128, n_seq_tokens = 1
+    seq_id[66][0] = 0
+s = 67, j = 0, idx = 67, n_seqs = 128, n_seq_tokens = 1
+    seq_id[67][0] = 0
+s = 68, j = 0, idx = 68, n_seqs = 128, n_seq_tokens = 1
+    seq_id[68][0] = 0
+s = 69, j = 0, idx = 69, n_seqs = 128, n_seq_tokens = 1
+    seq_id[69][0] = 0
+s = 70, j = 0, idx = 70, n_seqs = 128, n_seq_tokens = 1
+    seq_id[70][0] = 0
+s = 71, j = 0, idx = 71, n_seqs = 128, n_seq_tokens = 1
+    seq_id[71][0] = 0
+s = 72, j = 0, idx = 72, n_seqs = 128, n_seq_tokens = 1
+    seq_id[72][0] = 0
+s = 73, j = 0, idx = 73, n_seqs = 128, n_seq_tokens = 1
+    seq_id[73][0] = 0
+s = 74, j = 0, idx = 74, n_seqs = 128, n_seq_tokens = 1
+    seq_id[74][0] = 0
+s = 75, j = 0, idx = 75, n_seqs = 128, n_seq_tokens = 1
+    seq_id[75][0] = 0
+s = 76, j = 0, idx = 76, n_seqs = 128, n_seq_tokens = 1
+    seq_id[76][0] = 0
+s = 77, j = 0, idx = 77, n_seqs = 128, n_seq_tokens = 1
+    seq_id[77][0] = 0
+s = 78, j = 0, idx = 78, n_seqs = 128, n_seq_tokens = 1
+    seq_id[78][0] = 0
+s = 79, j = 0, idx = 79, n_seqs = 128, n_seq_tokens = 1
+    seq_id[79][0] = 0
+s = 80, j = 0, idx = 80, n_seqs = 128, n_seq_tokens = 1
+    seq_id[80][0] = 0
+s = 81, j = 0, idx = 81, n_seqs = 128, n_seq_tokens = 1
+    seq_id[81][0] = 0
+s = 82, j = 0, idx = 82, n_seqs = 128, n_seq_tokens = 1
+    seq_id[82][0] = 0
+s = 83, j = 0, idx = 83, n_seqs = 128, n_seq_tokens = 1
+    seq_id[83][0] = 0
+s = 84, j = 0, idx = 84, n_seqs = 128, n_seq_tokens = 1
+    seq_id[84][0] = 0
+s = 85, j = 0, idx = 85, n_seqs = 128, n_seq_tokens = 1
+    seq_id[85][0] = 0
+s = 86, j = 0, idx = 86, n_seqs = 128, n_seq_tokens = 1
+    seq_id[86][0] = 0
+s = 87, j = 0, idx = 87, n_seqs = 128, n_seq_tokens = 1
+    seq_id[87][0] = 0
+s = 88, j = 0, idx = 88, n_seqs = 128, n_seq_tokens = 1
+    seq_id[88][0] = 0
+s = 89, j = 0, idx = 89, n_seqs = 128, n_seq_tokens = 1
+    seq_id[89][0] = 0
+s = 90, j = 0, idx = 90, n_seqs = 128, n_seq_tokens = 1
+    seq_id[90][0] = 0
+s = 91, j = 0, idx = 91, n_seqs = 128, n_seq_tokens = 1
+    seq_id[91][0] = 0
+s = 92, j = 0, idx = 92, n_seqs = 128, n_seq_tokens = 1
+    seq_id[92][0] = 0
+s = 93, j = 0, idx = 93, n_seqs = 128, n_seq_tokens = 1
+    seq_id[93][0] = 0
+s = 94, j = 0, idx = 94, n_seqs = 128, n_seq_tokens = 1
+    seq_id[94][0] = 0
+s = 95, j = 0, idx = 95, n_seqs = 128, n_seq_tokens = 1
+    seq_id[95][0] = 0
+s = 96, j = 0, idx = 96, n_seqs = 128, n_seq_tokens = 1
+    seq_id[96][0] = 0
+s = 97, j = 0, idx = 97, n_seqs = 128, n_seq_tokens = 1
+    seq_id[97][0] = 0
+s = 98, j = 0, idx = 98, n_seqs = 128, n_seq_tokens = 1
+    seq_id[98][0] = 0
+s = 99, j = 0, idx = 99, n_seqs = 128, n_seq_tokens = 1
+    seq_id[99][0] = 0
+s = 100, j = 0, idx = 100, n_seqs = 128, n_seq_tokens = 1
+    seq_id[100][0] = 0
+s = 101, j = 0, idx = 101, n_seqs = 128, n_seq_tokens = 1
+    seq_id[101][0] = 0
+s = 102, j = 0, idx = 102, n_seqs = 128, n_seq_tokens = 1
+    seq_id[102][0] = 0
+s = 103, j = 0, idx = 103, n_seqs = 128, n_seq_tokens = 1
+    seq_id[103][0] = 0
+s = 104, j = 0, idx = 104, n_seqs = 128, n_seq_tokens = 1
+    seq_id[104][0] = 0
+s = 105, j = 0, idx = 105, n_seqs = 128, n_seq_tokens = 1
+    seq_id[105][0] = 0
+s = 106, j = 0, idx = 106, n_seqs = 128, n_seq_tokens = 1
+    seq_id[106][0] = 0
+s = 107, j = 0, idx = 107, n_seqs = 128, n_seq_tokens = 1
+    seq_id[107][0] = 0
+s = 108, j = 0, idx = 108, n_seqs = 128, n_seq_tokens = 1
+    seq_id[108][0] = 0
+s = 109, j = 0, idx = 109, n_seqs = 128, n_seq_tokens = 1
+    seq_id[109][0] = 0
+s = 110, j = 0, idx = 110, n_seqs = 128, n_seq_tokens = 1
+    seq_id[110][0] = 0
+s = 111, j = 0, idx = 111, n_seqs = 128, n_seq_tokens = 1
+    seq_id[111][0] = 0
+s = 112, j = 0, idx = 112, n_seqs = 128, n_seq_tokens = 1
+    seq_id[112][0] = 0
+s = 113, j = 0, idx = 113, n_seqs = 128, n_seq_tokens = 1
+    seq_id[113][0] = 0
+s = 114, j = 0, idx = 114, n_seqs = 128, n_seq_tokens = 1
+    seq_id[114][0] = 0
+s = 115, j = 0, idx = 115, n_seqs = 128, n_seq_tokens = 1
+    seq_id[115][0] = 0
+s = 116, j = 0, idx = 116, n_seqs = 128, n_seq_tokens = 1
+    seq_id[116][0] = 0
+s = 117, j = 0, idx = 117, n_seqs = 128, n_seq_tokens = 1
+    seq_id[117][0] = 0
+s = 118, j = 0, idx = 118, n_seqs = 128, n_seq_tokens = 1
+    seq_id[118][0] = 0
+s = 119, j = 0, idx = 119, n_seqs = 128, n_seq_tokens = 1
+    seq_id[119][0] = 0
+s = 120, j = 0, idx = 120, n_seqs = 128, n_seq_tokens = 1
+    seq_id[120][0] = 0
+s = 121, j = 0, idx = 121, n_seqs = 128, n_seq_tokens = 1
+    seq_id[121][0] = 0
+s = 122, j = 0, idx = 122, n_seqs = 128, n_seq_tokens = 1
+    seq_id[122][0] = 0
+s = 123, j = 0, idx = 123, n_seqs = 128, n_seq_tokens = 1
+    seq_id[123][0] = 0
+s = 124, j = 0, idx = 124, n_seqs = 128, n_seq_tokens = 1
+    seq_id[124][0] = 0
+s = 125, j = 0, idx = 125, n_seqs = 128, n_seq_tokens = 1
+    seq_id[125][0] = 0
+s = 126, j = 0, idx = 126, n_seqs = 128, n_seq_tokens = 1
+    seq_id[126][0] = 0
+s = 127, j = 0, idx = 127, n_seqs = 128, n_seq_tokens = 1
+    seq_id[127][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 128, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 128, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 128, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 128, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 128, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 128, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 128, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 7, j = 0, idx = 7, n_seqs = 128, n_seq_tokens = 1
+    seq_id[7][0] = 0
+s = 8, j = 0, idx = 8, n_seqs = 128, n_seq_tokens = 1
+    seq_id[8][0] = 0
+s = 9, j = 0, idx = 9, n_seqs = 128, n_seq_tokens = 1
+    seq_id[9][0] = 0
+s = 10, j = 0, idx = 10, n_seqs = 128, n_seq_tokens = 1
+    seq_id[10][0] = 0
+s = 11, j = 0, idx = 11, n_seqs = 128, n_seq_tokens = 1
+    seq_id[11][0] = 0
+s = 12, j = 0, idx = 12, n_seqs = 128, n_seq_tokens = 1
+    seq_id[12][0] = 0
+s = 13, j = 0, idx = 13, n_seqs = 128, n_seq_tokens = 1
+    seq_id[13][0] = 0
+s = 14, j = 0, idx = 14, n_seqs = 128, n_seq_tokens = 1
+    seq_id[14][0] = 0
+s = 15, j = 0, idx = 15, n_seqs = 128, n_seq_tokens = 1
+    seq_id[15][0] = 0
+s = 16, j = 0, idx = 16, n_seqs = 128, n_seq_tokens = 1
+    seq_id[16][0] = 0
+s = 17, j = 0, idx = 17, n_seqs = 128, n_seq_tokens = 1
+    seq_id[17][0] = 0
+s = 18, j = 0, idx = 18, n_seqs = 128, n_seq_tokens = 1
+    seq_id[18][0] = 0
+s = 19, j = 0, idx = 19, n_seqs = 128, n_seq_tokens = 1
+    seq_id[19][0] = 0
+s = 20, j = 0, idx = 20, n_seqs = 128, n_seq_tokens = 1
+    seq_id[20][0] = 0
+s = 21, j = 0, idx = 21, n_seqs = 128, n_seq_tokens = 1
+    seq_id[21][0] = 0
+s = 22, j = 0, idx = 22, n_seqs = 128, n_seq_tokens = 1
+    seq_id[22][0] = 0
+s = 23, j = 0, idx = 23, n_seqs = 128, n_seq_tokens = 1
+    seq_id[23][0] = 0
+s = 24, j = 0, idx = 24, n_seqs = 128, n_seq_tokens = 1
+    seq_id[24][0] = 0
+s = 25, j = 0, idx = 25, n_seqs = 128, n_seq_tokens = 1
+    seq_id[25][0] = 0
+s = 26, j = 0, idx = 26, n_seqs = 128, n_seq_tokens = 1
+    seq_id[26][0] = 0
+s = 27, j = 0, idx = 27, n_seqs = 128, n_seq_tokens = 1
+    seq_id[27][0] = 0
+s = 28, j = 0, idx = 28, n_seqs = 128, n_seq_tokens = 1
+    seq_id[28][0] = 0
+s = 29, j = 0, idx = 29, n_seqs = 128, n_seq_tokens = 1
+    seq_id[29][0] = 0
+s = 30, j = 0, idx = 30, n_seqs = 128, n_seq_tokens = 1
+    seq_id[30][0] = 0
+s = 31, j = 0, idx = 31, n_seqs = 128, n_seq_tokens = 1
+    seq_id[31][0] = 0
+s = 32, j = 0, idx = 32, n_seqs = 128, n_seq_tokens = 1
+    seq_id[32][0] = 0
+s = 33, j = 0, idx = 33, n_seqs = 128, n_seq_tokens = 1
+    seq_id[33][0] = 0
+s = 34, j = 0, idx = 34, n_seqs = 128, n_seq_tokens = 1
+    seq_id[34][0] = 0
+s = 35, j = 0, idx = 35, n_seqs = 128, n_seq_tokens = 1
+    seq_id[35][0] = 0
+s = 36, j = 0, idx = 36, n_seqs = 128, n_seq_tokens = 1
+    seq_id[36][0] = 0
+s = 37, j = 0, idx = 37, n_seqs = 128, n_seq_tokens = 1
+    seq_id[37][0] = 0
+s = 38, j = 0, idx = 38, n_seqs = 128, n_seq_tokens = 1
+    seq_id[38][0] = 0
+s = 39, j = 0, idx = 39, n_seqs = 128, n_seq_tokens = 1
+    seq_id[39][0] = 0
+s = 40, j = 0, idx = 40, n_seqs = 128, n_seq_tokens = 1
+    seq_id[40][0] = 0
+s = 41, j = 0, idx = 41, n_seqs = 128, n_seq_tokens = 1
+    seq_id[41][0] = 0
+s = 42, j = 0, idx = 42, n_seqs = 128, n_seq_tokens = 1
+    seq_id[42][0] = 0
+s = 43, j = 0, idx = 43, n_seqs = 128, n_seq_tokens = 1
+    seq_id[43][0] = 0
+s = 44, j = 0, idx = 44, n_seqs = 128, n_seq_tokens = 1
+    seq_id[44][0] = 0
+s = 45, j = 0, idx = 45, n_seqs = 128, n_seq_tokens = 1
+    seq_id[45][0] = 0
+s = 46, j = 0, idx = 46, n_seqs = 128, n_seq_tokens = 1
+    seq_id[46][0] = 0
+s = 47, j = 0, idx = 47, n_seqs = 128, n_seq_tokens = 1
+    seq_id[47][0] = 0
+s = 48, j = 0, idx = 48, n_seqs = 128, n_seq_tokens = 1
+    seq_id[48][0] = 0
+s = 49, j = 0, idx = 49, n_seqs = 128, n_seq_tokens = 1
+    seq_id[49][0] = 0
+s = 50, j = 0, idx = 50, n_seqs = 128, n_seq_tokens = 1
+    seq_id[50][0] = 0
+s = 51, j = 0, idx = 51, n_seqs = 128, n_seq_tokens = 1
+    seq_id[51][0] = 0
+s = 52, j = 0, idx = 52, n_seqs = 128, n_seq_tokens = 1
+    seq_id[52][0] = 0
+s = 53, j = 0, idx = 53, n_seqs = 128, n_seq_tokens = 1
+    seq_id[53][0] = 0
+s = 54, j = 0, idx = 54, n_seqs = 128, n_seq_tokens = 1
+    seq_id[54][0] = 0
+s = 55, j = 0, idx = 55, n_seqs = 128, n_seq_tokens = 1
+    seq_id[55][0] = 0
+s = 56, j = 0, idx = 56, n_seqs = 128, n_seq_tokens = 1
+    seq_id[56][0] = 0
+s = 57, j = 0, idx = 57, n_seqs = 128, n_seq_tokens = 1
+    seq_id[57][0] = 0
+s = 58, j = 0, idx = 58, n_seqs = 128, n_seq_tokens = 1
+    seq_id[58][0] = 0
+s = 59, j = 0, idx = 59, n_seqs = 128, n_seq_tokens = 1
+    seq_id[59][0] = 0
+s = 60, j = 0, idx = 60, n_seqs = 128, n_seq_tokens = 1
+    seq_id[60][0] = 0
+s = 61, j = 0, idx = 61, n_seqs = 128, n_seq_tokens = 1
+    seq_id[61][0] = 0
+s = 62, j = 0, idx = 62, n_seqs = 128, n_seq_tokens = 1
+    seq_id[62][0] = 0
+s = 63, j = 0, idx = 63, n_seqs = 128, n_seq_tokens = 1
+    seq_id[63][0] = 0
+s = 64, j = 0, idx = 64, n_seqs = 128, n_seq_tokens = 1
+    seq_id[64][0] = 0
+s = 65, j = 0, idx = 65, n_seqs = 128, n_seq_tokens = 1
+    seq_id[65][0] = 0
+s = 66, j = 0, idx = 66, n_seqs = 128, n_seq_tokens = 1
+    seq_id[66][0] = 0
+s = 67, j = 0, idx = 67, n_seqs = 128, n_seq_tokens = 1
+    seq_id[67][0] = 0
+s = 68, j = 0, idx = 68, n_seqs = 128, n_seq_tokens = 1
+    seq_id[68][0] = 0
+s = 69, j = 0, idx = 69, n_seqs = 128, n_seq_tokens = 1
+    seq_id[69][0] = 0
+s = 70, j = 0, idx = 70, n_seqs = 128, n_seq_tokens = 1
+    seq_id[70][0] = 0
+s = 71, j = 0, idx = 71, n_seqs = 128, n_seq_tokens = 1
+    seq_id[71][0] = 0
+s = 72, j = 0, idx = 72, n_seqs = 128, n_seq_tokens = 1
+    seq_id[72][0] = 0
+s = 73, j = 0, idx = 73, n_seqs = 128, n_seq_tokens = 1
+    seq_id[73][0] = 0
+s = 74, j = 0, idx = 74, n_seqs = 128, n_seq_tokens = 1
+    seq_id[74][0] = 0
+s = 75, j = 0, idx = 75, n_seqs = 128, n_seq_tokens = 1
+    seq_id[75][0] = 0
+s = 76, j = 0, idx = 76, n_seqs = 128, n_seq_tokens = 1
+    seq_id[76][0] = 0
+s = 77, j = 0, idx = 77, n_seqs = 128, n_seq_tokens = 1
+    seq_id[77][0] = 0
+0.02.170.436 I perplexity: 1.03 seconds per pass - ETA s = 78, j = 0, idx = 78, n_seqs = 128, n_seq_tokens = 1
+    seq_id[78][0] = 0
+s = 79, j = 0, idx = 79, n_seqs = 128, n_seq_tokens = 1
+    seq_id[79][0] = 0
+s = 80, j = 0, idx = 80, n_seqs = 128, n_seq_tokens = 1
+    seq_id[80][0] = 0
+s = 81, j = 0, idx = 81, n_seqs = 128, n_seq_tokens = 1
+    seq_id[81][0] = 0
+s = 82, j = 0, idx = 82, n_seqs = 128, n_seq_tokens = 1
+    seq_id[82][0] = 0
+s = 83, j = 0, idx = 83, n_seqs = 128, n_seq_tokens = 1
+    seq_id[83][0] = 0
+s = 84, j = 0, idx = 84, n_seqs = 128, n_seq_tokens = 1
+    seq_id[84][0] = 0
+s = 85, j = 0, idx = 85, n_seqs = 128, n_seq_tokens = 1
+    seq_id[85][0] = 0
+s = 86, j = 0, idx = 86, n_seqs = 128, n_seq_tokens = 1
+    seq_id[86][0] = 0
+s = 87, j = 0, idx = 87, n_seqs = 128, n_seq_tokens = 1
+    seq_id[87][0] = 0
+s = 88, j = 0, idx = 88, n_seqs = 128, n_seq_tokens = 1
+    seq_id[88][0] = 0
+s = 89, j = 0, idx = 89, n_seqs = 128, n_seq_tokens = 1
+    seq_id[89][0] = 0
+s = 90, j = 0, idx = 90, n_seqs = 128, n_seq_tokens = 1
+    seq_id[90][0] = 0
+s = 91, j = 0, idx = 91, n_seqs = 128, n_seq_tokens = 1
+    seq_id[91][0] = 0
+s = 92, j = 0, idx = 92, n_seqs = 128, n_seq_tokens = 1
+    seq_id[92][0] = 0
+s = 93, j = 0, idx = 93, n_seqs = 128, n_seq_tokens = 1
+    seq_id[93][0] = 0
+s = 94, j = 0, idx = 94, n_seqs = 128, n_seq_tokens = 1
+    seq_id[94][0] = 0
+s = 95, j = 0, idx = 95, n_seqs = 128, n_seq_tokens = 1
+    seq_id[95][0] = 0
+s = 96, j = 0, idx = 96, n_seqs = 128, n_seq_tokens = 1
+    seq_id[96][0] = 0
+s = 97, j = 0, idx = 97, n_seqs = 128, n_seq_tokens = 1
+    seq_id[97][0] = 0
+s = 98, j = 0, idx = 98, n_seqs = 128, n_seq_tokens = 1
+    seq_id[98][0] = 0
+s = 99, j = 0, idx = 99, n_seqs = 128, n_seq_tokens = 1
+    seq_id[99][0] = 0
+s = 100, j = 0, idx = 100, n_seqs = 128, n_seq_tokens = 1
+    seq_id[100][0] = 0
+s = 101, j = 0, idx = 101, n_seqs = 128, n_seq_tokens = 1
+    seq_id[101][0] = 0
+s = 102, j = 0, idx = 102, n_seqs = 128, n_seq_tokens = 1
+    seq_id[102][0] = 0
+s = 103, j = 0, idx = 103, n_seqs = 128, n_seq_tokens = 1
+    seq_id[103][0] = 0
+s = 104, j = 0, idx = 104, n_seqs = 128, n_seq_tokens = 1
+    seq_id[104][0] = 0
+s = 105, j = 0, idx = 105, n_seqs = 128, n_seq_tokens = 1
+    seq_id[105][0] = 0
+s = 106, j = 0, idx = 106, n_seqs = 128, n_seq_tokens = 1
+    seq_id[106][0] = 0
+s = 107, j = 0, idx = 107, n_seqs = 128, n_seq_tokens = 1
+    seq_id[107][0] = 0
+s = 108, j = 0, idx = 108, n_seqs = 128, n_seq_tokens = 1
+    seq_id[108][0] = 0
+s = 109, j = 0, idx = 109, n_seqs = 128, n_seq_tokens = 1
+    seq_id[109][0] = 0
+s = 110, j = 0, idx = 110, n_seqs = 128, n_seq_tokens = 1
+    seq_id[110][0] = 0
+s = 111, j = 0, idx = 111, n_seqs = 128, n_seq_tokens = 1
+    seq_id[111][0] = 0
+s = 112, j = 0, idx = 112, n_seqs = 128, n_seq_tokens = 1
+    seq_id[112][0] = 0
+s = 113, j = 0, idx = 113, n_seqs = 128, n_seq_tokens = 1
+    seq_id[113][0] = 0
+s = 114, j = 0, idx = 114, n_seqs = 128, n_seq_tokens = 1
+    seq_id[114][0] = 0
+s = 115, j = 0, idx = 115, n_seqs = 128, n_seq_tokens = 1
+    seq_id[115][0] = 0
+s = 116, j = 0, idx = 116, n_seqs = 128, n_seq_tokens = 1
+    seq_id[116][0] = 0
+s = 117, j = 0, idx = 117, n_seqs = 128, n_seq_tokens = 1
+    seq_id[117][0] = 0
+s = 118, j = 0, idx = 118, n_seqs = 128, n_seq_tokens = 1
+    seq_id[118][0] = 0
+s = 119, j = 0, idx = 119, n_seqs = 128, n_seq_tokens = 1
+    seq_id[119][0] = 0
+s = 120, j = 0, idx = 120, n_seqs = 128, n_seq_tokens = 1
+    seq_id[120][0] = 0
+s = 121, j = 0, idx = 121, n_seqs = 128, n_seq_tokens = 1
+    seq_id[121][0] = 0
+s = 122, j = 0, idx = 122, n_seqs = 128, n_seq_tokens = 1
+    seq_id[122][0] = 0
+s = 123, j = 0, idx = 123, n_seqs = 128, n_seq_tokens = 1
+    seq_id[123][0] = 0
+s = 124, j = 0, idx = 124, n_seqs = 128, n_seq_tokens = 1
+    seq_id[124][0] = 0
+s = 125, j = 0, idx = 125, n_seqs = 128, n_seq_tokens = 1
+    seq_id[125][0] = 0
+s = 126, j = 0, idx = 126, n_seqs = 128, n_seq_tokens = 1
+    seq_id[126][0] = 0
+s = 127, j = 0, idx = 127, n_seqs = 128, n_seq_tokens = 1
+    seq_id[127][0] = 0
+0.02 minutes
+[1]10.1485,
+0.02.173.598 I Final estimate: PPL = 10.1485 +/- 3.22644
+
+0.02.173.643 I llama_perf_context_print:        load time =    1134.92 ms
+0.02.173.660 I llama_perf_context_print: prompt eval time =    1026.35 ms /   128 tokens (    8.02 ms per token,   124.71 tokens per second)
+0.02.173.662 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.02.173.663 I llama_perf_context_print:       total time =    1038.30 ms /   129 tokens
+
+real	0m2.278s
+user	0m4.891s
+sys	0m0.701s
+```
+- q8_0:
+```
++ ./bin/llama-cli -no-cnv --model ../models-mnt/pythia/1.4B/ggml-model-q8_0.gguf -ngl 99 -c 0 -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.258 I build: 5635 (2db43275) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.000.511 I main: llama backend init
+0.00.000.527 I main: load the model and apply lora adapter, if any
+0.00.010.989 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q8_0.gguf (version GGUF V3 (latest))
+0.00.011.017 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.011.025 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.011.026 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.011.027 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.011.027 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.011.027 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.011.030 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.011.031 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.011.031 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.011.032 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.011.032 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.011.033 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.011.033 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.011.042 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.011.043 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.011.044 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.015.804 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.016.865 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.021.429 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.021.448 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.021.448 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.021.449 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.021.449 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.021.450 I llama_model_loader: - kv  22:                          general.file_type u32              = 7
+0.00.021.452 I llama_model_loader: - type  f32:  194 tensors
+0.00.021.452 I llama_model_loader: - type q8_0:   98 tensors
+0.00.021.455 I print_info: file format = GGUF V3 (latest)
+0.00.021.455 I print_info: file type   = Q8_0
+0.00.021.457 I print_info: file size   = 1.40 GiB (8.51 BPW) 
+0.00.055.809 I load: special tokens cache size = 25
+0.00.067.895 I load: token to piece cache size = 0.2984 MB
+0.00.067.923 I print_info: arch             = gptneox
+0.00.067.924 I print_info: vocab_only       = 0
+0.00.067.924 I print_info: n_ctx_train      = 2048
+0.00.067.924 I print_info: n_embd           = 2048
+0.00.067.925 I print_info: n_layer          = 24
+0.00.067.938 I print_info: n_head           = 16
+0.00.067.940 I print_info: n_head_kv        = 16
+0.00.067.940 I print_info: n_rot            = 32
+0.00.067.940 I print_info: n_swa            = 0
+0.00.067.941 I print_info: is_swa_any       = 0
+0.00.067.942 I print_info: n_embd_head_k    = 128
+0.00.067.942 I print_info: n_embd_head_v    = 128
+0.00.067.944 I print_info: n_gqa            = 1
+0.00.067.945 I print_info: n_embd_k_gqa     = 2048
+0.00.067.946 I print_info: n_embd_v_gqa     = 2048
+0.00.067.948 I print_info: f_norm_eps       = 1.0e-05
+0.00.067.948 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.067.949 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.067.949 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.067.949 I print_info: f_logit_scale    = 0.0e+00
+0.00.067.949 I print_info: f_attn_scale     = 0.0e+00
+0.00.067.950 I print_info: n_ff             = 8192
+0.00.067.950 I print_info: n_expert         = 0
+0.00.067.950 I print_info: n_expert_used    = 0
+0.00.067.951 I print_info: causal attn      = 1
+0.00.067.951 I print_info: pooling type     = 0
+0.00.067.951 I print_info: rope type        = 2
+0.00.067.951 I print_info: rope scaling     = linear
+0.00.067.952 I print_info: freq_base_train  = 10000.0
+0.00.067.953 I print_info: freq_scale_train = 1
+0.00.067.953 I print_info: n_ctx_orig_yarn  = 2048
+0.00.067.953 I print_info: rope_finetuned   = unknown
+0.00.067.953 I print_info: ssm_d_conv       = 0
+0.00.067.953 I print_info: ssm_d_inner      = 0
+0.00.067.954 I print_info: ssm_d_state      = 0
+0.00.067.954 I print_info: ssm_dt_rank      = 0
+0.00.067.954 I print_info: ssm_dt_b_c_rms   = 0
+0.00.067.954 I print_info: model type       = 1.4B
+0.00.067.955 I print_info: model params     = 1.41 B
+0.00.067.955 I print_info: general.name     = 1.4B
+0.00.067.958 I print_info: vocab type       = BPE
+0.00.067.958 I print_info: n_vocab          = 50304
+0.00.067.959 I print_info: n_merges         = 50009
+0.00.067.959 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.067.959 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.067.960 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.067.960 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.067.960 I print_info: LF token         = 187 'Ċ'
+0.00.067.960 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.067.961 I print_info: max token length = 1024
+0.00.067.962 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.162.207 I load_tensors:          AMX model buffer size =  1484.67 MiB
+0.00.162.230 I load_tensors:   CPU_Mapped model buffer size =  1313.84 MiB
+...............................................................................
+0.00.321.405 I llama_context: constructing llama_context
+0.00.321.437 I llama_context: n_seq_max     = 1
+0.00.321.445 I llama_context: n_ctx         = 2048
+0.00.321.451 I llama_context: n_ctx_per_seq = 2048
+0.00.321.458 I llama_context: n_batch       = 2048
+0.00.321.464 I llama_context: n_ubatch      = 512
+0.00.321.471 I llama_context: causal_attn   = 1
+0.00.321.478 I llama_context: flash_attn    = 0
+0.00.321.489 I llama_context: freq_base     = 10000.0
+0.00.321.497 I llama_context: freq_scale    = 1
+0.00.321.556 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.00.322.126 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.00.394.979 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.403.983 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.00.404.018 I llama_context: graph nodes  = 1063
+0.00.404.025 I llama_context: graph splits = 1
+0.00.404.056 I common_init_from_params: added <|endoftext|> logit bias = -inf
+0.00.404.518 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.404.538 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.496.735 I main: llama threadpool init, n_threads = 4
+0.00.496.758 I 
+0.00.496.834 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.496.849 I 
+0.00.496.974 I sampler seed: 1234
+0.00.496.994 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 2048
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.00.496.997 I sampler chain: logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+0.00.496.998 I generate: n_ctx = 2048, n_batch = 2048, n_predict = 64, n_keep = 0
+0.00.496.998 I 
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 7, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 7, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 7, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 7, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 7, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 7, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 7, n_seq_tokens = 1
+    seq_id[6][0] = 0
+I believe the meaning of life iss = 0, j = 0, idx = 0, n_seqs = 7, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 7, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 7, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 7, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 7, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 7, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 7, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ tos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ dies = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+,s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ nots = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ lives = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+."s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Wes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+'res = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ alls = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ goings = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ tos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ dies = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+."s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Wes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ alls = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ares = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+."s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Wes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+'res = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ alls = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ goings = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ tos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ dies = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+."s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ answers = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ iss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ nos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+."s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Is = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ cans = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+'ts = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ dos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ its = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+."s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Whats = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+?"s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Is = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ cans = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+'ts = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ dos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ its = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+."s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Whats = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+?"s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ answers = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ iss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ nos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+."s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Nos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+!"s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ "It
+
+0.02.785.189 I llama_perf_sampler_print:    sampling time =       2.71 ms /    71 runs   (    0.04 ms per token, 26228.30 tokens per second)
+0.02.785.194 I llama_perf_context_print:        load time =     495.09 ms
+0.02.785.196 I llama_perf_context_print: prompt eval time =      50.64 ms /     7 tokens (    7.23 ms per token,   138.23 tokens per second)
+0.02.785.197 I llama_perf_context_print:        eval time =    2225.21 ms /    63 runs   (   35.32 ms per token,    28.31 tokens per second)
+0.02.785.197 I llama_perf_context_print:       total time =    2289.56 ms /    70 tokens
+
+real	0m2.854s
+user	0m10.155s
+sys	0m0.825s
++ ./bin/llama-perplexity --model ../models-mnt/pythia/1.4B/ggml-model-q8_0.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -ngl 99 -c 128 -b 128 --chunks 1
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.303 I build: 5635 (2db43275) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.010.513 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q8_0.gguf (version GGUF V3 (latest))
+0.00.010.542 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.010.550 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.010.551 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.010.552 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.010.552 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.010.552 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.010.556 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.010.556 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.010.557 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.010.558 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.010.558 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.010.559 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.010.559 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.010.564 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.010.565 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.010.565 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.015.379 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.016.446 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.021.001 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.021.020 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.021.020 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.021.021 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.021.021 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.021.022 I llama_model_loader: - kv  22:                          general.file_type u32              = 7
+0.00.021.025 I llama_model_loader: - type  f32:  194 tensors
+0.00.021.026 I llama_model_loader: - type q8_0:   98 tensors
+0.00.021.028 I print_info: file format = GGUF V3 (latest)
+0.00.021.028 I print_info: file type   = Q8_0
+0.00.021.030 I print_info: file size   = 1.40 GiB (8.51 BPW) 
+0.00.054.186 I load: special tokens cache size = 25
+0.00.066.198 I load: token to piece cache size = 0.2984 MB
+0.00.066.227 I print_info: arch             = gptneox
+0.00.066.228 I print_info: vocab_only       = 0
+0.00.066.228 I print_info: n_ctx_train      = 2048
+0.00.066.228 I print_info: n_embd           = 2048
+0.00.066.228 I print_info: n_layer          = 24
+0.00.066.242 I print_info: n_head           = 16
+0.00.066.244 I print_info: n_head_kv        = 16
+0.00.066.244 I print_info: n_rot            = 32
+0.00.066.245 I print_info: n_swa            = 0
+0.00.066.246 I print_info: is_swa_any       = 0
+0.00.066.246 I print_info: n_embd_head_k    = 128
+0.00.066.247 I print_info: n_embd_head_v    = 128
+0.00.066.249 I print_info: n_gqa            = 1
+0.00.066.250 I print_info: n_embd_k_gqa     = 2048
+0.00.066.252 I print_info: n_embd_v_gqa     = 2048
+0.00.066.253 I print_info: f_norm_eps       = 1.0e-05
+0.00.066.254 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.066.254 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.066.254 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.066.255 I print_info: f_logit_scale    = 0.0e+00
+0.00.066.255 I print_info: f_attn_scale     = 0.0e+00
+0.00.066.255 I print_info: n_ff             = 8192
+0.00.066.256 I print_info: n_expert         = 0
+0.00.066.256 I print_info: n_expert_used    = 0
+0.00.066.256 I print_info: causal attn      = 1
+0.00.066.256 I print_info: pooling type     = 0
+0.00.066.257 I print_info: rope type        = 2
+0.00.066.257 I print_info: rope scaling     = linear
+0.00.066.258 I print_info: freq_base_train  = 10000.0
+0.00.066.259 I print_info: freq_scale_train = 1
+0.00.066.259 I print_info: n_ctx_orig_yarn  = 2048
+0.00.066.260 I print_info: rope_finetuned   = unknown
+0.00.066.260 I print_info: ssm_d_conv       = 0
+0.00.066.260 I print_info: ssm_d_inner      = 0
+0.00.066.260 I print_info: ssm_d_state      = 0
+0.00.066.260 I print_info: ssm_dt_rank      = 0
+0.00.066.261 I print_info: ssm_dt_b_c_rms   = 0
+0.00.066.261 I print_info: model type       = 1.4B
+0.00.066.262 I print_info: model params     = 1.41 B
+0.00.066.262 I print_info: general.name     = 1.4B
+0.00.066.265 I print_info: vocab type       = BPE
+0.00.066.266 I print_info: n_vocab          = 50304
+0.00.066.266 I print_info: n_merges         = 50009
+0.00.066.266 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.066.267 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.066.267 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.066.267 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.066.268 I print_info: LF token         = 187 'Ċ'
+0.00.066.268 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.066.268 I print_info: max token length = 1024
+0.00.066.270 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.161.678 I load_tensors:          AMX model buffer size =  1484.67 MiB
+0.00.161.700 I load_tensors:   CPU_Mapped model buffer size =  1313.84 MiB
+...............................................................................
+0.00.323.654 I llama_context: constructing llama_context
+0.00.323.690 I llama_context: n_seq_max     = 1
+0.00.323.697 I llama_context: n_ctx         = 128
+0.00.323.703 I llama_context: n_ctx_per_seq = 128
+0.00.323.710 I llama_context: n_batch       = 128
+0.00.323.716 I llama_context: n_ubatch      = 128
+0.00.323.722 I llama_context: causal_attn   = 1
+0.00.323.729 I llama_context: flash_attn    = 0
+0.00.323.739 I llama_context: freq_base     = 10000.0
+0.00.323.747 I llama_context: freq_scale    = 1
+0.00.323.814 W llama_context: n_ctx_per_seq (128) < n_ctx_train (2048) -- the full capacity of the model will not be utilized
+0.00.323.872 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.00.324.461 I llama_kv_cache_unified:        CPU KV buffer size =    24.00 MiB
+0.00.328.989 I llama_kv_cache_unified: size =   24.00 MiB (   128 cells,  24 layers,  1 seqs), K (f16):   12.00 MiB, V (f16):   12.00 MiB
+0.00.338.179 I llama_context:        CPU compute buffer size =    25.56 MiB
+0.00.338.215 I llama_context: graph nodes  = 1063
+0.00.338.222 I llama_context: graph splits = 1
+0.00.338.243 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 128
+0.00.338.251 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.394.311 I 
+0.00.394.415 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.394.441 I perplexity: tokenizing the input ..
+0.00.399.983 I perplexity: tokenization took 5.538 ms
+0.00.400.016 I perplexity: calculating perplexity over 1 chunks, n_ctx=128, batch_size=128, n_seq=1
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 128, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 128, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 128, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 128, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 128, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 128, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 128, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 7, j = 0, idx = 7, n_seqs = 128, n_seq_tokens = 1
+    seq_id[7][0] = 0
+s = 8, j = 0, idx = 8, n_seqs = 128, n_seq_tokens = 1
+    seq_id[8][0] = 0
+s = 9, j = 0, idx = 9, n_seqs = 128, n_seq_tokens = 1
+    seq_id[9][0] = 0
+s = 10, j = 0, idx = 10, n_seqs = 128, n_seq_tokens = 1
+    seq_id[10][0] = 0
+s = 11, j = 0, idx = 11, n_seqs = 128, n_seq_tokens = 1
+    seq_id[11][0] = 0
+s = 12, j = 0, idx = 12, n_seqs = 128, n_seq_tokens = 1
+    seq_id[12][0] = 0
+s = 13, j = 0, idx = 13, n_seqs = 128, n_seq_tokens = 1
+    seq_id[13][0] = 0
+s = 14, j = 0, idx = 14, n_seqs = 128, n_seq_tokens = 1
+    seq_id[14][0] = 0
+s = 15, j = 0, idx = 15, n_seqs = 128, n_seq_tokens = 1
+    seq_id[15][0] = 0
+s = 16, j = 0, idx = 16, n_seqs = 128, n_seq_tokens = 1
+    seq_id[16][0] = 0
+s = 17, j = 0, idx = 17, n_seqs = 128, n_seq_tokens = 1
+    seq_id[17][0] = 0
+s = 18, j = 0, idx = 18, n_seqs = 128, n_seq_tokens = 1
+    seq_id[18][0] = 0
+s = 19, j = 0, idx = 19, n_seqs = 128, n_seq_tokens = 1
+    seq_id[19][0] = 0
+s = 20, j = 0, idx = 20, n_seqs = 128, n_seq_tokens = 1
+    seq_id[20][0] = 0
+s = 21, j = 0, idx = 21, n_seqs = 128, n_seq_tokens = 1
+    seq_id[21][0] = 0
+s = 22, j = 0, idx = 22, n_seqs = 128, n_seq_tokens = 1
+    seq_id[22][0] = 0
+s = 23, j = 0, idx = 23, n_seqs = 128, n_seq_tokens = 1
+    seq_id[23][0] = 0
+s = 24, j = 0, idx = 24, n_seqs = 128, n_seq_tokens = 1
+    seq_id[24][0] = 0
+s = 25, j = 0, idx = 25, n_seqs = 128, n_seq_tokens = 1
+    seq_id[25][0] = 0
+s = 26, j = 0, idx = 26, n_seqs = 128, n_seq_tokens = 1
+    seq_id[26][0] = 0
+s = 27, j = 0, idx = 27, n_seqs = 128, n_seq_tokens = 1
+    seq_id[27][0] = 0
+s = 28, j = 0, idx = 28, n_seqs = 128, n_seq_tokens = 1
+    seq_id[28][0] = 0
+s = 29, j = 0, idx = 29, n_seqs = 128, n_seq_tokens = 1
+    seq_id[29][0] = 0
+s = 30, j = 0, idx = 30, n_seqs = 128, n_seq_tokens = 1
+    seq_id[30][0] = 0
+s = 31, j = 0, idx = 31, n_seqs = 128, n_seq_tokens = 1
+    seq_id[31][0] = 0
+s = 32, j = 0, idx = 32, n_seqs = 128, n_seq_tokens = 1
+    seq_id[32][0] = 0
+s = 33, j = 0, idx = 33, n_seqs = 128, n_seq_tokens = 1
+    seq_id[33][0] = 0
+s = 34, j = 0, idx = 34, n_seqs = 128, n_seq_tokens = 1
+    seq_id[34][0] = 0
+s = 35, j = 0, idx = 35, n_seqs = 128, n_seq_tokens = 1
+    seq_id[35][0] = 0
+s = 36, j = 0, idx = 36, n_seqs = 128, n_seq_tokens = 1
+    seq_id[36][0] = 0
+s = 37, j = 0, idx = 37, n_seqs = 128, n_seq_tokens = 1
+    seq_id[37][0] = 0
+s = 38, j = 0, idx = 38, n_seqs = 128, n_seq_tokens = 1
+    seq_id[38][0] = 0
+s = 39, j = 0, idx = 39, n_seqs = 128, n_seq_tokens = 1
+    seq_id[39][0] = 0
+s = 40, j = 0, idx = 40, n_seqs = 128, n_seq_tokens = 1
+    seq_id[40][0] = 0
+s = 41, j = 0, idx = 41, n_seqs = 128, n_seq_tokens = 1
+    seq_id[41][0] = 0
+s = 42, j = 0, idx = 42, n_seqs = 128, n_seq_tokens = 1
+    seq_id[42][0] = 0
+s = 43, j = 0, idx = 43, n_seqs = 128, n_seq_tokens = 1
+    seq_id[43][0] = 0
+s = 44, j = 0, idx = 44, n_seqs = 128, n_seq_tokens = 1
+    seq_id[44][0] = 0
+s = 45, j = 0, idx = 45, n_seqs = 128, n_seq_tokens = 1
+    seq_id[45][0] = 0
+s = 46, j = 0, idx = 46, n_seqs = 128, n_seq_tokens = 1
+    seq_id[46][0] = 0
+s = 47, j = 0, idx = 47, n_seqs = 128, n_seq_tokens = 1
+    seq_id[47][0] = 0
+s = 48, j = 0, idx = 48, n_seqs = 128, n_seq_tokens = 1
+    seq_id[48][0] = 0
+s = 49, j = 0, idx = 49, n_seqs = 128, n_seq_tokens = 1
+    seq_id[49][0] = 0
+s = 50, j = 0, idx = 50, n_seqs = 128, n_seq_tokens = 1
+    seq_id[50][0] = 0
+s = 51, j = 0, idx = 51, n_seqs = 128, n_seq_tokens = 1
+    seq_id[51][0] = 0
+s = 52, j = 0, idx = 52, n_seqs = 128, n_seq_tokens = 1
+    seq_id[52][0] = 0
+s = 53, j = 0, idx = 53, n_seqs = 128, n_seq_tokens = 1
+    seq_id[53][0] = 0
+s = 54, j = 0, idx = 54, n_seqs = 128, n_seq_tokens = 1
+    seq_id[54][0] = 0
+s = 55, j = 0, idx = 55, n_seqs = 128, n_seq_tokens = 1
+    seq_id[55][0] = 0
+s = 56, j = 0, idx = 56, n_seqs = 128, n_seq_tokens = 1
+    seq_id[56][0] = 0
+s = 57, j = 0, idx = 57, n_seqs = 128, n_seq_tokens = 1
+    seq_id[57][0] = 0
+s = 58, j = 0, idx = 58, n_seqs = 128, n_seq_tokens = 1
+    seq_id[58][0] = 0
+s = 59, j = 0, idx = 59, n_seqs = 128, n_seq_tokens = 1
+    seq_id[59][0] = 0
+s = 60, j = 0, idx = 60, n_seqs = 128, n_seq_tokens = 1
+    seq_id[60][0] = 0
+s = 61, j = 0, idx = 61, n_seqs = 128, n_seq_tokens = 1
+    seq_id[61][0] = 0
+s = 62, j = 0, idx = 62, n_seqs = 128, n_seq_tokens = 1
+    seq_id[62][0] = 0
+s = 63, j = 0, idx = 63, n_seqs = 128, n_seq_tokens = 1
+    seq_id[63][0] = 0
+s = 64, j = 0, idx = 64, n_seqs = 128, n_seq_tokens = 1
+    seq_id[64][0] = 0
+s = 65, j = 0, idx = 65, n_seqs = 128, n_seq_tokens = 1
+    seq_id[65][0] = 0
+s = 66, j = 0, idx = 66, n_seqs = 128, n_seq_tokens = 1
+    seq_id[66][0] = 0
+s = 67, j = 0, idx = 67, n_seqs = 128, n_seq_tokens = 1
+    seq_id[67][0] = 0
+s = 68, j = 0, idx = 68, n_seqs = 128, n_seq_tokens = 1
+    seq_id[68][0] = 0
+s = 69, j = 0, idx = 69, n_seqs = 128, n_seq_tokens = 1
+    seq_id[69][0] = 0
+s = 70, j = 0, idx = 70, n_seqs = 128, n_seq_tokens = 1
+    seq_id[70][0] = 0
+s = 71, j = 0, idx = 71, n_seqs = 128, n_seq_tokens = 1
+    seq_id[71][0] = 0
+s = 72, j = 0, idx = 72, n_seqs = 128, n_seq_tokens = 1
+    seq_id[72][0] = 0
+s = 73, j = 0, idx = 73, n_seqs = 128, n_seq_tokens = 1
+    seq_id[73][0] = 0
+s = 74, j = 0, idx = 74, n_seqs = 128, n_seq_tokens = 1
+    seq_id[74][0] = 0
+s = 75, j = 0, idx = 75, n_seqs = 128, n_seq_tokens = 1
+    seq_id[75][0] = 0
+s = 76, j = 0, idx = 76, n_seqs = 128, n_seq_tokens = 1
+    seq_id[76][0] = 0
+s = 77, j = 0, idx = 77, n_seqs = 128, n_seq_tokens = 1
+    seq_id[77][0] = 0
+s = 78, j = 0, idx = 78, n_seqs = 128, n_seq_tokens = 1
+    seq_id[78][0] = 0
+s = 79, j = 0, idx = 79, n_seqs = 128, n_seq_tokens = 1
+    seq_id[79][0] = 0
+s = 80, j = 0, idx = 80, n_seqs = 128, n_seq_tokens = 1
+    seq_id[80][0] = 0
+s = 81, j = 0, idx = 81, n_seqs = 128, n_seq_tokens = 1
+    seq_id[81][0] = 0
+s = 82, j = 0, idx = 82, n_seqs = 128, n_seq_tokens = 1
+    seq_id[82][0] = 0
+s = 83, j = 0, idx = 83, n_seqs = 128, n_seq_tokens = 1
+    seq_id[83][0] = 0
+s = 84, j = 0, idx = 84, n_seqs = 128, n_seq_tokens = 1
+    seq_id[84][0] = 0
+s = 85, j = 0, idx = 85, n_seqs = 128, n_seq_tokens = 1
+    seq_id[85][0] = 0
+s = 86, j = 0, idx = 86, n_seqs = 128, n_seq_tokens = 1
+    seq_id[86][0] = 0
+s = 87, j = 0, idx = 87, n_seqs = 128, n_seq_tokens = 1
+    seq_id[87][0] = 0
+s = 88, j = 0, idx = 88, n_seqs = 128, n_seq_tokens = 1
+    seq_id[88][0] = 0
+s = 89, j = 0, idx = 89, n_seqs = 128, n_seq_tokens = 1
+    seq_id[89][0] = 0
+s = 90, j = 0, idx = 90, n_seqs = 128, n_seq_tokens = 1
+    seq_id[90][0] = 0
+s = 91, j = 0, idx = 91, n_seqs = 128, n_seq_tokens = 1
+    seq_id[91][0] = 0
+s = 92, j = 0, idx = 92, n_seqs = 128, n_seq_tokens = 1
+    seq_id[92][0] = 0
+s = 93, j = 0, idx = 93, n_seqs = 128, n_seq_tokens = 1
+    seq_id[93][0] = 0
+s = 94, j = 0, idx = 94, n_seqs = 128, n_seq_tokens = 1
+    seq_id[94][0] = 0
+s = 95, j = 0, idx = 95, n_seqs = 128, n_seq_tokens = 1
+    seq_id[95][0] = 0
+s = 96, j = 0, idx = 96, n_seqs = 128, n_seq_tokens = 1
+    seq_id[96][0] = 0
+s = 97, j = 0, idx = 97, n_seqs = 128, n_seq_tokens = 1
+    seq_id[97][0] = 0
+s = 98, j = 0, idx = 98, n_seqs = 128, n_seq_tokens = 1
+    seq_id[98][0] = 0
+s = 99, j = 0, idx = 99, n_seqs = 128, n_seq_tokens = 1
+    seq_id[99][0] = 0
+s = 100, j = 0, idx = 100, n_seqs = 128, n_seq_tokens = 1
+    seq_id[100][0] = 0
+s = 101, j = 0, idx = 101, n_seqs = 128, n_seq_tokens = 1
+    seq_id[101][0] = 0
+s = 102, j = 0, idx = 102, n_seqs = 128, n_seq_tokens = 1
+    seq_id[102][0] = 0
+s = 103, j = 0, idx = 103, n_seqs = 128, n_seq_tokens = 1
+    seq_id[103][0] = 0
+s = 104, j = 0, idx = 104, n_seqs = 128, n_seq_tokens = 1
+    seq_id[104][0] = 0
+s = 105, j = 0, idx = 105, n_seqs = 128, n_seq_tokens = 1
+    seq_id[105][0] = 0
+s = 106, j = 0, idx = 106, n_seqs = 128, n_seq_tokens = 1
+    seq_id[106][0] = 0
+s = 107, j = 0, idx = 107, n_seqs = 128, n_seq_tokens = 1
+    seq_id[107][0] = 0
+s = 108, j = 0, idx = 108, n_seqs = 128, n_seq_tokens = 1
+    seq_id[108][0] = 0
+s = 109, j = 0, idx = 109, n_seqs = 128, n_seq_tokens = 1
+    seq_id[109][0] = 0
+s = 110, j = 0, idx = 110, n_seqs = 128, n_seq_tokens = 1
+    seq_id[110][0] = 0
+s = 111, j = 0, idx = 111, n_seqs = 128, n_seq_tokens = 1
+    seq_id[111][0] = 0
+s = 112, j = 0, idx = 112, n_seqs = 128, n_seq_tokens = 1
+    seq_id[112][0] = 0
+s = 113, j = 0, idx = 113, n_seqs = 128, n_seq_tokens = 1
+    seq_id[113][0] = 0
+s = 114, j = 0, idx = 114, n_seqs = 128, n_seq_tokens = 1
+    seq_id[114][0] = 0
+s = 115, j = 0, idx = 115, n_seqs = 128, n_seq_tokens = 1
+    seq_id[115][0] = 0
+s = 116, j = 0, idx = 116, n_seqs = 128, n_seq_tokens = 1
+    seq_id[116][0] = 0
+s = 117, j = 0, idx = 117, n_seqs = 128, n_seq_tokens = 1
+    seq_id[117][0] = 0
+s = 118, j = 0, idx = 118, n_seqs = 128, n_seq_tokens = 1
+    seq_id[118][0] = 0
+s = 119, j = 0, idx = 119, n_seqs = 128, n_seq_tokens = 1
+    seq_id[119][0] = 0
+s = 120, j = 0, idx = 120, n_seqs = 128, n_seq_tokens = 1
+    seq_id[120][0] = 0
+s = 121, j = 0, idx = 121, n_seqs = 128, n_seq_tokens = 1
+    seq_id[121][0] = 0
+s = 122, j = 0, idx = 122, n_seqs = 128, n_seq_tokens = 1
+    seq_id[122][0] = 0
+s = 123, j = 0, idx = 123, n_seqs = 128, n_seq_tokens = 1
+    seq_id[123][0] = 0
+s = 124, j = 0, idx = 124, n_seqs = 128, n_seq_tokens = 1
+    seq_id[124][0] = 0
+s = 125, j = 0, idx = 125, n_seqs = 128, n_seq_tokens = 1
+    seq_id[125][0] = 0
+s = 126, j = 0, idx = 126, n_seqs = 128, n_seq_tokens = 1
+    seq_id[126][0] = 0
+s = 127, j = 0, idx = 127, n_seqs = 128, n_seq_tokens = 1
+    seq_id[127][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 128, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 128, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 128, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 128, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 128, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 128, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 128, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 7, j = 0, idx = 7, n_seqs = 128, n_seq_tokens = 1
+    seq_id[7][0] = 0
+s = 8, j = 0, idx = 8, n_seqs = 128, n_seq_tokens = 1
+    seq_id[8][0] = 0
+s = 9, j = 0, idx = 9, n_seqs = 128, n_seq_tokens = 1
+    seq_id[9][0] = 0
+s = 10, j = 0, idx = 10, n_seqs = 128, n_seq_tokens = 1
+    seq_id[10][0] = 0
+s = 11, j = 0, idx = 11, n_seqs = 128, n_seq_tokens = 1
+    seq_id[11][0] = 0
+s = 12, j = 0, idx = 12, n_seqs = 128, n_seq_tokens = 1
+    seq_id[12][0] = 0
+s = 13, j = 0, idx = 13, n_seqs = 128, n_seq_tokens = 1
+    seq_id[13][0] = 0
+s = 14, j = 0, idx = 14, n_seqs = 128, n_seq_tokens = 1
+    seq_id[14][0] = 0
+s = 15, j = 0, idx = 15, n_seqs = 128, n_seq_tokens = 1
+    seq_id[15][0] = 0
+s = 16, j = 0, idx = 16, n_seqs = 128, n_seq_tokens = 1
+    seq_id[16][0] = 0
+s = 17, j = 0, idx = 17, n_seqs = 128, n_seq_tokens = 1
+    seq_id[17][0] = 0
+s = 18, j = 0, idx = 18, n_seqs = 128, n_seq_tokens = 1
+    seq_id[18][0] = 0
+s = 19, j = 0, idx = 19, n_seqs = 128, n_seq_tokens = 1
+    seq_id[19][0] = 0
+s = 20, j = 0, idx = 20, n_seqs = 128, n_seq_tokens = 1
+    seq_id[20][0] = 0
+s = 21, j = 0, idx = 21, n_seqs = 128, n_seq_tokens = 1
+    seq_id[21][0] = 0
+s = 22, j = 0, idx = 22, n_seqs = 128, n_seq_tokens = 1
+    seq_id[22][0] = 0
+s = 23, j = 0, idx = 23, n_seqs = 128, n_seq_tokens = 1
+    seq_id[23][0] = 0
+s = 24, j = 0, idx = 24, n_seqs = 128, n_seq_tokens = 1
+    seq_id[24][0] = 0
+s = 25, j = 0, idx = 25, n_seqs = 128, n_seq_tokens = 1
+    seq_id[25][0] = 0
+s = 26, j = 0, idx = 26, n_seqs = 128, n_seq_tokens = 1
+    seq_id[26][0] = 0
+s = 27, j = 0, idx = 27, n_seqs = 128, n_seq_tokens = 1
+    seq_id[27][0] = 0
+s = 28, j = 0, idx = 28, n_seqs = 128, n_seq_tokens = 1
+    seq_id[28][0] = 0
+s = 29, j = 0, idx = 29, n_seqs = 128, n_seq_tokens = 1
+    seq_id[29][0] = 0
+s = 30, j = 0, idx = 30, n_seqs = 128, n_seq_tokens = 1
+    seq_id[30][0] = 0
+s = 31, j = 0, idx = 31, n_seqs = 128, n_seq_tokens = 1
+    seq_id[31][0] = 0
+s = 32, j = 0, idx = 32, n_seqs = 128, n_seq_tokens = 1
+    seq_id[32][0] = 0
+s = 33, j = 0, idx = 33, n_seqs = 128, n_seq_tokens = 1
+    seq_id[33][0] = 0
+s = 34, j = 0, idx = 34, n_seqs = 128, n_seq_tokens = 1
+    seq_id[34][0] = 0
+s = 35, j = 0, idx = 35, n_seqs = 128, n_seq_tokens = 1
+    seq_id[35][0] = 0
+s = 36, j = 0, idx = 36, n_seqs = 128, n_seq_tokens = 1
+    seq_id[36][0] = 0
+s = 37, j = 0, idx = 37, n_seqs = 128, n_seq_tokens = 1
+    seq_id[37][0] = 0
+s = 38, j = 0, idx = 38, n_seqs = 128, n_seq_tokens = 1
+    seq_id[38][0] = 0
+s = 39, j = 0, idx = 39, n_seqs = 128, n_seq_tokens = 1
+    seq_id[39][0] = 0
+s = 40, j = 0, idx = 40, n_seqs = 128, n_seq_tokens = 1
+    seq_id[40][0] = 0
+s = 41, j = 0, idx = 41, n_seqs = 128, n_seq_tokens = 1
+    seq_id[41][0] = 0
+s = 42, j = 0, idx = 42, n_seqs = 128, n_seq_tokens = 1
+    seq_id[42][0] = 0
+s = 43, j = 0, idx = 43, n_seqs = 128, n_seq_tokens = 1
+    seq_id[43][0] = 0
+s = 44, j = 0, idx = 44, n_seqs = 128, n_seq_tokens = 1
+    seq_id[44][0] = 0
+s = 45, j = 0, idx = 45, n_seqs = 128, n_seq_tokens = 1
+    seq_id[45][0] = 0
+s = 46, j = 0, idx = 46, n_seqs = 128, n_seq_tokens = 1
+    seq_id[46][0] = 0
+s = 47, j = 0, idx = 47, n_seqs = 128, n_seq_tokens = 1
+    seq_id[47][0] = 0
+s = 48, j = 0, idx = 48, n_seqs = 128, n_seq_tokens = 1
+    seq_id[48][0] = 0
+s = 49, j = 0, idx = 49, n_seqs = 128, n_seq_tokens = 1
+    seq_id[49][0] = 0
+s = 50, j = 0, idx = 50, n_seqs = 128, n_seq_tokens = 1
+    seq_id[50][0] = 0
+s = 51, j = 0, idx = 51, n_seqs = 128, n_seq_tokens = 1
+    seq_id[51][0] = 0
+s = 52, j = 0, idx = 52, n_seqs = 128, n_seq_tokens = 1
+    seq_id[52][0] = 0
+s = 53, j = 0, idx = 53, n_seqs = 128, n_seq_tokens = 1
+    seq_id[53][0] = 0
+s = 54, j = 0, idx = 54, n_seqs = 128, n_seq_tokens = 1
+    seq_id[54][0] = 0
+s = 55, j = 0, idx = 55, n_seqs = 128, n_seq_tokens = 1
+    seq_id[55][0] = 0
+s = 56, j = 0, idx = 56, n_seqs = 128, n_seq_tokens = 1
+    seq_id[56][0] = 0
+s = 57, j = 0, idx = 57, n_seqs = 128, n_seq_tokens = 1
+    seq_id[57][0] = 0
+s = 58, j = 0, idx = 58, n_seqs = 128, n_seq_tokens = 1
+    seq_id[58][0] = 0
+s = 59, j = 0, idx = 59, n_seqs = 128, n_seq_tokens = 1
+    seq_id[59][0] = 0
+s = 60, j = 0, idx = 60, n_seqs = 128, n_seq_tokens = 1
+    seq_id[60][0] = 0
+s = 61, j = 0, idx = 61, n_seqs = 128, n_seq_tokens = 1
+    seq_id[61][0] = 0
+s = 62, j = 0, idx = 62, n_seqs = 128, n_seq_tokens = 1
+    seq_id[62][0] = 0
+s = 63, j = 0, idx = 63, n_seqs = 128, n_seq_tokens = 1
+    seq_id[63][0] = 0
+s = 64, j = 0, idx = 64, n_seqs = 128, n_seq_tokens = 1
+    seq_id[64][0] = 0
+s = 65, j = 0, idx = 65, n_seqs = 128, n_seq_tokens = 1
+    seq_id[65][0] = 0
+s = 66, j = 0, idx = 66, n_seqs = 128, n_seq_tokens = 1
+    seq_id[66][0] = 0
+s = 67, j = 0, idx = 67, n_seqs = 128, n_seq_tokens = 1
+    seq_id[67][0] = 0
+s = 68, j = 0, idx = 68, n_seqs = 128, n_seq_tokens = 1
+    seq_id[68][0] = 0
+s = 69, j = 0, idx = 69, n_seqs = 128, n_seq_tokens = 1
+    seq_id[69][0] = 0
+s = 70, j = 0, idx = 70, n_seqs = 128, n_seq_tokens = 1
+    seq_id[70][0] = 0
+s = 71, j = 0, idx = 71, n_seqs = 128, n_seq_tokens = 1
+    seq_id[71][0] = 0
+s = 72, j = 0, idx = 72, n_seqs = 128, n_seq_tokens = 1
+    seq_id[72][0] = 0
+s = 73, j = 0, idx = 73, n_seqs = 128, n_seq_tokens = 1
+    seq_id[73][0] = 0
+s = 74, j = 0, idx = 74, n_seqs = 128, n_seq_tokens = 1
+    seq_id[74][0] = 0
+s = 75, j = 0, idx = 75, n_seqs = 128, n_seq_tokens = 1
+    seq_id[75][0] = 0
+s = 76, j = 0, idx = 76, n_seqs = 128, n_seq_tokens = 1
+    seq_id[76][0] = 0
+s = 77, j = 0, idx = 77, n_seqs = 128, n_seq_tokens = 1
+    seq_id[77][0] = 0
+0.00.788.662 I perplexity: 0.39 seconds per pass - ETA s = 78, j = 0, idx = 78, n_seqs = 128, n_seq_tokens = 1
+    seq_id[78][0] = 0
+s = 79, j = 0, idx = 79, n_seqs = 128, n_seq_tokens = 1
+    seq_id[79][0] = 0
+s = 80, j = 0, idx = 80, n_seqs = 128, n_seq_tokens = 1
+    seq_id[80][0] = 0
+s = 81, j = 0, idx = 81, n_seqs = 128, n_seq_tokens = 1
+    seq_id[81][0] = 0
+s = 82, j = 0, idx = 82, n_seqs = 128, n_seq_tokens = 1
+    seq_id[82][0] = 0
+s = 83, j = 0, idx = 83, n_seqs = 128, n_seq_tokens = 1
+    seq_id[83][0] = 0
+s = 84, j = 0, idx = 84, n_seqs = 128, n_seq_tokens = 1
+    seq_id[84][0] = 0
+s = 85, j = 0, idx = 85, n_seqs = 128, n_seq_tokens = 1
+    seq_id[85][0] = 0
+s = 86, j = 0, idx = 86, n_seqs = 128, n_seq_tokens = 1
+    seq_id[86][0] = 0
+s = 87, j = 0, idx = 87, n_seqs = 128, n_seq_tokens = 1
+    seq_id[87][0] = 0
+s = 88, j = 0, idx = 88, n_seqs = 128, n_seq_tokens = 1
+    seq_id[88][0] = 0
+s = 89, j = 0, idx = 89, n_seqs = 128, n_seq_tokens = 1
+    seq_id[89][0] = 0
+s = 90, j = 0, idx = 90, n_seqs = 128, n_seq_tokens = 1
+    seq_id[90][0] = 0
+s = 91, j = 0, idx = 91, n_seqs = 128, n_seq_tokens = 1
+    seq_id[91][0] = 0
+s = 92, j = 0, idx = 92, n_seqs = 128, n_seq_tokens = 1
+    seq_id[92][0] = 0
+s = 93, j = 0, idx = 93, n_seqs = 128, n_seq_tokens = 1
+    seq_id[93][0] = 0
+s = 94, j = 0, idx = 94, n_seqs = 128, n_seq_tokens = 1
+    seq_id[94][0] = 0
+s = 95, j = 0, idx = 95, n_seqs = 128, n_seq_tokens = 1
+    seq_id[95][0] = 0
+s = 96, j = 0, idx = 96, n_seqs = 128, n_seq_tokens = 1
+    seq_id[96][0] = 0
+s = 97, j = 0, idx = 97, n_seqs = 128, n_seq_tokens = 1
+    seq_id[97][0] = 0
+s = 98, j = 0, idx = 98, n_seqs = 128, n_seq_tokens = 1
+    seq_id[98][0] = 0
+s = 99, j = 0, idx = 99, n_seqs = 128, n_seq_tokens = 1
+    seq_id[99][0] = 0
+s = 100, j = 0, idx = 100, n_seqs = 128, n_seq_tokens = 1
+    seq_id[100][0] = 0
+s = 101, j = 0, idx = 101, n_seqs = 128, n_seq_tokens = 1
+    seq_id[101][0] = 0
+s = 102, j = 0, idx = 102, n_seqs = 128, n_seq_tokens = 1
+    seq_id[102][0] = 0
+s = 103, j = 0, idx = 103, n_seqs = 128, n_seq_tokens = 1
+    seq_id[103][0] = 0
+s = 104, j = 0, idx = 104, n_seqs = 128, n_seq_tokens = 1
+    seq_id[104][0] = 0
+s = 105, j = 0, idx = 105, n_seqs = 128, n_seq_tokens = 1
+    seq_id[105][0] = 0
+s = 106, j = 0, idx = 106, n_seqs = 128, n_seq_tokens = 1
+    seq_id[106][0] = 0
+s = 107, j = 0, idx = 107, n_seqs = 128, n_seq_tokens = 1
+    seq_id[107][0] = 0
+s = 108, j = 0, idx = 108, n_seqs = 128, n_seq_tokens = 1
+    seq_id[108][0] = 0
+s = 109, j = 0, idx = 109, n_seqs = 128, n_seq_tokens = 1
+    seq_id[109][0] = 0
+s = 110, j = 0, idx = 110, n_seqs = 128, n_seq_tokens = 1
+    seq_id[110][0] = 0
+s = 111, j = 0, idx = 111, n_seqs = 128, n_seq_tokens = 1
+    seq_id[111][0] = 0
+s = 112, j = 0, idx = 112, n_seqs = 128, n_seq_tokens = 1
+    seq_id[112][0] = 0
+s = 113, j = 0, idx = 113, n_seqs = 128, n_seq_tokens = 1
+    seq_id[113][0] = 0
+s = 114, j = 0, idx = 114, n_seqs = 128, n_seq_tokens = 1
+    seq_id[114][0] = 0
+s = 115, j = 0, idx = 115, n_seqs = 128, n_seq_tokens = 1
+    seq_id[115][0] = 0
+s = 116, j = 0, idx = 116, n_seqs = 128, n_seq_tokens = 1
+    seq_id[116][0] = 0
+s = 117, j = 0, idx = 117, n_seqs = 128, n_seq_tokens = 1
+    seq_id[117][0] = 0
+s = 118, j = 0, idx = 118, n_seqs = 128, n_seq_tokens = 1
+    seq_id[118][0] = 0
+s = 119, j = 0, idx = 119, n_seqs = 128, n_seq_tokens = 1
+    seq_id[119][0] = 0
+s = 120, j = 0, idx = 120, n_seqs = 128, n_seq_tokens = 1
+    seq_id[120][0] = 0
+s = 121, j = 0, idx = 121, n_seqs = 128, n_seq_tokens = 1
+    seq_id[121][0] = 0
+s = 122, j = 0, idx = 122, n_seqs = 128, n_seq_tokens = 1
+    seq_id[122][0] = 0
+s = 123, j = 0, idx = 123, n_seqs = 128, n_seq_tokens = 1
+    seq_id[123][0] = 0
+s = 124, j = 0, idx = 124, n_seqs = 128, n_seq_tokens = 1
+    seq_id[124][0] = 0
+s = 125, j = 0, idx = 125, n_seqs = 128, n_seq_tokens = 1
+    seq_id[125][0] = 0
+s = 126, j = 0, idx = 126, n_seqs = 128, n_seq_tokens = 1
+    seq_id[126][0] = 0
+s = 127, j = 0, idx = 127, n_seqs = 128, n_seq_tokens = 1
+    seq_id[127][0] = 0
+0.00 minutes
+[1]10.1611,
+0.00.791.686 I Final estimate: PPL = 10.1611 +/- 3.23215
+
+0.00.791.803 I llama_perf_context_print:        load time =     393.93 ms
+0.00.791.820 I llama_perf_context_print: prompt eval time =     386.70 ms /   128 tokens (    3.02 ms per token,   331.01 tokens per second)
+0.00.791.821 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.00.791.822 I llama_perf_context_print:       total time =     397.52 ms /   129 tokens
+
+real	0m0.863s
+user	0m2.501s
+sys	0m0.820s
+```
+- q4_0:
+```
++ ./bin/llama-cli -no-cnv --model ../models-mnt/pythia/1.4B/ggml-model-q4_0.gguf -ngl 99 -c 0 -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.249 I build: 5635 (2db43275) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.000.497 I main: llama backend init
+0.00.000.514 I main: load the model and apply lora adapter, if any
+0.00.010.700 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q4_0.gguf (version GGUF V3 (latest))
+0.00.010.728 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.010.737 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.010.738 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.010.738 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.010.739 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.010.739 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.010.742 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.010.743 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.010.744 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.010.745 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.010.746 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.010.746 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.010.747 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.010.755 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.010.756 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.010.757 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.015.577 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.016.651 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.021.146 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.021.169 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.021.170 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.021.171 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.021.171 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.021.171 I llama_model_loader: - kv  22:                          general.file_type u32              = 2
+0.00.021.174 I llama_model_loader: - type  f32:  194 tensors
+0.00.021.175 I llama_model_loader: - type q4_0:   97 tensors
+0.00.021.175 I llama_model_loader: - type q6_K:    1 tensors
+0.00.021.178 I print_info: file format = GGUF V3 (latest)
+0.00.021.178 I print_info: file type   = Q4_0
+0.00.021.181 I print_info: file size   = 786.31 MiB (4.66 BPW) 
+0.00.055.083 I load: special tokens cache size = 25
+0.00.067.096 I load: token to piece cache size = 0.2984 MB
+0.00.067.125 I print_info: arch             = gptneox
+0.00.067.126 I print_info: vocab_only       = 0
+0.00.067.126 I print_info: n_ctx_train      = 2048
+0.00.067.126 I print_info: n_embd           = 2048
+0.00.067.126 I print_info: n_layer          = 24
+0.00.067.135 I print_info: n_head           = 16
+0.00.067.137 I print_info: n_head_kv        = 16
+0.00.067.137 I print_info: n_rot            = 32
+0.00.067.137 I print_info: n_swa            = 0
+0.00.067.138 I print_info: is_swa_any       = 0
+0.00.067.138 I print_info: n_embd_head_k    = 128
+0.00.067.139 I print_info: n_embd_head_v    = 128
+0.00.067.140 I print_info: n_gqa            = 1
+0.00.067.142 I print_info: n_embd_k_gqa     = 2048
+0.00.067.143 I print_info: n_embd_v_gqa     = 2048
+0.00.067.144 I print_info: f_norm_eps       = 1.0e-05
+0.00.067.145 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.067.145 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.067.146 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.067.146 I print_info: f_logit_scale    = 0.0e+00
+0.00.067.146 I print_info: f_attn_scale     = 0.0e+00
+0.00.067.147 I print_info: n_ff             = 8192
+0.00.067.147 I print_info: n_expert         = 0
+0.00.067.147 I print_info: n_expert_used    = 0
+0.00.067.148 I print_info: causal attn      = 1
+0.00.067.148 I print_info: pooling type     = 0
+0.00.067.148 I print_info: rope type        = 2
+0.00.067.148 I print_info: rope scaling     = linear
+0.00.067.149 I print_info: freq_base_train  = 10000.0
+0.00.067.150 I print_info: freq_scale_train = 1
+0.00.067.150 I print_info: n_ctx_orig_yarn  = 2048
+0.00.067.151 I print_info: rope_finetuned   = unknown
+0.00.067.151 I print_info: ssm_d_conv       = 0
+0.00.067.151 I print_info: ssm_d_inner      = 0
+0.00.067.151 I print_info: ssm_d_state      = 0
+0.00.067.152 I print_info: ssm_dt_rank      = 0
+0.00.067.152 I print_info: ssm_dt_b_c_rms   = 0
+0.00.067.153 I print_info: model type       = 1.4B
+0.00.067.153 I print_info: model params     = 1.41 B
+0.00.067.154 I print_info: general.name     = 1.4B
+0.00.067.157 I print_info: vocab type       = BPE
+0.00.067.157 I print_info: n_vocab          = 50304
+0.00.067.158 I print_info: n_merges         = 50009
+0.00.067.158 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.067.158 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.067.158 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.067.159 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.067.159 I print_info: LF token         = 187 'Ċ'
+0.00.067.160 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.067.160 I print_info: max token length = 1024
+0.00.067.162 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.120.621 I load_tensors:          AMX model buffer size =   728.60 MiB
+0.00.120.637 I load_tensors:   CPU_Mapped model buffer size =   696.72 MiB
+..............................................................................
+0.00.232.997 I llama_context: constructing llama_context
+0.00.233.016 I llama_context: n_seq_max     = 1
+0.00.233.017 I llama_context: n_ctx         = 2048
+0.00.233.017 I llama_context: n_ctx_per_seq = 2048
+0.00.233.018 I llama_context: n_batch       = 2048
+0.00.233.018 I llama_context: n_ubatch      = 512
+0.00.233.018 I llama_context: causal_attn   = 1
+0.00.233.019 I llama_context: flash_attn    = 0
+0.00.233.024 I llama_context: freq_base     = 10000.0
+0.00.233.024 I llama_context: freq_scale    = 1
+0.00.233.069 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.00.233.567 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.00.303.794 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.312.837 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.00.312.856 I llama_context: graph nodes  = 1063
+0.00.312.856 I llama_context: graph splits = 1
+0.00.312.874 I common_init_from_params: added <|endoftext|> logit bias = -inf
+0.00.313.287 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.313.299 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.394.169 I main: llama threadpool init, n_threads = 4
+0.00.394.190 I 
+0.00.394.262 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.394.274 I 
+0.00.394.405 I sampler seed: 1234
+0.00.394.425 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 2048
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.00.394.428 I sampler chain: logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+0.00.394.429 I generate: n_ctx = 2048, n_batch = 2048, n_predict = 64, n_keep = 0
+0.00.394.429 I 
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 7, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 7, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 7, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 7, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 7, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 7, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 7, n_seq_tokens = 1
+    seq_id[6][0] = 0
+I believe the meaning of life iss = 0, j = 0, idx = 0, n_seqs = 7, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 7, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 7, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 7, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 7, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 7, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 7, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ tos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ knows = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ands = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ experiences = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ whats = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ yous = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ loves = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ands = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ tos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ dos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ its = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+."s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Ifs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ yous = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ loves = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ somethings = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+,s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ sets = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ its = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ frees = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+."s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Yous = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ mights = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ justs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ finds = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ somethings = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ yous = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ didns = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+'ts = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ knows = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ yous = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ wanteds = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+."s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Is = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+'ves = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ alwayss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ wanteds = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ tos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ knows = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ truths = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+."s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Nows = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ Is = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ haves = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+."s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Sos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ Is = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+'ms = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ gonnas = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ gets = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ tos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ truths = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+."s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Is = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+'m gonna
+
+0.01.915.239 I llama_perf_sampler_print:    sampling time =       2.85 ms /    71 runs   (    0.04 ms per token, 24903.54 tokens per second)
+0.01.915.244 I llama_perf_context_print:        load time =     392.57 ms
+0.01.915.246 I llama_perf_context_print: prompt eval time =      48.56 ms /     7 tokens (    6.94 ms per token,   144.15 tokens per second)
+0.01.915.247 I llama_perf_context_print:        eval time =    1460.72 ms /    63 runs   (   23.19 ms per token,    43.13 tokens per second)
+0.01.915.247 I llama_perf_context_print:       total time =    1522.14 ms /    70 tokens
+
+real	0m1.965s
+user	0m6.849s
+sys	0m0.591s
++ ./bin/llama-perplexity --model ../models-mnt/pythia/1.4B/ggml-model-q4_0.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -ngl 99 -c 128 -b 128 --chunks 1
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.311 I build: 5635 (2db43275) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.010.658 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q4_0.gguf (version GGUF V3 (latest))
+0.00.010.686 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.010.694 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.010.695 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.010.696 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.010.696 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.010.697 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.010.700 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.010.700 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.010.701 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.010.701 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.010.702 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.010.702 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.010.703 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.010.708 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.010.709 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.010.709 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.015.483 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.016.540 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.021.066 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.021.085 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.021.085 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.021.086 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.021.086 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.021.087 I llama_model_loader: - kv  22:                          general.file_type u32              = 2
+0.00.021.090 I llama_model_loader: - type  f32:  194 tensors
+0.00.021.090 I llama_model_loader: - type q4_0:   97 tensors
+0.00.021.091 I llama_model_loader: - type q6_K:    1 tensors
+0.00.021.093 I print_info: file format = GGUF V3 (latest)
+0.00.021.093 I print_info: file type   = Q4_0
+0.00.021.096 I print_info: file size   = 786.31 MiB (4.66 BPW) 
+0.00.054.580 I load: special tokens cache size = 25
+0.00.066.654 I load: token to piece cache size = 0.2984 MB
+0.00.066.682 I print_info: arch             = gptneox
+0.00.066.683 I print_info: vocab_only       = 0
+0.00.066.683 I print_info: n_ctx_train      = 2048
+0.00.066.683 I print_info: n_embd           = 2048
+0.00.066.684 I print_info: n_layer          = 24
+0.00.066.692 I print_info: n_head           = 16
+0.00.066.694 I print_info: n_head_kv        = 16
+0.00.066.694 I print_info: n_rot            = 32
+0.00.066.695 I print_info: n_swa            = 0
+0.00.066.696 I print_info: is_swa_any       = 0
+0.00.066.696 I print_info: n_embd_head_k    = 128
+0.00.066.696 I print_info: n_embd_head_v    = 128
+0.00.066.698 I print_info: n_gqa            = 1
+0.00.066.700 I print_info: n_embd_k_gqa     = 2048
+0.00.066.701 I print_info: n_embd_v_gqa     = 2048
+0.00.066.702 I print_info: f_norm_eps       = 1.0e-05
+0.00.066.702 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.066.703 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.066.703 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.066.704 I print_info: f_logit_scale    = 0.0e+00
+0.00.066.704 I print_info: f_attn_scale     = 0.0e+00
+0.00.066.705 I print_info: n_ff             = 8192
+0.00.066.705 I print_info: n_expert         = 0
+0.00.066.705 I print_info: n_expert_used    = 0
+0.00.066.706 I print_info: causal attn      = 1
+0.00.066.706 I print_info: pooling type     = 0
+0.00.066.706 I print_info: rope type        = 2
+0.00.066.706 I print_info: rope scaling     = linear
+0.00.066.707 I print_info: freq_base_train  = 10000.0
+0.00.066.708 I print_info: freq_scale_train = 1
+0.00.066.708 I print_info: n_ctx_orig_yarn  = 2048
+0.00.066.708 I print_info: rope_finetuned   = unknown
+0.00.066.709 I print_info: ssm_d_conv       = 0
+0.00.066.709 I print_info: ssm_d_inner      = 0
+0.00.066.709 I print_info: ssm_d_state      = 0
+0.00.066.709 I print_info: ssm_dt_rank      = 0
+0.00.066.710 I print_info: ssm_dt_b_c_rms   = 0
+0.00.066.710 I print_info: model type       = 1.4B
+0.00.066.711 I print_info: model params     = 1.41 B
+0.00.066.711 I print_info: general.name     = 1.4B
+0.00.066.714 I print_info: vocab type       = BPE
+0.00.066.744 I print_info: n_vocab          = 50304
+0.00.066.744 I print_info: n_merges         = 50009
+0.00.066.744 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.066.745 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.066.745 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.066.745 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.066.746 I print_info: LF token         = 187 'Ċ'
+0.00.066.746 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.066.746 I print_info: max token length = 1024
+0.00.066.748 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.121.263 I load_tensors:          AMX model buffer size =   728.60 MiB
+0.00.121.285 I load_tensors:   CPU_Mapped model buffer size =   696.72 MiB
+..............................................................................
+0.00.235.019 I llama_context: constructing llama_context
+0.00.235.036 I llama_context: n_seq_max     = 1
+0.00.235.036 I llama_context: n_ctx         = 128
+0.00.235.036 I llama_context: n_ctx_per_seq = 128
+0.00.235.037 I llama_context: n_batch       = 128
+0.00.235.037 I llama_context: n_ubatch      = 128
+0.00.235.037 I llama_context: causal_attn   = 1
+0.00.235.038 I llama_context: flash_attn    = 0
+0.00.235.043 I llama_context: freq_base     = 10000.0
+0.00.235.044 I llama_context: freq_scale    = 1
+0.00.235.045 W llama_context: n_ctx_per_seq (128) < n_ctx_train (2048) -- the full capacity of the model will not be utilized
+0.00.235.092 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.00.235.331 I llama_kv_cache_unified:        CPU KV buffer size =    24.00 MiB
+0.00.239.446 I llama_kv_cache_unified: size =   24.00 MiB (   128 cells,  24 layers,  1 seqs), K (f16):   12.00 MiB, V (f16):   12.00 MiB
+0.00.248.627 I llama_context:        CPU compute buffer size =    25.56 MiB
+0.00.248.647 I llama_context: graph nodes  = 1063
+0.00.248.647 I llama_context: graph splits = 1
+0.00.248.656 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 128
+0.00.248.656 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.296.952 I 
+0.00.297.048 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.297.073 I perplexity: tokenizing the input ..
+0.00.303.541 I perplexity: tokenization took 6.465 ms
+0.00.303.571 I perplexity: calculating perplexity over 1 chunks, n_ctx=128, batch_size=128, n_seq=1
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 128, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 128, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 128, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 128, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 128, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 128, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 128, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 7, j = 0, idx = 7, n_seqs = 128, n_seq_tokens = 1
+    seq_id[7][0] = 0
+s = 8, j = 0, idx = 8, n_seqs = 128, n_seq_tokens = 1
+    seq_id[8][0] = 0
+s = 9, j = 0, idx = 9, n_seqs = 128, n_seq_tokens = 1
+    seq_id[9][0] = 0
+s = 10, j = 0, idx = 10, n_seqs = 128, n_seq_tokens = 1
+    seq_id[10][0] = 0
+s = 11, j = 0, idx = 11, n_seqs = 128, n_seq_tokens = 1
+    seq_id[11][0] = 0
+s = 12, j = 0, idx = 12, n_seqs = 128, n_seq_tokens = 1
+    seq_id[12][0] = 0
+s = 13, j = 0, idx = 13, n_seqs = 128, n_seq_tokens = 1
+    seq_id[13][0] = 0
+s = 14, j = 0, idx = 14, n_seqs = 128, n_seq_tokens = 1
+    seq_id[14][0] = 0
+s = 15, j = 0, idx = 15, n_seqs = 128, n_seq_tokens = 1
+    seq_id[15][0] = 0
+s = 16, j = 0, idx = 16, n_seqs = 128, n_seq_tokens = 1
+    seq_id[16][0] = 0
+s = 17, j = 0, idx = 17, n_seqs = 128, n_seq_tokens = 1
+    seq_id[17][0] = 0
+s = 18, j = 0, idx = 18, n_seqs = 128, n_seq_tokens = 1
+    seq_id[18][0] = 0
+s = 19, j = 0, idx = 19, n_seqs = 128, n_seq_tokens = 1
+    seq_id[19][0] = 0
+s = 20, j = 0, idx = 20, n_seqs = 128, n_seq_tokens = 1
+    seq_id[20][0] = 0
+s = 21, j = 0, idx = 21, n_seqs = 128, n_seq_tokens = 1
+    seq_id[21][0] = 0
+s = 22, j = 0, idx = 22, n_seqs = 128, n_seq_tokens = 1
+    seq_id[22][0] = 0
+s = 23, j = 0, idx = 23, n_seqs = 128, n_seq_tokens = 1
+    seq_id[23][0] = 0
+s = 24, j = 0, idx = 24, n_seqs = 128, n_seq_tokens = 1
+    seq_id[24][0] = 0
+s = 25, j = 0, idx = 25, n_seqs = 128, n_seq_tokens = 1
+    seq_id[25][0] = 0
+s = 26, j = 0, idx = 26, n_seqs = 128, n_seq_tokens = 1
+    seq_id[26][0] = 0
+s = 27, j = 0, idx = 27, n_seqs = 128, n_seq_tokens = 1
+    seq_id[27][0] = 0
+s = 28, j = 0, idx = 28, n_seqs = 128, n_seq_tokens = 1
+    seq_id[28][0] = 0
+s = 29, j = 0, idx = 29, n_seqs = 128, n_seq_tokens = 1
+    seq_id[29][0] = 0
+s = 30, j = 0, idx = 30, n_seqs = 128, n_seq_tokens = 1
+    seq_id[30][0] = 0
+s = 31, j = 0, idx = 31, n_seqs = 128, n_seq_tokens = 1
+    seq_id[31][0] = 0
+s = 32, j = 0, idx = 32, n_seqs = 128, n_seq_tokens = 1
+    seq_id[32][0] = 0
+s = 33, j = 0, idx = 33, n_seqs = 128, n_seq_tokens = 1
+    seq_id[33][0] = 0
+s = 34, j = 0, idx = 34, n_seqs = 128, n_seq_tokens = 1
+    seq_id[34][0] = 0
+s = 35, j = 0, idx = 35, n_seqs = 128, n_seq_tokens = 1
+    seq_id[35][0] = 0
+s = 36, j = 0, idx = 36, n_seqs = 128, n_seq_tokens = 1
+    seq_id[36][0] = 0
+s = 37, j = 0, idx = 37, n_seqs = 128, n_seq_tokens = 1
+    seq_id[37][0] = 0
+s = 38, j = 0, idx = 38, n_seqs = 128, n_seq_tokens = 1
+    seq_id[38][0] = 0
+s = 39, j = 0, idx = 39, n_seqs = 128, n_seq_tokens = 1
+    seq_id[39][0] = 0
+s = 40, j = 0, idx = 40, n_seqs = 128, n_seq_tokens = 1
+    seq_id[40][0] = 0
+s = 41, j = 0, idx = 41, n_seqs = 128, n_seq_tokens = 1
+    seq_id[41][0] = 0
+s = 42, j = 0, idx = 42, n_seqs = 128, n_seq_tokens = 1
+    seq_id[42][0] = 0
+s = 43, j = 0, idx = 43, n_seqs = 128, n_seq_tokens = 1
+    seq_id[43][0] = 0
+s = 44, j = 0, idx = 44, n_seqs = 128, n_seq_tokens = 1
+    seq_id[44][0] = 0
+s = 45, j = 0, idx = 45, n_seqs = 128, n_seq_tokens = 1
+    seq_id[45][0] = 0
+s = 46, j = 0, idx = 46, n_seqs = 128, n_seq_tokens = 1
+    seq_id[46][0] = 0
+s = 47, j = 0, idx = 47, n_seqs = 128, n_seq_tokens = 1
+    seq_id[47][0] = 0
+s = 48, j = 0, idx = 48, n_seqs = 128, n_seq_tokens = 1
+    seq_id[48][0] = 0
+s = 49, j = 0, idx = 49, n_seqs = 128, n_seq_tokens = 1
+    seq_id[49][0] = 0
+s = 50, j = 0, idx = 50, n_seqs = 128, n_seq_tokens = 1
+    seq_id[50][0] = 0
+s = 51, j = 0, idx = 51, n_seqs = 128, n_seq_tokens = 1
+    seq_id[51][0] = 0
+s = 52, j = 0, idx = 52, n_seqs = 128, n_seq_tokens = 1
+    seq_id[52][0] = 0
+s = 53, j = 0, idx = 53, n_seqs = 128, n_seq_tokens = 1
+    seq_id[53][0] = 0
+s = 54, j = 0, idx = 54, n_seqs = 128, n_seq_tokens = 1
+    seq_id[54][0] = 0
+s = 55, j = 0, idx = 55, n_seqs = 128, n_seq_tokens = 1
+    seq_id[55][0] = 0
+s = 56, j = 0, idx = 56, n_seqs = 128, n_seq_tokens = 1
+    seq_id[56][0] = 0
+s = 57, j = 0, idx = 57, n_seqs = 128, n_seq_tokens = 1
+    seq_id[57][0] = 0
+s = 58, j = 0, idx = 58, n_seqs = 128, n_seq_tokens = 1
+    seq_id[58][0] = 0
+s = 59, j = 0, idx = 59, n_seqs = 128, n_seq_tokens = 1
+    seq_id[59][0] = 0
+s = 60, j = 0, idx = 60, n_seqs = 128, n_seq_tokens = 1
+    seq_id[60][0] = 0
+s = 61, j = 0, idx = 61, n_seqs = 128, n_seq_tokens = 1
+    seq_id[61][0] = 0
+s = 62, j = 0, idx = 62, n_seqs = 128, n_seq_tokens = 1
+    seq_id[62][0] = 0
+s = 63, j = 0, idx = 63, n_seqs = 128, n_seq_tokens = 1
+    seq_id[63][0] = 0
+s = 64, j = 0, idx = 64, n_seqs = 128, n_seq_tokens = 1
+    seq_id[64][0] = 0
+s = 65, j = 0, idx = 65, n_seqs = 128, n_seq_tokens = 1
+    seq_id[65][0] = 0
+s = 66, j = 0, idx = 66, n_seqs = 128, n_seq_tokens = 1
+    seq_id[66][0] = 0
+s = 67, j = 0, idx = 67, n_seqs = 128, n_seq_tokens = 1
+    seq_id[67][0] = 0
+s = 68, j = 0, idx = 68, n_seqs = 128, n_seq_tokens = 1
+    seq_id[68][0] = 0
+s = 69, j = 0, idx = 69, n_seqs = 128, n_seq_tokens = 1
+    seq_id[69][0] = 0
+s = 70, j = 0, idx = 70, n_seqs = 128, n_seq_tokens = 1
+    seq_id[70][0] = 0
+s = 71, j = 0, idx = 71, n_seqs = 128, n_seq_tokens = 1
+    seq_id[71][0] = 0
+s = 72, j = 0, idx = 72, n_seqs = 128, n_seq_tokens = 1
+    seq_id[72][0] = 0
+s = 73, j = 0, idx = 73, n_seqs = 128, n_seq_tokens = 1
+    seq_id[73][0] = 0
+s = 74, j = 0, idx = 74, n_seqs = 128, n_seq_tokens = 1
+    seq_id[74][0] = 0
+s = 75, j = 0, idx = 75, n_seqs = 128, n_seq_tokens = 1
+    seq_id[75][0] = 0
+s = 76, j = 0, idx = 76, n_seqs = 128, n_seq_tokens = 1
+    seq_id[76][0] = 0
+s = 77, j = 0, idx = 77, n_seqs = 128, n_seq_tokens = 1
+    seq_id[77][0] = 0
+s = 78, j = 0, idx = 78, n_seqs = 128, n_seq_tokens = 1
+    seq_id[78][0] = 0
+s = 79, j = 0, idx = 79, n_seqs = 128, n_seq_tokens = 1
+    seq_id[79][0] = 0
+s = 80, j = 0, idx = 80, n_seqs = 128, n_seq_tokens = 1
+    seq_id[80][0] = 0
+s = 81, j = 0, idx = 81, n_seqs = 128, n_seq_tokens = 1
+    seq_id[81][0] = 0
+s = 82, j = 0, idx = 82, n_seqs = 128, n_seq_tokens = 1
+    seq_id[82][0] = 0
+s = 83, j = 0, idx = 83, n_seqs = 128, n_seq_tokens = 1
+    seq_id[83][0] = 0
+s = 84, j = 0, idx = 84, n_seqs = 128, n_seq_tokens = 1
+    seq_id[84][0] = 0
+s = 85, j = 0, idx = 85, n_seqs = 128, n_seq_tokens = 1
+    seq_id[85][0] = 0
+s = 86, j = 0, idx = 86, n_seqs = 128, n_seq_tokens = 1
+    seq_id[86][0] = 0
+s = 87, j = 0, idx = 87, n_seqs = 128, n_seq_tokens = 1
+    seq_id[87][0] = 0
+s = 88, j = 0, idx = 88, n_seqs = 128, n_seq_tokens = 1
+    seq_id[88][0] = 0
+s = 89, j = 0, idx = 89, n_seqs = 128, n_seq_tokens = 1
+    seq_id[89][0] = 0
+s = 90, j = 0, idx = 90, n_seqs = 128, n_seq_tokens = 1
+    seq_id[90][0] = 0
+s = 91, j = 0, idx = 91, n_seqs = 128, n_seq_tokens = 1
+    seq_id[91][0] = 0
+s = 92, j = 0, idx = 92, n_seqs = 128, n_seq_tokens = 1
+    seq_id[92][0] = 0
+s = 93, j = 0, idx = 93, n_seqs = 128, n_seq_tokens = 1
+    seq_id[93][0] = 0
+s = 94, j = 0, idx = 94, n_seqs = 128, n_seq_tokens = 1
+    seq_id[94][0] = 0
+s = 95, j = 0, idx = 95, n_seqs = 128, n_seq_tokens = 1
+    seq_id[95][0] = 0
+s = 96, j = 0, idx = 96, n_seqs = 128, n_seq_tokens = 1
+    seq_id[96][0] = 0
+s = 97, j = 0, idx = 97, n_seqs = 128, n_seq_tokens = 1
+    seq_id[97][0] = 0
+s = 98, j = 0, idx = 98, n_seqs = 128, n_seq_tokens = 1
+    seq_id[98][0] = 0
+s = 99, j = 0, idx = 99, n_seqs = 128, n_seq_tokens = 1
+    seq_id[99][0] = 0
+s = 100, j = 0, idx = 100, n_seqs = 128, n_seq_tokens = 1
+    seq_id[100][0] = 0
+s = 101, j = 0, idx = 101, n_seqs = 128, n_seq_tokens = 1
+    seq_id[101][0] = 0
+s = 102, j = 0, idx = 102, n_seqs = 128, n_seq_tokens = 1
+    seq_id[102][0] = 0
+s = 103, j = 0, idx = 103, n_seqs = 128, n_seq_tokens = 1
+    seq_id[103][0] = 0
+s = 104, j = 0, idx = 104, n_seqs = 128, n_seq_tokens = 1
+    seq_id[104][0] = 0
+s = 105, j = 0, idx = 105, n_seqs = 128, n_seq_tokens = 1
+    seq_id[105][0] = 0
+s = 106, j = 0, idx = 106, n_seqs = 128, n_seq_tokens = 1
+    seq_id[106][0] = 0
+s = 107, j = 0, idx = 107, n_seqs = 128, n_seq_tokens = 1
+    seq_id[107][0] = 0
+s = 108, j = 0, idx = 108, n_seqs = 128, n_seq_tokens = 1
+    seq_id[108][0] = 0
+s = 109, j = 0, idx = 109, n_seqs = 128, n_seq_tokens = 1
+    seq_id[109][0] = 0
+s = 110, j = 0, idx = 110, n_seqs = 128, n_seq_tokens = 1
+    seq_id[110][0] = 0
+s = 111, j = 0, idx = 111, n_seqs = 128, n_seq_tokens = 1
+    seq_id[111][0] = 0
+s = 112, j = 0, idx = 112, n_seqs = 128, n_seq_tokens = 1
+    seq_id[112][0] = 0
+s = 113, j = 0, idx = 113, n_seqs = 128, n_seq_tokens = 1
+    seq_id[113][0] = 0
+s = 114, j = 0, idx = 114, n_seqs = 128, n_seq_tokens = 1
+    seq_id[114][0] = 0
+s = 115, j = 0, idx = 115, n_seqs = 128, n_seq_tokens = 1
+    seq_id[115][0] = 0
+s = 116, j = 0, idx = 116, n_seqs = 128, n_seq_tokens = 1
+    seq_id[116][0] = 0
+s = 117, j = 0, idx = 117, n_seqs = 128, n_seq_tokens = 1
+    seq_id[117][0] = 0
+s = 118, j = 0, idx = 118, n_seqs = 128, n_seq_tokens = 1
+    seq_id[118][0] = 0
+s = 119, j = 0, idx = 119, n_seqs = 128, n_seq_tokens = 1
+    seq_id[119][0] = 0
+s = 120, j = 0, idx = 120, n_seqs = 128, n_seq_tokens = 1
+    seq_id[120][0] = 0
+s = 121, j = 0, idx = 121, n_seqs = 128, n_seq_tokens = 1
+    seq_id[121][0] = 0
+s = 122, j = 0, idx = 122, n_seqs = 128, n_seq_tokens = 1
+    seq_id[122][0] = 0
+s = 123, j = 0, idx = 123, n_seqs = 128, n_seq_tokens = 1
+    seq_id[123][0] = 0
+s = 124, j = 0, idx = 124, n_seqs = 128, n_seq_tokens = 1
+    seq_id[124][0] = 0
+s = 125, j = 0, idx = 125, n_seqs = 128, n_seq_tokens = 1
+    seq_id[125][0] = 0
+s = 126, j = 0, idx = 126, n_seqs = 128, n_seq_tokens = 1
+    seq_id[126][0] = 0
+s = 127, j = 0, idx = 127, n_seqs = 128, n_seq_tokens = 1
+    seq_id[127][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 128, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 128, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 128, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 128, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 128, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 128, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 128, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 7, j = 0, idx = 7, n_seqs = 128, n_seq_tokens = 1
+    seq_id[7][0] = 0
+s = 8, j = 0, idx = 8, n_seqs = 128, n_seq_tokens = 1
+    seq_id[8][0] = 0
+s = 9, j = 0, idx = 9, n_seqs = 128, n_seq_tokens = 1
+    seq_id[9][0] = 0
+s = 10, j = 0, idx = 10, n_seqs = 128, n_seq_tokens = 1
+    seq_id[10][0] = 0
+s = 11, j = 0, idx = 11, n_seqs = 128, n_seq_tokens = 1
+    seq_id[11][0] = 0
+s = 12, j = 0, idx = 12, n_seqs = 128, n_seq_tokens = 1
+    seq_id[12][0] = 0
+s = 13, j = 0, idx = 13, n_seqs = 128, n_seq_tokens = 1
+    seq_id[13][0] = 0
+s = 14, j = 0, idx = 14, n_seqs = 128, n_seq_tokens = 1
+    seq_id[14][0] = 0
+s = 15, j = 0, idx = 15, n_seqs = 128, n_seq_tokens = 1
+    seq_id[15][0] = 0
+s = 16, j = 0, idx = 16, n_seqs = 128, n_seq_tokens = 1
+    seq_id[16][0] = 0
+s = 17, j = 0, idx = 17, n_seqs = 128, n_seq_tokens = 1
+    seq_id[17][0] = 0
+s = 18, j = 0, idx = 18, n_seqs = 128, n_seq_tokens = 1
+    seq_id[18][0] = 0
+s = 19, j = 0, idx = 19, n_seqs = 128, n_seq_tokens = 1
+    seq_id[19][0] = 0
+s = 20, j = 0, idx = 20, n_seqs = 128, n_seq_tokens = 1
+    seq_id[20][0] = 0
+s = 21, j = 0, idx = 21, n_seqs = 128, n_seq_tokens = 1
+    seq_id[21][0] = 0
+s = 22, j = 0, idx = 22, n_seqs = 128, n_seq_tokens = 1
+    seq_id[22][0] = 0
+s = 23, j = 0, idx = 23, n_seqs = 128, n_seq_tokens = 1
+    seq_id[23][0] = 0
+s = 24, j = 0, idx = 24, n_seqs = 128, n_seq_tokens = 1
+    seq_id[24][0] = 0
+s = 25, j = 0, idx = 25, n_seqs = 128, n_seq_tokens = 1
+    seq_id[25][0] = 0
+s = 26, j = 0, idx = 26, n_seqs = 128, n_seq_tokens = 1
+    seq_id[26][0] = 0
+s = 27, j = 0, idx = 27, n_seqs = 128, n_seq_tokens = 1
+    seq_id[27][0] = 0
+s = 28, j = 0, idx = 28, n_seqs = 128, n_seq_tokens = 1
+    seq_id[28][0] = 0
+s = 29, j = 0, idx = 29, n_seqs = 128, n_seq_tokens = 1
+    seq_id[29][0] = 0
+s = 30, j = 0, idx = 30, n_seqs = 128, n_seq_tokens = 1
+    seq_id[30][0] = 0
+s = 31, j = 0, idx = 31, n_seqs = 128, n_seq_tokens = 1
+    seq_id[31][0] = 0
+s = 32, j = 0, idx = 32, n_seqs = 128, n_seq_tokens = 1
+    seq_id[32][0] = 0
+s = 33, j = 0, idx = 33, n_seqs = 128, n_seq_tokens = 1
+    seq_id[33][0] = 0
+s = 34, j = 0, idx = 34, n_seqs = 128, n_seq_tokens = 1
+    seq_id[34][0] = 0
+s = 35, j = 0, idx = 35, n_seqs = 128, n_seq_tokens = 1
+    seq_id[35][0] = 0
+s = 36, j = 0, idx = 36, n_seqs = 128, n_seq_tokens = 1
+    seq_id[36][0] = 0
+s = 37, j = 0, idx = 37, n_seqs = 128, n_seq_tokens = 1
+    seq_id[37][0] = 0
+s = 38, j = 0, idx = 38, n_seqs = 128, n_seq_tokens = 1
+    seq_id[38][0] = 0
+s = 39, j = 0, idx = 39, n_seqs = 128, n_seq_tokens = 1
+    seq_id[39][0] = 0
+s = 40, j = 0, idx = 40, n_seqs = 128, n_seq_tokens = 1
+    seq_id[40][0] = 0
+s = 41, j = 0, idx = 41, n_seqs = 128, n_seq_tokens = 1
+    seq_id[41][0] = 0
+s = 42, j = 0, idx = 42, n_seqs = 128, n_seq_tokens = 1
+    seq_id[42][0] = 0
+s = 43, j = 0, idx = 43, n_seqs = 128, n_seq_tokens = 1
+    seq_id[43][0] = 0
+s = 44, j = 0, idx = 44, n_seqs = 128, n_seq_tokens = 1
+    seq_id[44][0] = 0
+s = 45, j = 0, idx = 45, n_seqs = 128, n_seq_tokens = 1
+    seq_id[45][0] = 0
+s = 46, j = 0, idx = 46, n_seqs = 128, n_seq_tokens = 1
+    seq_id[46][0] = 0
+s = 47, j = 0, idx = 47, n_seqs = 128, n_seq_tokens = 1
+    seq_id[47][0] = 0
+s = 48, j = 0, idx = 48, n_seqs = 128, n_seq_tokens = 1
+    seq_id[48][0] = 0
+s = 49, j = 0, idx = 49, n_seqs = 128, n_seq_tokens = 1
+    seq_id[49][0] = 0
+s = 50, j = 0, idx = 50, n_seqs = 128, n_seq_tokens = 1
+    seq_id[50][0] = 0
+s = 51, j = 0, idx = 51, n_seqs = 128, n_seq_tokens = 1
+    seq_id[51][0] = 0
+s = 52, j = 0, idx = 52, n_seqs = 128, n_seq_tokens = 1
+    seq_id[52][0] = 0
+s = 53, j = 0, idx = 53, n_seqs = 128, n_seq_tokens = 1
+    seq_id[53][0] = 0
+s = 54, j = 0, idx = 54, n_seqs = 128, n_seq_tokens = 1
+    seq_id[54][0] = 0
+s = 55, j = 0, idx = 55, n_seqs = 128, n_seq_tokens = 1
+    seq_id[55][0] = 0
+s = 56, j = 0, idx = 56, n_seqs = 128, n_seq_tokens = 1
+    seq_id[56][0] = 0
+s = 57, j = 0, idx = 57, n_seqs = 128, n_seq_tokens = 1
+    seq_id[57][0] = 0
+s = 58, j = 0, idx = 58, n_seqs = 128, n_seq_tokens = 1
+    seq_id[58][0] = 0
+s = 59, j = 0, idx = 59, n_seqs = 128, n_seq_tokens = 1
+    seq_id[59][0] = 0
+s = 60, j = 0, idx = 60, n_seqs = 128, n_seq_tokens = 1
+    seq_id[60][0] = 0
+s = 61, j = 0, idx = 61, n_seqs = 128, n_seq_tokens = 1
+    seq_id[61][0] = 0
+s = 62, j = 0, idx = 62, n_seqs = 128, n_seq_tokens = 1
+    seq_id[62][0] = 0
+s = 63, j = 0, idx = 63, n_seqs = 128, n_seq_tokens = 1
+    seq_id[63][0] = 0
+s = 64, j = 0, idx = 64, n_seqs = 128, n_seq_tokens = 1
+    seq_id[64][0] = 0
+s = 65, j = 0, idx = 65, n_seqs = 128, n_seq_tokens = 1
+    seq_id[65][0] = 0
+s = 66, j = 0, idx = 66, n_seqs = 128, n_seq_tokens = 1
+    seq_id[66][0] = 0
+s = 67, j = 0, idx = 67, n_seqs = 128, n_seq_tokens = 1
+    seq_id[67][0] = 0
+s = 68, j = 0, idx = 68, n_seqs = 128, n_seq_tokens = 1
+    seq_id[68][0] = 0
+s = 69, j = 0, idx = 69, n_seqs = 128, n_seq_tokens = 1
+    seq_id[69][0] = 0
+s = 70, j = 0, idx = 70, n_seqs = 128, n_seq_tokens = 1
+    seq_id[70][0] = 0
+s = 71, j = 0, idx = 71, n_seqs = 128, n_seq_tokens = 1
+    seq_id[71][0] = 0
+s = 72, j = 0, idx = 72, n_seqs = 128, n_seq_tokens = 1
+    seq_id[72][0] = 0
+s = 73, j = 0, idx = 73, n_seqs = 128, n_seq_tokens = 1
+    seq_id[73][0] = 0
+s = 74, j = 0, idx = 74, n_seqs = 128, n_seq_tokens = 1
+    seq_id[74][0] = 0
+s = 75, j = 0, idx = 75, n_seqs = 128, n_seq_tokens = 1
+    seq_id[75][0] = 0
+s = 76, j = 0, idx = 76, n_seqs = 128, n_seq_tokens = 1
+    seq_id[76][0] = 0
+s = 77, j = 0, idx = 77, n_seqs = 128, n_seq_tokens = 1
+    seq_id[77][0] = 0
+0.00.732.670 I perplexity: 0.43 seconds per pass - ETA s = 78, j = 0, idx = 78, n_seqs = 128, n_seq_tokens = 1
+    seq_id[78][0] = 0
+s = 79, j = 0, idx = 79, n_seqs = 128, n_seq_tokens = 1
+    seq_id[79][0] = 0
+s = 80, j = 0, idx = 80, n_seqs = 128, n_seq_tokens = 1
+    seq_id[80][0] = 0
+s = 81, j = 0, idx = 81, n_seqs = 128, n_seq_tokens = 1
+    seq_id[81][0] = 0
+s = 82, j = 0, idx = 82, n_seqs = 128, n_seq_tokens = 1
+    seq_id[82][0] = 0
+s = 83, j = 0, idx = 83, n_seqs = 128, n_seq_tokens = 1
+    seq_id[83][0] = 0
+s = 84, j = 0, idx = 84, n_seqs = 128, n_seq_tokens = 1
+    seq_id[84][0] = 0
+s = 85, j = 0, idx = 85, n_seqs = 128, n_seq_tokens = 1
+    seq_id[85][0] = 0
+s = 86, j = 0, idx = 86, n_seqs = 128, n_seq_tokens = 1
+    seq_id[86][0] = 0
+s = 87, j = 0, idx = 87, n_seqs = 128, n_seq_tokens = 1
+    seq_id[87][0] = 0
+s = 88, j = 0, idx = 88, n_seqs = 128, n_seq_tokens = 1
+    seq_id[88][0] = 0
+s = 89, j = 0, idx = 89, n_seqs = 128, n_seq_tokens = 1
+    seq_id[89][0] = 0
+s = 90, j = 0, idx = 90, n_seqs = 128, n_seq_tokens = 1
+    seq_id[90][0] = 0
+s = 91, j = 0, idx = 91, n_seqs = 128, n_seq_tokens = 1
+    seq_id[91][0] = 0
+s = 92, j = 0, idx = 92, n_seqs = 128, n_seq_tokens = 1
+    seq_id[92][0] = 0
+s = 93, j = 0, idx = 93, n_seqs = 128, n_seq_tokens = 1
+    seq_id[93][0] = 0
+s = 94, j = 0, idx = 94, n_seqs = 128, n_seq_tokens = 1
+    seq_id[94][0] = 0
+s = 95, j = 0, idx = 95, n_seqs = 128, n_seq_tokens = 1
+    seq_id[95][0] = 0
+s = 96, j = 0, idx = 96, n_seqs = 128, n_seq_tokens = 1
+    seq_id[96][0] = 0
+s = 97, j = 0, idx = 97, n_seqs = 128, n_seq_tokens = 1
+    seq_id[97][0] = 0
+s = 98, j = 0, idx = 98, n_seqs = 128, n_seq_tokens = 1
+    seq_id[98][0] = 0
+s = 99, j = 0, idx = 99, n_seqs = 128, n_seq_tokens = 1
+    seq_id[99][0] = 0
+s = 100, j = 0, idx = 100, n_seqs = 128, n_seq_tokens = 1
+    seq_id[100][0] = 0
+s = 101, j = 0, idx = 101, n_seqs = 128, n_seq_tokens = 1
+    seq_id[101][0] = 0
+s = 102, j = 0, idx = 102, n_seqs = 128, n_seq_tokens = 1
+    seq_id[102][0] = 0
+s = 103, j = 0, idx = 103, n_seqs = 128, n_seq_tokens = 1
+    seq_id[103][0] = 0
+s = 104, j = 0, idx = 104, n_seqs = 128, n_seq_tokens = 1
+    seq_id[104][0] = 0
+s = 105, j = 0, idx = 105, n_seqs = 128, n_seq_tokens = 1
+    seq_id[105][0] = 0
+s = 106, j = 0, idx = 106, n_seqs = 128, n_seq_tokens = 1
+    seq_id[106][0] = 0
+s = 107, j = 0, idx = 107, n_seqs = 128, n_seq_tokens = 1
+    seq_id[107][0] = 0
+s = 108, j = 0, idx = 108, n_seqs = 128, n_seq_tokens = 1
+    seq_id[108][0] = 0
+s = 109, j = 0, idx = 109, n_seqs = 128, n_seq_tokens = 1
+    seq_id[109][0] = 0
+s = 110, j = 0, idx = 110, n_seqs = 128, n_seq_tokens = 1
+    seq_id[110][0] = 0
+s = 111, j = 0, idx = 111, n_seqs = 128, n_seq_tokens = 1
+    seq_id[111][0] = 0
+s = 112, j = 0, idx = 112, n_seqs = 128, n_seq_tokens = 1
+    seq_id[112][0] = 0
+s = 113, j = 0, idx = 113, n_seqs = 128, n_seq_tokens = 1
+    seq_id[113][0] = 0
+s = 114, j = 0, idx = 114, n_seqs = 128, n_seq_tokens = 1
+    seq_id[114][0] = 0
+s = 115, j = 0, idx = 115, n_seqs = 128, n_seq_tokens = 1
+    seq_id[115][0] = 0
+s = 116, j = 0, idx = 116, n_seqs = 128, n_seq_tokens = 1
+    seq_id[116][0] = 0
+s = 117, j = 0, idx = 117, n_seqs = 128, n_seq_tokens = 1
+    seq_id[117][0] = 0
+s = 118, j = 0, idx = 118, n_seqs = 128, n_seq_tokens = 1
+    seq_id[118][0] = 0
+s = 119, j = 0, idx = 119, n_seqs = 128, n_seq_tokens = 1
+    seq_id[119][0] = 0
+s = 120, j = 0, idx = 120, n_seqs = 128, n_seq_tokens = 1
+    seq_id[120][0] = 0
+s = 121, j = 0, idx = 121, n_seqs = 128, n_seq_tokens = 1
+    seq_id[121][0] = 0
+s = 122, j = 0, idx = 122, n_seqs = 128, n_seq_tokens = 1
+    seq_id[122][0] = 0
+s = 123, j = 0, idx = 123, n_seqs = 128, n_seq_tokens = 1
+    seq_id[123][0] = 0
+s = 124, j = 0, idx = 124, n_seqs = 128, n_seq_tokens = 1
+    seq_id[124][0] = 0
+s = 125, j = 0, idx = 125, n_seqs = 128, n_seq_tokens = 1
+    seq_id[125][0] = 0
+s = 126, j = 0, idx = 126, n_seqs = 128, n_seq_tokens = 1
+    seq_id[126][0] = 0
+s = 127, j = 0, idx = 127, n_seqs = 128, n_seq_tokens = 1
+    seq_id[127][0] = 0
+0.00 minutes
+[1]14.1117,
+0.00.735.645 I Final estimate: PPL = 14.1117 +/- 4.42919
+
+0.00.735.690 I llama_perf_context_print:        load time =     296.57 ms
+0.00.735.706 I llama_perf_context_print: prompt eval time =     427.21 ms /   128 tokens (    3.34 ms per token,   299.62 tokens per second)
+0.00.735.708 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.00.735.709 I llama_perf_context_print:       total time =     438.76 ms /   129 tokens
+
+real	0m0.779s
+user	0m2.631s
+sys	0m0.353s
+```
+- q4_1:
+```
++ ./bin/llama-cli -no-cnv --model ../models-mnt/pythia/1.4B/ggml-model-q4_1.gguf -ngl 99 -c 0 -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.295 I build: 5635 (2db43275) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.000.522 I main: llama backend init
+0.00.000.539 I main: load the model and apply lora adapter, if any
+0.00.011.336 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q4_1.gguf (version GGUF V3 (latest))
+0.00.011.366 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.011.375 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.011.376 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.011.376 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.011.377 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.011.377 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.011.382 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.011.383 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.011.383 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.011.384 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.011.384 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.011.385 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.011.385 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.011.390 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.011.391 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.011.391 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.016.239 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.017.339 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.021.904 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.021.924 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.021.924 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.021.925 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.021.925 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.021.926 I llama_model_loader: - kv  22:                          general.file_type u32              = 3
+0.00.021.929 I llama_model_loader: - type  f32:  194 tensors
+0.00.021.929 I llama_model_loader: - type q4_1:   97 tensors
+0.00.021.930 I llama_model_loader: - type q6_K:    1 tensors
+0.00.021.933 I print_info: file format = GGUF V3 (latest)
+0.00.021.933 I print_info: file type   = Q4_1
+0.00.021.936 I print_info: file size   = 864.46 MiB (5.13 BPW) 
+0.00.056.492 I load: special tokens cache size = 25
+0.00.068.541 I load: token to piece cache size = 0.2984 MB
+0.00.068.603 I print_info: arch             = gptneox
+0.00.068.605 I print_info: vocab_only       = 0
+0.00.068.606 I print_info: n_ctx_train      = 2048
+0.00.068.606 I print_info: n_embd           = 2048
+0.00.068.606 I print_info: n_layer          = 24
+0.00.068.621 I print_info: n_head           = 16
+0.00.068.623 I print_info: n_head_kv        = 16
+0.00.068.624 I print_info: n_rot            = 32
+0.00.068.624 I print_info: n_swa            = 0
+0.00.068.625 I print_info: is_swa_any       = 0
+0.00.068.625 I print_info: n_embd_head_k    = 128
+0.00.068.625 I print_info: n_embd_head_v    = 128
+0.00.068.627 I print_info: n_gqa            = 1
+0.00.068.629 I print_info: n_embd_k_gqa     = 2048
+0.00.068.632 I print_info: n_embd_v_gqa     = 2048
+0.00.068.634 I print_info: f_norm_eps       = 1.0e-05
+0.00.068.635 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.068.635 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.068.636 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.068.636 I print_info: f_logit_scale    = 0.0e+00
+0.00.068.637 I print_info: f_attn_scale     = 0.0e+00
+0.00.068.638 I print_info: n_ff             = 8192
+0.00.068.639 I print_info: n_expert         = 0
+0.00.068.639 I print_info: n_expert_used    = 0
+0.00.068.640 I print_info: causal attn      = 1
+0.00.068.641 I print_info: pooling type     = 0
+0.00.068.641 I print_info: rope type        = 2
+0.00.068.642 I print_info: rope scaling     = linear
+0.00.068.643 I print_info: freq_base_train  = 10000.0
+0.00.068.644 I print_info: freq_scale_train = 1
+0.00.068.645 I print_info: n_ctx_orig_yarn  = 2048
+0.00.068.645 I print_info: rope_finetuned   = unknown
+0.00.068.645 I print_info: ssm_d_conv       = 0
+0.00.068.646 I print_info: ssm_d_inner      = 0
+0.00.068.646 I print_info: ssm_d_state      = 0
+0.00.068.647 I print_info: ssm_dt_rank      = 0
+0.00.068.647 I print_info: ssm_dt_b_c_rms   = 0
+0.00.068.648 I print_info: model type       = 1.4B
+0.00.068.649 I print_info: model params     = 1.41 B
+0.00.068.650 I print_info: general.name     = 1.4B
+0.00.068.653 I print_info: vocab type       = BPE
+0.00.068.653 I print_info: n_vocab          = 50304
+0.00.068.654 I print_info: n_merges         = 50009
+0.00.068.654 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.068.655 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.068.656 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.068.656 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.068.657 I print_info: LF token         = 187 'Ċ'
+0.00.068.657 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.068.658 I print_info: max token length = 1024
+0.00.068.660 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.127.850 I load_tensors:          AMX model buffer size =   800.60 MiB
+0.00.127.866 I load_tensors:   CPU_Mapped model buffer size =   773.86 MiB
+..............................................................................
+0.00.250.119 I llama_context: constructing llama_context
+0.00.250.157 I llama_context: n_seq_max     = 1
+0.00.250.158 I llama_context: n_ctx         = 2048
+0.00.250.158 I llama_context: n_ctx_per_seq = 2048
+0.00.250.159 I llama_context: n_batch       = 2048
+0.00.250.159 I llama_context: n_ubatch      = 512
+0.00.250.159 I llama_context: causal_attn   = 1
+0.00.250.160 I llama_context: flash_attn    = 0
+0.00.250.165 I llama_context: freq_base     = 10000.0
+0.00.250.166 I llama_context: freq_scale    = 1
+0.00.250.212 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.00.250.690 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.00.322.550 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.332.230 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.00.332.250 I llama_context: graph nodes  = 1063
+0.00.332.251 I llama_context: graph splits = 1
+0.00.332.271 I common_init_from_params: added <|endoftext|> logit bias = -inf
+0.00.332.683 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.332.695 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.421.063 I main: llama threadpool init, n_threads = 4
+0.00.421.086 I 
+0.00.421.173 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.421.186 I 
+0.00.421.295 I sampler seed: 1234
+0.00.421.316 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 2048
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.00.421.321 I sampler chain: logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+0.00.421.322 I generate: n_ctx = 2048, n_batch = 2048, n_predict = 64, n_keep = 0
+0.00.421.323 I 
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+I believe the meaning of life iss = 0, j = 0, idx = 0, n_seqs = 7, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 7, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 7, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 7, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 7, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 7, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 7, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 7, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 7, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 7, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 7, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 7, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 7, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 7, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thats = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ whichs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ hass = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ not yets = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ beens = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ liveds = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+,s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ands = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thats = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+deaths = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ofs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ as = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ persons = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ iss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ nots = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ends = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ofs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thats = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ whichs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ hass = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ nots = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ yets = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ beens = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ liveds = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+."s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ Bibles = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ saids = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thats = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ Gods = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ hads = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ mades = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ mans = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ tos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ lives = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ins = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ alls = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ hiss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ sinss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+.s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ Tos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+lives = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ins = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ alls = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ hiss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ sinss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ iss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ nots = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ tos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ lives = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ins = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ deaths = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+.s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ To live
+
+0.02.049.177 I llama_perf_sampler_print:    sampling time =       2.81 ms /    71 runs   (    0.04 ms per token, 25311.94 tokens per second)
+0.02.049.183 I llama_perf_context_print:        load time =     419.37 ms
+0.02.049.185 I llama_perf_context_print: prompt eval time =      42.18 ms /     7 tokens (    6.03 ms per token,   165.97 tokens per second)
+0.02.049.186 I llama_perf_context_print:        eval time =    1573.98 ms /    63 runs   (   24.98 ms per token,    40.03 tokens per second)
+0.02.049.187 I llama_perf_context_print:       total time =    1629.21 ms /    70 tokens
+
+real	0m2.097s
+user	0m7.409s
+sys	0m0.574s
++ ./bin/llama-perplexity --model ../models-mnt/pythia/1.4B/ggml-model-q4_1.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -ngl 99 -c 128 -b 128 --chunks 1
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.325 I build: 5635 (2db43275) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.010.416 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q4_1.gguf (version GGUF V3 (latest))
+0.00.010.444 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.010.452 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.010.453 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.010.453 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.010.454 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.010.454 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.010.457 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.010.458 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.010.460 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.010.461 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.010.461 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.010.461 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.010.462 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.010.472 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.010.473 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.010.473 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.015.239 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.016.289 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.020.834 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.020.853 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.020.854 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.020.854 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.020.855 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.020.855 I llama_model_loader: - kv  22:                          general.file_type u32              = 3
+0.00.020.858 I llama_model_loader: - type  f32:  194 tensors
+0.00.020.859 I llama_model_loader: - type q4_1:   97 tensors
+0.00.020.859 I llama_model_loader: - type q6_K:    1 tensors
+0.00.020.862 I print_info: file format = GGUF V3 (latest)
+0.00.020.862 I print_info: file type   = Q4_1
+0.00.020.864 I print_info: file size   = 864.46 MiB (5.13 BPW) 
+0.00.053.287 I load: special tokens cache size = 25
+0.00.065.322 I load: token to piece cache size = 0.2984 MB
+0.00.065.351 I print_info: arch             = gptneox
+0.00.065.352 I print_info: vocab_only       = 0
+0.00.065.352 I print_info: n_ctx_train      = 2048
+0.00.065.352 I print_info: n_embd           = 2048
+0.00.065.353 I print_info: n_layer          = 24
+0.00.065.361 I print_info: n_head           = 16
+0.00.065.362 I print_info: n_head_kv        = 16
+0.00.065.363 I print_info: n_rot            = 32
+0.00.065.363 I print_info: n_swa            = 0
+0.00.065.366 I print_info: is_swa_any       = 0
+0.00.065.366 I print_info: n_embd_head_k    = 128
+0.00.065.366 I print_info: n_embd_head_v    = 128
+0.00.065.368 I print_info: n_gqa            = 1
+0.00.065.370 I print_info: n_embd_k_gqa     = 2048
+0.00.065.371 I print_info: n_embd_v_gqa     = 2048
+0.00.065.372 I print_info: f_norm_eps       = 1.0e-05
+0.00.065.373 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.065.373 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.065.373 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.065.373 I print_info: f_logit_scale    = 0.0e+00
+0.00.065.374 I print_info: f_attn_scale     = 0.0e+00
+0.00.065.374 I print_info: n_ff             = 8192
+0.00.065.374 I print_info: n_expert         = 0
+0.00.065.375 I print_info: n_expert_used    = 0
+0.00.065.375 I print_info: causal attn      = 1
+0.00.065.375 I print_info: pooling type     = 0
+0.00.065.376 I print_info: rope type        = 2
+0.00.065.376 I print_info: rope scaling     = linear
+0.00.065.377 I print_info: freq_base_train  = 10000.0
+0.00.065.377 I print_info: freq_scale_train = 1
+0.00.065.378 I print_info: n_ctx_orig_yarn  = 2048
+0.00.065.378 I print_info: rope_finetuned   = unknown
+0.00.065.379 I print_info: ssm_d_conv       = 0
+0.00.065.380 I print_info: ssm_d_inner      = 0
+0.00.065.380 I print_info: ssm_d_state      = 0
+0.00.065.380 I print_info: ssm_dt_rank      = 0
+0.00.065.381 I print_info: ssm_dt_b_c_rms   = 0
+0.00.065.382 I print_info: model type       = 1.4B
+0.00.065.383 I print_info: model params     = 1.41 B
+0.00.065.383 I print_info: general.name     = 1.4B
+0.00.065.386 I print_info: vocab type       = BPE
+0.00.065.387 I print_info: n_vocab          = 50304
+0.00.065.387 I print_info: n_merges         = 50009
+0.00.065.388 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.065.388 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.065.389 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.065.389 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.065.389 I print_info: LF token         = 187 'Ċ'
+0.00.065.390 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.065.390 I print_info: max token length = 1024
+0.00.065.391 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.124.692 I load_tensors:          AMX model buffer size =   800.60 MiB
+0.00.124.711 I load_tensors:   CPU_Mapped model buffer size =   773.86 MiB
+..............................................................................
+0.00.247.365 I llama_context: constructing llama_context
+0.00.247.379 I llama_context: n_seq_max     = 1
+0.00.247.380 I llama_context: n_ctx         = 128
+0.00.247.380 I llama_context: n_ctx_per_seq = 128
+0.00.247.380 I llama_context: n_batch       = 128
+0.00.247.381 I llama_context: n_ubatch      = 128
+0.00.247.381 I llama_context: causal_attn   = 1
+0.00.247.382 I llama_context: flash_attn    = 0
+0.00.247.386 I llama_context: freq_base     = 10000.0
+0.00.247.387 I llama_context: freq_scale    = 1
+0.00.247.388 W llama_context: n_ctx_per_seq (128) < n_ctx_train (2048) -- the full capacity of the model will not be utilized
+0.00.247.435 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.00.247.840 I llama_kv_cache_unified:        CPU KV buffer size =    24.00 MiB
+0.00.252.149 I llama_kv_cache_unified: size =   24.00 MiB (   128 cells,  24 layers,  1 seqs), K (f16):   12.00 MiB, V (f16):   12.00 MiB
+0.00.261.336 I llama_context:        CPU compute buffer size =    25.56 MiB
+0.00.261.353 I llama_context: graph nodes  = 1063
+0.00.261.353 I llama_context: graph splits = 1
+0.00.261.361 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 128
+0.00.261.361 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.305.867 I 
+0.00.305.967 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.305.993 I perplexity: tokenizing the input ..
+0.00.312.512 I perplexity: tokenization took 6.514 ms
+0.00.312.544 I perplexity: calculating perplexity over 1 chunks, n_ctx=128, batch_size=128, n_seq=1
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 128, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 128, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 128, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 128, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 128, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 128, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 128, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 7, j = 0, idx = 7, n_seqs = 128, n_seq_tokens = 1
+    seq_id[7][0] = 0
+s = 8, j = 0, idx = 8, n_seqs = 128, n_seq_tokens = 1
+    seq_id[8][0] = 0
+s = 9, j = 0, idx = 9, n_seqs = 128, n_seq_tokens = 1
+    seq_id[9][0] = 0
+s = 10, j = 0, idx = 10, n_seqs = 128, n_seq_tokens = 1
+    seq_id[10][0] = 0
+s = 11, j = 0, idx = 11, n_seqs = 128, n_seq_tokens = 1
+    seq_id[11][0] = 0
+s = 12, j = 0, idx = 12, n_seqs = 128, n_seq_tokens = 1
+    seq_id[12][0] = 0
+s = 13, j = 0, idx = 13, n_seqs = 128, n_seq_tokens = 1
+    seq_id[13][0] = 0
+s = 14, j = 0, idx = 14, n_seqs = 128, n_seq_tokens = 1
+    seq_id[14][0] = 0
+s = 15, j = 0, idx = 15, n_seqs = 128, n_seq_tokens = 1
+    seq_id[15][0] = 0
+s = 16, j = 0, idx = 16, n_seqs = 128, n_seq_tokens = 1
+    seq_id[16][0] = 0
+s = 17, j = 0, idx = 17, n_seqs = 128, n_seq_tokens = 1
+    seq_id[17][0] = 0
+s = 18, j = 0, idx = 18, n_seqs = 128, n_seq_tokens = 1
+    seq_id[18][0] = 0
+s = 19, j = 0, idx = 19, n_seqs = 128, n_seq_tokens = 1
+    seq_id[19][0] = 0
+s = 20, j = 0, idx = 20, n_seqs = 128, n_seq_tokens = 1
+    seq_id[20][0] = 0
+s = 21, j = 0, idx = 21, n_seqs = 128, n_seq_tokens = 1
+    seq_id[21][0] = 0
+s = 22, j = 0, idx = 22, n_seqs = 128, n_seq_tokens = 1
+    seq_id[22][0] = 0
+s = 23, j = 0, idx = 23, n_seqs = 128, n_seq_tokens = 1
+    seq_id[23][0] = 0
+s = 24, j = 0, idx = 24, n_seqs = 128, n_seq_tokens = 1
+    seq_id[24][0] = 0
+s = 25, j = 0, idx = 25, n_seqs = 128, n_seq_tokens = 1
+    seq_id[25][0] = 0
+s = 26, j = 0, idx = 26, n_seqs = 128, n_seq_tokens = 1
+    seq_id[26][0] = 0
+s = 27, j = 0, idx = 27, n_seqs = 128, n_seq_tokens = 1
+    seq_id[27][0] = 0
+s = 28, j = 0, idx = 28, n_seqs = 128, n_seq_tokens = 1
+    seq_id[28][0] = 0
+s = 29, j = 0, idx = 29, n_seqs = 128, n_seq_tokens = 1
+    seq_id[29][0] = 0
+s = 30, j = 0, idx = 30, n_seqs = 128, n_seq_tokens = 1
+    seq_id[30][0] = 0
+s = 31, j = 0, idx = 31, n_seqs = 128, n_seq_tokens = 1
+    seq_id[31][0] = 0
+s = 32, j = 0, idx = 32, n_seqs = 128, n_seq_tokens = 1
+    seq_id[32][0] = 0
+s = 33, j = 0, idx = 33, n_seqs = 128, n_seq_tokens = 1
+    seq_id[33][0] = 0
+s = 34, j = 0, idx = 34, n_seqs = 128, n_seq_tokens = 1
+    seq_id[34][0] = 0
+s = 35, j = 0, idx = 35, n_seqs = 128, n_seq_tokens = 1
+    seq_id[35][0] = 0
+s = 36, j = 0, idx = 36, n_seqs = 128, n_seq_tokens = 1
+    seq_id[36][0] = 0
+s = 37, j = 0, idx = 37, n_seqs = 128, n_seq_tokens = 1
+    seq_id[37][0] = 0
+s = 38, j = 0, idx = 38, n_seqs = 128, n_seq_tokens = 1
+    seq_id[38][0] = 0
+s = 39, j = 0, idx = 39, n_seqs = 128, n_seq_tokens = 1
+    seq_id[39][0] = 0
+s = 40, j = 0, idx = 40, n_seqs = 128, n_seq_tokens = 1
+    seq_id[40][0] = 0
+s = 41, j = 0, idx = 41, n_seqs = 128, n_seq_tokens = 1
+    seq_id[41][0] = 0
+s = 42, j = 0, idx = 42, n_seqs = 128, n_seq_tokens = 1
+    seq_id[42][0] = 0
+s = 43, j = 0, idx = 43, n_seqs = 128, n_seq_tokens = 1
+    seq_id[43][0] = 0
+s = 44, j = 0, idx = 44, n_seqs = 128, n_seq_tokens = 1
+    seq_id[44][0] = 0
+s = 45, j = 0, idx = 45, n_seqs = 128, n_seq_tokens = 1
+    seq_id[45][0] = 0
+s = 46, j = 0, idx = 46, n_seqs = 128, n_seq_tokens = 1
+    seq_id[46][0] = 0
+s = 47, j = 0, idx = 47, n_seqs = 128, n_seq_tokens = 1
+    seq_id[47][0] = 0
+s = 48, j = 0, idx = 48, n_seqs = 128, n_seq_tokens = 1
+    seq_id[48][0] = 0
+s = 49, j = 0, idx = 49, n_seqs = 128, n_seq_tokens = 1
+    seq_id[49][0] = 0
+s = 50, j = 0, idx = 50, n_seqs = 128, n_seq_tokens = 1
+    seq_id[50][0] = 0
+s = 51, j = 0, idx = 51, n_seqs = 128, n_seq_tokens = 1
+    seq_id[51][0] = 0
+s = 52, j = 0, idx = 52, n_seqs = 128, n_seq_tokens = 1
+    seq_id[52][0] = 0
+s = 53, j = 0, idx = 53, n_seqs = 128, n_seq_tokens = 1
+    seq_id[53][0] = 0
+s = 54, j = 0, idx = 54, n_seqs = 128, n_seq_tokens = 1
+    seq_id[54][0] = 0
+s = 55, j = 0, idx = 55, n_seqs = 128, n_seq_tokens = 1
+    seq_id[55][0] = 0
+s = 56, j = 0, idx = 56, n_seqs = 128, n_seq_tokens = 1
+    seq_id[56][0] = 0
+s = 57, j = 0, idx = 57, n_seqs = 128, n_seq_tokens = 1
+    seq_id[57][0] = 0
+s = 58, j = 0, idx = 58, n_seqs = 128, n_seq_tokens = 1
+    seq_id[58][0] = 0
+s = 59, j = 0, idx = 59, n_seqs = 128, n_seq_tokens = 1
+    seq_id[59][0] = 0
+s = 60, j = 0, idx = 60, n_seqs = 128, n_seq_tokens = 1
+    seq_id[60][0] = 0
+s = 61, j = 0, idx = 61, n_seqs = 128, n_seq_tokens = 1
+    seq_id[61][0] = 0
+s = 62, j = 0, idx = 62, n_seqs = 128, n_seq_tokens = 1
+    seq_id[62][0] = 0
+s = 63, j = 0, idx = 63, n_seqs = 128, n_seq_tokens = 1
+    seq_id[63][0] = 0
+s = 64, j = 0, idx = 64, n_seqs = 128, n_seq_tokens = 1
+    seq_id[64][0] = 0
+s = 65, j = 0, idx = 65, n_seqs = 128, n_seq_tokens = 1
+    seq_id[65][0] = 0
+s = 66, j = 0, idx = 66, n_seqs = 128, n_seq_tokens = 1
+    seq_id[66][0] = 0
+s = 67, j = 0, idx = 67, n_seqs = 128, n_seq_tokens = 1
+    seq_id[67][0] = 0
+s = 68, j = 0, idx = 68, n_seqs = 128, n_seq_tokens = 1
+    seq_id[68][0] = 0
+s = 69, j = 0, idx = 69, n_seqs = 128, n_seq_tokens = 1
+    seq_id[69][0] = 0
+s = 70, j = 0, idx = 70, n_seqs = 128, n_seq_tokens = 1
+    seq_id[70][0] = 0
+s = 71, j = 0, idx = 71, n_seqs = 128, n_seq_tokens = 1
+    seq_id[71][0] = 0
+s = 72, j = 0, idx = 72, n_seqs = 128, n_seq_tokens = 1
+    seq_id[72][0] = 0
+s = 73, j = 0, idx = 73, n_seqs = 128, n_seq_tokens = 1
+    seq_id[73][0] = 0
+s = 74, j = 0, idx = 74, n_seqs = 128, n_seq_tokens = 1
+    seq_id[74][0] = 0
+s = 75, j = 0, idx = 75, n_seqs = 128, n_seq_tokens = 1
+    seq_id[75][0] = 0
+s = 76, j = 0, idx = 76, n_seqs = 128, n_seq_tokens = 1
+    seq_id[76][0] = 0
+s = 77, j = 0, idx = 77, n_seqs = 128, n_seq_tokens = 1
+    seq_id[77][0] = 0
+s = 78, j = 0, idx = 78, n_seqs = 128, n_seq_tokens = 1
+    seq_id[78][0] = 0
+s = 79, j = 0, idx = 79, n_seqs = 128, n_seq_tokens = 1
+    seq_id[79][0] = 0
+s = 80, j = 0, idx = 80, n_seqs = 128, n_seq_tokens = 1
+    seq_id[80][0] = 0
+s = 81, j = 0, idx = 81, n_seqs = 128, n_seq_tokens = 1
+    seq_id[81][0] = 0
+s = 82, j = 0, idx = 82, n_seqs = 128, n_seq_tokens = 1
+    seq_id[82][0] = 0
+s = 83, j = 0, idx = 83, n_seqs = 128, n_seq_tokens = 1
+    seq_id[83][0] = 0
+s = 84, j = 0, idx = 84, n_seqs = 128, n_seq_tokens = 1
+    seq_id[84][0] = 0
+s = 85, j = 0, idx = 85, n_seqs = 128, n_seq_tokens = 1
+    seq_id[85][0] = 0
+s = 86, j = 0, idx = 86, n_seqs = 128, n_seq_tokens = 1
+    seq_id[86][0] = 0
+s = 87, j = 0, idx = 87, n_seqs = 128, n_seq_tokens = 1
+    seq_id[87][0] = 0
+s = 88, j = 0, idx = 88, n_seqs = 128, n_seq_tokens = 1
+    seq_id[88][0] = 0
+s = 89, j = 0, idx = 89, n_seqs = 128, n_seq_tokens = 1
+    seq_id[89][0] = 0
+s = 90, j = 0, idx = 90, n_seqs = 128, n_seq_tokens = 1
+    seq_id[90][0] = 0
+s = 91, j = 0, idx = 91, n_seqs = 128, n_seq_tokens = 1
+    seq_id[91][0] = 0
+s = 92, j = 0, idx = 92, n_seqs = 128, n_seq_tokens = 1
+    seq_id[92][0] = 0
+s = 93, j = 0, idx = 93, n_seqs = 128, n_seq_tokens = 1
+    seq_id[93][0] = 0
+s = 94, j = 0, idx = 94, n_seqs = 128, n_seq_tokens = 1
+    seq_id[94][0] = 0
+s = 95, j = 0, idx = 95, n_seqs = 128, n_seq_tokens = 1
+    seq_id[95][0] = 0
+s = 96, j = 0, idx = 96, n_seqs = 128, n_seq_tokens = 1
+    seq_id[96][0] = 0
+s = 97, j = 0, idx = 97, n_seqs = 128, n_seq_tokens = 1
+    seq_id[97][0] = 0
+s = 98, j = 0, idx = 98, n_seqs = 128, n_seq_tokens = 1
+    seq_id[98][0] = 0
+s = 99, j = 0, idx = 99, n_seqs = 128, n_seq_tokens = 1
+    seq_id[99][0] = 0
+s = 100, j = 0, idx = 100, n_seqs = 128, n_seq_tokens = 1
+    seq_id[100][0] = 0
+s = 101, j = 0, idx = 101, n_seqs = 128, n_seq_tokens = 1
+    seq_id[101][0] = 0
+s = 102, j = 0, idx = 102, n_seqs = 128, n_seq_tokens = 1
+    seq_id[102][0] = 0
+s = 103, j = 0, idx = 103, n_seqs = 128, n_seq_tokens = 1
+    seq_id[103][0] = 0
+s = 104, j = 0, idx = 104, n_seqs = 128, n_seq_tokens = 1
+    seq_id[104][0] = 0
+s = 105, j = 0, idx = 105, n_seqs = 128, n_seq_tokens = 1
+    seq_id[105][0] = 0
+s = 106, j = 0, idx = 106, n_seqs = 128, n_seq_tokens = 1
+    seq_id[106][0] = 0
+s = 107, j = 0, idx = 107, n_seqs = 128, n_seq_tokens = 1
+    seq_id[107][0] = 0
+s = 108, j = 0, idx = 108, n_seqs = 128, n_seq_tokens = 1
+    seq_id[108][0] = 0
+s = 109, j = 0, idx = 109, n_seqs = 128, n_seq_tokens = 1
+    seq_id[109][0] = 0
+s = 110, j = 0, idx = 110, n_seqs = 128, n_seq_tokens = 1
+    seq_id[110][0] = 0
+s = 111, j = 0, idx = 111, n_seqs = 128, n_seq_tokens = 1
+    seq_id[111][0] = 0
+s = 112, j = 0, idx = 112, n_seqs = 128, n_seq_tokens = 1
+    seq_id[112][0] = 0
+s = 113, j = 0, idx = 113, n_seqs = 128, n_seq_tokens = 1
+    seq_id[113][0] = 0
+s = 114, j = 0, idx = 114, n_seqs = 128, n_seq_tokens = 1
+    seq_id[114][0] = 0
+s = 115, j = 0, idx = 115, n_seqs = 128, n_seq_tokens = 1
+    seq_id[115][0] = 0
+s = 116, j = 0, idx = 116, n_seqs = 128, n_seq_tokens = 1
+    seq_id[116][0] = 0
+s = 117, j = 0, idx = 117, n_seqs = 128, n_seq_tokens = 1
+    seq_id[117][0] = 0
+s = 118, j = 0, idx = 118, n_seqs = 128, n_seq_tokens = 1
+    seq_id[118][0] = 0
+s = 119, j = 0, idx = 119, n_seqs = 128, n_seq_tokens = 1
+    seq_id[119][0] = 0
+s = 120, j = 0, idx = 120, n_seqs = 128, n_seq_tokens = 1
+    seq_id[120][0] = 0
+s = 121, j = 0, idx = 121, n_seqs = 128, n_seq_tokens = 1
+    seq_id[121][0] = 0
+s = 122, j = 0, idx = 122, n_seqs = 128, n_seq_tokens = 1
+    seq_id[122][0] = 0
+s = 123, j = 0, idx = 123, n_seqs = 128, n_seq_tokens = 1
+    seq_id[123][0] = 0
+s = 124, j = 0, idx = 124, n_seqs = 128, n_seq_tokens = 1
+    seq_id[124][0] = 0
+s = 125, j = 0, idx = 125, n_seqs = 128, n_seq_tokens = 1
+    seq_id[125][0] = 0
+s = 126, j = 0, idx = 126, n_seqs = 128, n_seq_tokens = 1
+    seq_id[126][0] = 0
+s = 127, j = 0, idx = 127, n_seqs = 128, n_seq_tokens = 1
+    seq_id[127][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 128, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 128, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 128, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 128, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 128, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 128, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 128, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 7, j = 0, idx = 7, n_seqs = 128, n_seq_tokens = 1
+    seq_id[7][0] = 0
+s = 8, j = 0, idx = 8, n_seqs = 128, n_seq_tokens = 1
+    seq_id[8][0] = 0
+s = 9, j = 0, idx = 9, n_seqs = 128, n_seq_tokens = 1
+    seq_id[9][0] = 0
+s = 10, j = 0, idx = 10, n_seqs = 128, n_seq_tokens = 1
+    seq_id[10][0] = 0
+s = 11, j = 0, idx = 11, n_seqs = 128, n_seq_tokens = 1
+    seq_id[11][0] = 0
+s = 12, j = 0, idx = 12, n_seqs = 128, n_seq_tokens = 1
+    seq_id[12][0] = 0
+s = 13, j = 0, idx = 13, n_seqs = 128, n_seq_tokens = 1
+    seq_id[13][0] = 0
+s = 14, j = 0, idx = 14, n_seqs = 128, n_seq_tokens = 1
+    seq_id[14][0] = 0
+s = 15, j = 0, idx = 15, n_seqs = 128, n_seq_tokens = 1
+    seq_id[15][0] = 0
+s = 16, j = 0, idx = 16, n_seqs = 128, n_seq_tokens = 1
+    seq_id[16][0] = 0
+s = 17, j = 0, idx = 17, n_seqs = 128, n_seq_tokens = 1
+    seq_id[17][0] = 0
+s = 18, j = 0, idx = 18, n_seqs = 128, n_seq_tokens = 1
+    seq_id[18][0] = 0
+s = 19, j = 0, idx = 19, n_seqs = 128, n_seq_tokens = 1
+    seq_id[19][0] = 0
+s = 20, j = 0, idx = 20, n_seqs = 128, n_seq_tokens = 1
+    seq_id[20][0] = 0
+s = 21, j = 0, idx = 21, n_seqs = 128, n_seq_tokens = 1
+    seq_id[21][0] = 0
+s = 22, j = 0, idx = 22, n_seqs = 128, n_seq_tokens = 1
+    seq_id[22][0] = 0
+s = 23, j = 0, idx = 23, n_seqs = 128, n_seq_tokens = 1
+    seq_id[23][0] = 0
+s = 24, j = 0, idx = 24, n_seqs = 128, n_seq_tokens = 1
+    seq_id[24][0] = 0
+s = 25, j = 0, idx = 25, n_seqs = 128, n_seq_tokens = 1
+    seq_id[25][0] = 0
+s = 26, j = 0, idx = 26, n_seqs = 128, n_seq_tokens = 1
+    seq_id[26][0] = 0
+s = 27, j = 0, idx = 27, n_seqs = 128, n_seq_tokens = 1
+    seq_id[27][0] = 0
+s = 28, j = 0, idx = 28, n_seqs = 128, n_seq_tokens = 1
+    seq_id[28][0] = 0
+s = 29, j = 0, idx = 29, n_seqs = 128, n_seq_tokens = 1
+    seq_id[29][0] = 0
+s = 30, j = 0, idx = 30, n_seqs = 128, n_seq_tokens = 1
+    seq_id[30][0] = 0
+s = 31, j = 0, idx = 31, n_seqs = 128, n_seq_tokens = 1
+    seq_id[31][0] = 0
+s = 32, j = 0, idx = 32, n_seqs = 128, n_seq_tokens = 1
+    seq_id[32][0] = 0
+s = 33, j = 0, idx = 33, n_seqs = 128, n_seq_tokens = 1
+    seq_id[33][0] = 0
+s = 34, j = 0, idx = 34, n_seqs = 128, n_seq_tokens = 1
+    seq_id[34][0] = 0
+s = 35, j = 0, idx = 35, n_seqs = 128, n_seq_tokens = 1
+    seq_id[35][0] = 0
+s = 36, j = 0, idx = 36, n_seqs = 128, n_seq_tokens = 1
+    seq_id[36][0] = 0
+s = 37, j = 0, idx = 37, n_seqs = 128, n_seq_tokens = 1
+    seq_id[37][0] = 0
+s = 38, j = 0, idx = 38, n_seqs = 128, n_seq_tokens = 1
+    seq_id[38][0] = 0
+s = 39, j = 0, idx = 39, n_seqs = 128, n_seq_tokens = 1
+    seq_id[39][0] = 0
+s = 40, j = 0, idx = 40, n_seqs = 128, n_seq_tokens = 1
+    seq_id[40][0] = 0
+s = 41, j = 0, idx = 41, n_seqs = 128, n_seq_tokens = 1
+    seq_id[41][0] = 0
+s = 42, j = 0, idx = 42, n_seqs = 128, n_seq_tokens = 1
+    seq_id[42][0] = 0
+s = 43, j = 0, idx = 43, n_seqs = 128, n_seq_tokens = 1
+    seq_id[43][0] = 0
+s = 44, j = 0, idx = 44, n_seqs = 128, n_seq_tokens = 1
+    seq_id[44][0] = 0
+s = 45, j = 0, idx = 45, n_seqs = 128, n_seq_tokens = 1
+    seq_id[45][0] = 0
+s = 46, j = 0, idx = 46, n_seqs = 128, n_seq_tokens = 1
+    seq_id[46][0] = 0
+s = 47, j = 0, idx = 47, n_seqs = 128, n_seq_tokens = 1
+    seq_id[47][0] = 0
+s = 48, j = 0, idx = 48, n_seqs = 128, n_seq_tokens = 1
+    seq_id[48][0] = 0
+s = 49, j = 0, idx = 49, n_seqs = 128, n_seq_tokens = 1
+    seq_id[49][0] = 0
+s = 50, j = 0, idx = 50, n_seqs = 128, n_seq_tokens = 1
+    seq_id[50][0] = 0
+s = 51, j = 0, idx = 51, n_seqs = 128, n_seq_tokens = 1
+    seq_id[51][0] = 0
+s = 52, j = 0, idx = 52, n_seqs = 128, n_seq_tokens = 1
+    seq_id[52][0] = 0
+s = 53, j = 0, idx = 53, n_seqs = 128, n_seq_tokens = 1
+    seq_id[53][0] = 0
+s = 54, j = 0, idx = 54, n_seqs = 128, n_seq_tokens = 1
+    seq_id[54][0] = 0
+s = 55, j = 0, idx = 55, n_seqs = 128, n_seq_tokens = 1
+    seq_id[55][0] = 0
+s = 56, j = 0, idx = 56, n_seqs = 128, n_seq_tokens = 1
+    seq_id[56][0] = 0
+s = 57, j = 0, idx = 57, n_seqs = 128, n_seq_tokens = 1
+    seq_id[57][0] = 0
+s = 58, j = 0, idx = 58, n_seqs = 128, n_seq_tokens = 1
+    seq_id[58][0] = 0
+s = 59, j = 0, idx = 59, n_seqs = 128, n_seq_tokens = 1
+    seq_id[59][0] = 0
+s = 60, j = 0, idx = 60, n_seqs = 128, n_seq_tokens = 1
+    seq_id[60][0] = 0
+s = 61, j = 0, idx = 61, n_seqs = 128, n_seq_tokens = 1
+    seq_id[61][0] = 0
+s = 62, j = 0, idx = 62, n_seqs = 128, n_seq_tokens = 1
+    seq_id[62][0] = 0
+s = 63, j = 0, idx = 63, n_seqs = 128, n_seq_tokens = 1
+    seq_id[63][0] = 0
+s = 64, j = 0, idx = 64, n_seqs = 128, n_seq_tokens = 1
+    seq_id[64][0] = 0
+s = 65, j = 0, idx = 65, n_seqs = 128, n_seq_tokens = 1
+    seq_id[65][0] = 0
+s = 66, j = 0, idx = 66, n_seqs = 128, n_seq_tokens = 1
+    seq_id[66][0] = 0
+s = 67, j = 0, idx = 67, n_seqs = 128, n_seq_tokens = 1
+    seq_id[67][0] = 0
+s = 68, j = 0, idx = 68, n_seqs = 128, n_seq_tokens = 1
+    seq_id[68][0] = 0
+s = 69, j = 0, idx = 69, n_seqs = 128, n_seq_tokens = 1
+    seq_id[69][0] = 0
+s = 70, j = 0, idx = 70, n_seqs = 128, n_seq_tokens = 1
+    seq_id[70][0] = 0
+s = 71, j = 0, idx = 71, n_seqs = 128, n_seq_tokens = 1
+    seq_id[71][0] = 0
+s = 72, j = 0, idx = 72, n_seqs = 128, n_seq_tokens = 1
+    seq_id[72][0] = 0
+s = 73, j = 0, idx = 73, n_seqs = 128, n_seq_tokens = 1
+    seq_id[73][0] = 0
+s = 74, j = 0, idx = 74, n_seqs = 128, n_seq_tokens = 1
+    seq_id[74][0] = 0
+s = 75, j = 0, idx = 75, n_seqs = 128, n_seq_tokens = 1
+    seq_id[75][0] = 0
+s = 76, j = 0, idx = 76, n_seqs = 128, n_seq_tokens = 1
+    seq_id[76][0] = 0
+s = 77, j = 0, idx = 77, n_seqs = 128, n_seq_tokens = 1
+    seq_id[77][0] = 0
+0.00.760.969 I perplexity: 0.45 seconds per pass - ETA s = 78, j = 0, idx = 78, n_seqs = 128, n_seq_tokens = 1
+    seq_id[78][0] = 0
+s = 79, j = 0, idx = 79, n_seqs = 128, n_seq_tokens = 1
+    seq_id[79][0] = 0
+s = 80, j = 0, idx = 80, n_seqs = 128, n_seq_tokens = 1
+    seq_id[80][0] = 0
+s = 81, j = 0, idx = 81, n_seqs = 128, n_seq_tokens = 1
+    seq_id[81][0] = 0
+s = 82, j = 0, idx = 82, n_seqs = 128, n_seq_tokens = 1
+    seq_id[82][0] = 0
+s = 83, j = 0, idx = 83, n_seqs = 128, n_seq_tokens = 1
+    seq_id[83][0] = 0
+s = 84, j = 0, idx = 84, n_seqs = 128, n_seq_tokens = 1
+    seq_id[84][0] = 0
+s = 85, j = 0, idx = 85, n_seqs = 128, n_seq_tokens = 1
+    seq_id[85][0] = 0
+s = 86, j = 0, idx = 86, n_seqs = 128, n_seq_tokens = 1
+    seq_id[86][0] = 0
+s = 87, j = 0, idx = 87, n_seqs = 128, n_seq_tokens = 1
+    seq_id[87][0] = 0
+s = 88, j = 0, idx = 88, n_seqs = 128, n_seq_tokens = 1
+    seq_id[88][0] = 0
+s = 89, j = 0, idx = 89, n_seqs = 128, n_seq_tokens = 1
+    seq_id[89][0] = 0
+s = 90, j = 0, idx = 90, n_seqs = 128, n_seq_tokens = 1
+    seq_id[90][0] = 0
+s = 91, j = 0, idx = 91, n_seqs = 128, n_seq_tokens = 1
+    seq_id[91][0] = 0
+s = 92, j = 0, idx = 92, n_seqs = 128, n_seq_tokens = 1
+    seq_id[92][0] = 0
+s = 93, j = 0, idx = 93, n_seqs = 128, n_seq_tokens = 1
+    seq_id[93][0] = 0
+s = 94, j = 0, idx = 94, n_seqs = 128, n_seq_tokens = 1
+    seq_id[94][0] = 0
+s = 95, j = 0, idx = 95, n_seqs = 128, n_seq_tokens = 1
+    seq_id[95][0] = 0
+s = 96, j = 0, idx = 96, n_seqs = 128, n_seq_tokens = 1
+    seq_id[96][0] = 0
+s = 97, j = 0, idx = 97, n_seqs = 128, n_seq_tokens = 1
+    seq_id[97][0] = 0
+s = 98, j = 0, idx = 98, n_seqs = 128, n_seq_tokens = 1
+    seq_id[98][0] = 0
+s = 99, j = 0, idx = 99, n_seqs = 128, n_seq_tokens = 1
+    seq_id[99][0] = 0
+s = 100, j = 0, idx = 100, n_seqs = 128, n_seq_tokens = 1
+    seq_id[100][0] = 0
+s = 101, j = 0, idx = 101, n_seqs = 128, n_seq_tokens = 1
+    seq_id[101][0] = 0
+s = 102, j = 0, idx = 102, n_seqs = 128, n_seq_tokens = 1
+    seq_id[102][0] = 0
+s = 103, j = 0, idx = 103, n_seqs = 128, n_seq_tokens = 1
+    seq_id[103][0] = 0
+s = 104, j = 0, idx = 104, n_seqs = 128, n_seq_tokens = 1
+    seq_id[104][0] = 0
+s = 105, j = 0, idx = 105, n_seqs = 128, n_seq_tokens = 1
+    seq_id[105][0] = 0
+s = 106, j = 0, idx = 106, n_seqs = 128, n_seq_tokens = 1
+    seq_id[106][0] = 0
+s = 107, j = 0, idx = 107, n_seqs = 128, n_seq_tokens = 1
+    seq_id[107][0] = 0
+s = 108, j = 0, idx = 108, n_seqs = 128, n_seq_tokens = 1
+    seq_id[108][0] = 0
+s = 109, j = 0, idx = 109, n_seqs = 128, n_seq_tokens = 1
+    seq_id[109][0] = 0
+s = 110, j = 0, idx = 110, n_seqs = 128, n_seq_tokens = 1
+    seq_id[110][0] = 0
+s = 111, j = 0, idx = 111, n_seqs = 128, n_seq_tokens = 1
+    seq_id[111][0] = 0
+s = 112, j = 0, idx = 112, n_seqs = 128, n_seq_tokens = 1
+    seq_id[112][0] = 0
+s = 113, j = 0, idx = 113, n_seqs = 128, n_seq_tokens = 1
+    seq_id[113][0] = 0
+s = 114, j = 0, idx = 114, n_seqs = 128, n_seq_tokens = 1
+    seq_id[114][0] = 0
+s = 115, j = 0, idx = 115, n_seqs = 128, n_seq_tokens = 1
+    seq_id[115][0] = 0
+s = 116, j = 0, idx = 116, n_seqs = 128, n_seq_tokens = 1
+    seq_id[116][0] = 0
+s = 117, j = 0, idx = 117, n_seqs = 128, n_seq_tokens = 1
+    seq_id[117][0] = 0
+s = 118, j = 0, idx = 118, n_seqs = 128, n_seq_tokens = 1
+    seq_id[118][0] = 0
+s = 119, j = 0, idx = 119, n_seqs = 128, n_seq_tokens = 1
+    seq_id[119][0] = 0
+s = 120, j = 0, idx = 120, n_seqs = 128, n_seq_tokens = 1
+    seq_id[120][0] = 0
+s = 121, j = 0, idx = 121, n_seqs = 128, n_seq_tokens = 1
+    seq_id[121][0] = 0
+s = 122, j = 0, idx = 122, n_seqs = 128, n_seq_tokens = 1
+    seq_id[122][0] = 0
+s = 123, j = 0, idx = 123, n_seqs = 128, n_seq_tokens = 1
+    seq_id[123][0] = 0
+s = 124, j = 0, idx = 124, n_seqs = 128, n_seq_tokens = 1
+    seq_id[124][0] = 0
+s = 125, j = 0, idx = 125, n_seqs = 128, n_seq_tokens = 1
+    seq_id[125][0] = 0
+s = 126, j = 0, idx = 126, n_seqs = 128, n_seq_tokens = 1
+    seq_id[126][0] = 0
+s = 127, j = 0, idx = 127, n_seqs = 128, n_seq_tokens = 1
+    seq_id[127][0] = 0
+0.00 minutes
+[1]12.6944,
+0.00.763.790 I Final estimate: PPL = 12.6944 +/- 3.90928
+
+0.00.763.836 I llama_perf_context_print:        load time =     305.46 ms
+0.00.763.854 I llama_perf_context_print: prompt eval time =     446.48 ms /   128 tokens (    3.49 ms per token,   286.69 tokens per second)
+0.00.763.856 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.00.763.857 I llama_perf_context_print:       total time =     458.00 ms /   129 tokens
+
+real	0m0.810s
+user	0m2.657s
+sys	0m0.466s
+```
+- q5_0:
+```
++ ./bin/llama-cli -no-cnv --model ../models-mnt/pythia/1.4B/ggml-model-q5_0.gguf -ngl 99 -c 0 -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.255 I build: 5635 (2db43275) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.000.450 I main: llama backend init
+0.00.000.467 I main: load the model and apply lora adapter, if any
+0.00.010.630 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q5_0.gguf (version GGUF V3 (latest))
+0.00.010.657 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.010.666 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.010.668 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.010.668 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.010.669 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.010.669 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.010.673 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.010.673 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.010.674 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.010.675 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.010.675 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.010.675 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.010.676 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.010.686 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.010.686 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.010.687 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.015.427 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.016.536 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.021.047 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.021.066 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.021.066 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.021.067 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.021.067 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.021.068 I llama_model_loader: - kv  22:                          general.file_type u32              = 8
+0.00.021.071 I llama_model_loader: - type  f32:  194 tensors
+0.00.021.071 I llama_model_loader: - type q5_0:   97 tensors
+0.00.021.071 I llama_model_loader: - type q6_K:    1 tensors
+0.00.021.074 I print_info: file format = GGUF V3 (latest)
+0.00.021.074 I print_info: file type   = Q5_0
+0.00.021.077 I print_info: file size   = 942.60 MiB (5.59 BPW) 
+0.00.053.794 I load: special tokens cache size = 25
+0.00.065.914 I load: token to piece cache size = 0.2984 MB
+0.00.065.944 I print_info: arch             = gptneox
+0.00.065.944 I print_info: vocab_only       = 0
+0.00.065.945 I print_info: n_ctx_train      = 2048
+0.00.065.945 I print_info: n_embd           = 2048
+0.00.065.945 I print_info: n_layer          = 24
+0.00.065.954 I print_info: n_head           = 16
+0.00.065.956 I print_info: n_head_kv        = 16
+0.00.065.957 I print_info: n_rot            = 32
+0.00.065.957 I print_info: n_swa            = 0
+0.00.065.958 I print_info: is_swa_any       = 0
+0.00.065.958 I print_info: n_embd_head_k    = 128
+0.00.065.959 I print_info: n_embd_head_v    = 128
+0.00.065.960 I print_info: n_gqa            = 1
+0.00.065.962 I print_info: n_embd_k_gqa     = 2048
+0.00.065.963 I print_info: n_embd_v_gqa     = 2048
+0.00.065.965 I print_info: f_norm_eps       = 1.0e-05
+0.00.065.965 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.065.965 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.065.965 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.065.966 I print_info: f_logit_scale    = 0.0e+00
+0.00.065.966 I print_info: f_attn_scale     = 0.0e+00
+0.00.065.967 I print_info: n_ff             = 8192
+0.00.065.967 I print_info: n_expert         = 0
+0.00.065.968 I print_info: n_expert_used    = 0
+0.00.065.968 I print_info: causal attn      = 1
+0.00.065.968 I print_info: pooling type     = 0
+0.00.065.968 I print_info: rope type        = 2
+0.00.065.969 I print_info: rope scaling     = linear
+0.00.065.970 I print_info: freq_base_train  = 10000.0
+0.00.065.970 I print_info: freq_scale_train = 1
+0.00.065.971 I print_info: n_ctx_orig_yarn  = 2048
+0.00.065.971 I print_info: rope_finetuned   = unknown
+0.00.065.971 I print_info: ssm_d_conv       = 0
+0.00.065.971 I print_info: ssm_d_inner      = 0
+0.00.065.971 I print_info: ssm_d_state      = 0
+0.00.065.972 I print_info: ssm_dt_rank      = 0
+0.00.065.972 I print_info: ssm_dt_b_c_rms   = 0
+0.00.065.973 I print_info: model type       = 1.4B
+0.00.065.973 I print_info: model params     = 1.41 B
+0.00.065.973 I print_info: general.name     = 1.4B
+0.00.065.976 I print_info: vocab type       = BPE
+0.00.065.977 I print_info: n_vocab          = 50304
+0.00.065.978 I print_info: n_merges         = 50009
+0.00.065.979 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.065.981 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.065.982 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.065.982 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.065.983 I print_info: LF token         = 187 'Ċ'
+0.00.065.984 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.065.985 I print_info: max token length = 1024
+0.00.065.987 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.129.713 I load_tensors:          AMX model buffer size =    80.60 MiB
+0.00.129.727 I load_tensors:   CPU_Mapped model buffer size =   862.00 MiB
+..................................................................................
+0.00.143.388 I llama_context: constructing llama_context
+0.00.143.404 I llama_context: n_seq_max     = 1
+0.00.143.405 I llama_context: n_ctx         = 2048
+0.00.143.405 I llama_context: n_ctx_per_seq = 2048
+0.00.143.406 I llama_context: n_batch       = 2048
+0.00.143.406 I llama_context: n_ubatch      = 512
+0.00.143.406 I llama_context: causal_attn   = 1
+0.00.143.407 I llama_context: flash_attn    = 0
+0.00.143.410 I llama_context: freq_base     = 10000.0
+0.00.143.411 I llama_context: freq_scale    = 1
+0.00.143.445 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.00.143.917 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.00.214.563 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.223.340 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.00.223.359 I llama_context: graph nodes  = 1063
+0.00.223.360 I llama_context: graph splits = 1
+0.00.223.375 I common_init_from_params: added <|endoftext|> logit bias = -inf
+0.00.223.808 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.223.821 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.331.510 I main: llama threadpool init, n_threads = 4
+0.00.331.531 I 
+0.00.331.602 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.331.614 I 
+0.00.331.711 I sampler seed: 1234
+0.00.331.730 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 2048
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.00.331.734 I sampler chain: logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+0.00.331.734 I generate: n_ctx = 2048, n_batch = 2048, n_predict = 64, n_keep = 0
+0.00.331.734 I 
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 7, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 7, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 7, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 7, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 7, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 7, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 7, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 7, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 7, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 7, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 7, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 7, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 7, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 7, n_seq_tokens = 1
+    seq_id[6][0] = 0
+I believe the meaning of life iss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ tos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ learns = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ands = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ grows = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ins = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ knowledges = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+.s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ Ands = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ Is = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ believes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thats = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ learnings = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ands = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ growths = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ iss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ keys = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ tos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ happinesss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+.s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Whats = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ woulds = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ its = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ means = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ tos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ yous = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ tos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ haves = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ as = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ meaningfuls = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ands = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ happys = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ lifes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+?s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Whats = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ woulds = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ its = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ means = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ tos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ yous = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ tos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ bes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ happys = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ins = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ yours = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ owns = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ rights = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ands = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ nots = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ bes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ defineds = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ bys = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ whats = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ otherss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thinks = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ofs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ yous = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+?s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+
+
+
+0.02.817.630 I llama_perf_sampler_print:    sampling time =       2.77 ms /    71 runs   (    0.04 ms per token, 25668.84 tokens per second)
+0.02.817.635 I llama_perf_context_print:        load time =     329.87 ms
+0.02.817.637 I llama_perf_context_print: prompt eval time =      81.15 ms /     7 tokens (   11.59 ms per token,    86.26 tokens per second)
+0.02.817.638 I llama_perf_context_print:        eval time =    2393.09 ms /    63 runs   (   37.99 ms per token,    26.33 tokens per second)
+0.02.817.639 I llama_perf_context_print:       total time =    2487.22 ms /    70 tokens
+
+real	0m2.865s
+user	0m10.414s
+sys	0m0.231s
++ ./bin/llama-perplexity --model ../models-mnt/pythia/1.4B/ggml-model-q5_0.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -ngl 99 -c 128 -b 128 --chunks 1
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.321 I build: 5635 (2db43275) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.010.718 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q5_0.gguf (version GGUF V3 (latest))
+0.00.010.746 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.010.759 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.010.760 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.010.761 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.010.761 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.010.762 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.010.765 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.010.767 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.010.769 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.010.770 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.010.771 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.010.771 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.010.772 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.010.787 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.010.800 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.010.815 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.015.651 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.016.730 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.021.300 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.021.318 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.021.319 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.021.320 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.021.320 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.021.321 I llama_model_loader: - kv  22:                          general.file_type u32              = 8
+0.00.021.324 I llama_model_loader: - type  f32:  194 tensors
+0.00.021.324 I llama_model_loader: - type q5_0:   97 tensors
+0.00.021.325 I llama_model_loader: - type q6_K:    1 tensors
+0.00.021.326 I print_info: file format = GGUF V3 (latest)
+0.00.021.327 I print_info: file type   = Q5_0
+0.00.021.330 I print_info: file size   = 942.60 MiB (5.59 BPW) 
+0.00.054.570 I load: special tokens cache size = 25
+0.00.066.610 I load: token to piece cache size = 0.2984 MB
+0.00.066.640 I print_info: arch             = gptneox
+0.00.066.641 I print_info: vocab_only       = 0
+0.00.066.641 I print_info: n_ctx_train      = 2048
+0.00.066.641 I print_info: n_embd           = 2048
+0.00.066.642 I print_info: n_layer          = 24
+0.00.066.657 I print_info: n_head           = 16
+0.00.066.659 I print_info: n_head_kv        = 16
+0.00.066.659 I print_info: n_rot            = 32
+0.00.066.660 I print_info: n_swa            = 0
+0.00.066.661 I print_info: is_swa_any       = 0
+0.00.066.661 I print_info: n_embd_head_k    = 128
+0.00.066.662 I print_info: n_embd_head_v    = 128
+0.00.066.664 I print_info: n_gqa            = 1
+0.00.066.665 I print_info: n_embd_k_gqa     = 2048
+0.00.066.667 I print_info: n_embd_v_gqa     = 2048
+0.00.066.668 I print_info: f_norm_eps       = 1.0e-05
+0.00.066.668 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.066.669 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.066.669 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.066.669 I print_info: f_logit_scale    = 0.0e+00
+0.00.066.670 I print_info: f_attn_scale     = 0.0e+00
+0.00.066.671 I print_info: n_ff             = 8192
+0.00.066.671 I print_info: n_expert         = 0
+0.00.066.671 I print_info: n_expert_used    = 0
+0.00.066.672 I print_info: causal attn      = 1
+0.00.066.672 I print_info: pooling type     = 0
+0.00.066.672 I print_info: rope type        = 2
+0.00.066.672 I print_info: rope scaling     = linear
+0.00.066.674 I print_info: freq_base_train  = 10000.0
+0.00.066.674 I print_info: freq_scale_train = 1
+0.00.066.674 I print_info: n_ctx_orig_yarn  = 2048
+0.00.066.675 I print_info: rope_finetuned   = unknown
+0.00.066.675 I print_info: ssm_d_conv       = 0
+0.00.066.675 I print_info: ssm_d_inner      = 0
+0.00.066.676 I print_info: ssm_d_state      = 0
+0.00.066.676 I print_info: ssm_dt_rank      = 0
+0.00.066.676 I print_info: ssm_dt_b_c_rms   = 0
+0.00.066.677 I print_info: model type       = 1.4B
+0.00.066.677 I print_info: model params     = 1.41 B
+0.00.066.678 I print_info: general.name     = 1.4B
+0.00.066.680 I print_info: vocab type       = BPE
+0.00.066.681 I print_info: n_vocab          = 50304
+0.00.066.681 I print_info: n_merges         = 50009
+0.00.066.682 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.066.682 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.066.682 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.066.682 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.066.683 I print_info: LF token         = 187 'Ċ'
+0.00.066.683 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.066.683 I print_info: max token length = 1024
+0.00.066.689 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.132.597 I load_tensors:          AMX model buffer size =    80.60 MiB
+0.00.132.617 I load_tensors:   CPU_Mapped model buffer size =   862.00 MiB
+..................................................................................
+0.00.146.332 I llama_context: constructing llama_context
+0.00.146.352 I llama_context: n_seq_max     = 1
+0.00.146.352 I llama_context: n_ctx         = 128
+0.00.146.353 I llama_context: n_ctx_per_seq = 128
+0.00.146.353 I llama_context: n_batch       = 128
+0.00.146.353 I llama_context: n_ubatch      = 128
+0.00.146.353 I llama_context: causal_attn   = 1
+0.00.146.354 I llama_context: flash_attn    = 0
+0.00.146.357 I llama_context: freq_base     = 10000.0
+0.00.146.357 I llama_context: freq_scale    = 1
+0.00.146.358 W llama_context: n_ctx_per_seq (128) < n_ctx_train (2048) -- the full capacity of the model will not be utilized
+0.00.146.394 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.00.146.793 I llama_kv_cache_unified:        CPU KV buffer size =    24.00 MiB
+0.00.151.129 I llama_kv_cache_unified: size =   24.00 MiB (   128 cells,  24 layers,  1 seqs), K (f16):   12.00 MiB, V (f16):   12.00 MiB
+0.00.159.851 I llama_context:        CPU compute buffer size =    25.56 MiB
+0.00.159.869 I llama_context: graph nodes  = 1063
+0.00.159.869 I llama_context: graph splits = 1
+0.00.159.877 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 128
+0.00.159.877 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.230.263 I 
+0.00.230.359 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.230.369 I perplexity: tokenizing the input ..
+0.00.236.512 I perplexity: tokenization took 6.139 ms
+0.00.236.541 I perplexity: calculating perplexity over 1 chunks, n_ctx=128, batch_size=128, n_seq=1
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 128, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 128, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 128, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 128, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 128, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 128, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 128, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 7, j = 0, idx = 7, n_seqs = 128, n_seq_tokens = 1
+    seq_id[7][0] = 0
+s = 8, j = 0, idx = 8, n_seqs = 128, n_seq_tokens = 1
+    seq_id[8][0] = 0
+s = 9, j = 0, idx = 9, n_seqs = 128, n_seq_tokens = 1
+    seq_id[9][0] = 0
+s = 10, j = 0, idx = 10, n_seqs = 128, n_seq_tokens = 1
+    seq_id[10][0] = 0
+s = 11, j = 0, idx = 11, n_seqs = 128, n_seq_tokens = 1
+    seq_id[11][0] = 0
+s = 12, j = 0, idx = 12, n_seqs = 128, n_seq_tokens = 1
+    seq_id[12][0] = 0
+s = 13, j = 0, idx = 13, n_seqs = 128, n_seq_tokens = 1
+    seq_id[13][0] = 0
+s = 14, j = 0, idx = 14, n_seqs = 128, n_seq_tokens = 1
+    seq_id[14][0] = 0
+s = 15, j = 0, idx = 15, n_seqs = 128, n_seq_tokens = 1
+    seq_id[15][0] = 0
+s = 16, j = 0, idx = 16, n_seqs = 128, n_seq_tokens = 1
+    seq_id[16][0] = 0
+s = 17, j = 0, idx = 17, n_seqs = 128, n_seq_tokens = 1
+    seq_id[17][0] = 0
+s = 18, j = 0, idx = 18, n_seqs = 128, n_seq_tokens = 1
+    seq_id[18][0] = 0
+s = 19, j = 0, idx = 19, n_seqs = 128, n_seq_tokens = 1
+    seq_id[19][0] = 0
+s = 20, j = 0, idx = 20, n_seqs = 128, n_seq_tokens = 1
+    seq_id[20][0] = 0
+s = 21, j = 0, idx = 21, n_seqs = 128, n_seq_tokens = 1
+    seq_id[21][0] = 0
+s = 22, j = 0, idx = 22, n_seqs = 128, n_seq_tokens = 1
+    seq_id[22][0] = 0
+s = 23, j = 0, idx = 23, n_seqs = 128, n_seq_tokens = 1
+    seq_id[23][0] = 0
+s = 24, j = 0, idx = 24, n_seqs = 128, n_seq_tokens = 1
+    seq_id[24][0] = 0
+s = 25, j = 0, idx = 25, n_seqs = 128, n_seq_tokens = 1
+    seq_id[25][0] = 0
+s = 26, j = 0, idx = 26, n_seqs = 128, n_seq_tokens = 1
+    seq_id[26][0] = 0
+s = 27, j = 0, idx = 27, n_seqs = 128, n_seq_tokens = 1
+    seq_id[27][0] = 0
+s = 28, j = 0, idx = 28, n_seqs = 128, n_seq_tokens = 1
+    seq_id[28][0] = 0
+s = 29, j = 0, idx = 29, n_seqs = 128, n_seq_tokens = 1
+    seq_id[29][0] = 0
+s = 30, j = 0, idx = 30, n_seqs = 128, n_seq_tokens = 1
+    seq_id[30][0] = 0
+s = 31, j = 0, idx = 31, n_seqs = 128, n_seq_tokens = 1
+    seq_id[31][0] = 0
+s = 32, j = 0, idx = 32, n_seqs = 128, n_seq_tokens = 1
+    seq_id[32][0] = 0
+s = 33, j = 0, idx = 33, n_seqs = 128, n_seq_tokens = 1
+    seq_id[33][0] = 0
+s = 34, j = 0, idx = 34, n_seqs = 128, n_seq_tokens = 1
+    seq_id[34][0] = 0
+s = 35, j = 0, idx = 35, n_seqs = 128, n_seq_tokens = 1
+    seq_id[35][0] = 0
+s = 36, j = 0, idx = 36, n_seqs = 128, n_seq_tokens = 1
+    seq_id[36][0] = 0
+s = 37, j = 0, idx = 37, n_seqs = 128, n_seq_tokens = 1
+    seq_id[37][0] = 0
+s = 38, j = 0, idx = 38, n_seqs = 128, n_seq_tokens = 1
+    seq_id[38][0] = 0
+s = 39, j = 0, idx = 39, n_seqs = 128, n_seq_tokens = 1
+    seq_id[39][0] = 0
+s = 40, j = 0, idx = 40, n_seqs = 128, n_seq_tokens = 1
+    seq_id[40][0] = 0
+s = 41, j = 0, idx = 41, n_seqs = 128, n_seq_tokens = 1
+    seq_id[41][0] = 0
+s = 42, j = 0, idx = 42, n_seqs = 128, n_seq_tokens = 1
+    seq_id[42][0] = 0
+s = 43, j = 0, idx = 43, n_seqs = 128, n_seq_tokens = 1
+    seq_id[43][0] = 0
+s = 44, j = 0, idx = 44, n_seqs = 128, n_seq_tokens = 1
+    seq_id[44][0] = 0
+s = 45, j = 0, idx = 45, n_seqs = 128, n_seq_tokens = 1
+    seq_id[45][0] = 0
+s = 46, j = 0, idx = 46, n_seqs = 128, n_seq_tokens = 1
+    seq_id[46][0] = 0
+s = 47, j = 0, idx = 47, n_seqs = 128, n_seq_tokens = 1
+    seq_id[47][0] = 0
+s = 48, j = 0, idx = 48, n_seqs = 128, n_seq_tokens = 1
+    seq_id[48][0] = 0
+s = 49, j = 0, idx = 49, n_seqs = 128, n_seq_tokens = 1
+    seq_id[49][0] = 0
+s = 50, j = 0, idx = 50, n_seqs = 128, n_seq_tokens = 1
+    seq_id[50][0] = 0
+s = 51, j = 0, idx = 51, n_seqs = 128, n_seq_tokens = 1
+    seq_id[51][0] = 0
+s = 52, j = 0, idx = 52, n_seqs = 128, n_seq_tokens = 1
+    seq_id[52][0] = 0
+s = 53, j = 0, idx = 53, n_seqs = 128, n_seq_tokens = 1
+    seq_id[53][0] = 0
+s = 54, j = 0, idx = 54, n_seqs = 128, n_seq_tokens = 1
+    seq_id[54][0] = 0
+s = 55, j = 0, idx = 55, n_seqs = 128, n_seq_tokens = 1
+    seq_id[55][0] = 0
+s = 56, j = 0, idx = 56, n_seqs = 128, n_seq_tokens = 1
+    seq_id[56][0] = 0
+s = 57, j = 0, idx = 57, n_seqs = 128, n_seq_tokens = 1
+    seq_id[57][0] = 0
+s = 58, j = 0, idx = 58, n_seqs = 128, n_seq_tokens = 1
+    seq_id[58][0] = 0
+s = 59, j = 0, idx = 59, n_seqs = 128, n_seq_tokens = 1
+    seq_id[59][0] = 0
+s = 60, j = 0, idx = 60, n_seqs = 128, n_seq_tokens = 1
+    seq_id[60][0] = 0
+s = 61, j = 0, idx = 61, n_seqs = 128, n_seq_tokens = 1
+    seq_id[61][0] = 0
+s = 62, j = 0, idx = 62, n_seqs = 128, n_seq_tokens = 1
+    seq_id[62][0] = 0
+s = 63, j = 0, idx = 63, n_seqs = 128, n_seq_tokens = 1
+    seq_id[63][0] = 0
+s = 64, j = 0, idx = 64, n_seqs = 128, n_seq_tokens = 1
+    seq_id[64][0] = 0
+s = 65, j = 0, idx = 65, n_seqs = 128, n_seq_tokens = 1
+    seq_id[65][0] = 0
+s = 66, j = 0, idx = 66, n_seqs = 128, n_seq_tokens = 1
+    seq_id[66][0] = 0
+s = 67, j = 0, idx = 67, n_seqs = 128, n_seq_tokens = 1
+    seq_id[67][0] = 0
+s = 68, j = 0, idx = 68, n_seqs = 128, n_seq_tokens = 1
+    seq_id[68][0] = 0
+s = 69, j = 0, idx = 69, n_seqs = 128, n_seq_tokens = 1
+    seq_id[69][0] = 0
+s = 70, j = 0, idx = 70, n_seqs = 128, n_seq_tokens = 1
+    seq_id[70][0] = 0
+s = 71, j = 0, idx = 71, n_seqs = 128, n_seq_tokens = 1
+    seq_id[71][0] = 0
+s = 72, j = 0, idx = 72, n_seqs = 128, n_seq_tokens = 1
+    seq_id[72][0] = 0
+s = 73, j = 0, idx = 73, n_seqs = 128, n_seq_tokens = 1
+    seq_id[73][0] = 0
+s = 74, j = 0, idx = 74, n_seqs = 128, n_seq_tokens = 1
+    seq_id[74][0] = 0
+s = 75, j = 0, idx = 75, n_seqs = 128, n_seq_tokens = 1
+    seq_id[75][0] = 0
+s = 76, j = 0, idx = 76, n_seqs = 128, n_seq_tokens = 1
+    seq_id[76][0] = 0
+s = 77, j = 0, idx = 77, n_seqs = 128, n_seq_tokens = 1
+    seq_id[77][0] = 0
+s = 78, j = 0, idx = 78, n_seqs = 128, n_seq_tokens = 1
+    seq_id[78][0] = 0
+s = 79, j = 0, idx = 79, n_seqs = 128, n_seq_tokens = 1
+    seq_id[79][0] = 0
+s = 80, j = 0, idx = 80, n_seqs = 128, n_seq_tokens = 1
+    seq_id[80][0] = 0
+s = 81, j = 0, idx = 81, n_seqs = 128, n_seq_tokens = 1
+    seq_id[81][0] = 0
+s = 82, j = 0, idx = 82, n_seqs = 128, n_seq_tokens = 1
+    seq_id[82][0] = 0
+s = 83, j = 0, idx = 83, n_seqs = 128, n_seq_tokens = 1
+    seq_id[83][0] = 0
+s = 84, j = 0, idx = 84, n_seqs = 128, n_seq_tokens = 1
+    seq_id[84][0] = 0
+s = 85, j = 0, idx = 85, n_seqs = 128, n_seq_tokens = 1
+    seq_id[85][0] = 0
+s = 86, j = 0, idx = 86, n_seqs = 128, n_seq_tokens = 1
+    seq_id[86][0] = 0
+s = 87, j = 0, idx = 87, n_seqs = 128, n_seq_tokens = 1
+    seq_id[87][0] = 0
+s = 88, j = 0, idx = 88, n_seqs = 128, n_seq_tokens = 1
+    seq_id[88][0] = 0
+s = 89, j = 0, idx = 89, n_seqs = 128, n_seq_tokens = 1
+    seq_id[89][0] = 0
+s = 90, j = 0, idx = 90, n_seqs = 128, n_seq_tokens = 1
+    seq_id[90][0] = 0
+s = 91, j = 0, idx = 91, n_seqs = 128, n_seq_tokens = 1
+    seq_id[91][0] = 0
+s = 92, j = 0, idx = 92, n_seqs = 128, n_seq_tokens = 1
+    seq_id[92][0] = 0
+s = 93, j = 0, idx = 93, n_seqs = 128, n_seq_tokens = 1
+    seq_id[93][0] = 0
+s = 94, j = 0, idx = 94, n_seqs = 128, n_seq_tokens = 1
+    seq_id[94][0] = 0
+s = 95, j = 0, idx = 95, n_seqs = 128, n_seq_tokens = 1
+    seq_id[95][0] = 0
+s = 96, j = 0, idx = 96, n_seqs = 128, n_seq_tokens = 1
+    seq_id[96][0] = 0
+s = 97, j = 0, idx = 97, n_seqs = 128, n_seq_tokens = 1
+    seq_id[97][0] = 0
+s = 98, j = 0, idx = 98, n_seqs = 128, n_seq_tokens = 1
+    seq_id[98][0] = 0
+s = 99, j = 0, idx = 99, n_seqs = 128, n_seq_tokens = 1
+    seq_id[99][0] = 0
+s = 100, j = 0, idx = 100, n_seqs = 128, n_seq_tokens = 1
+    seq_id[100][0] = 0
+s = 101, j = 0, idx = 101, n_seqs = 128, n_seq_tokens = 1
+    seq_id[101][0] = 0
+s = 102, j = 0, idx = 102, n_seqs = 128, n_seq_tokens = 1
+    seq_id[102][0] = 0
+s = 103, j = 0, idx = 103, n_seqs = 128, n_seq_tokens = 1
+    seq_id[103][0] = 0
+s = 104, j = 0, idx = 104, n_seqs = 128, n_seq_tokens = 1
+    seq_id[104][0] = 0
+s = 105, j = 0, idx = 105, n_seqs = 128, n_seq_tokens = 1
+    seq_id[105][0] = 0
+s = 106, j = 0, idx = 106, n_seqs = 128, n_seq_tokens = 1
+    seq_id[106][0] = 0
+s = 107, j = 0, idx = 107, n_seqs = 128, n_seq_tokens = 1
+    seq_id[107][0] = 0
+s = 108, j = 0, idx = 108, n_seqs = 128, n_seq_tokens = 1
+    seq_id[108][0] = 0
+s = 109, j = 0, idx = 109, n_seqs = 128, n_seq_tokens = 1
+    seq_id[109][0] = 0
+s = 110, j = 0, idx = 110, n_seqs = 128, n_seq_tokens = 1
+    seq_id[110][0] = 0
+s = 111, j = 0, idx = 111, n_seqs = 128, n_seq_tokens = 1
+    seq_id[111][0] = 0
+s = 112, j = 0, idx = 112, n_seqs = 128, n_seq_tokens = 1
+    seq_id[112][0] = 0
+s = 113, j = 0, idx = 113, n_seqs = 128, n_seq_tokens = 1
+    seq_id[113][0] = 0
+s = 114, j = 0, idx = 114, n_seqs = 128, n_seq_tokens = 1
+    seq_id[114][0] = 0
+s = 115, j = 0, idx = 115, n_seqs = 128, n_seq_tokens = 1
+    seq_id[115][0] = 0
+s = 116, j = 0, idx = 116, n_seqs = 128, n_seq_tokens = 1
+    seq_id[116][0] = 0
+s = 117, j = 0, idx = 117, n_seqs = 128, n_seq_tokens = 1
+    seq_id[117][0] = 0
+s = 118, j = 0, idx = 118, n_seqs = 128, n_seq_tokens = 1
+    seq_id[118][0] = 0
+s = 119, j = 0, idx = 119, n_seqs = 128, n_seq_tokens = 1
+    seq_id[119][0] = 0
+s = 120, j = 0, idx = 120, n_seqs = 128, n_seq_tokens = 1
+    seq_id[120][0] = 0
+s = 121, j = 0, idx = 121, n_seqs = 128, n_seq_tokens = 1
+    seq_id[121][0] = 0
+s = 122, j = 0, idx = 122, n_seqs = 128, n_seq_tokens = 1
+    seq_id[122][0] = 0
+s = 123, j = 0, idx = 123, n_seqs = 128, n_seq_tokens = 1
+    seq_id[123][0] = 0
+s = 124, j = 0, idx = 124, n_seqs = 128, n_seq_tokens = 1
+    seq_id[124][0] = 0
+s = 125, j = 0, idx = 125, n_seqs = 128, n_seq_tokens = 1
+    seq_id[125][0] = 0
+s = 126, j = 0, idx = 126, n_seqs = 128, n_seq_tokens = 1
+    seq_id[126][0] = 0
+s = 127, j = 0, idx = 127, n_seqs = 128, n_seq_tokens = 1
+    seq_id[127][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 128, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 128, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 128, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 128, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 128, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 128, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 128, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 7, j = 0, idx = 7, n_seqs = 128, n_seq_tokens = 1
+    seq_id[7][0] = 0
+s = 8, j = 0, idx = 8, n_seqs = 128, n_seq_tokens = 1
+    seq_id[8][0] = 0
+s = 9, j = 0, idx = 9, n_seqs = 128, n_seq_tokens = 1
+    seq_id[9][0] = 0
+s = 10, j = 0, idx = 10, n_seqs = 128, n_seq_tokens = 1
+    seq_id[10][0] = 0
+s = 11, j = 0, idx = 11, n_seqs = 128, n_seq_tokens = 1
+    seq_id[11][0] = 0
+s = 12, j = 0, idx = 12, n_seqs = 128, n_seq_tokens = 1
+    seq_id[12][0] = 0
+s = 13, j = 0, idx = 13, n_seqs = 128, n_seq_tokens = 1
+    seq_id[13][0] = 0
+s = 14, j = 0, idx = 14, n_seqs = 128, n_seq_tokens = 1
+    seq_id[14][0] = 0
+s = 15, j = 0, idx = 15, n_seqs = 128, n_seq_tokens = 1
+    seq_id[15][0] = 0
+s = 16, j = 0, idx = 16, n_seqs = 128, n_seq_tokens = 1
+    seq_id[16][0] = 0
+s = 17, j = 0, idx = 17, n_seqs = 128, n_seq_tokens = 1
+    seq_id[17][0] = 0
+s = 18, j = 0, idx = 18, n_seqs = 128, n_seq_tokens = 1
+    seq_id[18][0] = 0
+s = 19, j = 0, idx = 19, n_seqs = 128, n_seq_tokens = 1
+    seq_id[19][0] = 0
+s = 20, j = 0, idx = 20, n_seqs = 128, n_seq_tokens = 1
+    seq_id[20][0] = 0
+s = 21, j = 0, idx = 21, n_seqs = 128, n_seq_tokens = 1
+    seq_id[21][0] = 0
+s = 22, j = 0, idx = 22, n_seqs = 128, n_seq_tokens = 1
+    seq_id[22][0] = 0
+s = 23, j = 0, idx = 23, n_seqs = 128, n_seq_tokens = 1
+    seq_id[23][0] = 0
+s = 24, j = 0, idx = 24, n_seqs = 128, n_seq_tokens = 1
+    seq_id[24][0] = 0
+s = 25, j = 0, idx = 25, n_seqs = 128, n_seq_tokens = 1
+    seq_id[25][0] = 0
+s = 26, j = 0, idx = 26, n_seqs = 128, n_seq_tokens = 1
+    seq_id[26][0] = 0
+s = 27, j = 0, idx = 27, n_seqs = 128, n_seq_tokens = 1
+    seq_id[27][0] = 0
+s = 28, j = 0, idx = 28, n_seqs = 128, n_seq_tokens = 1
+    seq_id[28][0] = 0
+s = 29, j = 0, idx = 29, n_seqs = 128, n_seq_tokens = 1
+    seq_id[29][0] = 0
+s = 30, j = 0, idx = 30, n_seqs = 128, n_seq_tokens = 1
+    seq_id[30][0] = 0
+s = 31, j = 0, idx = 31, n_seqs = 128, n_seq_tokens = 1
+    seq_id[31][0] = 0
+s = 32, j = 0, idx = 32, n_seqs = 128, n_seq_tokens = 1
+    seq_id[32][0] = 0
+s = 33, j = 0, idx = 33, n_seqs = 128, n_seq_tokens = 1
+    seq_id[33][0] = 0
+s = 34, j = 0, idx = 34, n_seqs = 128, n_seq_tokens = 1
+    seq_id[34][0] = 0
+s = 35, j = 0, idx = 35, n_seqs = 128, n_seq_tokens = 1
+    seq_id[35][0] = 0
+s = 36, j = 0, idx = 36, n_seqs = 128, n_seq_tokens = 1
+    seq_id[36][0] = 0
+s = 37, j = 0, idx = 37, n_seqs = 128, n_seq_tokens = 1
+    seq_id[37][0] = 0
+s = 38, j = 0, idx = 38, n_seqs = 128, n_seq_tokens = 1
+    seq_id[38][0] = 0
+s = 39, j = 0, idx = 39, n_seqs = 128, n_seq_tokens = 1
+    seq_id[39][0] = 0
+s = 40, j = 0, idx = 40, n_seqs = 128, n_seq_tokens = 1
+    seq_id[40][0] = 0
+s = 41, j = 0, idx = 41, n_seqs = 128, n_seq_tokens = 1
+    seq_id[41][0] = 0
+s = 42, j = 0, idx = 42, n_seqs = 128, n_seq_tokens = 1
+    seq_id[42][0] = 0
+s = 43, j = 0, idx = 43, n_seqs = 128, n_seq_tokens = 1
+    seq_id[43][0] = 0
+s = 44, j = 0, idx = 44, n_seqs = 128, n_seq_tokens = 1
+    seq_id[44][0] = 0
+s = 45, j = 0, idx = 45, n_seqs = 128, n_seq_tokens = 1
+    seq_id[45][0] = 0
+s = 46, j = 0, idx = 46, n_seqs = 128, n_seq_tokens = 1
+    seq_id[46][0] = 0
+s = 47, j = 0, idx = 47, n_seqs = 128, n_seq_tokens = 1
+    seq_id[47][0] = 0
+s = 48, j = 0, idx = 48, n_seqs = 128, n_seq_tokens = 1
+    seq_id[48][0] = 0
+s = 49, j = 0, idx = 49, n_seqs = 128, n_seq_tokens = 1
+    seq_id[49][0] = 0
+s = 50, j = 0, idx = 50, n_seqs = 128, n_seq_tokens = 1
+    seq_id[50][0] = 0
+s = 51, j = 0, idx = 51, n_seqs = 128, n_seq_tokens = 1
+    seq_id[51][0] = 0
+s = 52, j = 0, idx = 52, n_seqs = 128, n_seq_tokens = 1
+    seq_id[52][0] = 0
+s = 53, j = 0, idx = 53, n_seqs = 128, n_seq_tokens = 1
+    seq_id[53][0] = 0
+s = 54, j = 0, idx = 54, n_seqs = 128, n_seq_tokens = 1
+    seq_id[54][0] = 0
+s = 55, j = 0, idx = 55, n_seqs = 128, n_seq_tokens = 1
+    seq_id[55][0] = 0
+s = 56, j = 0, idx = 56, n_seqs = 128, n_seq_tokens = 1
+    seq_id[56][0] = 0
+s = 57, j = 0, idx = 57, n_seqs = 128, n_seq_tokens = 1
+    seq_id[57][0] = 0
+s = 58, j = 0, idx = 58, n_seqs = 128, n_seq_tokens = 1
+    seq_id[58][0] = 0
+s = 59, j = 0, idx = 59, n_seqs = 128, n_seq_tokens = 1
+    seq_id[59][0] = 0
+s = 60, j = 0, idx = 60, n_seqs = 128, n_seq_tokens = 1
+    seq_id[60][0] = 0
+s = 61, j = 0, idx = 61, n_seqs = 128, n_seq_tokens = 1
+    seq_id[61][0] = 0
+s = 62, j = 0, idx = 62, n_seqs = 128, n_seq_tokens = 1
+    seq_id[62][0] = 0
+s = 63, j = 0, idx = 63, n_seqs = 128, n_seq_tokens = 1
+    seq_id[63][0] = 0
+s = 64, j = 0, idx = 64, n_seqs = 128, n_seq_tokens = 1
+    seq_id[64][0] = 0
+s = 65, j = 0, idx = 65, n_seqs = 128, n_seq_tokens = 1
+    seq_id[65][0] = 0
+s = 66, j = 0, idx = 66, n_seqs = 128, n_seq_tokens = 1
+    seq_id[66][0] = 0
+s = 67, j = 0, idx = 67, n_seqs = 128, n_seq_tokens = 1
+    seq_id[67][0] = 0
+s = 68, j = 0, idx = 68, n_seqs = 128, n_seq_tokens = 1
+    seq_id[68][0] = 0
+s = 69, j = 0, idx = 69, n_seqs = 128, n_seq_tokens = 1
+    seq_id[69][0] = 0
+s = 70, j = 0, idx = 70, n_seqs = 128, n_seq_tokens = 1
+    seq_id[70][0] = 0
+s = 71, j = 0, idx = 71, n_seqs = 128, n_seq_tokens = 1
+    seq_id[71][0] = 0
+s = 72, j = 0, idx = 72, n_seqs = 128, n_seq_tokens = 1
+    seq_id[72][0] = 0
+s = 73, j = 0, idx = 73, n_seqs = 128, n_seq_tokens = 1
+    seq_id[73][0] = 0
+s = 74, j = 0, idx = 74, n_seqs = 128, n_seq_tokens = 1
+    seq_id[74][0] = 0
+s = 75, j = 0, idx = 75, n_seqs = 128, n_seq_tokens = 1
+    seq_id[75][0] = 0
+s = 76, j = 0, idx = 76, n_seqs = 128, n_seq_tokens = 1
+    seq_id[76][0] = 0
+s = 77, j = 0, idx = 77, n_seqs = 128, n_seq_tokens = 1
+    seq_id[77][0] = 0
+0.01.364.097 I perplexity: 1.13 seconds per pass - ETA s = 78, j = 0, idx = 78, n_seqs = 128, n_seq_tokens = 1
+    seq_id[78][0] = 0
+s = 79, j = 0, idx = 79, n_seqs = 128, n_seq_tokens = 1
+    seq_id[79][0] = 0
+s = 80, j = 0, idx = 80, n_seqs = 128, n_seq_tokens = 1
+    seq_id[80][0] = 0
+s = 81, j = 0, idx = 81, n_seqs = 128, n_seq_tokens = 1
+    seq_id[81][0] = 0
+s = 82, j = 0, idx = 82, n_seqs = 128, n_seq_tokens = 1
+    seq_id[82][0] = 0
+s = 83, j = 0, idx = 83, n_seqs = 128, n_seq_tokens = 1
+    seq_id[83][0] = 0
+s = 84, j = 0, idx = 84, n_seqs = 128, n_seq_tokens = 1
+    seq_id[84][0] = 0
+s = 85, j = 0, idx = 85, n_seqs = 128, n_seq_tokens = 1
+    seq_id[85][0] = 0
+s = 86, j = 0, idx = 86, n_seqs = 128, n_seq_tokens = 1
+    seq_id[86][0] = 0
+s = 87, j = 0, idx = 87, n_seqs = 128, n_seq_tokens = 1
+    seq_id[87][0] = 0
+s = 88, j = 0, idx = 88, n_seqs = 128, n_seq_tokens = 1
+    seq_id[88][0] = 0
+s = 89, j = 0, idx = 89, n_seqs = 128, n_seq_tokens = 1
+    seq_id[89][0] = 0
+s = 90, j = 0, idx = 90, n_seqs = 128, n_seq_tokens = 1
+    seq_id[90][0] = 0
+s = 91, j = 0, idx = 91, n_seqs = 128, n_seq_tokens = 1
+    seq_id[91][0] = 0
+s = 92, j = 0, idx = 92, n_seqs = 128, n_seq_tokens = 1
+    seq_id[92][0] = 0
+s = 93, j = 0, idx = 93, n_seqs = 128, n_seq_tokens = 1
+    seq_id[93][0] = 0
+s = 94, j = 0, idx = 94, n_seqs = 128, n_seq_tokens = 1
+    seq_id[94][0] = 0
+s = 95, j = 0, idx = 95, n_seqs = 128, n_seq_tokens = 1
+    seq_id[95][0] = 0
+s = 96, j = 0, idx = 96, n_seqs = 128, n_seq_tokens = 1
+    seq_id[96][0] = 0
+s = 97, j = 0, idx = 97, n_seqs = 128, n_seq_tokens = 1
+    seq_id[97][0] = 0
+s = 98, j = 0, idx = 98, n_seqs = 128, n_seq_tokens = 1
+    seq_id[98][0] = 0
+s = 99, j = 0, idx = 99, n_seqs = 128, n_seq_tokens = 1
+    seq_id[99][0] = 0
+s = 100, j = 0, idx = 100, n_seqs = 128, n_seq_tokens = 1
+    seq_id[100][0] = 0
+s = 101, j = 0, idx = 101, n_seqs = 128, n_seq_tokens = 1
+    seq_id[101][0] = 0
+s = 102, j = 0, idx = 102, n_seqs = 128, n_seq_tokens = 1
+    seq_id[102][0] = 0
+s = 103, j = 0, idx = 103, n_seqs = 128, n_seq_tokens = 1
+    seq_id[103][0] = 0
+s = 104, j = 0, idx = 104, n_seqs = 128, n_seq_tokens = 1
+    seq_id[104][0] = 0
+s = 105, j = 0, idx = 105, n_seqs = 128, n_seq_tokens = 1
+    seq_id[105][0] = 0
+s = 106, j = 0, idx = 106, n_seqs = 128, n_seq_tokens = 1
+    seq_id[106][0] = 0
+s = 107, j = 0, idx = 107, n_seqs = 128, n_seq_tokens = 1
+    seq_id[107][0] = 0
+s = 108, j = 0, idx = 108, n_seqs = 128, n_seq_tokens = 1
+    seq_id[108][0] = 0
+s = 109, j = 0, idx = 109, n_seqs = 128, n_seq_tokens = 1
+    seq_id[109][0] = 0
+s = 110, j = 0, idx = 110, n_seqs = 128, n_seq_tokens = 1
+    seq_id[110][0] = 0
+s = 111, j = 0, idx = 111, n_seqs = 128, n_seq_tokens = 1
+    seq_id[111][0] = 0
+s = 112, j = 0, idx = 112, n_seqs = 128, n_seq_tokens = 1
+    seq_id[112][0] = 0
+s = 113, j = 0, idx = 113, n_seqs = 128, n_seq_tokens = 1
+    seq_id[113][0] = 0
+s = 114, j = 0, idx = 114, n_seqs = 128, n_seq_tokens = 1
+    seq_id[114][0] = 0
+s = 115, j = 0, idx = 115, n_seqs = 128, n_seq_tokens = 1
+    seq_id[115][0] = 0
+s = 116, j = 0, idx = 116, n_seqs = 128, n_seq_tokens = 1
+    seq_id[116][0] = 0
+s = 117, j = 0, idx = 117, n_seqs = 128, n_seq_tokens = 1
+    seq_id[117][0] = 0
+s = 118, j = 0, idx = 118, n_seqs = 128, n_seq_tokens = 1
+    seq_id[118][0] = 0
+s = 119, j = 0, idx = 119, n_seqs = 128, n_seq_tokens = 1
+    seq_id[119][0] = 0
+s = 120, j = 0, idx = 120, n_seqs = 128, n_seq_tokens = 1
+    seq_id[120][0] = 0
+s = 121, j = 0, idx = 121, n_seqs = 128, n_seq_tokens = 1
+    seq_id[121][0] = 0
+s = 122, j = 0, idx = 122, n_seqs = 128, n_seq_tokens = 1
+    seq_id[122][0] = 0
+s = 123, j = 0, idx = 123, n_seqs = 128, n_seq_tokens = 1
+    seq_id[123][0] = 0
+s = 124, j = 0, idx = 124, n_seqs = 128, n_seq_tokens = 1
+    seq_id[124][0] = 0
+s = 125, j = 0, idx = 125, n_seqs = 128, n_seq_tokens = 1
+    seq_id[125][0] = 0
+s = 126, j = 0, idx = 126, n_seqs = 128, n_seq_tokens = 1
+    seq_id[126][0] = 0
+s = 127, j = 0, idx = 127, n_seqs = 128, n_seq_tokens = 1
+    seq_id[127][0] = 0
+0.02 minutes
+[1]10.0822,
+0.01.367.081 I Final estimate: PPL = 10.0822 +/- 3.20340
+
+0.01.367.127 I llama_perf_context_print:        load time =     229.86 ms
+0.01.367.142 I llama_perf_context_print: prompt eval time =    1125.76 ms /   128 tokens (    8.79 ms per token,   113.70 tokens per second)
+0.01.367.157 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.01.367.170 I llama_perf_context_print:       total time =    1136.89 ms /   129 tokens
+
+real	0m1.413s
+user	0m4.957s
+sys	0m0.149s
+```
+- q5_1:
+```
++ ./bin/llama-cli -no-cnv --model ../models-mnt/pythia/1.4B/ggml-model-q5_1.gguf -ngl 99 -c 0 -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.252 I build: 5635 (2db43275) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.000.447 I main: llama backend init
+0.00.000.464 I main: load the model and apply lora adapter, if any
+0.00.010.823 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q5_1.gguf (version GGUF V3 (latest))
+0.00.010.849 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.010.858 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.010.859 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.010.859 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.010.860 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.010.860 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.010.864 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.010.865 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.010.865 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.010.866 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.010.866 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.010.866 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.010.867 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.010.880 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.010.881 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.010.881 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.015.671 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.016.800 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.021.335 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.021.355 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.021.355 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.021.356 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.021.356 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.021.357 I llama_model_loader: - kv  22:                          general.file_type u32              = 9
+0.00.021.359 I llama_model_loader: - type  f32:  194 tensors
+0.00.021.360 I llama_model_loader: - type q5_1:   97 tensors
+0.00.021.360 I llama_model_loader: - type q6_K:    1 tensors
+0.00.021.363 I print_info: file format = GGUF V3 (latest)
+0.00.021.363 I print_info: file type   = Q5_1
+0.00.021.366 I print_info: file size   = 1020.74 MiB (6.05 BPW) 
+0.00.055.185 I load: special tokens cache size = 25
+0.00.067.263 I load: token to piece cache size = 0.2984 MB
+0.00.067.294 I print_info: arch             = gptneox
+0.00.067.294 I print_info: vocab_only       = 0
+0.00.067.294 I print_info: n_ctx_train      = 2048
+0.00.067.295 I print_info: n_embd           = 2048
+0.00.067.295 I print_info: n_layer          = 24
+0.00.067.310 I print_info: n_head           = 16
+0.00.067.312 I print_info: n_head_kv        = 16
+0.00.067.312 I print_info: n_rot            = 32
+0.00.067.312 I print_info: n_swa            = 0
+0.00.067.314 I print_info: is_swa_any       = 0
+0.00.067.314 I print_info: n_embd_head_k    = 128
+0.00.067.314 I print_info: n_embd_head_v    = 128
+0.00.067.316 I print_info: n_gqa            = 1
+0.00.067.317 I print_info: n_embd_k_gqa     = 2048
+0.00.067.318 I print_info: n_embd_v_gqa     = 2048
+0.00.067.320 I print_info: f_norm_eps       = 1.0e-05
+0.00.067.320 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.067.320 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.067.321 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.067.321 I print_info: f_logit_scale    = 0.0e+00
+0.00.067.321 I print_info: f_attn_scale     = 0.0e+00
+0.00.067.322 I print_info: n_ff             = 8192
+0.00.067.322 I print_info: n_expert         = 0
+0.00.067.322 I print_info: n_expert_used    = 0
+0.00.067.322 I print_info: causal attn      = 1
+0.00.067.323 I print_info: pooling type     = 0
+0.00.067.323 I print_info: rope type        = 2
+0.00.067.323 I print_info: rope scaling     = linear
+0.00.067.324 I print_info: freq_base_train  = 10000.0
+0.00.067.325 I print_info: freq_scale_train = 1
+0.00.067.325 I print_info: n_ctx_orig_yarn  = 2048
+0.00.067.325 I print_info: rope_finetuned   = unknown
+0.00.067.326 I print_info: ssm_d_conv       = 0
+0.00.067.326 I print_info: ssm_d_inner      = 0
+0.00.067.326 I print_info: ssm_d_state      = 0
+0.00.067.326 I print_info: ssm_dt_rank      = 0
+0.00.067.327 I print_info: ssm_dt_b_c_rms   = 0
+0.00.067.327 I print_info: model type       = 1.4B
+0.00.067.328 I print_info: model params     = 1.41 B
+0.00.067.328 I print_info: general.name     = 1.4B
+0.00.067.331 I print_info: vocab type       = BPE
+0.00.067.331 I print_info: n_vocab          = 50304
+0.00.067.332 I print_info: n_merges         = 50009
+0.00.067.332 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.067.332 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.067.333 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.067.333 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.067.333 I print_info: LF token         = 187 'Ċ'
+0.00.067.333 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.067.334 I print_info: max token length = 1024
+0.00.067.335 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.137.998 I load_tensors:          AMX model buffer size =    80.60 MiB
+0.00.138.013 I load_tensors:   CPU_Mapped model buffer size =   940.14 MiB
+...............................................................................
+0.00.151.640 I llama_context: constructing llama_context
+0.00.151.660 I llama_context: n_seq_max     = 1
+0.00.151.660 I llama_context: n_ctx         = 2048
+0.00.151.660 I llama_context: n_ctx_per_seq = 2048
+0.00.151.661 I llama_context: n_batch       = 2048
+0.00.151.661 I llama_context: n_ubatch      = 512
+0.00.151.661 I llama_context: causal_attn   = 1
+0.00.151.662 I llama_context: flash_attn    = 0
+0.00.151.665 I llama_context: freq_base     = 10000.0
+0.00.151.666 I llama_context: freq_scale    = 1
+0.00.151.703 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.00.152.191 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.00.223.645 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.232.642 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.00.232.662 I llama_context: graph nodes  = 1063
+0.00.232.662 I llama_context: graph splits = 1
+0.00.232.678 I common_init_from_params: added <|endoftext|> logit bias = -inf
+0.00.233.080 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.233.094 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.337.069 I main: llama threadpool init, n_threads = 4
+0.00.337.091 I 
+0.00.337.187 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.337.199 I 
+0.00.337.315 I sampler seed: 1234
+0.00.337.336 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 2048
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.00.337.341 I sampler chain: logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+0.00.337.342 I generate: n_ctx = 2048, n_batch = 2048, n_predict = 64, n_keep = 0
+0.00.337.342 I 
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 7, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 7, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 7, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 7, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 7, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 7, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 7, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 7, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 7, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 7, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 7, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 7, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 7, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 7, n_seq_tokens = 1
+I believe the meaning of    seq_id[6][0] = 0
+ life iss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ tos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ dies = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ as = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ violents = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+,s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+diss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+figs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ureds = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+,s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ands = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ miserables = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ deaths = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+."s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+"s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Yous = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ares = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ as = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ fools = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+!"s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ shouteds = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ crowds = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+.s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Theres = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ iss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ nos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ suchs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+things = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ass = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ as = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ violents = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+,s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ diss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+figureds = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+,s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ands = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ms = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+isers = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ables = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ deaths = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+,"s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ hes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ rets = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+orteds = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+,s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ands = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+hes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ repeateds = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ this mant
+
+0.03.003.511 I llama_perf_sampler_print:    sampling time =       2.69 ms /    71 runs   (    0.04 ms per token, 26345.08 tokens per second)
+0.03.003.516 I llama_perf_context_print:        load time =     335.50 ms
+0.03.003.518 I llama_perf_context_print: prompt eval time =     135.17 ms /     7 tokens (   19.31 ms per token,    51.79 tokens per second)
+0.03.003.520 I llama_perf_context_print:        eval time =    2519.49 ms /    63 runs   (   39.99 ms per token,    25.01 tokens per second)
+0.03.003.521 I llama_perf_context_print:       total time =    2667.54 ms /    70 tokens
+
+real	0m3.056s
+user	0m11.092s
+sys	0m0.270s
++ ./bin/llama-perplexity --model ../models-mnt/pythia/1.4B/ggml-model-q5_1.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -ngl 99 -c 128 -b 128 --chunks 1
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.290 I build: 5635 (2db43275) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.010.425 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q5_1.gguf (version GGUF V3 (latest))
+0.00.010.451 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.010.459 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.010.460 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.010.460 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.010.461 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.010.461 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.010.464 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.010.466 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.010.487 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.010.489 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.010.489 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.010.490 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.010.490 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.010.500 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.010.501 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.010.501 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.015.315 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.016.379 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.020.932 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.020.951 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.020.952 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.020.952 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.020.953 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.020.953 I llama_model_loader: - kv  22:                          general.file_type u32              = 9
+0.00.020.955 I llama_model_loader: - type  f32:  194 tensors
+0.00.020.956 I llama_model_loader: - type q5_1:   97 tensors
+0.00.020.956 I llama_model_loader: - type q6_K:    1 tensors
+0.00.020.958 I print_info: file format = GGUF V3 (latest)
+0.00.020.959 I print_info: file type   = Q5_1
+0.00.020.961 I print_info: file size   = 1020.74 MiB (6.05 BPW) 
+0.00.053.961 I load: special tokens cache size = 25
+0.00.065.938 I load: token to piece cache size = 0.2984 MB
+0.00.065.966 I print_info: arch             = gptneox
+0.00.065.967 I print_info: vocab_only       = 0
+0.00.065.967 I print_info: n_ctx_train      = 2048
+0.00.065.967 I print_info: n_embd           = 2048
+0.00.065.967 I print_info: n_layer          = 24
+0.00.065.980 I print_info: n_head           = 16
+0.00.065.981 I print_info: n_head_kv        = 16
+0.00.065.982 I print_info: n_rot            = 32
+0.00.065.982 I print_info: n_swa            = 0
+0.00.065.983 I print_info: is_swa_any       = 0
+0.00.065.983 I print_info: n_embd_head_k    = 128
+0.00.065.983 I print_info: n_embd_head_v    = 128
+0.00.065.985 I print_info: n_gqa            = 1
+0.00.065.986 I print_info: n_embd_k_gqa     = 2048
+0.00.065.987 I print_info: n_embd_v_gqa     = 2048
+0.00.065.989 I print_info: f_norm_eps       = 1.0e-05
+0.00.065.989 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.065.989 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.065.989 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.065.990 I print_info: f_logit_scale    = 0.0e+00
+0.00.065.990 I print_info: f_attn_scale     = 0.0e+00
+0.00.065.991 I print_info: n_ff             = 8192
+0.00.065.991 I print_info: n_expert         = 0
+0.00.065.991 I print_info: n_expert_used    = 0
+0.00.065.991 I print_info: causal attn      = 1
+0.00.065.992 I print_info: pooling type     = 0
+0.00.065.992 I print_info: rope type        = 2
+0.00.065.992 I print_info: rope scaling     = linear
+0.00.065.993 I print_info: freq_base_train  = 10000.0
+0.00.065.993 I print_info: freq_scale_train = 1
+0.00.065.993 I print_info: n_ctx_orig_yarn  = 2048
+0.00.065.994 I print_info: rope_finetuned   = unknown
+0.00.065.994 I print_info: ssm_d_conv       = 0
+0.00.065.994 I print_info: ssm_d_inner      = 0
+0.00.065.994 I print_info: ssm_d_state      = 0
+0.00.065.994 I print_info: ssm_dt_rank      = 0
+0.00.065.994 I print_info: ssm_dt_b_c_rms   = 0
+0.00.065.995 I print_info: model type       = 1.4B
+0.00.065.996 I print_info: model params     = 1.41 B
+0.00.065.996 I print_info: general.name     = 1.4B
+0.00.065.998 I print_info: vocab type       = BPE
+0.00.065.999 I print_info: n_vocab          = 50304
+0.00.065.999 I print_info: n_merges         = 50009
+0.00.066.000 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.066.000 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.066.000 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.066.001 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.066.001 I print_info: LF token         = 187 'Ċ'
+0.00.066.001 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.066.002 I print_info: max token length = 1024
+0.00.066.003 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.136.119 I load_tensors:          AMX model buffer size =    80.60 MiB
+0.00.136.139 I load_tensors:   CPU_Mapped model buffer size =   940.14 MiB
+...............................................................................
+0.00.149.993 I llama_context: constructing llama_context
+0.00.150.010 I llama_context: n_seq_max     = 1
+0.00.150.010 I llama_context: n_ctx         = 128
+0.00.150.010 I llama_context: n_ctx_per_seq = 128
+0.00.150.011 I llama_context: n_batch       = 128
+0.00.150.011 I llama_context: n_ubatch      = 128
+0.00.150.011 I llama_context: causal_attn   = 1
+0.00.150.011 I llama_context: flash_attn    = 0
+0.00.150.014 I llama_context: freq_base     = 10000.0
+0.00.150.015 I llama_context: freq_scale    = 1
+0.00.150.016 W llama_context: n_ctx_per_seq (128) < n_ctx_train (2048) -- the full capacity of the model will not be utilized
+0.00.150.051 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.00.150.515 I llama_kv_cache_unified:        CPU KV buffer size =    24.00 MiB
+0.00.154.727 I llama_kv_cache_unified: size =   24.00 MiB (   128 cells,  24 layers,  1 seqs), K (f16):   12.00 MiB, V (f16):   12.00 MiB
+0.00.163.314 I llama_context:        CPU compute buffer size =    25.56 MiB
+0.00.163.333 I llama_context: graph nodes  = 1063
+0.00.163.333 I llama_context: graph splits = 1
+0.00.163.340 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 128
+0.00.163.340 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.224.865 I 
+0.00.224.955 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.224.986 I perplexity: tokenizing the input ..
+0.00.232.912 I perplexity: tokenization took 7.928 ms
+0.00.232.942 I perplexity: calculating perplexity over 1 chunks, n_ctx=128, batch_size=128, n_seq=1
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 128, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 128, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 128, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 128, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 128, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 128, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 128, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 7, j = 0, idx = 7, n_seqs = 128, n_seq_tokens = 1
+    seq_id[7][0] = 0
+s = 8, j = 0, idx = 8, n_seqs = 128, n_seq_tokens = 1
+    seq_id[8][0] = 0
+s = 9, j = 0, idx = 9, n_seqs = 128, n_seq_tokens = 1
+    seq_id[9][0] = 0
+s = 10, j = 0, idx = 10, n_seqs = 128, n_seq_tokens = 1
+    seq_id[10][0] = 0
+s = 11, j = 0, idx = 11, n_seqs = 128, n_seq_tokens = 1
+    seq_id[11][0] = 0
+s = 12, j = 0, idx = 12, n_seqs = 128, n_seq_tokens = 1
+    seq_id[12][0] = 0
+s = 13, j = 0, idx = 13, n_seqs = 128, n_seq_tokens = 1
+    seq_id[13][0] = 0
+s = 14, j = 0, idx = 14, n_seqs = 128, n_seq_tokens = 1
+    seq_id[14][0] = 0
+s = 15, j = 0, idx = 15, n_seqs = 128, n_seq_tokens = 1
+    seq_id[15][0] = 0
+s = 16, j = 0, idx = 16, n_seqs = 128, n_seq_tokens = 1
+    seq_id[16][0] = 0
+s = 17, j = 0, idx = 17, n_seqs = 128, n_seq_tokens = 1
+    seq_id[17][0] = 0
+s = 18, j = 0, idx = 18, n_seqs = 128, n_seq_tokens = 1
+    seq_id[18][0] = 0
+s = 19, j = 0, idx = 19, n_seqs = 128, n_seq_tokens = 1
+    seq_id[19][0] = 0
+s = 20, j = 0, idx = 20, n_seqs = 128, n_seq_tokens = 1
+    seq_id[20][0] = 0
+s = 21, j = 0, idx = 21, n_seqs = 128, n_seq_tokens = 1
+    seq_id[21][0] = 0
+s = 22, j = 0, idx = 22, n_seqs = 128, n_seq_tokens = 1
+    seq_id[22][0] = 0
+s = 23, j = 0, idx = 23, n_seqs = 128, n_seq_tokens = 1
+    seq_id[23][0] = 0
+s = 24, j = 0, idx = 24, n_seqs = 128, n_seq_tokens = 1
+    seq_id[24][0] = 0
+s = 25, j = 0, idx = 25, n_seqs = 128, n_seq_tokens = 1
+    seq_id[25][0] = 0
+s = 26, j = 0, idx = 26, n_seqs = 128, n_seq_tokens = 1
+    seq_id[26][0] = 0
+s = 27, j = 0, idx = 27, n_seqs = 128, n_seq_tokens = 1
+    seq_id[27][0] = 0
+s = 28, j = 0, idx = 28, n_seqs = 128, n_seq_tokens = 1
+    seq_id[28][0] = 0
+s = 29, j = 0, idx = 29, n_seqs = 128, n_seq_tokens = 1
+    seq_id[29][0] = 0
+s = 30, j = 0, idx = 30, n_seqs = 128, n_seq_tokens = 1
+    seq_id[30][0] = 0
+s = 31, j = 0, idx = 31, n_seqs = 128, n_seq_tokens = 1
+    seq_id[31][0] = 0
+s = 32, j = 0, idx = 32, n_seqs = 128, n_seq_tokens = 1
+    seq_id[32][0] = 0
+s = 33, j = 0, idx = 33, n_seqs = 128, n_seq_tokens = 1
+    seq_id[33][0] = 0
+s = 34, j = 0, idx = 34, n_seqs = 128, n_seq_tokens = 1
+    seq_id[34][0] = 0
+s = 35, j = 0, idx = 35, n_seqs = 128, n_seq_tokens = 1
+    seq_id[35][0] = 0
+s = 36, j = 0, idx = 36, n_seqs = 128, n_seq_tokens = 1
+    seq_id[36][0] = 0
+s = 37, j = 0, idx = 37, n_seqs = 128, n_seq_tokens = 1
+    seq_id[37][0] = 0
+s = 38, j = 0, idx = 38, n_seqs = 128, n_seq_tokens = 1
+    seq_id[38][0] = 0
+s = 39, j = 0, idx = 39, n_seqs = 128, n_seq_tokens = 1
+    seq_id[39][0] = 0
+s = 40, j = 0, idx = 40, n_seqs = 128, n_seq_tokens = 1
+    seq_id[40][0] = 0
+s = 41, j = 0, idx = 41, n_seqs = 128, n_seq_tokens = 1
+    seq_id[41][0] = 0
+s = 42, j = 0, idx = 42, n_seqs = 128, n_seq_tokens = 1
+    seq_id[42][0] = 0
+s = 43, j = 0, idx = 43, n_seqs = 128, n_seq_tokens = 1
+    seq_id[43][0] = 0
+s = 44, j = 0, idx = 44, n_seqs = 128, n_seq_tokens = 1
+    seq_id[44][0] = 0
+s = 45, j = 0, idx = 45, n_seqs = 128, n_seq_tokens = 1
+    seq_id[45][0] = 0
+s = 46, j = 0, idx = 46, n_seqs = 128, n_seq_tokens = 1
+    seq_id[46][0] = 0
+s = 47, j = 0, idx = 47, n_seqs = 128, n_seq_tokens = 1
+    seq_id[47][0] = 0
+s = 48, j = 0, idx = 48, n_seqs = 128, n_seq_tokens = 1
+    seq_id[48][0] = 0
+s = 49, j = 0, idx = 49, n_seqs = 128, n_seq_tokens = 1
+    seq_id[49][0] = 0
+s = 50, j = 0, idx = 50, n_seqs = 128, n_seq_tokens = 1
+    seq_id[50][0] = 0
+s = 51, j = 0, idx = 51, n_seqs = 128, n_seq_tokens = 1
+    seq_id[51][0] = 0
+s = 52, j = 0, idx = 52, n_seqs = 128, n_seq_tokens = 1
+    seq_id[52][0] = 0
+s = 53, j = 0, idx = 53, n_seqs = 128, n_seq_tokens = 1
+    seq_id[53][0] = 0
+s = 54, j = 0, idx = 54, n_seqs = 128, n_seq_tokens = 1
+    seq_id[54][0] = 0
+s = 55, j = 0, idx = 55, n_seqs = 128, n_seq_tokens = 1
+    seq_id[55][0] = 0
+s = 56, j = 0, idx = 56, n_seqs = 128, n_seq_tokens = 1
+    seq_id[56][0] = 0
+s = 57, j = 0, idx = 57, n_seqs = 128, n_seq_tokens = 1
+    seq_id[57][0] = 0
+s = 58, j = 0, idx = 58, n_seqs = 128, n_seq_tokens = 1
+    seq_id[58][0] = 0
+s = 59, j = 0, idx = 59, n_seqs = 128, n_seq_tokens = 1
+    seq_id[59][0] = 0
+s = 60, j = 0, idx = 60, n_seqs = 128, n_seq_tokens = 1
+    seq_id[60][0] = 0
+s = 61, j = 0, idx = 61, n_seqs = 128, n_seq_tokens = 1
+    seq_id[61][0] = 0
+s = 62, j = 0, idx = 62, n_seqs = 128, n_seq_tokens = 1
+    seq_id[62][0] = 0
+s = 63, j = 0, idx = 63, n_seqs = 128, n_seq_tokens = 1
+    seq_id[63][0] = 0
+s = 64, j = 0, idx = 64, n_seqs = 128, n_seq_tokens = 1
+    seq_id[64][0] = 0
+s = 65, j = 0, idx = 65, n_seqs = 128, n_seq_tokens = 1
+    seq_id[65][0] = 0
+s = 66, j = 0, idx = 66, n_seqs = 128, n_seq_tokens = 1
+    seq_id[66][0] = 0
+s = 67, j = 0, idx = 67, n_seqs = 128, n_seq_tokens = 1
+    seq_id[67][0] = 0
+s = 68, j = 0, idx = 68, n_seqs = 128, n_seq_tokens = 1
+    seq_id[68][0] = 0
+s = 69, j = 0, idx = 69, n_seqs = 128, n_seq_tokens = 1
+    seq_id[69][0] = 0
+s = 70, j = 0, idx = 70, n_seqs = 128, n_seq_tokens = 1
+    seq_id[70][0] = 0
+s = 71, j = 0, idx = 71, n_seqs = 128, n_seq_tokens = 1
+    seq_id[71][0] = 0
+s = 72, j = 0, idx = 72, n_seqs = 128, n_seq_tokens = 1
+    seq_id[72][0] = 0
+s = 73, j = 0, idx = 73, n_seqs = 128, n_seq_tokens = 1
+    seq_id[73][0] = 0
+s = 74, j = 0, idx = 74, n_seqs = 128, n_seq_tokens = 1
+    seq_id[74][0] = 0
+s = 75, j = 0, idx = 75, n_seqs = 128, n_seq_tokens = 1
+    seq_id[75][0] = 0
+s = 76, j = 0, idx = 76, n_seqs = 128, n_seq_tokens = 1
+    seq_id[76][0] = 0
+s = 77, j = 0, idx = 77, n_seqs = 128, n_seq_tokens = 1
+    seq_id[77][0] = 0
+s = 78, j = 0, idx = 78, n_seqs = 128, n_seq_tokens = 1
+    seq_id[78][0] = 0
+s = 79, j = 0, idx = 79, n_seqs = 128, n_seq_tokens = 1
+    seq_id[79][0] = 0
+s = 80, j = 0, idx = 80, n_seqs = 128, n_seq_tokens = 1
+    seq_id[80][0] = 0
+s = 81, j = 0, idx = 81, n_seqs = 128, n_seq_tokens = 1
+    seq_id[81][0] = 0
+s = 82, j = 0, idx = 82, n_seqs = 128, n_seq_tokens = 1
+    seq_id[82][0] = 0
+s = 83, j = 0, idx = 83, n_seqs = 128, n_seq_tokens = 1
+    seq_id[83][0] = 0
+s = 84, j = 0, idx = 84, n_seqs = 128, n_seq_tokens = 1
+    seq_id[84][0] = 0
+s = 85, j = 0, idx = 85, n_seqs = 128, n_seq_tokens = 1
+    seq_id[85][0] = 0
+s = 86, j = 0, idx = 86, n_seqs = 128, n_seq_tokens = 1
+    seq_id[86][0] = 0
+s = 87, j = 0, idx = 87, n_seqs = 128, n_seq_tokens = 1
+    seq_id[87][0] = 0
+s = 88, j = 0, idx = 88, n_seqs = 128, n_seq_tokens = 1
+    seq_id[88][0] = 0
+s = 89, j = 0, idx = 89, n_seqs = 128, n_seq_tokens = 1
+    seq_id[89][0] = 0
+s = 90, j = 0, idx = 90, n_seqs = 128, n_seq_tokens = 1
+    seq_id[90][0] = 0
+s = 91, j = 0, idx = 91, n_seqs = 128, n_seq_tokens = 1
+    seq_id[91][0] = 0
+s = 92, j = 0, idx = 92, n_seqs = 128, n_seq_tokens = 1
+    seq_id[92][0] = 0
+s = 93, j = 0, idx = 93, n_seqs = 128, n_seq_tokens = 1
+    seq_id[93][0] = 0
+s = 94, j = 0, idx = 94, n_seqs = 128, n_seq_tokens = 1
+    seq_id[94][0] = 0
+s = 95, j = 0, idx = 95, n_seqs = 128, n_seq_tokens = 1
+    seq_id[95][0] = 0
+s = 96, j = 0, idx = 96, n_seqs = 128, n_seq_tokens = 1
+    seq_id[96][0] = 0
+s = 97, j = 0, idx = 97, n_seqs = 128, n_seq_tokens = 1
+    seq_id[97][0] = 0
+s = 98, j = 0, idx = 98, n_seqs = 128, n_seq_tokens = 1
+    seq_id[98][0] = 0
+s = 99, j = 0, idx = 99, n_seqs = 128, n_seq_tokens = 1
+    seq_id[99][0] = 0
+s = 100, j = 0, idx = 100, n_seqs = 128, n_seq_tokens = 1
+    seq_id[100][0] = 0
+s = 101, j = 0, idx = 101, n_seqs = 128, n_seq_tokens = 1
+    seq_id[101][0] = 0
+s = 102, j = 0, idx = 102, n_seqs = 128, n_seq_tokens = 1
+    seq_id[102][0] = 0
+s = 103, j = 0, idx = 103, n_seqs = 128, n_seq_tokens = 1
+    seq_id[103][0] = 0
+s = 104, j = 0, idx = 104, n_seqs = 128, n_seq_tokens = 1
+    seq_id[104][0] = 0
+s = 105, j = 0, idx = 105, n_seqs = 128, n_seq_tokens = 1
+    seq_id[105][0] = 0
+s = 106, j = 0, idx = 106, n_seqs = 128, n_seq_tokens = 1
+    seq_id[106][0] = 0
+s = 107, j = 0, idx = 107, n_seqs = 128, n_seq_tokens = 1
+    seq_id[107][0] = 0
+s = 108, j = 0, idx = 108, n_seqs = 128, n_seq_tokens = 1
+    seq_id[108][0] = 0
+s = 109, j = 0, idx = 109, n_seqs = 128, n_seq_tokens = 1
+    seq_id[109][0] = 0
+s = 110, j = 0, idx = 110, n_seqs = 128, n_seq_tokens = 1
+    seq_id[110][0] = 0
+s = 111, j = 0, idx = 111, n_seqs = 128, n_seq_tokens = 1
+    seq_id[111][0] = 0
+s = 112, j = 0, idx = 112, n_seqs = 128, n_seq_tokens = 1
+    seq_id[112][0] = 0
+s = 113, j = 0, idx = 113, n_seqs = 128, n_seq_tokens = 1
+    seq_id[113][0] = 0
+s = 114, j = 0, idx = 114, n_seqs = 128, n_seq_tokens = 1
+    seq_id[114][0] = 0
+s = 115, j = 0, idx = 115, n_seqs = 128, n_seq_tokens = 1
+    seq_id[115][0] = 0
+s = 116, j = 0, idx = 116, n_seqs = 128, n_seq_tokens = 1
+    seq_id[116][0] = 0
+s = 117, j = 0, idx = 117, n_seqs = 128, n_seq_tokens = 1
+    seq_id[117][0] = 0
+s = 118, j = 0, idx = 118, n_seqs = 128, n_seq_tokens = 1
+    seq_id[118][0] = 0
+s = 119, j = 0, idx = 119, n_seqs = 128, n_seq_tokens = 1
+    seq_id[119][0] = 0
+s = 120, j = 0, idx = 120, n_seqs = 128, n_seq_tokens = 1
+    seq_id[120][0] = 0
+s = 121, j = 0, idx = 121, n_seqs = 128, n_seq_tokens = 1
+    seq_id[121][0] = 0
+s = 122, j = 0, idx = 122, n_seqs = 128, n_seq_tokens = 1
+    seq_id[122][0] = 0
+s = 123, j = 0, idx = 123, n_seqs = 128, n_seq_tokens = 1
+    seq_id[123][0] = 0
+s = 124, j = 0, idx = 124, n_seqs = 128, n_seq_tokens = 1
+    seq_id[124][0] = 0
+s = 125, j = 0, idx = 125, n_seqs = 128, n_seq_tokens = 1
+    seq_id[125][0] = 0
+s = 126, j = 0, idx = 126, n_seqs = 128, n_seq_tokens = 1
+    seq_id[126][0] = 0
+s = 127, j = 0, idx = 127, n_seqs = 128, n_seq_tokens = 1
+    seq_id[127][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 128, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 128, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 128, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 128, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 128, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 128, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 128, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 7, j = 0, idx = 7, n_seqs = 128, n_seq_tokens = 1
+    seq_id[7][0] = 0
+s = 8, j = 0, idx = 8, n_seqs = 128, n_seq_tokens = 1
+    seq_id[8][0] = 0
+s = 9, j = 0, idx = 9, n_seqs = 128, n_seq_tokens = 1
+    seq_id[9][0] = 0
+s = 10, j = 0, idx = 10, n_seqs = 128, n_seq_tokens = 1
+    seq_id[10][0] = 0
+s = 11, j = 0, idx = 11, n_seqs = 128, n_seq_tokens = 1
+    seq_id[11][0] = 0
+s = 12, j = 0, idx = 12, n_seqs = 128, n_seq_tokens = 1
+    seq_id[12][0] = 0
+s = 13, j = 0, idx = 13, n_seqs = 128, n_seq_tokens = 1
+    seq_id[13][0] = 0
+s = 14, j = 0, idx = 14, n_seqs = 128, n_seq_tokens = 1
+    seq_id[14][0] = 0
+s = 15, j = 0, idx = 15, n_seqs = 128, n_seq_tokens = 1
+    seq_id[15][0] = 0
+s = 16, j = 0, idx = 16, n_seqs = 128, n_seq_tokens = 1
+    seq_id[16][0] = 0
+s = 17, j = 0, idx = 17, n_seqs = 128, n_seq_tokens = 1
+    seq_id[17][0] = 0
+s = 18, j = 0, idx = 18, n_seqs = 128, n_seq_tokens = 1
+    seq_id[18][0] = 0
+s = 19, j = 0, idx = 19, n_seqs = 128, n_seq_tokens = 1
+    seq_id[19][0] = 0
+s = 20, j = 0, idx = 20, n_seqs = 128, n_seq_tokens = 1
+    seq_id[20][0] = 0
+s = 21, j = 0, idx = 21, n_seqs = 128, n_seq_tokens = 1
+    seq_id[21][0] = 0
+s = 22, j = 0, idx = 22, n_seqs = 128, n_seq_tokens = 1
+    seq_id[22][0] = 0
+s = 23, j = 0, idx = 23, n_seqs = 128, n_seq_tokens = 1
+    seq_id[23][0] = 0
+s = 24, j = 0, idx = 24, n_seqs = 128, n_seq_tokens = 1
+    seq_id[24][0] = 0
+s = 25, j = 0, idx = 25, n_seqs = 128, n_seq_tokens = 1
+    seq_id[25][0] = 0
+s = 26, j = 0, idx = 26, n_seqs = 128, n_seq_tokens = 1
+    seq_id[26][0] = 0
+s = 27, j = 0, idx = 27, n_seqs = 128, n_seq_tokens = 1
+    seq_id[27][0] = 0
+s = 28, j = 0, idx = 28, n_seqs = 128, n_seq_tokens = 1
+    seq_id[28][0] = 0
+s = 29, j = 0, idx = 29, n_seqs = 128, n_seq_tokens = 1
+    seq_id[29][0] = 0
+s = 30, j = 0, idx = 30, n_seqs = 128, n_seq_tokens = 1
+    seq_id[30][0] = 0
+s = 31, j = 0, idx = 31, n_seqs = 128, n_seq_tokens = 1
+    seq_id[31][0] = 0
+s = 32, j = 0, idx = 32, n_seqs = 128, n_seq_tokens = 1
+    seq_id[32][0] = 0
+s = 33, j = 0, idx = 33, n_seqs = 128, n_seq_tokens = 1
+    seq_id[33][0] = 0
+s = 34, j = 0, idx = 34, n_seqs = 128, n_seq_tokens = 1
+    seq_id[34][0] = 0
+s = 35, j = 0, idx = 35, n_seqs = 128, n_seq_tokens = 1
+    seq_id[35][0] = 0
+s = 36, j = 0, idx = 36, n_seqs = 128, n_seq_tokens = 1
+    seq_id[36][0] = 0
+s = 37, j = 0, idx = 37, n_seqs = 128, n_seq_tokens = 1
+    seq_id[37][0] = 0
+s = 38, j = 0, idx = 38, n_seqs = 128, n_seq_tokens = 1
+    seq_id[38][0] = 0
+s = 39, j = 0, idx = 39, n_seqs = 128, n_seq_tokens = 1
+    seq_id[39][0] = 0
+s = 40, j = 0, idx = 40, n_seqs = 128, n_seq_tokens = 1
+    seq_id[40][0] = 0
+s = 41, j = 0, idx = 41, n_seqs = 128, n_seq_tokens = 1
+    seq_id[41][0] = 0
+s = 42, j = 0, idx = 42, n_seqs = 128, n_seq_tokens = 1
+    seq_id[42][0] = 0
+s = 43, j = 0, idx = 43, n_seqs = 128, n_seq_tokens = 1
+    seq_id[43][0] = 0
+s = 44, j = 0, idx = 44, n_seqs = 128, n_seq_tokens = 1
+    seq_id[44][0] = 0
+s = 45, j = 0, idx = 45, n_seqs = 128, n_seq_tokens = 1
+    seq_id[45][0] = 0
+s = 46, j = 0, idx = 46, n_seqs = 128, n_seq_tokens = 1
+    seq_id[46][0] = 0
+s = 47, j = 0, idx = 47, n_seqs = 128, n_seq_tokens = 1
+    seq_id[47][0] = 0
+s = 48, j = 0, idx = 48, n_seqs = 128, n_seq_tokens = 1
+    seq_id[48][0] = 0
+s = 49, j = 0, idx = 49, n_seqs = 128, n_seq_tokens = 1
+    seq_id[49][0] = 0
+s = 50, j = 0, idx = 50, n_seqs = 128, n_seq_tokens = 1
+    seq_id[50][0] = 0
+s = 51, j = 0, idx = 51, n_seqs = 128, n_seq_tokens = 1
+    seq_id[51][0] = 0
+s = 52, j = 0, idx = 52, n_seqs = 128, n_seq_tokens = 1
+    seq_id[52][0] = 0
+s = 53, j = 0, idx = 53, n_seqs = 128, n_seq_tokens = 1
+    seq_id[53][0] = 0
+s = 54, j = 0, idx = 54, n_seqs = 128, n_seq_tokens = 1
+    seq_id[54][0] = 0
+s = 55, j = 0, idx = 55, n_seqs = 128, n_seq_tokens = 1
+    seq_id[55][0] = 0
+s = 56, j = 0, idx = 56, n_seqs = 128, n_seq_tokens = 1
+    seq_id[56][0] = 0
+s = 57, j = 0, idx = 57, n_seqs = 128, n_seq_tokens = 1
+    seq_id[57][0] = 0
+s = 58, j = 0, idx = 58, n_seqs = 128, n_seq_tokens = 1
+    seq_id[58][0] = 0
+s = 59, j = 0, idx = 59, n_seqs = 128, n_seq_tokens = 1
+    seq_id[59][0] = 0
+s = 60, j = 0, idx = 60, n_seqs = 128, n_seq_tokens = 1
+    seq_id[60][0] = 0
+s = 61, j = 0, idx = 61, n_seqs = 128, n_seq_tokens = 1
+    seq_id[61][0] = 0
+s = 62, j = 0, idx = 62, n_seqs = 128, n_seq_tokens = 1
+    seq_id[62][0] = 0
+s = 63, j = 0, idx = 63, n_seqs = 128, n_seq_tokens = 1
+    seq_id[63][0] = 0
+s = 64, j = 0, idx = 64, n_seqs = 128, n_seq_tokens = 1
+    seq_id[64][0] = 0
+s = 65, j = 0, idx = 65, n_seqs = 128, n_seq_tokens = 1
+    seq_id[65][0] = 0
+s = 66, j = 0, idx = 66, n_seqs = 128, n_seq_tokens = 1
+    seq_id[66][0] = 0
+s = 67, j = 0, idx = 67, n_seqs = 128, n_seq_tokens = 1
+    seq_id[67][0] = 0
+s = 68, j = 0, idx = 68, n_seqs = 128, n_seq_tokens = 1
+    seq_id[68][0] = 0
+s = 69, j = 0, idx = 69, n_seqs = 128, n_seq_tokens = 1
+    seq_id[69][0] = 0
+s = 70, j = 0, idx = 70, n_seqs = 128, n_seq_tokens = 1
+    seq_id[70][0] = 0
+s = 71, j = 0, idx = 71, n_seqs = 128, n_seq_tokens = 1
+    seq_id[71][0] = 0
+s = 72, j = 0, idx = 72, n_seqs = 128, n_seq_tokens = 1
+    seq_id[72][0] = 0
+s = 73, j = 0, idx = 73, n_seqs = 128, n_seq_tokens = 1
+    seq_id[73][0] = 0
+s = 74, j = 0, idx = 74, n_seqs = 128, n_seq_tokens = 1
+    seq_id[74][0] = 0
+s = 75, j = 0, idx = 75, n_seqs = 128, n_seq_tokens = 1
+    seq_id[75][0] = 0
+s = 76, j = 0, idx = 76, n_seqs = 128, n_seq_tokens = 1
+    seq_id[76][0] = 0
+s = 77, j = 0, idx = 77, n_seqs = 128, n_seq_tokens = 1
+    seq_id[77][0] = 0
+0.02.204.472 I perplexity: 1.97 seconds per pass - ETA s = 78, j = 0, idx = 78, n_seqs = 128, n_seq_tokens = 1
+    seq_id[78][0] = 0
+s = 79, j = 0, idx = 79, n_seqs = 128, n_seq_tokens = 1
+    seq_id[79][0] = 0
+s = 80, j = 0, idx = 80, n_seqs = 128, n_seq_tokens = 1
+    seq_id[80][0] = 0
+s = 81, j = 0, idx = 81, n_seqs = 128, n_seq_tokens = 1
+    seq_id[81][0] = 0
+s = 82, j = 0, idx = 82, n_seqs = 128, n_seq_tokens = 1
+    seq_id[82][0] = 0
+s = 83, j = 0, idx = 83, n_seqs = 128, n_seq_tokens = 1
+    seq_id[83][0] = 0
+s = 84, j = 0, idx = 84, n_seqs = 128, n_seq_tokens = 1
+    seq_id[84][0] = 0
+s = 85, j = 0, idx = 85, n_seqs = 128, n_seq_tokens = 1
+    seq_id[85][0] = 0
+s = 86, j = 0, idx = 86, n_seqs = 128, n_seq_tokens = 1
+    seq_id[86][0] = 0
+s = 87, j = 0, idx = 87, n_seqs = 128, n_seq_tokens = 1
+    seq_id[87][0] = 0
+s = 88, j = 0, idx = 88, n_seqs = 128, n_seq_tokens = 1
+    seq_id[88][0] = 0
+s = 89, j = 0, idx = 89, n_seqs = 128, n_seq_tokens = 1
+    seq_id[89][0] = 0
+s = 90, j = 0, idx = 90, n_seqs = 128, n_seq_tokens = 1
+    seq_id[90][0] = 0
+s = 91, j = 0, idx = 91, n_seqs = 128, n_seq_tokens = 1
+    seq_id[91][0] = 0
+s = 92, j = 0, idx = 92, n_seqs = 128, n_seq_tokens = 1
+    seq_id[92][0] = 0
+s = 93, j = 0, idx = 93, n_seqs = 128, n_seq_tokens = 1
+    seq_id[93][0] = 0
+s = 94, j = 0, idx = 94, n_seqs = 128, n_seq_tokens = 1
+    seq_id[94][0] = 0
+s = 95, j = 0, idx = 95, n_seqs = 128, n_seq_tokens = 1
+    seq_id[95][0] = 0
+s = 96, j = 0, idx = 96, n_seqs = 128, n_seq_tokens = 1
+    seq_id[96][0] = 0
+s = 97, j = 0, idx = 97, n_seqs = 128, n_seq_tokens = 1
+    seq_id[97][0] = 0
+s = 98, j = 0, idx = 98, n_seqs = 128, n_seq_tokens = 1
+    seq_id[98][0] = 0
+s = 99, j = 0, idx = 99, n_seqs = 128, n_seq_tokens = 1
+    seq_id[99][0] = 0
+s = 100, j = 0, idx = 100, n_seqs = 128, n_seq_tokens = 1
+    seq_id[100][0] = 0
+s = 101, j = 0, idx = 101, n_seqs = 128, n_seq_tokens = 1
+    seq_id[101][0] = 0
+s = 102, j = 0, idx = 102, n_seqs = 128, n_seq_tokens = 1
+    seq_id[102][0] = 0
+s = 103, j = 0, idx = 103, n_seqs = 128, n_seq_tokens = 1
+    seq_id[103][0] = 0
+s = 104, j = 0, idx = 104, n_seqs = 128, n_seq_tokens = 1
+    seq_id[104][0] = 0
+s = 105, j = 0, idx = 105, n_seqs = 128, n_seq_tokens = 1
+    seq_id[105][0] = 0
+s = 106, j = 0, idx = 106, n_seqs = 128, n_seq_tokens = 1
+    seq_id[106][0] = 0
+s = 107, j = 0, idx = 107, n_seqs = 128, n_seq_tokens = 1
+    seq_id[107][0] = 0
+s = 108, j = 0, idx = 108, n_seqs = 128, n_seq_tokens = 1
+    seq_id[108][0] = 0
+s = 109, j = 0, idx = 109, n_seqs = 128, n_seq_tokens = 1
+    seq_id[109][0] = 0
+s = 110, j = 0, idx = 110, n_seqs = 128, n_seq_tokens = 1
+    seq_id[110][0] = 0
+s = 111, j = 0, idx = 111, n_seqs = 128, n_seq_tokens = 1
+    seq_id[111][0] = 0
+s = 112, j = 0, idx = 112, n_seqs = 128, n_seq_tokens = 1
+    seq_id[112][0] = 0
+s = 113, j = 0, idx = 113, n_seqs = 128, n_seq_tokens = 1
+    seq_id[113][0] = 0
+s = 114, j = 0, idx = 114, n_seqs = 128, n_seq_tokens = 1
+    seq_id[114][0] = 0
+s = 115, j = 0, idx = 115, n_seqs = 128, n_seq_tokens = 1
+    seq_id[115][0] = 0
+s = 116, j = 0, idx = 116, n_seqs = 128, n_seq_tokens = 1
+    seq_id[116][0] = 0
+s = 117, j = 0, idx = 117, n_seqs = 128, n_seq_tokens = 1
+    seq_id[117][0] = 0
+s = 118, j = 0, idx = 118, n_seqs = 128, n_seq_tokens = 1
+    seq_id[118][0] = 0
+s = 119, j = 0, idx = 119, n_seqs = 128, n_seq_tokens = 1
+    seq_id[119][0] = 0
+s = 120, j = 0, idx = 120, n_seqs = 128, n_seq_tokens = 1
+    seq_id[120][0] = 0
+s = 121, j = 0, idx = 121, n_seqs = 128, n_seq_tokens = 1
+    seq_id[121][0] = 0
+s = 122, j = 0, idx = 122, n_seqs = 128, n_seq_tokens = 1
+    seq_id[122][0] = 0
+s = 123, j = 0, idx = 123, n_seqs = 128, n_seq_tokens = 1
+    seq_id[123][0] = 0
+s = 124, j = 0, idx = 124, n_seqs = 128, n_seq_tokens = 1
+    seq_id[124][0] = 0
+s = 125, j = 0, idx = 125, n_seqs = 128, n_seq_tokens = 1
+    seq_id[125][0] = 0
+s = 126, j = 0, idx = 126, n_seqs = 128, n_seq_tokens = 1
+    seq_id[126][0] = 0
+s = 127, j = 0, idx = 127, n_seqs = 128, n_seq_tokens = 1
+    seq_id[127][0] = 0
+0.02 minutes
+[1]10.1864,
+0.02.207.465 I Final estimate: PPL = 10.1864 +/- 3.18686
+
+0.02.207.507 I llama_perf_context_print:        load time =     224.51 ms
+0.02.207.521 I llama_perf_context_print: prompt eval time =    1969.61 ms /   128 tokens (   15.39 ms per token,    64.99 tokens per second)
+0.02.207.522 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.02.207.523 I llama_perf_context_print:       total time =    1982.66 ms /   129 tokens
+
+real	0m2.257s
+user	0m8.285s
+sys	0m0.169s
+```
+- q2_k:
+```
++ ./bin/llama-cli -no-cnv --model ../models-mnt/pythia/1.4B/ggml-model-q2_k.gguf -ngl 99 -c 0 -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.272 I build: 5635 (2db43275) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.000.461 I main: llama backend init
+0.00.000.478 I main: load the model and apply lora adapter, if any
+0.00.011.010 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q2_k.gguf (version GGUF V3 (latest))
+0.00.011.037 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.011.045 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.011.046 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.011.046 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.011.047 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.011.047 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.011.072 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.011.075 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.011.076 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.011.076 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.011.077 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.011.077 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.011.078 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.011.083 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.011.083 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.011.084 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.015.955 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.017.018 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.021.582 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.021.601 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.021.601 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.021.602 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.021.602 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.021.603 I llama_model_loader: - kv  22:                          general.file_type u32              = 10
+0.00.021.605 I llama_model_loader: - type  f32:  194 tensors
+0.00.021.606 I llama_model_loader: - type q2_K:   49 tensors
+0.00.021.606 I llama_model_loader: - type q3_K:   48 tensors
+0.00.021.606 I llama_model_loader: - type q6_K:    1 tensors
+0.00.021.608 I print_info: file format = GGUF V3 (latest)
+0.00.021.609 I print_info: file type   = Q2_K - Medium
+0.00.021.612 I print_info: file size   = 542.04 MiB (3.21 BPW) 
+0.00.056.000 I load: special tokens cache size = 25
+0.00.068.044 I load: token to piece cache size = 0.2984 MB
+0.00.068.074 I print_info: arch             = gptneox
+0.00.068.075 I print_info: vocab_only       = 0
+0.00.068.075 I print_info: n_ctx_train      = 2048
+0.00.068.075 I print_info: n_embd           = 2048
+0.00.068.075 I print_info: n_layer          = 24
+0.00.068.090 I print_info: n_head           = 16
+0.00.068.092 I print_info: n_head_kv        = 16
+0.00.068.092 I print_info: n_rot            = 32
+0.00.068.092 I print_info: n_swa            = 0
+0.00.068.093 I print_info: is_swa_any       = 0
+0.00.068.094 I print_info: n_embd_head_k    = 128
+0.00.068.094 I print_info: n_embd_head_v    = 128
+0.00.068.096 I print_info: n_gqa            = 1
+0.00.068.097 I print_info: n_embd_k_gqa     = 2048
+0.00.068.099 I print_info: n_embd_v_gqa     = 2048
+0.00.068.100 I print_info: f_norm_eps       = 1.0e-05
+0.00.068.100 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.068.101 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.068.101 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.068.102 I print_info: f_logit_scale    = 0.0e+00
+0.00.068.102 I print_info: f_attn_scale     = 0.0e+00
+0.00.068.103 I print_info: n_ff             = 8192
+0.00.068.103 I print_info: n_expert         = 0
+0.00.068.103 I print_info: n_expert_used    = 0
+0.00.068.104 I print_info: causal attn      = 1
+0.00.068.104 I print_info: pooling type     = 0
+0.00.068.104 I print_info: rope type        = 2
+0.00.068.104 I print_info: rope scaling     = linear
+0.00.068.106 I print_info: freq_base_train  = 10000.0
+0.00.068.106 I print_info: freq_scale_train = 1
+0.00.068.107 I print_info: n_ctx_orig_yarn  = 2048
+0.00.068.107 I print_info: rope_finetuned   = unknown
+0.00.068.107 I print_info: ssm_d_conv       = 0
+0.00.068.107 I print_info: ssm_d_inner      = 0
+0.00.068.107 I print_info: ssm_d_state      = 0
+0.00.068.107 I print_info: ssm_dt_rank      = 0
+0.00.068.108 I print_info: ssm_dt_b_c_rms   = 0
+0.00.068.108 I print_info: model type       = 1.4B
+0.00.068.109 I print_info: model params     = 1.41 B
+0.00.068.109 I print_info: general.name     = 1.4B
+0.00.068.112 I print_info: vocab type       = BPE
+0.00.068.113 I print_info: n_vocab          = 50304
+0.00.068.113 I print_info: n_merges         = 50009
+0.00.068.113 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.068.113 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.068.114 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.068.114 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.068.114 I print_info: LF token         = 187 'Ċ'
+0.00.068.115 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.068.115 I print_info: max token length = 1024
+0.00.068.117 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.105.870 I load_tensors:          AMX model buffer size =    80.60 MiB
+0.00.105.887 I load_tensors:   CPU_Mapped model buffer size =   461.44 MiB
+..........................................................................
+0.00.119.709 I llama_context: constructing llama_context
+0.00.119.725 I llama_context: n_seq_max     = 1
+0.00.119.726 I llama_context: n_ctx         = 2048
+0.00.119.726 I llama_context: n_ctx_per_seq = 2048
+0.00.119.726 I llama_context: n_batch       = 2048
+0.00.119.726 I llama_context: n_ubatch      = 512
+0.00.119.727 I llama_context: causal_attn   = 1
+0.00.119.727 I llama_context: flash_attn    = 0
+0.00.119.730 I llama_context: freq_base     = 10000.0
+0.00.119.731 I llama_context: freq_scale    = 1
+0.00.119.767 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.00.120.221 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.00.192.180 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.201.216 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.00.201.236 I llama_context: graph nodes  = 1063
+0.00.201.236 I llama_context: graph splits = 1
+0.00.201.253 I common_init_from_params: added <|endoftext|> logit bias = -inf
+0.00.201.684 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.201.697 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.283.330 I main: llama threadpool init, n_threads = 4
+0.00.283.351 I 
+0.00.283.426 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.283.438 I 
+0.00.283.574 I sampler seed: 1234
+0.00.283.594 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 2048
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.00.283.598 I sampler chain: logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+0.00.283.599 I generate: n_ctx = 2048, n_batch = 2048, n_predict = 64, n_keep = 0
+0.00.283.599 I 
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 7, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 7, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 7, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 7, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 7, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 7, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 7, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 7, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 7, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 7, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 7, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 7, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 7, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 7, n_seq_tokens = 1
+    seq_id[6][0] = 0
+I believe the meaning of life iss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ as = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ multis = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+-s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+fs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+alts = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+.s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+  s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+    s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+            s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+        s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+            s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+            s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+            s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+            s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+            s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+                        s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+  s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+                s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+                s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+                s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+                s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+                s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+?s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+                s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+?s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+         s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+?s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+            s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+?s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+         s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+?s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+         s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+?s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+          s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+?s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+           s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+?s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+     s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+?s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+?s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+                s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+?s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+         s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+?          
+
+0.01.860.645 I llama_perf_sampler_print:    sampling time =       2.47 ms /    71 runs   (    0.03 ms per token, 28791.57 tokens per second)
+0.01.860.649 I llama_perf_context_print:        load time =     281.69 ms
+0.01.860.651 I llama_perf_context_print: prompt eval time =      85.81 ms /     7 tokens (   12.26 ms per token,    81.58 tokens per second)
+0.01.860.652 I llama_perf_context_print:        eval time =    1480.32 ms /    63 runs   (   23.50 ms per token,    42.56 tokens per second)
+0.01.860.652 I llama_perf_context_print:       total time =    1578.42 ms /    70 tokens
+
+real	0m1.896s
+user	0m6.667s
+sys	0m0.206s
++ ./bin/llama-perplexity --model ../models-mnt/pythia/1.4B/ggml-model-q2_k.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -ngl 99 -c 128 -b 128 --chunks 1
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.339 I build: 5635 (2db43275) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.010.430 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q2_k.gguf (version GGUF V3 (latest))
+0.00.010.459 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.010.466 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.010.467 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.010.468 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.010.468 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.010.469 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.010.472 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.010.472 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.010.473 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.010.475 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.010.476 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.010.476 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.010.477 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.010.481 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.010.482 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.010.482 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.015.172 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.016.220 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.020.763 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.020.782 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.020.782 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.020.783 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.020.783 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.020.784 I llama_model_loader: - kv  22:                          general.file_type u32              = 10
+0.00.020.786 I llama_model_loader: - type  f32:  194 tensors
+0.00.020.787 I llama_model_loader: - type q2_K:   49 tensors
+0.00.020.787 I llama_model_loader: - type q3_K:   48 tensors
+0.00.020.787 I llama_model_loader: - type q6_K:    1 tensors
+0.00.020.790 I print_info: file format = GGUF V3 (latest)
+0.00.020.790 I print_info: file type   = Q2_K - Medium
+0.00.020.792 I print_info: file size   = 542.04 MiB (3.21 BPW) 
+0.00.054.170 I load: special tokens cache size = 25
+0.00.066.263 I load: token to piece cache size = 0.2984 MB
+0.00.066.318 I print_info: arch             = gptneox
+0.00.066.319 I print_info: vocab_only       = 0
+0.00.066.319 I print_info: n_ctx_train      = 2048
+0.00.066.319 I print_info: n_embd           = 2048
+0.00.066.319 I print_info: n_layer          = 24
+0.00.066.333 I print_info: n_head           = 16
+0.00.066.334 I print_info: n_head_kv        = 16
+0.00.066.335 I print_info: n_rot            = 32
+0.00.066.335 I print_info: n_swa            = 0
+0.00.066.336 I print_info: is_swa_any       = 0
+0.00.066.336 I print_info: n_embd_head_k    = 128
+0.00.066.336 I print_info: n_embd_head_v    = 128
+0.00.066.338 I print_info: n_gqa            = 1
+0.00.066.340 I print_info: n_embd_k_gqa     = 2048
+0.00.066.341 I print_info: n_embd_v_gqa     = 2048
+0.00.066.342 I print_info: f_norm_eps       = 1.0e-05
+0.00.066.342 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.066.343 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.066.343 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.066.343 I print_info: f_logit_scale    = 0.0e+00
+0.00.066.343 I print_info: f_attn_scale     = 0.0e+00
+0.00.066.344 I print_info: n_ff             = 8192
+0.00.066.344 I print_info: n_expert         = 0
+0.00.066.344 I print_info: n_expert_used    = 0
+0.00.066.345 I print_info: causal attn      = 1
+0.00.066.345 I print_info: pooling type     = 0
+0.00.066.345 I print_info: rope type        = 2
+0.00.066.345 I print_info: rope scaling     = linear
+0.00.066.346 I print_info: freq_base_train  = 10000.0
+0.00.066.347 I print_info: freq_scale_train = 1
+0.00.066.347 I print_info: n_ctx_orig_yarn  = 2048
+0.00.066.347 I print_info: rope_finetuned   = unknown
+0.00.066.348 I print_info: ssm_d_conv       = 0
+0.00.066.348 I print_info: ssm_d_inner      = 0
+0.00.066.348 I print_info: ssm_d_state      = 0
+0.00.066.348 I print_info: ssm_dt_rank      = 0
+0.00.066.348 I print_info: ssm_dt_b_c_rms   = 0
+0.00.066.349 I print_info: model type       = 1.4B
+0.00.066.350 I print_info: model params     = 1.41 B
+0.00.066.350 I print_info: general.name     = 1.4B
+0.00.066.353 I print_info: vocab type       = BPE
+0.00.066.353 I print_info: n_vocab          = 50304
+0.00.066.354 I print_info: n_merges         = 50009
+0.00.066.354 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.066.354 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.066.355 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.066.355 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.066.356 I print_info: LF token         = 187 'Ċ'
+0.00.066.356 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.066.356 I print_info: max token length = 1024
+0.00.066.358 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.104.801 I load_tensors:          AMX model buffer size =    80.60 MiB
+0.00.104.823 I load_tensors:   CPU_Mapped model buffer size =   461.44 MiB
+..........................................................................
+0.00.118.381 I llama_context: constructing llama_context
+0.00.118.397 I llama_context: n_seq_max     = 1
+0.00.118.397 I llama_context: n_ctx         = 128
+0.00.118.397 I llama_context: n_ctx_per_seq = 128
+0.00.118.397 I llama_context: n_batch       = 128
+0.00.118.398 I llama_context: n_ubatch      = 128
+0.00.118.398 I llama_context: causal_attn   = 1
+0.00.118.398 I llama_context: flash_attn    = 0
+0.00.118.402 I llama_context: freq_base     = 10000.0
+0.00.118.403 I llama_context: freq_scale    = 1
+0.00.118.404 W llama_context: n_ctx_per_seq (128) < n_ctx_train (2048) -- the full capacity of the model will not be utilized
+0.00.118.440 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.00.118.876 I llama_kv_cache_unified:        CPU KV buffer size =    24.00 MiB
+0.00.123.133 I llama_kv_cache_unified: size =   24.00 MiB (   128 cells,  24 layers,  1 seqs), K (f16):   12.00 MiB, V (f16):   12.00 MiB
+0.00.131.961 I llama_context:        CPU compute buffer size =    25.56 MiB
+0.00.131.980 I llama_context: graph nodes  = 1063
+0.00.131.980 I llama_context: graph splits = 1
+0.00.131.988 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 128
+0.00.131.989 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.172.215 I 
+0.00.172.349 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.172.372 I perplexity: tokenizing the input ..
+0.00.178.741 I perplexity: tokenization took 6.365 ms
+0.00.178.768 I perplexity: calculating perplexity over 1 chunks, n_ctx=128, batch_size=128, n_seq=1
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 128, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 128, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 128, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 128, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 128, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 128, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 128, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 7, j = 0, idx = 7, n_seqs = 128, n_seq_tokens = 1
+    seq_id[7][0] = 0
+s = 8, j = 0, idx = 8, n_seqs = 128, n_seq_tokens = 1
+    seq_id[8][0] = 0
+s = 9, j = 0, idx = 9, n_seqs = 128, n_seq_tokens = 1
+    seq_id[9][0] = 0
+s = 10, j = 0, idx = 10, n_seqs = 128, n_seq_tokens = 1
+    seq_id[10][0] = 0
+s = 11, j = 0, idx = 11, n_seqs = 128, n_seq_tokens = 1
+    seq_id[11][0] = 0
+s = 12, j = 0, idx = 12, n_seqs = 128, n_seq_tokens = 1
+    seq_id[12][0] = 0
+s = 13, j = 0, idx = 13, n_seqs = 128, n_seq_tokens = 1
+    seq_id[13][0] = 0
+s = 14, j = 0, idx = 14, n_seqs = 128, n_seq_tokens = 1
+    seq_id[14][0] = 0
+s = 15, j = 0, idx = 15, n_seqs = 128, n_seq_tokens = 1
+    seq_id[15][0] = 0
+s = 16, j = 0, idx = 16, n_seqs = 128, n_seq_tokens = 1
+    seq_id[16][0] = 0
+s = 17, j = 0, idx = 17, n_seqs = 128, n_seq_tokens = 1
+    seq_id[17][0] = 0
+s = 18, j = 0, idx = 18, n_seqs = 128, n_seq_tokens = 1
+    seq_id[18][0] = 0
+s = 19, j = 0, idx = 19, n_seqs = 128, n_seq_tokens = 1
+    seq_id[19][0] = 0
+s = 20, j = 0, idx = 20, n_seqs = 128, n_seq_tokens = 1
+    seq_id[20][0] = 0
+s = 21, j = 0, idx = 21, n_seqs = 128, n_seq_tokens = 1
+    seq_id[21][0] = 0
+s = 22, j = 0, idx = 22, n_seqs = 128, n_seq_tokens = 1
+    seq_id[22][0] = 0
+s = 23, j = 0, idx = 23, n_seqs = 128, n_seq_tokens = 1
+    seq_id[23][0] = 0
+s = 24, j = 0, idx = 24, n_seqs = 128, n_seq_tokens = 1
+    seq_id[24][0] = 0
+s = 25, j = 0, idx = 25, n_seqs = 128, n_seq_tokens = 1
+    seq_id[25][0] = 0
+s = 26, j = 0, idx = 26, n_seqs = 128, n_seq_tokens = 1
+    seq_id[26][0] = 0
+s = 27, j = 0, idx = 27, n_seqs = 128, n_seq_tokens = 1
+    seq_id[27][0] = 0
+s = 28, j = 0, idx = 28, n_seqs = 128, n_seq_tokens = 1
+    seq_id[28][0] = 0
+s = 29, j = 0, idx = 29, n_seqs = 128, n_seq_tokens = 1
+    seq_id[29][0] = 0
+s = 30, j = 0, idx = 30, n_seqs = 128, n_seq_tokens = 1
+    seq_id[30][0] = 0
+s = 31, j = 0, idx = 31, n_seqs = 128, n_seq_tokens = 1
+    seq_id[31][0] = 0
+s = 32, j = 0, idx = 32, n_seqs = 128, n_seq_tokens = 1
+    seq_id[32][0] = 0
+s = 33, j = 0, idx = 33, n_seqs = 128, n_seq_tokens = 1
+    seq_id[33][0] = 0
+s = 34, j = 0, idx = 34, n_seqs = 128, n_seq_tokens = 1
+    seq_id[34][0] = 0
+s = 35, j = 0, idx = 35, n_seqs = 128, n_seq_tokens = 1
+    seq_id[35][0] = 0
+s = 36, j = 0, idx = 36, n_seqs = 128, n_seq_tokens = 1
+    seq_id[36][0] = 0
+s = 37, j = 0, idx = 37, n_seqs = 128, n_seq_tokens = 1
+    seq_id[37][0] = 0
+s = 38, j = 0, idx = 38, n_seqs = 128, n_seq_tokens = 1
+    seq_id[38][0] = 0
+s = 39, j = 0, idx = 39, n_seqs = 128, n_seq_tokens = 1
+    seq_id[39][0] = 0
+s = 40, j = 0, idx = 40, n_seqs = 128, n_seq_tokens = 1
+    seq_id[40][0] = 0
+s = 41, j = 0, idx = 41, n_seqs = 128, n_seq_tokens = 1
+    seq_id[41][0] = 0
+s = 42, j = 0, idx = 42, n_seqs = 128, n_seq_tokens = 1
+    seq_id[42][0] = 0
+s = 43, j = 0, idx = 43, n_seqs = 128, n_seq_tokens = 1
+    seq_id[43][0] = 0
+s = 44, j = 0, idx = 44, n_seqs = 128, n_seq_tokens = 1
+    seq_id[44][0] = 0
+s = 45, j = 0, idx = 45, n_seqs = 128, n_seq_tokens = 1
+    seq_id[45][0] = 0
+s = 46, j = 0, idx = 46, n_seqs = 128, n_seq_tokens = 1
+    seq_id[46][0] = 0
+s = 47, j = 0, idx = 47, n_seqs = 128, n_seq_tokens = 1
+    seq_id[47][0] = 0
+s = 48, j = 0, idx = 48, n_seqs = 128, n_seq_tokens = 1
+    seq_id[48][0] = 0
+s = 49, j = 0, idx = 49, n_seqs = 128, n_seq_tokens = 1
+    seq_id[49][0] = 0
+s = 50, j = 0, idx = 50, n_seqs = 128, n_seq_tokens = 1
+    seq_id[50][0] = 0
+s = 51, j = 0, idx = 51, n_seqs = 128, n_seq_tokens = 1
+    seq_id[51][0] = 0
+s = 52, j = 0, idx = 52, n_seqs = 128, n_seq_tokens = 1
+    seq_id[52][0] = 0
+s = 53, j = 0, idx = 53, n_seqs = 128, n_seq_tokens = 1
+    seq_id[53][0] = 0
+s = 54, j = 0, idx = 54, n_seqs = 128, n_seq_tokens = 1
+    seq_id[54][0] = 0
+s = 55, j = 0, idx = 55, n_seqs = 128, n_seq_tokens = 1
+    seq_id[55][0] = 0
+s = 56, j = 0, idx = 56, n_seqs = 128, n_seq_tokens = 1
+    seq_id[56][0] = 0
+s = 57, j = 0, idx = 57, n_seqs = 128, n_seq_tokens = 1
+    seq_id[57][0] = 0
+s = 58, j = 0, idx = 58, n_seqs = 128, n_seq_tokens = 1
+    seq_id[58][0] = 0
+s = 59, j = 0, idx = 59, n_seqs = 128, n_seq_tokens = 1
+    seq_id[59][0] = 0
+s = 60, j = 0, idx = 60, n_seqs = 128, n_seq_tokens = 1
+    seq_id[60][0] = 0
+s = 61, j = 0, idx = 61, n_seqs = 128, n_seq_tokens = 1
+    seq_id[61][0] = 0
+s = 62, j = 0, idx = 62, n_seqs = 128, n_seq_tokens = 1
+    seq_id[62][0] = 0
+s = 63, j = 0, idx = 63, n_seqs = 128, n_seq_tokens = 1
+    seq_id[63][0] = 0
+s = 64, j = 0, idx = 64, n_seqs = 128, n_seq_tokens = 1
+    seq_id[64][0] = 0
+s = 65, j = 0, idx = 65, n_seqs = 128, n_seq_tokens = 1
+    seq_id[65][0] = 0
+s = 66, j = 0, idx = 66, n_seqs = 128, n_seq_tokens = 1
+    seq_id[66][0] = 0
+s = 67, j = 0, idx = 67, n_seqs = 128, n_seq_tokens = 1
+    seq_id[67][0] = 0
+s = 68, j = 0, idx = 68, n_seqs = 128, n_seq_tokens = 1
+    seq_id[68][0] = 0
+s = 69, j = 0, idx = 69, n_seqs = 128, n_seq_tokens = 1
+    seq_id[69][0] = 0
+s = 70, j = 0, idx = 70, n_seqs = 128, n_seq_tokens = 1
+    seq_id[70][0] = 0
+s = 71, j = 0, idx = 71, n_seqs = 128, n_seq_tokens = 1
+    seq_id[71][0] = 0
+s = 72, j = 0, idx = 72, n_seqs = 128, n_seq_tokens = 1
+    seq_id[72][0] = 0
+s = 73, j = 0, idx = 73, n_seqs = 128, n_seq_tokens = 1
+    seq_id[73][0] = 0
+s = 74, j = 0, idx = 74, n_seqs = 128, n_seq_tokens = 1
+    seq_id[74][0] = 0
+s = 75, j = 0, idx = 75, n_seqs = 128, n_seq_tokens = 1
+    seq_id[75][0] = 0
+s = 76, j = 0, idx = 76, n_seqs = 128, n_seq_tokens = 1
+    seq_id[76][0] = 0
+s = 77, j = 0, idx = 77, n_seqs = 128, n_seq_tokens = 1
+    seq_id[77][0] = 0
+s = 78, j = 0, idx = 78, n_seqs = 128, n_seq_tokens = 1
+    seq_id[78][0] = 0
+s = 79, j = 0, idx = 79, n_seqs = 128, n_seq_tokens = 1
+    seq_id[79][0] = 0
+s = 80, j = 0, idx = 80, n_seqs = 128, n_seq_tokens = 1
+    seq_id[80][0] = 0
+s = 81, j = 0, idx = 81, n_seqs = 128, n_seq_tokens = 1
+    seq_id[81][0] = 0
+s = 82, j = 0, idx = 82, n_seqs = 128, n_seq_tokens = 1
+    seq_id[82][0] = 0
+s = 83, j = 0, idx = 83, n_seqs = 128, n_seq_tokens = 1
+    seq_id[83][0] = 0
+s = 84, j = 0, idx = 84, n_seqs = 128, n_seq_tokens = 1
+    seq_id[84][0] = 0
+s = 85, j = 0, idx = 85, n_seqs = 128, n_seq_tokens = 1
+    seq_id[85][0] = 0
+s = 86, j = 0, idx = 86, n_seqs = 128, n_seq_tokens = 1
+    seq_id[86][0] = 0
+s = 87, j = 0, idx = 87, n_seqs = 128, n_seq_tokens = 1
+    seq_id[87][0] = 0
+s = 88, j = 0, idx = 88, n_seqs = 128, n_seq_tokens = 1
+    seq_id[88][0] = 0
+s = 89, j = 0, idx = 89, n_seqs = 128, n_seq_tokens = 1
+    seq_id[89][0] = 0
+s = 90, j = 0, idx = 90, n_seqs = 128, n_seq_tokens = 1
+    seq_id[90][0] = 0
+s = 91, j = 0, idx = 91, n_seqs = 128, n_seq_tokens = 1
+    seq_id[91][0] = 0
+s = 92, j = 0, idx = 92, n_seqs = 128, n_seq_tokens = 1
+    seq_id[92][0] = 0
+s = 93, j = 0, idx = 93, n_seqs = 128, n_seq_tokens = 1
+    seq_id[93][0] = 0
+s = 94, j = 0, idx = 94, n_seqs = 128, n_seq_tokens = 1
+    seq_id[94][0] = 0
+s = 95, j = 0, idx = 95, n_seqs = 128, n_seq_tokens = 1
+    seq_id[95][0] = 0
+s = 96, j = 0, idx = 96, n_seqs = 128, n_seq_tokens = 1
+    seq_id[96][0] = 0
+s = 97, j = 0, idx = 97, n_seqs = 128, n_seq_tokens = 1
+    seq_id[97][0] = 0
+s = 98, j = 0, idx = 98, n_seqs = 128, n_seq_tokens = 1
+    seq_id[98][0] = 0
+s = 99, j = 0, idx = 99, n_seqs = 128, n_seq_tokens = 1
+    seq_id[99][0] = 0
+s = 100, j = 0, idx = 100, n_seqs = 128, n_seq_tokens = 1
+    seq_id[100][0] = 0
+s = 101, j = 0, idx = 101, n_seqs = 128, n_seq_tokens = 1
+    seq_id[101][0] = 0
+s = 102, j = 0, idx = 102, n_seqs = 128, n_seq_tokens = 1
+    seq_id[102][0] = 0
+s = 103, j = 0, idx = 103, n_seqs = 128, n_seq_tokens = 1
+    seq_id[103][0] = 0
+s = 104, j = 0, idx = 104, n_seqs = 128, n_seq_tokens = 1
+    seq_id[104][0] = 0
+s = 105, j = 0, idx = 105, n_seqs = 128, n_seq_tokens = 1
+    seq_id[105][0] = 0
+s = 106, j = 0, idx = 106, n_seqs = 128, n_seq_tokens = 1
+    seq_id[106][0] = 0
+s = 107, j = 0, idx = 107, n_seqs = 128, n_seq_tokens = 1
+    seq_id[107][0] = 0
+s = 108, j = 0, idx = 108, n_seqs = 128, n_seq_tokens = 1
+    seq_id[108][0] = 0
+s = 109, j = 0, idx = 109, n_seqs = 128, n_seq_tokens = 1
+    seq_id[109][0] = 0
+s = 110, j = 0, idx = 110, n_seqs = 128, n_seq_tokens = 1
+    seq_id[110][0] = 0
+s = 111, j = 0, idx = 111, n_seqs = 128, n_seq_tokens = 1
+    seq_id[111][0] = 0
+s = 112, j = 0, idx = 112, n_seqs = 128, n_seq_tokens = 1
+    seq_id[112][0] = 0
+s = 113, j = 0, idx = 113, n_seqs = 128, n_seq_tokens = 1
+    seq_id[113][0] = 0
+s = 114, j = 0, idx = 114, n_seqs = 128, n_seq_tokens = 1
+    seq_id[114][0] = 0
+s = 115, j = 0, idx = 115, n_seqs = 128, n_seq_tokens = 1
+    seq_id[115][0] = 0
+s = 116, j = 0, idx = 116, n_seqs = 128, n_seq_tokens = 1
+    seq_id[116][0] = 0
+s = 117, j = 0, idx = 117, n_seqs = 128, n_seq_tokens = 1
+    seq_id[117][0] = 0
+s = 118, j = 0, idx = 118, n_seqs = 128, n_seq_tokens = 1
+    seq_id[118][0] = 0
+s = 119, j = 0, idx = 119, n_seqs = 128, n_seq_tokens = 1
+    seq_id[119][0] = 0
+s = 120, j = 0, idx = 120, n_seqs = 128, n_seq_tokens = 1
+    seq_id[120][0] = 0
+s = 121, j = 0, idx = 121, n_seqs = 128, n_seq_tokens = 1
+    seq_id[121][0] = 0
+s = 122, j = 0, idx = 122, n_seqs = 128, n_seq_tokens = 1
+    seq_id[122][0] = 0
+s = 123, j = 0, idx = 123, n_seqs = 128, n_seq_tokens = 1
+    seq_id[123][0] = 0
+s = 124, j = 0, idx = 124, n_seqs = 128, n_seq_tokens = 1
+    seq_id[124][0] = 0
+s = 125, j = 0, idx = 125, n_seqs = 128, n_seq_tokens = 1
+    seq_id[125][0] = 0
+s = 126, j = 0, idx = 126, n_seqs = 128, n_seq_tokens = 1
+    seq_id[126][0] = 0
+s = 127, j = 0, idx = 127, n_seqs = 128, n_seq_tokens = 1
+    seq_id[127][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 128, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 128, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 128, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 128, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 128, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 128, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 128, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 7, j = 0, idx = 7, n_seqs = 128, n_seq_tokens = 1
+    seq_id[7][0] = 0
+s = 8, j = 0, idx = 8, n_seqs = 128, n_seq_tokens = 1
+    seq_id[8][0] = 0
+s = 9, j = 0, idx = 9, n_seqs = 128, n_seq_tokens = 1
+    seq_id[9][0] = 0
+s = 10, j = 0, idx = 10, n_seqs = 128, n_seq_tokens = 1
+    seq_id[10][0] = 0
+s = 11, j = 0, idx = 11, n_seqs = 128, n_seq_tokens = 1
+    seq_id[11][0] = 0
+s = 12, j = 0, idx = 12, n_seqs = 128, n_seq_tokens = 1
+    seq_id[12][0] = 0
+s = 13, j = 0, idx = 13, n_seqs = 128, n_seq_tokens = 1
+    seq_id[13][0] = 0
+s = 14, j = 0, idx = 14, n_seqs = 128, n_seq_tokens = 1
+    seq_id[14][0] = 0
+s = 15, j = 0, idx = 15, n_seqs = 128, n_seq_tokens = 1
+    seq_id[15][0] = 0
+s = 16, j = 0, idx = 16, n_seqs = 128, n_seq_tokens = 1
+    seq_id[16][0] = 0
+s = 17, j = 0, idx = 17, n_seqs = 128, n_seq_tokens = 1
+    seq_id[17][0] = 0
+s = 18, j = 0, idx = 18, n_seqs = 128, n_seq_tokens = 1
+    seq_id[18][0] = 0
+s = 19, j = 0, idx = 19, n_seqs = 128, n_seq_tokens = 1
+    seq_id[19][0] = 0
+s = 20, j = 0, idx = 20, n_seqs = 128, n_seq_tokens = 1
+    seq_id[20][0] = 0
+s = 21, j = 0, idx = 21, n_seqs = 128, n_seq_tokens = 1
+    seq_id[21][0] = 0
+s = 22, j = 0, idx = 22, n_seqs = 128, n_seq_tokens = 1
+    seq_id[22][0] = 0
+s = 23, j = 0, idx = 23, n_seqs = 128, n_seq_tokens = 1
+    seq_id[23][0] = 0
+s = 24, j = 0, idx = 24, n_seqs = 128, n_seq_tokens = 1
+    seq_id[24][0] = 0
+s = 25, j = 0, idx = 25, n_seqs = 128, n_seq_tokens = 1
+    seq_id[25][0] = 0
+s = 26, j = 0, idx = 26, n_seqs = 128, n_seq_tokens = 1
+    seq_id[26][0] = 0
+s = 27, j = 0, idx = 27, n_seqs = 128, n_seq_tokens = 1
+    seq_id[27][0] = 0
+s = 28, j = 0, idx = 28, n_seqs = 128, n_seq_tokens = 1
+    seq_id[28][0] = 0
+s = 29, j = 0, idx = 29, n_seqs = 128, n_seq_tokens = 1
+    seq_id[29][0] = 0
+s = 30, j = 0, idx = 30, n_seqs = 128, n_seq_tokens = 1
+    seq_id[30][0] = 0
+s = 31, j = 0, idx = 31, n_seqs = 128, n_seq_tokens = 1
+    seq_id[31][0] = 0
+s = 32, j = 0, idx = 32, n_seqs = 128, n_seq_tokens = 1
+    seq_id[32][0] = 0
+s = 33, j = 0, idx = 33, n_seqs = 128, n_seq_tokens = 1
+    seq_id[33][0] = 0
+s = 34, j = 0, idx = 34, n_seqs = 128, n_seq_tokens = 1
+    seq_id[34][0] = 0
+s = 35, j = 0, idx = 35, n_seqs = 128, n_seq_tokens = 1
+    seq_id[35][0] = 0
+s = 36, j = 0, idx = 36, n_seqs = 128, n_seq_tokens = 1
+    seq_id[36][0] = 0
+s = 37, j = 0, idx = 37, n_seqs = 128, n_seq_tokens = 1
+    seq_id[37][0] = 0
+s = 38, j = 0, idx = 38, n_seqs = 128, n_seq_tokens = 1
+    seq_id[38][0] = 0
+s = 39, j = 0, idx = 39, n_seqs = 128, n_seq_tokens = 1
+    seq_id[39][0] = 0
+s = 40, j = 0, idx = 40, n_seqs = 128, n_seq_tokens = 1
+    seq_id[40][0] = 0
+s = 41, j = 0, idx = 41, n_seqs = 128, n_seq_tokens = 1
+    seq_id[41][0] = 0
+s = 42, j = 0, idx = 42, n_seqs = 128, n_seq_tokens = 1
+    seq_id[42][0] = 0
+s = 43, j = 0, idx = 43, n_seqs = 128, n_seq_tokens = 1
+    seq_id[43][0] = 0
+s = 44, j = 0, idx = 44, n_seqs = 128, n_seq_tokens = 1
+    seq_id[44][0] = 0
+s = 45, j = 0, idx = 45, n_seqs = 128, n_seq_tokens = 1
+    seq_id[45][0] = 0
+s = 46, j = 0, idx = 46, n_seqs = 128, n_seq_tokens = 1
+    seq_id[46][0] = 0
+s = 47, j = 0, idx = 47, n_seqs = 128, n_seq_tokens = 1
+    seq_id[47][0] = 0
+s = 48, j = 0, idx = 48, n_seqs = 128, n_seq_tokens = 1
+    seq_id[48][0] = 0
+s = 49, j = 0, idx = 49, n_seqs = 128, n_seq_tokens = 1
+    seq_id[49][0] = 0
+s = 50, j = 0, idx = 50, n_seqs = 128, n_seq_tokens = 1
+    seq_id[50][0] = 0
+s = 51, j = 0, idx = 51, n_seqs = 128, n_seq_tokens = 1
+    seq_id[51][0] = 0
+s = 52, j = 0, idx = 52, n_seqs = 128, n_seq_tokens = 1
+    seq_id[52][0] = 0
+s = 53, j = 0, idx = 53, n_seqs = 128, n_seq_tokens = 1
+    seq_id[53][0] = 0
+s = 54, j = 0, idx = 54, n_seqs = 128, n_seq_tokens = 1
+    seq_id[54][0] = 0
+s = 55, j = 0, idx = 55, n_seqs = 128, n_seq_tokens = 1
+    seq_id[55][0] = 0
+s = 56, j = 0, idx = 56, n_seqs = 128, n_seq_tokens = 1
+    seq_id[56][0] = 0
+s = 57, j = 0, idx = 57, n_seqs = 128, n_seq_tokens = 1
+    seq_id[57][0] = 0
+s = 58, j = 0, idx = 58, n_seqs = 128, n_seq_tokens = 1
+    seq_id[58][0] = 0
+s = 59, j = 0, idx = 59, n_seqs = 128, n_seq_tokens = 1
+    seq_id[59][0] = 0
+s = 60, j = 0, idx = 60, n_seqs = 128, n_seq_tokens = 1
+    seq_id[60][0] = 0
+s = 61, j = 0, idx = 61, n_seqs = 128, n_seq_tokens = 1
+    seq_id[61][0] = 0
+s = 62, j = 0, idx = 62, n_seqs = 128, n_seq_tokens = 1
+    seq_id[62][0] = 0
+s = 63, j = 0, idx = 63, n_seqs = 128, n_seq_tokens = 1
+    seq_id[63][0] = 0
+s = 64, j = 0, idx = 64, n_seqs = 128, n_seq_tokens = 1
+    seq_id[64][0] = 0
+s = 65, j = 0, idx = 65, n_seqs = 128, n_seq_tokens = 1
+    seq_id[65][0] = 0
+s = 66, j = 0, idx = 66, n_seqs = 128, n_seq_tokens = 1
+    seq_id[66][0] = 0
+s = 67, j = 0, idx = 67, n_seqs = 128, n_seq_tokens = 1
+    seq_id[67][0] = 0
+s = 68, j = 0, idx = 68, n_seqs = 128, n_seq_tokens = 1
+    seq_id[68][0] = 0
+s = 69, j = 0, idx = 69, n_seqs = 128, n_seq_tokens = 1
+    seq_id[69][0] = 0
+s = 70, j = 0, idx = 70, n_seqs = 128, n_seq_tokens = 1
+    seq_id[70][0] = 0
+s = 71, j = 0, idx = 71, n_seqs = 128, n_seq_tokens = 1
+    seq_id[71][0] = 0
+s = 72, j = 0, idx = 72, n_seqs = 128, n_seq_tokens = 1
+    seq_id[72][0] = 0
+s = 73, j = 0, idx = 73, n_seqs = 128, n_seq_tokens = 1
+    seq_id[73][0] = 0
+s = 74, j = 0, idx = 74, n_seqs = 128, n_seq_tokens = 1
+    seq_id[74][0] = 0
+s = 75, j = 0, idx = 75, n_seqs = 128, n_seq_tokens = 1
+    seq_id[75][0] = 0
+s = 76, j = 0, idx = 76, n_seqs = 128, n_seq_tokens = 1
+    seq_id[76][0] = 0
+s = 77, j = 0, idx = 77, n_seqs = 128, n_seq_tokens = 1
+    seq_id[77][0] = 0
+0.01.473.824 I perplexity: 1.30 seconds per pass - ETA s = 78, j = 0, idx = 78, n_seqs = 128, n_seq_tokens = 1
+    seq_id[78][0] = 0
+s = 79, j = 0, idx = 79, n_seqs = 128, n_seq_tokens = 1
+    seq_id[79][0] = 0
+s = 80, j = 0, idx = 80, n_seqs = 128, n_seq_tokens = 1
+    seq_id[80][0] = 0
+s = 81, j = 0, idx = 81, n_seqs = 128, n_seq_tokens = 1
+    seq_id[81][0] = 0
+s = 82, j = 0, idx = 82, n_seqs = 128, n_seq_tokens = 1
+    seq_id[82][0] = 0
+s = 83, j = 0, idx = 83, n_seqs = 128, n_seq_tokens = 1
+    seq_id[83][0] = 0
+s = 84, j = 0, idx = 84, n_seqs = 128, n_seq_tokens = 1
+    seq_id[84][0] = 0
+s = 85, j = 0, idx = 85, n_seqs = 128, n_seq_tokens = 1
+    seq_id[85][0] = 0
+s = 86, j = 0, idx = 86, n_seqs = 128, n_seq_tokens = 1
+    seq_id[86][0] = 0
+s = 87, j = 0, idx = 87, n_seqs = 128, n_seq_tokens = 1
+    seq_id[87][0] = 0
+s = 88, j = 0, idx = 88, n_seqs = 128, n_seq_tokens = 1
+    seq_id[88][0] = 0
+s = 89, j = 0, idx = 89, n_seqs = 128, n_seq_tokens = 1
+    seq_id[89][0] = 0
+s = 90, j = 0, idx = 90, n_seqs = 128, n_seq_tokens = 1
+    seq_id[90][0] = 0
+s = 91, j = 0, idx = 91, n_seqs = 128, n_seq_tokens = 1
+    seq_id[91][0] = 0
+s = 92, j = 0, idx = 92, n_seqs = 128, n_seq_tokens = 1
+    seq_id[92][0] = 0
+s = 93, j = 0, idx = 93, n_seqs = 128, n_seq_tokens = 1
+    seq_id[93][0] = 0
+s = 94, j = 0, idx = 94, n_seqs = 128, n_seq_tokens = 1
+    seq_id[94][0] = 0
+s = 95, j = 0, idx = 95, n_seqs = 128, n_seq_tokens = 1
+    seq_id[95][0] = 0
+s = 96, j = 0, idx = 96, n_seqs = 128, n_seq_tokens = 1
+    seq_id[96][0] = 0
+s = 97, j = 0, idx = 97, n_seqs = 128, n_seq_tokens = 1
+    seq_id[97][0] = 0
+s = 98, j = 0, idx = 98, n_seqs = 128, n_seq_tokens = 1
+    seq_id[98][0] = 0
+s = 99, j = 0, idx = 99, n_seqs = 128, n_seq_tokens = 1
+    seq_id[99][0] = 0
+s = 100, j = 0, idx = 100, n_seqs = 128, n_seq_tokens = 1
+    seq_id[100][0] = 0
+s = 101, j = 0, idx = 101, n_seqs = 128, n_seq_tokens = 1
+    seq_id[101][0] = 0
+s = 102, j = 0, idx = 102, n_seqs = 128, n_seq_tokens = 1
+    seq_id[102][0] = 0
+s = 103, j = 0, idx = 103, n_seqs = 128, n_seq_tokens = 1
+    seq_id[103][0] = 0
+s = 104, j = 0, idx = 104, n_seqs = 128, n_seq_tokens = 1
+    seq_id[104][0] = 0
+s = 105, j = 0, idx = 105, n_seqs = 128, n_seq_tokens = 1
+    seq_id[105][0] = 0
+s = 106, j = 0, idx = 106, n_seqs = 128, n_seq_tokens = 1
+    seq_id[106][0] = 0
+s = 107, j = 0, idx = 107, n_seqs = 128, n_seq_tokens = 1
+    seq_id[107][0] = 0
+s = 108, j = 0, idx = 108, n_seqs = 128, n_seq_tokens = 1
+    seq_id[108][0] = 0
+s = 109, j = 0, idx = 109, n_seqs = 128, n_seq_tokens = 1
+    seq_id[109][0] = 0
+s = 110, j = 0, idx = 110, n_seqs = 128, n_seq_tokens = 1
+    seq_id[110][0] = 0
+s = 111, j = 0, idx = 111, n_seqs = 128, n_seq_tokens = 1
+    seq_id[111][0] = 0
+s = 112, j = 0, idx = 112, n_seqs = 128, n_seq_tokens = 1
+    seq_id[112][0] = 0
+s = 113, j = 0, idx = 113, n_seqs = 128, n_seq_tokens = 1
+    seq_id[113][0] = 0
+s = 114, j = 0, idx = 114, n_seqs = 128, n_seq_tokens = 1
+    seq_id[114][0] = 0
+s = 115, j = 0, idx = 115, n_seqs = 128, n_seq_tokens = 1
+    seq_id[115][0] = 0
+s = 116, j = 0, idx = 116, n_seqs = 128, n_seq_tokens = 1
+    seq_id[116][0] = 0
+s = 117, j = 0, idx = 117, n_seqs = 128, n_seq_tokens = 1
+    seq_id[117][0] = 0
+s = 118, j = 0, idx = 118, n_seqs = 128, n_seq_tokens = 1
+    seq_id[118][0] = 0
+s = 119, j = 0, idx = 119, n_seqs = 128, n_seq_tokens = 1
+    seq_id[119][0] = 0
+s = 120, j = 0, idx = 120, n_seqs = 128, n_seq_tokens = 1
+    seq_id[120][0] = 0
+s = 121, j = 0, idx = 121, n_seqs = 128, n_seq_tokens = 1
+    seq_id[121][0] = 0
+s = 122, j = 0, idx = 122, n_seqs = 128, n_seq_tokens = 1
+    seq_id[122][0] = 0
+s = 123, j = 0, idx = 123, n_seqs = 128, n_seq_tokens = 1
+    seq_id[123][0] = 0
+s = 124, j = 0, idx = 124, n_seqs = 128, n_seq_tokens = 1
+    seq_id[124][0] = 0
+s = 125, j = 0, idx = 125, n_seqs = 128, n_seq_tokens = 1
+    seq_id[125][0] = 0
+s = 126, j = 0, idx = 126, n_seqs = 128, n_seq_tokens = 1
+    seq_id[126][0] = 0
+s = 127, j = 0, idx = 127, n_seqs = 128, n_seq_tokens = 1
+    seq_id[127][0] = 0
+0.02 minutes
+[1]70.7471,
+0.01.476.759 I Final estimate: PPL = 70.7471 +/- 27.47559
+
+0.01.476.799 I llama_perf_context_print:        load time =     171.81 ms
+0.01.476.802 I llama_perf_context_print: prompt eval time =    1293.21 ms /   128 tokens (   10.10 ms per token,    98.98 tokens per second)
+0.01.476.804 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.01.476.806 I llama_perf_context_print:       total time =    1304.60 ms /   129 tokens
+
+real	0m1.511s
+user	0m5.513s
+sys	0m0.101s
+```
+- q3_k:
+```
++ ./bin/llama-cli -no-cnv --model ../models-mnt/pythia/1.4B/ggml-model-q3_k.gguf -ngl 99 -c 0 -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.259 I build: 5635 (2db43275) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.000.454 I main: llama backend init
+0.00.000.470 I main: load the model and apply lora adapter, if any
+0.00.010.803 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q3_k.gguf (version GGUF V3 (latest))
+0.00.010.832 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.010.841 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.010.841 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.010.842 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.010.843 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.010.843 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.010.847 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.010.847 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.010.849 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.010.850 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.010.850 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.010.851 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.010.853 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.010.862 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.010.863 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.010.864 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.015.686 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.016.759 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.021.368 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.021.387 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.021.388 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.021.389 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.021.389 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.021.390 I llama_model_loader: - kv  22:                          general.file_type u32              = 12
+0.00.021.393 I llama_model_loader: - type  f32:  194 tensors
+0.00.021.394 I llama_model_loader: - type q3_K:   25 tensors
+0.00.021.395 I llama_model_loader: - type q4_K:   71 tensors
+0.00.021.395 I llama_model_loader: - type q5_K:    1 tensors
+0.00.021.395 I llama_model_loader: - type q6_K:    1 tensors
+0.00.021.397 I print_info: file format = GGUF V3 (latest)
+0.00.021.398 I print_info: file type   = Q3_K - Medium
+0.00.021.401 I print_info: file size   = 724.27 MiB (4.29 BPW) 
+0.00.055.151 I load: special tokens cache size = 25
+0.00.067.298 I load: token to piece cache size = 0.2984 MB
+0.00.067.328 I print_info: arch             = gptneox
+0.00.067.328 I print_info: vocab_only       = 0
+0.00.067.328 I print_info: n_ctx_train      = 2048
+0.00.067.329 I print_info: n_embd           = 2048
+0.00.067.329 I print_info: n_layer          = 24
+0.00.067.338 I print_info: n_head           = 16
+0.00.067.339 I print_info: n_head_kv        = 16
+0.00.067.340 I print_info: n_rot            = 32
+0.00.067.340 I print_info: n_swa            = 0
+0.00.067.341 I print_info: is_swa_any       = 0
+0.00.067.342 I print_info: n_embd_head_k    = 128
+0.00.067.342 I print_info: n_embd_head_v    = 128
+0.00.067.343 I print_info: n_gqa            = 1
+0.00.067.345 I print_info: n_embd_k_gqa     = 2048
+0.00.067.346 I print_info: n_embd_v_gqa     = 2048
+0.00.067.347 I print_info: f_norm_eps       = 1.0e-05
+0.00.067.347 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.067.347 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.067.348 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.067.348 I print_info: f_logit_scale    = 0.0e+00
+0.00.067.348 I print_info: f_attn_scale     = 0.0e+00
+0.00.067.349 I print_info: n_ff             = 8192
+0.00.067.349 I print_info: n_expert         = 0
+0.00.067.349 I print_info: n_expert_used    = 0
+0.00.067.350 I print_info: causal attn      = 1
+0.00.067.350 I print_info: pooling type     = 0
+0.00.067.350 I print_info: rope type        = 2
+0.00.067.351 I print_info: rope scaling     = linear
+0.00.067.352 I print_info: freq_base_train  = 10000.0
+0.00.067.353 I print_info: freq_scale_train = 1
+0.00.067.353 I print_info: n_ctx_orig_yarn  = 2048
+0.00.067.353 I print_info: rope_finetuned   = unknown
+0.00.067.353 I print_info: ssm_d_conv       = 0
+0.00.067.353 I print_info: ssm_d_inner      = 0
+0.00.067.354 I print_info: ssm_d_state      = 0
+0.00.067.354 I print_info: ssm_dt_rank      = 0
+0.00.067.354 I print_info: ssm_dt_b_c_rms   = 0
+0.00.067.355 I print_info: model type       = 1.4B
+0.00.067.356 I print_info: model params     = 1.41 B
+0.00.067.356 I print_info: general.name     = 1.4B
+0.00.067.359 I print_info: vocab type       = BPE
+0.00.067.359 I print_info: n_vocab          = 50304
+0.00.067.360 I print_info: n_merges         = 50009
+0.00.067.360 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.067.360 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.067.360 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.067.361 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.067.361 I print_info: LF token         = 187 'Ċ'
+0.00.067.361 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.067.362 I print_info: max token length = 1024
+0.00.067.363 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.117.427 I load_tensors:          AMX model buffer size =   526.60 MiB
+0.00.117.449 I load_tensors:   CPU_Mapped model buffer size =   643.67 MiB
+...............................................................................
+0.00.200.878 I llama_context: constructing llama_context
+0.00.200.911 I llama_context: n_seq_max     = 1
+0.00.200.918 I llama_context: n_ctx         = 2048
+0.00.200.925 I llama_context: n_ctx_per_seq = 2048
+0.00.200.931 I llama_context: n_batch       = 2048
+0.00.200.937 I llama_context: n_ubatch      = 512
+0.00.200.945 I llama_context: causal_attn   = 1
+0.00.200.952 I llama_context: flash_attn    = 0
+0.00.200.963 I llama_context: freq_base     = 10000.0
+0.00.200.971 I llama_context: freq_scale    = 1
+0.00.201.031 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.00.201.411 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.00.274.040 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.283.031 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.00.283.068 I llama_context: graph nodes  = 1063
+0.00.283.075 I llama_context: graph splits = 1
+0.00.283.105 I common_init_from_params: added <|endoftext|> logit bias = -inf
+0.00.283.524 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.283.544 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.373.722 I main: llama threadpool init, n_threads = 4
+0.00.373.744 I 
+0.00.373.818 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.373.831 I 
+0.00.373.933 I sampler seed: 1234
+0.00.373.960 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 2048
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.00.373.963 I sampler chain: logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+0.00.373.964 I generate: n_ctx = 2048, n_batch = 2048, n_predict = 64, n_keep = 0
+0.00.373.965 I 
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 7, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 7, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 7, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 7, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 7, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 7, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 7, n_seq_tokens = 1
+    seq_id[6][0] = 0
+I believe the meanings = 0, j = 0, idx = 0, n_seqs = 7, n_seq_tokens = 1
+ of    seq_id[0][0] = 0
+ life iss = 1, j = 0, idx = 1, n_seqs = 7, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 7, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 7, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 7, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 7, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 7, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thats = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ whens = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ yous = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ares = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ mosts = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ yous = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ares = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ bests = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+.
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Is = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thinks = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thats = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ mosts = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ importants = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ things = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ iss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thats = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ Is = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ hopes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thats = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ yous = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ wills = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ alwayss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ haves = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ bests = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ins = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ worlds = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+.s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Is = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ believes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thats = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ loves = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ iss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ answers = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ tos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ours = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ livess = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ problemss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+.s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Is = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ believes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thats = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ yous = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ares = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ bests = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ persons = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ins = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ worlds = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+.
+
+
+0.02.213.423 I llama_perf_sampler_print:    sampling time =       2.65 ms /    71 runs   (    0.04 ms per token, 26832.96 tokens per second)
+0.02.213.428 I llama_perf_context_print:        load time =     372.12 ms
+0.02.213.429 I llama_perf_context_print: prompt eval time =      75.91 ms /     7 tokens (   10.84 ms per token,    92.21 tokens per second)
+0.02.213.430 I llama_perf_context_print:        eval time =    1752.18 ms /    63 runs   (   27.81 ms per token,    35.96 tokens per second)
+0.02.213.430 I llama_perf_context_print:       total time =    1840.81 ms /    70 tokens
+
+real	0m2.258s
+user	0m8.047s
+sys	0m0.476s
++ ./bin/llama-perplexity --model ../models-mnt/pythia/1.4B/ggml-model-q3_k.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -ngl 99 -c 128 -b 128 --chunks 1
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.299 I build: 5635 (2db43275) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.010.471 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q3_k.gguf (version GGUF V3 (latest))
+0.00.010.498 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.010.506 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.010.507 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.010.507 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.010.508 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.010.508 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.010.511 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.010.511 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.010.512 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.010.512 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.010.513 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.010.513 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.010.515 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.010.520 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.010.521 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.010.521 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.015.315 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.016.392 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.020.957 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.020.977 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.020.977 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.020.978 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.020.978 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.020.979 I llama_model_loader: - kv  22:                          general.file_type u32              = 12
+0.00.020.981 I llama_model_loader: - type  f32:  194 tensors
+0.00.020.982 I llama_model_loader: - type q3_K:   25 tensors
+0.00.020.982 I llama_model_loader: - type q4_K:   71 tensors
+0.00.020.983 I llama_model_loader: - type q5_K:    1 tensors
+0.00.020.983 I llama_model_loader: - type q6_K:    1 tensors
+0.00.020.985 I print_info: file format = GGUF V3 (latest)
+0.00.020.985 I print_info: file type   = Q3_K - Medium
+0.00.020.987 I print_info: file size   = 724.27 MiB (4.29 BPW) 
+0.00.054.312 I load: special tokens cache size = 25
+0.00.066.294 I load: token to piece cache size = 0.2984 MB
+0.00.066.322 I print_info: arch             = gptneox
+0.00.066.323 I print_info: vocab_only       = 0
+0.00.066.323 I print_info: n_ctx_train      = 2048
+0.00.066.323 I print_info: n_embd           = 2048
+0.00.066.323 I print_info: n_layer          = 24
+0.00.066.332 I print_info: n_head           = 16
+0.00.066.333 I print_info: n_head_kv        = 16
+0.00.066.334 I print_info: n_rot            = 32
+0.00.066.334 I print_info: n_swa            = 0
+0.00.066.335 I print_info: is_swa_any       = 0
+0.00.066.335 I print_info: n_embd_head_k    = 128
+0.00.066.335 I print_info: n_embd_head_v    = 128
+0.00.066.337 I print_info: n_gqa            = 1
+0.00.066.338 I print_info: n_embd_k_gqa     = 2048
+0.00.066.340 I print_info: n_embd_v_gqa     = 2048
+0.00.066.341 I print_info: f_norm_eps       = 1.0e-05
+0.00.066.343 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.066.343 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.066.343 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.066.344 I print_info: f_logit_scale    = 0.0e+00
+0.00.066.344 I print_info: f_attn_scale     = 0.0e+00
+0.00.066.345 I print_info: n_ff             = 8192
+0.00.066.345 I print_info: n_expert         = 0
+0.00.066.345 I print_info: n_expert_used    = 0
+0.00.066.345 I print_info: causal attn      = 1
+0.00.066.345 I print_info: pooling type     = 0
+0.00.066.346 I print_info: rope type        = 2
+0.00.066.346 I print_info: rope scaling     = linear
+0.00.066.347 I print_info: freq_base_train  = 10000.0
+0.00.066.347 I print_info: freq_scale_train = 1
+0.00.066.347 I print_info: n_ctx_orig_yarn  = 2048
+0.00.066.348 I print_info: rope_finetuned   = unknown
+0.00.066.348 I print_info: ssm_d_conv       = 0
+0.00.066.348 I print_info: ssm_d_inner      = 0
+0.00.066.348 I print_info: ssm_d_state      = 0
+0.00.066.348 I print_info: ssm_dt_rank      = 0
+0.00.066.348 I print_info: ssm_dt_b_c_rms   = 0
+0.00.066.349 I print_info: model type       = 1.4B
+0.00.066.349 I print_info: model params     = 1.41 B
+0.00.066.350 I print_info: general.name     = 1.4B
+0.00.066.352 I print_info: vocab type       = BPE
+0.00.066.353 I print_info: n_vocab          = 50304
+0.00.066.353 I print_info: n_merges         = 50009
+0.00.066.354 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.066.354 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.066.354 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.066.354 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.066.355 I print_info: LF token         = 187 'Ċ'
+0.00.066.355 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.066.355 I print_info: max token length = 1024
+0.00.066.357 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.117.357 I load_tensors:          AMX model buffer size =   526.60 MiB
+0.00.117.380 I load_tensors:   CPU_Mapped model buffer size =   643.67 MiB
+...............................................................................
+0.00.203.552 I llama_context: constructing llama_context
+0.00.203.572 I llama_context: n_seq_max     = 1
+0.00.203.572 I llama_context: n_ctx         = 128
+0.00.203.573 I llama_context: n_ctx_per_seq = 128
+0.00.203.573 I llama_context: n_batch       = 128
+0.00.203.573 I llama_context: n_ubatch      = 128
+0.00.203.574 I llama_context: causal_attn   = 1
+0.00.203.574 I llama_context: flash_attn    = 0
+0.00.203.578 I llama_context: freq_base     = 10000.0
+0.00.203.579 I llama_context: freq_scale    = 1
+0.00.203.580 W llama_context: n_ctx_per_seq (128) < n_ctx_train (2048) -- the full capacity of the model will not be utilized
+0.00.203.628 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.00.203.910 I llama_kv_cache_unified:        CPU KV buffer size =    24.00 MiB
+0.00.208.171 I llama_kv_cache_unified: size =   24.00 MiB (   128 cells,  24 layers,  1 seqs), K (f16):   12.00 MiB, V (f16):   12.00 MiB
+0.00.217.212 I llama_context:        CPU compute buffer size =    25.56 MiB
+0.00.217.230 I llama_context: graph nodes  = 1063
+0.00.217.231 I llama_context: graph splits = 1
+0.00.217.239 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 128
+0.00.217.239 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.268.397 I 
+0.00.268.496 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.268.521 I perplexity: tokenizing the input ..
+0.00.275.032 I perplexity: tokenization took 6.507 ms
+0.00.275.064 I perplexity: calculating perplexity over 1 chunks, n_ctx=128, batch_size=128, n_seq=1
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 128, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 128, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 128, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 128, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 128, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 128, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 128, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 7, j = 0, idx = 7, n_seqs = 128, n_seq_tokens = 1
+    seq_id[7][0] = 0
+s = 8, j = 0, idx = 8, n_seqs = 128, n_seq_tokens = 1
+    seq_id[8][0] = 0
+s = 9, j = 0, idx = 9, n_seqs = 128, n_seq_tokens = 1
+    seq_id[9][0] = 0
+s = 10, j = 0, idx = 10, n_seqs = 128, n_seq_tokens = 1
+    seq_id[10][0] = 0
+s = 11, j = 0, idx = 11, n_seqs = 128, n_seq_tokens = 1
+    seq_id[11][0] = 0
+s = 12, j = 0, idx = 12, n_seqs = 128, n_seq_tokens = 1
+    seq_id[12][0] = 0
+s = 13, j = 0, idx = 13, n_seqs = 128, n_seq_tokens = 1
+    seq_id[13][0] = 0
+s = 14, j = 0, idx = 14, n_seqs = 128, n_seq_tokens = 1
+    seq_id[14][0] = 0
+s = 15, j = 0, idx = 15, n_seqs = 128, n_seq_tokens = 1
+    seq_id[15][0] = 0
+s = 16, j = 0, idx = 16, n_seqs = 128, n_seq_tokens = 1
+    seq_id[16][0] = 0
+s = 17, j = 0, idx = 17, n_seqs = 128, n_seq_tokens = 1
+    seq_id[17][0] = 0
+s = 18, j = 0, idx = 18, n_seqs = 128, n_seq_tokens = 1
+    seq_id[18][0] = 0
+s = 19, j = 0, idx = 19, n_seqs = 128, n_seq_tokens = 1
+    seq_id[19][0] = 0
+s = 20, j = 0, idx = 20, n_seqs = 128, n_seq_tokens = 1
+    seq_id[20][0] = 0
+s = 21, j = 0, idx = 21, n_seqs = 128, n_seq_tokens = 1
+    seq_id[21][0] = 0
+s = 22, j = 0, idx = 22, n_seqs = 128, n_seq_tokens = 1
+    seq_id[22][0] = 0
+s = 23, j = 0, idx = 23, n_seqs = 128, n_seq_tokens = 1
+    seq_id[23][0] = 0
+s = 24, j = 0, idx = 24, n_seqs = 128, n_seq_tokens = 1
+    seq_id[24][0] = 0
+s = 25, j = 0, idx = 25, n_seqs = 128, n_seq_tokens = 1
+    seq_id[25][0] = 0
+s = 26, j = 0, idx = 26, n_seqs = 128, n_seq_tokens = 1
+    seq_id[26][0] = 0
+s = 27, j = 0, idx = 27, n_seqs = 128, n_seq_tokens = 1
+    seq_id[27][0] = 0
+s = 28, j = 0, idx = 28, n_seqs = 128, n_seq_tokens = 1
+    seq_id[28][0] = 0
+s = 29, j = 0, idx = 29, n_seqs = 128, n_seq_tokens = 1
+    seq_id[29][0] = 0
+s = 30, j = 0, idx = 30, n_seqs = 128, n_seq_tokens = 1
+    seq_id[30][0] = 0
+s = 31, j = 0, idx = 31, n_seqs = 128, n_seq_tokens = 1
+    seq_id[31][0] = 0
+s = 32, j = 0, idx = 32, n_seqs = 128, n_seq_tokens = 1
+    seq_id[32][0] = 0
+s = 33, j = 0, idx = 33, n_seqs = 128, n_seq_tokens = 1
+    seq_id[33][0] = 0
+s = 34, j = 0, idx = 34, n_seqs = 128, n_seq_tokens = 1
+    seq_id[34][0] = 0
+s = 35, j = 0, idx = 35, n_seqs = 128, n_seq_tokens = 1
+    seq_id[35][0] = 0
+s = 36, j = 0, idx = 36, n_seqs = 128, n_seq_tokens = 1
+    seq_id[36][0] = 0
+s = 37, j = 0, idx = 37, n_seqs = 128, n_seq_tokens = 1
+    seq_id[37][0] = 0
+s = 38, j = 0, idx = 38, n_seqs = 128, n_seq_tokens = 1
+    seq_id[38][0] = 0
+s = 39, j = 0, idx = 39, n_seqs = 128, n_seq_tokens = 1
+    seq_id[39][0] = 0
+s = 40, j = 0, idx = 40, n_seqs = 128, n_seq_tokens = 1
+    seq_id[40][0] = 0
+s = 41, j = 0, idx = 41, n_seqs = 128, n_seq_tokens = 1
+    seq_id[41][0] = 0
+s = 42, j = 0, idx = 42, n_seqs = 128, n_seq_tokens = 1
+    seq_id[42][0] = 0
+s = 43, j = 0, idx = 43, n_seqs = 128, n_seq_tokens = 1
+    seq_id[43][0] = 0
+s = 44, j = 0, idx = 44, n_seqs = 128, n_seq_tokens = 1
+    seq_id[44][0] = 0
+s = 45, j = 0, idx = 45, n_seqs = 128, n_seq_tokens = 1
+    seq_id[45][0] = 0
+s = 46, j = 0, idx = 46, n_seqs = 128, n_seq_tokens = 1
+    seq_id[46][0] = 0
+s = 47, j = 0, idx = 47, n_seqs = 128, n_seq_tokens = 1
+    seq_id[47][0] = 0
+s = 48, j = 0, idx = 48, n_seqs = 128, n_seq_tokens = 1
+    seq_id[48][0] = 0
+s = 49, j = 0, idx = 49, n_seqs = 128, n_seq_tokens = 1
+    seq_id[49][0] = 0
+s = 50, j = 0, idx = 50, n_seqs = 128, n_seq_tokens = 1
+    seq_id[50][0] = 0
+s = 51, j = 0, idx = 51, n_seqs = 128, n_seq_tokens = 1
+    seq_id[51][0] = 0
+s = 52, j = 0, idx = 52, n_seqs = 128, n_seq_tokens = 1
+    seq_id[52][0] = 0
+s = 53, j = 0, idx = 53, n_seqs = 128, n_seq_tokens = 1
+    seq_id[53][0] = 0
+s = 54, j = 0, idx = 54, n_seqs = 128, n_seq_tokens = 1
+    seq_id[54][0] = 0
+s = 55, j = 0, idx = 55, n_seqs = 128, n_seq_tokens = 1
+    seq_id[55][0] = 0
+s = 56, j = 0, idx = 56, n_seqs = 128, n_seq_tokens = 1
+    seq_id[56][0] = 0
+s = 57, j = 0, idx = 57, n_seqs = 128, n_seq_tokens = 1
+    seq_id[57][0] = 0
+s = 58, j = 0, idx = 58, n_seqs = 128, n_seq_tokens = 1
+    seq_id[58][0] = 0
+s = 59, j = 0, idx = 59, n_seqs = 128, n_seq_tokens = 1
+    seq_id[59][0] = 0
+s = 60, j = 0, idx = 60, n_seqs = 128, n_seq_tokens = 1
+    seq_id[60][0] = 0
+s = 61, j = 0, idx = 61, n_seqs = 128, n_seq_tokens = 1
+    seq_id[61][0] = 0
+s = 62, j = 0, idx = 62, n_seqs = 128, n_seq_tokens = 1
+    seq_id[62][0] = 0
+s = 63, j = 0, idx = 63, n_seqs = 128, n_seq_tokens = 1
+    seq_id[63][0] = 0
+s = 64, j = 0, idx = 64, n_seqs = 128, n_seq_tokens = 1
+    seq_id[64][0] = 0
+s = 65, j = 0, idx = 65, n_seqs = 128, n_seq_tokens = 1
+    seq_id[65][0] = 0
+s = 66, j = 0, idx = 66, n_seqs = 128, n_seq_tokens = 1
+    seq_id[66][0] = 0
+s = 67, j = 0, idx = 67, n_seqs = 128, n_seq_tokens = 1
+    seq_id[67][0] = 0
+s = 68, j = 0, idx = 68, n_seqs = 128, n_seq_tokens = 1
+    seq_id[68][0] = 0
+s = 69, j = 0, idx = 69, n_seqs = 128, n_seq_tokens = 1
+    seq_id[69][0] = 0
+s = 70, j = 0, idx = 70, n_seqs = 128, n_seq_tokens = 1
+    seq_id[70][0] = 0
+s = 71, j = 0, idx = 71, n_seqs = 128, n_seq_tokens = 1
+    seq_id[71][0] = 0
+s = 72, j = 0, idx = 72, n_seqs = 128, n_seq_tokens = 1
+    seq_id[72][0] = 0
+s = 73, j = 0, idx = 73, n_seqs = 128, n_seq_tokens = 1
+    seq_id[73][0] = 0
+s = 74, j = 0, idx = 74, n_seqs = 128, n_seq_tokens = 1
+    seq_id[74][0] = 0
+s = 75, j = 0, idx = 75, n_seqs = 128, n_seq_tokens = 1
+    seq_id[75][0] = 0
+s = 76, j = 0, idx = 76, n_seqs = 128, n_seq_tokens = 1
+    seq_id[76][0] = 0
+s = 77, j = 0, idx = 77, n_seqs = 128, n_seq_tokens = 1
+    seq_id[77][0] = 0
+s = 78, j = 0, idx = 78, n_seqs = 128, n_seq_tokens = 1
+    seq_id[78][0] = 0
+s = 79, j = 0, idx = 79, n_seqs = 128, n_seq_tokens = 1
+    seq_id[79][0] = 0
+s = 80, j = 0, idx = 80, n_seqs = 128, n_seq_tokens = 1
+    seq_id[80][0] = 0
+s = 81, j = 0, idx = 81, n_seqs = 128, n_seq_tokens = 1
+    seq_id[81][0] = 0
+s = 82, j = 0, idx = 82, n_seqs = 128, n_seq_tokens = 1
+    seq_id[82][0] = 0
+s = 83, j = 0, idx = 83, n_seqs = 128, n_seq_tokens = 1
+    seq_id[83][0] = 0
+s = 84, j = 0, idx = 84, n_seqs = 128, n_seq_tokens = 1
+    seq_id[84][0] = 0
+s = 85, j = 0, idx = 85, n_seqs = 128, n_seq_tokens = 1
+    seq_id[85][0] = 0
+s = 86, j = 0, idx = 86, n_seqs = 128, n_seq_tokens = 1
+    seq_id[86][0] = 0
+s = 87, j = 0, idx = 87, n_seqs = 128, n_seq_tokens = 1
+    seq_id[87][0] = 0
+s = 88, j = 0, idx = 88, n_seqs = 128, n_seq_tokens = 1
+    seq_id[88][0] = 0
+s = 89, j = 0, idx = 89, n_seqs = 128, n_seq_tokens = 1
+    seq_id[89][0] = 0
+s = 90, j = 0, idx = 90, n_seqs = 128, n_seq_tokens = 1
+    seq_id[90][0] = 0
+s = 91, j = 0, idx = 91, n_seqs = 128, n_seq_tokens = 1
+    seq_id[91][0] = 0
+s = 92, j = 0, idx = 92, n_seqs = 128, n_seq_tokens = 1
+    seq_id[92][0] = 0
+s = 93, j = 0, idx = 93, n_seqs = 128, n_seq_tokens = 1
+    seq_id[93][0] = 0
+s = 94, j = 0, idx = 94, n_seqs = 128, n_seq_tokens = 1
+    seq_id[94][0] = 0
+s = 95, j = 0, idx = 95, n_seqs = 128, n_seq_tokens = 1
+    seq_id[95][0] = 0
+s = 96, j = 0, idx = 96, n_seqs = 128, n_seq_tokens = 1
+    seq_id[96][0] = 0
+s = 97, j = 0, idx = 97, n_seqs = 128, n_seq_tokens = 1
+    seq_id[97][0] = 0
+s = 98, j = 0, idx = 98, n_seqs = 128, n_seq_tokens = 1
+    seq_id[98][0] = 0
+s = 99, j = 0, idx = 99, n_seqs = 128, n_seq_tokens = 1
+    seq_id[99][0] = 0
+s = 100, j = 0, idx = 100, n_seqs = 128, n_seq_tokens = 1
+    seq_id[100][0] = 0
+s = 101, j = 0, idx = 101, n_seqs = 128, n_seq_tokens = 1
+    seq_id[101][0] = 0
+s = 102, j = 0, idx = 102, n_seqs = 128, n_seq_tokens = 1
+    seq_id[102][0] = 0
+s = 103, j = 0, idx = 103, n_seqs = 128, n_seq_tokens = 1
+    seq_id[103][0] = 0
+s = 104, j = 0, idx = 104, n_seqs = 128, n_seq_tokens = 1
+    seq_id[104][0] = 0
+s = 105, j = 0, idx = 105, n_seqs = 128, n_seq_tokens = 1
+    seq_id[105][0] = 0
+s = 106, j = 0, idx = 106, n_seqs = 128, n_seq_tokens = 1
+    seq_id[106][0] = 0
+s = 107, j = 0, idx = 107, n_seqs = 128, n_seq_tokens = 1
+    seq_id[107][0] = 0
+s = 108, j = 0, idx = 108, n_seqs = 128, n_seq_tokens = 1
+    seq_id[108][0] = 0
+s = 109, j = 0, idx = 109, n_seqs = 128, n_seq_tokens = 1
+    seq_id[109][0] = 0
+s = 110, j = 0, idx = 110, n_seqs = 128, n_seq_tokens = 1
+    seq_id[110][0] = 0
+s = 111, j = 0, idx = 111, n_seqs = 128, n_seq_tokens = 1
+    seq_id[111][0] = 0
+s = 112, j = 0, idx = 112, n_seqs = 128, n_seq_tokens = 1
+    seq_id[112][0] = 0
+s = 113, j = 0, idx = 113, n_seqs = 128, n_seq_tokens = 1
+    seq_id[113][0] = 0
+s = 114, j = 0, idx = 114, n_seqs = 128, n_seq_tokens = 1
+    seq_id[114][0] = 0
+s = 115, j = 0, idx = 115, n_seqs = 128, n_seq_tokens = 1
+    seq_id[115][0] = 0
+s = 116, j = 0, idx = 116, n_seqs = 128, n_seq_tokens = 1
+    seq_id[116][0] = 0
+s = 117, j = 0, idx = 117, n_seqs = 128, n_seq_tokens = 1
+    seq_id[117][0] = 0
+s = 118, j = 0, idx = 118, n_seqs = 128, n_seq_tokens = 1
+    seq_id[118][0] = 0
+s = 119, j = 0, idx = 119, n_seqs = 128, n_seq_tokens = 1
+    seq_id[119][0] = 0
+s = 120, j = 0, idx = 120, n_seqs = 128, n_seq_tokens = 1
+    seq_id[120][0] = 0
+s = 121, j = 0, idx = 121, n_seqs = 128, n_seq_tokens = 1
+    seq_id[121][0] = 0
+s = 122, j = 0, idx = 122, n_seqs = 128, n_seq_tokens = 1
+    seq_id[122][0] = 0
+s = 123, j = 0, idx = 123, n_seqs = 128, n_seq_tokens = 1
+    seq_id[123][0] = 0
+s = 124, j = 0, idx = 124, n_seqs = 128, n_seq_tokens = 1
+    seq_id[124][0] = 0
+s = 125, j = 0, idx = 125, n_seqs = 128, n_seq_tokens = 1
+    seq_id[125][0] = 0
+s = 126, j = 0, idx = 126, n_seqs = 128, n_seq_tokens = 1
+    seq_id[126][0] = 0
+s = 127, j = 0, idx = 127, n_seqs = 128, n_seq_tokens = 1
+    seq_id[127][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 128, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 128, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 128, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 128, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 128, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 128, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 128, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 7, j = 0, idx = 7, n_seqs = 128, n_seq_tokens = 1
+    seq_id[7][0] = 0
+s = 8, j = 0, idx = 8, n_seqs = 128, n_seq_tokens = 1
+    seq_id[8][0] = 0
+s = 9, j = 0, idx = 9, n_seqs = 128, n_seq_tokens = 1
+    seq_id[9][0] = 0
+s = 10, j = 0, idx = 10, n_seqs = 128, n_seq_tokens = 1
+    seq_id[10][0] = 0
+s = 11, j = 0, idx = 11, n_seqs = 128, n_seq_tokens = 1
+    seq_id[11][0] = 0
+s = 12, j = 0, idx = 12, n_seqs = 128, n_seq_tokens = 1
+    seq_id[12][0] = 0
+s = 13, j = 0, idx = 13, n_seqs = 128, n_seq_tokens = 1
+    seq_id[13][0] = 0
+s = 14, j = 0, idx = 14, n_seqs = 128, n_seq_tokens = 1
+    seq_id[14][0] = 0
+s = 15, j = 0, idx = 15, n_seqs = 128, n_seq_tokens = 1
+    seq_id[15][0] = 0
+s = 16, j = 0, idx = 16, n_seqs = 128, n_seq_tokens = 1
+    seq_id[16][0] = 0
+s = 17, j = 0, idx = 17, n_seqs = 128, n_seq_tokens = 1
+    seq_id[17][0] = 0
+s = 18, j = 0, idx = 18, n_seqs = 128, n_seq_tokens = 1
+    seq_id[18][0] = 0
+s = 19, j = 0, idx = 19, n_seqs = 128, n_seq_tokens = 1
+    seq_id[19][0] = 0
+s = 20, j = 0, idx = 20, n_seqs = 128, n_seq_tokens = 1
+    seq_id[20][0] = 0
+s = 21, j = 0, idx = 21, n_seqs = 128, n_seq_tokens = 1
+    seq_id[21][0] = 0
+s = 22, j = 0, idx = 22, n_seqs = 128, n_seq_tokens = 1
+    seq_id[22][0] = 0
+s = 23, j = 0, idx = 23, n_seqs = 128, n_seq_tokens = 1
+    seq_id[23][0] = 0
+s = 24, j = 0, idx = 24, n_seqs = 128, n_seq_tokens = 1
+    seq_id[24][0] = 0
+s = 25, j = 0, idx = 25, n_seqs = 128, n_seq_tokens = 1
+    seq_id[25][0] = 0
+s = 26, j = 0, idx = 26, n_seqs = 128, n_seq_tokens = 1
+    seq_id[26][0] = 0
+s = 27, j = 0, idx = 27, n_seqs = 128, n_seq_tokens = 1
+    seq_id[27][0] = 0
+s = 28, j = 0, idx = 28, n_seqs = 128, n_seq_tokens = 1
+    seq_id[28][0] = 0
+s = 29, j = 0, idx = 29, n_seqs = 128, n_seq_tokens = 1
+    seq_id[29][0] = 0
+s = 30, j = 0, idx = 30, n_seqs = 128, n_seq_tokens = 1
+    seq_id[30][0] = 0
+s = 31, j = 0, idx = 31, n_seqs = 128, n_seq_tokens = 1
+    seq_id[31][0] = 0
+s = 32, j = 0, idx = 32, n_seqs = 128, n_seq_tokens = 1
+    seq_id[32][0] = 0
+s = 33, j = 0, idx = 33, n_seqs = 128, n_seq_tokens = 1
+    seq_id[33][0] = 0
+s = 34, j = 0, idx = 34, n_seqs = 128, n_seq_tokens = 1
+    seq_id[34][0] = 0
+s = 35, j = 0, idx = 35, n_seqs = 128, n_seq_tokens = 1
+    seq_id[35][0] = 0
+s = 36, j = 0, idx = 36, n_seqs = 128, n_seq_tokens = 1
+    seq_id[36][0] = 0
+s = 37, j = 0, idx = 37, n_seqs = 128, n_seq_tokens = 1
+    seq_id[37][0] = 0
+s = 38, j = 0, idx = 38, n_seqs = 128, n_seq_tokens = 1
+    seq_id[38][0] = 0
+s = 39, j = 0, idx = 39, n_seqs = 128, n_seq_tokens = 1
+    seq_id[39][0] = 0
+s = 40, j = 0, idx = 40, n_seqs = 128, n_seq_tokens = 1
+    seq_id[40][0] = 0
+s = 41, j = 0, idx = 41, n_seqs = 128, n_seq_tokens = 1
+    seq_id[41][0] = 0
+s = 42, j = 0, idx = 42, n_seqs = 128, n_seq_tokens = 1
+    seq_id[42][0] = 0
+s = 43, j = 0, idx = 43, n_seqs = 128, n_seq_tokens = 1
+    seq_id[43][0] = 0
+s = 44, j = 0, idx = 44, n_seqs = 128, n_seq_tokens = 1
+    seq_id[44][0] = 0
+s = 45, j = 0, idx = 45, n_seqs = 128, n_seq_tokens = 1
+    seq_id[45][0] = 0
+s = 46, j = 0, idx = 46, n_seqs = 128, n_seq_tokens = 1
+    seq_id[46][0] = 0
+s = 47, j = 0, idx = 47, n_seqs = 128, n_seq_tokens = 1
+    seq_id[47][0] = 0
+s = 48, j = 0, idx = 48, n_seqs = 128, n_seq_tokens = 1
+    seq_id[48][0] = 0
+s = 49, j = 0, idx = 49, n_seqs = 128, n_seq_tokens = 1
+    seq_id[49][0] = 0
+s = 50, j = 0, idx = 50, n_seqs = 128, n_seq_tokens = 1
+    seq_id[50][0] = 0
+s = 51, j = 0, idx = 51, n_seqs = 128, n_seq_tokens = 1
+    seq_id[51][0] = 0
+s = 52, j = 0, idx = 52, n_seqs = 128, n_seq_tokens = 1
+    seq_id[52][0] = 0
+s = 53, j = 0, idx = 53, n_seqs = 128, n_seq_tokens = 1
+    seq_id[53][0] = 0
+s = 54, j = 0, idx = 54, n_seqs = 128, n_seq_tokens = 1
+    seq_id[54][0] = 0
+s = 55, j = 0, idx = 55, n_seqs = 128, n_seq_tokens = 1
+    seq_id[55][0] = 0
+s = 56, j = 0, idx = 56, n_seqs = 128, n_seq_tokens = 1
+    seq_id[56][0] = 0
+s = 57, j = 0, idx = 57, n_seqs = 128, n_seq_tokens = 1
+    seq_id[57][0] = 0
+s = 58, j = 0, idx = 58, n_seqs = 128, n_seq_tokens = 1
+    seq_id[58][0] = 0
+s = 59, j = 0, idx = 59, n_seqs = 128, n_seq_tokens = 1
+    seq_id[59][0] = 0
+s = 60, j = 0, idx = 60, n_seqs = 128, n_seq_tokens = 1
+    seq_id[60][0] = 0
+s = 61, j = 0, idx = 61, n_seqs = 128, n_seq_tokens = 1
+    seq_id[61][0] = 0
+s = 62, j = 0, idx = 62, n_seqs = 128, n_seq_tokens = 1
+    seq_id[62][0] = 0
+s = 63, j = 0, idx = 63, n_seqs = 128, n_seq_tokens = 1
+    seq_id[63][0] = 0
+s = 64, j = 0, idx = 64, n_seqs = 128, n_seq_tokens = 1
+    seq_id[64][0] = 0
+s = 65, j = 0, idx = 65, n_seqs = 128, n_seq_tokens = 1
+    seq_id[65][0] = 0
+s = 66, j = 0, idx = 66, n_seqs = 128, n_seq_tokens = 1
+    seq_id[66][0] = 0
+s = 67, j = 0, idx = 67, n_seqs = 128, n_seq_tokens = 1
+    seq_id[67][0] = 0
+s = 68, j = 0, idx = 68, n_seqs = 128, n_seq_tokens = 1
+    seq_id[68][0] = 0
+s = 69, j = 0, idx = 69, n_seqs = 128, n_seq_tokens = 1
+    seq_id[69][0] = 0
+s = 70, j = 0, idx = 70, n_seqs = 128, n_seq_tokens = 1
+    seq_id[70][0] = 0
+s = 71, j = 0, idx = 71, n_seqs = 128, n_seq_tokens = 1
+    seq_id[71][0] = 0
+s = 72, j = 0, idx = 72, n_seqs = 128, n_seq_tokens = 1
+    seq_id[72][0] = 0
+s = 73, j = 0, idx = 73, n_seqs = 128, n_seq_tokens = 1
+    seq_id[73][0] = 0
+s = 74, j = 0, idx = 74, n_seqs = 128, n_seq_tokens = 1
+    seq_id[74][0] = 0
+s = 75, j = 0, idx = 75, n_seqs = 128, n_seq_tokens = 1
+    seq_id[75][0] = 0
+s = 76, j = 0, idx = 76, n_seqs = 128, n_seq_tokens = 1
+    seq_id[76][0] = 0
+s = 77, j = 0, idx = 77, n_seqs = 128, n_seq_tokens = 1
+    seq_id[77][0] = 0
+0.01.179.649 I perplexity: 0.90 seconds per pass - ETA s = 78, j = 0, idx = 78, n_seqs = 128, n_seq_tokens = 1
+    seq_id[78][0] = 0
+s = 79, j = 0, idx = 79, n_seqs = 128, n_seq_tokens = 1
+    seq_id[79][0] = 0
+s = 80, j = 0, idx = 80, n_seqs = 128, n_seq_tokens = 1
+    seq_id[80][0] = 0
+s = 81, j = 0, idx = 81, n_seqs = 128, n_seq_tokens = 1
+    seq_id[81][0] = 0
+s = 82, j = 0, idx = 82, n_seqs = 128, n_seq_tokens = 1
+    seq_id[82][0] = 0
+s = 83, j = 0, idx = 83, n_seqs = 128, n_seq_tokens = 1
+    seq_id[83][0] = 0
+s = 84, j = 0, idx = 84, n_seqs = 128, n_seq_tokens = 1
+    seq_id[84][0] = 0
+s = 85, j = 0, idx = 85, n_seqs = 128, n_seq_tokens = 1
+    seq_id[85][0] = 0
+s = 86, j = 0, idx = 86, n_seqs = 128, n_seq_tokens = 1
+    seq_id[86][0] = 0
+s = 87, j = 0, idx = 87, n_seqs = 128, n_seq_tokens = 1
+    seq_id[87][0] = 0
+s = 88, j = 0, idx = 88, n_seqs = 128, n_seq_tokens = 1
+    seq_id[88][0] = 0
+s = 89, j = 0, idx = 89, n_seqs = 128, n_seq_tokens = 1
+    seq_id[89][0] = 0
+s = 90, j = 0, idx = 90, n_seqs = 128, n_seq_tokens = 1
+    seq_id[90][0] = 0
+s = 91, j = 0, idx = 91, n_seqs = 128, n_seq_tokens = 1
+    seq_id[91][0] = 0
+s = 92, j = 0, idx = 92, n_seqs = 128, n_seq_tokens = 1
+    seq_id[92][0] = 0
+s = 93, j = 0, idx = 93, n_seqs = 128, n_seq_tokens = 1
+    seq_id[93][0] = 0
+s = 94, j = 0, idx = 94, n_seqs = 128, n_seq_tokens = 1
+    seq_id[94][0] = 0
+s = 95, j = 0, idx = 95, n_seqs = 128, n_seq_tokens = 1
+    seq_id[95][0] = 0
+s = 96, j = 0, idx = 96, n_seqs = 128, n_seq_tokens = 1
+    seq_id[96][0] = 0
+s = 97, j = 0, idx = 97, n_seqs = 128, n_seq_tokens = 1
+    seq_id[97][0] = 0
+s = 98, j = 0, idx = 98, n_seqs = 128, n_seq_tokens = 1
+    seq_id[98][0] = 0
+s = 99, j = 0, idx = 99, n_seqs = 128, n_seq_tokens = 1
+    seq_id[99][0] = 0
+s = 100, j = 0, idx = 100, n_seqs = 128, n_seq_tokens = 1
+    seq_id[100][0] = 0
+s = 101, j = 0, idx = 101, n_seqs = 128, n_seq_tokens = 1
+    seq_id[101][0] = 0
+s = 102, j = 0, idx = 102, n_seqs = 128, n_seq_tokens = 1
+    seq_id[102][0] = 0
+s = 103, j = 0, idx = 103, n_seqs = 128, n_seq_tokens = 1
+    seq_id[103][0] = 0
+s = 104, j = 0, idx = 104, n_seqs = 128, n_seq_tokens = 1
+    seq_id[104][0] = 0
+s = 105, j = 0, idx = 105, n_seqs = 128, n_seq_tokens = 1
+    seq_id[105][0] = 0
+s = 106, j = 0, idx = 106, n_seqs = 128, n_seq_tokens = 1
+    seq_id[106][0] = 0
+s = 107, j = 0, idx = 107, n_seqs = 128, n_seq_tokens = 1
+    seq_id[107][0] = 0
+s = 108, j = 0, idx = 108, n_seqs = 128, n_seq_tokens = 1
+    seq_id[108][0] = 0
+s = 109, j = 0, idx = 109, n_seqs = 128, n_seq_tokens = 1
+    seq_id[109][0] = 0
+s = 110, j = 0, idx = 110, n_seqs = 128, n_seq_tokens = 1
+    seq_id[110][0] = 0
+s = 111, j = 0, idx = 111, n_seqs = 128, n_seq_tokens = 1
+    seq_id[111][0] = 0
+s = 112, j = 0, idx = 112, n_seqs = 128, n_seq_tokens = 1
+    seq_id[112][0] = 0
+s = 113, j = 0, idx = 113, n_seqs = 128, n_seq_tokens = 1
+    seq_id[113][0] = 0
+s = 114, j = 0, idx = 114, n_seqs = 128, n_seq_tokens = 1
+    seq_id[114][0] = 0
+s = 115, j = 0, idx = 115, n_seqs = 128, n_seq_tokens = 1
+    seq_id[115][0] = 0
+s = 116, j = 0, idx = 116, n_seqs = 128, n_seq_tokens = 1
+    seq_id[116][0] = 0
+s = 117, j = 0, idx = 117, n_seqs = 128, n_seq_tokens = 1
+    seq_id[117][0] = 0
+s = 118, j = 0, idx = 118, n_seqs = 128, n_seq_tokens = 1
+    seq_id[118][0] = 0
+s = 119, j = 0, idx = 119, n_seqs = 128, n_seq_tokens = 1
+    seq_id[119][0] = 0
+s = 120, j = 0, idx = 120, n_seqs = 128, n_seq_tokens = 1
+    seq_id[120][0] = 0
+s = 121, j = 0, idx = 121, n_seqs = 128, n_seq_tokens = 1
+    seq_id[121][0] = 0
+s = 122, j = 0, idx = 122, n_seqs = 128, n_seq_tokens = 1
+    seq_id[122][0] = 0
+s = 123, j = 0, idx = 123, n_seqs = 128, n_seq_tokens = 1
+    seq_id[123][0] = 0
+s = 124, j = 0, idx = 124, n_seqs = 128, n_seq_tokens = 1
+    seq_id[124][0] = 0
+s = 125, j = 0, idx = 125, n_seqs = 128, n_seq_tokens = 1
+    seq_id[125][0] = 0
+s = 126, j = 0, idx = 126, n_seqs = 128, n_seq_tokens = 1
+    seq_id[126][0] = 0
+s = 127, j = 0, idx = 127, n_seqs = 128, n_seq_tokens = 1
+    seq_id[127][0] = 0
+0.00 minutes
+[1]12.3725,
+0.01.182.462 I Final estimate: PPL = 12.3725 +/- 4.01345
+
+0.01.182.507 I llama_perf_context_print:        load time =     268.02 ms
+0.01.182.525 I llama_perf_context_print: prompt eval time =     902.65 ms /   128 tokens (    7.05 ms per token,   141.80 tokens per second)
+0.01.182.527 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.01.182.528 I llama_perf_context_print:       total time =     914.14 ms /   129 tokens
+
+real	0m1.224s
+user	0m4.263s
+sys	0m0.413s
+```
+- q4_k:
+```
++ ./bin/llama-cli -no-cnv --model ../models-mnt/pythia/1.4B/ggml-model-q4_k.gguf -ngl 99 -c 0 -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.330 I build: 5635 (2db43275) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.000.561 I main: llama backend init
+0.00.000.577 I main: load the model and apply lora adapter, if any
+0.00.010.695 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q4_k.gguf (version GGUF V3 (latest))
+0.00.010.722 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.010.730 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.010.731 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.010.731 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.010.732 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.010.732 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.010.735 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.010.736 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.010.736 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.010.737 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.010.737 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.010.737 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.010.738 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.010.747 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.010.747 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.010.748 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.015.497 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.016.610 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.021.092 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.021.114 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.021.115 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.021.115 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.021.116 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.021.116 I llama_model_loader: - kv  22:                          general.file_type u32              = 15
+0.00.021.119 I llama_model_loader: - type  f32:  194 tensors
+0.00.021.120 I llama_model_loader: - type q4_K:   61 tensors
+0.00.021.120 I llama_model_loader: - type q5_K:   24 tensors
+0.00.021.120 I llama_model_loader: - type q6_K:   13 tensors
+0.00.021.122 I print_info: file format = GGUF V3 (latest)
+0.00.021.122 I print_info: file type   = Q4_K - Medium
+0.00.021.126 I print_info: file size   = 871.81 MiB (5.17 BPW) 
+0.00.053.331 I load: special tokens cache size = 25
+0.00.065.504 I load: token to piece cache size = 0.2984 MB
+0.00.065.533 I print_info: arch             = gptneox
+0.00.065.533 I print_info: vocab_only       = 0
+0.00.065.534 I print_info: n_ctx_train      = 2048
+0.00.065.534 I print_info: n_embd           = 2048
+0.00.065.534 I print_info: n_layer          = 24
+0.00.065.542 I print_info: n_head           = 16
+0.00.065.544 I print_info: n_head_kv        = 16
+0.00.065.544 I print_info: n_rot            = 32
+0.00.065.544 I print_info: n_swa            = 0
+0.00.065.546 I print_info: is_swa_any       = 0
+0.00.065.546 I print_info: n_embd_head_k    = 128
+0.00.065.546 I print_info: n_embd_head_v    = 128
+0.00.065.548 I print_info: n_gqa            = 1
+0.00.065.549 I print_info: n_embd_k_gqa     = 2048
+0.00.065.551 I print_info: n_embd_v_gqa     = 2048
+0.00.065.552 I print_info: f_norm_eps       = 1.0e-05
+0.00.065.552 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.065.553 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.065.553 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.065.553 I print_info: f_logit_scale    = 0.0e+00
+0.00.065.554 I print_info: f_attn_scale     = 0.0e+00
+0.00.065.554 I print_info: n_ff             = 8192
+0.00.065.555 I print_info: n_expert         = 0
+0.00.065.555 I print_info: n_expert_used    = 0
+0.00.065.555 I print_info: causal attn      = 1
+0.00.065.556 I print_info: pooling type     = 0
+0.00.065.556 I print_info: rope type        = 2
+0.00.065.556 I print_info: rope scaling     = linear
+0.00.065.557 I print_info: freq_base_train  = 10000.0
+0.00.065.557 I print_info: freq_scale_train = 1
+0.00.065.558 I print_info: n_ctx_orig_yarn  = 2048
+0.00.065.558 I print_info: rope_finetuned   = unknown
+0.00.065.558 I print_info: ssm_d_conv       = 0
+0.00.065.558 I print_info: ssm_d_inner      = 0
+0.00.065.558 I print_info: ssm_d_state      = 0
+0.00.065.559 I print_info: ssm_dt_rank      = 0
+0.00.065.559 I print_info: ssm_dt_b_c_rms   = 0
+0.00.065.559 I print_info: model type       = 1.4B
+0.00.065.560 I print_info: model params     = 1.41 B
+0.00.065.560 I print_info: general.name     = 1.4B
+0.00.065.563 I print_info: vocab type       = BPE
+0.00.065.564 I print_info: n_vocab          = 50304
+0.00.065.564 I print_info: n_merges         = 50009
+0.00.065.564 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.065.564 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.065.565 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.065.565 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.065.565 I print_info: LF token         = 187 'Ċ'
+0.00.065.566 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.065.566 I print_info: max token length = 1024
+0.00.065.568 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.123.905 I load_tensors:          AMX model buffer size =   829.10 MiB
+0.00.123.928 I load_tensors:   CPU_Mapped model buffer size =   782.22 MiB
+................................................................................
+0.00.248.588 I llama_context: constructing llama_context
+0.00.248.621 I llama_context: n_seq_max     = 1
+0.00.248.628 I llama_context: n_ctx         = 2048
+0.00.248.635 I llama_context: n_ctx_per_seq = 2048
+0.00.248.641 I llama_context: n_batch       = 2048
+0.00.248.648 I llama_context: n_ubatch      = 512
+0.00.248.655 I llama_context: causal_attn   = 1
+0.00.248.663 I llama_context: flash_attn    = 0
+0.00.248.673 I llama_context: freq_base     = 10000.0
+0.00.248.681 I llama_context: freq_scale    = 1
+0.00.248.739 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.00.249.350 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.00.320.092 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.329.251 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.00.329.287 I llama_context: graph nodes  = 1063
+0.00.329.339 I llama_context: graph splits = 1
+0.00.329.368 I common_init_from_params: added <|endoftext|> logit bias = -inf
+0.00.329.788 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.329.803 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.431.930 I main: llama threadpool init, n_threads = 4
+0.00.431.953 I 
+0.00.432.035 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.432.050 I 
+0.00.432.168 I sampler seed: 1234
+0.00.432.188 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 2048
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.00.432.191 I sampler chain: logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+0.00.432.192 I generate: n_ctx = 2048, n_batch = 2048, n_predict = 64, n_keep = 0
+0.00.432.192 I 
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 7, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 7, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 7, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 7, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 7, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 7, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 7, n_seq_tokens = 1
+    seq_id[6][0] = 0
+I believe the meaning of life iss = 0, j = 0, idx = 0, n_seqs = 7, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 7, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 7, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 7, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 7, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 7, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 7, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thats = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ whichs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ yous = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ believes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ yous = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ wills = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ finds = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ats = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ends = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ofs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ yours = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ lifes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+.s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Mys = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ lifes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ iss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ verys = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ shorts = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+.s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ Is = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ dos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ nots = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ expects = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thats = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ Is = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ wills = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ lives = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ forevers = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+.s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ Buts = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ Is = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ dos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ hopes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ Is = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ wills = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ haves = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ as = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ longs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ands = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ happys = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ lifes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+.s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Yous = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ have alls = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ mades = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ suchs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ as = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ wonderfuls = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ lifes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ togethers = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+.s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ Is = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thanks = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ yous = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ for alls = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ you have
+
+0.02.571.186 I llama_perf_sampler_print:    sampling time =       2.93 ms /    71 runs   (    0.04 ms per token, 24232.08 tokens per second)
+0.02.571.192 I llama_perf_context_print:        load time =     430.24 ms
+0.02.571.194 I llama_perf_context_print: prompt eval time =      75.80 ms /     7 tokens (   10.83 ms per token,    92.35 tokens per second)
+0.02.571.195 I llama_perf_context_print:        eval time =    2051.41 ms /    63 runs   (   32.56 ms per token,    30.71 tokens per second)
+0.02.571.197 I llama_perf_context_print:       total time =    2140.35 ms /    70 tokens
+
+real	0m2.619s
+user	0m9.491s
+sys	0m0.594s
++ ./bin/llama-perplexity --model ../models-mnt/pythia/1.4B/ggml-model-q4_k.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -ngl 99 -c 128 -b 128 --chunks 1
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.303 I build: 5635 (2db43275) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.010.489 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q4_k.gguf (version GGUF V3 (latest))
+0.00.010.519 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.010.527 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.010.528 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.010.529 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.010.529 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.010.530 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.010.533 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.010.534 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.010.537 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.010.538 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.010.539 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.010.539 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.010.540 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.010.551 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.010.551 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.010.552 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.015.375 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.016.429 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.020.952 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.020.972 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.020.972 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.020.973 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.020.974 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.020.974 I llama_model_loader: - kv  22:                          general.file_type u32              = 15
+0.00.020.977 I llama_model_loader: - type  f32:  194 tensors
+0.00.020.978 I llama_model_loader: - type q4_K:   61 tensors
+0.00.020.978 I llama_model_loader: - type q5_K:   24 tensors
+0.00.020.978 I llama_model_loader: - type q6_K:   13 tensors
+0.00.020.981 I print_info: file format = GGUF V3 (latest)
+0.00.020.981 I print_info: file type   = Q4_K - Medium
+0.00.020.983 I print_info: file size   = 871.81 MiB (5.17 BPW) 
+0.00.054.713 I load: special tokens cache size = 25
+0.00.066.714 I load: token to piece cache size = 0.2984 MB
+0.00.066.743 I print_info: arch             = gptneox
+0.00.066.744 I print_info: vocab_only       = 0
+0.00.066.744 I print_info: n_ctx_train      = 2048
+0.00.066.745 I print_info: n_embd           = 2048
+0.00.066.745 I print_info: n_layer          = 24
+0.00.066.761 I print_info: n_head           = 16
+0.00.066.762 I print_info: n_head_kv        = 16
+0.00.066.763 I print_info: n_rot            = 32
+0.00.066.763 I print_info: n_swa            = 0
+0.00.066.764 I print_info: is_swa_any       = 0
+0.00.066.765 I print_info: n_embd_head_k    = 128
+0.00.066.765 I print_info: n_embd_head_v    = 128
+0.00.066.767 I print_info: n_gqa            = 1
+0.00.066.768 I print_info: n_embd_k_gqa     = 2048
+0.00.066.770 I print_info: n_embd_v_gqa     = 2048
+0.00.066.771 I print_info: f_norm_eps       = 1.0e-05
+0.00.066.771 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.066.772 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.066.772 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.066.772 I print_info: f_logit_scale    = 0.0e+00
+0.00.066.773 I print_info: f_attn_scale     = 0.0e+00
+0.00.066.773 I print_info: n_ff             = 8192
+0.00.066.774 I print_info: n_expert         = 0
+0.00.066.774 I print_info: n_expert_used    = 0
+0.00.066.774 I print_info: causal attn      = 1
+0.00.066.775 I print_info: pooling type     = 0
+0.00.066.775 I print_info: rope type        = 2
+0.00.066.775 I print_info: rope scaling     = linear
+0.00.066.776 I print_info: freq_base_train  = 10000.0
+0.00.066.776 I print_info: freq_scale_train = 1
+0.00.066.777 I print_info: n_ctx_orig_yarn  = 2048
+0.00.066.777 I print_info: rope_finetuned   = unknown
+0.00.066.777 I print_info: ssm_d_conv       = 0
+0.00.066.777 I print_info: ssm_d_inner      = 0
+0.00.066.778 I print_info: ssm_d_state      = 0
+0.00.066.778 I print_info: ssm_dt_rank      = 0
+0.00.066.778 I print_info: ssm_dt_b_c_rms   = 0
+0.00.066.779 I print_info: model type       = 1.4B
+0.00.066.779 I print_info: model params     = 1.41 B
+0.00.066.780 I print_info: general.name     = 1.4B
+0.00.066.783 I print_info: vocab type       = BPE
+0.00.066.784 I print_info: n_vocab          = 50304
+0.00.066.784 I print_info: n_merges         = 50009
+0.00.066.785 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.066.785 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.066.785 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.066.785 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.066.786 I print_info: LF token         = 187 'Ċ'
+0.00.066.786 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.066.786 I print_info: max token length = 1024
+0.00.066.788 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.127.072 I load_tensors:          AMX model buffer size =   829.10 MiB
+0.00.127.093 I load_tensors:   CPU_Mapped model buffer size =   782.22 MiB
+................................................................................
+0.00.249.999 I llama_context: constructing llama_context
+0.00.250.033 I llama_context: n_seq_max     = 1
+0.00.250.040 I llama_context: n_ctx         = 128
+0.00.250.047 I llama_context: n_ctx_per_seq = 128
+0.00.250.053 I llama_context: n_batch       = 128
+0.00.250.060 I llama_context: n_ubatch      = 128
+0.00.250.066 I llama_context: causal_attn   = 1
+0.00.250.072 I llama_context: flash_attn    = 0
+0.00.250.084 I llama_context: freq_base     = 10000.0
+0.00.250.091 I llama_context: freq_scale    = 1
+0.00.250.099 W llama_context: n_ctx_per_seq (128) < n_ctx_train (2048) -- the full capacity of the model will not be utilized
+0.00.250.170 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.00.250.701 I llama_kv_cache_unified:        CPU KV buffer size =    24.00 MiB
+0.00.255.161 I llama_kv_cache_unified: size =   24.00 MiB (   128 cells,  24 layers,  1 seqs), K (f16):   12.00 MiB, V (f16):   12.00 MiB
+0.00.264.340 I llama_context:        CPU compute buffer size =    25.56 MiB
+0.00.264.375 I llama_context: graph nodes  = 1063
+0.00.264.382 I llama_context: graph splits = 1
+0.00.264.403 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 128
+0.00.264.410 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.326.785 I 
+0.00.326.878 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.326.903 I perplexity: tokenizing the input ..
+0.00.333.428 I perplexity: tokenization took 6.521 ms
+0.00.333.459 I perplexity: calculating perplexity over 1 chunks, n_ctx=128, batch_size=128, n_seq=1
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 128, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 128, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 128, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 128, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 128, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 128, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 128, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 7, j = 0, idx = 7, n_seqs = 128, n_seq_tokens = 1
+    seq_id[7][0] = 0
+s = 8, j = 0, idx = 8, n_seqs = 128, n_seq_tokens = 1
+    seq_id[8][0] = 0
+s = 9, j = 0, idx = 9, n_seqs = 128, n_seq_tokens = 1
+    seq_id[9][0] = 0
+s = 10, j = 0, idx = 10, n_seqs = 128, n_seq_tokens = 1
+    seq_id[10][0] = 0
+s = 11, j = 0, idx = 11, n_seqs = 128, n_seq_tokens = 1
+    seq_id[11][0] = 0
+s = 12, j = 0, idx = 12, n_seqs = 128, n_seq_tokens = 1
+    seq_id[12][0] = 0
+s = 13, j = 0, idx = 13, n_seqs = 128, n_seq_tokens = 1
+    seq_id[13][0] = 0
+s = 14, j = 0, idx = 14, n_seqs = 128, n_seq_tokens = 1
+    seq_id[14][0] = 0
+s = 15, j = 0, idx = 15, n_seqs = 128, n_seq_tokens = 1
+    seq_id[15][0] = 0
+s = 16, j = 0, idx = 16, n_seqs = 128, n_seq_tokens = 1
+    seq_id[16][0] = 0
+s = 17, j = 0, idx = 17, n_seqs = 128, n_seq_tokens = 1
+    seq_id[17][0] = 0
+s = 18, j = 0, idx = 18, n_seqs = 128, n_seq_tokens = 1
+    seq_id[18][0] = 0
+s = 19, j = 0, idx = 19, n_seqs = 128, n_seq_tokens = 1
+    seq_id[19][0] = 0
+s = 20, j = 0, idx = 20, n_seqs = 128, n_seq_tokens = 1
+    seq_id[20][0] = 0
+s = 21, j = 0, idx = 21, n_seqs = 128, n_seq_tokens = 1
+    seq_id[21][0] = 0
+s = 22, j = 0, idx = 22, n_seqs = 128, n_seq_tokens = 1
+    seq_id[22][0] = 0
+s = 23, j = 0, idx = 23, n_seqs = 128, n_seq_tokens = 1
+    seq_id[23][0] = 0
+s = 24, j = 0, idx = 24, n_seqs = 128, n_seq_tokens = 1
+    seq_id[24][0] = 0
+s = 25, j = 0, idx = 25, n_seqs = 128, n_seq_tokens = 1
+    seq_id[25][0] = 0
+s = 26, j = 0, idx = 26, n_seqs = 128, n_seq_tokens = 1
+    seq_id[26][0] = 0
+s = 27, j = 0, idx = 27, n_seqs = 128, n_seq_tokens = 1
+    seq_id[27][0] = 0
+s = 28, j = 0, idx = 28, n_seqs = 128, n_seq_tokens = 1
+    seq_id[28][0] = 0
+s = 29, j = 0, idx = 29, n_seqs = 128, n_seq_tokens = 1
+    seq_id[29][0] = 0
+s = 30, j = 0, idx = 30, n_seqs = 128, n_seq_tokens = 1
+    seq_id[30][0] = 0
+s = 31, j = 0, idx = 31, n_seqs = 128, n_seq_tokens = 1
+    seq_id[31][0] = 0
+s = 32, j = 0, idx = 32, n_seqs = 128, n_seq_tokens = 1
+    seq_id[32][0] = 0
+s = 33, j = 0, idx = 33, n_seqs = 128, n_seq_tokens = 1
+    seq_id[33][0] = 0
+s = 34, j = 0, idx = 34, n_seqs = 128, n_seq_tokens = 1
+    seq_id[34][0] = 0
+s = 35, j = 0, idx = 35, n_seqs = 128, n_seq_tokens = 1
+    seq_id[35][0] = 0
+s = 36, j = 0, idx = 36, n_seqs = 128, n_seq_tokens = 1
+    seq_id[36][0] = 0
+s = 37, j = 0, idx = 37, n_seqs = 128, n_seq_tokens = 1
+    seq_id[37][0] = 0
+s = 38, j = 0, idx = 38, n_seqs = 128, n_seq_tokens = 1
+    seq_id[38][0] = 0
+s = 39, j = 0, idx = 39, n_seqs = 128, n_seq_tokens = 1
+    seq_id[39][0] = 0
+s = 40, j = 0, idx = 40, n_seqs = 128, n_seq_tokens = 1
+    seq_id[40][0] = 0
+s = 41, j = 0, idx = 41, n_seqs = 128, n_seq_tokens = 1
+    seq_id[41][0] = 0
+s = 42, j = 0, idx = 42, n_seqs = 128, n_seq_tokens = 1
+    seq_id[42][0] = 0
+s = 43, j = 0, idx = 43, n_seqs = 128, n_seq_tokens = 1
+    seq_id[43][0] = 0
+s = 44, j = 0, idx = 44, n_seqs = 128, n_seq_tokens = 1
+    seq_id[44][0] = 0
+s = 45, j = 0, idx = 45, n_seqs = 128, n_seq_tokens = 1
+    seq_id[45][0] = 0
+s = 46, j = 0, idx = 46, n_seqs = 128, n_seq_tokens = 1
+    seq_id[46][0] = 0
+s = 47, j = 0, idx = 47, n_seqs = 128, n_seq_tokens = 1
+    seq_id[47][0] = 0
+s = 48, j = 0, idx = 48, n_seqs = 128, n_seq_tokens = 1
+    seq_id[48][0] = 0
+s = 49, j = 0, idx = 49, n_seqs = 128, n_seq_tokens = 1
+    seq_id[49][0] = 0
+s = 50, j = 0, idx = 50, n_seqs = 128, n_seq_tokens = 1
+    seq_id[50][0] = 0
+s = 51, j = 0, idx = 51, n_seqs = 128, n_seq_tokens = 1
+    seq_id[51][0] = 0
+s = 52, j = 0, idx = 52, n_seqs = 128, n_seq_tokens = 1
+    seq_id[52][0] = 0
+s = 53, j = 0, idx = 53, n_seqs = 128, n_seq_tokens = 1
+    seq_id[53][0] = 0
+s = 54, j = 0, idx = 54, n_seqs = 128, n_seq_tokens = 1
+    seq_id[54][0] = 0
+s = 55, j = 0, idx = 55, n_seqs = 128, n_seq_tokens = 1
+    seq_id[55][0] = 0
+s = 56, j = 0, idx = 56, n_seqs = 128, n_seq_tokens = 1
+    seq_id[56][0] = 0
+s = 57, j = 0, idx = 57, n_seqs = 128, n_seq_tokens = 1
+    seq_id[57][0] = 0
+s = 58, j = 0, idx = 58, n_seqs = 128, n_seq_tokens = 1
+    seq_id[58][0] = 0
+s = 59, j = 0, idx = 59, n_seqs = 128, n_seq_tokens = 1
+    seq_id[59][0] = 0
+s = 60, j = 0, idx = 60, n_seqs = 128, n_seq_tokens = 1
+    seq_id[60][0] = 0
+s = 61, j = 0, idx = 61, n_seqs = 128, n_seq_tokens = 1
+    seq_id[61][0] = 0
+s = 62, j = 0, idx = 62, n_seqs = 128, n_seq_tokens = 1
+    seq_id[62][0] = 0
+s = 63, j = 0, idx = 63, n_seqs = 128, n_seq_tokens = 1
+    seq_id[63][0] = 0
+s = 64, j = 0, idx = 64, n_seqs = 128, n_seq_tokens = 1
+    seq_id[64][0] = 0
+s = 65, j = 0, idx = 65, n_seqs = 128, n_seq_tokens = 1
+    seq_id[65][0] = 0
+s = 66, j = 0, idx = 66, n_seqs = 128, n_seq_tokens = 1
+    seq_id[66][0] = 0
+s = 67, j = 0, idx = 67, n_seqs = 128, n_seq_tokens = 1
+    seq_id[67][0] = 0
+s = 68, j = 0, idx = 68, n_seqs = 128, n_seq_tokens = 1
+    seq_id[68][0] = 0
+s = 69, j = 0, idx = 69, n_seqs = 128, n_seq_tokens = 1
+    seq_id[69][0] = 0
+s = 70, j = 0, idx = 70, n_seqs = 128, n_seq_tokens = 1
+    seq_id[70][0] = 0
+s = 71, j = 0, idx = 71, n_seqs = 128, n_seq_tokens = 1
+    seq_id[71][0] = 0
+s = 72, j = 0, idx = 72, n_seqs = 128, n_seq_tokens = 1
+    seq_id[72][0] = 0
+s = 73, j = 0, idx = 73, n_seqs = 128, n_seq_tokens = 1
+    seq_id[73][0] = 0
+s = 74, j = 0, idx = 74, n_seqs = 128, n_seq_tokens = 1
+    seq_id[74][0] = 0
+s = 75, j = 0, idx = 75, n_seqs = 128, n_seq_tokens = 1
+    seq_id[75][0] = 0
+s = 76, j = 0, idx = 76, n_seqs = 128, n_seq_tokens = 1
+    seq_id[76][0] = 0
+s = 77, j = 0, idx = 77, n_seqs = 128, n_seq_tokens = 1
+    seq_id[77][0] = 0
+s = 78, j = 0, idx = 78, n_seqs = 128, n_seq_tokens = 1
+    seq_id[78][0] = 0
+s = 79, j = 0, idx = 79, n_seqs = 128, n_seq_tokens = 1
+    seq_id[79][0] = 0
+s = 80, j = 0, idx = 80, n_seqs = 128, n_seq_tokens = 1
+    seq_id[80][0] = 0
+s = 81, j = 0, idx = 81, n_seqs = 128, n_seq_tokens = 1
+    seq_id[81][0] = 0
+s = 82, j = 0, idx = 82, n_seqs = 128, n_seq_tokens = 1
+    seq_id[82][0] = 0
+s = 83, j = 0, idx = 83, n_seqs = 128, n_seq_tokens = 1
+    seq_id[83][0] = 0
+s = 84, j = 0, idx = 84, n_seqs = 128, n_seq_tokens = 1
+    seq_id[84][0] = 0
+s = 85, j = 0, idx = 85, n_seqs = 128, n_seq_tokens = 1
+    seq_id[85][0] = 0
+s = 86, j = 0, idx = 86, n_seqs = 128, n_seq_tokens = 1
+    seq_id[86][0] = 0
+s = 87, j = 0, idx = 87, n_seqs = 128, n_seq_tokens = 1
+    seq_id[87][0] = 0
+s = 88, j = 0, idx = 88, n_seqs = 128, n_seq_tokens = 1
+    seq_id[88][0] = 0
+s = 89, j = 0, idx = 89, n_seqs = 128, n_seq_tokens = 1
+    seq_id[89][0] = 0
+s = 90, j = 0, idx = 90, n_seqs = 128, n_seq_tokens = 1
+    seq_id[90][0] = 0
+s = 91, j = 0, idx = 91, n_seqs = 128, n_seq_tokens = 1
+    seq_id[91][0] = 0
+s = 92, j = 0, idx = 92, n_seqs = 128, n_seq_tokens = 1
+    seq_id[92][0] = 0
+s = 93, j = 0, idx = 93, n_seqs = 128, n_seq_tokens = 1
+    seq_id[93][0] = 0
+s = 94, j = 0, idx = 94, n_seqs = 128, n_seq_tokens = 1
+    seq_id[94][0] = 0
+s = 95, j = 0, idx = 95, n_seqs = 128, n_seq_tokens = 1
+    seq_id[95][0] = 0
+s = 96, j = 0, idx = 96, n_seqs = 128, n_seq_tokens = 1
+    seq_id[96][0] = 0
+s = 97, j = 0, idx = 97, n_seqs = 128, n_seq_tokens = 1
+    seq_id[97][0] = 0
+s = 98, j = 0, idx = 98, n_seqs = 128, n_seq_tokens = 1
+    seq_id[98][0] = 0
+s = 99, j = 0, idx = 99, n_seqs = 128, n_seq_tokens = 1
+    seq_id[99][0] = 0
+s = 100, j = 0, idx = 100, n_seqs = 128, n_seq_tokens = 1
+    seq_id[100][0] = 0
+s = 101, j = 0, idx = 101, n_seqs = 128, n_seq_tokens = 1
+    seq_id[101][0] = 0
+s = 102, j = 0, idx = 102, n_seqs = 128, n_seq_tokens = 1
+    seq_id[102][0] = 0
+s = 103, j = 0, idx = 103, n_seqs = 128, n_seq_tokens = 1
+    seq_id[103][0] = 0
+s = 104, j = 0, idx = 104, n_seqs = 128, n_seq_tokens = 1
+    seq_id[104][0] = 0
+s = 105, j = 0, idx = 105, n_seqs = 128, n_seq_tokens = 1
+    seq_id[105][0] = 0
+s = 106, j = 0, idx = 106, n_seqs = 128, n_seq_tokens = 1
+    seq_id[106][0] = 0
+s = 107, j = 0, idx = 107, n_seqs = 128, n_seq_tokens = 1
+    seq_id[107][0] = 0
+s = 108, j = 0, idx = 108, n_seqs = 128, n_seq_tokens = 1
+    seq_id[108][0] = 0
+s = 109, j = 0, idx = 109, n_seqs = 128, n_seq_tokens = 1
+    seq_id[109][0] = 0
+s = 110, j = 0, idx = 110, n_seqs = 128, n_seq_tokens = 1
+    seq_id[110][0] = 0
+s = 111, j = 0, idx = 111, n_seqs = 128, n_seq_tokens = 1
+    seq_id[111][0] = 0
+s = 112, j = 0, idx = 112, n_seqs = 128, n_seq_tokens = 1
+    seq_id[112][0] = 0
+s = 113, j = 0, idx = 113, n_seqs = 128, n_seq_tokens = 1
+    seq_id[113][0] = 0
+s = 114, j = 0, idx = 114, n_seqs = 128, n_seq_tokens = 1
+    seq_id[114][0] = 0
+s = 115, j = 0, idx = 115, n_seqs = 128, n_seq_tokens = 1
+    seq_id[115][0] = 0
+s = 116, j = 0, idx = 116, n_seqs = 128, n_seq_tokens = 1
+    seq_id[116][0] = 0
+s = 117, j = 0, idx = 117, n_seqs = 128, n_seq_tokens = 1
+    seq_id[117][0] = 0
+s = 118, j = 0, idx = 118, n_seqs = 128, n_seq_tokens = 1
+    seq_id[118][0] = 0
+s = 119, j = 0, idx = 119, n_seqs = 128, n_seq_tokens = 1
+    seq_id[119][0] = 0
+s = 120, j = 0, idx = 120, n_seqs = 128, n_seq_tokens = 1
+    seq_id[120][0] = 0
+s = 121, j = 0, idx = 121, n_seqs = 128, n_seq_tokens = 1
+    seq_id[121][0] = 0
+s = 122, j = 0, idx = 122, n_seqs = 128, n_seq_tokens = 1
+    seq_id[122][0] = 0
+s = 123, j = 0, idx = 123, n_seqs = 128, n_seq_tokens = 1
+    seq_id[123][0] = 0
+s = 124, j = 0, idx = 124, n_seqs = 128, n_seq_tokens = 1
+    seq_id[124][0] = 0
+s = 125, j = 0, idx = 125, n_seqs = 128, n_seq_tokens = 1
+    seq_id[125][0] = 0
+s = 126, j = 0, idx = 126, n_seqs = 128, n_seq_tokens = 1
+    seq_id[126][0] = 0
+s = 127, j = 0, idx = 127, n_seqs = 128, n_seq_tokens = 1
+    seq_id[127][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 128, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 128, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 128, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 128, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 128, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 128, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 128, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 7, j = 0, idx = 7, n_seqs = 128, n_seq_tokens = 1
+    seq_id[7][0] = 0
+s = 8, j = 0, idx = 8, n_seqs = 128, n_seq_tokens = 1
+    seq_id[8][0] = 0
+s = 9, j = 0, idx = 9, n_seqs = 128, n_seq_tokens = 1
+    seq_id[9][0] = 0
+s = 10, j = 0, idx = 10, n_seqs = 128, n_seq_tokens = 1
+    seq_id[10][0] = 0
+s = 11, j = 0, idx = 11, n_seqs = 128, n_seq_tokens = 1
+    seq_id[11][0] = 0
+s = 12, j = 0, idx = 12, n_seqs = 128, n_seq_tokens = 1
+    seq_id[12][0] = 0
+s = 13, j = 0, idx = 13, n_seqs = 128, n_seq_tokens = 1
+    seq_id[13][0] = 0
+s = 14, j = 0, idx = 14, n_seqs = 128, n_seq_tokens = 1
+    seq_id[14][0] = 0
+s = 15, j = 0, idx = 15, n_seqs = 128, n_seq_tokens = 1
+    seq_id[15][0] = 0
+s = 16, j = 0, idx = 16, n_seqs = 128, n_seq_tokens = 1
+    seq_id[16][0] = 0
+s = 17, j = 0, idx = 17, n_seqs = 128, n_seq_tokens = 1
+    seq_id[17][0] = 0
+s = 18, j = 0, idx = 18, n_seqs = 128, n_seq_tokens = 1
+    seq_id[18][0] = 0
+s = 19, j = 0, idx = 19, n_seqs = 128, n_seq_tokens = 1
+    seq_id[19][0] = 0
+s = 20, j = 0, idx = 20, n_seqs = 128, n_seq_tokens = 1
+    seq_id[20][0] = 0
+s = 21, j = 0, idx = 21, n_seqs = 128, n_seq_tokens = 1
+    seq_id[21][0] = 0
+s = 22, j = 0, idx = 22, n_seqs = 128, n_seq_tokens = 1
+    seq_id[22][0] = 0
+s = 23, j = 0, idx = 23, n_seqs = 128, n_seq_tokens = 1
+    seq_id[23][0] = 0
+s = 24, j = 0, idx = 24, n_seqs = 128, n_seq_tokens = 1
+    seq_id[24][0] = 0
+s = 25, j = 0, idx = 25, n_seqs = 128, n_seq_tokens = 1
+    seq_id[25][0] = 0
+s = 26, j = 0, idx = 26, n_seqs = 128, n_seq_tokens = 1
+    seq_id[26][0] = 0
+s = 27, j = 0, idx = 27, n_seqs = 128, n_seq_tokens = 1
+    seq_id[27][0] = 0
+s = 28, j = 0, idx = 28, n_seqs = 128, n_seq_tokens = 1
+    seq_id[28][0] = 0
+s = 29, j = 0, idx = 29, n_seqs = 128, n_seq_tokens = 1
+    seq_id[29][0] = 0
+s = 30, j = 0, idx = 30, n_seqs = 128, n_seq_tokens = 1
+    seq_id[30][0] = 0
+s = 31, j = 0, idx = 31, n_seqs = 128, n_seq_tokens = 1
+    seq_id[31][0] = 0
+s = 32, j = 0, idx = 32, n_seqs = 128, n_seq_tokens = 1
+    seq_id[32][0] = 0
+s = 33, j = 0, idx = 33, n_seqs = 128, n_seq_tokens = 1
+    seq_id[33][0] = 0
+s = 34, j = 0, idx = 34, n_seqs = 128, n_seq_tokens = 1
+    seq_id[34][0] = 0
+s = 35, j = 0, idx = 35, n_seqs = 128, n_seq_tokens = 1
+    seq_id[35][0] = 0
+s = 36, j = 0, idx = 36, n_seqs = 128, n_seq_tokens = 1
+    seq_id[36][0] = 0
+s = 37, j = 0, idx = 37, n_seqs = 128, n_seq_tokens = 1
+    seq_id[37][0] = 0
+s = 38, j = 0, idx = 38, n_seqs = 128, n_seq_tokens = 1
+    seq_id[38][0] = 0
+s = 39, j = 0, idx = 39, n_seqs = 128, n_seq_tokens = 1
+    seq_id[39][0] = 0
+s = 40, j = 0, idx = 40, n_seqs = 128, n_seq_tokens = 1
+    seq_id[40][0] = 0
+s = 41, j = 0, idx = 41, n_seqs = 128, n_seq_tokens = 1
+    seq_id[41][0] = 0
+s = 42, j = 0, idx = 42, n_seqs = 128, n_seq_tokens = 1
+    seq_id[42][0] = 0
+s = 43, j = 0, idx = 43, n_seqs = 128, n_seq_tokens = 1
+    seq_id[43][0] = 0
+s = 44, j = 0, idx = 44, n_seqs = 128, n_seq_tokens = 1
+    seq_id[44][0] = 0
+s = 45, j = 0, idx = 45, n_seqs = 128, n_seq_tokens = 1
+    seq_id[45][0] = 0
+s = 46, j = 0, idx = 46, n_seqs = 128, n_seq_tokens = 1
+    seq_id[46][0] = 0
+s = 47, j = 0, idx = 47, n_seqs = 128, n_seq_tokens = 1
+    seq_id[47][0] = 0
+s = 48, j = 0, idx = 48, n_seqs = 128, n_seq_tokens = 1
+    seq_id[48][0] = 0
+s = 49, j = 0, idx = 49, n_seqs = 128, n_seq_tokens = 1
+    seq_id[49][0] = 0
+s = 50, j = 0, idx = 50, n_seqs = 128, n_seq_tokens = 1
+    seq_id[50][0] = 0
+s = 51, j = 0, idx = 51, n_seqs = 128, n_seq_tokens = 1
+    seq_id[51][0] = 0
+s = 52, j = 0, idx = 52, n_seqs = 128, n_seq_tokens = 1
+    seq_id[52][0] = 0
+s = 53, j = 0, idx = 53, n_seqs = 128, n_seq_tokens = 1
+    seq_id[53][0] = 0
+s = 54, j = 0, idx = 54, n_seqs = 128, n_seq_tokens = 1
+    seq_id[54][0] = 0
+s = 55, j = 0, idx = 55, n_seqs = 128, n_seq_tokens = 1
+    seq_id[55][0] = 0
+s = 56, j = 0, idx = 56, n_seqs = 128, n_seq_tokens = 1
+    seq_id[56][0] = 0
+s = 57, j = 0, idx = 57, n_seqs = 128, n_seq_tokens = 1
+    seq_id[57][0] = 0
+s = 58, j = 0, idx = 58, n_seqs = 128, n_seq_tokens = 1
+    seq_id[58][0] = 0
+s = 59, j = 0, idx = 59, n_seqs = 128, n_seq_tokens = 1
+    seq_id[59][0] = 0
+s = 60, j = 0, idx = 60, n_seqs = 128, n_seq_tokens = 1
+    seq_id[60][0] = 0
+s = 61, j = 0, idx = 61, n_seqs = 128, n_seq_tokens = 1
+    seq_id[61][0] = 0
+s = 62, j = 0, idx = 62, n_seqs = 128, n_seq_tokens = 1
+    seq_id[62][0] = 0
+s = 63, j = 0, idx = 63, n_seqs = 128, n_seq_tokens = 1
+    seq_id[63][0] = 0
+s = 64, j = 0, idx = 64, n_seqs = 128, n_seq_tokens = 1
+    seq_id[64][0] = 0
+s = 65, j = 0, idx = 65, n_seqs = 128, n_seq_tokens = 1
+    seq_id[65][0] = 0
+s = 66, j = 0, idx = 66, n_seqs = 128, n_seq_tokens = 1
+    seq_id[66][0] = 0
+s = 67, j = 0, idx = 67, n_seqs = 128, n_seq_tokens = 1
+    seq_id[67][0] = 0
+s = 68, j = 0, idx = 68, n_seqs = 128, n_seq_tokens = 1
+    seq_id[68][0] = 0
+s = 69, j = 0, idx = 69, n_seqs = 128, n_seq_tokens = 1
+    seq_id[69][0] = 0
+s = 70, j = 0, idx = 70, n_seqs = 128, n_seq_tokens = 1
+    seq_id[70][0] = 0
+s = 71, j = 0, idx = 71, n_seqs = 128, n_seq_tokens = 1
+    seq_id[71][0] = 0
+s = 72, j = 0, idx = 72, n_seqs = 128, n_seq_tokens = 1
+    seq_id[72][0] = 0
+s = 73, j = 0, idx = 73, n_seqs = 128, n_seq_tokens = 1
+    seq_id[73][0] = 0
+s = 74, j = 0, idx = 74, n_seqs = 128, n_seq_tokens = 1
+    seq_id[74][0] = 0
+s = 75, j = 0, idx = 75, n_seqs = 128, n_seq_tokens = 1
+    seq_id[75][0] = 0
+s = 76, j = 0, idx = 76, n_seqs = 128, n_seq_tokens = 1
+    seq_id[76][0] = 0
+s = 77, j = 0, idx = 77, n_seqs = 128, n_seq_tokens = 1
+    seq_id[77][0] = 0
+0.00.907.184 I perplexity: 0.57 seconds per pass - ETA s = 78, j = 0, idx = 78, n_seqs = 128, n_seq_tokens = 1
+    seq_id[78][0] = 0
+s = 79, j = 0, idx = 79, n_seqs = 128, n_seq_tokens = 1
+    seq_id[79][0] = 0
+s = 80, j = 0, idx = 80, n_seqs = 128, n_seq_tokens = 1
+    seq_id[80][0] = 0
+s = 81, j = 0, idx = 81, n_seqs = 128, n_seq_tokens = 1
+    seq_id[81][0] = 0
+s = 82, j = 0, idx = 82, n_seqs = 128, n_seq_tokens = 1
+    seq_id[82][0] = 0
+s = 83, j = 0, idx = 83, n_seqs = 128, n_seq_tokens = 1
+    seq_id[83][0] = 0
+s = 84, j = 0, idx = 84, n_seqs = 128, n_seq_tokens = 1
+    seq_id[84][0] = 0
+s = 85, j = 0, idx = 85, n_seqs = 128, n_seq_tokens = 1
+    seq_id[85][0] = 0
+s = 86, j = 0, idx = 86, n_seqs = 128, n_seq_tokens = 1
+    seq_id[86][0] = 0
+s = 87, j = 0, idx = 87, n_seqs = 128, n_seq_tokens = 1
+    seq_id[87][0] = 0
+s = 88, j = 0, idx = 88, n_seqs = 128, n_seq_tokens = 1
+    seq_id[88][0] = 0
+s = 89, j = 0, idx = 89, n_seqs = 128, n_seq_tokens = 1
+    seq_id[89][0] = 0
+s = 90, j = 0, idx = 90, n_seqs = 128, n_seq_tokens = 1
+    seq_id[90][0] = 0
+s = 91, j = 0, idx = 91, n_seqs = 128, n_seq_tokens = 1
+    seq_id[91][0] = 0
+s = 92, j = 0, idx = 92, n_seqs = 128, n_seq_tokens = 1
+    seq_id[92][0] = 0
+s = 93, j = 0, idx = 93, n_seqs = 128, n_seq_tokens = 1
+    seq_id[93][0] = 0
+s = 94, j = 0, idx = 94, n_seqs = 128, n_seq_tokens = 1
+    seq_id[94][0] = 0
+s = 95, j = 0, idx = 95, n_seqs = 128, n_seq_tokens = 1
+    seq_id[95][0] = 0
+s = 96, j = 0, idx = 96, n_seqs = 128, n_seq_tokens = 1
+    seq_id[96][0] = 0
+s = 97, j = 0, idx = 97, n_seqs = 128, n_seq_tokens = 1
+    seq_id[97][0] = 0
+s = 98, j = 0, idx = 98, n_seqs = 128, n_seq_tokens = 1
+    seq_id[98][0] = 0
+s = 99, j = 0, idx = 99, n_seqs = 128, n_seq_tokens = 1
+    seq_id[99][0] = 0
+s = 100, j = 0, idx = 100, n_seqs = 128, n_seq_tokens = 1
+    seq_id[100][0] = 0
+s = 101, j = 0, idx = 101, n_seqs = 128, n_seq_tokens = 1
+    seq_id[101][0] = 0
+s = 102, j = 0, idx = 102, n_seqs = 128, n_seq_tokens = 1
+    seq_id[102][0] = 0
+s = 103, j = 0, idx = 103, n_seqs = 128, n_seq_tokens = 1
+    seq_id[103][0] = 0
+s = 104, j = 0, idx = 104, n_seqs = 128, n_seq_tokens = 1
+    seq_id[104][0] = 0
+s = 105, j = 0, idx = 105, n_seqs = 128, n_seq_tokens = 1
+    seq_id[105][0] = 0
+s = 106, j = 0, idx = 106, n_seqs = 128, n_seq_tokens = 1
+    seq_id[106][0] = 0
+s = 107, j = 0, idx = 107, n_seqs = 128, n_seq_tokens = 1
+    seq_id[107][0] = 0
+s = 108, j = 0, idx = 108, n_seqs = 128, n_seq_tokens = 1
+    seq_id[108][0] = 0
+s = 109, j = 0, idx = 109, n_seqs = 128, n_seq_tokens = 1
+    seq_id[109][0] = 0
+s = 110, j = 0, idx = 110, n_seqs = 128, n_seq_tokens = 1
+    seq_id[110][0] = 0
+s = 111, j = 0, idx = 111, n_seqs = 128, n_seq_tokens = 1
+    seq_id[111][0] = 0
+s = 112, j = 0, idx = 112, n_seqs = 128, n_seq_tokens = 1
+    seq_id[112][0] = 0
+s = 113, j = 0, idx = 113, n_seqs = 128, n_seq_tokens = 1
+    seq_id[113][0] = 0
+s = 114, j = 0, idx = 114, n_seqs = 128, n_seq_tokens = 1
+    seq_id[114][0] = 0
+s = 115, j = 0, idx = 115, n_seqs = 128, n_seq_tokens = 1
+    seq_id[115][0] = 0
+s = 116, j = 0, idx = 116, n_seqs = 128, n_seq_tokens = 1
+    seq_id[116][0] = 0
+s = 117, j = 0, idx = 117, n_seqs = 128, n_seq_tokens = 1
+    seq_id[117][0] = 0
+s = 118, j = 0, idx = 118, n_seqs = 128, n_seq_tokens = 1
+    seq_id[118][0] = 0
+s = 119, j = 0, idx = 119, n_seqs = 128, n_seq_tokens = 1
+    seq_id[119][0] = 0
+s = 120, j = 0, idx = 120, n_seqs = 128, n_seq_tokens = 1
+    seq_id[120][0] = 0
+s = 121, j = 0, idx = 121, n_seqs = 128, n_seq_tokens = 1
+    seq_id[121][0] = 0
+s = 122, j = 0, idx = 122, n_seqs = 128, n_seq_tokens = 1
+    seq_id[122][0] = 0
+s = 123, j = 0, idx = 123, n_seqs = 128, n_seq_tokens = 1
+    seq_id[123][0] = 0
+s = 124, j = 0, idx = 124, n_seqs = 128, n_seq_tokens = 1
+    seq_id[124][0] = 0
+s = 125, j = 0, idx = 125, n_seqs = 128, n_seq_tokens = 1
+    seq_id[125][0] = 0
+s = 126, j = 0, idx = 126, n_seqs = 128, n_seq_tokens = 1
+    seq_id[126][0] = 0
+s = 127, j = 0, idx = 127, n_seqs = 128, n_seq_tokens = 1
+    seq_id[127][0] = 0
+0.00 minutes
+[1]10.3355,
+0.00.910.331 I Final estimate: PPL = 10.3355 +/- 3.28881
+
+0.00.910.375 I llama_perf_context_print:        load time =     326.41 ms
+0.00.910.390 I llama_perf_context_print: prompt eval time =     571.88 ms /   128 tokens (    4.47 ms per token,   223.82 tokens per second)
+0.00.910.391 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.00.910.392 I llama_perf_context_print:       total time =     583.61 ms /   129 tokens
+
+real	0m0.956s
+user	0m3.168s
+sys	0m0.534s
+```
+- q5_k:
+```
++ ./bin/llama-cli -no-cnv --model ../models-mnt/pythia/1.4B/ggml-model-q5_k.gguf -ngl 99 -c 0 -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.289 I build: 5635 (2db43275) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.000.558 I main: llama backend init
+0.00.000.574 I main: load the model and apply lora adapter, if any
+0.00.010.964 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q5_k.gguf (version GGUF V3 (latest))
+0.00.010.992 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.011.006 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.011.008 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.011.009 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.011.010 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.011.010 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.011.014 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.011.014 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.011.015 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.011.015 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.011.015 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.011.016 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.011.017 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.011.021 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.011.022 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.011.022 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.015.815 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.016.912 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.021.475 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.021.494 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.021.495 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.021.495 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.021.496 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.021.496 I llama_model_loader: - kv  22:                          general.file_type u32              = 17
+0.00.021.499 I llama_model_loader: - type  f32:  194 tensors
+0.00.021.500 I llama_model_loader: - type q5_K:   61 tensors
+0.00.021.500 I llama_model_loader: - type q6_K:   37 tensors
+0.00.021.502 I print_info: file format = GGUF V3 (latest)
+0.00.021.503 I print_info: file type   = Q5_K - Medium
+0.00.021.506 I print_info: file size   = 1006.35 MiB (5.97 BPW) 
+0.00.055.292 I load: special tokens cache size = 25
+0.00.067.428 I load: token to piece cache size = 0.2984 MB
+0.00.067.457 I print_info: arch             = gptneox
+0.00.067.458 I print_info: vocab_only       = 0
+0.00.067.458 I print_info: n_ctx_train      = 2048
+0.00.067.459 I print_info: n_embd           = 2048
+0.00.067.459 I print_info: n_layer          = 24
+0.00.067.474 I print_info: n_head           = 16
+0.00.067.476 I print_info: n_head_kv        = 16
+0.00.067.476 I print_info: n_rot            = 32
+0.00.067.476 I print_info: n_swa            = 0
+0.00.067.477 I print_info: is_swa_any       = 0
+0.00.067.478 I print_info: n_embd_head_k    = 128
+0.00.067.478 I print_info: n_embd_head_v    = 128
+0.00.067.480 I print_info: n_gqa            = 1
+0.00.067.483 I print_info: n_embd_k_gqa     = 2048
+0.00.067.485 I print_info: n_embd_v_gqa     = 2048
+0.00.067.486 I print_info: f_norm_eps       = 1.0e-05
+0.00.067.486 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.067.487 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.067.487 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.067.487 I print_info: f_logit_scale    = 0.0e+00
+0.00.067.488 I print_info: f_attn_scale     = 0.0e+00
+0.00.067.489 I print_info: n_ff             = 8192
+0.00.067.489 I print_info: n_expert         = 0
+0.00.067.489 I print_info: n_expert_used    = 0
+0.00.067.489 I print_info: causal attn      = 1
+0.00.067.490 I print_info: pooling type     = 0
+0.00.067.490 I print_info: rope type        = 2
+0.00.067.490 I print_info: rope scaling     = linear
+0.00.067.491 I print_info: freq_base_train  = 10000.0
+0.00.067.492 I print_info: freq_scale_train = 1
+0.00.067.492 I print_info: n_ctx_orig_yarn  = 2048
+0.00.067.492 I print_info: rope_finetuned   = unknown
+0.00.067.492 I print_info: ssm_d_conv       = 0
+0.00.067.493 I print_info: ssm_d_inner      = 0
+0.00.067.493 I print_info: ssm_d_state      = 0
+0.00.067.493 I print_info: ssm_dt_rank      = 0
+0.00.067.493 I print_info: ssm_dt_b_c_rms   = 0
+0.00.067.494 I print_info: model type       = 1.4B
+0.00.067.495 I print_info: model params     = 1.41 B
+0.00.067.495 I print_info: general.name     = 1.4B
+0.00.067.498 I print_info: vocab type       = BPE
+0.00.067.499 I print_info: n_vocab          = 50304
+0.00.067.499 I print_info: n_merges         = 50009
+0.00.067.500 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.067.500 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.067.500 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.067.500 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.067.501 I print_info: LF token         = 187 'Ċ'
+0.00.067.501 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.067.502 I print_info: max token length = 1024
+0.00.067.508 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.136.647 I load_tensors:          AMX model buffer size =   946.85 MiB
+0.00.136.663 I load_tensors:   CPU_Mapped model buffer size =   914.75 MiB
+.................................................................................
+0.00.274.166 I llama_context: constructing llama_context
+0.00.274.201 I llama_context: n_seq_max     = 1
+0.00.274.208 I llama_context: n_ctx         = 2048
+0.00.274.215 I llama_context: n_ctx_per_seq = 2048
+0.00.274.221 I llama_context: n_batch       = 2048
+0.00.274.227 I llama_context: n_ubatch      = 512
+0.00.274.233 I llama_context: causal_attn   = 1
+0.00.274.252 I llama_context: flash_attn    = 0
+0.00.274.263 I llama_context: freq_base     = 10000.0
+0.00.274.271 I llama_context: freq_scale    = 1
+0.00.274.330 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.00.274.768 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.00.345.691 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.354.559 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.00.354.589 I llama_context: graph nodes  = 1063
+0.00.354.596 I llama_context: graph splits = 1
+0.00.354.626 I common_init_from_params: added <|endoftext|> logit bias = -inf
+0.00.355.049 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.355.069 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.471.231 I main: llama threadpool init, n_threads = 4
+0.00.471.254 I 
+0.00.471.330 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.471.345 I 
+0.00.471.490 I sampler seed: 1234
+0.00.471.511 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 2048
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.00.471.515 I sampler chain: logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+0.00.471.516 I generate: n_ctx = 2048, n_batch = 2048, n_predict = 64, n_keep = 0
+0.00.471.516 I 
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 7, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 7, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 7, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 7, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 7, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 7, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 7, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 7, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 7, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 7, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 7, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 7, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 7, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 7, n_seq_tokens = 1
+    seq_id[6][0] = 0
+I believe the meaning of life iss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ tos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ gets = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ass = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ manys = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thingss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ass = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ yous = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ cans = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+ in    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ worlds = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+.s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Is = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ believes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thats = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ meanings = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ofs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ lifes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ iss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ tos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ experiences = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ joys = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+,s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ loves = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+,s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ peaces = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+,s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ses = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+rens = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+itys = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+,s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ands = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ compassions = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ fors = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ alls = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ beingss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+.
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Is = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ believes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thats = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ meanings = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ofs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ lifes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ iss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ tos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ experiences = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ lifes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ tos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ itss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ fulls = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ests = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ capacitys = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+.
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Is = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ believe that
+
+0.03.069.215 I llama_perf_sampler_print:    sampling time =       2.85 ms /    71 runs   (    0.04 ms per token, 24921.02 tokens per second)
+0.03.069.220 I llama_perf_context_print:        load time =     469.50 ms
+0.03.069.222 I llama_perf_context_print: prompt eval time =      95.23 ms /     7 tokens (   13.60 ms per token,    73.50 tokens per second)
+0.03.069.223 I llama_perf_context_print:        eval time =    2490.60 ms /    63 runs   (   39.53 ms per token,    25.30 tokens per second)
+0.03.069.223 I llama_perf_context_print:       total time =    2599.12 ms /    70 tokens
+
+real	0m3.125s
+user	0m11.535s
+sys	0m0.567s
++ ./bin/llama-perplexity --model ../models-mnt/pythia/1.4B/ggml-model-q5_k.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -ngl 99 -c 128 -b 128 --chunks 1
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.370 I build: 5635 (2db43275) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.011.192 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q5_k.gguf (version GGUF V3 (latest))
+0.00.011.221 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.011.229 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.011.230 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.011.230 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.011.231 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.011.231 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.011.234 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.011.235 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.011.236 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.011.236 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.011.237 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.011.237 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.011.238 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.011.243 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.011.244 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.011.244 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.016.079 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.017.155 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.021.752 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.021.772 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.021.772 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.021.773 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.021.773 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.021.774 I llama_model_loader: - kv  22:                          general.file_type u32              = 17
+0.00.021.777 I llama_model_loader: - type  f32:  194 tensors
+0.00.021.778 I llama_model_loader: - type q5_K:   61 tensors
+0.00.021.778 I llama_model_loader: - type q6_K:   37 tensors
+0.00.021.781 I print_info: file format = GGUF V3 (latest)
+0.00.021.781 I print_info: file type   = Q5_K - Medium
+0.00.021.784 I print_info: file size   = 1006.35 MiB (5.97 BPW) 
+0.00.055.628 I load: special tokens cache size = 25
+0.00.067.673 I load: token to piece cache size = 0.2984 MB
+0.00.067.702 I print_info: arch             = gptneox
+0.00.067.703 I print_info: vocab_only       = 0
+0.00.067.703 I print_info: n_ctx_train      = 2048
+0.00.067.703 I print_info: n_embd           = 2048
+0.00.067.704 I print_info: n_layer          = 24
+0.00.067.718 I print_info: n_head           = 16
+0.00.067.720 I print_info: n_head_kv        = 16
+0.00.067.720 I print_info: n_rot            = 32
+0.00.067.720 I print_info: n_swa            = 0
+0.00.067.722 I print_info: is_swa_any       = 0
+0.00.067.722 I print_info: n_embd_head_k    = 128
+0.00.067.722 I print_info: n_embd_head_v    = 128
+0.00.067.724 I print_info: n_gqa            = 1
+0.00.067.725 I print_info: n_embd_k_gqa     = 2048
+0.00.067.726 I print_info: n_embd_v_gqa     = 2048
+0.00.067.728 I print_info: f_norm_eps       = 1.0e-05
+0.00.067.728 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.067.728 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.067.729 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.067.729 I print_info: f_logit_scale    = 0.0e+00
+0.00.067.729 I print_info: f_attn_scale     = 0.0e+00
+0.00.067.730 I print_info: n_ff             = 8192
+0.00.067.730 I print_info: n_expert         = 0
+0.00.067.730 I print_info: n_expert_used    = 0
+0.00.067.731 I print_info: causal attn      = 1
+0.00.067.731 I print_info: pooling type     = 0
+0.00.067.731 I print_info: rope type        = 2
+0.00.067.732 I print_info: rope scaling     = linear
+0.00.067.733 I print_info: freq_base_train  = 10000.0
+0.00.067.733 I print_info: freq_scale_train = 1
+0.00.067.734 I print_info: n_ctx_orig_yarn  = 2048
+0.00.067.734 I print_info: rope_finetuned   = unknown
+0.00.067.734 I print_info: ssm_d_conv       = 0
+0.00.067.735 I print_info: ssm_d_inner      = 0
+0.00.067.735 I print_info: ssm_d_state      = 0
+0.00.067.735 I print_info: ssm_dt_rank      = 0
+0.00.067.735 I print_info: ssm_dt_b_c_rms   = 0
+0.00.067.736 I print_info: model type       = 1.4B
+0.00.067.737 I print_info: model params     = 1.41 B
+0.00.067.737 I print_info: general.name     = 1.4B
+0.00.067.740 I print_info: vocab type       = BPE
+0.00.067.741 I print_info: n_vocab          = 50304
+0.00.067.741 I print_info: n_merges         = 50009
+0.00.067.741 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.067.742 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.067.742 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.067.742 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.067.743 I print_info: LF token         = 187 'Ċ'
+0.00.067.743 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.067.743 I print_info: max token length = 1024
+0.00.067.745 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.137.702 I load_tensors:          AMX model buffer size =   946.85 MiB
+0.00.137.716 I load_tensors:   CPU_Mapped model buffer size =   914.75 MiB
+.................................................................................
+0.00.274.599 I llama_context: constructing llama_context
+0.00.274.631 I llama_context: n_seq_max     = 1
+0.00.274.638 I llama_context: n_ctx         = 128
+0.00.274.645 I llama_context: n_ctx_per_seq = 128
+0.00.274.652 I llama_context: n_batch       = 128
+0.00.274.658 I llama_context: n_ubatch      = 128
+0.00.274.665 I llama_context: causal_attn   = 1
+0.00.274.672 I llama_context: flash_attn    = 0
+0.00.274.685 I llama_context: freq_base     = 10000.0
+0.00.274.705 I llama_context: freq_scale    = 1
+0.00.274.712 W llama_context: n_ctx_per_seq (128) < n_ctx_train (2048) -- the full capacity of the model will not be utilized
+0.00.274.771 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.00.275.186 I llama_kv_cache_unified:        CPU KV buffer size =    24.00 MiB
+0.00.279.645 I llama_kv_cache_unified: size =   24.00 MiB (   128 cells,  24 layers,  1 seqs), K (f16):   12.00 MiB, V (f16):   12.00 MiB
+0.00.288.950 I llama_context:        CPU compute buffer size =    25.56 MiB
+0.00.288.985 I llama_context: graph nodes  = 1063
+0.00.288.992 I llama_context: graph splits = 1
+0.00.289.014 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 128
+0.00.289.034 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.366.177 I 
+0.00.366.264 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.366.274 I perplexity: tokenizing the input ..
+0.00.372.811 I perplexity: tokenization took 6.532 ms
+0.00.372.841 I perplexity: calculating perplexity over 1 chunks, n_ctx=128, batch_size=128, n_seq=1
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 128, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 128, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 128, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 128, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 128, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 128, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 128, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 7, j = 0, idx = 7, n_seqs = 128, n_seq_tokens = 1
+    seq_id[7][0] = 0
+s = 8, j = 0, idx = 8, n_seqs = 128, n_seq_tokens = 1
+    seq_id[8][0] = 0
+s = 9, j = 0, idx = 9, n_seqs = 128, n_seq_tokens = 1
+    seq_id[9][0] = 0
+s = 10, j = 0, idx = 10, n_seqs = 128, n_seq_tokens = 1
+    seq_id[10][0] = 0
+s = 11, j = 0, idx = 11, n_seqs = 128, n_seq_tokens = 1
+    seq_id[11][0] = 0
+s = 12, j = 0, idx = 12, n_seqs = 128, n_seq_tokens = 1
+    seq_id[12][0] = 0
+s = 13, j = 0, idx = 13, n_seqs = 128, n_seq_tokens = 1
+    seq_id[13][0] = 0
+s = 14, j = 0, idx = 14, n_seqs = 128, n_seq_tokens = 1
+    seq_id[14][0] = 0
+s = 15, j = 0, idx = 15, n_seqs = 128, n_seq_tokens = 1
+    seq_id[15][0] = 0
+s = 16, j = 0, idx = 16, n_seqs = 128, n_seq_tokens = 1
+    seq_id[16][0] = 0
+s = 17, j = 0, idx = 17, n_seqs = 128, n_seq_tokens = 1
+    seq_id[17][0] = 0
+s = 18, j = 0, idx = 18, n_seqs = 128, n_seq_tokens = 1
+    seq_id[18][0] = 0
+s = 19, j = 0, idx = 19, n_seqs = 128, n_seq_tokens = 1
+    seq_id[19][0] = 0
+s = 20, j = 0, idx = 20, n_seqs = 128, n_seq_tokens = 1
+    seq_id[20][0] = 0
+s = 21, j = 0, idx = 21, n_seqs = 128, n_seq_tokens = 1
+    seq_id[21][0] = 0
+s = 22, j = 0, idx = 22, n_seqs = 128, n_seq_tokens = 1
+    seq_id[22][0] = 0
+s = 23, j = 0, idx = 23, n_seqs = 128, n_seq_tokens = 1
+    seq_id[23][0] = 0
+s = 24, j = 0, idx = 24, n_seqs = 128, n_seq_tokens = 1
+    seq_id[24][0] = 0
+s = 25, j = 0, idx = 25, n_seqs = 128, n_seq_tokens = 1
+    seq_id[25][0] = 0
+s = 26, j = 0, idx = 26, n_seqs = 128, n_seq_tokens = 1
+    seq_id[26][0] = 0
+s = 27, j = 0, idx = 27, n_seqs = 128, n_seq_tokens = 1
+    seq_id[27][0] = 0
+s = 28, j = 0, idx = 28, n_seqs = 128, n_seq_tokens = 1
+    seq_id[28][0] = 0
+s = 29, j = 0, idx = 29, n_seqs = 128, n_seq_tokens = 1
+    seq_id[29][0] = 0
+s = 30, j = 0, idx = 30, n_seqs = 128, n_seq_tokens = 1
+    seq_id[30][0] = 0
+s = 31, j = 0, idx = 31, n_seqs = 128, n_seq_tokens = 1
+    seq_id[31][0] = 0
+s = 32, j = 0, idx = 32, n_seqs = 128, n_seq_tokens = 1
+    seq_id[32][0] = 0
+s = 33, j = 0, idx = 33, n_seqs = 128, n_seq_tokens = 1
+    seq_id[33][0] = 0
+s = 34, j = 0, idx = 34, n_seqs = 128, n_seq_tokens = 1
+    seq_id[34][0] = 0
+s = 35, j = 0, idx = 35, n_seqs = 128, n_seq_tokens = 1
+    seq_id[35][0] = 0
+s = 36, j = 0, idx = 36, n_seqs = 128, n_seq_tokens = 1
+    seq_id[36][0] = 0
+s = 37, j = 0, idx = 37, n_seqs = 128, n_seq_tokens = 1
+    seq_id[37][0] = 0
+s = 38, j = 0, idx = 38, n_seqs = 128, n_seq_tokens = 1
+    seq_id[38][0] = 0
+s = 39, j = 0, idx = 39, n_seqs = 128, n_seq_tokens = 1
+    seq_id[39][0] = 0
+s = 40, j = 0, idx = 40, n_seqs = 128, n_seq_tokens = 1
+    seq_id[40][0] = 0
+s = 41, j = 0, idx = 41, n_seqs = 128, n_seq_tokens = 1
+    seq_id[41][0] = 0
+s = 42, j = 0, idx = 42, n_seqs = 128, n_seq_tokens = 1
+    seq_id[42][0] = 0
+s = 43, j = 0, idx = 43, n_seqs = 128, n_seq_tokens = 1
+    seq_id[43][0] = 0
+s = 44, j = 0, idx = 44, n_seqs = 128, n_seq_tokens = 1
+    seq_id[44][0] = 0
+s = 45, j = 0, idx = 45, n_seqs = 128, n_seq_tokens = 1
+    seq_id[45][0] = 0
+s = 46, j = 0, idx = 46, n_seqs = 128, n_seq_tokens = 1
+    seq_id[46][0] = 0
+s = 47, j = 0, idx = 47, n_seqs = 128, n_seq_tokens = 1
+    seq_id[47][0] = 0
+s = 48, j = 0, idx = 48, n_seqs = 128, n_seq_tokens = 1
+    seq_id[48][0] = 0
+s = 49, j = 0, idx = 49, n_seqs = 128, n_seq_tokens = 1
+    seq_id[49][0] = 0
+s = 50, j = 0, idx = 50, n_seqs = 128, n_seq_tokens = 1
+    seq_id[50][0] = 0
+s = 51, j = 0, idx = 51, n_seqs = 128, n_seq_tokens = 1
+    seq_id[51][0] = 0
+s = 52, j = 0, idx = 52, n_seqs = 128, n_seq_tokens = 1
+    seq_id[52][0] = 0
+s = 53, j = 0, idx = 53, n_seqs = 128, n_seq_tokens = 1
+    seq_id[53][0] = 0
+s = 54, j = 0, idx = 54, n_seqs = 128, n_seq_tokens = 1
+    seq_id[54][0] = 0
+s = 55, j = 0, idx = 55, n_seqs = 128, n_seq_tokens = 1
+    seq_id[55][0] = 0
+s = 56, j = 0, idx = 56, n_seqs = 128, n_seq_tokens = 1
+    seq_id[56][0] = 0
+s = 57, j = 0, idx = 57, n_seqs = 128, n_seq_tokens = 1
+    seq_id[57][0] = 0
+s = 58, j = 0, idx = 58, n_seqs = 128, n_seq_tokens = 1
+    seq_id[58][0] = 0
+s = 59, j = 0, idx = 59, n_seqs = 128, n_seq_tokens = 1
+    seq_id[59][0] = 0
+s = 60, j = 0, idx = 60, n_seqs = 128, n_seq_tokens = 1
+    seq_id[60][0] = 0
+s = 61, j = 0, idx = 61, n_seqs = 128, n_seq_tokens = 1
+    seq_id[61][0] = 0
+s = 62, j = 0, idx = 62, n_seqs = 128, n_seq_tokens = 1
+    seq_id[62][0] = 0
+s = 63, j = 0, idx = 63, n_seqs = 128, n_seq_tokens = 1
+    seq_id[63][0] = 0
+s = 64, j = 0, idx = 64, n_seqs = 128, n_seq_tokens = 1
+    seq_id[64][0] = 0
+s = 65, j = 0, idx = 65, n_seqs = 128, n_seq_tokens = 1
+    seq_id[65][0] = 0
+s = 66, j = 0, idx = 66, n_seqs = 128, n_seq_tokens = 1
+    seq_id[66][0] = 0
+s = 67, j = 0, idx = 67, n_seqs = 128, n_seq_tokens = 1
+    seq_id[67][0] = 0
+s = 68, j = 0, idx = 68, n_seqs = 128, n_seq_tokens = 1
+    seq_id[68][0] = 0
+s = 69, j = 0, idx = 69, n_seqs = 128, n_seq_tokens = 1
+    seq_id[69][0] = 0
+s = 70, j = 0, idx = 70, n_seqs = 128, n_seq_tokens = 1
+    seq_id[70][0] = 0
+s = 71, j = 0, idx = 71, n_seqs = 128, n_seq_tokens = 1
+    seq_id[71][0] = 0
+s = 72, j = 0, idx = 72, n_seqs = 128, n_seq_tokens = 1
+    seq_id[72][0] = 0
+s = 73, j = 0, idx = 73, n_seqs = 128, n_seq_tokens = 1
+    seq_id[73][0] = 0
+s = 74, j = 0, idx = 74, n_seqs = 128, n_seq_tokens = 1
+    seq_id[74][0] = 0
+s = 75, j = 0, idx = 75, n_seqs = 128, n_seq_tokens = 1
+    seq_id[75][0] = 0
+s = 76, j = 0, idx = 76, n_seqs = 128, n_seq_tokens = 1
+    seq_id[76][0] = 0
+s = 77, j = 0, idx = 77, n_seqs = 128, n_seq_tokens = 1
+    seq_id[77][0] = 0
+s = 78, j = 0, idx = 78, n_seqs = 128, n_seq_tokens = 1
+    seq_id[78][0] = 0
+s = 79, j = 0, idx = 79, n_seqs = 128, n_seq_tokens = 1
+    seq_id[79][0] = 0
+s = 80, j = 0, idx = 80, n_seqs = 128, n_seq_tokens = 1
+    seq_id[80][0] = 0
+s = 81, j = 0, idx = 81, n_seqs = 128, n_seq_tokens = 1
+    seq_id[81][0] = 0
+s = 82, j = 0, idx = 82, n_seqs = 128, n_seq_tokens = 1
+    seq_id[82][0] = 0
+s = 83, j = 0, idx = 83, n_seqs = 128, n_seq_tokens = 1
+    seq_id[83][0] = 0
+s = 84, j = 0, idx = 84, n_seqs = 128, n_seq_tokens = 1
+    seq_id[84][0] = 0
+s = 85, j = 0, idx = 85, n_seqs = 128, n_seq_tokens = 1
+    seq_id[85][0] = 0
+s = 86, j = 0, idx = 86, n_seqs = 128, n_seq_tokens = 1
+    seq_id[86][0] = 0
+s = 87, j = 0, idx = 87, n_seqs = 128, n_seq_tokens = 1
+    seq_id[87][0] = 0
+s = 88, j = 0, idx = 88, n_seqs = 128, n_seq_tokens = 1
+    seq_id[88][0] = 0
+s = 89, j = 0, idx = 89, n_seqs = 128, n_seq_tokens = 1
+    seq_id[89][0] = 0
+s = 90, j = 0, idx = 90, n_seqs = 128, n_seq_tokens = 1
+    seq_id[90][0] = 0
+s = 91, j = 0, idx = 91, n_seqs = 128, n_seq_tokens = 1
+    seq_id[91][0] = 0
+s = 92, j = 0, idx = 92, n_seqs = 128, n_seq_tokens = 1
+    seq_id[92][0] = 0
+s = 93, j = 0, idx = 93, n_seqs = 128, n_seq_tokens = 1
+    seq_id[93][0] = 0
+s = 94, j = 0, idx = 94, n_seqs = 128, n_seq_tokens = 1
+    seq_id[94][0] = 0
+s = 95, j = 0, idx = 95, n_seqs = 128, n_seq_tokens = 1
+    seq_id[95][0] = 0
+s = 96, j = 0, idx = 96, n_seqs = 128, n_seq_tokens = 1
+    seq_id[96][0] = 0
+s = 97, j = 0, idx = 97, n_seqs = 128, n_seq_tokens = 1
+    seq_id[97][0] = 0
+s = 98, j = 0, idx = 98, n_seqs = 128, n_seq_tokens = 1
+    seq_id[98][0] = 0
+s = 99, j = 0, idx = 99, n_seqs = 128, n_seq_tokens = 1
+    seq_id[99][0] = 0
+s = 100, j = 0, idx = 100, n_seqs = 128, n_seq_tokens = 1
+    seq_id[100][0] = 0
+s = 101, j = 0, idx = 101, n_seqs = 128, n_seq_tokens = 1
+    seq_id[101][0] = 0
+s = 102, j = 0, idx = 102, n_seqs = 128, n_seq_tokens = 1
+    seq_id[102][0] = 0
+s = 103, j = 0, idx = 103, n_seqs = 128, n_seq_tokens = 1
+    seq_id[103][0] = 0
+s = 104, j = 0, idx = 104, n_seqs = 128, n_seq_tokens = 1
+    seq_id[104][0] = 0
+s = 105, j = 0, idx = 105, n_seqs = 128, n_seq_tokens = 1
+    seq_id[105][0] = 0
+s = 106, j = 0, idx = 106, n_seqs = 128, n_seq_tokens = 1
+    seq_id[106][0] = 0
+s = 107, j = 0, idx = 107, n_seqs = 128, n_seq_tokens = 1
+    seq_id[107][0] = 0
+s = 108, j = 0, idx = 108, n_seqs = 128, n_seq_tokens = 1
+    seq_id[108][0] = 0
+s = 109, j = 0, idx = 109, n_seqs = 128, n_seq_tokens = 1
+    seq_id[109][0] = 0
+s = 110, j = 0, idx = 110, n_seqs = 128, n_seq_tokens = 1
+    seq_id[110][0] = 0
+s = 111, j = 0, idx = 111, n_seqs = 128, n_seq_tokens = 1
+    seq_id[111][0] = 0
+s = 112, j = 0, idx = 112, n_seqs = 128, n_seq_tokens = 1
+    seq_id[112][0] = 0
+s = 113, j = 0, idx = 113, n_seqs = 128, n_seq_tokens = 1
+    seq_id[113][0] = 0
+s = 114, j = 0, idx = 114, n_seqs = 128, n_seq_tokens = 1
+    seq_id[114][0] = 0
+s = 115, j = 0, idx = 115, n_seqs = 128, n_seq_tokens = 1
+    seq_id[115][0] = 0
+s = 116, j = 0, idx = 116, n_seqs = 128, n_seq_tokens = 1
+    seq_id[116][0] = 0
+s = 117, j = 0, idx = 117, n_seqs = 128, n_seq_tokens = 1
+    seq_id[117][0] = 0
+s = 118, j = 0, idx = 118, n_seqs = 128, n_seq_tokens = 1
+    seq_id[118][0] = 0
+s = 119, j = 0, idx = 119, n_seqs = 128, n_seq_tokens = 1
+    seq_id[119][0] = 0
+s = 120, j = 0, idx = 120, n_seqs = 128, n_seq_tokens = 1
+    seq_id[120][0] = 0
+s = 121, j = 0, idx = 121, n_seqs = 128, n_seq_tokens = 1
+    seq_id[121][0] = 0
+s = 122, j = 0, idx = 122, n_seqs = 128, n_seq_tokens = 1
+    seq_id[122][0] = 0
+s = 123, j = 0, idx = 123, n_seqs = 128, n_seq_tokens = 1
+    seq_id[123][0] = 0
+s = 124, j = 0, idx = 124, n_seqs = 128, n_seq_tokens = 1
+    seq_id[124][0] = 0
+s = 125, j = 0, idx = 125, n_seqs = 128, n_seq_tokens = 1
+    seq_id[125][0] = 0
+s = 126, j = 0, idx = 126, n_seqs = 128, n_seq_tokens = 1
+    seq_id[126][0] = 0
+s = 127, j = 0, idx = 127, n_seqs = 128, n_seq_tokens = 1
+    seq_id[127][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 128, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 128, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 128, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 128, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 128, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 128, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 128, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 7, j = 0, idx = 7, n_seqs = 128, n_seq_tokens = 1
+    seq_id[7][0] = 0
+s = 8, j = 0, idx = 8, n_seqs = 128, n_seq_tokens = 1
+    seq_id[8][0] = 0
+s = 9, j = 0, idx = 9, n_seqs = 128, n_seq_tokens = 1
+    seq_id[9][0] = 0
+s = 10, j = 0, idx = 10, n_seqs = 128, n_seq_tokens = 1
+    seq_id[10][0] = 0
+s = 11, j = 0, idx = 11, n_seqs = 128, n_seq_tokens = 1
+    seq_id[11][0] = 0
+s = 12, j = 0, idx = 12, n_seqs = 128, n_seq_tokens = 1
+    seq_id[12][0] = 0
+s = 13, j = 0, idx = 13, n_seqs = 128, n_seq_tokens = 1
+    seq_id[13][0] = 0
+s = 14, j = 0, idx = 14, n_seqs = 128, n_seq_tokens = 1
+    seq_id[14][0] = 0
+s = 15, j = 0, idx = 15, n_seqs = 128, n_seq_tokens = 1
+    seq_id[15][0] = 0
+s = 16, j = 0, idx = 16, n_seqs = 128, n_seq_tokens = 1
+    seq_id[16][0] = 0
+s = 17, j = 0, idx = 17, n_seqs = 128, n_seq_tokens = 1
+    seq_id[17][0] = 0
+s = 18, j = 0, idx = 18, n_seqs = 128, n_seq_tokens = 1
+    seq_id[18][0] = 0
+s = 19, j = 0, idx = 19, n_seqs = 128, n_seq_tokens = 1
+    seq_id[19][0] = 0
+s = 20, j = 0, idx = 20, n_seqs = 128, n_seq_tokens = 1
+    seq_id[20][0] = 0
+s = 21, j = 0, idx = 21, n_seqs = 128, n_seq_tokens = 1
+    seq_id[21][0] = 0
+s = 22, j = 0, idx = 22, n_seqs = 128, n_seq_tokens = 1
+    seq_id[22][0] = 0
+s = 23, j = 0, idx = 23, n_seqs = 128, n_seq_tokens = 1
+    seq_id[23][0] = 0
+s = 24, j = 0, idx = 24, n_seqs = 128, n_seq_tokens = 1
+    seq_id[24][0] = 0
+s = 25, j = 0, idx = 25, n_seqs = 128, n_seq_tokens = 1
+    seq_id[25][0] = 0
+s = 26, j = 0, idx = 26, n_seqs = 128, n_seq_tokens = 1
+    seq_id[26][0] = 0
+s = 27, j = 0, idx = 27, n_seqs = 128, n_seq_tokens = 1
+    seq_id[27][0] = 0
+s = 28, j = 0, idx = 28, n_seqs = 128, n_seq_tokens = 1
+    seq_id[28][0] = 0
+s = 29, j = 0, idx = 29, n_seqs = 128, n_seq_tokens = 1
+    seq_id[29][0] = 0
+s = 30, j = 0, idx = 30, n_seqs = 128, n_seq_tokens = 1
+    seq_id[30][0] = 0
+s = 31, j = 0, idx = 31, n_seqs = 128, n_seq_tokens = 1
+    seq_id[31][0] = 0
+s = 32, j = 0, idx = 32, n_seqs = 128, n_seq_tokens = 1
+    seq_id[32][0] = 0
+s = 33, j = 0, idx = 33, n_seqs = 128, n_seq_tokens = 1
+    seq_id[33][0] = 0
+s = 34, j = 0, idx = 34, n_seqs = 128, n_seq_tokens = 1
+    seq_id[34][0] = 0
+s = 35, j = 0, idx = 35, n_seqs = 128, n_seq_tokens = 1
+    seq_id[35][0] = 0
+s = 36, j = 0, idx = 36, n_seqs = 128, n_seq_tokens = 1
+    seq_id[36][0] = 0
+s = 37, j = 0, idx = 37, n_seqs = 128, n_seq_tokens = 1
+    seq_id[37][0] = 0
+s = 38, j = 0, idx = 38, n_seqs = 128, n_seq_tokens = 1
+    seq_id[38][0] = 0
+s = 39, j = 0, idx = 39, n_seqs = 128, n_seq_tokens = 1
+    seq_id[39][0] = 0
+s = 40, j = 0, idx = 40, n_seqs = 128, n_seq_tokens = 1
+    seq_id[40][0] = 0
+s = 41, j = 0, idx = 41, n_seqs = 128, n_seq_tokens = 1
+    seq_id[41][0] = 0
+s = 42, j = 0, idx = 42, n_seqs = 128, n_seq_tokens = 1
+    seq_id[42][0] = 0
+s = 43, j = 0, idx = 43, n_seqs = 128, n_seq_tokens = 1
+    seq_id[43][0] = 0
+s = 44, j = 0, idx = 44, n_seqs = 128, n_seq_tokens = 1
+    seq_id[44][0] = 0
+s = 45, j = 0, idx = 45, n_seqs = 128, n_seq_tokens = 1
+    seq_id[45][0] = 0
+s = 46, j = 0, idx = 46, n_seqs = 128, n_seq_tokens = 1
+    seq_id[46][0] = 0
+s = 47, j = 0, idx = 47, n_seqs = 128, n_seq_tokens = 1
+    seq_id[47][0] = 0
+s = 48, j = 0, idx = 48, n_seqs = 128, n_seq_tokens = 1
+    seq_id[48][0] = 0
+s = 49, j = 0, idx = 49, n_seqs = 128, n_seq_tokens = 1
+    seq_id[49][0] = 0
+s = 50, j = 0, idx = 50, n_seqs = 128, n_seq_tokens = 1
+    seq_id[50][0] = 0
+s = 51, j = 0, idx = 51, n_seqs = 128, n_seq_tokens = 1
+    seq_id[51][0] = 0
+s = 52, j = 0, idx = 52, n_seqs = 128, n_seq_tokens = 1
+    seq_id[52][0] = 0
+s = 53, j = 0, idx = 53, n_seqs = 128, n_seq_tokens = 1
+    seq_id[53][0] = 0
+s = 54, j = 0, idx = 54, n_seqs = 128, n_seq_tokens = 1
+    seq_id[54][0] = 0
+s = 55, j = 0, idx = 55, n_seqs = 128, n_seq_tokens = 1
+    seq_id[55][0] = 0
+s = 56, j = 0, idx = 56, n_seqs = 128, n_seq_tokens = 1
+    seq_id[56][0] = 0
+s = 57, j = 0, idx = 57, n_seqs = 128, n_seq_tokens = 1
+    seq_id[57][0] = 0
+s = 58, j = 0, idx = 58, n_seqs = 128, n_seq_tokens = 1
+    seq_id[58][0] = 0
+s = 59, j = 0, idx = 59, n_seqs = 128, n_seq_tokens = 1
+    seq_id[59][0] = 0
+s = 60, j = 0, idx = 60, n_seqs = 128, n_seq_tokens = 1
+    seq_id[60][0] = 0
+s = 61, j = 0, idx = 61, n_seqs = 128, n_seq_tokens = 1
+    seq_id[61][0] = 0
+s = 62, j = 0, idx = 62, n_seqs = 128, n_seq_tokens = 1
+    seq_id[62][0] = 0
+s = 63, j = 0, idx = 63, n_seqs = 128, n_seq_tokens = 1
+    seq_id[63][0] = 0
+s = 64, j = 0, idx = 64, n_seqs = 128, n_seq_tokens = 1
+    seq_id[64][0] = 0
+s = 65, j = 0, idx = 65, n_seqs = 128, n_seq_tokens = 1
+    seq_id[65][0] = 0
+s = 66, j = 0, idx = 66, n_seqs = 128, n_seq_tokens = 1
+    seq_id[66][0] = 0
+s = 67, j = 0, idx = 67, n_seqs = 128, n_seq_tokens = 1
+    seq_id[67][0] = 0
+s = 68, j = 0, idx = 68, n_seqs = 128, n_seq_tokens = 1
+    seq_id[68][0] = 0
+s = 69, j = 0, idx = 69, n_seqs = 128, n_seq_tokens = 1
+    seq_id[69][0] = 0
+s = 70, j = 0, idx = 70, n_seqs = 128, n_seq_tokens = 1
+    seq_id[70][0] = 0
+s = 71, j = 0, idx = 71, n_seqs = 128, n_seq_tokens = 1
+    seq_id[71][0] = 0
+s = 72, j = 0, idx = 72, n_seqs = 128, n_seq_tokens = 1
+    seq_id[72][0] = 0
+s = 73, j = 0, idx = 73, n_seqs = 128, n_seq_tokens = 1
+    seq_id[73][0] = 0
+s = 74, j = 0, idx = 74, n_seqs = 128, n_seq_tokens = 1
+    seq_id[74][0] = 0
+s = 75, j = 0, idx = 75, n_seqs = 128, n_seq_tokens = 1
+    seq_id[75][0] = 0
+s = 76, j = 0, idx = 76, n_seqs = 128, n_seq_tokens = 1
+    seq_id[76][0] = 0
+s = 77, j = 0, idx = 77, n_seqs = 128, n_seq_tokens = 1
+    seq_id[77][0] = 0
+0.01.038.553 I perplexity: 0.67 seconds per pass - ETA s = 78, j = 0, idx = 78, n_seqs = 128, n_seq_tokens = 1
+    seq_id[78][0] = 0
+s = 79, j = 0, idx = 79, n_seqs = 128, n_seq_tokens = 1
+    seq_id[79][0] = 0
+s = 80, j = 0, idx = 80, n_seqs = 128, n_seq_tokens = 1
+    seq_id[80][0] = 0
+s = 81, j = 0, idx = 81, n_seqs = 128, n_seq_tokens = 1
+    seq_id[81][0] = 0
+s = 82, j = 0, idx = 82, n_seqs = 128, n_seq_tokens = 1
+    seq_id[82][0] = 0
+s = 83, j = 0, idx = 83, n_seqs = 128, n_seq_tokens = 1
+    seq_id[83][0] = 0
+s = 84, j = 0, idx = 84, n_seqs = 128, n_seq_tokens = 1
+    seq_id[84][0] = 0
+s = 85, j = 0, idx = 85, n_seqs = 128, n_seq_tokens = 1
+    seq_id[85][0] = 0
+s = 86, j = 0, idx = 86, n_seqs = 128, n_seq_tokens = 1
+    seq_id[86][0] = 0
+s = 87, j = 0, idx = 87, n_seqs = 128, n_seq_tokens = 1
+    seq_id[87][0] = 0
+s = 88, j = 0, idx = 88, n_seqs = 128, n_seq_tokens = 1
+    seq_id[88][0] = 0
+s = 89, j = 0, idx = 89, n_seqs = 128, n_seq_tokens = 1
+    seq_id[89][0] = 0
+s = 90, j = 0, idx = 90, n_seqs = 128, n_seq_tokens = 1
+    seq_id[90][0] = 0
+s = 91, j = 0, idx = 91, n_seqs = 128, n_seq_tokens = 1
+    seq_id[91][0] = 0
+s = 92, j = 0, idx = 92, n_seqs = 128, n_seq_tokens = 1
+    seq_id[92][0] = 0
+s = 93, j = 0, idx = 93, n_seqs = 128, n_seq_tokens = 1
+    seq_id[93][0] = 0
+s = 94, j = 0, idx = 94, n_seqs = 128, n_seq_tokens = 1
+    seq_id[94][0] = 0
+s = 95, j = 0, idx = 95, n_seqs = 128, n_seq_tokens = 1
+    seq_id[95][0] = 0
+s = 96, j = 0, idx = 96, n_seqs = 128, n_seq_tokens = 1
+    seq_id[96][0] = 0
+s = 97, j = 0, idx = 97, n_seqs = 128, n_seq_tokens = 1
+    seq_id[97][0] = 0
+s = 98, j = 0, idx = 98, n_seqs = 128, n_seq_tokens = 1
+    seq_id[98][0] = 0
+s = 99, j = 0, idx = 99, n_seqs = 128, n_seq_tokens = 1
+    seq_id[99][0] = 0
+s = 100, j = 0, idx = 100, n_seqs = 128, n_seq_tokens = 1
+    seq_id[100][0] = 0
+s = 101, j = 0, idx = 101, n_seqs = 128, n_seq_tokens = 1
+    seq_id[101][0] = 0
+s = 102, j = 0, idx = 102, n_seqs = 128, n_seq_tokens = 1
+    seq_id[102][0] = 0
+s = 103, j = 0, idx = 103, n_seqs = 128, n_seq_tokens = 1
+    seq_id[103][0] = 0
+s = 104, j = 0, idx = 104, n_seqs = 128, n_seq_tokens = 1
+    seq_id[104][0] = 0
+s = 105, j = 0, idx = 105, n_seqs = 128, n_seq_tokens = 1
+    seq_id[105][0] = 0
+s = 106, j = 0, idx = 106, n_seqs = 128, n_seq_tokens = 1
+    seq_id[106][0] = 0
+s = 107, j = 0, idx = 107, n_seqs = 128, n_seq_tokens = 1
+    seq_id[107][0] = 0
+s = 108, j = 0, idx = 108, n_seqs = 128, n_seq_tokens = 1
+    seq_id[108][0] = 0
+s = 109, j = 0, idx = 109, n_seqs = 128, n_seq_tokens = 1
+    seq_id[109][0] = 0
+s = 110, j = 0, idx = 110, n_seqs = 128, n_seq_tokens = 1
+    seq_id[110][0] = 0
+s = 111, j = 0, idx = 111, n_seqs = 128, n_seq_tokens = 1
+    seq_id[111][0] = 0
+s = 112, j = 0, idx = 112, n_seqs = 128, n_seq_tokens = 1
+    seq_id[112][0] = 0
+s = 113, j = 0, idx = 113, n_seqs = 128, n_seq_tokens = 1
+    seq_id[113][0] = 0
+s = 114, j = 0, idx = 114, n_seqs = 128, n_seq_tokens = 1
+    seq_id[114][0] = 0
+s = 115, j = 0, idx = 115, n_seqs = 128, n_seq_tokens = 1
+    seq_id[115][0] = 0
+s = 116, j = 0, idx = 116, n_seqs = 128, n_seq_tokens = 1
+    seq_id[116][0] = 0
+s = 117, j = 0, idx = 117, n_seqs = 128, n_seq_tokens = 1
+    seq_id[117][0] = 0
+s = 118, j = 0, idx = 118, n_seqs = 128, n_seq_tokens = 1
+    seq_id[118][0] = 0
+s = 119, j = 0, idx = 119, n_seqs = 128, n_seq_tokens = 1
+    seq_id[119][0] = 0
+s = 120, j = 0, idx = 120, n_seqs = 128, n_seq_tokens = 1
+    seq_id[120][0] = 0
+s = 121, j = 0, idx = 121, n_seqs = 128, n_seq_tokens = 1
+    seq_id[121][0] = 0
+s = 122, j = 0, idx = 122, n_seqs = 128, n_seq_tokens = 1
+    seq_id[122][0] = 0
+s = 123, j = 0, idx = 123, n_seqs = 128, n_seq_tokens = 1
+    seq_id[123][0] = 0
+s = 124, j = 0, idx = 124, n_seqs = 128, n_seq_tokens = 1
+    seq_id[124][0] = 0
+s = 125, j = 0, idx = 125, n_seqs = 128, n_seq_tokens = 1
+    seq_id[125][0] = 0
+s = 126, j = 0, idx = 126, n_seqs = 128, n_seq_tokens = 1
+    seq_id[126][0] = 0
+s = 127, j = 0, idx = 127, n_seqs = 128, n_seq_tokens = 1
+    seq_id[127][0] = 0
+0.00 minutes
+[1]11.0242,
+0.01.041.350 I Final estimate: PPL = 11.0242 +/- 3.53494
+
+0.01.041.395 I llama_perf_context_print:        load time =     365.74 ms
+0.01.041.410 I llama_perf_context_print: prompt eval time =     663.85 ms /   128 tokens (    5.19 ms per token,   192.82 tokens per second)
+0.01.041.411 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.01.041.412 I llama_perf_context_print:       total time =     675.24 ms /   129 tokens
+
+real	0m1.091s
+user	0m3.643s
+sys	0m0.604s
+```
+- q6_k:
+```
++ ./bin/llama-cli -no-cnv --model ../models-mnt/pythia/1.4B/ggml-model-q6_k.gguf -ngl 99 -c 0 -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.263 I build: 5635 (2db43275) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.000.469 I main: llama backend init
+0.00.000.486 I main: load the model and apply lora adapter, if any
+0.00.010.874 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q6_k.gguf (version GGUF V3 (latest))
+0.00.010.901 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.010.910 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.010.911 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.010.912 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.010.912 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.010.913 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.010.916 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.010.917 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.010.918 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.010.918 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.010.918 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.010.919 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.010.919 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.010.924 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.010.925 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.010.925 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.015.617 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.016.769 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.021.286 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.021.306 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.021.307 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.021.307 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.021.307 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.021.308 I llama_model_loader: - kv  22:                          general.file_type u32              = 18
+0.00.021.311 I llama_model_loader: - type  f32:  194 tensors
+0.00.021.312 I llama_model_loader: - type q6_K:   98 tensors
+0.00.021.314 I print_info: file format = GGUF V3 (latest)
+0.00.021.314 I print_info: file type   = Q6_K
+0.00.021.316 I print_info: file size   = 1.08 GiB (6.57 BPW) 
+0.00.054.939 I load: special tokens cache size = 25
+0.00.067.072 I load: token to piece cache size = 0.2984 MB
+0.00.067.102 I print_info: arch             = gptneox
+0.00.067.102 I print_info: vocab_only       = 0
+0.00.067.103 I print_info: n_ctx_train      = 2048
+0.00.067.103 I print_info: n_embd           = 2048
+0.00.067.103 I print_info: n_layer          = 24
+0.00.067.118 I print_info: n_head           = 16
+0.00.067.120 I print_info: n_head_kv        = 16
+0.00.067.121 I print_info: n_rot            = 32
+0.00.067.121 I print_info: n_swa            = 0
+0.00.067.122 I print_info: is_swa_any       = 0
+0.00.067.123 I print_info: n_embd_head_k    = 128
+0.00.067.123 I print_info: n_embd_head_v    = 128
+0.00.067.125 I print_info: n_gqa            = 1
+0.00.067.126 I print_info: n_embd_k_gqa     = 2048
+0.00.067.127 I print_info: n_embd_v_gqa     = 2048
+0.00.067.129 I print_info: f_norm_eps       = 1.0e-05
+0.00.067.129 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.067.130 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.067.130 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.067.130 I print_info: f_logit_scale    = 0.0e+00
+0.00.067.131 I print_info: f_attn_scale     = 0.0e+00
+0.00.067.131 I print_info: n_ff             = 8192
+0.00.067.132 I print_info: n_expert         = 0
+0.00.067.132 I print_info: n_expert_used    = 0
+0.00.067.133 I print_info: causal attn      = 1
+0.00.067.133 I print_info: pooling type     = 0
+0.00.067.133 I print_info: rope type        = 2
+0.00.067.133 I print_info: rope scaling     = linear
+0.00.067.135 I print_info: freq_base_train  = 10000.0
+0.00.067.135 I print_info: freq_scale_train = 1
+0.00.067.136 I print_info: n_ctx_orig_yarn  = 2048
+0.00.067.136 I print_info: rope_finetuned   = unknown
+0.00.067.136 I print_info: ssm_d_conv       = 0
+0.00.067.137 I print_info: ssm_d_inner      = 0
+0.00.067.137 I print_info: ssm_d_state      = 0
+0.00.067.137 I print_info: ssm_dt_rank      = 0
+0.00.067.138 I print_info: ssm_dt_b_c_rms   = 0
+0.00.067.139 I print_info: model type       = 1.4B
+0.00.067.139 I print_info: model params     = 1.41 B
+0.00.067.140 I print_info: general.name     = 1.4B
+0.00.067.143 I print_info: vocab type       = BPE
+0.00.067.144 I print_info: n_vocab          = 50304
+0.00.067.144 I print_info: n_merges         = 50009
+0.00.067.144 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.067.145 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.067.145 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.067.145 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.067.145 I print_info: LF token         = 187 'Ċ'
+0.00.067.146 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.067.146 I print_info: max token length = 1024
+0.00.067.148 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.142.091 I load_tensors:          AMX model buffer size =  1025.60 MiB
+0.00.142.109 I load_tensors:   CPU_Mapped model buffer size =  1014.92 MiB
+.................................................................................
+0.00.284.064 I llama_context: constructing llama_context
+0.00.284.099 I llama_context: n_seq_max     = 1
+0.00.284.106 I llama_context: n_ctx         = 2048
+0.00.284.113 I llama_context: n_ctx_per_seq = 2048
+0.00.284.120 I llama_context: n_batch       = 2048
+0.00.284.126 I llama_context: n_ubatch      = 512
+0.00.284.144 I llama_context: causal_attn   = 1
+0.00.284.151 I llama_context: flash_attn    = 0
+0.00.284.162 I llama_context: freq_base     = 10000.0
+0.00.284.169 I llama_context: freq_scale    = 1
+0.00.284.226 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.00.284.615 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.00.357.640 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.366.690 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.00.366.708 I llama_context: graph nodes  = 1063
+0.00.366.709 I llama_context: graph splits = 1
+0.00.366.769 I common_init_from_params: added <|endoftext|> logit bias = -inf
+0.00.367.132 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.367.145 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.492.023 I main: llama threadpool init, n_threads = 4
+0.00.492.046 I 
+0.00.492.119 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.492.133 I 
+0.00.492.235 I sampler seed: 1234
+0.00.492.256 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 2048
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.00.492.260 I sampler chain: logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+0.00.492.261 I generate: n_ctx = 2048, n_batch = 2048, n_predict = 64, n_keep = 0
+0.00.492.261 I 
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 7, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 7, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 7, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 7, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 7, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 7, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 7, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 7, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 7, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 7, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 7, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 7, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 7, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 7, n_seq_tokens = 1
+    seq_id[6][0] = 0
+I believe the meaning of life iss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ tos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ finds = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ yourselfs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+."s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+"s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Is = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thoughts = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ yous = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ weres = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ as = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ Buddhists = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+."s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+"s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Is = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ams = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+,s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+ but    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ Is = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+'ms = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ nots = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+.s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ Thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ Buddhas = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ saids = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+,s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ 's = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Hes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ whos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ knowss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ hiss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ owns = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ minds = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+,s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ atts = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ainss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ tos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ trues = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ paths = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+.'s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ Yous = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ dons = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+'ts = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ haves = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ as = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ minds = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+;s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ yous = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ dons = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+'ts = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ haves = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ as = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ paths = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+.s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ Thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ paths = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ is thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ life.
+
+0.03.199.656 I llama_perf_sampler_print:    sampling time =       2.75 ms /    71 runs   (    0.04 ms per token, 25780.68 tokens per second)
+0.03.199.661 I llama_perf_context_print:        load time =     490.43 ms
+0.03.199.662 I llama_perf_context_print: prompt eval time =     115.02 ms /     7 tokens (   16.43 ms per token,    60.86 tokens per second)
+0.03.199.663 I llama_perf_context_print:        eval time =    2580.31 ms /    63 runs   (   40.96 ms per token,    24.42 tokens per second)
+0.03.199.664 I llama_perf_context_print:       total time =    2708.72 ms /    70 tokens
+
+real	0m3.257s
+user	0m11.898s
+sys	0m0.726s
++ ./bin/llama-perplexity --model ../models-mnt/pythia/1.4B/ggml-model-q6_k.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -ngl 99 -c 128 -b 128 --chunks 1
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.359 I build: 5635 (2db43275) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.010.649 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q6_k.gguf (version GGUF V3 (latest))
+0.00.010.678 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.010.686 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.010.686 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.010.687 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.010.687 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.010.687 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.010.691 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.010.691 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.010.692 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.010.692 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.010.695 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.010.696 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.010.696 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.010.701 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.010.701 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.010.702 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.015.495 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.016.549 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.021.093 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.021.111 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.021.112 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.021.112 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.021.112 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.021.113 I llama_model_loader: - kv  22:                          general.file_type u32              = 18
+0.00.021.116 I llama_model_loader: - type  f32:  194 tensors
+0.00.021.116 I llama_model_loader: - type q6_K:   98 tensors
+0.00.021.119 I print_info: file format = GGUF V3 (latest)
+0.00.021.119 I print_info: file type   = Q6_K
+0.00.021.121 I print_info: file size   = 1.08 GiB (6.57 BPW) 
+0.00.054.233 I load: special tokens cache size = 25
+0.00.066.238 I load: token to piece cache size = 0.2984 MB
+0.00.066.267 I print_info: arch             = gptneox
+0.00.066.268 I print_info: vocab_only       = 0
+0.00.066.268 I print_info: n_ctx_train      = 2048
+0.00.066.268 I print_info: n_embd           = 2048
+0.00.066.268 I print_info: n_layer          = 24
+0.00.066.283 I print_info: n_head           = 16
+0.00.066.285 I print_info: n_head_kv        = 16
+0.00.066.285 I print_info: n_rot            = 32
+0.00.066.285 I print_info: n_swa            = 0
+0.00.066.286 I print_info: is_swa_any       = 0
+0.00.066.287 I print_info: n_embd_head_k    = 128
+0.00.066.287 I print_info: n_embd_head_v    = 128
+0.00.066.288 I print_info: n_gqa            = 1
+0.00.066.290 I print_info: n_embd_k_gqa     = 2048
+0.00.066.291 I print_info: n_embd_v_gqa     = 2048
+0.00.066.292 I print_info: f_norm_eps       = 1.0e-05
+0.00.066.292 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.066.293 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.066.293 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.066.293 I print_info: f_logit_scale    = 0.0e+00
+0.00.066.293 I print_info: f_attn_scale     = 0.0e+00
+0.00.066.294 I print_info: n_ff             = 8192
+0.00.066.294 I print_info: n_expert         = 0
+0.00.066.295 I print_info: n_expert_used    = 0
+0.00.066.295 I print_info: causal attn      = 1
+0.00.066.295 I print_info: pooling type     = 0
+0.00.066.295 I print_info: rope type        = 2
+0.00.066.296 I print_info: rope scaling     = linear
+0.00.066.297 I print_info: freq_base_train  = 10000.0
+0.00.066.297 I print_info: freq_scale_train = 1
+0.00.066.297 I print_info: n_ctx_orig_yarn  = 2048
+0.00.066.297 I print_info: rope_finetuned   = unknown
+0.00.066.298 I print_info: ssm_d_conv       = 0
+0.00.066.298 I print_info: ssm_d_inner      = 0
+0.00.066.298 I print_info: ssm_d_state      = 0
+0.00.066.298 I print_info: ssm_dt_rank      = 0
+0.00.066.298 I print_info: ssm_dt_b_c_rms   = 0
+0.00.066.299 I print_info: model type       = 1.4B
+0.00.066.299 I print_info: model params     = 1.41 B
+0.00.066.300 I print_info: general.name     = 1.4B
+0.00.066.302 I print_info: vocab type       = BPE
+0.00.066.303 I print_info: n_vocab          = 50304
+0.00.066.303 I print_info: n_merges         = 50009
+0.00.066.303 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.066.304 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.066.304 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.066.304 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.066.305 I print_info: LF token         = 187 'Ċ'
+0.00.066.305 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.066.305 I print_info: max token length = 1024
+0.00.066.307 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.143.146 I load_tensors:          AMX model buffer size =  1025.60 MiB
+0.00.143.160 I load_tensors:   CPU_Mapped model buffer size =  1014.92 MiB
+.................................................................................
+0.00.282.420 I llama_context: constructing llama_context
+0.00.282.453 I llama_context: n_seq_max     = 1
+0.00.282.460 I llama_context: n_ctx         = 128
+0.00.282.467 I llama_context: n_ctx_per_seq = 128
+0.00.282.468 I llama_context: n_batch       = 128
+0.00.282.468 I llama_context: n_ubatch      = 128
+0.00.282.469 I llama_context: causal_attn   = 1
+0.00.282.469 I llama_context: flash_attn    = 0
+0.00.282.474 I llama_context: freq_base     = 10000.0
+0.00.282.475 I llama_context: freq_scale    = 1
+0.00.282.476 W llama_context: n_ctx_per_seq (128) < n_ctx_train (2048) -- the full capacity of the model will not be utilized
+0.00.282.522 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.00.282.840 I llama_kv_cache_unified:        CPU KV buffer size =    24.00 MiB
+0.00.287.138 I llama_kv_cache_unified: size =   24.00 MiB (   128 cells,  24 layers,  1 seqs), K (f16):   12.00 MiB, V (f16):   12.00 MiB
+0.00.295.934 I llama_context:        CPU compute buffer size =    25.56 MiB
+0.00.295.953 I llama_context: graph nodes  = 1063
+0.00.295.953 I llama_context: graph splits = 1
+0.00.295.962 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 128
+0.00.295.962 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.379.511 I 
+0.00.379.628 I system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.379.652 I perplexity: tokenizing the input ..
+0.00.386.087 I perplexity: tokenization took 6.431 ms
+0.00.386.119 I perplexity: calculating perplexity over 1 chunks, n_ctx=128, batch_size=128, n_seq=1
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 128, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 128, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 128, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 128, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 128, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 128, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 128, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 7, j = 0, idx = 7, n_seqs = 128, n_seq_tokens = 1
+    seq_id[7][0] = 0
+s = 8, j = 0, idx = 8, n_seqs = 128, n_seq_tokens = 1
+    seq_id[8][0] = 0
+s = 9, j = 0, idx = 9, n_seqs = 128, n_seq_tokens = 1
+    seq_id[9][0] = 0
+s = 10, j = 0, idx = 10, n_seqs = 128, n_seq_tokens = 1
+    seq_id[10][0] = 0
+s = 11, j = 0, idx = 11, n_seqs = 128, n_seq_tokens = 1
+    seq_id[11][0] = 0
+s = 12, j = 0, idx = 12, n_seqs = 128, n_seq_tokens = 1
+    seq_id[12][0] = 0
+s = 13, j = 0, idx = 13, n_seqs = 128, n_seq_tokens = 1
+    seq_id[13][0] = 0
+s = 14, j = 0, idx = 14, n_seqs = 128, n_seq_tokens = 1
+    seq_id[14][0] = 0
+s = 15, j = 0, idx = 15, n_seqs = 128, n_seq_tokens = 1
+    seq_id[15][0] = 0
+s = 16, j = 0, idx = 16, n_seqs = 128, n_seq_tokens = 1
+    seq_id[16][0] = 0
+s = 17, j = 0, idx = 17, n_seqs = 128, n_seq_tokens = 1
+    seq_id[17][0] = 0
+s = 18, j = 0, idx = 18, n_seqs = 128, n_seq_tokens = 1
+    seq_id[18][0] = 0
+s = 19, j = 0, idx = 19, n_seqs = 128, n_seq_tokens = 1
+    seq_id[19][0] = 0
+s = 20, j = 0, idx = 20, n_seqs = 128, n_seq_tokens = 1
+    seq_id[20][0] = 0
+s = 21, j = 0, idx = 21, n_seqs = 128, n_seq_tokens = 1
+    seq_id[21][0] = 0
+s = 22, j = 0, idx = 22, n_seqs = 128, n_seq_tokens = 1
+    seq_id[22][0] = 0
+s = 23, j = 0, idx = 23, n_seqs = 128, n_seq_tokens = 1
+    seq_id[23][0] = 0
+s = 24, j = 0, idx = 24, n_seqs = 128, n_seq_tokens = 1
+    seq_id[24][0] = 0
+s = 25, j = 0, idx = 25, n_seqs = 128, n_seq_tokens = 1
+    seq_id[25][0] = 0
+s = 26, j = 0, idx = 26, n_seqs = 128, n_seq_tokens = 1
+    seq_id[26][0] = 0
+s = 27, j = 0, idx = 27, n_seqs = 128, n_seq_tokens = 1
+    seq_id[27][0] = 0
+s = 28, j = 0, idx = 28, n_seqs = 128, n_seq_tokens = 1
+    seq_id[28][0] = 0
+s = 29, j = 0, idx = 29, n_seqs = 128, n_seq_tokens = 1
+    seq_id[29][0] = 0
+s = 30, j = 0, idx = 30, n_seqs = 128, n_seq_tokens = 1
+    seq_id[30][0] = 0
+s = 31, j = 0, idx = 31, n_seqs = 128, n_seq_tokens = 1
+    seq_id[31][0] = 0
+s = 32, j = 0, idx = 32, n_seqs = 128, n_seq_tokens = 1
+    seq_id[32][0] = 0
+s = 33, j = 0, idx = 33, n_seqs = 128, n_seq_tokens = 1
+    seq_id[33][0] = 0
+s = 34, j = 0, idx = 34, n_seqs = 128, n_seq_tokens = 1
+    seq_id[34][0] = 0
+s = 35, j = 0, idx = 35, n_seqs = 128, n_seq_tokens = 1
+    seq_id[35][0] = 0
+s = 36, j = 0, idx = 36, n_seqs = 128, n_seq_tokens = 1
+    seq_id[36][0] = 0
+s = 37, j = 0, idx = 37, n_seqs = 128, n_seq_tokens = 1
+    seq_id[37][0] = 0
+s = 38, j = 0, idx = 38, n_seqs = 128, n_seq_tokens = 1
+    seq_id[38][0] = 0
+s = 39, j = 0, idx = 39, n_seqs = 128, n_seq_tokens = 1
+    seq_id[39][0] = 0
+s = 40, j = 0, idx = 40, n_seqs = 128, n_seq_tokens = 1
+    seq_id[40][0] = 0
+s = 41, j = 0, idx = 41, n_seqs = 128, n_seq_tokens = 1
+    seq_id[41][0] = 0
+s = 42, j = 0, idx = 42, n_seqs = 128, n_seq_tokens = 1
+    seq_id[42][0] = 0
+s = 43, j = 0, idx = 43, n_seqs = 128, n_seq_tokens = 1
+    seq_id[43][0] = 0
+s = 44, j = 0, idx = 44, n_seqs = 128, n_seq_tokens = 1
+    seq_id[44][0] = 0
+s = 45, j = 0, idx = 45, n_seqs = 128, n_seq_tokens = 1
+    seq_id[45][0] = 0
+s = 46, j = 0, idx = 46, n_seqs = 128, n_seq_tokens = 1
+    seq_id[46][0] = 0
+s = 47, j = 0, idx = 47, n_seqs = 128, n_seq_tokens = 1
+    seq_id[47][0] = 0
+s = 48, j = 0, idx = 48, n_seqs = 128, n_seq_tokens = 1
+    seq_id[48][0] = 0
+s = 49, j = 0, idx = 49, n_seqs = 128, n_seq_tokens = 1
+    seq_id[49][0] = 0
+s = 50, j = 0, idx = 50, n_seqs = 128, n_seq_tokens = 1
+    seq_id[50][0] = 0
+s = 51, j = 0, idx = 51, n_seqs = 128, n_seq_tokens = 1
+    seq_id[51][0] = 0
+s = 52, j = 0, idx = 52, n_seqs = 128, n_seq_tokens = 1
+    seq_id[52][0] = 0
+s = 53, j = 0, idx = 53, n_seqs = 128, n_seq_tokens = 1
+    seq_id[53][0] = 0
+s = 54, j = 0, idx = 54, n_seqs = 128, n_seq_tokens = 1
+    seq_id[54][0] = 0
+s = 55, j = 0, idx = 55, n_seqs = 128, n_seq_tokens = 1
+    seq_id[55][0] = 0
+s = 56, j = 0, idx = 56, n_seqs = 128, n_seq_tokens = 1
+    seq_id[56][0] = 0
+s = 57, j = 0, idx = 57, n_seqs = 128, n_seq_tokens = 1
+    seq_id[57][0] = 0
+s = 58, j = 0, idx = 58, n_seqs = 128, n_seq_tokens = 1
+    seq_id[58][0] = 0
+s = 59, j = 0, idx = 59, n_seqs = 128, n_seq_tokens = 1
+    seq_id[59][0] = 0
+s = 60, j = 0, idx = 60, n_seqs = 128, n_seq_tokens = 1
+    seq_id[60][0] = 0
+s = 61, j = 0, idx = 61, n_seqs = 128, n_seq_tokens = 1
+    seq_id[61][0] = 0
+s = 62, j = 0, idx = 62, n_seqs = 128, n_seq_tokens = 1
+    seq_id[62][0] = 0
+s = 63, j = 0, idx = 63, n_seqs = 128, n_seq_tokens = 1
+    seq_id[63][0] = 0
+s = 64, j = 0, idx = 64, n_seqs = 128, n_seq_tokens = 1
+    seq_id[64][0] = 0
+s = 65, j = 0, idx = 65, n_seqs = 128, n_seq_tokens = 1
+    seq_id[65][0] = 0
+s = 66, j = 0, idx = 66, n_seqs = 128, n_seq_tokens = 1
+    seq_id[66][0] = 0
+s = 67, j = 0, idx = 67, n_seqs = 128, n_seq_tokens = 1
+    seq_id[67][0] = 0
+s = 68, j = 0, idx = 68, n_seqs = 128, n_seq_tokens = 1
+    seq_id[68][0] = 0
+s = 69, j = 0, idx = 69, n_seqs = 128, n_seq_tokens = 1
+    seq_id[69][0] = 0
+s = 70, j = 0, idx = 70, n_seqs = 128, n_seq_tokens = 1
+    seq_id[70][0] = 0
+s = 71, j = 0, idx = 71, n_seqs = 128, n_seq_tokens = 1
+    seq_id[71][0] = 0
+s = 72, j = 0, idx = 72, n_seqs = 128, n_seq_tokens = 1
+    seq_id[72][0] = 0
+s = 73, j = 0, idx = 73, n_seqs = 128, n_seq_tokens = 1
+    seq_id[73][0] = 0
+s = 74, j = 0, idx = 74, n_seqs = 128, n_seq_tokens = 1
+    seq_id[74][0] = 0
+s = 75, j = 0, idx = 75, n_seqs = 128, n_seq_tokens = 1
+    seq_id[75][0] = 0
+s = 76, j = 0, idx = 76, n_seqs = 128, n_seq_tokens = 1
+    seq_id[76][0] = 0
+s = 77, j = 0, idx = 77, n_seqs = 128, n_seq_tokens = 1
+    seq_id[77][0] = 0
+s = 78, j = 0, idx = 78, n_seqs = 128, n_seq_tokens = 1
+    seq_id[78][0] = 0
+s = 79, j = 0, idx = 79, n_seqs = 128, n_seq_tokens = 1
+    seq_id[79][0] = 0
+s = 80, j = 0, idx = 80, n_seqs = 128, n_seq_tokens = 1
+    seq_id[80][0] = 0
+s = 81, j = 0, idx = 81, n_seqs = 128, n_seq_tokens = 1
+    seq_id[81][0] = 0
+s = 82, j = 0, idx = 82, n_seqs = 128, n_seq_tokens = 1
+    seq_id[82][0] = 0
+s = 83, j = 0, idx = 83, n_seqs = 128, n_seq_tokens = 1
+    seq_id[83][0] = 0
+s = 84, j = 0, idx = 84, n_seqs = 128, n_seq_tokens = 1
+    seq_id[84][0] = 0
+s = 85, j = 0, idx = 85, n_seqs = 128, n_seq_tokens = 1
+    seq_id[85][0] = 0
+s = 86, j = 0, idx = 86, n_seqs = 128, n_seq_tokens = 1
+    seq_id[86][0] = 0
+s = 87, j = 0, idx = 87, n_seqs = 128, n_seq_tokens = 1
+    seq_id[87][0] = 0
+s = 88, j = 0, idx = 88, n_seqs = 128, n_seq_tokens = 1
+    seq_id[88][0] = 0
+s = 89, j = 0, idx = 89, n_seqs = 128, n_seq_tokens = 1
+    seq_id[89][0] = 0
+s = 90, j = 0, idx = 90, n_seqs = 128, n_seq_tokens = 1
+    seq_id[90][0] = 0
+s = 91, j = 0, idx = 91, n_seqs = 128, n_seq_tokens = 1
+    seq_id[91][0] = 0
+s = 92, j = 0, idx = 92, n_seqs = 128, n_seq_tokens = 1
+    seq_id[92][0] = 0
+s = 93, j = 0, idx = 93, n_seqs = 128, n_seq_tokens = 1
+    seq_id[93][0] = 0
+s = 94, j = 0, idx = 94, n_seqs = 128, n_seq_tokens = 1
+    seq_id[94][0] = 0
+s = 95, j = 0, idx = 95, n_seqs = 128, n_seq_tokens = 1
+    seq_id[95][0] = 0
+s = 96, j = 0, idx = 96, n_seqs = 128, n_seq_tokens = 1
+    seq_id[96][0] = 0
+s = 97, j = 0, idx = 97, n_seqs = 128, n_seq_tokens = 1
+    seq_id[97][0] = 0
+s = 98, j = 0, idx = 98, n_seqs = 128, n_seq_tokens = 1
+    seq_id[98][0] = 0
+s = 99, j = 0, idx = 99, n_seqs = 128, n_seq_tokens = 1
+    seq_id[99][0] = 0
+s = 100, j = 0, idx = 100, n_seqs = 128, n_seq_tokens = 1
+    seq_id[100][0] = 0
+s = 101, j = 0, idx = 101, n_seqs = 128, n_seq_tokens = 1
+    seq_id[101][0] = 0
+s = 102, j = 0, idx = 102, n_seqs = 128, n_seq_tokens = 1
+    seq_id[102][0] = 0
+s = 103, j = 0, idx = 103, n_seqs = 128, n_seq_tokens = 1
+    seq_id[103][0] = 0
+s = 104, j = 0, idx = 104, n_seqs = 128, n_seq_tokens = 1
+    seq_id[104][0] = 0
+s = 105, j = 0, idx = 105, n_seqs = 128, n_seq_tokens = 1
+    seq_id[105][0] = 0
+s = 106, j = 0, idx = 106, n_seqs = 128, n_seq_tokens = 1
+    seq_id[106][0] = 0
+s = 107, j = 0, idx = 107, n_seqs = 128, n_seq_tokens = 1
+    seq_id[107][0] = 0
+s = 108, j = 0, idx = 108, n_seqs = 128, n_seq_tokens = 1
+    seq_id[108][0] = 0
+s = 109, j = 0, idx = 109, n_seqs = 128, n_seq_tokens = 1
+    seq_id[109][0] = 0
+s = 110, j = 0, idx = 110, n_seqs = 128, n_seq_tokens = 1
+    seq_id[110][0] = 0
+s = 111, j = 0, idx = 111, n_seqs = 128, n_seq_tokens = 1
+    seq_id[111][0] = 0
+s = 112, j = 0, idx = 112, n_seqs = 128, n_seq_tokens = 1
+    seq_id[112][0] = 0
+s = 113, j = 0, idx = 113, n_seqs = 128, n_seq_tokens = 1
+    seq_id[113][0] = 0
+s = 114, j = 0, idx = 114, n_seqs = 128, n_seq_tokens = 1
+    seq_id[114][0] = 0
+s = 115, j = 0, idx = 115, n_seqs = 128, n_seq_tokens = 1
+    seq_id[115][0] = 0
+s = 116, j = 0, idx = 116, n_seqs = 128, n_seq_tokens = 1
+    seq_id[116][0] = 0
+s = 117, j = 0, idx = 117, n_seqs = 128, n_seq_tokens = 1
+    seq_id[117][0] = 0
+s = 118, j = 0, idx = 118, n_seqs = 128, n_seq_tokens = 1
+    seq_id[118][0] = 0
+s = 119, j = 0, idx = 119, n_seqs = 128, n_seq_tokens = 1
+    seq_id[119][0] = 0
+s = 120, j = 0, idx = 120, n_seqs = 128, n_seq_tokens = 1
+    seq_id[120][0] = 0
+s = 121, j = 0, idx = 121, n_seqs = 128, n_seq_tokens = 1
+    seq_id[121][0] = 0
+s = 122, j = 0, idx = 122, n_seqs = 128, n_seq_tokens = 1
+    seq_id[122][0] = 0
+s = 123, j = 0, idx = 123, n_seqs = 128, n_seq_tokens = 1
+    seq_id[123][0] = 0
+s = 124, j = 0, idx = 124, n_seqs = 128, n_seq_tokens = 1
+    seq_id[124][0] = 0
+s = 125, j = 0, idx = 125, n_seqs = 128, n_seq_tokens = 1
+    seq_id[125][0] = 0
+s = 126, j = 0, idx = 126, n_seqs = 128, n_seq_tokens = 1
+    seq_id[126][0] = 0
+s = 127, j = 0, idx = 127, n_seqs = 128, n_seq_tokens = 1
+    seq_id[127][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 128, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 128, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 128, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 128, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 4, j = 0, idx = 4, n_seqs = 128, n_seq_tokens = 1
+    seq_id[4][0] = 0
+s = 5, j = 0, idx = 5, n_seqs = 128, n_seq_tokens = 1
+    seq_id[5][0] = 0
+s = 6, j = 0, idx = 6, n_seqs = 128, n_seq_tokens = 1
+    seq_id[6][0] = 0
+s = 7, j = 0, idx = 7, n_seqs = 128, n_seq_tokens = 1
+    seq_id[7][0] = 0
+s = 8, j = 0, idx = 8, n_seqs = 128, n_seq_tokens = 1
+    seq_id[8][0] = 0
+s = 9, j = 0, idx = 9, n_seqs = 128, n_seq_tokens = 1
+    seq_id[9][0] = 0
+s = 10, j = 0, idx = 10, n_seqs = 128, n_seq_tokens = 1
+    seq_id[10][0] = 0
+s = 11, j = 0, idx = 11, n_seqs = 128, n_seq_tokens = 1
+    seq_id[11][0] = 0
+s = 12, j = 0, idx = 12, n_seqs = 128, n_seq_tokens = 1
+    seq_id[12][0] = 0
+s = 13, j = 0, idx = 13, n_seqs = 128, n_seq_tokens = 1
+    seq_id[13][0] = 0
+s = 14, j = 0, idx = 14, n_seqs = 128, n_seq_tokens = 1
+    seq_id[14][0] = 0
+s = 15, j = 0, idx = 15, n_seqs = 128, n_seq_tokens = 1
+    seq_id[15][0] = 0
+s = 16, j = 0, idx = 16, n_seqs = 128, n_seq_tokens = 1
+    seq_id[16][0] = 0
+s = 17, j = 0, idx = 17, n_seqs = 128, n_seq_tokens = 1
+    seq_id[17][0] = 0
+s = 18, j = 0, idx = 18, n_seqs = 128, n_seq_tokens = 1
+    seq_id[18][0] = 0
+s = 19, j = 0, idx = 19, n_seqs = 128, n_seq_tokens = 1
+    seq_id[19][0] = 0
+s = 20, j = 0, idx = 20, n_seqs = 128, n_seq_tokens = 1
+    seq_id[20][0] = 0
+s = 21, j = 0, idx = 21, n_seqs = 128, n_seq_tokens = 1
+    seq_id[21][0] = 0
+s = 22, j = 0, idx = 22, n_seqs = 128, n_seq_tokens = 1
+    seq_id[22][0] = 0
+s = 23, j = 0, idx = 23, n_seqs = 128, n_seq_tokens = 1
+    seq_id[23][0] = 0
+s = 24, j = 0, idx = 24, n_seqs = 128, n_seq_tokens = 1
+    seq_id[24][0] = 0
+s = 25, j = 0, idx = 25, n_seqs = 128, n_seq_tokens = 1
+    seq_id[25][0] = 0
+s = 26, j = 0, idx = 26, n_seqs = 128, n_seq_tokens = 1
+    seq_id[26][0] = 0
+s = 27, j = 0, idx = 27, n_seqs = 128, n_seq_tokens = 1
+    seq_id[27][0] = 0
+s = 28, j = 0, idx = 28, n_seqs = 128, n_seq_tokens = 1
+    seq_id[28][0] = 0
+s = 29, j = 0, idx = 29, n_seqs = 128, n_seq_tokens = 1
+    seq_id[29][0] = 0
+s = 30, j = 0, idx = 30, n_seqs = 128, n_seq_tokens = 1
+    seq_id[30][0] = 0
+s = 31, j = 0, idx = 31, n_seqs = 128, n_seq_tokens = 1
+    seq_id[31][0] = 0
+s = 32, j = 0, idx = 32, n_seqs = 128, n_seq_tokens = 1
+    seq_id[32][0] = 0
+s = 33, j = 0, idx = 33, n_seqs = 128, n_seq_tokens = 1
+    seq_id[33][0] = 0
+s = 34, j = 0, idx = 34, n_seqs = 128, n_seq_tokens = 1
+    seq_id[34][0] = 0
+s = 35, j = 0, idx = 35, n_seqs = 128, n_seq_tokens = 1
+    seq_id[35][0] = 0
+s = 36, j = 0, idx = 36, n_seqs = 128, n_seq_tokens = 1
+    seq_id[36][0] = 0
+s = 37, j = 0, idx = 37, n_seqs = 128, n_seq_tokens = 1
+    seq_id[37][0] = 0
+s = 38, j = 0, idx = 38, n_seqs = 128, n_seq_tokens = 1
+    seq_id[38][0] = 0
+s = 39, j = 0, idx = 39, n_seqs = 128, n_seq_tokens = 1
+    seq_id[39][0] = 0
+s = 40, j = 0, idx = 40, n_seqs = 128, n_seq_tokens = 1
+    seq_id[40][0] = 0
+s = 41, j = 0, idx = 41, n_seqs = 128, n_seq_tokens = 1
+    seq_id[41][0] = 0
+s = 42, j = 0, idx = 42, n_seqs = 128, n_seq_tokens = 1
+    seq_id[42][0] = 0
+s = 43, j = 0, idx = 43, n_seqs = 128, n_seq_tokens = 1
+    seq_id[43][0] = 0
+s = 44, j = 0, idx = 44, n_seqs = 128, n_seq_tokens = 1
+    seq_id[44][0] = 0
+s = 45, j = 0, idx = 45, n_seqs = 128, n_seq_tokens = 1
+    seq_id[45][0] = 0
+s = 46, j = 0, idx = 46, n_seqs = 128, n_seq_tokens = 1
+    seq_id[46][0] = 0
+s = 47, j = 0, idx = 47, n_seqs = 128, n_seq_tokens = 1
+    seq_id[47][0] = 0
+s = 48, j = 0, idx = 48, n_seqs = 128, n_seq_tokens = 1
+    seq_id[48][0] = 0
+s = 49, j = 0, idx = 49, n_seqs = 128, n_seq_tokens = 1
+    seq_id[49][0] = 0
+s = 50, j = 0, idx = 50, n_seqs = 128, n_seq_tokens = 1
+    seq_id[50][0] = 0
+s = 51, j = 0, idx = 51, n_seqs = 128, n_seq_tokens = 1
+    seq_id[51][0] = 0
+s = 52, j = 0, idx = 52, n_seqs = 128, n_seq_tokens = 1
+    seq_id[52][0] = 0
+s = 53, j = 0, idx = 53, n_seqs = 128, n_seq_tokens = 1
+    seq_id[53][0] = 0
+s = 54, j = 0, idx = 54, n_seqs = 128, n_seq_tokens = 1
+    seq_id[54][0] = 0
+s = 55, j = 0, idx = 55, n_seqs = 128, n_seq_tokens = 1
+    seq_id[55][0] = 0
+s = 56, j = 0, idx = 56, n_seqs = 128, n_seq_tokens = 1
+    seq_id[56][0] = 0
+s = 57, j = 0, idx = 57, n_seqs = 128, n_seq_tokens = 1
+    seq_id[57][0] = 0
+s = 58, j = 0, idx = 58, n_seqs = 128, n_seq_tokens = 1
+    seq_id[58][0] = 0
+s = 59, j = 0, idx = 59, n_seqs = 128, n_seq_tokens = 1
+    seq_id[59][0] = 0
+s = 60, j = 0, idx = 60, n_seqs = 128, n_seq_tokens = 1
+    seq_id[60][0] = 0
+s = 61, j = 0, idx = 61, n_seqs = 128, n_seq_tokens = 1
+    seq_id[61][0] = 0
+s = 62, j = 0, idx = 62, n_seqs = 128, n_seq_tokens = 1
+    seq_id[62][0] = 0
+s = 63, j = 0, idx = 63, n_seqs = 128, n_seq_tokens = 1
+    seq_id[63][0] = 0
+s = 64, j = 0, idx = 64, n_seqs = 128, n_seq_tokens = 1
+    seq_id[64][0] = 0
+s = 65, j = 0, idx = 65, n_seqs = 128, n_seq_tokens = 1
+    seq_id[65][0] = 0
+s = 66, j = 0, idx = 66, n_seqs = 128, n_seq_tokens = 1
+    seq_id[66][0] = 0
+s = 67, j = 0, idx = 67, n_seqs = 128, n_seq_tokens = 1
+    seq_id[67][0] = 0
+s = 68, j = 0, idx = 68, n_seqs = 128, n_seq_tokens = 1
+    seq_id[68][0] = 0
+s = 69, j = 0, idx = 69, n_seqs = 128, n_seq_tokens = 1
+    seq_id[69][0] = 0
+s = 70, j = 0, idx = 70, n_seqs = 128, n_seq_tokens = 1
+    seq_id[70][0] = 0
+s = 71, j = 0, idx = 71, n_seqs = 128, n_seq_tokens = 1
+    seq_id[71][0] = 0
+s = 72, j = 0, idx = 72, n_seqs = 128, n_seq_tokens = 1
+    seq_id[72][0] = 0
+s = 73, j = 0, idx = 73, n_seqs = 128, n_seq_tokens = 1
+    seq_id[73][0] = 0
+s = 74, j = 0, idx = 74, n_seqs = 128, n_seq_tokens = 1
+    seq_id[74][0] = 0
+s = 75, j = 0, idx = 75, n_seqs = 128, n_seq_tokens = 1
+    seq_id[75][0] = 0
+s = 76, j = 0, idx = 76, n_seqs = 128, n_seq_tokens = 1
+    seq_id[76][0] = 0
+s = 77, j = 0, idx = 77, n_seqs = 128, n_seq_tokens = 1
+    seq_id[77][0] = 0
+0.01.185.921 I perplexity: 0.80 seconds per pass - ETA s = 78, j = 0, idx = 78, n_seqs = 128, n_seq_tokens = 1
+    seq_id[78][0] = 0
+s = 79, j = 0, idx = 79, n_seqs = 128, n_seq_tokens = 1
+    seq_id[79][0] = 0
+s = 80, j = 0, idx = 80, n_seqs = 128, n_seq_tokens = 1
+    seq_id[80][0] = 0
+s = 81, j = 0, idx = 81, n_seqs = 128, n_seq_tokens = 1
+    seq_id[81][0] = 0
+s = 82, j = 0, idx = 82, n_seqs = 128, n_seq_tokens = 1
+    seq_id[82][0] = 0
+s = 83, j = 0, idx = 83, n_seqs = 128, n_seq_tokens = 1
+    seq_id[83][0] = 0
+s = 84, j = 0, idx = 84, n_seqs = 128, n_seq_tokens = 1
+    seq_id[84][0] = 0
+s = 85, j = 0, idx = 85, n_seqs = 128, n_seq_tokens = 1
+    seq_id[85][0] = 0
+s = 86, j = 0, idx = 86, n_seqs = 128, n_seq_tokens = 1
+    seq_id[86][0] = 0
+s = 87, j = 0, idx = 87, n_seqs = 128, n_seq_tokens = 1
+    seq_id[87][0] = 0
+s = 88, j = 0, idx = 88, n_seqs = 128, n_seq_tokens = 1
+    seq_id[88][0] = 0
+s = 89, j = 0, idx = 89, n_seqs = 128, n_seq_tokens = 1
+    seq_id[89][0] = 0
+s = 90, j = 0, idx = 90, n_seqs = 128, n_seq_tokens = 1
+    seq_id[90][0] = 0
+s = 91, j = 0, idx = 91, n_seqs = 128, n_seq_tokens = 1
+    seq_id[91][0] = 0
+s = 92, j = 0, idx = 92, n_seqs = 128, n_seq_tokens = 1
+    seq_id[92][0] = 0
+s = 93, j = 0, idx = 93, n_seqs = 128, n_seq_tokens = 1
+    seq_id[93][0] = 0
+s = 94, j = 0, idx = 94, n_seqs = 128, n_seq_tokens = 1
+    seq_id[94][0] = 0
+s = 95, j = 0, idx = 95, n_seqs = 128, n_seq_tokens = 1
+    seq_id[95][0] = 0
+s = 96, j = 0, idx = 96, n_seqs = 128, n_seq_tokens = 1
+    seq_id[96][0] = 0
+s = 97, j = 0, idx = 97, n_seqs = 128, n_seq_tokens = 1
+    seq_id[97][0] = 0
+s = 98, j = 0, idx = 98, n_seqs = 128, n_seq_tokens = 1
+    seq_id[98][0] = 0
+s = 99, j = 0, idx = 99, n_seqs = 128, n_seq_tokens = 1
+    seq_id[99][0] = 0
+s = 100, j = 0, idx = 100, n_seqs = 128, n_seq_tokens = 1
+    seq_id[100][0] = 0
+s = 101, j = 0, idx = 101, n_seqs = 128, n_seq_tokens = 1
+    seq_id[101][0] = 0
+s = 102, j = 0, idx = 102, n_seqs = 128, n_seq_tokens = 1
+    seq_id[102][0] = 0
+s = 103, j = 0, idx = 103, n_seqs = 128, n_seq_tokens = 1
+    seq_id[103][0] = 0
+s = 104, j = 0, idx = 104, n_seqs = 128, n_seq_tokens = 1
+    seq_id[104][0] = 0
+s = 105, j = 0, idx = 105, n_seqs = 128, n_seq_tokens = 1
+    seq_id[105][0] = 0
+s = 106, j = 0, idx = 106, n_seqs = 128, n_seq_tokens = 1
+    seq_id[106][0] = 0
+s = 107, j = 0, idx = 107, n_seqs = 128, n_seq_tokens = 1
+    seq_id[107][0] = 0
+s = 108, j = 0, idx = 108, n_seqs = 128, n_seq_tokens = 1
+    seq_id[108][0] = 0
+s = 109, j = 0, idx = 109, n_seqs = 128, n_seq_tokens = 1
+    seq_id[109][0] = 0
+s = 110, j = 0, idx = 110, n_seqs = 128, n_seq_tokens = 1
+    seq_id[110][0] = 0
+s = 111, j = 0, idx = 111, n_seqs = 128, n_seq_tokens = 1
+    seq_id[111][0] = 0
+s = 112, j = 0, idx = 112, n_seqs = 128, n_seq_tokens = 1
+    seq_id[112][0] = 0
+s = 113, j = 0, idx = 113, n_seqs = 128, n_seq_tokens = 1
+    seq_id[113][0] = 0
+s = 114, j = 0, idx = 114, n_seqs = 128, n_seq_tokens = 1
+    seq_id[114][0] = 0
+s = 115, j = 0, idx = 115, n_seqs = 128, n_seq_tokens = 1
+    seq_id[115][0] = 0
+s = 116, j = 0, idx = 116, n_seqs = 128, n_seq_tokens = 1
+    seq_id[116][0] = 0
+s = 117, j = 0, idx = 117, n_seqs = 128, n_seq_tokens = 1
+    seq_id[117][0] = 0
+s = 118, j = 0, idx = 118, n_seqs = 128, n_seq_tokens = 1
+    seq_id[118][0] = 0
+s = 119, j = 0, idx = 119, n_seqs = 128, n_seq_tokens = 1
+    seq_id[119][0] = 0
+s = 120, j = 0, idx = 120, n_seqs = 128, n_seq_tokens = 1
+    seq_id[120][0] = 0
+s = 121, j = 0, idx = 121, n_seqs = 128, n_seq_tokens = 1
+    seq_id[121][0] = 0
+s = 122, j = 0, idx = 122, n_seqs = 128, n_seq_tokens = 1
+    seq_id[122][0] = 0
+s = 123, j = 0, idx = 123, n_seqs = 128, n_seq_tokens = 1
+    seq_id[123][0] = 0
+s = 124, j = 0, idx = 124, n_seqs = 128, n_seq_tokens = 1
+    seq_id[124][0] = 0
+s = 125, j = 0, idx = 125, n_seqs = 128, n_seq_tokens = 1
+    seq_id[125][0] = 0
+s = 126, j = 0, idx = 126, n_seqs = 128, n_seq_tokens = 1
+    seq_id[126][0] = 0
+s = 127, j = 0, idx = 127, n_seqs = 128, n_seq_tokens = 1
+    seq_id[127][0] = 0
+0.00 minutes
+[1]10.3482,
+0.01.188.968 I Final estimate: PPL = 10.3482 +/- 3.30522
+
+0.01.189.056 I llama_perf_context_print:        load time =     379.08 ms
+0.01.189.058 I llama_perf_context_print: prompt eval time =     797.97 ms /   128 tokens (    6.23 ms per token,   160.41 tokens per second)
+0.01.189.060 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.01.189.061 I llama_perf_context_print:       total time =     809.57 ms /   129 tokens
+
+real	0m1.243s
+user	0m4.245s
+sys	0m0.600s
+```
+- save-load-state: 
+```
++ ./bin/llama-save-load-state --model ../models-mnt/pythia/1.4B/ggml-model-q4_0.gguf -ngl 99 -c 0
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.301 I build: 5635 (2db43275) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.010.551 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q4_0.gguf (version GGUF V3 (latest))
+0.00.010.581 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.010.590 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.010.590 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.010.591 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.010.591 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.010.592 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.010.595 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.010.596 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.010.598 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.010.599 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.010.600 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.010.601 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.010.601 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.010.607 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.010.608 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.010.608 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.015.373 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.016.457 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.020.922 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.020.945 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.020.945 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.020.946 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.020.946 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.020.947 I llama_model_loader: - kv  22:                          general.file_type u32              = 2
+0.00.020.950 I llama_model_loader: - type  f32:  194 tensors
+0.00.020.950 I llama_model_loader: - type q4_0:   97 tensors
+0.00.020.951 I llama_model_loader: - type q6_K:    1 tensors
+0.00.020.952 I print_info: file format = GGUF V3 (latest)
+0.00.020.953 I print_info: file type   = Q4_0
+0.00.020.956 I print_info: file size   = 786.31 MiB (4.66 BPW) 
+0.00.053.861 I load: special tokens cache size = 25
+0.00.065.872 I load: token to piece cache size = 0.2984 MB
+0.00.065.901 I print_info: arch             = gptneox
+0.00.065.901 I print_info: vocab_only       = 0
+0.00.065.902 I print_info: n_ctx_train      = 2048
+0.00.065.902 I print_info: n_embd           = 2048
+0.00.065.902 I print_info: n_layer          = 24
+0.00.065.918 I print_info: n_head           = 16
+0.00.065.920 I print_info: n_head_kv        = 16
+0.00.065.920 I print_info: n_rot            = 32
+0.00.065.920 I print_info: n_swa            = 0
+0.00.065.922 I print_info: is_swa_any       = 0
+0.00.065.922 I print_info: n_embd_head_k    = 128
+0.00.065.922 I print_info: n_embd_head_v    = 128
+0.00.065.924 I print_info: n_gqa            = 1
+0.00.065.926 I print_info: n_embd_k_gqa     = 2048
+0.00.065.927 I print_info: n_embd_v_gqa     = 2048
+0.00.065.928 I print_info: f_norm_eps       = 1.0e-05
+0.00.065.929 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.065.929 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.065.930 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.065.930 I print_info: f_logit_scale    = 0.0e+00
+0.00.065.930 I print_info: f_attn_scale     = 0.0e+00
+0.00.065.931 I print_info: n_ff             = 8192
+0.00.065.931 I print_info: n_expert         = 0
+0.00.065.931 I print_info: n_expert_used    = 0
+0.00.065.932 I print_info: causal attn      = 1
+0.00.065.932 I print_info: pooling type     = 0
+0.00.065.932 I print_info: rope type        = 2
+0.00.065.932 I print_info: rope scaling     = linear
+0.00.065.934 I print_info: freq_base_train  = 10000.0
+0.00.065.934 I print_info: freq_scale_train = 1
+0.00.065.934 I print_info: n_ctx_orig_yarn  = 2048
+0.00.065.935 I print_info: rope_finetuned   = unknown
+0.00.065.935 I print_info: ssm_d_conv       = 0
+0.00.065.935 I print_info: ssm_d_inner      = 0
+0.00.065.935 I print_info: ssm_d_state      = 0
+0.00.065.935 I print_info: ssm_dt_rank      = 0
+0.00.065.935 I print_info: ssm_dt_b_c_rms   = 0
+0.00.065.936 I print_info: model type       = 1.4B
+0.00.065.936 I print_info: model params     = 1.41 B
+0.00.065.936 I print_info: general.name     = 1.4B
+0.00.065.939 I print_info: vocab type       = BPE
+0.00.065.940 I print_info: n_vocab          = 50304
+0.00.065.940 I print_info: n_merges         = 50009
+0.00.065.941 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.065.941 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.065.941 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.065.941 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.065.941 I print_info: LF token         = 187 'Ċ'
+0.00.065.942 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.065.942 I print_info: max token length = 1024
+0.00.065.944 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.119.754 I load_tensors:          AMX model buffer size =   728.60 MiB
+0.00.119.775 I load_tensors:   CPU_Mapped model buffer size =   696.72 MiB
+..............................................................................
+0.00.233.731 I llama_context: constructing llama_context
+0.00.233.767 I llama_context: n_seq_max     = 1
+0.00.233.774 I llama_context: n_ctx         = 2048
+0.00.233.781 I llama_context: n_ctx_per_seq = 2048
+0.00.233.788 I llama_context: n_batch       = 2048
+0.00.233.794 I llama_context: n_ubatch      = 512
+0.00.233.813 I llama_context: causal_attn   = 1
+0.00.233.820 I llama_context: flash_attn    = 0
+0.00.233.831 I llama_context: freq_base     = 10000.0
+0.00.233.838 I llama_context: freq_scale    = 1
+0.00.233.898 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.00.234.328 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.00.305.518 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.314.589 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.00.314.608 I llama_context: graph nodes  = 1063
+0.00.314.608 I llama_context: graph splits = 1
+0.00.314.618 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.314.619 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+main : serialized state into 988319 out of a maximum of 988319 bytes
+0.00.900.628 I llama_context: constructing llama_context
+0.00.900.647 I llama_context: n_seq_max     = 1
+0.00.900.647 I llama_context: n_ctx         = 2048
+0.00.900.648 I llama_context: n_ctx_per_seq = 2048
+0.00.900.648 I llama_context: n_batch       = 2048
+0.00.900.648 I llama_context: n_ubatch      = 512
+0.00.900.649 I llama_context: causal_attn   = 1
+0.00.900.649 I llama_context: flash_attn    = 0
+0.00.900.655 I llama_context: freq_base     = 10000.0
+0.00.900.656 I llama_context: freq_scale    = 1
+0.00.900.672 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.00.901.189 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.00.974.001 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.983.077 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.00.983.093 I llama_context: graph nodes  = 1063
+0.00.983.093 I llama_context: graph splits = 1
+main : deserialized state from 988319 out of a maximum of 988319 bytes
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 4, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 4, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 4, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 4, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 4, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 4, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 4, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 4, n_seq_tokens = 1
+    seq_id[3][0] = 0
+
+first run: The quick brown fox jumpss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ overs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ lazys = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ Dogs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+."s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Ours = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ friends = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ iss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ as = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ poets = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+."s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Hes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+'ss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+
+
+second run: The quick brown fox jumpss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ overs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ lazys = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ Dogs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+."s = 0, 0.01.468.774 I llama_context: constructing llama_context
+0.01.468.799 I llama_context: n_seq_max     = 1
+0.01.468.799 I llama_context: n_ctx         = 2048
+0.01.468.800 I llama_context: n_ctx_per_seq = 2048
+0.01.468.800 I llama_context: n_batch       = 2048
+0.01.468.800 I llama_context: n_ubatch      = 512
+0.01.468.801 I llama_context: causal_attn   = 1
+0.01.468.801 I llama_context: flash_attn    = 0
+0.01.468.806 I llama_context: freq_base     = 10000.0
+0.01.468.807 I llama_context: freq_scale    = 1
+0.01.468.824 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.01.469.305 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.01.541.150 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.01.549.836 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.01.549.857 I llama_context: graph nodes  = 1063
+0.01.549.857 I llama_context: graph splits = 1
+main : deserialized state from 988319 out of a maximum of 988319 bytes
+main : seq 0 copied, 787068 bytes
+main : kv cache cleared
+main : seq 1 restored, 787068 bytes
+j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Ours = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ friends = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ iss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ as = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ poets = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+."s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Hes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+'ss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+
+
+single seq run: The quick brown foxs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 4
+    seq_id[0][0] = 1
+s = 0, j = 1, idx = 1, n_seqs = 1, n_seq_tokens = 4
+    seq_id[1][0] = 1
+s = 0, j = 2, idx = 2, n_seqs = 1, n_seq_tokens = 4
+    seq_id[2][0] = 1
+s = 0, j = 3, idx = 3, n_seqs = 1, n_seq_tokens = 4
+    seq_id[3][0] = 1
+ jumpss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ overs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ lazys = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ Dogs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+."s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+Ours = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ friends = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ iss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ as = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ poets = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+."s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+Hes = 0, j = 0, idx = 0, n_seqs = 1, n_se
+main : success
+q_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+'ss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+
+
+real	0m2.125s
+user	0m6.429s
+sys	0m0.751s
++ ./bin/llama-save-load-state --model ../models-mnt/pythia/1.4B/ggml-model-q4_0.gguf -ngl 99 -c 0 -fa
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.258 I build: 5635 (2db43275) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.010.679 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q4_0.gguf (version GGUF V3 (latest))
+0.00.010.707 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.010.715 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.010.716 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.010.717 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.010.717 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.010.718 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.010.721 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.010.723 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.010.724 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.010.724 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.010.725 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.010.726 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.010.727 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.010.736 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.010.737 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.010.737 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.015.582 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.016.656 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.021.147 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.021.168 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.021.169 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.021.169 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.021.170 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.021.170 I llama_model_loader: - kv  22:                          general.file_type u32              = 2
+0.00.021.173 I llama_model_loader: - type  f32:  194 tensors
+0.00.021.174 I llama_model_loader: - type q4_0:   97 tensors
+0.00.021.174 I llama_model_loader: - type q6_K:    1 tensors
+0.00.021.176 I print_info: file format = GGUF V3 (latest)
+0.00.021.177 I print_info: file type   = Q4_0
+0.00.021.179 I print_info: file size   = 786.31 MiB (4.66 BPW) 
+0.00.054.907 I load: special tokens cache size = 25
+0.00.066.874 I load: token to piece cache size = 0.2984 MB
+0.00.066.905 I print_info: arch             = gptneox
+0.00.066.905 I print_info: vocab_only       = 0
+0.00.066.905 I print_info: n_ctx_train      = 2048
+0.00.066.906 I print_info: n_embd           = 2048
+0.00.066.906 I print_info: n_layer          = 24
+0.00.066.914 I print_info: n_head           = 16
+0.00.066.916 I print_info: n_head_kv        = 16
+0.00.066.917 I print_info: n_rot            = 32
+0.00.066.917 I print_info: n_swa            = 0
+0.00.066.918 I print_info: is_swa_any       = 0
+0.00.066.918 I print_info: n_embd_head_k    = 128
+0.00.066.919 I print_info: n_embd_head_v    = 128
+0.00.066.920 I print_info: n_gqa            = 1
+0.00.066.922 I print_info: n_embd_k_gqa     = 2048
+0.00.066.923 I print_info: n_embd_v_gqa     = 2048
+0.00.066.924 I print_info: f_norm_eps       = 1.0e-05
+0.00.066.925 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.066.926 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.066.926 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.066.927 I print_info: f_logit_scale    = 0.0e+00
+0.00.066.927 I print_info: f_attn_scale     = 0.0e+00
+0.00.066.928 I print_info: n_ff             = 8192
+0.00.066.928 I print_info: n_expert         = 0
+0.00.066.928 I print_info: n_expert_used    = 0
+0.00.066.929 I print_info: causal attn      = 1
+0.00.066.929 I print_info: pooling type     = 0
+0.00.066.929 I print_info: rope type        = 2
+0.00.066.929 I print_info: rope scaling     = linear
+0.00.066.931 I print_info: freq_base_train  = 10000.0
+0.00.066.931 I print_info: freq_scale_train = 1
+0.00.066.931 I print_info: n_ctx_orig_yarn  = 2048
+0.00.066.932 I print_info: rope_finetuned   = unknown
+0.00.066.932 I print_info: ssm_d_conv       = 0
+0.00.066.932 I print_info: ssm_d_inner      = 0
+0.00.066.932 I print_info: ssm_d_state      = 0
+0.00.066.933 I print_info: ssm_dt_rank      = 0
+0.00.066.933 I print_info: ssm_dt_b_c_rms   = 0
+0.00.066.934 I print_info: model type       = 1.4B
+0.00.066.934 I print_info: model params     = 1.41 B
+0.00.066.935 I print_info: general.name     = 1.4B
+0.00.066.937 I print_info: vocab type       = BPE
+0.00.066.938 I print_info: n_vocab          = 50304
+0.00.066.938 I print_info: n_merges         = 50009
+0.00.066.939 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.066.939 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.066.939 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.066.939 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.066.940 I print_info: LF token         = 187 'Ċ'
+0.00.066.940 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.066.940 I print_info: max token length = 1024
+0.00.066.942 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.118.878 I load_tensors:          AMX model buffer size =   728.60 MiB
+0.00.118.899 I load_tensors:   CPU_Mapped model buffer size =   696.72 MiB
+..............................................................................
+0.00.229.859 I llama_context: constructing llama_context
+0.00.229.895 I llama_context: n_seq_max     = 1
+0.00.229.902 I llama_context: n_ctx         = 2048
+0.00.229.909 I llama_context: n_ctx_per_seq = 2048
+0.00.229.916 I llama_context: n_batch       = 2048
+0.00.229.922 I llama_context: n_ubatch      = 512
+0.00.229.942 I llama_context: causal_attn   = 1
+0.00.229.948 I llama_context: flash_attn    = 1
+0.00.229.959 I llama_context: freq_base     = 10000.0
+0.00.229.969 I llama_context: freq_scale    = 1
+0.00.230.028 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.00.230.644 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.00.302.867 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.311.675 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.00.311.693 I llama_context: graph nodes  = 968
+0.00.311.693 I llama_context: graph splits = 1
+0.00.311.702 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.311.702 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+main : serialized state into 988319 out of a maximum of 988319 bytes
+0.00.831.497 I llama_context: constructing llama_context
+0.00.831.515 I llama_context: n_seq_max     = 1
+0.00.831.515 I llama_context: n_ctx         = 2048
+0.00.831.516 I llama_context: n_ctx_per_seq = 2048
+0.00.831.516 I llama_context: n_batch       = 2048
+0.00.831.516 I llama_context: n_ubatch      = 512
+0.00.831.517 I llama_context: causal_attn   = 1
+0.00.831.517 I llama_context: flash_attn    = 1
+0.00.831.523 I llama_context: freq_base     = 10000.0
+0.00.831.524 I llama_context: freq_scale    = 1
+0.00.831.541 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.00.831.947 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.00.903.174 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.911.960 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.00.911.978 I llama_context: graph nodes  = 968
+0.00.911.979 I llama_context: graph splits = 1
+main : deserialized state from 988319 out of a maximum of 988319 bytes
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 4, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 4, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 4, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 4, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 4, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 4, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 4, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 4, n_seq_tokens = 1
+    seq_id[3][0] = 0
+
+first run: The quick brown fox jumpss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ overs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ lazys = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ls = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ops = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+-s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+joints = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+eds = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ dogs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+.s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+  s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+gos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ess = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ tos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+
+
+second run: The quick brown fox jumpss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ overs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ lazys = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ls = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ops = 0, j = 0, idx 0.01.353.114 I llama_context: constructing llama_context
+0.01.353.136 I llama_context: n_seq_max     = 1
+0.01.353.136 I llama_context: n_ctx         = 2048
+0.01.353.137 I llama_context: n_ctx_per_seq = 2048
+0.01.353.137 I llama_context: n_batch       = 2048
+0.01.353.137 I llama_context: n_ubatch      = 512
+0.01.353.138 I llama_context: causal_attn   = 1
+0.01.353.138 I llama_context: flash_attn    = 1
+0.01.353.143 I llama_context: freq_base     = 10000.0
+0.01.353.144 I llama_context: freq_scale    = 1
+0.01.353.161 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.01.353.643 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.01.425.014 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.01.433.909 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.01.433.927 I llama_context: graph nodes  = 968
+0.01.433.928 I llama_context: graph splits = 1
+main : deserialized state from 988319 out of a maximum of 988319 bytes
+main : seq 0 copied, 787068 bytes
+main : kv cache cleared
+main : seq 1 restored, 787068 bytes
+= 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+-s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+joints = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+eds = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ dogs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+.s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+  s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+gos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ess = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ tos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+
+
+single seq run: The quick brown foxs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 4
+    seq_id[0][0] = 1
+s = 0, j = 1, idx = 1, n_seqs = 1, n_seq_tokens = 4
+    seq_id[1][0] = 1
+s = 0, j = 2, idx = 2, n_seqs = 1, n_seq_tokens = 4
+    seq_id[2][0] = 1
+s = 0, j = 3, idx = 3, n_seqs = 1, n_seq_tokens = 4
+    seq_id[3][0] = 1
+ jumpss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ overs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ lazys = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ ls = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ops = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+-s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+joints = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+eds = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ dogs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+.s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+  s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+gos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ess = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0
+main : success
+] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ tos = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+
+
+real	0m1.956s
+user	0m5.871s
+sys	0m0.679s
+```
+### ctest_with_model_debug
+
+Runs ctest with model files in debug mode
+- status: 0
+```
++ LLAMACPP_TEST_MODELFILE=/mnt/llama.cpp/models/pythia/1.4B/ggml-model-f16.gguf
++ time ctest --output-on-failure -L model
+Test project /home/ggml/work/llama.cpp/build-ci-debug
+    Start 29: test-model-load-cancel
+1/2 Test #29: test-model-load-cancel ...........   Passed    0.01 sec
+    Start 30: test-autorelease
+2/2 Test #30: test-autorelease .................   Passed    1.28 sec
+
+100% tests passed, 0 tests failed out of 2
+
+Label Time Summary:
+model    =   1.29 sec*proc (2 tests)
+
+Total Test time (real) =   1.29 sec
+0.59user 0.70system 0:01.30elapsed 99%CPU (0avgtext+0avgdata 5358008maxresident)k
+0inputs+40outputs (0major+51954minor)pagefaults 0swaps
+```
+### ctest_with_model_release
+
+Runs ctest with model files in release mode
+- status: 0
+```
++ LLAMACPP_TEST_MODELFILE=/mnt/llama.cpp/models/pythia/1.4B/ggml-model-f16.gguf
++ time ctest --output-on-failure -L model
+Test project /home/ggml/work/llama.cpp/build-ci-release
+    Start 29: test-model-load-cancel
+1/2 Test #29: test-model-load-cancel ...........   Passed    0.00 sec
+    Start 30: test-autorelease
+2/2 Test #30: test-autorelease .................   Passed    1.16 sec
+
+100% tests passed, 0 tests failed out of 2
+
+Label Time Summary:
+model    =   1.16 sec*proc (2 tests)
+
+Total Test time (real) =   1.16 sec
+0.48user 0.69system 0:01.17elapsed 100%CPU (0avgtext+0avgdata 5352744maxresident)k
+0inputs+40outputs (0major+51714minor)pagefaults 0swaps
+```
