@@ -1,0 +1,778 @@
++ ./bin/llama-save-load-state --model ../models-mnt/pythia/1.4B/ggml-model-q4_0.gguf -ngl 99 -c 0
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.226 I build: 5635 (2db432750) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for aarch64-linux-gnu
+0.00.013.548 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q4_0.gguf (version GGUF V3 (latest))
+0.00.013.570 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.013.578 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.013.579 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.013.580 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.013.581 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.013.581 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.013.584 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.013.585 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.013.586 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.013.586 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.013.587 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.013.588 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.013.589 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.013.603 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.013.604 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.013.605 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.021.059 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.023.184 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.030.075 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.030.085 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.030.086 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.030.087 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.030.088 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.030.089 I llama_model_loader: - kv  22:                          general.file_type u32              = 2
+0.00.030.091 I llama_model_loader: - type  f32:  194 tensors
+0.00.030.091 I llama_model_loader: - type q4_0:   97 tensors
+0.00.030.092 I llama_model_loader: - type q6_K:    1 tensors
+0.00.030.094 I print_info: file format = GGUF V3 (latest)
+0.00.030.095 I print_info: file type   = Q4_0
+0.00.030.098 I print_info: file size   = 786.31 MiB (4.66 BPW) 
+0.00.077.181 I load: special tokens cache size = 25
+0.00.097.431 I load: token to piece cache size = 0.2984 MB
+0.00.097.459 I print_info: arch             = gptneox
+0.00.097.463 I print_info: vocab_only       = 0
+0.00.097.464 I print_info: n_ctx_train      = 2048
+0.00.097.464 I print_info: n_embd           = 2048
+0.00.097.465 I print_info: n_layer          = 24
+0.00.097.484 I print_info: n_head           = 16
+0.00.097.491 I print_info: n_head_kv        = 16
+0.00.097.492 I print_info: n_rot            = 32
+0.00.097.492 I print_info: n_swa            = 0
+0.00.097.494 I print_info: is_swa_any       = 0
+0.00.097.494 I print_info: n_embd_head_k    = 128
+0.00.097.495 I print_info: n_embd_head_v    = 128
+0.00.097.497 I print_info: n_gqa            = 1
+0.00.097.498 I print_info: n_embd_k_gqa     = 2048
+0.00.097.500 I print_info: n_embd_v_gqa     = 2048
+0.00.097.503 I print_info: f_norm_eps       = 1.0e-05
+0.00.097.503 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.097.504 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.097.504 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.097.505 I print_info: f_logit_scale    = 0.0e+00
+0.00.097.505 I print_info: f_attn_scale     = 0.0e+00
+0.00.097.507 I print_info: n_ff             = 8192
+0.00.097.507 I print_info: n_expert         = 0
+0.00.097.508 I print_info: n_expert_used    = 0
+0.00.097.509 I print_info: causal attn      = 1
+0.00.097.509 I print_info: pooling type     = 0
+0.00.097.510 I print_info: rope type        = 2
+0.00.097.510 I print_info: rope scaling     = linear
+0.00.097.512 I print_info: freq_base_train  = 10000.0
+0.00.097.513 I print_info: freq_scale_train = 1
+0.00.097.513 I print_info: n_ctx_orig_yarn  = 2048
+0.00.097.514 I print_info: rope_finetuned   = unknown
+0.00.097.514 I print_info: ssm_d_conv       = 0
+0.00.097.515 I print_info: ssm_d_inner      = 0
+0.00.097.515 I print_info: ssm_d_state      = 0
+0.00.097.516 I print_info: ssm_dt_rank      = 0
+0.00.097.516 I print_info: ssm_dt_b_c_rms   = 0
+0.00.097.517 I print_info: model type       = 1.4B
+0.00.097.518 I print_info: model params     = 1.41 B
+0.00.097.518 I print_info: general.name     = 1.4B
+0.00.097.521 I print_info: vocab type       = BPE
+0.00.097.523 I print_info: n_vocab          = 50304
+0.00.097.523 I print_info: n_merges         = 50009
+0.00.097.524 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.097.525 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.097.525 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.097.526 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.097.526 I print_info: LF token         = 187 'Ċ'
+0.00.097.527 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.097.527 I print_info: max token length = 1024
+0.00.097.535 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.137.081 I load_tensors:   CPU_REPACK model buffer size =   648.00 MiB
+0.00.137.091 I load_tensors:   CPU_Mapped model buffer size =   777.31 MiB
+...............................................................................
+0.00.519.893 I llama_context: constructing llama_context
+0.00.519.901 I llama_context: n_seq_max     = 1
+0.00.519.902 I llama_context: n_ctx         = 2048
+0.00.519.902 I llama_context: n_ctx_per_seq = 2048
+0.00.519.902 I llama_context: n_batch       = 2048
+0.00.519.903 I llama_context: n_ubatch      = 512
+0.00.519.903 I llama_context: causal_attn   = 1
+0.00.519.904 I llama_context: flash_attn    = 0
+0.00.519.908 I llama_context: freq_base     = 10000.0
+0.00.519.909 I llama_context: freq_scale    = 1
+0.00.519.945 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.00.520.051 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.00.627.518 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.636.855 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.00.636.867 I llama_context: graph nodes  = 1063
+0.00.636.867 I llama_context: graph splits = 1
+0.00.636.874 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.636.874 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+main : serialized state into 988319 out of a maximum of 988319 bytes
+0.01.011.456 I llama_context: constructing llama_context
+0.01.011.474 I llama_context: n_seq_max     = 1
+0.01.011.475 I llama_context: n_ctx         = 2048
+0.01.011.475 I llama_context: n_ctx_per_seq = 2048
+0.01.011.476 I llama_context: n_batch       = 2048
+0.01.011.476 I llama_context: n_ubatch      = 512
+0.01.011.477 I llama_context: causal_attn   = 1
+0.01.011.477 I llama_context: flash_attn    = 0
+0.01.011.482 I llama_context: freq_base     = 10000.0
+0.01.011.483 I llama_context: freq_scale    = 1
+0.01.011.496 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.01.011.576 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.01.120.594 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.01.129.649 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.01.129.657 I llama_context: graph nodes  = 1063
+0.01.129.658 I llama_context: graph splits = 1
+main : deserialized state from 988319 out of a maximum of 988319 bytes
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 4, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 4, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 4, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 4, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 4, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 4, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 4, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 4, n_seq_tokens = 1
+    seq_id[3][0] = 0
+
+first run: The quick brown fox jumpss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ overs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ lazys = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ Dogs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+."s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Runs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+,s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ runs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+,s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ runs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+!"s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Is = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+'ms = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+
+
+second run: The quick brown fox jumpss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ overs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ lazys = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ Dogs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+."s = 0, j = 0, i0.01.451.277 I llama_context: constructing llama_context
+0.01.451.295 I llama_context: n_seq_max     = 1
+0.01.451.296 I llama_context: n_ctx         = 2048
+0.01.451.296 I llama_context: n_ctx_per_seq = 2048
+0.01.451.297 I llama_context: n_batch       = 2048
+0.01.451.297 I llama_context: n_ubatch      = 512
+0.01.451.298 I llama_context: causal_attn   = 1
+0.01.451.298 I llama_context: flash_attn    = 0
+0.01.451.303 I llama_context: freq_base     = 10000.0
+0.01.451.304 I llama_context: freq_scale    = 1
+0.01.451.317 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.01.451.413 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.01.557.547 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.01.566.672 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.01.566.680 I llama_context: graph nodes  = 1063
+0.01.566.680 I llama_context: graph splits = 1
+main : deserialized state from 988319 out of a maximum of 988319 bytes
+main : seq 0 copied, 787068 bytes
+main : kv cache cleared
+main : seq 1 restored, 787068 bytes
+dx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Runs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+,s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ runs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+,s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ runs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+!"s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+Is = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+'ms = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+
+
+single seq run: The quick brown foxs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 4
+    seq_id[0][0] = 1
+s = 0, j = 1, idx = 1, n_seqs = 1, n_seq_tokens = 4
+    seq_id[1][0] = 1
+s = 0, j = 2, idx = 2, n_seqs = 1, n_seq_tokens = 4
+    seq_id[2][0] = 1
+s = 0, j = 3, idx = 3, n_seqs = 1, n_seq_tokens = 4
+    seq_id[3][0] = 1
+ jumpss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ overs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ lazys = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ Dogs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+."s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+Runs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+,s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ runs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+,s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ runs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+!"s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ "s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+Is = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[
+main : success
+0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+'ms = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+
+
+real	0m2.048s
+user	0m6.858s
+sys	0m0.692s
++ ./bin/llama-save-load-state --model ../models-mnt/pythia/1.4B/ggml-model-q4_0.gguf -ngl 99 -c 0 -fa
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.232 I build: 5635 (2db432750) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for aarch64-linux-gnu
+0.00.013.435 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q4_0.gguf (version GGUF V3 (latest))
+0.00.013.459 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.013.466 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.013.467 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.013.468 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.013.469 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.013.469 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.013.472 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.013.473 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.013.473 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.013.474 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.013.475 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.013.476 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.013.477 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.013.490 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.013.490 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.013.491 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.021.027 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.023.070 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.030.182 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.030.192 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.030.193 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.030.194 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.030.194 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.030.195 I llama_model_loader: - kv  22:                          general.file_type u32              = 2
+0.00.030.198 I llama_model_loader: - type  f32:  194 tensors
+0.00.030.199 I llama_model_loader: - type q4_0:   97 tensors
+0.00.030.199 I llama_model_loader: - type q6_K:    1 tensors
+0.00.030.202 I print_info: file format = GGUF V3 (latest)
+0.00.030.203 I print_info: file type   = Q4_0
+0.00.030.207 I print_info: file size   = 786.31 MiB (4.66 BPW) 
+0.00.078.260 I load: special tokens cache size = 25
+0.00.100.014 I load: token to piece cache size = 0.2984 MB
+0.00.100.042 I print_info: arch             = gptneox
+0.00.100.043 I print_info: vocab_only       = 0
+0.00.100.043 I print_info: n_ctx_train      = 2048
+0.00.100.043 I print_info: n_embd           = 2048
+0.00.100.044 I print_info: n_layer          = 24
+0.00.100.065 I print_info: n_head           = 16
+0.00.100.073 I print_info: n_head_kv        = 16
+0.00.100.073 I print_info: n_rot            = 32
+0.00.100.074 I print_info: n_swa            = 0
+0.00.100.075 I print_info: is_swa_any       = 0
+0.00.100.075 I print_info: n_embd_head_k    = 128
+0.00.100.076 I print_info: n_embd_head_v    = 128
+0.00.100.078 I print_info: n_gqa            = 1
+0.00.100.080 I print_info: n_embd_k_gqa     = 2048
+0.00.100.081 I print_info: n_embd_v_gqa     = 2048
+0.00.100.083 I print_info: f_norm_eps       = 1.0e-05
+0.00.100.084 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.100.084 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.100.085 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.100.085 I print_info: f_logit_scale    = 0.0e+00
+0.00.100.086 I print_info: f_attn_scale     = 0.0e+00
+0.00.100.087 I print_info: n_ff             = 8192
+0.00.100.087 I print_info: n_expert         = 0
+0.00.100.088 I print_info: n_expert_used    = 0
+0.00.100.088 I print_info: causal attn      = 1
+0.00.100.088 I print_info: pooling type     = 0
+0.00.100.089 I print_info: rope type        = 2
+0.00.100.089 I print_info: rope scaling     = linear
+0.00.100.090 I print_info: freq_base_train  = 10000.0
+0.00.100.091 I print_info: freq_scale_train = 1
+0.00.100.091 I print_info: n_ctx_orig_yarn  = 2048
+0.00.100.092 I print_info: rope_finetuned   = unknown
+0.00.100.092 I print_info: ssm_d_conv       = 0
+0.00.100.093 I print_info: ssm_d_inner      = 0
+0.00.100.093 I print_info: ssm_d_state      = 0
+0.00.100.094 I print_info: ssm_dt_rank      = 0
+0.00.100.095 I print_info: ssm_dt_b_c_rms   = 0
+0.00.100.095 I print_info: model type       = 1.4B
+0.00.100.096 I print_info: model params     = 1.41 B
+0.00.100.096 I print_info: general.name     = 1.4B
+0.00.100.100 I print_info: vocab type       = BPE
+0.00.100.102 I print_info: n_vocab          = 50304
+0.00.100.103 I print_info: n_merges         = 50009
+0.00.100.103 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.100.103 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.100.104 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.100.105 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.100.105 I print_info: LF token         = 187 'Ċ'
+0.00.100.106 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.100.107 I print_info: max token length = 1024
+0.00.100.115 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.139.168 I load_tensors:   CPU_REPACK model buffer size =   648.00 MiB
+0.00.139.180 I load_tensors:   CPU_Mapped model buffer size =   777.31 MiB
+...............................................................................
+0.00.523.185 I llama_context: constructing llama_context
+0.00.523.194 I llama_context: n_seq_max     = 1
+0.00.523.194 I llama_context: n_ctx         = 2048
+0.00.523.194 I llama_context: n_ctx_per_seq = 2048
+0.00.523.195 I llama_context: n_batch       = 2048
+0.00.523.195 I llama_context: n_ubatch      = 512
+0.00.523.196 I llama_context: causal_attn   = 1
+0.00.523.196 I llama_context: flash_attn    = 1
+0.00.523.199 I llama_context: freq_base     = 10000.0
+0.00.523.200 I llama_context: freq_scale    = 1
+0.00.523.238 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.00.523.330 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.00.635.082 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.644.287 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.00.644.296 I llama_context: graph nodes  = 968
+0.00.644.297 I llama_context: graph splits = 1
+0.00.644.303 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.644.303 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+main : serialized state into 988319 out of a maximum of 988319 bytes
+0.01.004.968 I llama_context: constructing llama_context
+0.01.004.991 I llama_context: n_seq_max     = 1
+0.01.004.992 I llama_context: n_ctx         = 2048
+0.01.004.992 I llama_context: n_ctx_per_seq = 2048
+0.01.004.993 I llama_context: n_batch       = 2048
+0.01.004.993 I llama_context: n_ubatch      = 512
+0.01.004.993 I llama_context: causal_attn   = 1
+0.01.004.994 I llama_context: flash_attn    = 1
+0.01.004.999 I llama_context: freq_base     = 10000.0
+0.01.004.999 I llama_context: freq_scale    = 1
+0.01.005.015 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.01.005.095 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.01.115.191 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.01.124.185 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.01.124.194 I llama_context: graph nodes  = 968
+0.01.124.194 I llama_context: graph splits = 1
+main : deserialized state from 988319 out of a maximum of 988319 bytes
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 2, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 2, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 4, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 4, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 4, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 4, n_seq_tokens = 1
+    seq_id[3][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 4, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 1, j = 0, idx = 1, n_seqs = 4, n_seq_tokens = 1
+    seq_id[1][0] = 0
+s = 2, j = 0, idx = 2, n_seqs = 4, n_seq_tokens = 1
+    seq_id[2][0] = 0
+s = 3, j = 0, idx = 3, n_seqs = 4, n_seq_tokens = 1
+    seq_id[3][0] = 0
+
+first run: The quick brown fox jumpss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ overs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ lazys = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ drunks = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ards = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+.s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ dogs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ls = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ickss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ hiss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ faces = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+"s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+
+
+second run: The quick brown fox jumpss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ overs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ lazys = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ drunks = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ards = 0.01.439.895 I llama_context: constructing llama_context
+0.01.439.916 I llama_context: n_seq_max     = 1
+0.01.439.916 I llama_context: n_ctx         = 2048
+0.01.439.916 I llama_context: n_ctx_per_seq = 2048
+0.01.439.917 I llama_context: n_batch       = 2048
+0.01.439.917 I llama_context: n_ubatch      = 512
+0.01.439.918 I llama_context: causal_attn   = 1
+0.01.439.918 I llama_context: flash_attn    = 1
+0.01.439.923 I llama_context: freq_base     = 10000.0
+0.01.439.923 I llama_context: freq_scale    = 1
+0.01.439.937 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.01.440.015 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.01.549.237 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.01.557.981 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.01.557.990 I llama_context: graph nodes  = 968
+0.01.557.990 I llama_context: graph splits = 1
+main : deserialized state from 988319 out of a maximum of 988319 bytes
+main : seq 0 copied, 787068 bytes
+main : kv cache cleared
+main : seq 1 restored, 787068 bytes
+0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+.s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ dogs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ ls = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ickss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ hiss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+ faces = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+"s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 0
+
+
+
+single seq run: The quick brown foxs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 4
+    seq_id[0][0] = 1
+s = 0, j = 1, idx = 1, n_seqs = 1, n_seq_tokens = 4
+    seq_id[1][0] = 1
+s = 0, j = 2, idx = 2, n_seqs = 1, n_seq_tokens = 4
+    seq_id[2][0] = 1
+s = 0, j = 3, idx = 3, n_seqs = 1, n_seq_tokens = 4
+    seq_id[3][0] = 1
+ jumpss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ overs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ lazys = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ drunks = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ards = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+.s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ thes = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ dogs = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ ls = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ickss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ hiss = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+ faces = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+"s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_s
+main : success
+eq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+s = 0, j = 0, idx = 0, n_seqs = 1, n_seq_tokens = 1
+    seq_id[0][0] = 1
+
+
+real	0m2.030s
+user	0m6.687s
+sys	0m0.705s
