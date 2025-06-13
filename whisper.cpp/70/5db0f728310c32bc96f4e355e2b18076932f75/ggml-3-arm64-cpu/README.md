@@ -1,0 +1,127 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 16:02.40
+- date:    Fri Jun 13 15:56:46 UTC 2025
+- repo:    https://github.com/ggerganov/whisper.cpp
+- commit:  https://github.com/ggerganov/whisper.cpp/commit/705db0f728310c32bc96f4e355e2b18076932f75
+- author:  Daniel Bevenius
+```
+whisper : fix VAD processing for skipped audio segments (#3230)
+
+This commit addresses an issue with token timestamps when audio segments
+are skipped, in `whisper_exp_compute_token_level_timestamps` related to
+the VAD processing and the energy levels.
+
+The motivation for this is that the token timestamps exceed the energy
+array bounds due to segment timing misalignment:
+```console
+                  (skipped introduction)
+                    ↓
+Audio segment:     [2600ms → 5600ms]  (3 seconds of actual audio)
+Energy array:      [0 → 480652]       (samples for 3 seconds)
+Token timestamps:  [3266ms → 3408ms]  (absolute timestamps)
+```
+So both `s0` and `t1` get clamped to the maximum sample index (480652)
+which causes the start/end timestamps to be the same for all the tokens
+after a certain point.
+
+This is addressed by using segment-relative timestamps in the
+`timestamp_to_sample` and `sample_to_timestamp`.
+```
+
+## Environment
+
+```
+GG_BUILD_CLOUD=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-debug
+No tests were found!!!
+
+real	0m0.009s
+user	0m0.005s
+sys	0m0.004s
+```
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-release
+No tests were found!!!
+
+real	0m0.009s
+user	0m0.003s
+sys	0m0.006s
+```
+### bench
+
+Whisper Benchmark Results
+- status: 0
+#### memcpy Benchmark
+
+```
+memcpy:   10.68 GB/s (heat-up)
+memcpy:   10.64 GB/s ( 1 thread)
+memcpy:   10.66 GB/s ( 1 thread)
+memcpy:   19.75 GB/s ( 2 thread)
+memcpy:   27.55 GB/s ( 3 thread)
+memcpy:   33.38 GB/s ( 4 thread)
+sum:    783359998621.000000
+```
+
+#### ggml_mul_mat Benchmark
+
+```
+  64 x   64: Q4_0    28.1 GFLOPS (128 runs) | Q4_1    27.4 GFLOPS (128 runs)
+  64 x   64: Q5_0    21.2 GFLOPS (128 runs) | Q5_1    20.2 GFLOPS (128 runs) | Q8_0    29.6 GFLOPS (128 runs)
+  64 x   64: F16     32.0 GFLOPS (128 runs) | F32     33.8 GFLOPS (128 runs)
+ 128 x  128: Q4_0    55.5 GFLOPS (128 runs) | Q4_1    51.7 GFLOPS (128 runs)
+ 128 x  128: Q5_0    37.8 GFLOPS (128 runs) | Q5_1    34.3 GFLOPS (128 runs) | Q8_0    59.1 GFLOPS (128 runs)
+ 128 x  128: F16     68.0 GFLOPS (128 runs) | F32     55.3 GFLOPS (128 runs)
+ 256 x  256: Q4_0    72.6 GFLOPS (128 runs) | Q4_1    66.0 GFLOPS (128 runs)
+ 256 x  256: Q5_0    48.9 GFLOPS (128 runs) | Q5_1    43.5 GFLOPS (128 runs) | Q8_0    79.9 GFLOPS (128 runs)
+ 256 x  256: F16     94.6 GFLOPS (128 runs) | F32     65.6 GFLOPS (128 runs)
+ 512 x  512: Q4_0    80.9 GFLOPS (128 runs) | Q4_1    73.4 GFLOPS (128 runs)
+ 512 x  512: Q5_0    55.6 GFLOPS (128 runs) | Q5_1    48.8 GFLOPS (128 runs) | Q8_0    91.3 GFLOPS (128 runs)
+ 512 x  512: F16    112.1 GFLOPS (128 runs) | F32     66.2 GFLOPS (128 runs)
+1024 x 1024: Q4_0    86.4 GFLOPS ( 41 runs) | Q4_1    78.1 GFLOPS ( 37 runs)
+1024 x 1024: Q5_0    59.6 GFLOPS ( 28 runs) | Q5_1    51.1 GFLOPS ( 24 runs) | Q8_0    97.9 GFLOPS ( 46 runs)
+1024 x 1024: F16    122.8 GFLOPS ( 58 runs) | F32     63.6 GFLOPS ( 30 runs)
+2048 x 2048: Q4_0    89.5 GFLOPS (  6 runs) | Q4_1    80.2 GFLOPS (  5 runs)
+2048 x 2048: Q5_0    61.9 GFLOPS (  4 runs) | Q5_1    53.3 GFLOPS (  4 runs) | Q8_0   102.5 GFLOPS (  6 runs)
+2048 x 2048: F16    122.1 GFLOPS (  8 runs) | F32     55.5 GFLOPS (  4 runs)
+4096 x 4096: Q4_0    90.9 GFLOPS (  3 runs) | Q4_1    81.3 GFLOPS (  3 runs)
+4096 x 4096: Q5_0    62.0 GFLOPS (  3 runs) | Q5_1    53.6 GFLOPS (  3 runs) | Q8_0   100.9 GFLOPS (  3 runs)
+4096 x 4096: F16    105.7 GFLOPS (  3 runs) | F32     49.3 GFLOPS (  3 runs)
+```
+
+#### Model Benchmarks
+
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             NEON |       tiny.en |   4 |   0 |  543.50 |    2.14 |    1.05 |    0.80 | 705db0f7 |
+|             NEON |          tiny |   4 |   0 |  547.30 |    2.18 |    1.05 |    0.80 | 705db0f7 |
+|             NEON |       base.en |   4 |   0 | 1230.27 |    4.49 |    1.99 |    1.39 | 705db0f7 |
+|             NEON |          base |   4 |   0 | 1232.97 |    4.54 |    2.00 |    1.39 | 705db0f7 |
+|             NEON |      small.en |   4 |   0 | 4358.64 |   12.66 |    5.51 |    3.78 | 705db0f7 |
+|             NEON |         small |   4 |   0 | 4381.54 |   12.79 |    5.58 |    3.78 | 705db0f7 |
+|             NEON |     medium.en |   4 |   0 | 13979.68 |   36.14 |   15.00 |   10.67 | 705db0f7 |
+|             NEON |        medium |   4 |   0 | 13953.52 |   35.70 |   14.91 |   10.65 | 705db0f7 |
+|             NEON |      large-v1 |   4 |   0 | 26408.30 |   65.64 |   27.26 |   19.56 | 705db0f7 |
+|             NEON |      large-v2 |   4 |   0 | 26411.72 |   65.61 |   27.32 |   19.56 | 705db0f7 |
+|             NEON |      large-v3 |   4 |   0 | 26502.23 |   65.22 |   27.40 |   19.59 | 705db0f7 |
+|             NEON | large-v3-turbo |   4 |   0 | 24168.97 |   10.82 |    4.68 |    3.44 | 705db0f7 |
+
