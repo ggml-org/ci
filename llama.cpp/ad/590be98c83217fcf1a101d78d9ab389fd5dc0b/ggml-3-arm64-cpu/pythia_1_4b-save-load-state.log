@@ -1,0 +1,330 @@
++ ./bin/llama-save-load-state --model ../models-mnt/pythia/1.4B/ggml-model-q4_0.gguf -ngl 99 -c 0
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.232 I build: 5682 (ad590be98) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for aarch64-linux-gnu
+0.00.013.236 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q4_0.gguf (version GGUF V3 (latest))
+0.00.013.262 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.013.270 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.013.271 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.013.272 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.013.272 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.013.273 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.013.276 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.013.277 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.013.278 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.013.278 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.013.279 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.013.280 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.013.281 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.013.295 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.013.296 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.013.296 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.021.067 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.023.113 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.030.452 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.030.465 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.030.466 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.030.467 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.030.467 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.030.468 I llama_model_loader: - kv  22:                          general.file_type u32              = 2
+0.00.030.471 I llama_model_loader: - type  f32:  194 tensors
+0.00.030.471 I llama_model_loader: - type q4_0:   97 tensors
+0.00.030.472 I llama_model_loader: - type q6_K:    1 tensors
+0.00.030.474 I print_info: file format = GGUF V3 (latest)
+0.00.030.475 I print_info: file type   = Q4_0
+0.00.030.479 I print_info: file size   = 786.31 MiB (4.66 BPW) 
+0.00.079.700 I load: special tokens cache size = 25
+0.00.099.799 I load: token to piece cache size = 0.2984 MB
+0.00.099.824 I print_info: arch             = gptneox
+0.00.099.829 I print_info: vocab_only       = 0
+0.00.099.830 I print_info: n_ctx_train      = 2048
+0.00.099.830 I print_info: n_embd           = 2048
+0.00.099.830 I print_info: n_layer          = 24
+0.00.099.851 I print_info: n_head           = 16
+0.00.099.858 I print_info: n_head_kv        = 16
+0.00.099.859 I print_info: n_rot            = 32
+0.00.099.860 I print_info: n_swa            = 0
+0.00.099.862 I print_info: is_swa_any       = 0
+0.00.099.862 I print_info: n_embd_head_k    = 128
+0.00.099.862 I print_info: n_embd_head_v    = 128
+0.00.099.864 I print_info: n_gqa            = 1
+0.00.099.866 I print_info: n_embd_k_gqa     = 2048
+0.00.099.868 I print_info: n_embd_v_gqa     = 2048
+0.00.099.870 I print_info: f_norm_eps       = 1.0e-05
+0.00.099.870 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.099.871 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.099.872 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.099.872 I print_info: f_logit_scale    = 0.0e+00
+0.00.099.873 I print_info: f_attn_scale     = 0.0e+00
+0.00.099.875 I print_info: n_ff             = 8192
+0.00.099.875 I print_info: n_expert         = 0
+0.00.099.876 I print_info: n_expert_used    = 0
+0.00.099.876 I print_info: causal attn      = 1
+0.00.099.877 I print_info: pooling type     = 0
+0.00.099.877 I print_info: rope type        = 2
+0.00.099.877 I print_info: rope scaling     = linear
+0.00.099.879 I print_info: freq_base_train  = 10000.0
+0.00.099.880 I print_info: freq_scale_train = 1
+0.00.099.881 I print_info: n_ctx_orig_yarn  = 2048
+0.00.099.881 I print_info: rope_finetuned   = unknown
+0.00.099.882 I print_info: ssm_d_conv       = 0
+0.00.099.882 I print_info: ssm_d_inner      = 0
+0.00.099.883 I print_info: ssm_d_state      = 0
+0.00.099.883 I print_info: ssm_dt_rank      = 0
+0.00.099.883 I print_info: ssm_dt_b_c_rms   = 0
+0.00.099.884 I print_info: model type       = 1.4B
+0.00.099.885 I print_info: model params     = 1.41 B
+0.00.099.885 I print_info: general.name     = 1.4B
+0.00.099.888 I print_info: vocab type       = BPE
+0.00.099.889 I print_info: n_vocab          = 50304
+0.00.099.889 I print_info: n_merges         = 50009
+0.00.099.890 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.099.891 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.099.891 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.099.892 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.099.892 I print_info: LF token         = 187 'Ċ'
+0.00.099.893 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.099.894 I print_info: max token length = 1024
+0.00.099.895 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.139.900 I load_tensors:   CPU_REPACK model buffer size =   648.00 MiB
+0.00.139.910 I load_tensors:   CPU_Mapped model buffer size =   777.31 MiB
+...............................................................................
+0.00.523.590 I llama_context: constructing llama_context
+0.00.523.599 I llama_context: n_seq_max     = 1
+0.00.523.600 I llama_context: n_ctx         = 2048
+0.00.523.600 I llama_context: n_ctx_per_seq = 2048
+0.00.523.600 I llama_context: n_batch       = 2048
+0.00.523.601 I llama_context: n_ubatch      = 512
+0.00.523.601 I llama_context: causal_attn   = 1
+0.00.523.602 I llama_context: flash_attn    = 0
+0.00.523.606 I llama_context: freq_base     = 10000.0
+0.00.523.607 I llama_context: freq_scale    = 1
+0.00.523.635 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.00.523.722 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.00.633.969 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.643.346 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.00.643.355 I llama_context: graph nodes  = 1063
+0.00.643.355 I llama_context: graph splits = 1
+0.00.643.363 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.643.363 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+main : serialized state into 988319 out of a maximum of 988319 bytes
+0.01.016.234 I llama_context: constructing llama_context
+0.01.016.254 I llama_context: n_seq_max     = 1
+0.01.016.255 I llama_context: n_ctx         = 2048
+0.01.016.256 I llama_context: n_ctx_per_seq = 2048
+0.01.016.256 I llama_context: n_batch       = 2048
+0.01.016.256 I llama_context: n_ubatch      = 512
+0.01.016.257 I llama_context: causal_attn   = 1
+0.01.016.258 I llama_context: flash_attn    = 0
+0.01.016.263 I llama_context: freq_base     = 10000.0
+0.01.016.264 I llama_context: freq_scale    = 1
+0.01.016.276 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.01.016.388 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.01.127.661 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.01.136.705 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.01.136.712 I llama_context: graph nodes  = 1063
+0.01.136.712 I llama_context: graph splits = 1
+main : deserialized state from 988319 out of a maximum of 988319 bytes
+0.01.468.433 I llama_context: constructing llama_context
+0.01.468.454 I llama_context: n_seq_max     = 1
+0.01.468.454 I llama_context: n_ctx         = 2048
+0.01.468.455 I llama_context: n_ctx_per_seq = 2048
+0.01.468.455 I llama_context: n_batch       = 2048
+0.01.468.456 I llama_context: n_ubatch      = 512
+0.01.468.456 I llama_context: causal_attn   = 1
+0.01.468.457 I llama_context: flash_attn    = 0
+0.01.468.462 I llama_context: freq_base     = 10000.0
+0.01.468.463 I llama_context: freq_scale    = 1
+0.01.468.475 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.01.468.557 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.01.576.106 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.01.585.255 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.01.585.264 I llama_context: graph nodes  = 1063
+0.01.585.265 I llama_context: graph splits = 1
+main : deserialized state from 988319 out of a maximum of 988319 bytes
+main : seq 0 copied, 787068 bytes
+main : kv cache cleared
+main : seq 1 restored, 787068 bytes
+
+main : success
+
+first run: The quick brown fox jumps over the lazy Dog." "Run, run, run!" "I'm
+
+
+second run: The quick brown fox jumps over the lazy Dog." "Run, run, run!" "I'm
+
+
+single seq run: The quick brown fox jumps over the lazy Dog." "Run, run, run!" "I'm
+
+real	0m2.076s
+user	0m6.907s
+sys	0m0.710s
++ ./bin/llama-save-load-state --model ../models-mnt/pythia/1.4B/ggml-model-q4_0.gguf -ngl 99 -c 0 -fa
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.000.237 I build: 5682 (ad590be98) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for aarch64-linux-gnu
+0.00.013.383 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q4_0.gguf (version GGUF V3 (latest))
+0.00.013.410 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.013.424 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.013.425 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.013.426 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.013.426 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.013.427 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.013.430 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.013.431 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.013.432 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.013.433 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.013.434 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.013.435 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.013.436 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.013.451 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.013.452 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.013.453 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.020.667 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.022.803 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.029.748 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.029.759 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.029.760 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.029.762 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.029.762 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.029.763 I llama_model_loader: - kv  22:                          general.file_type u32              = 2
+0.00.029.766 I llama_model_loader: - type  f32:  194 tensors
+0.00.029.767 I llama_model_loader: - type q4_0:   97 tensors
+0.00.029.768 I llama_model_loader: - type q6_K:    1 tensors
+0.00.029.771 I print_info: file format = GGUF V3 (latest)
+0.00.029.772 I print_info: file type   = Q4_0
+0.00.029.776 I print_info: file size   = 786.31 MiB (4.66 BPW) 
+0.00.079.680 I load: special tokens cache size = 25
+0.00.099.610 I load: token to piece cache size = 0.2984 MB
+0.00.099.638 I print_info: arch             = gptneox
+0.00.099.639 I print_info: vocab_only       = 0
+0.00.099.640 I print_info: n_ctx_train      = 2048
+0.00.099.641 I print_info: n_embd           = 2048
+0.00.099.641 I print_info: n_layer          = 24
+0.00.099.662 I print_info: n_head           = 16
+0.00.099.669 I print_info: n_head_kv        = 16
+0.00.099.670 I print_info: n_rot            = 32
+0.00.099.670 I print_info: n_swa            = 0
+0.00.099.671 I print_info: is_swa_any       = 0
+0.00.099.672 I print_info: n_embd_head_k    = 128
+0.00.099.672 I print_info: n_embd_head_v    = 128
+0.00.099.674 I print_info: n_gqa            = 1
+0.00.099.676 I print_info: n_embd_k_gqa     = 2048
+0.00.099.678 I print_info: n_embd_v_gqa     = 2048
+0.00.099.680 I print_info: f_norm_eps       = 1.0e-05
+0.00.099.680 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.099.681 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.099.681 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.099.682 I print_info: f_logit_scale    = 0.0e+00
+0.00.099.682 I print_info: f_attn_scale     = 0.0e+00
+0.00.099.683 I print_info: n_ff             = 8192
+0.00.099.684 I print_info: n_expert         = 0
+0.00.099.684 I print_info: n_expert_used    = 0
+0.00.099.685 I print_info: causal attn      = 1
+0.00.099.685 I print_info: pooling type     = 0
+0.00.099.685 I print_info: rope type        = 2
+0.00.099.686 I print_info: rope scaling     = linear
+0.00.099.687 I print_info: freq_base_train  = 10000.0
+0.00.099.688 I print_info: freq_scale_train = 1
+0.00.099.688 I print_info: n_ctx_orig_yarn  = 2048
+0.00.099.688 I print_info: rope_finetuned   = unknown
+0.00.099.689 I print_info: ssm_d_conv       = 0
+0.00.099.690 I print_info: ssm_d_inner      = 0
+0.00.099.691 I print_info: ssm_d_state      = 0
+0.00.099.691 I print_info: ssm_dt_rank      = 0
+0.00.099.691 I print_info: ssm_dt_b_c_rms   = 0
+0.00.099.692 I print_info: model type       = 1.4B
+0.00.099.693 I print_info: model params     = 1.41 B
+0.00.099.694 I print_info: general.name     = 1.4B
+0.00.099.698 I print_info: vocab type       = BPE
+0.00.099.699 I print_info: n_vocab          = 50304
+0.00.099.699 I print_info: n_merges         = 50009
+0.00.099.700 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.099.700 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.099.701 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.099.702 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.099.703 I print_info: LF token         = 187 'Ċ'
+0.00.099.703 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.099.704 I print_info: max token length = 1024
+0.00.099.705 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.139.616 I load_tensors:   CPU_REPACK model buffer size =   648.00 MiB
+0.00.139.628 I load_tensors:   CPU_Mapped model buffer size =   777.31 MiB
+...............................................................................
+0.00.526.018 I llama_context: constructing llama_context
+0.00.526.026 I llama_context: n_seq_max     = 1
+0.00.526.026 I llama_context: n_ctx         = 2048
+0.00.526.027 I llama_context: n_ctx_per_seq = 2048
+0.00.526.027 I llama_context: n_batch       = 2048
+0.00.526.028 I llama_context: n_ubatch      = 512
+0.00.526.028 I llama_context: causal_attn   = 1
+0.00.526.028 I llama_context: flash_attn    = 1
+0.00.526.033 I llama_context: freq_base     = 10000.0
+0.00.526.034 I llama_context: freq_scale    = 1
+0.00.526.060 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.00.526.186 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.00.639.964 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.00.649.291 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.00.649.300 I llama_context: graph nodes  = 968
+0.00.649.300 I llama_context: graph splits = 1
+0.00.649.308 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.649.309 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+main : serialized state into 988319 out of a maximum of 988319 bytes
+0.01.011.952 I llama_context: constructing llama_context
+0.01.011.972 I llama_context: n_seq_max     = 1
+0.01.011.973 I llama_context: n_ctx         = 2048
+0.01.011.973 I llama_context: n_ctx_per_seq = 2048
+0.01.011.973 I llama_context: n_batch       = 2048
+0.01.011.974 I llama_context: n_ubatch      = 512
+0.01.011.974 I llama_context: causal_attn   = 1
+0.01.011.975 I llama_context: flash_attn    = 1
+0.01.011.979 I llama_context: freq_base     = 10000.0
+0.01.011.980 I llama_context: freq_scale    = 1
+0.01.011.995 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.01.012.080 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.01.120.354 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.01.129.434 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.01.129.441 I llama_context: graph nodes  = 968
+0.01.129.442 I llama_context: graph splits = 1
+main : deserialized state from 988319 out of a maximum of 988319 bytes
+0.01.444.287 I llama_context: constructing llama_context
+0.01.444.310 I llama_context: n_seq_max     = 1
+0.01.444.311 I llama_context: n_ctx         = 2048
+0.01.444.311 I llama_context: n_ctx_per_seq = 2048
+0.01.444.312 I llama_context: n_batch       = 2048
+0.01.444.312 I llama_context: n_ubatch      = 512
+0.01.444.312 I llama_context: causal_attn   = 1
+0.01.444.313 I llama_context: flash_attn    = 1
+0.01.444.318 I llama_context: freq_base     = 10000.0
+0.01.444.319 I llama_context: freq_scale    = 1
+0.01.444.332 I llama_context:        CPU  output buffer size =     0.19 MiB
+0.01.444.409 I llama_kv_cache_unified:        CPU KV buffer size =   384.00 MiB
+0.01.555.461 I llama_kv_cache_unified: size =  384.00 MiB (  2048 cells,  24 layers,  1 seqs), K (f16):  192.00 MiB, V (f16):  192.00 MiB
+0.01.564.282 I llama_context:        CPU compute buffer size =   102.25 MiB
+0.01.564.290 I llama_context: graph nodes  = 968
+0.01.564.291 I llama_context: graph splits = 1
+main : deserialized state from 988319 out of a maximum of 988319 bytes
+main : seq 0 copied, 787068 bytes
+main : kv cache cleared
+main : seq 1 restored, 787068 bytes
+
+main : success
+
+first run: The quick brown fox jumps over the lazy drunkard. the dog licks his face"
+
+
+
+
+second run: The quick brown fox jumps over the lazy drunkard. the dog licks his face"
+
+
+
+
+single seq run: The quick brown fox jumps over the lazy drunkard. the dog licks his face"
+
+
+
+real	0m2.043s
+user	0m6.686s
+sys	0m0.704s
