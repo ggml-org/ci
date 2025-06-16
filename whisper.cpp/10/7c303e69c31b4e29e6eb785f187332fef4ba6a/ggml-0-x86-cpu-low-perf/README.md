@@ -1,0 +1,103 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 3:25.52
+- date:    Mon Jun 16 08:17:53 UTC 2025
+- repo:    https://github.com/ggerganov/whisper.cpp
+- commit:  https://github.com/ggerganov/whisper.cpp/commit/107c303e69c31b4e29e6eb785f187332fef4ba6a
+- author:  Sacha Arbonel
+```
+server : graceful shutdown, atomic server state, and health endpoint Improvements (#3243)
+
+* feat(server): implement graceful shutdown and server state management
+
+* refactor(server): use lambda capture by reference in server.cpp
+```
+
+## Environment
+
+```
+GG_BUILD_CLOUD=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+GG_BUILD_LOW_PERF=1
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-debug
+No tests were found!!!
+
+real	0m0.024s
+user	0m0.024s
+sys	0m0.000s
+```
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-release
+No tests were found!!!
+
+real	0m0.024s
+user	0m0.020s
+sys	0m0.004s
+```
+### bench
+
+Whisper Benchmark Results
+- status: 0
+#### memcpy Benchmark
+
+```
+memcpy:   14.51 GB/s (heat-up)
+memcpy:   14.64 GB/s ( 1 thread)
+memcpy:   14.58 GB/s ( 1 thread)
+memcpy:   22.78 GB/s ( 2 thread)
+memcpy:   25.48 GB/s ( 3 thread)
+memcpy:   28.72 GB/s ( 4 thread)
+sum:    -3072000520.000000
+```
+
+#### ggml_mul_mat Benchmark
+
+```
+  64 x   64: Q4_0    17.1 GFLOPS (128 runs) | Q4_1    19.9 GFLOPS (128 runs)
+  64 x   64: Q5_0    19.1 GFLOPS (128 runs) | Q5_1    18.1 GFLOPS (128 runs) | Q8_0    21.5 GFLOPS (128 runs)
+  64 x   64: F16     19.1 GFLOPS (128 runs) | F32     11.6 GFLOPS (128 runs)
+ 128 x  128: Q4_0    38.9 GFLOPS (128 runs) | Q4_1    39.1 GFLOPS (128 runs)
+ 128 x  128: Q5_0    35.3 GFLOPS (128 runs) | Q5_1    32.6 GFLOPS (128 runs) | Q8_0    44.0 GFLOPS (128 runs)
+ 128 x  128: F16     37.7 GFLOPS (128 runs) | F32     25.5 GFLOPS (128 runs)
+ 256 x  256: Q4_0    52.1 GFLOPS (128 runs) | Q4_1    51.8 GFLOPS (128 runs)
+ 256 x  256: Q5_0    44.7 GFLOPS (128 runs) | Q5_1    40.8 GFLOPS (128 runs) | Q8_0    60.7 GFLOPS (128 runs)
+ 256 x  256: F16     51.1 GFLOPS (128 runs) | F32     36.0 GFLOPS (128 runs)
+ 512 x  512: Q4_0    61.2 GFLOPS (128 runs) | Q4_1    60.5 GFLOPS (128 runs)
+ 512 x  512: Q5_0    51.8 GFLOPS (128 runs) | Q5_1    47.0 GFLOPS (128 runs) | Q8_0    72.0 GFLOPS (128 runs)
+ 512 x  512: F16     59.2 GFLOPS (128 runs) | F32     41.2 GFLOPS (128 runs)
+1024 x 1024: Q4_0    67.0 GFLOPS ( 32 runs) | Q4_1    65.9 GFLOPS ( 31 runs)
+1024 x 1024: Q5_0    57.0 GFLOPS ( 27 runs) | Q5_1    50.8 GFLOPS ( 24 runs) | Q8_0    79.5 GFLOPS ( 38 runs)
+1024 x 1024: F16     63.2 GFLOPS ( 30 runs) | F32     41.3 GFLOPS ( 20 runs)
+2048 x 2048: Q4_0    70.4 GFLOPS (  5 runs) | Q4_1    69.0 GFLOPS (  5 runs)
+2048 x 2048: Q5_0    60.0 GFLOPS (  4 runs) | Q5_1    53.1 GFLOPS (  4 runs) | Q8_0    83.9 GFLOPS (  5 runs)
+2048 x 2048: F16     64.8 GFLOPS (  4 runs) | F32     40.4 GFLOPS (  3 runs)
+4096 x 4096: Q4_0    72.0 GFLOPS (  3 runs) | Q4_1    70.2 GFLOPS (  3 runs)
+4096 x 4096: Q5_0    61.2 GFLOPS (  3 runs) | Q5_1    54.0 GFLOPS (  3 runs) | Q8_0    86.0 GFLOPS (  3 runs)
+4096 x 4096: F16     63.2 GFLOPS (  3 runs) | F32     36.1 GFLOPS (  3 runs)
+```
+
+#### Model Benchmarks
+
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             AVX2 |          tiny |   4 |   0 |  946.59 |    2.65 |    1.56 |    1.36 | 107c303e |
+|             AVX2 |          base |   4 |   0 | 2109.46 |    5.01 |    2.70 |    2.38 | 107c303e |
+|             AVX2 |         small |   4 |   0 | 7653.87 |   14.53 |    7.70 |    6.67 | 107c303e |
+
