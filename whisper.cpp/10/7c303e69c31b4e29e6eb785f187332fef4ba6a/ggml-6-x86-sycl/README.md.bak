@@ -1,0 +1,72 @@
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-release
+No tests were found!!!
+
+real	0m0,034s
+user	0m0,018s
+sys	0m0,016s
+```
+### bench
+
+Whisper Benchmark Results
+- status: 0
+#### memcpy Benchmark
+
+```
+memcpy:    5.59 GB/s (heat-up)
+memcpy:    8.96 GB/s ( 1 thread)
+memcpy:    9.16 GB/s ( 1 thread)
+memcpy:   17.19 GB/s ( 2 thread)
+memcpy:   24.57 GB/s ( 3 thread)
+memcpy:   29.39 GB/s ( 4 thread)
+sum:    -3071998578.000000
+```
+
+#### ggml_mul_mat Benchmark
+
+```
+  64 x   64: Q4_0    13.4 GFLOPS (128 runs) | Q4_1    13.5 GFLOPS (128 runs)
+  64 x   64: Q5_0    13.7 GFLOPS (128 runs) | Q5_1    12.6 GFLOPS (128 runs) | Q8_0    14.7 GFLOPS (128 runs)
+  64 x   64: F16     13.0 GFLOPS (128 runs) | F32     19.6 GFLOPS (128 runs)
+ 128 x  128: Q4_0    33.0 GFLOPS (128 runs) | Q4_1    36.8 GFLOPS (128 runs)
+ 128 x  128: Q5_0    42.8 GFLOPS (128 runs) | Q5_1    46.5 GFLOPS (128 runs) | Q8_0    65.9 GFLOPS (128 runs)
+ 128 x  128: F16     57.7 GFLOPS (128 runs) | F32     67.3 GFLOPS (128 runs)
+ 256 x  256: Q4_0    85.5 GFLOPS (128 runs) | Q4_1    79.8 GFLOPS (128 runs)
+ 256 x  256: Q5_0    77.2 GFLOPS (128 runs) | Q5_1    73.1 GFLOPS (128 runs) | Q8_0   104.4 GFLOPS (128 runs)
+ 256 x  256: F16     84.2 GFLOPS (128 runs) | F32     87.9 GFLOPS (128 runs)
+ 512 x  512: Q4_0    97.2 GFLOPS (128 runs) | Q4_1    92.3 GFLOPS (128 runs)
+ 512 x  512: Q5_0    84.2 GFLOPS (128 runs) | Q5_1    80.7 GFLOPS (128 runs) | Q8_0   126.2 GFLOPS (128 runs)
+ 512 x  512: F16     98.4 GFLOPS (128 runs) | F32    100.8 GFLOPS (128 runs)
+1024 x 1024: Q4_0   126.3 GFLOPS ( 59 runs) | Q4_1   126.2 GFLOPS ( 59 runs)
+1024 x 1024: Q5_0   120.0 GFLOPS ( 56 runs) | Q5_1   111.8 GFLOPS ( 53 runs) | Q8_0   169.4 GFLOPS ( 79 runs)
+1024 x 1024: F16    121.9 GFLOPS ( 57 runs) | F32    116.3 GFLOPS ( 55 runs)
+2048 x 2048: Q4_0   148.7 GFLOPS (  9 runs) | Q4_1   122.3 GFLOPS (  8 runs)
+2048 x 2048: Q5_0   116.1 GFLOPS (  7 runs) | Q5_1   113.6 GFLOPS (  7 runs) | Q8_0   172.9 GFLOPS ( 11 runs)
+2048 x 2048: F16    124.7 GFLOPS (  8 runs) | F32    114.3 GFLOPS (  7 runs)
+4096 x 4096: Q4_0   154.2 GFLOPS (  3 runs) | Q4_1   134.2 GFLOPS (  3 runs)
+4096 x 4096: Q5_0   128.7 GFLOPS (  3 runs) | Q5_1   123.3 GFLOPS (  3 runs) | Q8_0   173.1 GFLOPS (  3 runs)
+4096 x 4096: F16    116.2 GFLOPS (  3 runs) | F32     99.5 GFLOPS (  3 runs)
+```
+
+#### Model Benchmarks
+
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             AVX2 |       tiny.en |   4 |   0 |   20.79 |    6.97 |    2.28 |    0.05 | 107c303e |
+|             AVX2 |          tiny |   4 |   0 |   20.82 |    6.98 |    2.32 |    0.05 | 107c303e |
+|             AVX2 |       base.en |   4 |   0 |   35.56 |   10.07 |    3.06 |    0.08 | 107c303e |
+|             AVX2 |          base |   4 |   0 |   36.31 |   10.69 |    3.07 |    0.08 | 107c303e |
+|             AVX2 |      small.en |   4 |   0 |   94.98 |   19.55 |    6.01 |    0.18 | 107c303e |
+|             AVX2 |         small |   4 |   0 |   95.00 |   19.57 |    6.04 |    0.19 | 107c303e |
+|             AVX2 |     medium.en |   4 |   0 |  236.48 |   38.29 |   10.54 |    0.37 | 107c303e |
+|             AVX2 |        medium |   4 |   0 |  237.34 |   37.36 |   10.52 |    0.37 | 107c303e |
+|             AVX2 |      large-v1 |   4 |   0 |  385.50 |   47.80 |   14.73 |    0.56 | 107c303e |
+|             AVX2 |      large-v2 |   4 |   0 |  385.75 |   47.38 |   14.71 |    0.56 | 107c303e |
+|             AVX2 |      large-v3 |   4 |   0 |  384.45 |   47.43 |   14.66 |    0.56 | 107c303e |
+|             AVX2 | large-v3-turbo |   4 |   0 |  353.87 |   11.24 |    3.50 |    0.08 | 107c303e |
+
