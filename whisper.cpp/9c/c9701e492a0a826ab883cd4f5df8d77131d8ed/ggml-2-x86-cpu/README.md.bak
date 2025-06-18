@@ -1,0 +1,85 @@
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-debug
+No tests were found!!!
+
+real	0m0.067s
+user	0m0.055s
+sys	0m0.013s
+```
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-release
+No tests were found!!!
+
+real	0m0.069s
+user	0m0.057s
+sys	0m0.012s
+```
+### bench
+
+Whisper Benchmark Results
+- status: 0
+#### memcpy Benchmark
+
+```
+memcpy:   11.72 GB/s (heat-up)
+memcpy:   11.72 GB/s ( 1 thread)
+memcpy:   11.60 GB/s ( 1 thread)
+memcpy:   23.14 GB/s ( 2 thread)
+memcpy:   32.92 GB/s ( 3 thread)
+memcpy:   44.26 GB/s ( 4 thread)
+sum:    -3071998350.000000
+```
+
+#### ggml_mul_mat Benchmark
+
+```
+  64 x   64: Q4_0    26.8 GFLOPS (128 runs) | Q4_1    28.8 GFLOPS (128 runs)
+  64 x   64: Q5_0    29.2 GFLOPS (128 runs) | Q5_1    28.7 GFLOPS (128 runs) | Q8_0    31.5 GFLOPS (128 runs)
+  64 x   64: F16     29.6 GFLOPS (128 runs) | F32     14.9 GFLOPS (128 runs)
+ 128 x  128: Q4_0    72.2 GFLOPS (128 runs) | Q4_1    69.9 GFLOPS (128 runs)
+ 128 x  128: Q5_0    65.1 GFLOPS (128 runs) | Q5_1    59.4 GFLOPS (128 runs) | Q8_0    81.8 GFLOPS (128 runs)
+ 128 x  128: F16     69.5 GFLOPS (128 runs) | F32     35.9 GFLOPS (128 runs)
+ 256 x  256: Q4_0   112.4 GFLOPS (128 runs) | Q4_1   106.4 GFLOPS (128 runs)
+ 256 x  256: Q5_0    96.7 GFLOPS (128 runs) | Q5_1    92.1 GFLOPS (128 runs) | Q8_0   134.9 GFLOPS (128 runs)
+ 256 x  256: F16     96.3 GFLOPS (128 runs) | F32     55.4 GFLOPS (128 runs)
+ 512 x  512: Q4_0   133.4 GFLOPS (128 runs) | Q4_1   127.3 GFLOPS (128 runs)
+ 512 x  512: Q5_0   109.7 GFLOPS (128 runs) | Q5_1   102.2 GFLOPS (128 runs) | Q8_0   169.1 GFLOPS (128 runs)
+ 512 x  512: F16    114.7 GFLOPS (128 runs) | F32     62.9 GFLOPS (128 runs)
+1024 x 1024: Q4_0   153.6 GFLOPS ( 72 runs) | Q4_1   142.5 GFLOPS ( 67 runs)
+1024 x 1024: Q5_0   125.4 GFLOPS ( 59 runs) | Q5_1   119.5 GFLOPS ( 56 runs) | Q8_0   189.8 GFLOPS ( 89 runs)
+1024 x 1024: F16    124.5 GFLOPS ( 59 runs) | F32     63.7 GFLOPS ( 30 runs)
+2048 x 2048: Q4_0   171.4 GFLOPS ( 10 runs) | Q4_1   149.3 GFLOPS (  9 runs)
+2048 x 2048: Q5_0   138.5 GFLOPS (  9 runs) | Q5_1   131.5 GFLOPS (  8 runs) | Q8_0   202.3 GFLOPS ( 12 runs)
+2048 x 2048: F16    130.1 GFLOPS (  8 runs) | F32     64.6 GFLOPS (  4 runs)
+4096 x 4096: Q4_0   181.4 GFLOPS (  3 runs) | Q4_1   152.5 GFLOPS (  3 runs)
+4096 x 4096: Q5_0   144.7 GFLOPS (  3 runs) | Q5_1   135.7 GFLOPS (  3 runs) | Q8_0   201.3 GFLOPS (  3 runs)
+4096 x 4096: F16    123.4 GFLOPS (  3 runs) | F32     61.5 GFLOPS (  3 runs)
+```
+
+#### Model Benchmarks
+
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             AVX2 |       tiny.en |   4 |   0 |  500.74 |    1.87 |    0.94 |    0.72 | 9cc9701e |
+|             AVX2 |          tiny |   4 |   0 |  500.80 |    1.79 |    0.92 |    0.72 | 9cc9701e |
+|             AVX2 |       base.en |   4 |   0 | 1122.68 |    3.54 |    1.67 |    1.26 | 9cc9701e |
+|             AVX2 |          base |   4 |   0 | 1141.70 |    3.66 |    1.67 |    1.25 | 9cc9701e |
+|             AVX2 |      small.en |   4 |   0 | 4024.11 |   10.35 |    4.65 |    3.51 | 9cc9701e |
+|             AVX2 |         small |   4 |   0 | 4016.82 |   10.30 |    4.61 |    3.52 | 9cc9701e |
+|             AVX2 |     medium.en |   4 |   0 | 12812.80 |   29.23 |   13.04 |    9.94 | 9cc9701e |
+|             AVX2 |        medium |   4 |   0 | 12846.63 |   28.91 |   13.06 |    9.84 | 9cc9701e |
+|             AVX2 |      large-v1 |   4 |   0 | 24271.28 |   52.55 |   23.86 |   18.11 | 9cc9701e |
+|             AVX2 |      large-v2 |   4 |   0 | 24334.92 |   53.12 |   24.06 |   18.11 | 9cc9701e |
+|             AVX2 |      large-v3 |   4 |   0 | 24272.66 |   53.00 |   24.06 |   18.10 | 9cc9701e |
+|             AVX2 | large-v3-turbo |   4 |   0 | 22080.77 |    9.55 |    4.23 |    3.25 | 9cc9701e |
+
