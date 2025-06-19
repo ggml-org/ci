@@ -1,4 +1,4 @@
-+ cmake -DCMAKE_BUILD_TYPE=Release -DLLAMA_FATAL_WARNINGS=ON -DLLAMA_CURL=ON ..
++ cmake -DCMAKE_BUILD_TYPE=Debug -DLLAMA_FATAL_WARNINGS=ON -DLLAMA_CURL=ON ..
 -- The C compiler identification is GNU 11.4.0
 -- The CXX compiler identification is GNU 11.4.0
 -- Detecting C compiler ABI info
@@ -48,8 +48,8 @@
 -- Found CURL: /usr/lib/aarch64-linux-gnu/libcurl.so (found version "7.81.0")  
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-release
+-- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-debug
 
-real	0m2.218s
-user	0m1.419s
-sys	0m0.599s
+real	0m2.214s
+user	0m1.398s
+sys	0m0.621s
