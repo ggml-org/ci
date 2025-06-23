@@ -60,10 +60,10 @@ Call Stack (most recent call first):
 -- Found assembler: /Library/Developer/CommandLineTools/usr/bin/cc
 -- Including METAL backend
 -- Found CURL: /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/lib/libcurl.tbd (found version "8.7.1")
--- Configuring done (3.5s)
+-- Configuring done (3.4s)
 -- Generating done (0.3s)
 -- Build files have been written to: /Users/ggml/work/llama.cpp/build-ci-debug
 
-real	0m3.843s
-user	0m1.089s
-sys	0m1.507s
+real	0m3.717s
+user	0m1.020s
+sys	0m1.519s
