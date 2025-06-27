@@ -1,0 +1,14 @@
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             NEON |       tiny.en |   4 |   0 |  546.73 |    2.11 |    1.06 |    0.79 | f8abbeb2 |
+|             NEON |          tiny |   4 |   0 |  546.43 |    2.12 |    1.05 |    0.79 | f8abbeb2 |
+|             NEON |       base.en |   4 |   0 | 1236.50 |    4.38 |    1.95 |    1.39 | f8abbeb2 |
+|             NEON |          base |   4 |   0 | 1237.13 |    4.39 |    1.95 |    1.38 | f8abbeb2 |
+|             NEON |      small.en |   4 |   0 | 4404.55 |   12.24 |    5.41 |    3.80 | f8abbeb2 |
+|             NEON |         small |   4 |   0 | 4407.29 |   12.32 |    5.46 |    3.81 | f8abbeb2 |
+|             NEON |     medium.en |   4 |   0 | 14081.38 |   34.08 |   14.71 |   10.70 | f8abbeb2 |
+|             NEON |        medium |   4 |   0 | 14074.12 |   34.11 |   14.83 |   10.75 | f8abbeb2 |
+|             NEON |      large-v1 |   4 |   0 | 26610.67 |   61.45 |   26.46 |   19.67 | f8abbeb2 |
+|             NEON |      large-v2 |   4 |   0 | 26619.91 |   61.47 |   26.39 |   19.69 | f8abbeb2 |
+|             NEON |      large-v3 |   4 |   0 | 26551.07 |   61.08 |   26.35 |   19.62 | f8abbeb2 |
+|             NEON | large-v3-turbo |   4 |   0 | 24360.06 |   10.28 |    4.64 |    3.45 | f8abbeb2 |
