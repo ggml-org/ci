@@ -1,5 +1,0 @@
-rm: cannot remove '/home/ggml/results/ggml/48/9716ba99ecd51164f79e8c6fec0b5bf634eac9/ggml-6-x86-sycl/*.log': No such file or directory
-rm: cannot remove '/home/ggml/results/ggml/48/9716ba99ecd51164f79e8c6fec0b5bf634eac9/ggml-6-x86-sycl/*.exit': No such file or directory
-rm: cannot remove '/home/ggml/results/ggml/48/9716ba99ecd51164f79e8c6fec0b5bf634eac9/ggml-6-x86-sycl/*.md': No such file or directory
-Not detected ONEAPI_ROOT, please install oneAPI base toolkit and enable it by:
-source /opt/intel/oneapi/setvars.sh

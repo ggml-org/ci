@@ -1,7 +1,0 @@
-whisper_init_from_file_with_params_no_state: loading model from '/home/ggml/.cache/results/whisper.cpp/models/ggml-large-v2.bin'
-whisper_init_with_params_no_state: use gpu    = 1
-whisper_init_with_params_no_state: flash attn = 0
-whisper_init_with_params_no_state: gpu_device = 0
-whisper_init_with_params_no_state: dtw        = 0
-terminate called after throwing an instance of 'std::runtime_error'
-  what():  can not find preferred GPU platform

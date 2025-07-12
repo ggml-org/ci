@@ -1,5 +1,0 @@
-|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
-|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
-|             NEON |          tiny |   4 |   0 |  549.97 |    2.18 |    1.09 |    0.80 | 9cfcd6cc |
-|             NEON |          base |   4 |   0 | 1248.43 |    4.45 |    1.97 |    1.39 | 9cfcd6cc |
-|             NEON |         small |   4 |   0 | 4423.41 |   12.55 |    5.49 |    3.82 | 9cfcd6cc |
