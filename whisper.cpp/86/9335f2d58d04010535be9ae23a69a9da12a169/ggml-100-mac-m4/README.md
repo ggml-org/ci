@@ -1,0 +1,114 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 142.85
+- date:    Sat Jul 12 06:30:29 PDT 2025
+- repo:    https://github.com/ggerganov/whisper.cpp
+- commit:  https://github.com/ggerganov/whisper.cpp/commit/869335f2d58d04010535be9ae23a69a9da12a169
+- author:  accessiblepixel
+```
+server : add dtw.params for v3-large-turbo (#3307)
+
+* Add DTW model large-v3-turbo parameters to server.cpp example
+
+DTW support is available in whispercpp and the large-v3-turbo model has already been added to the sources, but the large-v3-turbo model hasn't been added to the server.cpp file to make use of it. This commit hopefully corrects that issue.
+
+* match original linebreak of original server.cpp file after adding large.v3.turbo dtw
+```
+
+## Environment
+
+```
+GG_BUILD_CLOUD=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+GG_BUILD_METAL=1
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /Users/ggml/work/whisper.cpp/build-ci-debug
+No tests were found!!!
+
+real	0m0.020s
+user	0m0.003s
+sys	0m0.006s
+```
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /Users/ggml/work/whisper.cpp/build-ci-release
+No tests were found!!!
+
+real	0m0.011s
+user	0m0.003s
+sys	0m0.006s
+```
+### bench
+
+Whisper Benchmark Results
+- status: 0
+#### memcpy Benchmark
+
+```
+memcpy:   31.26 GB/s (heat-up)
+memcpy:   41.30 GB/s ( 1 thread)
+memcpy:   40.70 GB/s ( 1 thread)
+memcpy:   50.06 GB/s ( 2 thread)
+memcpy:   50.50 GB/s ( 3 thread)
+memcpy:   49.94 GB/s ( 4 thread)
+sum:    -3072000740.000000
+```
+
+#### ggml_mul_mat Benchmark
+
+```
+  64 x   64: Q4_0    12.6 GFLOPS (128 runs) | Q4_1    13.1 GFLOPS (128 runs)
+  64 x   64: Q5_0    11.8 GFLOPS (128 runs) | Q5_1    12.7 GFLOPS (128 runs) | Q8_0    15.1 GFLOPS (128 runs)
+  64 x   64: F16     15.6 GFLOPS (128 runs) | F32     15.2 GFLOPS (128 runs)
+ 128 x  128: Q4_0   100.2 GFLOPS (128 runs) | Q4_1    95.1 GFLOPS (128 runs)
+ 128 x  128: Q5_0    61.7 GFLOPS (128 runs) | Q5_1    60.4 GFLOPS (128 runs) | Q8_0    93.8 GFLOPS (128 runs)
+ 128 x  128: F16     75.6 GFLOPS (128 runs) | F32     61.9 GFLOPS (128 runs)
+ 256 x  256: Q4_0   267.8 GFLOPS (128 runs) | Q4_1   235.3 GFLOPS (128 runs)
+ 256 x  256: Q5_0   155.6 GFLOPS (128 runs) | Q5_1   144.4 GFLOPS (128 runs) | Q8_0   290.3 GFLOPS (128 runs)
+ 256 x  256: F16    188.9 GFLOPS (128 runs) | F32    121.4 GFLOPS (128 runs)
+ 512 x  512: Q4_0   363.4 GFLOPS (128 runs) | Q4_1   341.5 GFLOPS (128 runs)
+ 512 x  512: Q5_0   198.7 GFLOPS (128 runs) | Q5_1   175.2 GFLOPS (128 runs) | Q8_0   429.1 GFLOPS (128 runs)
+ 512 x  512: F16    271.3 GFLOPS (128 runs) | F32    157.5 GFLOPS (128 runs)
+1024 x 1024: Q4_0   416.5 GFLOPS (128 runs) | Q4_1   375.1 GFLOPS (128 runs)
+1024 x 1024: Q5_0   208.5 GFLOPS ( 98 runs) | Q5_1   188.1 GFLOPS ( 88 runs) | Q8_0   501.5 GFLOPS (128 runs)
+1024 x 1024: F16    300.7 GFLOPS (128 runs) | F32    159.5 GFLOPS ( 75 runs)
+2048 x 2048: Q4_0   416.6 GFLOPS ( 25 runs) | Q4_1   374.8 GFLOPS ( 22 runs)
+2048 x 2048: Q5_0   220.7 GFLOPS ( 13 runs) | Q5_1   191.5 GFLOPS ( 12 runs) | Q8_0   508.8 GFLOPS ( 30 runs)
+2048 x 2048: F16    300.9 GFLOPS ( 18 runs) | F32    131.2 GFLOPS (  8 runs)
+4096 x 4096: Q4_0   427.9 GFLOPS (  4 runs) | Q4_1   380.4 GFLOPS (  3 runs)
+4096 x 4096: Q5_0   225.3 GFLOPS (  3 runs) | Q5_1   193.6 GFLOPS (  3 runs) | Q8_0   517.0 GFLOPS (  4 runs)
+4096 x 4096: F16    234.8 GFLOPS (  3 runs) | F32    117.7 GFLOPS (  3 runs)
+```
+
+#### Model Benchmarks
+
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             NEON |       tiny.en |   4 |   0 |   34.32 |    1.36 |    0.38 |    0.03 | 869335f2 |
+|             NEON |          tiny |   4 |   0 |   34.43 |    1.36 |    0.38 |    0.03 | 869335f2 |
+|             NEON |       base.en |   4 |   0 |   69.79 |    2.28 |    0.50 |    0.06 | 869335f2 |
+|             NEON |          base |   4 |   0 |   71.07 |    2.29 |    0.50 |    0.06 | 869335f2 |
+|             NEON |      small.en |   4 |   0 |  228.51 |    5.57 |    1.19 |    0.18 | 869335f2 |
+|             NEON |         small |   4 |   0 |  228.60 |    5.54 |    1.19 |    0.18 | 869335f2 |
+|             NEON |     medium.en |   4 |   0 |  680.34 |   14.33 |    3.05 |    0.49 | 869335f2 |
+|             NEON |        medium |   4 |   0 |  683.33 |   14.35 |    3.06 |    0.49 | 869335f2 |
+|             NEON |      large-v1 |   4 |   0 | 1278.88 |   24.92 |    5.26 |    0.89 | 869335f2 |
+|             NEON |      large-v2 |   4 |   0 | 1276.10 |   24.91 |    5.26 |    0.90 | 869335f2 |
+|             NEON |      large-v3 |   4 |   0 | 1280.54 |   24.90 |    5.45 |    0.90 | 869335f2 |
+|             NEON | large-v3-turbo |   4 |   0 | 1166.03 |    4.49 |    0.94 |    0.15 | 869335f2 |
+
