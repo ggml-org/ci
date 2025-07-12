@@ -1,0 +1,7 @@
+memcpy:    5.63 GB/s (heat-up)
+memcpy:    9.14 GB/s ( 1 thread)
+memcpy:    8.62 GB/s ( 1 thread)
+memcpy:   17.00 GB/s ( 2 thread)
+memcpy:   24.00 GB/s ( 3 thread)
+memcpy:   32.22 GB/s ( 4 thread)
+sum:    -3071998555.000000
