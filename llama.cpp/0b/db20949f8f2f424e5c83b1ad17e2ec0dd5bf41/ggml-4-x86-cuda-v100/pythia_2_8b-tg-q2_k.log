@@ -1,0 +1,1490 @@
++ ./bin/llama-cli -no-cnv --model ../models-mnt/pythia/2.8B/ggml-model-q2_k.gguf -t 1 -ngl 99 -c 0 -s 1234 -n 256 --ignore-eos -p 'I believe the meaning of life is'
+ggml_cuda_init: GGML_CUDA_FORCE_MMQ:    no
+ggml_cuda_init: GGML_CUDA_FORCE_CUBLAS: no
+ggml_cuda_init: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0, VMM: yes
+0.00.000.181 I build: 5936 (0bdb20949) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.000.524 I main: llama backend init
+0.00.000.536 I main: load the model and apply lora adapter, if any
+0.00.288.734 I llama_model_load_from_file_impl: using device CUDA0 (Tesla V100-PCIE-16GB) - 15841 MiB free
+0.00.305.085 I llama_model_loader: loaded meta data with 23 key-value pairs and 388 tensors from ../models-mnt/pythia/2.8B/ggml-model-q2_k.gguf (version GGUF V3 (latest))
+0.00.305.110 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.305.120 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.305.123 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.305.124 I llama_model_loader: - kv   2:                               general.name str              = 2.8B
+0.00.305.125 I llama_model_loader: - kv   3:                           general.finetune str              = 2.8B
+0.00.305.126 I llama_model_loader: - kv   4:                         general.size_label str              = 2.8B
+0.00.305.129 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.305.130 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2560
+0.00.305.132 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 32
+0.00.305.132 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 10240
+0.00.305.133 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 20
+0.00.305.134 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 32
+0.00.305.135 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.305.157 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.305.158 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.305.158 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.312.069 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.313.829 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.320.530 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.320.538 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.320.538 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.320.539 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.320.540 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.320.541 I llama_model_loader: - kv  22:                          general.file_type u32              = 10
+0.00.320.544 I llama_model_loader: - type  f32:  258 tensors
+0.00.320.545 I llama_model_loader: - type q2_K:   65 tensors
+0.00.320.546 I llama_model_loader: - type q3_K:   64 tensors
+0.00.320.546 I llama_model_loader: - type q6_K:    1 tensors
+0.00.320.548 I print_info: file format = GGUF V3 (latest)
+0.00.320.549 I print_info: file type   = Q2_K - Medium
+0.00.320.552 I print_info: file size   = 1.01 GiB (3.13 BPW) 
+0.00.370.795 I load: special tokens cache size = 25
+0.00.392.644 I load: token to piece cache size = 0.2984 MB
+0.00.392.668 I print_info: arch             = gptneox
+0.00.392.669 I print_info: vocab_only       = 0
+0.00.392.670 I print_info: n_ctx_train      = 2048
+0.00.392.670 I print_info: n_embd           = 2560
+0.00.392.671 I print_info: n_layer          = 32
+0.00.392.692 I print_info: n_head           = 32
+0.00.392.695 I print_info: n_head_kv        = 32
+0.00.392.695 I print_info: n_rot            = 20
+0.00.392.696 I print_info: n_swa            = 0
+0.00.392.697 I print_info: is_swa_any       = 0
+0.00.392.697 I print_info: n_embd_head_k    = 80
+0.00.392.698 I print_info: n_embd_head_v    = 80
+0.00.392.700 I print_info: n_gqa            = 1
+0.00.392.702 I print_info: n_embd_k_gqa     = 2560
+0.00.392.704 I print_info: n_embd_v_gqa     = 2560
+0.00.392.709 I print_info: f_norm_eps       = 1.0e-05
+0.00.392.710 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.392.711 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.392.712 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.392.712 I print_info: f_logit_scale    = 0.0e+00
+0.00.392.713 I print_info: f_attn_scale     = 0.0e+00
+0.00.392.714 I print_info: n_ff             = 10240
+0.00.392.715 I print_info: n_expert         = 0
+0.00.392.715 I print_info: n_expert_used    = 0
+0.00.392.715 I print_info: causal attn      = 1
+0.00.392.716 I print_info: pooling type     = 0
+0.00.392.717 I print_info: rope type        = 2
+0.00.392.717 I print_info: rope scaling     = linear
+0.00.392.718 I print_info: freq_base_train  = 10000.0
+0.00.392.719 I print_info: freq_scale_train = 1
+0.00.392.720 I print_info: n_ctx_orig_yarn  = 2048
+0.00.392.720 I print_info: rope_finetuned   = unknown
+0.00.392.721 I print_info: model type       = 2.8B
+0.00.392.722 I print_info: model params     = 2.78 B
+0.00.392.722 I print_info: general.name     = 2.8B
+0.00.392.726 I print_info: vocab type       = BPE
+0.00.392.727 I print_info: n_vocab          = 50304
+0.00.392.728 I print_info: n_merges         = 50009
+0.00.392.732 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.392.732 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.392.733 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.392.733 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.392.734 I print_info: LF token         = 187 'Ċ'
+0.00.392.734 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.392.735 I print_info: max token length = 1024
+0.00.392.737 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.462.978 I load_tensors: offloading 32 repeating layers to GPU
+0.00.462.988 I load_tensors: offloading output layer to GPU
+0.00.462.989 I load_tensors: offloaded 33/33 layers to GPU
+0.00.462.998 I load_tensors:        CUDA0 model buffer size =   993.89 MiB
+0.00.463.000 I load_tensors:   CPU_Mapped model buffer size =    40.30 MiB
+.......................................................................................
+0.00.670.411 I llama_context: constructing llama_context
+0.00.670.418 W llama_context: non-unified KV cache requires ggml_set_rows() - forcing unified KV cache
+0.00.670.420 I llama_context: n_seq_max     = 1
+0.00.670.421 I llama_context: n_ctx         = 2048
+0.00.670.421 I llama_context: n_ctx_per_seq = 2048
+0.00.670.422 I llama_context: n_batch       = 2048
+0.00.670.422 I llama_context: n_ubatch      = 512
+0.00.670.423 I llama_context: causal_attn   = 1
+0.00.670.424 I llama_context: flash_attn    = 0
+0.00.670.425 I llama_context: kv_unified    = true
+0.00.670.432 I llama_context: freq_base     = 10000.0
+0.00.670.433 I llama_context: freq_scale    = 1
+0.00.671.738 I llama_context:  CUDA_Host  output buffer size =     0.19 MiB
+0.00.672.078 I llama_kv_cache_unified:      CUDA0 KV buffer size =   640.00 MiB
+0.00.672.889 I llama_kv_cache_unified: size =  640.00 MiB (  2048 cells,  32 layers,  1/ 1 seqs), K (f16):  320.00 MiB, V (f16):  320.00 MiB
+0.00.672.895 W llama_kv_cache_unified: LLAMA_SET_ROWS=0, using old ggml_cpy() method for backwards compatibility
+0.00.699.081 I llama_context:      CUDA0 compute buffer size =   142.00 MiB
+0.00.699.089 I llama_context:  CUDA_Host compute buffer size =     9.01 MiB
+0.00.699.091 I llama_context: graph nodes  = 1351
+0.00.699.091 I llama_context: graph splits = 2
+0.00.699.108 I common_init_from_params: added <|endoftext|> logit bias = -inf
+0.00.699.583 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.699.587 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.733.810 I main: llama threadpool init, n_threads = 1
+0.00.733.826 I 
+0.00.733.910 I system_info: n_threads = 1 (n_threads_batch = 1) / 6 | CUDA : ARCHS = 700 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.733.915 I 
+0.00.734.039 I sampler seed: 1234
+0.00.734.053 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+	dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 2048
+	top_k = 40, top_p = 0.950, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+0.00.734.057 I sampler chain: logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+0.00.734.058 I generate: n_ctx = 2048, n_batch = 2048, n_predict = 256, n_keep = 0
+0.00.734.058 I 
+I believe the meaning of life is in the0.00.805.894 I   placeholder: can_reuse = 1
+0.00.805.898 I   placeholder: can_reuse = 1
+0.00.805.901 I   placeholder: can_reuse = 0
+0.00.805.902 I   placeholder: can_reuse = 1
+ first0.00.813.047 I   placeholder: can_reuse = 1
+0.00.813.049 I   placeholder: can_reuse = 1
+0.00.813.050 I   placeholder: can_reuse = 0
+0.00.813.050 I   placeholder: can_reuse = 1
+ place0.00.820.404 I   placeholder: can_reuse = 1
+0.00.820.407 I   placeholder: can_reuse = 1
+0.00.820.408 I   placeholder: can_reuse = 0
+0.00.820.408 I   placeholder: can_reuse = 1
+ the0.00.827.741 I   placeholder: can_reuse = 1
+0.00.827.746 I   placeholder: can_reuse = 1
+0.00.827.747 I   placeholder: can_reuse = 0
+0.00.827.747 I   placeholder: can_reuse = 1
+ best0.00.834.889 I   placeholder: can_reuse = 1
+0.00.834.894 I   placeholder: can_reuse = 1
+0.00.834.894 I   placeholder: can_reuse = 0
+0.00.834.895 I   placeholder: can_reuse = 1
+ way0.00.842.019 I   placeholder: can_reuse = 1
+0.00.842.024 I   placeholder: can_reuse = 1
+0.00.842.025 I   placeholder: can_reuse = 0
+0.00.842.025 I   placeholder: can_reuse = 1
+ to0.00.849.169 I   placeholder: can_reuse = 1
+0.00.849.174 I   placeholder: can_reuse = 1
+0.00.849.174 I   placeholder: can_reuse = 0
+0.00.849.175 I   placeholder: can_reuse = 1
+ be0.00.856.348 I   placeholder: can_reuse = 1
+0.00.856.353 I   placeholder: can_reuse = 1
+0.00.856.353 I   placeholder: can_reuse = 0
+0.00.856.354 I   placeholder: can_reuse = 1
+.0.00.863.493 I   placeholder: can_reuse = 1
+0.00.863.495 I   placeholder: can_reuse = 1
+0.00.863.496 I   placeholder: can_reuse = 0
+0.00.863.496 I   placeholder: can_reuse = 1
+
+0.00.870.630 I   placeholder: can_reuse = 1
+0.00.870.634 I   placeholder: can_reuse = 1
+0.00.870.635 I   placeholder: can_reuse = 0
+0.00.870.635 I   placeholder: can_reuse = 1
+
+0.00.877.762 I   placeholder: can_reuse = 1
+0.00.877.766 I   placeholder: can_reuse = 1
+0.00.877.767 I   placeholder: can_reuse = 0
+0.00.877.768 I   placeholder: can_reuse = 1
+—0.00.884.897 I   placeholder: can_reuse = 1
+0.00.884.901 I   placeholder: can_reuse = 1
+0.00.884.902 I   placeholder: can_reuse = 0
+0.00.884.903 I   placeholder: can_reuse = 1
+
+0.00.892.047 I   placeholder: can_reuse = 1
+0.00.892.051 I   placeholder: can_reuse = 1
+0.00.892.052 I   placeholder: can_reuse = 0
+0.00.892.052 I   placeholder: can_reuse = 1
+
+0.00.899.183 I   placeholder: can_reuse = 1
+0.00.899.187 I   placeholder: can_reuse = 1
+0.00.899.187 I   placeholder: can_reuse = 0
+0.00.899.188 I   placeholder: can_reuse = 1
+
+0.00.906.302 I   placeholder: can_reuse = 1
+0.00.906.306 I   placeholder: can_reuse = 1
+0.00.906.307 I   placeholder: can_reuse = 0
+0.00.906.307 I   placeholder: can_reuse = 1
+.0.00.913.423 I   placeholder: can_reuse = 1
+0.00.913.426 I   placeholder: can_reuse = 1
+0.00.913.426 I   placeholder: can_reuse = 0
+0.00.913.427 I   placeholder: can_reuse = 1
+
+0.00.923.763 I   placeholder: can_reuse = 1
+0.00.923.764 I   placeholder: can_reuse = 1
+0.00.923.764 I   placeholder: can_reuse = 0
+0.00.923.765 I   placeholder: can_reuse = 1
+
+0.00.932.254 I   placeholder: can_reuse = 1
+0.00.932.255 I   placeholder: can_reuse = 1
+0.00.932.256 I   placeholder: can_reuse = 0
+0.00.932.256 I   placeholder: can_reuse = 1
+.0.00.939.428 I   placeholder: can_reuse = 1
+0.00.939.429 I   placeholder: can_reuse = 1
+0.00.939.429 I   placeholder: can_reuse = 0
+0.00.939.430 I   placeholder: can_reuse = 1
+
+0.00.946.614 I   placeholder: can_reuse = 1
+0.00.946.615 I   placeholder: can_reuse = 1
+0.00.946.616 I   placeholder: can_reuse = 0
+0.00.946.616 I   placeholder: can_reuse = 1
+
+0.00.953.746 I   placeholder: can_reuse = 1
+0.00.953.748 I   placeholder: can_reuse = 1
+0.00.953.749 I   placeholder: can_reuse = 0
+0.00.953.750 I   placeholder: can_reuse = 1
+.0.00.960.879 I   placeholder: can_reuse = 1
+0.00.960.884 I   placeholder: can_reuse = 1
+0.00.960.884 I   placeholder: can_reuse = 0
+0.00.960.885 I   placeholder: can_reuse = 1
+
+0.00.968.140 I   placeholder: can_reuse = 1
+0.00.968.145 I   placeholder: can_reuse = 1
+0.00.968.145 I   placeholder: can_reuse = 0
+0.00.968.146 I   placeholder: can_reuse = 1
+
+0.00.975.270 I   placeholder: can_reuse = 1
+0.00.975.274 I   placeholder: can_reuse = 1
+0.00.975.275 I   placeholder: can_reuse = 0
+0.00.975.275 I   placeholder: can_reuse = 1
+.0.00.982.405 I   placeholder: can_reuse = 1
+0.00.982.409 I   placeholder: can_reuse = 1
+0.00.982.409 I   placeholder: can_reuse = 0
+0.00.982.410 I   placeholder: can_reuse = 1
+
+0.00.989.732 I   placeholder: can_reuse = 1
+0.00.989.737 I   placeholder: can_reuse = 1
+0.00.989.738 I   placeholder: can_reuse = 0
+0.00.989.738 I   placeholder: can_reuse = 1
+
+0.00.996.953 I   placeholder: can_reuse = 1
+0.00.996.954 I   placeholder: can_reuse = 1
+0.00.996.955 I   placeholder: can_reuse = 0
+0.00.996.956 I   placeholder: can_reuse = 1
+.0.01.004.139 I   placeholder: can_reuse = 1
+0.01.004.144 I   placeholder: can_reuse = 1
+0.01.004.144 I   placeholder: can_reuse = 0
+0.01.004.145 I   placeholder: can_reuse = 1
+
+0.01.011.362 I   placeholder: can_reuse = 1
+0.01.011.364 I   placeholder: can_reuse = 1
+0.01.011.365 I   placeholder: can_reuse = 0
+0.01.011.366 I   placeholder: can_reuse = 1
+
+0.01.018.549 I   placeholder: can_reuse = 1
+0.01.018.553 I   placeholder: can_reuse = 1
+0.01.018.554 I   placeholder: can_reuse = 0
+0.01.018.555 I   placeholder: can_reuse = 1
+.0.01.025.748 I   placeholder: can_reuse = 1
+0.01.025.748 I   placeholder: can_reuse = 1
+0.01.025.749 I   placeholder: can_reuse = 0
+0.01.025.749 I   placeholder: can_reuse = 1
+
+0.01.033.059 I   placeholder: can_reuse = 1
+0.01.033.063 I   placeholder: can_reuse = 1
+0.01.033.064 I   placeholder: can_reuse = 0
+0.01.033.064 I   placeholder: can_reuse = 1
+
+0.01.040.255 I   placeholder: can_reuse = 1
+0.01.040.260 I   placeholder: can_reuse = 1
+0.01.040.261 I   placeholder: can_reuse = 0
+0.01.040.261 I   placeholder: can_reuse = 1
+.0.01.047.492 I   placeholder: can_reuse = 1
+0.01.047.494 I   placeholder: can_reuse = 1
+0.01.047.495 I   placeholder: can_reuse = 0
+0.01.047.495 I   placeholder: can_reuse = 1
+
+0.01.054.694 I   placeholder: can_reuse = 1
+0.01.054.699 I   placeholder: can_reuse = 1
+0.01.054.700 I   placeholder: can_reuse = 0
+0.01.054.700 I   placeholder: can_reuse = 1
+
+0.01.061.890 I   placeholder: can_reuse = 1
+0.01.061.896 I   placeholder: can_reuse = 1
+0.01.061.897 I   placeholder: can_reuse = 0
+0.01.061.897 I   placeholder: can_reuse = 1
+.0.01.069.084 I   placeholder: can_reuse = 1
+0.01.069.089 I   placeholder: can_reuse = 1
+0.01.069.089 I   placeholder: can_reuse = 0
+0.01.069.090 I   placeholder: can_reuse = 1
+
+0.01.076.274 I   placeholder: can_reuse = 1
+0.01.076.276 I   placeholder: can_reuse = 1
+0.01.076.276 I   placeholder: can_reuse = 0
+0.01.076.277 I   placeholder: can_reuse = 1
+
+0.01.083.486 I   placeholder: can_reuse = 1
+0.01.083.490 I   placeholder: can_reuse = 1
+0.01.083.491 I   placeholder: can_reuse = 0
+0.01.083.491 I   placeholder: can_reuse = 1
+.0.01.090.669 I   placeholder: can_reuse = 1
+0.01.090.674 I   placeholder: can_reuse = 1
+0.01.090.674 I   placeholder: can_reuse = 0
+0.01.090.675 I   placeholder: can_reuse = 1
+
+0.01.098.661 I   placeholder: can_reuse = 1
+0.01.098.665 I   placeholder: can_reuse = 1
+0.01.098.666 I   placeholder: can_reuse = 0
+0.01.098.667 I   placeholder: can_reuse = 1
+
+0.01.105.859 I   placeholder: can_reuse = 1
+0.01.105.861 I   placeholder: can_reuse = 1
+0.01.105.861 I   placeholder: can_reuse = 0
+0.01.105.862 I   placeholder: can_reuse = 1
+.0.01.113.055 I   placeholder: can_reuse = 1
+0.01.113.059 I   placeholder: can_reuse = 1
+0.01.113.060 I   placeholder: can_reuse = 0
+0.01.113.061 I   placeholder: can_reuse = 1
+
+0.01.120.253 I   placeholder: can_reuse = 1
+0.01.120.257 I   placeholder: can_reuse = 1
+0.01.120.258 I   placeholder: can_reuse = 0
+0.01.120.258 I   placeholder: can_reuse = 1
+
+0.01.127.464 I   placeholder: can_reuse = 1
+0.01.127.468 I   placeholder: can_reuse = 1
+0.01.127.468 I   placeholder: can_reuse = 0
+0.01.127.469 I   placeholder: can_reuse = 1
+.0.01.134.659 I   placeholder: can_reuse = 1
+0.01.134.659 I   placeholder: can_reuse = 1
+0.01.134.660 I   placeholder: can_reuse = 0
+0.01.134.660 I   placeholder: can_reuse = 1
+
+0.01.141.874 I   placeholder: can_reuse = 1
+0.01.141.878 I   placeholder: can_reuse = 1
+0.01.141.879 I   placeholder: can_reuse = 0
+0.01.141.879 I   placeholder: can_reuse = 1
+
+0.01.149.064 I   placeholder: can_reuse = 1
+0.01.149.065 I   placeholder: can_reuse = 1
+0.01.149.065 I   placeholder: can_reuse = 0
+0.01.149.066 I   placeholder: can_reuse = 1
+.0.01.156.253 I   placeholder: can_reuse = 1
+0.01.156.257 I   placeholder: can_reuse = 1
+0.01.156.258 I   placeholder: can_reuse = 0
+0.01.156.260 I   placeholder: can_reuse = 1
+
+0.01.163.469 I   placeholder: can_reuse = 1
+0.01.163.469 I   placeholder: can_reuse = 1
+0.01.163.470 I   placeholder: can_reuse = 0
+0.01.163.472 I   placeholder: can_reuse = 1
+
+0.01.170.817 I   placeholder: can_reuse = 1
+0.01.170.822 I   placeholder: can_reuse = 1
+0.01.170.823 I   placeholder: can_reuse = 0
+0.01.170.823 I   placeholder: can_reuse = 1
+.0.01.178.034 I   placeholder: can_reuse = 1
+0.01.178.035 I   placeholder: can_reuse = 1
+0.01.178.036 I   placeholder: can_reuse = 0
+0.01.178.036 I   placeholder: can_reuse = 1
+
+0.01.185.273 I   placeholder: can_reuse = 1
+0.01.185.276 I   placeholder: can_reuse = 1
+0.01.185.277 I   placeholder: can_reuse = 0
+0.01.185.277 I   placeholder: can_reuse = 1
+
+0.01.192.468 I   placeholder: can_reuse = 1
+0.01.192.472 I   placeholder: can_reuse = 1
+0.01.192.473 I   placeholder: can_reuse = 0
+0.01.192.473 I   placeholder: can_reuse = 1
+.0.01.199.676 I   placeholder: can_reuse = 1
+0.01.199.680 I   placeholder: can_reuse = 1
+0.01.199.681 I   placeholder: can_reuse = 0
+0.01.199.681 I   placeholder: can_reuse = 1
+
+0.01.206.882 I   placeholder: can_reuse = 1
+0.01.206.887 I   placeholder: can_reuse = 1
+0.01.206.888 I   placeholder: can_reuse = 0
+0.01.206.888 I   placeholder: can_reuse = 1
+
+0.01.214.096 I   placeholder: can_reuse = 1
+0.01.214.098 I   placeholder: can_reuse = 1
+0.01.214.099 I   placeholder: can_reuse = 0
+0.01.214.100 I   placeholder: can_reuse = 1
+.0.01.221.499 I   placeholder: can_reuse = 1
+0.01.221.503 I   placeholder: can_reuse = 1
+0.01.221.504 I   placeholder: can_reuse = 0
+0.01.221.504 I   placeholder: can_reuse = 1
+
+0.01.228.861 I   placeholder: can_reuse = 1
+0.01.228.863 I   placeholder: can_reuse = 1
+0.01.228.864 I   placeholder: can_reuse = 0
+0.01.228.864 I   placeholder: can_reuse = 1
+
+0.01.236.156 I   placeholder: can_reuse = 1
+0.01.236.156 I   placeholder: can_reuse = 1
+0.01.236.157 I   placeholder: can_reuse = 0
+0.01.236.157 I   placeholder: can_reuse = 1
+.0.01.243.485 I   placeholder: can_reuse = 1
+0.01.243.489 I   placeholder: can_reuse = 1
+0.01.243.490 I   placeholder: can_reuse = 0
+0.01.243.490 I   placeholder: can_reuse = 1
+
+0.01.250.784 I   placeholder: can_reuse = 1
+0.01.250.788 I   placeholder: can_reuse = 1
+0.01.250.789 I   placeholder: can_reuse = 0
+0.01.250.789 I   placeholder: can_reuse = 1
+
+0.01.258.117 I   placeholder: can_reuse = 1
+0.01.258.118 I   placeholder: can_reuse = 1
+0.01.258.119 I   placeholder: can_reuse = 0
+0.01.258.120 I   placeholder: can_reuse = 1
+.0.01.265.408 I   placeholder: can_reuse = 1
+0.01.265.413 I   placeholder: can_reuse = 1
+0.01.265.413 I   placeholder: can_reuse = 0
+0.01.265.414 I   placeholder: can_reuse = 1
+
+0.01.272.729 I   placeholder: can_reuse = 1
+0.01.272.732 I   placeholder: can_reuse = 1
+0.01.272.732 I   placeholder: can_reuse = 0
+0.01.272.733 I   placeholder: can_reuse = 1
+
+0.01.280.042 I   placeholder: can_reuse = 1
+0.01.280.047 I   placeholder: can_reuse = 1
+0.01.280.047 I   placeholder: can_reuse = 0
+0.01.280.048 I   placeholder: can_reuse = 1
+.0.01.287.361 I   placeholder: can_reuse = 1
+0.01.287.363 I   placeholder: can_reuse = 1
+0.01.287.364 I   placeholder: can_reuse = 0
+0.01.287.365 I   placeholder: can_reuse = 1
+
+0.01.294.674 I   placeholder: can_reuse = 1
+0.01.294.676 I   placeholder: can_reuse = 1
+0.01.294.677 I   placeholder: can_reuse = 0
+0.01.294.678 I   placeholder: can_reuse = 1
+
+0.01.301.988 I   placeholder: can_reuse = 1
+0.01.301.992 I   placeholder: can_reuse = 1
+0.01.301.993 I   placeholder: can_reuse = 0
+0.01.301.993 I   placeholder: can_reuse = 1
+.0.01.309.323 I   placeholder: can_reuse = 1
+0.01.309.327 I   placeholder: can_reuse = 1
+0.01.309.328 I   placeholder: can_reuse = 0
+0.01.309.328 I   placeholder: can_reuse = 1
+
+0.01.316.646 I   placeholder: can_reuse = 1
+0.01.316.647 I   placeholder: can_reuse = 1
+0.01.316.647 I   placeholder: can_reuse = 0
+0.01.316.648 I   placeholder: can_reuse = 1
+
+0.01.323.996 I   placeholder: can_reuse = 1
+0.01.323.998 I   placeholder: can_reuse = 1
+0.01.323.999 I   placeholder: can_reuse = 0
+0.01.323.999 I   placeholder: can_reuse = 1
+.0.01.331.328 I   placeholder: can_reuse = 1
+0.01.331.332 I   placeholder: can_reuse = 1
+0.01.331.333 I   placeholder: can_reuse = 0
+0.01.331.334 I   placeholder: can_reuse = 1
+
+0.01.338.656 I   placeholder: can_reuse = 1
+0.01.338.660 I   placeholder: can_reuse = 1
+0.01.338.661 I   placeholder: can_reuse = 0
+0.01.338.661 I   placeholder: can_reuse = 1
+
+0.01.345.971 I   placeholder: can_reuse = 1
+0.01.345.976 I   placeholder: can_reuse = 1
+0.01.345.977 I   placeholder: can_reuse = 0
+0.01.345.977 I   placeholder: can_reuse = 1
+.0.01.353.283 I   placeholder: can_reuse = 1
+0.01.353.287 I   placeholder: can_reuse = 1
+0.01.353.288 I   placeholder: can_reuse = 0
+0.01.353.288 I   placeholder: can_reuse = 1
+
+0.01.360.598 I   placeholder: can_reuse = 1
+0.01.360.602 I   placeholder: can_reuse = 1
+0.01.360.603 I   placeholder: can_reuse = 0
+0.01.360.603 I   placeholder: can_reuse = 1
+
+0.01.367.922 I   placeholder: can_reuse = 1
+0.01.367.926 I   placeholder: can_reuse = 1
+0.01.367.926 I   placeholder: can_reuse = 0
+0.01.367.927 I   placeholder: can_reuse = 1
+.0.01.375.291 I   placeholder: can_reuse = 1
+0.01.375.295 I   placeholder: can_reuse = 1
+0.01.375.296 I   placeholder: can_reuse = 0
+0.01.375.296 I   placeholder: can_reuse = 1
+
+0.01.382.623 I   placeholder: can_reuse = 1
+0.01.382.626 I   placeholder: can_reuse = 1
+0.01.382.627 I   placeholder: can_reuse = 0
+0.01.382.628 I   placeholder: can_reuse = 1
+
+0.01.389.969 I   placeholder: can_reuse = 1
+0.01.389.971 I   placeholder: can_reuse = 1
+0.01.389.972 I   placeholder: can_reuse = 0
+0.01.389.972 I   placeholder: can_reuse = 1
+.0.01.397.263 I   placeholder: can_reuse = 1
+0.01.397.264 I   placeholder: can_reuse = 1
+0.01.397.265 I   placeholder: can_reuse = 0
+0.01.397.265 I   placeholder: can_reuse = 1
+
+0.01.404.574 I   placeholder: can_reuse = 1
+0.01.404.576 I   placeholder: can_reuse = 1
+0.01.404.577 I   placeholder: can_reuse = 0
+0.01.404.577 I   placeholder: can_reuse = 1
+
+0.01.411.917 I   placeholder: can_reuse = 1
+0.01.411.923 I   placeholder: can_reuse = 1
+0.01.411.924 I   placeholder: can_reuse = 0
+0.01.411.924 I   placeholder: can_reuse = 1
+.0.01.419.319 I   placeholder: can_reuse = 1
+0.01.419.323 I   placeholder: can_reuse = 1
+0.01.419.324 I   placeholder: can_reuse = 0
+0.01.419.324 I   placeholder: can_reuse = 1
+
+0.01.426.627 I   placeholder: can_reuse = 1
+0.01.426.630 I   placeholder: can_reuse = 1
+0.01.426.630 I   placeholder: can_reuse = 0
+0.01.426.631 I   placeholder: can_reuse = 1
+
+0.01.433.936 I   placeholder: can_reuse = 1
+0.01.433.938 I   placeholder: can_reuse = 1
+0.01.433.939 I   placeholder: can_reuse = 0
+0.01.433.939 I   placeholder: can_reuse = 1
+.0.01.441.242 I   placeholder: can_reuse = 1
+0.01.441.246 I   placeholder: can_reuse = 1
+0.01.441.246 I   placeholder: can_reuse = 0
+0.01.441.247 I   placeholder: can_reuse = 1
+
+0.01.448.557 I   placeholder: can_reuse = 1
+0.01.448.558 I   placeholder: can_reuse = 1
+0.01.448.559 I   placeholder: can_reuse = 0
+0.01.448.560 I   placeholder: can_reuse = 1
+
+0.01.456.004 I   placeholder: can_reuse = 1
+0.01.456.009 I   placeholder: can_reuse = 1
+0.01.456.009 I   placeholder: can_reuse = 0
+0.01.456.010 I   placeholder: can_reuse = 1
+.0.01.463.388 I   placeholder: can_reuse = 1
+0.01.463.388 I   placeholder: can_reuse = 1
+0.01.463.389 I   placeholder: can_reuse = 0
+0.01.463.390 I   placeholder: can_reuse = 1
+
+0.01.470.779 I   placeholder: can_reuse = 1
+0.01.470.781 I   placeholder: can_reuse = 1
+0.01.470.782 I   placeholder: can_reuse = 0
+0.01.470.783 I   placeholder: can_reuse = 1
+
+0.01.478.137 I   placeholder: can_reuse = 1
+0.01.478.139 I   placeholder: can_reuse = 1
+0.01.478.140 I   placeholder: can_reuse = 0
+0.01.478.140 I   placeholder: can_reuse = 1
+.0.01.485.491 I   placeholder: can_reuse = 1
+0.01.485.493 I   placeholder: can_reuse = 1
+0.01.485.493 I   placeholder: can_reuse = 0
+0.01.485.494 I   placeholder: can_reuse = 1
+
+0.01.492.909 I   placeholder: can_reuse = 1
+0.01.492.910 I   placeholder: can_reuse = 1
+0.01.492.910 I   placeholder: can_reuse = 0
+0.01.492.911 I   placeholder: can_reuse = 1
+
+0.01.500.299 I   placeholder: can_reuse = 1
+0.01.500.303 I   placeholder: can_reuse = 1
+0.01.500.304 I   placeholder: can_reuse = 0
+0.01.500.304 I   placeholder: can_reuse = 1
+.0.01.507.674 I   placeholder: can_reuse = 1
+0.01.507.679 I   placeholder: can_reuse = 1
+0.01.507.679 I   placeholder: can_reuse = 0
+0.01.507.680 I   placeholder: can_reuse = 1
+
+0.01.515.037 I   placeholder: can_reuse = 1
+0.01.515.040 I   placeholder: can_reuse = 1
+0.01.515.040 I   placeholder: can_reuse = 0
+0.01.515.041 I   placeholder: can_reuse = 1
+
+0.01.522.396 I   placeholder: can_reuse = 1
+0.01.522.400 I   placeholder: can_reuse = 1
+0.01.522.401 I   placeholder: can_reuse = 0
+0.01.522.401 I   placeholder: can_reuse = 1
+.0.01.529.747 I   placeholder: can_reuse = 1
+0.01.529.749 I   placeholder: can_reuse = 1
+0.01.529.749 I   placeholder: can_reuse = 0
+0.01.529.750 I   placeholder: can_reuse = 1
+
+0.01.537.107 I   placeholder: can_reuse = 1
+0.01.537.108 I   placeholder: can_reuse = 1
+0.01.537.108 I   placeholder: can_reuse = 0
+0.01.537.109 I   placeholder: can_reuse = 1
+
+0.01.544.464 I   placeholder: can_reuse = 1
+0.01.544.464 I   placeholder: can_reuse = 1
+0.01.544.465 I   placeholder: can_reuse = 0
+0.01.544.465 I   placeholder: can_reuse = 1
+.0.01.551.836 I   placeholder: can_reuse = 1
+0.01.551.840 I   placeholder: can_reuse = 1
+0.01.551.841 I   placeholder: can_reuse = 0
+0.01.551.841 I   placeholder: can_reuse = 1
+
+0.01.559.200 I   placeholder: can_reuse = 1
+0.01.559.201 I   placeholder: can_reuse = 1
+0.01.559.202 I   placeholder: can_reuse = 0
+0.01.559.203 I   placeholder: can_reuse = 1
+
+0.01.566.559 I   placeholder: can_reuse = 1
+0.01.566.561 I   placeholder: can_reuse = 1
+0.01.566.561 I   placeholder: can_reuse = 0
+0.01.566.562 I   placeholder: can_reuse = 1
+.0.01.573.913 I   placeholder: can_reuse = 1
+0.01.573.917 I   placeholder: can_reuse = 1
+0.01.573.918 I   placeholder: can_reuse = 0
+0.01.573.918 I   placeholder: can_reuse = 1
+
+0.01.581.319 I   placeholder: can_reuse = 1
+0.01.581.323 I   placeholder: can_reuse = 1
+0.01.581.324 I   placeholder: can_reuse = 0
+0.01.581.324 I   placeholder: can_reuse = 1
+
+0.01.588.675 I   placeholder: can_reuse = 1
+0.01.588.677 I   placeholder: can_reuse = 1
+0.01.588.678 I   placeholder: can_reuse = 0
+0.01.588.678 I   placeholder: can_reuse = 1
+.0.01.596.063 I   placeholder: can_reuse = 1
+0.01.596.065 I   placeholder: can_reuse = 1
+0.01.596.066 I   placeholder: can_reuse = 0
+0.01.596.066 I   placeholder: can_reuse = 1
+
+0.01.603.423 I   placeholder: can_reuse = 1
+0.01.603.428 I   placeholder: can_reuse = 1
+0.01.603.428 I   placeholder: can_reuse = 0
+0.01.603.429 I   placeholder: can_reuse = 1
+
+0.01.610.785 I   placeholder: can_reuse = 1
+0.01.610.785 I   placeholder: can_reuse = 1
+0.01.610.786 I   placeholder: can_reuse = 0
+0.01.610.786 I   placeholder: can_reuse = 1
+.0.01.618.133 I   placeholder: can_reuse = 1
+0.01.618.136 I   placeholder: can_reuse = 1
+0.01.618.136 I   placeholder: can_reuse = 0
+0.01.618.137 I   placeholder: can_reuse = 1
+
+0.01.625.492 I   placeholder: can_reuse = 1
+0.01.625.496 I   placeholder: can_reuse = 1
+0.01.625.497 I   placeholder: can_reuse = 0
+0.01.625.497 I   placeholder: can_reuse = 1
+
+0.01.632.861 I   placeholder: can_reuse = 1
+0.01.632.865 I   placeholder: can_reuse = 1
+0.01.632.866 I   placeholder: can_reuse = 0
+0.01.632.866 I   placeholder: can_reuse = 1
+.0.01.640.223 I   placeholder: can_reuse = 1
+0.01.640.224 I   placeholder: can_reuse = 1
+0.01.640.225 I   placeholder: can_reuse = 0
+0.01.640.225 I   placeholder: can_reuse = 1
+
+0.01.647.626 I   placeholder: can_reuse = 1
+0.01.647.627 I   placeholder: can_reuse = 1
+0.01.647.627 I   placeholder: can_reuse = 0
+0.01.647.628 I   placeholder: can_reuse = 1
+
+0.01.654.998 I   placeholder: can_reuse = 1
+0.01.654.999 I   placeholder: can_reuse = 1
+0.01.654.999 I   placeholder: can_reuse = 0
+0.01.655.000 I   placeholder: can_reuse = 1
+.0.01.662.342 I   placeholder: can_reuse = 1
+0.01.662.344 I   placeholder: can_reuse = 1
+0.01.662.344 I   placeholder: can_reuse = 0
+0.01.662.345 I   placeholder: can_reuse = 1
+
+0.01.669.719 I   placeholder: can_reuse = 1
+0.01.669.723 I   placeholder: can_reuse = 1
+0.01.669.724 I   placeholder: can_reuse = 0
+0.01.669.725 I   placeholder: can_reuse = 1
+
+0.01.677.091 I   placeholder: can_reuse = 1
+0.01.677.095 I   placeholder: can_reuse = 1
+0.01.677.096 I   placeholder: can_reuse = 0
+0.01.677.096 I   placeholder: can_reuse = 1
+.0.01.684.458 I   placeholder: can_reuse = 1
+0.01.684.462 I   placeholder: can_reuse = 1
+0.01.684.463 I   placeholder: can_reuse = 0
+0.01.684.463 I   placeholder: can_reuse = 1
+
+0.01.692.010 I   placeholder: can_reuse = 1
+0.01.692.015 I   placeholder: can_reuse = 1
+0.01.692.015 I   placeholder: can_reuse = 0
+0.01.692.016 I   placeholder: can_reuse = 1
+
+0.01.699.467 I   placeholder: can_reuse = 1
+0.01.699.469 I   placeholder: can_reuse = 1
+0.01.699.470 I   placeholder: can_reuse = 0
+0.01.699.471 I   placeholder: can_reuse = 1
+.0.01.706.900 I   placeholder: can_reuse = 1
+0.01.706.904 I   placeholder: can_reuse = 1
+0.01.706.904 I   placeholder: can_reuse = 0
+0.01.706.905 I   placeholder: can_reuse = 1
+
+0.01.714.345 I   placeholder: can_reuse = 1
+0.01.714.349 I   placeholder: can_reuse = 1
+0.01.714.350 I   placeholder: can_reuse = 0
+0.01.714.351 I   placeholder: can_reuse = 1
+
+0.01.721.810 I   placeholder: can_reuse = 1
+0.01.721.814 I   placeholder: can_reuse = 1
+0.01.721.814 I   placeholder: can_reuse = 0
+0.01.721.815 I   placeholder: can_reuse = 1
+.0.01.729.252 I   placeholder: can_reuse = 1
+0.01.729.254 I   placeholder: can_reuse = 1
+0.01.729.255 I   placeholder: can_reuse = 0
+0.01.729.256 I   placeholder: can_reuse = 1
+
+0.01.736.697 I   placeholder: can_reuse = 1
+0.01.736.698 I   placeholder: can_reuse = 1
+0.01.736.699 I   placeholder: can_reuse = 0
+0.01.736.700 I   placeholder: can_reuse = 1
+
+0.01.744.144 I   placeholder: can_reuse = 1
+0.01.744.148 I   placeholder: can_reuse = 1
+0.01.744.149 I   placeholder: can_reuse = 0
+0.01.744.149 I   placeholder: can_reuse = 1
+.0.01.751.588 I   placeholder: can_reuse = 1
+0.01.751.590 I   placeholder: can_reuse = 1
+0.01.751.591 I   placeholder: can_reuse = 0
+0.01.751.591 I   placeholder: can_reuse = 1
+
+0.01.759.049 I   placeholder: can_reuse = 1
+0.01.759.053 I   placeholder: can_reuse = 1
+0.01.759.054 I   placeholder: can_reuse = 0
+0.01.759.054 I   placeholder: can_reuse = 1
+
+0.01.766.493 I   placeholder: can_reuse = 1
+0.01.766.497 I   placeholder: can_reuse = 1
+0.01.766.497 I   placeholder: can_reuse = 0
+0.01.766.498 I   placeholder: can_reuse = 1
+.0.01.773.933 I   placeholder: can_reuse = 1
+0.01.773.938 I   placeholder: can_reuse = 1
+0.01.773.939 I   placeholder: can_reuse = 0
+0.01.773.939 I   placeholder: can_reuse = 1
+
+0.01.781.361 I   placeholder: can_reuse = 1
+0.01.781.365 I   placeholder: can_reuse = 1
+0.01.781.365 I   placeholder: can_reuse = 0
+0.01.781.366 I   placeholder: can_reuse = 1
+
+0.01.788.911 I   placeholder: can_reuse = 1
+0.01.788.915 I   placeholder: can_reuse = 1
+0.01.788.915 I   placeholder: can_reuse = 0
+0.01.788.916 I   placeholder: can_reuse = 1
+.0.01.796.341 I   placeholder: can_reuse = 1
+0.01.796.343 I   placeholder: can_reuse = 1
+0.01.796.344 I   placeholder: can_reuse = 0
+0.01.796.344 I   placeholder: can_reuse = 1
+
+0.01.803.802 I   placeholder: can_reuse = 1
+0.01.803.803 I   placeholder: can_reuse = 1
+0.01.803.803 I   placeholder: can_reuse = 0
+0.01.803.804 I   placeholder: can_reuse = 1
+
+0.01.811.230 I   placeholder: can_reuse = 1
+0.01.811.232 I   placeholder: can_reuse = 1
+0.01.811.233 I   placeholder: can_reuse = 0
+0.01.811.233 I   placeholder: can_reuse = 1
+.0.01.818.673 I   placeholder: can_reuse = 1
+0.01.818.675 I   placeholder: can_reuse = 1
+0.01.818.675 I   placeholder: can_reuse = 0
+0.01.818.676 I   placeholder: can_reuse = 1
+
+0.01.826.120 I   placeholder: can_reuse = 1
+0.01.826.125 I   placeholder: can_reuse = 1
+0.01.826.126 I   placeholder: can_reuse = 0
+0.01.826.126 I   placeholder: can_reuse = 1
+
+0.01.833.578 I   placeholder: can_reuse = 1
+0.01.833.582 I   placeholder: can_reuse = 1
+0.01.833.583 I   placeholder: can_reuse = 0
+0.01.833.583 I   placeholder: can_reuse = 1
+.0.01.841.014 I   placeholder: can_reuse = 1
+0.01.841.018 I   placeholder: can_reuse = 1
+0.01.841.019 I   placeholder: can_reuse = 0
+0.01.841.019 I   placeholder: can_reuse = 1
+
+0.01.848.456 I   placeholder: can_reuse = 1
+0.01.848.460 I   placeholder: can_reuse = 1
+0.01.848.461 I   placeholder: can_reuse = 0
+0.01.848.461 I   placeholder: can_reuse = 1
+
+0.01.855.913 I   placeholder: can_reuse = 1
+0.01.855.918 I   placeholder: can_reuse = 1
+0.01.855.918 I   placeholder: can_reuse = 0
+0.01.855.919 I   placeholder: can_reuse = 1
+.0.01.863.577 I   placeholder: can_reuse = 1
+0.01.863.578 I   placeholder: can_reuse = 1
+0.01.863.578 I   placeholder: can_reuse = 0
+0.01.863.579 I   placeholder: can_reuse = 1
+
+0.01.871.013 I   placeholder: can_reuse = 1
+0.01.871.015 I   placeholder: can_reuse = 1
+0.01.871.016 I   placeholder: can_reuse = 0
+0.01.871.016 I   placeholder: can_reuse = 1
+
+0.01.878.450 I   placeholder: can_reuse = 1
+0.01.878.452 I   placeholder: can_reuse = 1
+0.01.878.453 I   placeholder: can_reuse = 0
+0.01.878.453 I   placeholder: can_reuse = 1
+.0.01.885.884 I   placeholder: can_reuse = 1
+0.01.885.888 I   placeholder: can_reuse = 1
+0.01.885.889 I   placeholder: can_reuse = 0
+0.01.885.889 I   placeholder: can_reuse = 1
+
+0.01.893.365 I   placeholder: can_reuse = 1
+0.01.893.369 I   placeholder: can_reuse = 1
+0.01.893.369 I   placeholder: can_reuse = 0
+0.01.893.370 I   placeholder: can_reuse = 1
+
+0.01.900.851 I   placeholder: can_reuse = 1
+0.01.900.853 I   placeholder: can_reuse = 1
+0.01.900.853 I   placeholder: can_reuse = 0
+0.01.900.854 I   placeholder: can_reuse = 1
+.0.01.908.294 I   placeholder: can_reuse = 1
+0.01.908.298 I   placeholder: can_reuse = 1
+0.01.908.299 I   placeholder: can_reuse = 0
+0.01.908.299 I   placeholder: can_reuse = 1
+
+0.01.915.743 I   placeholder: can_reuse = 1
+0.01.915.746 I   placeholder: can_reuse = 1
+0.01.915.746 I   placeholder: can_reuse = 0
+0.01.915.747 I   placeholder: can_reuse = 1
+
+0.01.923.219 I   placeholder: can_reuse = 1
+0.01.923.223 I   placeholder: can_reuse = 1
+0.01.923.224 I   placeholder: can_reuse = 0
+0.01.923.224 I   placeholder: can_reuse = 1
+.0.01.931.292 I   placeholder: can_reuse = 1
+0.01.931.292 I   placeholder: can_reuse = 1
+0.01.931.293 I   placeholder: can_reuse = 0
+0.01.931.293 I   placeholder: can_reuse = 1
+
+0.01.938.837 I   placeholder: can_reuse = 1
+0.01.938.839 I   placeholder: can_reuse = 1
+0.01.938.840 I   placeholder: can_reuse = 0
+0.01.938.840 I   placeholder: can_reuse = 1
+
+0.01.946.320 I   placeholder: can_reuse = 1
+0.01.946.322 I   placeholder: can_reuse = 1
+0.01.946.322 I   placeholder: can_reuse = 0
+0.01.946.323 I   placeholder: can_reuse = 1
+.0.01.953.854 I   placeholder: can_reuse = 1
+0.01.953.856 I   placeholder: can_reuse = 1
+0.01.953.857 I   placeholder: can_reuse = 0
+0.01.953.858 I   placeholder: can_reuse = 1
+
+0.01.961.327 I   placeholder: can_reuse = 1
+0.01.961.331 I   placeholder: can_reuse = 1
+0.01.961.332 I   placeholder: can_reuse = 0
+0.01.961.333 I   placeholder: can_reuse = 1
+
+0.01.968.841 I   placeholder: can_reuse = 1
+0.01.968.845 I   placeholder: can_reuse = 1
+0.01.968.846 I   placeholder: can_reuse = 0
+0.01.968.847 I   placeholder: can_reuse = 1
+.0.01.976.319 I   placeholder: can_reuse = 1
+0.01.976.323 I   placeholder: can_reuse = 1
+0.01.976.323 I   placeholder: can_reuse = 0
+0.01.976.324 I   placeholder: can_reuse = 1
+
+0.01.983.923 I   placeholder: can_reuse = 1
+0.01.983.927 I   placeholder: can_reuse = 1
+0.01.983.927 I   placeholder: can_reuse = 0
+0.01.983.928 I   placeholder: can_reuse = 1
+
+0.01.991.402 I   placeholder: can_reuse = 1
+0.01.991.404 I   placeholder: can_reuse = 1
+0.01.991.405 I   placeholder: can_reuse = 0
+0.01.991.405 I   placeholder: can_reuse = 1
+.0.01.998.899 I   placeholder: can_reuse = 1
+0.01.998.901 I   placeholder: can_reuse = 1
+0.01.998.902 I   placeholder: can_reuse = 0
+0.01.998.903 I   placeholder: can_reuse = 1
+
+0.02.006.411 I   placeholder: can_reuse = 1
+0.02.006.412 I   placeholder: can_reuse = 1
+0.02.006.413 I   placeholder: can_reuse = 0
+0.02.006.414 I   placeholder: can_reuse = 1
+
+0.02.013.918 I   placeholder: can_reuse = 1
+0.02.013.920 I   placeholder: can_reuse = 1
+0.02.013.920 I   placeholder: can_reuse = 0
+0.02.013.921 I   placeholder: can_reuse = 1
+.0.02.021.392 I   placeholder: can_reuse = 1
+0.02.021.397 I   placeholder: can_reuse = 1
+0.02.021.397 I   placeholder: can_reuse = 0
+0.02.021.398 I   placeholder: can_reuse = 1
+
+0.02.028.891 I   placeholder: can_reuse = 1
+0.02.028.895 I   placeholder: can_reuse = 1
+0.02.028.896 I   placeholder: can_reuse = 0
+0.02.028.896 I   placeholder: can_reuse = 1
+
+0.02.036.373 I   placeholder: can_reuse = 1
+0.02.036.377 I   placeholder: can_reuse = 1
+0.02.036.378 I   placeholder: can_reuse = 0
+0.02.036.378 I   placeholder: can_reuse = 1
+.0.02.043.901 I   placeholder: can_reuse = 1
+0.02.043.903 I   placeholder: can_reuse = 1
+0.02.043.904 I   placeholder: can_reuse = 0
+0.02.043.904 I   placeholder: can_reuse = 1
+
+0.02.051.392 I   placeholder: can_reuse = 1
+0.02.051.394 I   placeholder: can_reuse = 1
+0.02.051.395 I   placeholder: can_reuse = 0
+0.02.051.396 I   placeholder: can_reuse = 1
+
+0.02.058.879 I   placeholder: can_reuse = 1
+0.02.058.881 I   placeholder: can_reuse = 1
+0.02.058.882 I   placeholder: can_reuse = 0
+0.02.058.883 I   placeholder: can_reuse = 1
+.0.02.066.368 I   placeholder: can_reuse = 1
+0.02.066.373 I   placeholder: can_reuse = 1
+0.02.066.373 I   placeholder: can_reuse = 0
+0.02.066.374 I   placeholder: can_reuse = 1
+
+0.02.073.897 I   placeholder: can_reuse = 1
+0.02.073.900 I   placeholder: can_reuse = 1
+0.02.073.900 I   placeholder: can_reuse = 0
+0.02.073.901 I   placeholder: can_reuse = 1
+
+0.02.081.379 I   placeholder: can_reuse = 1
+0.02.081.383 I   placeholder: can_reuse = 1
+0.02.081.384 I   placeholder: can_reuse = 0
+0.02.081.384 I   placeholder: can_reuse = 1
+.0.02.088.872 I   placeholder: can_reuse = 1
+0.02.088.874 I   placeholder: can_reuse = 1
+0.02.088.875 I   placeholder: can_reuse = 0
+0.02.088.875 I   placeholder: can_reuse = 1
+
+0.02.096.359 I   placeholder: can_reuse = 1
+0.02.096.363 I   placeholder: can_reuse = 1
+0.02.096.364 I   placeholder: can_reuse = 0
+0.02.096.364 I   placeholder: can_reuse = 1
+
+0.02.103.855 I   placeholder: can_reuse = 1
+0.02.103.860 I   placeholder: can_reuse = 1
+0.02.103.861 I   placeholder: can_reuse = 0
+0.02.103.861 I   placeholder: can_reuse = 1
+.0.02.111.327 I   placeholder: can_reuse = 1
+0.02.111.328 I   placeholder: can_reuse = 1
+0.02.111.329 I   placeholder: can_reuse = 0
+0.02.111.329 I   placeholder: can_reuse = 1
+
+0.02.118.801 I   placeholder: can_reuse = 1
+0.02.118.803 I   placeholder: can_reuse = 1
+0.02.118.804 I   placeholder: can_reuse = 0
+0.02.118.805 I   placeholder: can_reuse = 1
+
+0.02.126.281 I   placeholder: can_reuse = 1
+0.02.126.283 I   placeholder: can_reuse = 1
+0.02.126.283 I   placeholder: can_reuse = 0
+0.02.126.284 I   placeholder: can_reuse = 1
+.0.02.133.776 I   placeholder: can_reuse = 1
+0.02.133.780 I   placeholder: can_reuse = 1
+0.02.133.780 I   placeholder: can_reuse = 0
+0.02.133.781 I   placeholder: can_reuse = 1
+
+0.02.141.290 I   placeholder: can_reuse = 1
+0.02.141.292 I   placeholder: can_reuse = 1
+0.02.141.293 I   placeholder: can_reuse = 0
+0.02.141.294 I   placeholder: can_reuse = 1
+
+0.02.148.785 I   placeholder: can_reuse = 1
+0.02.148.789 I   placeholder: can_reuse = 1
+0.02.148.800 I   placeholder: can_reuse = 0
+0.02.148.801 I   placeholder: can_reuse = 1
+.0.02.156.283 I   placeholder: can_reuse = 1
+0.02.156.286 I   placeholder: can_reuse = 1
+0.02.156.287 I   placeholder: can_reuse = 0
+0.02.156.287 I   placeholder: can_reuse = 1
+
+0.02.163.791 I   placeholder: can_reuse = 1
+0.02.163.795 I   placeholder: can_reuse = 1
+0.02.163.796 I   placeholder: can_reuse = 0
+0.02.163.797 I   placeholder: can_reuse = 1
+
+0.02.171.388 I   placeholder: can_reuse = 1
+0.02.171.393 I   placeholder: can_reuse = 1
+0.02.171.393 I   placeholder: can_reuse = 0
+0.02.171.394 I   placeholder: can_reuse = 1
+.0.02.178.937 I   placeholder: can_reuse = 1
+0.02.178.939 I   placeholder: can_reuse = 1
+0.02.178.940 I   placeholder: can_reuse = 0
+0.02.178.941 I   placeholder: can_reuse = 1
+
+0.02.186.479 I   placeholder: can_reuse = 1
+0.02.186.481 I   placeholder: can_reuse = 1
+0.02.186.481 I   placeholder: can_reuse = 0
+0.02.186.482 I   placeholder: can_reuse = 1
+
+0.02.194.052 I   placeholder: can_reuse = 1
+0.02.194.054 I   placeholder: can_reuse = 1
+0.02.194.055 I   placeholder: can_reuse = 0
+0.02.194.056 I   placeholder: can_reuse = 1
+.0.02.201.571 I   placeholder: can_reuse = 1
+0.02.201.573 I   placeholder: can_reuse = 1
+0.02.201.574 I   placeholder: can_reuse = 0
+0.02.201.575 I   placeholder: can_reuse = 1
+
+0.02.209.104 I   placeholder: can_reuse = 1
+0.02.209.106 I   placeholder: can_reuse = 1
+0.02.209.107 I   placeholder: can_reuse = 0
+0.02.209.108 I   placeholder: can_reuse = 1
+
+0.02.216.637 I   placeholder: can_reuse = 1
+0.02.216.641 I   placeholder: can_reuse = 1
+0.02.216.642 I   placeholder: can_reuse = 0
+0.02.216.642 I   placeholder: can_reuse = 1
+.0.02.224.222 I   placeholder: can_reuse = 1
+0.02.224.224 I   placeholder: can_reuse = 1
+0.02.224.224 I   placeholder: can_reuse = 0
+0.02.224.225 I   placeholder: can_reuse = 1
+
+0.02.231.769 I   placeholder: can_reuse = 1
+0.02.231.771 I   placeholder: can_reuse = 1
+0.02.231.772 I   placeholder: can_reuse = 0
+0.02.231.772 I   placeholder: can_reuse = 1
+
+0.02.239.316 I   placeholder: can_reuse = 1
+0.02.239.320 I   placeholder: can_reuse = 1
+0.02.239.321 I   placeholder: can_reuse = 0
+0.02.239.321 I   placeholder: can_reuse = 1
+.0.02.246.885 I   placeholder: can_reuse = 1
+0.02.246.890 I   placeholder: can_reuse = 1
+0.02.246.890 I   placeholder: can_reuse = 0
+0.02.246.892 I   placeholder: can_reuse = 1
+
+0.02.254.430 I   placeholder: can_reuse = 1
+0.02.254.433 I   placeholder: can_reuse = 1
+0.02.254.433 I   placeholder: can_reuse = 0
+0.02.254.434 I   placeholder: can_reuse = 1
+
+0.02.261.961 I   placeholder: can_reuse = 1
+0.02.261.963 I   placeholder: can_reuse = 1
+0.02.261.963 I   placeholder: can_reuse = 0
+0.02.261.964 I   placeholder: can_reuse = 1
+.0.02.269.536 I   placeholder: can_reuse = 1
+0.02.269.538 I   placeholder: can_reuse = 1
+0.02.269.539 I   placeholder: can_reuse = 0
+0.02.269.540 I   placeholder: can_reuse = 1
+
+0.02.277.069 I   placeholder: can_reuse = 1
+0.02.277.073 I   placeholder: can_reuse = 1
+0.02.277.074 I   placeholder: can_reuse = 0
+0.02.277.074 I   placeholder: can_reuse = 1
+
+0.02.284.605 I   placeholder: can_reuse = 1
+0.02.284.607 I   placeholder: can_reuse = 1
+0.02.284.608 I   placeholder: can_reuse = 0
+0.02.284.608 I   placeholder: can_reuse = 1
+.0.02.292.144 I   placeholder: can_reuse = 1
+0.02.292.148 I   placeholder: can_reuse = 1
+0.02.292.149 I   placeholder: can_reuse = 0
+0.02.292.149 I   placeholder: can_reuse = 1
+
+0.02.299.690 I   placeholder: can_reuse = 1
+0.02.299.692 I   placeholder: can_reuse = 1
+0.02.299.693 I   placeholder: can_reuse = 0
+0.02.299.693 I   placeholder: can_reuse = 1
+
+0.02.307.210 I   placeholder: can_reuse = 1
+0.02.307.214 I   placeholder: can_reuse = 1
+0.02.307.215 I   placeholder: can_reuse = 0
+0.02.307.215 I   placeholder: can_reuse = 1
+.0.02.314.741 I   placeholder: can_reuse = 1
+0.02.314.742 I   placeholder: can_reuse = 1
+0.02.314.743 I   placeholder: can_reuse = 0
+0.02.314.743 I   placeholder: can_reuse = 1
+
+0.02.322.271 I   placeholder: can_reuse = 1
+0.02.322.275 I   placeholder: can_reuse = 1
+0.02.322.276 I   placeholder: can_reuse = 0
+0.02.322.276 I   placeholder: can_reuse = 1
+
+0.02.329.808 I   placeholder: can_reuse = 1
+0.02.329.811 I   placeholder: can_reuse = 1
+0.02.329.812 I   placeholder: can_reuse = 0
+0.02.329.812 I   placeholder: can_reuse = 1
+.0.02.337.344 I   placeholder: can_reuse = 1
+0.02.337.348 I   placeholder: can_reuse = 1
+0.02.337.349 I   placeholder: can_reuse = 0
+0.02.337.349 I   placeholder: can_reuse = 1
+
+0.02.344.897 I   placeholder: can_reuse = 1
+0.02.344.899 I   placeholder: can_reuse = 1
+0.02.344.900 I   placeholder: can_reuse = 0
+0.02.344.900 I   placeholder: can_reuse = 1
+
+0.02.352.428 I   placeholder: can_reuse = 1
+0.02.352.428 I   placeholder: can_reuse = 1
+0.02.352.429 I   placeholder: can_reuse = 0
+0.02.352.429 I   placeholder: can_reuse = 1
+.0.02.359.974 I   placeholder: can_reuse = 1
+0.02.359.975 I   placeholder: can_reuse = 1
+0.02.359.976 I   placeholder: can_reuse = 0
+0.02.359.976 I   placeholder: can_reuse = 1
+
+0.02.367.513 I   placeholder: can_reuse = 1
+0.02.367.517 I   placeholder: can_reuse = 1
+0.02.367.518 I   placeholder: can_reuse = 0
+0.02.367.518 I   placeholder: can_reuse = 1
+
+0.02.375.092 I   placeholder: can_reuse = 1
+0.02.375.094 I   placeholder: can_reuse = 1
+0.02.375.094 I   placeholder: can_reuse = 0
+0.02.375.095 I   placeholder: can_reuse = 1
+.0.02.382.623 I   placeholder: can_reuse = 1
+0.02.382.624 I   placeholder: can_reuse = 1
+0.02.382.625 I   placeholder: can_reuse = 0
+0.02.382.625 I   placeholder: can_reuse = 1
+
+0.02.390.165 I   placeholder: can_reuse = 1
+0.02.390.170 I   placeholder: can_reuse = 1
+0.02.390.171 I   placeholder: can_reuse = 0
+0.02.390.171 I   placeholder: can_reuse = 1
+
+0.02.397.713 I   placeholder: can_reuse = 1
+0.02.397.717 I   placeholder: can_reuse = 1
+0.02.397.718 I   placeholder: can_reuse = 0
+0.02.397.718 I   placeholder: can_reuse = 1
+.0.02.405.245 I   placeholder: can_reuse = 1
+0.02.405.247 I   placeholder: can_reuse = 1
+0.02.405.248 I   placeholder: can_reuse = 0
+0.02.405.249 I   placeholder: can_reuse = 1
+
+0.02.412.887 I   placeholder: can_reuse = 1
+0.02.412.891 I   placeholder: can_reuse = 1
+0.02.412.892 I   placeholder: can_reuse = 0
+0.02.412.892 I   placeholder: can_reuse = 1
+
+0.02.420.467 I   placeholder: can_reuse = 1
+0.02.420.469 I   placeholder: can_reuse = 1
+0.02.420.470 I   placeholder: can_reuse = 0
+0.02.420.471 I   placeholder: can_reuse = 1
+.0.02.428.057 I   placeholder: can_reuse = 1
+0.02.428.059 I   placeholder: can_reuse = 1
+0.02.428.060 I   placeholder: can_reuse = 0
+0.02.428.060 I   placeholder: can_reuse = 1
+
+0.02.435.648 I   placeholder: can_reuse = 1
+0.02.435.650 I   placeholder: can_reuse = 1
+0.02.435.651 I   placeholder: can_reuse = 0
+0.02.435.652 I   placeholder: can_reuse = 1
+
+0.02.443.272 I   placeholder: can_reuse = 1
+0.02.443.272 I   placeholder: can_reuse = 1
+0.02.443.273 I   placeholder: can_reuse = 0
+0.02.443.273 I   placeholder: can_reuse = 1
+.0.02.450.848 I   placeholder: can_reuse = 1
+0.02.450.852 I   placeholder: can_reuse = 1
+0.02.450.853 I   placeholder: can_reuse = 0
+0.02.450.853 I   placeholder: can_reuse = 1
+
+0.02.458.435 I   placeholder: can_reuse = 1
+0.02.458.435 I   placeholder: can_reuse = 1
+0.02.458.437 I   placeholder: can_reuse = 0
+0.02.458.437 I   placeholder: can_reuse = 1
+
+0.02.466.014 I   placeholder: can_reuse = 1
+0.02.466.016 I   placeholder: can_reuse = 1
+0.02.466.017 I   placeholder: can_reuse = 0
+0.02.466.017 I   placeholder: can_reuse = 1
+.0.02.473.586 I   placeholder: can_reuse = 1
+0.02.473.589 I   placeholder: can_reuse = 1
+0.02.473.589 I   placeholder: can_reuse = 0
+0.02.473.590 I   placeholder: can_reuse = 1
+
+0.02.481.171 I   placeholder: can_reuse = 1
+0.02.481.175 I   placeholder: can_reuse = 1
+0.02.481.175 I   placeholder: can_reuse = 0
+0.02.481.176 I   placeholder: can_reuse = 1
+
+0.02.491.457 I   placeholder: can_reuse = 1
+0.02.491.459 I   placeholder: can_reuse = 1
+0.02.491.460 I   placeholder: can_reuse = 0
+0.02.491.460 I   placeholder: can_reuse = 1
+.0.02.499.043 I   placeholder: can_reuse = 1
+0.02.499.048 I   placeholder: can_reuse = 1
+0.02.499.049 I   placeholder: can_reuse = 0
+0.02.499.049 I   placeholder: can_reuse = 1
+
+0.02.506.647 I   placeholder: can_reuse = 1
+0.02.506.648 I   placeholder: can_reuse = 1
+0.02.506.649 I   placeholder: can_reuse = 0
+0.02.506.649 I   placeholder: can_reuse = 1
+
+0.02.514.236 I   placeholder: can_reuse = 1
+0.02.514.239 I   placeholder: can_reuse = 1
+0.02.514.239 I   placeholder: can_reuse = 0
+0.02.514.240 I   placeholder: can_reuse = 1
+.0.02.521.810 I   placeholder: can_reuse = 1
+0.02.521.812 I   placeholder: can_reuse = 1
+0.02.521.813 I   placeholder: can_reuse = 0
+0.02.521.814 I   placeholder: can_reuse = 1
+
+0.02.529.395 I   placeholder: can_reuse = 1
+0.02.529.399 I   placeholder: can_reuse = 1
+0.02.529.400 I   placeholder: can_reuse = 0
+0.02.529.400 I   placeholder: can_reuse = 1
+
+0.02.536.999 I   placeholder: can_reuse = 1
+0.02.537.003 I   placeholder: can_reuse = 1
+0.02.537.004 I   placeholder: can_reuse = 0
+0.02.537.004 I   placeholder: can_reuse = 1
+.0.02.544.573 I   placeholder: can_reuse = 1
+0.02.544.575 I   placeholder: can_reuse = 1
+0.02.544.576 I   placeholder: can_reuse = 0
+0.02.544.576 I   placeholder: can_reuse = 1
+
+0.02.552.158 I   placeholder: can_reuse = 1
+0.02.552.162 I   placeholder: can_reuse = 1
+0.02.552.163 I   placeholder: can_reuse = 0
+0.02.552.164 I   placeholder: can_reuse = 1
+
+0.02.559.745 I   placeholder: can_reuse = 1
+0.02.559.750 I   placeholder: can_reuse = 1
+0.02.559.750 I   placeholder: can_reuse = 0
+0.02.559.751 I   placeholder: can_reuse = 1
+.0.02.567.343 I   placeholder: can_reuse = 1
+0.02.567.346 I   placeholder: can_reuse = 1
+0.02.567.346 I   placeholder: can_reuse = 0
+0.02.567.347 I   placeholder: can_reuse = 1
+
+0.02.574.954 I   placeholder: can_reuse = 1
+0.02.574.958 I   placeholder: can_reuse = 1
+0.02.574.959 I   placeholder: can_reuse = 0
+0.02.574.960 I   placeholder: can_reuse = 1
+
+0.02.582.520 I   placeholder: can_reuse = 1
+0.02.582.525 I   placeholder: can_reuse = 1
+0.02.582.526 I   placeholder: can_reuse = 0
+0.02.582.526 I   placeholder: can_reuse = 1
+.0.02.590.101 I   placeholder: can_reuse = 1
+0.02.590.104 I   placeholder: can_reuse = 1
+0.02.590.104 I   placeholder: can_reuse = 0
+0.02.590.105 I   placeholder: can_reuse = 1
+
+0.02.597.695 I   placeholder: can_reuse = 1
+0.02.597.697 I   placeholder: can_reuse = 1
+0.02.597.698 I   placeholder: can_reuse = 0
+0.02.597.698 I   placeholder: can_reuse = 1
+
+0.02.605.272 I   placeholder: can_reuse = 1
+0.02.605.277 I   placeholder: can_reuse = 1
+0.02.605.278 I   placeholder: can_reuse = 0
+0.02.605.278 I   placeholder: can_reuse = 1
+.0.02.612.856 I   placeholder: can_reuse = 1
+0.02.612.860 I   placeholder: can_reuse = 1
+0.02.612.861 I   placeholder: can_reuse = 0
+0.02.612.861 I   placeholder: can_reuse = 1
+
+0.02.620.466 I   placeholder: can_reuse = 1
+0.02.620.469 I   placeholder: can_reuse = 1
+0.02.620.469 I   placeholder: can_reuse = 0
+0.02.620.470 I   placeholder: can_reuse = 1
+
+0.02.628.054 I   placeholder: can_reuse = 1
+0.02.628.056 I   placeholder: can_reuse = 1
+0.02.628.057 I   placeholder: can_reuse = 0
+0.02.628.057 I   placeholder: can_reuse = 1
+.0.02.635.641 I   placeholder: can_reuse = 1
+0.02.635.645 I   placeholder: can_reuse = 1
+0.02.635.646 I   placeholder: can_reuse = 0
+0.02.635.646 I   placeholder: can_reuse = 1
+
+0.02.643.217 I   placeholder: can_reuse = 1
+0.02.643.219 I   placeholder: can_reuse = 1
+0.02.643.220 I   placeholder: can_reuse = 0
+0.02.643.220 I   placeholder: can_reuse = 1
+
+0.02.650.799 I   placeholder: can_reuse = 1
+0.02.650.803 I   placeholder: can_reuse = 1
+0.02.650.803 I   placeholder: can_reuse = 0
+0.02.650.804 I   placeholder: can_reuse = 1
+.0.02.658.531 I   placeholder: can_reuse = 1
+0.02.658.536 I   placeholder: can_reuse = 1
+0.02.658.537 I   placeholder: can_reuse = 0
+0.02.658.537 I   placeholder: can_reuse = 1
+
+0.02.666.221 I   placeholder: can_reuse = 1
+0.02.666.223 I   placeholder: can_reuse = 1
+0.02.666.224 I   placeholder: can_reuse = 0
+0.02.666.225 I   placeholder: can_reuse = 1
+
+0.02.673.892 I   placeholder: can_reuse = 1
+0.02.673.897 I   placeholder: can_reuse = 1
+0.02.673.897 I   placeholder: can_reuse = 0
+0.02.673.898 I   placeholder: can_reuse = 1
+.0.02.681.581 I   placeholder: can_reuse = 1
+0.02.681.583 I   placeholder: can_reuse = 1
+0.02.681.584 I   placeholder: can_reuse = 0
+0.02.681.584 I   placeholder: can_reuse = 1
+
+0.02.689.245 I   placeholder: can_reuse = 1
+0.02.689.249 I   placeholder: can_reuse = 1
+0.02.689.250 I   placeholder: can_reuse = 0
+0.02.689.250 I   placeholder: can_reuse = 1
+
+
+
+0.02.696.928 I llama_perf_sampler_print:    sampling time =      10.42 ms /   263 runs   (    0.04 ms per token, 25235.08 tokens per second)
+0.02.696.932 I llama_perf_context_print:        load time =     443.34 ms
+0.02.696.934 I llama_perf_context_print: prompt eval time =      63.42 ms /     7 tokens (    9.06 ms per token,   110.38 tokens per second)
+0.02.696.936 I llama_perf_context_print:        eval time =    1862.68 ms /   255 runs   (    7.30 ms per token,   136.90 tokens per second)
+0.02.696.938 I llama_perf_context_print:       total time =    1964.84 ms /   262 tokens
+0.02.696.938 I llama_perf_context_print:    graphs reused =          0
+
+real	0m3.005s
+user	0m2.298s
+sys	0m0.707s
++ ./bin/llama-perplexity --model ../models-mnt/pythia/2.8B/ggml-model-q2_k.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test.raw -t 1 -ngl 99 -c 2048 -b 512 --chunks 4
+ggml_cuda_init: GGML_CUDA_FORCE_MMQ:    no
+ggml_cuda_init: GGML_CUDA_FORCE_CUBLAS: no
+ggml_cuda_init: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0, VMM: yes
+0.00.005.207 I build: 5936 (0bdb20949) with cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 for x86_64-linux-gnu
+0.00.260.936 I llama_model_load_from_file_impl: using device CUDA0 (Tesla V100-PCIE-16GB) - 15841 MiB free
+0.00.277.200 I llama_model_loader: loaded meta data with 23 key-value pairs and 388 tensors from ../models-mnt/pythia/2.8B/ggml-model-q2_k.gguf (version GGUF V3 (latest))
+0.00.277.229 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.277.239 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.277.241 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.277.242 I llama_model_loader: - kv   2:                               general.name str              = 2.8B
+0.00.277.243 I llama_model_loader: - kv   3:                           general.finetune str              = 2.8B
+0.00.277.244 I llama_model_loader: - kv   4:                         general.size_label str              = 2.8B
+0.00.277.248 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.277.249 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2560
+0.00.277.251 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 32
+0.00.277.252 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 10240
+0.00.277.253 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 20
+0.00.277.254 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 32
+0.00.277.255 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.277.274 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.277.275 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.277.276 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.284.024 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.285.878 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.292.606 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.292.615 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.292.616 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.292.617 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.292.618 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.292.619 I llama_model_loader: - kv  22:                          general.file_type u32              = 10
+0.00.292.622 I llama_model_loader: - type  f32:  258 tensors
+0.00.292.622 I llama_model_loader: - type q2_K:   65 tensors
+0.00.292.623 I llama_model_loader: - type q3_K:   64 tensors
+0.00.292.623 I llama_model_loader: - type q6_K:    1 tensors
+0.00.292.626 I print_info: file format = GGUF V3 (latest)
+0.00.292.626 I print_info: file type   = Q2_K - Medium
+0.00.292.629 I print_info: file size   = 1.01 GiB (3.13 BPW) 
+0.00.342.675 I load: special tokens cache size = 25
+0.00.365.601 I load: token to piece cache size = 0.2984 MB
+0.00.365.623 I print_info: arch             = gptneox
+0.00.365.623 I print_info: vocab_only       = 0
+0.00.365.624 I print_info: n_ctx_train      = 2048
+0.00.365.624 I print_info: n_embd           = 2560
+0.00.365.625 I print_info: n_layer          = 32
+0.00.365.646 I print_info: n_head           = 32
+0.00.365.651 I print_info: n_head_kv        = 32
+0.00.365.652 I print_info: n_rot            = 20
+0.00.365.652 I print_info: n_swa            = 0
+0.00.365.654 I print_info: is_swa_any       = 0
+0.00.365.654 I print_info: n_embd_head_k    = 80
+0.00.365.655 I print_info: n_embd_head_v    = 80
+0.00.365.657 I print_info: n_gqa            = 1
+0.00.365.659 I print_info: n_embd_k_gqa     = 2560
+0.00.365.661 I print_info: n_embd_v_gqa     = 2560
+0.00.365.664 I print_info: f_norm_eps       = 1.0e-05
+0.00.365.665 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.365.665 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.365.666 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.365.666 I print_info: f_logit_scale    = 0.0e+00
+0.00.365.667 I print_info: f_attn_scale     = 0.0e+00
+0.00.365.668 I print_info: n_ff             = 10240
+0.00.365.669 I print_info: n_expert         = 0
+0.00.365.670 I print_info: n_expert_used    = 0
+0.00.365.670 I print_info: causal attn      = 1
+0.00.365.671 I print_info: pooling type     = 0
+0.00.365.671 I print_info: rope type        = 2
+0.00.365.672 I print_info: rope scaling     = linear
+0.00.365.673 I print_info: freq_base_train  = 10000.0
+0.00.365.674 I print_info: freq_scale_train = 1
+0.00.365.675 I print_info: n_ctx_orig_yarn  = 2048
+0.00.365.675 I print_info: rope_finetuned   = unknown
+0.00.365.676 I print_info: model type       = 2.8B
+0.00.365.677 I print_info: model params     = 2.78 B
+0.00.365.678 I print_info: general.name     = 2.8B
+0.00.365.680 I print_info: vocab type       = BPE
+0.00.365.682 I print_info: n_vocab          = 50304
+0.00.365.683 I print_info: n_merges         = 50009
+0.00.365.684 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.365.685 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.365.685 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.365.686 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.365.687 I print_info: LF token         = 187 'Ċ'
+0.00.365.688 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.365.689 I print_info: max token length = 1024
+0.00.365.692 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.435.880 I load_tensors: offloading 32 repeating layers to GPU
+0.00.435.888 I load_tensors: offloading output layer to GPU
+0.00.435.889 I load_tensors: offloaded 33/33 layers to GPU
+0.00.435.899 I load_tensors:        CUDA0 model buffer size =   993.89 MiB
+0.00.435.900 I load_tensors:   CPU_Mapped model buffer size =    40.30 MiB
+.......................................................................................
+0.00.621.485 I llama_context: constructing llama_context
+0.00.621.491 W llama_context: non-unified KV cache requires ggml_set_rows() - forcing unified KV cache
+0.00.621.492 I llama_context: n_seq_max     = 1
+0.00.621.493 I llama_context: n_ctx         = 2048
+0.00.621.493 I llama_context: n_ctx_per_seq = 2048
+0.00.621.494 I llama_context: n_batch       = 512
+0.00.621.494 I llama_context: n_ubatch      = 512
+0.00.621.495 I llama_context: causal_attn   = 1
+0.00.621.496 I llama_context: flash_attn    = 0
+0.00.621.496 I llama_context: kv_unified    = true
+0.00.621.501 I llama_context: freq_base     = 10000.0
+0.00.621.503 I llama_context: freq_scale    = 1
+0.00.622.805 I llama_context:  CUDA_Host  output buffer size =     0.19 MiB
+0.00.623.159 I llama_kv_cache_unified:      CUDA0 KV buffer size =   640.00 MiB
+0.00.623.966 I llama_kv_cache_unified: size =  640.00 MiB (  2048 cells,  32 layers,  1/ 1 seqs), K (f16):  320.00 MiB, V (f16):  320.00 MiB
+0.00.623.972 W llama_kv_cache_unified: LLAMA_SET_ROWS=0, using old ggml_cpy() method for backwards compatibility
+0.00.649.838 I llama_context:      CUDA0 compute buffer size =   142.00 MiB
+0.00.649.845 I llama_context:  CUDA_Host compute buffer size =     9.01 MiB
+0.00.649.846 I llama_context: graph nodes  = 1351
+0.00.649.846 I llama_context: graph splits = 2
+0.00.649.862 I common_init_from_params: added <|endoftext|> logit bias = -inf
+0.00.650.306 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.650.310 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.682.680 I 
+0.00.682.776 I system_info: n_threads = 1 (n_threads_batch = 1) / 6 | CUDA : ARCHS = 700 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.682.789 I perplexity: tokenizing the input ..
+0.01.459.271 I perplexity: tokenization took 776.469 ms
+0.01.459.593 I perplexity: calculating perplexity over 4 chunks, n_ctx=2048, batch_size=512, n_seq=1
+0.01.519.585 I   placeholder: can_reuse = 1
+0.01.519.596 I   placeholder: can_reuse = 1
+0.01.519.599 I   placeholder: can_reuse = 0
+0.01.519.600 I   placeholder: can_reuse = 1
+0.01.905.850 I   placeholder: can_reuse = 1
+0.01.905.865 I   placeholder: can_reuse = 1
+0.01.905.867 I   placeholder: can_reuse = 0
+0.01.905.868 I   placeholder: can_reuse = 1
+0.02.079.592 I perplexity: 0.62 seconds per pass - ETA 0.03 minutes
+[1]65.3391,0.02.157.134 I   placeholder: can_reuse = 1
+0.02.157.143 I   placeholder: can_reuse = 1
+0.02.157.144 I   placeholder: can_reuse = 0
+0.02.157.144 I   placeholder: can_reuse = 1
+0.02.455.911 I   placeholder: can_reuse = 1
+0.02.455.927 I   placeholder: can_reuse = 1
+0.02.455.928 I   placeholder: can_reuse = 0
+0.02.455.929 I   placeholder: can_reuse = 1
+[2]77.8564,0.02.676.405 I   placeholder: can_reuse = 1
+0.02.676.414 I   placeholder: can_reuse = 1
+0.02.676.415 I   placeholder: can_reuse = 0
+0.02.676.415 I   placeholder: can_reuse = 1
+0.02.974.985 I   placeholder: can_reuse = 1
+0.02.975.001 I   placeholder: can_reuse = 1
+0.02.975.002 I   placeholder: can_reuse = 0
+0.02.975.003 I   placeholder: can_reuse = 1
+[3]87.6350,0.03.200.456 I   placeholder: can_reuse = 1
+0.03.200.465 I   placeholder: can_reuse = 1
+0.03.200.466 I   placeholder: can_reuse = 0
+0.03.200.467 I   placeholder: can_reuse = 1
+0.03.499.303 I   placeholder: can_reuse = 1
+0.03.499.318 I   placeholder: can_reuse = 1
+0.03.499.319 I   placeholder: can_reuse = 0
+0.03.499.320 I   placeholder: can_reuse = 1
+[4]86.2160,
+0.03.694.097 I Final estimate: PPL = 86.2160 +/- 4.58012
+
+0.03.697.819 I llama_perf_context_print:        load time =     421.72 ms
+0.03.697.822 I llama_perf_context_print: prompt eval time =    1881.59 ms /  8192 tokens (    0.23 ms per token,  4353.77 tokens per second)
+0.03.697.824 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.03.697.825 I llama_perf_context_print:       total time =    3015.15 ms /  8193 tokens
+0.03.697.825 I llama_perf_context_print:    graphs reused =          0
+
+real	0m4.004s
+user	0m4.126s
+sys	0m0.871s
