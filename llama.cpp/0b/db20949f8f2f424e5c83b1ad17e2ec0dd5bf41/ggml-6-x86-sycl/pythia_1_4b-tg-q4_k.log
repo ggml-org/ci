@@ -1,0 +1,556 @@
++ ./bin/llama-cli -no-cnv --model ../models-mnt/pythia/1.4B/ggml-model-q4_k.gguf -ngl 99 -c 0 -s 1234 -n 64 --ignore-eos -p 'I believe the meaning of life is'
+0.00.000.397 I build: 5936 (0bdb2094) with Intel(R) oneAPI DPC++/C++ Compiler 2025.1.1 (2025.1.1.20250418) for x86_64-unknown-linux-gnu
+0.00.000.526 I main: llama backend init
+0.00.000.538 I main: load the model and apply lora adapter, if any
+0.00.000.861 I llama_model_load_from_file_impl: using device SYCL0 (Intel(R) Arc(TM) Pro A60 Graphics) - 11597 MiB free
+0.00.017.103 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q4_k.gguf (version GGUF V3 (latest))
+0.00.017.136 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.017.159 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.017.161 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.017.162 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.017.163 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.017.164 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.017.168 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.017.169 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.017.171 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.017.172 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.017.172 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.017.173 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.017.175 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.017.183 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0,000010
+0.00.017.183 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.017.184 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.024.935 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.026.744 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.034.496 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.034.509 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.034.510 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.034.511 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.034.511 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.034.512 I llama_model_loader: - kv  22:                          general.file_type u32              = 15
+0.00.034.517 I llama_model_loader: - type  f32:  194 tensors
+0.00.034.518 I llama_model_loader: - type q4_K:   61 tensors
+0.00.034.519 I llama_model_loader: - type q5_K:   24 tensors
+0.00.034.520 I llama_model_loader: - type q6_K:   13 tensors
+0.00.034.525 I print_info: file format = GGUF V3 (latest)
+0.00.034.529 I print_info: file type   = Q4_K - Medium
+0.00.034.535 I print_info: file size   = 871,81 MiB (5,17 BPW) 
+0.00.092.705 I load: special tokens cache size = 25
+0.00.112.013 I load: token to piece cache size = 0,2984 MB
+0.00.112.052 I print_info: arch             = gptneox
+0.00.112.054 I print_info: vocab_only       = 0
+0.00.112.055 I print_info: n_ctx_train      = 2048
+0.00.112.056 I print_info: n_embd           = 2048
+0.00.112.057 I print_info: n_layer          = 24
+0.00.112.074 I print_info: n_head           = 16
+0.00.112.078 I print_info: n_head_kv        = 16
+0.00.112.078 I print_info: n_rot            = 32
+0.00.112.079 I print_info: n_swa            = 0
+0.00.112.082 I print_info: is_swa_any       = 0
+0.00.112.083 I print_info: n_embd_head_k    = 128
+0.00.112.083 I print_info: n_embd_head_v    = 128
+0.00.112.086 I print_info: n_gqa            = 1
+0.00.112.089 I print_info: n_embd_k_gqa     = 2048
+0.00.112.092 I print_info: n_embd_v_gqa     = 2048
+0.00.112.094 I print_info: f_norm_eps       = 1,0e-05
+0.00.112.095 I print_info: f_norm_rms_eps   = 0,0e+00
+0.00.112.096 I print_info: f_clamp_kqv      = 0,0e+00
+0.00.112.097 I print_info: f_max_alibi_bias = 0,0e+00
+0.00.112.097 I print_info: f_logit_scale    = 0,0e+00
+0.00.112.098 I print_info: f_attn_scale     = 0,0e+00
+0.00.112.099 I print_info: n_ff             = 8192
+0.00.112.100 I print_info: n_expert         = 0
+0.00.112.100 I print_info: n_expert_used    = 0
+0.00.112.101 I print_info: causal attn      = 1
+0.00.112.101 I print_info: pooling type     = 0
+0.00.112.102 I print_info: rope type        = 2
+0.00.112.103 I print_info: rope scaling     = linear
+0.00.112.105 I print_info: freq_base_train  = 10000,0
+0.00.112.106 I print_info: freq_scale_train = 1
+0.00.112.107 I print_info: n_ctx_orig_yarn  = 2048
+0.00.112.108 I print_info: rope_finetuned   = unknown
+0.00.112.109 I print_info: model type       = 1.4B
+0.00.112.110 I print_info: model params     = 1,41 B
+0.00.112.111 I print_info: general.name     = 1.4B
+0.00.112.115 I print_info: vocab type       = BPE
+0.00.112.116 I print_info: n_vocab          = 50304
+0.00.112.117 I print_info: n_merges         = 50009
+0.00.112.117 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.112.118 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.112.118 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.112.119 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.112.120 I print_info: LF token         = 187 'Ċ'
+0.00.112.121 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.112.122 I print_info: max token length = 1024
+0.00.112.125 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.202.476 I load_tensors: offloading 24 repeating layers to GPU
+0.00.202.491 I load_tensors: offloading output layer to GPU
+0.00.202.492 I load_tensors: offloaded 25/25 layers to GPU
+0.00.202.502 I load_tensors:   CPU_Mapped model buffer size =    55,27 MiB
+0.00.202.503 I load_tensors:        SYCL0 model buffer size =   816,55 MiB
+..............................................................................
+0.00.611.575 I llama_context: constructing llama_context
+0.00.611.582 W llama_context: non-unified KV cache requires ggml_set_rows() - forcing unified KV cache
+0.00.611.583 I llama_context: n_seq_max     = 1
+0.00.611.584 I llama_context: n_ctx         = 2048
+0.00.611.585 I llama_context: n_ctx_per_seq = 2048
+0.00.611.585 I llama_context: n_batch       = 2048
+0.00.611.586 I llama_context: n_ubatch      = 512
+0.00.611.586 I llama_context: causal_attn   = 1
+0.00.611.587 I llama_context: flash_attn    = 0
+0.00.611.588 I llama_context: kv_unified    = true
+0.00.611.593 I llama_context: freq_base     = 10000,0
+0.00.611.594 I llama_context: freq_scale    = 1
+0.00.611.607 I Running with Environment Variables:
+0.00.611.608 I   GGML_SYCL_DEBUG: 0
+0.00.611.609 I   GGML_SYCL_DISABLE_OPT: 0
+0.00.611.609 I   GGML_SYCL_DISABLE_GRAPH: 1
+0.00.611.610 I   GGML_SYCL_DISABLE_DNN: 0
+0.00.611.610 I   GGML_SYCL_PRIORITIZE_DMMV: 0
+0.00.611.611 I Build with Macros:
+0.00.611.611 I   GGML_SYCL_FORCE_MMQ: no
+0.00.611.611 I   GGML_SYCL_F16: yes
+0.00.611.613 I Found 1 SYCL devices:
+0.00.611.614 I |  |                   |                                       |       |Max    |        |Max  |Global |                     |
+0.00.611.614 I |  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+0.00.611.615 I |ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+0.00.611.615 I |--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+0.00.611.714 I | 0| [level_zero:gpu:0]|             Intel Arc Pro A60 Graphics|  12.57|    256|    1024|   32| 12160M|         1.6.33276+22|
+0.00.611.715 I SYCL Optimization Feature:
+0.00.611.715 I |ID|        Device Type|Reorder|
+0.00.611.716 I |--|-------------------|-------|
+0.00.611.722 I | 0| [level_zero:gpu:0]|      Y|
+0.00.611.875 I llama_context:  SYCL_Host  output buffer size =     0,19 MiB
+0.00.614.607 I llama_kv_cache_unified:      SYCL0 KV buffer size =   384,00 MiB
+0.00.616.939 I llama_kv_cache_unified: size =  384,00 MiB (  2048 cells,  24 layers,  1/ 1 seqs), K (f16):  192,00 MiB, V (f16):  192,00 MiB
+0.00.616.945 W llama_kv_cache_unified: LLAMA_SET_ROWS=0, using old ggml_cpy() method for backwards compatibility
+0.00.657.510 I llama_context:      SYCL0 compute buffer size =   102,25 MiB
+0.00.657.519 I llama_context:  SYCL_Host compute buffer size =     8,01 MiB
+0.00.657.520 I llama_context: graph nodes  = 1015
+0.00.657.521 I llama_context: graph splits = 2
+0.00.657.544 I common_init_from_params: added <|endoftext|> logit bias = -inf
+0.00.657.903 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 2048
+0.00.657.908 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.01.030.174 I main: llama threadpool init, n_threads = 8
+0.01.030.197 I 
+0.01.030.285 I system_info: n_threads = 8 (n_threads_batch = 8) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.01.030.285 I 
+0.01.030.440 I sampler seed: 1234
+0.01.030.462 I sampler params: 
+	repeat_last_n = 64, repeat_penalty = 1,000, frequency_penalty = 0,000, presence_penalty = 0,000
+	dry_multiplier = 0,000, dry_base = 1,750, dry_allowed_length = 2, dry_penalty_last_n = 2048
+	top_k = 40, top_p = 0,950, min_p = 0,050, xtc_probability = 0,000, xtc_threshold = 0,100, typical_p = 1,000, top_n_sigma = -1,000, temp = 0,800
+	mirostat = 0, mirostat_lr = 0,100, mirostat_ent = 5,000
+0.01.030.471 I sampler chain: logits -> logit-bias -> penalties -> dry -> top-n-sigma -> top-k -> typical -> top-p -> min-p -> xtc -> temp-ext -> dist 
+0.01.030.472 I generate: n_ctx = 2048, n_batch = 2048, n_predict = 64, n_keep = 0
+0.01.030.472 I 
+I believe the meaning of life is that of0.01.665.731 I   placeholder: can_reuse = 1
+0.01.665.732 I   placeholder: can_reuse = 1
+0.01.665.737 I   placeholder: can_reuse = 0
+0.01.665.738 I   placeholder: can_reuse = 1
+ a0.01.691.547 I   placeholder: can_reuse = 1
+0.01.691.548 I   placeholder: can_reuse = 1
+0.01.691.549 I   placeholder: can_reuse = 0
+0.01.691.549 I   placeholder: can_reuse = 1
+ human0.01.718.272 I   placeholder: can_reuse = 1
+0.01.718.273 I   placeholder: can_reuse = 1
+0.01.718.274 I   placeholder: can_reuse = 0
+0.01.718.275 I   placeholder: can_reuse = 1
+ being0.01.747.825 I   placeholder: can_reuse = 1
+0.01.747.826 I   placeholder: can_reuse = 1
+0.01.747.827 I   placeholder: can_reuse = 0
+0.01.747.828 I   placeholder: can_reuse = 1
+ living0.01.777.643 I   placeholder: can_reuse = 1
+0.01.777.645 I   placeholder: can_reuse = 1
+0.01.777.646 I   placeholder: can_reuse = 0
+0.01.777.647 I   placeholder: can_reuse = 1
+ in0.01.807.613 I   placeholder: can_reuse = 1
+0.01.807.614 I   placeholder: can_reuse = 1
+0.01.807.615 I   placeholder: can_reuse = 0
+0.01.807.616 I   placeholder: can_reuse = 1
+ a0.01.836.592 I   placeholder: can_reuse = 1
+0.01.836.593 I   placeholder: can_reuse = 1
+0.01.836.594 I   placeholder: can_reuse = 0
+0.01.836.594 I   placeholder: can_reuse = 1
+ particular0.01.865.093 I   placeholder: can_reuse = 1
+0.01.865.094 I   placeholder: can_reuse = 1
+0.01.865.095 I   placeholder: can_reuse = 0
+0.01.865.096 I   placeholder: can_reuse = 1
+ society0.01.894.755 I   placeholder: can_reuse = 1
+0.01.894.757 I   placeholder: can_reuse = 1
+0.01.894.758 I   placeholder: can_reuse = 0
+0.01.894.759 I   placeholder: can_reuse = 1
+,0.01.924.850 I   placeholder: can_reuse = 1
+0.01.924.851 I   placeholder: can_reuse = 1
+0.01.924.852 I   placeholder: can_reuse = 0
+0.01.924.853 I   placeholder: can_reuse = 1
+ and0.01.957.866 I   placeholder: can_reuse = 1
+0.01.957.867 I   placeholder: can_reuse = 1
+0.01.957.869 I   placeholder: can_reuse = 0
+0.01.957.870 I   placeholder: can_reuse = 1
+ the0.01.989.229 I   placeholder: can_reuse = 1
+0.01.989.231 I   placeholder: can_reuse = 1
+0.01.989.232 I   placeholder: can_reuse = 0
+0.01.989.233 I   placeholder: can_reuse = 1
+ meaning0.02.020.650 I   placeholder: can_reuse = 1
+0.02.020.651 I   placeholder: can_reuse = 1
+0.02.020.653 I   placeholder: can_reuse = 0
+0.02.020.654 I   placeholder: can_reuse = 1
+ of0.02.052.514 I   placeholder: can_reuse = 1
+0.02.052.515 I   placeholder: can_reuse = 1
+0.02.052.516 I   placeholder: can_reuse = 0
+0.02.052.517 I   placeholder: can_reuse = 1
+ society0.02.084.614 I   placeholder: can_reuse = 1
+0.02.084.615 I   placeholder: can_reuse = 1
+0.02.084.616 I   placeholder: can_reuse = 0
+0.02.084.617 I   placeholder: can_reuse = 1
+ is0.02.116.445 I   placeholder: can_reuse = 1
+0.02.116.446 I   placeholder: can_reuse = 1
+0.02.116.448 I   placeholder: can_reuse = 0
+0.02.116.448 I   placeholder: can_reuse = 1
+ that0.02.149.433 I   placeholder: can_reuse = 1
+0.02.149.435 I   placeholder: can_reuse = 1
+0.02.149.436 I   placeholder: can_reuse = 0
+0.02.149.436 I   placeholder: can_reuse = 1
+ of0.02.181.763 I   placeholder: can_reuse = 1
+0.02.181.765 I   placeholder: can_reuse = 1
+0.02.181.766 I   placeholder: can_reuse = 0
+0.02.181.767 I   placeholder: can_reuse = 1
+ a0.02.214.133 I   placeholder: can_reuse = 1
+0.02.214.134 I   placeholder: can_reuse = 1
+0.02.214.136 I   placeholder: can_reuse = 0
+0.02.214.137 I   placeholder: can_reuse = 1
+ human0.02.246.933 I   placeholder: can_reuse = 1
+0.02.246.934 I   placeholder: can_reuse = 1
+0.02.246.936 I   placeholder: can_reuse = 0
+0.02.246.936 I   placeholder: can_reuse = 1
+ being0.02.281.073 I   placeholder: can_reuse = 1
+0.02.281.075 I   placeholder: can_reuse = 1
+0.02.281.076 I   placeholder: can_reuse = 0
+0.02.281.077 I   placeholder: can_reuse = 1
+ living0.02.313.143 I   placeholder: can_reuse = 1
+0.02.313.145 I   placeholder: can_reuse = 1
+0.02.313.146 I   placeholder: can_reuse = 0
+0.02.313.148 I   placeholder: can_reuse = 1
+ in0.02.344.842 I   placeholder: can_reuse = 1
+0.02.344.843 I   placeholder: can_reuse = 1
+0.02.344.844 I   placeholder: can_reuse = 0
+0.02.344.845 I   placeholder: can_reuse = 1
+ a0.02.377.696 I   placeholder: can_reuse = 1
+0.02.377.698 I   placeholder: can_reuse = 1
+0.02.377.699 I   placeholder: can_reuse = 0
+0.02.377.700 I   placeholder: can_reuse = 1
+ particular0.02.410.849 I   placeholder: can_reuse = 1
+0.02.410.850 I   placeholder: can_reuse = 1
+0.02.410.851 I   placeholder: can_reuse = 0
+0.02.410.852 I   placeholder: can_reuse = 1
+ time0.02.441.989 I   placeholder: can_reuse = 1
+0.02.441.990 I   placeholder: can_reuse = 1
+0.02.441.991 I   placeholder: can_reuse = 0
+0.02.441.991 I   placeholder: can_reuse = 1
+ in0.02.479.898 I   placeholder: can_reuse = 1
+0.02.479.900 I   placeholder: can_reuse = 1
+0.02.479.901 I   placeholder: can_reuse = 0
+0.02.479.902 I   placeholder: can_reuse = 1
+ a0.02.512.180 I   placeholder: can_reuse = 1
+0.02.512.181 I   placeholder: can_reuse = 1
+0.02.512.182 I   placeholder: can_reuse = 0
+0.02.512.183 I   placeholder: can_reuse = 1
+ particular0.02.544.618 I   placeholder: can_reuse = 1
+0.02.544.620 I   placeholder: can_reuse = 1
+0.02.544.621 I   placeholder: can_reuse = 0
+0.02.544.622 I   placeholder: can_reuse = 1
+ place0.02.577.264 I   placeholder: can_reuse = 1
+0.02.577.265 I   placeholder: can_reuse = 1
+0.02.577.266 I   placeholder: can_reuse = 0
+0.02.577.266 I   placeholder: can_reuse = 1
+.0.02.609.297 I   placeholder: can_reuse = 1
+0.02.609.298 I   placeholder: can_reuse = 1
+0.02.609.300 I   placeholder: can_reuse = 0
+0.02.609.300 I   placeholder: can_reuse = 1
+ The0.02.639.998 I   placeholder: can_reuse = 1
+0.02.640.000 I   placeholder: can_reuse = 1
+0.02.640.001 I   placeholder: can_reuse = 0
+0.02.640.002 I   placeholder: can_reuse = 1
+ two0.02.671.075 I   placeholder: can_reuse = 1
+0.02.671.076 I   placeholder: can_reuse = 1
+0.02.671.078 I   placeholder: can_reuse = 0
+0.02.671.078 I   placeholder: can_reuse = 1
+ are0.02.701.515 I   placeholder: can_reuse = 1
+0.02.701.516 I   placeholder: can_reuse = 1
+0.02.701.517 I   placeholder: can_reuse = 0
+0.02.701.518 I   placeholder: can_reuse = 1
+ not0.02.732.953 I   placeholder: can_reuse = 1
+0.02.732.954 I   placeholder: can_reuse = 1
+0.02.732.955 I   placeholder: can_reuse = 0
+0.02.732.955 I   placeholder: can_reuse = 1
+ mutually0.02.770.957 I   placeholder: can_reuse = 1
+0.02.770.970 I   placeholder: can_reuse = 1
+0.02.770.972 I   placeholder: can_reuse = 0
+0.02.770.973 I   placeholder: can_reuse = 1
+ exclusive0.02.805.336 I   placeholder: can_reuse = 1
+0.02.805.337 I   placeholder: can_reuse = 1
+0.02.805.338 I   placeholder: can_reuse = 0
+0.02.805.339 I   placeholder: can_reuse = 1
+;0.02.838.052 I   placeholder: can_reuse = 1
+0.02.838.053 I   placeholder: can_reuse = 1
+0.02.838.054 I   placeholder: can_reuse = 0
+0.02.838.055 I   placeholder: can_reuse = 1
+ they0.02.873.149 I   placeholder: can_reuse = 1
+0.02.873.150 I   placeholder: can_reuse = 1
+0.02.873.151 I   placeholder: can_reuse = 0
+0.02.873.172 I   placeholder: can_reuse = 1
+ are0.02.908.109 I   placeholder: can_reuse = 1
+0.02.908.110 I   placeholder: can_reuse = 1
+0.02.908.112 I   placeholder: can_reuse = 0
+0.02.908.113 I   placeholder: can_reuse = 1
+ in0.02.941.923 I   placeholder: can_reuse = 1
+0.02.941.924 I   placeholder: can_reuse = 1
+0.02.941.925 I   placeholder: can_reuse = 0
+0.02.941.926 I   placeholder: can_reuse = 1
+separ0.02.976.373 I   placeholder: can_reuse = 1
+0.02.976.373 I   placeholder: can_reuse = 1
+0.02.976.375 I   placeholder: can_reuse = 0
+0.02.976.376 I   placeholder: can_reuse = 1
+able0.03.009.345 I   placeholder: can_reuse = 1
+0.03.009.346 I   placeholder: can_reuse = 1
+0.03.009.348 I   placeholder: can_reuse = 0
+0.03.009.348 I   placeholder: can_reuse = 1
+.0.03.042.030 I   placeholder: can_reuse = 1
+0.03.042.031 I   placeholder: can_reuse = 1
+0.03.042.032 I   placeholder: can_reuse = 0
+0.03.042.033 I   placeholder: can_reuse = 1
+ The0.03.072.438 I   placeholder: can_reuse = 1
+0.03.072.439 I   placeholder: can_reuse = 1
+0.03.072.440 I   placeholder: can_reuse = 0
+0.03.072.441 I   placeholder: can_reuse = 1
+ meaning0.03.103.278 I   placeholder: can_reuse = 1
+0.03.103.279 I   placeholder: can_reuse = 1
+0.03.103.280 I   placeholder: can_reuse = 0
+0.03.103.280 I   placeholder: can_reuse = 1
+ of0.03.135.764 I   placeholder: can_reuse = 1
+0.03.135.765 I   placeholder: can_reuse = 1
+0.03.135.767 I   placeholder: can_reuse = 0
+0.03.135.768 I   placeholder: can_reuse = 1
+ man0.03.166.843 I   placeholder: can_reuse = 1
+0.03.166.844 I   placeholder: can_reuse = 1
+0.03.166.845 I   placeholder: can_reuse = 0
+0.03.166.846 I   placeholder: can_reuse = 1
+ and0.03.197.582 I   placeholder: can_reuse = 1
+0.03.197.583 I   placeholder: can_reuse = 1
+0.03.197.584 I   placeholder: can_reuse = 0
+0.03.197.585 I   placeholder: can_reuse = 1
+ of0.03.227.880 I   placeholder: can_reuse = 1
+0.03.227.881 I   placeholder: can_reuse = 1
+0.03.227.882 I   placeholder: can_reuse = 0
+0.03.227.883 I   placeholder: can_reuse = 1
+ the0.03.257.713 I   placeholder: can_reuse = 1
+0.03.257.714 I   placeholder: can_reuse = 1
+0.03.257.716 I   placeholder: can_reuse = 0
+0.03.257.717 I   placeholder: can_reuse = 1
+ meaning0.03.287.409 I   placeholder: can_reuse = 1
+0.03.287.410 I   placeholder: can_reuse = 1
+0.03.287.411 I   placeholder: can_reuse = 0
+0.03.287.412 I   placeholder: can_reuse = 1
+ of0.03.317.122 I   placeholder: can_reuse = 1
+0.03.317.123 I   placeholder: can_reuse = 1
+0.03.317.124 I   placeholder: can_reuse = 0
+0.03.317.125 I   placeholder: can_reuse = 1
+ man0.03.346.997 I   placeholder: can_reuse = 1
+0.03.346.998 I   placeholder: can_reuse = 1
+0.03.346.999 I   placeholder: can_reuse = 0
+0.03.347.000 I   placeholder: can_reuse = 1
+ are0.03.376.764 I   placeholder: can_reuse = 1
+0.03.376.765 I   placeholder: can_reuse = 1
+0.03.376.767 I   placeholder: can_reuse = 0
+0.03.376.767 I   placeholder: can_reuse = 1
+ the0.03.406.308 I   placeholder: can_reuse = 1
+0.03.406.308 I   placeholder: can_reuse = 1
+0.03.406.310 I   placeholder: can_reuse = 0
+0.03.406.311 I   placeholder: can_reuse = 1
+ same0.03.436.449 I   placeholder: can_reuse = 1
+0.03.436.450 I   placeholder: can_reuse = 1
+0.03.436.451 I   placeholder: can_reuse = 0
+0.03.436.452 I   placeholder: can_reuse = 1
+,0.03.467.306 I   placeholder: can_reuse = 1
+0.03.467.306 I   placeholder: can_reuse = 1
+0.03.467.308 I   placeholder: can_reuse = 0
+0.03.467.309 I   placeholder: can_reuse = 1
+ but0.03.498.242 I   placeholder: can_reuse = 1
+0.03.498.243 I   placeholder: can_reuse = 1
+0.03.498.245 I   placeholder: can_reuse = 0
+0.03.498.246 I   placeholder: can_reuse = 1
+ the0.03.530.648 I   placeholder: can_reuse = 1
+0.03.530.649 I   placeholder: can_reuse = 1
+0.03.530.651 I   placeholder: can_reuse = 0
+0.03.530.651 I   placeholder: can_reuse = 1
+ meaning0.03.561.334 I   placeholder: can_reuse = 1
+0.03.561.335 I   placeholder: can_reuse = 1
+0.03.561.337 I   placeholder: can_reuse = 0
+0.03.561.338 I   placeholder: can_reuse = 1
+ of0.03.591.973 I   placeholder: can_reuse = 1
+0.03.591.974 I   placeholder: can_reuse = 1
+0.03.591.975 I   placeholder: can_reuse = 0
+0.03.591.976 I   placeholder: can_reuse = 1
+ man
+
+0.03.622.893 I llama_perf_sampler_print:    sampling time =       4,28 ms /    71 runs   (    0,06 ms per token, 16577,17 tokens per second)
+0.03.622.899 I llama_perf_context_print:        load time =    1027,49 ms
+0.03.622.901 I llama_perf_context_print: prompt eval time =      95,61 ms /     7 tokens (   13,66 ms per token,    73,21 tokens per second)
+0.03.622.903 I llama_perf_context_print:        eval time =    2480,88 ms /    63 runs   (   39,38 ms per token,    25,39 tokens per second)
+0.03.622.905 I llama_perf_context_print:       total time =    2594,53 ms /    70 tokens
+0.03.622.906 I llama_perf_context_print:    graphs reused =          0
+
+real	0m3,937s
+user	0m1,785s
+sys	0m2,523s
++ ./bin/llama-perplexity --model ../models-mnt/pythia/1.4B/ggml-model-q4_k.gguf -f ../models-mnt/wikitext/wikitext-2-raw/wiki.test-60.raw -ngl 99 -c 128 -b 128 --chunks 1
+0.00.000.295 I build: 5936 (0bdb2094) with Intel(R) oneAPI DPC++/C++ Compiler 2025.1.1 (2025.1.1.20250418) for x86_64-unknown-linux-gnu
+0.00.000.545 I llama_model_load_from_file_impl: using device SYCL0 (Intel(R) Arc(TM) Pro A60 Graphics) - 11597 MiB free
+0.00.012.767 I llama_model_loader: loaded meta data with 23 key-value pairs and 292 tensors from ../models-mnt/pythia/1.4B/ggml-model-q4_k.gguf (version GGUF V3 (latest))
+0.00.012.787 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.012.795 I llama_model_loader: - kv   0:                       general.architecture str              = gptneox
+0.00.012.797 I llama_model_loader: - kv   1:                               general.type str              = model
+0.00.012.797 I llama_model_loader: - kv   2:                               general.name str              = 1.4B
+0.00.012.798 I llama_model_loader: - kv   3:                           general.finetune str              = 1.4B
+0.00.012.798 I llama_model_loader: - kv   4:                         general.size_label str              = 1.4B
+0.00.012.802 I llama_model_loader: - kv   5:                     gptneox.context_length u32              = 2048
+0.00.012.802 I llama_model_loader: - kv   6:                   gptneox.embedding_length u32              = 2048
+0.00.012.803 I llama_model_loader: - kv   7:                        gptneox.block_count u32              = 24
+0.00.012.803 I llama_model_loader: - kv   8:                gptneox.feed_forward_length u32              = 8192
+0.00.012.804 I llama_model_loader: - kv   9:               gptneox.rope.dimension_count u32              = 32
+0.00.012.804 I llama_model_loader: - kv  10:               gptneox.attention.head_count u32              = 16
+0.00.012.805 I llama_model_loader: - kv  11:              gptneox.use_parallel_residual bool             = true
+0.00.012.809 I llama_model_loader: - kv  12:       gptneox.attention.layer_norm_epsilon f32              = 0.000010
+0.00.012.810 I llama_model_loader: - kv  13:                       tokenizer.ggml.model str              = gpt2
+0.00.012.810 I llama_model_loader: - kv  14:                         tokenizer.ggml.pre str              = olmo
+0.00.018.852 I llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,50304]   = ["<|endoftext|>", "<|padding|>", "!",...
+0.00.020.270 I llama_model_loader: - kv  16:                  tokenizer.ggml.token_type arr[i32,50304]   = [3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+0.00.026.213 I llama_model_loader: - kv  17:                      tokenizer.ggml.merges arr[str,50009]   = ["Ġ Ġ", "Ġ t", "Ġ a", "h e", "i n...
+0.00.026.221 I llama_model_loader: - kv  18:                tokenizer.ggml.bos_token_id u32              = 0
+0.00.026.222 I llama_model_loader: - kv  19:                tokenizer.ggml.eos_token_id u32              = 0
+0.00.026.223 I llama_model_loader: - kv  20:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.026.223 I llama_model_loader: - kv  21:               general.quantization_version u32              = 2
+0.00.026.225 I llama_model_loader: - kv  22:                          general.file_type u32              = 15
+0.00.026.227 I llama_model_loader: - type  f32:  194 tensors
+0.00.026.228 I llama_model_loader: - type q4_K:   61 tensors
+0.00.026.228 I llama_model_loader: - type q5_K:   24 tensors
+0.00.026.229 I llama_model_loader: - type q6_K:   13 tensors
+0.00.026.232 I print_info: file format = GGUF V3 (latest)
+0.00.026.234 I print_info: file type   = Q4_K - Medium
+0.00.026.237 I print_info: file size   = 871.81 MiB (5.17 BPW) 
+0.00.064.367 I load: special tokens cache size = 25
+0.00.079.896 I load: token to piece cache size = 0.2984 MB
+0.00.079.934 I print_info: arch             = gptneox
+0.00.079.935 I print_info: vocab_only       = 0
+0.00.079.935 I print_info: n_ctx_train      = 2048
+0.00.079.936 I print_info: n_embd           = 2048
+0.00.079.936 I print_info: n_layer          = 24
+0.00.079.952 I print_info: n_head           = 16
+0.00.079.955 I print_info: n_head_kv        = 16
+0.00.079.955 I print_info: n_rot            = 32
+0.00.079.955 I print_info: n_swa            = 0
+0.00.079.958 I print_info: is_swa_any       = 0
+0.00.079.958 I print_info: n_embd_head_k    = 128
+0.00.079.958 I print_info: n_embd_head_v    = 128
+0.00.079.960 I print_info: n_gqa            = 1
+0.00.079.963 I print_info: n_embd_k_gqa     = 2048
+0.00.079.964 I print_info: n_embd_v_gqa     = 2048
+0.00.079.966 I print_info: f_norm_eps       = 1.0e-05
+0.00.079.968 I print_info: f_norm_rms_eps   = 0.0e+00
+0.00.079.969 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.079.969 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.079.970 I print_info: f_logit_scale    = 0.0e+00
+0.00.079.970 I print_info: f_attn_scale     = 0.0e+00
+0.00.079.971 I print_info: n_ff             = 8192
+0.00.079.972 I print_info: n_expert         = 0
+0.00.079.972 I print_info: n_expert_used    = 0
+0.00.079.972 I print_info: causal attn      = 1
+0.00.079.972 I print_info: pooling type     = 0
+0.00.079.973 I print_info: rope type        = 2
+0.00.079.973 I print_info: rope scaling     = linear
+0.00.079.974 I print_info: freq_base_train  = 10000.0
+0.00.079.975 I print_info: freq_scale_train = 1
+0.00.079.975 I print_info: n_ctx_orig_yarn  = 2048
+0.00.079.976 I print_info: rope_finetuned   = unknown
+0.00.079.977 I print_info: model type       = 1.4B
+0.00.079.978 I print_info: model params     = 1.41 B
+0.00.079.978 I print_info: general.name     = 1.4B
+0.00.079.980 I print_info: vocab type       = BPE
+0.00.079.981 I print_info: n_vocab          = 50304
+0.00.079.981 I print_info: n_merges         = 50009
+0.00.079.981 I print_info: BOS token        = 0 '<|endoftext|>'
+0.00.079.982 I print_info: EOS token        = 0 '<|endoftext|>'
+0.00.079.982 I print_info: EOT token        = 0 '<|endoftext|>'
+0.00.079.982 I print_info: UNK token        = 0 '<|endoftext|>'
+0.00.079.983 I print_info: LF token         = 187 'Ċ'
+0.00.079.983 I print_info: EOG token        = 0 '<|endoftext|>'
+0.00.079.984 I print_info: max token length = 1024
+0.00.079.986 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.143.568 I load_tensors: offloading 24 repeating layers to GPU
+0.00.143.577 I load_tensors: offloading output layer to GPU
+0.00.143.578 I load_tensors: offloaded 25/25 layers to GPU
+0.00.143.585 I load_tensors:        SYCL0 model buffer size =   816.55 MiB
+0.00.143.587 I load_tensors:   CPU_Mapped model buffer size =    55.27 MiB
+..............................................................................
+0.00.464.724 I llama_context: constructing llama_context
+0.00.464.731 W llama_context: non-unified KV cache requires ggml_set_rows() - forcing unified KV cache
+0.00.464.732 I llama_context: n_seq_max     = 1
+0.00.464.732 I llama_context: n_ctx         = 128
+0.00.464.733 I llama_context: n_ctx_per_seq = 128
+0.00.464.733 I llama_context: n_batch       = 128
+0.00.464.734 I llama_context: n_ubatch      = 128
+0.00.464.734 I llama_context: causal_attn   = 1
+0.00.464.735 I llama_context: flash_attn    = 0
+0.00.464.735 I llama_context: kv_unified    = true
+0.00.464.739 I llama_context: freq_base     = 10000.0
+0.00.464.740 I llama_context: freq_scale    = 1
+0.00.464.741 W llama_context: n_ctx_per_seq (128) < n_ctx_train (2048) -- the full capacity of the model will not be utilized
+0.00.464.752 I Running with Environment Variables:
+0.00.464.752 I   GGML_SYCL_DEBUG: 0
+0.00.464.753 I   GGML_SYCL_DISABLE_OPT: 0
+0.00.464.753 I   GGML_SYCL_DISABLE_GRAPH: 1
+0.00.464.754 I   GGML_SYCL_DISABLE_DNN: 0
+0.00.464.754 I   GGML_SYCL_PRIORITIZE_DMMV: 0
+0.00.464.754 I Build with Macros:
+0.00.464.754 I   GGML_SYCL_FORCE_MMQ: no
+0.00.464.755 I   GGML_SYCL_F16: yes
+0.00.464.756 I Found 1 SYCL devices:
+0.00.464.757 I |  |                   |                                       |       |Max    |        |Max  |Global |                     |
+0.00.464.757 I |  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+0.00.464.758 I |ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+0.00.464.758 I |--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+0.00.464.850 I | 0| [level_zero:gpu:0]|             Intel Arc Pro A60 Graphics|  12.57|    256|    1024|   32| 12160M|         1.6.33276+22|
+0.00.464.851 I SYCL Optimization Feature:
+0.00.464.851 I |ID|        Device Type|Reorder|
+0.00.464.851 I |--|-------------------|-------|
+0.00.464.856 I | 0| [level_zero:gpu:0]|      Y|
+0.00.464.994 I llama_context:  SYCL_Host  output buffer size =     0.19 MiB
+0.00.465.532 I llama_kv_cache_unified:      SYCL0 KV buffer size =    24.00 MiB
+0.00.465.927 I llama_kv_cache_unified: size =   24.00 MiB (   128 cells,  24 layers,  1/ 1 seqs), K (f16):   12.00 MiB, V (f16):   12.00 MiB
+0.00.465.933 W llama_kv_cache_unified: LLAMA_SET_ROWS=0, using old ggml_cpy() method for backwards compatibility
+0.00.494.818 I llama_context:      SYCL0 compute buffer size =    25.56 MiB
+0.00.494.824 I llama_context:  SYCL_Host compute buffer size =     1.06 MiB
+0.00.494.824 I llama_context: graph nodes  = 1015
+0.00.494.825 I llama_context: graph splits = 2
+0.00.494.844 I common_init_from_params: added <|endoftext|> logit bias = -inf
+0.00.495.132 I common_init_from_params: setting dry_penalty_last_n to ctx_size = 128
+0.00.495.136 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.00.805.539 I 
+0.00.805.640 I system_info: n_threads = 8 (n_threads_batch = 8) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.805.649 I perplexity: tokenizing the input ..
+0.00.815.022 I perplexity: tokenization took 9.366 ms
+0.00.815.066 I perplexity: calculating perplexity over 1 chunks, n_ctx=128, batch_size=128, n_seq=1
+0.01.002.436 I perplexity: 0.19 seconds per pass - ETA 0.00 minutes
+[1]10.1265,
+0.01.009.261 I Final estimate: PPL = 10.1265 +/- 3.23345
+
+0.01.009.359 I llama_perf_context_print:        load time =     804.97 ms
+0.01.009.362 I llama_perf_context_print: prompt eval time =     187.05 ms /   128 tokens (    1.46 ms per token,   684.32 tokens per second)
+0.01.009.364 I llama_perf_context_print:        eval time =       0.00 ms /     1 runs   (    0.00 ms per token,      inf tokens per second)
+0.01.009.365 I llama_perf_context_print:       total time =     203.83 ms /   129 tokens
+0.01.009.366 I llama_perf_context_print:    graphs reused =          0
+
+real	0m1,241s
+user	0m0,706s
+sys	0m0,585s
