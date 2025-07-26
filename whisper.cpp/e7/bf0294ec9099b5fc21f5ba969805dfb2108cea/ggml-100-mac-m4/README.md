@@ -1,0 +1,130 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 144.27
+- date:    Sat Jul 26 03:27:59 PDT 2025
+- repo:    https://github.com/ggerganov/whisper.cpp
+- commit:  https://github.com/ggerganov/whisper.cpp/commit/e7bf0294ec9099b5fc21f5ba969805dfb2108cea
+- author:  Rich Waters
+```
+Support static xcframework packaging in build-xcframework.sh (#3322)
+
+* This commit allows for the building of a static xcframework by adding a
+BUILD_STATIC_XCFRAMEWORK option. When enabled, the build-xcframework.sh
+script builds a self-contained static whisper.xcframework.
+
+The motivation for this change is so that command line binaries can link
+whisper.cpp without forcing users to install the whisper.xcframework
+separately.
+
+* Update build-xcframework.sh
+
+Co-authored-by: Daniel Bevenius <daniel.bevenius@gmail.com>
+
+* Address reviewer feedback: remove extra indentation around static xcframework creation.
+
+* squash! Address reviewer feedback: remove extra indentation around static xcframework creation.
+
+Fix whitespaces.
+
+---------
+
+Co-authored-by: Daniel Bevenius <daniel.bevenius@gmail.com>
+```
+
+## Environment
+
+```
+GG_BUILD_CLOUD=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+GG_BUILD_METAL=1
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /Users/ggml/work/whisper.cpp/build-ci-debug
+No tests were found!!!
+
+real	0m0.012s
+user	0m0.003s
+sys	0m0.006s
+```
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /Users/ggml/work/whisper.cpp/build-ci-release
+No tests were found!!!
+
+real	0m0.010s
+user	0m0.003s
+sys	0m0.005s
+```
+### bench
+
+Whisper Benchmark Results
+- status: 0
+#### memcpy Benchmark
+
+```
+memcpy:   31.18 GB/s (heat-up)
+memcpy:   38.07 GB/s ( 1 thread)
+memcpy:   37.39 GB/s ( 1 thread)
+memcpy:   46.08 GB/s ( 2 thread)
+memcpy:   50.52 GB/s ( 3 thread)
+memcpy:   50.87 GB/s ( 4 thread)
+sum:    -3072000856.000000
+```
+
+#### ggml_mul_mat Benchmark
+
+```
+  64 x   64: Q4_0    12.6 GFLOPS (128 runs) | Q4_1    12.8 GFLOPS (128 runs)
+  64 x   64: Q5_0    11.0 GFLOPS (128 runs) | Q5_1    12.0 GFLOPS (128 runs) | Q8_0    13.5 GFLOPS (128 runs)
+  64 x   64: F16     13.1 GFLOPS (128 runs) | F32     13.2 GFLOPS (128 runs)
+ 128 x  128: Q4_0    88.9 GFLOPS (128 runs) | Q4_1    86.9 GFLOPS (128 runs)
+ 128 x  128: Q5_0    62.1 GFLOPS (128 runs) | Q5_1    60.0 GFLOPS (128 runs) | Q8_0    92.1 GFLOPS (128 runs)
+ 128 x  128: F16     76.4 GFLOPS (128 runs) | F32     63.3 GFLOPS (128 runs)
+ 256 x  256: Q4_0   262.7 GFLOPS (128 runs) | Q4_1   247.0 GFLOPS (128 runs)
+ 256 x  256: Q5_0   156.4 GFLOPS (128 runs) | Q5_1   144.2 GFLOPS (128 runs) | Q8_0   288.2 GFLOPS (128 runs)
+ 256 x  256: F16    186.7 GFLOPS (128 runs) | F32    124.4 GFLOPS (128 runs)
+ 512 x  512: Q4_0   367.6 GFLOPS (128 runs) | Q4_1   346.1 GFLOPS (128 runs)
+ 512 x  512: Q5_0   194.4 GFLOPS (128 runs) | Q5_1   176.3 GFLOPS (128 runs) | Q8_0   430.3 GFLOPS (128 runs)
+ 512 x  512: F16    276.2 GFLOPS (128 runs) | F32    158.9 GFLOPS (128 runs)
+1024 x 1024: Q4_0   424.5 GFLOPS (128 runs) | Q4_1   373.1 GFLOPS (128 runs)
+1024 x 1024: Q5_0   213.5 GFLOPS (100 runs) | Q5_1   189.0 GFLOPS ( 89 runs) | Q8_0   506.9 GFLOPS (128 runs)
+1024 x 1024: F16    313.1 GFLOPS (128 runs) | F32    161.6 GFLOPS ( 76 runs)
+2048 x 2048: Q4_0   427.3 GFLOPS ( 25 runs) | Q4_1   385.1 GFLOPS ( 23 runs)
+2048 x 2048: Q5_0   219.7 GFLOPS ( 13 runs) | Q5_1   191.4 GFLOPS ( 12 runs) | Q8_0   516.7 GFLOPS ( 31 runs)
+2048 x 2048: F16    312.0 GFLOPS ( 19 runs) | F32    132.2 GFLOPS (  8 runs)
+4096 x 4096: Q4_0   436.0 GFLOPS (  4 runs) | Q4_1   391.9 GFLOPS (  3 runs)
+4096 x 4096: Q5_0   226.8 GFLOPS (  3 runs) | Q5_1   186.6 GFLOPS (  3 runs) | Q8_0   519.1 GFLOPS (  4 runs)
+4096 x 4096: F16    241.6 GFLOPS (  3 runs) | F32    116.3 GFLOPS (  3 runs)
+```
+
+#### Model Benchmarks
+
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             NEON |       tiny.en |   4 |   0 |   33.60 |    1.32 |    0.38 |    0.03 | e7bf0294 |
+|             NEON |          tiny |   4 |   0 |   33.72 |    1.35 |    0.38 |    0.03 | e7bf0294 |
+|             NEON |       base.en |   4 |   0 |   68.17 |    2.16 |    0.49 |    0.06 | e7bf0294 |
+|             NEON |          base |   4 |   0 |   68.74 |    2.14 |    0.49 |    0.06 | e7bf0294 |
+|             NEON |      small.en |   4 |   0 |  223.43 |    5.48 |    1.20 |    0.17 | e7bf0294 |
+|             NEON |         small |   4 |   0 |  223.38 |    5.49 |    1.17 |    0.17 | e7bf0294 |
+|             NEON |     medium.en |   4 |   0 |  677.42 |   14.21 |    3.07 |    0.48 | e7bf0294 |
+|             NEON |        medium |   4 |   0 |  674.58 |   14.23 |    3.09 |    0.48 | e7bf0294 |
+|             NEON |      large-v1 |   4 |   0 | 1256.67 |   24.69 |    5.23 |    0.87 | e7bf0294 |
+|             NEON |      large-v2 |   4 |   0 | 1277.48 |   24.85 |    5.24 |    0.87 | e7bf0294 |
+|             NEON |      large-v3 |   4 |   0 | 1262.86 |   24.73 |    5.26 |    0.87 | e7bf0294 |
+|             NEON | large-v3-turbo |   4 |   0 | 1150.70 |    4.49 |    0.97 |    0.14 | e7bf0294 |
+
