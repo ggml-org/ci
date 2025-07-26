@@ -1,0 +1,130 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 14:12.20
+- date:    Sat Jul 26 10:39:56 UTC 2025
+- repo:    https://github.com/ggerganov/whisper.cpp
+- commit:  https://github.com/ggerganov/whisper.cpp/commit/e7bf0294ec9099b5fc21f5ba969805dfb2108cea
+- author:  Rich Waters
+```
+Support static xcframework packaging in build-xcframework.sh (#3322)
+
+* This commit allows for the building of a static xcframework by adding a
+BUILD_STATIC_XCFRAMEWORK option. When enabled, the build-xcframework.sh
+script builds a self-contained static whisper.xcframework.
+
+The motivation for this change is so that command line binaries can link
+whisper.cpp without forcing users to install the whisper.xcframework
+separately.
+
+* Update build-xcframework.sh
+
+Co-authored-by: Daniel Bevenius <daniel.bevenius@gmail.com>
+
+* Address reviewer feedback: remove extra indentation around static xcframework creation.
+
+* squash! Address reviewer feedback: remove extra indentation around static xcframework creation.
+
+Fix whitespaces.
+
+---------
+
+Co-authored-by: Daniel Bevenius <daniel.bevenius@gmail.com>
+```
+
+## Environment
+
+```
+GG_BUILD_CLOUD=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+GG_BUILD_EXTRA_TESTS_0=1
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-debug
+No tests were found!!!
+
+real	0m0.067s
+user	0m0.055s
+sys	0m0.012s
+```
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-release
+No tests were found!!!
+
+real	0m0.068s
+user	0m0.057s
+sys	0m0.011s
+```
+### bench
+
+Whisper Benchmark Results
+- status: 0
+#### memcpy Benchmark
+
+```
+memcpy:   13.89 GB/s (heat-up)
+memcpy:   13.84 GB/s ( 1 thread)
+memcpy:   13.83 GB/s ( 1 thread)
+memcpy:   23.29 GB/s ( 2 thread)
+memcpy:   34.48 GB/s ( 3 thread)
+memcpy:   44.79 GB/s ( 4 thread)
+sum:    -3071998407.000000
+```
+
+#### ggml_mul_mat Benchmark
+
+```
+  64 x   64: Q4_0    27.1 GFLOPS (128 runs) | Q4_1    25.7 GFLOPS (128 runs)
+  64 x   64: Q5_0    25.5 GFLOPS (128 runs) | Q5_1    26.3 GFLOPS (128 runs) | Q8_0    29.5 GFLOPS (128 runs)
+  64 x   64: F16     28.4 GFLOPS (128 runs) | F32     13.8 GFLOPS (128 runs)
+ 128 x  128: Q4_0    71.0 GFLOPS (128 runs) | Q4_1    71.9 GFLOPS (128 runs)
+ 128 x  128: Q5_0    67.9 GFLOPS (128 runs) | Q5_1    62.8 GFLOPS (128 runs) | Q8_0    83.0 GFLOPS (128 runs)
+ 128 x  128: F16     66.9 GFLOPS (128 runs) | F32     32.2 GFLOPS (128 runs)
+ 256 x  256: Q4_0   111.2 GFLOPS (128 runs) | Q4_1   107.0 GFLOPS (128 runs)
+ 256 x  256: Q5_0    95.5 GFLOPS (128 runs) | Q5_1    89.0 GFLOPS (128 runs) | Q8_0   131.9 GFLOPS (128 runs)
+ 256 x  256: F16     97.9 GFLOPS (128 runs) | F32     54.0 GFLOPS (128 runs)
+ 512 x  512: Q4_0   132.6 GFLOPS (128 runs) | Q4_1   127.7 GFLOPS (128 runs)
+ 512 x  512: Q5_0   108.0 GFLOPS (128 runs) | Q5_1   102.3 GFLOPS (128 runs) | Q8_0   165.4 GFLOPS (128 runs)
+ 512 x  512: F16    115.8 GFLOPS (128 runs) | F32     62.8 GFLOPS (128 runs)
+1024 x 1024: Q4_0   154.5 GFLOPS ( 72 runs) | Q4_1   142.4 GFLOPS ( 67 runs)
+1024 x 1024: Q5_0   125.6 GFLOPS ( 59 runs) | Q5_1   119.8 GFLOPS ( 56 runs) | Q8_0   189.9 GFLOPS ( 89 runs)
+1024 x 1024: F16    121.8 GFLOPS ( 57 runs) | F32     63.4 GFLOPS ( 30 runs)
+2048 x 2048: Q4_0   171.2 GFLOPS ( 10 runs) | Q4_1   149.7 GFLOPS (  9 runs)
+2048 x 2048: Q5_0   137.1 GFLOPS (  8 runs) | Q5_1   129.8 GFLOPS (  8 runs) | Q8_0   201.4 GFLOPS ( 12 runs)
+2048 x 2048: F16    128.6 GFLOPS (  8 runs) | F32     64.8 GFLOPS (  4 runs)
+4096 x 4096: Q4_0   181.8 GFLOPS (  3 runs) | Q4_1   152.5 GFLOPS (  3 runs)
+4096 x 4096: Q5_0   144.2 GFLOPS (  3 runs) | Q5_1   136.8 GFLOPS (  3 runs) | Q8_0   201.9 GFLOPS (  3 runs)
+4096 x 4096: F16    120.5 GFLOPS (  3 runs) | F32     61.6 GFLOPS (  3 runs)
+```
+
+#### Model Benchmarks
+
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             AVX2 |       tiny.en |   4 |   0 |  521.54 |    1.95 |    0.97 |    0.73 | e7bf0294 |
+|             AVX2 |          tiny |   4 |   0 |  522.48 |    1.90 |    0.94 |    0.73 | e7bf0294 |
+|             AVX2 |       base.en |   4 |   0 | 1150.52 |    3.67 |    1.70 |    1.27 | e7bf0294 |
+|             AVX2 |          base |   4 |   0 | 1158.34 |    3.68 |    1.70 |    1.27 | e7bf0294 |
+|             AVX2 |      small.en |   4 |   0 | 4124.45 |   10.82 |    4.78 |    3.60 | e7bf0294 |
+|             AVX2 |         small |   4 |   0 | 4230.57 |   10.75 |    4.76 |    3.57 | e7bf0294 |
+|             AVX2 |     medium.en |   4 |   0 | 13125.02 |   30.04 |   13.78 |   10.09 | e7bf0294 |
+|             AVX2 |        medium |   4 |   0 | 13190.96 |   29.89 |   13.50 |   10.17 | e7bf0294 |
+|             AVX2 |      large-v1 |   4 |   0 | 24882.51 |   54.80 |   24.61 |   18.77 | e7bf0294 |
+|             AVX2 |      large-v2 |   4 |   0 | 25103.29 |   54.82 |   24.89 |   18.65 | e7bf0294 |
+|             AVX2 |      large-v3 |   4 |   0 | 25066.59 |   54.85 |   24.65 |   18.68 | e7bf0294 |
+|             AVX2 | large-v3-turbo |   4 |   0 | 22663.20 |    9.65 |    4.37 |    3.35 | e7bf0294 |
+
