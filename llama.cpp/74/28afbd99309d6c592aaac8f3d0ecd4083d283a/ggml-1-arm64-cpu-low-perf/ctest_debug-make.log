@@ -1,0 +1,100 @@
+++ nproc
++ make -j4
+[  2%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+[  0%] Building CXX object common/CMakeFiles/build_info.dir/build-info.cpp.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/sha256.dir/deps/sha256/sha256.c.o
+[  2%] Building C object examples/gguf-hash/CMakeFiles/xxhash.dir/deps/xxhash/xxhash.c.o
+[  2%] Built target xxhash
+[  2%] Built target sha256
+[  2%] Built target build_info
+[  3%] Building C object examples/gguf-hash/CMakeFiles/sha1.dir/deps/sha1/sha1.c.o
+[  3%] Building CXX object tools/mtmd/CMakeFiles/llama-llava-cli.dir/deprecation-warning.cpp.o
+[  3%] Built target sha1
+[  3%] Building CXX object tools/mtmd/CMakeFiles/llama-gemma3-cli.dir/deprecation-warning.cpp.o
+[  3%] Linking CXX executable ../../bin/llama-llava-cli
+[  4%] Linking CXX executable ../../bin/llama-gemma3-cli
+[  5%] Building CXX object tools/mtmd/CMakeFiles/llama-minicpmv-cli.dir/deprecation-warning.cpp.o
+[  5%] Linking CXX executable ../../bin/llama-minicpmv-cli
+[  5%] Built target llama-llava-cli
+[  5%] Built target llama-gemma3-cli
+[  6%] Building CXX object tools/mtmd/CMakeFiles/llama-qwen2vl-cli.dir/deprecation-warning.cpp.o
+[  6%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml.cpp.o
+[  6%] Linking CXX executable ../../bin/llama-qwen2vl-cli
+[  6%] Built target llama-minicpmv-cli
+[  7%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o
+[  7%] Built target llama-qwen2vl-cli
+[  7%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o
+[  8%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o
+[  8%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o
+[  8%] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o
+[  9%] Building CXX object ggml/src/CMakeFiles/ggml-base.dir/gguf.cpp.o
+[  9%] Linking CXX shared library ../../bin/libggml-base.so
+[  9%] Built target ggml-base
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o
+[ 10%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o
+[ 10%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/repack.cpp.o
+[ 11%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/hbm.cpp.o
+[ 11%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/quants.c.o
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/traits.cpp.o
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o
+[ 12%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[ 13%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/binary-ops.cpp.o
+[ 13%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/unary-ops.cpp.o
+[ 14%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/vec.cpp.o
+[ 14%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ops.cpp.o
+[ 14%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.o
+[ 15%] Building C object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/arch/arm/quants.c.o
+[ 15%] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/arch/arm/repack.cpp.o
+[ 16%] Linking CXX shared library ../../bin/libggml-cpu.so
+[ 16%] Built target ggml-cpu
+[ 16%] Building CXX object ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o
+[ 16%] Linking CXX shared library ../../bin/libggml.so
+[ 16%] Built target ggml
+[ 19%] Building CXX object examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/gguf-hash.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-adapter.cpp.o
+[ 19%] Building CXX object examples/gguf/CMakeFiles/llama-gguf.dir/gguf.cpp.o
+[ 19%] Linking CXX executable ../../bin/llama-gguf
+[ 19%] Linking CXX executable ../../bin/llama-gguf-hash
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-arch.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/llama.dir/llama-batch.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-chat.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/llama.dir/llama-context.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/llama.dir/llama-cparams.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/llama.dir/llama-grammar.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/llama.dir/llama-graph.cpp.o
+/usr/bin/ld: ../../bin/libggml-cpu.so: undefined reference to `ggml_gemv_iq4_nl_8x8_q8_0'
+/usr/bin/ld: ../../bin/libggml-cpu.so: undefined reference to `ggml_gemm_iq4_nl_8x8_q8_0'
+collect2: error: ld returned 1 exit status
+make[2]: *** [examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/build.make:106: bin/llama-gguf-hash] Error 1
+make[1]: *** [CMakeFiles/Makefile2:2827: examples/gguf-hash/CMakeFiles/llama-gguf-hash.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[ 22%] Building CXX object src/CMakeFiles/llama.dir/llama-hparams.cpp.o
+/usr/bin/ld[ 22%] Building CXX object src/CMakeFiles/llama.dir/llama-impl.cpp.o
+: ../../bin/libggml-cpu.so: undefined reference to `ggml_gemv_iq4_nl_8x8_q8_0'
+/usr/bin/ld: ../../bin/libggml-cpu.so: undefined reference to `ggml_gemm_iq4_nl_8x8_q8_0'
+[ 23%] Building CXX object src/CMakeFiles/llama.dir/llama-io.cpp.o
+collect2: error: ld returned 1 exit status
+make[2]: *** [examples/gguf/CMakeFiles/llama-gguf.dir/build.make:100: bin/llama-gguf] Error 1
+make[1]: *** [CMakeFiles/Makefile2:2933: examples/gguf/CMakeFiles/llama-gguf.dir/all] Error 2
+[ 23%] Building CXX object src/CMakeFiles/llama.dir/llama-kv-cache-unified.cpp.o
+[ 23%] Building CXX object src/CMakeFiles/llama.dir/llama-kv-cache-unified-iswa.cpp.o
+[ 24%] Building CXX object src/CMakeFiles/llama.dir/llama-memory.cpp.o
+[ 24%] Building CXX object src/CMakeFiles/llama.dir/llama-memory-hybrid.cpp.o
+[ 25%] Building CXX object src/CMakeFiles/llama.dir/llama-memory-recurrent.cpp.o
+[ 25%] Building CXX object src/CMakeFiles/llama.dir/llama-mmap.cpp.o
+[ 26%] Building CXX object src/CMakeFiles/llama.dir/llama-model-loader.cpp.o
+[ 26%] Building CXX object src/CMakeFiles/llama.dir/llama-model-saver.cpp.o
+[ 26%] Building CXX object src/CMakeFiles/llama.dir/llama-model.cpp.o
+[ 27%] Building CXX object src/CMakeFiles/llama.dir/llama-quant.cpp.o
+[ 28%] Building CXX object src/CMakeFiles/llama.dir/llama-sampling.cpp.o
+[ 28%] Building CXX object src/CMakeFiles/llama.dir/llama-vocab.cpp.o
+[ 28%] Building CXX object src/CMakeFiles/llama.dir/unicode.cpp.o
+[ 28%] Building CXX object src/CMakeFiles/llama.dir/unicode-data.cpp.o
+[ 29%] Linking CXX shared library ../bin/libllama.so
+[ 29%] Built target llama
+make: *** [Makefile:146: all] Error 2
+
+real	0m3.728s
+user	0m6.180s
+sys	0m1.488s
