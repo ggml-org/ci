@@ -1,0 +1,109 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 16:30.74
+- date:    Wed Jul 30 19:11:25 UTC 2025
+- repo:    https://github.com/ggerganov/whisper.cpp
+- commit:  https://github.com/ggerganov/whisper.cpp/commit/f7502dca872866a310fe69d30b163fa87d256319
+- author:  Georgi Gerganov
+```
+whisper : reset conv scheduler when CoreML is used (#3350)
+
+ggml-ci
+```
+
+## Environment
+
+```
+GG_BUILD_CLOUD=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-debug
+No tests were found!!!
+
+real	0m0.009s
+user	0m0.005s
+sys	0m0.004s
+```
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-release
+No tests were found!!!
+
+real	0m0.009s
+user	0m0.004s
+sys	0m0.005s
+```
+### bench
+
+Whisper Benchmark Results
+- status: 0
+#### memcpy Benchmark
+
+```
+memcpy:   12.15 GB/s (heat-up)
+memcpy:   12.16 GB/s ( 1 thread)
+memcpy:   12.22 GB/s ( 1 thread)
+memcpy:   20.29 GB/s ( 2 thread)
+memcpy:   28.74 GB/s ( 3 thread)
+memcpy:   36.01 GB/s ( 4 thread)
+sum:    783359998454.000000
+```
+
+#### ggml_mul_mat Benchmark
+
+```
+  64 x   64: Q4_0    27.7 GFLOPS (128 runs) | Q4_1    27.1 GFLOPS (128 runs)
+  64 x   64: Q5_0    20.9 GFLOPS (128 runs) | Q5_1    19.7 GFLOPS (128 runs) | Q8_0    28.5 GFLOPS (128 runs)
+  64 x   64: F16     28.1 GFLOPS (128 runs) | F32     32.8 GFLOPS (128 runs)
+ 128 x  128: Q4_0    55.6 GFLOPS (128 runs) | Q4_1    51.5 GFLOPS (128 runs)
+ 128 x  128: Q5_0    37.8 GFLOPS (128 runs) | Q5_1    33.7 GFLOPS (128 runs) | Q8_0    59.2 GFLOPS (128 runs)
+ 128 x  128: F16     61.1 GFLOPS (128 runs) | F32     55.2 GFLOPS (128 runs)
+ 256 x  256: Q4_0    72.6 GFLOPS (128 runs) | Q4_1    66.1 GFLOPS (128 runs)
+ 256 x  256: Q5_0    49.1 GFLOPS (128 runs) | Q5_1    41.9 GFLOPS (128 runs) | Q8_0    79.9 GFLOPS (128 runs)
+ 256 x  256: F16     88.9 GFLOPS (128 runs) | F32     65.8 GFLOPS (128 runs)
+ 512 x  512: Q4_0    81.0 GFLOPS (128 runs) | Q4_1    73.1 GFLOPS (128 runs)
+ 512 x  512: Q5_0    55.5 GFLOPS (128 runs) | Q5_1    46.8 GFLOPS (128 runs) | Q8_0    90.9 GFLOPS (128 runs)
+ 512 x  512: F16    106.0 GFLOPS (128 runs) | F32     66.0 GFLOPS (128 runs)
+1024 x 1024: Q4_0    86.4 GFLOPS ( 41 runs) | Q4_1    77.8 GFLOPS ( 37 runs)
+1024 x 1024: Q5_0    59.5 GFLOPS ( 28 runs) | Q5_1    49.5 GFLOPS ( 24 runs) | Q8_0    97.7 GFLOPS ( 46 runs)
+1024 x 1024: F16    119.1 GFLOPS ( 56 runs) | F32     63.4 GFLOPS ( 30 runs)
+2048 x 2048: Q4_0    89.6 GFLOPS (  6 runs) | Q4_1    80.4 GFLOPS (  5 runs)
+2048 x 2048: Q5_0    61.8 GFLOPS (  4 runs) | Q5_1    51.2 GFLOPS (  3 runs) | Q8_0   102.0 GFLOPS (  6 runs)
+2048 x 2048: F16    119.7 GFLOPS (  7 runs) | F32     55.3 GFLOPS (  4 runs)
+4096 x 4096: Q4_0    90.9 GFLOPS (  3 runs) | Q4_1    81.4 GFLOPS (  3 runs)
+4096 x 4096: Q5_0    62.1 GFLOPS (  3 runs) | Q5_1    51.5 GFLOPS (  3 runs) | Q8_0   100.8 GFLOPS (  3 runs)
+4096 x 4096: F16    105.8 GFLOPS (  3 runs) | F32     49.3 GFLOPS (  3 runs)
+```
+
+#### Model Benchmarks
+
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             NEON |       tiny.en |   4 |   0 |  614.50 |    2.30 |    1.12 |    0.84 | f7502dca |
+|             NEON |          tiny |   4 |   0 |  609.84 |    2.28 |    1.12 |    0.84 | f7502dca |
+|             NEON |       base.en |   4 |   0 | 1356.72 |    4.86 |    2.07 |    1.47 | f7502dca |
+|             NEON |          base |   4 |   0 | 1361.08 |    4.90 |    2.07 |    1.47 | f7502dca |
+|             NEON |      small.en |   4 |   0 | 4746.75 |   13.36 |    5.80 |    4.06 | f7502dca |
+|             NEON |         small |   4 |   0 | 4741.36 |   13.35 |    5.83 |    4.06 | f7502dca |
+|             NEON |     medium.en |   4 |   0 | 15076.59 |   37.30 |   15.83 |   11.42 | f7502dca |
+|             NEON |        medium |   4 |   0 | 15002.05 |   37.28 |   15.87 |   11.43 | f7502dca |
+|             NEON |      large-v1 |   4 |   0 | 28047.57 |   66.00 |   28.20 |   20.80 | f7502dca |
+|             NEON |      large-v2 |   4 |   0 | 27993.69 |   66.10 |   28.16 |   20.76 | f7502dca |
+|             NEON |      large-v3 |   4 |   0 | 28117.00 |   65.58 |   28.00 |   20.73 | f7502dca |
+|             NEON | large-v3-turbo |   4 |   0 | 25765.05 |   10.84 |    4.83 |    3.58 | f7502dca |
+
