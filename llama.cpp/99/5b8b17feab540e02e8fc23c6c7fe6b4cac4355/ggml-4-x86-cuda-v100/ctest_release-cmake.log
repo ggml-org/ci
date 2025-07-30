@@ -38,10 +38,10 @@
 -- ggml version: 0.0.6034
 -- ggml commit:  995b8b17f
 -- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "7.81.0")  
--- Configuring done (3.7s)
+-- Configuring done (3.6s)
 -- Generating done (0.2s)
 -- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-release
 
-real	0m3.995s
-user	0m2.980s
-sys	0m1.015s
+real	0m3.959s
+user	0m2.899s
+sys	0m1.066s
