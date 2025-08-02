@@ -1,0 +1,129 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 2:39.96
+- date:    Sat Aug  2 05:05:54 UTC 2025
+- repo:    https://github.com/ggerganov/whisper.cpp
+- commit:  https://github.com/ggerganov/whisper.cpp/commit/0becabc8d68d9ffa6ddfba5240e38cd7a2642046
+- author:  Daniel Bevenius
+```
+stream.wasm : add language selection support (#3354)
+
+* stream.wasm : add language selection support
+
+This commit adds support for selecting the language in the stream.wasm
+example. This is includes adding the model `base` which supports
+multilingual transcription, and allowing the user to select a language
+from a dropdown menu in the HTML interface.
+
+The motivation for this is that it allows users to transcribe audio in
+various languages.
+
+Refs: https://github.com/ggml-org/whisper.cpp/issues/3347
+
+* squash! stream.wasm : add language selection support
+
+Remove strdup() for language in stream.wasm and update butten text for
+base (should not be "base.en" but just "base").
+```
+
+## Environment
+
+```
+GG_BUILD_CLOUD=1
+GG_BUILD_CUDA=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-debug
+No tests were found!!!
+
+real	0m0.035s
+user	0m0.023s
+sys	0m0.012s
+```
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-release
+No tests were found!!!
+
+real	0m0.036s
+user	0m0.028s
+sys	0m0.008s
+```
+### bench
+
+Whisper Benchmark Results
+- status: 0
+#### memcpy Benchmark
+
+```
+memcpy:    9.86 GB/s (heat-up)
+memcpy:   10.23 GB/s ( 1 thread)
+memcpy:   10.25 GB/s ( 1 thread)
+memcpy:   19.16 GB/s ( 2 thread)
+memcpy:   23.35 GB/s ( 3 thread)
+memcpy:   27.61 GB/s ( 4 thread)
+sum:    -3071999329.000000
+```
+
+#### ggml_mul_mat Benchmark
+
+```
+ggml_cuda_init: GGML_CUDA_FORCE_MMQ:    no
+ggml_cuda_init: GGML_CUDA_FORCE_CUBLAS: no
+ggml_cuda_init: found 1 CUDA devices:
+  Device 0: Tesla V100-PCIE-16GB, compute capability 7.0, VMM: yes
+  64 x   64: Q4_0    18.7 GFLOPS (128 runs) | Q4_1    18.9 GFLOPS (128 runs)
+  64 x   64: Q5_0    17.5 GFLOPS (128 runs) | Q5_1    13.3 GFLOPS (128 runs) | Q8_0    19.5 GFLOPS (128 runs)
+  64 x   64: F16     20.2 GFLOPS (128 runs) | F32      7.4 GFLOPS (128 runs)
+ 128 x  128: Q4_0    27.5 GFLOPS (128 runs) | Q4_1    29.4 GFLOPS (128 runs)
+ 128 x  128: Q5_0    26.0 GFLOPS (128 runs) | Q5_1    36.0 GFLOPS (128 runs) | Q8_0    45.8 GFLOPS (128 runs)
+ 128 x  128: F16     41.4 GFLOPS (128 runs) | F32     22.3 GFLOPS (128 runs)
+ 256 x  256: Q4_0    60.6 GFLOPS (128 runs) | Q4_1    55.5 GFLOPS (128 runs)
+ 256 x  256: Q5_0    51.8 GFLOPS (128 runs) | Q5_1    45.0 GFLOPS (128 runs) | Q8_0    50.9 GFLOPS (128 runs)
+ 256 x  256: F16     54.8 GFLOPS (128 runs) | F32     33.4 GFLOPS (128 runs)
+ 512 x  512: Q4_0    74.7 GFLOPS (128 runs) | Q4_1    72.3 GFLOPS (128 runs)
+ 512 x  512: Q5_0    60.7 GFLOPS (128 runs) | Q5_1    59.7 GFLOPS (128 runs) | Q8_0    79.8 GFLOPS (128 runs)
+ 512 x  512: F16     65.8 GFLOPS (128 runs) | F32     37.8 GFLOPS (128 runs)
+1024 x 1024: Q4_0    83.2 GFLOPS ( 39 runs) | Q4_1    83.1 GFLOPS ( 39 runs)
+1024 x 1024: Q5_0    71.4 GFLOPS ( 34 runs) | Q5_1    68.6 GFLOPS ( 32 runs) | Q8_0   101.0 GFLOPS ( 48 runs)
+1024 x 1024: F16     77.3 GFLOPS ( 37 runs) | F32     41.2 GFLOPS ( 20 runs)
+2048 x 2048: Q4_0    88.3 GFLOPS (  6 runs) | Q4_1    92.7 GFLOPS (  6 runs)
+2048 x 2048: Q5_0    72.4 GFLOPS (  5 runs) | Q5_1    73.3 GFLOPS (  5 runs) | Q8_0   106.6 GFLOPS (  7 runs)
+2048 x 2048: F16     78.2 GFLOPS (  5 runs) | F32     41.7 GFLOPS (  3 runs)
+4096 x 4096: Q4_0    93.9 GFLOPS (  3 runs) | Q4_1    94.8 GFLOPS (  3 runs)
+4096 x 4096: Q5_0    76.9 GFLOPS (  3 runs) | Q5_1    74.8 GFLOPS (  3 runs) | Q8_0   113.4 GFLOPS (  3 runs)
+4096 x 4096: F16     80.1 GFLOPS (  3 runs) | F32     36.0 GFLOPS (  3 runs)
+```
+
+#### Model Benchmarks
+
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             AVX2 |       tiny.en |   4 |   0 |    6.47 |    1.07 |    0.30 |    0.01 | 0becabc8 |
+|             AVX2 |          tiny |   4 |   0 |    6.06 |    1.02 |    0.33 |    0.01 | 0becabc8 |
+|             AVX2 |       base.en |   4 |   0 |   11.06 |    1.58 |    0.47 |    0.02 | 0becabc8 |
+|             AVX2 |          base |   4 |   0 |   11.05 |    1.46 |    0.44 |    0.02 | 0becabc8 |
+|             AVX2 |      small.en |   4 |   0 |   32.91 |    2.88 |    0.86 |    0.04 | 0becabc8 |
+|             AVX2 |         small |   4 |   0 |   31.30 |    2.88 |    0.91 |    0.04 | 0becabc8 |
+|             AVX2 |     medium.en |   4 |   0 |   84.82 |    6.30 |    1.86 |    0.09 | 0becabc8 |
+|             AVX2 |        medium |   4 |   0 |   84.81 |    6.18 |    1.88 |    0.09 | 0becabc8 |
+|             AVX2 |      large-v1 |   4 |   0 |  139.79 |    9.14 |    2.75 |    0.15 | 0becabc8 |
+|             AVX2 |      large-v2 |   4 |   0 |  139.65 |    9.26 |    2.92 |    0.15 | 0becabc8 |
+|             AVX2 |      large-v3 |   4 |   0 |  139.86 |    9.11 |    2.72 |    0.15 | 0becabc8 |
+|             AVX2 | large-v3-turbo |   4 |   0 |  129.12 |    1.44 |    0.44 |    0.02 | 0becabc8 |
+
