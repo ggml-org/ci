@@ -1,0 +1,114 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 8:57.55
+- date:    Wed Aug 13 17:39:58 UTC 2025
+- repo:    https://github.com/ggerganov/whisper.cpp
+- commit:  https://github.com/ggerganov/whisper.cpp/commit/16c2924cb2c4b5c9f79220aa7708eb5b346b029b
+- author:  ustas
+```
+ci : update main-cuda.Dockerfile (#3371)
+
+* Update main-cuda.Dockerfile
+
+Bump CUDA to 13.0.0 and exclude the `compute_50` arch from build because it was deprecated and now throws an error.
+
+* Add quotes in main-cuda.Dockerfile
+```
+
+## Environment
+
+```
+GG_BUILD_AMX=1
+GG_BUILD_CLOUD=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-debug
+No tests were found!!!
+
+real	0m0.007s
+user	0m0.001s
+sys	0m0.006s
+```
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-release
+No tests were found!!!
+
+real	0m0.007s
+user	0m0.004s
+sys	0m0.003s
+```
+### bench
+
+Whisper Benchmark Results
+- status: 0
+#### memcpy Benchmark
+
+```
+memcpy:   10.33 GB/s (heat-up)
+memcpy:   10.31 GB/s ( 1 thread)
+memcpy:   10.31 GB/s ( 1 thread)
+memcpy:   20.59 GB/s ( 2 thread)
+memcpy:   27.53 GB/s ( 3 thread)
+memcpy:   37.47 GB/s ( 4 thread)
+sum:    -3071998694.000000
+```
+
+#### ggml_mul_mat Benchmark
+
+```
+  64 x   64: Q4_0    19.0 GFLOPS (128 runs) | Q4_1    25.4 GFLOPS (128 runs)
+  64 x   64: Q5_0    24.9 GFLOPS (128 runs) | Q5_1    24.5 GFLOPS (128 runs) | Q8_0    27.4 GFLOPS (128 runs)
+  64 x   64: F16     25.1 GFLOPS (128 runs) | F32     14.0 GFLOPS (128 runs)
+ 128 x  128: Q4_0    69.1 GFLOPS (128 runs) | Q4_1    68.5 GFLOPS (128 runs)
+ 128 x  128: Q5_0    63.6 GFLOPS (128 runs) | Q5_1    63.4 GFLOPS (128 runs) | Q8_0    73.9 GFLOPS (128 runs)
+ 128 x  128: F16     60.6 GFLOPS (128 runs) | F32     40.0 GFLOPS (128 runs)
+ 256 x  256: Q4_0   131.9 GFLOPS (128 runs) | Q4_1   125.4 GFLOPS (128 runs)
+ 256 x  256: Q5_0   110.5 GFLOPS (128 runs) | Q5_1   109.9 GFLOPS (128 runs) | Q8_0   149.9 GFLOPS (128 runs)
+ 256 x  256: F16    114.5 GFLOPS (128 runs) | F32     65.0 GFLOPS (128 runs)
+ 512 x  512: Q4_0   164.2 GFLOPS (128 runs) | Q4_1   165.0 GFLOPS (128 runs)
+ 512 x  512: Q5_0   135.1 GFLOPS (128 runs) | Q5_1   136.4 GFLOPS (128 runs) | Q8_0   194.5 GFLOPS (128 runs)
+ 512 x  512: F16    145.3 GFLOPS (128 runs) | F32     75.3 GFLOPS (128 runs)
+1024 x 1024: Q4_0   183.9 GFLOPS ( 86 runs) | Q4_1   188.6 GFLOPS ( 88 runs)
+1024 x 1024: Q5_0   150.3 GFLOPS ( 70 runs) | Q5_1   156.2 GFLOPS ( 73 runs) | Q8_0   213.0 GFLOPS (100 runs)
+1024 x 1024: F16    155.6 GFLOPS ( 73 runs) | F32     72.7 GFLOPS ( 34 runs)
+2048 x 2048: Q4_0   202.0 GFLOPS ( 12 runs) | Q4_1   204.8 GFLOPS ( 12 runs)
+2048 x 2048: Q5_0   162.3 GFLOPS ( 10 runs) | Q5_1   165.9 GFLOPS ( 10 runs) | Q8_0   227.0 GFLOPS ( 14 runs)
+2048 x 2048: F16    160.2 GFLOPS ( 10 runs) | F32     73.6 GFLOPS (  5 runs)
+4096 x 4096: Q4_0   210.4 GFLOPS (  3 runs) | Q4_1   209.3 GFLOPS (  3 runs)
+4096 x 4096: Q5_0   167.8 GFLOPS (  3 runs) | Q5_1   172.4 GFLOPS (  3 runs) | Q8_0   221.8 GFLOPS (  3 runs)
+4096 x 4096: F16    162.4 GFLOPS (  3 runs) | F32     73.7 GFLOPS (  3 runs)
+```
+
+#### Model Benchmarks
+
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             AVX2 |       tiny.en |   4 |   0 |  294.46 |    1.29 |    0.69 |    0.50 | 16c2924c |
+|             AVX2 |          tiny |   4 |   0 |  295.46 |    1.34 |    0.70 |    0.50 | 16c2924c |
+|             AVX2 |       base.en |   4 |   0 |  628.09 |    3.08 |    1.30 |    0.83 | 16c2924c |
+|             AVX2 |          base |   4 |   0 |  633.38 |    3.12 |    1.31 |    0.83 | 16c2924c |
+|             AVX2 |      small.en |   4 |   0 | 2134.15 |   11.46 |    4.48 |    2.16 | 16c2924c |
+|             AVX2 |         small |   4 |   0 | 2149.45 |   11.54 |    4.48 |    2.16 | 16c2924c |
+|             AVX2 |     medium.en |   4 |   0 | 6598.68 |   33.11 |   11.83 |    5.49 | 16c2924c |
+|             AVX2 |        medium |   4 |   0 | 6561.47 |   33.23 |   11.86 |    5.47 | 16c2924c |
+|             AVX2 |      large-v1 |   4 |   0 | 12572.02 |   61.59 |   22.12 |   10.14 | 16c2924c |
+|             AVX2 |      large-v2 |   4 |   0 | 12544.19 |   61.46 |   22.10 |   10.12 | 16c2924c |
+|             AVX2 |      large-v3 |   4 |   0 | 12538.08 |   61.60 |   22.10 |   10.12 | 16c2924c |
+|             AVX2 | large-v3-turbo |   4 |   0 | 11586.80 |   10.17 |    4.02 |    2.10 | 16c2924c |
+
