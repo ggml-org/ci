@@ -1,0 +1,174 @@
++ ctest --output-on-failure -L main
+Test project /home/ggml/work/llama.cpp/build-ci-release
+      Start  1: test-tokenizer-0-bert-bge
+ 1/36 Test  #1: test-tokenizer-0-bert-bge .........   Passed    0.24 sec
+      Start  2: test-tokenizer-0-command-r
+ 2/36 Test  #2: test-tokenizer-0-command-r ........   Passed    0.99 sec
+      Start  3: test-tokenizer-0-deepseek-coder
+ 3/36 Test  #3: test-tokenizer-0-deepseek-coder ...   Passed    0.27 sec
+      Start  4: test-tokenizer-0-deepseek-llm
+ 4/36 Test  #4: test-tokenizer-0-deepseek-llm .....   Passed    0.49 sec
+      Start  5: test-tokenizer-0-falcon
+ 5/36 Test  #5: test-tokenizer-0-falcon ...........   Passed    0.35 sec
+      Start  6: test-tokenizer-0-gpt-2
+ 6/36 Test  #6: test-tokenizer-0-gpt-2 ............   Passed    0.31 sec
+      Start  7: test-tokenizer-0-llama-bpe
+ 7/36 Test  #7: test-tokenizer-0-llama-bpe ........   Passed    0.65 sec
+      Start  8: test-tokenizer-0-llama-spm
+ 8/36 Test  #8: test-tokenizer-0-llama-spm ........   Passed    0.23 sec
+      Start  9: test-tokenizer-0-mpt
+ 9/36 Test  #9: test-tokenizer-0-mpt ..............   Passed    0.30 sec
+      Start 10: test-tokenizer-0-phi-3
+10/36 Test #10: test-tokenizer-0-phi-3 ............   Passed    0.24 sec
+      Start 11: test-tokenizer-0-qwen2
+11/36 Test #11: test-tokenizer-0-qwen2 ............   Passed    0.62 sec
+      Start 12: test-tokenizer-0-refact
+12/36 Test #12: test-tokenizer-0-refact ...........   Passed    0.29 sec
+      Start 13: test-tokenizer-0-starcoder
+13/36 Test #13: test-tokenizer-0-starcoder ........   Passed    0.31 sec
+      Start 14: test-tokenizers-ggml-vocabs
+14/36 Test #14: test-tokenizers-ggml-vocabs .......   Passed    4.76 sec
+      Start 15: test-sampling
+15/36 Test #15: test-sampling .....................   Passed    1.89 sec
+      Start 16: test-grammar-parser
+16/36 Test #16: test-grammar-parser ...............   Passed    0.13 sec
+      Start 17: test-grammar-integration
+17/36 Test #17: test-grammar-integration ..........   Passed    0.14 sec
+      Start 18: test-llama-grammar
+18/36 Test #18: test-llama-grammar ................   Passed    0.11 sec
+      Start 19: test-chat
+19/36 Test #19: test-chat .........................   Passed    1.36 sec
+      Start 20: test-json-schema-to-grammar
+20/36 Test #20: test-json-schema-to-grammar .......   Passed    4.94 sec
+      Start 21: test-tokenizer-1-llama-spm
+21/36 Test #21: test-tokenizer-1-llama-spm ........   Passed    0.48 sec
+      Start 22: test-chat-parser
+22/36 Test #22: test-chat-parser ..................   Passed    0.12 sec
+      Start 23: test-chat-template
+23/36 Test #23: test-chat-template ................   Passed    0.31 sec
+      Start 24: test-json-partial
+24/36 Test #24: test-json-partial .................   Passed    0.14 sec
+      Start 25: test-log
+25/36 Test #25: test-log ..........................   Passed    0.21 sec
+      Start 26: test-regex-partial
+26/36 Test #26: test-regex-partial ................   Passed    0.16 sec
+      Start 27: test-thread-safety
+27/36 Test #27: test-thread-safety ................   Passed   29.12 sec
+      Start 28: test-arg-parser
+28/36 Test #28: test-arg-parser ...................   Passed    2.49 sec
+      Start 29: test-opt
+29/36 Test #29: test-opt ..........................Subprocess aborted***Exception:   3.16 sec
+Running with Environment Variables:
+  GGML_SYCL_DEBUG: 0
+  GGML_SYCL_DISABLE_OPT: 0
+  GGML_SYCL_DISABLE_GRAPH: 1
+  GGML_SYCL_DISABLE_DNN: 0
+  GGML_SYCL_PRIORITIZE_DMMV: 0
+Build with Macros:
+  GGML_SYCL_FORCE_MMQ: no
+  GGML_SYCL_F16: yes
+Found 1 SYCL devices:
+|  |                   |                                       |       |Max    |        |Max  |Global |                     |
+|  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+|ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+|--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+| 0| [level_zero:gpu:0]|             Intel Arc Pro A60 Graphics|  12.57|    256|    1024|   32| 12160M|         1.6.33276+22|
+SYCL Optimization Feature:
+|ID|        Device Type|Reorder|
+|--|-------------------|-------|
+| 0| [level_zero:gpu:0]|      Y|
+Testing 2 devices
+
+Backend 1/2: SYCL0
+  Device description: Intel(R) Arc(TM) Pro A60 Graphics
+  Device memory: 11597 MB (11597 MB free)
+
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=1): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=1, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=2, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=2, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=2, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=3, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=3, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=4, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=5, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=no, ndata_shard=6, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=1): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=1, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=2, ndata_batch=2): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=2, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=2, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=3, ndata_batch=3): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=3, ndata_batch=6): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=4, ndata_batch=4): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=5, ndata_batch=5): [1;32mOK[0m
+  test_dataset(shuffle=yes, ndata_shard=6, ndata_batch=6): [1;32mOK[0m
+  test_grad(): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=results_initial, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=weights_after_forward, optimizer=adamw): [1;32mOK[0m
+  test_forward_backward(high_level=no, shuffle=no, subtest=results_after_forward, optimizer=adamw): [1;32mOK[0m
+/home/ggml/work/llama.cpp/ggml/src/ggml-backend.cpp:736: pre-allocated tensor (adamw step for weights) in a buffer (SYCL0) that cannot run the operation (OPT_STEP_ADAMW)
+[New LWP 1691972]
+warning: File "/opt/intel/oneapi/compiler/2025.1/lib/libsycl.so.8.0.0-gdb.py" auto-loading has been declined by your `auto-load safe-path' set to "$debugdir:$datadir/auto-load".
+To enable execution of this file add
+	add-auto-load-safe-path /opt/intel/oneapi/compiler/2025.1/lib/libsycl.so.8.0.0-gdb.py
+line to your configuration file "/home/ggml/.config/gdb/gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/ggml/.config/gdb/gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x000076d67ccea42f in __GI___wait4 (pid=1691974, stat_loc=0x0, options=0, usage=0x0) at ../sysdeps/unix/sysv/linux/wait4.c:30
+30	../sysdeps/unix/sysv/linux/wait4.c: No such file or directory.
+#0  0x000076d67ccea42f in __GI___wait4 (pid=1691974, stat_loc=0x0, options=0, usage=0x0) at ../sysdeps/unix/sysv/linux/wait4.c:30
+30	in ../sysdeps/unix/sysv/linux/wait4.c
+#1  0x000076d67d32048a in ggml_print_backtrace () from /home/ggml/work/llama.cpp/build-ci-release/bin/libggml-base.so
+#2  0x000076d67d31f609 in ggml_abort () from /home/ggml/work/llama.cpp/build-ci-release/bin/libggml-base.so
+#3  0x000076d67d3404b9 in ggml_backend_sched_backend_id_from_cur(ggml_backend_sched*, ggml_tensor*) () from /home/ggml/work/llama.cpp/build-ci-release/bin/libggml-base.so
+#4  0x000076d67d33b104 in ggml_backend_sched_split_graph(ggml_backend_sched*, ggml_cgraph*) () from /home/ggml/work/llama.cpp/build-ci-release/bin/libggml-base.so
+#5  0x000076d67d33e377 in ggml_backend_sched_alloc_graph () from /home/ggml/work/llama.cpp/build-ci-release/bin/libggml-base.so
+#6  0x000076d67d34307d in ggml_opt_alloc () from /home/ggml/work/llama.cpp/build-ci-release/bin/libggml-base.so
+#7  0x000000000040767a in test_backend(ggml_backend_sched*, ggml_backend*, ggml_opt_optimizer_type) ()
+#8  0x0000000000405f2d in main ()
+[Inferior 1 (process 1691971) detached]
+
+      Start 30: test-gguf
+30/36 Test #30: test-gguf .........................   Passed    0.49 sec
+      Start 31: test-backend-ops
+31/36 Test #31: test-backend-ops ..................   Passed   61.12 sec
+      Start 34: test-barrier
+32/36 Test #34: test-barrier ......................   Passed    0.74 sec
+      Start 35: test-quantize-fns
+33/36 Test #35: test-quantize-fns .................   Passed   20.68 sec
+      Start 36: test-quantize-perf
+34/36 Test #36: test-quantize-perf ................   Passed    0.13 sec
+      Start 37: test-rope
+35/36 Test #37: test-rope .........................   Passed    0.17 sec
+      Start 38: test-mtmd-c-api
+36/36 Test #38: test-mtmd-c-api ...................   Passed    0.07 sec
+
+97% tests passed, 1 tests failed out of 36
+
+Label Time Summary:
+main    = 138.19 sec*proc (36 tests)
+
+Total Test time (real) = 138.24 sec
+
+The following tests FAILED:
+	 29 - test-opt (Subprocess aborted)
+Errors while running CTest
+
+real	2m18,274s
+user	4m11,637s
+sys	0m51,072s
