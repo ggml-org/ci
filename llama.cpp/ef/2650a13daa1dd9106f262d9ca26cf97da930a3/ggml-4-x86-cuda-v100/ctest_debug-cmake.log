@@ -43,6 +43,6 @@ CMAKE_BUILD_TYPE=Debug
 -- Generating done (0.2s)
 -- Build files have been written to: /home/ggml/work/llama.cpp/build-ci-debug
 
-real	0m4.010s
-user	0m2.943s
-sys	0m1.077s
+real	0m4.023s
+user	0m3.003s
+sys	0m1.023s
