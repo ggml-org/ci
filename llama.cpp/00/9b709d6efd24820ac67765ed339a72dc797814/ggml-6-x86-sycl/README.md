@@ -1,0 +1,622 @@
+## Summary
+
+- status:  FAILURE ❌ (8)
+- runtime: 2:23.08
+- date:    Jum 29 Agu 2025 10:38:34  WIB
+- repo:    https://github.com/ggerganov/llama.cpp
+- commit:  https://github.com/ggerganov/llama.cpp/commit/009b709d6efd24820ac67765ed339a72dc797814
+- author:  Aman Gupta
+```
+CUDA: fuse adds, fuse add with rms norm (#15631)
+
+* CUDA: fused add with rms_norm_mul
+
+* Non-broadcast fuse works
+
+* Add fused adds
+
+* format
+
+* Remove n_fuse from template params
+
+* Address review comments
+
+* Move template inside binbcast
+```
+
+## Environment
+
+```
+GG_BUILD_C_COMPILER=gcc
+GG_BUILD_CLOUD=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_SYCL=1
+```
+
+## Output
+
+### ctest_release
+
+Runs ctest in release mode
+- status: 8
+```
++ ctest --output-on-failure -L main
+Test project /home/ggml/work/llama.cpp/build-ci-release
+      Start  1: test-tokenizer-0-bert-bge
+ 1/36 Test  #1: test-tokenizer-0-bert-bge .........   Passed    0.26 sec
+      Start  2: test-tokenizer-0-command-r
+ 2/36 Test  #2: test-tokenizer-0-command-r ........   Passed    0.96 sec
+      Start  3: test-tokenizer-0-deepseek-coder
+ 3/36 Test  #3: test-tokenizer-0-deepseek-coder ...   Passed    0.28 sec
+      Start  4: test-tokenizer-0-deepseek-llm
+ 4/36 Test  #4: test-tokenizer-0-deepseek-llm .....   Passed    0.45 sec
+      Start  5: test-tokenizer-0-falcon
+ 5/36 Test  #5: test-tokenizer-0-falcon ...........   Passed    0.37 sec
+      Start  6: test-tokenizer-0-gpt-2
+ 6/36 Test  #6: test-tokenizer-0-gpt-2 ............   Passed    0.29 sec
+      Start  7: test-tokenizer-0-llama-bpe
+ 7/36 Test  #7: test-tokenizer-0-llama-bpe ........   Passed    0.61 sec
+      Start  8: test-tokenizer-0-llama-spm
+ 8/36 Test  #8: test-tokenizer-0-llama-spm ........   Passed    0.19 sec
+      Start  9: test-tokenizer-0-mpt
+ 9/36 Test  #9: test-tokenizer-0-mpt ..............   Passed    0.30 sec
+      Start 10: test-tokenizer-0-phi-3
+10/36 Test #10: test-tokenizer-0-phi-3 ............   Passed    0.23 sec
+      Start 11: test-tokenizer-0-qwen2
+11/36 Test #11: test-tokenizer-0-qwen2 ............   Passed    0.64 sec
+      Start 12: test-tokenizer-0-refact
+12/36 Test #12: test-tokenizer-0-refact ...........   Passed    0.31 sec
+      Start 13: test-tokenizer-0-starcoder
+13/36 Test #13: test-tokenizer-0-starcoder ........   Passed    0.29 sec
+      Start 14: test-tokenizers-ggml-vocabs
+14/36 Test #14: test-tokenizers-ggml-vocabs .......   Passed    4.85 sec
+      Start 15: test-sampling
+15/36 Test #15: test-sampling .....................   Passed    1.92 sec
+      Start 16: test-grammar-parser
+16/36 Test #16: test-grammar-parser ...............   Passed    0.13 sec
+      Start 17: test-grammar-integration
+17/36 Test #17: test-grammar-integration ..........   Passed    0.15 sec
+      Start 18: test-llama-grammar
+18/36 Test #18: test-llama-grammar ................   Passed    0.13 sec
+      Start 19: test-chat
+19/36 Test #19: test-chat .........................   Passed    1.34 sec
+      Start 20: test-json-schema-to-grammar
+20/36 Test #20: test-json-schema-to-grammar .......   Passed    4.66 sec
+      Start 21: test-tokenizer-1-llama-spm
+21/36 Test #21: test-tokenizer-1-llama-spm ........   Passed    0.51 sec
+      Start 22: test-chat-parser
+22/36 Test #22: test-chat-parser ..................   Passed    0.13 sec
+      Start 23: test-chat-template
+23/36 Test #23: test-chat-template ................   Passed    0.35 sec
+      Start 24: test-json-partial
+24/36 Test #24: test-json-partial .................   Passed    0.16 sec
+      Start 25: test-log
+25/36 Test #25: test-log ..........................   Passed    0.22 sec
+      Start 26: test-regex-partial
+26/36 Test #26: test-regex-partial ................   Passed    0.16 sec
+      Start 27: test-thread-safety
+27/36 Test #27: test-thread-safety ................***Exception: SegFault  1.33 sec
+0.00.001.352 I curl_perform_with_retry: HEAD https://huggingface.co/ggml-org/models/resolve/main/tinyllamas/stories15M-q4_0.gguf (attempt 1 of 1)...
+0.00.694.713 I common_download_file_single: using cached file: /home/ggml/.cache/llama.cpp/ggml-org_models_tinyllamas_stories15M-q4_0.gguf
+0.00.706.128 I build: 6316 (009b709d) with Intel(R) oneAPI DPC++/C++ Compiler 2025.1.1 (2025.1.1.20250418) for x86_64-unknown-linux-gnu
+0.00.706.287 I system_info: n_threads = 2 (n_threads_batch = 2) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.706.797 I llama_model_load_from_file_impl: using device SYCL0 (Intel(R) Arc(TM) Pro A60 Graphics) - 11597 MiB free
+0.00.715.325 I llama_model_loader: loaded meta data with 20 key-value pairs and 57 tensors from /home/ggml/.cache/llama.cpp/ggml-org_models_tinyllamas_stories15M-q4_0.gguf (version GGUF V3 (latest))
+0.00.715.347 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.722.994 I llama_model_loader: - kv   0:                      tokenizer.ggml.tokens arr[str,32000]   = ["<unk>", "<s>", "</s>", "<0x00>", "<...
+0.00.738.413 I llama_model_loader: - kv   1:                      tokenizer.ggml.scores arr[f32,32000]   = [0.000000, 0.000000, 0.000000, 0.0000...
+0.00.739.594 I llama_model_loader: - kv   2:                  tokenizer.ggml.token_type arr[i32,32000]   = [2, 3, 3, 6, 6, 6, 6, 6, 6, 6, 6, 6, ...
+0.00.739.602 I llama_model_loader: - kv   3:                       tokenizer.ggml.model str              = llama
+0.00.739.602 I llama_model_loader: - kv   4:                       general.architecture str              = llama
+0.00.739.603 I llama_model_loader: - kv   5:                               general.name str              = llama
+0.00.739.605 I llama_model_loader: - kv   6:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.739.606 I llama_model_loader: - kv   7:                tokenizer.ggml.bos_token_id u32              = 1
+0.00.739.607 I llama_model_loader: - kv   8:                tokenizer.ggml.eos_token_id u32              = 2
+0.00.739.608 I llama_model_loader: - kv   9:          tokenizer.ggml.seperator_token_id u32              = 4294967295
+0.00.739.609 I llama_model_loader: - kv  10:            tokenizer.ggml.padding_token_id u32              = 4294967295
+0.00.739.610 I llama_model_loader: - kv  11:                       llama.context_length u32              = 128
+0.00.739.610 I llama_model_loader: - kv  12:                     llama.embedding_length u32              = 288
+0.00.739.611 I llama_model_loader: - kv  13:                  llama.feed_forward_length u32              = 768
+0.00.739.612 I llama_model_loader: - kv  14:                 llama.attention.head_count u32              = 6
+0.00.739.612 I llama_model_loader: - kv  15:                          llama.block_count u32              = 6
+0.00.739.613 I llama_model_loader: - kv  16:                 llama.rope.dimension_count u32              = 48
+0.00.739.615 I llama_model_loader: - kv  17:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+0.00.739.616 I llama_model_loader: - kv  18:               general.quantization_version u32              = 2
+0.00.739.617 I llama_model_loader: - kv  19:                          general.file_type u32              = 2
+0.00.739.618 I llama_model_loader: - type  f32:   13 tensors
+0.00.739.619 I llama_model_loader: - type q4_0:   43 tensors
+0.00.739.620 I llama_model_loader: - type q8_0:    1 tensors
+0.00.739.623 I print_info: file format = GGUF V3 (latest)
+0.00.739.626 I print_info: file type   = Q4_0
+0.00.739.627 I print_info: file size   = 17.50 MiB (6.01 BPW) 
+0.00.746.395 W load: bad special token: 'tokenizer.ggml.seperator_token_id' = 4294967295, using default id -1
+0.00.746.398 W load: bad special token: 'tokenizer.ggml.padding_token_id' = 4294967295, using default id -1
+0.00.764.180 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.764.186 I load: printing all EOG tokens:
+0.00.764.187 I load:   - 2 ('</s>')
+0.00.764.249 I load: special tokens cache size = 3
+0.00.767.966 I load: token to piece cache size = 0.1684 MB
+0.00.767.986 I print_info: arch             = llama
+0.00.767.987 I print_info: vocab_only       = 0
+0.00.767.988 I print_info: n_ctx_train      = 128
+0.00.767.988 I print_info: n_embd           = 288
+0.00.767.988 I print_info: n_layer          = 6
+0.00.767.997 I print_info: n_head           = 6
+0.00.767.999 I print_info: n_head_kv        = 6
+0.00.767.999 I print_info: n_rot            = 48
+0.00.768.000 I print_info: n_swa            = 0
+0.00.768.001 I print_info: is_swa_any       = 0
+0.00.768.002 I print_info: n_embd_head_k    = 48
+0.00.768.002 I print_info: n_embd_head_v    = 48
+0.00.768.004 I print_info: n_gqa            = 1
+0.00.768.007 I print_info: n_embd_k_gqa     = 288
+0.00.768.008 I print_info: n_embd_v_gqa     = 288
+0.00.768.010 I print_info: f_norm_eps       = 0.0e+00
+0.00.768.011 I print_info: f_norm_rms_eps   = 1.0e-05
+0.00.768.011 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.768.012 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.768.012 I print_info: f_logit_scale    = 0.0e+00
+0.00.768.013 I print_info: f_attn_scale     = 0.0e+00
+0.00.768.015 I print_info: n_ff             = 768
+0.00.768.015 I print_info: n_expert         = 0
+0.00.768.015 I print_info: n_expert_used    = 0
+0.00.768.016 I print_info: causal attn      = 1
+0.00.768.016 I print_info: pooling type     = 0
+0.00.768.016 I print_info: rope type        = 0
+0.00.768.017 I print_info: rope scaling     = linear
+0.00.768.018 I print_info: freq_base_train  = 10000.0
+0.00.768.019 I print_info: freq_scale_train = 1
+0.00.768.019 I print_info: n_ctx_orig_yarn  = 128
+0.00.768.020 I print_info: rope_finetuned   = unknown
+0.00.768.021 I print_info: model type       = ?B
+0.00.768.022 I print_info: model params     = 24.41 M
+0.00.768.023 I print_info: general.name     = llama
+0.00.768.025 I print_info: vocab type       = SPM
+0.00.768.026 I print_info: n_vocab          = 32000
+0.00.768.026 I print_info: n_merges         = 0
+0.00.768.027 I print_info: BOS token        = 1 '<s>'
+0.00.768.027 I print_info: EOS token        = 2 '</s>'
+0.00.768.028 I print_info: UNK token        = 0 '<unk>'
+0.00.768.028 I print_info: LF token         = 13 '<0x0A>'
+0.00.768.029 I print_info: EOG token        = 2 '</s>'
+0.00.768.029 I print_info: max token length = 48
+0.00.768.031 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.781.089 I load_tensors: offloading 6 repeating layers to GPU
+0.00.781.096 I load_tensors: offloading output layer to GPU
+0.00.781.096 I load_tensors: offloaded 7/7 layers to GPU
+0.00.781.102 I load_tensors:   CPU_Mapped model buffer size =     4.94 MiB
+0.00.781.103 I load_tensors:        SYCL0 model buffer size =    12.56 MiB
+.....................
+0.00.800.262 I llama_model_loader: loaded meta data with 20 key-value pairs and 57 tensors from /home/ggml/.cache/llama.cpp/ggml-org_models_tinyllamas_stories15M-q4_0.gguf (version GGUF V3 (latest))
+0.00.800.280 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.806.067 I llama_model_loader: - kv   0:                      tokenizer.ggml.tokens arr[str,32000]   = ["<unk>", "<s>", "</s>", "<0x00>", "<...
+0.00.821.587 I llama_model_loader: - kv   1:                      tokenizer.ggml.scores arr[f32,32000]   = [0.000000, 0.000000, 0.000000, 0.0000...
+0.00.822.806 I llama_model_loader: - kv   2:                  tokenizer.ggml.token_type arr[i32,32000]   = [2, 3, 3, 6, 6, 6, 6, 6, 6, 6, 6, 6, ...
+0.00.822.814 I llama_model_loader: - kv   3:                       tokenizer.ggml.model str              = llama
+0.00.822.815 I llama_model_loader: - kv   4:                       general.architecture str              = llama
+0.00.822.816 I llama_model_loader: - kv   5:                               general.name str              = llama
+0.00.822.817 I llama_model_loader: - kv   6:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.822.818 I llama_model_loader: - kv   7:                tokenizer.ggml.bos_token_id u32              = 1
+0.00.822.819 I llama_model_loader: - kv   8:                tokenizer.ggml.eos_token_id u32              = 2
+0.00.822.820 I llama_model_loader: - kv   9:          tokenizer.ggml.seperator_token_id u32              = 4294967295
+0.00.822.821 I llama_model_loader: - kv  10:            tokenizer.ggml.padding_token_id u32              = 4294967295
+0.00.822.822 I llama_model_loader: - kv  11:                       llama.context_length u32              = 128
+0.00.822.822 I llama_model_loader: - kv  12:                     llama.embedding_length u32              = 288
+0.00.822.823 I llama_model_loader: - kv  13:                  llama.feed_forward_length u32              = 768
+0.00.822.824 I llama_model_loader: - kv  14:                 llama.attention.head_count u32              = 6
+0.00.822.824 I llama_model_loader: - kv  15:                          llama.block_count u32              = 6
+0.00.822.825 I llama_model_loader: - kv  16:                 llama.rope.dimension_count u32              = 48
+0.00.822.827 I llama_model_loader: - kv  17:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+0.00.822.828 I llama_model_loader: - kv  18:               general.quantization_version u32              = 2
+0.00.822.829 I llama_model_loader: - kv  19:                          general.file_type u32              = 2
+0.00.822.830 I llama_model_loader: - type  f32:   13 tensors
+0.00.822.830 I llama_model_loader: - type q4_0:   43 tensors
+0.00.822.831 I llama_model_loader: - type q8_0:    1 tensors
+0.00.822.832 I print_info: file format = GGUF V3 (latest)
+0.00.822.833 I print_info: file type   = Q4_0
+0.00.822.835 I print_info: file size   = 17.50 MiB (6.01 BPW) 
+0.00.829.490 W load: bad special token: 'tokenizer.ggml.seperator_token_id' = 4294967295, using default id -1
+0.00.829.492 W load: bad special token: 'tokenizer.ggml.padding_token_id' = 4294967295, using default id -1
+0.00.845.394 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.845.399 I load: printing all EOG tokens:
+0.00.845.400 I load:   - 2 ('</s>')
+0.00.845.462 I load: special tokens cache size = 3
+0.00.849.438 I load: token to piece cache size = 0.1684 MB
+0.00.849.452 I print_info: arch             = llama
+0.00.849.453 I print_info: vocab_only       = 0
+0.00.849.453 I print_info: n_ctx_train      = 128
+0.00.849.454 I print_info: n_embd           = 288
+0.00.849.454 I print_info: n_layer          = 6
+0.00.849.460 I print_info: n_head           = 6
+0.00.849.461 I print_info: n_head_kv        = 6
+0.00.849.462 I print_info: n_rot            = 48
+0.00.849.463 I print_info: n_swa            = 0
+0.00.849.463 I print_info: is_swa_any       = 0
+0.00.849.464 I print_info: n_embd_head_k    = 48
+0.00.849.464 I print_info: n_embd_head_v    = 48
+0.00.849.465 I print_info: n_gqa            = 1
+0.00.849.466 I print_info: n_embd_k_gqa     = 288
+0.00.849.468 I print_info: n_embd_v_gqa     = 288
+0.00.849.469 I print_info: f_norm_eps       = 0.0e+00
+0.00.849.470 I print_info: f_norm_rms_eps   = 1.0e-05
+0.00.849.470 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.849.471 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.849.471 I print_info: f_logit_scale    = 0.0e+00
+0.00.849.472 I print_info: f_attn_scale     = 0.0e+00
+0.00.849.473 I print_info: n_ff             = 768
+0.00.849.473 I print_info: n_expert         = 0
+0.00.849.474 I print_info: n_expert_used    = 0
+0.00.849.474 I print_info: causal attn      = 1
+0.00.849.475 I print_info: pooling type     = 0
+0.00.849.475 I print_info: rope type        = 0
+0.00.849.475 I print_info: rope scaling     = linear
+0.00.849.477 I print_info: freq_base_train  = 10000.0
+0.00.849.478 I print_info: freq_scale_train = 1
+0.00.849.479 I print_info: n_ctx_orig_yarn  = 128
+0.00.849.479 I print_info: rope_finetuned   = unknown
+0.00.849.480 I print_info: model type       = ?B
+0.00.849.481 I print_info: model params     = 24.41 M
+0.00.849.481 I print_info: general.name     = llama
+0.00.849.483 I print_info: vocab type       = SPM
+0.00.849.483 I print_info: n_vocab          = 32000
+0.00.849.484 I print_info: n_merges         = 0
+0.00.849.484 I print_info: BOS token        = 1 '<s>'
+0.00.849.485 I print_info: EOS token        = 2 '</s>'
+0.00.849.485 I print_info: UNK token        = 0 '<unk>'
+0.00.849.485 I print_info: LF token         = 13 '<0x0A>'
+0.00.849.486 I print_info: EOG token        = 2 '</s>'
+0.00.849.487 I print_info: max token length = 48
+0.00.849.487 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.851.693 I load_tensors: offloading 6 repeating layers to GPU
+0.00.851.699 I load_tensors: offloading output layer to GPU
+0.00.851.700 I load_tensors: offloaded 7/7 layers to GPU
+0.00.851.702 I load_tensors:   CPU_Mapped model buffer size =    17.50 MiB
+0.00.851.703 I load_tensors:   CPU_REPACK model buffer size =     3.20 MiB
+.....................
+0.00.855.068 I llama_model_load_from_file_impl: using device SYCL0 (Intel(R) Arc(TM) Pro A60 Graphics) - 11597 MiB free
+0.00.861.234 I llama_model_loader: loaded meta data with 20 key-value pairs and 57 tensors from /home/ggml/.cache/llama.cpp/ggml-org_models_tinyllamas_stories15M-q4_0.gguf (version GGUF V3 (latest))
+0.00.861.245 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.867.430 I llama_model_loader: - kv   0:                      tokenizer.ggml.tokens arr[str,32000]   = ["<unk>", "<s>", "</s>", "<0x00>", "<...
+0.00.880.904 I llama_model_loader: - kv   1:                      tokenizer.ggml.scores arr[f32,32000]   = [0.000000, 0.000000, 0.000000, 0.0000...
+0.00.882.042 I llama_model_loader: - kv   2:                  tokenizer.ggml.token_type arr[i32,32000]   = [2, 3, 3, 6, 6, 6, 6, 6, 6, 6, 6, 6, ...
+0.00.882.050 I llama_model_loader: - kv   3:                       tokenizer.ggml.model str              = llama
+0.00.882.051 I llama_model_loader: - kv   4:                       general.architecture str              = llama
+0.00.882.052 I llama_model_loader: - kv   5:                               general.name str              = llama
+0.00.882.052 I llama_model_loader: - kv   6:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.882.053 I llama_model_loader: - kv   7:                tokenizer.ggml.bos_token_id u32              = 1
+0.00.882.054 I llama_model_loader: - kv   8:                tokenizer.ggml.eos_token_id u32              = 2
+0.00.882.055 I llama_model_loader: - kv   9:          tokenizer.ggml.seperator_token_id u32              = 4294967295
+0.00.882.056 I llama_model_loader: - kv  10:            tokenizer.ggml.padding_token_id u32              = 4294967295
+0.00.882.057 I llama_model_loader: - kv  11:                       llama.context_length u32              = 128
+0.00.882.057 I llama_model_loader: - kv  12:                     llama.embedding_length u32              = 288
+0.00.882.058 I llama_model_loader: - kv  13:                  llama.feed_forward_length u32              = 768
+0.00.882.059 I llama_model_loader: - kv  14:                 llama.attention.head_count u32              = 6
+0.00.882.059 I llama_model_loader: - kv  15:                          llama.block_count u32              = 6
+0.00.882.060 I llama_model_loader: - kv  16:                 llama.rope.dimension_count u32              = 48
+0.00.882.062 I llama_model_loader: - kv  17:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+0.00.882.063 I llama_model_loader: - kv  18:               general.quantization_version u32              = 2
+0.00.882.064 I llama_model_loader: - kv  19:                          general.file_type u32              = 2
+0.00.882.065 I llama_model_loader: - type  f32:   13 tensors
+0.00.882.065 I llama_model_loader: - type q4_0:   43 tensors
+0.00.882.066 I llama_model_loader: - type q8_0:    1 tensors
+0.00.882.067 I print_info: file format = GGUF V3 (latest)
+0.00.882.069 I print_info: file type   = Q4_0
+0.00.882.070 I print_info: file size   = 17.50 MiB (6.01 BPW) 
+0.00.888.340 W load: bad special token: 'tokenizer.ggml.seperator_token_id' = 4294967295, using default id -1
+0.00.888.341 W load: bad special token: 'tokenizer.ggml.padding_token_id' = 4294967295, using default id -1
+0.00.904.601 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.904.607 I load: printing all EOG tokens:
+0.00.904.608 I load:   - 2 ('</s>')
+0.00.904.678 I load: special tokens cache size = 3
+0.00.909.333 I load: token to piece cache size = 0.1684 MB
+0.00.909.347 I print_info: arch             = llama
+0.00.909.348 I print_info: vocab_only       = 0
+0.00.909.349 I print_info: n_ctx_train      = 128
+0.00.909.349 I print_info: n_embd           = 288
+0.00.909.350 I print_info: n_layer          = 6
+0.00.909.356 I print_info: n_head           = 6
+0.00.909.357 I print_info: n_head_kv        = 6
+0.00.909.358 I print_info: n_rot            = 48
+0.00.909.358 I print_info: n_swa            = 0
+0.00.909.359 I print_info: is_swa_any       = 0
+0.00.909.359 I print_info: n_embd_head_k    = 48
+0.00.909.360 I print_info: n_embd_head_v    = 48
+0.00.909.361 I print_info: n_gqa            = 1
+0.00.909.362 I print_info: n_embd_k_gqa     = 288
+0.00.909.363 I print_info: n_embd_v_gqa     = 288
+0.00.909.364 I print_info: f_norm_eps       = 0.0e+00
+0.00.909.365 I print_info: f_norm_rms_eps   = 1.0e-05
+0.00.909.366 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.909.366 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.909.366 I print_info: f_logit_scale    = 0.0e+00
+0.00.909.367 I print_info: f_attn_scale     = 0.0e+00
+0.00.909.368 I print_info: n_ff             = 768
+0.00.909.369 I print_info: n_expert         = 0
+0.00.909.369 I print_info: n_expert_used    = 0
+0.00.909.369 I print_info: causal attn      = 1
+0.00.909.370 I print_info: pooling type     = 0
+0.00.909.370 I print_info: rope type        = 0
+0.00.909.370 I print_info: rope scaling     = linear
+0.00.909.372 I print_info: freq_base_train  = 10000.0
+0.00.909.372 I print_info: freq_scale_train = 1
+0.00.909.373 I print_info: n_ctx_orig_yarn  = 128
+0.00.909.374 I print_info: rope_finetuned   = unknown
+0.00.909.374 I print_info: model type       = ?B
+0.00.909.375 I print_info: model params     = 24.41 M
+0.00.909.376 I print_info: general.name     = llama
+0.00.909.378 I print_info: vocab type       = SPM
+0.00.909.379 I print_info: n_vocab          = 32000
+0.00.909.380 I print_info: n_merges         = 0
+0.00.909.380 I print_info: BOS token        = 1 '<s>'
+0.00.909.381 I print_info: EOS token        = 2 '</s>'
+0.00.909.381 I print_info: UNK token        = 0 '<unk>'
+0.00.909.382 I print_info: LF token         = 13 '<0x0A>'
+0.00.909.382 I print_info: EOG token        = 2 '</s>'
+0.00.909.383 I print_info: max token length = 48
+0.00.909.384 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.921.089 I load_tensors: offloading 6 repeating layers to GPU
+0.00.921.096 I load_tensors: offloading output layer to GPU
+0.00.921.097 I load_tensors: offloaded 7/7 layers to GPU
+0.00.921.099 I load_tensors:   CPU_Mapped model buffer size =     4.94 MiB
+0.00.921.101 I load_tensors:        SYCL0 model buffer size =    12.56 MiB
+.....................
+0.00.932.471 I Creating context 1/4 for model 1/3
+0.00.932.524 I Creating context 2/4 for model 1/3
+0.00.932.544 I Creating context 3/4 for model 1/3
+0.00.932.561 I Creating context 4/4 for model 1/3
+0.00.932.584 I llama_context: constructing llama_context
+0.00.932.595 I Creating context 1/4 for model 2/3
+0.00.932.628 I llama_context: n_seq_max     = 1
+0.00.932.632 I llama_context: n_ctx         = 256
+0.00.932.635 I llama_context: n_ctx_per_seq = 256
+0.00.932.637 I llama_context: n_batch       = 256
+0.00.932.638 I llama_context: n_ubatch      = 32
+0.00.932.641 I llama_context: causal_attn   = 1
+0.00.932.642 I llama_context: flash_attn    = 0
+0.00.932.644 I llama_context: kv_unified    = false
+0.00.932.654 I llama_context: freq_base     = 10000.0
+0.00.932.659 I llama_context: freq_scale    = 1
+0.00.932.662 W llama_context: n_ctx_per_seq (256) > n_ctx_train (128) -- possible training context overflow
+0.00.932.685 I Running with Environment Variables:
+0.00.932.686 I   GGML_SYCL_DEBUG: 0
+0.00.932.687 I   GGML_SYCL_DISABLE_OPT: 0
+0.00.932.689 I   GGML_SYCL_DISABLE_GRAPH: 1
+0.00.932.689 I   GGML_SYCL_DISABLE_DNN: 0
+0.00.932.690 I   GGML_SYCL_PRIORITIZE_DMMV: 0
+0.00.932.691 I Build with Macros:
+0.00.932.692 I   GGML_SYCL_FORCE_MMQ: no
+0.00.932.692 I   GGML_SYCL_F16: yes
+0.00.932.696 I Found 1 SYCL devices:
+0.00.932.697 I |  |                   |                                       |       |Max    |        |Max  |Global |                     |
+0.00.932.698 I |  |                   |                                       |       |compute|Max work|sub  |mem    |                     |
+0.00.932.699 I |ID|        Device Type|                                   Name|Version|units  |group   |group|size   |       Driver version|
+0.00.932.699 I |--|-------------------|---------------------------------------|-------|-------|--------|-----|-------|---------------------|
+0.00.932.757 I Creating context 3/4 for model 2/3
+0.00.932.759 I llama_context: constructing llama_context
+0.00.932.765 I Creating context 2/4 for model 2/3
+0.00.932.789 I llama_context: n_seq_max     = 1
+0.00.932.791 I llama_context: n_ctx         = 256
+0.00.932.792 I llama_context: n_ctx_per_seq = 256
+0.00.932.793 I llama_context: n_batch       = 256
+0.00.932.794 I llama_context: n_ubatch      = 32
+0.00.932.795 I llama_context: causal_attn   = 1
+0.00.932.796 I llama_context: flash_attn    = 0
+0.00.932.797 I llama_context: kv_unified    = false
+0.00.932.805 I llama_context: freq_base     = 10000.0
+0.00.932.808 I llama_context: freq_scale    = 1
+0.00.932.810 W llama_context: n_ctx_per_seq (256) > n_ctx_train (128) -- possible training context overflow
+0.00.932.921 I | 0| [level_zero:gpu:0]|             Intel Arc Pro A60 Graphics|  12.57|    256|    1024|   32| 12160M|         1.6.33276+22|
+0.00.932.924 I SYCL Optimization Feature:
+0.00.932.926 I |ID|        Device Type|Reorder|
+0.00.932.927 I |--|-------------------|-------|
+0.00.932.941 I llama_context: constructing llama_context
+0.00.932.944 I llama_context: n_seq_max     = 1
+0.00.932.945 I llama_context: n_ctx         = 256
+0.00.932.946 I llama_context: n_ctx_per_seq = 256
+0.00.932.946 I llama_context: n_batch       = 256
+0.00.932.947 I llama_context: n_ubatch      = 32
+0.00.932.948 I llama_context: causal_attn   = 1
+0.00.932.949 I llama_context: flash_attn    = 0
+0.00.932.950 I llama_context: kv_unified    = false
+0.00.932.956 I | 0| [level_zero:gpu:0]|      Y|
+0.00.932.957 I llama_context: freq_base     = 10000.0
+0.00.932.960 I llama_context: freq_scale    = 1
+0.00.932.962 W llama_context: n_ctx_per_seq (256) > n_ctx_train (128) -- possible training context overflow
+0.00.933.036 I llama_context: constructing llama_context
+0.00.933.049 I llama_context: n_seq_max     = 1
+0.00.933.051 I llama_context: n_ctx         = 256
+0.00.933.052 I llama_context: n_ctx_per_seq = 256
+0.00.933.052 I llama_context: n_batch       = 256
+0.00.933.053 I llama_context: n_ubatch      = 32
+0.00.933.054 I llama_context: causal_attn   = 1
+0.00.933.055 I llama_context: flash_attn    = 0
+0.00.933.056 I llama_context: kv_unified    = false
+0.00.933.064 I llama_context: freq_base     = 10000.0
+0.00.933.066 I llama_context: freq_scale    = 1
+0.00.933.068 W llama_context: n_ctx_per_seq (256) > n_ctx_train (128) -- possible training context overflow
+0.00.933.224 I llama_context:  SYCL_Host  output buffer size =     0.12 MiB
+0.00.933.233 I llama_context: constructing llama_context
+0.00.933.251 I llama_context: n_seq_max     = 1
+0.00.933.252 I llama_context: n_ctx         = 256
+0.00.933.253 I llama_context: n_ctx_per_seq = 256
+0.00.933.254 I llama_context: n_batch       = 256
+0.00.933.255 I llama_context: n_ubatch      = 32
+0.00.933.256 I llama_context: causal_attn   = 1
+0.00.933.257 I llama_context: flash_attn    = 0
+0.00.933.258 I llama_context: kv_unified    = false
+0.00.933.266 I llama_context: freq_base     = 10000.0
+0.00.933.269 I llama_context: freq_scale    = 1
+0.00.933.271 W llama_context: n_ctx_per_seq (256) > n_ctx_train (128) -- possible training context overflow
+0.00.933.279 I llama_context: constructing llama_context
+0.00.933.288 I llama_context: n_seq_max     = 1
+0.00.933.294 I llama_context: n_ctx         = 256
+0.00.933.296 I llama_context: n_ctx_per_seq = 256
+0.00.933.298 I llama_context: n_batch       = 256
+0.00.933.299 I llama_context: n_ubatch      = 32
+0.00.933.301 I llama_context: causal_attn   = 1
+0.00.933.303 I llama_context: flash_attn    = 0
+0.00.933.304 I llama_context: kv_unified    = false
+0.00.933.312 I llama_context: constructing llama_context
+0.00.933.313 I llama_context: freq_base     = 10000.0
+0.00.933.315 I llama_context: n_seq_max     = 1
+0.00.933.319 I llama_context: freq_scale    = 1
+0.00.933.333 W llama_context: n_ctx_per_seq (256) > n_ctx_train (128) -- possible training context overflow
+0.00.933.343 I llama_context: n_ctx         = 256
+0.00.933.345 I llama_context: n_ctx_per_seq = 256
+0.00.933.349 I llama_context: n_batch       = 256
+0.00.933.350 I llama_context: n_ubatch      = 32
+0.00.933.353 I llama_context: causal_attn   = 1
+0.00.933.355 I llama_context: flash_attn    = 0
+0.00.933.356 I llama_context: kv_unified    = false
+0.00.933.361 I llama_context: freq_base     = 10000.0
+0.00.933.363 I llama_context:        CPU  output buffer size =     0.12 MiB
+0.00.933.365 I llama_context: freq_scale    = 1
+0.00.933.369 W llama_context: n_ctx_per_seq (256) > n_ctx_train (128) -- possible training context overflow
+0.00.933.416 I llama_context:        CPU  output buffer size =     0.12 MiB
+0.00.933.510 I llama_kv_cache:        CPU KV buffer size =     1.69 MiB
+0.00.933.556 I llama_context:  SYCL_Host  output buffer size =     0.12 MiB
+0.00.933.669 I llama_kv_cache:        CPU KV buffer size =     1.69 MiB
+0.00.933.878 I llama_context:        CPU  output buffer size =     0.12 MiB
+0.00.933.932 I llama_kv_cache:      SYCL0 KV buffer size =     1.69 MiB
+0.00.933.954 I Creating context 4/4 for model 2/3
+0.00.934.027 I llama_context:  SYCL_Host  output buffer size =     0.12 MiB
+0.00.934.031 I Creating context 1/4 for model 3/3
+0.00.934.072 I llama_kv_cache:        CPU KV buffer size =     1.69 MiB
+0.00.934.140 I llama_context: constructing llama_context
+0.00.934.143 I llama_context: n_seq_max     = 1
+0.00.934.166 I llama_context: n_ctx         = 256
+0.00.934.169 I llama_context: n_ctx_per_seq = 256
+0.00.934.170 I llama_context: n_batch       = 256
+0.00.934.172 I llama_context: n_ubatch      = 32
+0.00.934.174 I llama_context: causal_attn   = 1
+0.00.934.175 I llama_context: flash_attn    = 0
+0.00.934.177 I llama_context: kv_unified    = false
+0.00.934.189 I llama_kv_cache: size =    1.69 MiB (   256 cells,   6 layers,  1/1 seqs), K (f16):    0.84 MiB, V (f16):    0.84 MiB
+0.00.934.190 I llama_context: freq_base     = 10000.0
+0.00.934.193 I llama_context: freq_scale    = 1
+0.00.934.197 W llama_context: n_ctx_per_seq (256) > n_ctx_train (128) -- possible training context overflow
+0.00.934.209 I llama_context: constructing llama_context
+0.00.934.214 I llama_context: n_seq_max     = 1
+0.00.934.215 I llama_context: n_ctx         = 256
+0.00.934.216 I llama_context: n_ctx_per_seq = 256
+0.00.934.222 I llama_context: n_batch       = 256
+0.00.934.224 I llama_context: n_ubatch      = 32
+0.00.934.225 I llama_context: causal_attn   = 1
+0.00.934.226 I llama_context: flash_attn    = 0
+0.00.934.227 I llama_context: kv_unified    = false
+0.00.934.234 I llama_context: freq_base     = 10000.0
+0.00.934.237 I llama_context: freq_scale    = 1
+0.00.934.240 W llama_context: n_ctx_per_seq (256) > n_ctx_train (128) -- possible training context overflow
+0.00.934.305 I llama_context:        CPU  output buffer size =     0.12 MiB
+0.00.934.430 I llama_kv_cache:        CPU KV buffer size =     1.69 MiB
+0.00.934.460 I llama_context:  SYCL_Host  output buffer size =     0.12 MiB
+0.00.934.784 I llama_context:  SYCL_Host  output buffer size =     0.12 MiB
+0.00.934.890 I llama_kv_cache:      SYCL0 KV buffer size =     1.69 MiB
+0.00.935.091 I Creating context 2/4 for model 3/3
+0.00.935.254 I llama_context: constructing llama_context
+0.00.935.257 I llama_context: n_seq_max     = 1
+0.00.935.259 I llama_context: n_ctx         = 256
+0.00.935.260 I llama_context: n_ctx_per_seq = 256
+0.00.935.262 I llama_context: n_batch       = 256
+0.00.935.263 I llama_context: n_ubatch      = 32
+0.00.935.265 I llama_context: causal_attn   = 1
+0.00.935.267 I llama_context: flash_attn    = 0
+0.00.935.268 I llama_context: kv_unified    = false
+0.00.935.276 I llama_context: freq_base     = 10000.0
+0.00.935.279 I llama_context: freq_scale    = 1
+0.00.935.282 W llama_context: n_ctx_per_seq (256) > n_ctx_train (128) -- possible training context overflow
+0.00.935.344 I llama_kv_cache:      SYCL0 KV buffer size =     1.69 MiB
+0.00.935.526 I llama_context:  SYCL_Host  output buffer size =     0.12 MiB
+0.00.935.613 I llama_kv_cache:      SYCL0 KV buffer size =     1.69 MiB
+0.00.936.042 I Creating context 3/4 for model 3/3
+0.00.936.117 I llama_context: constructing llama_context
+0.00.936.119 I llama_context: n_seq_max     = 1
+0.00.936.120 I llama_context: n_ctx         = 256
+0.00.936.121 I llama_context: n_ctx_per_seq = 256
+0.00.936.122 I llama_context: n_batch       = 256
+0.00.936.123 I llama_context: n_ubatch      = 32
+0.00.936.124 I llama_context: causal_attn   = 1
+0.00.936.125 I llama_context: flash_attn    = 0
+0.00.936.125 I llama_context: kv_unified    = false
+0.00.936.131 I llama_context: freq_base     = 10000.0
+0.00.936.133 I llama_context: freq_scale    = 1
+0.00.936.135 W llama_context: n_ctx_per_seq (256) > n_ctx_train (128) -- possible training context overflow
+0.00.936.248 I Creating context 4/4 for model 3/3
+0.00.936.309 I llama_kv_cache:      SYCL0 KV buffer size =     1.69 MiB
+0.00.936.343 I llama_kv_cache:      SYCL0 KV buffer size =     1.69 MiB
+0.00.936.410 I llama_context: constructing llama_context
+0.00.936.414 I llama_context: n_seq_max     = 1
+0.00.936.415 I llama_context: n_ctx         = 256
+0.00.936.417 I llama_context: n_ctx_per_seq = 256
+0.00.936.418 I llama_context: n_batch       = 256
+0.00.936.420 I llama_context: n_ubatch      = 32
+0.00.936.422 I llama_context: causal_attn   = 1
+0.00.936.424 I llama_context: flash_attn    = 0
+0.00.936.425 I llama_context: kv_unified    = false
+0.00.936.433 I llama_context: freq_base     = 10000.0
+0.00.936.436 I llama_context: freq_scale    = 1
+0.00.936.440 W llama_context: n_ctx_per_seq (256) > n_ctx_train (128) -- possible training context overflow
+0.00.936.473 I llama_context:  SYCL_Host  output buffer size =     0.12 MiB
+0.00.936.578 I llama_kv_cache: size =    1.69 MiB (   256 cells,   6 layers,  1/1 seqs), K (f16):    0.84 MiB, V (f16):    0.84 MiB
+0.00.936.681 I llama_kv_cache: size =    1.69 MiB (   256 cells,   6 layers,  1/1 seqs), K (f16):    0.84 MiB, V (f16):    0.84 MiB
+0.00.936.731 I llama_context:  SYCL_Host  output buffer size =     0.12 MiB
+0.00.937.034 I llama_kv_cache: size =    1.69 MiB (   256 cells,   6 layers,  1/1 seqs), K (f16):    0.84 MiB, V (f16):    0.84 MiB
+0.00.937.049 I llama_kv_cache:      SYCL0 KV buffer size =     1.69 MiB
+0.00.937.638 I llama_kv_cache:      SYCL0 KV buffer size =     1.69 MiB
+0.00.937.785 I llama_kv_cache: size =    1.69 MiB (   256 cells,   6 layers,  1/1 seqs), K (f16):    0.84 MiB, V (f16):    0.84 MiB
+0.00.938.187 I llama_kv_cache: size =    1.69 MiB (   256 cells,   6 layers,  1/1 seqs), K (f16):    0.84 MiB, V (f16):    0.84 MiB
+0.00.938.572 I llama_kv_cache: size =    1.69 MiB (   256 cells,   6 layers,  1/1 seqs), K (f16):    0.84 MiB, V (f16):    0.84 MiB
+0.00.939.223 I llama_context:      SYCL0 compute buffer size =     3.94 MiB
+0.00.939.236 I llama_context:  SYCL_Host compute buffer size =     0.17 MiB
+0.00.939.237 I llama_context: graph nodes  = 216
+0.00.939.238 I llama_context: graph splits = 2
+0.00.939.985 I llama_context:        CPU compute buffer size =     3.98 MiB
+0.00.939.996 I llama_context: graph nodes  = 216
+0.00.939.998 I llama_context: graph splits = 1
+0.00.940.047 I llama_kv_cache: size =    1.69 MiB (   256 cells,   6 layers,  1/1 seqs), K (f16):    0.84 MiB, V (f16):    0.84 MiB
+0.00.940.318 I llama_kv_cache: size =    1.69 MiB (   256 cells,   6 layers,  1/1 seqs), K (f16):    0.84 MiB, V (f16):    0.84 MiB
+0.00.940.522 I llama_context:        CPU compute buffer size =     3.98 MiB
+0.00.940.537 I llama_context: graph nodes  = 216
+0.00.940.539 I llama_context: graph splits = 1
+0.00.940.566 I llama_kv_cache: size =    1.69 MiB (   256 cells,   6 layers,  1/1 seqs), K (f16):    0.84 MiB, V (f16):    0.84 MiB
+0.00.940.696 I llama_kv_cache: size =    1.69 MiB (   256 cells,   6 layers,  1/1 seqs), K (f16):    0.84 MiB, V (f16):    0.84 MiB
+0.00.941.397 I llama_kv_cache: size =    1.69 MiB (   256 cells,   6 layers,  1/1 seqs), K (f16):    0.84 MiB, V (f16):    0.84 MiB
+0.00.943.311 I llama_context:      SYCL0 compute buffer size =     3.94 MiB
+0.00.943.317 I llama_context:  SYCL_Host compute buffer size =     0.17 MiB
+0.00.943.318 I llama_context: graph nodes  = 216
+0.00.943.319 I llama_context: graph splits = 2
+
+      Start 28: test-arg-parser
+28/36 Test #28: test-arg-parser ...................   Passed    1.99 sec
+      Start 29: test-opt
+29/36 Test #29: test-opt ..........................   Passed    0.25 sec
+      Start 30: test-gguf
+30/36 Test #30: test-gguf .........................   Passed    0.45 sec
+      Start 31: test-backend-ops
+31/36 Test #31: test-backend-ops ..................   Passed   61.25 sec
+      Start 34: test-barrier
+32/36 Test #34: test-barrier ......................   Passed    0.53 sec
+      Start 35: test-quantize-fns
+33/36 Test #35: test-quantize-fns .................   Passed   22.62 sec
+      Start 36: test-quantize-perf
+34/36 Test #36: test-quantize-perf ................   Passed    0.15 sec
+      Start 37: test-rope
+35/36 Test #37: test-rope .........................   Passed    0.23 sec
+      Start 38: test-mtmd-c-api
+36/36 Test #38: test-mtmd-c-api ...................   Passed    0.08 sec
+
+97% tests passed, 1 tests failed out of 36
+
+Label Time Summary:
+main    = 108.79 sec*proc (36 tests)
+
+Total Test time (real) = 108.84 sec
+
+The following tests FAILED:
+	 27 - test-thread-safety (SEGFAULT)
+Errors while running CTest
+
+real	1m48,874s
+user	3m55,063s
+sys	0m26,385s
+```
