@@ -1,0 +1,110 @@
+## Summary
+
+- status:  SUCCESS ✅
+- runtime: 2:35.24
+- date:    Fri Sep  5 13:22:59 UTC 2025
+- repo:    https://github.com/ggerganov/whisper.cpp
+- commit:  https://github.com/ggerganov/whisper.cpp/commit/bb0e1fc60f26a707cabf724edcf7cfcab2a269b6
+- author:  Daniel Bevenius
+```
+ci : remove brew installation of cmake for macos-latest (#3408)
+
+This commit remove the brew install of cmake for macos-latest
+as this now seems to be pre-installed on the runner.
+
+The motivation for this is that this job is failing with the following
+error:
+```console
+Error: cmake was installed from the local/pinned tap
+but you are trying to install it from the homebrew/core tap.
+Formulae with the same name from different taps cannot be installed at the same time.
+```
+```
+
+## Environment
+
+```
+GG_BUILD_CLOUD=1
+GG_BUILD_CXX_COMPILER=g++
+GG_BUILD_C_COMPILER=gcc
+GG_BUILD_LOW_PERF=1
+```
+
+## Output
+
+### ctest_debug
+
+Runs ctest in debug mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-debug
+No tests were found!!!
+
+real	0m0.009s
+user	0m0.003s
+sys	0m0.006s
+```
+### ctest_release
+
+Runs ctest in release mode
+- status: 0
+```
++ ctest --output-on-failure -L main -E test-opt
+Test project /home/ggml/work/whisper.cpp/build-ci-release
+No tests were found!!!
+
+real	0m0.009s
+user	0m0.009s
+sys	0m0.000s
+```
+### bench
+
+Whisper Benchmark Results
+- status: 0
+#### memcpy Benchmark
+
+```
+memcpy:   11.99 GB/s (heat-up)
+memcpy:   11.75 GB/s ( 1 thread)
+memcpy:   11.74 GB/s ( 1 thread)
+memcpy:   21.58 GB/s ( 2 thread)
+memcpy:   28.28 GB/s ( 3 thread)
+memcpy:   34.70 GB/s ( 4 thread)
+sum:    783359997263.000000
+```
+
+#### ggml_mul_mat Benchmark
+
+```
+  64 x   64: Q4_0    29.3 GFLOPS (128 runs) | Q4_1    28.1 GFLOPS (128 runs)
+  64 x   64: Q5_0    21.8 GFLOPS (128 runs) | Q5_1    20.4 GFLOPS (128 runs) | Q8_0    30.4 GFLOPS (128 runs)
+  64 x   64: F16     25.1 GFLOPS (128 runs) | F32     28.7 GFLOPS (128 runs)
+ 128 x  128: Q4_0    56.2 GFLOPS (128 runs) | Q4_1    52.1 GFLOPS (128 runs)
+ 128 x  128: Q5_0    37.9 GFLOPS (128 runs) | Q5_1    34.4 GFLOPS (128 runs) | Q8_0    60.4 GFLOPS (128 runs)
+ 128 x  128: F16     61.5 GFLOPS (128 runs) | F32     55.8 GFLOPS (128 runs)
+ 256 x  256: Q4_0    72.9 GFLOPS (128 runs) | Q4_1    66.4 GFLOPS (128 runs)
+ 256 x  256: Q5_0    48.6 GFLOPS (128 runs) | Q5_1    44.0 GFLOPS (128 runs) | Q8_0    80.7 GFLOPS (128 runs)
+ 256 x  256: F16     89.5 GFLOPS (128 runs) | F32     66.1 GFLOPS (128 runs)
+ 512 x  512: Q4_0    81.2 GFLOPS (128 runs) | Q4_1    73.4 GFLOPS (128 runs)
+ 512 x  512: Q5_0    54.9 GFLOPS (128 runs) | Q5_1    49.0 GFLOPS (128 runs) | Q8_0    91.7 GFLOPS (128 runs)
+ 512 x  512: F16    108.1 GFLOPS (128 runs) | F32     67.3 GFLOPS (128 runs)
+1024 x 1024: Q4_0    86.6 GFLOPS ( 41 runs) | Q4_1    77.1 GFLOPS ( 36 runs)
+1024 x 1024: Q5_0    58.7 GFLOPS ( 28 runs) | Q5_1    51.7 GFLOPS ( 25 runs) | Q8_0    98.9 GFLOPS ( 47 runs)
+1024 x 1024: F16    121.2 GFLOPS ( 57 runs) | F32     63.0 GFLOPS ( 30 runs)
+2048 x 2048: Q4_0    89.3 GFLOPS (  6 runs) | Q4_1    80.4 GFLOPS (  5 runs)
+2048 x 2048: Q5_0    60.6 GFLOPS (  4 runs) | Q5_1    53.5 GFLOPS (  4 runs) | Q8_0   102.7 GFLOPS (  6 runs)
+2048 x 2048: F16    120.5 GFLOPS (  8 runs) | F32     55.7 GFLOPS (  4 runs)
+4096 x 4096: Q4_0    91.0 GFLOPS (  3 runs) | Q4_1    81.4 GFLOPS (  3 runs)
+4096 x 4096: Q5_0    60.7 GFLOPS (  3 runs) | Q5_1    54.0 GFLOPS (  3 runs) | Q8_0   101.1 GFLOPS (  3 runs)
+4096 x 4096: F16    106.5 GFLOPS (  3 runs) | F32     49.6 GFLOPS (  3 runs)
+```
+
+#### Model Benchmarks
+
+|           Config |         Model |  Th |  FA |    Enc. |    Dec. |    Bch5 |      PP |  Commit |
+|              --- |           --- | --- | --- |     --- |     --- |     --- |     --- |     --- |
+|             NEON |          tiny |   4 |   0 |  611.36 |    2.31 |    1.11 |    0.84 | bb0e1fc6 |
+|             NEON |          base |   4 |   0 | 1357.88 |    4.81 |    2.10 |    1.48 | bb0e1fc6 |
+|             NEON |         small |   4 |   0 | 4735.18 |   13.46 |    5.82 |    4.05 | bb0e1fc6 |
+
