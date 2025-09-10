@@ -63,10 +63,10 @@ Call Stack (most recent call first):
 -- ggml version: 0.0.6444
 -- ggml commit:  b6fb92f56
 -- Found CURL: /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/lib/libcurl.tbd (found version "8.7.1")
--- Configuring done (2.7s)
+-- Configuring done (2.6s)
 -- Generating done (0.3s)
 -- Build files have been written to: /Users/ggml/work/llama.cpp/build-ci-release
 
-real	0m2.945s
-user	0m1.035s
-sys	0m1.325s
+real	0m2.923s
+user	0m1.025s
+sys	0m1.293s
