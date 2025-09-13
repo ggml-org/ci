@@ -1,0 +1,2 @@
+ci/run.sh: line 293: syntax error near unexpected token `fi'
+ci/run.sh: line 293: `    fi'
