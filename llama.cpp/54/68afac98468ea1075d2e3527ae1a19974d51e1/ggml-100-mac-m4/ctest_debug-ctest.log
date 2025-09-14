@@ -1,0 +1,160 @@
++ ctest --output-on-failure -L main -E test-opt
+Test project /Users/ggml/work/llama.cpp/build-ci-debug
+      Start  1: test-tokenizer-0-bert-bge
+ 1/35 Test  #1: test-tokenizer-0-bert-bge .........   Passed    1.34 sec
+      Start  2: test-tokenizer-0-command-r
+ 2/35 Test  #2: test-tokenizer-0-command-r ........   Passed    1.16 sec
+      Start  3: test-tokenizer-0-deepseek-coder
+ 3/35 Test  #3: test-tokenizer-0-deepseek-coder ...   Passed    0.17 sec
+      Start  4: test-tokenizer-0-deepseek-llm
+ 4/35 Test  #4: test-tokenizer-0-deepseek-llm .....   Passed    0.46 sec
+      Start  5: test-tokenizer-0-falcon
+ 5/35 Test  #5: test-tokenizer-0-falcon ...........   Passed    0.29 sec
+      Start  6: test-tokenizer-0-gpt-2
+ 6/35 Test  #6: test-tokenizer-0-gpt-2 ............   Passed    0.23 sec
+      Start  7: test-tokenizer-0-llama-bpe
+ 7/35 Test  #7: test-tokenizer-0-llama-bpe ........   Passed    0.68 sec
+      Start  8: test-tokenizer-0-llama-spm
+ 8/35 Test  #8: test-tokenizer-0-llama-spm ........   Passed    0.09 sec
+      Start  9: test-tokenizer-0-mpt
+ 9/35 Test  #9: test-tokenizer-0-mpt ..............   Passed    0.23 sec
+      Start 10: test-tokenizer-0-phi-3
+10/35 Test #10: test-tokenizer-0-phi-3 ............   Passed    0.09 sec
+      Start 11: test-tokenizer-0-qwen2
+11/35 Test #11: test-tokenizer-0-qwen2 ............   Passed    0.63 sec
+      Start 12: test-tokenizer-0-refact
+12/35 Test #12: test-tokenizer-0-refact ...........   Passed    0.22 sec
+      Start 13: test-tokenizer-0-starcoder
+13/35 Test #13: test-tokenizer-0-starcoder ........   Passed    0.22 sec
+      Start 14: test-tokenizers-ggml-vocabs
+14/35 Test #14: test-tokenizers-ggml-vocabs .......   Passed    5.45 sec
+      Start 15: test-sampling
+15/35 Test #15: test-sampling .....................   Passed    2.45 sec
+      Start 16: test-grammar-parser
+16/35 Test #16: test-grammar-parser ...............   Passed    0.20 sec
+      Start 17: test-grammar-integration
+17/35 Test #17: test-grammar-integration ..........   Passed    0.25 sec
+      Start 18: test-llama-grammar
+18/35 Test #18: test-llama-grammar ................   Passed    0.20 sec
+      Start 19: test-chat
+19/35 Test #19: test-chat .........................   Passed   27.29 sec
+      Start 20: test-json-schema-to-grammar
+20/35 Test #20: test-json-schema-to-grammar .......   Passed    2.32 sec
+      Start 21: test-tokenizer-1-llama-spm
+21/35 Test #21: test-tokenizer-1-llama-spm ........   Passed    1.12 sec
+      Start 22: test-chat-parser
+22/35 Test #22: test-chat-parser ..................   Passed    0.23 sec
+      Start 23: test-chat-template
+23/35 Test #23: test-chat-template ................   Passed    3.34 sec
+      Start 24: test-json-partial
+24/35 Test #24: test-json-partial .................   Passed    0.21 sec
+      Start 25: test-log
+25/35 Test #25: test-log ..........................   Passed    0.24 sec
+      Start 26: test-regex-partial
+26/35 Test #26: test-regex-partial ................   Passed    0.22 sec
+      Start 27: test-thread-safety
+27/35 Test #27: test-thread-safety ................***Timeout 1500.09 sec
+register_backend: registered backend Metal (1 devices)
+register_device: registered device Metal (Apple M4)
+register_backend: registered backend BLAS (1 devices)
+register_device: registered device BLAS (Accelerate)
+register_backend: registered backend CPU (1 devices)
+register_device: registered device CPU (Apple M4)
+0.00.002.266 I curl_perform_with_retry: HEAD https://huggingface.co/ggml-org/models/resolve/main/tinyllamas/stories15M-q4_0.gguf (attempt 1 of 1)...
+0.00.375.535 I common_download_file_single: using cached file: /Users/ggml/Library/Caches/llama.cpp/ggml-org_models_tinyllamas_stories15M-q4_0.gguf
+0.00.390.683 I build: 6470 (5468afac9) with Apple clang version 16.0.0 (clang-1600.0.26.4) for arm64-apple-darwin24.1.0 (debug)
+0.00.390.788 I system_info: n_threads = 2 (n_threads_batch = 2) / 10 | Metal : EMBED_LIBRARY = 1 | BF16 = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | SME = 1 | ACCELERATE = 1 | REPACK = 1 | 
+0.00.390.982 I llama_model_load_from_file_impl: using device Metal (Apple M4) (unknown id) - 10922 MiB free
+0.00.401.897 I llama_model_loader: loaded meta data with 20 key-value pairs and 57 tensors from /Users/ggml/Library/Caches/llama.cpp/ggml-org_models_tinyllamas_stories15M-q4_0.gguf (version GGUF V3 (latest))
+0.00.401.954 I llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+0.00.428.297 I llama_model_loader: - kv   0:                      tokenizer.ggml.tokens arr[str,32000]   = ["<unk>", "<s>", "</s>", "<0x00>", "<...
+0.00.438.107 I llama_model_loader: - kv   1:                      tokenizer.ggml.scores arr[f32,32000]   = [0.000000, 0.000000, 0.000000, 0.0000...
+0.00.440.842 I llama_model_loader: - kv   2:                  tokenizer.ggml.token_type arr[i32,32000]   = [2, 3, 3, 6, 6, 6, 6, 6, 6, 6, 6, 6, ...
+0.00.440.846 I llama_model_loader: - kv   3:                       tokenizer.ggml.model str              = llama
+0.00.440.846 I llama_model_loader: - kv   4:                       general.architecture str              = llama
+0.00.440.847 I llama_model_loader: - kv   5:                               general.name str              = llama
+0.00.440.849 I llama_model_loader: - kv   6:            tokenizer.ggml.unknown_token_id u32              = 0
+0.00.440.853 I llama_model_loader: - kv   7:                tokenizer.ggml.bos_token_id u32              = 1
+0.00.440.855 I llama_model_loader: - kv   8:                tokenizer.ggml.eos_token_id u32              = 2
+0.00.440.857 I llama_model_loader: - kv   9:          tokenizer.ggml.seperator_token_id u32              = 4294967295
+0.00.440.858 I llama_model_loader: - kv  10:            tokenizer.ggml.padding_token_id u32              = 4294967295
+0.00.440.859 I llama_model_loader: - kv  11:                       llama.context_length u32              = 128
+0.00.440.860 I llama_model_loader: - kv  12:                     llama.embedding_length u32              = 288
+0.00.440.861 I llama_model_loader: - kv  13:                  llama.feed_forward_length u32              = 768
+0.00.440.862 I llama_model_loader: - kv  14:                 llama.attention.head_count u32              = 6
+0.00.440.863 I llama_model_loader: - kv  15:                          llama.block_count u32              = 6
+0.00.440.864 I llama_model_loader: - kv  16:                 llama.rope.dimension_count u32              = 48
+0.00.440.866 I llama_model_loader: - kv  17:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+0.00.440.868 I llama_model_loader: - kv  18:               general.quantization_version u32              = 2
+0.00.440.869 I llama_model_loader: - kv  19:                          general.file_type u32              = 2
+0.00.440.871 I llama_model_loader: - type  f32:   13 tensors
+0.00.440.872 I llama_model_loader: - type q4_0:   43 tensors
+0.00.440.872 I llama_model_loader: - type q8_0:    1 tensors
+0.00.440.874 I print_info: file format = GGUF V3 (latest)
+0.00.440.875 I print_info: file type   = Q4_0
+0.00.440.877 I print_info: file size   = 17.50 MiB (6.01 BPW) 
+0.00.454.481 W load: bad special token: 'tokenizer.ggml.seperator_token_id' = 4294967295, using default id -1
+0.00.454.485 W load: bad special token: 'tokenizer.ggml.padding_token_id' = 4294967295, using default id -1
+0.00.472.615 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.00.472.616 I load: printing all EOG tokens:
+0.00.472.655 I load:   - 2 ('</s>')
+0.00.472.760 I load: special tokens cache size = 3
+0.00.481.233 I load: token to piece cache size = 0.1684 MB
+0.00.481.253 I print_info: arch             = llama
+0.00.481.254 I print_info: vocab_only       = 0
+0.00.481.254 I print_info: n_ctx_train      = 128
+0.00.481.254 I print_info: n_embd           = 288
+0.00.481.255 I print_info: n_layer          = 6
+0.00.481.287 I print_info: n_head           = 6
+0.00.481.307 I print_info: n_head_kv        = 6
+0.00.481.307 I print_info: n_rot            = 48
+0.00.481.308 I print_info: n_swa            = 0
+0.00.481.308 I print_info: is_swa_any       = 0
+0.00.481.308 I print_info: n_embd_head_k    = 48
+0.00.481.308 I print_info: n_embd_head_v    = 48
+0.00.481.310 I print_info: n_gqa            = 1
+0.00.481.312 I print_info: n_embd_k_gqa     = 288
+0.00.481.324 I print_info: n_embd_v_gqa     = 288
+0.00.481.325 I print_info: f_norm_eps       = 0.0e+00
+0.00.481.325 I print_info: f_norm_rms_eps   = 1.0e-05
+0.00.481.325 I print_info: f_clamp_kqv      = 0.0e+00
+0.00.481.325 I print_info: f_max_alibi_bias = 0.0e+00
+0.00.481.326 I print_info: f_logit_scale    = 0.0e+00
+0.00.481.326 I print_info: f_attn_scale     = 0.0e+00
+0.00.481.328 I print_info: n_ff             = 768
+0.00.481.328 I print_info: n_expert         = 0
+0.00.481.328 I print_info: n_expert_used    = 0
+0.00.481.328 I print_info: causal attn      = 1
+0.00.481.328 I print_info: pooling type     = 0
+0.00.481.328 I print_info: rope type        = 0
+0.00.481.329 I print_info: rope scaling     = linear
+0.00.481.329 I print_info: freq_base_train  = 10000.0
+0.00.481.329 I print_info: freq_scale_train = 1
+0.00.481.329 I print_info: n_ctx_orig_yarn  = 128
+0.00.481.330 I print_info: rope_finetuned   = unknown
+0.00.481.330 I print_info: model type       = ?B
+0.00.481.331 I print_info: model params     = 24.41 M
+0.00.481.331 I print_info: general.name     = llama
+0.00.481.332 I print_info: vocab type       = SPM
+0.00.481.332 I print_info: n_vocab          = 32000
+0.00.481.333 I print_info: n_merges         = 0
+0.00.481.333 I print_info: BOS token        = 1 '<s>'
+0.00.481.334 I print_info: EOS token        = 2 '</s>'
+0.00.481.334 I print_info: UNK token        = 0 '<unk>'
+0.00.481.334 I print_info: LF token         = 13 '<0x0A>'
+0.00.481.335 I print_info: EOG token        = 2 '</s>'
+0.00.481.335 I print_info: max token length = 48
+0.00.481.339 I load_tensors: loading model tensors, this can take a while... (mmap = true)
+0.00.491.429 I load_tensors: offloading 6 repeating layers to GPU
+0.00.491.430 I load_tensors: offloading output layer to GPU
+0.00.491.430 I load_tensors: offloaded 7/7 layers to GPU
+0.00.491.455 I load_tensors: Metal_Mapped model buffer size =    12.57 MiB
+0.00.491.456 I load_tensors:   CPU_Mapped model buffer size =     4.94 MiB
+/Users/ggml/work/llama.cpp/ggml/src/ggml-backend.cpp:1843: GGML_ASSERT((char *)addr + ggml_backend_buffer_get_alloc_size(buffer, tensor) <= (char *)ggml_backend_buffer_get_base(buffer) + ggml_backend_buffer_get_size(buffer)) failed
+(lldb) process attach --pid 97248
+
+      Start 28: test-arg-parser
+28/35 Test #28: test-arg-parser ...................   Passed    1.78 sec
+      Start 29: test-gguf
+29/35 Test #29: test-gguf .........................   Passed    4.71 sec
+      Start 30: test-backend-ops
