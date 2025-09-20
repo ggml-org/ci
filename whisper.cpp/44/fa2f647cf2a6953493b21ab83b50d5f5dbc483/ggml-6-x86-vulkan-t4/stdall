@@ -1,0 +1,201 @@
+mkdir: cannot create directory ‘/mnt/whisper.cpp’: Permission denied
+mkdir: cannot create directory ‘/mnt/whisper.cpp’: Permission denied
+ci/run.sh: line 112: cd: /mnt/whisper.cpp/models: No such file or directory
+Downloading ggml model tiny.en from 'https://huggingface.co/ggerganov/whisper.cpp' ...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  1364  100  1364    0     0   9852      0 --:--:-- --:--:-- --:--:--  9884
+100 74.1M  100 74.1M    0     0   203M      0 --:--:-- --:--:-- --:--:--  203M
+Done! Model 'tiny.en' saved in './ggml-tiny.en.bin'
+You can now use it like this:
+
+  $ ./build/bin/whisper-cli -m ./ggml-tiny.en.bin -f samples/jfk.wav
+
+mkdir: cannot create directory ‘/mnt/whisper.cpp’: Permission denied
+ci/run.sh: line 112: cd: /mnt/whisper.cpp/models: No such file or directory
+Downloading ggml model tiny from 'https://huggingface.co/ggerganov/whisper.cpp' ...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  1364  100  1364    0     0  12019      0 --:--:-- --:--:-- --:--:-- 12070
+ 74 74.0M   74 55.4M    0     0   102M      0 --:--:-- --:--:-- --:--:--  102M100 74.0M  100 74.0M    0     0   127M      0 --:--:-- --:--:-- --:--:--  491M
+Done! Model 'tiny' saved in './ggml-tiny.bin'
+You can now use it like this:
+
+  $ ./build/bin/whisper-cli -m ./ggml-tiny.bin -f samples/jfk.wav
+
+mkdir: cannot create directory ‘/mnt/whisper.cpp’: Permission denied
+ci/run.sh: line 112: cd: /mnt/whisper.cpp/models: No such file or directory
+Downloading ggml model base.en from 'https://huggingface.co/ggerganov/whisper.cpp' ...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  1376  100  1376    0     0  11863      0 --:--:-- --:--:-- --:--:-- 11965
+100  141M  100  141M    0     0   273M      0 --:--:-- --:--:-- --:--:--  273M
+Done! Model 'base.en' saved in './ggml-base.en.bin'
+You can now use it like this:
+
+  $ ./build/bin/whisper-cli -m ./ggml-base.en.bin -f samples/jfk.wav
+
+mkdir: cannot create directory ‘/mnt/whisper.cpp’: Permission denied
+ci/run.sh: line 112: cd: /mnt/whisper.cpp/models: No such file or directory
+Downloading ggml model base from 'https://huggingface.co/ggerganov/whisper.cpp' ...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  1360  100  1360    0     0  11632      0 --:--:-- --:--:-- --:--:-- 11724
+  3  141M    3 4876k    0     0  21.1M      0  0:00:06 --:--:--  0:00:06 21.1M100  141M  100  141M    0     0   218M      0 --:--:-- --:--:-- --:--:--  325M
+Done! Model 'base' saved in './ggml-base.bin'
+You can now use it like this:
+
+  $ ./build/bin/whisper-cli -m ./ggml-base.bin -f samples/jfk.wav
+
+mkdir: cannot create directory ‘/mnt/whisper.cpp’: Permission denied
+ci/run.sh: line 112: cd: /mnt/whisper.cpp/models: No such file or directory
+Downloading ggml model small.en from 'https://huggingface.co/ggerganov/whisper.cpp' ...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  1372  100  1372    0     0  11899      0 --:--:-- --:--:-- --:--:-- 11930
+  3  465M    3 17.3M    0     0  31.0M      0  0:00:14 --:--:--  0:00:14 31.0M 14  465M   14 68.8M    0     0  44.1M      0  0:00:10  0:00:01  0:00:09 51.4M 25  465M   25  119M    0     0  46.8M      0  0:00:09  0:00:02  0:00:07 51.3M 36  465M   36  171M    0     0  48.0M      0  0:00:09  0:00:03  0:00:06 51.2M 47  465M   47  221M    0     0  48.6M      0  0:00:09  0:00:04  0:00:05 51.1M 58  465M   58  271M    0     0  48.8M      0  0:00:09  0:00:05  0:00:04 50.8M 69  465M   69  322M    0     0  49.1M      0  0:00:09  0:00:06  0:00:03 50.7M 81  465M   81  376M    0     0  49.8M      0  0:00:09  0:00:07  0:00:02 51.3M 91  465M   91  427M    0     0  49.9M      0  0:00:09  0:00:08  0:00:01 51.3M100  465M  100  465M    0     0  50.1M      0  0:00:09  0:00:09 --:--:-- 51.5M
+Done! Model 'small.en' saved in './ggml-small.en.bin'
+You can now use it like this:
+
+  $ ./build/bin/whisper-cli -m ./ggml-small.en.bin -f samples/jfk.wav
+
+mkdir: cannot create directory ‘/mnt/whisper.cpp’: Permission denied
+ci/run.sh: line 112: cd: /mnt/whisper.cpp/models: No such file or directory
+Downloading ggml model small from 'https://huggingface.co/ggerganov/whisper.cpp' ...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  1372  100  1372    0     0  12036      0 --:--:-- --:--:-- --:--:-- 12141
+  3  465M    3 15.7M    0     0  58.7M      0  0:00:07 --:--:--  0:00:07 58.7M 97  465M   97  452M    0     0   355M      0  0:00:01  0:00:01 --:--:--  435M100  465M  100  465M    0     0   358M      0  0:00:01  0:00:01 --:--:--  437M
+Done! Model 'small' saved in './ggml-small.bin'
+You can now use it like this:
+
+  $ ./build/bin/whisper-cli -m ./ggml-small.bin -f samples/jfk.wav
+
+mkdir: cannot create directory ‘/mnt/whisper.cpp’: Permission denied
+ci/run.sh: line 112: cd: /mnt/whisper.cpp/models: No such file or directory
+Downloading ggml model medium.en from 'https://huggingface.co/ggerganov/whisper.cpp' ...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  1370  100  1370    0     0  11995      0 --:--:-- --:--:-- --:--:-- 12017
+ 22 1462M   22  329M    0     0   346M      0  0:00:04 --:--:--  0:00:04  346M 56 1462M   56  821M    0     0   420M      0  0:00:03  0:00:01  0:00:02  492M 90 1462M   90 1318M    0     0   446M      0  0:00:03  0:00:02  0:00:01  494M100 1462M  100 1462M    0     0   451M      0  0:00:03  0:00:03 --:--:--  496M
+Done! Model 'medium.en' saved in './ggml-medium.en.bin'
+You can now use it like this:
+
+  $ ./build/bin/whisper-cli -m ./ggml-medium.en.bin -f samples/jfk.wav
+
+mkdir: cannot create directory ‘/mnt/whisper.cpp’: Permission denied
+ci/run.sh: line 112: cd: /mnt/whisper.cpp/models: No such file or directory
+Downloading ggml model medium from 'https://huggingface.co/ggerganov/whisper.cpp' ...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  1366  100  1366    0     0  11196      0 --:--:-- --:--:-- --:--:-- 11289
+ 15 1462M   15  227M    0     0   329M      0  0:00:04 --:--:--  0:00:04  329M 46 1462M   46  674M    0     0   397M      0  0:00:03  0:00:01  0:00:02  444M 76 1462M   76 1113M    0     0   413M      0  0:00:03  0:00:02  0:00:01  441M100 1462M  100 1462M    0     0   423M      0  0:00:03  0:00:03 --:--:--  447M
+Done! Model 'medium' saved in './ggml-medium.bin'
+You can now use it like this:
+
+  $ ./build/bin/whisper-cli -m ./ggml-medium.bin -f samples/jfk.wav
+
+mkdir: cannot create directory ‘/mnt/whisper.cpp’: Permission denied
+ci/run.sh: line 112: cd: /mnt/whisper.cpp/models: No such file or directory
+Downloading ggml model large-v1 from 'https://huggingface.co/ggerganov/whisper.cpp' ...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  1376  100  1376    0     0  11863      0 --:--:-- --:--:-- --:--:-- 11965
+  0 2951M    0 11.4M    0     0  52.1M      0  0:00:56 --:--:--  0:00:56 52.1M 10 2951M   10  322M    0     0   259M      0  0:00:11  0:00:01  0:00:10  304M 17 2951M   17  502M    0     0   225M      0  0:00:13  0:00:02  0:00:11  243M 22 2951M   22  658M    0     0   204M      0  0:00:14  0:00:03  0:00:11  215M 27 2951M   27  804M    0     0   188M      0  0:00:15  0:00:04  0:00:11  195M 31 2951M   31  932M    0     0   176M      0  0:00:16  0:00:05  0:00:11  181M 35 2951M   35 1049M    0     0   166M      0  0:00:17  0:00:06  0:00:11  143M 39 2951M   39 1157M    0     0   158M      0  0:00:18  0:00:07  0:00:11  129M 40 2951M   40 1187M    0     0   122M      0  0:00:24  0:00:09  0:00:15 81.3M 42 2951M   42 1255M    0     0   122M      0  0:00:24  0:00:10  0:00:14 75.4M 46 2951M   46 1370M    0     0   121M      0  0:00:24  0:00:11  0:00:13 72.9M 50 2951M   50 1487M    0     0   121M      0  0:00:24  0:00:12  0:00:12 73.3M 53 2951M   53 1585M    0     0   119M      0  0:00:24  0:00:13  0:00:11 71.8M 57 2951M   57 1683M    0     0   117M      0  0:00:25  0:00:14  0:00:11  109M 60 2951M   60 1771M    0     0   115M      0  0:00:25  0:00:15  0:00:10  102M 62 2951M   62 1850M    0     0   113M      0  0:00:25  0:00:16  0:00:09 97.2M 65 2951M   65 1928M    0     0   111M      0  0:00:26  0:00:17  0:00:09 87.9M 67 2951M   67 1996M    0     0   109M      0  0:00:26  0:00:18  0:00:08 82.0M 69 2951M   69 2064M    0     0   106M      0  0:00:27  0:00:19  0:00:08 75.8M 71 2951M   71 2122M    0     0   104M      0  0:00:28  0:00:20  0:00:08 71.0M 74 2951M   74 2190M    0     0   102M      0  0:00:28  0:00:21  0:00:07 66.5M 76 2951M   76 2245M    0     0   100M      0  0:00:29  0:00:22  0:00:07 63.5M 78 2951M   78 2303M    0     0  99.0M      0  0:00:29  0:00:23  0:00:06 61.4M 80 2951M   80 2362M    0     0  97.5M      0  0:00:30  0:00:24  0:00:06 60.5M 82 2951M   82 2430M    0     0  96.0M      0  0:00:30  0:00:25  0:00:05 60.4M 84 2951M   84 2488M    0     0  94.8M      0  0:00:31  0:00:26  0:00:05 60.9M 86 2951M   86 2556M    0     0  93.5M      0  0:00:31  0:00:27  0:00:04 61.4M 88 2951M   88 2615M    0     0  92.4M      0  0:00:31  0:00:28  0:00:03 61.8M 90 2951M   90 2673M    0     0  91.4M      0  0:00:32  0:00:29  0:00:03 61.9M 92 2951M   92 2741M    0     0  90.3M      0  0:00:32  0:00:30  0:00:02 61.6M 94 2951M   94 2799M    0     0  89.3M      0  0:00:33  0:00:31  0:00:02 61.2M 96 2951M   96 2857M    0     0  88.5M      0  0:00:33  0:00:32  0:00:01 61.0M 99 2951M   99 2925M    0     0  87.6M      0  0:00:33  0:00:33 --:--:-- 61.1M100 2951M  100 2951M    0     0  87.4M      0  0:00:33  0:00:33 --:--:-- 61.5M
+Done! Model 'large-v1' saved in './ggml-large-v1.bin'
+You can now use it like this:
+
+  $ ./build/bin/whisper-cli -m ./ggml-large-v1.bin -f samples/jfk.wav
+
+mkdir: cannot create directory ‘/mnt/whisper.cpp’: Permission denied
+ci/run.sh: line 112: cd: /mnt/whisper.cpp/models: No such file or directory
+Downloading ggml model large-v2 from 'https://huggingface.co/ggerganov/whisper.cpp' ...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  1364  100  1364    0     0   8898      0 --:--:-- --:--:-- --:--:--  8915
+  0 2951M    0 19.8M    0     0  37.0M      0  0:01:19 --:--:--  0:01:19 37.0M  2 2951M    2 88.0M    0     0  56.5M      0  0:00:52  0:00:01  0:00:51 66.8M  5 2951M    5  156M    0     0  60.6M      0  0:00:48  0:00:02  0:00:46 66.7M  7 2951M    7  214M    0     0  62.0M      0  0:00:47  0:00:03  0:00:44 66.6M  7 2951M    7  233M    0     0  37.0M      0  0:01:19  0:00:06  0:01:13 37.0M  8 2951M    8  253M    0     0  38.8M      0  0:01:16  0:00:06  0:01:10 38.9M 11 2951M   11  340M    0     0  45.3M      0  0:01:05  0:00:07  0:00:58 42.3M 14 2951M   14  418M    0     0  49.4M      0  0:00:59  0:00:08  0:00:51 44.5M 17 2951M   17  505M    0     0  53.1M      0  0:00:55  0:00:09  0:00:46 48.1M 19 2951M   19  583M    0     0  55.7M      0  0:00:52  0:00:10  0:00:42 84.2M 22 2951M   22  661M    0     0  57.5M      0  0:00:51  0:00:11  0:00:40 82.1M 24 2951M   24  731M    0     0  58.7M      0  0:00:50  0:00:12  0:00:38 79.2M 27 2951M   27  806M    0     0  59.8M      0  0:00:49  0:00:13  0:00:36 77.4M 29 2951M   29  885M    0     0  60.8M      0  0:00:48  0:00:14  0:00:34 75.4M 32 2951M   32  953M    0     0  61.6M      0  0:00:47  0:00:15  0:00:32 73.7M 34 2951M   34 1032M    0     0  62.3M      0  0:00:47  0:00:16  0:00:31 73.3M 37 2951M   37 1100M    0     0  62.9M      0  0:00:46  0:00:17  0:00:29 73.3M 39 2951M   39 1179M    0     0  63.5M      0  0:00:46  0:00:18  0:00:28 73.1M 42 2951M   42 1247M    0     0  63.7M      0  0:00:46  0:00:19  0:00:27 72.0M 44 2951M   44 1306M    0     0  63.8M      0  0:00:46  0:00:20  0:00:26 70.8M 46 2951M   46 1375M    0     0  63.9M      0  0:00:46  0:00:21  0:00:25 69.3M 48 2951M   48 1443M    0     0  64.0M      0  0:00:46  0:00:22  0:00:24 68.0M 51 2951M   51 1512M    0     0  64.1M      0  0:00:45  0:00:23  0:00:22 66.6M 53 2951M   53 1571M    0     0  64.2M      0  0:00:45  0:00:24  0:00:21 66.3M 55 2951M   55 1640M    0     0  64.3M      0  0:00:45  0:00:25  0:00:20 66.1M 57 2951M   57 1708M    0     0  64.3M      0  0:00:45  0:00:26  0:00:19 66.1M 60 2951M   60 1777M    0     0  64.4M      0  0:00:45  0:00:27  0:00:18 66.0M 62 2951M   62 1836M    0     0  64.5M      0  0:00:45  0:00:28  0:00:17 66.0M 64 2951M   64 1904M    0     0  64.5M      0  0:00:45  0:00:29  0:00:16 66.0M 66 2951M   66 1973M    0     0  64.6M      0  0:00:45  0:00:30  0:00:15 66.0M 69 2951M   69 2042M    0     0  64.6M      0  0:00:45  0:00:31  0:00:14 66.0M 71 2951M   71 2100M    0     0  64.7M      0  0:00:45  0:00:32  0:00:13 66.0M 73 2951M   73 2169M    0     0  64.7M      0  0:00:45  0:00:33  0:00:12 66.0M 75 2951M   75 2232M    0     0  64.8M      0  0:00:45  0:00:34  0:00:11 66.2M 77 2951M   77 2301M    0     0  64.8M      0  0:00:45  0:00:35  0:00:10 66.6M 80 2951M   80 2370M    0     0  64.9M      0  0:00:45  0:00:36  0:00:09 66.7M 82 2951M   82 2438M    0     0  64.9M      0  0:00:45  0:00:37  0:00:08 66.6M 84 2951M   84 2507M    0     0  64.9M      0  0:00:45  0:00:38  0:00:07 66.7M 86 2951M   86 2566M    0     0  65.0M      0  0:00:45  0:00:39  0:00:06 66.4M 89 2951M   89 2634M    0     0  65.0M      0  0:00:45  0:00:40  0:00:05 66.0M 91 2951M   91 2703M    0     0  65.0M      0  0:00:45  0:00:41  0:00:04 65.9M 93 2951M   93 2762M    0     0  65.0M      0  0:00:45  0:00:42  0:00:03 65.9M 95 2951M   95 2830M    0     0  65.1M      0  0:00:45  0:00:43  0:00:02 65.9M 98 2951M   98 2899M    0     0  65.1M      0  0:00:45  0:00:44  0:00:01 66.0M100 2951M  100 2951M    0     0  65.1M      0  0:00:45  0:00:45 --:--:-- 66.0M
+Done! Model 'large-v2' saved in './ggml-large-v2.bin'
+You can now use it like this:
+
+  $ ./build/bin/whisper-cli -m ./ggml-large-v2.bin -f samples/jfk.wav
+
+mkdir: cannot create directory ‘/mnt/whisper.cpp’: Permission denied
+ci/run.sh: line 112: cd: /mnt/whisper.cpp/models: No such file or directory
+Downloading ggml model large-v3 from 'https://huggingface.co/ggerganov/whisper.cpp' ...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  1372  100  1372    0     0   9529      0 --:--:-- --:--:-- --:--:--  9527100  1372  100  1372    0     0   9515      0 --:--:-- --:--:-- --:--:--  9462
+  2 2951M    2 63.9M    0     0  55.3M      0  0:00:53  0:00:01  0:00:52 55.3M  4 2951M    4  132M    0     0  60.4M      0  0:00:48  0:00:02  0:00:46 66.2M  6 2951M    6  191M    0     0  59.8M      0  0:00:49  0:00:03  0:00:46 62.4M  7 2951M    7  220M    0     0  50.6M      0  0:00:58  0:00:04  0:00:54 48.9M  8 2951M    8  239M    0     0  41.6M      0  0:01:10  0:00:05  0:01:05 38.1M  8 2951M    8  249M    0     0  36.8M      0  0:01:20  0:00:06  0:01:14 33.0M  8 2951M    8  259M    0     0  28.9M      0  0:01:41  0:00:08  0:01:33 18.7M  9 2951M    9  269M    0     0  23.7M      0  0:02:04  0:00:11  0:01:53 9798k  9 2951M    9  278M    0     0  20.1M      0  0:02:26  0:00:13  0:02:13 6292k  9 2951M    9  288M    0     0  17.5M      0  0:02:48  0:00:16  0:02:32 4650k 10 2951M   10  298M    0     0  13.1M      0  0:03:43  0:00:22  0:03:21 3134k 10 2951M   10  308M    0     0  12.9M      0  0:03:48  0:00:23  0:03:25 3343k 10 2951M   10  317M    0     0  12.5M      0  0:03:55  0:00:25  0:03:30 3556k 11 2951M   11  327M    0     0  12.1M      0  0:04:03  0:00:27  0:03:36 3772k 11 2951M   11  337M    0     0  11.6M      0  0:04:13  0:00:28  0:03:45 3985k 11 2951M   11  347M    0     0  11.2M      0  0:04:23  0:00:30  0:03:53 6007k 12 2951M   12  356M    0     0  10.8M      0  0:04:31  0:00:32  0:03:59 5537k 12 2951M   12  366M    0     0  10.5M      0  0:04:39  0:00:34  0:04:05 5353k 12 2951M   12  376M    0     0  10.3M      0  0:04:45  0:00:36  0:04:09 5333k 13 2951M   13  386M    0     0  10.0M      0  0:04:52  0:00:38  0:04:14 5397k 13 2951M   13  395M    0     0   9.9M      0  0:04:57  0:00:39  0:04:18 5531k 13 2951M   13  405M    0     0  9966k      0  0:05:03  0:00:41  0:04:22 5648k 14 2951M   14  415M    0     0  9810k      0  0:05:08  0:00:43  0:04:25 5733k 14 2951M   14  425M    0     0  9679k      0  0:05:12  0:00:44  0:04:28 5845k 14 2951M   14  434M    0     0  9563k      0  0:05:16  0:00:46  0:04:30 6003k 15 2951M   15  444M    0     0  9485k      0  0:05:18  0:00:47  0:04:31 6209k 15 2951M   15  454M    0     0  9143k      0  0:05:30  0:00:50  0:04:40 5420k 15 2951M   15  464M    0     0  9191k      0  0:05:28  0:00:51  0:04:37 5980k 16 2951M   16  473M    0     0  9226k      0  0:05:27  0:00:52  0:04:35 6554k 16 2951M   16  483M    0     0  9271k      0  0:05:25  0:00:53  0:04:32 7289k 16 2951M   16  493M    0     0  9315k      0  0:05:24  0:00:54  0:04:30 8007k 17 2951M   17  503M    0     0  9344k      0  0:05:23  0:00:55  0:04:28 11.4M 17 2951M   17  522M    0     0  9425k      0  0:05:20  0:00:56  0:04:24 11.5M 18 2951M   18  532M    0     0  9472k      0  0:05:19  0:00:57  0:04:22 11.7M 18 2951M   18  542M    0     0  9513k      0  0:05:17  0:00:58  0:04:19 11.8M 18 2951M   18  552M    0     0  9559k      0  0:05:16  0:00:59  0:04:17 11.9M 19 2951M   19  571M    0     0  9656k      0  0:05:13  0:01:00  0:04:13 12.4M 19 2951M   19  581M    0     0  9709k      0  0:05:11  0:01:01  0:04:10 12.9M 20 2951M   20  600M    0     0  9836k      0  0:05:07  0:01:02  0:04:05 13.7M 21 2951M   21  620M    0     0  9980k      0  0:05:02  0:01:03  0:03:59 14.7M 21 2951M   21  630M    0     0   9.8M      0  0:05:00  0:01:04  0:03:56 15.5M 22 2951M   22  649M    0     0   9.9M      0  0:04:55  0:01:05  0:03:50 17.3M 22 2951M   22  678M    0     0  10.2M      0  0:04:49  0:01:06  0:03:43 18.7M 23 2951M   23  698M    0     0  10.3M      0  0:04:45  0:01:07  0:03:38 19.4M 23 2951M   23  707M    0     0  10.1M      0  0:04:50  0:01:09  0:03:41 14.3M 24 2951M   24  717M    0     0   9.7M      0  0:05:01  0:01:13  0:03:48 9699k 24 2951M   24  737M    0     0   9.9M      0  0:04:57  0:01:14  0:03:43 9819k 25 2951M   25  756M    0     0  10.0M      0  0:04:55  0:01:15  0:03:40 8750k 25 2951M   25  766M    0     0  10.0M      0  0:04:54  0:01:16  0:03:38 7760k 26 2951M   26  776M    0     0  10.0M      0  0:04:54  0:01:17  0:03:37 9121k 26 2951M   26  786M    0     0  10.0M      0  0:04:53  0:01:18  0:03:35 14.1M 27 2951M   27  805M    0     0  10.1M      0  0:04:52  0:01:19  0:03:33 12.4M 27 2951M   27  815M    0     0  10.1M      0  0:04:51  0:01:20  0:03:31 12.2M 28 2951M   28  834M    0     0  10.2M      0  0:04:48  0:01:21  0:03:27 13.8M 28 2951M   28  854M    0     0  10.3M      0  0:04:44  0:01:22  0:03:22 15.7M 29 2951M   29  883M    0     0  10.6M      0  0:04:37  0:01:23  0:03:14 19.6M 31 2951M   31  936M    0     0  11.1M      0  0:04:25  0:01:24  0:03:01 29.7M 34 2951M   34 1011M    0     0  11.8M      0  0:04:08  0:01:25  0:02:43 40.4M 34 2951M   34 1017M    0     0  11.4M      0  0:04:17  0:01:28  0:02:49 24.5M 36 2951M   36 1089M    0     0  12.2M      0  0:04:01  0:01:29  0:02:32 34.6M 44 2951M   44 1326M    0     0  14.7M      0  0:03:20  0:01:30  0:01:50 63.9M 46 2951M   46 1360M    0     0  14.9M      0  0:03:17  0:01:31  0:01:46 59.6M 46 2951M   46 1380M    0     0  14.9M      0  0:03:17  0:01:32  0:01:45 52.3M 47 2951M   47 1400M    0     0  15.0M      0  0:03:16  0:01:33  0:01:43 88.8M 48 2951M   48 1429M    0     0  15.1M      0  0:03:14  0:01:34  0:01:40 66.0M 50 2951M   50 1479M    0     0  15.5M      0  0:03:09  0:01:35  0:01:34 30.6M 52 2951M   52 1548M    0     0  16.0M      0  0:03:03  0:01:36  0:01:27 35.9M 53 2951M   53 1568M    0     0  16.1M      0  0:03:02  0:01:37  0:01:25 38.5M 54 2951M   54 1617M    0     0  16.4M      0  0:02:59  0:01:38  0:01:21 44.4M 57 2951M   57 1699M    0     0  17.1M      0  0:02:52  0:01:39  0:01:13 53.0M 59 2951M   59 1749M    0     0  17.4M      0  0:02:49  0:01:40  0:01:09 53.0M 61 2951M   61 1802M    0     0  17.8M      0  0:02:45  0:01:41  0:01:04 53.9M 63 2951M   63 1869M    0     0  18.3M      0  0:02:41  0:01:42  0:00:59 60.9M 65 2951M   65 1935M    0     0  18.7M      0  0:02:37  0:01:43  0:00:54 63.0M 68 2951M   68 2009M    0     0  19.2M      0  0:02:33  0:01:44  0:00:49 62.3M 70 2951M   70 2072M    0     0  19.7M      0  0:02:29  0:01:45  0:00:44 64.8M 71 2951M   71 2112M    0     0  19.8M      0  0:02:28  0:01:46  0:00:42 59.5M 73 2951M   73 2176M    0     0  20.2M      0  0:02:25  0:01:47  0:00:38 58.8M 75 2951M   75 2228M    0     0  20.5M      0  0:02:23  0:01:48  0:00:35 54.8M 76 2951M   76 2264M    0     0  20.7M      0  0:02:22  0:01:49  0:00:33 51.0M 78 2951M   78 2323M    0     0  21.0M      0  0:02:19  0:01:50  0:00:29 50.7M 79 2951M   79 2359M    0     0  21.2M      0  0:02:19  0:01:51  0:00:28 50.9M 80 2951M   80 2379M    0     0  21.1M      0  0:02:19  0:01:52  0:00:27 40.0M 81 2951M   81 2398M    0     0  21.2M      0  0:02:19  0:01:53  0:00:26 36.8M 83 2951M   83 2469M    0     0  21.6M      0  0:02:16  0:01:54  0:00:22 42.5M 85 2951M   85 2525M    0     0  21.9M      0  0:02:14  0:01:55  0:00:19 40.4M 86 2951M   86 2547M    0     0  21.3M      0  0:02:18  0:01:59  0:00:19 23.5M 93 2951M   93 2774M    0     0  23.0M      0  0:02:07  0:02:00  0:00:07 50.4M 95 2951M   95 2825M    0     0  23.3M      0  0:02:06  0:02:01  0:00:05 53.0M 97 2951M   97 2876M    0     0  23.5M      0  0:02:05  0:02:02  0:00:03 50.2M 98 2951M   98 2912M    0     0  23.6M      0  0:02:04  0:02:03  0:00:01 48.4M100 2951M  100 2951M    0     0  23.8M      0  0:02:03  0:02:03 --:--:-- 90.0M
+Done! Model 'large-v3' saved in './ggml-large-v3.bin'
+You can now use it like this:
+
+  $ ./build/bin/whisper-cli -m ./ggml-large-v3.bin -f samples/jfk.wav
+
+mkdir: cannot create directory ‘/mnt/whisper.cpp’: Permission denied
+ci/run.sh: line 112: cd: /mnt/whisper.cpp/models: No such file or directory
+Downloading ggml model large-v3-turbo from 'https://huggingface.co/ggerganov/whisper.cpp' ...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  1386  100  1386    0     0   9699      0 --:--:-- --:--:-- --:--:--  9760
+  1 1549M    1 29.8M    0     0  45.4M      0  0:00:34 --:--:--  0:00:34 45.4M  5 1549M    5 77.6M    0     0  54.5M      0  0:00:28  0:00:01  0:00:27 62.2M  9 1549M    9  147M    0     0  48.7M      0  0:00:31  0:00:03  0:00:28 49.6M 12 1549M   12  188M    0     0  51.9M      0  0:00:29  0:00:03  0:00:26 53.3M 15 1549M   15  240M    0     0  54.2M      0  0:00:28  0:00:04  0:00:24 55.8M 17 1549M   17  272M    0     0  43.8M      0  0:00:35  0:00:06  0:00:29 43.6M 18 1549M   18  282M    0     0  39.8M      0  0:00:38  0:00:07  0:00:31 36.1M 18 1549M   18  292M    0     0  36.9M      0  0:00:41  0:00:07  0:00:34 29.7M 19 1549M   19  302M    0     0  34.9M      0  0:00:44  0:00:08  0:00:36 22.6M 20 1549M   20  321M    0     0  32.0M      0  0:00:48  0:00:10  0:00:38 14.4M 21 1549M   21  331M    0     0  31.1M      0  0:00:49  0:00:10  0:00:39 13.1M 22 1549M   22  350M    0     0  29.7M      0  0:00:52  0:00:11  0:00:41 14.4M 24 1549M   24  378M    0     0  30.4M      0  0:00:50  0:00:12  0:00:38 19.0M 29 1549M   29  453M    0     0  33.5M      0  0:00:46  0:00:13  0:00:33 31.1M 33 1549M   33  521M    0     0  35.8M      0  0:00:43  0:00:14  0:00:29 44.1M 37 1549M   37  579M    0     0  37.5M      0  0:00:41  0:00:15  0:00:26 51.5M 41 1549M   41  635M    0     0  38.7M      0  0:00:40  0:00:16  0:00:24 61.3M 45 1549M   45  707M    0     0  39.5M      0  0:00:39  0:00:17  0:00:22 60.4M 46 1549M   46  717M    0     0  38.2M      0  0:00:40  0:00:18  0:00:22 50.0M 46 1549M   46  727M    0     0  36.9M      0  0:00:41  0:00:19  0:00:22 40.3M 47 1549M   47  737M    0     0  35.9M      0  0:00:43  0:00:20  0:00:23 31.2M 48 1549M   48  756M    0     0  31.7M      0  0:00:48  0:00:23  0:00:25 16.2M 50 1549M   50  776M    0     0  31.7M      0  0:00:48  0:00:24  0:00:24 10.4M 55 1549M   55  862M    0     0  33.8M      0  0:00:45  0:00:25  0:00:20 21.5M 59 1549M   59  922M    0     0  34.8M      0  0:00:44  0:00:26  0:00:18 28.6M 63 1549M   63  991M    0     0  36.0M      0  0:00:43  0:00:27  0:00:16 36.1M 68 1549M   68 1055M    0     0  37.1M      0  0:00:41  0:00:28  0:00:13 65.1M 72 1549M   72 1122M    0     0  38.0M      0  0:00:40  0:00:29  0:00:11 68.7M 76 1549M   76 1189M    0     0  39.0M      0  0:00:39  0:00:30  0:00:09 66.0M 79 1549M   79 1224M    0     0  38.7M      0  0:00:39  0:00:31  0:00:08 58.8M 80 1549M   80 1243M    0     0  37.8M      0  0:00:40  0:00:32  0:00:08 46.9M 80 1549M   80 1253M    0     0  37.4M      0  0:00:41  0:00:33  0:00:08 39.3M 82 1549M   82 1284M    0     0  37.2M      0  0:00:41  0:00:34  0:00:07 32.4M 86 1549M   86 1347M    0     0  38.0M      0  0:00:40  0:00:35  0:00:05 31.5M 90 1549M   90 1407M    0     0  38.6M      0  0:00:40  0:00:36  0:00:04 38.1M 95 1549M   95 1475M    0     0  39.4M      0  0:00:39  0:00:37  0:00:02 51.2M 99 1549M   99 1537M    0     0  39.5M      0  0:00:39  0:00:38  0:00:01 52.7M 99 1549M   99 1547M    0     0  39.1M      0  0:00:39  0:00:39 --:--:-- 51.9M100 1549M  100 1549M    0     0  39.0M      0  0:00:39  0:00:39 --:--:-- 47.8M
+Done! Model 'large-v3-turbo' saved in './ggml-large-v3-turbo.bin'
+You can now use it like this:
+
+  $ ./build/bin/whisper-cli -m ./ggml-large-v3-turbo.bin -f samples/jfk.wav
+
++ gg_run_ctest ctest debug
++ mode=debug
++ cd /home/ggml/work/whisper.cpp
++ rm -rf build-ci-debug
++ tee /home/ggml/results/whisper.cpp/44/fa2f647cf2a6953493b21ab83b50d5f5dbc483/ggml-6-x86-vulkan-t4/ctest_debug.log
++ mkdir build-ci-debug
++ cd build-ci-debug
++ set -e
++ gg_check_build_requirements
++ command -v cmake
++ command -v make
++ tee -a /home/ggml/results/whisper.cpp/44/fa2f647cf2a6953493b21ab83b50d5f5dbc483/ggml-6-x86-vulkan-t4/ctest_debug-cmake.log
++ cmake -DCMAKE_BUILD_TYPE=debug -DWHISPER_FATAL_WARNINGS=ON -DGGML_VULKAN=ON ..
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Git: /usr/bin/git (found version "2.43.0") 
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- ccache found, compilation results will be cached. Disable with GGML_CCACHE=OFF.
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- GGML_SYSTEM_ARCH: x86
+-- Including CPU backend
+-- Found OpenMP_C: -fopenmp (found version "4.5") 
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5")  
+-- x86 detected
+-- Adding CPU backend variant ggml-cpu: -march=native 
+CMake Error at /usr/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake:230 (message):
+  Could NOT find Vulkan (missing: Vulkan_LIBRARY Vulkan_INCLUDE_DIR) (found
+  version "")
+Call Stack (most recent call first):
+  /usr/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake:600 (_FPHSA_FAILURE_MESSAGE)
+  /usr/share/cmake-3.28/Modules/FindVulkan.cmake:600 (find_package_handle_standard_args)
+  ggml/src/ggml-vulkan/CMakeLists.txt:4 (find_package)
+
+
+-- Configuring incomplete, errors occurred!
+
+real	0m18.275s
+user	0m0.541s
+sys	0m0.410s
++ cur=1
++ echo 1
++ set +x
+cat: /home/ggml/results/whisper.cpp/44/fa2f647cf2a6953493b21ab83b50d5f5dbc483/ggml-6-x86-vulkan-t4/ctest_debug-ctest.log: No such file or directory
