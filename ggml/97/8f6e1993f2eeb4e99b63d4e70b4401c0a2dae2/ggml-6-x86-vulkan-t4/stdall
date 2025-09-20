@@ -1,0 +1,7 @@
+mkdir: cannot create directory ‘/mnt/ggml’: Permission denied
+rm: cannot remove '/home/ggml/results/ggml/97/8f6e1993f2eeb4e99b63d4e70b4401c0a2dae2/ggml-6-x86-vulkan-t4/*.log': No such file or directory
+rm: cannot remove '/home/ggml/results/ggml/97/8f6e1993f2eeb4e99b63d4e70b4401c0a2dae2/ggml-6-x86-vulkan-t4/*.exit': No such file or directory
+rm: cannot remove '/home/ggml/results/ggml/97/8f6e1993f2eeb4e99b63d4e70b4401c0a2dae2/ggml-6-x86-vulkan-t4/*.md': No such file or directory
+mkdir: cannot create directory ‘/mnt/ggml’: Permission denied
+Error: [Errno 13] Permission denied: '/mnt/ggml'
+Error: Failed to create Python virtual environment at /mnt/ggml/venv.
