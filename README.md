@@ -1,3 +1,6 @@
+> [!NOTE]
+> Replaced with Github self-hosted runners
+
 # ci
 
 CI for ggml and related projects
